@@ -1,4 +1,6 @@
 ---
+
+[![Git](https://app.soluble.cloud/api/v1/public/badges/b8ca09fb-428a-41ea-bbe5-f8efc1105fea.svg?orgId=320408544746)](https://app.soluble.cloud/repos/details/github.com/jsoehner/platform-client-sdk-javascript?orgId=320408544746)  
 title: Platform API Client SDK - JavaScript
 ---
 

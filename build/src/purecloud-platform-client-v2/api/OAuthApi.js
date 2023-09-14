@@ -5,7 +5,7 @@ class OAuthApi {
 	/**
 	 * OAuth service.
 	 * @module purecloud-platform-client-v2/api/OAuthApi
-	 * @version 124.0.0
+	 * @version 174.0.0
 	 */
 
 	/**
@@ -34,13 +34,13 @@ class OAuthApi {
 		return this.apiClient.callApi(
 			'/api/v2/oauth/clients/{clientId}', 
 			'DELETE', 
-			{ 'clientId': clientId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'clientId': clientId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -49,8 +49,12 @@ class OAuthApi {
 	 * Get a client that is authorized by the resource owner
 	 * 
 	 * @param {String} clientId The ID of client
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.acceptLanguage The language in which to display the client descriptions. (default to en-us)
 	 */
-	getOauthAuthorization(clientId) { 
+	getOauthAuthorization(clientId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'clientId' is set
 		if (clientId === undefined || clientId === null) {
 			throw 'Missing the required parameter "clientId" when calling getOauthAuthorization';
@@ -59,33 +63,37 @@ class OAuthApi {
 		return this.apiClient.callApi(
 			'/api/v2/oauth/authorizations/{clientId}', 
 			'GET', 
-			{ 'clientId': clientId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'clientId': clientId },
+			{  },
+			{ 'Accept-Language': opts['acceptLanguage'] },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * List clients that are authorized by the resource owner
+	 * List clients that have been authorized, requested, or revoked by the resource owner
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.acceptLanguage The language in which to display the client descriptions. (default to en-us)
 	 */
-	getOauthAuthorizations() { 
+	getOauthAuthorizations(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/oauth/authorizations', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{ 'Accept-Language': opts['acceptLanguage'] },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -104,13 +112,13 @@ class OAuthApi {
 		return this.apiClient.callApi(
 			'/api/v2/oauth/clients/{clientId}', 
 			'GET', 
-			{ 'clientId': clientId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'clientId': clientId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -134,13 +142,13 @@ class OAuthApi {
 		return this.apiClient.callApi(
 			'/api/v2/oauth/clients/{clientId}/usage/query/results/{executionId}', 
 			'GET', 
-			{ 'executionId': executionId,'clientId': clientId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'executionId': executionId,'clientId': clientId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -163,13 +171,13 @@ class OAuthApi {
 		return this.apiClient.callApi(
 			'/api/v2/oauth/clients/{clientId}/usage/summary', 
 			'GET', 
-			{ 'clientId': clientId }, 
-			{ 'days': opts['days'] }, 
-			{  }, 
-			{  }, 
+			{ 'clientId': clientId },
+			{ 'days': opts['days'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -183,13 +191,13 @@ class OAuthApi {
 		return this.apiClient.callApi(
 			'/api/v2/oauth/clients', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -212,13 +220,13 @@ class OAuthApi {
 		return this.apiClient.callApi(
 			'/api/v2/oauth/scopes/{scopeId}', 
 			'GET', 
-			{ 'scopeId': scopeId }, 
-			{  }, 
-			{ 'Accept-Language': opts['acceptLanguage'] }, 
-			{  }, 
+			{ 'scopeId': scopeId },
+			{  },
+			{ 'Accept-Language': opts['acceptLanguage'] },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -236,13 +244,13 @@ class OAuthApi {
 		return this.apiClient.callApi(
 			'/api/v2/oauth/scopes', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{ 'Accept-Language': opts['acceptLanguage'] }, 
-			{  }, 
+			{  },
+			{  },
+			{ 'Accept-Language': opts['acceptLanguage'] },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -261,13 +269,13 @@ class OAuthApi {
 		return this.apiClient.callApi(
 			'/api/v2/oauth/clients/{clientId}/secret', 
 			'POST', 
-			{ 'clientId': clientId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'clientId': clientId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -291,20 +299,20 @@ class OAuthApi {
 		return this.apiClient.callApi(
 			'/api/v2/oauth/clients/{clientId}/usage/query', 
 			'POST', 
-			{ 'clientId': clientId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'clientId': clientId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
 	 * Create OAuth client
-	 * The OAuth Grant/Client is required in order to create an authentication token and gain access to PureCloud.  The preferred authorizedGrantTypes is &#39;CODE&#39; which requires applications to send a client ID and client secret. This is typically a web server.  If the client is unable to secure the client secret then the &#39;TOKEN&#39; grant type aka IMPLICIT should be used. This is would be for browser or mobile apps.  If a client is to be used outside of the context of a user then the &#39;CLIENT-CREDENTIALS&#39; grant may be used. In this case the client must be granted roles  via the &#39;roleIds&#39; field.
+	 * The OAuth Grant/Client is required in order to create an authentication token and gain access to PureCloud.  The preferred authorizedGrantTypes is CODE which requires applications to send a client ID and client secret. This is typically a web server.  If the client is unable to secure the client secret then the TOKEN grant type aka IMPLICIT should be used. This is would be for browser or mobile apps.  If a client is to be used outside of the context of a user then the CLIENT-CREDENTIALS grant may be used. In this case the client must be granted roles  via the roleIds field.
 	 * @param {Object} body Client
 	 */
 	postOauthClients(body) { 
@@ -316,13 +324,13 @@ class OAuthApi {
 		return this.apiClient.callApi(
 			'/api/v2/oauth/clients', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -346,13 +354,13 @@ class OAuthApi {
 		return this.apiClient.callApi(
 			'/api/v2/oauth/clients/{clientId}', 
 			'PUT', 
-			{ 'clientId': clientId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'clientId': clientId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}

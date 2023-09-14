@@ -20,14 +20,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 # AuditQueryServiceMapping getAuditsQueryRealtimeServicemapping()
 
 
-
 GET /api/v2/audits/query/realtime/servicemapping
 
 Get service mapping information used in realtime audits.
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * audits:audit:view
 
@@ -68,14 +65,11 @@ This endpoint does not need any parameter.
 # AuditQueryServiceMapping getAuditsQueryServicemapping()
 
 
-
 GET /api/v2/audits/query/servicemapping
 
 Get service mapping information used in audits.
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * audits:audit:view
 
@@ -116,14 +110,11 @@ This endpoint does not need any parameter.
 # AuditQueryExecutionStatusResponse getAuditsQueryTransactionId(transactionId)
 
 
-
 GET /api/v2/audits/query/{transactionId}
 
 Get status of audit query execution
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * audits:audit:view
 
@@ -169,14 +160,11 @@ apiInstance.getAuditsQueryTransactionId(transactionId)
 # AuditQueryExecutionResultsResponse getAuditsQueryTransactionIdResults(transactionId, opts)
 
 
-
 GET /api/v2/audits/query/{transactionId}/results
 
 Get results of audit query
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * audits:audit:view
 
@@ -196,7 +184,7 @@ let apiInstance = new platformClient.AuditApi();
 let transactionId = "transactionId_example"; // String | Transaction ID
 let opts = { 
   'cursor': "cursor_example", // String | Indicates where to resume query results (not required for first page)
-  'pageSize': 25, // Number | Page size
+  'pageSize': 25, // Number | Indicates maximum number of results in response. Default page size is 25 results. The maximum page size is 500.
   'expand': ["expand_example"] // [String] | Which fields, if any, to expand
 };
 
@@ -217,7 +205,7 @@ apiInstance.getAuditsQueryTransactionIdResults(transactionId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **transactionId** | **String** | Transaction ID |  |
  **cursor** | **String** | Indicates where to resume query results (not required for first page) | [optional]  |
- **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageSize** | **Number** | Indicates maximum number of results in response. Default page size is 25 results. The maximum page size is 500. | [optional] [default to 25] |
  **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: user |
 {: class="table table-striped"}
 
@@ -230,14 +218,13 @@ apiInstance.getAuditsQueryTransactionIdResults(transactionId, opts)
 # AuditQueryExecutionStatusResponse postAuditsQuery(body)
 
 
-
 POST /api/v2/audits/query
 
 Create audit query execution
 
+Use /api/v2/audits/query/servicemapping endpoint for a list of valid values
 
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * audits:audit:view
 
@@ -283,14 +270,13 @@ apiInstance.postAuditsQuery(body)
 # AuditRealtimeQueryResultsResponse postAuditsQueryRealtime(body, opts)
 
 
-
 POST /api/v2/audits/query/realtime
 
 This endpoint will only retrieve 14 days worth of audits for certain services. Please use /query to get a full list and older audits.
 
+Use /api/v2/audits/query/realtime/servicemapping endpoint for a list of valid values
 
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * audits:audit:view
 

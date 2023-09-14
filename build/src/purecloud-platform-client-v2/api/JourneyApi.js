@@ -5,7 +5,7 @@ class JourneyApi {
 	/**
 	 * Journey service.
 	 * @module purecloud-platform-client-v2/api/JourneyApi
-	 * @version 124.0.0
+	 * @version 174.0.0
 	 */
 
 	/**
@@ -34,13 +34,13 @@ class JourneyApi {
 		return this.apiClient.callApi(
 			'/api/v2/journey/actionmaps/{actionMapId}', 
 			'DELETE', 
-			{ 'actionMapId': actionMapId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'actionMapId': actionMapId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -50,7 +50,7 @@ class JourneyApi {
 	 * 
 	 * @param {String} actionTemplateId ID of the action template.
 	 * @param {Object} opts Optional parameters
-	 * @param {Boolean} opts.hardDelete Determines whether Action Template should be soft-deleted (have it&#39;s state set to deleted) or hard-deleted (permanently removed). Set to false (soft-delete) by default.
+	 * @param {Boolean} opts.hardDelete Determines whether Action Template should be soft-deleted (have it's state set to deleted) or hard-deleted (permanently removed). Set to false (soft-delete) by default.
 	 */
 	deleteJourneyActiontemplate(actionTemplateId, opts) { 
 		opts = opts || {};
@@ -63,13 +63,13 @@ class JourneyApi {
 		return this.apiClient.callApi(
 			'/api/v2/journey/actiontemplates/{actionTemplateId}', 
 			'DELETE', 
-			{ 'actionTemplateId': actionTemplateId }, 
-			{ 'hardDelete': opts['hardDelete'] }, 
-			{  }, 
-			{  }, 
+			{ 'actionTemplateId': actionTemplateId },
+			{ 'hardDelete': opts['hardDelete'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -88,13 +88,38 @@ class JourneyApi {
 		return this.apiClient.callApi(
 			'/api/v2/journey/outcomes/{outcomeId}', 
 			'DELETE', 
-			{ 'outcomeId': outcomeId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'outcomeId': outcomeId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete an outcome predictor.
+	 * 
+	 * @param {String} predictorId ID of predictor
+	 */
+	deleteJourneyOutcomesPredictor(predictorId) { 
+		// verify the required parameter 'predictorId' is set
+		if (predictorId === undefined || predictorId === null) {
+			throw 'Missing the required parameter "predictorId" when calling deleteJourneyOutcomesPredictor';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/outcomes/predictors/{predictorId}', 
+			'DELETE', 
+			{ 'predictorId': predictorId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -113,13 +138,100 @@ class JourneyApi {
 		return this.apiClient.callApi(
 			'/api/v2/journey/segments/{segmentId}', 
 			'DELETE', 
-			{ 'segmentId': segmentId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'segmentId': segmentId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get status for async query for journey aggregates
+	 * 
+	 * @param {String} jobId jobId
+	 * getAnalyticsJourneysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getAnalyticsJourneysAggregatesJob(jobId) { 
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null) {
+			throw 'Missing the required parameter "jobId" when calling getAnalyticsJourneysAggregatesJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/journeys/aggregates/jobs/{jobId}', 
+			'GET', 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Fetch a page of results for an async aggregates query
+	 * 
+	 * @param {String} jobId jobId
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.cursor Cursor token to retrieve next page
+	 * getAnalyticsJourneysAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getAnalyticsJourneysAggregatesJobResults(jobId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null) {
+			throw 'Missing the required parameter "jobId" when calling getAnalyticsJourneysAggregatesJobResults';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/journeys/aggregates/jobs/{jobId}/results', 
+			'GET', 
+			{ 'jobId': jobId },
+			{ 'cursor': opts['cursor'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Retrieve all sessions for a given external contact.
+	 * 
+	 * @param {String} contactId ExternalContact ID
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
+	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
+	 * @param {Boolean} opts.includeMerged Indicates whether to return sessions from all external contacts in the merge-set of the given one.
+	 */
+	getExternalcontactsContactJourneySessions(contactId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'contactId' is set
+		if (contactId === undefined || contactId === null) {
+			throw 'Missing the required parameter "contactId" when calling getExternalcontactsContactJourneySessions';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/contacts/{contactId}/journey/sessions', 
+			'GET', 
+			{ 'contactId': contactId },
+			{ 'pageSize': opts['pageSize'],'after': opts['after'],'includeMerged': opts['includeMerged'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -138,13 +250,13 @@ class JourneyApi {
 		return this.apiClient.callApi(
 			'/api/v2/journey/actionmaps/{actionMapId}', 
 			'GET', 
-			{ 'actionMapId': actionMapId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'actionMapId': actionMapId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -155,12 +267,12 @@ class JourneyApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
-	 * @param {String} opts.sortBy Field(s) to sort by. Prefix with &#39;-&#39; for descending (e.g. sortBy=displayName,-createdDate).
-	 * @param {String} opts.filterField Field to filter by (e.g. filterField=weight or filterField=action.actionTemplate.id). Requires &#39;filterField&#39; to also be set.
-	 * @param {String} opts.filterValue Value to filter by. Requires &#39;filterValue&#39; to also be set.
+	 * @param {String} opts.sortBy Field(s) to sort by. Prefix with '-' for descending (e.g. sortBy=displayName,-createdDate).
+	 * @param {String} opts.filterField Field to filter by (e.g. filterField=weight or filterField=action.actionTemplate.id). Requires 'filterField' to also be set.
+	 * @param {String} opts.filterValue Value to filter by. Requires 'filterValue' to also be set.
 	 * @param {Array.<String>} opts.actionMapIds IDs of action maps to return. Use of this parameter is not compatible with pagination, filtering, sorting or querying. A maximum of 100 action maps are allowed per request.
-	 * @param {Array.<String>} opts.queryFields Action Map field(s) to query on. Requires &#39;queryValue&#39; to also be set.
-	 * @param {String} opts.queryValue Value to query on. Requires &#39;queryFields&#39; to also be set.
+	 * @param {Array.<String>} opts.queryFields Action Map field(s) to query on. Requires 'queryValue' to also be set.
+	 * @param {String} opts.queryValue Value to query on. Requires 'queryFields' to also be set.
 	 */
 	getJourneyActionmaps(opts) { 
 		opts = opts || {};
@@ -169,13 +281,63 @@ class JourneyApi {
 		return this.apiClient.callApi(
 			'/api/v2/journey/actionmaps', 
 			'GET', 
-			{  }, 
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'filterField': opts['filterField'],'filterValue': opts['filterValue'],'actionMapIds': this.apiClient.buildCollectionParam(opts['actionMapIds'], 'multi'),'queryFields': this.apiClient.buildCollectionParam(opts['queryFields'], 'multi'),'queryValue': opts['queryValue'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'filterField': opts['filterField'],'filterValue': opts['filterValue'],'actionMapIds': this.apiClient.buildCollectionParam(opts['actionMapIds'], 'multi'),'queryFields': this.apiClient.buildCollectionParam(opts['queryFields'], 'multi'),'queryValue': opts['queryValue'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get status of job.
+	 * 
+	 * @param {String} jobId ID of the job.
+	 */
+	getJourneyActionmapsEstimatesJob(jobId) { 
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null) {
+			throw 'Missing the required parameter "jobId" when calling getJourneyActionmapsEstimatesJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/actionmaps/estimates/jobs/{jobId}', 
+			'GET', 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get estimates from completed job.
+	 * 
+	 * @param {String} jobId ID of the job.
+	 */
+	getJourneyActionmapsEstimatesJobResults(jobId) { 
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null) {
+			throw 'Missing the required parameter "jobId" when calling getJourneyActionmapsEstimatesJobResults';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/actionmaps/estimates/jobs/{jobId}/results', 
+			'GET', 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -194,13 +356,13 @@ class JourneyApi {
 		return this.apiClient.callApi(
 			'/api/v2/journey/actiontargets/{actionTargetId}', 
 			'GET', 
-			{ 'actionTargetId': actionTargetId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'actionTargetId': actionTargetId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -219,13 +381,13 @@ class JourneyApi {
 		return this.apiClient.callApi(
 			'/api/v2/journey/actiontargets', 
 			'GET', 
-			{  }, 
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -244,13 +406,13 @@ class JourneyApi {
 		return this.apiClient.callApi(
 			'/api/v2/journey/actiontemplates/{actionTemplateId}', 
 			'GET', 
-			{ 'actionTemplateId': actionTemplateId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'actionTemplateId': actionTemplateId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -261,11 +423,11 @@ class JourneyApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
-	 * @param {String} opts.sortBy Field(s) to sort by. Prefix with &#39;-&#39; for descending (e.g. sortBy=name,-createdDate).
+	 * @param {String} opts.sortBy Field(s) to sort by. Prefix with '-' for descending (e.g. sortBy=name,-createdDate).
 	 * @param {Object} opts.mediaType Media type
 	 * @param {Object} opts.state Action template state.
-	 * @param {Array.<String>} opts.queryFields ActionTemplate field(s) to query on. Requires &#39;queryValue&#39; to also be set.
-	 * @param {String} opts.queryValue Value to query on. Requires &#39;queryFields&#39; to also be set.
+	 * @param {Array.<String>} opts.queryFields ActionTemplate field(s) to query on. Requires 'queryValue' to also be set.
+	 * @param {String} opts.queryValue Value to query on. Requires 'queryFields' to also be set.
 	 */
 	getJourneyActiontemplates(opts) { 
 		opts = opts || {};
@@ -274,13 +436,13 @@ class JourneyApi {
 		return this.apiClient.callApi(
 			'/api/v2/journey/actiontemplates', 
 			'GET', 
-			{  }, 
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'mediaType': opts['mediaType'],'state': opts['state'],'queryFields': this.apiClient.buildCollectionParam(opts['queryFields'], 'multi'),'queryValue': opts['queryValue'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'mediaType': opts['mediaType'],'state': opts['state'],'queryFields': this.apiClient.buildCollectionParam(opts['queryFields'], 'multi'),'queryValue': opts['queryValue'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -299,13 +461,13 @@ class JourneyApi {
 		return this.apiClient.callApi(
 			'/api/v2/journey/outcomes/{outcomeId}', 
 			'GET', 
-			{ 'outcomeId': outcomeId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'outcomeId': outcomeId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -316,10 +478,10 @@ class JourneyApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
-	 * @param {String} opts.sortBy Field(s) to sort by. The response can be sorted by any first level property on the Outcome response. Prefix with &#39;-&#39; for descending (e.g. sortBy=displayName,-createdDate).
+	 * @param {String} opts.sortBy Field(s) to sort by. The response can be sorted by any first level property on the Outcome response. Prefix with '-' for descending (e.g. sortBy=displayName,-createdDate).
 	 * @param {Array.<String>} opts.outcomeIds IDs of outcomes to return. Use of this parameter is not compatible with pagination, sorting or querying. A maximum of 20 outcomes are allowed per request.
-	 * @param {Array.<String>} opts.queryFields Outcome field(s) to query on. Requires &#39;queryValue&#39; to also be set.
-	 * @param {String} opts.queryValue Value to query on. Requires &#39;queryFields&#39; to also be set.
+	 * @param {Array.<String>} opts.queryFields Outcome field(s) to query on. Requires 'queryValue' to also be set.
+	 * @param {String} opts.queryValue Value to query on. Requires 'queryFields' to also be set.
 	 */
 	getJourneyOutcomes(opts) { 
 		opts = opts || {};
@@ -328,13 +490,110 @@ class JourneyApi {
 		return this.apiClient.callApi(
 			'/api/v2/journey/outcomes', 
 			'GET', 
-			{  }, 
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'outcomeIds': this.apiClient.buildCollectionParam(opts['outcomeIds'], 'multi'),'queryFields': this.apiClient.buildCollectionParam(opts['queryFields'], 'multi'),'queryValue': opts['queryValue'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'outcomeIds': this.apiClient.buildCollectionParam(opts['outcomeIds'], 'multi'),'queryFields': this.apiClient.buildCollectionParam(opts['queryFields'], 'multi'),'queryValue': opts['queryValue'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get job status.
+	 * 
+	 * @param {String} jobId ID of the job.
+	 * getJourneyOutcomesAttributionsJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getJourneyOutcomesAttributionsJob(jobId) { 
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null) {
+			throw 'Missing the required parameter "jobId" when calling getJourneyOutcomesAttributionsJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/outcomes/attributions/jobs/{jobId}', 
+			'GET', 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get outcome attribution entities from completed job.
+	 * 
+	 * @param {String} jobId ID of the job.
+	 * getJourneyOutcomesAttributionsJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getJourneyOutcomesAttributionsJobResults(jobId) { 
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null) {
+			throw 'Missing the required parameter "jobId" when calling getJourneyOutcomesAttributionsJobResults';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/outcomes/attributions/jobs/{jobId}/results', 
+			'GET', 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Retrieve a single outcome predictor.
+	 * 
+	 * @param {String} predictorId ID of predictor
+	 */
+	getJourneyOutcomesPredictor(predictorId) { 
+		// verify the required parameter 'predictorId' is set
+		if (predictorId === undefined || predictorId === null) {
+			throw 'Missing the required parameter "predictorId" when calling getJourneyOutcomesPredictor';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/outcomes/predictors/{predictorId}', 
+			'GET', 
+			{ 'predictorId': predictorId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Retrieve all outcome predictors.
+	 * 
+	 */
+	getJourneyOutcomesPredictors() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/outcomes/predictors', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -353,13 +612,13 @@ class JourneyApi {
 		return this.apiClient.callApi(
 			'/api/v2/journey/segments/{segmentId}', 
 			'GET', 
-			{ 'segmentId': segmentId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'segmentId': segmentId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -368,13 +627,13 @@ class JourneyApi {
 	 * Retrieve all segments.
 	 * 
 	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.sortBy Field(s) to sort by. The response can be sorted by any first level property on the Outcome response. Prefix with &#39;-&#39; for descending (e.g. sortBy=displayName,-createdDate).
+	 * @param {String} opts.sortBy Field(s) to sort by. The response can be sorted by any first level property on the Outcome response. Prefix with '-' for descending (e.g. sortBy=displayName,-createdDate).
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Boolean} opts.isActive Determines whether or not to show only active segments.
 	 * @param {Array.<String>} opts.segmentIds IDs of segments to return. Use of this parameter is not compatible with pagination, sorting or querying. A maximum of 100 segments are allowed per request.
-	 * @param {Array.<String>} opts.queryFields Segment field(s) to query on. Requires &#39;queryValue&#39; to also be set.
-	 * @param {String} opts.queryValue Value to query on. Requires &#39;queryFields&#39; to also be set.
+	 * @param {Array.<String>} opts.queryFields Segment field(s) to query on. Requires 'queryValue' to also be set.
+	 * @param {String} opts.queryValue Value to query on. Requires 'queryFields' to also be set.
 	 */
 	getJourneySegments(opts) { 
 		opts = opts || {};
@@ -383,13 +642,13 @@ class JourneyApi {
 		return this.apiClient.callApi(
 			'/api/v2/journey/segments', 
 			'GET', 
-			{  }, 
-			{ 'sortBy': opts['sortBy'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'isActive': opts['isActive'],'segmentIds': this.apiClient.buildCollectionParam(opts['segmentIds'], 'multi'),'queryFields': this.apiClient.buildCollectionParam(opts['queryFields'], 'multi'),'queryValue': opts['queryValue'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'sortBy': opts['sortBy'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'isActive': opts['isActive'],'segmentIds': this.apiClient.buildCollectionParam(opts['segmentIds'], 'multi'),'queryFields': this.apiClient.buildCollectionParam(opts['queryFields'], 'multi'),'queryValue': opts['queryValue'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -408,13 +667,44 @@ class JourneyApi {
 		return this.apiClient.callApi(
 			'/api/v2/journey/sessions/{sessionId}', 
 			'GET', 
-			{ 'sessionId': sessionId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'sessionId': sessionId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Retrieve all events for a given session.
+	 * 
+	 * @param {String} sessionId System-generated UUID that represents the session the event is a part of.
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
+	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
+	 * getJourneySessionEvents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getJourneySessionEvents(sessionId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'sessionId' is set
+		if (sessionId === undefined || sessionId === null) {
+			throw 'Missing the required parameter "sessionId" when calling getJourneySessionEvents';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/sessions/{sessionId}/events', 
+			'GET', 
+			{ 'sessionId': sessionId },
+			{ 'pageSize': opts['pageSize'],'after': opts['after'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -433,13 +723,46 @@ class JourneyApi {
 		return this.apiClient.callApi(
 			'/api/v2/journey/sessions/{sessionId}/outcomescores', 
 			'GET', 
-			{ 'sessionId': sessionId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'sessionId': sessionId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Retrieve segment assignments by session ID.
+	 * 
+	 * @param {String} sessionId ID of the session to query for segment assignments.
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
+	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
+	 * @param {Object} opts.segmentScope Scope to filter on. If not specified, both session-scoped and customer-scoped assignments are returned.
+	 * @param {Object} opts.assignmentState Assignment state to filter on. If not specified, both assigned and unassigned assignments are returned.
+	 * getJourneySessionSegments is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getJourneySessionSegments(sessionId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'sessionId' is set
+		if (sessionId === undefined || sessionId === null) {
+			throw 'Missing the required parameter "sessionId" when calling getJourneySessionSegments';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/sessions/{sessionId}/segments', 
+			'GET', 
+			{ 'sessionId': sessionId },
+			{ 'pageSize': opts['pageSize'],'after': opts['after'],'segmentScope': opts['segmentScope'],'assignmentState': opts['assignmentState'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -462,13 +785,13 @@ class JourneyApi {
 		return this.apiClient.callApi(
 			'/api/v2/journey/actionmaps/{actionMapId}', 
 			'PATCH', 
-			{ 'actionMapId': actionMapId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'actionMapId': actionMapId },
+			{  },
+			{  },
+			{  },
 			opts['body'], 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -491,13 +814,13 @@ class JourneyApi {
 		return this.apiClient.callApi(
 			'/api/v2/journey/actiontargets/{actionTargetId}', 
 			'PATCH', 
-			{ 'actionTargetId': actionTargetId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'actionTargetId': actionTargetId },
+			{  },
+			{  },
+			{  },
 			opts['body'], 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -520,13 +843,13 @@ class JourneyApi {
 		return this.apiClient.callApi(
 			'/api/v2/journey/actiontemplates/{actionTemplateId}', 
 			'PATCH', 
-			{ 'actionTemplateId': actionTemplateId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'actionTemplateId': actionTemplateId },
+			{  },
+			{  },
+			{  },
 			opts['body'], 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -549,13 +872,13 @@ class JourneyApi {
 		return this.apiClient.callApi(
 			'/api/v2/journey/outcomes/{outcomeId}', 
 			'PATCH', 
-			{ 'outcomeId': outcomeId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'outcomeId': outcomeId },
+			{  },
+			{  },
+			{  },
 			opts['body'], 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -578,13 +901,39 @@ class JourneyApi {
 		return this.apiClient.callApi(
 			'/api/v2/journey/segments/{segmentId}', 
 			'PATCH', 
-			{ 'segmentId': segmentId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'segmentId': segmentId },
+			{  },
+			{  },
+			{  },
 			opts['body'], 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Query for journey aggregates asynchronously
+	 * 
+	 * @param {Object} body query
+	 * postAnalyticsJourneysAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postAnalyticsJourneysAggregatesJobs(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postAnalyticsJourneysAggregatesJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/journeys/aggregates/jobs', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -603,13 +952,13 @@ class JourneyApi {
 		return this.apiClient.callApi(
 			'/api/v2/analytics/journeys/aggregates/query', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -627,13 +976,38 @@ class JourneyApi {
 		return this.apiClient.callApi(
 			'/api/v2/journey/actionmaps', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			opts['body'], 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Query for estimates
+	 * 
+	 * @param {Object} body audience estimator request
+	 */
+	postJourneyActionmapsEstimatesJobs(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postJourneyActionmapsEstimatesJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/actionmaps/estimates/jobs', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -651,13 +1025,43 @@ class JourneyApi {
 		return this.apiClient.callApi(
 			'/api/v2/journey/actiontemplates', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			opts['body'], 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Send a journey app event, used for tracking customer activity on an application.
+	 * 
+	 * @param {String} deploymentId The ID of the deployment sending the app event.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 * postJourneyDeploymentAppevents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postJourneyDeploymentAppevents(deploymentId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'deploymentId' is set
+		if (deploymentId === undefined || deploymentId === null) {
+			throw 'Missing the required parameter "deploymentId" when calling postJourneyDeploymentAppevents';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/deployments/{deploymentId}/appevents', 
+			'POST', 
+			{ 'deploymentId': deploymentId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -675,13 +1079,62 @@ class JourneyApi {
 		return this.apiClient.callApi(
 			'/api/v2/journey/outcomes', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			opts['body'], 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create Outcome Attributions
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body outcome attribution request
+	 * postJourneyOutcomesAttributionsJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postJourneyOutcomesAttributionsJobs(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/outcomes/attributions/jobs', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create an outcome predictor.
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 */
+	postJourneyOutcomesPredictors(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/outcomes/predictors', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -699,13 +1152,13 @@ class JourneyApi {
 		return this.apiClient.callApi(
 			'/api/v2/journey/segments', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			opts['body'], 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}

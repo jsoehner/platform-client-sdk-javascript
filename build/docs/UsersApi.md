@@ -9,12 +9,14 @@ All URIs are relative to *https://api.mypurecloud.com*
 | ------------- | ------------- | ------------- |
 [**deleteAnalyticsUsersDetailsJob**](UsersApi.html#deleteAnalyticsUsersDetailsJob) | **DELETE** /api/v2/analytics/users/details/jobs/{jobId} | Delete/cancel an async request
 [**deleteAuthorizationSubjectDivisionRole**](UsersApi.html#deleteAuthorizationSubjectDivisionRole) | **DELETE** /api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{roleId} | Delete a grant of a role in a division
-[**deleteRoutingUserUtilization**](UsersApi.html#deleteRoutingUserUtilization) | **DELETE** /api/v2/routing/users/{userId}/utilization | Delete the user&#39;s max utilization settings and revert to the organization-wide default.
+[**deleteRoutingUserUtilization**](UsersApi.html#deleteRoutingUserUtilization) | **DELETE** /api/v2/routing/users/{userId}/utilization | Delete the user's max utilization settings and revert to the organization-wide default.
 [**deleteUser**](UsersApi.html#deleteUser) | **DELETE** /api/v2/users/{userId} | Delete user
 [**deleteUserRoutinglanguage**](UsersApi.html#deleteUserRoutinglanguage) | **DELETE** /api/v2/users/{userId}/routinglanguages/{languageId} | Remove routing language from user
 [**deleteUserRoutingskill**](UsersApi.html#deleteUserRoutingskill) | **DELETE** /api/v2/users/{userId}/routingskills/{skillId} | Remove routing skill from user
 [**deleteUserStationAssociatedstation**](UsersApi.html#deleteUserStationAssociatedstation) | **DELETE** /api/v2/users/{userId}/station/associatedstation | Clear associated station
 [**deleteUserStationDefaultstation**](UsersApi.html#deleteUserStationDefaultstation) | **DELETE** /api/v2/users/{userId}/station/defaultstation | Clear default station
+[**getAnalyticsUsersAggregatesJob**](UsersApi.html#getAnalyticsUsersAggregatesJob) | **GET** /api/v2/analytics/users/aggregates/jobs/{jobId} | Get status for async query for user aggregates
+[**getAnalyticsUsersAggregatesJobResults**](UsersApi.html#getAnalyticsUsersAggregatesJobResults) | **GET** /api/v2/analytics/users/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query
 [**getAnalyticsUsersDetailsJob**](UsersApi.html#getAnalyticsUsersDetailsJob) | **GET** /api/v2/analytics/users/details/jobs/{jobId} | Get status for async query for user details
 [**getAnalyticsUsersDetailsJobResults**](UsersApi.html#getAnalyticsUsersDetailsJobResults) | **GET** /api/v2/analytics/users/details/jobs/{jobId}/results | Fetch a page of results for an async query
 [**getAnalyticsUsersDetailsJobsAvailability**](UsersApi.html#getAnalyticsUsersDetailsJobsAvailability) | **GET** /api/v2/analytics/users/details/jobs/availability | Lookup the datalake availability date and time
@@ -25,21 +27,22 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getAuthorizationSubjectsMe**](UsersApi.html#getAuthorizationSubjectsMe) | **GET** /api/v2/authorization/subjects/me | Returns a listing of roles and permissions for the currently authenticated user.
 [**getFieldconfig**](UsersApi.html#getFieldconfig) | **GET** /api/v2/fieldconfig | Fetch field config for an entity type
 [**getProfilesUsers**](UsersApi.html#getProfilesUsers) | **GET** /api/v2/profiles/users | Get a user profile listing
-[**getRoutingUserUtilization**](UsersApi.html#getRoutingUserUtilization) | **GET** /api/v2/routing/users/{userId}/utilization | Get the user&#39;s max utilization settings.  If not configured, the organization-wide default is returned.
+[**getRoutingUserUtilization**](UsersApi.html#getRoutingUserUtilization) | **GET** /api/v2/routing/users/{userId}/utilization | Get the user's max utilization settings.  If not configured, the organization-wide default is returned.
 [**getUser**](UsersApi.html#getUser) | **GET** /api/v2/users/{userId} | Get user.
 [**getUserAdjacents**](UsersApi.html#getUserAdjacents) | **GET** /api/v2/users/{userId}/adjacents | Get adjacents
-[**getUserCallforwarding**](UsersApi.html#getUserCallforwarding) | **GET** /api/v2/users/{userId}/callforwarding | Get a user&#39;s CallForwarding
+[**getUserCallforwarding**](UsersApi.html#getUserCallforwarding) | **GET** /api/v2/users/{userId}/callforwarding | Get a user's CallForwarding
 [**getUserDirectreports**](UsersApi.html#getUserDirectreports) | **GET** /api/v2/users/{userId}/directreports | Get direct reports
 [**getUserFavorites**](UsersApi.html#getUserFavorites) | **GET** /api/v2/users/{userId}/favorites | Deprecated; will be revived with new contract
-[**getUserGeolocation**](UsersApi.html#getUserGeolocation) | **GET** /api/v2/users/{userId}/geolocations/{clientId} | Get a user&#39;s Geolocation
+[**getUserGeolocation**](UsersApi.html#getUserGeolocation) | **GET** /api/v2/users/{userId}/geolocations/{clientId} | Get a user's Geolocation
 [**getUserOutofoffice**](UsersApi.html#getUserOutofoffice) | **GET** /api/v2/users/{userId}/outofoffice | Get a OutOfOffice
 [**getUserProfile**](UsersApi.html#getUserProfile) | **GET** /api/v2/users/{userId}/profile | Get user profile
 [**getUserProfileskills**](UsersApi.html#getUserProfileskills) | **GET** /api/v2/users/{userId}/profileskills | List profile skills for a user
 [**getUserQueues**](UsersApi.html#getUserQueues) | **GET** /api/v2/users/{userId}/queues | Get queues for user
-[**getUserRoles**](UsersApi.html#getUserRoles) | **GET** /api/v2/users/{userId}/roles | Returns a listing of roles and permissions for a user.
+[**getUserRoles**](UsersApi.html#getUserRoles) | **GET** /api/v2/users/{subjectId}/roles | Returns a listing of roles and permissions for a user.
 [**getUserRoutinglanguages**](UsersApi.html#getUserRoutinglanguages) | **GET** /api/v2/users/{userId}/routinglanguages | List routing language for user
 [**getUserRoutingskills**](UsersApi.html#getUserRoutingskills) | **GET** /api/v2/users/{userId}/routingskills | List routing skills for user
 [**getUserRoutingstatus**](UsersApi.html#getUserRoutingstatus) | **GET** /api/v2/users/{userId}/routingstatus | Fetch the routing status of a user
+[**getUserSkillgroups**](UsersApi.html#getUserSkillgroups) | **GET** /api/v2/users/{userId}/skillgroups | Get skill groups for a user
 [**getUserState**](UsersApi.html#getUserState) | **GET** /api/v2/users/{userId}/state | Get user state information.
 [**getUserStation**](UsersApi.html#getUserStation) | **GET** /api/v2/users/{userId}/station | Get station information for user
 [**getUserSuperiors**](UsersApi.html#getUserSuperiors) | **GET** /api/v2/users/{userId}/superiors | Get superiors
@@ -51,22 +54,25 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getUsersMe**](UsersApi.html#getUsersMe) | **GET** /api/v2/users/me | Get current user details.
 [**getUsersSearch**](UsersApi.html#getUsersSearch) | **GET** /api/v2/users/search | Search users using the q64 value returned from a previous search
 [**patchUser**](UsersApi.html#patchUser) | **PATCH** /api/v2/users/{userId} | Update user
-[**patchUserCallforwarding**](UsersApi.html#patchUserCallforwarding) | **PATCH** /api/v2/users/{userId}/callforwarding | Patch a user&#39;s CallForwarding
-[**patchUserGeolocation**](UsersApi.html#patchUserGeolocation) | **PATCH** /api/v2/users/{userId}/geolocations/{clientId} | Patch a user&#39;s Geolocation
+[**patchUserCallforwarding**](UsersApi.html#patchUserCallforwarding) | **PATCH** /api/v2/users/{userId}/callforwarding | Patch a user's CallForwarding
+[**patchUserGeolocation**](UsersApi.html#patchUserGeolocation) | **PATCH** /api/v2/users/{userId}/geolocations/{clientId} | Patch a user's Geolocation
 [**patchUserQueue**](UsersApi.html#patchUserQueue) | **PATCH** /api/v2/users/{userId}/queues/{queueId} | Join or unjoin a queue for a user
 [**patchUserQueues**](UsersApi.html#patchUserQueues) | **PATCH** /api/v2/users/{userId}/queues | Join or unjoin a set of queues for a user
 [**patchUserRoutinglanguage**](UsersApi.html#patchUserRoutinglanguage) | **PATCH** /api/v2/users/{userId}/routinglanguages/{languageId} | Update routing language proficiency or state.
 [**patchUserRoutinglanguagesBulk**](UsersApi.html#patchUserRoutinglanguagesBulk) | **PATCH** /api/v2/users/{userId}/routinglanguages/bulk | Add bulk routing language to user. Max limit 50 languages
 [**patchUserRoutingskillsBulk**](UsersApi.html#patchUserRoutingskillsBulk) | **PATCH** /api/v2/users/{userId}/routingskills/bulk | Bulk add routing skills to user
 [**patchUsersBulk**](UsersApi.html#patchUsersBulk) | **PATCH** /api/v2/users/bulk | Update bulk acd autoanswer on users
+[**postAnalyticsUsersActivityQuery**](UsersApi.html#postAnalyticsUsersActivityQuery) | **POST** /api/v2/analytics/users/activity/query | Query for user activity observations
+[**postAnalyticsUsersAggregatesJobs**](UsersApi.html#postAnalyticsUsersAggregatesJobs) | **POST** /api/v2/analytics/users/aggregates/jobs | Query for user aggregates asynchronously
 [**postAnalyticsUsersAggregatesQuery**](UsersApi.html#postAnalyticsUsersAggregatesQuery) | **POST** /api/v2/analytics/users/aggregates/query | Query for user aggregates
 [**postAnalyticsUsersDetailsJobs**](UsersApi.html#postAnalyticsUsersDetailsJobs) | **POST** /api/v2/analytics/users/details/jobs | Query for user details asynchronously
 [**postAnalyticsUsersDetailsQuery**](UsersApi.html#postAnalyticsUsersDetailsQuery) | **POST** /api/v2/analytics/users/details/query | Query for user details
 [**postAnalyticsUsersObservationsQuery**](UsersApi.html#postAnalyticsUsersObservationsQuery) | **POST** /api/v2/analytics/users/observations/query | Query for user observations
 [**postAuthorizationSubjectBulkadd**](UsersApi.html#postAuthorizationSubjectBulkadd) | **POST** /api/v2/authorization/subjects/{subjectId}/bulkadd | Bulk-grant roles and divisions to a subject.
 [**postAuthorizationSubjectBulkremove**](UsersApi.html#postAuthorizationSubjectBulkremove) | **POST** /api/v2/authorization/subjects/{subjectId}/bulkremove | Bulk-remove grants from a subject.
-[**postAuthorizationSubjectBulkreplace**](UsersApi.html#postAuthorizationSubjectBulkreplace) | **POST** /api/v2/authorization/subjects/{subjectId}/bulkreplace | Replace subject&#39;s roles and divisions with the exact list supplied in the request.
+[**postAuthorizationSubjectBulkreplace**](UsersApi.html#postAuthorizationSubjectBulkreplace) | **POST** /api/v2/authorization/subjects/{subjectId}/bulkreplace | Replace subject's roles and divisions with the exact list supplied in the request.
 [**postAuthorizationSubjectDivisionRole**](UsersApi.html#postAuthorizationSubjectDivisionRole) | **POST** /api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{roleId} | Make a grant of a role in a division
+[**postUserExternalid**](UsersApi.html#postUserExternalid) | **POST** /api/v2/users/{userId}/externalid | Create mapping between external identifier and user. Limit 100 per entity.
 [**postUserInvite**](UsersApi.html#postUserInvite) | **POST** /api/v2/users/{userId}/invite | Send an activation email to the user
 [**postUserPassword**](UsersApi.html#postUserPassword) | **POST** /api/v2/users/{userId}/password | Change a users password
 [**postUserRoutinglanguages**](UsersApi.html#postUserRoutinglanguages) | **POST** /api/v2/users/{userId}/routinglanguages | Add routing language to user
@@ -75,11 +81,14 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postUsersDevelopmentActivitiesAggregatesQuery**](UsersApi.html#postUsersDevelopmentActivitiesAggregatesQuery) | **POST** /api/v2/users/development/activities/aggregates/query | Retrieve aggregated development activity data
 [**postUsersMePassword**](UsersApi.html#postUsersMePassword) | **POST** /api/v2/users/me/password | Change your password
 [**postUsersSearch**](UsersApi.html#postUsersSearch) | **POST** /api/v2/users/search | Search users
-[**putRoutingUserUtilization**](UsersApi.html#putRoutingUserUtilization) | **PUT** /api/v2/routing/users/{userId}/utilization | Update the user&#39;s max utilization settings.  Include only those media types requiring custom configuration.
-[**putUserCallforwarding**](UsersApi.html#putUserCallforwarding) | **PUT** /api/v2/users/{userId}/callforwarding | Update a user&#39;s CallForwarding
+[**postUsersSearchConversationTarget**](UsersApi.html#postUsersSearchConversationTarget) | **POST** /api/v2/users/search/conversation/target | Search users as conversation targets
+[**postUsersSearchQueuemembersManage**](UsersApi.html#postUsersSearchQueuemembersManage) | **POST** /api/v2/users/search/queuemembers/manage | Search manage queue member
+[**postUsersSearchTeamsAssign**](UsersApi.html#postUsersSearchTeamsAssign) | **POST** /api/v2/users/search/teams/assign | Search users assigned to teams
+[**putRoutingUserUtilization**](UsersApi.html#putRoutingUserUtilization) | **PUT** /api/v2/routing/users/{userId}/utilization | Update the user's max utilization settings.  Include only those media types requiring custom configuration.
+[**putUserCallforwarding**](UsersApi.html#putUserCallforwarding) | **PUT** /api/v2/users/{userId}/callforwarding | Update a user's CallForwarding
 [**putUserOutofoffice**](UsersApi.html#putUserOutofoffice) | **PUT** /api/v2/users/{userId}/outofoffice | Update an OutOfOffice
 [**putUserProfileskills**](UsersApi.html#putUserProfileskills) | **PUT** /api/v2/users/{userId}/profileskills | Update profile skills for a user
-[**putUserRoles**](UsersApi.html#putUserRoles) | **PUT** /api/v2/users/{userId}/roles | Sets the user&#39;s roles
+[**putUserRoles**](UsersApi.html#putUserRoles) | **PUT** /api/v2/users/{subjectId}/roles | Sets the user's roles
 [**putUserRoutingskill**](UsersApi.html#putUserRoutingskill) | **PUT** /api/v2/users/{userId}/routingskills/{skillId} | Update routing skill proficiency or state.
 [**putUserRoutingskillsBulk**](UsersApi.html#putUserRoutingskillsBulk) | **PUT** /api/v2/users/{userId}/routingskills/bulk | Replace all routing skills assigned to a user
 [**putUserRoutingstatus**](UsersApi.html#putUserRoutingstatus) | **PUT** /api/v2/users/{userId}/routingstatus | Update the routing status of a user
@@ -93,14 +102,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 # void deleteAnalyticsUsersDetailsJob(jobId)
 
 
-
 DELETE /api/v2/analytics/users/details/jobs/{jobId}
 
 Delete/cancel an async request
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * analytics:userDetail:view
 
@@ -146,14 +152,11 @@ void (no response body)
 # void deleteAuthorizationSubjectDivisionRole(subjectId, divisionId, roleId)
 
 
-
 DELETE /api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{roleId}
 
 Delete a grant of a role in a division
 
-
-
-Requires ANY permissions: 
+Requires ALL permissions:
 
 * authorization:grant:delete
 
@@ -203,14 +206,11 @@ void (no response body)
 # void deleteRoutingUserUtilization(userId)
 
 
-
 DELETE /api/v2/routing/users/{userId}/utilization
 
-Delete the user&#39;s max utilization settings and revert to the organization-wide default.
+Delete the user's max utilization settings and revert to the organization-wide default.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * routing:utilization:manage
 
@@ -253,19 +253,17 @@ void (no response body)
 
 <a name="deleteUser"></a>
 
-# Empty deleteUser(userId)
-
+# **Object** deleteUser(userId)
 
 
 DELETE /api/v2/users/{userId}
 
 Delete user
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * directory:user:delete
+* directory:organization:admin
 
 ### Example Usage
 
@@ -302,21 +300,18 @@ apiInstance.deleteUser(userId)
 
 ### Return type
 
-**Empty**
+**Object**
 
 <a name="deleteUserRoutinglanguage"></a>
 
 # void deleteUserRoutinglanguage(userId, languageId)
 
 
-
 DELETE /api/v2/users/{userId}/routinglanguages/{languageId}
 
 Remove routing language from user
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * routing:skill:assign
 * routing:language:assign
@@ -365,14 +360,11 @@ void (no response body)
 # void deleteUserRoutingskill(userId, skillId)
 
 
-
 DELETE /api/v2/users/{userId}/routingskills/{skillId}
 
 Remove routing skill from user
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * routing:skill:assign
 
@@ -420,15 +412,11 @@ void (no response body)
 # void deleteUserStationAssociatedstation(userId)
 
 
-
 DELETE /api/v2/users/{userId}/station/associatedstation
 
 Clear associated station
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -472,14 +460,11 @@ void (no response body)
 # void deleteUserStationDefaultstation(userId)
 
 
-
 DELETE /api/v2/users/{userId}/station/defaultstation
 
 Clear default station
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 * telephony:phone:assign
@@ -521,19 +506,124 @@ apiInstance.deleteUserStationDefaultstation(userId)
 
 void (no response body)
 
+<a name="getAnalyticsUsersAggregatesJob"></a>
+
+# AsyncQueryStatus getAnalyticsUsersAggregatesJob(jobId)
+
+
+GET /api/v2/analytics/users/aggregates/jobs/{jobId}
+
+Get status for async query for user aggregates
+
+getAnalyticsUsersAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* analytics:userAggregate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.UsersApi();
+
+let jobId = "jobId_example"; // String | jobId
+
+apiInstance.getAnalyticsUsersAggregatesJob(jobId)
+  .then((data) => {
+    console.log(`getAnalyticsUsersAggregatesJob success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getAnalyticsUsersAggregatesJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | jobId |  |
+{: class="table table-striped"}
+
+### Return type
+
+**AsyncQueryStatus**
+
+<a name="getAnalyticsUsersAggregatesJobResults"></a>
+
+# UserAsyncAggregateQueryResponse getAnalyticsUsersAggregatesJobResults(jobId, opts)
+
+
+GET /api/v2/analytics/users/aggregates/jobs/{jobId}/results
+
+Fetch a page of results for an async aggregates query
+
+getAnalyticsUsersAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* analytics:userAggregate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.UsersApi();
+
+let jobId = "jobId_example"; // String | jobId
+let opts = { 
+  'cursor': "cursor_example" // String | Cursor token to retrieve next page
+};
+
+apiInstance.getAnalyticsUsersAggregatesJobResults(jobId, opts)
+  .then((data) => {
+    console.log(`getAnalyticsUsersAggregatesJobResults success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getAnalyticsUsersAggregatesJobResults');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | jobId |  |
+ **cursor** | **String** | Cursor token to retrieve next page | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**UserAsyncAggregateQueryResponse**
+
 <a name="getAnalyticsUsersDetailsJob"></a>
 
 # AsyncQueryStatus getAnalyticsUsersDetailsJob(jobId)
-
 
 
 GET /api/v2/analytics/users/details/jobs/{jobId}
 
 Get status for async query for user details
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * analytics:userDetail:view
 
@@ -579,14 +669,11 @@ apiInstance.getAnalyticsUsersDetailsJob(jobId)
 # AnalyticsUserDetailsAsyncQueryResponse getAnalyticsUsersDetailsJobResults(jobId, opts)
 
 
-
 GET /api/v2/analytics/users/details/jobs/{jobId}/results
 
 Fetch a page of results for an async query
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * analytics:userDetail:view
 
@@ -606,7 +693,7 @@ let apiInstance = new platformClient.UsersApi();
 let jobId = "jobId_example"; // String | jobId
 let opts = { 
   'cursor': "cursor_example", // String | Indicates where to resume query results (not required for first page)
-  'pageSize': 56 // Number | The desired maximum number of results
+  'pageSize': 3.4 // Number | The desired maximum number of results
 };
 
 apiInstance.getAnalyticsUsersDetailsJobResults(jobId, opts)
@@ -638,14 +725,11 @@ apiInstance.getAnalyticsUsersDetailsJobResults(jobId, opts)
 # DataAvailabilityResponse getAnalyticsUsersDetailsJobsAvailability()
 
 
-
 GET /api/v2/analytics/users/details/jobs/availability
 
 Lookup the datalake availability date and time
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * analytics:userDetail:view
 
@@ -693,8 +777,7 @@ Returns which divisions the current user has the given permission in.
 
 This route is deprecated, use authorization/divisionspermitted/paged/me instead.
 
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -742,15 +825,11 @@ apiInstance.getAuthorizationDivisionspermittedMe(permission, opts)
 # DivsPermittedEntityListing getAuthorizationDivisionspermittedPagedMe(permission, opts)
 
 
-
 GET /api/v2/authorization/divisionspermitted/paged/me
 
 Returns which divisions the current user has the given permission in.
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -807,8 +886,7 @@ Returns which divisions the specified user has the given permission in.
 
 This route is deprecated, use authorization/divisionspermitted/paged/me instead.
 
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -860,14 +938,11 @@ apiInstance.getAuthorizationDivisionspermittedPagedSubjectId(subjectId, permissi
 # AuthzSubject getAuthorizationSubject(subjectId)
 
 
-
 GET /api/v2/authorization/subjects/{subjectId}
 
 Returns a listing of roles and permissions for a user.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * authorization:grant:view
 
@@ -913,15 +988,11 @@ apiInstance.getAuthorizationSubject(subjectId)
 # AuthzSubject getAuthorizationSubjectsMe()
 
 
-
 GET /api/v2/authorization/subjects/me
 
 Returns a listing of roles and permissions for the currently authenticated user.
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -965,10 +1036,7 @@ GET /api/v2/fieldconfig
 
 Fetch field config for an entity type
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -1019,8 +1087,7 @@ Get a user profile listing
 
 This api is deprecated. User /api/v2/users
 
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -1042,7 +1109,7 @@ let opts = {
   'jid': ["jid_example"], // [String] | jid
   'sortOrder': "ASC", // String | Ascending or descending sort order
   'expand': ["expand_example"], // [String] | Which fields, if any, to expand
-  'integrationPresenceSource': "integrationPresenceSource_example" // String | Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \"expand\".
+  'integrationPresenceSource': "integrationPresenceSource_example" // String | Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an expand.
 };
 
 apiInstance.getProfilesUsers(opts)
@@ -1065,8 +1132,8 @@ apiInstance.getProfilesUsers(opts)
  **id** | **[String]** | id | [optional]  |
  **jid** | **[String]** | jid | [optional]  |
  **sortOrder** | **String** | Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
- **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization |
- **integrationPresenceSource** | **String** | Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \&quot;expand\&quot;. | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone, RingCentral |
+ **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization |
+ **integrationPresenceSource** | **String** | Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an expand. | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone, EightByEight |
 {: class="table table-striped"}
 
 ### Return type
@@ -1078,14 +1145,11 @@ apiInstance.getProfilesUsers(opts)
 # AgentMaxUtilization getRoutingUserUtilization(userId)
 
 
-
 GET /api/v2/routing/users/{userId}/utilization
 
-Get the user&#39;s max utilization settings.  If not configured, the organization-wide default is returned.
+Get the user's max utilization settings.  If not configured, the organization-wide default is returned.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * routing:utilization:manage
 * routing:utilization:view
@@ -1132,15 +1196,11 @@ apiInstance.getRoutingUserUtilization(userId)
 # User getUser(userId, opts)
 
 
-
 GET /api/v2/users/{userId}
 
 Get user.
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -1178,8 +1238,8 @@ apiInstance.getUser(userId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
- **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography |
- **integrationPresenceSource** | **String** | Gets an integration presence for a user instead of their default. | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone, RingCentral |
+ **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, dateLastLogin, authorization.unusedRoles, team, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography |
+ **integrationPresenceSource** | **String** | Gets an integration presence for a user instead of their default. | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone, EightByEight |
  **state** | **String** | Search for a user with this state | [optional] [default to active]<br />**Values**: active, deleted |
 {: class="table table-striped"}
 
@@ -1192,15 +1252,11 @@ apiInstance.getUser(userId, opts)
 # Adjacents getUserAdjacents(userId, opts)
 
 
-
 GET /api/v2/users/{userId}/adjacents
 
 Get adjacents
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -1236,7 +1292,7 @@ apiInstance.getUserAdjacents(userId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
- **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography |
+ **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, dateLastLogin, authorization.unusedRoles, team, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography |
 {: class="table table-striped"}
 
 ### Return type
@@ -1248,15 +1304,11 @@ apiInstance.getUserAdjacents(userId, opts)
 # CallForwarding getUserCallforwarding(userId)
 
 
-
 GET /api/v2/users/{userId}/callforwarding
 
-Get a user&#39;s CallForwarding
+Get a user's CallForwarding
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -1300,15 +1352,11 @@ apiInstance.getUserCallforwarding(userId)
 # [User] getUserDirectreports(userId, opts)
 
 
-
 GET /api/v2/users/{userId}/directreports
 
 Get direct reports
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -1344,7 +1392,7 @@ apiInstance.getUserDirectreports(userId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
- **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography |
+ **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, dateLastLogin, authorization.unusedRoles, team, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography |
 {: class="table table-striped"}
 
 ### Return type
@@ -1361,10 +1409,7 @@ GET /api/v2/users/{userId}/favorites
 
 Deprecated; will be revived with new contract
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -1406,7 +1451,7 @@ apiInstance.getUserFavorites(userId, opts)
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **sortOrder** | **String** | Sort order | [optional] [default to ASC] |
- **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography |
+ **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, dateLastLogin, authorization.unusedRoles, team, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography |
 {: class="table table-striped"}
 
 ### Return type
@@ -1418,15 +1463,11 @@ apiInstance.getUserFavorites(userId, opts)
 # Geolocation getUserGeolocation(userId, clientId)
 
 
-
 GET /api/v2/users/{userId}/geolocations/{clientId}
 
-Get a user&#39;s Geolocation
+Get a user's Geolocation
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -1472,15 +1513,11 @@ apiInstance.getUserGeolocation(userId, clientId)
 # OutOfOffice getUserOutofoffice(userId)
 
 
-
 GET /api/v2/users/{userId}/outofoffice
 
 Get a OutOfOffice
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -1531,8 +1568,7 @@ Get user profile
 
 This api has been deprecated. Use api/v2/users instead
 
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -1569,8 +1605,8 @@ apiInstance.getUserProfile(userId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | userId |  |
- **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team |
- **integrationPresenceSource** | **String** | Gets an integration presence for a user instead of their default. | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone, RingCentral |
+ **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, dateLastLogin, authorization.unusedRoles, team |
+ **integrationPresenceSource** | **String** | Gets an integration presence for a user instead of their default. | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone, EightByEight |
 {: class="table table-striped"}
 
 ### Return type
@@ -1582,14 +1618,11 @@ apiInstance.getUserProfile(userId, opts)
 # **[&#39;String&#39;]** getUserProfileskills(userId)
 
 
-
 GET /api/v2/users/{userId}/profileskills
 
 List profile skills for a user
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * directory:userProfile:view
 
@@ -1635,14 +1668,11 @@ apiInstance.getUserProfileskills(userId)
 # UserQueueEntityListing getUserQueues(userId, opts)
 
 
-
 GET /api/v2/users/{userId}/queues
 
 Get queues for user
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * routing:queue:view
 * routing:queue:join
@@ -1697,17 +1727,14 @@ apiInstance.getUserQueues(userId, opts)
 
 <a name="getUserRoles"></a>
 
-# UserAuthorization getUserRoles(userId)
+# UserAuthorization getUserRoles(subjectId)
 
 
-
-GET /api/v2/users/{userId}/roles
+GET /api/v2/users/{subjectId}/roles
 
 Returns a listing of roles and permissions for a user.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * authorization:grant:view
 
@@ -1724,9 +1751,9 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UsersApi();
 
-let userId = "userId_example"; // String | User ID
+let subjectId = "subjectId_example"; // String | User ID
 
-apiInstance.getUserRoles(userId)
+apiInstance.getUserRoles(subjectId)
   .then((data) => {
     console.log(`getUserRoles success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1741,7 +1768,7 @@ apiInstance.getUserRoles(userId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **userId** | **String** | User ID |  |
+ **subjectId** | **String** | User ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1753,15 +1780,11 @@ apiInstance.getUserRoles(userId)
 # UserLanguageEntityListing getUserRoutinglanguages(userId, opts)
 
 
-
 GET /api/v2/users/{userId}/routinglanguages
 
 List routing language for user
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -1813,15 +1836,11 @@ apiInstance.getUserRoutinglanguages(userId, opts)
 # UserSkillEntityListing getUserRoutingskills(userId, opts)
 
 
-
 GET /api/v2/users/{userId}/routingskills
 
 List routing skills for user
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -1873,15 +1892,11 @@ apiInstance.getUserRoutingskills(userId, opts)
 # RoutingStatus getUserRoutingstatus(userId)
 
 
-
 GET /api/v2/users/{userId}/routingstatus
 
 Fetch the routing status of a user
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -1920,19 +1935,74 @@ apiInstance.getUserRoutingstatus(userId)
 
 **RoutingStatus**
 
+<a name="getUserSkillgroups"></a>
+
+# UserSkillGroupEntityListing getUserSkillgroups(userId, opts)
+
+
+GET /api/v2/users/{userId}/skillgroups
+
+Get skill groups for a user
+
+Requires ANY permissions:
+
+* routing:skillGroup:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.UsersApi();
+
+let userId = "userId_example"; // String | User ID
+let opts = { 
+  'pageSize': 25, // Number | Page size
+  'after': "after_example", // String | The cursor that points to the next page
+  'before': "before_example" // String | The cursor that points to the previous page
+};
+
+apiInstance.getUserSkillgroups(userId, opts)
+  .then((data) => {
+    console.log(`getUserSkillgroups success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getUserSkillgroups');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String** | User ID |  |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **after** | **String** | The cursor that points to the next page | [optional]  |
+ **before** | **String** | The cursor that points to the previous page | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**UserSkillGroupEntityListing**
+
 <a name="getUserState"></a>
 
 # UserState getUserState(userId)
-
 
 
 GET /api/v2/users/{userId}/state
 
 Get user state information.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * directory:userStateChange:view
 
@@ -1978,15 +2048,11 @@ apiInstance.getUserState(userId)
 # UserStations getUserStation(userId)
 
 
-
 GET /api/v2/users/{userId}/station
 
 Get station information for user
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -2030,15 +2096,11 @@ apiInstance.getUserStation(userId)
 # [User] getUserSuperiors(userId, opts)
 
 
-
 GET /api/v2/users/{userId}/superiors
 
 Get superiors
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -2074,7 +2136,7 @@ apiInstance.getUserSuperiors(userId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
- **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography |
+ **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, dateLastLogin, authorization.unusedRoles, team, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography |
 {: class="table table-striped"}
 
 ### Return type
@@ -2086,14 +2148,11 @@ apiInstance.getUserSuperiors(userId, opts)
 # TrustorEntityListing getUserTrustors(userId, opts)
 
 
-
 GET /api/v2/users/{userId}/trustors
 
 List the organizations that have authorized/trusted the user.
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * authorization:orgTrustor:view
 
@@ -2145,15 +2204,11 @@ apiInstance.getUserTrustors(userId, opts)
 # UserEntityListing getUsers(opts)
 
 
-
 GET /api/v2/users
 
 Get the list of available users.
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -2172,10 +2227,10 @@ let opts = {
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
   'id': ["id_example"], // [String] | A list of user IDs to fetch by bulk
-  'jabberId': ["jabberId_example"], // [String] | A list of jabberIds to fetch by bulk (cannot be used with the \"id\" parameter)
+  'jabberId': ["jabberId_example"], // [String] | A list of jabberIds to fetch by bulk (cannot be used with the id parameter)
   'sortOrder': "ASC", // String | Ascending or descending sort order
   'expand': ["expand_example"], // [String] | Which fields, if any, to expand
-  'integrationPresenceSource': "integrationPresenceSource_example", // String | Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \"expand\". When using this parameter the maximum number of users that can be returned is 100.
+  'integrationPresenceSource': "integrationPresenceSource_example", // String | Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an expand. When using this parameter the maximum number of users that can be returned is 100.
   'state': "active" // String | Only list users of this state
 };
 
@@ -2197,10 +2252,10 @@ apiInstance.getUsers(opts)
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **id** | **[String]** | A list of user IDs to fetch by bulk | [optional]  |
- **jabberId** | **[String]** | A list of jabberIds to fetch by bulk (cannot be used with the \&quot;id\&quot; parameter) | [optional]  |
+ **jabberId** | **[String]** | A list of jabberIds to fetch by bulk (cannot be used with the id parameter) | [optional]  |
  **sortOrder** | **String** | Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
- **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography |
- **integrationPresenceSource** | **String** | Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \&quot;expand\&quot;. When using this parameter the maximum number of users that can be returned is 100. | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone, RingCentral |
+ **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, dateLastLogin, authorization.unusedRoles, team, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography |
+ **integrationPresenceSource** | **String** | Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an expand. When using this parameter the maximum number of users that can be returned is 100. | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone, EightByEight |
  **state** | **String** | Only list users of this state | [optional] [default to active]<br />**Values**: active, inactive, deleted, any |
 {: class="table table-striped"}
 
@@ -2213,14 +2268,13 @@ apiInstance.getUsers(opts)
 # DevelopmentActivityListing getUsersDevelopmentActivities(opts)
 
 
-
 GET /api/v2/users/development/activities
 
 Get list of Development Activities
 
 Either moduleId or userId is required. Results are filtered based on the applicable permissions.
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * learning:assignment:view
 * coaching:appointment:view
@@ -2244,6 +2298,7 @@ let opts = {
   'interval': "interval_example", // String | Specifies the dateDue range to be queried. Milliseconds will be truncated. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
   'completionInterval': "completionInterval_example", // String | Specifies the range of completion dates to be used for filtering. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
   'overdue': "Any", // String | Specifies if non-overdue, overdue, or all activities are returned. If not specified, all activities are returned
+  'pass': "Any", // String | Specifies if only the failed (pass is False) or passed (pass is True) activities are returned. If pass is Any or if the pass parameter is not supplied, all activities are returned
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
   'sortOrder': "Desc", // String | Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc)
@@ -2272,6 +2327,7 @@ apiInstance.getUsersDevelopmentActivities(opts)
  **interval** | **String** | Specifies the dateDue range to be queried. Milliseconds will be truncated. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss | [optional]  |
  **completionInterval** | **String** | Specifies the range of completion dates to be used for filtering. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss | [optional]  |
  **overdue** | **String** | Specifies if non-overdue, overdue, or all activities are returned. If not specified, all activities are returned | [optional] [default to Any]<br />**Values**: True, False, Any |
+ **pass** | **String** | Specifies if only the failed (pass is False) or passed (pass is True) activities are returned. If pass is Any or if the pass parameter is not supplied, all activities are returned | [optional] [default to Any]<br />**Values**: True, False, Any |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **sortOrder** | **String** | Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc) | [optional] [default to Desc]<br />**Values**: Asc, Desc |
@@ -2289,15 +2345,13 @@ apiInstance.getUsersDevelopmentActivities(opts)
 # DevelopmentActivityListing getUsersDevelopmentActivitiesMe(opts)
 
 
-
 GET /api/v2/users/development/activities/me
 
 Get list of Development Activities for current user
 
 Results are filtered based on the applicable permissions.
 
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -2317,6 +2371,7 @@ let opts = {
   'interval': "interval_example", // String | Specifies the dateDue range to be queried. Milliseconds will be truncated. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
   'completionInterval': "completionInterval_example", // String | Specifies the range of completion dates to be used for filtering. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
   'overdue': "Any", // String | Specifies if non-overdue, overdue, or all activities are returned. If not specified, all activities are returned
+  'pass': "Any", // String | Specifies if only the failed (pass is False) or passed (pass is True) activities are returned. If pass is Any or if the pass parameter is not supplied, all activities are returned
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
   'sortOrder': "Desc", // String | Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc)
@@ -2344,6 +2399,7 @@ apiInstance.getUsersDevelopmentActivitiesMe(opts)
  **interval** | **String** | Specifies the dateDue range to be queried. Milliseconds will be truncated. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss | [optional]  |
  **completionInterval** | **String** | Specifies the range of completion dates to be used for filtering. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss | [optional]  |
  **overdue** | **String** | Specifies if non-overdue, overdue, or all activities are returned. If not specified, all activities are returned | [optional] [default to Any]<br />**Values**: True, False, Any |
+ **pass** | **String** | Specifies if only the failed (pass is False) or passed (pass is True) activities are returned. If pass is Any or if the pass parameter is not supplied, all activities are returned | [optional] [default to Any]<br />**Values**: True, False, Any |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **sortOrder** | **String** | Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc) | [optional] [default to Desc]<br />**Values**: Asc, Desc |
@@ -2361,14 +2417,13 @@ apiInstance.getUsersDevelopmentActivitiesMe(opts)
 # DevelopmentActivity getUsersDevelopmentActivity(activityId, type)
 
 
-
 GET /api/v2/users/development/activities/{activityId}
 
 Get a Development Activity
 
 Permission not required if you are the attendee, creator or facilitator of the coaching appointment or you are the assigned user of the learning assignment.
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * learning:assignment:view
 * coaching:appointment:view
@@ -2405,7 +2460,7 @@ apiInstance.getUsersDevelopmentActivity(activityId, type)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **activityId** | **String** | Specifies the activity ID, maps to either assignment or appointment ID |  |
- **type** | **String** | Specifies the activity type. | <br />**Values**: Informational, Coaching, AssessedContent, Assessment |
+ **type** | **String** | Specifies the activity type. | <br />**Values**: Informational, Coaching, AssessedContent, Assessment, External |
 {: class="table table-striped"}
 
 ### Return type
@@ -2417,15 +2472,13 @@ apiInstance.getUsersDevelopmentActivity(activityId, type)
 # UserMe getUsersMe(opts)
 
 
-
 GET /api/v2/users/me
 
 Get current user details.
 
 This request is not valid when using the Client Credentials OAuth grant.
 
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -2442,7 +2495,7 @@ let apiInstance = new platformClient.UsersApi();
 
 let opts = { 
   'expand': ["expand_example"], // [String] | Which fields, if any, to expand.
-  'integrationPresenceSource': "integrationPresenceSource_example" // String | Get your presence for a given integration. This parameter will only be used when presence is provided as an \"expand\".
+  'integrationPresenceSource': "integrationPresenceSource_example" // String | Get your presence for a given integration. This parameter will only be used when presence is provided as an expand.
 };
 
 apiInstance.getUsersMe(opts)
@@ -2460,8 +2513,8 @@ apiInstance.getUsersMe(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, date, geolocationsettings, organization, presencedefinitions, locationdefinitions, orgauthorization, orgproducts, favorites, superiors, directreports, adjacents, routingskills, routinglanguages, fieldconfigs, token, trustors, logCapture |
- **integrationPresenceSource** | **String** | Get your presence for a given integration. This parameter will only be used when presence is provided as an \&quot;expand\&quot;. | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone, RingCentral |
+ **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, dateLastLogin, authorization.unusedRoles, team, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, date, geolocationsettings, organization, presencedefinitions, divisionedpresencedefinitions, locationdefinitions, orgauthorization, orgproducts, favorites, superiors, directreports, adjacents, routingskills, routinglanguages, fieldconfigs, token, trustors, logCapture |
+ **integrationPresenceSource** | **String** | Get your presence for a given integration. This parameter will only be used when presence is provided as an expand. | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone, EightByEight |
 {: class="table table-striped"}
 
 ### Return type
@@ -2473,14 +2526,11 @@ apiInstance.getUsersMe(opts)
 # UsersSearchResponse getUsersSearch(q64, opts)
 
 
-
 GET /api/v2/users/search
 
 Search users using the q64 value returned from a previous search
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * directory:user:view
 
@@ -2520,7 +2570,7 @@ apiInstance.getUsersSearch(q64, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **q64** | **String** | q64 |  |
  **expand** | **[String]** | expand | [optional]  |
- **integrationPresenceSource** | **String** | integrationPresenceSource | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone, RingCentral |
+ **integrationPresenceSource** | **String** | integrationPresenceSource | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone, EightByEight |
 {: class="table table-striped"}
 
 ### Return type
@@ -2532,16 +2582,14 @@ apiInstance.getUsersSearch(q64, opts)
 # User patchUser(userId, body)
 
 
-
 PATCH /api/v2/users/{userId}
 
 Update user
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * directory:user:edit
+* directory:organization:admin
 
 ### Example Usage
 
@@ -2587,14 +2635,11 @@ apiInstance.patchUser(userId, body)
 # CallForwarding patchUserCallforwarding(userId, body)
 
 
-
 PATCH /api/v2/users/{userId}/callforwarding
 
-Patch a user&#39;s CallForwarding
+Patch a user's CallForwarding
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * conversation:callForwarding:edit
 
@@ -2642,15 +2687,13 @@ apiInstance.patchUserCallforwarding(userId, body)
 # Geolocation patchUserGeolocation(userId, clientId, body)
 
 
-
 PATCH /api/v2/users/{userId}/geolocations/{clientId}
 
-Patch a user&#39;s Geolocation
+Patch a user's Geolocation
 
-The geolocation object can be patched one of three ways. Option 1: Set the &#39;primary&#39; property to true. This will set the client as the user&#39;s primary geolocation source.  Option 2: Provide the &#39;latitude&#39; and &#39;longitude&#39; values.  This will enqueue an asynchronous update of the &#39;city&#39;, &#39;region&#39;, and &#39;country&#39;, generating a notification. A subsequent GET operation will include the new values for &#39;city&#39;, &#39;region&#39; and &#39;country&#39;.  Option 3:  Provide the &#39;city&#39;, &#39;region&#39;, &#39;country&#39; values.  Option 1 can be combined with Option 2 or Option 3.  For example, update the client as primary and provide latitude and longitude values.
+The geolocation object can be patched one of three ways. Option 1: Set the primary property to true. This will set the client as the users primary geolocation source.  Option 2: Provide the latitude and longitude values.  This will enqueue an asynchronous update of the city, region, and country, generating a notification. A subsequent GET operation will include the new values for city, region and country.  Option 3:  Provide the city, region, country values.  Option 1 can be combined with Option 2 or Option 3.  For example, update the client as primary and provide latitude and longitude values.
 
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -2698,14 +2741,11 @@ apiInstance.patchUserGeolocation(userId, clientId, body)
 # UserQueue patchUserQueue(queueId, userId, body)
 
 
-
 PATCH /api/v2/users/{userId}/queues/{queueId}
 
 Join or unjoin a queue for a user
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * routing:queue:join
 * routing:queueMember:manage
@@ -2756,14 +2796,11 @@ apiInstance.patchUserQueue(queueId, userId, body)
 # UserQueueEntityListing patchUserQueues(userId, body, opts)
 
 
-
 PATCH /api/v2/users/{userId}/queues
 
 Join or unjoin a set of queues for a user
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * routing:queue:join
 * routing:queueMember:manage
@@ -2816,14 +2853,11 @@ apiInstance.patchUserQueues(userId, body, opts)
 # UserRoutingLanguage patchUserRoutinglanguage(userId, languageId, body)
 
 
-
 PATCH /api/v2/users/{userId}/routinglanguages/{languageId}
 
 Update routing language proficiency or state.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * routing:skill:assign
 * routing:language:assign
@@ -2874,14 +2908,11 @@ apiInstance.patchUserRoutinglanguage(userId, languageId, body)
 # UserLanguageEntityListing patchUserRoutinglanguagesBulk(userId, body)
 
 
-
 PATCH /api/v2/users/{userId}/routinglanguages/bulk
 
 Add bulk routing language to user. Max limit 50 languages
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * routing:skill:assign
 * routing:language:assign
@@ -2930,14 +2961,11 @@ apiInstance.patchUserRoutinglanguagesBulk(userId, body)
 # UserSkillEntityListing patchUserRoutingskillsBulk(userId, body)
 
 
-
 PATCH /api/v2/users/{userId}/routingskills/bulk
 
 Bulk add routing skills to user
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * routing:skill:assign
 
@@ -2985,17 +3013,14 @@ apiInstance.patchUserRoutingskillsBulk(userId, body)
 # UserEntityListing patchUsersBulk(body)
 
 
-
 PATCH /api/v2/users/bulk
 
 Update bulk acd autoanswer on users
 
+Requires ANY permissions:
 
-
-Requires ANY permissions: 
-
-* directory:user:add
 * directory:user:edit
+* directory:organization:admin
 
 ### Example Usage
 
@@ -3034,19 +3059,126 @@ apiInstance.patchUsersBulk(body)
 
 **UserEntityListing**
 
+<a name="postAnalyticsUsersActivityQuery"></a>
+
+# UserActivityResponse postAnalyticsUsersActivityQuery(body, opts)
+
+
+POST /api/v2/analytics/users/activity/query
+
+Query for user activity observations
+
+postAnalyticsUsersActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* analytics:userObservation:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.UsersApi();
+
+let body = {}; // Object | query
+let opts = { 
+  'pageSize': 3.4, // Number | The desired page size
+  'pageNumber': 3.4 // Number | The desired page number
+};
+
+apiInstance.postAnalyticsUsersActivityQuery(body, opts)
+  .then((data) => {
+    console.log(`postAnalyticsUsersActivityQuery success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postAnalyticsUsersActivityQuery');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | query |  |
+ **pageSize** | **Number** | The desired page size | [optional]  |
+ **pageNumber** | **Number** | The desired page number | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**UserActivityResponse**
+
+<a name="postAnalyticsUsersAggregatesJobs"></a>
+
+# AsyncQueryResponse postAnalyticsUsersAggregatesJobs(body)
+
+
+POST /api/v2/analytics/users/aggregates/jobs
+
+Query for user aggregates asynchronously
+
+postAnalyticsUsersAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* analytics:userAggregate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.UsersApi();
+
+let body = {}; // Object | query
+
+apiInstance.postAnalyticsUsersAggregatesJobs(body)
+  .then((data) => {
+    console.log(`postAnalyticsUsersAggregatesJobs success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postAnalyticsUsersAggregatesJobs');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | query |  |
+{: class="table table-striped"}
+
+### Return type
+
+**AsyncQueryResponse**
+
 <a name="postAnalyticsUsersAggregatesQuery"></a>
 
 # UserAggregateQueryResponse postAnalyticsUsersAggregatesQuery(body)
-
 
 
 POST /api/v2/analytics/users/aggregates/query
 
 Query for user aggregates
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * analytics:userAggregate:view
 
@@ -3092,14 +3224,11 @@ apiInstance.postAnalyticsUsersAggregatesQuery(body)
 # AsyncQueryResponse postAnalyticsUsersDetailsJobs(body)
 
 
-
 POST /api/v2/analytics/users/details/jobs
 
 Query for user details asynchronously
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * analytics:userDetail:view
 
@@ -3145,14 +3274,11 @@ apiInstance.postAnalyticsUsersDetailsJobs(body)
 # AnalyticsUserDetailsQueryResponse postAnalyticsUsersDetailsQuery(body)
 
 
-
 POST /api/v2/analytics/users/details/query
 
 Query for user details
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * analytics:userDetail:view
 
@@ -3198,14 +3324,11 @@ apiInstance.postAnalyticsUsersDetailsQuery(body)
 # UserObservationQueryResponse postAnalyticsUsersObservationsQuery(body)
 
 
-
 POST /api/v2/analytics/users/observations/query
 
 Query for user observations
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * analytics:userObservation:view
 
@@ -3251,14 +3374,11 @@ apiInstance.postAnalyticsUsersObservationsQuery(body)
 # void postAuthorizationSubjectBulkadd(subjectId, body, opts)
 
 
-
 POST /api/v2/authorization/subjects/{subjectId}/bulkadd
 
 Bulk-grant roles and divisions to a subject.
 
-
-
-Requires ANY permissions: 
+Requires ALL permissions:
 
 * authorization:grant:add
 
@@ -3310,14 +3430,11 @@ void (no response body)
 # void postAuthorizationSubjectBulkremove(subjectId, body)
 
 
-
 POST /api/v2/authorization/subjects/{subjectId}/bulkremove
 
 Bulk-remove grants from a subject.
 
-
-
-Requires ANY permissions: 
+Requires ALL permissions:
 
 * authorization:grant:delete
 
@@ -3365,14 +3482,13 @@ void (no response body)
 # void postAuthorizationSubjectBulkreplace(subjectId, body, opts)
 
 
-
 POST /api/v2/authorization/subjects/{subjectId}/bulkreplace
 
-Replace subject&#39;s roles and divisions with the exact list supplied in the request.
+Replace subject's roles and divisions with the exact list supplied in the request.
 
 This operation will not remove grants that are inherited from group membership. It will only set the grants directly applied to the subject.
 
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * authorization:grant:add
 * authorization:grant:delete
@@ -3425,14 +3541,11 @@ void (no response body)
 # void postAuthorizationSubjectDivisionRole(subjectId, divisionId, roleId, opts)
 
 
-
 POST /api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{roleId}
 
 Make a grant of a role in a division
 
-
-
-Requires ANY permissions: 
+Requires ALL permissions:
 
 * authorization:grant:add
 
@@ -3481,19 +3594,70 @@ apiInstance.postAuthorizationSubjectDivisionRole(subjectId, divisionId, roleId, 
 
 void (no response body)
 
+<a name="postUserExternalid"></a>
+
+# [UserExternalIdentifier] postUserExternalid(userId, body)
+
+
+POST /api/v2/users/{userId}/externalid
+
+Create mapping between external identifier and user. Limit 100 per entity.
+
+Authority Name and External key are case sensitive.
+
+Requires ANY permissions:
+
+* directory:user:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.UsersApi();
+
+let userId = "userId_example"; // String | User ID
+let body = {}; // Object | 
+
+apiInstance.postUserExternalid(userId, body)
+  .then((data) => {
+    console.log(`postUserExternalid success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postUserExternalid');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String** | User ID |  |
+ **body** | **Object** |  |  |
+{: class="table table-striped"}
+
+### Return type
+
+**[UserExternalIdentifier]**
+
 <a name="postUserInvite"></a>
 
 # void postUserInvite(userId, opts)
-
 
 
 POST /api/v2/users/{userId}/invite
 
 Send an activation email to the user
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * directory:user:add
 
@@ -3543,14 +3707,11 @@ void (no response body)
 # void postUserPassword(userId, body)
 
 
-
 POST /api/v2/users/{userId}/password
 
 Change a users password
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * directory:user:setPassword
 
@@ -3598,14 +3759,11 @@ void (no response body)
 # UserRoutingLanguage postUserRoutinglanguages(userId, body)
 
 
-
 POST /api/v2/users/{userId}/routinglanguages
 
 Add routing language to user
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * routing:skill:assign
 * routing:language:assign
@@ -3654,14 +3812,11 @@ apiInstance.postUserRoutinglanguages(userId, body)
 # UserRoutingSkill postUserRoutingskills(userId, body)
 
 
-
 POST /api/v2/users/{userId}/routingskills
 
 Add routing skill to user
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * routing:skill:assign
 
@@ -3709,14 +3864,13 @@ apiInstance.postUserRoutingskills(userId, body)
 # User postUsers(body)
 
 
-
 POST /api/v2/users
 
 Create user
 
+If user creation is successful but the provided password is invalid or configuration fails, POST api/v2/users/{userId}/password can be used to re-attempt password configuration.
 
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * directory:user:add
 
@@ -3762,14 +3916,13 @@ apiInstance.postUsers(body)
 # DevelopmentActivityAggregateResponse postUsersDevelopmentActivitiesAggregatesQuery(body)
 
 
-
 POST /api/v2/users/development/activities/aggregates/query
 
 Retrieve aggregated development activity data
 
 Results are filtered based on the applicable permissions.
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * learning:assignment:view
 * coaching:appointment:view
@@ -3816,15 +3969,11 @@ apiInstance.postUsersDevelopmentActivitiesAggregatesQuery(body)
 # void postUsersMePassword(body)
 
 
-
 POST /api/v2/users/me/password
 
 Change your password
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -3868,14 +4017,11 @@ void (no response body)
 # UsersSearchResponse postUsersSearch(body)
 
 
-
 POST /api/v2/users/search
 
 Search users
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * directory:user:view
 
@@ -3916,19 +4062,171 @@ apiInstance.postUsersSearch(body)
 
 **UsersSearchResponse**
 
+<a name="postUsersSearchConversationTarget"></a>
+
+# UsersSearchResponse postUsersSearchConversationTarget(body)
+
+
+POST /api/v2/users/search/conversation/target
+
+Search users as conversation targets
+
+postUsersSearchConversationTarget is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* conversation:communication:target
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.UsersApi();
+
+let body = {}; // Object | Search request options
+
+apiInstance.postUsersSearchConversationTarget(body)
+  .then((data) => {
+    console.log(`postUsersSearchConversationTarget success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postUsersSearchConversationTarget');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Search request options |  |
+{: class="table table-striped"}
+
+### Return type
+
+**UsersSearchResponse**
+
+<a name="postUsersSearchQueuemembersManage"></a>
+
+# UsersSearchResponse postUsersSearchQueuemembersManage(body)
+
+
+POST /api/v2/users/search/queuemembers/manage
+
+Search manage queue member
+
+postUsersSearchQueuemembersManage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* routing:queueMember:manage
+* routing:queue:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.UsersApi();
+
+let body = {}; // Object | Search request options
+
+apiInstance.postUsersSearchQueuemembersManage(body)
+  .then((data) => {
+    console.log(`postUsersSearchQueuemembersManage success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postUsersSearchQueuemembersManage');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Search request options |  |
+{: class="table table-striped"}
+
+### Return type
+
+**UsersSearchResponse**
+
+<a name="postUsersSearchTeamsAssign"></a>
+
+# UsersSearchResponse postUsersSearchTeamsAssign(body)
+
+
+POST /api/v2/users/search/teams/assign
+
+Search users assigned to teams
+
+Requires ANY permissions:
+
+* groups:team:assign
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.UsersApi();
+
+let body = {}; // Object | Search request options
+
+apiInstance.postUsersSearchTeamsAssign(body)
+  .then((data) => {
+    console.log(`postUsersSearchTeamsAssign success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postUsersSearchTeamsAssign');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Search request options |  |
+{: class="table table-striped"}
+
+### Return type
+
+**UsersSearchResponse**
+
 <a name="putRoutingUserUtilization"></a>
 
 # AgentMaxUtilization putRoutingUserUtilization(userId, body)
 
 
-
 PUT /api/v2/routing/users/{userId}/utilization
 
-Update the user&#39;s max utilization settings.  Include only those media types requiring custom configuration.
+Update the user's max utilization settings.  Include only those media types requiring custom configuration.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * routing:utilization:manage
 
@@ -3976,14 +4274,11 @@ apiInstance.putRoutingUserUtilization(userId, body)
 # CallForwarding putUserCallforwarding(userId, body)
 
 
-
 PUT /api/v2/users/{userId}/callforwarding
 
-Update a user&#39;s CallForwarding
+Update a user's CallForwarding
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * conversation:callForwarding:edit
 
@@ -4031,15 +4326,11 @@ apiInstance.putUserCallforwarding(userId, body)
 # OutOfOffice putUserOutofoffice(userId, body)
 
 
-
 PUT /api/v2/users/{userId}/outofoffice
 
 Update an OutOfOffice
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -4085,14 +4376,11 @@ apiInstance.putUserOutofoffice(userId, body)
 # **[&#39;String&#39;]** putUserProfileskills(userId, body)
 
 
-
 PUT /api/v2/users/{userId}/profileskills
 
 Update profile skills for a user
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * directory:userProfile:edit
 
@@ -4110,7 +4398,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.UsersApi();
 
 let userId = "userId_example"; // String | User ID
-let body = [{}]; // Object | Skills
+let body = ["body_example"]; // [String] | Skills
 
 apiInstance.putUserProfileskills(userId, body)
   .then((data) => {
@@ -4128,7 +4416,7 @@ apiInstance.putUserProfileskills(userId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
- **body** | **Object** | Skills |  |
+ **body** | **[String]** | Skills |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -4137,17 +4425,14 @@ apiInstance.putUserProfileskills(userId, body)
 
 <a name="putUserRoles"></a>
 
-# UserAuthorization putUserRoles(userId, body)
+# UserAuthorization putUserRoles(subjectId, body)
 
 
+PUT /api/v2/users/{subjectId}/roles
 
-PUT /api/v2/users/{userId}/roles
+Sets the user's roles
 
-Sets the user&#39;s roles
-
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * authorization:grant:add
 
@@ -4164,10 +4449,10 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UsersApi();
 
-let userId = "userId_example"; // String | User ID
-let body = [{}]; // Object | List of roles
+let subjectId = "subjectId_example"; // String | User ID
+let body = ["body_example"]; // [String] | List of roles
 
-apiInstance.putUserRoles(userId, body)
+apiInstance.putUserRoles(subjectId, body)
   .then((data) => {
     console.log(`putUserRoles success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4182,8 +4467,8 @@ apiInstance.putUserRoles(userId, body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **userId** | **String** | User ID |  |
- **body** | **Object** | List of roles |  |
+ **subjectId** | **String** | User ID |  |
+ **body** | **[String]** | List of roles |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -4195,14 +4480,11 @@ apiInstance.putUserRoles(userId, body)
 # UserRoutingSkill putUserRoutingskill(userId, skillId, body)
 
 
-
 PUT /api/v2/users/{userId}/routingskills/{skillId}
 
 Update routing skill proficiency or state.
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * routing:skill:assign
 
@@ -4252,14 +4534,11 @@ apiInstance.putUserRoutingskill(userId, skillId, body)
 # UserSkillEntityListing putUserRoutingskillsBulk(userId, body)
 
 
-
 PUT /api/v2/users/{userId}/routingskills/bulk
 
 Replace all routing skills assigned to a user
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * routing:skill:assign
 
@@ -4307,15 +4586,11 @@ apiInstance.putUserRoutingskillsBulk(userId, body)
 # RoutingStatus putUserRoutingstatus(userId, body)
 
 
-
 PUT /api/v2/users/{userId}/routingstatus
 
 Update the routing status of a user
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -4361,14 +4636,11 @@ apiInstance.putUserRoutingstatus(userId, body)
 # UserState putUserState(userId, body)
 
 
-
 PUT /api/v2/users/{userId}/state
 
 Update user state information.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * directory:user:edit
 
@@ -4416,15 +4688,11 @@ apiInstance.putUserState(userId, body)
 # void putUserStationAssociatedstationStationId(userId, stationId)
 
 
-
 PUT /api/v2/users/{userId}/station/associatedstation/{stationId}
 
 Set associated station
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -4470,14 +4738,11 @@ void (no response body)
 # void putUserStationDefaultstationStationId(userId, stationId)
 
 
-
 PUT /api/v2/users/{userId}/station/defaultstation/{stationId}
 
 Set default station
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * telephony:plugin:all
 * telephony:phone:assign

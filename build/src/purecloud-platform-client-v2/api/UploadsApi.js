@@ -5,7 +5,7 @@ class UploadsApi {
 	/**
 	 * Uploads service.
 	 * @module purecloud-platform-client-v2/api/UploadsApi
-	 * @version 124.0.0
+	 * @version 174.0.0
 	 */
 
 	/**
@@ -34,13 +34,13 @@ class UploadsApi {
 		return this.apiClient.callApi(
 			'/api/v2/knowledge/documentuploads', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -64,13 +64,38 @@ class UploadsApi {
 		return this.apiClient.callApi(
 			'/api/v2/languageunderstanding/miners/{minerId}/uploads', 
 			'POST', 
-			{ 'minerId': minerId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'minerId': minerId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Generates pre-signed URL to upload cover art for learning modules
+	 * 
+	 * @param {Object} body query
+	 */
+	postUploadsLearningCoverart(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postUploadsLearningCoverart';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/uploads/learning/coverart', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -89,13 +114,13 @@ class UploadsApi {
 		return this.apiClient.callApi(
 			'/api/v2/uploads/publicassets/images', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -114,13 +139,13 @@ class UploadsApi {
 		return this.apiClient.callApi(
 			'/api/v2/uploads/recordings', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -139,38 +164,13 @@ class UploadsApi {
 		return this.apiClient.callApi(
 			'/api/v2/uploads/workforcemanagement/historicaldata/csv', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-	/**
-	 * Creates presigned url for uploading WFM historical data file. Requires data in json format.
-	 * 
-	 * @param {Object} body query
-	 */
-	postUploadsWorkforcemanagementHistoricaldataJson(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postUploadsWorkforcemanagementHistoricaldataJson';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/uploads/workforcemanagement/historicaldata/json', 
-			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}

@@ -5,7 +5,7 @@ class LanguagesApi {
 	/**
 	 * Languages service.
 	 * @module purecloud-platform-client-v2/api/LanguagesApi
-	 * @version 124.0.0
+	 * @version 174.0.0
 	 */
 
 	/**
@@ -22,8 +22,9 @@ class LanguagesApi {
 
 	/**
 	 * Delete Language (Deprecated)
-	 * This endpoint is deprecated. It has been moved to /routing/languages/{languageId}
+	 * This endpoint is deprecated. Please see the Routing API (DELETE /api/v2/routing/languages/{languageId})
 	 * @param {String} languageId Language ID
+	 * @deprecated
 	 */
 	deleteLanguage(languageId) { 
 		// verify the required parameter 'languageId' is set
@@ -34,46 +35,22 @@ class LanguagesApi {
 		return this.apiClient.callApi(
 			'/api/v2/languages/{languageId}', 
 			'DELETE', 
-			{ 'languageId': languageId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'languageId': languageId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Delete Language
-	 * 
+	 * Get Language (Deprecated)
+	 * This endpoint is deprecated. Please see the Routing API (GET /api/v2/routing/languages/{languageId})
 	 * @param {String} languageId Language ID
-	 */
-	deleteRoutingLanguage(languageId) { 
-		// verify the required parameter 'languageId' is set
-		if (languageId === undefined || languageId === null) {
-			throw 'Missing the required parameter "languageId" when calling deleteRoutingLanguage';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/routing/languages/{languageId}', 
-			'DELETE', 
-			{ 'languageId': languageId }, 
-			{  }, 
-			{  }, 
-			{  }, 
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get language (Deprecated)
-	 * This endpoint is deprecated. It has been moved to /routing/languages/{languageId}
-	 * @param {String} languageId Language ID
+	 * @deprecated
 	 */
 	getLanguage(languageId) { 
 		// verify the required parameter 'languageId' is set
@@ -84,25 +61,26 @@ class LanguagesApi {
 		return this.apiClient.callApi(
 			'/api/v2/languages/{languageId}', 
 			'GET', 
-			{ 'languageId': languageId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'languageId': languageId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
 	 * Get the list of supported languages. (Deprecated)
-	 * This endpoint is deprecated. It has been moved to /routing/languages
+	 * This endpoint is deprecated. Please see the Routing API (GET /api/v2/routing/languages)
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Object} opts.sortOrder Ascending or descending sort order (default to ASC)
 	 * @param {String} opts.name Name
+	 * @deprecated
 	 */
 	getLanguages(opts) { 
 		opts = opts || {};
@@ -111,13 +89,13 @@ class LanguagesApi {
 		return this.apiClient.callApi(
 			'/api/v2/languages', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortOrder': opts['sortOrder'],'name': opts['name'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortOrder': opts['sortOrder'],'name': opts['name'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -131,13 +109,13 @@ class LanguagesApi {
 		return this.apiClient.callApi(
 			'/api/v2/languages/translations', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -156,13 +134,13 @@ class LanguagesApi {
 		return this.apiClient.callApi(
 			'/api/v2/languages/translations/builtin', 
 			'GET', 
-			{  }, 
-			{ 'language': language }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'language': language },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -181,13 +159,13 @@ class LanguagesApi {
 		return this.apiClient.callApi(
 			'/api/v2/languages/translations/organization', 
 			'GET', 
-			{  }, 
-			{ 'language': language }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'language': language },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -206,46 +184,22 @@ class LanguagesApi {
 		return this.apiClient.callApi(
 			'/api/v2/languages/translations/users/{userId}', 
 			'GET', 
-			{ 'userId': userId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'userId': userId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get language
-	 * 
-	 * @param {String} languageId Language ID
-	 */
-	getRoutingLanguage(languageId) { 
-		// verify the required parameter 'languageId' is set
-		if (languageId === undefined || languageId === null) {
-			throw 'Missing the required parameter "languageId" when calling getRoutingLanguage';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/routing/languages/{languageId}', 
-			'GET', 
-			{ 'languageId': languageId }, 
-			{  }, 
-			{  }, 
-			{  }, 
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
 	 * Create Language (Deprecated)
-	 * This endpoint is deprecated. It has been moved to /routing/languages
+	 * This endpoint is deprecated. Please see the Routing API. (POST /api/v2/routing/languages
 	 * @param {Object} body Language
+	 * @deprecated
 	 */
 	postLanguages(body) { 
 		// verify the required parameter 'body' is set
@@ -256,13 +210,13 @@ class LanguagesApi {
 		return this.apiClient.callApi(
 			'/api/v2/languages', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}

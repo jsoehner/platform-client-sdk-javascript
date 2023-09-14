@@ -29,16 +29,21 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getIntegrationsBotconnectorIntegrationIdBots**](IntegrationsApi.html#getIntegrationsBotconnectorIntegrationIdBots) | **GET** /api/v2/integrations/botconnector/{integrationId}/bots | Get a list of botConnector bots for this integration
 [**getIntegrationsBotconnectorIntegrationIdBotsSummaries**](IntegrationsApi.html#getIntegrationsBotconnectorIntegrationIdBotsSummaries) | **GET** /api/v2/integrations/botconnector/{integrationId}/bots/summaries | Get a summary list of botConnector bots for this integration
 [**getIntegrationsClientapps**](IntegrationsApi.html#getIntegrationsClientapps) | **GET** /api/v2/integrations/clientapps | List permitted client app integrations for the logged in user
+[**getIntegrationsClientappsUnifiedcommunications**](IntegrationsApi.html#getIntegrationsClientappsUnifiedcommunications) | **GET** /api/v2/integrations/clientapps/unifiedcommunications | UC integration client application configuration.
 [**getIntegrationsCredential**](IntegrationsApi.html#getIntegrationsCredential) | **GET** /api/v2/integrations/credentials/{credentialId} | Get a single credential with sensitive fields redacted
 [**getIntegrationsCredentials**](IntegrationsApi.html#getIntegrationsCredentials) | **GET** /api/v2/integrations/credentials | List multiple sets of credentials
 [**getIntegrationsCredentialsTypes**](IntegrationsApi.html#getIntegrationsCredentialsTypes) | **GET** /api/v2/integrations/credentials/types | List all credential types
-[**getIntegrationsEventlog**](IntegrationsApi.html#getIntegrationsEventlog) | **GET** /api/v2/integrations/eventlog | List all events
-[**getIntegrationsEventlogEventId**](IntegrationsApi.html#getIntegrationsEventlogEventId) | **GET** /api/v2/integrations/eventlog/{eventId} | Get a single event
 [**getIntegrationsSpeechDialogflowAgent**](IntegrationsApi.html#getIntegrationsSpeechDialogflowAgent) | **GET** /api/v2/integrations/speech/dialogflow/agents/{agentId} | Get details about a Dialogflow agent
-[**getIntegrationsSpeechDialogflowAgents**](IntegrationsApi.html#getIntegrationsSpeechDialogflowAgents) | **GET** /api/v2/integrations/speech/dialogflow/agents | Get a list of Dialogflow agents in the customers&#39; Google accounts
+[**getIntegrationsSpeechDialogflowAgents**](IntegrationsApi.html#getIntegrationsSpeechDialogflowAgents) | **GET** /api/v2/integrations/speech/dialogflow/agents | Get a list of Dialogflow agents in the customers' Google accounts
 [**getIntegrationsSpeechLexBotAlias**](IntegrationsApi.html#getIntegrationsSpeechLexBotAlias) | **GET** /api/v2/integrations/speech/lex/bot/alias/{aliasId} | Get details about a Lex bot alias
-[**getIntegrationsSpeechLexBotBotIdAliases**](IntegrationsApi.html#getIntegrationsSpeechLexBotBotIdAliases) | **GET** /api/v2/integrations/speech/lex/bot/{botId}/aliases | Get a list of aliases for a bot in the customer&#39;s AWS accounts
-[**getIntegrationsSpeechLexBots**](IntegrationsApi.html#getIntegrationsSpeechLexBots) | **GET** /api/v2/integrations/speech/lex/bots | Get a list of Lex bots in the customers&#39; AWS accounts
+[**getIntegrationsSpeechLexBotBotIdAliases**](IntegrationsApi.html#getIntegrationsSpeechLexBotBotIdAliases) | **GET** /api/v2/integrations/speech/lex/bot/{botId}/aliases | Get a list of aliases for a bot in the customer's AWS accounts
+[**getIntegrationsSpeechLexBots**](IntegrationsApi.html#getIntegrationsSpeechLexBots) | **GET** /api/v2/integrations/speech/lex/bots | Get a list of Lex bots in the customers' AWS accounts
+[**getIntegrationsSpeechNuanceNuanceIntegrationIdBot**](IntegrationsApi.html#getIntegrationsSpeechNuanceNuanceIntegrationIdBot) | **GET** /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/{botId} | Get a Nuance bot in the specified Integration
+[**getIntegrationsSpeechNuanceNuanceIntegrationIdBotJob**](IntegrationsApi.html#getIntegrationsSpeechNuanceNuanceIntegrationIdBotJob) | **GET** /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/{botId}/jobs/{jobId} | Get the status of an asynchronous Nuance bot GET job
+[**getIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResults**](IntegrationsApi.html#getIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResults) | **GET** /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/{botId}/jobs/{jobId}/results | Get the result of an asynchronous Nuance bot GET job
+[**getIntegrationsSpeechNuanceNuanceIntegrationIdBots**](IntegrationsApi.html#getIntegrationsSpeechNuanceNuanceIntegrationIdBots) | **GET** /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots | Get a list of Nuance bots available in the specified Integration
+[**getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJob**](IntegrationsApi.html#getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJob) | **GET** /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/jobs/{jobId} | Get the status of an asynchronous Nuance bots GET job
+[**getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResults**](IntegrationsApi.html#getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResults) | **GET** /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/jobs/{jobId}/results | Get the result of an asynchronous Nuance bots GET job
 [**getIntegrationsSpeechTtsEngine**](IntegrationsApi.html#getIntegrationsSpeechTtsEngine) | **GET** /api/v2/integrations/speech/tts/engines/{engineId} | Get details about a TTS engine
 [**getIntegrationsSpeechTtsEngineVoice**](IntegrationsApi.html#getIntegrationsSpeechTtsEngineVoice) | **GET** /api/v2/integrations/speech/tts/engines/{engineId}/voices/{voiceId} | Get details about a specific voice for a TTS engine
 [**getIntegrationsSpeechTtsEngineVoices**](IntegrationsApi.html#getIntegrationsSpeechTtsEngineVoices) | **GET** /api/v2/integrations/speech/tts/engines/{engineId}/voices | Get a list of voices for a TTS engine
@@ -60,11 +65,15 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postIntegrationsActions**](IntegrationsApi.html#postIntegrationsActions) | **POST** /api/v2/integrations/actions | Create a new Action
 [**postIntegrationsActionsDrafts**](IntegrationsApi.html#postIntegrationsActionsDrafts) | **POST** /api/v2/integrations/actions/drafts | Create a new Draft
 [**postIntegrationsCredentials**](IntegrationsApi.html#postIntegrationsCredentials) | **POST** /api/v2/integrations/credentials | Create a set of credentials
-[**postIntegrationsWorkforcemanagementVendorconnection**](IntegrationsApi.html#postIntegrationsWorkforcemanagementVendorconnection) | **POST** /api/v2/integrations/workforcemanagement/vendorconnection | Add a vendor connection
+[**postIntegrationsSpeechNuanceNuanceIntegrationIdBotJobs**](IntegrationsApi.html#postIntegrationsSpeechNuanceNuanceIntegrationIdBotJobs) | **POST** /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/{botId}/jobs | Get a Nuance bot in the specified Integration asynchronously
+[**postIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobs**](IntegrationsApi.html#postIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobs) | **POST** /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/jobs | Get a list of Nuance bots in the specified Integration asynchronously
+[**postIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidate**](IntegrationsApi.html#postIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidate) | **POST** /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/launch/validate | Try out a single credential for a Nuance bot to know if the secret is correct
 [**putIntegrationConfigCurrent**](IntegrationsApi.html#putIntegrationConfigCurrent) | **PUT** /api/v2/integrations/{integrationId}/config/current | Update integration configuration.
 [**putIntegrationsBotconnectorIntegrationIdBots**](IntegrationsApi.html#putIntegrationsBotconnectorIntegrationIdBots) | **PUT** /api/v2/integrations/botconnector/{integrationId}/bots | Set a list of botConnector bots plus versions for this integration
 [**putIntegrationsCredential**](IntegrationsApi.html#putIntegrationsCredential) | **PUT** /api/v2/integrations/credentials/{credentialId} | Update a set of credentials
+[**putIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettings**](IntegrationsApi.html#putIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettings) | **PUT** /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/launch/settings | Update the Nuance bot list for the specific bots made available to Genesys Cloud in the specified Integration
 [**putIntegrationsSpeechTtsSettings**](IntegrationsApi.html#putIntegrationsSpeechTtsSettings) | **PUT** /api/v2/integrations/speech/tts/settings | Update TTS settings for an org
+[**putIntegrationsUnifiedcommunicationThirdpartypresences**](IntegrationsApi.html#putIntegrationsUnifiedcommunicationThirdpartypresences) | **PUT** /api/v2/integrations/unifiedcommunications/{ucIntegrationId}/thirdpartypresences | Bulk integration presence ingestion
 {: class="table table-striped"}
 
 <a name="deleteIntegration"></a>
@@ -72,14 +81,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 # Integration deleteIntegration(integrationId)
 
 
-
 DELETE /api/v2/integrations/{integrationId}
 
 Delete integration.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * integrations:integration:delete
 
@@ -125,14 +131,11 @@ apiInstance.deleteIntegration(integrationId)
 # void deleteIntegrationsAction(actionId)
 
 
-
 DELETE /api/v2/integrations/actions/{actionId}
 
 Delete an Action
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * integrations:action:delete
 
@@ -178,14 +181,11 @@ void (no response body)
 # void deleteIntegrationsActionDraft(actionId)
 
 
-
 DELETE /api/v2/integrations/actions/{actionId}/draft
 
 Delete a Draft
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * integrations:action:delete
 
@@ -231,15 +231,11 @@ void (no response body)
 # void deleteIntegrationsCredential(credentialId)
 
 
-
 DELETE /api/v2/integrations/credentials/{credentialId}
 
 Delete a set of credentials
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -283,14 +279,11 @@ void (no response body)
 # Integration getIntegration(integrationId, opts)
 
 
-
 GET /api/v2/integrations/{integrationId}
 
 Get integration.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * integrations:integration:view
 
@@ -350,14 +343,11 @@ apiInstance.getIntegration(integrationId, opts)
 # IntegrationConfiguration getIntegrationConfigCurrent(integrationId)
 
 
-
 GET /api/v2/integrations/{integrationId}/config/current
 
 Get integration configuration.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * integrations:integration:view
 
@@ -403,14 +393,11 @@ apiInstance.getIntegrationConfigCurrent(integrationId)
 # IntegrationEntityListing getIntegrations(opts)
 
 
-
 GET /api/v2/integrations
 
 List integrations
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * integrations:integration:view
 
@@ -468,14 +455,11 @@ apiInstance.getIntegrations(opts)
 # Action getIntegrationsAction(actionId, opts)
 
 
-
 GET /api/v2/integrations/actions/{actionId}
 
 Retrieves a single Action matching id.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * integrations:action:view
 * bridge:actions:view
@@ -516,7 +500,7 @@ apiInstance.getIntegrationsAction(actionId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **actionId** | **String** | actionId |  |
  **expand** | **String** | Indicates a field in the response which should be expanded. | [optional] <br />**Values**: contract |
- **includeConfig** | **Boolean** | Return config in response. | [optional] [default to false] |
+ **includeConfig** | **Boolean** | Return config in response. | [optional] [default to false]<br />**Values**: true, false |
 {: class="table table-striped"}
 
 ### Return type
@@ -528,14 +512,11 @@ apiInstance.getIntegrationsAction(actionId, opts)
 # Action getIntegrationsActionDraft(actionId, opts)
 
 
-
 GET /api/v2/integrations/actions/{actionId}/draft
 
 Retrieve a Draft
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * integrations:action:view
 * bridge:actions:view
@@ -576,7 +557,7 @@ apiInstance.getIntegrationsActionDraft(actionId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **actionId** | **String** | actionId |  |
  **expand** | **String** | Indicates a field in the response which should be expanded. | [optional] <br />**Values**: contract |
- **includeConfig** | **Boolean** | Return config in response. | [optional] [default to false] |
+ **includeConfig** | **Boolean** | Return config in response. | [optional] [default to false]<br />**Values**: true, false |
 {: class="table table-striped"}
 
 ### Return type
@@ -588,14 +569,11 @@ apiInstance.getIntegrationsActionDraft(actionId, opts)
 # JsonSchemaDocument getIntegrationsActionDraftSchema(actionId, fileName)
 
 
-
 GET /api/v2/integrations/actions/{actionId}/draft/schemas/{fileName}
 
 Retrieve schema for a Draft based on filename.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * integrations:action:view
 * bridge:actions:view
@@ -644,14 +622,11 @@ apiInstance.getIntegrationsActionDraftSchema(actionId, fileName)
 # **&#39;String&#39;** getIntegrationsActionDraftTemplate(actionId, fileName)
 
 
-
 GET /api/v2/integrations/actions/{actionId}/draft/templates/{fileName}
 
 Retrieve templates for a Draft based on filename.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * integrations:action:view
 * bridge:actions:view
@@ -700,14 +675,11 @@ apiInstance.getIntegrationsActionDraftTemplate(actionId, fileName)
 # DraftValidationResult getIntegrationsActionDraftValidation(actionId)
 
 
-
 GET /api/v2/integrations/actions/{actionId}/draft/validation
 
 Validate current Draft configuration.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * integrations:action:edit
 
@@ -753,14 +725,11 @@ apiInstance.getIntegrationsActionDraftValidation(actionId)
 # JsonSchemaDocument getIntegrationsActionSchema(actionId, fileName)
 
 
-
 GET /api/v2/integrations/actions/{actionId}/schemas/{fileName}
 
 Retrieve schema for an action based on filename.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * integrations:action:view
 * bridge:actions:view
@@ -809,14 +778,11 @@ apiInstance.getIntegrationsActionSchema(actionId, fileName)
 # **&#39;String&#39;** getIntegrationsActionTemplate(actionId, fileName)
 
 
-
 GET /api/v2/integrations/actions/{actionId}/templates/{fileName}
 
 Retrieve text of templates for an action based on filename.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * integrations:action:view
 * bridge:actions:view
@@ -865,14 +831,11 @@ apiInstance.getIntegrationsActionTemplate(actionId, fileName)
 # ActionEntityListing getIntegrationsActions(opts)
 
 
-
 GET /api/v2/integrations/actions
 
 Retrieves all actions associated with filters passed in via query param.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * integrations:action:view
 * bridge:actions:view
@@ -897,9 +860,10 @@ let opts = {
   'previousPage': "previousPage_example", // String | Previous page token
   'sortBy': "sortBy_example", // String | Root level field name to sort on.
   'sortOrder': "asc", // String | Direction to sort 'sortBy' field.
-  'category': "category_example", // String | Filter by category name
-  'name': "name_example", // String | Filter by action name. Provide full or just the first part of name.
-  'secure': "secure_example", // String | Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions.
+  'category': "category_example", // String | Filter by category name.
+  'name': "name_example", // String | Filter by partial or complete action name.
+  'ids': "ids_example", // String | Filter by action Id. Can be a comma separated list to request multiple actions.  Limit of 50 Ids.
+  'secure': "secure_example", // String | Filter based on 'secure' configuration option. True will only return actions marked as secure. False will return only non-secure actions. Do not use filter if you want all Actions.
   'includeAuthActions': "false" // String | Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions.
 };
 
@@ -923,10 +887,11 @@ apiInstance.getIntegrationsActions(opts)
  **nextPage** | **String** | next page token | [optional]  |
  **previousPage** | **String** | Previous page token | [optional]  |
  **sortBy** | **String** | Root level field name to sort on. | [optional]  |
- **sortOrder** | **String** | Direction to sort &#39;sortBy&#39; field. | [optional] [default to asc]<br />**Values**: ASC, DESC |
- **category** | **String** | Filter by category name | [optional]  |
- **name** | **String** | Filter by action name. Provide full or just the first part of name. | [optional]  |
- **secure** | **String** | Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions. | [optional] <br />**Values**: true, false |
+ **sortOrder** | **String** | Direction to sort 'sortBy' field. | [optional] [default to asc]<br />**Values**: ASC, DESC |
+ **category** | **String** | Filter by category name. | [optional]  |
+ **name** | **String** | Filter by partial or complete action name. | [optional]  |
+ **ids** | **String** | Filter by action Id. Can be a comma separated list to request multiple actions.  Limit of 50 Ids. | [optional]  |
+ **secure** | **String** | Filter based on 'secure' configuration option. True will only return actions marked as secure. False will return only non-secure actions. Do not use filter if you want all Actions. | [optional] <br />**Values**: true, false |
  **includeAuthActions** | **String** | Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions. | [optional] [default to false]<br />**Values**: true, false |
 {: class="table table-striped"}
 
@@ -939,14 +904,11 @@ apiInstance.getIntegrationsActions(opts)
 # CategoryEntityListing getIntegrationsActionsCategories(opts)
 
 
-
 GET /api/v2/integrations/actions/categories
 
 Retrieves all categories of available Actions
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * integrations:action:view
 * bridge:actions:view
@@ -993,8 +955,8 @@ apiInstance.getIntegrationsActionsCategories(opts)
  **pageNumber** | **Number** | The page number requested | [optional] [default to 1] |
  **nextPage** | **String** | next page token | [optional]  |
  **previousPage** | **String** | Previous page token | [optional]  |
- **sortBy** | **String** | Root level field name to sort on.  Only &#39;name&#39; is supported on this endpoint. | [optional]  |
- **sortOrder** | **String** | Direction to sort &#39;sortBy&#39; field. | [optional] [default to asc]<br />**Values**: ASC, DESC |
+ **sortBy** | **String** | Root level field name to sort on.  Only 'name' is supported on this endpoint. | [optional]  |
+ **sortOrder** | **String** | Direction to sort 'sortBy' field. | [optional] [default to asc]<br />**Values**: ASC, DESC |
  **secure** | **String** | Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions. | [optional] <br />**Values**: true, false |
 {: class="table table-striped"}
 
@@ -1007,14 +969,11 @@ apiInstance.getIntegrationsActionsCategories(opts)
 # ActionEntityListing getIntegrationsActionsDrafts(opts)
 
 
-
 GET /api/v2/integrations/actions/drafts
 
 Retrieves all action drafts associated with the filters passed in via query param.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * integrations:action:view
 * bridge:actions:view
@@ -1039,9 +998,10 @@ let opts = {
   'previousPage': "previousPage_example", // String | Previous page token
   'sortBy': "sortBy_example", // String | Root level field name to sort on.
   'sortOrder': "asc", // String | Direction to sort 'sortBy' field.
-  'category': "category_example", // String | Filter by category name
-  'name': "name_example", // String | Filter by action name. Provide full or just the first part of name.
-  'secure': "secure_example", // String | Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions.
+  'category': "category_example", // String | Filter by category name.
+  'name': "name_example", // String | Filter by partial or complete action name.
+  'ids': "ids_example", // String | Filter by action Id. Can be a comma separated list to request multiple actions.  Limit of 50 Ids.
+  'secure': "secure_example", // String | Filter based on 'secure' configuration option. True will only return actions marked as secure. False will return only non-secure actions. Do not use filter if you want all Actions.
   'includeAuthActions': "false" // String | Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions.
 };
 
@@ -1065,10 +1025,11 @@ apiInstance.getIntegrationsActionsDrafts(opts)
  **nextPage** | **String** | next page token | [optional]  |
  **previousPage** | **String** | Previous page token | [optional]  |
  **sortBy** | **String** | Root level field name to sort on. | [optional]  |
- **sortOrder** | **String** | Direction to sort &#39;sortBy&#39; field. | [optional] [default to asc]<br />**Values**: ASC, DESC |
- **category** | **String** | Filter by category name | [optional]  |
- **name** | **String** | Filter by action name. Provide full or just the first part of name. | [optional]  |
- **secure** | **String** | Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions. | [optional] <br />**Values**: true, false |
+ **sortOrder** | **String** | Direction to sort 'sortBy' field. | [optional] [default to asc]<br />**Values**: ASC, DESC |
+ **category** | **String** | Filter by category name. | [optional]  |
+ **name** | **String** | Filter by partial or complete action name. | [optional]  |
+ **ids** | **String** | Filter by action Id. Can be a comma separated list to request multiple actions.  Limit of 50 Ids. | [optional]  |
+ **secure** | **String** | Filter based on 'secure' configuration option. True will only return actions marked as secure. False will return only non-secure actions. Do not use filter if you want all Actions. | [optional] <br />**Values**: true, false |
  **includeAuthActions** | **String** | Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions. | [optional] [default to false]<br />**Values**: true, false |
 {: class="table table-striped"}
 
@@ -1081,14 +1042,11 @@ apiInstance.getIntegrationsActionsDrafts(opts)
 # BotConnectorBot getIntegrationsBotconnectorIntegrationIdBot(integrationId, botId, opts)
 
 
-
 GET /api/v2/integrations/botconnector/{integrationId}/bots/{botId}
 
 Get a specific botConnector bot, plus versions, for this integration
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * integration:botconnector:view
 
@@ -1140,14 +1098,11 @@ apiInstance.getIntegrationsBotconnectorIntegrationIdBot(integrationId, botId, op
 # BotConnectorBotVersionSummaryEntityListing getIntegrationsBotconnectorIntegrationIdBotVersions(integrationId, botId, opts)
 
 
-
 GET /api/v2/integrations/botconnector/{integrationId}/bots/{botId}/versions
 
 Get a list of bot versions for a bot
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * integration:botconnector:view
 
@@ -1201,14 +1156,11 @@ apiInstance.getIntegrationsBotconnectorIntegrationIdBotVersions(integrationId, b
 # BotList getIntegrationsBotconnectorIntegrationIdBots(integrationId)
 
 
-
 GET /api/v2/integrations/botconnector/{integrationId}/bots
 
 Get a list of botConnector bots for this integration
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * integration:botconnector:view
 
@@ -1254,14 +1206,11 @@ apiInstance.getIntegrationsBotconnectorIntegrationIdBots(integrationId)
 # BotConnectorBotSummaryEntityListing getIntegrationsBotconnectorIntegrationIdBotsSummaries(integrationId, opts)
 
 
-
 GET /api/v2/integrations/botconnector/{integrationId}/bots/summaries
 
 Get a summary list of botConnector bots for this integration
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * integration:botconnector:view
 
@@ -1313,15 +1262,11 @@ apiInstance.getIntegrationsBotconnectorIntegrationIdBotsSummaries(integrationId,
 # ClientAppEntityListing getIntegrationsClientapps(opts)
 
 
-
 GET /api/v2/integrations/clientapps
 
 List permitted client app integrations for the logged in user
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -1372,20 +1317,80 @@ apiInstance.getIntegrationsClientapps(opts)
 
 **ClientAppEntityListing**
 
+<a name="getIntegrationsClientappsUnifiedcommunications"></a>
+
+# UCIntegrationListing getIntegrationsClientappsUnifiedcommunications(opts)
+
+
+GET /api/v2/integrations/clientapps/unifiedcommunications
+
+UC integration client application configuration.
+
+This endpoint returns basic UI configuration data for all Unified Communications integrations client applications enabled for the current organization.
+
+Requires ANY permissions:
+
+* integration:unifiedCommunications:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.IntegrationsApi();
+
+let opts = { 
+  'pageSize': 25, // Number | The total page size requested
+  'pageNumber': 1, // Number | The page number requested
+  'sortBy': "sortBy_example", // String | variable name requested to sort by
+  'expand': ["expand_example"], // [String] | variable name requested by expand list
+  'nextPage': "nextPage_example", // String | next page token
+  'previousPage': "previousPage_example" // String | Previous page token
+};
+
+apiInstance.getIntegrationsClientappsUnifiedcommunications(opts)
+  .then((data) => {
+    console.log(`getIntegrationsClientappsUnifiedcommunications success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getIntegrationsClientappsUnifiedcommunications');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **pageSize** | **Number** | The total page size requested | [optional] [default to 25] |
+ **pageNumber** | **Number** | The page number requested | [optional] [default to 1] |
+ **sortBy** | **String** | variable name requested to sort by | [optional]  |
+ **expand** | **[String]** | variable name requested by expand list | [optional]  |
+ **nextPage** | **String** | next page token | [optional]  |
+ **previousPage** | **String** | Previous page token | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**UCIntegrationListing**
+
 <a name="getIntegrationsCredential"></a>
 
 # Credential getIntegrationsCredential(credentialId)
-
 
 
 GET /api/v2/integrations/credentials/{credentialId}
 
 Get a single credential with sensitive fields redacted
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -1429,15 +1434,11 @@ apiInstance.getIntegrationsCredential(credentialId)
 # CredentialInfoListing getIntegrationsCredentials(opts)
 
 
-
 GET /api/v2/integrations/credentials
 
 List multiple sets of credentials
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -1485,15 +1486,11 @@ apiInstance.getIntegrationsCredentials(opts)
 # CredentialTypeListing getIntegrationsCredentialsTypes()
 
 
-
 GET /api/v2/integrations/credentials/types
 
 List all credential types
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -1527,137 +1524,16 @@ This endpoint does not need any parameter.
 
 **CredentialTypeListing**
 
-<a name="getIntegrationsEventlog"></a>
-
-# IntegrationEventEntityListing getIntegrationsEventlog(opts)
-
-
-
-GET /api/v2/integrations/eventlog
-
-List all events
-
-
-
-Requires ANY permissions: 
-
-* integrations:integration:view
-* bridge:notification:view
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.IntegrationsApi();
-
-let opts = { 
-  'pageSize': 25, // Number | Page size
-  'pageNumber': 1, // Number | Page number
-  'sortBy': "timestamp", // String | Sort by
-  'sortOrder': "descending", // String | Order by
-  'entityId': "entityId_example" // String | Include only events with this entity ID
-};
-
-apiInstance.getIntegrationsEventlog(opts)
-  .then((data) => {
-    console.log(`getIntegrationsEventlog success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling getIntegrationsEventlog');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **pageSize** | **Number** | Page size | [optional] [default to 25] |
- **pageNumber** | **Number** | Page number | [optional] [default to 1] |
- **sortBy** | **String** | Sort by | [optional] [default to timestamp] |
- **sortOrder** | **String** | Order by | [optional] [default to descending] |
- **entityId** | **String** | Include only events with this entity ID | [optional]  |
-{: class="table table-striped"}
-
-### Return type
-
-**IntegrationEventEntityListing**
-
-<a name="getIntegrationsEventlogEventId"></a>
-
-# IntegrationEvent getIntegrationsEventlogEventId(eventId)
-
-
-
-GET /api/v2/integrations/eventlog/{eventId}
-
-Get a single event
-
-
-
-Requires ANY permissions: 
-
-* integrations:integration:view
-* bridge:notification:view
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.IntegrationsApi();
-
-let eventId = "eventId_example"; // String | Event Id
-
-apiInstance.getIntegrationsEventlogEventId(eventId)
-  .then((data) => {
-    console.log(`getIntegrationsEventlogEventId success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling getIntegrationsEventlogEventId');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **eventId** | **String** | Event Id |  |
-{: class="table table-striped"}
-
-### Return type
-
-**IntegrationEvent**
-
 <a name="getIntegrationsSpeechDialogflowAgent"></a>
 
 # DialogflowAgent getIntegrationsSpeechDialogflowAgent(agentId)
-
 
 
 GET /api/v2/integrations/speech/dialogflow/agents/{agentId}
 
 Get details about a Dialogflow agent
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * integrations:integration:view
 
@@ -1703,14 +1579,11 @@ apiInstance.getIntegrationsSpeechDialogflowAgent(agentId)
 # DialogflowAgentSummaryEntityListing getIntegrationsSpeechDialogflowAgents(opts)
 
 
-
 GET /api/v2/integrations/speech/dialogflow/agents
 
-Get a list of Dialogflow agents in the customers&#39; Google accounts
+Get a list of Dialogflow agents in the customers' Google accounts
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * integrations:integration:view
 
@@ -1762,14 +1635,11 @@ apiInstance.getIntegrationsSpeechDialogflowAgents(opts)
 # LexBotAlias getIntegrationsSpeechLexBotAlias(aliasId)
 
 
-
 GET /api/v2/integrations/speech/lex/bot/alias/{aliasId}
 
 Get details about a Lex bot alias
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * integrations:integration:view
 
@@ -1815,14 +1685,11 @@ apiInstance.getIntegrationsSpeechLexBotAlias(aliasId)
 # LexBotAliasEntityListing getIntegrationsSpeechLexBotBotIdAliases(botId, opts)
 
 
-
 GET /api/v2/integrations/speech/lex/bot/{botId}/aliases
 
-Get a list of aliases for a bot in the customer&#39;s AWS accounts
+Get a list of aliases for a bot in the customer's AWS accounts
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * integrations:integration:view
 
@@ -1878,14 +1745,11 @@ apiInstance.getIntegrationsSpeechLexBotBotIdAliases(botId, opts)
 # LexBotEntityListing getIntegrationsSpeechLexBots(opts)
 
 
-
 GET /api/v2/integrations/speech/lex/bots
 
-Get a list of Lex bots in the customers&#39; AWS accounts
+Get a list of Lex bots in the customers' AWS accounts
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * integrations:integration:view
 
@@ -1932,19 +1796,358 @@ apiInstance.getIntegrationsSpeechLexBots(opts)
 
 **LexBotEntityListing**
 
+<a name="getIntegrationsSpeechNuanceNuanceIntegrationIdBot"></a>
+
+# NuanceBot getIntegrationsSpeechNuanceNuanceIntegrationIdBot(nuanceIntegrationId, botId, opts)
+
+
+GET /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/{botId}
+
+Get a Nuance bot in the specified Integration
+
+getIntegrationsSpeechNuanceNuanceIntegrationIdBot is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* integrations:integration:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.IntegrationsApi();
+
+let nuanceIntegrationId = "nuanceIntegrationId_example"; // String | The integration ID for this group of bots
+let botId = "botId_example"; // String | The Nuance bot ID to get
+let opts = { 
+  'expand': ["expand_example"], // [String] | expand
+  'targetChannel': "targetChannel_example" // String | targetChannel
+};
+
+apiInstance.getIntegrationsSpeechNuanceNuanceIntegrationIdBot(nuanceIntegrationId, botId, opts)
+  .then((data) => {
+    console.log(`getIntegrationsSpeechNuanceNuanceIntegrationIdBot success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getIntegrationsSpeechNuanceNuanceIntegrationIdBot');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **nuanceIntegrationId** | **String** | The integration ID for this group of bots |  |
+ **botId** | **String** | The Nuance bot ID to get |  |
+ **expand** | **[String]** | expand | [optional] <br />**Values**: variables, transferNodes, channels, locales |
+ **targetChannel** | **String** | targetChannel | [optional] <br />**Values**: digital, voice |
+{: class="table table-striped"}
+
+### Return type
+
+**NuanceBot**
+
+<a name="getIntegrationsSpeechNuanceNuanceIntegrationIdBotJob"></a>
+
+# AsyncJob getIntegrationsSpeechNuanceNuanceIntegrationIdBotJob(nuanceIntegrationId, botId, jobId)
+
+
+GET /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/{botId}/jobs/{jobId}
+
+Get the status of an asynchronous Nuance bot GET job
+
+getIntegrationsSpeechNuanceNuanceIntegrationIdBotJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* integrations:integration:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.IntegrationsApi();
+
+let nuanceIntegrationId = "nuanceIntegrationId_example"; // String | The integration ID for this group of bots
+let botId = "botId_example"; // String | The Nuance bot ID
+let jobId = "jobId_example"; // String | The asynchronous job ID
+
+apiInstance.getIntegrationsSpeechNuanceNuanceIntegrationIdBotJob(nuanceIntegrationId, botId, jobId)
+  .then((data) => {
+    console.log(`getIntegrationsSpeechNuanceNuanceIntegrationIdBotJob success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getIntegrationsSpeechNuanceNuanceIntegrationIdBotJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **nuanceIntegrationId** | **String** | The integration ID for this group of bots |  |
+ **botId** | **String** | The Nuance bot ID |  |
+ **jobId** | **String** | The asynchronous job ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**AsyncJob**
+
+<a name="getIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResults"></a>
+
+# NuanceBot getIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResults(nuanceIntegrationId, botId, jobId)
+
+
+GET /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/{botId}/jobs/{jobId}/results
+
+Get the result of an asynchronous Nuance bot GET job
+
+getIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* integrations:integration:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.IntegrationsApi();
+
+let nuanceIntegrationId = "nuanceIntegrationId_example"; // String | The integration ID for this group of bots
+let botId = "botId_example"; // String | The Nuance bot ID
+let jobId = "jobId_example"; // String | The asynchronous job ID
+
+apiInstance.getIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResults(nuanceIntegrationId, botId, jobId)
+  .then((data) => {
+    console.log(`getIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResults success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResults');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **nuanceIntegrationId** | **String** | The integration ID for this group of bots |  |
+ **botId** | **String** | The Nuance bot ID |  |
+ **jobId** | **String** | The asynchronous job ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**NuanceBot**
+
+<a name="getIntegrationsSpeechNuanceNuanceIntegrationIdBots"></a>
+
+# NuanceBotEntityListing getIntegrationsSpeechNuanceNuanceIntegrationIdBots(nuanceIntegrationId, opts)
+
+
+GET /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots
+
+Get a list of Nuance bots available in the specified Integration
+
+If the onlyRegisteredBots param is set, the returned data will only include the Nuance bots which have configured client secrets within the Integration,  otherwise all of the Nuance bots available to the Integrations configured discovery credentials are returned.
+
+getIntegrationsSpeechNuanceNuanceIntegrationIdBots is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* integrations:integration:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.IntegrationsApi();
+
+let nuanceIntegrationId = "nuanceIntegrationId_example"; // String | The integration ID for this group of bots
+let opts = { 
+  'pageNumber': 1, // Number | Page number
+  'pageSize': 25, // Number | Page size
+  'onlyRegisteredBots': true // Boolean | Limit bots to the ones configured for Genesys Cloud usage
+};
+
+apiInstance.getIntegrationsSpeechNuanceNuanceIntegrationIdBots(nuanceIntegrationId, opts)
+  .then((data) => {
+    console.log(`getIntegrationsSpeechNuanceNuanceIntegrationIdBots success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getIntegrationsSpeechNuanceNuanceIntegrationIdBots');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **nuanceIntegrationId** | **String** | The integration ID for this group of bots |  |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **onlyRegisteredBots** | **Boolean** | Limit bots to the ones configured for Genesys Cloud usage | [optional] [default to true] |
+{: class="table table-striped"}
+
+### Return type
+
+**NuanceBotEntityListing**
+
+<a name="getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJob"></a>
+
+# AsyncJob getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJob(nuanceIntegrationId, jobId)
+
+
+GET /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/jobs/{jobId}
+
+Get the status of an asynchronous Nuance bots GET job
+
+getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* integrations:integration:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.IntegrationsApi();
+
+let nuanceIntegrationId = "nuanceIntegrationId_example"; // String | The integration ID for this group of bots
+let jobId = "jobId_example"; // String | The asynchronous job ID
+
+apiInstance.getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJob(nuanceIntegrationId, jobId)
+  .then((data) => {
+    console.log(`getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJob success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **nuanceIntegrationId** | **String** | The integration ID for this group of bots |  |
+ **jobId** | **String** | The asynchronous job ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**AsyncJob**
+
+<a name="getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResults"></a>
+
+# NuanceBotEntityListing getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResults(nuanceIntegrationId, jobId)
+
+
+GET /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/jobs/{jobId}/results
+
+Get the result of an asynchronous Nuance bots GET job
+
+getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* integrations:integration:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.IntegrationsApi();
+
+let nuanceIntegrationId = "nuanceIntegrationId_example"; // String | The integration ID for this group of bots
+let jobId = "jobId_example"; // String | The asynchronous job ID
+
+apiInstance.getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResults(nuanceIntegrationId, jobId)
+  .then((data) => {
+    console.log(`getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResults success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResults');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **nuanceIntegrationId** | **String** | The integration ID for this group of bots |  |
+ **jobId** | **String** | The asynchronous job ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**NuanceBotEntityListing**
+
 <a name="getIntegrationsSpeechTtsEngine"></a>
 
 # TtsEngineEntity getIntegrationsSpeechTtsEngine(engineId, opts)
-
 
 
 GET /api/v2/integrations/speech/tts/engines/{engineId}
 
 Get details about a TTS engine
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * integrations:integration:view
 
@@ -1994,14 +2197,11 @@ apiInstance.getIntegrationsSpeechTtsEngine(engineId, opts)
 # TtsVoiceEntity getIntegrationsSpeechTtsEngineVoice(engineId, voiceId)
 
 
-
 GET /api/v2/integrations/speech/tts/engines/{engineId}/voices/{voiceId}
 
 Get details about a specific voice for a TTS engine
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * integrations:integration:view
 
@@ -2049,14 +2249,11 @@ apiInstance.getIntegrationsSpeechTtsEngineVoice(engineId, voiceId)
 # TtsVoiceEntityListing getIntegrationsSpeechTtsEngineVoices(engineId, opts)
 
 
-
 GET /api/v2/integrations/speech/tts/engines/{engineId}/voices
 
 Get a list of voices for a TTS engine
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * integrations:integration:view
 
@@ -2108,14 +2305,11 @@ apiInstance.getIntegrationsSpeechTtsEngineVoices(engineId, opts)
 # TtsEngineEntityListing getIntegrationsSpeechTtsEngines(opts)
 
 
-
 GET /api/v2/integrations/speech/tts/engines
 
 Get a list of TTS engines enabled for org
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * integrations:integration:view
 
@@ -2171,14 +2365,11 @@ apiInstance.getIntegrationsSpeechTtsEngines(opts)
 # TtsSettings getIntegrationsSpeechTtsSettings()
 
 
-
 GET /api/v2/integrations/speech/tts/settings
 
 Get TTS settings for an org
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * integrations:integration:view
 
@@ -2219,14 +2410,11 @@ This endpoint does not need any parameter.
 # IntegrationType getIntegrationsType(typeId)
 
 
-
 GET /api/v2/integrations/types/{typeId}
 
 Get integration type.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * integrations:integration:view
 
@@ -2272,14 +2460,11 @@ apiInstance.getIntegrationsType(typeId)
 # JsonSchemaDocument getIntegrationsTypeConfigschema(typeId, configType)
 
 
-
 GET /api/v2/integrations/types/{typeId}/configschemas/{configType}
 
 Get properties config schema for an integration type.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * integrations:integration:view
 
@@ -2327,14 +2512,11 @@ apiInstance.getIntegrationsTypeConfigschema(typeId, configType)
 # IntegrationTypeEntityListing getIntegrationsTypes(opts)
 
 
-
 GET /api/v2/integrations/types
 
 List integration types
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * integrations:integration:view
 
@@ -2392,15 +2574,11 @@ apiInstance.getIntegrationsTypes(opts)
 # UserAppEntityListing getIntegrationsUserapps(opts)
 
 
-
 GET /api/v2/integrations/userapps
 
 List permitted user app integrations for the logged in user
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -2458,14 +2636,11 @@ apiInstance.getIntegrationsUserapps(opts)
 # Integration patchIntegration(integrationId, opts)
 
 
-
 PATCH /api/v2/integrations/{integrationId}
 
 Update an integration.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * integrations:integration:edit
 
@@ -2484,13 +2659,13 @@ let apiInstance = new platformClient.IntegrationsApi();
 
 let integrationId = "integrationId_example"; // String | Integration Id
 let opts = { 
-  'body': {}, // Object | Integration Update
   'pageSize': 25, // Number | The total page size requested
   'pageNumber': 1, // Number | The page number requested
   'sortBy': "sortBy_example", // String | variable name requested to sort by
   'expand': ["expand_example"], // [String] | variable name requested by expand list
   'nextPage': "nextPage_example", // String | next page token
-  'previousPage': "previousPage_example" // String | Previous page token
+  'previousPage': "previousPage_example", // String | Previous page token
+  'body': {} // Object | Integration Update
 };
 
 apiInstance.patchIntegration(integrationId, opts)
@@ -2509,13 +2684,13 @@ apiInstance.patchIntegration(integrationId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **integrationId** | **String** | Integration Id |  |
- **body** | **Object** | Integration Update | [optional]  |
  **pageSize** | **Number** | The total page size requested | [optional] [default to 25] |
  **pageNumber** | **Number** | The page number requested | [optional] [default to 1] |
  **sortBy** | **String** | variable name requested to sort by | [optional]  |
  **expand** | **[String]** | variable name requested by expand list | [optional]  |
  **nextPage** | **String** | next page token | [optional]  |
  **previousPage** | **String** | Previous page token | [optional]  |
+ **body** | **Object** | Integration Update | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2527,14 +2702,11 @@ apiInstance.patchIntegration(integrationId, opts)
 # Action patchIntegrationsAction(actionId, body)
 
 
-
 PATCH /api/v2/integrations/actions/{actionId}
 
 Patch an Action
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * integrations:action:edit
 
@@ -2582,14 +2754,11 @@ apiInstance.patchIntegrationsAction(actionId, body)
 # Action patchIntegrationsActionDraft(actionId, body)
 
 
-
 PATCH /api/v2/integrations/actions/{actionId}/draft
 
 Update an existing Draft
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * integrations:action:edit
 
@@ -2637,14 +2806,11 @@ apiInstance.patchIntegrationsActionDraft(actionId, body)
 # Integration postIntegrations(opts)
 
 
-
 POST /api/v2/integrations
 
 Create an integration.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * integrations:integration:add
 
@@ -2692,14 +2858,11 @@ apiInstance.postIntegrations(opts)
 # Action postIntegrationsActionDraft(actionId)
 
 
-
 POST /api/v2/integrations/actions/{actionId}/draft
 
 Create a new Draft from existing Action
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * integrations:action:edit
 
@@ -2745,14 +2908,11 @@ apiInstance.postIntegrationsActionDraft(actionId)
 # Action postIntegrationsActionDraftPublish(actionId, body)
 
 
-
 POST /api/v2/integrations/actions/{actionId}/draft/publish
 
 Publish a Draft and make it the active Action configuration
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * integrations:action:edit
 
@@ -2800,14 +2960,11 @@ apiInstance.postIntegrationsActionDraftPublish(actionId, body)
 # TestExecutionResult postIntegrationsActionDraftTest(actionId, body)
 
 
-
 POST /api/v2/integrations/actions/{actionId}/draft/test
 
 Test the execution of a draft. Responses will show execution steps broken out with intermediate results to help in debugging.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * integrations:action:execute
 
@@ -2825,7 +2982,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.IntegrationsApi();
 
 let actionId = "actionId_example"; // String | actionId
-let body = null; // Object | Map of parameters used for variable substitution.
+let body = null; // {String: Object} | Map of parameters used for variable substitution.
 
 apiInstance.postIntegrationsActionDraftTest(actionId, body)
   .then((data) => {
@@ -2843,7 +3000,7 @@ apiInstance.postIntegrationsActionDraftTest(actionId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **actionId** | **String** | actionId |  |
- **body** | **Object** | Map of parameters used for variable substitution. |  |
+ **body** | **{String: Object}** | Map of parameters used for variable substitution. |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2855,14 +3012,11 @@ apiInstance.postIntegrationsActionDraftTest(actionId, body)
 # **Object** postIntegrationsActionExecute(actionId, body)
 
 
-
 POST /api/v2/integrations/actions/{actionId}/execute
 
 Execute Action and return response from 3rd party.  Responses will follow the schemas defined on the Action for success and error.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * integrations:action:execute
 * bridge:actions:execute
@@ -2881,7 +3035,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.IntegrationsApi();
 
 let actionId = "actionId_example"; // String | actionId
-let body = null; // Object | Map of parameters used for variable substitution.
+let body = null; // {String: Object} | Map of parameters used for variable substitution.
 
 apiInstance.postIntegrationsActionExecute(actionId, body)
   .then((data) => {
@@ -2899,7 +3053,7 @@ apiInstance.postIntegrationsActionExecute(actionId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **actionId** | **String** | actionId |  |
- **body** | **Object** | Map of parameters used for variable substitution. |  |
+ **body** | **{String: Object}** | Map of parameters used for variable substitution. |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2911,14 +3065,11 @@ apiInstance.postIntegrationsActionExecute(actionId, body)
 # TestExecutionResult postIntegrationsActionTest(actionId, body)
 
 
-
 POST /api/v2/integrations/actions/{actionId}/test
 
 Test the execution of an action. Responses will show execution steps broken out with intermediate results to help in debugging.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * integrations:action:execute
 * bridge:actions:execute
@@ -2937,7 +3088,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.IntegrationsApi();
 
 let actionId = "actionId_example"; // String | actionId
-let body = null; // Object | Map of parameters used for variable substitution.
+let body = null; // {String: Object} | Map of parameters used for variable substitution.
 
 apiInstance.postIntegrationsActionTest(actionId, body)
   .then((data) => {
@@ -2955,7 +3106,7 @@ apiInstance.postIntegrationsActionTest(actionId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **actionId** | **String** | actionId |  |
- **body** | **Object** | Map of parameters used for variable substitution. |  |
+ **body** | **{String: Object}** | Map of parameters used for variable substitution. |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2967,14 +3118,11 @@ apiInstance.postIntegrationsActionTest(actionId, body)
 # Action postIntegrationsActions(body)
 
 
-
 POST /api/v2/integrations/actions
 
 Create a new Action
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * integrations:action:add
 
@@ -3020,14 +3168,11 @@ apiInstance.postIntegrationsActions(body)
 # Action postIntegrationsActionsDrafts(body)
 
 
-
 POST /api/v2/integrations/actions/drafts
 
 Create a new Draft
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * integrations:action:add
 
@@ -3073,15 +3218,11 @@ apiInstance.postIntegrationsActionsDrafts(body)
 # CredentialInfo postIntegrationsCredentials(opts)
 
 
-
 POST /api/v2/integrations/credentials
 
 Create a set of credentials
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -3122,20 +3263,20 @@ apiInstance.postIntegrationsCredentials(opts)
 
 **CredentialInfo**
 
-<a name="postIntegrationsWorkforcemanagementVendorconnection"></a>
+<a name="postIntegrationsSpeechNuanceNuanceIntegrationIdBotJobs"></a>
 
-# UserActionCategoryEntityListing postIntegrationsWorkforcemanagementVendorconnection(opts)
-
-
-
-POST /api/v2/integrations/workforcemanagement/vendorconnection
-
-Add a vendor connection
+# AsyncJob postIntegrationsSpeechNuanceNuanceIntegrationIdBotJobs(nuanceIntegrationId, botId, opts)
 
 
+POST /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/{botId}/jobs
 
-Requires NO permissions: 
+Get a Nuance bot in the specified Integration asynchronously
 
+postIntegrationsSpeechNuanceNuanceIntegrationIdBotJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* integrations:integration:view
 
 ### Example Usage
 
@@ -3150,16 +3291,19 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.IntegrationsApi();
 
+let nuanceIntegrationId = "nuanceIntegrationId_example"; // String | The integration ID for this group of bots
+let botId = "botId_example"; // String | The Nuance bot ID
 let opts = { 
-  'body': {} // Object | 
+  'expand': ["expand_example"], // [String] | expand
+  'body': "body_example" // String | targetChannel
 };
 
-apiInstance.postIntegrationsWorkforcemanagementVendorconnection(opts)
+apiInstance.postIntegrationsSpeechNuanceNuanceIntegrationIdBotJobs(nuanceIntegrationId, botId, opts)
   .then((data) => {
-    console.log(`postIntegrationsWorkforcemanagementVendorconnection success! data: ${JSON.stringify(data, null, 2)}`);
+    console.log(`postIntegrationsSpeechNuanceNuanceIntegrationIdBotJobs success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch((err) => {
-    console.log('There was a failure calling postIntegrationsWorkforcemanagementVendorconnection');
+    console.log('There was a failure calling postIntegrationsSpeechNuanceNuanceIntegrationIdBotJobs');
     console.error(err);
   });
 ```
@@ -3169,26 +3313,140 @@ apiInstance.postIntegrationsWorkforcemanagementVendorconnection(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **Object** |  | [optional]  |
+ **nuanceIntegrationId** | **String** | The integration ID for this group of bots |  |
+ **botId** | **String** | The Nuance bot ID |  |
+ **expand** | **[String]** | expand | [optional] <br />**Values**: variables, transferNodes, channels, locales |
+ **body** | **String** | targetChannel | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-**UserActionCategoryEntityListing**
+**AsyncJob**
+
+<a name="postIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobs"></a>
+
+# AsyncJob postIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobs(nuanceIntegrationId, opts)
+
+
+POST /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/jobs
+
+Get a list of Nuance bots in the specified Integration asynchronously
+
+postIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* integrations:integration:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.IntegrationsApi();
+
+let nuanceIntegrationId = "nuanceIntegrationId_example"; // String | The integration ID for this group of bots
+let opts = { 
+  'pageNumber': 1, // Number | Page number
+  'pageSize': 25, // Number | Page size
+  'onlyRegisteredBots': true // Boolean | Limit bots to the ones configured for Genesys Cloud usage
+};
+
+apiInstance.postIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobs(nuanceIntegrationId, opts)
+  .then((data) => {
+    console.log(`postIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobs success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobs');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **nuanceIntegrationId** | **String** | The integration ID for this group of bots |  |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **onlyRegisteredBots** | **Boolean** | Limit bots to the ones configured for Genesys Cloud usage | [optional] [default to true] |
+{: class="table table-striped"}
+
+### Return type
+
+**AsyncJob**
+
+<a name="postIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidate"></a>
+
+# void postIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidate(nuanceIntegrationId, settings)
+
+
+POST /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/launch/validate
+
+Try out a single credential for a Nuance bot to know if the secret is correct
+
+postIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* integrations:integration:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.IntegrationsApi();
+
+let nuanceIntegrationId = "nuanceIntegrationId_example"; // String | The integration ID for this group of bots
+let settings = {}; // Object | 
+
+apiInstance.postIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidate(nuanceIntegrationId, settings)
+  .then(() => {
+    console.log('postIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidate returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidate');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **nuanceIntegrationId** | **String** | The integration ID for this group of bots |  |
+ **settings** | **Object** |  |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
 
 <a name="putIntegrationConfigCurrent"></a>
 
 # IntegrationConfiguration putIntegrationConfigCurrent(integrationId, opts)
 
 
-
 PUT /api/v2/integrations/{integrationId}/config/current
 
 Update integration configuration.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * integrations:integration:edit
 
@@ -3238,14 +3496,11 @@ apiInstance.putIntegrationConfigCurrent(integrationId, opts)
 # void putIntegrationsBotconnectorIntegrationIdBots(integrationId, botList)
 
 
-
 PUT /api/v2/integrations/botconnector/{integrationId}/bots
 
 Set a list of botConnector bots plus versions for this integration
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * integration:botconnector:edit
 
@@ -3293,15 +3548,11 @@ void (no response body)
 # CredentialInfo putIntegrationsCredential(credentialId, opts)
 
 
-
 PUT /api/v2/integrations/credentials/{credentialId}
 
 Update a set of credentials
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -3344,19 +3595,70 @@ apiInstance.putIntegrationsCredential(credentialId, opts)
 
 **CredentialInfo**
 
+<a name="putIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettings"></a>
+
+# void putIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettings(nuanceIntegrationId, settings)
+
+
+PUT /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/launch/settings
+
+Update the Nuance bot list for the specific bots made available to Genesys Cloud in the specified Integration
+
+putIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* integrations:integration:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.IntegrationsApi();
+
+let nuanceIntegrationId = "nuanceIntegrationId_example"; // String | The integration ID for this group of bots
+let settings = {}; // Object | 
+
+apiInstance.putIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettings(nuanceIntegrationId, settings)
+  .then(() => {
+    console.log('putIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettings returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettings');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **nuanceIntegrationId** | **String** | The integration ID for this group of bots |  |
+ **settings** | **Object** |  |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
 <a name="putIntegrationsSpeechTtsSettings"></a>
 
 # TtsSettings putIntegrationsSpeechTtsSettings(body)
-
 
 
 PUT /api/v2/integrations/speech/tts/settings
 
 Update TTS settings for an org
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * integrations:integration:edit
 
@@ -3396,4 +3698,58 @@ apiInstance.putIntegrationsSpeechTtsSettings(body)
 ### Return type
 
 **TtsSettings**
+
+<a name="putIntegrationsUnifiedcommunicationThirdpartypresences"></a>
+
+# **&#39;String&#39;** putIntegrationsUnifiedcommunicationThirdpartypresences(ucIntegrationId, body)
+
+
+PUT /api/v2/integrations/unifiedcommunications/{ucIntegrationId}/thirdpartypresences
+
+Bulk integration presence ingestion
+
+This endpoint accepts bulk presence updates from a 3rd-party presence integration and maps the 3rd-party user to a Genesys Cloud user via the matching email address. The 3rd-party presence value will be mapped to a Genesys Cloud organization presence definition value.
+
+Requires ANY permissions:
+
+* integration:presence:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.IntegrationsApi();
+
+let ucIntegrationId = "ucIntegrationId_example"; // String | UC Integration ID
+let body = [{}]; // Object | List of User presences
+
+apiInstance.putIntegrationsUnifiedcommunicationThirdpartypresences(ucIntegrationId, body)
+  .then((data) => {
+    console.log(`putIntegrationsUnifiedcommunicationThirdpartypresences success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putIntegrationsUnifiedcommunicationThirdpartypresences');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **ucIntegrationId** | **String** | UC Integration ID |  |
+ **body** | **Object** | List of User presences |  |
+{: class="table table-striped"}
+
+### Return type
+
+**&#39;String&#39;**
 

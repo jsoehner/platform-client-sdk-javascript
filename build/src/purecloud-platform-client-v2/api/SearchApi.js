@@ -5,7 +5,7 @@ class SearchApi {
 	/**
 	 * Search service.
 	 * @module purecloud-platform-client-v2/api/SearchApi
-	 * @version 124.0.0
+	 * @version 174.0.0
 	 */
 
 	/**
@@ -34,13 +34,13 @@ class SearchApi {
 		return this.apiClient.callApi(
 			'/api/v2/documentation/gkn/search', 
 			'GET', 
-			{  }, 
-			{ 'q64': q64 }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'q64': q64 },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -59,13 +59,13 @@ class SearchApi {
 		return this.apiClient.callApi(
 			'/api/v2/documentation/search', 
 			'GET', 
-			{  }, 
-			{ 'q64': q64 }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'q64': q64 },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -88,13 +88,13 @@ class SearchApi {
 		return this.apiClient.callApi(
 			'/api/v2/groups/search', 
 			'GET', 
-			{  }, 
-			{ 'q64': q64,'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'q64': q64,'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -117,13 +117,13 @@ class SearchApi {
 		return this.apiClient.callApi(
 			'/api/v2/locations/search', 
 			'GET', 
-			{  }, 
-			{ 'q64': q64,'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'q64': q64,'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -147,13 +147,13 @@ class SearchApi {
 		return this.apiClient.callApi(
 			'/api/v2/search', 
 			'GET', 
-			{  }, 
-			{ 'q64': q64,'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'profile': opts['profile'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'q64': q64,'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'profile': opts['profile'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -177,13 +177,13 @@ class SearchApi {
 		return this.apiClient.callApi(
 			'/api/v2/search/suggest', 
 			'GET', 
-			{  }, 
-			{ 'q64': q64,'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'profile': opts['profile'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'q64': q64,'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'profile': opts['profile'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -207,13 +207,13 @@ class SearchApi {
 		return this.apiClient.callApi(
 			'/api/v2/users/search', 
 			'GET', 
-			{  }, 
-			{ 'q64': q64,'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'integrationPresenceSource': opts['integrationPresenceSource'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'q64': q64,'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'integrationPresenceSource': opts['integrationPresenceSource'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -236,13 +236,13 @@ class SearchApi {
 		return this.apiClient.callApi(
 			'/api/v2/voicemail/search', 
 			'GET', 
-			{  }, 
-			{ 'q64': q64,'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'q64': q64,'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -261,13 +261,64 @@ class SearchApi {
 		return this.apiClient.callApi(
 			'/api/v2/analytics/conversations/transcripts/query', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Search conversations
+	 * 
+	 * @param {Object} body Search request options
+	 */
+	postConversationsParticipantsAttributesSearch(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postConversationsParticipantsAttributesSearch';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/participants/attributes/search', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Search all documents
+	 * 
+	 * @param {Object} body Search request options
+	 * postDocumentationAllSearch is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postDocumentationAllSearch(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postDocumentationAllSearch';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/documentation/all/search', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -286,13 +337,13 @@ class SearchApi {
 		return this.apiClient.callApi(
 			'/api/v2/documentation/gkn/search', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -311,13 +362,13 @@ class SearchApi {
 		return this.apiClient.callApi(
 			'/api/v2/documentation/search', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -336,13 +387,13 @@ class SearchApi {
 		return this.apiClient.callApi(
 			'/api/v2/groups/search', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -353,6 +404,7 @@ class SearchApi {
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
+	 * @deprecated
 	 */
 	postKnowledgeKnowledgebaseSearch(knowledgeBaseId, opts) { 
 		opts = opts || {};
@@ -365,13 +417,13 @@ class SearchApi {
 		return this.apiClient.callApi(
 			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/search', 
 			'POST', 
-			{ 'knowledgeBaseId': knowledgeBaseId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'knowledgeBaseId': knowledgeBaseId },
+			{  },
+			{  },
+			{  },
 			opts['body'], 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -390,13 +442,13 @@ class SearchApi {
 		return this.apiClient.callApi(
 			'/api/v2/locations/search', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -419,13 +471,13 @@ class SearchApi {
 		return this.apiClient.callApi(
 			'/api/v2/search', 
 			'POST', 
-			{  }, 
-			{ 'profile': opts['profile'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'profile': opts['profile'] },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -448,13 +500,13 @@ class SearchApi {
 		return this.apiClient.callApi(
 			'/api/v2/search/suggest', 
 			'POST', 
-			{  }, 
-			{ 'profile': opts['profile'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'profile': opts['profile'] },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -473,13 +525,38 @@ class SearchApi {
 		return this.apiClient.callApi(
 			'/api/v2/speechandtextanalytics/transcripts/search', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Search resources.
+	 * 
+	 * @param {Object} body Search request options
+	 */
+	postTeamsSearch(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postTeamsSearch';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/teams/search', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -498,13 +575,90 @@ class SearchApi {
 		return this.apiClient.callApi(
 			'/api/v2/users/search', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Search users as conversation targets
+	 * 
+	 * @param {Object} body Search request options
+	 * postUsersSearchConversationTarget is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postUsersSearchConversationTarget(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postUsersSearchConversationTarget';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/users/search/conversation/target', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Search manage queue member
+	 * 
+	 * @param {Object} body Search request options
+	 * postUsersSearchQueuemembersManage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postUsersSearchQueuemembersManage(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postUsersSearchQueuemembersManage';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/users/search/queuemembers/manage', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Search users assigned to teams
+	 * 
+	 * @param {Object} body Search request options
+	 */
+	postUsersSearchTeamsAssign(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postUsersSearchTeamsAssign';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/users/search/teams/assign', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -523,13 +677,13 @@ class SearchApi {
 		return this.apiClient.callApi(
 			'/api/v2/voicemail/search', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}

@@ -33,14 +33,13 @@ All URIs are relative to *https://api.mypurecloud.com*
 # CoachingAppointmentReference deleteCoachingAppointment(appointmentId)
 
 
-
 DELETE /api/v2/coaching/appointments/{appointmentId}
 
 Delete an existing appointment
 
 Permission not required if you are the creator of the appointment
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * coaching:appointment:delete
 
@@ -86,14 +85,13 @@ apiInstance.deleteCoachingAppointment(appointmentId)
 # void deleteCoachingAppointmentAnnotation(appointmentId, annotationId)
 
 
-
 DELETE /api/v2/coaching/appointments/{appointmentId}/annotations/{annotationId}
 
 Delete an existing annotation
 
 You must have the appropriate permission for the type of annotation you are updating. Permission not required if you are the creator or facilitator of the appointment
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * coaching:annotation:delete
 * coaching:privateAnnotation:delete
@@ -142,14 +140,13 @@ void (no response body)
 # CoachingAppointmentResponse getCoachingAppointment(appointmentId)
 
 
-
 GET /api/v2/coaching/appointments/{appointmentId}
 
 Retrieve an appointment
 
 Permission not required if you are the attendee, creator or facilitator of the appointment
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * coaching:appointment:view
 
@@ -195,14 +192,13 @@ apiInstance.getCoachingAppointment(appointmentId)
 # CoachingAnnotation getCoachingAppointmentAnnotation(appointmentId, annotationId)
 
 
-
 GET /api/v2/coaching/appointments/{appointmentId}/annotations/{annotationId}
 
 Retrieve an annotation.
 
 You must have the appropriate permission for the type of annotation you are creating. Permission not required if you are related to the appointment (only the creator or facilitator can view private annotations).
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * coaching:annotation:view
 * coaching:privateAnnotation:view
@@ -251,14 +247,13 @@ apiInstance.getCoachingAppointmentAnnotation(appointmentId, annotationId)
 # CoachingAnnotationList getCoachingAppointmentAnnotations(appointmentId, opts)
 
 
-
 GET /api/v2/coaching/appointments/{appointmentId}/annotations
 
 Get a list of annotations.
 
 You must have the appropriate permission for the type of annotation you are creating. Permission not required if you are related to the appointment (only the creator or facilitator can view private annotations).
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * coaching:annotation:view
 * coaching:privateAnnotation:view
@@ -311,14 +306,13 @@ apiInstance.getCoachingAppointmentAnnotations(appointmentId, opts)
 # CoachingAppointmentStatusResponseList getCoachingAppointmentStatuses(appointmentId, opts)
 
 
-
 GET /api/v2/coaching/appointments/{appointmentId}/statuses
 
 Get the list of status changes for a coaching appointment.
 
 Permission not required if you are an attendee, creator or facilitator of the appointment
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * coaching:appointmentStatus:view
 
@@ -370,14 +364,11 @@ apiInstance.getCoachingAppointmentStatuses(appointmentId, opts)
 # CoachingAppointmentResponseList getCoachingAppointments(userIds, opts)
 
 
-
 GET /api/v2/coaching/appointments
 
 Get appointments for users and optional date range
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * coaching:appointment:view
 
@@ -404,7 +395,8 @@ let opts = {
   'sortOrder': "sortOrder_example", // String | Sort (by due date) either Asc or Desc
   'relationships': ["relationships_example"], // [String] | Relationships to filter by
   'completionInterval': "completionInterval_example", // String | Appointment completion start and end to filter by. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
-  'overdue': "overdue_example" // String | Overdue status to filter by
+  'overdue': "overdue_example", // String | Overdue status to filter by
+  'intervalCondition': "intervalCondition_example" // String | Filter condition for interval
 };
 
 apiInstance.getCoachingAppointments(userIds, opts)
@@ -432,6 +424,7 @@ apiInstance.getCoachingAppointments(userIds, opts)
  **relationships** | **[String]** | Relationships to filter by | [optional] <br />**Values**: Creator, Facilitator, Attendee |
  **completionInterval** | **String** | Appointment completion start and end to filter by. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss | [optional]  |
  **overdue** | **String** | Overdue status to filter by | [optional] <br />**Values**: True, False, Any |
+ **intervalCondition** | **String** | Filter condition for interval | [optional] <br />**Values**: StartsIn, Overlaps |
 {: class="table table-striped"}
 
 ### Return type
@@ -443,15 +436,11 @@ apiInstance.getCoachingAppointments(userIds, opts)
 # CoachingAppointmentResponseList getCoachingAppointmentsMe(opts)
 
 
-
 GET /api/v2/coaching/appointments/me
 
 Get my appointments for a given date range
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -475,7 +464,8 @@ let opts = {
   'sortOrder': "sortOrder_example", // String | Sort (by due date) either Asc or Desc
   'relationships': ["relationships_example"], // [String] | Relationships to filter by
   'completionInterval': "completionInterval_example", // String | Appointment completion start and end to filter by. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
-  'overdue': "overdue_example" // String | Overdue status to filter by
+  'overdue': "overdue_example", // String | Overdue status to filter by
+  'intervalCondition': "intervalCondition_example" // String | Filter condition for interval
 };
 
 apiInstance.getCoachingAppointmentsMe(opts)
@@ -502,6 +492,7 @@ apiInstance.getCoachingAppointmentsMe(opts)
  **relationships** | **[String]** | Relationships to filter by | [optional] <br />**Values**: Creator, Facilitator, Attendee |
  **completionInterval** | **String** | Appointment completion start and end to filter by. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss | [optional]  |
  **overdue** | **String** | Overdue status to filter by | [optional] <br />**Values**: True, False, Any |
+ **intervalCondition** | **String** | Filter condition for interval | [optional] <br />**Values**: StartsIn, Overlaps |
 {: class="table table-striped"}
 
 ### Return type
@@ -513,14 +504,13 @@ apiInstance.getCoachingAppointmentsMe(opts)
 # CoachingNotification getCoachingNotification(notificationId, opts)
 
 
-
 GET /api/v2/coaching/notifications/{notificationId}
 
 Get an existing notification
 
 Permission not required if you are the owner of the notification.
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * coaching:notification:view
 
@@ -570,15 +560,11 @@ apiInstance.getCoachingNotification(notificationId, opts)
 # CoachingNotificationList getCoachingNotifications(opts)
 
 
-
 GET /api/v2/coaching/notifications
 
 Retrieve the list of your notifications.
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -628,14 +614,13 @@ apiInstance.getCoachingNotifications(opts)
 # CoachingAppointmentResponse patchCoachingAppointment(appointmentId, body)
 
 
-
 PATCH /api/v2/coaching/appointments/{appointmentId}
 
 Update an existing appointment
 
 Permission not required if you are the creator or facilitator of the appointment
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * coaching:appointment:edit
 
@@ -683,14 +668,13 @@ apiInstance.patchCoachingAppointment(appointmentId, body)
 # CoachingAnnotation patchCoachingAppointmentAnnotation(appointmentId, annotationId, body)
 
 
-
 PATCH /api/v2/coaching/appointments/{appointmentId}/annotations/{annotationId}
 
 Update an existing annotation.
 
 You must have the appropriate permission for the type of annotation you are updating. Permission not required if you are the creator or facilitator of the appointment
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * coaching:annotation:edit
 * coaching:privateAnnotation:edit
@@ -741,14 +725,13 @@ apiInstance.patchCoachingAppointmentAnnotation(appointmentId, annotationId, body
 # CoachingAppointmentStatusResponse patchCoachingAppointmentStatus(appointmentId, body)
 
 
-
 PATCH /api/v2/coaching/appointments/{appointmentId}/status
 
 Update the status of a coaching appointment
 
 Permission not required if you are an attendee, creator or facilitator of the appointment
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * coaching:appointmentStatus:edit
 
@@ -796,15 +779,13 @@ apiInstance.patchCoachingAppointmentStatus(appointmentId, body)
 # CoachingNotification patchCoachingNotification(notificationId, body)
 
 
-
 PATCH /api/v2/coaching/notifications/{notificationId}
 
 Update an existing notification.
 
 Can only update your own notifications.
 
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -850,14 +831,13 @@ apiInstance.patchCoachingNotification(notificationId, body)
 # CoachingAnnotation postCoachingAppointmentAnnotations(appointmentId, body)
 
 
-
 POST /api/v2/coaching/appointments/{appointmentId}/annotations
 
 Create a new annotation.
 
 You must have the appropriate permission for the type of annotation you are creating. Permission not required if you are related to the appointment (only the creator or facilitator can create private annotations).
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * coaching:annotation:add
 * coaching:privateAnnotation:add
@@ -906,14 +886,13 @@ apiInstance.postCoachingAppointmentAnnotations(appointmentId, body)
 # AddConversationResponse postCoachingAppointmentConversations(appointmentId, body)
 
 
-
 POST /api/v2/coaching/appointments/{appointmentId}/conversations
 
 Add a conversation to an appointment
 
 Permission not required if you are the creator or facilitator of the appointment
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * coaching:appointment:edit
 * coaching:appointmentConversation:add
@@ -962,14 +941,11 @@ apiInstance.postCoachingAppointmentConversations(appointmentId, body)
 # CoachingAppointmentResponse postCoachingAppointments(body)
 
 
-
 POST /api/v2/coaching/appointments
 
 Create a new appointment
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * coaching:appointment:add
 
@@ -1015,14 +991,11 @@ apiInstance.postCoachingAppointments(body)
 # CoachingAppointmentAggregateResponse postCoachingAppointmentsAggregatesQuery(body)
 
 
-
 POST /api/v2/coaching/appointments/aggregates/query
 
 Retrieve aggregated appointment data
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * coaching:appointment:view
 
@@ -1068,14 +1041,11 @@ apiInstance.postCoachingAppointmentsAggregatesQuery(body)
 # CoachingSlotsResponse postCoachingScheduleslotsQuery(body)
 
 
-
 POST /api/v2/coaching/scheduleslots/query
 
 Get list of possible slots where a coaching appointment can be scheduled.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * coaching:scheduleSlot:view
 

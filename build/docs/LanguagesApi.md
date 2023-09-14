@@ -8,14 +8,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
 [**deleteLanguage**](LanguagesApi.html#deleteLanguage) | **DELETE** /api/v2/languages/{languageId} | Delete Language (Deprecated)
-[**deleteRoutingLanguage**](LanguagesApi.html#deleteRoutingLanguage) | **DELETE** /api/v2/routing/languages/{languageId} | Delete Language
-[**getLanguage**](LanguagesApi.html#getLanguage) | **GET** /api/v2/languages/{languageId} | Get language (Deprecated)
+[**getLanguage**](LanguagesApi.html#getLanguage) | **GET** /api/v2/languages/{languageId} | Get Language (Deprecated)
 [**getLanguages**](LanguagesApi.html#getLanguages) | **GET** /api/v2/languages | Get the list of supported languages. (Deprecated)
 [**getLanguagesTranslations**](LanguagesApi.html#getLanguagesTranslations) | **GET** /api/v2/languages/translations | Get all available languages for translation
 [**getLanguagesTranslationsBuiltin**](LanguagesApi.html#getLanguagesTranslationsBuiltin) | **GET** /api/v2/languages/translations/builtin | Get the builtin translation for a language
 [**getLanguagesTranslationsOrganization**](LanguagesApi.html#getLanguagesTranslationsOrganization) | **GET** /api/v2/languages/translations/organization | Get effective translation for an organization by language
 [**getLanguagesTranslationsUser**](LanguagesApi.html#getLanguagesTranslationsUser) | **GET** /api/v2/languages/translations/users/{userId} | Get effective language translation for a user
-[**getRoutingLanguage**](LanguagesApi.html#getRoutingLanguage) | **GET** /api/v2/routing/languages/{languageId} | Get language
 [**postLanguages**](LanguagesApi.html#postLanguages) | **POST** /api/v2/languages | Create Language (Deprecated)
 {: class="table table-striped"}
 
@@ -29,9 +27,9 @@ DELETE /api/v2/languages/{languageId}
 
 Delete Language (Deprecated)
 
-This endpoint is deprecated. It has been moved to /routing/languages/{languageId}
+This endpoint is deprecated. Please see the Routing API (DELETE /api/v2/routing/languages/{languageId})
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * routing:skill:manage
 
@@ -72,59 +70,6 @@ apiInstance.deleteLanguage(languageId)
 
 void (no response body)
 
-<a name="deleteRoutingLanguage"></a>
-
-# void deleteRoutingLanguage(languageId)
-
-
-
-DELETE /api/v2/routing/languages/{languageId}
-
-Delete Language
-
-
-
-Requires ANY permissions: 
-
-* routing:skill:manage
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.LanguagesApi();
-
-let languageId = "languageId_example"; // String | Language ID
-
-apiInstance.deleteRoutingLanguage(languageId)
-  .then(() => {
-    console.log('deleteRoutingLanguage returned successfully.');
-  })
-  .catch((err) => {
-    console.log('There was a failure calling deleteRoutingLanguage');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **languageId** | **String** | Language ID |  |
-{: class="table table-striped"}
-
-### Return type
-
-void (no response body)
-
 <a name="getLanguage"></a>
 
 # Language getLanguage(languageId)
@@ -133,11 +78,11 @@ void (no response body)
 
 GET /api/v2/languages/{languageId}
 
-Get language (Deprecated)
+Get Language (Deprecated)
 
-This endpoint is deprecated. It has been moved to /routing/languages/{languageId}
+This endpoint is deprecated. Please see the Routing API (GET /api/v2/routing/languages/{languageId})
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * routing:skill:manage
 
@@ -188,9 +133,9 @@ GET /api/v2/languages
 
 Get the list of supported languages. (Deprecated)
 
-This endpoint is deprecated. It has been moved to /routing/languages
+This endpoint is deprecated. Please see the Routing API (GET /api/v2/routing/languages)
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * routing:skill:manage
 
@@ -244,15 +189,11 @@ apiInstance.getLanguages(opts)
 # AvailableTranslations getLanguagesTranslations()
 
 
-
 GET /api/v2/languages/translations
 
 Get all available languages for translation
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -291,15 +232,11 @@ This endpoint does not need any parameter.
 # **{&#39;String&#39;: Object}** getLanguagesTranslationsBuiltin(language)
 
 
-
 GET /api/v2/languages/translations/builtin
 
 Get the builtin translation for a language
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -343,15 +280,11 @@ apiInstance.getLanguagesTranslationsBuiltin(language)
 # **{&#39;String&#39;: Object}** getLanguagesTranslationsOrganization(language)
 
 
-
 GET /api/v2/languages/translations/organization
 
 Get effective translation for an organization by language
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -395,15 +328,11 @@ apiInstance.getLanguagesTranslationsOrganization(language)
 # **{&#39;String&#39;: Object}** getLanguagesTranslationsUser(userId)
 
 
-
 GET /api/v2/languages/translations/users/{userId}
 
 Get effective language translation for a user
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -442,58 +371,6 @@ apiInstance.getLanguagesTranslationsUser(userId)
 
 **{&#39;String&#39;: Object}**
 
-<a name="getRoutingLanguage"></a>
-
-# Language getRoutingLanguage(languageId)
-
-
-
-GET /api/v2/routing/languages/{languageId}
-
-Get language
-
-
-
-Requires NO permissions: 
-
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.LanguagesApi();
-
-let languageId = "languageId_example"; // String | Language ID
-
-apiInstance.getRoutingLanguage(languageId)
-  .then((data) => {
-    console.log(`getRoutingLanguage success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling getRoutingLanguage');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **languageId** | **String** | Language ID |  |
-{: class="table table-striped"}
-
-### Return type
-
-**Language**
-
 <a name="postLanguages"></a>
 
 # Language postLanguages(body)
@@ -504,9 +381,9 @@ POST /api/v2/languages
 
 Create Language (Deprecated)
 
-This endpoint is deprecated. It has been moved to /routing/languages
+This endpoint is deprecated. Please see the Routing API. (POST /api/v2/routing/languages
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * routing:skill:manage
 

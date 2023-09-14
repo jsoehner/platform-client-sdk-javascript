@@ -5,7 +5,7 @@ class WebDeploymentsApi {
 	/**
 	 * WebDeployments service.
 	 * @module purecloud-platform-client-v2/api/WebDeploymentsApi
-	 * @version 124.0.0
+	 * @version 174.0.0
 	 */
 
 	/**
@@ -34,13 +34,13 @@ class WebDeploymentsApi {
 		return this.apiClient.callApi(
 			'/api/v2/webdeployments/configurations/{configurationId}', 
 			'DELETE', 
-			{ 'configurationId': configurationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'configurationId': configurationId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -59,13 +59,68 @@ class WebDeploymentsApi {
 		return this.apiClient.callApi(
 			'/api/v2/webdeployments/deployments/{deploymentId}', 
 			'DELETE', 
-			{ 'deploymentId': deploymentId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'deploymentId': deploymentId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Deletes a cobrowse session
+	 * 
+	 * @param {String} deploymentId WebMessaging deployment ID
+	 * @param {String} sessionId Cobrowse session id or join code
+	 */
+	deleteWebdeploymentsDeploymentCobrowseSessionId(deploymentId, sessionId) { 
+		// verify the required parameter 'deploymentId' is set
+		if (deploymentId === undefined || deploymentId === null) {
+			throw 'Missing the required parameter "deploymentId" when calling deleteWebdeploymentsDeploymentCobrowseSessionId';
+		}
+		// verify the required parameter 'sessionId' is set
+		if (sessionId === undefined || sessionId === null) {
+			throw 'Missing the required parameter "sessionId" when calling deleteWebdeploymentsDeploymentCobrowseSessionId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/webdeployments/deployments/{deploymentId}/cobrowse/{sessionId}', 
+			'DELETE', 
+			{ 'deploymentId': deploymentId,'sessionId': sessionId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Invalidate JWT
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.xJourneySessionId The Customer's journey sessionId.
+	 * @param {String} opts.xJourneySessionType The Customer's journey session type.
+	 */
+	deleteWebdeploymentsTokenRevoke(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/webdeployments/token/revoke', 
+			'DELETE', 
+			{  },
+			{  },
+			{ 'X-Journey-Session-Id': opts['xJourneySessionId'],'X-Journey-Session-Type': opts['xJourneySessionType'] },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -89,13 +144,13 @@ class WebDeploymentsApi {
 		return this.apiClient.callApi(
 			'/api/v2/webdeployments/configurations/{configurationId}/versions/{versionId}', 
 			'GET', 
-			{ 'configurationId': configurationId,'versionId': versionId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'configurationId': configurationId,'versionId': versionId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -114,13 +169,13 @@ class WebDeploymentsApi {
 		return this.apiClient.callApi(
 			'/api/v2/webdeployments/configurations/{configurationId}/versions', 
 			'GET', 
-			{ 'configurationId': configurationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'configurationId': configurationId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -139,13 +194,13 @@ class WebDeploymentsApi {
 		return this.apiClient.callApi(
 			'/api/v2/webdeployments/configurations/{configurationId}/versions/draft', 
 			'GET', 
-			{ 'configurationId': configurationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'configurationId': configurationId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -163,13 +218,13 @@ class WebDeploymentsApi {
 		return this.apiClient.callApi(
 			'/api/v2/webdeployments/configurations', 
 			'GET', 
-			{  }, 
-			{ 'showOnlyPublished': opts['showOnlyPublished'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'showOnlyPublished': opts['showOnlyPublished'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -178,8 +233,12 @@ class WebDeploymentsApi {
 	 * Get a deployment
 	 * 
 	 * @param {String} deploymentId The deployment ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.expand The specified entity attributes will be filled. Comma separated values expected. 
 	 */
-	getWebdeploymentsDeployment(deploymentId) { 
+	getWebdeploymentsDeployment(deploymentId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'deploymentId' is set
 		if (deploymentId === undefined || deploymentId === null) {
 			throw 'Missing the required parameter "deploymentId" when calling getWebdeploymentsDeployment';
@@ -188,13 +247,73 @@ class WebDeploymentsApi {
 		return this.apiClient.callApi(
 			'/api/v2/webdeployments/deployments/{deploymentId}', 
 			'GET', 
-			{ 'deploymentId': deploymentId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'deploymentId': deploymentId },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Retrieves a cobrowse session
+	 * 
+	 * @param {String} deploymentId WebMessaging deployment ID
+	 * @param {String} sessionId Cobrowse session id or join code
+	 */
+	getWebdeploymentsDeploymentCobrowseSessionId(deploymentId, sessionId) { 
+		// verify the required parameter 'deploymentId' is set
+		if (deploymentId === undefined || deploymentId === null) {
+			throw 'Missing the required parameter "deploymentId" when calling getWebdeploymentsDeploymentCobrowseSessionId';
+		}
+		// verify the required parameter 'sessionId' is set
+		if (sessionId === undefined || sessionId === null) {
+			throw 'Missing the required parameter "sessionId" when calling getWebdeploymentsDeploymentCobrowseSessionId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/webdeployments/deployments/{deploymentId}/cobrowse/{sessionId}', 
+			'GET', 
+			{ 'deploymentId': deploymentId,'sessionId': sessionId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get active configuration for a given deployment
+	 * 
+	 * @param {String} deploymentId The deployment ID
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.type Get active configuration on a deployment
+	 * @param {Array.<String>} opts.expand Expand instructions for the return value
+	 */
+	getWebdeploymentsDeploymentConfigurations(deploymentId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'deploymentId' is set
+		if (deploymentId === undefined || deploymentId === null) {
+			throw 'Missing the required parameter "deploymentId" when calling getWebdeploymentsDeploymentConfigurations';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/webdeployments/deployments/{deploymentId}/configurations', 
+			'GET', 
+			{ 'deploymentId': deploymentId },
+			{ 'type': opts['type'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -202,19 +321,23 @@ class WebDeploymentsApi {
 	/**
 	 * Get deployments
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.expand The specified entity attributes will be filled. Comma separated values expected.
 	 */
-	getWebdeploymentsDeployments() { 
+	getWebdeploymentsDeployments(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/webdeployments/deployments', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -233,13 +356,13 @@ class WebDeploymentsApi {
 		return this.apiClient.callApi(
 			'/api/v2/webdeployments/configurations/{configurationId}/versions/draft/publish', 
 			'POST', 
-			{ 'configurationId': configurationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'configurationId': configurationId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -258,13 +381,13 @@ class WebDeploymentsApi {
 		return this.apiClient.callApi(
 			'/api/v2/webdeployments/configurations', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			configurationVersion, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -283,13 +406,62 @@ class WebDeploymentsApi {
 		return this.apiClient.callApi(
 			'/api/v2/webdeployments/deployments', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			deployment, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Exchange an oAuth code (obtained using the Authorization Code Flow) for a JWT that can be used by webdeployments.
+	 * 
+	 * @param {Object} body webDeploymentsOAuthExchangeRequest
+	 */
+	postWebdeploymentsTokenOauthcodegrantjwtexchange(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postWebdeploymentsTokenOauthcodegrantjwtexchange';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/webdeployments/token/oauthcodegrantjwtexchange', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Refresh a JWT.
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 */
+	postWebdeploymentsTokenRefresh(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/webdeployments/token/refresh', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -313,13 +485,13 @@ class WebDeploymentsApi {
 		return this.apiClient.callApi(
 			'/api/v2/webdeployments/configurations/{configurationId}/versions/draft', 
 			'PUT', 
-			{ 'configurationId': configurationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'configurationId': configurationId },
+			{  },
+			{  },
+			{  },
 			configurationVersion, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -343,13 +515,13 @@ class WebDeploymentsApi {
 		return this.apiClient.callApi(
 			'/api/v2/webdeployments/deployments/{deploymentId}', 
 			'PUT', 
-			{ 'deploymentId': deploymentId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'deploymentId': deploymentId },
+			{  },
+			{  },
+			{  },
 			deployment, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}

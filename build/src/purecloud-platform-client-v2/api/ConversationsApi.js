@@ -5,7 +5,7 @@ class ConversationsApi {
 	/**
 	 * Conversations service.
 	 * @module purecloud-platform-client-v2/api/ConversationsApi
-	 * @version 124.0.0
+	 * @version 174.0.0
 	 */
 
 	/**
@@ -21,7 +21,7 @@ class ConversationsApi {
 
 
 	/**
-	 * Delete/cancel an async request
+	 * Delete/cancel an async details job
 	 * 
 	 * @param {String} jobId jobId
 	 */
@@ -34,13 +34,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/analytics/conversations/details/jobs/{jobId}', 
 			'DELETE', 
-			{ 'jobId': jobId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -69,13 +69,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/{conversationId}/participants/{participantId}/codes/{addCommunicationCode}', 
 			'DELETE', 
-			{ 'conversationId': conversationId,'participantId': participantId,'addCommunicationCode': addCommunicationCode }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId,'addCommunicationCode': addCommunicationCode },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -99,13 +99,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/{conversationId}/participants/{participantId}/flaggedreason', 
 			'DELETE', 
-			{ 'conversationId': conversationId,'participantId': participantId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -129,13 +129,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult', 
 			'DELETE', 
-			{ 'conversationId': conversationId,'participantId': participantId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -159,13 +159,38 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/emails/{conversationId}/messages/draft/attachments/{attachmentId}', 
 			'DELETE', 
-			{ 'conversationId': conversationId,'attachmentId': attachmentId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'attachmentId': attachmentId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Remove a cached media item asychronously
+	 * 
+	 * @param {String} cachedMediaItemId cachedMediaItemId
+	 */
+	deleteConversationsMessagesCachedmediaCachedMediaItemId(cachedMediaItemId) { 
+		// verify the required parameter 'cachedMediaItemId' is set
+		if (cachedMediaItemId === undefined || cachedMediaItemId === null) {
+			throw 'Missing the required parameter "cachedMediaItemId" when calling deleteConversationsMessagesCachedmediaCachedMediaItemId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messages/cachedmedia/{cachedMediaItemId}', 
+			'DELETE', 
+			{ 'cachedMediaItemId': cachedMediaItemId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -184,13 +209,38 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/integrations/facebook/{integrationId}', 
 			'DELETE', 
-			{ 'integrationId': integrationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'integrationId': integrationId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete Instagram messaging integration
+	 * 
+	 * @param {String} integrationId Integration ID
+	 */
+	deleteConversationsMessagingIntegrationsInstagramIntegrationId(integrationId) { 
+		// verify the required parameter 'integrationId' is set
+		if (integrationId === undefined || integrationId === null) {
+			throw 'Missing the required parameter "integrationId" when calling deleteConversationsMessagingIntegrationsInstagramIntegrationId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/integrations/instagram/{integrationId}', 
+			'DELETE', 
+			{ 'integrationId': integrationId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -209,13 +259,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/integrations/line/{integrationId}', 
 			'DELETE', 
-			{ 'integrationId': integrationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'integrationId': integrationId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -234,13 +284,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/integrations/open/{integrationId}', 
 			'DELETE', 
-			{ 'integrationId': integrationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'integrationId': integrationId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -259,13 +309,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/integrations/twitter/{integrationId}', 
 			'DELETE', 
-			{ 'integrationId': integrationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'integrationId': integrationId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -284,13 +334,83 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/integrations/whatsapp/{integrationId}', 
 			'DELETE', 
-			{ 'integrationId': integrationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'integrationId': integrationId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete a messaging setting
+	 * 
+	 * @param {String} messageSettingId Message Setting ID
+	 */
+	deleteConversationsMessagingSetting(messageSettingId) { 
+		// verify the required parameter 'messageSettingId' is set
+		if (messageSettingId === undefined || messageSettingId === null) {
+			throw 'Missing the required parameter "messageSettingId" when calling deleteConversationsMessagingSetting';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/settings/{messageSettingId}', 
+			'DELETE', 
+			{ 'messageSettingId': messageSettingId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete the organization's default setting, a global default will be applied to integrations without settings
+	 * When an integration is created a settings ID may be assigned to it. If the settings ID is not supplied, the default settings will be assigned to it.
+	 */
+	deleteConversationsMessagingSettingsDefault() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/settings/default', 
+			'DELETE', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete a supported content profile
+	 * 
+	 * @param {String} supportedContentId Supported Content ID
+	 */
+	deleteConversationsMessagingSupportedcontentSupportedContentId(supportedContentId) { 
+		// verify the required parameter 'supportedContentId' is set
+		if (supportedContentId === undefined || supportedContentId === null) {
+			throw 'Missing the required parameter "supportedContentId" when calling deleteConversationsMessagingSupportedcontentSupportedContentId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/supportedcontent/{supportedContentId}', 
+			'DELETE', 
+			{ 'supportedContentId': supportedContentId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -309,13 +429,69 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/analytics/conversations/{conversationId}/details', 
 			'GET', 
-			{ 'conversationId': conversationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get status for async query for conversation aggregates
+	 * 
+	 * @param {String} jobId jobId
+	 * getAnalyticsConversationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getAnalyticsConversationsAggregatesJob(jobId) { 
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null) {
+			throw 'Missing the required parameter "jobId" when calling getAnalyticsConversationsAggregatesJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/conversations/aggregates/jobs/{jobId}', 
+			'GET', 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Fetch a page of results for an async aggregates query
+	 * 
+	 * @param {String} jobId jobId
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.cursor Cursor token to retrieve next page
+	 * getAnalyticsConversationsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getAnalyticsConversationsAggregatesJobResults(jobId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null) {
+			throw 'Missing the required parameter "jobId" when calling getAnalyticsConversationsAggregatesJobResults';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/conversations/aggregates/jobs/{jobId}/results', 
+			'GET', 
+			{ 'jobId': jobId },
+			{ 'cursor': opts['cursor'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -333,13 +509,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/analytics/conversations/details', 
 			'GET', 
-			{  }, 
-			{ 'id': this.apiClient.buildCollectionParam(opts['id'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'id': this.apiClient.buildCollectionParam(opts['id'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -358,19 +534,19 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/analytics/conversations/details/jobs/{jobId}', 
 			'GET', 
-			{ 'jobId': jobId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Fetch a page of results for an async query
+	 * Fetch a page of results for an async details job
 	 * 
 	 * @param {String} jobId jobId
 	 * @param {Object} opts Optional parameters
@@ -388,13 +564,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/analytics/conversations/details/jobs/{jobId}/results', 
 			'GET', 
-			{ 'jobId': jobId }, 
-			{ 'cursor': opts['cursor'],'pageSize': opts['pageSize'] }, 
-			{  }, 
-			{  }, 
+			{ 'jobId': jobId },
+			{ 'cursor': opts['cursor'],'pageSize': opts['pageSize'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -408,13 +584,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/analytics/conversations/details/jobs/availability', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -433,13 +609,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/{conversationId}', 
 			'GET', 
-			{ 'conversationId': conversationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -468,13 +644,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/{conversationId}/participants/{participantId}/secureivrsessions/{secureSessionId}', 
 			'GET', 
-			{ 'conversationId': conversationId,'participantId': participantId,'secureSessionId': secureSessionId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId,'secureSessionId': secureSessionId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -498,13 +674,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/{conversationId}/participants/{participantId}/secureivrsessions', 
 			'GET', 
-			{ 'conversationId': conversationId,'participantId': participantId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -532,13 +708,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/{conversationId}/participants/{participantId}/wrapup', 
 			'GET', 
-			{ 'conversationId': conversationId,'participantId': participantId }, 
-			{ 'provisional': opts['provisional'] }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{ 'provisional': opts['provisional'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -562,13 +738,38 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/{conversationId}/participants/{participantId}/wrapupcodes', 
 			'GET', 
-			{ 'conversationId': conversationId,'participantId': participantId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the secure attributes on a conversation.
+	 * 
+	 * @param {String} conversationId conversation ID
+	 */
+	getConversationSecureattributes(conversationId) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling getConversationSecureattributes';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/{conversationId}/secureattributes', 
+			'GET', 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -586,13 +787,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations', 
 			'GET', 
-			{  }, 
-			{ 'communicationType': opts['communicationType'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'communicationType': opts['communicationType'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -611,13 +812,52 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/calls/{conversationId}', 
 			'GET', 
-			{ 'conversationId': conversationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the wrap-up for this conversation communication. 
+	 * 
+	 * @param {String} conversationId conversationId
+	 * @param {String} participantId participantId
+	 * @param {String} communicationId communicationId
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.provisional Indicates if the wrap-up code is provisional. (default to false)
+	 */
+	getConversationsCallParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling getConversationsCallParticipantCommunicationWrapup';
+		}
+		// verify the required parameter 'participantId' is set
+		if (participantId === undefined || participantId === null) {
+			throw 'Missing the required parameter "participantId" when calling getConversationsCallParticipantCommunicationWrapup';
+		}
+		// verify the required parameter 'communicationId' is set
+		if (communicationId === undefined || communicationId === null) {
+			throw 'Missing the required parameter "communicationId" when calling getConversationsCallParticipantCommunicationWrapup';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup', 
+			'GET', 
+			{ 'conversationId': conversationId,'participantId': participantId,'communicationId': communicationId },
+			{ 'provisional': opts['provisional'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -645,13 +885,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/calls/{conversationId}/participants/{participantId}/wrapup', 
 			'GET', 
-			{ 'conversationId': conversationId,'participantId': participantId }, 
-			{ 'provisional': opts['provisional'] }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{ 'provisional': opts['provisional'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -675,13 +915,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/calls/{conversationId}/participants/{participantId}/wrapupcodes', 
 			'GET', 
-			{ 'conversationId': conversationId,'participantId': participantId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -700,13 +940,52 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/callbacks/{conversationId}', 
 			'GET', 
-			{ 'conversationId': conversationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the wrap-up for this conversation communication. 
+	 * 
+	 * @param {String} conversationId conversationId
+	 * @param {String} participantId participantId
+	 * @param {String} communicationId communicationId
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.provisional Indicates if the wrap-up code is provisional. (default to false)
+	 */
+	getConversationsCallbackParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling getConversationsCallbackParticipantCommunicationWrapup';
+		}
+		// verify the required parameter 'participantId' is set
+		if (participantId === undefined || participantId === null) {
+			throw 'Missing the required parameter "participantId" when calling getConversationsCallbackParticipantCommunicationWrapup';
+		}
+		// verify the required parameter 'communicationId' is set
+		if (communicationId === undefined || communicationId === null) {
+			throw 'Missing the required parameter "communicationId" when calling getConversationsCallbackParticipantCommunicationWrapup';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup', 
+			'GET', 
+			{ 'conversationId': conversationId,'participantId': participantId,'communicationId': communicationId },
+			{ 'provisional': opts['provisional'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -734,13 +1013,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/wrapup', 
 			'GET', 
-			{ 'conversationId': conversationId,'participantId': participantId }, 
-			{ 'provisional': opts['provisional'] }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{ 'provisional': opts['provisional'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -764,13 +1043,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/wrapupcodes', 
 			'GET', 
-			{ 'conversationId': conversationId,'participantId': participantId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -784,13 +1063,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/callbacks', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -804,13 +1083,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/calls', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -821,7 +1100,7 @@ class ConversationsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize Page size, maximum 50 (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
-	 * @param {String} opts.interval Interval string; format is ISO-8601. Separate start and end times with forward slash &#39;/&#39;
+	 * @param {String} opts.interval Interval string; format is ISO-8601. Separate start and end times with forward slash '/'
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand.
 	 */
 	getConversationsCallsHistory(opts) { 
@@ -831,13 +1110,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/calls/history', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'interval': opts['interval'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'interval': opts['interval'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -851,13 +1130,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/calls/maximumconferenceparties', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -876,13 +1155,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/chats/{conversationId}', 
 			'GET', 
-			{ 'conversationId': conversationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -906,13 +1185,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/chats/{conversationId}/messages/{messageId}', 
 			'GET', 
-			{ 'conversationId': conversationId,'messageId': messageId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'messageId': messageId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -938,13 +1217,52 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/chats/{conversationId}/messages', 
 			'GET', 
-			{ 'conversationId': conversationId }, 
-			{ 'after': opts['after'],'before': opts['before'],'sortOrder': opts['sortOrder'],'maxResults': opts['maxResults'] }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId },
+			{ 'after': opts['after'],'before': opts['before'],'sortOrder': opts['sortOrder'],'maxResults': opts['maxResults'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the wrap-up for this conversation communication. 
+	 * 
+	 * @param {String} conversationId conversationId
+	 * @param {String} participantId participantId
+	 * @param {String} communicationId communicationId
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.provisional Indicates if the wrap-up code is provisional. (default to false)
+	 */
+	getConversationsChatParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling getConversationsChatParticipantCommunicationWrapup';
+		}
+		// verify the required parameter 'participantId' is set
+		if (participantId === undefined || participantId === null) {
+			throw 'Missing the required parameter "participantId" when calling getConversationsChatParticipantCommunicationWrapup';
+		}
+		// verify the required parameter 'communicationId' is set
+		if (communicationId === undefined || communicationId === null) {
+			throw 'Missing the required parameter "communicationId" when calling getConversationsChatParticipantCommunicationWrapup';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/chats/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup', 
+			'GET', 
+			{ 'conversationId': conversationId,'participantId': participantId,'communicationId': communicationId },
+			{ 'provisional': opts['provisional'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -972,13 +1290,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/chats/{conversationId}/participants/{participantId}/wrapup', 
 			'GET', 
-			{ 'conversationId': conversationId,'participantId': participantId }, 
-			{ 'provisional': opts['provisional'] }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{ 'provisional': opts['provisional'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1002,13 +1320,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/chats/{conversationId}/participants/{participantId}/wrapupcodes', 
 			'GET', 
-			{ 'conversationId': conversationId,'participantId': participantId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1022,13 +1340,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/chats', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1047,13 +1365,52 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/cobrowsesessions/{conversationId}', 
 			'GET', 
-			{ 'conversationId': conversationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the wrap-up for this conversation communication. 
+	 * 
+	 * @param {String} conversationId conversationId
+	 * @param {String} participantId participantId
+	 * @param {String} communicationId communicationId
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.provisional Indicates if the wrap-up code is provisional. (default to false)
+	 */
+	getConversationsCobrowsesessionParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling getConversationsCobrowsesessionParticipantCommunicationWrapup';
+		}
+		// verify the required parameter 'participantId' is set
+		if (participantId === undefined || participantId === null) {
+			throw 'Missing the required parameter "participantId" when calling getConversationsCobrowsesessionParticipantCommunicationWrapup';
+		}
+		// verify the required parameter 'communicationId' is set
+		if (communicationId === undefined || communicationId === null) {
+			throw 'Missing the required parameter "communicationId" when calling getConversationsCobrowsesessionParticipantCommunicationWrapup';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup', 
+			'GET', 
+			{ 'conversationId': conversationId,'participantId': participantId,'communicationId': communicationId },
+			{ 'provisional': opts['provisional'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1081,13 +1438,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/wrapup', 
 			'GET', 
-			{ 'conversationId': conversationId,'participantId': participantId }, 
-			{ 'provisional': opts['provisional'] }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{ 'provisional': opts['provisional'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1111,13 +1468,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/wrapupcodes', 
 			'GET', 
-			{ 'conversationId': conversationId,'participantId': participantId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1131,13 +1488,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/cobrowsesessions', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1156,13 +1513,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/emails/{conversationId}', 
 			'GET', 
-			{ 'conversationId': conversationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1186,13 +1543,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/emails/{conversationId}/messages/{messageId}', 
 			'GET', 
-			{ 'conversationId': conversationId,'messageId': messageId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'messageId': messageId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1211,13 +1568,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/emails/{conversationId}/messages', 
 			'GET', 
-			{ 'conversationId': conversationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1236,13 +1593,52 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/emails/{conversationId}/messages/draft', 
 			'GET', 
-			{ 'conversationId': conversationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the wrap-up for this conversation communication. 
+	 * 
+	 * @param {String} conversationId conversationId
+	 * @param {String} participantId participantId
+	 * @param {String} communicationId communicationId
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.provisional Indicates if the wrap-up code is provisional. (default to false)
+	 */
+	getConversationsEmailParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling getConversationsEmailParticipantCommunicationWrapup';
+		}
+		// verify the required parameter 'participantId' is set
+		if (participantId === undefined || participantId === null) {
+			throw 'Missing the required parameter "participantId" when calling getConversationsEmailParticipantCommunicationWrapup';
+		}
+		// verify the required parameter 'communicationId' is set
+		if (communicationId === undefined || communicationId === null) {
+			throw 'Missing the required parameter "communicationId" when calling getConversationsEmailParticipantCommunicationWrapup';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/emails/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup', 
+			'GET', 
+			{ 'conversationId': conversationId,'participantId': participantId,'communicationId': communicationId },
+			{ 'provisional': opts['provisional'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1270,13 +1666,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/emails/{conversationId}/participants/{participantId}/wrapup', 
 			'GET', 
-			{ 'conversationId': conversationId,'participantId': participantId }, 
-			{ 'provisional': opts['provisional'] }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{ 'provisional': opts['provisional'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1300,13 +1696,38 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/emails/{conversationId}/participants/{participantId}/wrapupcodes', 
 			'GET', 
-			{ 'conversationId': conversationId,'participantId': participantId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get emails settings for a given conversation
+	 * 
+	 * @param {String} conversationId conversationId
+	 */
+	getConversationsEmailSettings(conversationId) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling getConversationsEmailSettings';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/emails/{conversationId}/settings', 
+			'GET', 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1320,13 +1741,58 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/emails', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the encryption key configurations
+	 * 
+	 * @param {String} keyconfigurationsId Key Configurations Id
+	 */
+	getConversationsKeyconfiguration(keyconfigurationsId) { 
+		// verify the required parameter 'keyconfigurationsId' is set
+		if (keyconfigurationsId === undefined || keyconfigurationsId === null) {
+			throw 'Missing the required parameter "keyconfigurationsId" when calling getConversationsKeyconfiguration';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/keyconfigurations/{keyconfigurationsId}', 
+			'GET', 
+			{ 'keyconfigurationsId': keyconfigurationsId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a list of key configurations data
+	 * 
+	 */
+	getConversationsKeyconfigurations() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/keyconfigurations', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1345,13 +1811,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messages/{conversationId}', 
 			'GET', 
-			{ 'conversationId': conversationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1380,13 +1846,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media/{mediaId}', 
 			'GET', 
-			{ 'conversationId': conversationId,'communicationId': communicationId,'mediaId': mediaId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'communicationId': communicationId,'mediaId': mediaId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1395,8 +1861,12 @@ class ConversationsApi {
 	 * Get message
 	 * 
 	 * @param {String} messageId messageId
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.useNormalizedMessage If true, response removes deprecated fields (textBody, media, stickers) (default to false)
 	 */
-	getConversationsMessageDetails(messageId) { 
+	getConversationsMessageDetails(messageId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'messageId' is set
 		if (messageId === undefined || messageId === null) {
 			throw 'Missing the required parameter "messageId" when calling getConversationsMessageDetails';
@@ -1405,13 +1875,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messages/{messageId}/details', 
 			'GET', 
-			{ 'messageId': messageId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'messageId': messageId },
+			{ 'useNormalizedMessage': opts['useNormalizedMessage'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1421,8 +1891,12 @@ class ConversationsApi {
 	 * 
 	 * @param {String} conversationId conversationId
 	 * @param {String} messageId messageId
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.useNormalizedMessage If true, response removes deprecated fields (textBody, media, stickers) (default to false)
 	 */
-	getConversationsMessageMessage(conversationId, messageId) { 
+	getConversationsMessageMessage(conversationId, messageId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
 			throw 'Missing the required parameter "conversationId" when calling getConversationsMessageMessage';
@@ -1435,13 +1909,52 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messages/{conversationId}/messages/{messageId}', 
 			'GET', 
-			{ 'conversationId': conversationId,'messageId': messageId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'messageId': messageId },
+			{ 'useNormalizedMessage': opts['useNormalizedMessage'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the wrap-up for this conversation communication. 
+	 * 
+	 * @param {String} conversationId conversationId
+	 * @param {String} participantId participantId
+	 * @param {String} communicationId communicationId
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.provisional Indicates if the wrap-up code is provisional. (default to false)
+	 */
+	getConversationsMessageParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling getConversationsMessageParticipantCommunicationWrapup';
+		}
+		// verify the required parameter 'participantId' is set
+		if (participantId === undefined || participantId === null) {
+			throw 'Missing the required parameter "participantId" when calling getConversationsMessageParticipantCommunicationWrapup';
+		}
+		// verify the required parameter 'communicationId' is set
+		if (communicationId === undefined || communicationId === null) {
+			throw 'Missing the required parameter "communicationId" when calling getConversationsMessageParticipantCommunicationWrapup';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messages/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup', 
+			'GET', 
+			{ 'conversationId': conversationId,'participantId': participantId,'communicationId': communicationId },
+			{ 'provisional': opts['provisional'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1469,13 +1982,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messages/{conversationId}/participants/{participantId}/wrapup', 
 			'GET', 
-			{ 'conversationId': conversationId,'participantId': participantId }, 
-			{ 'provisional': opts['provisional'] }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{ 'provisional': opts['provisional'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1483,7 +1996,7 @@ class ConversationsApi {
 	/**
 	 * Get list of wrapup codes for this conversation participant
 	 * 
-	 * @param {String} conversationId  conversationId
+	 * @param {String} conversationId conversationId
 	 * @param {String} participantId participantId
 	 */
 	getConversationsMessageParticipantWrapupcodes(conversationId, participantId) { 
@@ -1499,13 +2012,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messages/{conversationId}/participants/{participantId}/wrapupcodes', 
 			'GET', 
-			{ 'conversationId': conversationId,'participantId': participantId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1519,13 +2032,64 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messages', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a list of cached media items
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {String} opts.url URL to search for
+	 */
+	getConversationsMessagesCachedmedia(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messages/cachedmedia', 
+			'GET', 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'url': opts['url'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a cached media item
+	 * 
+	 * @param {String} cachedMediaItemId cachedMediaItemId
+	 */
+	getConversationsMessagesCachedmediaCachedMediaItemId(cachedMediaItemId) { 
+		// verify the required parameter 'cachedMediaItemId' is set
+		if (cachedMediaItemId === undefined || cachedMediaItemId === null) {
+			throw 'Missing the required parameter "cachedMediaItemId" when calling getConversationsMessagesCachedmediaCachedMediaItemId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messages/cachedmedia/{cachedMediaItemId}', 
+			'GET', 
+			{ 'cachedMediaItemId': cachedMediaItemId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1539,13 +2103,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/facebook/app', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1556,8 +2120,9 @@ class ConversationsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
-	 * @param {Object} opts.expand Expand instructions for the return value.
+	 * @param {Array.<String>} opts.expand Expand instructions for the return value.
 	 * @param {String} opts.supportedContentId Filter integrations returned based on the supported content ID
+	 * @param {String} opts.messagingSettingId Filter integrations returned based on the setting ID
 	 */
 	getConversationsMessagingIntegrations(opts) { 
 		opts = opts || {};
@@ -1566,13 +2131,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/integrations', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'],'supportedContent.id': opts['supportedContentId'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'supportedContent.id': opts['supportedContentId'],'messagingSetting.id': opts['messagingSettingId'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1585,6 +2150,7 @@ class ConversationsApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Object} opts.expand Expand instructions for the return value.
 	 * @param {String} opts.supportedContentId Filter integrations returned based on the supported content ID
+	 * @param {String} opts.messagingSettingId Filter integrations returned based on the setting ID
 	 */
 	getConversationsMessagingIntegrationsFacebook(opts) { 
 		opts = opts || {};
@@ -1593,13 +2159,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/integrations/facebook', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'],'supportedContent.id': opts['supportedContentId'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'],'supportedContent.id': opts['supportedContentId'],'messagingSetting.id': opts['messagingSettingId'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1622,13 +2188,70 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/integrations/facebook/{integrationId}', 
 			'GET', 
-			{ 'integrationId': integrationId }, 
-			{ 'expand': opts['expand'] }, 
-			{  }, 
-			{  }, 
+			{ 'integrationId': integrationId },
+			{ 'expand': opts['expand'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a list of Instagram Integrations
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Object} opts.expand Expand instructions for the return value.
+	 * @param {String} opts.supportedContentId Filter integrations returned based on the supported content ID
+	 * @param {String} opts.messagingSettingId Filter integrations returned based on the setting ID
+	 */
+	getConversationsMessagingIntegrationsInstagram(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/integrations/instagram', 
+			'GET', 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'],'supportedContent.id': opts['supportedContentId'],'messagingSetting.id': opts['messagingSettingId'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get Instagram messaging integration
+	 * 
+	 * @param {String} integrationId Integration ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.expand Expand instructions for the return value.
+	 */
+	getConversationsMessagingIntegrationsInstagramIntegrationId(integrationId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'integrationId' is set
+		if (integrationId === undefined || integrationId === null) {
+			throw 'Missing the required parameter "integrationId" when calling getConversationsMessagingIntegrationsInstagramIntegrationId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/integrations/instagram/{integrationId}', 
+			'GET', 
+			{ 'integrationId': integrationId },
+			{ 'expand': opts['expand'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1641,6 +2264,7 @@ class ConversationsApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Object} opts.expand Expand instructions for the return value.
 	 * @param {String} opts.supportedContentId Filter integrations returned based on the supported content ID
+	 * @param {String} opts.messagingSettingId Filter integrations returned based on the setting ID
 	 */
 	getConversationsMessagingIntegrationsLine(opts) { 
 		opts = opts || {};
@@ -1649,13 +2273,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/integrations/line', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'],'supportedContent.id': opts['supportedContentId'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'],'supportedContent.id': opts['supportedContentId'],'messagingSetting.id': opts['messagingSettingId'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1678,13 +2302,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/integrations/line/{integrationId}', 
 			'GET', 
-			{ 'integrationId': integrationId }, 
-			{ 'expand': opts['expand'] }, 
-			{  }, 
-			{  }, 
+			{ 'integrationId': integrationId },
+			{ 'expand': opts['expand'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1697,6 +2321,7 @@ class ConversationsApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Object} opts.expand Expand instructions for the return value.
 	 * @param {String} opts.supportedContentId Filter integrations returned based on the supported content ID
+	 * @param {String} opts.messagingSettingId Filter integrations returned based on the setting ID
 	 */
 	getConversationsMessagingIntegrationsOpen(opts) { 
 		opts = opts || {};
@@ -1705,13 +2330,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/integrations/open', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'],'supportedContent.id': opts['supportedContentId'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'],'supportedContent.id': opts['supportedContentId'],'messagingSetting.id': opts['messagingSettingId'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1734,13 +2359,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/integrations/open/{integrationId}', 
 			'GET', 
-			{ 'integrationId': integrationId }, 
-			{ 'expand': opts['expand'] }, 
-			{  }, 
-			{  }, 
+			{ 'integrationId': integrationId },
+			{ 'expand': opts['expand'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1753,6 +2378,7 @@ class ConversationsApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Object} opts.expand Expand instructions for the return value.
 	 * @param {String} opts.supportedContentId Filter integrations returned based on the supported content ID
+	 * @param {String} opts.messagingSettingId Filter integrations returned based on the setting ID
 	 */
 	getConversationsMessagingIntegrationsTwitter(opts) { 
 		opts = opts || {};
@@ -1761,13 +2387,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/integrations/twitter', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'],'supportedContent.id': opts['supportedContentId'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'],'supportedContent.id': opts['supportedContentId'],'messagingSetting.id': opts['messagingSettingId'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1790,13 +2416,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/integrations/twitter/{integrationId}', 
 			'GET', 
-			{ 'integrationId': integrationId }, 
-			{ 'expand': opts['expand'] }, 
-			{  }, 
-			{  }, 
+			{ 'integrationId': integrationId },
+			{ 'expand': opts['expand'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1809,6 +2435,7 @@ class ConversationsApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Object} opts.expand Expand instructions for the return value.
 	 * @param {String} opts.supportedContentId Filter integrations returned based on the supported content ID
+	 * @param {String} opts.messagingSettingId Filter integrations returned based on the setting ID
 	 */
 	getConversationsMessagingIntegrationsWhatsapp(opts) { 
 		opts = opts || {};
@@ -1817,13 +2444,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/integrations/whatsapp', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'],'supportedContent.id': opts['supportedContentId'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'],'supportedContent.id': opts['supportedContentId'],'messagingSetting.id': opts['messagingSettingId'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1846,13 +2473,83 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/integrations/whatsapp/{integrationId}', 
 			'GET', 
-			{ 'integrationId': integrationId }, 
-			{ 'expand': opts['expand'] }, 
-			{  }, 
-			{  }, 
+			{ 'integrationId': integrationId },
+			{ 'expand': opts['expand'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a messaging setting
+	 * 
+	 * @param {String} messageSettingId Message Setting ID
+	 */
+	getConversationsMessagingSetting(messageSettingId) { 
+		// verify the required parameter 'messageSettingId' is set
+		if (messageSettingId === undefined || messageSettingId === null) {
+			throw 'Missing the required parameter "messageSettingId" when calling getConversationsMessagingSetting';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/settings/{messageSettingId}', 
+			'GET', 
+			{ 'messageSettingId': messageSettingId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a list of messaging settings
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 */
+	getConversationsMessagingSettings(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/settings', 
+			'GET', 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the organization's default settings that will be used as the default when creating an integration.
+	 * When an integration is created a settings ID may be assigned to it. If the settings ID is not supplied, the default settings will be assigned to it.
+	 */
+	getConversationsMessagingSettingsDefault() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/settings/default', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1860,7 +2557,7 @@ class ConversationsApi {
 	/**
 	 * Get a list of Messaging Stickers
 	 * 
-	 * @param {String} messengerType Messenger Type
+	 * @param {Object} messengerType Messenger Type
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
@@ -1876,13 +2573,83 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/stickers/{messengerType}', 
 			'GET', 
-			{ 'messengerType': messengerType }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] }, 
-			{  }, 
-			{  }, 
+			{ 'messengerType': messengerType },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a list of Supported Content profiles
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 */
+	getConversationsMessagingSupportedcontent(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/supportedcontent', 
+			'GET', 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the organization's default supported content profile that will be used as the default when creating an integration.
+	 * When an integration is created a supported content ID may be assigned to it. If the supported content ID is not supplied, the default supported content profile will be assigned to it.
+	 */
+	getConversationsMessagingSupportedcontentDefault() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/supportedcontent/default', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a supported content profile
+	 * 
+	 * @param {String} supportedContentId Supported Content ID
+	 */
+	getConversationsMessagingSupportedcontentSupportedContentId(supportedContentId) { 
+		// verify the required parameter 'supportedContentId' is set
+		if (supportedContentId === undefined || supportedContentId === null) {
+			throw 'Missing the required parameter "supportedContentId" when calling getConversationsMessagingSupportedcontentSupportedContentId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/supportedcontent/{supportedContentId}', 
+			'GET', 
+			{ 'supportedContentId': supportedContentId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1896,13 +2663,202 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/threadingtimeline', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the wrap-up for this conversation communication. 
+	 * 
+	 * @param {String} conversationId conversationId
+	 * @param {String} participantId participantId
+	 * @param {String} communicationId communicationId
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.provisional Indicates if the wrap-up code is provisional. (default to false)
+	 */
+	getConversationsScreenshareParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling getConversationsScreenshareParticipantCommunicationWrapup';
+		}
+		// verify the required parameter 'participantId' is set
+		if (participantId === undefined || participantId === null) {
+			throw 'Missing the required parameter "participantId" when calling getConversationsScreenshareParticipantCommunicationWrapup';
+		}
+		// verify the required parameter 'communicationId' is set
+		if (communicationId === undefined || communicationId === null) {
+			throw 'Missing the required parameter "communicationId" when calling getConversationsScreenshareParticipantCommunicationWrapup';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/screenshares/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup', 
+			'GET', 
+			{ 'conversationId': conversationId,'participantId': participantId,'communicationId': communicationId },
+			{ 'provisional': opts['provisional'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get Settings
+	 * 
+	 */
+	getConversationsSettings() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/settings', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the wrap-up for this conversation communication. 
+	 * 
+	 * @param {String} conversationId conversationId
+	 * @param {String} participantId participantId
+	 * @param {String} communicationId communicationId
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.provisional Indicates if the wrap-up code is provisional. (default to false)
+	 */
+	getConversationsSocialParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling getConversationsSocialParticipantCommunicationWrapup';
+		}
+		// verify the required parameter 'participantId' is set
+		if (participantId === undefined || participantId === null) {
+			throw 'Missing the required parameter "participantId" when calling getConversationsSocialParticipantCommunicationWrapup';
+		}
+		// verify the required parameter 'communicationId' is set
+		if (communicationId === undefined || communicationId === null) {
+			throw 'Missing the required parameter "communicationId" when calling getConversationsSocialParticipantCommunicationWrapup';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/socials/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup', 
+			'GET', 
+			{ 'conversationId': conversationId,'participantId': participantId,'communicationId': communicationId },
+			{ 'provisional': opts['provisional'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get video conference details (e.g. the current number of active participants).
+	 * 
+	 * @param {String} conferenceId conferenceId
+	 * getConversationsVideoDetails is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getConversationsVideoDetails(conferenceId) { 
+		// verify the required parameter 'conferenceId' is set
+		if (conferenceId === undefined || conferenceId === null) {
+			throw 'Missing the required parameter "conferenceId" when calling getConversationsVideoDetails';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/videos/{conferenceId}/details', 
+			'GET', 
+			{ 'conferenceId': conferenceId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the wrap-up for this conversation communication. 
+	 * 
+	 * @param {String} conversationId conversationId
+	 * @param {String} participantId participantId
+	 * @param {String} communicationId communicationId
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.provisional Indicates if the wrap-up code is provisional. (default to false)
+	 */
+	getConversationsVideoParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling getConversationsVideoParticipantCommunicationWrapup';
+		}
+		// verify the required parameter 'participantId' is set
+		if (participantId === undefined || participantId === null) {
+			throw 'Missing the required parameter "participantId" when calling getConversationsVideoParticipantCommunicationWrapup';
+		}
+		// verify the required parameter 'communicationId' is set
+		if (communicationId === undefined || communicationId === null) {
+			throw 'Missing the required parameter "communicationId" when calling getConversationsVideoParticipantCommunicationWrapup';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/videos/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup', 
+			'GET', 
+			{ 'conversationId': conversationId,'participantId': participantId,'communicationId': communicationId },
+			{ 'provisional': opts['provisional'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Gets a record for a given meetingId
+	 * 
+	 * @param {String} meetingId meetingId
+	 * getConversationsVideosMeeting is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getConversationsVideosMeeting(meetingId) { 
+		// verify the required parameter 'meetingId' is set
+		if (meetingId === undefined || meetingId === null) {
+			throw 'Missing the required parameter "meetingId" when calling getConversationsVideosMeeting';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/videos/meetings/{meetingId}', 
+			'GET', 
+			{ 'meetingId': meetingId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1931,13 +2887,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/{conversationId}/participants/{participantId}', 
 			'PATCH', 
-			{ 'conversationId': conversationId,'participantId': participantId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1966,19 +2922,89 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/{conversationId}/participants/{participantId}/attributes', 
 			'PATCH', 
-			{ 'conversationId': conversationId,'participantId': participantId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Update a conversation by setting it&#39;s recording state, merging in other conversations to create a conference, or disconnecting all of the participants
+	 * Update the secure attributes on a conversation.
+	 * 
+	 * @param {String} conversationId conversation ID
+	 * @param {Object} body Conversation Secure Attributes
+	 */
+	patchConversationSecureattributes(conversationId, body) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling patchConversationSecureattributes';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchConversationSecureattributes';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/{conversationId}/secureattributes', 
+			'PATCH', 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update after-call work for this conversation communication.
+	 * 
+	 * @param {String} conversationId conversationId
+	 * @param {String} participantId participantId
+	 * @param {String} communicationId communicationId
+	 * @param {Object} body AfterCallWorkUpdate
+	 */
+	patchConversationsAftercallworkConversationIdParticipantCommunication(conversationId, participantId, communicationId, body) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling patchConversationsAftercallworkConversationIdParticipantCommunication';
+		}
+		// verify the required parameter 'participantId' is set
+		if (participantId === undefined || participantId === null) {
+			throw 'Missing the required parameter "participantId" when calling patchConversationsAftercallworkConversationIdParticipantCommunication';
+		}
+		// verify the required parameter 'communicationId' is set
+		if (communicationId === undefined || communicationId === null) {
+			throw 'Missing the required parameter "communicationId" when calling patchConversationsAftercallworkConversationIdParticipantCommunication';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchConversationsAftercallworkConversationIdParticipantCommunication';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/aftercallwork/{conversationId}/participants/{participantId}/communications/{communicationId}', 
+			'PATCH', 
+			{ 'conversationId': conversationId,'participantId': participantId,'communicationId': communicationId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update a conversation by setting its recording state, merging in other conversations to create a conference, or disconnecting all of the participants
 	 * 
 	 * @param {String} conversationId conversationId
 	 * @param {Object} body Conversation
@@ -1996,13 +3022,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/calls/{conversationId}', 
 			'PATCH', 
-			{ 'conversationId': conversationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2031,13 +3057,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/calls/{conversationId}/participants/{participantId}', 
 			'PATCH', 
-			{ 'conversationId': conversationId,'participantId': participantId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2066,19 +3092,19 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/calls/{conversationId}/participants/{participantId}/attributes', 
 			'PATCH', 
-			{ 'conversationId': conversationId,'participantId': participantId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Update conversation participant&#39;s communication by disconnecting it.
+	 * Update conversation participant's communication by disconnecting it.
 	 * 
 	 * @param {String} conversationId conversationId
 	 * @param {String} participantId participantId
@@ -2106,13 +3132,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}', 
 			'PATCH', 
-			{ 'conversationId': conversationId,'participantId': participantId,'communicationId': communicationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId,'communicationId': communicationId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2141,13 +3167,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult', 
 			'PATCH', 
-			{ 'conversationId': conversationId,'participantId': participantId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2171,13 +3197,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/callbacks/{conversationId}', 
 			'PATCH', 
-			{ 'conversationId': conversationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2206,13 +3232,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/callbacks/{conversationId}/participants/{participantId}', 
 			'PATCH', 
-			{ 'conversationId': conversationId,'participantId': participantId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2241,19 +3267,19 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/attributes', 
 			'PATCH', 
-			{ 'conversationId': conversationId,'participantId': participantId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Update conversation participant&#39;s communication by disconnecting it.
+	 * Update conversation participant's communication by disconnecting it.
 	 * 
 	 * @param {String} conversationId conversationId
 	 * @param {String} participantId participantId
@@ -2281,13 +3307,38 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/communications/{communicationId}', 
 			'PATCH', 
-			{ 'conversationId': conversationId,'participantId': participantId,'communicationId': communicationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId,'communicationId': communicationId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update a scheduled callback
+	 * 
+	 * @param {Object} body PatchCallbackRequest
+	 */
+	patchConversationsCallbacks(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchConversationsCallbacks';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/callbacks', 
+			'PATCH', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2311,13 +3362,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/chats/{conversationId}', 
 			'PATCH', 
-			{ 'conversationId': conversationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2346,13 +3397,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/chats/{conversationId}/participants/{participantId}', 
 			'PATCH', 
-			{ 'conversationId': conversationId,'participantId': participantId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2381,19 +3432,19 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/chats/{conversationId}/participants/{participantId}/attributes', 
 			'PATCH', 
-			{ 'conversationId': conversationId,'participantId': participantId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Update conversation participant&#39;s communication by disconnecting it.
+	 * Update conversation participant's communication by disconnecting it.
 	 * 
 	 * @param {String} conversationId conversationId
 	 * @param {String} participantId participantId
@@ -2421,13 +3472,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/chats/{conversationId}/participants/{participantId}/communications/{communicationId}', 
 			'PATCH', 
-			{ 'conversationId': conversationId,'participantId': participantId,'communicationId': communicationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId,'communicationId': communicationId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2451,13 +3502,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/cobrowsesessions/{conversationId}', 
 			'PATCH', 
-			{ 'conversationId': conversationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2485,13 +3536,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}', 
 			'PATCH', 
-			{ 'conversationId': conversationId,'participantId': participantId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
 			opts['body'], 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2519,19 +3570,19 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/attributes', 
 			'PATCH', 
-			{ 'conversationId': conversationId,'participantId': participantId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
 			opts['body'], 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Update conversation participant&#39;s communication by disconnecting it.
+	 * Update conversation participant's communication by disconnecting it.
 	 * 
 	 * @param {String} conversationId conversationId
 	 * @param {String} participantId participantId
@@ -2559,13 +3610,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/communications/{communicationId}', 
 			'PATCH', 
-			{ 'conversationId': conversationId,'participantId': participantId,'communicationId': communicationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId,'communicationId': communicationId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2589,13 +3640,44 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/emails/{conversationId}', 
 			'PATCH', 
-			{ 'conversationId': conversationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Reset conversation draft to its initial state and/or auto-fill draft content
+	 * 
+	 * @param {String} conversationId conversationId
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.autoFill autoFill
+	 * @param {Boolean} opts.discard discard
+	 * @param {Object} opts.body Draft Manipulation Request
+	 */
+	patchConversationsEmailMessagesDraft(conversationId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling patchConversationsEmailMessagesDraft';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/emails/{conversationId}/messages/draft', 
+			'PATCH', 
+			{ 'conversationId': conversationId },
+			{ 'autoFill': opts['autoFill'],'discard': opts['discard'] },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2624,13 +3706,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/emails/{conversationId}/participants/{participantId}', 
 			'PATCH', 
-			{ 'conversationId': conversationId,'participantId': participantId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2659,19 +3741,19 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/emails/{conversationId}/participants/{participantId}/attributes', 
 			'PATCH', 
-			{ 'conversationId': conversationId,'participantId': participantId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Update conversation participant&#39;s communication by disconnecting it.
+	 * Update conversation participant's communication by disconnecting it.
 	 * 
 	 * @param {String} conversationId conversationId
 	 * @param {String} participantId participantId
@@ -2699,13 +3781,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/emails/{conversationId}/participants/{participantId}/communications/{communicationId}', 
 			'PATCH', 
-			{ 'conversationId': conversationId,'participantId': participantId,'communicationId': communicationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId,'communicationId': communicationId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2729,13 +3811,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messages/{conversationId}', 
 			'PATCH', 
-			{ 'conversationId': conversationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2743,7 +3825,7 @@ class ConversationsApi {
 	/**
 	 * Update conversation participant
 	 * 
-	 * @param {String} conversationId  conversationId
+	 * @param {String} conversationId conversationId
 	 * @param {String} participantId participantId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
@@ -2763,13 +3845,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messages/{conversationId}/participants/{participantId}', 
 			'PATCH', 
-			{ 'conversationId': conversationId,'participantId': participantId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
 			opts['body'], 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2777,7 +3859,7 @@ class ConversationsApi {
 	/**
 	 * Update the attributes on a conversation participant.
 	 * 
-	 * @param {String} conversationId  conversationId
+	 * @param {String} conversationId conversationId
 	 * @param {String} participantId participantId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
@@ -2797,21 +3879,21 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messages/{conversationId}/participants/{participantId}/attributes', 
 			'PATCH', 
-			{ 'conversationId': conversationId,'participantId': participantId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
 			opts['body'], 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Update conversation participant&#39;s communication by disconnecting it.
+	 * Update conversation participant's communication by disconnecting it.
 	 * 
-	 * @param {String} conversationId  conversationId
+	 * @param {String} conversationId conversationId
 	 * @param {String} participantId participantId
 	 * @param {String} communicationId communicationId
 	 * @param {Object} body Participant
@@ -2837,13 +3919,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messages/{conversationId}/participants/{participantId}/communications/{communicationId}', 
 			'PATCH', 
-			{ 'conversationId': conversationId,'participantId': participantId,'communicationId': communicationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId,'communicationId': communicationId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2867,13 +3949,43 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/integrations/facebook/{integrationId}', 
 			'PATCH', 
-			{ 'integrationId': integrationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'integrationId': integrationId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update Instagram messaging integration
+	 * 
+	 * @param {String} integrationId Integration ID
+	 * @param {Object} body InstagramIntegrationUpdateRequest
+	 */
+	patchConversationsMessagingIntegrationsInstagramIntegrationId(integrationId, body) { 
+		// verify the required parameter 'integrationId' is set
+		if (integrationId === undefined || integrationId === null) {
+			throw 'Missing the required parameter "integrationId" when calling patchConversationsMessagingIntegrationsInstagramIntegrationId';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchConversationsMessagingIntegrationsInstagramIntegrationId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/integrations/instagram/{integrationId}', 
+			'PATCH', 
+			{ 'integrationId': integrationId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2897,13 +4009,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/integrations/open/{integrationId}', 
 			'PATCH', 
-			{ 'integrationId': integrationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'integrationId': integrationId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2927,20 +4039,20 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/integrations/twitter/{integrationId}', 
 			'PATCH', 
-			{ 'integrationId': integrationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'integrationId': integrationId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Update or activate a WhatsApp messaging integration.
-	 * The following steps are required in order to fully activate a Whatsapp Integration: Initially, you will need to get an activation code by sending: an action set to Activate, and an authenticationMethod choosing from Sms or Voice. Finally, once you have been informed of an activation code on selected authenticationMethod, you will need to confirm the code by sending: an action set to Confirm, and the confirmationCode you have received from Whatsapp.
+	 * Update or activate a WhatsApp messaging integration
+	 * The following steps are required in order to fully activate a WhatsApp Integration: Initially, you will need to get an activation code by sending: an action set to Activate, and an authenticationMethod choosing from Sms or Voice. Finally, once you have been informed of an activation code on selected authenticationMethod, you will need to confirm the code by sending: an action set to Confirm, and the confirmationCode you have received from Whatsapp.
 	 * @param {String} integrationId Integration ID
 	 * @param {Object} body WhatsAppIntegrationUpdateRequest
 	 */
@@ -2957,13 +4069,98 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/integrations/whatsapp/{integrationId}', 
 			'PATCH', 
-			{ 'integrationId': integrationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'integrationId': integrationId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update a messaging setting
+	 * 
+	 * @param {String} messageSettingId Message Setting ID
+	 * @param {Object} body MessagingSetting
+	 */
+	patchConversationsMessagingSetting(messageSettingId, body) { 
+		// verify the required parameter 'messageSettingId' is set
+		if (messageSettingId === undefined || messageSettingId === null) {
+			throw 'Missing the required parameter "messageSettingId" when calling patchConversationsMessagingSetting';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchConversationsMessagingSetting';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/settings/{messageSettingId}', 
+			'PATCH', 
+			{ 'messageSettingId': messageSettingId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update a supported content profile
+	 * 
+	 * @param {String} supportedContentId Supported Content ID
+	 * @param {Object} body SupportedContent
+	 */
+	patchConversationsMessagingSupportedcontentSupportedContentId(supportedContentId, body) { 
+		// verify the required parameter 'supportedContentId' is set
+		if (supportedContentId === undefined || supportedContentId === null) {
+			throw 'Missing the required parameter "supportedContentId" when calling patchConversationsMessagingSupportedcontentSupportedContentId';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchConversationsMessagingSupportedcontentSupportedContentId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/supportedcontent/{supportedContentId}', 
+			'PATCH', 
+			{ 'supportedContentId': supportedContentId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update Settings
+	 * 
+	 * @param {Object} body Settings
+	 */
+	patchConversationsSettings(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchConversationsSettings';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/settings', 
+			'PATCH', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2987,13 +4184,70 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/analytics/conversations/{conversationId}/details/properties', 
 			'POST', 
-			{ 'conversationId': conversationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Query for conversation activity observations
+	 * 
+	 * @param {Object} body query
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize The desired page size
+	 * @param {Number} opts.pageNumber The desired page number
+	 * postAnalyticsConversationsActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postAnalyticsConversationsActivityQuery(body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postAnalyticsConversationsActivityQuery';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/conversations/activity/query', 
+			'POST', 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Query for conversation aggregates asynchronously
+	 * 
+	 * @param {Object} body query
+	 * postAnalyticsConversationsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postAnalyticsConversationsAggregatesJobs(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postAnalyticsConversationsAggregatesJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/conversations/aggregates/jobs', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3012,13 +4266,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/analytics/conversations/aggregates/query', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3037,13 +4291,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/analytics/conversations/details/jobs', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3062,13 +4316,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/analytics/conversations/details/query', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3092,13 +4346,64 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/{conversationId}/assign', 
 			'POST', 
-			{ 'conversationId': conversationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Barge a conversation creating a barged in conference of connected participants.
+	 * 
+	 * @param {String} conversationId conversation ID
+	 * postConversationBarge is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postConversationBarge(conversationId) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling postConversationBarge';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/{conversationId}/barge', 
+			'POST', 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Creates a cobrowse session. Requires conversation:cobrowse:add (for web messaging) or conversation:cobrowsevoice:add permission.
+	 * 
+	 * @param {String} conversationId Conversation ID
+	 */
+	postConversationCobrowse(conversationId) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling postConversationCobrowse';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/{conversationId}/cobrowse', 
+			'POST', 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3117,13 +4422,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/{conversationId}/disconnect', 
 			'POST', 
-			{ 'conversationId': conversationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3151,13 +4456,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/{conversationId}/participants/{participantId}/callbacks', 
 			'POST', 
-			{ 'conversationId': conversationId,'participantId': participantId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
 			opts['body'], 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3185,13 +4490,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/{conversationId}/participants/{participantId}/digits', 
 			'POST', 
-			{ 'conversationId': conversationId,'participantId': participantId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
 			opts['body'], 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3220,13 +4525,121 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/{conversationId}/participants/{participantId}/replace', 
 			'POST', 
-			{ 'conversationId': conversationId,'participantId': participantId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Replace this participant with the specified agent
+	 * 
+	 * @param {String} conversationId conversation ID
+	 * @param {String} participantId participant ID
+	 * @param {Object} body Transfer request
+	 * postConversationParticipantReplaceAgent is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postConversationParticipantReplaceAgent(conversationId, participantId, body) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling postConversationParticipantReplaceAgent';
+		}
+		// verify the required parameter 'participantId' is set
+		if (participantId === undefined || participantId === null) {
+			throw 'Missing the required parameter "participantId" when calling postConversationParticipantReplaceAgent';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postConversationParticipantReplaceAgent';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/{conversationId}/participants/{participantId}/replace/agent', 
+			'POST', 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Replace this participant with the an external contact
+	 * 
+	 * @param {String} conversationId conversation ID
+	 * @param {String} participantId participant ID
+	 * @param {Object} body Transfer request
+	 * postConversationParticipantReplaceExternal is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postConversationParticipantReplaceExternal(conversationId, participantId, body) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling postConversationParticipantReplaceExternal';
+		}
+		// verify the required parameter 'participantId' is set
+		if (participantId === undefined || participantId === null) {
+			throw 'Missing the required parameter "participantId" when calling postConversationParticipantReplaceExternal';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postConversationParticipantReplaceExternal';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/{conversationId}/participants/{participantId}/replace/external', 
+			'POST', 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Replace this participant with the specified queue
+	 * 
+	 * @param {String} conversationId conversation ID
+	 * @param {String} participantId participant ID
+	 * @param {Object} body Transfer request
+	 * postConversationParticipantReplaceQueue is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postConversationParticipantReplaceQueue(conversationId, participantId, body) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling postConversationParticipantReplaceQueue';
+		}
+		// verify the required parameter 'participantId' is set
+		if (participantId === undefined || participantId === null) {
+			throw 'Missing the required parameter "participantId" when calling postConversationParticipantReplaceQueue';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postConversationParticipantReplaceQueue';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/{conversationId}/participants/{participantId}/replace/queue', 
+			'POST', 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3254,13 +4667,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/{conversationId}/participants/{participantId}/secureivrsessions', 
 			'POST', 
-			{ 'conversationId': conversationId,'participantId': participantId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
 			opts['body'], 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3284,13 +4697,44 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/calls/{conversationId}', 
 			'POST', 
-			{ 'conversationId': conversationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Barge a given participant's call creating a barged in conference of connected participants.
+	 * 
+	 * @param {String} conversationId conversationId
+	 * @param {String} participantId participantId
+	 * postConversationsCallParticipantBarge is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postConversationsCallParticipantBarge(conversationId, participantId) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling postConversationsCallParticipantBarge';
+		}
+		// verify the required parameter 'participantId' is set
+		if (participantId === undefined || participantId === null) {
+			throw 'Missing the required parameter "participantId" when calling postConversationsCallParticipantBarge';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/calls/{conversationId}/participants/{participantId}/barge', 
+			'POST', 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3314,13 +4758,52 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/calls/{conversationId}/participants/{participantId}/coach', 
 			'POST', 
-			{ 'conversationId': conversationId,'participantId': participantId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Apply wrap-up for this conversation communication
+	 * 
+	 * @param {String} conversationId conversationId
+	 * @param {String} participantId participantId
+	 * @param {String} communicationId communicationId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body Wrap-up
+	 */
+	postConversationsCallParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling postConversationsCallParticipantCommunicationWrapup';
+		}
+		// verify the required parameter 'participantId' is set
+		if (participantId === undefined || participantId === null) {
+			throw 'Missing the required parameter "participantId" when calling postConversationsCallParticipantCommunicationWrapup';
+		}
+		// verify the required parameter 'communicationId' is set
+		if (communicationId === undefined || communicationId === null) {
+			throw 'Missing the required parameter "communicationId" when calling postConversationsCallParticipantCommunicationWrapup';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup', 
+			'POST', 
+			{ 'conversationId': conversationId,'participantId': participantId,'communicationId': communicationId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3330,7 +4813,7 @@ class ConversationsApi {
 	 * 
 	 * @param {String} conversationId conversationId
 	 * @param {String} participantId participantId
-	 * @param {Object} body Destination address &amp; initial speak to
+	 * @param {Object} body Destination address and initial speak to
 	 */
 	postConversationsCallParticipantConsult(conversationId, participantId, body) { 
 		// verify the required parameter 'conversationId' is set
@@ -3349,13 +4832,121 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult', 
 			'POST', 
-			{ 'conversationId': conversationId,'participantId': participantId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Initiate a consult transfer to an agent
+	 * 
+	 * @param {String} conversationId conversationId
+	 * @param {String} participantId participantId
+	 * @param {Object} body Destination agent and initial speak to
+	 * postConversationsCallParticipantConsultAgent is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postConversationsCallParticipantConsultAgent(conversationId, participantId, body) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling postConversationsCallParticipantConsultAgent';
+		}
+		// verify the required parameter 'participantId' is set
+		if (participantId === undefined || participantId === null) {
+			throw 'Missing the required parameter "participantId" when calling postConversationsCallParticipantConsultAgent';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postConversationsCallParticipantConsultAgent';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult/agent', 
+			'POST', 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Initiate a consult transfer to an external contact
+	 * 
+	 * @param {String} conversationId conversationId
+	 * @param {String} participantId participantId
+	 * @param {Object} body Destination address and initial speak to
+	 * postConversationsCallParticipantConsultExternal is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postConversationsCallParticipantConsultExternal(conversationId, participantId, body) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling postConversationsCallParticipantConsultExternal';
+		}
+		// verify the required parameter 'participantId' is set
+		if (participantId === undefined || participantId === null) {
+			throw 'Missing the required parameter "participantId" when calling postConversationsCallParticipantConsultExternal';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postConversationsCallParticipantConsultExternal';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult/external', 
+			'POST', 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Initiate a consult transfer to a queue
+	 * 
+	 * @param {String} conversationId conversationId
+	 * @param {String} participantId participantId
+	 * @param {Object} body Destination queue and initial speak to
+	 * postConversationsCallParticipantConsultQueue is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postConversationsCallParticipantConsultQueue(conversationId, participantId, body) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling postConversationsCallParticipantConsultQueue';
+		}
+		// verify the required parameter 'participantId' is set
+		if (participantId === undefined || participantId === null) {
+			throw 'Missing the required parameter "participantId" when calling postConversationsCallParticipantConsultQueue';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postConversationsCallParticipantConsultQueue';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult/queue', 
+			'POST', 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3379,13 +4970,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/calls/{conversationId}/participants/{participantId}/monitor', 
 			'POST', 
-			{ 'conversationId': conversationId,'participantId': participantId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3414,13 +5005,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/calls/{conversationId}/participants/{participantId}/replace', 
 			'POST', 
-			{ 'conversationId': conversationId,'participantId': participantId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3444,13 +5035,52 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/calls/{conversationId}/participants', 
 			'POST', 
-			{ 'conversationId': conversationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Apply wrap-up for this conversation communication
+	 * 
+	 * @param {String} conversationId conversationId
+	 * @param {String} participantId participantId
+	 * @param {String} communicationId communicationId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body Wrap-up
+	 */
+	postConversationsCallbackParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling postConversationsCallbackParticipantCommunicationWrapup';
+		}
+		// verify the required parameter 'participantId' is set
+		if (participantId === undefined || participantId === null) {
+			throw 'Missing the required parameter "participantId" when calling postConversationsCallbackParticipantCommunicationWrapup';
+		}
+		// verify the required parameter 'communicationId' is set
+		if (communicationId === undefined || communicationId === null) {
+			throw 'Missing the required parameter "communicationId" when calling postConversationsCallbackParticipantCommunicationWrapup';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup', 
+			'POST', 
+			{ 'conversationId': conversationId,'participantId': participantId,'communicationId': communicationId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3479,13 +5109,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/replace', 
 			'POST', 
-			{ 'conversationId': conversationId,'participantId': participantId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3504,13 +5134,63 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/callbacks', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Disconnect multiple scheduled callbacks
+	 * 
+	 * @param {Object} body BulkCallbackDisconnectRequest
+	 */
+	postConversationsCallbacksBulkDisconnect(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postConversationsCallbacksBulkDisconnect';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/callbacks/bulk/disconnect', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update multiple scheduled callbacks
+	 * 
+	 * @param {Object} body BulkCallbackPatchRequest
+	 */
+	postConversationsCallbacksBulkUpdate(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postConversationsCallbacksBulkUpdate';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/callbacks/bulk/update', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3529,13 +5209,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/calls', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3564,13 +5244,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/chats/{conversationId}/communications/{communicationId}/messages', 
 			'POST', 
-			{ 'conversationId': conversationId,'communicationId': communicationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'communicationId': communicationId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3594,13 +5274,52 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/chats/{conversationId}/communications/{communicationId}/typing', 
 			'POST', 
-			{ 'conversationId': conversationId,'communicationId': communicationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'communicationId': communicationId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Apply wrap-up for this conversation communication
+	 * 
+	 * @param {String} conversationId conversationId
+	 * @param {String} participantId participantId
+	 * @param {String} communicationId communicationId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body Wrap-up
+	 */
+	postConversationsChatParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling postConversationsChatParticipantCommunicationWrapup';
+		}
+		// verify the required parameter 'participantId' is set
+		if (participantId === undefined || participantId === null) {
+			throw 'Missing the required parameter "participantId" when calling postConversationsChatParticipantCommunicationWrapup';
+		}
+		// verify the required parameter 'communicationId' is set
+		if (communicationId === undefined || communicationId === null) {
+			throw 'Missing the required parameter "communicationId" when calling postConversationsChatParticipantCommunicationWrapup';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/chats/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup', 
+			'POST', 
+			{ 'conversationId': conversationId,'participantId': participantId,'communicationId': communicationId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3629,13 +5348,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/chats/{conversationId}/participants/{participantId}/replace', 
 			'POST', 
-			{ 'conversationId': conversationId,'participantId': participantId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3654,13 +5373,52 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/chats', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Apply wrap-up for this conversation communication
+	 * 
+	 * @param {String} conversationId conversationId
+	 * @param {String} participantId participantId
+	 * @param {String} communicationId communicationId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body Wrap-up
+	 */
+	postConversationsCobrowsesessionParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling postConversationsCobrowsesessionParticipantCommunicationWrapup';
+		}
+		// verify the required parameter 'participantId' is set
+		if (participantId === undefined || participantId === null) {
+			throw 'Missing the required parameter "participantId" when calling postConversationsCobrowsesessionParticipantCommunicationWrapup';
+		}
+		// verify the required parameter 'communicationId' is set
+		if (communicationId === undefined || communicationId === null) {
+			throw 'Missing the required parameter "communicationId" when calling postConversationsCobrowsesessionParticipantCommunicationWrapup';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup', 
+			'POST', 
+			{ 'conversationId': conversationId,'participantId': participantId,'communicationId': communicationId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3688,13 +5446,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/replace', 
 			'POST', 
-			{ 'conversationId': conversationId,'participantId': participantId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
 			opts['body'], 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3718,13 +5476,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/emails/{conversationId}/inboundmessages', 
 			'POST', 
-			{ 'conversationId': conversationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3748,13 +5506,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/emails/{conversationId}/messages', 
 			'POST', 
-			{ 'conversationId': conversationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3778,13 +5536,52 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/emails/{conversationId}/messages/draft/attachments/copy', 
 			'POST', 
-			{ 'conversationId': conversationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Apply wrap-up for this conversation communication
+	 * 
+	 * @param {String} conversationId conversationId
+	 * @param {String} participantId participantId
+	 * @param {String} communicationId communicationId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body Wrap-up
+	 */
+	postConversationsEmailParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling postConversationsEmailParticipantCommunicationWrapup';
+		}
+		// verify the required parameter 'participantId' is set
+		if (participantId === undefined || participantId === null) {
+			throw 'Missing the required parameter "participantId" when calling postConversationsEmailParticipantCommunicationWrapup';
+		}
+		// verify the required parameter 'communicationId' is set
+		if (communicationId === undefined || communicationId === null) {
+			throw 'Missing the required parameter "communicationId" when calling postConversationsEmailParticipantCommunicationWrapup';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/emails/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup', 
+			'POST', 
+			{ 'conversationId': conversationId,'participantId': participantId,'communicationId': communicationId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3813,13 +5610,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/emails/{conversationId}/participants/{participantId}/replace', 
 			'POST', 
-			{ 'conversationId': conversationId,'participantId': participantId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3838,13 +5635,38 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/emails', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create an email conversation, per API
+	 * 
+	 * @param {Object} body Create agentless email request
+	 */
+	postConversationsEmailsAgentless(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postConversationsEmailsAgentless';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/emails/agentless', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3863,13 +5685,63 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/faxes', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Setup configurations for encryption key creation
+	 * 
+	 * @param {Object} body Encryption Configuration
+	 */
+	postConversationsKeyconfigurations(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postConversationsKeyconfigurations';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/keyconfigurations', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Validate encryption key configurations without saving it
+	 * 
+	 * @param {Object} body Encryption Configuration
+	 */
+	postConversationsKeyconfigurationsValidate(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postConversationsKeyconfigurationsValidate';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/keyconfigurations/validate', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3880,8 +5752,12 @@ class ConversationsApi {
 	 * @param {String} conversationId conversationId
 	 * @param {String} communicationId communicationId
 	 * @param {Object} body Message
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.useNormalizedMessage If true, response removes deprecated fields (textBody, media, stickers) (default to false)
 	 */
-	postConversationsMessageCommunicationMessages(conversationId, communicationId, body) { 
+	postConversationsMessageCommunicationMessages(conversationId, communicationId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
 			throw 'Missing the required parameter "conversationId" when calling postConversationsMessageCommunicationMessages';
@@ -3898,13 +5774,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages', 
 			'POST', 
-			{ 'conversationId': conversationId,'communicationId': communicationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'communicationId': communicationId },
+			{ 'useNormalizedMessage': opts['useNormalizedMessage'] },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3928,23 +5804,149 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media', 
 			'POST', 
-			{ 'conversationId': conversationId,'communicationId': communicationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'communicationId': communicationId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Send message typing event
+	 * Send message typing event for existing conversation/communication.
+	 * @param {String} conversationId conversationId
+	 * @param {String} communicationId communicationId
+	 * @param {Object} body MessageTypingEvent
+	 */
+	postConversationsMessageCommunicationTyping(conversationId, communicationId, body) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling postConversationsMessageCommunicationTyping';
+		}
+		// verify the required parameter 'communicationId' is set
+		if (communicationId === undefined || communicationId === null) {
+			throw 'Missing the required parameter "communicationId" when calling postConversationsMessageCommunicationTyping';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postConversationsMessageCommunicationTyping';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messages/{conversationId}/communications/{communicationId}/typing', 
+			'POST', 
+			{ 'conversationId': conversationId,'communicationId': communicationId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Send an inbound Open Event Message
+	 * Send an inbound event message to an Open Messaging integration. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will either generate a new Conversation, or be a part of an existing conversation. See https://developer.genesys.cloud/api/digital/openmessaging/ for example usage.
+	 * @param {String} integrationId integrationId
+	 * @param {Object} body NormalizedMessage
+	 */
+	postConversationsMessageInboundOpenEvent(integrationId, body) { 
+		// verify the required parameter 'integrationId' is set
+		if (integrationId === undefined || integrationId === null) {
+			throw 'Missing the required parameter "integrationId" when calling postConversationsMessageInboundOpenEvent';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postConversationsMessageInboundOpenEvent';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messages/{integrationId}/inbound/open/event', 
+			'POST', 
+			{ 'integrationId': integrationId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Send inbound Open Message
+	 * Send an inbound message to an Open Messaging integration. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will either generate a new Conversation, or be a part of an existing conversation. See https://developer.genesys.cloud/api/digital/openmessaging/ for example usage.
+	 * @param {String} integrationId integrationId
+	 * @param {Object} body NormalizedMessage
+	 */
+	postConversationsMessageInboundOpenMessage(integrationId, body) { 
+		// verify the required parameter 'integrationId' is set
+		if (integrationId === undefined || integrationId === null) {
+			throw 'Missing the required parameter "integrationId" when calling postConversationsMessageInboundOpenMessage';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postConversationsMessageInboundOpenMessage';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messages/{integrationId}/inbound/open/message', 
+			'POST', 
+			{ 'integrationId': integrationId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Send an inbound Open Receipt Message
+	 * Send an inbound open Receipt to an Open Messaging integration. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will either generate a new Conversation, or be a part of an existing conversation. See https://developer.genesys.cloud/api/digital/openmessaging/ for example usage.
+	 * @param {String} integrationId integrationId
+	 * @param {Object} body NormalizedMessage
+	 */
+	postConversationsMessageInboundOpenReceipt(integrationId, body) { 
+		// verify the required parameter 'integrationId' is set
+		if (integrationId === undefined || integrationId === null) {
+			throw 'Missing the required parameter "integrationId" when calling postConversationsMessageInboundOpenReceipt';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postConversationsMessageInboundOpenReceipt';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messages/{integrationId}/inbound/open/receipt', 
+			'POST', 
+			{ 'integrationId': integrationId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
 	 * Get messages in batch
-	 * The path parameter [conversationId] should contain the conversationId of the conversation being filtered. The body should contain the messageId(s) of messages being requested. For example: [\&quot;a3069a33b-bbb1-4703-9d68-061d9e9db96e\&quot;, \&quot;55bc6be3-078c-4a49-a4e6-1e05776ed7e8\&quot;]
+	 * The path parameter [conversationId] should contain the conversationId of the conversation being filtered. The body should contain the messageId(s) of messages being requested. For example: ["a3069a33b-bbb1-4703-9d68-061d9e9db96e", "55bc6be3-078c-4a49-a4e6-1e05776ed7e8"]
 	 * @param {String} conversationId 
 	 * @param {Object} opts Optional parameters
-	 * @param {Array.<Object>} opts.body messageIds
+	 * @param {Boolean} opts.useNormalizedMessage If true, response removes deprecated fields (textBody, media, stickers) (default to false)
+	 * @param {Array.<String>} opts.body messageIds
 	 */
 	postConversationsMessageMessagesBulk(conversationId, opts) { 
 		opts = opts || {};
@@ -3957,13 +5959,83 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messages/{conversationId}/messages/bulk', 
 			'POST', 
-			{ 'conversationId': conversationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId },
+			{ 'useNormalizedMessage': opts['useNormalizedMessage'] },
+			{  },
+			{  },
 			opts['body'], 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Apply wrap-up for this conversation communication
+	 * 
+	 * @param {String} conversationId conversationId
+	 * @param {String} participantId participantId
+	 * @param {String} communicationId communicationId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body Wrap-up
+	 */
+	postConversationsMessageParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling postConversationsMessageParticipantCommunicationWrapup';
+		}
+		// verify the required parameter 'participantId' is set
+		if (participantId === undefined || participantId === null) {
+			throw 'Missing the required parameter "participantId" when calling postConversationsMessageParticipantCommunicationWrapup';
+		}
+		// verify the required parameter 'communicationId' is set
+		if (communicationId === undefined || communicationId === null) {
+			throw 'Missing the required parameter "communicationId" when calling postConversationsMessageParticipantCommunicationWrapup';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messages/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup', 
+			'POST', 
+			{ 'conversationId': conversationId,'participantId': participantId,'communicationId': communicationId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Listen in on the conversation from the point of view of a given participant.
+	 * 
+	 * @param {String} conversationId conversationId
+	 * @param {String} participantId participantId
+	 * postConversationsMessageParticipantMonitor is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postConversationsMessageParticipantMonitor(conversationId, participantId) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling postConversationsMessageParticipantMonitor';
+		}
+		// verify the required parameter 'participantId' is set
+		if (participantId === undefined || participantId === null) {
+			throw 'Missing the required parameter "participantId" when calling postConversationsMessageParticipantMonitor';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messages/{conversationId}/participants/{participantId}/monitor', 
+			'POST', 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3992,13 +6064,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messages/{conversationId}/participants/{participantId}/replace', 
 			'POST', 
-			{ 'conversationId': conversationId,'participantId': participantId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -4017,20 +6089,20 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messages', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
 	 * Send an agentless outbound message
-	 * Send an agentlesss (api participant) outbound message using a client credential grant. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will generate a new Conversation, if there is an existing active Conversation between the fromAddress and toAddress already, then this POST will fail.
+	 * Send an agentless (api participant) outbound message using a client credential grant. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. If there is already a connected conversation between the fromAddress and toAddress specified, the useExistingActiveConversation param can be used to barge in to the ongoing conversation.
 	 * @param {Object} body Create agentless outbound messaging request
 	 */
 	postConversationsMessagesAgentless(body) { 
@@ -4042,13 +6114,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messages/agentless', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -4067,13 +6139,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messages/inbound/open', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -4092,13 +6164,38 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/integrations/facebook', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create Instagram Integration
+	 * 
+	 * @param {Object} body InstagramIntegrationRequest
+	 */
+	postConversationsMessagingIntegrationsInstagram(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postConversationsMessagingIntegrationsInstagram';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/integrations/instagram', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -4117,13 +6214,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/integrations/line', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -4142,13 +6239,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/integrations/open', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -4167,13 +6264,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/integrations/twitter', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -4192,13 +6289,231 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/integrations/whatsapp', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create a messaging setting
+	 * 
+	 * @param {Object} body MessagingSetting
+	 */
+	postConversationsMessagingSettings(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postConversationsMessagingSettings';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/settings', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create a Supported Content profile
+	 * 
+	 * @param {Object} body SupportedContent
+	 */
+	postConversationsMessagingSupportedcontent(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postConversationsMessagingSupportedcontent';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/supportedcontent', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Search conversations
+	 * 
+	 * @param {Object} body Search request options
+	 */
+	postConversationsParticipantsAttributesSearch(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postConversationsParticipantsAttributesSearch';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/participants/attributes/search', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Apply wrap-up for this conversation communication
+	 * 
+	 * @param {String} conversationId conversationId
+	 * @param {String} participantId participantId
+	 * @param {String} communicationId communicationId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body Wrap-up
+	 */
+	postConversationsScreenshareParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling postConversationsScreenshareParticipantCommunicationWrapup';
+		}
+		// verify the required parameter 'participantId' is set
+		if (participantId === undefined || participantId === null) {
+			throw 'Missing the required parameter "participantId" when calling postConversationsScreenshareParticipantCommunicationWrapup';
+		}
+		// verify the required parameter 'communicationId' is set
+		if (communicationId === undefined || communicationId === null) {
+			throw 'Missing the required parameter "communicationId" when calling postConversationsScreenshareParticipantCommunicationWrapup';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/screenshares/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup', 
+			'POST', 
+			{ 'conversationId': conversationId,'participantId': participantId,'communicationId': communicationId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Apply wrap-up for this conversation communication
+	 * 
+	 * @param {String} conversationId conversationId
+	 * @param {String} participantId participantId
+	 * @param {String} communicationId communicationId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body Wrap-up
+	 */
+	postConversationsSocialParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling postConversationsSocialParticipantCommunicationWrapup';
+		}
+		// verify the required parameter 'participantId' is set
+		if (participantId === undefined || participantId === null) {
+			throw 'Missing the required parameter "participantId" when calling postConversationsSocialParticipantCommunicationWrapup';
+		}
+		// verify the required parameter 'communicationId' is set
+		if (communicationId === undefined || communicationId === null) {
+			throw 'Missing the required parameter "communicationId" when calling postConversationsSocialParticipantCommunicationWrapup';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/socials/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup', 
+			'POST', 
+			{ 'conversationId': conversationId,'participantId': participantId,'communicationId': communicationId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Apply wrap-up for this conversation communication
+	 * 
+	 * @param {String} conversationId conversationId
+	 * @param {String} participantId participantId
+	 * @param {String} communicationId communicationId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body Wrap-up
+	 */
+	postConversationsVideoParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling postConversationsVideoParticipantCommunicationWrapup';
+		}
+		// verify the required parameter 'participantId' is set
+		if (participantId === undefined || participantId === null) {
+			throw 'Missing the required parameter "participantId" when calling postConversationsVideoParticipantCommunicationWrapup';
+		}
+		// verify the required parameter 'communicationId' is set
+		if (communicationId === undefined || communicationId === null) {
+			throw 'Missing the required parameter "communicationId" when calling postConversationsVideoParticipantCommunicationWrapup';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/videos/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup', 
+			'POST', 
+			{ 'conversationId': conversationId,'participantId': participantId,'communicationId': communicationId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Generate a meetingId for a given conferenceId
+	 * 
+	 * @param {Object} body MeetingIdRequest
+	 * postConversationsVideosMeetings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postConversationsVideosMeetings(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postConversationsVideosMeetings';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/videos/meetings', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -4222,13 +6537,43 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/{conversationId}/participants/{participantId}/flaggedreason', 
 			'PUT', 
-			{ 'conversationId': conversationId,'participantId': participantId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Set the secure attributes on a conversation.
+	 * 
+	 * @param {String} conversationId conversation ID
+	 * @param {Object} body Conversation Secure Attributes
+	 */
+	putConversationSecureattributes(conversationId, body) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling putConversationSecureattributes';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putConversationSecureattributes';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/{conversationId}/secureattributes', 
+			'PUT', 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -4252,13 +6597,13 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/{conversationId}/tags', 
 			'PUT', 
-			{ 'conversationId': conversationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -4292,13 +6637,133 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/uuidata', 
 			'PUT', 
-			{ 'conversationId': conversationId,'participantId': participantId,'communicationId': communicationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'participantId': participantId,'communicationId': communicationId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update a conversation by setting its recording state
+	 * 
+	 * @param {String} conversationId conversationId
+	 * @param {Object} body SetRecordingState
+	 */
+	putConversationsCallRecordingstate(conversationId, body) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling putConversationsCallRecordingstate';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putConversationsCallRecordingstate';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/calls/{conversationId}/recordingstate', 
+			'PUT', 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update a conversation by setting its recording state
+	 * 
+	 * @param {String} conversationId conversationId
+	 * @param {Object} body SetRecordingState
+	 */
+	putConversationsCallbackRecordingstate(conversationId, body) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling putConversationsCallbackRecordingstate';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putConversationsCallbackRecordingstate';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/callbacks/{conversationId}/recordingstate', 
+			'PUT', 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update a conversation by setting its recording state
+	 * 
+	 * @param {String} conversationId conversationId
+	 * @param {Object} body SetRecordingState
+	 */
+	putConversationsChatRecordingstate(conversationId, body) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling putConversationsChatRecordingstate';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putConversationsChatRecordingstate';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/chats/{conversationId}/recordingstate', 
+			'PUT', 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update a conversation by setting its recording state
+	 * 
+	 * @param {String} conversationId conversationId
+	 * @param {Object} body SetRecordingState
+	 */
+	putConversationsCobrowsesessionRecordingstate(conversationId, body) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling putConversationsCobrowsesessionRecordingstate';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putConversationsCobrowsesessionRecordingstate';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/cobrowsesessions/{conversationId}/recordingstate', 
+			'PUT', 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -4322,13 +6787,103 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/emails/{conversationId}/messages/draft', 
 			'PUT', 
-			{ 'conversationId': conversationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update a conversation by setting its recording state
+	 * 
+	 * @param {String} conversationId conversationId
+	 * @param {Object} body SetRecordingState
+	 */
+	putConversationsEmailRecordingstate(conversationId, body) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling putConversationsEmailRecordingstate';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putConversationsEmailRecordingstate';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/emails/{conversationId}/recordingstate', 
+			'PUT', 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update the encryption key configurations
+	 * 
+	 * @param {String} keyconfigurationsId Key Configurations Id
+	 * @param {Object} body Encryption key configuration metadata
+	 */
+	putConversationsKeyconfiguration(keyconfigurationsId, body) { 
+		// verify the required parameter 'keyconfigurationsId' is set
+		if (keyconfigurationsId === undefined || keyconfigurationsId === null) {
+			throw 'Missing the required parameter "keyconfigurationsId" when calling putConversationsKeyconfiguration';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putConversationsKeyconfiguration';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/keyconfigurations/{keyconfigurationsId}', 
+			'PUT', 
+			{ 'keyconfigurationsId': keyconfigurationsId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update a conversation by setting its recording state
+	 * 
+	 * @param {String} conversationId conversationId
+	 * @param {Object} body SetRecordingState
+	 */
+	putConversationsMessageRecordingstate(conversationId, body) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling putConversationsMessageRecordingstate';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putConversationsMessageRecordingstate';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messages/{conversationId}/recordingstate', 
+			'PUT', 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -4352,13 +6907,63 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/integrations/line/{integrationId}', 
 			'PUT', 
-			{ 'integrationId': integrationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'integrationId': integrationId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Set the organization's default setting that may be applied to to integrations without settings
+	 * When an integration is created a settings ID may be assigned to it. If the settings ID is not supplied, the default settings will be assigned to it.
+	 * @param {Object} body MessagingSetting
+	 */
+	putConversationsMessagingSettingsDefault(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putConversationsMessagingSettingsDefault';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/settings/default', 
+			'PUT', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Set the organization's default supported content profile that may be assigned to an integration when it is created.
+	 * When an integration is created a supported content ID may be assigned to it. If the supported content ID is not supplied, the default supported content profile will be assigned to it.
+	 * @param {Object} body SupportedContent
+	 */
+	putConversationsMessagingSupportedcontentDefault(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putConversationsMessagingSupportedcontentDefault';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/messaging/supportedcontent/default', 
+			'PUT', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -4377,13 +6982,103 @@ class ConversationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/conversations/messaging/threadingtimeline', 
 			'PUT', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update a conversation by setting its recording state
+	 * 
+	 * @param {String} conversationId conversationId
+	 * @param {Object} body SetRecordingState
+	 */
+	putConversationsScreenshareRecordingstate(conversationId, body) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling putConversationsScreenshareRecordingstate';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putConversationsScreenshareRecordingstate';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/screenshares/{conversationId}/recordingstate', 
+			'PUT', 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update a conversation by setting its recording state
+	 * 
+	 * @param {String} conversationId conversationId
+	 * @param {Object} body SetRecordingState
+	 */
+	putConversationsSocialRecordingstate(conversationId, body) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling putConversationsSocialRecordingstate';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putConversationsSocialRecordingstate';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/socials/{conversationId}/recordingstate', 
+			'PUT', 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update a conversation by setting its recording state
+	 * 
+	 * @param {String} conversationId conversationId
+	 * @param {Object} body SetRecordingState
+	 */
+	putConversationsVideoRecordingstate(conversationId, body) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling putConversationsVideoRecordingstate';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putConversationsVideoRecordingstate';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/videos/{conversationId}/recordingstate', 
+			'PUT', 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}

@@ -18,14 +18,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 # JsonNodeSearchResponse getSearch(q64, opts)
 
 
-
 GET /api/v2/search
 
 Search using the q64 value returned from a previous search.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * directory:user:view
 
@@ -64,7 +61,7 @@ apiInstance.getSearch(q64, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **q64** | **String** | q64 |  |
- **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation, images, addressVerificationDetails |
+ **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, dateLastLogin, authorization.unusedRoles, team, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation, images, addressVerificationDetails |
  **profile** | **Boolean** | profile | [optional] [default to true] |
 {: class="table table-striped"}
 
@@ -77,14 +74,11 @@ apiInstance.getSearch(q64, opts)
 # JsonNodeSearchResponse getSearchSuggest(q64, opts)
 
 
-
 GET /api/v2/search/suggest
 
 Suggest resources using the q64 value returned from a previous suggest query.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * directory:user:view
 
@@ -123,7 +117,7 @@ apiInstance.getSearchSuggest(q64, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **q64** | **String** | q64 |  |
- **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation, images, addressVerificationDetails |
+ **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, dateLastLogin, authorization.unusedRoles, team, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation, images, addressVerificationDetails |
  **profile** | **Boolean** | profile | [optional] [default to true] |
 {: class="table table-striped"}
 
@@ -136,14 +130,11 @@ apiInstance.getSearchSuggest(q64, opts)
 # JsonNodeSearchResponse postSearch(body, opts)
 
 
-
 POST /api/v2/search
 
 Search resources.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * directory:user:view
 
@@ -193,14 +184,11 @@ apiInstance.postSearch(body, opts)
 # JsonNodeSearchResponse postSearchSuggest(body, opts)
 
 
-
 POST /api/v2/search/suggest
 
 Suggest resources.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * directory:user:view
 

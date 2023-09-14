@@ -9,7 +9,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | ------------- | ------------- | ------------- |
 [**deleteOauthClient**](OAuthApi.html#deleteOauthClient) | **DELETE** /api/v2/oauth/clients/{clientId} | Delete OAuth Client
 [**getOauthAuthorization**](OAuthApi.html#getOauthAuthorization) | **GET** /api/v2/oauth/authorizations/{clientId} | Get a client that is authorized by the resource owner
-[**getOauthAuthorizations**](OAuthApi.html#getOauthAuthorizations) | **GET** /api/v2/oauth/authorizations | List clients that are authorized by the resource owner
+[**getOauthAuthorizations**](OAuthApi.html#getOauthAuthorizations) | **GET** /api/v2/oauth/authorizations | List clients that have been authorized, requested, or revoked by the resource owner
 [**getOauthClient**](OAuthApi.html#getOauthClient) | **GET** /api/v2/oauth/clients/{clientId} | Get OAuth Client
 [**getOauthClientUsageQueryResult**](OAuthApi.html#getOauthClientUsageQueryResult) | **GET** /api/v2/oauth/clients/{clientId}/usage/query/results/{executionId} | Get the results of a usage query
 [**getOauthClientUsageSummary**](OAuthApi.html#getOauthClientUsageSummary) | **GET** /api/v2/oauth/clients/{clientId}/usage/summary | Get a summary of OAuth client API usage
@@ -27,14 +27,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 # void deleteOauthClient(clientId)
 
 
-
 DELETE /api/v2/oauth/clients/{clientId}
 
 Delete OAuth Client
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * oauth:client:delete
 
@@ -77,17 +74,14 @@ void (no response body)
 
 <a name="getOauthAuthorization"></a>
 
-# OAuthAuthorization getOauthAuthorization(clientId)
-
+# OAuthAuthorization getOauthAuthorization(clientId, opts)
 
 
 GET /api/v2/oauth/authorizations/{clientId}
 
 Get a client that is authorized by the resource owner
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * oauth:client:authorize
 
@@ -105,8 +99,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OAuthApi();
 
 let clientId = "clientId_example"; // String | The ID of client
+let opts = { 
+  'acceptLanguage': "en-us" // String | The language in which to display the client descriptions.
+};
 
-apiInstance.getOauthAuthorization(clientId)
+apiInstance.getOauthAuthorization(clientId, opts)
   .then((data) => {
     console.log(`getOauthAuthorization success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -122,6 +119,7 @@ apiInstance.getOauthAuthorization(clientId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **clientId** | **String** | The ID of client |  |
+ **acceptLanguage** | **String** | The language in which to display the client descriptions. | [optional] [default to en-us] |
 {: class="table table-striped"}
 
 ### Return type
@@ -130,17 +128,14 @@ apiInstance.getOauthAuthorization(clientId)
 
 <a name="getOauthAuthorizations"></a>
 
-# OAuthAuthorizationListing getOauthAuthorizations()
-
+# OAuthAuthorizationListing getOauthAuthorizations(opts)
 
 
 GET /api/v2/oauth/authorizations
 
-List clients that are authorized by the resource owner
+List clients that have been authorized, requested, or revoked by the resource owner
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * oauth:client:authorize
 
@@ -157,7 +152,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OAuthApi();
 
-apiInstance.getOauthAuthorizations()
+let opts = { 
+  'acceptLanguage': "en-us" // String | The language in which to display the client descriptions.
+};
+
+apiInstance.getOauthAuthorizations(opts)
   .then((data) => {
     console.log(`getOauthAuthorizations success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -169,8 +168,11 @@ apiInstance.getOauthAuthorizations()
 
 ### Parameters
 
-This endpoint does not need any parameter.
 
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **acceptLanguage** | **String** | The language in which to display the client descriptions. | [optional] [default to en-us] |
+{: class="table table-striped"}
 
 ### Return type
 
@@ -181,14 +183,11 @@ This endpoint does not need any parameter.
 # OAuthClient getOauthClient(clientId)
 
 
-
 GET /api/v2/oauth/clients/{clientId}
 
 Get OAuth Client
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * oauth:client:view
 
@@ -234,16 +233,14 @@ apiInstance.getOauthClient(clientId)
 # ApiUsageQueryResult getOauthClientUsageQueryResult(executionId, clientId)
 
 
-
 GET /api/v2/oauth/clients/{clientId}/usage/query/results/{executionId}
 
 Get the results of a usage query
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * oauth:client:view
+* usage:client:view
 
 ### Example Usage
 
@@ -289,16 +286,16 @@ apiInstance.getOauthClientUsageQueryResult(executionId, clientId)
 # UsageExecutionResult getOauthClientUsageSummary(clientId, opts)
 
 
-
 GET /api/v2/oauth/clients/{clientId}/usage/summary
 
 Get a summary of OAuth client API usage
 
 After calling this method, you will then need to poll for the query results based on the returned execution Id
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * oauth:client:view
+* usage:client:view
 
 ### Example Usage
 
@@ -346,14 +343,11 @@ apiInstance.getOauthClientUsageSummary(clientId, opts)
 # OAuthClientEntityListing getOauthClients()
 
 
-
 GET /api/v2/oauth/clients
 
 The list of OAuth clients
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * oauth:client:view
 
@@ -394,15 +388,11 @@ This endpoint does not need any parameter.
 # OAuthScope getOauthScope(scopeId, opts)
 
 
-
 GET /api/v2/oauth/scopes/{scopeId}
 
 An OAuth scope
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -450,15 +440,11 @@ apiInstance.getOauthScope(scopeId, opts)
 # OAuthScopeListing getOauthScopes(opts)
 
 
-
 GET /api/v2/oauth/scopes
 
 The list of OAuth scopes
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -504,14 +490,13 @@ apiInstance.getOauthScopes(opts)
 # OAuthClient postOauthClientSecret(clientId)
 
 
-
 POST /api/v2/oauth/clients/{clientId}/secret
 
 Regenerate Client Secret
 
 This operation will set the client secret to a randomly generated cryptographically random value. All clients must be updated with the new secret. This operation should be used with caution.
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * oauth:client:edit
 
@@ -557,16 +542,16 @@ apiInstance.postOauthClientSecret(clientId)
 # UsageExecutionResult postOauthClientUsageQuery(clientId, body)
 
 
-
 POST /api/v2/oauth/clients/{clientId}/usage/query
 
 Query for OAuth client API usage
 
 After calling this method, you will then need to poll for the query results based on the returned execution Id
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * oauth:client:view
+* usage:client:view
 
 ### Example Usage
 
@@ -612,14 +597,13 @@ apiInstance.postOauthClientUsageQuery(clientId, body)
 # OAuthClient postOauthClients(body)
 
 
-
 POST /api/v2/oauth/clients
 
 Create OAuth client
 
-The OAuth Grant/Client is required in order to create an authentication token and gain access to PureCloud.  The preferred authorizedGrantTypes is &#39;CODE&#39; which requires applications to send a client ID and client secret. This is typically a web server.  If the client is unable to secure the client secret then the &#39;TOKEN&#39; grant type aka IMPLICIT should be used. This is would be for browser or mobile apps.  If a client is to be used outside of the context of a user then the &#39;CLIENT-CREDENTIALS&#39; grant may be used. In this case the client must be granted roles  via the &#39;roleIds&#39; field.
+The OAuth Grant/Client is required in order to create an authentication token and gain access to PureCloud.  The preferred authorizedGrantTypes is CODE which requires applications to send a client ID and client secret. This is typically a web server.  If the client is unable to secure the client secret then the TOKEN grant type aka IMPLICIT should be used. This is would be for browser or mobile apps.  If a client is to be used outside of the context of a user then the CLIENT-CREDENTIALS grant may be used. In this case the client must be granted roles  via the roleIds field.
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * oauth:client:add
 
@@ -665,14 +649,11 @@ apiInstance.postOauthClients(body)
 # OAuthClient putOauthClient(clientId, body)
 
 
-
 PUT /api/v2/oauth/clients/{clientId}
 
 Update OAuth Client
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * oauth:client:edit
 

@@ -5,7 +5,7 @@ class ArchitectApi {
 	/**
 	 * Architect service.
 	 * @module purecloud-platform-client-v2/api/ArchitectApi
-	 * @version 124.0.0
+	 * @version 174.0.0
 	 */
 
 	/**
@@ -34,13 +34,132 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/architect/emergencygroups/{emergencyGroupId}', 
 			'DELETE', 
-			{ 'emergencyGroupId': emergencyGroupId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'emergencyGroupId': emergencyGroupId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete a grammar.
+	 * 
+	 * @param {String} grammarId grammar ID
+	 * deleteArchitectGrammar is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	deleteArchitectGrammar(grammarId) { 
+		// verify the required parameter 'grammarId' is set
+		if (grammarId === undefined || grammarId === null) {
+			throw 'Missing the required parameter "grammarId" when calling deleteArchitectGrammar';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/architect/grammars/{grammarId}', 
+			'DELETE', 
+			{ 'grammarId': grammarId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete specified grammar language
+	 * 
+	 * @param {String} grammarId Grammar ID
+	 * @param {String} languageCode Language
+	 * deleteArchitectGrammarLanguage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	deleteArchitectGrammarLanguage(grammarId, languageCode) { 
+		// verify the required parameter 'grammarId' is set
+		if (grammarId === undefined || grammarId === null) {
+			throw 'Missing the required parameter "grammarId" when calling deleteArchitectGrammarLanguage';
+		}
+		// verify the required parameter 'languageCode' is set
+		if (languageCode === undefined || languageCode === null) {
+			throw 'Missing the required parameter "languageCode" when calling deleteArchitectGrammarLanguage';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/architect/grammars/{grammarId}/languages/{languageCode}', 
+			'DELETE', 
+			{ 'grammarId': grammarId,'languageCode': languageCode },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Clear the DTMF mode file for the grammar language if there is one
+	 * 
+	 * @param {String} grammarId Grammar ID
+	 * @param {String} languageCode Language
+	 * deleteArchitectGrammarLanguageFilesDtmf is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	deleteArchitectGrammarLanguageFilesDtmf(grammarId, languageCode) { 
+		// verify the required parameter 'grammarId' is set
+		if (grammarId === undefined || grammarId === null) {
+			throw 'Missing the required parameter "grammarId" when calling deleteArchitectGrammarLanguageFilesDtmf';
+		}
+		// verify the required parameter 'languageCode' is set
+		if (languageCode === undefined || languageCode === null) {
+			throw 'Missing the required parameter "languageCode" when calling deleteArchitectGrammarLanguageFilesDtmf';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/architect/grammars/{grammarId}/languages/{languageCode}/files/dtmf', 
+			'DELETE', 
+			{ 'grammarId': grammarId,'languageCode': languageCode },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Clear the voice mode file for the grammar language if there is one
+	 * 
+	 * @param {String} grammarId Grammar ID
+	 * @param {String} languageCode Language
+	 * deleteArchitectGrammarLanguageFilesVoice is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	deleteArchitectGrammarLanguageFilesVoice(grammarId, languageCode) { 
+		// verify the required parameter 'grammarId' is set
+		if (grammarId === undefined || grammarId === null) {
+			throw 'Missing the required parameter "grammarId" when calling deleteArchitectGrammarLanguageFilesVoice';
+		}
+		// verify the required parameter 'languageCode' is set
+		if (languageCode === undefined || languageCode === null) {
+			throw 'Missing the required parameter "languageCode" when calling deleteArchitectGrammarLanguageFilesVoice';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/architect/grammars/{grammarId}/languages/{languageCode}/files/voice', 
+			'DELETE', 
+			{ 'grammarId': grammarId,'languageCode': languageCode },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -59,13 +178,13 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/architect/ivrs/{ivrId}', 
 			'DELETE', 
-			{ 'ivrId': ivrId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'ivrId': ivrId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -88,13 +207,13 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/architect/prompts/{promptId}', 
 			'DELETE', 
-			{ 'promptId': promptId }, 
-			{ 'allResources': opts['allResources'] }, 
-			{  }, 
-			{  }, 
+			{ 'promptId': promptId },
+			{ 'allResources': opts['allResources'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -118,13 +237,13 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/architect/prompts/{promptId}/resources/{languageCode}', 
 			'DELETE', 
-			{ 'promptId': promptId,'languageCode': languageCode }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'promptId': promptId,'languageCode': languageCode },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -148,13 +267,13 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/architect/prompts/{promptId}/resources/{languageCode}/audio', 
 			'DELETE', 
-			{ 'promptId': promptId,'languageCode': languageCode }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'promptId': promptId,'languageCode': languageCode },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -173,13 +292,13 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/architect/prompts', 
 			'DELETE', 
-			{  }, 
-			{ 'id': this.apiClient.buildCollectionParam(id, 'multi') }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'id': this.apiClient.buildCollectionParam(id, 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -198,13 +317,13 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/architect/schedules/{scheduleId}', 
 			'DELETE', 
-			{ 'scheduleId': scheduleId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'scheduleId': scheduleId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -223,13 +342,13 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/architect/schedulegroups/{scheduleGroupId}', 
 			'DELETE', 
-			{ 'scheduleGroupId': scheduleGroupId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'scheduleGroupId': scheduleGroupId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -253,13 +372,13 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/architect/systemprompts/{promptId}/resources/{languageCode}', 
 			'DELETE', 
-			{ 'promptId': promptId,'languageCode': languageCode }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'promptId': promptId,'languageCode': languageCode },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -278,13 +397,13 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/flows/{flowId}', 
 			'DELETE', 
-			{ 'flowId': flowId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'flowId': flowId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -303,13 +422,13 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/flows', 
 			'DELETE', 
-			{  }, 
-			{ 'id': this.apiClient.buildCollectionParam(id, 'multi') }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'id': this.apiClient.buildCollectionParam(id, 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -332,13 +451,13 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/flows/datatables/{datatableId}', 
 			'DELETE', 
-			{ 'datatableId': datatableId }, 
-			{ 'force': opts['force'] }, 
-			{  }, 
-			{  }, 
+			{ 'datatableId': datatableId },
+			{ 'force': opts['force'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -362,13 +481,13 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/flows/datatables/{datatableId}/rows/{rowId}', 
 			'DELETE', 
-			{ 'datatableId': datatableId,'rowId': rowId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'datatableId': datatableId,'rowId': rowId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -387,13 +506,13 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/flows/milestones/{milestoneId}', 
 			'DELETE', 
-			{ 'milestoneId': milestoneId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'milestoneId': milestoneId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -422,13 +541,13 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/architect/dependencytracking', 
 			'GET', 
-			{  }, 
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'name': name,'objectType': this.apiClient.buildCollectionParam(opts['objectType'], 'multi'),'consumedResources': opts['consumedResources'],'consumingResources': opts['consumingResources'],'consumedResourceType': this.apiClient.buildCollectionParam(opts['consumedResourceType'], 'multi'),'consumingResourceType': this.apiClient.buildCollectionParam(opts['consumingResourceType'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'name': name,'objectType': this.apiClient.buildCollectionParam(opts['objectType'], 'multi'),'consumedResources': opts['consumedResources'],'consumingResources': opts['consumingResources'],'consumedResourceType': this.apiClient.buildCollectionParam(opts['consumedResourceType'], 'multi'),'consumingResourceType': this.apiClient.buildCollectionParam(opts['consumingResourceType'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -442,13 +561,13 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/architect/dependencytracking/build', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -483,13 +602,13 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/architect/dependencytracking/consumedresources', 
 			'GET', 
-			{  }, 
-			{ 'id': id,'version': version,'objectType': objectType,'resourceType': this.apiClient.buildCollectionParam(opts['resourceType'], 'multi'),'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'id': id,'version': version,'objectType': objectType,'resourceType': this.apiClient.buildCollectionParam(opts['resourceType'], 'multi'),'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -521,13 +640,13 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/architect/dependencytracking/consumingresources', 
 			'GET', 
-			{  }, 
-			{ 'id': id,'objectType': objectType,'resourceType': this.apiClient.buildCollectionParam(opts['resourceType'], 'multi'),'version': opts['version'],'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'flowFilter': opts['flowFilter'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'id': id,'objectType': objectType,'resourceType': this.apiClient.buildCollectionParam(opts['resourceType'], 'multi'),'version': opts['version'],'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'flowFilter': opts['flowFilter'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -551,13 +670,13 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/architect/dependencytracking/deletedresourceconsumers', 
 			'GET', 
-			{  }, 
-			{ 'name': opts['name'],'objectType': this.apiClient.buildCollectionParam(opts['objectType'], 'multi'),'flowFilter': opts['flowFilter'],'consumedResources': opts['consumedResources'],'consumedResourceType': this.apiClient.buildCollectionParam(opts['consumedResourceType'], 'multi'),'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'name': opts['name'],'objectType': this.apiClient.buildCollectionParam(opts['objectType'], 'multi'),'flowFilter': opts['flowFilter'],'consumedResources': opts['consumedResources'],'consumedResourceType': this.apiClient.buildCollectionParam(opts['consumedResourceType'], 'multi'),'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -586,13 +705,13 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/architect/dependencytracking/object', 
 			'GET', 
-			{  }, 
-			{ 'id': id,'version': opts['version'],'objectType': opts['objectType'],'consumedResources': opts['consumedResources'],'consumingResources': opts['consumingResources'],'consumedResourceType': this.apiClient.buildCollectionParam(opts['consumedResourceType'], 'multi'),'consumingResourceType': this.apiClient.buildCollectionParam(opts['consumingResourceType'], 'multi'),'consumedResourceRequest': opts['consumedResourceRequest'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'id': id,'version': opts['version'],'objectType': opts['objectType'],'consumedResources': opts['consumedResources'],'consumingResources': opts['consumingResources'],'consumedResourceType': this.apiClient.buildCollectionParam(opts['consumedResourceType'], 'multi'),'consumingResourceType': this.apiClient.buildCollectionParam(opts['consumingResourceType'], 'multi'),'consumedResourceRequest': opts['consumedResourceRequest'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -611,13 +730,13 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/architect/dependencytracking/types/{typeId}', 
 			'GET', 
-			{ 'typeId': typeId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'typeId': typeId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -636,13 +755,13 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/architect/dependencytracking/types', 
 			'GET', 
-			{  }, 
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -665,13 +784,13 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/architect/dependencytracking/updatedresourceconsumers', 
 			'GET', 
-			{  }, 
-			{ 'name': opts['name'],'objectType': this.apiClient.buildCollectionParam(opts['objectType'], 'multi'),'consumedResources': opts['consumedResources'],'consumedResourceType': this.apiClient.buildCollectionParam(opts['consumedResourceType'], 'multi'),'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'name': opts['name'],'objectType': this.apiClient.buildCollectionParam(opts['objectType'], 'multi'),'consumedResources': opts['consumedResources'],'consumedResourceType': this.apiClient.buildCollectionParam(opts['consumedResourceType'], 'multi'),'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -690,13 +809,13 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/architect/emergencygroups/{emergencyGroupId}', 
 			'GET', 
-			{ 'emergencyGroupId': emergencyGroupId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'emergencyGroupId': emergencyGroupId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -718,13 +837,137 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/architect/emergencygroups', 
 			'GET', 
-			{  }, 
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'name': opts['name'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'name': opts['name'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a pageable list of basic emergency group objects filterable by query parameters.
+	 * This returns emergency groups consisting of name and division. If one or more IDs are specified, the search will fetch flow outcomes that match the given ID(s) and not use any additional supplied query parameters in the search.
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {String} opts.sortBy Sort by (default to name)
+	 * @param {String} opts.sortOrder Sort order (default to ASC)
+	 * @param {Array.<String>} opts.id ID of the Emergency Groups to filter by.
+	 * @param {String} opts.name Name of the Emergency Group to filter by.
+	 * @param {Array.<String>} opts.divisionId List of divisionIds on which to filter.
+	 */
+	getArchitectEmergencygroupsDivisionviews(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/architect/emergencygroups/divisionviews', 
+			'GET', 
+			{  },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'name': opts['name'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a grammar
+	 * Returns a specified grammar
+	 * @param {String} grammarId grammar ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.includeFileUrls Include grammar language file URLs
+	 * getArchitectGrammar is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getArchitectGrammar(grammarId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'grammarId' is set
+		if (grammarId === undefined || grammarId === null) {
+			throw 'Missing the required parameter "grammarId" when calling getArchitectGrammar';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/architect/grammars/{grammarId}', 
+			'GET', 
+			{ 'grammarId': grammarId },
+			{ 'includeFileUrls': opts['includeFileUrls'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a grammar language.
+	 * 
+	 * @param {String} grammarId Grammar ID
+	 * @param {String} languageCode Language
+	 * getArchitectGrammarLanguage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getArchitectGrammarLanguage(grammarId, languageCode) { 
+		// verify the required parameter 'grammarId' is set
+		if (grammarId === undefined || grammarId === null) {
+			throw 'Missing the required parameter "grammarId" when calling getArchitectGrammarLanguage';
+		}
+		// verify the required parameter 'languageCode' is set
+		if (languageCode === undefined || languageCode === null) {
+			throw 'Missing the required parameter "languageCode" when calling getArchitectGrammarLanguage';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/architect/grammars/{grammarId}/languages/{languageCode}', 
+			'GET', 
+			{ 'grammarId': grammarId,'languageCode': languageCode },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a pageable list of grammars, filtered by query parameters
+	 * Multiple IDs can be specified, in which case all matching grammars will be returned, and no other parameters will be evaluated.
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Object} opts.sortBy Sort by (default to id)
+	 * @param {Object} opts.sortOrder Sort order (default to asc)
+	 * @param {Array.<String>} opts.id ID
+	 * @param {String} opts.name Name
+	 * @param {String} opts.description Description
+	 * @param {String} opts.nameOrDescription Name or description
+	 * @param {Boolean} opts.includeFileUrls Include grammar language file URLs
+	 * getArchitectGrammars is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getArchitectGrammars(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/architect/grammars', 
+			'GET', 
+			{  },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'name': opts['name'],'description': opts['description'],'nameOrDescription': opts['nameOrDescription'],'includeFileUrls': opts['includeFileUrls'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -743,13 +986,13 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/architect/ivrs/{ivrId}', 
 			'GET', 
-			{ 'ivrId': ivrId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'ivrId': ivrId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -763,6 +1006,8 @@ class ArchitectApi {
 	 * @param {String} opts.sortBy Sort by (default to name)
 	 * @param {String} opts.sortOrder Sort order (default to ASC)
 	 * @param {String} opts.name Name of the IVR to filter by.
+	 * @param {String} opts.dnis The phone number of the IVR to filter by.
+	 * @param {String} opts.scheduleGroup The Schedule Group of the IVR to filter by.
 	 */
 	getArchitectIvrs(opts) { 
 		opts = opts || {};
@@ -771,13 +1016,43 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/architect/ivrs', 
 			'GET', 
-			{  }, 
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'name': opts['name'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'name': opts['name'],'dnis': opts['dnis'],'scheduleGroup': opts['scheduleGroup'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a pageable list of basic ivr configuration information objects filterable by query parameters.
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {String} opts.sortBy Sort by (default to name)
+	 * @param {String} opts.sortOrder Sort order (default to ASC)
+	 * @param {Array.<String>} opts.id ID of the IVR to filter by.
+	 * @param {String} opts.name Name of the IVR to filter by.
+	 * @param {Array.<String>} opts.divisionId List of divisionIds on which to filter.
+	 */
+	getArchitectIvrsDivisionviews(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/architect/ivrs/divisionviews', 
+			'GET', 
+			{  },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'name': opts['name'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -796,13 +1071,13 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/architect/prompts/{promptId}', 
 			'GET', 
-			{ 'promptId': promptId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'promptId': promptId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -834,13 +1109,13 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/architect/prompts/{promptId}/history/{historyId}', 
 			'GET', 
-			{ 'promptId': promptId,'historyId': historyId }, 
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortOrder': opts['sortOrder'],'sortBy': opts['sortBy'],'action': this.apiClient.buildCollectionParam(opts['action'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{ 'promptId': promptId,'historyId': historyId },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortOrder': opts['sortOrder'],'sortBy': opts['sortBy'],'action': this.apiClient.buildCollectionParam(opts['action'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -864,13 +1139,13 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/architect/prompts/{promptId}/resources/{languageCode}', 
 			'GET', 
-			{ 'promptId': promptId,'languageCode': languageCode }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'promptId': promptId,'languageCode': languageCode },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -894,13 +1169,13 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/architect/prompts/{promptId}/resources', 
 			'GET', 
-			{ 'promptId': promptId }, 
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] }, 
-			{  }, 
-			{  }, 
+			{ 'promptId': promptId },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -924,13 +1199,13 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/architect/prompts', 
 			'GET', 
-			{  }, 
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'name': this.apiClient.buildCollectionParam(opts['name'], 'multi'),'description': opts['description'],'nameOrDescription': opts['nameOrDescription'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'name': this.apiClient.buildCollectionParam(opts['name'], 'multi'),'description': opts['description'],'nameOrDescription': opts['nameOrDescription'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -949,13 +1224,13 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/architect/schedules/{scheduleId}', 
 			'GET', 
-			{ 'scheduleId': scheduleId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'scheduleId': scheduleId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -974,13 +1249,13 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/architect/schedulegroups/{scheduleGroupId}', 
 			'GET', 
-			{ 'scheduleGroupId': scheduleGroupId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'scheduleGroupId': scheduleGroupId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1004,13 +1279,43 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/architect/schedulegroups', 
 			'GET', 
-			{  }, 
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'name': opts['name'],'scheduleIds': opts['scheduleIds'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'name': opts['name'],'scheduleIds': opts['scheduleIds'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a pageable list of basic schedule group configuration information objects filterable by query parameters.
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {String} opts.sortBy Sort by (default to name)
+	 * @param {String} opts.sortOrder Sort order (default to ASC)
+	 * @param {Array.<String>} opts.id ID of the schedule group to filter by.
+	 * @param {String} opts.name Name of the schedule group to filter by.
+	 * @param {Array.<String>} opts.divisionId List of divisionIds on which to filter.
+	 */
+	getArchitectSchedulegroupsDivisionviews(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/architect/schedulegroups/divisionviews', 
+			'GET', 
+			{  },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'name': opts['name'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1033,13 +1338,43 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/architect/schedules', 
 			'GET', 
-			{  }, 
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'name': opts['name'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'name': opts['name'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a pageable list of basic schedule configuration information objects filterable by query parameters.
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {String} opts.sortBy Sort by (default to name)
+	 * @param {String} opts.sortOrder Sort order (default to ASC)
+	 * @param {Array.<String>} opts.id ID of the schedule group to filter by.
+	 * @param {String} opts.name Name of the schedule group to filter by.
+	 * @param {Array.<String>} opts.divisionId List of divisionIds on which to filter.
+	 */
+	getArchitectSchedulesDivisionviews(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/architect/schedules/divisionviews', 
+			'GET', 
+			{  },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'name': opts['name'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1058,13 +1393,13 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/architect/systemprompts/{promptId}', 
 			'GET', 
-			{ 'promptId': promptId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'promptId': promptId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1096,13 +1431,13 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/architect/systemprompts/{promptId}/history/{historyId}', 
 			'GET', 
-			{ 'promptId': promptId,'historyId': historyId }, 
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortOrder': opts['sortOrder'],'sortBy': opts['sortBy'],'action': this.apiClient.buildCollectionParam(opts['action'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{ 'promptId': promptId,'historyId': historyId },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortOrder': opts['sortOrder'],'sortBy': opts['sortBy'],'action': this.apiClient.buildCollectionParam(opts['action'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1126,13 +1461,13 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/architect/systemprompts/{promptId}/resources/{languageCode}', 
 			'GET', 
-			{ 'promptId': promptId,'languageCode': languageCode }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'promptId': promptId,'languageCode': languageCode },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1158,13 +1493,13 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/architect/systemprompts/{promptId}/resources', 
 			'GET', 
-			{ 'promptId': promptId }, 
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
-			{  }, 
-			{  }, 
+			{ 'promptId': promptId },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1188,13 +1523,13 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/architect/systemprompts', 
 			'GET', 
-			{  }, 
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'name': opts['name'],'description': opts['description'],'nameOrDescription': opts['nameOrDescription'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'name': opts['name'],'description': opts['description'],'nameOrDescription': opts['nameOrDescription'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1217,13 +1552,13 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/flows/{flowId}', 
 			'GET', 
-			{ 'flowId': flowId }, 
-			{ 'deleted': opts['deleted'] }, 
-			{  }, 
-			{  }, 
+			{ 'flowId': flowId },
+			{ 'deleted': opts['deleted'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1255,13 +1590,13 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/flows/{flowId}/history/{historyId}', 
 			'GET', 
-			{ 'flowId': flowId,'historyId': historyId }, 
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortOrder': opts['sortOrder'],'sortBy': opts['sortBy'],'action': this.apiClient.buildCollectionParam(opts['action'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{ 'flowId': flowId,'historyId': historyId },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortOrder': opts['sortOrder'],'sortBy': opts['sortBy'],'action': this.apiClient.buildCollectionParam(opts['action'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1284,13 +1619,13 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/flows/{flowId}/latestconfiguration', 
 			'GET', 
-			{ 'flowId': flowId }, 
-			{ 'deleted': opts['deleted'] }, 
-			{  }, 
-			{  }, 
+			{ 'flowId': flowId },
+			{ 'deleted': opts['deleted'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1318,13 +1653,13 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/flows/{flowId}/versions/{versionId}', 
 			'GET', 
-			{ 'flowId': flowId,'versionId': versionId }, 
-			{ 'deleted': opts['deleted'] }, 
-			{  }, 
-			{  }, 
+			{ 'flowId': flowId,'versionId': versionId },
+			{ 'deleted': opts['deleted'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1352,13 +1687,13 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/flows/{flowId}/versions/{versionId}/configuration', 
 			'GET', 
-			{ 'flowId': flowId,'versionId': versionId }, 
-			{ 'deleted': opts['deleted'] }, 
-			{  }, 
-			{  }, 
+			{ 'flowId': flowId,'versionId': versionId },
+			{ 'deleted': opts['deleted'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1383,13 +1718,13 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/flows/{flowId}/versions', 
 			'GET', 
-			{ 'flowId': flowId }, 
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'deleted': opts['deleted'] }, 
-			{  }, 
-			{  }, 
+			{ 'flowId': flowId },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'deleted': opts['deleted'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1425,13 +1760,13 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/flows', 
 			'GET', 
-			{  }, 
-			{ 'type': this.apiClient.buildCollectionParam(opts['type'], 'multi'),'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'name': opts['name'],'description': opts['description'],'nameOrDescription': opts['nameOrDescription'],'publishVersionId': opts['publishVersionId'],'editableBy': opts['editableBy'],'lockedBy': opts['lockedBy'],'lockedByClientId': opts['lockedByClientId'],'secure': opts['secure'],'deleted': opts['deleted'],'includeSchemas': opts['includeSchemas'],'publishedAfter': opts['publishedAfter'],'publishedBefore': opts['publishedBefore'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'type': this.apiClient.buildCollectionParam(opts['type'], 'multi'),'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'name': opts['name'],'description': opts['description'],'nameOrDescription': opts['nameOrDescription'],'publishVersionId': opts['publishVersionId'],'editableBy': opts['editableBy'],'lockedBy': opts['lockedBy'],'lockedByClientId': opts['lockedByClientId'],'secure': opts['secure'],'deleted': opts['deleted'],'includeSchemas': opts['includeSchemas'],'publishedAfter': opts['publishedAfter'],'publishedBefore': opts['publishedBefore'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1454,13 +1789,13 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/flows/datatables/{datatableId}', 
 			'GET', 
-			{ 'datatableId': datatableId }, 
-			{ 'expand': opts['expand'] }, 
-			{  }, 
-			{  }, 
+			{ 'datatableId': datatableId },
+			{ 'expand': opts['expand'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1484,13 +1819,13 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/flows/datatables/{datatableId}/export/jobs/{exportJobId}', 
 			'GET', 
-			{ 'datatableId': datatableId,'exportJobId': exportJobId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'datatableId': datatableId,'exportJobId': exportJobId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1514,13 +1849,13 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/flows/datatables/{datatableId}/import/jobs/{importJobId}', 
 			'GET', 
-			{ 'datatableId': datatableId,'importJobId': importJobId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'datatableId': datatableId,'importJobId': importJobId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1544,13 +1879,13 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/flows/datatables/{datatableId}/import/jobs', 
 			'GET', 
-			{ 'datatableId': datatableId }, 
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] }, 
-			{  }, 
-			{  }, 
+			{ 'datatableId': datatableId },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1578,13 +1913,13 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/flows/datatables/{datatableId}/rows/{rowId}', 
 			'GET', 
-			{ 'datatableId': datatableId,'rowId': rowId }, 
-			{ 'showbrief': opts['showbrief'] }, 
-			{  }, 
-			{  }, 
+			{ 'datatableId': datatableId,'rowId': rowId },
+			{ 'showbrief': opts['showbrief'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1597,6 +1932,7 @@ class ArchitectApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Boolean} opts.showbrief If true returns just the key value of the row (default to true)
+	 * @param {Object} opts.sortOrder Sort order (default to ascending)
 	 */
 	getFlowsDatatableRows(datatableId, opts) { 
 		opts = opts || {};
@@ -1609,13 +1945,13 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/flows/datatables/{datatableId}/rows', 
 			'GET', 
-			{ 'datatableId': datatableId }, 
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'showbrief': opts['showbrief'] }, 
-			{  }, 
-			{  }, 
+			{ 'datatableId': datatableId },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'showbrief': opts['showbrief'],'sortOrder': opts['sortOrder'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1630,7 +1966,7 @@ class ArchitectApi {
 	 * @param {Object} opts.sortBy Sort by (default to id)
 	 * @param {String} opts.sortOrder Sort order (default to ascending)
 	 * @param {Array.<String>} opts.divisionId division ID(s)
-	 * @param {String} opts.name Name to filter by
+	 * @param {String} opts.name Filter by Name. The wildcard character * is supported within the filter. Matches are case-insensitive.
 	 */
 	getFlowsDatatables(opts) { 
 		opts = opts || {};
@@ -1639,13 +1975,13 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/flows/datatables', 
 			'GET', 
-			{  }, 
-			{ 'expand': opts['expand'],'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi'),'name': opts['name'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'expand': opts['expand'],'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi'),'name': opts['name'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1668,13 +2004,13 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/flows/datatables/divisionviews/{datatableId}', 
 			'GET', 
-			{ 'datatableId': datatableId }, 
-			{ 'expand': opts['expand'] }, 
-			{  }, 
-			{  }, 
+			{ 'datatableId': datatableId },
+			{ 'expand': opts['expand'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1689,7 +2025,7 @@ class ArchitectApi {
 	 * @param {Object} opts.sortBy Sort by (default to id)
 	 * @param {String} opts.sortOrder Sort order (default to ascending)
 	 * @param {Array.<String>} opts.divisionId division ID(s)
-	 * @param {String} opts.name Name to filter by
+	 * @param {String} opts.name Filter by Name. The wildcard character * is supported within the filter. Matches are case-insensitive.
 	 */
 	getFlowsDatatablesDivisionviews(opts) { 
 		opts = opts || {};
@@ -1698,13 +2034,13 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/flows/datatables/divisionviews', 
 			'GET', 
-			{  }, 
-			{ 'expand': opts['expand'],'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi'),'name': opts['name'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'expand': opts['expand'],'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi'),'name': opts['name'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1733,19 +2069,19 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/flows/divisionviews', 
 			'GET', 
-			{  }, 
-			{ 'type': this.apiClient.buildCollectionParam(opts['type'], 'multi'),'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'name': opts['name'],'publishVersionId': opts['publishVersionId'],'publishedAfter': opts['publishedAfter'],'publishedBefore': opts['publishedBefore'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi'),'includeSchemas': opts['includeSchemas'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'type': this.apiClient.buildCollectionParam(opts['type'], 'multi'),'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'name': opts['name'],'publishVersionId': opts['publishVersionId'],'publishedAfter': opts['publishedAfter'],'publishedBefore': opts['publishedBefore'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi'),'includeSchemas': opts['includeSchemas'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Get a flow execution&#39;s details. Flow execution details are available for several days after the flow is started.
+	 * Get a flow execution's details. Flow execution details are available for several days after the flow is started.
 	 * 
 	 * @param {String} flowExecutionId flow execution ID
 	 */
@@ -1758,13 +2094,123 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/flows/executions/{flowExecutionId}', 
 			'GET', 
-			{ 'flowExecutionId': flowExecutionId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'flowExecutionId': flowExecutionId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Start a process (job) to prepare a download of a singular flow execution data instance by Id
+	 * Returns a JobResult object that contains an ID that can be used to check status and/or download links when the process (job) is complete.
+	 * @param {String} instanceId Instance ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.expand Expand various details.
+	 * getFlowsInstance is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getFlowsInstance(instanceId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'instanceId' is set
+		if (instanceId === undefined || instanceId === null) {
+			throw 'Missing the required parameter "instanceId" when calling getFlowsInstance';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/flows/instances/{instanceId}', 
+			'GET', 
+			{ 'instanceId': instanceId },
+			{ 'expand': opts['expand'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the status and/or results of an asynchronous flow execution data retrieval job
+	 * 
+	 * @param {String} jobId The asynchronous job ID
+	 * getFlowsInstancesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getFlowsInstancesJob(jobId) { 
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null) {
+			throw 'Missing the required parameter "jobId" when calling getFlowsInstancesJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/flows/instances/jobs/{jobId}', 
+			'GET', 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Retrieve a list of capabilities that the org can use to query for execution data
+	 * Returns the queryable parameters that can be used to build a query for execution data.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.expand Expand various query types.
+	 * getFlowsInstancesQuerycapabilities is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getFlowsInstancesQuerycapabilities(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/flows/instances/querycapabilities', 
+			'GET', 
+			{  },
+			{ 'expand': opts['expand'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Fetch Architect Job Status
+	 * 
+	 * @param {String} jobId Job ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.expand Which fields, if any, to expand.
+	 */
+	getFlowsJob(jobId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null) {
+			throw 'Missing the required parameter "jobId" when calling getFlowsJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/flows/jobs/{jobId}', 
+			'GET', 
+			{ 'jobId': jobId },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1783,13 +2229,13 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/flows/milestones/{milestoneId}', 
 			'GET', 
-			{ 'milestoneId': milestoneId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'milestoneId': milestoneId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1815,13 +2261,13 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/flows/milestones', 
 			'GET', 
-			{  }, 
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'name': opts['name'],'description': opts['description'],'nameOrDescription': opts['nameOrDescription'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'name': opts['name'],'description': opts['description'],'nameOrDescription': opts['nameOrDescription'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1845,13 +2291,13 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/flows/milestones/divisionviews', 
 			'GET', 
-			{  }, 
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'name': opts['name'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'name': opts['name'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1870,13 +2316,13 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/flows/outcomes/{flowOutcomeId}', 
 			'GET', 
-			{ 'flowOutcomeId': flowOutcomeId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'flowOutcomeId': flowOutcomeId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1902,13 +2348,13 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/flows/outcomes', 
 			'GET', 
-			{  }, 
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'name': opts['name'],'description': opts['description'],'nameOrDescription': opts['nameOrDescription'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'name': opts['name'],'description': opts['description'],'nameOrDescription': opts['nameOrDescription'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1932,13 +2378,43 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/flows/outcomes/divisionviews', 
 			'GET', 
-			{  }, 
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'name': opts['name'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'name': opts['name'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Updates a grammar
+	 * 
+	 * @param {String} grammarId grammar ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 * patchArchitectGrammar is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	patchArchitectGrammar(grammarId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'grammarId' is set
+		if (grammarId === undefined || grammarId === null) {
+			throw 'Missing the required parameter "grammarId" when calling patchArchitectGrammar';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/architect/grammars/{grammarId}', 
+			'PATCH', 
+			{ 'grammarId': grammarId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1952,13 +2428,13 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/architect/dependencytracking/build', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1977,13 +2453,142 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/architect/emergencygroups', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Creates a presigned URL for uploading a grammar DTMF mode file
+	 * 
+	 * @param {String} grammarId Grammar ID
+	 * @param {String} languageCode Language
+	 * @param {Object} body query
+	 * postArchitectGrammarLanguageFilesDtmf is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postArchitectGrammarLanguageFilesDtmf(grammarId, languageCode, body) { 
+		// verify the required parameter 'grammarId' is set
+		if (grammarId === undefined || grammarId === null) {
+			throw 'Missing the required parameter "grammarId" when calling postArchitectGrammarLanguageFilesDtmf';
+		}
+		// verify the required parameter 'languageCode' is set
+		if (languageCode === undefined || languageCode === null) {
+			throw 'Missing the required parameter "languageCode" when calling postArchitectGrammarLanguageFilesDtmf';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postArchitectGrammarLanguageFilesDtmf';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/architect/grammars/{grammarId}/languages/{languageCode}/files/dtmf', 
+			'POST', 
+			{ 'grammarId': grammarId,'languageCode': languageCode },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Creates a presigned URL for uploading a grammar voice mode file
+	 * 
+	 * @param {String} grammarId Grammar ID
+	 * @param {String} languageCode Language
+	 * @param {Object} body query
+	 * postArchitectGrammarLanguageFilesVoice is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postArchitectGrammarLanguageFilesVoice(grammarId, languageCode, body) { 
+		// verify the required parameter 'grammarId' is set
+		if (grammarId === undefined || grammarId === null) {
+			throw 'Missing the required parameter "grammarId" when calling postArchitectGrammarLanguageFilesVoice';
+		}
+		// verify the required parameter 'languageCode' is set
+		if (languageCode === undefined || languageCode === null) {
+			throw 'Missing the required parameter "languageCode" when calling postArchitectGrammarLanguageFilesVoice';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postArchitectGrammarLanguageFilesVoice';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/architect/grammars/{grammarId}/languages/{languageCode}/files/voice', 
+			'POST', 
+			{ 'grammarId': grammarId,'languageCode': languageCode },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create a new language for a given grammar
+	 * 
+	 * @param {String} grammarId Grammar ID
+	 * @param {Object} body 
+	 * postArchitectGrammarLanguages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postArchitectGrammarLanguages(grammarId, body) { 
+		// verify the required parameter 'grammarId' is set
+		if (grammarId === undefined || grammarId === null) {
+			throw 'Missing the required parameter "grammarId" when calling postArchitectGrammarLanguages';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postArchitectGrammarLanguages';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/architect/grammars/{grammarId}/languages', 
+			'POST', 
+			{ 'grammarId': grammarId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create a new grammar
+	 * 
+	 * @param {Object} body 
+	 * postArchitectGrammars is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postArchitectGrammars(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postArchitectGrammars';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/architect/grammars', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2002,13 +2607,13 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/architect/ivrs', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2027,13 +2632,13 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/architect/prompts/{promptId}/history', 
 			'POST', 
-			{ 'promptId': promptId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'promptId': promptId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2057,13 +2662,13 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/architect/prompts/{promptId}/resources', 
 			'POST', 
-			{ 'promptId': promptId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'promptId': promptId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2082,13 +2687,13 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/architect/prompts', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2107,13 +2712,13 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/architect/schedulegroups', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2132,13 +2737,13 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/architect/schedules', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2157,13 +2762,13 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/architect/systemprompts/{promptId}/history', 
 			'POST', 
-			{ 'promptId': promptId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'promptId': promptId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2187,13 +2792,13 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/architect/systemprompts/{promptId}/resources', 
 			'POST', 
-			{ 'promptId': promptId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'promptId': promptId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2212,13 +2817,13 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/flows/{flowId}/history', 
 			'POST', 
-			{ 'flowId': flowId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'flowId': flowId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2227,7 +2832,7 @@ class ArchitectApi {
 	 * Create flow version
 	 * 
 	 * @param {String} flowId Flow ID
-	 * @param {Object} body 
+	 * @param {Object.<String, {String: Object}>} body 
 	 */
 	postFlowVersions(flowId, body) { 
 		// verify the required parameter 'flowId' is set
@@ -2242,13 +2847,13 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/flows/{flowId}/versions', 
 			'POST', 
-			{ 'flowId': flowId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'flowId': flowId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2271,13 +2876,13 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/flows', 
 			'POST', 
-			{  }, 
-			{ 'language': opts['language'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'language': opts['language'] },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2296,13 +2901,13 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/flows/actions/checkin', 
 			'POST', 
-			{  }, 
-			{ 'flow': flow }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'flow': flow },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2321,13 +2926,13 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/flows/actions/checkout', 
 			'POST', 
-			{  }, 
-			{ 'flow': flow }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'flow': flow },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2346,13 +2951,13 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/flows/actions/deactivate', 
 			'POST', 
-			{  }, 
-			{ 'flow': flow }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'flow': flow },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2375,13 +2980,13 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/flows/actions/publish', 
 			'POST', 
-			{  }, 
-			{ 'flow': flow,'version': opts['version'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'flow': flow,'version': opts['version'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2400,13 +3005,13 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/flows/actions/revert', 
 			'POST', 
-			{  }, 
-			{ 'flow': flow }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'flow': flow },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2425,13 +3030,13 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/flows/actions/unlock', 
 			'POST', 
-			{  }, 
-			{ 'flow': flow }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'flow': flow },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2450,13 +3055,13 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/flows/datatables/{datatableId}/export/jobs', 
 			'POST', 
-			{ 'datatableId': datatableId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'datatableId': datatableId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2480,22 +3085,22 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/flows/datatables/{datatableId}/import/jobs', 
 			'POST', 
-			{ 'datatableId': datatableId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'datatableId': datatableId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
 	 * Create a new row entry for the datatable.
-	 * Will add the passed in row entry to the datatable with the given datatableId after verifying it against the schema.  The DataTableRow should be a json-ized&#39; stream of key -&gt; value pairs {      \&quot;Field1\&quot;: \&quot;XYZZY\&quot;,      \&quot;Field2\&quot;: false,      \&quot;KEY\&quot;: \&quot;27272\&quot;  }
+	 * Will add the passed in row entry to the datatable with the given datatableId after verifying it against the schema.  The DataTableRow should be a json-ized stream of key -> value pairs {      "Field1": "XYZZY",      "Field2": false,      "KEY": "27272"  }
 	 * @param {String} datatableId id of datatable
-	 * @param {Object} dataTableRow 
+	 * @param {Object.<String, {String: Object}>} dataTableRow 
 	 */
 	postFlowsDatatableRows(datatableId, dataTableRow) { 
 		// verify the required parameter 'datatableId' is set
@@ -2510,20 +3115,20 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/flows/datatables/{datatableId}/rows', 
 			'POST', 
-			{ 'datatableId': datatableId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'datatableId': datatableId },
+			{  },
+			{  },
+			{  },
 			dataTableRow, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
 	 * Create a new datatable with the specified json-schema definition
-	 * This will create a new datatable with fields that match the property definitions in the JSON schema.  The schema&#39;s title field will be overridden by the name field in the DataTable object.  See also http://json-schema.org/
+	 * This will create a new datatable with fields that match the property definitions in the JSON schema.  The schemas title field will be overridden by the name field in the DataTable object.  See also http://json-schema.org/
 	 * @param {Object} body datatable json-schema
 	 */
 	postFlowsDatatables(body) { 
@@ -2535,19 +3140,19 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/flows/datatables', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Launch an instance of a flow definition, for flow types that support it such as the &#39;workflow&#39; type.
+	 * Launch an instance of a flow definition, for flow types that support it such as the 'workflow' type.
 	 * The launch is asynchronous, it returns as soon as the flow starts. You can use the returned ID to query its status if you need.
 	 * @param {Object} flowLaunchRequest 
 	 */
@@ -2560,13 +3165,93 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/flows/executions', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			flowLaunchRequest, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Start a process (job) that will prepare a list of execution data IDs for download.
+	 * Returns a JobResult object that contains an ID that can be used to check status and/or download links when the process (job) is complete.
+	 * @param {Object} body Requested Flow Ids
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.expand Expand various query types.
+	 * postFlowsInstancesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postFlowsInstancesJobs(body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postFlowsInstancesJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/flows/instances/jobs', 
+			'POST', 
+			{  },
+			{ 'expand': opts['expand'] },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Query the database of existing flow histories to look for particular flow criteria
+	 * Returns a list of matching flow histories up to 200 max.
+	 * @param {Object} body query
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.indexOnly indexes only
+	 * postFlowsInstancesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postFlowsInstancesQuery(body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postFlowsInstancesQuery';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/flows/instances/query', 
+			'POST', 
+			{  },
+			{ 'indexOnly': opts['indexOnly'] },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Register Architect Job. Returns a URL where a file, such as an Architect flow YAML file, can be PUT which will then initiate the job.
+	 * 
+	 */
+	postFlowsJobs() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/flows/jobs', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2584,13 +3269,13 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/flows/milestones', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			opts['body'], 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2608,13 +3293,13 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/flows/outcomes', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			opts['body'], 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2638,13 +3323,13 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/architect/emergencygroups/{emergencyGroupId}', 
 			'PUT', 
-			{ 'emergencyGroupId': emergencyGroupId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'emergencyGroupId': emergencyGroupId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2668,13 +3353,13 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/architect/ivrs/{ivrId}', 
 			'PUT', 
-			{ 'ivrId': ivrId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'ivrId': ivrId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2698,13 +3383,13 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/architect/prompts/{promptId}', 
 			'PUT', 
-			{ 'promptId': promptId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'promptId': promptId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2733,13 +3418,13 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/architect/prompts/{promptId}/resources/{languageCode}', 
 			'PUT', 
-			{ 'promptId': promptId,'languageCode': languageCode }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'promptId': promptId,'languageCode': languageCode },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2763,13 +3448,13 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/architect/schedules/{scheduleId}', 
 			'PUT', 
-			{ 'scheduleId': scheduleId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'scheduleId': scheduleId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2793,13 +3478,13 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/architect/schedulegroups/{scheduleGroupId}', 
 			'PUT', 
-			{ 'scheduleGroupId': scheduleGroupId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'scheduleGroupId': scheduleGroupId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2828,13 +3513,13 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/architect/systemprompts/{promptId}/resources/{languageCode}', 
 			'PUT', 
-			{ 'promptId': promptId,'languageCode': languageCode }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'promptId': promptId,'languageCode': languageCode },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2858,13 +3543,13 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/flows/{flowId}', 
 			'PUT', 
-			{ 'flowId': flowId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'flowId': flowId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2892,24 +3577,24 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/flows/datatables/{datatableId}', 
 			'PUT', 
-			{ 'datatableId': datatableId }, 
-			{ 'expand': opts['expand'] }, 
-			{  }, 
-			{  }, 
+			{ 'datatableId': datatableId },
+			{ 'expand': opts['expand'] },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
 	 * Update a row entry
-	 * Updates a row with the given rowId (the value of the key field) to the new values.  The DataTableRow should be a json-ized&#39; stream of key -&gt; value pairs {     \&quot;Field1\&quot;: \&quot;XYZZY\&quot;,     \&quot;Field2\&quot;: false,     \&quot;KEY\&quot;: \&quot;27272\&quot; }
+	 * Updates a row with the given rowId (the value of the key field) to the new values.  The DataTableRow should be a json-ized stream of key -> value pairs {     "Field1": "XYZZY",     "Field2": false,     "KEY": "27272" }
 	 * @param {String} datatableId id of datatable
 	 * @param {String} rowId the key for the row
 	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body datatable row
+	 * @param {Object.<String, {String: Object}>} opts.body datatable row
 	 */
 	putFlowsDatatableRow(datatableId, rowId, opts) { 
 		opts = opts || {};
@@ -2926,13 +3611,13 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/flows/datatables/{datatableId}/rows/{rowId}', 
 			'PUT', 
-			{ 'datatableId': datatableId,'rowId': rowId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'datatableId': datatableId,'rowId': rowId },
+			{  },
+			{  },
+			{  },
 			opts['body'], 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2955,13 +3640,13 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/flows/milestones/{milestoneId}', 
 			'PUT', 
-			{ 'milestoneId': milestoneId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'milestoneId': milestoneId },
+			{  },
+			{  },
+			{  },
 			opts['body'], 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2984,13 +3669,13 @@ class ArchitectApi {
 		return this.apiClient.callApi(
 			'/api/v2/flows/outcomes/{flowOutcomeId}', 
 			'PUT', 
-			{ 'flowOutcomeId': flowOutcomeId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'flowOutcomeId': flowOutcomeId },
+			{  },
+			{  },
+			{  },
 			opts['body'], 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}

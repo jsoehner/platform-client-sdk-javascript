@@ -7,11 +7,15 @@ import ArchitectApi from './api/ArchitectApi.js';
 import AuditApi from './api/AuditApi.js';
 import AuthorizationApi from './api/AuthorizationApi.js';
 import BillingApi from './api/BillingApi.js';
+import CarrierServicesApi from './api/CarrierServicesApi.js';
 import ChatApi from './api/ChatApi.js';
 import CoachingApi from './api/CoachingApi.js';
 import ContentManagementApi from './api/ContentManagementApi.js';
 import ConversationsApi from './api/ConversationsApi.js';
 import DataExtensionsApi from './api/DataExtensionsApi.js';
+import DownloadsApi from './api/DownloadsApi.js';
+import EmailsApi from './api/EmailsApi.js';
+import EventsApi from './api/EventsApi.js';
 import ExternalContactsApi from './api/ExternalContactsApi.js';
 import FaxApi from './api/FaxApi.js';
 import FlowsApi from './api/FlowsApi.js';
@@ -21,6 +25,7 @@ import GeolocationApi from './api/GeolocationApi.js';
 import GreetingsApi from './api/GreetingsApi.js';
 import GroupsApi from './api/GroupsApi.js';
 import IdentityProviderApi from './api/IdentityProviderApi.js';
+import InfrastructureAsCodeApi from './api/InfrastructureAsCodeApi.js';
 import IntegrationsApi from './api/IntegrationsApi.js';
 import JourneyApi from './api/JourneyApi.js';
 import KnowledgeApi from './api/KnowledgeApi.js';
@@ -29,6 +34,7 @@ import LanguagesApi from './api/LanguagesApi.js';
 import LearningApi from './api/LearningApi.js';
 import LicenseApi from './api/LicenseApi.js';
 import LocationsApi from './api/LocationsApi.js';
+import MessagingApi from './api/MessagingApi.js';
 import MobileDevicesApi from './api/MobileDevicesApi.js';
 import NotificationsApi from './api/NotificationsApi.js';
 import OAuthApi from './api/OAuthApi.js';
@@ -37,6 +43,7 @@ import OrganizationApi from './api/OrganizationApi.js';
 import OrganizationAuthorizationApi from './api/OrganizationAuthorizationApi.js';
 import OutboundApi from './api/OutboundApi.js';
 import PresenceApi from './api/PresenceApi.js';
+import ProcessAutomationApi from './api/ProcessAutomationApi.js';
 import QualityApi from './api/QualityApi.js';
 import RecordingApi from './api/RecordingApi.js';
 import ResponseManagementApi from './api/ResponseManagementApi.js';
@@ -44,9 +51,12 @@ import RoutingApi from './api/RoutingApi.js';
 import SCIMApi from './api/SCIMApi.js';
 import ScriptsApi from './api/ScriptsApi.js';
 import SearchApi from './api/SearchApi.js';
+import SettingsApi from './api/SettingsApi.js';
 import SpeechTextAnalyticsApi from './api/SpeechTextAnalyticsApi.js';
 import StationsApi from './api/StationsApi.js';
 import SuggestApi from './api/SuggestApi.js';
+import TaskManagementApi from './api/TaskManagementApi.js';
+import TeamsApi from './api/TeamsApi.js';
 import TelephonyApi from './api/TelephonyApi.js';
 import TelephonyProvidersEdgeApi from './api/TelephonyProvidersEdgeApi.js';
 import TextbotsApi from './api/TextbotsApi.js';
@@ -62,6 +72,7 @@ import WebDeploymentsApi from './api/WebDeploymentsApi.js';
 import WebMessagingApi from './api/WebMessagingApi.js';
 import WidgetsApi from './api/WidgetsApi.js';
 import WorkforceManagementApi from './api/WorkforceManagementApi.js';
+
 
 
 /**
@@ -93,7 +104,7 @@ import WorkforceManagementApi from './api/WorkforceManagementApi.js';
  * </pre>
  * </p>
  * @module purecloud-platform-client-v2/index
- * @version 124.0.0
+ * @version 174.0.0
  */
 class platformClient {
 	constructor() {
@@ -138,6 +149,11 @@ class platformClient {
 		 */
 		this.BillingApi = BillingApi;
 		/**
+		 * The CarrierServicesApi service constructor.
+		 * @property {module:purecloud-platform-client-v2/api/CarrierServicesApi}
+		 */
+		this.CarrierServicesApi = CarrierServicesApi;
+		/**
 		 * The ChatApi service constructor.
 		 * @property {module:purecloud-platform-client-v2/api/ChatApi}
 		 */
@@ -162,6 +178,21 @@ class platformClient {
 		 * @property {module:purecloud-platform-client-v2/api/DataExtensionsApi}
 		 */
 		this.DataExtensionsApi = DataExtensionsApi;
+		/**
+		 * The DownloadsApi service constructor.
+		 * @property {module:purecloud-platform-client-v2/api/DownloadsApi}
+		 */
+		this.DownloadsApi = DownloadsApi;
+		/**
+		 * The EmailsApi service constructor.
+		 * @property {module:purecloud-platform-client-v2/api/EmailsApi}
+		 */
+		this.EmailsApi = EmailsApi;
+		/**
+		 * The EventsApi service constructor.
+		 * @property {module:purecloud-platform-client-v2/api/EventsApi}
+		 */
+		this.EventsApi = EventsApi;
 		/**
 		 * The ExternalContactsApi service constructor.
 		 * @property {module:purecloud-platform-client-v2/api/ExternalContactsApi}
@@ -208,6 +239,11 @@ class platformClient {
 		 */
 		this.IdentityProviderApi = IdentityProviderApi;
 		/**
+		 * The InfrastructureAsCodeApi service constructor.
+		 * @property {module:purecloud-platform-client-v2/api/InfrastructureAsCodeApi}
+		 */
+		this.InfrastructureAsCodeApi = InfrastructureAsCodeApi;
+		/**
 		 * The IntegrationsApi service constructor.
 		 * @property {module:purecloud-platform-client-v2/api/IntegrationsApi}
 		 */
@@ -247,6 +283,11 @@ class platformClient {
 		 * @property {module:purecloud-platform-client-v2/api/LocationsApi}
 		 */
 		this.LocationsApi = LocationsApi;
+		/**
+		 * The MessagingApi service constructor.
+		 * @property {module:purecloud-platform-client-v2/api/MessagingApi}
+		 */
+		this.MessagingApi = MessagingApi;
 		/**
 		 * The MobileDevicesApi service constructor.
 		 * @property {module:purecloud-platform-client-v2/api/MobileDevicesApi}
@@ -288,6 +329,11 @@ class platformClient {
 		 */
 		this.PresenceApi = PresenceApi;
 		/**
+		 * The ProcessAutomationApi service constructor.
+		 * @property {module:purecloud-platform-client-v2/api/ProcessAutomationApi}
+		 */
+		this.ProcessAutomationApi = ProcessAutomationApi;
+		/**
 		 * The QualityApi service constructor.
 		 * @property {module:purecloud-platform-client-v2/api/QualityApi}
 		 */
@@ -323,6 +369,11 @@ class platformClient {
 		 */
 		this.SearchApi = SearchApi;
 		/**
+		 * The SettingsApi service constructor.
+		 * @property {module:purecloud-platform-client-v2/api/SettingsApi}
+		 */
+		this.SettingsApi = SettingsApi;
+		/**
 		 * The SpeechTextAnalyticsApi service constructor.
 		 * @property {module:purecloud-platform-client-v2/api/SpeechTextAnalyticsApi}
 		 */
@@ -337,6 +388,16 @@ class platformClient {
 		 * @property {module:purecloud-platform-client-v2/api/SuggestApi}
 		 */
 		this.SuggestApi = SuggestApi;
+		/**
+		 * The TaskManagementApi service constructor.
+		 * @property {module:purecloud-platform-client-v2/api/TaskManagementApi}
+		 */
+		this.TaskManagementApi = TaskManagementApi;
+		/**
+		 * The TeamsApi service constructor.
+		 * @property {module:purecloud-platform-client-v2/api/TeamsApi}
+		 */
+		this.TeamsApi = TeamsApi;
 		/**
 		 * The TelephonyApi service constructor.
 		 * @property {module:purecloud-platform-client-v2/api/TelephonyApi}

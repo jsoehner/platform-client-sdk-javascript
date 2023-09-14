@@ -18,10 +18,17 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteOutboundContactlistContacts**](OutboundApi.html#deleteOutboundContactlistContacts) | **DELETE** /api/v2/outbound/contactlists/{contactListId}/contacts | Delete contacts from a contact list.
 [**deleteOutboundContactlistfilter**](OutboundApi.html#deleteOutboundContactlistfilter) | **DELETE** /api/v2/outbound/contactlistfilters/{contactListFilterId} | Delete Contact List Filter
 [**deleteOutboundContactlists**](OutboundApi.html#deleteOutboundContactlists) | **DELETE** /api/v2/outbound/contactlists | Delete multiple contact lists.
+[**deleteOutboundDigitalruleset**](OutboundApi.html#deleteOutboundDigitalruleset) | **DELETE** /api/v2/outbound/digitalrulesets/{digitalRuleSetId} | Delete an Outbound Digital Rule Set
 [**deleteOutboundDnclist**](OutboundApi.html#deleteOutboundDnclist) | **DELETE** /api/v2/outbound/dnclists/{dncListId} | Delete dialer DNC list
+[**deleteOutboundDnclistCustomexclusioncolumns**](OutboundApi.html#deleteOutboundDnclistCustomexclusioncolumns) | **DELETE** /api/v2/outbound/dnclists/{dncListId}/customexclusioncolumns | Deletes all or expired custom exclusion column entries from a DNC list.
+[**deleteOutboundDnclistEmailaddresses**](OutboundApi.html#deleteOutboundDnclistEmailaddresses) | **DELETE** /api/v2/outbound/dnclists/{dncListId}/emailaddresses | Deletes all or expired email addresses from a DNC list.
+[**deleteOutboundDnclistPhonenumbers**](OutboundApi.html#deleteOutboundDnclistPhonenumbers) | **DELETE** /api/v2/outbound/dnclists/{dncListId}/phonenumbers | Deletes all or expired phone numbers from a DNC list.
 [**deleteOutboundMessagingcampaign**](OutboundApi.html#deleteOutboundMessagingcampaign) | **DELETE** /api/v2/outbound/messagingcampaigns/{messagingCampaignId} | Delete an Outbound Messaging Campaign
+[**deleteOutboundMessagingcampaignProgress**](OutboundApi.html#deleteOutboundMessagingcampaignProgress) | **DELETE** /api/v2/outbound/messagingcampaigns/{messagingCampaignId}/progress | Reset messaging campaign progress and recycle the messaging campaign
 [**deleteOutboundRuleset**](OutboundApi.html#deleteOutboundRuleset) | **DELETE** /api/v2/outbound/rulesets/{ruleSetId} | Delete a Rule Set.
 [**deleteOutboundSchedulesCampaign**](OutboundApi.html#deleteOutboundSchedulesCampaign) | **DELETE** /api/v2/outbound/schedules/campaigns/{campaignId} | Delete a dialer campaign schedule.
+[**deleteOutboundSchedulesEmailcampaign**](OutboundApi.html#deleteOutboundSchedulesEmailcampaign) | **DELETE** /api/v2/outbound/schedules/emailcampaigns/{emailCampaignId} | Delete an email campaign schedule.
+[**deleteOutboundSchedulesMessagingcampaign**](OutboundApi.html#deleteOutboundSchedulesMessagingcampaign) | **DELETE** /api/v2/outbound/schedules/messagingcampaigns/{messagingCampaignId} | Delete a messaging campaign schedule.
 [**deleteOutboundSchedulesSequence**](OutboundApi.html#deleteOutboundSchedulesSequence) | **DELETE** /api/v2/outbound/schedules/sequences/{sequenceId} | Delete a dialer sequence schedule.
 [**deleteOutboundSequence**](OutboundApi.html#deleteOutboundSequence) | **DELETE** /api/v2/outbound/sequences/{sequenceId} | Delete a dialer campaign sequence.
 [**getOutboundAttemptlimit**](OutboundApi.html#getOutboundAttemptlimit) | **GET** /api/v2/outbound/attemptlimits/{attemptLimitsId} | Get attempt limits
@@ -31,7 +38,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getOutboundCallanalysisresponseset**](OutboundApi.html#getOutboundCallanalysisresponseset) | **GET** /api/v2/outbound/callanalysisresponsesets/{callAnalysisSetId} | Get a dialer call analysis response set.
 [**getOutboundCallanalysisresponsesets**](OutboundApi.html#getOutboundCallanalysisresponsesets) | **GET** /api/v2/outbound/callanalysisresponsesets | Query a list of dialer call analysis response sets.
 [**getOutboundCampaign**](OutboundApi.html#getOutboundCampaign) | **GET** /api/v2/outbound/campaigns/{campaignId} | Get dialer campaign.
-[**getOutboundCampaignAgentownedmappingpreviewResults**](OutboundApi.html#getOutboundCampaignAgentownedmappingpreviewResults) | **GET** /api/v2/outbound/campaigns/{campaignId}/agentownedmappingpreview/results | Get a preview of how agents will be mapped to this campaign&#39;s contact list.
+[**getOutboundCampaignAgentownedmappingpreviewResults**](OutboundApi.html#getOutboundCampaignAgentownedmappingpreviewResults) | **GET** /api/v2/outbound/campaigns/{campaignId}/agentownedmappingpreview/results | Get a preview of how agents will be mapped to this campaign's contact list.
 [**getOutboundCampaignDiagnostics**](OutboundApi.html#getOutboundCampaignDiagnostics) | **GET** /api/v2/outbound/campaigns/{campaignId}/diagnostics | Get campaign diagnostics
 [**getOutboundCampaignInteractions**](OutboundApi.html#getOutboundCampaignInteractions) | **GET** /api/v2/outbound/campaigns/{campaignId}/interactions | Get dialer campaign interactions.
 [**getOutboundCampaignProgress**](OutboundApi.html#getOutboundCampaignProgress) | **GET** /api/v2/outbound/campaigns/{campaignId}/progress | Get campaign progress
@@ -53,6 +60,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getOutboundContactlists**](OutboundApi.html#getOutboundContactlists) | **GET** /api/v2/outbound/contactlists | Query a list of contact lists.
 [**getOutboundContactlistsDivisionview**](OutboundApi.html#getOutboundContactlistsDivisionview) | **GET** /api/v2/outbound/contactlists/divisionviews/{contactListId} | Get a basic ContactList information object
 [**getOutboundContactlistsDivisionviews**](OutboundApi.html#getOutboundContactlistsDivisionviews) | **GET** /api/v2/outbound/contactlists/divisionviews | Query a list of simplified contact list objects.
+[**getOutboundDigitalruleset**](OutboundApi.html#getOutboundDigitalruleset) | **GET** /api/v2/outbound/digitalrulesets/{digitalRuleSetId} | Get an Outbound Digital Rule Set
+[**getOutboundDigitalrulesets**](OutboundApi.html#getOutboundDigitalrulesets) | **GET** /api/v2/outbound/digitalrulesets | Query a list of Outbound Digital Rule Sets
 [**getOutboundDnclist**](OutboundApi.html#getOutboundDnclist) | **GET** /api/v2/outbound/dnclists/{dncListId} | Get dialer DNC list
 [**getOutboundDnclistExport**](OutboundApi.html#getOutboundDnclistExport) | **GET** /api/v2/outbound/dnclists/{dncListId}/export | Get the URI of a DNC list export.
 [**getOutboundDnclistImportstatus**](OutboundApi.html#getOutboundDnclistImportstatus) | **GET** /api/v2/outbound/dnclists/{dncListId}/importstatus | Get dialer dncList import status.
@@ -62,7 +71,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getOutboundEvent**](OutboundApi.html#getOutboundEvent) | **GET** /api/v2/outbound/events/{eventId} | Get Dialer Event
 [**getOutboundEvents**](OutboundApi.html#getOutboundEvents) | **GET** /api/v2/outbound/events | Query Event Logs
 [**getOutboundMessagingcampaign**](OutboundApi.html#getOutboundMessagingcampaign) | **GET** /api/v2/outbound/messagingcampaigns/{messagingCampaignId} | Get an Outbound Messaging Campaign
-[**getOutboundMessagingcampaignProgress**](OutboundApi.html#getOutboundMessagingcampaignProgress) | **GET** /api/v2/outbound/messagingcampaigns/{messagingCampaignId}/progress | Get messaging campaign&#39;s progress
+[**getOutboundMessagingcampaignDiagnostics**](OutboundApi.html#getOutboundMessagingcampaignDiagnostics) | **GET** /api/v2/outbound/messagingcampaigns/{messagingCampaignId}/diagnostics | Get messaging campaign diagnostics
+[**getOutboundMessagingcampaignProgress**](OutboundApi.html#getOutboundMessagingcampaignProgress) | **GET** /api/v2/outbound/messagingcampaigns/{messagingCampaignId}/progress | Get messaging campaign's progress
 [**getOutboundMessagingcampaigns**](OutboundApi.html#getOutboundMessagingcampaigns) | **GET** /api/v2/outbound/messagingcampaigns | Query a list of Messaging Campaigns
 [**getOutboundMessagingcampaignsDivisionview**](OutboundApi.html#getOutboundMessagingcampaignsDivisionview) | **GET** /api/v2/outbound/messagingcampaigns/divisionviews/{messagingCampaignId} | Get a basic Messaging Campaign information object
 [**getOutboundMessagingcampaignsDivisionviews**](OutboundApi.html#getOutboundMessagingcampaignsDivisionviews) | **GET** /api/v2/outbound/messagingcampaigns/divisionviews | Query a list of basic Messaging Campaign information objects
@@ -70,18 +80,25 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getOutboundRulesets**](OutboundApi.html#getOutboundRulesets) | **GET** /api/v2/outbound/rulesets | Query a list of Rule Sets.
 [**getOutboundSchedulesCampaign**](OutboundApi.html#getOutboundSchedulesCampaign) | **GET** /api/v2/outbound/schedules/campaigns/{campaignId} | Get a dialer campaign schedule.
 [**getOutboundSchedulesCampaigns**](OutboundApi.html#getOutboundSchedulesCampaigns) | **GET** /api/v2/outbound/schedules/campaigns | Query for a list of dialer campaign schedules.
+[**getOutboundSchedulesEmailcampaign**](OutboundApi.html#getOutboundSchedulesEmailcampaign) | **GET** /api/v2/outbound/schedules/emailcampaigns/{emailCampaignId} | Get an email campaign schedule.
+[**getOutboundSchedulesEmailcampaigns**](OutboundApi.html#getOutboundSchedulesEmailcampaigns) | **GET** /api/v2/outbound/schedules/emailcampaigns | Query for a list of email campaign schedules.
+[**getOutboundSchedulesMessagingcampaign**](OutboundApi.html#getOutboundSchedulesMessagingcampaign) | **GET** /api/v2/outbound/schedules/messagingcampaigns/{messagingCampaignId} | Get a messaging campaign schedule.
+[**getOutboundSchedulesMessagingcampaigns**](OutboundApi.html#getOutboundSchedulesMessagingcampaigns) | **GET** /api/v2/outbound/schedules/messagingcampaigns | Query for a list of messaging campaign schedules.
 [**getOutboundSchedulesSequence**](OutboundApi.html#getOutboundSchedulesSequence) | **GET** /api/v2/outbound/schedules/sequences/{sequenceId} | Get a dialer sequence schedule.
 [**getOutboundSchedulesSequences**](OutboundApi.html#getOutboundSchedulesSequences) | **GET** /api/v2/outbound/schedules/sequences | Query for a list of dialer sequence schedules.
 [**getOutboundSequence**](OutboundApi.html#getOutboundSequence) | **GET** /api/v2/outbound/sequences/{sequenceId} | Get a dialer campaign sequence.
 [**getOutboundSequences**](OutboundApi.html#getOutboundSequences) | **GET** /api/v2/outbound/sequences | Query a list of dialer campaign sequences.
 [**getOutboundSettings**](OutboundApi.html#getOutboundSettings) | **GET** /api/v2/outbound/settings | Get the outbound settings for this organization
 [**getOutboundWrapupcodemappings**](OutboundApi.html#getOutboundWrapupcodemappings) | **GET** /api/v2/outbound/wrapupcodemappings | Get the Dialer wrap up code mapping.
+[**patchOutboundDnclistCustomexclusioncolumns**](OutboundApi.html#patchOutboundDnclistCustomexclusioncolumns) | **PATCH** /api/v2/outbound/dnclists/{dncListId}/customexclusioncolumns | Add entries to or delete entries from a DNC list.
+[**patchOutboundDnclistEmailaddresses**](OutboundApi.html#patchOutboundDnclistEmailaddresses) | **PATCH** /api/v2/outbound/dnclists/{dncListId}/emailaddresses | Add emails to or Delete emails from a DNC list.
+[**patchOutboundDnclistPhonenumbers**](OutboundApi.html#patchOutboundDnclistPhonenumbers) | **PATCH** /api/v2/outbound/dnclists/{dncListId}/phonenumbers | Add numbers to or delete numbers from a DNC list.
 [**patchOutboundSettings**](OutboundApi.html#patchOutboundSettings) | **PATCH** /api/v2/outbound/settings | Update the outbound settings for this organization
 [**postOutboundAttemptlimits**](OutboundApi.html#postOutboundAttemptlimits) | **POST** /api/v2/outbound/attemptlimits | Create attempt limits
 [**postOutboundAudits**](OutboundApi.html#postOutboundAudits) | **POST** /api/v2/outbound/audits | Retrieves audits for dialer.
 [**postOutboundCallabletimesets**](OutboundApi.html#postOutboundCallabletimesets) | **POST** /api/v2/outbound/callabletimesets | Create callable time set
 [**postOutboundCallanalysisresponsesets**](OutboundApi.html#postOutboundCallanalysisresponsesets) | **POST** /api/v2/outbound/callanalysisresponsesets | Create a dialer call analysis response set.
-[**postOutboundCampaignAgentownedmappingpreview**](OutboundApi.html#postOutboundCampaignAgentownedmappingpreview) | **POST** /api/v2/outbound/campaigns/{campaignId}/agentownedmappingpreview | Initiate request for a preview of how agents will be mapped to this campaign&#39;s contact list.
+[**postOutboundCampaignAgentownedmappingpreview**](OutboundApi.html#postOutboundCampaignAgentownedmappingpreview) | **POST** /api/v2/outbound/campaigns/{campaignId}/agentownedmappingpreview | Initiate request for a preview of how agents will be mapped to this campaign's contact list.
 [**postOutboundCampaignCallbackSchedule**](OutboundApi.html#postOutboundCampaignCallbackSchedule) | **POST** /api/v2/outbound/campaigns/{campaignId}/callback/schedule | Schedule a Callback for a Dialer Campaign (Deprecated)
 [**postOutboundCampaignrules**](OutboundApi.html#postOutboundCampaignrules) | **POST** /api/v2/outbound/campaignrules | Create Campaign Rule
 [**postOutboundCampaigns**](OutboundApi.html#postOutboundCampaigns) | **POST** /api/v2/outbound/campaigns | Create a campaign.
@@ -94,6 +111,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postOutboundContactlistfiltersPreview**](OutboundApi.html#postOutboundContactlistfiltersPreview) | **POST** /api/v2/outbound/contactlistfilters/preview | Get a preview of the output of a contact list filter
 [**postOutboundContactlists**](OutboundApi.html#postOutboundContactlists) | **POST** /api/v2/outbound/contactlists | Create a contact List.
 [**postOutboundConversationDnc**](OutboundApi.html#postOutboundConversationDnc) | **POST** /api/v2/outbound/conversations/{conversationId}/dnc | Add phone numbers to a Dialer DNC list.
+[**postOutboundDigitalrulesets**](OutboundApi.html#postOutboundDigitalrulesets) | **POST** /api/v2/outbound/digitalrulesets | Create an Outbound Digital Rule Set
+[**postOutboundDnclistEmailaddresses**](OutboundApi.html#postOutboundDnclistEmailaddresses) | **POST** /api/v2/outbound/dnclists/{dncListId}/emailaddresses | Add email addresses to a DNC list.
 [**postOutboundDnclistExport**](OutboundApi.html#postOutboundDnclistExport) | **POST** /api/v2/outbound/dnclists/{dncListId}/export | Initiate the export of a dnc list.
 [**postOutboundDnclistPhonenumbers**](OutboundApi.html#postOutboundDnclistPhonenumbers) | **POST** /api/v2/outbound/dnclists/{dncListId}/phonenumbers | Add phone numbers to a DNC list.
 [**postOutboundDnclists**](OutboundApi.html#postOutboundDnclists) | **POST** /api/v2/outbound/dnclists | Create dialer DNC list
@@ -105,15 +124,18 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**putOutboundCallabletimeset**](OutboundApi.html#putOutboundCallabletimeset) | **PUT** /api/v2/outbound/callabletimesets/{callableTimeSetId} | Update callable time set
 [**putOutboundCallanalysisresponseset**](OutboundApi.html#putOutboundCallanalysisresponseset) | **PUT** /api/v2/outbound/callanalysisresponsesets/{callAnalysisSetId} | Update a dialer call analysis response set.
 [**putOutboundCampaign**](OutboundApi.html#putOutboundCampaign) | **PUT** /api/v2/outbound/campaigns/{campaignId} | Update a campaign.
-[**putOutboundCampaignAgent**](OutboundApi.html#putOutboundCampaignAgent) | **PUT** /api/v2/outbound/campaigns/{campaignId}/agents/{userId} | Send notification that an agent&#39;s state changed 
+[**putOutboundCampaignAgent**](OutboundApi.html#putOutboundCampaignAgent) | **PUT** /api/v2/outbound/campaigns/{campaignId}/agents/{userId} | Send notification that an agent's state changed 
 [**putOutboundCampaignrule**](OutboundApi.html#putOutboundCampaignrule) | **PUT** /api/v2/outbound/campaignrules/{campaignRuleId} | Update Campaign Rule
 [**putOutboundContactlist**](OutboundApi.html#putOutboundContactlist) | **PUT** /api/v2/outbound/contactlists/{contactListId} | Update a contact list.
 [**putOutboundContactlistContact**](OutboundApi.html#putOutboundContactlistContact) | **PUT** /api/v2/outbound/contactlists/{contactListId}/contacts/{contactId} | Update a contact.
 [**putOutboundContactlistfilter**](OutboundApi.html#putOutboundContactlistfilter) | **PUT** /api/v2/outbound/contactlistfilters/{contactListFilterId} | Update Contact List Filter
+[**putOutboundDigitalruleset**](OutboundApi.html#putOutboundDigitalruleset) | **PUT** /api/v2/outbound/digitalrulesets/{digitalRuleSetId} | Update an Outbound Digital Rule Set
 [**putOutboundDnclist**](OutboundApi.html#putOutboundDnclist) | **PUT** /api/v2/outbound/dnclists/{dncListId} | Update dialer DNC list
 [**putOutboundMessagingcampaign**](OutboundApi.html#putOutboundMessagingcampaign) | **PUT** /api/v2/outbound/messagingcampaigns/{messagingCampaignId} | Update an Outbound Messaging Campaign
 [**putOutboundRuleset**](OutboundApi.html#putOutboundRuleset) | **PUT** /api/v2/outbound/rulesets/{ruleSetId} | Update a Rule Set.
 [**putOutboundSchedulesCampaign**](OutboundApi.html#putOutboundSchedulesCampaign) | **PUT** /api/v2/outbound/schedules/campaigns/{campaignId} | Update a new campaign schedule.
+[**putOutboundSchedulesEmailcampaign**](OutboundApi.html#putOutboundSchedulesEmailcampaign) | **PUT** /api/v2/outbound/schedules/emailcampaigns/{emailCampaignId} | Update an email campaign schedule.
+[**putOutboundSchedulesMessagingcampaign**](OutboundApi.html#putOutboundSchedulesMessagingcampaign) | **PUT** /api/v2/outbound/schedules/messagingcampaigns/{messagingCampaignId} | Update a new messaging campaign schedule.
 [**putOutboundSchedulesSequence**](OutboundApi.html#putOutboundSchedulesSequence) | **PUT** /api/v2/outbound/schedules/sequences/{sequenceId} | Update a new sequence schedule.
 [**putOutboundSequence**](OutboundApi.html#putOutboundSequence) | **PUT** /api/v2/outbound/sequences/{sequenceId} | Update a new campaign sequence.
 [**putOutboundWrapupcodemappings**](OutboundApi.html#putOutboundWrapupcodemappings) | **PUT** /api/v2/outbound/wrapupcodemappings | Update the Dialer wrap up code mapping.
@@ -124,14 +146,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 # void deleteOutboundAttemptlimit(attemptLimitsId)
 
 
-
 DELETE /api/v2/outbound/attemptlimits/{attemptLimitsId}
 
 Delete attempt limits
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * outbound:attemptLimits:delete
 
@@ -177,14 +196,11 @@ void (no response body)
 # void deleteOutboundCallabletimeset(callableTimeSetId)
 
 
-
 DELETE /api/v2/outbound/callabletimesets/{callableTimeSetId}
 
 Delete callable time set
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * outbound:callableTimeSet:delete
 
@@ -230,14 +246,11 @@ void (no response body)
 # void deleteOutboundCallanalysisresponseset(callAnalysisSetId)
 
 
-
 DELETE /api/v2/outbound/callanalysisresponsesets/{callAnalysisSetId}
 
 Delete a dialer call analysis response set.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * outbound:responseSet:delete
 
@@ -283,14 +296,11 @@ void (no response body)
 # Campaign deleteOutboundCampaign(campaignId)
 
 
-
 DELETE /api/v2/outbound/campaigns/{campaignId}
 
 Delete a campaign.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * outbound:campaign:delete
 
@@ -336,14 +346,11 @@ apiInstance.deleteOutboundCampaign(campaignId)
 # void deleteOutboundCampaignProgress(campaignId)
 
 
-
 DELETE /api/v2/outbound/campaigns/{campaignId}/progress
 
 Reset campaign progress and recycle the campaign
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * outbound:campaign:edit
 
@@ -389,14 +396,11 @@ void (no response body)
 # void deleteOutboundCampaignrule(campaignRuleId)
 
 
-
 DELETE /api/v2/outbound/campaignrules/{campaignRuleId}
 
 Delete Campaign Rule
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * outbound:campaignRule:delete
 
@@ -442,14 +446,11 @@ void (no response body)
 # void deleteOutboundContactlist(contactListId)
 
 
-
 DELETE /api/v2/outbound/contactlists/{contactListId}
 
 Delete a contact list.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * outbound:contactList:delete
 
@@ -495,14 +496,11 @@ void (no response body)
 # void deleteOutboundContactlistContact(contactListId, contactId)
 
 
-
 DELETE /api/v2/outbound/contactlists/{contactListId}/contacts/{contactId}
 
 Delete a contact.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * outbound:contact:delete
 
@@ -550,14 +548,11 @@ void (no response body)
 # void deleteOutboundContactlistContacts(contactListId, contactIds)
 
 
-
 DELETE /api/v2/outbound/contactlists/{contactListId}/contacts
 
 Delete contacts from a contact list.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * outbound:contact:delete
 
@@ -605,14 +600,11 @@ void (no response body)
 # void deleteOutboundContactlistfilter(contactListFilterId)
 
 
-
 DELETE /api/v2/outbound/contactlistfilters/{contactListFilterId}
 
 Delete Contact List Filter
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * outbound:contactListFilter:delete
 
@@ -658,14 +650,11 @@ void (no response body)
 # void deleteOutboundContactlists(id)
 
 
-
 DELETE /api/v2/outbound/contactlists
 
 Delete multiple contact lists.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * outbound:contactList:delete
 
@@ -706,19 +695,66 @@ apiInstance.deleteOutboundContactlists(id)
 
 void (no response body)
 
+<a name="deleteOutboundDigitalruleset"></a>
+
+# void deleteOutboundDigitalruleset(digitalRuleSetId)
+
+
+DELETE /api/v2/outbound/digitalrulesets/{digitalRuleSetId}
+
+Delete an Outbound Digital Rule Set
+
+Requires ANY permissions:
+
+* outbound:digitalRuleSet:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let digitalRuleSetId = "digitalRuleSetId_example"; // String | The Digital Rule Set ID
+
+apiInstance.deleteOutboundDigitalruleset(digitalRuleSetId)
+  .then(() => {
+    console.log('deleteOutboundDigitalruleset returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteOutboundDigitalruleset');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **digitalRuleSetId** | **String** | The Digital Rule Set ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
 <a name="deleteOutboundDnclist"></a>
 
 # void deleteOutboundDnclist(dncListId)
-
 
 
 DELETE /api/v2/outbound/dnclists/{dncListId}
 
 Delete dialer DNC list
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * outbound:dncList:delete
 
@@ -759,19 +795,184 @@ apiInstance.deleteOutboundDnclist(dncListId)
 
 void (no response body)
 
+<a name="deleteOutboundDnclistCustomexclusioncolumns"></a>
+
+# void deleteOutboundDnclistCustomexclusioncolumns(dncListId, opts)
+
+
+DELETE /api/v2/outbound/dnclists/{dncListId}/customexclusioncolumns
+
+Deletes all or expired custom exclusion column entries from a DNC list.
+
+This operation is only for Internal DNC lists of custom exclusion column entries
+
+Requires ANY permissions:
+
+* outbound:dnc:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let dncListId = "dncListId_example"; // String | DncList ID
+let opts = { 
+  'expiredOnly': false // Boolean | Set to true to only remove DNC entries that are expired
+};
+
+apiInstance.deleteOutboundDnclistCustomexclusioncolumns(dncListId, opts)
+  .then(() => {
+    console.log('deleteOutboundDnclistCustomexclusioncolumns returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteOutboundDnclistCustomexclusioncolumns');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **dncListId** | **String** | DncList ID |  |
+ **expiredOnly** | **Boolean** | Set to true to only remove DNC entries that are expired | [optional] [default to false] |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
+<a name="deleteOutboundDnclistEmailaddresses"></a>
+
+# void deleteOutboundDnclistEmailaddresses(dncListId, opts)
+
+
+DELETE /api/v2/outbound/dnclists/{dncListId}/emailaddresses
+
+Deletes all or expired email addresses from a DNC list.
+
+This operation is Only for Internal DNC lists of email addresses
+
+Requires ANY permissions:
+
+* outbound:dnc:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let dncListId = "dncListId_example"; // String | DncList ID
+let opts = { 
+  'expiredOnly': false // Boolean | Set to true to only remove DNC entries that are expired
+};
+
+apiInstance.deleteOutboundDnclistEmailaddresses(dncListId, opts)
+  .then(() => {
+    console.log('deleteOutboundDnclistEmailaddresses returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteOutboundDnclistEmailaddresses');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **dncListId** | **String** | DncList ID |  |
+ **expiredOnly** | **Boolean** | Set to true to only remove DNC entries that are expired | [optional] [default to false] |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
+<a name="deleteOutboundDnclistPhonenumbers"></a>
+
+# void deleteOutboundDnclistPhonenumbers(dncListId, opts)
+
+
+DELETE /api/v2/outbound/dnclists/{dncListId}/phonenumbers
+
+Deletes all or expired phone numbers from a DNC list.
+
+This operation is Only for Internal DNC lists of phone numbers
+
+Requires ANY permissions:
+
+* outbound:dnc:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let dncListId = "dncListId_example"; // String | DncList ID
+let opts = { 
+  'expiredOnly': false // Boolean | Set to true to only remove DNC entries that are expired
+};
+
+apiInstance.deleteOutboundDnclistPhonenumbers(dncListId, opts)
+  .then(() => {
+    console.log('deleteOutboundDnclistPhonenumbers returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteOutboundDnclistPhonenumbers');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **dncListId** | **String** | DncList ID |  |
+ **expiredOnly** | **Boolean** | Set to true to only remove DNC entries that are expired | [optional] [default to false] |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
 <a name="deleteOutboundMessagingcampaign"></a>
 
 # MessagingCampaign deleteOutboundMessagingcampaign(messagingCampaignId)
-
 
 
 DELETE /api/v2/outbound/messagingcampaigns/{messagingCampaignId}
 
 Delete an Outbound Messaging Campaign
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * outbound:messagingCampaign:delete
 * outbound:emailCampaign:delete
@@ -813,19 +1014,67 @@ apiInstance.deleteOutboundMessagingcampaign(messagingCampaignId)
 
 **MessagingCampaign**
 
+<a name="deleteOutboundMessagingcampaignProgress"></a>
+
+# void deleteOutboundMessagingcampaignProgress(messagingCampaignId)
+
+
+DELETE /api/v2/outbound/messagingcampaigns/{messagingCampaignId}/progress
+
+Reset messaging campaign progress and recycle the messaging campaign
+
+Requires ANY permissions:
+
+* outbound:messagingCampaign:edit
+* outbound:emailCampaign:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let messagingCampaignId = "messagingCampaignId_example"; // String | The Messaging Campaign ID
+
+apiInstance.deleteOutboundMessagingcampaignProgress(messagingCampaignId)
+  .then(() => {
+    console.log('deleteOutboundMessagingcampaignProgress returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteOutboundMessagingcampaignProgress');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **messagingCampaignId** | **String** | The Messaging Campaign ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
 <a name="deleteOutboundRuleset"></a>
 
 # void deleteOutboundRuleset(ruleSetId)
-
 
 
 DELETE /api/v2/outbound/rulesets/{ruleSetId}
 
 Delete a Rule Set.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * outbound:ruleSet:delete
 
@@ -871,14 +1120,11 @@ void (no response body)
 # void deleteOutboundSchedulesCampaign(campaignId)
 
 
-
 DELETE /api/v2/outbound/schedules/campaigns/{campaignId}
 
 Delete a dialer campaign schedule.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * outbound:schedule:delete
 
@@ -919,19 +1165,116 @@ apiInstance.deleteOutboundSchedulesCampaign(campaignId)
 
 void (no response body)
 
+<a name="deleteOutboundSchedulesEmailcampaign"></a>
+
+# void deleteOutboundSchedulesEmailcampaign(emailCampaignId)
+
+
+DELETE /api/v2/outbound/schedules/emailcampaigns/{emailCampaignId}
+
+Delete an email campaign schedule.
+
+Requires ANY permissions:
+
+* outbound:emailCampaignSchedule:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let emailCampaignId = "emailCampaignId_example"; // String | Email Campaign ID
+
+apiInstance.deleteOutboundSchedulesEmailcampaign(emailCampaignId)
+  .then(() => {
+    console.log('deleteOutboundSchedulesEmailcampaign returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteOutboundSchedulesEmailcampaign');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **emailCampaignId** | **String** | Email Campaign ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
+<a name="deleteOutboundSchedulesMessagingcampaign"></a>
+
+# void deleteOutboundSchedulesMessagingcampaign(messagingCampaignId)
+
+
+DELETE /api/v2/outbound/schedules/messagingcampaigns/{messagingCampaignId}
+
+Delete a messaging campaign schedule.
+
+Requires ANY permissions:
+
+* outbound:messagingCampaignSchedule:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let messagingCampaignId = "messagingCampaignId_example"; // String | Messaging Campaign ID
+
+apiInstance.deleteOutboundSchedulesMessagingcampaign(messagingCampaignId)
+  .then(() => {
+    console.log('deleteOutboundSchedulesMessagingcampaign returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteOutboundSchedulesMessagingcampaign');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **messagingCampaignId** | **String** | Messaging Campaign ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
 <a name="deleteOutboundSchedulesSequence"></a>
 
 # void deleteOutboundSchedulesSequence(sequenceId)
-
 
 
 DELETE /api/v2/outbound/schedules/sequences/{sequenceId}
 
 Delete a dialer sequence schedule.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * outbound:schedule:delete
 
@@ -977,14 +1320,11 @@ void (no response body)
 # void deleteOutboundSequence(sequenceId)
 
 
-
 DELETE /api/v2/outbound/sequences/{sequenceId}
 
 Delete a dialer campaign sequence.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * outbound:campaignSequence:delete
 
@@ -1030,14 +1370,11 @@ void (no response body)
 # AttemptLimits getOutboundAttemptlimit(attemptLimitsId)
 
 
-
 GET /api/v2/outbound/attemptlimits/{attemptLimitsId}
 
 Get attempt limits
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * outbound:attemptLimits:view
 
@@ -1083,14 +1420,11 @@ apiInstance.getOutboundAttemptlimit(attemptLimitsId)
 # AttemptLimitsEntityListing getOutboundAttemptlimits(opts)
 
 
-
 GET /api/v2/outbound/attemptlimits
 
 Query attempt limits list
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * outbound:attemptLimits:view
 
@@ -1150,14 +1484,11 @@ apiInstance.getOutboundAttemptlimits(opts)
 # CallableTimeSet getOutboundCallabletimeset(callableTimeSetId)
 
 
-
 GET /api/v2/outbound/callabletimesets/{callableTimeSetId}
 
 Get callable time set
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * outbound:callableTimeSet:view
 
@@ -1203,14 +1534,11 @@ apiInstance.getOutboundCallabletimeset(callableTimeSetId)
 # CallableTimeSetEntityListing getOutboundCallabletimesets(opts)
 
 
-
 GET /api/v2/outbound/callabletimesets
 
 Query callable time set list
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * outbound:callableTimeSet:view
 
@@ -1270,14 +1598,11 @@ apiInstance.getOutboundCallabletimesets(opts)
 # ResponseSet getOutboundCallanalysisresponseset(callAnalysisSetId)
 
 
-
 GET /api/v2/outbound/callanalysisresponsesets/{callAnalysisSetId}
 
 Get a dialer call analysis response set.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * outbound:responseSet:view
 
@@ -1323,14 +1648,11 @@ apiInstance.getOutboundCallanalysisresponseset(callAnalysisSetId)
 # ResponseSetEntityListing getOutboundCallanalysisresponsesets(opts)
 
 
-
 GET /api/v2/outbound/callanalysisresponsesets
 
 Query a list of dialer call analysis response sets.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * outbound:responseSet:view
 
@@ -1390,14 +1712,11 @@ apiInstance.getOutboundCallanalysisresponsesets(opts)
 # Campaign getOutboundCampaign(campaignId)
 
 
-
 GET /api/v2/outbound/campaigns/{campaignId}
 
 Get dialer campaign.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * outbound:campaign:view
 
@@ -1443,14 +1762,11 @@ apiInstance.getOutboundCampaign(campaignId)
 # AgentOwnedMappingPreviewListing getOutboundCampaignAgentownedmappingpreviewResults(campaignId)
 
 
-
 GET /api/v2/outbound/campaigns/{campaignId}/agentownedmappingpreview/results
 
-Get a preview of how agents will be mapped to this campaign&#39;s contact list.
+Get a preview of how agents will be mapped to this campaign's contact list.
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * outbound:campaign:view
 * outbound:contact:view
@@ -1498,14 +1814,11 @@ apiInstance.getOutboundCampaignAgentownedmappingpreviewResults(campaignId)
 # CampaignDiagnostics getOutboundCampaignDiagnostics(campaignId)
 
 
-
 GET /api/v2/outbound/campaigns/{campaignId}/diagnostics
 
 Get campaign diagnostics
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * outbound:campaign:view
 
@@ -1551,14 +1864,11 @@ apiInstance.getOutboundCampaignDiagnostics(campaignId)
 # CampaignInteractions getOutboundCampaignInteractions(campaignId)
 
 
-
 GET /api/v2/outbound/campaigns/{campaignId}/interactions
 
 Get dialer campaign interactions.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * outbound:campaign:view
 
@@ -1604,14 +1914,11 @@ apiInstance.getOutboundCampaignInteractions(campaignId)
 # CampaignProgress getOutboundCampaignProgress(campaignId)
 
 
-
 GET /api/v2/outbound/campaigns/{campaignId}/progress
 
 Get campaign progress
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * outbound:campaign:view
 
@@ -1657,14 +1964,11 @@ apiInstance.getOutboundCampaignProgress(campaignId)
 # CampaignStats getOutboundCampaignStats(campaignId)
 
 
-
 GET /api/v2/outbound/campaigns/{campaignId}/stats
 
 Get statistics about a Dialer Campaign
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * outbound:campaign:view
 
@@ -1710,14 +2014,11 @@ apiInstance.getOutboundCampaignStats(campaignId)
 # CampaignRule getOutboundCampaignrule(campaignRuleId)
 
 
-
 GET /api/v2/outbound/campaignrules/{campaignRuleId}
 
 Get Campaign Rule
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * outbound:campaignRule:view
 
@@ -1763,14 +2064,11 @@ apiInstance.getOutboundCampaignrule(campaignRuleId)
 # CampaignRuleEntityListing getOutboundCampaignrules(opts)
 
 
-
 GET /api/v2/outbound/campaignrules
 
 Query Campaign Rule list
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * outbound:campaignRule:view
 
@@ -1830,14 +2128,11 @@ apiInstance.getOutboundCampaignrules(opts)
 # CampaignEntityListing getOutboundCampaigns(opts)
 
 
-
 GET /api/v2/outbound/campaigns
 
 Query a list of dialer campaigns.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * outbound:campaign:view
 
@@ -1909,14 +2204,11 @@ apiInstance.getOutboundCampaigns(opts)
 # CommonCampaignEntityListing getOutboundCampaignsAll(opts)
 
 
-
 GET /api/v2/outbound/campaigns/all
 
 Query across all types of campaigns by division
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * outbound:campaign:view
 * outbound:messagingCampaign:view
@@ -1978,14 +2270,11 @@ apiInstance.getOutboundCampaignsAll(opts)
 # CommonCampaignDivisionViewEntityListing getOutboundCampaignsAllDivisionviews(opts)
 
 
-
 GET /api/v2/outbound/campaigns/all/divisionviews
 
 Query across all types of campaigns
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * outbound:campaign:search
 * outbound:messagingCampaign:search
@@ -2047,14 +2336,13 @@ apiInstance.getOutboundCampaignsAllDivisionviews(opts)
 # CampaignDivisionView getOutboundCampaignsDivisionview(campaignId)
 
 
-
 GET /api/v2/outbound/campaigns/divisionviews/{campaignId}
 
 Get a basic Campaign information object
 
 This returns a simplified version of a Campaign, consisting of name and division.
 
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * outbound:campaign:search
 
@@ -2100,14 +2388,13 @@ apiInstance.getOutboundCampaignsDivisionview(campaignId)
 # CampaignDivisionViewListing getOutboundCampaignsDivisionviews(opts)
 
 
-
 GET /api/v2/outbound/campaigns/divisionviews
 
 Query a list of basic Campaign information objects
 
 This returns a simplified version of a Campaign, consisting of name and division.
 
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * outbound:campaign:search
 
@@ -2167,14 +2454,11 @@ apiInstance.getOutboundCampaignsDivisionviews(opts)
 # ContactList getOutboundContactlist(contactListId, opts)
 
 
-
 GET /api/v2/outbound/contactlists/{contactListId}
 
 Get a dialer contact list.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * outbound:contactList:view
 
@@ -2226,14 +2510,11 @@ apiInstance.getOutboundContactlist(contactListId, opts)
 # DialerContact getOutboundContactlistContact(contactListId, contactId)
 
 
-
 GET /api/v2/outbound/contactlists/{contactListId}/contacts/{contactId}
 
 Get a contact.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * outbound:contact:view
 
@@ -2281,14 +2562,11 @@ apiInstance.getOutboundContactlistContact(contactListId, contactId)
 # ExportUri getOutboundContactlistExport(contactListId, opts)
 
 
-
 GET /api/v2/outbound/contactlists/{contactListId}/export
 
 Get the URI of a contact list export.
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * outbound:contact:view
 * outbound:contactList:view
@@ -2339,14 +2617,11 @@ apiInstance.getOutboundContactlistExport(contactListId, opts)
 # ImportStatus getOutboundContactlistImportstatus(contactListId)
 
 
-
 GET /api/v2/outbound/contactlists/{contactListId}/importstatus
 
 Get dialer contactList import status.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * outbound:contactList:view
 
@@ -2392,14 +2667,11 @@ apiInstance.getOutboundContactlistImportstatus(contactListId)
 # TimeZoneMappingPreview getOutboundContactlistTimezonemappingpreview(contactListId)
 
 
-
 GET /api/v2/outbound/contactlists/{contactListId}/timezonemappingpreview
 
 Preview the result of applying Automatic Time Zone Mapping to a contact list
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * outbound:contactList:view
 
@@ -2445,14 +2717,11 @@ apiInstance.getOutboundContactlistTimezonemappingpreview(contactListId)
 # ContactListFilter getOutboundContactlistfilter(contactListFilterId)
 
 
-
 GET /api/v2/outbound/contactlistfilters/{contactListFilterId}
 
 Get Contact list filter
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * outbound:contactListFilter:view
 
@@ -2498,14 +2767,11 @@ apiInstance.getOutboundContactlistfilter(contactListFilterId)
 # ContactListFilterEntityListing getOutboundContactlistfilters(opts)
 
 
-
 GET /api/v2/outbound/contactlistfilters
 
 Query Contact list filters
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * outbound:contactListFilter:view
 
@@ -2567,14 +2833,11 @@ apiInstance.getOutboundContactlistfilters(opts)
 # ContactListEntityListing getOutboundContactlists(opts)
 
 
-
 GET /api/v2/outbound/contactlists
 
 Query a list of contact lists.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * outbound:contactList:view
 
@@ -2642,14 +2905,13 @@ apiInstance.getOutboundContactlists(opts)
 # ContactListDivisionView getOutboundContactlistsDivisionview(contactListId, opts)
 
 
-
 GET /api/v2/outbound/contactlists/divisionviews/{contactListId}
 
 Get a basic ContactList information object
 
 This returns a simplified version of a ContactList, consisting of the name, division, column names, phone columns, import status, and size.
 
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * outbound:contactList:search
 
@@ -2701,14 +2963,13 @@ apiInstance.getOutboundContactlistsDivisionview(contactListId, opts)
 # ContactListDivisionViewListing getOutboundContactlistsDivisionviews(opts)
 
 
-
 GET /api/v2/outbound/contactlists/divisionviews
 
 Query a list of simplified contact list objects.
 
 This return a simplified version of contact lists, consisting of the name, division, column names, phone columns, import status, and size.
 
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * outbound:contactList:search
 
@@ -2767,19 +3028,128 @@ apiInstance.getOutboundContactlistsDivisionviews(opts)
 
 **ContactListDivisionViewListing**
 
+<a name="getOutboundDigitalruleset"></a>
+
+# DigitalRuleSet getOutboundDigitalruleset(digitalRuleSetId)
+
+
+GET /api/v2/outbound/digitalrulesets/{digitalRuleSetId}
+
+Get an Outbound Digital Rule Set
+
+Requires ANY permissions:
+
+* outbound:digitalRuleSet:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let digitalRuleSetId = "digitalRuleSetId_example"; // String | The Digital Rule Set ID
+
+apiInstance.getOutboundDigitalruleset(digitalRuleSetId)
+  .then((data) => {
+    console.log(`getOutboundDigitalruleset success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getOutboundDigitalruleset');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **digitalRuleSetId** | **String** | The Digital Rule Set ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**DigitalRuleSet**
+
+<a name="getOutboundDigitalrulesets"></a>
+
+# DigitalRuleSetEntityListing getOutboundDigitalrulesets(opts)
+
+
+GET /api/v2/outbound/digitalrulesets
+
+Query a list of Outbound Digital Rule Sets
+
+Requires ANY permissions:
+
+* outbound:digitalRuleSet:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let opts = { 
+  'pageSize': 25, // Number | Page size. The max that will be returned is 100.
+  'pageNumber': 1, // Number | Page number
+  'sortBy': "name", // String | The field to sort by
+  'sortOrder': "ascending", // String | The direction to sort
+  'name': "name_example", // String | Name
+  'id': ["id_example"] // [String] | A list of digital rule set ids to bulk fetch
+};
+
+apiInstance.getOutboundDigitalrulesets(opts)
+  .then((data) => {
+    console.log(`getOutboundDigitalrulesets success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getOutboundDigitalrulesets');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **pageSize** | **Number** | Page size. The max that will be returned is 100. | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **sortBy** | **String** | The field to sort by | [optional] [default to name]<br />**Values**: name |
+ **sortOrder** | **String** | The direction to sort | [optional] [default to ascending]<br />**Values**: ascending, descending |
+ **name** | **String** | Name | [optional]  |
+ **id** | **[String]** | A list of digital rule set ids to bulk fetch | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**DigitalRuleSetEntityListing**
+
 <a name="getOutboundDnclist"></a>
 
 # DncList getOutboundDnclist(dncListId, opts)
-
 
 
 GET /api/v2/outbound/dnclists/{dncListId}
 
 Get dialer DNC list
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * outbound:dncList:view
 
@@ -2831,14 +3201,11 @@ apiInstance.getOutboundDnclist(dncListId, opts)
 # ExportUri getOutboundDnclistExport(dncListId, opts)
 
 
-
 GET /api/v2/outbound/dnclists/{dncListId}/export
 
 Get the URI of a DNC list export.
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * outbound:dnc:view
 * outbound:dncList:view
@@ -2889,14 +3256,11 @@ apiInstance.getOutboundDnclistExport(dncListId, opts)
 # ImportStatus getOutboundDnclistImportstatus(dncListId)
 
 
-
 GET /api/v2/outbound/dnclists/{dncListId}/importstatus
 
 Get dialer dncList import status.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * outbound:dncList:view
 
@@ -2942,14 +3306,11 @@ apiInstance.getOutboundDnclistImportstatus(dncListId)
 # DncListEntityListing getOutboundDnclists(opts)
 
 
-
 GET /api/v2/outbound/dnclists
 
 Query dialer DNC lists
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * outbound:dncList:view
 
@@ -3002,7 +3363,7 @@ apiInstance.getOutboundDnclists(opts)
  **allowEmptyResult** | **Boolean** | Whether to return an empty page when there are no results for that page | [optional] [default to false] |
  **filterType** | **String** | Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
  **name** | **String** | Name | [optional]  |
- **dncSourceType** | **String** | DncSourceType | [optional] <br />**Values**: rds, dnc.com, gryphon |
+ **dncSourceType** | **String** | DncSourceType | [optional] <br />**Values**: rds, rds_custom, dnc.com, gryphon |
  **divisionId** | **[String]** | Division ID(s) | [optional]  |
  **sortBy** | **String** | Sort by | [optional]  |
  **sortOrder** | **String** | Sort order | [optional] <br />**Values**: ascending, descending |
@@ -3017,14 +3378,13 @@ apiInstance.getOutboundDnclists(opts)
 # DncListDivisionView getOutboundDnclistsDivisionview(dncListId, opts)
 
 
-
 GET /api/v2/outbound/dnclists/divisionviews/{dncListId}
 
 Get a basic DncList information object
 
 This returns a simplified version of a DncList, consisting of the name, division, import status, and size.
 
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * outbound:dncList:search
 
@@ -3076,14 +3436,13 @@ apiInstance.getOutboundDnclistsDivisionview(dncListId, opts)
 # DncListDivisionViewListing getOutboundDnclistsDivisionviews(opts)
 
 
-
 GET /api/v2/outbound/dnclists/divisionviews
 
 Query a list of simplified dnc list objects.
 
 This return a simplified version of dnc lists, consisting of the name, division, import status, and size.
 
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * outbound:dncList:search
 
@@ -3134,7 +3493,7 @@ apiInstance.getOutboundDnclistsDivisionviews(opts)
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **filterType** | **String** | Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
  **name** | **String** | Name | [optional]  |
- **dncSourceType** | **String** | DncSourceType | [optional] <br />**Values**: rds, dnc.com, gryphon |
+ **dncSourceType** | **String** | DncSourceType | [optional] <br />**Values**: rds, rds_custom, dnc.com, gryphon |
  **id** | **[String]** | id | [optional]  |
  **sortBy** | **String** | Sort by | [optional]  |
  **sortOrder** | **String** | Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
@@ -3149,14 +3508,11 @@ apiInstance.getOutboundDnclistsDivisionviews(opts)
 # EventLog getOutboundEvent(eventId)
 
 
-
 GET /api/v2/outbound/events/{eventId}
 
 Get Dialer Event
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * outbound:eventLog:view
 
@@ -3202,14 +3558,11 @@ apiInstance.getOutboundEvent(eventId)
 # DialerEventEntityListing getOutboundEvents(opts)
 
 
-
 GET /api/v2/outbound/events
 
 Query Event Logs
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * outbound:eventLog:view
 
@@ -3269,14 +3622,11 @@ apiInstance.getOutboundEvents(opts)
 # MessagingCampaign getOutboundMessagingcampaign(messagingCampaignId)
 
 
-
 GET /api/v2/outbound/messagingcampaigns/{messagingCampaignId}
 
 Get an Outbound Messaging Campaign
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * outbound:messagingCampaign:view
 * outbound:emailCampaign:view
@@ -3318,19 +3668,67 @@ apiInstance.getOutboundMessagingcampaign(messagingCampaignId)
 
 **MessagingCampaign**
 
+<a name="getOutboundMessagingcampaignDiagnostics"></a>
+
+# MessagingCampaignDiagnostics getOutboundMessagingcampaignDiagnostics(messagingCampaignId)
+
+
+GET /api/v2/outbound/messagingcampaigns/{messagingCampaignId}/diagnostics
+
+Get messaging campaign diagnostics
+
+Requires ANY permissions:
+
+* outbound:messagingCampaign:view
+* outbound:emailCampaign:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let messagingCampaignId = "messagingCampaignId_example"; // String | The Messaging Campaign ID
+
+apiInstance.getOutboundMessagingcampaignDiagnostics(messagingCampaignId)
+  .then((data) => {
+    console.log(`getOutboundMessagingcampaignDiagnostics success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getOutboundMessagingcampaignDiagnostics');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **messagingCampaignId** | **String** | The Messaging Campaign ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**MessagingCampaignDiagnostics**
+
 <a name="getOutboundMessagingcampaignProgress"></a>
 
 # CampaignProgress getOutboundMessagingcampaignProgress(messagingCampaignId)
 
 
-
 GET /api/v2/outbound/messagingcampaigns/{messagingCampaignId}/progress
 
-Get messaging campaign&#39;s progress
+Get messaging campaign's progress
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * outbound:messagingCampaign:view
 * outbound:emailCampaign:view
@@ -3377,14 +3775,11 @@ apiInstance.getOutboundMessagingcampaignProgress(messagingCampaignId)
 # MessagingCampaignEntityListing getOutboundMessagingcampaigns(opts)
 
 
-
 GET /api/v2/outbound/messagingcampaigns
 
 Query a list of Messaging Campaigns
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * outbound:messagingCampaign:view
 * outbound:emailCampaign:view
@@ -3451,14 +3846,13 @@ apiInstance.getOutboundMessagingcampaigns(opts)
 # MessagingCampaignDivisionView getOutboundMessagingcampaignsDivisionview(messagingCampaignId)
 
 
-
 GET /api/v2/outbound/messagingcampaigns/divisionviews/{messagingCampaignId}
 
 Get a basic Messaging Campaign information object
 
 This returns a simplified version of a Messaging Campaign, consisting of id, name, and division.
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * outbound:messagingCampaign:search
 * outbound:emailCampaign:search
@@ -3505,14 +3899,13 @@ apiInstance.getOutboundMessagingcampaignsDivisionview(messagingCampaignId)
 # MessagingCampaignDivisionViewEntityListing getOutboundMessagingcampaignsDivisionviews(opts)
 
 
-
 GET /api/v2/outbound/messagingcampaigns/divisionviews
 
 Query a list of basic Messaging Campaign information objects
 
 This returns a listing of simplified Messaging Campaigns, each consisting of id, name, and division.
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * outbound:messagingCampaign:search
 * outbound:emailCampaign:search
@@ -3573,14 +3966,11 @@ apiInstance.getOutboundMessagingcampaignsDivisionviews(opts)
 # RuleSet getOutboundRuleset(ruleSetId)
 
 
-
 GET /api/v2/outbound/rulesets/{ruleSetId}
 
 Get a Rule Set by ID.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * outbound:ruleSet:view
 
@@ -3626,14 +4016,11 @@ apiInstance.getOutboundRuleset(ruleSetId)
 # RuleSetEntityListing getOutboundRulesets(opts)
 
 
-
 GET /api/v2/outbound/rulesets
 
 Query a list of Rule Sets.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * outbound:ruleSet:view
 
@@ -3693,14 +4080,11 @@ apiInstance.getOutboundRulesets(opts)
 # CampaignSchedule getOutboundSchedulesCampaign(campaignId)
 
 
-
 GET /api/v2/outbound/schedules/campaigns/{campaignId}
 
 Get a dialer campaign schedule.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * outbound:schedule:view
 
@@ -3746,14 +4130,11 @@ apiInstance.getOutboundSchedulesCampaign(campaignId)
 # [CampaignSchedule] getOutboundSchedulesCampaigns()
 
 
-
 GET /api/v2/outbound/schedules/campaigns
 
 Query for a list of dialer campaign schedules.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * outbound:schedule:view
 
@@ -3789,19 +4170,206 @@ This endpoint does not need any parameter.
 
 **[CampaignSchedule]**
 
+<a name="getOutboundSchedulesEmailcampaign"></a>
+
+# EmailCampaignSchedule getOutboundSchedulesEmailcampaign(emailCampaignId)
+
+
+GET /api/v2/outbound/schedules/emailcampaigns/{emailCampaignId}
+
+Get an email campaign schedule.
+
+Requires ANY permissions:
+
+* outbound:emailCampaignSchedule:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let emailCampaignId = "emailCampaignId_example"; // String | Email Campaign ID
+
+apiInstance.getOutboundSchedulesEmailcampaign(emailCampaignId)
+  .then((data) => {
+    console.log(`getOutboundSchedulesEmailcampaign success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getOutboundSchedulesEmailcampaign');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **emailCampaignId** | **String** | Email Campaign ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**EmailCampaignSchedule**
+
+<a name="getOutboundSchedulesEmailcampaigns"></a>
+
+# MessagingCampaignScheduleEntityListing getOutboundSchedulesEmailcampaigns()
+
+
+GET /api/v2/outbound/schedules/emailcampaigns
+
+Query for a list of email campaign schedules.
+
+Requires ANY permissions:
+
+* outbound:emailCampaignSchedule:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+apiInstance.getOutboundSchedulesEmailcampaigns()
+  .then((data) => {
+    console.log(`getOutboundSchedulesEmailcampaigns success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getOutboundSchedulesEmailcampaigns');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+
+### Return type
+
+**MessagingCampaignScheduleEntityListing**
+
+<a name="getOutboundSchedulesMessagingcampaign"></a>
+
+# MessagingCampaignSchedule getOutboundSchedulesMessagingcampaign(messagingCampaignId)
+
+
+GET /api/v2/outbound/schedules/messagingcampaigns/{messagingCampaignId}
+
+Get a messaging campaign schedule.
+
+Requires ANY permissions:
+
+* outbound:messagingCampaignSchedule:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let messagingCampaignId = "messagingCampaignId_example"; // String | Messaging Campaign ID
+
+apiInstance.getOutboundSchedulesMessagingcampaign(messagingCampaignId)
+  .then((data) => {
+    console.log(`getOutboundSchedulesMessagingcampaign success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getOutboundSchedulesMessagingcampaign');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **messagingCampaignId** | **String** | Messaging Campaign ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**MessagingCampaignSchedule**
+
+<a name="getOutboundSchedulesMessagingcampaigns"></a>
+
+# MessagingCampaignScheduleEntityListing getOutboundSchedulesMessagingcampaigns()
+
+
+GET /api/v2/outbound/schedules/messagingcampaigns
+
+Query for a list of messaging campaign schedules.
+
+Requires ANY permissions:
+
+* outbound:messagingCampaignSchedule:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+apiInstance.getOutboundSchedulesMessagingcampaigns()
+  .then((data) => {
+    console.log(`getOutboundSchedulesMessagingcampaigns success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getOutboundSchedulesMessagingcampaigns');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+
+### Return type
+
+**MessagingCampaignScheduleEntityListing**
+
 <a name="getOutboundSchedulesSequence"></a>
 
 # SequenceSchedule getOutboundSchedulesSequence(sequenceId)
-
 
 
 GET /api/v2/outbound/schedules/sequences/{sequenceId}
 
 Get a dialer sequence schedule.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * outbound:schedule:view
 
@@ -3847,14 +4415,11 @@ apiInstance.getOutboundSchedulesSequence(sequenceId)
 # [SequenceSchedule] getOutboundSchedulesSequences()
 
 
-
 GET /api/v2/outbound/schedules/sequences
 
 Query for a list of dialer sequence schedules.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * outbound:schedule:view
 
@@ -3895,14 +4460,11 @@ This endpoint does not need any parameter.
 # CampaignSequence getOutboundSequence(sequenceId)
 
 
-
 GET /api/v2/outbound/sequences/{sequenceId}
 
 Get a dialer campaign sequence.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * outbound:campaignSequence:view
 
@@ -3948,14 +4510,11 @@ apiInstance.getOutboundSequence(sequenceId)
 # CampaignSequenceEntityListing getOutboundSequences(opts)
 
 
-
 GET /api/v2/outbound/sequences
 
 Query a list of dialer campaign sequences.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * outbound:campaignSequence:view
 
@@ -4015,14 +4574,11 @@ apiInstance.getOutboundSequences(opts)
 # OutboundSettings getOutboundSettings()
 
 
-
 GET /api/v2/outbound/settings
 
 Get the outbound settings for this organization
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * outbound:settings:view
 
@@ -4063,14 +4619,11 @@ This endpoint does not need any parameter.
 # WrapUpCodeMapping getOutboundWrapupcodemappings()
 
 
-
 GET /api/v2/outbound/wrapupcodemappings
 
 Get the Dialer wrap up code mapping.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * outbound:wrapUpCodeMapping:view
 
@@ -4106,19 +4659,178 @@ This endpoint does not need any parameter.
 
 **WrapUpCodeMapping**
 
+<a name="patchOutboundDnclistCustomexclusioncolumns"></a>
+
+# void patchOutboundDnclistCustomexclusioncolumns(dncListId, body)
+
+
+PATCH /api/v2/outbound/dnclists/{dncListId}/customexclusioncolumns
+
+Add entries to or delete entries from a DNC list.
+
+Only Internal DNC lists may be deleted from
+
+Requires ANY permissions:
+
+* outbound:dnc:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let dncListId = "dncListId_example"; // String | DncList ID
+let body = {}; // Object | DNC Custom exclusion column entries
+
+apiInstance.patchOutboundDnclistCustomexclusioncolumns(dncListId, body)
+  .then(() => {
+    console.log('patchOutboundDnclistCustomexclusioncolumns returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchOutboundDnclistCustomexclusioncolumns');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **dncListId** | **String** | DncList ID |  |
+ **body** | **Object** | DNC Custom exclusion column entries |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
+<a name="patchOutboundDnclistEmailaddresses"></a>
+
+# void patchOutboundDnclistEmailaddresses(dncListId, body)
+
+
+PATCH /api/v2/outbound/dnclists/{dncListId}/emailaddresses
+
+Add emails to or Delete emails from a DNC list.
+
+Only Internal DNC lists may be added to or deleted from
+
+Requires ANY permissions:
+
+* outbound:dnc:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let dncListId = "dncListId_example"; // String | DncList ID
+let body = {}; // Object | DNC Emails
+
+apiInstance.patchOutboundDnclistEmailaddresses(dncListId, body)
+  .then(() => {
+    console.log('patchOutboundDnclistEmailaddresses returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchOutboundDnclistEmailaddresses');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **dncListId** | **String** | DncList ID |  |
+ **body** | **Object** | DNC Emails |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
+<a name="patchOutboundDnclistPhonenumbers"></a>
+
+# void patchOutboundDnclistPhonenumbers(dncListId, body)
+
+
+PATCH /api/v2/outbound/dnclists/{dncListId}/phonenumbers
+
+Add numbers to or delete numbers from a DNC list.
+
+Only Internal DNC lists may be added to deleted from
+
+Requires ANY permissions:
+
+* outbound:dnc:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let dncListId = "dncListId_example"; // String | DncList ID
+let body = {}; // Object | DNC Phone Numbers
+
+apiInstance.patchOutboundDnclistPhonenumbers(dncListId, body)
+  .then(() => {
+    console.log('patchOutboundDnclistPhonenumbers returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchOutboundDnclistPhonenumbers');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **dncListId** | **String** | DncList ID |  |
+ **body** | **Object** | DNC Phone Numbers |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
 <a name="patchOutboundSettings"></a>
 
 # void patchOutboundSettings(body)
-
 
 
 PATCH /api/v2/outbound/settings
 
 Update the outbound settings for this organization
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * outbound:settings:edit
 
@@ -4164,14 +4876,11 @@ void (no response body)
 # AttemptLimits postOutboundAttemptlimits(body)
 
 
-
 POST /api/v2/outbound/attemptlimits
 
 Create attempt limits
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * outbound:attemptLimits:add
 
@@ -4217,14 +4926,11 @@ apiInstance.postOutboundAttemptlimits(body)
 # AuditSearchResult postOutboundAudits(body, opts)
 
 
-
 POST /api/v2/outbound/audits
 
 Retrieves audits for dialer.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * outbound:audit:view
 
@@ -4282,14 +4988,11 @@ apiInstance.postOutboundAudits(body, opts)
 # CallableTimeSet postOutboundCallabletimesets(body)
 
 
-
 POST /api/v2/outbound/callabletimesets
 
 Create callable time set
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * outbound:callableTimeSet:add
 
@@ -4335,14 +5038,11 @@ apiInstance.postOutboundCallabletimesets(body)
 # ResponseSet postOutboundCallanalysisresponsesets(body)
 
 
-
 POST /api/v2/outbound/callanalysisresponsesets
 
 Create a dialer call analysis response set.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * outbound:responseSet:add
 
@@ -4385,17 +5085,14 @@ apiInstance.postOutboundCallanalysisresponsesets(body)
 
 <a name="postOutboundCampaignAgentownedmappingpreview"></a>
 
-# Empty postOutboundCampaignAgentownedmappingpreview(campaignId)
-
+# **Object** postOutboundCampaignAgentownedmappingpreview(campaignId)
 
 
 POST /api/v2/outbound/campaigns/{campaignId}/agentownedmappingpreview
 
-Initiate request for a preview of how agents will be mapped to this campaign&#39;s contact list.
+Initiate request for a preview of how agents will be mapped to this campaign's contact list.
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * outbound:campaign:view
 * outbound:contact:view
@@ -4436,7 +5133,7 @@ apiInstance.postOutboundCampaignAgentownedmappingpreview(campaignId)
 
 ### Return type
 
-**Empty**
+**Object**
 
 <a name="postOutboundCampaignCallbackSchedule"></a>
 
@@ -4448,10 +5145,9 @@ POST /api/v2/outbound/campaigns/{campaignId}/callback/schedule
 
 Schedule a Callback for a Dialer Campaign (Deprecated)
 
-This endpoint is deprecated and may have unexpected results. Please use \&quot;/conversations/{conversationId}/participants/{participantId}/callbacks instead.\&quot;
+This endpoint is deprecated and may have unexpected results. Please use "/conversations/{conversationId}/participants/{participantId}/callbacks instead."
 
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -4497,14 +5193,11 @@ apiInstance.postOutboundCampaignCallbackSchedule(campaignId, body)
 # CampaignRule postOutboundCampaignrules(body)
 
 
-
 POST /api/v2/outbound/campaignrules
 
 Create Campaign Rule
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * outbound:campaignRule:add
 
@@ -4550,14 +5243,11 @@ apiInstance.postOutboundCampaignrules(body)
 # Campaign postOutboundCampaigns(body)
 
 
-
 POST /api/v2/outbound/campaigns
 
 Create a campaign.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * outbound:campaign:add
 
@@ -4603,14 +5293,11 @@ apiInstance.postOutboundCampaigns(body)
 # [CampaignProgress] postOutboundCampaignsProgress(body)
 
 
-
 POST /api/v2/outbound/campaigns/progress
 
 Get progress for a list of campaigns
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * outbound:campaign:view
 
@@ -4627,7 +5314,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
 
-let body = [{}]; // Object | Campaign IDs
+let body = ["body_example"]; // [String] | Campaign IDs
 
 apiInstance.postOutboundCampaignsProgress(body)
   .then((data) => {
@@ -4644,7 +5331,7 @@ apiInstance.postOutboundCampaignsProgress(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **Object** | Campaign IDs |  |
+ **body** | **[String]** | Campaign IDs |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -4656,14 +5343,11 @@ apiInstance.postOutboundCampaignsProgress(body)
 # void postOutboundContactlistClear(contactListId)
 
 
-
 POST /api/v2/outbound/contactlists/{contactListId}/clear
 
 Deletes all contacts out of a list. All outstanding recalls or rule-scheduled callbacks for non-preview campaigns configured with the contactlist will be cancelled.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * outbound:contact:delete
 
@@ -4709,14 +5393,11 @@ void (no response body)
 # [DialerContact] postOutboundContactlistContacts(contactListId, body, opts)
 
 
-
 POST /api/v2/outbound/contactlists/{contactListId}/contacts
 
 Add contacts to a contact list.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * outbound:contact:add
 
@@ -4759,8 +5440,8 @@ apiInstance.postOutboundContactlistContacts(contactListId, body, opts)
  **contactListId** | **String** | Contact List ID |  |
  **body** | **Object** | Contact |  |
  **priority** | **Boolean** | Contact priority. True means the contact(s) will be dialed next; false means the contact will go to the end of the contact queue. | [optional]  |
- **clearSystemData** | **Boolean** | Clear system data. True means the system columns (attempts, callable status, etc) stored on the contact will be cleared if the contact already exists; false means they won&#39;t. | [optional]  |
- **doNotQueue** | **Boolean** | Do not queue. True means that updated contacts will not have their positions in the queue altered, so contacts that have already been dialed will not be redialed. For new contacts, this parameter has no effect; False means that updated contacts will be re-queued, according to the &#39;priority&#39; parameter. | [optional]  |
+ **clearSystemData** | **Boolean** | Clear system data. True means the system columns (attempts, callable status, etc) stored on the contact will be cleared if the contact already exists; false means they won't. | [optional]  |
+ **doNotQueue** | **Boolean** | Do not queue. True means that updated contacts will not have their positions in the queue altered, so contacts that have already been dialed will not be redialed. For new contacts, this parameter has no effect; False means that updated contacts will be re-queued, according to the 'priority' parameter. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -4772,14 +5453,11 @@ apiInstance.postOutboundContactlistContacts(contactListId, body, opts)
 # [DialerContact] postOutboundContactlistContactsBulk(contactListId, body)
 
 
-
 POST /api/v2/outbound/contactlists/{contactListId}/contacts/bulk
 
 Get contacts from a contact list.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * outbound:contact:view
 
@@ -4797,7 +5475,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OutboundApi();
 
 let contactListId = "contactListId_example"; // String | Contact List ID
-let body = [{}]; // Object | ContactIds to get.
+let body = ["body_example"]; // [String] | ContactIds to get.
 
 apiInstance.postOutboundContactlistContactsBulk(contactListId, body)
   .then((data) => {
@@ -4815,7 +5493,7 @@ apiInstance.postOutboundContactlistContactsBulk(contactListId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **contactListId** | **String** | Contact List ID |  |
- **body** | **Object** | ContactIds to get. |  |
+ **body** | **[String]** | ContactIds to get. |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -4827,14 +5505,13 @@ apiInstance.postOutboundContactlistContactsBulk(contactListId, body)
 # DomainEntityRef postOutboundContactlistExport(contactListId)
 
 
-
 POST /api/v2/outbound/contactlists/{contactListId}/export
 
 Initiate the export of a contact list.
 
 Returns 200 if received OK.
 
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * outbound:contact:view
 * outbound:contactList:view
@@ -4881,14 +5558,11 @@ apiInstance.postOutboundContactlistExport(contactListId)
 # ContactListFilter postOutboundContactlistfilters(body)
 
 
-
 POST /api/v2/outbound/contactlistfilters
 
 Create Contact List Filter
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * outbound:contactListFilter:add
 
@@ -4934,14 +5608,11 @@ apiInstance.postOutboundContactlistfilters(body)
 # FilterPreviewResponse postOutboundContactlistfiltersPreview(body)
 
 
-
 POST /api/v2/outbound/contactlistfilters/preview
 
 Get a preview of the output of a contact list filter
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * outbound:contact:view
 
@@ -4987,14 +5658,11 @@ apiInstance.postOutboundContactlistfiltersPreview(body)
 # ContactList postOutboundContactlists(body)
 
 
-
 POST /api/v2/outbound/contactlists
 
 Create a contact List.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * outbound:contactList:add
 
@@ -5040,14 +5708,11 @@ apiInstance.postOutboundContactlists(body)
 # void postOutboundConversationDnc(conversationId)
 
 
-
 POST /api/v2/outbound/conversations/{conversationId}/dnc
 
 Add phone numbers to a Dialer DNC list.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * outbound:dnc:add
 
@@ -5088,10 +5753,113 @@ apiInstance.postOutboundConversationDnc(conversationId)
 
 void (no response body)
 
+<a name="postOutboundDigitalrulesets"></a>
+
+# DigitalRuleSet postOutboundDigitalrulesets(body)
+
+
+POST /api/v2/outbound/digitalrulesets
+
+Create an Outbound Digital Rule Set
+
+Requires ANY permissions:
+
+* outbound:digitalRuleSet:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let body = {}; // Object | Digital Rule Set
+
+apiInstance.postOutboundDigitalrulesets(body)
+  .then((data) => {
+    console.log(`postOutboundDigitalrulesets success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postOutboundDigitalrulesets');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Digital Rule Set |  |
+{: class="table table-striped"}
+
+### Return type
+
+**DigitalRuleSet**
+
+<a name="postOutboundDnclistEmailaddresses"></a>
+
+# void postOutboundDnclistEmailaddresses(dncListId, body)
+
+
+POST /api/v2/outbound/dnclists/{dncListId}/emailaddresses
+
+Add email addresses to a DNC list.
+
+Only Internal DNC lists may be appended to
+
+Requires ANY permissions:
+
+* outbound:dnc:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let dncListId = "dncListId_example"; // String | DncList ID
+let body = ["body_example"]; // [String] | DNC email addresses
+
+apiInstance.postOutboundDnclistEmailaddresses(dncListId, body)
+  .then(() => {
+    console.log('postOutboundDnclistEmailaddresses returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postOutboundDnclistEmailaddresses');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **dncListId** | **String** | DncList ID |  |
+ **body** | **[String]** | DNC email addresses |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (no response body)
+
 <a name="postOutboundDnclistExport"></a>
 
 # DomainEntityRef postOutboundDnclistExport(dncListId)
-
 
 
 POST /api/v2/outbound/dnclists/{dncListId}/export
@@ -5100,7 +5868,7 @@ Initiate the export of a dnc list.
 
 Returns 200 if received OK.
 
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * outbound:dnc:view
 * outbound:dncList:view
@@ -5144,8 +5912,7 @@ apiInstance.postOutboundDnclistExport(dncListId)
 
 <a name="postOutboundDnclistPhonenumbers"></a>
 
-# void postOutboundDnclistPhonenumbers(dncListId, body)
-
+# void postOutboundDnclistPhonenumbers(dncListId, body, opts)
 
 
 POST /api/v2/outbound/dnclists/{dncListId}/phonenumbers
@@ -5154,7 +5921,7 @@ Add phone numbers to a DNC list.
 
 Only Internal DNC lists may be appended to
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * outbound:dnc:add
 
@@ -5172,9 +5939,12 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OutboundApi();
 
 let dncListId = "dncListId_example"; // String | DncList ID
-let body = [{}]; // Object | DNC Phone Numbers
+let body = ["body_example"]; // [String] | DNC Phone Numbers
+let opts = { 
+  'expirationDateTime': "expirationDateTime_example" // String | Expiration date for DNC phone numbers in yyyy-MM-ddTHH:mmZ format
+};
 
-apiInstance.postOutboundDnclistPhonenumbers(dncListId, body)
+apiInstance.postOutboundDnclistPhonenumbers(dncListId, body, opts)
   .then(() => {
     console.log('postOutboundDnclistPhonenumbers returned successfully.');
   })
@@ -5190,7 +5960,8 @@ apiInstance.postOutboundDnclistPhonenumbers(dncListId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **dncListId** | **String** | DncList ID |  |
- **body** | **Object** | DNC Phone Numbers |  |
+ **body** | **[String]** | DNC Phone Numbers |  |
+ **expirationDateTime** | **String** | Expiration date for DNC phone numbers in yyyy-MM-ddTHH:mmZ format | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -5202,14 +5973,11 @@ void (no response body)
 # DncList postOutboundDnclists(body)
 
 
-
 POST /api/v2/outbound/dnclists
 
 Create dialer DNC list
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * outbound:dncList:add
 
@@ -5255,14 +6023,11 @@ apiInstance.postOutboundDnclists(body)
 # MessagingCampaign postOutboundMessagingcampaigns(body)
 
 
-
 POST /api/v2/outbound/messagingcampaigns
 
 Create a Messaging Campaign
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * outbound:messagingCampaign:add
 * outbound:emailCampaign:add
@@ -5309,14 +6074,11 @@ apiInstance.postOutboundMessagingcampaigns(body)
 # [CampaignProgress] postOutboundMessagingcampaignsProgress(body)
 
 
-
 POST /api/v2/outbound/messagingcampaigns/progress
 
 Get progress for a list of messaging campaigns
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * outbound:messagingCampaign:view
 * outbound:emailCampaign:view
@@ -5334,7 +6096,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
 
-let body = [{}]; // Object | Messaging Campaign IDs
+let body = ["body_example"]; // [String] | Messaging Campaign IDs
 
 apiInstance.postOutboundMessagingcampaignsProgress(body)
   .then((data) => {
@@ -5351,7 +6113,7 @@ apiInstance.postOutboundMessagingcampaignsProgress(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **Object** | Messaging Campaign IDs |  |
+ **body** | **[String]** | Messaging Campaign IDs |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -5363,14 +6125,11 @@ apiInstance.postOutboundMessagingcampaignsProgress(body)
 # RuleSet postOutboundRulesets(body)
 
 
-
 POST /api/v2/outbound/rulesets
 
 Create a Rule Set.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * outbound:ruleSet:add
 
@@ -5416,14 +6175,11 @@ apiInstance.postOutboundRulesets(body)
 # CampaignSequence postOutboundSequences(body)
 
 
-
 POST /api/v2/outbound/sequences
 
 Create a new campaign sequence.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * outbound:campaignSequence:add
 
@@ -5469,14 +6225,11 @@ apiInstance.postOutboundSequences(body)
 # AttemptLimits putOutboundAttemptlimit(attemptLimitsId, body)
 
 
-
 PUT /api/v2/outbound/attemptlimits/{attemptLimitsId}
 
 Update attempt limits
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * outbound:attemptLimits:edit
 
@@ -5524,14 +6277,11 @@ apiInstance.putOutboundAttemptlimit(attemptLimitsId, body)
 # CallableTimeSet putOutboundCallabletimeset(callableTimeSetId, body)
 
 
-
 PUT /api/v2/outbound/callabletimesets/{callableTimeSetId}
 
 Update callable time set
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * outbound:callableTimeSet:edit
 
@@ -5579,14 +6329,11 @@ apiInstance.putOutboundCallabletimeset(callableTimeSetId, body)
 # ResponseSet putOutboundCallanalysisresponseset(callAnalysisSetId, body)
 
 
-
 PUT /api/v2/outbound/callanalysisresponsesets/{callAnalysisSetId}
 
 Update a dialer call analysis response set.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * outbound:responseSet:edit
 
@@ -5634,14 +6381,11 @@ apiInstance.putOutboundCallanalysisresponseset(callAnalysisSetId, body)
 # Campaign putOutboundCampaign(campaignId, body)
 
 
-
 PUT /api/v2/outbound/campaigns/{campaignId}
 
 Update a campaign.
 
-
-
-Requires ANY permissions: 
+Requires ALL permissions:
 
 * outbound:campaign:edit
 
@@ -5689,15 +6433,13 @@ apiInstance.putOutboundCampaign(campaignId, body)
 # **&#39;String&#39;** putOutboundCampaignAgent(campaignId, userId, body)
 
 
-
 PUT /api/v2/outbound/campaigns/{campaignId}/agents/{userId}
 
-Send notification that an agent&#39;s state changed 
+Send notification that an agent's state changed 
 
 New agent state.
 
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -5732,7 +6474,7 @@ apiInstance.putOutboundCampaignAgent(campaignId, userId, body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **campaignId** | **String** | Campaign ID |  |
- **userId** | **String** | Agent&#39;s user ID |  |
+ **userId** | **String** | Agent's user ID |  |
  **body** | **Object** | agent |  |
 {: class="table table-striped"}
 
@@ -5745,14 +6487,11 @@ apiInstance.putOutboundCampaignAgent(campaignId, userId, body)
 # CampaignRule putOutboundCampaignrule(campaignRuleId, body)
 
 
-
 PUT /api/v2/outbound/campaignrules/{campaignRuleId}
 
 Update Campaign Rule
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * outbound:campaignRule:edit
 
@@ -5800,14 +6539,11 @@ apiInstance.putOutboundCampaignrule(campaignRuleId, body)
 # ContactList putOutboundContactlist(contactListId, body)
 
 
-
 PUT /api/v2/outbound/contactlists/{contactListId}
 
 Update a contact list.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * outbound:contactList:edit
 
@@ -5855,14 +6591,11 @@ apiInstance.putOutboundContactlist(contactListId, body)
 # DialerContact putOutboundContactlistContact(contactListId, contactId, body)
 
 
-
 PUT /api/v2/outbound/contactlists/{contactListId}/contacts/{contactId}
 
 Update a contact.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * outbound:contact:edit
 
@@ -5912,14 +6645,11 @@ apiInstance.putOutboundContactlistContact(contactListId, contactId, body)
 # ContactListFilter putOutboundContactlistfilter(contactListFilterId, body)
 
 
-
 PUT /api/v2/outbound/contactlistfilters/{contactListFilterId}
 
 Update Contact List Filter
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * outbound:contactListFilter:edit
 
@@ -5962,19 +6692,68 @@ apiInstance.putOutboundContactlistfilter(contactListFilterId, body)
 
 **ContactListFilter**
 
+<a name="putOutboundDigitalruleset"></a>
+
+# DigitalRuleSet putOutboundDigitalruleset(digitalRuleSetId, body)
+
+
+PUT /api/v2/outbound/digitalrulesets/{digitalRuleSetId}
+
+Update an Outbound Digital Rule Set
+
+Requires ANY permissions:
+
+* outbound:digitalRuleSet:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let digitalRuleSetId = "digitalRuleSetId_example"; // String | The Digital Rule Set ID
+let body = {}; // Object | Digital Rule Set
+
+apiInstance.putOutboundDigitalruleset(digitalRuleSetId, body)
+  .then((data) => {
+    console.log(`putOutboundDigitalruleset success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putOutboundDigitalruleset');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **digitalRuleSetId** | **String** | The Digital Rule Set ID |  |
+ **body** | **Object** | Digital Rule Set |  |
+{: class="table table-striped"}
+
+### Return type
+
+**DigitalRuleSet**
+
 <a name="putOutboundDnclist"></a>
 
 # DncList putOutboundDnclist(dncListId, body)
-
 
 
 PUT /api/v2/outbound/dnclists/{dncListId}
 
 Update dialer DNC list
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * outbound:dncList:edit
 
@@ -6022,14 +6801,11 @@ apiInstance.putOutboundDnclist(dncListId, body)
 # MessagingCampaign putOutboundMessagingcampaign(messagingCampaignId, body)
 
 
-
 PUT /api/v2/outbound/messagingcampaigns/{messagingCampaignId}
 
 Update an Outbound Messaging Campaign
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * outbound:messagingCampaign:edit
 * outbound:emailCampaign:edit
@@ -6078,14 +6854,11 @@ apiInstance.putOutboundMessagingcampaign(messagingCampaignId, body)
 # RuleSet putOutboundRuleset(ruleSetId, body)
 
 
-
 PUT /api/v2/outbound/rulesets/{ruleSetId}
 
 Update a Rule Set.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * outbound:ruleSet:edit
 
@@ -6133,14 +6906,11 @@ apiInstance.putOutboundRuleset(ruleSetId, body)
 # CampaignSchedule putOutboundSchedulesCampaign(campaignId, body)
 
 
-
 PUT /api/v2/outbound/schedules/campaigns/{campaignId}
 
 Update a new campaign schedule.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * outbound:schedule:edit
 
@@ -6183,19 +6953,120 @@ apiInstance.putOutboundSchedulesCampaign(campaignId, body)
 
 **CampaignSchedule**
 
+<a name="putOutboundSchedulesEmailcampaign"></a>
+
+# EmailCampaignSchedule putOutboundSchedulesEmailcampaign(emailCampaignId, body)
+
+
+PUT /api/v2/outbound/schedules/emailcampaigns/{emailCampaignId}
+
+Update an email campaign schedule.
+
+Requires ANY permissions:
+
+* outbound:emailCampaignSchedule:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let emailCampaignId = "emailCampaignId_example"; // String | Email Campaign ID
+let body = {}; // Object | EmailCampaignSchedule
+
+apiInstance.putOutboundSchedulesEmailcampaign(emailCampaignId, body)
+  .then((data) => {
+    console.log(`putOutboundSchedulesEmailcampaign success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putOutboundSchedulesEmailcampaign');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **emailCampaignId** | **String** | Email Campaign ID |  |
+ **body** | **Object** | EmailCampaignSchedule |  |
+{: class="table table-striped"}
+
+### Return type
+
+**EmailCampaignSchedule**
+
+<a name="putOutboundSchedulesMessagingcampaign"></a>
+
+# MessagingCampaignSchedule putOutboundSchedulesMessagingcampaign(messagingCampaignId, body)
+
+
+PUT /api/v2/outbound/schedules/messagingcampaigns/{messagingCampaignId}
+
+Update a new messaging campaign schedule.
+
+Requires ANY permissions:
+
+* outbound:messagingCampaignSchedule:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let messagingCampaignId = "messagingCampaignId_example"; // String | Messaging Campaign ID
+let body = {}; // Object | MessagingCampaignSchedule
+
+apiInstance.putOutboundSchedulesMessagingcampaign(messagingCampaignId, body)
+  .then((data) => {
+    console.log(`putOutboundSchedulesMessagingcampaign success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putOutboundSchedulesMessagingcampaign');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **messagingCampaignId** | **String** | Messaging Campaign ID |  |
+ **body** | **Object** | MessagingCampaignSchedule |  |
+{: class="table table-striped"}
+
+### Return type
+
+**MessagingCampaignSchedule**
+
 <a name="putOutboundSchedulesSequence"></a>
 
 # SequenceSchedule putOutboundSchedulesSequence(sequenceId, body)
-
 
 
 PUT /api/v2/outbound/schedules/sequences/{sequenceId}
 
 Update a new sequence schedule.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * outbound:schedule:edit
 
@@ -6243,14 +7114,11 @@ apiInstance.putOutboundSchedulesSequence(sequenceId, body)
 # CampaignSequence putOutboundSequence(sequenceId, body)
 
 
-
 PUT /api/v2/outbound/sequences/{sequenceId}
 
 Update a new campaign sequence.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * outbound:campaignSequence:edit
 
@@ -6298,14 +7166,11 @@ apiInstance.putOutboundSequence(sequenceId, body)
 # WrapUpCodeMapping putOutboundWrapupcodemappings(body)
 
 
-
 PUT /api/v2/outbound/wrapupcodemappings
 
 Update the Dialer wrap up code mapping.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * outbound:wrapUpCodeMapping:edit
 

@@ -1,9 +1,10 @@
-import superagent from 'superagent';
+import { default as axios } from 'axios';
 import Configuration from './configuration.js';
+import { default as qs } from 'qs';
 
 /**
  * @module purecloud-platform-client-v2/ApiClient
- * @version 124.0.0
+ * @version 174.0.0
  */
 class ApiClient {
 	/**
@@ -38,7 +39,7 @@ class ApiClient {
 
 		/**
 		 * Enumeration of collection format separator strategies.
-		 * @enum {String} 
+		 * @enum {String}
 		 * @readonly
 		 */
 		this.CollectionFormatEnum = {
@@ -85,10 +86,9 @@ class ApiClient {
 		 * @type {Array.<String>}
 		 */
 		this.authentications = {
-			'PureCloud OAuth': {type: 'oauth2'},
-			'Guest Chat JWT': {type: 'apiKey', 'in': 'header', name: 'Authorization'}
+			'Guest Chat JWT': {type: 'apiKey', 'in': 'header', name: 'Authorization'},
+			'PureCloud OAuth': {type: 'oauth2'}
 		};
-
 		/**
 		 * The default HTTP headers to be included for all API calls.
 		 * @type {Array.<String>}
@@ -105,9 +105,6 @@ class ApiClient {
 
 		this.authData = {};
 		this.settingsPrefix = 'purecloud';
-
-		// Expose superagent module for use with superagent-proxy
-		this.superagent = superagent;
 
 		// Transparently request a new access token when it expires (Code Authorization only)
 		this.refreshInProgress = false;
@@ -189,7 +186,7 @@ class ApiClient {
 		// Load current auth data
 		const tempState = this.authData.state;
 		this.authData = localStorage.getItem(`${this.settingsPrefix}_auth_data`);
-		if (!this.authData) 
+		if (!this.authData)
 			this.authData = {};
 		else
 			this.authData = JSON.parse(this.authData);
@@ -209,7 +206,7 @@ class ApiClient {
 	 * @description Initiates the implicit grant login flow. Will attempt to load the token from local storage, if enabled.
 	 * @param {string} clientId - The client ID of an OAuth Implicit Grant client
 	 * @param {string} redirectUri - The redirect URI of the OAuth Implicit Grant client
-	 * @param {object} opts - (optional) Additional options 
+	 * @param {object} opts - (optional) Additional options
 	 * @param {string} opts.state - (optional) An arbitrary string to be passed back with the login response. Used for client apps to associate login responses with a request.
 	 * @param {string} opts.org - (optional) The organization name that would normally used when specifying an organization name when logging in. This is only used when a provider is also specified.
 	 * @param {string} opts.provider - (optional) Authentication provider to log in with e.g. okta, adfs, salesforce, onelogin. This is only used when an org is also specified.
@@ -276,64 +273,65 @@ class ApiClient {
 				reject(new Error('The client credentials grant is not supported in a browser.'));
 				return;
 			}
-
-			// Build token request
-			var request = superagent('POST', `https://login.${this.config.environment}/oauth/token`);
-			if (this.proxy && request.proxy) {
-				request.proxy(this.proxy);
+			const headers = {
+				'Authorization': `Basic ${authHeader}`
 			}
-			request.set('Authorization', `Basic ${authHeader}`);
-			request.send('grant_type=client_credentials');
-
-			// Execute request
-			request.end((error, response) => {
-				if (error) {
-					// Log error
-					this.config.logger.log(
-						'error',
-						response.statusCode,
-						'POST',
-						`https://login.${this.config.environment}/oauth/token`,
-						request.header,
-						response.headers,
-						{ grant_type: 'client_credentials' },
-						response.body
-					);
-					reject(error);
-				} else {
+			axios({
+				method: `POST`,
+				url: `https://login.${this.config.environment}/oauth/token`,
+				headers: headers,
+				data: 'grant_type=client_credentials',
+				httpsAgent: this.proxyAgent
+			})
+				.then((response) => {
 					// Logging
 					this.config.logger.log(
 						'trace',
-						response.statusCode,
+						response.status,
 						'POST',
 						`https://login.${this.config.environment}/oauth/token`,
-						request.header,
+						headers,
 						response.headers,
 						{ grant_type: 'client_credentials' },
 						undefined
 					);
 					this.config.logger.log(
 						'debug',
-						response.statusCode,
+						response.status,
 						'POST',
 						`https://login.${this.config.environment}/oauth/token`,
-						request.header,
+						headers,
 						undefined,
 						{ grant_type: 'client_credentials' },
 						undefined
 					);
 
 					// Save access token
-					this.setAccessToken(response.body['access_token']);
+					this.setAccessToken(response.data['access_token']);
 
 					// Set expiry time
-					this.authData.tokenExpiryTime = (new Date()).getTime() + (response.body['expires_in'] * 1000);
+					this.authData.tokenExpiryTime = (new Date()).getTime() + (response.data['expires_in'] * 1000);
 					this.authData.tokenExpiryTimeString = (new Date(this.authData.tokenExpiryTime)).toUTCString();
 
 					// Return auth data
 					resolve(this.authData);
-				}
-			});
+				})
+				.catch((error) => {
+					// Log error
+					if (error.response) {
+						this.config.logger.log(
+							'error',
+							error.response.status,
+							'POST',
+							`https://login.${this.config.environment}/oauth/token`,
+							headers,
+							error.response.headers,
+							{ grant_type: 'client_credentials' },
+							error.response.data
+						);
+					}
+					reject(error);
+				});
 		});
 	}
 
@@ -353,9 +351,10 @@ class ApiClient {
 			}
 			var encodedData = Buffer.from(clientId + ':' + clientSecret).toString('base64');
 			var request = this._formAuthRequest(encodedData,
-												{ grant_type: 'urn:ietf:params:oauth:grant-type:saml2-bearer' },
-										        { orgName: orgName },
-										        { assertion: assertion });
+												{ grant_type: 'urn:ietf:params:oauth:grant-type:saml2-bearer',
+										        orgName: orgName,
+										        assertion: assertion });
+			request.proxy = this.proxy;
 			var bodyParam = {
 				grant_type: 'urn:ietf:params:oauth:grant-type:saml2-bearer',
 				orgName: orgName,
@@ -363,54 +362,56 @@ class ApiClient {
 			};
 
 			// Handle response
-			request.end((error, response) => {
-				if (error) {
-					// Log error
-					this.config.logger.log(
-						'error',
-						response.statusCode,
-						'POST',
-						`https://login.${this.config.environment}/oauth/token`,
-						request.header,
-						response.headers,
-						bodyParam,
-						response.body
-					);
-					reject(error);
-				} else {
+			request
+				.then((response) => {
 					// Logging
 					this.config.logger.log(
 						'trace',
-						response.statusCode,
+						response.status,
 						'POST',
 						`https://login.${this.config.environment}/oauth/token`,
-						request.header,
+						request.headers,
 						response.headers,
 						bodyParam,
 						undefined
 					);
 					this.config.logger.log(
 						'debug',
-						response.statusCode,
+						response.status,
 						'POST',
 						`https://login.${this.config.environment}/oauth/token`,
-						request.header,
+						request.headers,
 						undefined,
 						bodyParam,
 						undefined
 					);
 
 					// Get access token from response
-					var access_token = response.body.access_token;
+					var access_token = response.data.access_token;
 
 					this.setAccessToken(access_token);
-					this.authData.tokenExpiryTime = new Date().getTime() + response.body['expires_in'] * 1000;
+					this.authData.tokenExpiryTime = new Date().getTime() + response.data['expires_in'] * 1000;
 					this.authData.tokenExpiryTimeString = new Date(this.authData.tokenExpiryTime).toUTCString();
 
 					// Return auth data
 					resolve(this.authData);
-				}
-			});
+				})
+				.catch((error) => {
+					// Log error
+					if (error.response) {
+						this.config.logger.log(
+							'error',
+							error.response.status,
+							'POST',
+							`https://login.${this.config.environment}/oauth/token`,
+							request.headers,
+							error.response.headers,
+							bodyParam,
+							error.response.data
+						);
+					}
+					reject(error);
+				});
 		});
 	}
 
@@ -431,9 +432,10 @@ class ApiClient {
 			}
 			var encodedData = Buffer.from(clientId + ':' + clientSecret).toString('base64');
 			var request = this._formAuthRequest(encodedData,
-												{ grant_type: 'authorization_code' },
-									            { code: authCode },
-										        { redirect_uri: redirectUri });
+												{ grant_type: 'authorization_code',
+									            code: authCode,
+										        redirect_uri: redirectUri });
+			request.proxy = this.proxy;
 			var bodyParam = {
 				grant_type: 'authorization_code',
 				code: authCode,
@@ -458,7 +460,8 @@ class ApiClient {
 				return;
 			}
 			var encodedData = Buffer.from(clientId + ':' + clientSecret).toString('base64');
-			var request = this._formAuthRequest(encodedData, { grant_type: 'refresh_token' }, { refresh_token: refreshToken });
+			var request = this._formAuthRequest(encodedData, { grant_type: 'refresh_token' , refresh_token: refreshToken });
+			request.proxy = this.proxy;
 			var bodyParam = {
 				grant_type: 'refresh_token',
 				refresh_token: refreshToken,
@@ -476,73 +479,76 @@ class ApiClient {
 	 * @param {function} reject - Promise reject callback
 	 */
 	_handleCodeAuthorizationResponse(request, bodyParam, resolve, reject) {
-		request.end((error, response) => {
-			if (error) {
-				// Log error
-				this.config.logger.log(
-					'error',
-					response.statusCode,
-					'POST',
-					`https://login.${this.config.environment}/oauth/token`,
-					request.header,
-					response.headers,
-					bodyParam,
-					response.body
-				);
-
-				reject(error);
-			} else {
+		request
+			.then((response) => {
 				// Logging
 				this.config.logger.log(
 					'trace',
-					response.statusCode,
+					response.status,
 					'POST',
 					`https://login.${this.config.environment}/oauth/token`,
-					request.header,
+					request.headers,
 					response.headers,
 					bodyParam,
 					undefined
 				);
 				this.config.logger.log(
 					'debug',
-					response.statusCode,
+					response.status,
 					'POST',
 					`https://login.${this.config.environment}/oauth/token`,
-					request.header,
+					request.headers,
 					undefined,
 					bodyParam,
 					undefined
 				);
 
 				// Get access token from response
-				var access_token = response.body.access_token;
-				var refresh_token = response.body.refresh_token;
+				var access_token = response.data.access_token;
+				var refresh_token = response.data.refresh_token;
 
 				this.setAccessToken(access_token);
 				this.authData.refreshToken = refresh_token;
-				this.authData.tokenExpiryTime = new Date().getTime() + response.body['expires_in'] * 1000;
+				this.authData.tokenExpiryTime = new Date().getTime() + response.data['expires_in'] * 1000;
 				this.authData.tokenExpiryTimeString = new Date(this.authData.tokenExpiryTime).toUTCString();
 
 				// Return auth data
 				resolve(this.authData);
-			}
-		});
+			})
+			.catch((error) => {
+				// Log error
+				if (error.response) {
+					this.config.logger.log(
+						'error',
+						error.response.status,
+						'POST',
+						`https://login.${this.config.environment}/oauth/token`,
+						request.headers,
+						error.response.headers,
+						bodyParam,
+						error.response.data
+					);
+				}
+
+				reject(error);
+			});
 	}
 
 	/**
 	 * @description Utility function to create the request for auth requests
 	 * @param {string} encodedData - Base64 encoded client and clientSecret pair
+	 * @param {object} data - data to url form encode
 	 */
-	_formAuthRequest(encodedData) {
-		var request = superagent('POST', `https://login.${this.config.environment}/oauth/token`);
-		// Set the headers
-		request.set('Authorization', 'Basic ' + encodedData);
-		request.set('Content-Type', 'application/x-www-form-urlencoded');
-		// Add form data
-		request.type('form');
-		for (var i = 0; i < arguments.length; i++) {
-    		request.send(arguments[i]);
-  		}
+	_formAuthRequest(encodedData, data) {
+		var request = axios({
+			method: `POST`,
+			url: `https://login.${this.config.environment}/oauth/token`,
+			headers: {
+				'Authorization': 'Basic ' + encodedData,
+				'Content-Type': 'application/x-www-form-urlencoded'
+			},
+			data: qs.stringify(data)
+		});
 
 		return request;
 	}
@@ -605,7 +611,7 @@ class ApiClient {
 			}
 
 			// Test token
-			this.callApi('/api/v2/tokens/me', 'GET', 
+			this.callApi('/api/v2/tokens/me', 'GET',
 				null, null, null, null, null, ['PureCloud OAuth'], ['application/json'], ['application/json'])
 				.then(() => {
 					resolve();
@@ -631,7 +637,7 @@ class ApiClient {
 			const match = hashRegex.exec(h);
 			if (match) hash[match[1]] = decodeURIComponent(decodeURIComponent(match[2].replace(/\+/g, '%20')));
 		});
-		
+
 		// Check for error
 		if (hash.error) {
 			return hash;
@@ -744,6 +750,36 @@ class ApiClient {
 	}
 
 	/**
+	 * Returns query parameters serialized in the format needed for an axios request.
+	 * @param param The unserialized query parameters.
+	 * @returns {Object} The serialized representation the query parameters.
+	 */
+	serialize(obj) {
+		var result = {};
+		for (var p in obj) {
+			if (obj.hasOwnProperty(p) && obj[p] !== undefined) {
+				result[encodeURIComponent(p)] = Array.isArray(obj[p]) ? obj[p].join(",") : this.paramToString(obj[p]);
+			}
+		}
+		return result
+	}
+
+	/**
+	 * Adds headers onto an existing header object (may be empty)
+	 * @param existingHeaders The existing header object.
+	 * @param newHeaders New headers.
+	 * @returns {Object} The combination of all headers.
+	 */
+	addHeaders(existingHeaders, ...newHeaders) {
+		if (existingHeaders) {
+			existingHeaders = Object.assign(existingHeaders, ...newHeaders);
+		} else {
+			existingHeaders = Object.assign(...newHeaders);
+		}
+		return existingHeaders;
+	}
+
+	/**
 	 * Builds full URL by appending the given path to the base URL and replacing path parameter place-holders with parameter values.
 	 * NOTE: query parameters are not handled here.
 	 * @param {String} path The path to append to the base URL.
@@ -799,7 +835,7 @@ class ApiClient {
 	/**
 	 * Checks whether the given parameter value represents file-like content.
 	 * @param param The parameter to check.
-	 * @returns {Boolean} <code>true</code> if <code>param</code> represents a file. 
+	 * @returns {Boolean} <code>true</code> if <code>param</code> represents a file.
 	 */
 	isFileParam(param) {
 		// fs.ReadStream in Node.js (but not in runtime like browserify)
@@ -858,6 +894,9 @@ class ApiClient {
 	 */
 	buildCollectionParam(param, collectionFormat) {
 		if (!param) return;
+		if (!Array.isArray(param)) {
+			param = [param]
+		}
 
 		switch (collectionFormat) {
 			case 'csv':
@@ -869,7 +908,7 @@ class ApiClient {
 			case 'pipes':
 				return param.map(this.paramToString).join('|');
 			case 'multi':
-				// return the array directly as SuperAgent will handle it as expected
+				// return the array directly as axios will handle it as expected
 				return param.map(this.paramToString);
 			default:
 				throw new Error(`Unknown collection format: ${collectionFormat}`);
@@ -878,7 +917,7 @@ class ApiClient {
 
 	/**
 	 * Applies authentication headers to the request.
-	 * @param {Object} request The request object created by a <code>superagent()</code> call.
+	 * @param {Object} request The axios request config object.
 	 * @param {Array.<String>} authNames An array of authentication method names.
 	 */
 	applyAuthToRequest(request, authNames) {
@@ -887,7 +926,10 @@ class ApiClient {
 			switch (auth.type) {
 				case 'basic':
 					if (auth.username || auth.password) {
-						request.auth(auth.username || '', auth.password || '');
+						request.auth = {
+							username: auth.username || '',
+							password: auth.password || ''
+						};
 					}
 					break;
 				case 'apiKey':
@@ -899,21 +941,29 @@ class ApiClient {
 							data[auth.name] = auth.apiKey;
 						}
 						if (auth['in'] === 'header') {
-							request.set(data);
+							request.headers = this.addHeaders(request.headers, data);
 						} else {
-							request.query(data);
+							request.params = this.serialize(data);
 						}
 					}
 					break;
 				case 'oauth2':
 					if (auth.accessToken) {
-						request.set({'Authorization': `Bearer ${auth.accessToken}`});
+						request.headers = this.addHeaders(request.headers, {'Authorization': `Bearer ${auth.accessToken}`});
 					}
 					break;
 				default:
 					throw new Error(`Unknown authentication type: ${auth.type}`);
 			}
 		});
+	}
+
+	/**
+	 * @description Sets the proxy agent axios will use for requests 
+	 * @param {any} agent - The proxy agent
+	 */
+	setProxyAgent(agent) {
+		this.proxyAgent = agent
 	}
 
 	/**
@@ -936,86 +986,71 @@ class ApiClient {
 			sendRequest(this);
 			function sendRequest(that) {
 				var url = that.buildUrl(path, pathParams);
-				var request = superagent(httpMethod, url);
-
-				if (that.proxy && request.proxy) {
-					request.proxy(that.proxy);
-				}
+				var request = {
+					method: httpMethod,
+					url: url,	
+					httpsAgent: that.proxyAgent,
+					timeout: that.timeout,
+					params: that.serialize(queryParams)
+				};
 
 				// apply authentications
 				that.applyAuthToRequest(request, authNames);
 
-				// set query parameters
-				request.query(that.normalizeParams(queryParams));
-
 				// set header parameters
-				request.set(that.defaultHeaders).set(that.normalizeParams(headerParams));
-				//request.set({ 'purecloud-sdk': '124.0.0' });
-
-				// set request timeout
-				request.timeout(that.timeout);
+				const defaultHeaders = that.defaultHeaders;
+				const normalizedHeaderParams = that.normalizeParams(headerParams);
+				request.headers = that.addHeaders(request.headers, defaultHeaders, normalizedHeaderParams);
 
 				var contentType = that.jsonPreferredMime(contentTypes);
 				if (contentType) {
-					request.type(contentType);
-				} else if (!request.header['Content-Type']) {
-					request.type('application/json');
+					request.headers['Content-Type'] = contentType;
+				} else if (!request.headers['Content-Type']) {
+					request.headers['Content-Type'] = 'application/json';
 				}
 
 				if (contentType === 'application/x-www-form-urlencoded') {
-					request.send(that.normalizeParams(formParams));
+					request.data = that.normalizeParams(formParams);
 				} else if (contentType == 'multipart/form-data') {
 					var _formParams = that.normalizeParams(formParams);
 					for (var key in _formParams) {
 						if (_formParams.hasOwnProperty(key)) {
-							if (that.isFileParam(_formParams[key])) {
-								// file field
-								request.attach(key, _formParams[key]);
-							} else {
-								request.field(key, _formParams[key]);
-							}
+							// Looks like axios handles files and forms the same way
+							var formData = new FormData();
+							formData.set(key, _formParams[key]);
+							request.data = formData;
 						}
 					}
 				} else if (bodyParam) {
-					request.send(bodyParam);
+					request.data = bodyParam;
 				}
 
 				var accept = that.jsonPreferredMime(accepts);
 				if (accept) {
-					request.accept(accept);
+					request.headers['Accept'] = accept;
 				}
-				request.end((error, response) => {
-					if (error) {
-						if (!response) {
-							reject({
-								status: 0,
-								statusText: 'error',
-								headers: [],
-								body: {},
-								text: 'error',
-								error: error
-							});
-							return;
-						}
-					}
+				axios.request(request)
+					.then((response) => {
+						// Build response object
+						var data = (that.returnExtended === true) ? {
+							status: response.status,
+							statusText: response.statusText,
+							headers: response.headers,
+							body: response.data,
+							text: response.text,
+							error: null
+						} : response.data ? response.data : response.text;
 
-					// Build response object
-					var data = (that.returnExtended === true || error) ? {
-						status: response.status,
-						statusText: response.statusText,
-						headers: response.headers,
-						body: response.body,
-						text: response.text,
-						error: error
-					} : response.body ? response.body : response.text;
+						// Debug logging
+						that.config.logger.log('trace', response.status, httpMethod, url, request.headers, response.headers, bodyParam, undefined);
+						that.config.logger.log('debug', response.status, httpMethod, url, request.headers, undefined, bodyParam, undefined);
 
-					// Debug logging
-					that.config.logger.log('trace', response.statusCode, httpMethod, url, request.header, response.headers, bodyParam, undefined);
-					that.config.logger.log('debug', response.statusCode, httpMethod, url, request.header, undefined, bodyParam, undefined);
-
-					// Resolve promise
-					if (error) {
-						if (data.status == 401 && that.config.refresh_access_token && that.authData.refreshToken !== "") {
+						// Resolve promise
+						resolve(data);
+					})
+					.catch((error) => {
+						var data = error
+						if (error.response && error.response.status == 401 && that.config.refresh_access_token && that.authData.refreshToken !== "") {
 							that._handleExpiredAccessToken()
 								.then(() => {
 									sendRequest(that);
@@ -1023,24 +1058,29 @@ class ApiClient {
 								.catch((err) => {
 									reject(err);
 								});
-						} else {
+						} else if (error.response) {
 							// Log error
 							that.config.logger.log(
 								'error',
-								response.statusCode,
+								error.response.status,
 								httpMethod,
 								url,
-								request.header,
-								response.headers,
+								request.headers,
+								error.response.headers,
 								bodyParam,
-								response.body
+								error.response.data
 							);
-							reject(data);
+							data = (that.returnExtended === true) ? {
+								status: error.response.status,
+								statusText: error.response.statusText,
+								headers: error.response.headers,
+								body: error.response.data,
+								text: error.response.text,
+								error: error
+							} : error.response.data ? error.response.data : error.response.text;
 						}
-					} else {
-						resolve(data);
-					}
-				});
+						reject(data);
+					});
 			}
 		});
 	}

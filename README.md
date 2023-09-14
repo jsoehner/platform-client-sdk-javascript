@@ -4,30 +4,34 @@ title: Platform API Client SDK - JavaScript
 
 # Platform API Javascript Client
 
-A JavaScript library to interface with the Genesys Cloud Platform API. View the documentation on the [Genesys Cloud Developer Center](https://developer.mypurecloud.com/api/rest/client-libraries/javascript/). Browse the source code on [Github](https://github.com/MyPureCloud/platform-client-sdk-javascript).
+A JavaScript library to interface with the Genesys Cloud Platform API. View the documentation on the [Genesys Cloud Developer Center](https://developer.genesys.cloud/devapps/sdk/docexplorer/purecloudjavascript/). Browse the source code on [Github](https://github.com/MyPureCloud/platform-client-sdk-javascript).
 
 [![GitHub release](https://img.shields.io/github/release/mypurecloud/platform-client-sdk-javascript.svg)](https://github.com/MyPureCloud/platform-client-sdk-javascript)
 [![npm](https://img.shields.io/npm/v/purecloud-platform-client-v2.svg)](https://www.npmjs.com/package/purecloud-platform-client-v2)
 [![Release Notes Badge](https://developer-content.genesys.cloud/images/sdk-release-notes.png)](https://github.com/MyPureCloud/platform-client-sdk-javascript/blob/master/releaseNotes.md)
 
+## Preview API's
+
+**Warning:** Preview API's are included in this SDK. These resources are subject to both breaking and non-breaking changes at any time without notice. This includes, but is not limited to, changing resource names, paths, contracts, documentation, and removing resources entirely. For a full list of the preview API's see [here](https://developer.genesys.cloud/platform/preview-apis)
+
 ## CommonJS
 
 For node.js via [NPM](https://www.npmjs.com/package/purecloud-platform-client-v2):
 
-```{"language":"sh"}
+```sh
 npm install purecloud-platform-client-v2
 ```
 
-```{"language":"javascript"}
+```javascript
 // Obtain a reference to the platformClient object
 const platformClient = require('purecloud-platform-client-v2');
 ```
 
 For direct use in a browser script:
 
-```{"language":"html"}
+```html
 <!-- Include the CJS SDK -->
-<script src="https://sdk-cdn.mypurecloud.com/javascript/124.0.0/purecloud-platform-client-v2.min.js"></script>
+<script src="https://sdk-cdn.mypurecloud.com/javascript/174.0.0/purecloud-platform-client-v2.min.js"></script>
 
 <script type="text/javascript">
   // Obtain a reference to the platformClient object
@@ -38,13 +42,13 @@ For direct use in a browser script:
 
 ## AMD
 
-```{"language":"html"}
+```html
 <!-- Include requirejs -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.5/require.min.js"></script>
 
 <script type="text/javascript">
   // Obtain a reference to the platformClient object
-  requirejs(['https://sdk-cdn.mypurecloud.com/javascript/amd/124.0.0/purecloud-platform-client-v2.min.js'], (platformClient) => {
+  requirejs(['https://sdk-cdn.mypurecloud.com/javascript/amd/174.0.0/purecloud-platform-client-v2.min.js'], (platformClient) => {
     console.log(platformClient);
   });
 </script>
@@ -77,11 +81,11 @@ Want your app to always use the most recent version of the SDK? To do this, simp
 
 After authentication has completed, the access token is stored on the `ApiClient` instance and the access token will be sent with all API requests.
 
-**Node.js** [Client Credentials grant](https://developer.mypurecloud.com/api/rest/authorization/use-client-credentials.html)
+**Node.js** [Client Credentials grant](https://developer.genesys.cloud/authorization/platform-auth/use-client-credentials)
 
 The Client Credentials grant only works when used in node.js. This is restricted intentionally because it is impossible for client credentials to be handled securely in a browser application.
 
-```{"language":"javascript"}
+```javascript
 const client = platformClient.ApiClient.instance;
 client.loginClientCredentialsGrant(clientId,clientSecret)
 .then(()=> {
@@ -94,11 +98,11 @@ client.loginClientCredentialsGrant(clientId,clientSecret)
 
 ```
 
-**Node.js** [Saml2bearer Grant](https://developer.mypurecloud.com/api/rest/authorization/use-saml2-bearer.html)
+**Node.js** [Saml2bearer Grant](https://developer.genesys.cloud/authorization/platform-auth/use-saml2-bearer)
 
 The Saml2bearer grant only works when used in node.js. This is restricted intentionally because it is impossible for client credentials to be handled securely in a browser application.
 
-```{"language":"javascript"}
+```javascript
 const client = platformClient.ApiClient.instance;
 client.loginSaml2BearerGrant(clientId,clientSecret,orgName,encodedAssertionString)
   .then(() => {
@@ -110,11 +114,11 @@ client.loginSaml2BearerGrant(clientId,clientSecret,orgName,encodedAssertionStrin
   });
 ```
 
-**Node.js** [Authorization Code Grant](https://developer.mypurecloud.com/api/rest/authorization/use-authorization-code.html)
+**Node.js** [Authorization Code Grant](https://developer.genesys.cloud/authorization/platform-auth/use-authorization-code)
 
 The Authorization Code grant only works when used in node.js. This is restricted intentionally because it is impossible for client credentials to be handled securely in a browser application.
 
-```{"language":"javascript"}
+```javascript
 const client = platformClient.ApiClient.instance;
 client.loginCodeAuthorizationGrant(clientId,clientSecret,authCode,redirectUri)
   .then(() => {
@@ -129,7 +133,7 @@ client.loginCodeAuthorizationGrant(clientId,clientSecret,authCode,redirectUri)
 By default the SDK will transparently request a new access token when it expires. If multiple threads are running 1 thread will request a new token, other threads will wait a maximum of 10 seconds for the token refresh to complete, this time can be overriden with the _client.config.refresh_token_wait_max_ field of the _Configuration_ object within ApiClient.  
 If you wish to apply the refresh logic yourself, set _client.config.refresh_access_token_ to false and store the refresh token. The _tokenExpiryTime_ can be used to preemptively request a new token. Use _refreshCodeAuthorizationGrant_ to request a new token when necessary.
 
-```{"language":"javascript"}
+```javascript
 const client = platformClient.ApiClient.instance;
 client.config.refresh_access_token = false;
 client.loginCodeAuthorizationGrant(clientId,clientSecret,authCode,redirectUri)
@@ -156,7 +160,7 @@ client.refreshCodeAuthorizationGrant(clientId,clientSecret,refreshToken)
   });
 ```
 
-**Web** [Implicit grant](https://developer.mypurecloud.com/api/rest/authorization/use-implicit-grant.html)
+**Web** [Implicit grant](https://developer.genesys.cloud/authorization/platform-auth/use-implicit-grant)
 
 The Implicit grant only works when used in a browser. This is because a node.js application does not have a browser interface that can display the Genesys Cloud login window.
 
@@ -164,7 +168,7 @@ Optional parameters may be specified in the optional third parameter for `loginI
 
 * `state` - An arbitrary string used to associate a login request with a login response. This value will be provided in the `state` property on the object when the promise is resolved. The state in the resolved promise will be identical to what was passed into `loginImplicitGrant`, except when the state is retrieved from the auth hash upon completing a login; in that case, the state from the auth hash will override the passed in state.
 
-```{"language":"javascript"}
+```javascript
 const client = platformClient.ApiClient.instance;
 client.loginImplicitGrant(clientId, redirectUri, { state: state })
   .then((data) => {
@@ -179,7 +183,7 @@ client.loginImplicitGrant(clientId, redirectUri, { state: state })
 
 **Any platform** Provide an existing auth token
 
-```{"language":"javascript"}
+```javascript
 const client = platformClient.ApiClient.instance;
 client.setAccessToken(yourAccessToken);
 // Do authenticated things; no authentication function needed
@@ -207,7 +211,8 @@ By default, the request and response bodies are not logged because these can con
 To log to a file, provide a `log_file_path` value. SDK users are responsible for the rotation of the log file. This feature is not available in browser-based applications.
 
 Example logging configuration:
-```{"language":"javascript"}
+
+```javascript
 client.config.logger.log_level = client.config.logger.logLevelEnum.level.LTrace;
 client.config.logger.log_format = client.config.logger.logFormatEnum.formats.JSON;
 client.config.logger.log_request_body = true;
@@ -235,7 +240,8 @@ When using `Jest` to test projects containing this SDK you must set `client.conf
 > ReferenceError: You are trying to import a file after the Jest environment has been torn down
 
 INI:
-```{"language":"ini"}
+
+```ini
 [logging]
 log_level = trace
 log_format = text
@@ -252,7 +258,8 @@ host = https://api.mypurecloud.com
 ```
 
 JSON:
-```{"language":"json"}
+
+```json
 {
     "logging": {
         "log_level": "trace",
@@ -277,7 +284,7 @@ JSON:
 
 If connecting to a Genesys Cloud environment other than mypurecloud.com (e.g. mypurecloud.ie), set the environment on the `ApiClient` instance with the PureCloudRegionHosts object.
 
-```{"language":"javascript"}
+```javascript
 const client = platformClient.ApiClient.instance;
 client.setEnvironment(platformClient.PureCloudRegionHosts.eu_west_1);
 ```
@@ -287,7 +294,7 @@ client.setEnvironment(platformClient.PureCloudRegionHosts.eu_west_1);
 
 In a web environment, it is possible to persist the access token to prevent an authentication request from being made on each page load. To enable this function, simply enable settings persistence prior to attempting a login. To maintain multiple auth tokens in storage, specify the prefix to use for storage/retrieval when enabling persistence. Otherwise, the prefix is optional and will default to `purecloud`.
 
-```{"language":"javascript"}
+```javascript
 const client = platformClient.ApiClient.instance;
 client.setPersistSettings(true, 'optional_prefix');
 ```
@@ -299,7 +306,7 @@ All API requests return a Promise which resolves to the response body, otherwise
 
 **Node.js**
 
-```{"language":"javascript"}
+```javascript
 // Create API instance
 const authorizationApi = new platformClient.AuthorizationApi();
 
@@ -321,7 +328,7 @@ client.loginClientCredentialsGrant(clientId, clientSecret)
 
 **Web**
 
-```{"language":"javascript"}
+```javascript
 // Create API instance
 const usersApi = new platformClient.UsersApi();
 
@@ -346,21 +353,18 @@ client.loginImplicitGrant(clientId, redirectUri)
 
 By default, the SDK will return only the response body as the result of an API function call. To retrieve additional information about the response, enable extended responses. This will return the extended response for all API function calls:
 
-```{"language":"javascript"}
+```javascript
 const client = platformClient.ApiClient.instance;
 client.setReturnExtendedResponses(true);
 ```
 
 Extended response object example (`body` and `text` have been truncated):
 
-```{"language":"json"}
+```json
 {
   "status": 200,
   "statusText": "",
   "headers": {
-    "inin-ratelimit-allowed": "180",
-    "inin-ratelimit-count": "3",
-    "inin-ratelimit-reset": "3",
     "pragma": "no-cache",
     "inin-correlation-id": "ec35f2a8-289b-42d4-8893-c50eaf81a3c1",
     "content-type": "application/json",
@@ -376,71 +380,29 @@ Extended response object example (`body` and `text` have been truncated):
 
 ### Using a Proxy (Node.js only)
 
-Using a proxy is accomplished in two steps:
+Using a proxy is accomplished by setting the `proxyAgent` on the `ApiClient` object.
+The `proxyAgent` will be used to set the `httpsAgent` on the axios request object used in all api calls. See [axios documentation](https://axios-http.com/docs/req_config) for details.
+We recommended using the npm package `hpagent` https://www.npmjs.com/package/hpagent to create a proxyAgent although other options are available.
+An example using `hpagent` to create the proxy is shown below
 
-1. Apply the `superagent-proxy` package to the `client.superagent` object
-2. Set proxy settings on the `client` object
+NOTE: The hpagent package is a NodeJS package. As such, web applications that wish to use this proxy must configure their build tools to handle transpiling and polyfilling the NodeJS package for their desired web target.
 
-After both steps have been completed, the configured proxy server will be used for all requests.
-
-NOTE: SDK proxy configuration is only available in the node.js package due to `superagent-proxy`'s incompatibility with browserify. Additionally, `superagent-proxy` is not included a dependency of the SDK and must be provided by your node application's dependencies.
-
-```{"language":"javascript"}
+```javascript
+const {HttpsProxyAgent} = require('hpagent')
 const client = platformClient.ApiClient.instance;
-require('superagent-proxy')(client.superagent);
-// Configure settings for your proxy here
-// Documentation: https://www.npmjs.com/package/proxy-agent
-client.proxy = {
-  host: '172.1.1.100',
-  port: 443,
-  protocol: 'https',
-};
+
+agent = new HttpsProxyAgent({
+  proxy: proxyUrl,
+});
+client.setProxyAgent(agent)
 ```
-
-
-### Error Responses
-
-Error responses will always be thrown as an extended response object. Note that the `error` property will contain a JavaScript [Error](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error) object.
-
-Example error response object:
-
-```{"language":"json"}
-{
-  "status": 404,
-  "statusText": "",
-  "headers": {
-    "inin-ratelimit-allowed": "300",
-    "inin-ratelimit-count": "6",
-    "inin-ratelimit-reset": "38",
-    "pragma": "no-cache",
-    "inin-correlation-id": "d11bd3b3-ab7e-4fd4-9687-d04af9f30a63",
-    "content-type": "application/json",
-    "cache-control": "no-cache, no-store, must-revalidate",
-    "expires": "0"
-  },
-  "body": {
-    "status": 404,
-    "code": "not.found",
-    "message": "The requested operation failed with status 404",
-    "contextId": "d11bd3b3-ab7e-4fd4-9687-d04af9f30a63",
-    "details": [],
-    "errors": []
-  },
-  "text": "{\"status\":404,\"code\":\"not.found\",\"message\":\"The requested operation failed with status 404\",\"contextId\":\"d11bd3b3-ab7e-4fd4-9687-d04af9f30a63\",\"details\":[],\"errors\":[]}",
-  "error": {
-    "original": null
-  }
-}
-```
-
 
 ## Versioning
 
 The SDK's version is incremented according to the [Semantic Versioning Specification](https://semver.org/). The decision to increment version numbers is determined by [diffing the Platform API's swagger](https://github.com/purecloudlabs/platform-client-sdk-common/blob/master/modules/swaggerDiff.js) for automated builds, and optionally forcing a version bump when a build is triggered manually (e.g. releasing a bugfix).
 
-
 ## Support
 
 This package is intended to be forwards compatible with v2 of Genesys Cloud's Platform API. While the general policy for the API is not to introduce breaking changes, there are certain additions and changes to the API that cause breaking changes for the SDK, often due to the way the API is expressed in its swagger definition. Because of this, the SDK can have a major version bump while the API remains at major version 2. While the SDK is intended to be forward compatible, patches will only be released to the latest version. For these reasons, it is strongly recommended that all applications using this SDK are kept up to date and use the latest version of the SDK.
 
-For any issues, questions, or suggestions for the SDK, visit the [Genesys Cloud Developer Forum](https://developer.mypurecloud.com/forum/).
+For any issues, questions, or suggestions for the SDK, visit the [Genesys Cloud Developer Forum](https://developer.genesys.cloud/forum/).

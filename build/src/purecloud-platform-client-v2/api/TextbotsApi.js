@@ -5,7 +5,7 @@ class TextbotsApi {
 	/**
 	 * Textbots service.
 	 * @module purecloud-platform-client-v2/api/TextbotsApi
-	 * @version 124.0.0
+	 * @version 174.0.0
 	 */
 
 	/**
@@ -21,9 +21,36 @@ class TextbotsApi {
 
 
 	/**
+	 * Find bots using the currently configured friendly name or ID.
+	 * The name does allow case-insensitive partial string matches or by IDs (up to 50), but not both at the same time. Optionally you can limit the scope of the search by providing one or more bot types.  You can specify the maximum results to return, up to a limit of 100
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.botType Bot types
+	 * @param {String} opts.botName Bot name
+	 * @param {Array.<String>} opts.botId Bot IDs
+	 * @param {Number} opts.pageSize The maximum results to return (default to 25)
+	 */
+	getTextbotsBotsSearch(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/textbots/bots/search', 
+			'GET', 
+			{  },
+			{ 'botType': this.apiClient.buildCollectionParam(opts['botType'], 'multi'),'botName': opts['botName'],'botId': this.apiClient.buildCollectionParam(opts['botId'], 'multi'),'pageSize': opts['pageSize'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Issue a bot flow turn event
 	 * Send a turn event to an executing bot flow and produce the next action to take.
-	 * @param {String} sessionId The bot flow session ID, typically obtained from &#39;POST /api/v2/textbots/botflows/sessions&#39;
+	 * @param {String} sessionId The bot flow session ID, typically obtained from 'POST /api/v2/textbots/botflows/sessions'
 	 * @param {Object} turnRequest 
 	 */
 	postTextbotsBotflowsSessionTurns(sessionId, turnRequest) { 
@@ -39,20 +66,20 @@ class TextbotsApi {
 		return this.apiClient.callApi(
 			'/api/v2/textbots/botflows/sessions/{sessionId}/turns', 
 			'POST', 
-			{ 'sessionId': sessionId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'sessionId': sessionId },
+			{  },
+			{  },
+			{  },
 			turnRequest, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
 	 * Create an execution instance of a bot flow definition.
-	 * The launch is asynchronous; use the returned instance ID to post turns to it using &#39;POST /api/v2/textbots/botflows/sessions/{sessionId}/turns&#39;.
+	 * The launch is asynchronous; use the returned instance ID to post turns to it using POST /api/v2/textbots/botflows/sessions/{sessionId}/turns.
 	 * @param {Object} launchRequest 
 	 */
 	postTextbotsBotflowsSessions(launchRequest) { 
@@ -64,13 +91,13 @@ class TextbotsApi {
 		return this.apiClient.callApi(
 			'/api/v2/textbots/botflows/sessions', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			launchRequest, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -89,13 +116,13 @@ class TextbotsApi {
 		return this.apiClient.callApi(
 			'/api/v2/textbots/bots/execute', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			postTextRequest, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}

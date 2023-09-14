@@ -5,7 +5,7 @@ class ScriptsApi {
 	/**
 	 * Scripts service.
 	 * @module purecloud-platform-client-v2/api/ScriptsApi
-	 * @version 124.0.0
+	 * @version 174.0.0
 	 */
 
 	/**
@@ -34,13 +34,13 @@ class ScriptsApi {
 		return this.apiClient.callApi(
 			'/api/v2/scripts/{scriptId}', 
 			'GET', 
-			{ 'scriptId': scriptId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'scriptId': scriptId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -68,13 +68,13 @@ class ScriptsApi {
 		return this.apiClient.callApi(
 			'/api/v2/scripts/{scriptId}/pages/{pageId}', 
 			'GET', 
-			{ 'scriptId': scriptId,'pageId': pageId }, 
-			{ 'scriptDataVersion': opts['scriptDataVersion'] }, 
-			{  }, 
-			{  }, 
+			{ 'scriptId': scriptId,'pageId': pageId },
+			{ 'scriptDataVersion': opts['scriptDataVersion'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -97,13 +97,13 @@ class ScriptsApi {
 		return this.apiClient.callApi(
 			'/api/v2/scripts/{scriptId}/pages', 
 			'GET', 
-			{ 'scriptId': scriptId }, 
-			{ 'scriptDataVersion': opts['scriptDataVersion'] }, 
-			{  }, 
-			{  }, 
+			{ 'scriptId': scriptId },
+			{ 'scriptDataVersion': opts['scriptDataVersion'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -121,6 +121,7 @@ class ScriptsApi {
 	 * @param {Object} opts.sortBy SortBy
 	 * @param {Object} opts.sortOrder SortOrder
 	 * @param {String} opts.scriptDataVersion Advanced usage - controls the data version of the script
+	 * @param {String} opts.divisionIds Filters scripts to requested divisionIds
 	 */
 	getScripts(opts) { 
 		opts = opts || {};
@@ -129,13 +130,46 @@ class ScriptsApi {
 		return this.apiClient.callApi(
 			'/api/v2/scripts', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'],'name': opts['name'],'feature': opts['feature'],'flowId': opts['flowId'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'scriptDataVersion': opts['scriptDataVersion'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'],'name': opts['name'],'feature': opts['feature'],'flowId': opts['flowId'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'scriptDataVersion': opts['scriptDataVersion'],'divisionIds': opts['divisionIds'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the metadata for a list of scripts
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {String} opts.expand Expand
+	 * @param {String} opts.name Name filter
+	 * @param {String} opts.feature Feature filter
+	 * @param {String} opts.flowId Secure flow id filter
+	 * @param {Object} opts.sortBy SortBy
+	 * @param {Object} opts.sortOrder SortOrder
+	 * @param {String} opts.scriptDataVersion Advanced usage - controls the data version of the script
+	 * @param {String} opts.divisionIds Filters scripts to requested divisionIds
+	 */
+	getScriptsDivisionviews(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/scripts/divisionviews', 
+			'GET', 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'],'name': opts['name'],'feature': opts['feature'],'flowId': opts['flowId'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'scriptDataVersion': opts['scriptDataVersion'],'divisionIds': opts['divisionIds'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -151,6 +185,7 @@ class ScriptsApi {
 	 * @param {String} opts.feature Feature filter
 	 * @param {String} opts.flowId Secure flow id filter
 	 * @param {String} opts.scriptDataVersion Advanced usage - controls the data version of the script
+	 * @param {String} opts.divisionIds Filters scripts to requested divisionIds
 	 */
 	getScriptsPublished(opts) { 
 		opts = opts || {};
@@ -159,13 +194,44 @@ class ScriptsApi {
 		return this.apiClient.callApi(
 			'/api/v2/scripts/published', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'],'name': opts['name'],'feature': opts['feature'],'flowId': opts['flowId'],'scriptDataVersion': opts['scriptDataVersion'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'],'name': opts['name'],'feature': opts['feature'],'flowId': opts['flowId'],'scriptDataVersion': opts['scriptDataVersion'],'divisionIds': opts['divisionIds'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the published scripts metadata.
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {String} opts.expand Expand
+	 * @param {String} opts.name Name filter
+	 * @param {String} opts.feature Feature filter
+	 * @param {String} opts.flowId Secure flow id filter
+	 * @param {String} opts.scriptDataVersion Advanced usage - controls the data version of the script
+	 * @param {String} opts.divisionIds Filters scripts to requested divisionIds
+	 */
+	getScriptsPublishedDivisionviews(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/scripts/published/divisionviews', 
+			'GET', 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'],'name': opts['name'],'feature': opts['feature'],'flowId': opts['flowId'],'scriptDataVersion': opts['scriptDataVersion'],'divisionIds': opts['divisionIds'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -188,13 +254,13 @@ class ScriptsApi {
 		return this.apiClient.callApi(
 			'/api/v2/scripts/published/{scriptId}', 
 			'GET', 
-			{ 'scriptId': scriptId }, 
-			{ 'scriptDataVersion': opts['scriptDataVersion'] }, 
-			{  }, 
-			{  }, 
+			{ 'scriptId': scriptId },
+			{ 'scriptDataVersion': opts['scriptDataVersion'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -222,13 +288,13 @@ class ScriptsApi {
 		return this.apiClient.callApi(
 			'/api/v2/scripts/published/{scriptId}/pages/{pageId}', 
 			'GET', 
-			{ 'scriptId': scriptId,'pageId': pageId }, 
-			{ 'scriptDataVersion': opts['scriptDataVersion'] }, 
-			{  }, 
-			{  }, 
+			{ 'scriptId': scriptId,'pageId': pageId },
+			{ 'scriptDataVersion': opts['scriptDataVersion'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -251,13 +317,13 @@ class ScriptsApi {
 		return this.apiClient.callApi(
 			'/api/v2/scripts/published/{scriptId}/pages', 
 			'GET', 
-			{ 'scriptId': scriptId }, 
-			{ 'scriptDataVersion': opts['scriptDataVersion'] }, 
-			{  }, 
-			{  }, 
+			{ 'scriptId': scriptId },
+			{ 'scriptDataVersion': opts['scriptDataVersion'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -267,9 +333,9 @@ class ScriptsApi {
 	 * 
 	 * @param {String} scriptId Script ID
 	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.input input
-	 * @param {String} opts.output output
-	 * @param {String} opts.type type
+	 * @param {Object} opts.input input
+	 * @param {Object} opts.output output
+	 * @param {Object} opts.type type
 	 * @param {String} opts.scriptDataVersion Advanced usage - controls the data version of the script
 	 */
 	getScriptsPublishedScriptIdVariables(scriptId, opts) { 
@@ -283,13 +349,13 @@ class ScriptsApi {
 		return this.apiClient.callApi(
 			'/api/v2/scripts/published/{scriptId}/variables', 
 			'GET', 
-			{ 'scriptId': scriptId }, 
-			{ 'input': opts['input'],'output': opts['output'],'type': opts['type'],'scriptDataVersion': opts['scriptDataVersion'] }, 
-			{  }, 
-			{  }, 
+			{ 'scriptId': scriptId },
+			{ 'input': opts['input'],'output': opts['output'],'type': opts['type'],'scriptDataVersion': opts['scriptDataVersion'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -312,13 +378,13 @@ class ScriptsApi {
 		return this.apiClient.callApi(
 			'/api/v2/scripts/uploads/{uploadId}/status', 
 			'GET', 
-			{ 'uploadId': uploadId }, 
-			{ 'longPoll': opts['longPoll'] }, 
-			{  }, 
-			{  }, 
+			{ 'uploadId': uploadId },
+			{ 'longPoll': opts['longPoll'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -341,13 +407,38 @@ class ScriptsApi {
 		return this.apiClient.callApi(
 			'/api/v2/scripts/{scriptId}/export', 
 			'POST', 
-			{ 'scriptId': scriptId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'scriptId': scriptId },
+			{  },
+			{  },
+			{  },
 			opts['body'], 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Publish a script.
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.scriptDataVersion Advanced usage - controls the data version of the script
+	 * @param {Object} opts.body body
+	 */
+	postScriptsPublished(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/scripts/published', 
+			'POST', 
+			{  },
+			{ 'scriptDataVersion': opts['scriptDataVersion'] },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}

@@ -5,6 +5,7 @@ export default {
 		format: 'amd'
 	},
 	external: [
-		'superagent'
+		'axios',
+		'qs'
 	]
 };

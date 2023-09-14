@@ -5,7 +5,7 @@ class ExternalContactsApi {
 	/**
 	 * ExternalContacts service.
 	 * @module purecloud-platform-client-v2/api/ExternalContactsApi
-	 * @version 124.0.0
+	 * @version 174.0.0
 	 */
 
 	/**
@@ -34,13 +34,13 @@ class ExternalContactsApi {
 		return this.apiClient.callApi(
 			'/api/v2/externalcontacts/contacts/{contactId}', 
 			'DELETE', 
-			{ 'contactId': contactId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'contactId': contactId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -64,13 +64,13 @@ class ExternalContactsApi {
 		return this.apiClient.callApi(
 			'/api/v2/externalcontacts/contacts/{contactId}/notes/{noteId}', 
 			'DELETE', 
-			{ 'contactId': contactId,'noteId': noteId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'contactId': contactId,'noteId': noteId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -89,13 +89,13 @@ class ExternalContactsApi {
 		return this.apiClient.callApi(
 			'/api/v2/externalcontacts/contacts/schemas/{schemaId}', 
 			'DELETE', 
-			{ 'schemaId': schemaId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'schemaId': schemaId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -114,13 +114,13 @@ class ExternalContactsApi {
 		return this.apiClient.callApi(
 			'/api/v2/externalcontacts/organizations/{externalOrganizationId}', 
 			'DELETE', 
-			{ 'externalOrganizationId': externalOrganizationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'externalOrganizationId': externalOrganizationId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -144,13 +144,13 @@ class ExternalContactsApi {
 		return this.apiClient.callApi(
 			'/api/v2/externalcontacts/organizations/{externalOrganizationId}/notes/{noteId}', 
 			'DELETE', 
-			{ 'externalOrganizationId': externalOrganizationId,'noteId': noteId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'externalOrganizationId': externalOrganizationId,'noteId': noteId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -169,13 +169,13 @@ class ExternalContactsApi {
 		return this.apiClient.callApi(
 			'/api/v2/externalcontacts/organizations/{externalOrganizationId}/trustor', 
 			'DELETE', 
-			{ 'externalOrganizationId': externalOrganizationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'externalOrganizationId': externalOrganizationId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -194,13 +194,13 @@ class ExternalContactsApi {
 		return this.apiClient.callApi(
 			'/api/v2/externalcontacts/relationships/{relationshipId}', 
 			'DELETE', 
-			{ 'relationshipId': relationshipId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'relationshipId': relationshipId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -223,13 +223,69 @@ class ExternalContactsApi {
 		return this.apiClient.callApi(
 			'/api/v2/externalcontacts/contacts/{contactId}', 
 			'GET', 
-			{ 'contactId': contactId }, 
-			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{ 'contactId': contactId },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * List the identifiers for a contact
+	 * 
+	 * @param {String} contactId ExternalContact ID
+	 */
+	getExternalcontactsContactIdentifiers(contactId) { 
+		// verify the required parameter 'contactId' is set
+		if (contactId === undefined || contactId === null) {
+			throw 'Missing the required parameter "contactId" when calling getExternalcontactsContactIdentifiers';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/contacts/{contactId}/identifiers', 
+			'GET', 
+			{ 'contactId': contactId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Retrieve all sessions for a given external contact.
+	 * 
+	 * @param {String} contactId ExternalContact ID
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
+	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
+	 * @param {Boolean} opts.includeMerged Indicates whether to return sessions from all external contacts in the merge-set of the given one.
+	 */
+	getExternalcontactsContactJourneySessions(contactId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'contactId' is set
+		if (contactId === undefined || contactId === null) {
+			throw 'Missing the required parameter "contactId" when calling getExternalcontactsContactJourneySessions';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/contacts/{contactId}/journey/sessions', 
+			'GET', 
+			{ 'contactId': contactId },
+			{ 'pageSize': opts['pageSize'],'after': opts['after'],'includeMerged': opts['includeMerged'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -257,13 +313,13 @@ class ExternalContactsApi {
 		return this.apiClient.callApi(
 			'/api/v2/externalcontacts/contacts/{contactId}/notes/{noteId}', 
 			'GET', 
-			{ 'contactId': contactId,'noteId': noteId }, 
-			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{ 'contactId': contactId,'noteId': noteId },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -273,8 +329,8 @@ class ExternalContactsApi {
 	 * 
 	 * @param {String} contactId ExternalContact Id
 	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageSize Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) (default to 20)
-	 * @param {Number} opts.pageNumber Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) (default to 1)
+	 * @param {Number} opts.pageSize Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (default to 20)
+	 * @param {Number} opts.pageNumber Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (default to 1)
 	 * @param {String} opts.sortOrder Sort order
 	 * @param {Array.<String>} opts.expand which fields, if any, to expand
 	 */
@@ -289,13 +345,42 @@ class ExternalContactsApi {
 		return this.apiClient.callApi(
 			'/api/v2/externalcontacts/contacts/{contactId}/notes', 
 			'GET', 
-			{ 'contactId': contactId }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortOrder': opts['sortOrder'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{ 'contactId': contactId },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortOrder': opts['sortOrder'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Fetch an unresolved external contact
+	 * 
+	 * @param {String} contactId ExternalContact ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.expand which fields, if any, to expand (externalOrganization,externalDataSources)
+	 */
+	getExternalcontactsContactUnresolved(contactId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'contactId' is set
+		if (contactId === undefined || contactId === null) {
+			throw 'Missing the required parameter "contactId" when calling getExternalcontactsContactUnresolved';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/contacts/{contactId}/unresolved', 
+			'GET', 
+			{ 'contactId': contactId },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -304,8 +389,8 @@ class ExternalContactsApi {
 	 * Search for external contacts
 	 * 
 	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageSize Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) (default to 20)
-	 * @param {Number} opts.pageNumber Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) (default to 1)
+	 * @param {Number} opts.pageSize Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (default to 20)
+	 * @param {Number} opts.pageNumber Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (default to 1)
 	 * @param {String} opts.q User supplied search keywords (no special syntax is currently supported)
 	 * @param {String} opts.sortOrder Sort order
 	 * @param {Array.<String>} opts.expand which fields, if any, to expand
@@ -317,13 +402,13 @@ class ExternalContactsApi {
 		return this.apiClient.callApi(
 			'/api/v2/externalcontacts/contacts', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'q': opts['q'],'sortOrder': opts['sortOrder'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'q': opts['q'],'sortOrder': opts['sortOrder'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -342,13 +427,13 @@ class ExternalContactsApi {
 		return this.apiClient.callApi(
 			'/api/v2/externalcontacts/contacts/schemas/{schemaId}', 
 			'GET', 
-			{ 'schemaId': schemaId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'schemaId': schemaId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -372,19 +457,19 @@ class ExternalContactsApi {
 		return this.apiClient.callApi(
 			'/api/v2/externalcontacts/contacts/schemas/{schemaId}/versions/{versionId}', 
 			'GET', 
-			{ 'schemaId': schemaId,'versionId': versionId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'schemaId': schemaId,'versionId': versionId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Get all versions of an external contact&#39;s schema
+	 * Get all versions of an external contact's schema
 	 * 
 	 * @param {String} schemaId Schema ID
 	 */
@@ -397,13 +482,13 @@ class ExternalContactsApi {
 		return this.apiClient.callApi(
 			'/api/v2/externalcontacts/contacts/schemas/{schemaId}/versions', 
 			'GET', 
-			{ 'schemaId': schemaId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'schemaId': schemaId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -417,13 +502,13 @@ class ExternalContactsApi {
 		return this.apiClient.callApi(
 			'/api/v2/externalcontacts/contacts/schemas', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -447,13 +532,13 @@ class ExternalContactsApi {
 		return this.apiClient.callApi(
 			'/api/v2/externalcontacts/organizations/{externalOrganizationId}', 
 			'GET', 
-			{ 'externalOrganizationId': externalOrganizationId }, 
-			{ 'expand': opts['expand'],'includeTrustors': opts['includeTrustors'] }, 
-			{  }, 
-			{  }, 
+			{ 'externalOrganizationId': externalOrganizationId },
+			{ 'expand': opts['expand'],'includeTrustors': opts['includeTrustors'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -463,8 +548,8 @@ class ExternalContactsApi {
 	 * 
 	 * @param {String} externalOrganizationId External Organization ID
 	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageSize Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) (default to 20)
-	 * @param {Number} opts.pageNumber Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) (default to 1)
+	 * @param {Number} opts.pageSize Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (default to 20)
+	 * @param {Number} opts.pageNumber Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (default to 1)
 	 * @param {String} opts.q User supplied search keywords (no special syntax is currently supported)
 	 * @param {String} opts.sortOrder Sort order
 	 * @param {Array.<String>} opts.expand which fields, if any, to expand
@@ -480,13 +565,13 @@ class ExternalContactsApi {
 		return this.apiClient.callApi(
 			'/api/v2/externalcontacts/organizations/{externalOrganizationId}/contacts', 
 			'GET', 
-			{ 'externalOrganizationId': externalOrganizationId }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'q': opts['q'],'sortOrder': opts['sortOrder'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{ 'externalOrganizationId': externalOrganizationId },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'q': opts['q'],'sortOrder': opts['sortOrder'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -514,13 +599,13 @@ class ExternalContactsApi {
 		return this.apiClient.callApi(
 			'/api/v2/externalcontacts/organizations/{externalOrganizationId}/notes/{noteId}', 
 			'GET', 
-			{ 'externalOrganizationId': externalOrganizationId,'noteId': noteId }, 
-			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{ 'externalOrganizationId': externalOrganizationId,'noteId': noteId },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -530,8 +615,8 @@ class ExternalContactsApi {
 	 * 
 	 * @param {String} externalOrganizationId External Organization Id
 	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageSize Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) (default to 20)
-	 * @param {Number} opts.pageNumber Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) (default to 1)
+	 * @param {Number} opts.pageSize Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (default to 20)
+	 * @param {Number} opts.pageNumber Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (default to 1)
 	 * @param {String} opts.sortOrder Sort order
 	 * @param {Array.<String>} opts.expand which fields, if any, to expand
 	 */
@@ -546,13 +631,13 @@ class ExternalContactsApi {
 		return this.apiClient.callApi(
 			'/api/v2/externalcontacts/organizations/{externalOrganizationId}/notes', 
 			'GET', 
-			{ 'externalOrganizationId': externalOrganizationId }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortOrder': opts['sortOrder'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{ 'externalOrganizationId': externalOrganizationId },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortOrder': opts['sortOrder'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -562,8 +647,8 @@ class ExternalContactsApi {
 	 * 
 	 * @param {String} externalOrganizationId External Organization ID
 	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageSize Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) (default to 20)
-	 * @param {Number} opts.pageNumber Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) (default to 1)
+	 * @param {Number} opts.pageSize Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (default to 20)
+	 * @param {Number} opts.pageNumber Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (default to 1)
 	 * @param {Object} opts.expand which fields, if any, to expand
 	 * @param {String} opts.sortOrder Sort order
 	 */
@@ -578,13 +663,13 @@ class ExternalContactsApi {
 		return this.apiClient.callApi(
 			'/api/v2/externalcontacts/organizations/{externalOrganizationId}/relationships', 
 			'GET', 
-			{ 'externalOrganizationId': externalOrganizationId }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'],'sortOrder': opts['sortOrder'] }, 
-			{  }, 
-			{  }, 
+			{ 'externalOrganizationId': externalOrganizationId },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'],'sortOrder': opts['sortOrder'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -593,10 +678,10 @@ class ExternalContactsApi {
 	 * Search for external organizations
 	 * 
 	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageSize Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) (default to 20)
-	 * @param {Number} opts.pageNumber Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) (default to 1)
+	 * @param {Number} opts.pageSize Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (default to 20)
+	 * @param {Number} opts.pageNumber Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (default to 1)
 	 * @param {String} opts.q Search query
-	 * @param {Array.<String>} opts.trustorId Search for external organizations by trustorIds (limit 25). If supplied, the &#39;q&#39; parameters is ignored. Items are returned in the order requested
+	 * @param {Array.<String>} opts.trustorId Search for external organizations by trustorIds (limit 25). If supplied, the 'q' parameters is ignored. Items are returned in the order requested
 	 * @param {String} opts.sortOrder Sort order
 	 * @param {Array.<String>} opts.expand which fields, if any, to expand
 	 * @param {Boolean} opts.includeTrustors (true or false) whether or not to include trustor information embedded in the externalOrganization
@@ -608,13 +693,13 @@ class ExternalContactsApi {
 		return this.apiClient.callApi(
 			'/api/v2/externalcontacts/organizations', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'q': opts['q'],'trustorId': this.apiClient.buildCollectionParam(opts['trustorId'], 'multi'),'sortOrder': opts['sortOrder'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'includeTrustors': opts['includeTrustors'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'q': opts['q'],'trustorId': this.apiClient.buildCollectionParam(opts['trustorId'], 'multi'),'sortOrder': opts['sortOrder'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'includeTrustors': opts['includeTrustors'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -633,13 +718,13 @@ class ExternalContactsApi {
 		return this.apiClient.callApi(
 			'/api/v2/externalcontacts/organizations/schemas/{schemaId}', 
 			'GET', 
-			{ 'schemaId': schemaId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'schemaId': schemaId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -663,19 +748,19 @@ class ExternalContactsApi {
 		return this.apiClient.callApi(
 			'/api/v2/externalcontacts/organizations/schemas/{schemaId}/versions/{versionId}', 
 			'GET', 
-			{ 'schemaId': schemaId,'versionId': versionId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'schemaId': schemaId,'versionId': versionId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Get all versions of an external organization&#39;s schema
+	 * Get all versions of an external organization's schema
 	 * 
 	 * @param {String} schemaId Schema ID
 	 */
@@ -688,13 +773,13 @@ class ExternalContactsApi {
 		return this.apiClient.callApi(
 			'/api/v2/externalcontacts/organizations/schemas/{schemaId}/versions', 
 			'GET', 
-			{ 'schemaId': schemaId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'schemaId': schemaId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -708,13 +793,13 @@ class ExternalContactsApi {
 		return this.apiClient.callApi(
 			'/api/v2/externalcontacts/organizations/schemas', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -737,13 +822,13 @@ class ExternalContactsApi {
 		return this.apiClient.callApi(
 			'/api/v2/externalcontacts/relationships/{relationshipId}', 
 			'GET', 
-			{ 'relationshipId': relationshipId }, 
-			{ 'expand': opts['expand'] }, 
-			{  }, 
-			{  }, 
+			{ 'relationshipId': relationshipId },
+			{ 'expand': opts['expand'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -766,13 +851,13 @@ class ExternalContactsApi {
 		return this.apiClient.callApi(
 			'/api/v2/externalcontacts/reversewhitepageslookup', 
 			'GET', 
-			{  }, 
-			{ 'lookupVal': lookupVal,'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'lookupVal': lookupVal,'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -791,13 +876,13 @@ class ExternalContactsApi {
 		return this.apiClient.callApi(
 			'/api/v2/externalcontacts/scan/contacts', 
 			'GET', 
-			{  }, 
-			{ 'limit': opts['limit'],'cursor': opts['cursor'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'limit': opts['limit'],'cursor': opts['cursor'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -816,13 +901,13 @@ class ExternalContactsApi {
 		return this.apiClient.callApi(
 			'/api/v2/externalcontacts/scan/notes', 
 			'GET', 
-			{  }, 
-			{ 'limit': opts['limit'],'cursor': opts['cursor'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'limit': opts['limit'],'cursor': opts['cursor'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -841,13 +926,13 @@ class ExternalContactsApi {
 		return this.apiClient.callApi(
 			'/api/v2/externalcontacts/scan/organizations', 
 			'GET', 
-			{  }, 
-			{ 'limit': opts['limit'],'cursor': opts['cursor'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'limit': opts['limit'],'cursor': opts['cursor'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -866,13 +951,43 @@ class ExternalContactsApi {
 		return this.apiClient.callApi(
 			'/api/v2/externalcontacts/scan/relationships', 
 			'GET', 
-			{  }, 
-			{ 'limit': opts['limit'],'cursor': opts['cursor'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'limit': opts['limit'],'cursor': opts['cursor'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Claim or release identifiers for a contact
+	 * 
+	 * @param {String} contactId ExternalContact ID
+	 * @param {Object} body ClaimRequest
+	 */
+	patchExternalcontactsContactIdentifiers(contactId, body) { 
+		// verify the required parameter 'contactId' is set
+		if (contactId === undefined || contactId === null) {
+			throw 'Missing the required parameter "contactId" when calling patchExternalcontactsContactIdentifiers';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchExternalcontactsContactIdentifiers';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/contacts/{contactId}/identifiers', 
+			'PATCH', 
+			{ 'contactId': contactId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -891,13 +1006,13 @@ class ExternalContactsApi {
 		return this.apiClient.callApi(
 			'/api/v2/externalcontacts/bulk/contacts', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -916,13 +1031,13 @@ class ExternalContactsApi {
 		return this.apiClient.callApi(
 			'/api/v2/externalcontacts/bulk/contacts/add', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -941,13 +1056,38 @@ class ExternalContactsApi {
 		return this.apiClient.callApi(
 			'/api/v2/externalcontacts/bulk/contacts/remove', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Bulk fetch unresolved ancestor contacts
+	 * 
+	 * @param {Object} body Contact ids
+	 */
+	postExternalcontactsBulkContactsUnresolved(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postExternalcontactsBulkContactsUnresolved';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/bulk/contacts/unresolved', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -966,13 +1106,13 @@ class ExternalContactsApi {
 		return this.apiClient.callApi(
 			'/api/v2/externalcontacts/bulk/contacts/update', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -991,13 +1131,13 @@ class ExternalContactsApi {
 		return this.apiClient.callApi(
 			'/api/v2/externalcontacts/bulk/notes', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1016,13 +1156,13 @@ class ExternalContactsApi {
 		return this.apiClient.callApi(
 			'/api/v2/externalcontacts/bulk/notes/add', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1041,13 +1181,13 @@ class ExternalContactsApi {
 		return this.apiClient.callApi(
 			'/api/v2/externalcontacts/bulk/notes/remove', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1066,13 +1206,13 @@ class ExternalContactsApi {
 		return this.apiClient.callApi(
 			'/api/v2/externalcontacts/bulk/notes/update', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1091,13 +1231,13 @@ class ExternalContactsApi {
 		return this.apiClient.callApi(
 			'/api/v2/externalcontacts/bulk/organizations', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1116,13 +1256,13 @@ class ExternalContactsApi {
 		return this.apiClient.callApi(
 			'/api/v2/externalcontacts/bulk/organizations/add', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1141,13 +1281,13 @@ class ExternalContactsApi {
 		return this.apiClient.callApi(
 			'/api/v2/externalcontacts/bulk/organizations/remove', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1166,13 +1306,13 @@ class ExternalContactsApi {
 		return this.apiClient.callApi(
 			'/api/v2/externalcontacts/bulk/organizations/update', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1191,13 +1331,13 @@ class ExternalContactsApi {
 		return this.apiClient.callApi(
 			'/api/v2/externalcontacts/bulk/relationships', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1216,13 +1356,13 @@ class ExternalContactsApi {
 		return this.apiClient.callApi(
 			'/api/v2/externalcontacts/bulk/relationships/add', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1241,13 +1381,13 @@ class ExternalContactsApi {
 		return this.apiClient.callApi(
 			'/api/v2/externalcontacts/bulk/relationships/remove', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1266,13 +1406,13 @@ class ExternalContactsApi {
 		return this.apiClient.callApi(
 			'/api/v2/externalcontacts/bulk/relationships/update', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1296,13 +1436,38 @@ class ExternalContactsApi {
 		return this.apiClient.callApi(
 			'/api/v2/externalcontacts/contacts/{contactId}/notes', 
 			'POST', 
-			{ 'contactId': contactId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'contactId': contactId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Promote an observed contact (ephemeral or identified) to a curated contact
+	 * 
+	 * @param {String} contactId ExternalContact ID
+	 */
+	postExternalcontactsContactPromotion(contactId) { 
+		// verify the required parameter 'contactId' is set
+		if (contactId === undefined || contactId === null) {
+			throw 'Missing the required parameter "contactId" when calling postExternalcontactsContactPromotion';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/contacts/{contactId}/promotion', 
+			'POST', 
+			{ 'contactId': contactId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1321,13 +1486,13 @@ class ExternalContactsApi {
 		return this.apiClient.callApi(
 			'/api/v2/externalcontacts/contacts', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1346,13 +1511,63 @@ class ExternalContactsApi {
 		return this.apiClient.callApi(
 			'/api/v2/externalcontacts/contacts/schemas', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Fetch a contact using an identifier type and value.
+	 * Phone number identifier values must be provided with the country code and a leading + symbol. Example: "+1 704 298 4733"
+	 * @param {Object} identifier 
+	 */
+	postExternalcontactsIdentifierlookup(identifier) { 
+		// verify the required parameter 'identifier' is set
+		if (identifier === undefined || identifier === null) {
+			throw 'Missing the required parameter "identifier" when calling postExternalcontactsIdentifierlookup';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/identifierlookup', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			identifier, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Merge two contacts into a new contact record
+	 * Two curated contacts cannot be merged. Refer to the Contact Merging article on the Developer Center for details
+	 * @param {Object} body MergeRequest
+	 */
+	postExternalcontactsMergeContacts(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postExternalcontactsMergeContacts';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/merge/contacts', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1376,13 +1591,13 @@ class ExternalContactsApi {
 		return this.apiClient.callApi(
 			'/api/v2/externalcontacts/organizations/{externalOrganizationId}/notes', 
 			'POST', 
-			{ 'externalOrganizationId': externalOrganizationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'externalOrganizationId': externalOrganizationId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1401,13 +1616,13 @@ class ExternalContactsApi {
 		return this.apiClient.callApi(
 			'/api/v2/externalcontacts/organizations', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1426,13 +1641,13 @@ class ExternalContactsApi {
 		return this.apiClient.callApi(
 			'/api/v2/externalcontacts/organizations/schemas', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1451,13 +1666,13 @@ class ExternalContactsApi {
 		return this.apiClient.callApi(
 			'/api/v2/externalcontacts/relationships', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1481,13 +1696,13 @@ class ExternalContactsApi {
 		return this.apiClient.callApi(
 			'/api/v2/externalcontacts/contacts/{contactId}', 
 			'PUT', 
-			{ 'contactId': contactId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'contactId': contactId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1516,13 +1731,13 @@ class ExternalContactsApi {
 		return this.apiClient.callApi(
 			'/api/v2/externalcontacts/contacts/{contactId}/notes/{noteId}', 
 			'PUT', 
-			{ 'contactId': contactId,'noteId': noteId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'contactId': contactId,'noteId': noteId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1546,13 +1761,13 @@ class ExternalContactsApi {
 		return this.apiClient.callApi(
 			'/api/v2/externalcontacts/contacts/schemas/{schemaId}', 
 			'PUT', 
-			{ 'schemaId': schemaId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'schemaId': schemaId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1560,29 +1775,29 @@ class ExternalContactsApi {
 	/**
 	 * Associate/disassociate an external contact with a conversation
 	 * To associate, supply a value for the externalContactId.  To disassociate, do not include the property at all.
-	 * @param {Object} body ConversationAssociation
 	 * @param {String} conversationId Conversation ID
+	 * @param {Object} body ConversationAssociation
 	 */
-	putExternalcontactsConversation(body, conversationId) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putExternalcontactsConversation';
-		}
+	putExternalcontactsConversation(conversationId, body) { 
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
 			throw 'Missing the required parameter "conversationId" when calling putExternalcontactsConversation';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putExternalcontactsConversation';
 		}
 
 		return this.apiClient.callApi(
 			'/api/v2/externalcontacts/conversations/{conversationId}', 
 			'PUT', 
-			{ 'conversationId': conversationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1606,13 +1821,13 @@ class ExternalContactsApi {
 		return this.apiClient.callApi(
 			'/api/v2/externalcontacts/organizations/{externalOrganizationId}', 
 			'PUT', 
-			{ 'externalOrganizationId': externalOrganizationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'externalOrganizationId': externalOrganizationId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1641,13 +1856,13 @@ class ExternalContactsApi {
 		return this.apiClient.callApi(
 			'/api/v2/externalcontacts/organizations/{externalOrganizationId}/notes/{noteId}', 
 			'PUT', 
-			{ 'externalOrganizationId': externalOrganizationId,'noteId': noteId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'externalOrganizationId': externalOrganizationId,'noteId': noteId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1671,13 +1886,13 @@ class ExternalContactsApi {
 		return this.apiClient.callApi(
 			'/api/v2/externalcontacts/organizations/{externalOrganizationId}/trustor/{trustorId}', 
 			'PUT', 
-			{ 'externalOrganizationId': externalOrganizationId,'trustorId': trustorId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'externalOrganizationId': externalOrganizationId,'trustorId': trustorId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1701,13 +1916,13 @@ class ExternalContactsApi {
 		return this.apiClient.callApi(
 			'/api/v2/externalcontacts/organizations/schemas/{schemaId}', 
 			'PUT', 
-			{ 'schemaId': schemaId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'schemaId': schemaId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1731,13 +1946,13 @@ class ExternalContactsApi {
 		return this.apiClient.callApi(
 			'/api/v2/externalcontacts/relationships/{relationshipId}', 
 			'PUT', 
-			{ 'relationshipId': relationshipId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'relationshipId': relationshipId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}

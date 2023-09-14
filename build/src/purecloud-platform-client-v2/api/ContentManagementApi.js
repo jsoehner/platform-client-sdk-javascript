@@ -5,7 +5,7 @@ class ContentManagementApi {
 	/**
 	 * ContentManagement service.
 	 * @module purecloud-platform-client-v2/api/ContentManagementApi
-	 * @version 124.0.0
+	 * @version 174.0.0
 	 */
 
 	/**
@@ -38,13 +38,13 @@ class ContentManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/contentmanagement/documents/{documentId}', 
 			'DELETE', 
-			{ 'documentId': documentId }, 
-			{ 'override': opts['override'] }, 
-			{  }, 
-			{  }, 
+			{ 'documentId': documentId },
+			{ 'override': opts['override'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -63,13 +63,13 @@ class ContentManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/contentmanagement/shares/{shareId}', 
 			'DELETE', 
-			{ 'shareId': shareId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'shareId': shareId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -88,13 +88,13 @@ class ContentManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/contentmanagement/status/{statusId}', 
 			'DELETE', 
-			{ 'statusId': statusId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'statusId': statusId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -117,13 +117,13 @@ class ContentManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/contentmanagement/workspaces/{workspaceId}', 
 			'DELETE', 
-			{ 'workspaceId': workspaceId }, 
-			{ 'moveChildrenToWorkspaceId': opts['moveChildrenToWorkspaceId'] }, 
-			{  }, 
-			{  }, 
+			{ 'workspaceId': workspaceId },
+			{ 'moveChildrenToWorkspaceId': opts['moveChildrenToWorkspaceId'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -147,13 +147,13 @@ class ContentManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/contentmanagement/workspaces/{workspaceId}/members/{memberId}', 
 			'DELETE', 
-			{ 'workspaceId': workspaceId,'memberId': memberId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'workspaceId': workspaceId,'memberId': memberId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -177,13 +177,13 @@ class ContentManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues/{tagId}', 
 			'DELETE', 
-			{ 'workspaceId': workspaceId,'tagId': tagId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'workspaceId': workspaceId,'tagId': tagId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -206,20 +206,20 @@ class ContentManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/contentmanagement/documents/{documentId}', 
 			'GET', 
-			{ 'documentId': documentId }, 
-			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{ 'documentId': documentId },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
 	 * Get a list of audits for a document.
-	 * 
+	 * This api is deprecated, use https://developer.genesys.cloud/platform/audit/ instead.
 	 * @param {String} documentId Document ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize Page size (default to 25)
@@ -228,6 +228,7 @@ class ContentManagementApi {
 	 * @param {String} opts.level level (default to USER)
 	 * @param {String} opts.sortBy Sort by
 	 * @param {String} opts.sortOrder Sort order (default to ascending)
+	 * @deprecated
 	 */
 	getContentmanagementDocumentAudits(documentId, opts) { 
 		opts = opts || {};
@@ -240,13 +241,13 @@ class ContentManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/contentmanagement/documents/{documentId}/audits', 
 			'GET', 
-			{ 'documentId': documentId }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'transactionFilter': opts['transactionFilter'],'level': opts['level'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
-			{  }, 
-			{  }, 
+			{ 'documentId': documentId },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'transactionFilter': opts['transactionFilter'],'level': opts['level'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -270,13 +271,13 @@ class ContentManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/contentmanagement/documents/{documentId}/content', 
 			'GET', 
-			{ 'documentId': documentId }, 
-			{ 'disposition': opts['disposition'],'contentType': opts['contentType'] }, 
-			{  }, 
-			{  }, 
+			{ 'documentId': documentId },
+			{ 'disposition': opts['disposition'],'contentType': opts['contentType'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -292,6 +293,7 @@ class ContentManagementApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {String} opts.sortBy name or dateCreated
 	 * @param {String} opts.sortOrder ascending or descending (default to ascending)
+	 * @deprecated
 	 */
 	getContentmanagementDocuments(workspaceId, opts) { 
 		opts = opts || {};
@@ -304,13 +306,13 @@ class ContentManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/contentmanagement/documents', 
 			'GET', 
-			{  }, 
-			{ 'workspaceId': workspaceId,'name': opts['name'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'workspaceId': workspaceId,'name': opts['name'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -337,13 +339,13 @@ class ContentManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/contentmanagement/query', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'queryPhrase': queryPhrase,'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'queryPhrase': queryPhrase,'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -362,13 +364,13 @@ class ContentManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/contentmanagement/securityprofiles/{securityProfileId}', 
 			'GET', 
-			{ 'securityProfileId': securityProfileId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'securityProfileId': securityProfileId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -382,13 +384,13 @@ class ContentManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/contentmanagement/securityprofiles', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -411,13 +413,13 @@ class ContentManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/contentmanagement/shares/{shareId}', 
 			'GET', 
-			{ 'shareId': shareId }, 
-			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{ 'shareId': shareId },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -443,13 +445,13 @@ class ContentManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/contentmanagement/shared/{sharedId}', 
 			'GET', 
-			{ 'sharedId': sharedId }, 
-			{ 'redirect': opts['redirect'],'disposition': opts['disposition'],'contentType': opts['contentType'],'expand': opts['expand'] }, 
-			{  }, 
-			{  }, 
+			{ 'sharedId': sharedId },
+			{ 'redirect': opts['redirect'],'disposition': opts['disposition'],'contentType': opts['contentType'],'expand': opts['expand'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -470,13 +472,13 @@ class ContentManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/contentmanagement/shares', 
 			'GET', 
-			{  }, 
-			{ 'entityId': opts['entityId'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'entityId': opts['entityId'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -495,13 +497,13 @@ class ContentManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/contentmanagement/status', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -520,13 +522,13 @@ class ContentManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/contentmanagement/status/{statusId}', 
 			'GET', 
-			{ 'statusId': statusId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'statusId': statusId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -540,13 +542,13 @@ class ContentManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/contentmanagement/usage', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -569,13 +571,13 @@ class ContentManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/contentmanagement/workspaces/{workspaceId}', 
 			'GET', 
-			{ 'workspaceId': workspaceId }, 
-			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{ 'workspaceId': workspaceId },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -602,13 +604,13 @@ class ContentManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/contentmanagement/workspaces/{workspaceId}/documents', 
 			'GET', 
-			{ 'workspaceId': workspaceId }, 
-			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
-			{  }, 
-			{  }, 
+			{ 'workspaceId': workspaceId },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -636,13 +638,13 @@ class ContentManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/contentmanagement/workspaces/{workspaceId}/members/{memberId}', 
 			'GET', 
-			{ 'workspaceId': workspaceId,'memberId': memberId }, 
-			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{ 'workspaceId': workspaceId,'memberId': memberId },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -667,13 +669,13 @@ class ContentManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/contentmanagement/workspaces/{workspaceId}/members', 
 			'GET', 
-			{ 'workspaceId': workspaceId }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{ 'workspaceId': workspaceId },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -701,13 +703,13 @@ class ContentManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues/{tagId}', 
 			'GET', 
-			{ 'workspaceId': workspaceId,'tagId': tagId }, 
-			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{ 'workspaceId': workspaceId,'tagId': tagId },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -733,20 +735,20 @@ class ContentManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues', 
 			'GET', 
-			{ 'workspaceId': workspaceId }, 
-			{ 'value': opts['value'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{ 'workspaceId': workspaceId },
+			{ 'value': opts['value'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
 	 * Get a list of workspaces.
-	 * Specifying &#39;content&#39; access will return all workspaces the user has document access to, while &#39;admin&#39; access will return all group workspaces the user has administrative rights to.
+	 * Specifying content access will return all workspaces the user has document access to, while admin access will return all group workspaces the user has administrative rights to.
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
@@ -760,21 +762,22 @@ class ContentManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/contentmanagement/workspaces', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'access': this.apiClient.buildCollectionParam(opts['access'], 'multi'),'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'access': this.apiClient.buildCollectionParam(opts['access'], 'multi'),'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
 	 * Query audits
-	 * 
+	 * This api is deprecated, use https://developer.genesys.cloud/platform/audit/ instead.
 	 * @param {Object} body Allows for a filtered query returning facet information
+	 * @deprecated
 	 */
 	postContentmanagementAuditquery(body) { 
 		// verify the required parameter 'body' is set
@@ -785,13 +788,13 @@ class ContentManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/contentmanagement/auditquery', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -820,13 +823,13 @@ class ContentManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/contentmanagement/documents/{documentId}', 
 			'POST', 
-			{ 'documentId': documentId }, 
-			{ 'expand': opts['expand'],'override': opts['override'] }, 
-			{  }, 
-			{  }, 
+			{ 'documentId': documentId },
+			{ 'expand': opts['expand'],'override': opts['override'] },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -854,13 +857,13 @@ class ContentManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/contentmanagement/documents/{documentId}/content', 
 			'POST', 
-			{ 'documentId': documentId }, 
-			{ 'override': opts['override'] }, 
-			{  }, 
-			{  }, 
+			{ 'documentId': documentId },
+			{ 'override': opts['override'] },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -885,13 +888,13 @@ class ContentManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/contentmanagement/documents', 
 			'POST', 
-			{  }, 
-			{ 'copySource': opts['copySource'],'moveSource': opts['moveSource'],'override': opts['override'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'copySource': opts['copySource'],'moveSource': opts['moveSource'],'override': opts['override'] },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -914,13 +917,13 @@ class ContentManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/contentmanagement/query', 
 			'POST', 
-			{  }, 
-			{ 'expand': opts['expand'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'expand': opts['expand'] },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -939,13 +942,13 @@ class ContentManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/contentmanagement/shares', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -969,13 +972,13 @@ class ContentManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues', 
 			'POST', 
-			{ 'workspaceId': workspaceId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'workspaceId': workspaceId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1003,13 +1006,13 @@ class ContentManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues/query', 
 			'POST', 
-			{ 'workspaceId': workspaceId }, 
-			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{ 'workspaceId': workspaceId },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1028,13 +1031,13 @@ class ContentManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/contentmanagement/workspaces', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1058,13 +1061,13 @@ class ContentManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/contentmanagement/workspaces/{workspaceId}', 
 			'PUT', 
-			{ 'workspaceId': workspaceId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'workspaceId': workspaceId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1093,13 +1096,13 @@ class ContentManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/contentmanagement/workspaces/{workspaceId}/members/{memberId}', 
 			'PUT', 
-			{ 'workspaceId': workspaceId,'memberId': memberId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'workspaceId': workspaceId,'memberId': memberId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1128,13 +1131,13 @@ class ContentManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues/{tagId}', 
 			'PUT', 
-			{ 'workspaceId': workspaceId,'tagId': tagId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'workspaceId': workspaceId,'tagId': tagId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}

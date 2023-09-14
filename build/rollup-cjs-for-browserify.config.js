@@ -1,6 +1,6 @@
-import resolve from 'rollup-plugin-node-resolve';
-import commonjs from 'rollup-plugin-commonjs';
-import json from 'rollup-plugin-json';
+import { nodeResolve } from '@rollup/plugin-node-resolve';
+import commonjs from '@rollup/plugin-commonjs';
+import json from '@rollup/plugin-json';
 import replace from 'rollup-plugin-re';
 import builtins from 'rollup-plugin-node-builtins';
 import globals from 'rollup-plugin-node-globals';
@@ -27,12 +27,13 @@ export default {
 			'https',
 			'url',
 			'zlib',
-			'superagent'
+			'axios',
+			'qs'
 		]
 	},
 	plugins: [ 
 		builtins(),
-		resolve(),
+		nodeResolve(),
 		replace({
 			// https://github.com/rollup/rollup-plugin-commonjs/issues/166#issuecomment-328853157
 			// do replace before commonjs
@@ -64,9 +65,6 @@ export default {
 		commonjs({
 			// non-CommonJS modules will be ignored, but you can also specifically include/exclude files
 			include: 'node_modules/**',  // Default: undefined
-			
-			// Exclude superagent. It will be resolved by browserify. Can't resolve it here or it runs into some issue where replace -> replace$$0 in superagent code. Causes runtime errors in the browser. This may be because of a circular dependency. There are two warnings about them during the rollup build when superagent is included.
-			exclude: ['node_modules/superagent/**'],
 
 			browser: true,
 			preferBuiltins: false,
@@ -95,6 +93,7 @@ export default {
 		'tty',
 		'crypto',
 		'os',
-		'superagent'
+		'axios',
+		'qs'
 	]
 };

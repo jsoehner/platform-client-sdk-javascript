@@ -5,7 +5,7 @@ class CoachingApi {
 	/**
 	 * Coaching service.
 	 * @module purecloud-platform-client-v2/api/CoachingApi
-	 * @version 124.0.0
+	 * @version 174.0.0
 	 */
 
 	/**
@@ -34,13 +34,13 @@ class CoachingApi {
 		return this.apiClient.callApi(
 			'/api/v2/coaching/appointments/{appointmentId}', 
 			'DELETE', 
-			{ 'appointmentId': appointmentId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'appointmentId': appointmentId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -64,13 +64,13 @@ class CoachingApi {
 		return this.apiClient.callApi(
 			'/api/v2/coaching/appointments/{appointmentId}/annotations/{annotationId}', 
 			'DELETE', 
-			{ 'appointmentId': appointmentId,'annotationId': annotationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'appointmentId': appointmentId,'annotationId': annotationId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -89,13 +89,13 @@ class CoachingApi {
 		return this.apiClient.callApi(
 			'/api/v2/coaching/appointments/{appointmentId}', 
 			'GET', 
-			{ 'appointmentId': appointmentId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'appointmentId': appointmentId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -119,13 +119,13 @@ class CoachingApi {
 		return this.apiClient.callApi(
 			'/api/v2/coaching/appointments/{appointmentId}/annotations/{annotationId}', 
 			'GET', 
-			{ 'appointmentId': appointmentId,'annotationId': annotationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'appointmentId': appointmentId,'annotationId': annotationId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -149,13 +149,13 @@ class CoachingApi {
 		return this.apiClient.callApi(
 			'/api/v2/coaching/appointments/{appointmentId}/annotations', 
 			'GET', 
-			{ 'appointmentId': appointmentId }, 
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] }, 
-			{  }, 
-			{  }, 
+			{ 'appointmentId': appointmentId },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -179,13 +179,13 @@ class CoachingApi {
 		return this.apiClient.callApi(
 			'/api/v2/coaching/appointments/{appointmentId}/statuses', 
 			'GET', 
-			{ 'appointmentId': appointmentId }, 
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] }, 
-			{  }, 
-			{  }, 
+			{ 'appointmentId': appointmentId },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -204,6 +204,7 @@ class CoachingApi {
 	 * @param {Array.<String>} opts.relationships Relationships to filter by
 	 * @param {String} opts.completionInterval Appointment completion start and end to filter by. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
 	 * @param {Object} opts.overdue Overdue status to filter by
+	 * @param {Object} opts.intervalCondition Filter condition for interval
 	 */
 	getCoachingAppointments(userIds, opts) { 
 		opts = opts || {};
@@ -216,13 +217,13 @@ class CoachingApi {
 		return this.apiClient.callApi(
 			'/api/v2/coaching/appointments', 
 			'GET', 
-			{  }, 
-			{ 'userIds': this.apiClient.buildCollectionParam(userIds, 'multi'),'interval': opts['interval'],'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'statuses': this.apiClient.buildCollectionParam(opts['statuses'], 'multi'),'facilitatorIds': this.apiClient.buildCollectionParam(opts['facilitatorIds'], 'multi'),'sortOrder': opts['sortOrder'],'relationships': this.apiClient.buildCollectionParam(opts['relationships'], 'multi'),'completionInterval': opts['completionInterval'],'overdue': opts['overdue'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'userIds': this.apiClient.buildCollectionParam(userIds, 'multi'),'interval': opts['interval'],'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'statuses': this.apiClient.buildCollectionParam(opts['statuses'], 'multi'),'facilitatorIds': this.apiClient.buildCollectionParam(opts['facilitatorIds'], 'multi'),'sortOrder': opts['sortOrder'],'relationships': this.apiClient.buildCollectionParam(opts['relationships'], 'multi'),'completionInterval': opts['completionInterval'],'overdue': opts['overdue'],'intervalCondition': opts['intervalCondition'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -240,6 +241,7 @@ class CoachingApi {
 	 * @param {Array.<String>} opts.relationships Relationships to filter by
 	 * @param {String} opts.completionInterval Appointment completion start and end to filter by. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
 	 * @param {Object} opts.overdue Overdue status to filter by
+	 * @param {Object} opts.intervalCondition Filter condition for interval
 	 */
 	getCoachingAppointmentsMe(opts) { 
 		opts = opts || {};
@@ -248,13 +250,13 @@ class CoachingApi {
 		return this.apiClient.callApi(
 			'/api/v2/coaching/appointments/me', 
 			'GET', 
-			{  }, 
-			{ 'interval': opts['interval'],'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'statuses': this.apiClient.buildCollectionParam(opts['statuses'], 'multi'),'facilitatorIds': this.apiClient.buildCollectionParam(opts['facilitatorIds'], 'multi'),'sortOrder': opts['sortOrder'],'relationships': this.apiClient.buildCollectionParam(opts['relationships'], 'multi'),'completionInterval': opts['completionInterval'],'overdue': opts['overdue'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'interval': opts['interval'],'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'statuses': this.apiClient.buildCollectionParam(opts['statuses'], 'multi'),'facilitatorIds': this.apiClient.buildCollectionParam(opts['facilitatorIds'], 'multi'),'sortOrder': opts['sortOrder'],'relationships': this.apiClient.buildCollectionParam(opts['relationships'], 'multi'),'completionInterval': opts['completionInterval'],'overdue': opts['overdue'],'intervalCondition': opts['intervalCondition'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -277,13 +279,13 @@ class CoachingApi {
 		return this.apiClient.callApi(
 			'/api/v2/coaching/notifications/{notificationId}', 
 			'GET', 
-			{ 'notificationId': notificationId }, 
-			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{ 'notificationId': notificationId },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -303,13 +305,13 @@ class CoachingApi {
 		return this.apiClient.callApi(
 			'/api/v2/coaching/notifications', 
 			'GET', 
-			{  }, 
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -333,13 +335,13 @@ class CoachingApi {
 		return this.apiClient.callApi(
 			'/api/v2/coaching/appointments/{appointmentId}', 
 			'PATCH', 
-			{ 'appointmentId': appointmentId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'appointmentId': appointmentId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -368,13 +370,13 @@ class CoachingApi {
 		return this.apiClient.callApi(
 			'/api/v2/coaching/appointments/{appointmentId}/annotations/{annotationId}', 
 			'PATCH', 
-			{ 'appointmentId': appointmentId,'annotationId': annotationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'appointmentId': appointmentId,'annotationId': annotationId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -398,13 +400,13 @@ class CoachingApi {
 		return this.apiClient.callApi(
 			'/api/v2/coaching/appointments/{appointmentId}/status', 
 			'PATCH', 
-			{ 'appointmentId': appointmentId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'appointmentId': appointmentId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -428,13 +430,13 @@ class CoachingApi {
 		return this.apiClient.callApi(
 			'/api/v2/coaching/notifications/{notificationId}', 
 			'PATCH', 
-			{ 'notificationId': notificationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'notificationId': notificationId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -458,13 +460,13 @@ class CoachingApi {
 		return this.apiClient.callApi(
 			'/api/v2/coaching/appointments/{appointmentId}/annotations', 
 			'POST', 
-			{ 'appointmentId': appointmentId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'appointmentId': appointmentId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -488,13 +490,13 @@ class CoachingApi {
 		return this.apiClient.callApi(
 			'/api/v2/coaching/appointments/{appointmentId}/conversations', 
 			'POST', 
-			{ 'appointmentId': appointmentId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'appointmentId': appointmentId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -513,13 +515,13 @@ class CoachingApi {
 		return this.apiClient.callApi(
 			'/api/v2/coaching/appointments', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -538,13 +540,13 @@ class CoachingApi {
 		return this.apiClient.callApi(
 			'/api/v2/coaching/appointments/aggregates/query', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -563,13 +565,13 @@ class CoachingApi {
 		return this.apiClient.callApi(
 			'/api/v2/coaching/scheduleslots/query', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}

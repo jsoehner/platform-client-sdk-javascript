@@ -10,8 +10,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteStationAssociateduser**](StationsApi.html#deleteStationAssociateduser) | **DELETE** /api/v2/stations/{stationId}/associateduser | Unassigns the user assigned to this station
 [**getStation**](StationsApi.html#getStation) | **GET** /api/v2/stations/{stationId} | Get station.
 [**getStations**](StationsApi.html#getStations) | **GET** /api/v2/stations | Get the list of available stations.
-[**getStationsSettings**](StationsApi.html#getStationsSettings) | **GET** /api/v2/stations/settings | Get an organization&#39;s StationSettings
-[**patchStationsSettings**](StationsApi.html#patchStationsSettings) | **PATCH** /api/v2/stations/settings | Patch an organization&#39;s StationSettings
 {: class="table table-striped"}
 
 <a name="deleteStationAssociateduser"></a>
@@ -19,15 +17,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 # void deleteStationAssociateduser(stationId)
 
 
-
 DELETE /api/v2/stations/{stationId}/associateduser
 
 Unassigns the user assigned to this station
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -71,15 +65,11 @@ void (no response body)
 # Station getStation(stationId)
 
 
-
 GET /api/v2/stations/{stationId}
 
 Get station.
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -123,15 +113,11 @@ apiInstance.getStation(stationId)
 # StationEntityListing getStations(opts)
 
 
-
 GET /api/v2/stations
 
 Get the list of available stations.
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -185,104 +171,4 @@ apiInstance.getStations(opts)
 ### Return type
 
 **StationEntityListing**
-
-<a name="getStationsSettings"></a>
-
-# StationSettings getStationsSettings()
-
-
-
-GET /api/v2/stations/settings
-
-Get an organization&#39;s StationSettings
-
-
-
-Requires NO permissions: 
-
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.StationsApi();
-
-apiInstance.getStationsSettings()
-  .then((data) => {
-    console.log(`getStationsSettings success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling getStationsSettings');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-
-### Return type
-
-**StationSettings**
-
-<a name="patchStationsSettings"></a>
-
-# StationSettings patchStationsSettings(body)
-
-
-
-PATCH /api/v2/stations/settings
-
-Patch an organization&#39;s StationSettings
-
-
-
-Requires ANY permissions: 
-
-* telephony:plugin:all
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.StationsApi();
-
-let body = {}; // Object | Station settings
-
-apiInstance.patchStationsSettings(body)
-  .then((data) => {
-    console.log(`patchStationsSettings success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling patchStationsSettings');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **body** | **Object** | Station settings |  |
-{: class="table table-striped"}
-
-### Return type
-
-**StationSettings**
 

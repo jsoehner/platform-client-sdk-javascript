@@ -5,7 +5,7 @@ class GroupsApi {
 	/**
 	 * Groups service.
 	 * @module purecloud-platform-client-v2/api/GroupsApi
-	 * @version 124.0.0
+	 * @version 174.0.0
 	 */
 
 	/**
@@ -34,13 +34,39 @@ class GroupsApi {
 		return this.apiClient.callApi(
 			'/api/v2/groups/{groupId}', 
 			'DELETE', 
-			{ 'groupId': groupId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'groupId': groupId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Remove dynamic group definition
+	 * 
+	 * @param {String} groupId Group ID
+	 * deleteGroupDynamicsettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	deleteGroupDynamicsettings(groupId) { 
+		// verify the required parameter 'groupId' is set
+		if (groupId === undefined || groupId === null) {
+			throw 'Missing the required parameter "groupId" when calling deleteGroupDynamicsettings';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/groups/{groupId}/dynamicsettings', 
+			'DELETE', 
+			{ 'groupId': groupId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -64,13 +90,13 @@ class GroupsApi {
 		return this.apiClient.callApi(
 			'/api/v2/groups/{groupId}/members', 
 			'DELETE', 
-			{ 'groupId': groupId }, 
-			{ 'ids': ids }, 
-			{  }, 
-			{  }, 
+			{ 'groupId': groupId },
+			{ 'ids': ids },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -79,6 +105,7 @@ class GroupsApi {
 	 * Fetch field config for an entity type
 	 * 
 	 * @param {Object} type Field type
+	 * @deprecated
 	 */
 	getFieldconfig(type) { 
 		// verify the required parameter 'type' is set
@@ -89,13 +116,13 @@ class GroupsApi {
 		return this.apiClient.callApi(
 			'/api/v2/fieldconfig', 
 			'GET', 
-			{  }, 
-			{ 'type': type }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'type': type },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -114,13 +141,39 @@ class GroupsApi {
 		return this.apiClient.callApi(
 			'/api/v2/groups/{groupId}', 
 			'GET', 
-			{ 'groupId': groupId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'groupId': groupId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get dynamic group definition
+	 * 
+	 * @param {String} groupId Group ID
+	 * getGroupDynamicsettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getGroupDynamicsettings(groupId) { 
+		// verify the required parameter 'groupId' is set
+		if (groupId === undefined || groupId === null) {
+			throw 'Missing the required parameter "groupId" when calling getGroupDynamicsettings';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/groups/{groupId}/dynamicsettings', 
+			'GET', 
+			{ 'groupId': groupId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -139,13 +192,13 @@ class GroupsApi {
 		return this.apiClient.callApi(
 			'/api/v2/groups/{groupId}/individuals', 
 			'GET', 
-			{ 'groupId': groupId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'groupId': groupId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -171,13 +224,13 @@ class GroupsApi {
 		return this.apiClient.callApi(
 			'/api/v2/groups/{groupId}/members', 
 			'GET', 
-			{ 'groupId': groupId }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortOrder': opts['sortOrder'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{ 'groupId': groupId },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortOrder': opts['sortOrder'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -188,6 +241,7 @@ class GroupsApi {
 	 * @param {String} groupId groupId
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.fields Comma separated fields to return.  Allowable values can be found by querying /api/v2/fieldconfig?type=group and using the key for the elements returned by the fieldList
+	 * @deprecated
 	 */
 	getGroupProfile(groupId, opts) { 
 		opts = opts || {};
@@ -200,13 +254,13 @@ class GroupsApi {
 		return this.apiClient.callApi(
 			'/api/v2/groups/{groupId}/profile', 
 			'GET', 
-			{ 'groupId': groupId }, 
-			{ 'fields': opts['fields'] }, 
-			{  }, 
-			{  }, 
+			{ 'groupId': groupId },
+			{ 'fields': opts['fields'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -218,7 +272,7 @@ class GroupsApi {
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Array.<String>} opts.id id
-	 * @param {Array.<String>} opts.jabberId A list of jabberIds to fetch by bulk (cannot be used with the \&quot;id\&quot; parameter)
+	 * @param {Array.<String>} opts.jabberId A list of jabberIds to fetch by bulk (cannot be used with the id parameter)
 	 * @param {Object} opts.sortOrder Ascending or descending sort order (default to ASC)
 	 */
 	getGroups(opts) { 
@@ -228,13 +282,13 @@ class GroupsApi {
 		return this.apiClient.callApi(
 			'/api/v2/groups', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'jabberId': this.apiClient.buildCollectionParam(opts['jabberId'], 'multi'),'sortOrder': opts['sortOrder'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'jabberId': this.apiClient.buildCollectionParam(opts['jabberId'], 'multi'),'sortOrder': opts['sortOrder'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -257,13 +311,13 @@ class GroupsApi {
 		return this.apiClient.callApi(
 			'/api/v2/groups/search', 
 			'GET', 
-			{  }, 
-			{ 'q64': q64,'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'q64': q64,'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -275,7 +329,9 @@ class GroupsApi {
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Array.<String>} opts.id id
+	 * @param {Array.<String>} opts.jabberId A list of jabberIds to fetch by bulk (cannot be used with the id parameter)
 	 * @param {Object} opts.sortOrder Ascending or descending sort order (default to ASC)
+	 * @deprecated
 	 */
 	getProfilesGroups(opts) { 
 		opts = opts || {};
@@ -284,13 +340,13 @@ class GroupsApi {
 		return this.apiClient.callApi(
 			'/api/v2/profiles/groups', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'sortOrder': opts['sortOrder'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'jabberId': this.apiClient.buildCollectionParam(opts['jabberId'], 'multi'),'sortOrder': opts['sortOrder'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -314,13 +370,13 @@ class GroupsApi {
 		return this.apiClient.callApi(
 			'/api/v2/groups/{groupId}/members', 
 			'POST', 
-			{ 'groupId': groupId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'groupId': groupId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -339,13 +395,40 @@ class GroupsApi {
 		return this.apiClient.callApi(
 			'/api/v2/groups', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Preview the number of users selected for a dynamic group definition query
+	 * 
+	 * @param {Object} body Group query to preview
+	 * @deprecated
+	 * postGroupsDynamicsettingsPreview is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postGroupsDynamicsettingsPreview(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postGroupsDynamicsettingsPreview';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/groups/dynamicsettings/preview', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -364,13 +447,13 @@ class GroupsApi {
 		return this.apiClient.callApi(
 			'/api/v2/groups/search', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -393,13 +476,44 @@ class GroupsApi {
 		return this.apiClient.callApi(
 			'/api/v2/groups/{groupId}', 
 			'PUT', 
-			{ 'groupId': groupId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'groupId': groupId },
+			{  },
+			{  },
+			{  },
 			opts['body'], 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create / Update dynamic group definition
+	 * 
+	 * @param {String} groupId Group ID
+	 * @param {Object} body Create/Update dynamic groups
+	 * putGroupDynamicsettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	putGroupDynamicsettings(groupId, body) { 
+		// verify the required parameter 'groupId' is set
+		if (groupId === undefined || groupId === null) {
+			throw 'Missing the required parameter "groupId" when calling putGroupDynamicsettings';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putGroupDynamicsettings';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/groups/{groupId}/dynamicsettings', 
+			'PUT', 
+			{ 'groupId': groupId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}

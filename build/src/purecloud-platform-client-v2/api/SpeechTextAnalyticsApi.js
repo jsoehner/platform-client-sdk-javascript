@@ -5,7 +5,7 @@ class SpeechTextAnalyticsApi {
 	/**
 	 * SpeechTextAnalytics service.
 	 * @module purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
-	 * @version 124.0.0
+	 * @version 174.0.0
 	 */
 
 	/**
@@ -21,11 +21,11 @@ class SpeechTextAnalyticsApi {
 
 
 	/**
-	 * Delete a Speech &amp; Text Analytics program by id
+	 * Delete a Speech and Text Analytics program by id
 	 * 
 	 * @param {String} programId The id of the program
 	 * @param {Object} opts Optional parameters
-	 * @param {Boolean} opts.forceDelete Indicates whether the program is forced to be deleted or not. Required when the program to delete is the default program. (default to false)
+	 * @param {Object} opts.forceDelete Indicates whether the program is forced to be deleted or not. Required when the program to delete is the default program. (default to false)
 	 */
 	deleteSpeechandtextanalyticsProgram(programId, opts) { 
 		opts = opts || {};
@@ -38,19 +38,64 @@ class SpeechTextAnalyticsApi {
 		return this.apiClient.callApi(
 			'/api/v2/speechandtextanalytics/programs/{programId}', 
 			'DELETE', 
-			{ 'programId': programId }, 
-			{ 'forceDelete': opts['forceDelete'] }, 
-			{  }, 
-			{  }, 
+			{ 'programId': programId },
+			{ 'forceDelete': opts['forceDelete'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Delete a Speech &amp; Text Analytics topic by id
+	 * Delete All Speech and Text Analytics SentimentFeedback
+	 * 
+	 */
+	deleteSpeechandtextanalyticsSentimentfeedback() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/speechandtextanalytics/sentimentfeedback', 
+			'DELETE', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete a Speech and Text Analytics SentimentFeedback by Id
+	 * 
+	 * @param {String} sentimentFeedbackId The Id of the SentimentFeedback
+	 */
+	deleteSpeechandtextanalyticsSentimentfeedbackSentimentFeedbackId(sentimentFeedbackId) { 
+		// verify the required parameter 'sentimentFeedbackId' is set
+		if (sentimentFeedbackId === undefined || sentimentFeedbackId === null) {
+			throw 'Missing the required parameter "sentimentFeedbackId" when calling deleteSpeechandtextanalyticsSentimentfeedbackSentimentFeedbackId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/speechandtextanalytics/sentimentfeedback/{sentimentFeedbackId}', 
+			'DELETE', 
+			{ 'sentimentFeedbackId': sentimentFeedbackId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete a Speech and Text Analytics topic by id
 	 * 
 	 * @param {String} topicId The id of the topic
 	 */
@@ -63,13 +108,13 @@ class SpeechTextAnalyticsApi {
 		return this.apiClient.callApi(
 			'/api/v2/speechandtextanalytics/topics/{topicId}', 
 			'DELETE', 
-			{ 'topicId': topicId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'topicId': topicId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -88,13 +133,13 @@ class SpeechTextAnalyticsApi {
 		return this.apiClient.callApi(
 			'/api/v2/speechandtextanalytics/conversations/{conversationId}', 
 			'GET', 
-			{ 'conversationId': conversationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -118,39 +163,49 @@ class SpeechTextAnalyticsApi {
 		return this.apiClient.callApi(
 			'/api/v2/speechandtextanalytics/conversations/{conversationId}/communications/{communicationId}/transcripturl', 
 			'GET', 
-			{ 'conversationId': conversationId,'communicationId': communicationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'communicationId': communicationId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Get list of supported Speech &amp; Text Analytics dialects
+	 * Get the list of pre-signed S3 URL for the transcripts of a specific communication of a conversation
 	 * 
+	 * @param {String} conversationId Conversation ID
+	 * @param {String} communicationId Communication ID
 	 */
-	getSpeechandtextanalyticsDialects() { 
+	getSpeechandtextanalyticsConversationCommunicationTranscripturls(conversationId, communicationId) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null) {
+			throw 'Missing the required parameter "conversationId" when calling getSpeechandtextanalyticsConversationCommunicationTranscripturls';
+		}
+		// verify the required parameter 'communicationId' is set
+		if (communicationId === undefined || communicationId === null) {
+			throw 'Missing the required parameter "communicationId" when calling getSpeechandtextanalyticsConversationCommunicationTranscripturls';
+		}
 
 		return this.apiClient.callApi(
-			'/api/v2/speechandtextanalytics/dialects', 
+			'/api/v2/speechandtextanalytics/conversations/{conversationId}/communications/{communicationId}/transcripturls', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'conversationId': conversationId,'communicationId': communicationId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Get a Speech &amp; Text Analytics program by id
+	 * Get a Speech and Text Analytics program by id
 	 * 
 	 * @param {String} programId The id of the program
 	 */
@@ -163,19 +218,19 @@ class SpeechTextAnalyticsApi {
 		return this.apiClient.callApi(
 			'/api/v2/speechandtextanalytics/programs/{programId}', 
 			'GET', 
-			{ 'programId': programId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'programId': programId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Get Speech &amp; Text Analytics program mappings to queues and flows by id
+	 * Get Speech and Text Analytics program mappings to queues and flows by id
 	 * 
 	 * @param {String} programId The id of the program
 	 */
@@ -188,23 +243,49 @@ class SpeechTextAnalyticsApi {
 		return this.apiClient.callApi(
 			'/api/v2/speechandtextanalytics/programs/{programId}/mappings', 
 			'GET', 
-			{ 'programId': programId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'programId': programId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Get the list of Speech &amp; Text Analytics programs
+	 * Get transcription engine settings of a program
+	 * 
+	 * @param {String} programId The id of the program
+	 */
+	getSpeechandtextanalyticsProgramTranscriptionengines(programId) { 
+		// verify the required parameter 'programId' is set
+		if (programId === undefined || programId === null) {
+			throw 'Missing the required parameter "programId" when calling getSpeechandtextanalyticsProgramTranscriptionengines';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/speechandtextanalytics/programs/{programId}/transcriptionengines', 
+			'GET', 
+			{ 'programId': programId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the list of Speech and Text Analytics programs
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.nextPage The key for listing the next page
 	 * @param {Number} opts.pageSize The page size for the listing (default to 20)
+	 * @param {Object} opts.state Program state. Defaults to Latest
 	 */
 	getSpeechandtextanalyticsPrograms(opts) { 
 		opts = opts || {};
@@ -213,19 +294,19 @@ class SpeechTextAnalyticsApi {
 		return this.apiClient.callApi(
 			'/api/v2/speechandtextanalytics/programs', 
 			'GET', 
-			{  }, 
-			{ 'nextPage': opts['nextPage'],'pageSize': opts['pageSize'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'nextPage': opts['nextPage'],'pageSize': opts['pageSize'],'state': opts['state'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Get a Speech &amp; Text Analytics general program job by id
+	 * Get a Speech and Text Analytics general program job by id
 	 * 
 	 * @param {String} jobId The id of the publish programs job
 	 */
@@ -238,19 +319,19 @@ class SpeechTextAnalyticsApi {
 		return this.apiClient.callApi(
 			'/api/v2/speechandtextanalytics/programs/general/jobs/{jobId}', 
 			'GET', 
-			{ 'jobId': jobId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Get the list of Speech &amp; Text Analytics programs mappings to queues and flows
+	 * Get the list of Speech and Text Analytics programs mappings to queues and flows
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.nextPage The key for listing the next page
@@ -263,19 +344,19 @@ class SpeechTextAnalyticsApi {
 		return this.apiClient.callApi(
 			'/api/v2/speechandtextanalytics/programs/mappings', 
 			'GET', 
-			{  }, 
-			{ 'nextPage': opts['nextPage'],'pageSize': opts['pageSize'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'nextPage': opts['nextPage'],'pageSize': opts['pageSize'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Get a Speech &amp; Text Analytics publish programs job by id
+	 * Get a Speech and Text Analytics publish programs job by id
 	 * 
 	 * @param {String} jobId The id of the publish programs job
 	 */
@@ -288,19 +369,39 @@ class SpeechTextAnalyticsApi {
 		return this.apiClient.callApi(
 			'/api/v2/speechandtextanalytics/programs/publishjobs/{jobId}', 
 			'GET', 
-			{ 'jobId': jobId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Get the list of Speech &amp; Text Analytics unpublished programs
+	 * Get supported dialects for each transcription engine
+	 * 
+	 */
+	getSpeechandtextanalyticsProgramsTranscriptionenginesDialects() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/speechandtextanalytics/programs/transcriptionengines/dialects', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the list of Speech and Text Analytics unpublished programs
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.nextPage The key for listing the next page
@@ -313,13 +414,57 @@ class SpeechTextAnalyticsApi {
 		return this.apiClient.callApi(
 			'/api/v2/speechandtextanalytics/programs/unpublished', 
 			'GET', 
-			{  }, 
-			{ 'nextPage': opts['nextPage'],'pageSize': opts['pageSize'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'nextPage': opts['nextPage'],'pageSize': opts['pageSize'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the list of Speech and Text Analytics sentiment supported dialects
+	 * 
+	 */
+	getSpeechandtextanalyticsSentimentDialects() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/speechandtextanalytics/sentiment/dialects', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the list of Speech and Text Analytics SentimentFeedback
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.dialect The key for filter the listing by dialect, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard
+	 */
+	getSpeechandtextanalyticsSentimentfeedback(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/speechandtextanalytics/sentimentfeedback', 
+			'GET', 
+			{  },
+			{ 'dialect': opts['dialect'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -333,19 +478,19 @@ class SpeechTextAnalyticsApi {
 		return this.apiClient.callApi(
 			'/api/v2/speechandtextanalytics/settings', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Get a Speech &amp; Text Analytics topic by id
+	 * Get a Speech and Text Analytics topic by id
 	 * 
 	 * @param {String} topicId The id of the topic
 	 */
@@ -358,19 +503,19 @@ class SpeechTextAnalyticsApi {
 		return this.apiClient.callApi(
 			'/api/v2/speechandtextanalytics/topics/{topicId}', 
 			'GET', 
-			{ 'topicId': topicId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'topicId': topicId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Get the list of Speech &amp; Text Analytics topics
+	 * Get the list of Speech and Text Analytics topics
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.nextPage The key for listing the next page
@@ -388,19 +533,19 @@ class SpeechTextAnalyticsApi {
 		return this.apiClient.callApi(
 			'/api/v2/speechandtextanalytics/topics', 
 			'GET', 
-			{  }, 
-			{ 'nextPage': opts['nextPage'],'pageSize': opts['pageSize'],'state': opts['state'],'name': opts['name'],'ids': this.apiClient.buildCollectionParam(opts['ids'], 'multi'),'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'nextPage': opts['nextPage'],'pageSize': opts['pageSize'],'state': opts['state'],'name': opts['name'],'ids': this.apiClient.buildCollectionParam(opts['ids'], 'multi'),'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Get list of supported Speech &amp; Text Analytics topics dialects
+	 * Get list of supported Speech and Text Analytics topics dialects
 	 * 
 	 */
 	getSpeechandtextanalyticsTopicsDialects() { 
@@ -408,19 +553,19 @@ class SpeechTextAnalyticsApi {
 		return this.apiClient.callApi(
 			'/api/v2/speechandtextanalytics/topics/dialects', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Get the Speech &amp; Text Analytics general topics for a given dialect
+	 * Get the Speech and Text Analytics general topics for a given dialect
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.dialect The dialect of the general topics, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard
@@ -432,19 +577,43 @@ class SpeechTextAnalyticsApi {
 		return this.apiClient.callApi(
 			'/api/v2/speechandtextanalytics/topics/general', 
 			'GET', 
-			{  }, 
-			{ 'dialect': opts['dialect'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'dialect': opts['dialect'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Get a Speech &amp; Text Analytics publish topics job by id
+	 * Get the list of general topics from the org and the system with their current status
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.dialect The dialect of the general topics, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard
+	 */
+	getSpeechandtextanalyticsTopicsGeneralStatus(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/speechandtextanalytics/topics/general/status', 
+			'GET', 
+			{  },
+			{ 'dialect': opts['dialect'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a Speech and Text Analytics publish topics job by id
 	 * 
 	 * @param {String} jobId The id of the publish topics job
 	 */
@@ -457,13 +626,13 @@ class SpeechTextAnalyticsApi {
 		return this.apiClient.callApi(
 			'/api/v2/speechandtextanalytics/topics/publishjobs/{jobId}', 
 			'GET', 
-			{ 'jobId': jobId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -482,19 +651,19 @@ class SpeechTextAnalyticsApi {
 		return this.apiClient.callApi(
 			'/api/v2/speechandtextanalytics/settings', 
 			'PATCH', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Create new Speech &amp; Text Analytics program
+	 * Create new Speech and Text Analytics program
 	 * 
 	 * @param {Object} body The program to create
 	 */
@@ -507,19 +676,19 @@ class SpeechTextAnalyticsApi {
 		return this.apiClient.callApi(
 			'/api/v2/speechandtextanalytics/programs', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Create new Speech &amp; Text Analytics general program job
+	 * Create new Speech and Text Analytics general program job
 	 * 
 	 * @param {Object} body The general programs job to create
 	 */
@@ -532,19 +701,19 @@ class SpeechTextAnalyticsApi {
 		return this.apiClient.callApi(
 			'/api/v2/speechandtextanalytics/programs/general/jobs', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Create new Speech &amp; Text Analytics publish programs job
+	 * Create new Speech and Text Analytics publish programs job
 	 * 
 	 * @param {Object} body The publish programs job to create
 	 */
@@ -557,19 +726,44 @@ class SpeechTextAnalyticsApi {
 		return this.apiClient.callApi(
 			'/api/v2/speechandtextanalytics/programs/publishjobs', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Create new Speech &amp; Text Analytics topic
+	 * Create a Speech and Text Analytics SentimentFeedback
+	 * 
+	 * @param {Object} body The SentimentFeedback to create
+	 */
+	postSpeechandtextanalyticsSentimentfeedback(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postSpeechandtextanalyticsSentimentfeedback';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/speechandtextanalytics/sentimentfeedback', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create new Speech and Text Analytics topic
 	 * 
 	 * @param {Object} body The topic to create
 	 */
@@ -582,19 +776,19 @@ class SpeechTextAnalyticsApi {
 		return this.apiClient.callApi(
 			'/api/v2/speechandtextanalytics/topics', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Create new Speech &amp; Text Analytics publish topics job
+	 * Create new Speech and Text Analytics publish topics job
 	 * 
 	 * @param {Object} body The publish topics job to create
 	 */
@@ -607,13 +801,13 @@ class SpeechTextAnalyticsApi {
 		return this.apiClient.callApi(
 			'/api/v2/speechandtextanalytics/topics/publishjobs', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -632,19 +826,19 @@ class SpeechTextAnalyticsApi {
 		return this.apiClient.callApi(
 			'/api/v2/speechandtextanalytics/transcripts/search', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Update existing Speech &amp; Text Analytics program
+	 * Update existing Speech and Text Analytics program
 	 * 
 	 * @param {String} programId The id of the program
 	 * @param {Object} body The program to update
@@ -662,19 +856,19 @@ class SpeechTextAnalyticsApi {
 		return this.apiClient.callApi(
 			'/api/v2/speechandtextanalytics/programs/{programId}', 
 			'PUT', 
-			{ 'programId': programId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'programId': programId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Set Speech &amp; Text Analytics program mappings to queues and flows
+	 * Set Speech and Text Analytics program mappings to queues and flows
 	 * 
 	 * @param {String} programId The id of the program
 	 * @param {Object} body The program to set mappings for
@@ -692,13 +886,43 @@ class SpeechTextAnalyticsApi {
 		return this.apiClient.callApi(
 			'/api/v2/speechandtextanalytics/programs/{programId}/mappings', 
 			'PUT', 
-			{ 'programId': programId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'programId': programId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update transcription engine settings of a program
+	 * 
+	 * @param {String} programId The id of the program
+	 * @param {Object} body Program transcription engine setting
+	 */
+	putSpeechandtextanalyticsProgramTranscriptionengines(programId, body) { 
+		// verify the required parameter 'programId' is set
+		if (programId === undefined || programId === null) {
+			throw 'Missing the required parameter "programId" when calling putSpeechandtextanalyticsProgramTranscriptionengines';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putSpeechandtextanalyticsProgramTranscriptionengines';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/speechandtextanalytics/programs/{programId}/transcriptionengines', 
+			'PUT', 
+			{ 'programId': programId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -717,19 +941,19 @@ class SpeechTextAnalyticsApi {
 		return this.apiClient.callApi(
 			'/api/v2/speechandtextanalytics/settings', 
 			'PUT', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Update existing Speech &amp; Text Analytics topic
+	 * Update existing Speech and Text Analytics topic
 	 * 
 	 * @param {String} topicId The id of the topic
 	 * @param {Object} body The topic to update
@@ -747,13 +971,13 @@ class SpeechTextAnalyticsApi {
 		return this.apiClient.callApi(
 			'/api/v2/speechandtextanalytics/topics/{topicId}', 
 			'PUT', 
-			{ 'topicId': topicId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'topicId': topicId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}

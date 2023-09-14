@@ -15,12 +15,15 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteExternalcontactsOrganizationTrustor**](ExternalContactsApi.html#deleteExternalcontactsOrganizationTrustor) | **DELETE** /api/v2/externalcontacts/organizations/{externalOrganizationId}/trustor | Unlink the Trustor for this External Organization
 [**deleteExternalcontactsRelationship**](ExternalContactsApi.html#deleteExternalcontactsRelationship) | **DELETE** /api/v2/externalcontacts/relationships/{relationshipId} | Delete a relationship
 [**getExternalcontactsContact**](ExternalContactsApi.html#getExternalcontactsContact) | **GET** /api/v2/externalcontacts/contacts/{contactId} | Fetch an external contact
+[**getExternalcontactsContactIdentifiers**](ExternalContactsApi.html#getExternalcontactsContactIdentifiers) | **GET** /api/v2/externalcontacts/contacts/{contactId}/identifiers | List the identifiers for a contact
+[**getExternalcontactsContactJourneySessions**](ExternalContactsApi.html#getExternalcontactsContactJourneySessions) | **GET** /api/v2/externalcontacts/contacts/{contactId}/journey/sessions | Retrieve all sessions for a given external contact.
 [**getExternalcontactsContactNote**](ExternalContactsApi.html#getExternalcontactsContactNote) | **GET** /api/v2/externalcontacts/contacts/{contactId}/notes/{noteId} | Fetch a note for an external contact
 [**getExternalcontactsContactNotes**](ExternalContactsApi.html#getExternalcontactsContactNotes) | **GET** /api/v2/externalcontacts/contacts/{contactId}/notes | List notes for an external contact
+[**getExternalcontactsContactUnresolved**](ExternalContactsApi.html#getExternalcontactsContactUnresolved) | **GET** /api/v2/externalcontacts/contacts/{contactId}/unresolved | Fetch an unresolved external contact
 [**getExternalcontactsContacts**](ExternalContactsApi.html#getExternalcontactsContacts) | **GET** /api/v2/externalcontacts/contacts | Search for external contacts
 [**getExternalcontactsContactsSchema**](ExternalContactsApi.html#getExternalcontactsContactsSchema) | **GET** /api/v2/externalcontacts/contacts/schemas/{schemaId} | Get a schema
 [**getExternalcontactsContactsSchemaVersion**](ExternalContactsApi.html#getExternalcontactsContactsSchemaVersion) | **GET** /api/v2/externalcontacts/contacts/schemas/{schemaId}/versions/{versionId} | Get a specific version of a schema
-[**getExternalcontactsContactsSchemaVersions**](ExternalContactsApi.html#getExternalcontactsContactsSchemaVersions) | **GET** /api/v2/externalcontacts/contacts/schemas/{schemaId}/versions | Get all versions of an external contact&#39;s schema
+[**getExternalcontactsContactsSchemaVersions**](ExternalContactsApi.html#getExternalcontactsContactsSchemaVersions) | **GET** /api/v2/externalcontacts/contacts/schemas/{schemaId}/versions | Get all versions of an external contact's schema
 [**getExternalcontactsContactsSchemas**](ExternalContactsApi.html#getExternalcontactsContactsSchemas) | **GET** /api/v2/externalcontacts/contacts/schemas | Get a list of schemas.
 [**getExternalcontactsOrganization**](ExternalContactsApi.html#getExternalcontactsOrganization) | **GET** /api/v2/externalcontacts/organizations/{externalOrganizationId} | Fetch an external organization
 [**getExternalcontactsOrganizationContacts**](ExternalContactsApi.html#getExternalcontactsOrganizationContacts) | **GET** /api/v2/externalcontacts/organizations/{externalOrganizationId}/contacts | Search for external contacts in an external organization
@@ -30,7 +33,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getExternalcontactsOrganizations**](ExternalContactsApi.html#getExternalcontactsOrganizations) | **GET** /api/v2/externalcontacts/organizations | Search for external organizations
 [**getExternalcontactsOrganizationsSchema**](ExternalContactsApi.html#getExternalcontactsOrganizationsSchema) | **GET** /api/v2/externalcontacts/organizations/schemas/{schemaId} | Get a schema
 [**getExternalcontactsOrganizationsSchemaVersion**](ExternalContactsApi.html#getExternalcontactsOrganizationsSchemaVersion) | **GET** /api/v2/externalcontacts/organizations/schemas/{schemaId}/versions/{versionId} | Get a specific version of a schema
-[**getExternalcontactsOrganizationsSchemaVersions**](ExternalContactsApi.html#getExternalcontactsOrganizationsSchemaVersions) | **GET** /api/v2/externalcontacts/organizations/schemas/{schemaId}/versions | Get all versions of an external organization&#39;s schema
+[**getExternalcontactsOrganizationsSchemaVersions**](ExternalContactsApi.html#getExternalcontactsOrganizationsSchemaVersions) | **GET** /api/v2/externalcontacts/organizations/schemas/{schemaId}/versions | Get all versions of an external organization's schema
 [**getExternalcontactsOrganizationsSchemas**](ExternalContactsApi.html#getExternalcontactsOrganizationsSchemas) | **GET** /api/v2/externalcontacts/organizations/schemas | Get a list of schemas.
 [**getExternalcontactsRelationship**](ExternalContactsApi.html#getExternalcontactsRelationship) | **GET** /api/v2/externalcontacts/relationships/{relationshipId} | Fetch a relationship
 [**getExternalcontactsReversewhitepageslookup**](ExternalContactsApi.html#getExternalcontactsReversewhitepageslookup) | **GET** /api/v2/externalcontacts/reversewhitepageslookup | Look up contacts and externalOrganizations based on an attribute. Maximum of 25 values returned.
@@ -38,9 +41,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getExternalcontactsScanNotes**](ExternalContactsApi.html#getExternalcontactsScanNotes) | **GET** /api/v2/externalcontacts/scan/notes | Scan for notes using paging
 [**getExternalcontactsScanOrganizations**](ExternalContactsApi.html#getExternalcontactsScanOrganizations) | **GET** /api/v2/externalcontacts/scan/organizations | Scan for external organizations using paging
 [**getExternalcontactsScanRelationships**](ExternalContactsApi.html#getExternalcontactsScanRelationships) | **GET** /api/v2/externalcontacts/scan/relationships | Scan for relationships
+[**patchExternalcontactsContactIdentifiers**](ExternalContactsApi.html#patchExternalcontactsContactIdentifiers) | **PATCH** /api/v2/externalcontacts/contacts/{contactId}/identifiers | Claim or release identifiers for a contact
 [**postExternalcontactsBulkContacts**](ExternalContactsApi.html#postExternalcontactsBulkContacts) | **POST** /api/v2/externalcontacts/bulk/contacts | Bulk fetch contacts
 [**postExternalcontactsBulkContactsAdd**](ExternalContactsApi.html#postExternalcontactsBulkContactsAdd) | **POST** /api/v2/externalcontacts/bulk/contacts/add | Bulk add contacts
 [**postExternalcontactsBulkContactsRemove**](ExternalContactsApi.html#postExternalcontactsBulkContactsRemove) | **POST** /api/v2/externalcontacts/bulk/contacts/remove | Bulk remove contacts
+[**postExternalcontactsBulkContactsUnresolved**](ExternalContactsApi.html#postExternalcontactsBulkContactsUnresolved) | **POST** /api/v2/externalcontacts/bulk/contacts/unresolved | Bulk fetch unresolved ancestor contacts
 [**postExternalcontactsBulkContactsUpdate**](ExternalContactsApi.html#postExternalcontactsBulkContactsUpdate) | **POST** /api/v2/externalcontacts/bulk/contacts/update | Bulk update contacts
 [**postExternalcontactsBulkNotes**](ExternalContactsApi.html#postExternalcontactsBulkNotes) | **POST** /api/v2/externalcontacts/bulk/notes | Bulk fetch notes
 [**postExternalcontactsBulkNotesAdd**](ExternalContactsApi.html#postExternalcontactsBulkNotesAdd) | **POST** /api/v2/externalcontacts/bulk/notes/add | Bulk add notes
@@ -55,8 +60,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postExternalcontactsBulkRelationshipsRemove**](ExternalContactsApi.html#postExternalcontactsBulkRelationshipsRemove) | **POST** /api/v2/externalcontacts/bulk/relationships/remove | Bulk remove relationships
 [**postExternalcontactsBulkRelationshipsUpdate**](ExternalContactsApi.html#postExternalcontactsBulkRelationshipsUpdate) | **POST** /api/v2/externalcontacts/bulk/relationships/update | Bulk update relationships
 [**postExternalcontactsContactNotes**](ExternalContactsApi.html#postExternalcontactsContactNotes) | **POST** /api/v2/externalcontacts/contacts/{contactId}/notes | Create a note for an external contact
+[**postExternalcontactsContactPromotion**](ExternalContactsApi.html#postExternalcontactsContactPromotion) | **POST** /api/v2/externalcontacts/contacts/{contactId}/promotion | Promote an observed contact (ephemeral or identified) to a curated contact
 [**postExternalcontactsContacts**](ExternalContactsApi.html#postExternalcontactsContacts) | **POST** /api/v2/externalcontacts/contacts | Create an external contact
 [**postExternalcontactsContactsSchemas**](ExternalContactsApi.html#postExternalcontactsContactsSchemas) | **POST** /api/v2/externalcontacts/contacts/schemas | Create a schema
+[**postExternalcontactsIdentifierlookup**](ExternalContactsApi.html#postExternalcontactsIdentifierlookup) | **POST** /api/v2/externalcontacts/identifierlookup | Fetch a contact using an identifier type and value.
+[**postExternalcontactsMergeContacts**](ExternalContactsApi.html#postExternalcontactsMergeContacts) | **POST** /api/v2/externalcontacts/merge/contacts | Merge two contacts into a new contact record
 [**postExternalcontactsOrganizationNotes**](ExternalContactsApi.html#postExternalcontactsOrganizationNotes) | **POST** /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes | Create a note for an external organization
 [**postExternalcontactsOrganizations**](ExternalContactsApi.html#postExternalcontactsOrganizations) | **POST** /api/v2/externalcontacts/organizations | Create an external organization
 [**postExternalcontactsOrganizationsSchemas**](ExternalContactsApi.html#postExternalcontactsOrganizationsSchemas) | **POST** /api/v2/externalcontacts/organizations/schemas | Create a schema
@@ -74,17 +82,14 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 <a name="deleteExternalcontactsContact"></a>
 
-# Empty deleteExternalcontactsContact(contactId)
-
+# **Object** deleteExternalcontactsContact(contactId)
 
 
 DELETE /api/v2/externalcontacts/contacts/{contactId}
 
 Delete an external contact
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * externalContacts:contact:delete
 
@@ -123,21 +128,18 @@ apiInstance.deleteExternalcontactsContact(contactId)
 
 ### Return type
 
-**Empty**
+**Object**
 
 <a name="deleteExternalcontactsContactNote"></a>
 
-# Empty deleteExternalcontactsContactNote(contactId, noteId)
-
+# **Object** deleteExternalcontactsContactNote(contactId, noteId)
 
 
 DELETE /api/v2/externalcontacts/contacts/{contactId}/notes/{noteId}
 
 Delete a note for an external contact
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * externalContacts:contact:edit
 
@@ -178,21 +180,18 @@ apiInstance.deleteExternalcontactsContactNote(contactId, noteId)
 
 ### Return type
 
-**Empty**
+**Object**
 
 <a name="deleteExternalcontactsContactsSchema"></a>
 
 # void deleteExternalcontactsContactsSchema(schemaId)
 
 
-
 DELETE /api/v2/externalcontacts/contacts/schemas/{schemaId}
 
 Delete a schema
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * externalContacts:customFields:edit
 
@@ -235,17 +234,14 @@ void (no response body)
 
 <a name="deleteExternalcontactsOrganization"></a>
 
-# Empty deleteExternalcontactsOrganization(externalOrganizationId)
-
+# **Object** deleteExternalcontactsOrganization(externalOrganizationId)
 
 
 DELETE /api/v2/externalcontacts/organizations/{externalOrganizationId}
 
 Delete an external organization
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * relate:externalOrganization:delete
 * externalContacts:externalOrganization:delete
@@ -285,21 +281,18 @@ apiInstance.deleteExternalcontactsOrganization(externalOrganizationId)
 
 ### Return type
 
-**Empty**
+**Object**
 
 <a name="deleteExternalcontactsOrganizationNote"></a>
 
-# Empty deleteExternalcontactsOrganizationNote(externalOrganizationId, noteId)
-
+# **Object** deleteExternalcontactsOrganizationNote(externalOrganizationId, noteId)
 
 
 DELETE /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes/{noteId}
 
 Delete a note for an external organization
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * externalContacts:externalOrganization:edit
 
@@ -340,21 +333,18 @@ apiInstance.deleteExternalcontactsOrganizationNote(externalOrganizationId, noteI
 
 ### Return type
 
-**Empty**
+**Object**
 
 <a name="deleteExternalcontactsOrganizationTrustor"></a>
 
 # void deleteExternalcontactsOrganizationTrustor(externalOrganizationId)
 
 
-
 DELETE /api/v2/externalcontacts/organizations/{externalOrganizationId}/trustor
 
 Unlink the Trustor for this External Organization
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * externalContacts:externalOrganization:edit
 
@@ -397,17 +387,14 @@ void (no response body)
 
 <a name="deleteExternalcontactsRelationship"></a>
 
-# Empty deleteExternalcontactsRelationship(relationshipId)
-
+# **Object** deleteExternalcontactsRelationship(relationshipId)
 
 
 DELETE /api/v2/externalcontacts/relationships/{relationshipId}
 
 Delete a relationship
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * externalContacts:externalOrganization:edit
 
@@ -446,21 +433,18 @@ apiInstance.deleteExternalcontactsRelationship(relationshipId)
 
 ### Return type
 
-**Empty**
+**Object**
 
 <a name="getExternalcontactsContact"></a>
 
 # ExternalContact getExternalcontactsContact(contactId, opts)
 
 
-
 GET /api/v2/externalcontacts/contacts/{contactId}
 
 Fetch an external contact
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * externalContacts:contact:view
 
@@ -505,19 +489,124 @@ apiInstance.getExternalcontactsContact(contactId, opts)
 
 **ExternalContact**
 
+<a name="getExternalcontactsContactIdentifiers"></a>
+
+# EntityListing getExternalcontactsContactIdentifiers(contactId)
+
+
+GET /api/v2/externalcontacts/contacts/{contactId}/identifiers
+
+List the identifiers for a contact
+
+Requires ANY permissions:
+
+* externalContacts:contact:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let contactId = "contactId_example"; // String | ExternalContact ID
+
+apiInstance.getExternalcontactsContactIdentifiers(contactId)
+  .then((data) => {
+    console.log(`getExternalcontactsContactIdentifiers success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getExternalcontactsContactIdentifiers');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **contactId** | **String** | ExternalContact ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**EntityListing**
+
+<a name="getExternalcontactsContactJourneySessions"></a>
+
+# SessionListing getExternalcontactsContactJourneySessions(contactId, opts)
+
+
+GET /api/v2/externalcontacts/contacts/{contactId}/journey/sessions
+
+Retrieve all sessions for a given external contact.
+
+Requires ANY permissions:
+
+* externalContacts:session:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let contactId = "contactId_example"; // String | ExternalContact ID
+let opts = { 
+  'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 200.
+  'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
+  'includeMerged': true // Boolean | Indicates whether to return sessions from all external contacts in the merge-set of the given one.
+};
+
+apiInstance.getExternalcontactsContactJourneySessions(contactId, opts)
+  .then((data) => {
+    console.log(`getExternalcontactsContactJourneySessions success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getExternalcontactsContactJourneySessions');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **contactId** | **String** | ExternalContact ID |  |
+ **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
+ **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
+ **includeMerged** | **Boolean** | Indicates whether to return sessions from all external contacts in the merge-set of the given one. | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+**SessionListing**
+
 <a name="getExternalcontactsContactNote"></a>
 
 # Note getExternalcontactsContactNote(contactId, noteId, opts)
-
 
 
 GET /api/v2/externalcontacts/contacts/{contactId}/notes/{noteId}
 
 Fetch a note for an external contact
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * externalContacts:contact:view
 
@@ -569,14 +658,11 @@ apiInstance.getExternalcontactsContactNote(contactId, noteId, opts)
 # NoteListing getExternalcontactsContactNotes(contactId, opts)
 
 
-
 GET /api/v2/externalcontacts/contacts/{contactId}/notes
 
 List notes for an external contact
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * externalContacts:contact:view
 
@@ -617,8 +703,8 @@ apiInstance.getExternalcontactsContactNotes(contactId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **contactId** | **String** | ExternalContact Id |  |
- **pageSize** | **Number** | Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) | [optional] [default to 20] |
- **pageNumber** | **Number** | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) | [optional] [default to 20] |
+ **pageNumber** | **Number** | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) | [optional] [default to 1] |
  **sortOrder** | **String** | Sort order | [optional]  |
  **expand** | **[String]** | which fields, if any, to expand | [optional] <br />**Values**: author, externalDataSources |
 {: class="table table-striped"}
@@ -627,19 +713,70 @@ apiInstance.getExternalcontactsContactNotes(contactId, opts)
 
 **NoteListing**
 
+<a name="getExternalcontactsContactUnresolved"></a>
+
+# ExternalContact getExternalcontactsContactUnresolved(contactId, opts)
+
+
+GET /api/v2/externalcontacts/contacts/{contactId}/unresolved
+
+Fetch an unresolved external contact
+
+Requires ANY permissions:
+
+* externalContacts:contact:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let contactId = "contactId_example"; // String | ExternalContact ID
+let opts = { 
+  'expand': ["expand_example"] // [String] | which fields, if any, to expand (externalOrganization,externalDataSources)
+};
+
+apiInstance.getExternalcontactsContactUnresolved(contactId, opts)
+  .then((data) => {
+    console.log(`getExternalcontactsContactUnresolved success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getExternalcontactsContactUnresolved');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **contactId** | **String** | ExternalContact ID |  |
+ **expand** | **[String]** | which fields, if any, to expand (externalOrganization,externalDataSources) | [optional] <br />**Values**: externalOrganization, externalDataSources |
+{: class="table table-striped"}
+
+### Return type
+
+**ExternalContact**
+
 <a name="getExternalcontactsContacts"></a>
 
 # ContactListing getExternalcontactsContacts(opts)
-
 
 
 GET /api/v2/externalcontacts/contacts
 
 Search for external contacts
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * externalContacts:contact:view
 
@@ -679,8 +816,8 @@ apiInstance.getExternalcontactsContacts(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **pageSize** | **Number** | Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) | [optional] [default to 20] |
- **pageNumber** | **Number** | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) | [optional] [default to 20] |
+ **pageNumber** | **Number** | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) | [optional] [default to 1] |
  **q** | **String** | User supplied search keywords (no special syntax is currently supported) | [optional]  |
  **sortOrder** | **String** | Sort order | [optional]  |
  **expand** | **[String]** | which fields, if any, to expand | [optional] <br />**Values**: externalOrganization, externalDataSources |
@@ -695,14 +832,11 @@ apiInstance.getExternalcontactsContacts(opts)
 # DataSchema getExternalcontactsContactsSchema(schemaId)
 
 
-
 GET /api/v2/externalcontacts/contacts/schemas/{schemaId}
 
 Get a schema
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * externalContacts:customFields:view
 
@@ -748,14 +882,11 @@ apiInstance.getExternalcontactsContactsSchema(schemaId)
 # DataSchema getExternalcontactsContactsSchemaVersion(schemaId, versionId)
 
 
-
 GET /api/v2/externalcontacts/contacts/schemas/{schemaId}/versions/{versionId}
 
 Get a specific version of a schema
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * externalContacts:customFields:view
 
@@ -803,14 +934,11 @@ apiInstance.getExternalcontactsContactsSchemaVersion(schemaId, versionId)
 # DataSchema getExternalcontactsContactsSchemaVersions(schemaId)
 
 
-
 GET /api/v2/externalcontacts/contacts/schemas/{schemaId}/versions
 
-Get all versions of an external contact&#39;s schema
+Get all versions of an external contact's schema
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * externalContacts:customFields:view
 
@@ -856,14 +984,11 @@ apiInstance.getExternalcontactsContactsSchemaVersions(schemaId)
 # DataSchemaListing getExternalcontactsContactsSchemas()
 
 
-
 GET /api/v2/externalcontacts/contacts/schemas
 
 Get a list of schemas.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * externalContacts:customFields:view
 
@@ -904,14 +1029,11 @@ This endpoint does not need any parameter.
 # ExternalOrganization getExternalcontactsOrganization(externalOrganizationId, opts)
 
 
-
 GET /api/v2/externalcontacts/organizations/{externalOrganizationId}
 
 Fetch an external organization
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * relate:externalOrganization:view
 * externalContacts:externalOrganization:view
@@ -964,14 +1086,11 @@ apiInstance.getExternalcontactsOrganization(externalOrganizationId, opts)
 # ContactListing getExternalcontactsOrganizationContacts(externalOrganizationId, opts)
 
 
-
 GET /api/v2/externalcontacts/organizations/{externalOrganizationId}/contacts
 
 Search for external contacts in an external organization
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * externalContacts:contact:view
 
@@ -1013,8 +1132,8 @@ apiInstance.getExternalcontactsOrganizationContacts(externalOrganizationId, opts
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **externalOrganizationId** | **String** | External Organization ID |  |
- **pageSize** | **Number** | Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) | [optional] [default to 20] |
- **pageNumber** | **Number** | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) | [optional] [default to 20] |
+ **pageNumber** | **Number** | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) | [optional] [default to 1] |
  **q** | **String** | User supplied search keywords (no special syntax is currently supported) | [optional]  |
  **sortOrder** | **String** | Sort order | [optional]  |
  **expand** | **[String]** | which fields, if any, to expand | [optional] <br />**Values**: externalOrganization, externalDataSources |
@@ -1029,14 +1148,11 @@ apiInstance.getExternalcontactsOrganizationContacts(externalOrganizationId, opts
 # Note getExternalcontactsOrganizationNote(externalOrganizationId, noteId, opts)
 
 
-
 GET /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes/{noteId}
 
 Fetch a note for an external organization
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * externalContacts:externalOrganization:view
 
@@ -1088,14 +1204,11 @@ apiInstance.getExternalcontactsOrganizationNote(externalOrganizationId, noteId, 
 # NoteListing getExternalcontactsOrganizationNotes(externalOrganizationId, opts)
 
 
-
 GET /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes
 
 List notes for an external organization
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * relate:externalOrganization:view
 * externalContacts:externalOrganization:view
@@ -1137,8 +1250,8 @@ apiInstance.getExternalcontactsOrganizationNotes(externalOrganizationId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **externalOrganizationId** | **String** | External Organization Id |  |
- **pageSize** | **Number** | Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) | [optional] [default to 20] |
- **pageNumber** | **Number** | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) | [optional] [default to 20] |
+ **pageNumber** | **Number** | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) | [optional] [default to 1] |
  **sortOrder** | **String** | Sort order | [optional]  |
  **expand** | **[String]** | which fields, if any, to expand | [optional] <br />**Values**: author, externalDataSources |
 {: class="table table-striped"}
@@ -1152,14 +1265,11 @@ apiInstance.getExternalcontactsOrganizationNotes(externalOrganizationId, opts)
 # RelationshipListing getExternalcontactsOrganizationRelationships(externalOrganizationId, opts)
 
 
-
 GET /api/v2/externalcontacts/organizations/{externalOrganizationId}/relationships
 
 Fetch a relationship for an external organization
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * relate:externalOrganization:view
 * externalContacts:externalOrganization:view
@@ -1201,8 +1311,8 @@ apiInstance.getExternalcontactsOrganizationRelationships(externalOrganizationId,
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **externalOrganizationId** | **String** | External Organization ID |  |
- **pageSize** | **Number** | Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) | [optional] [default to 20] |
- **pageNumber** | **Number** | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) | [optional] [default to 20] |
+ **pageNumber** | **Number** | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) | [optional] [default to 1] |
  **expand** | **String** | which fields, if any, to expand | [optional] <br />**Values**: externalDataSources |
  **sortOrder** | **String** | Sort order | [optional]  |
 {: class="table table-striped"}
@@ -1216,14 +1326,11 @@ apiInstance.getExternalcontactsOrganizationRelationships(externalOrganizationId,
 # ExternalOrganizationListing getExternalcontactsOrganizations(opts)
 
 
-
 GET /api/v2/externalcontacts/organizations
 
 Search for external organizations
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * relate:externalOrganization:view
 * externalContacts:externalOrganization:view
@@ -1266,10 +1373,10 @@ apiInstance.getExternalcontactsOrganizations(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **pageSize** | **Number** | Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) | [optional] [default to 20] |
- **pageNumber** | **Number** | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;= 1,000) | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) | [optional] [default to 20] |
+ **pageNumber** | **Number** | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) | [optional] [default to 1] |
  **q** | **String** | Search query | [optional]  |
- **trustorId** | **[String]** | Search for external organizations by trustorIds (limit 25). If supplied, the &#39;q&#39; parameters is ignored. Items are returned in the order requested | [optional]  |
+ **trustorId** | **[String]** | Search for external organizations by trustorIds (limit 25). If supplied, the 'q' parameters is ignored. Items are returned in the order requested | [optional]  |
  **sortOrder** | **String** | Sort order | [optional]  |
  **expand** | **[String]** | which fields, if any, to expand | [optional] <br />**Values**: externalDataSources |
  **includeTrustors** | **Boolean** | (true or false) whether or not to include trustor information embedded in the externalOrganization | [optional]  |
@@ -1284,14 +1391,11 @@ apiInstance.getExternalcontactsOrganizations(opts)
 # DataSchema getExternalcontactsOrganizationsSchema(schemaId)
 
 
-
 GET /api/v2/externalcontacts/organizations/schemas/{schemaId}
 
 Get a schema
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * externalContacts:customFields:view
 
@@ -1337,14 +1441,11 @@ apiInstance.getExternalcontactsOrganizationsSchema(schemaId)
 # DataSchema getExternalcontactsOrganizationsSchemaVersion(schemaId, versionId)
 
 
-
 GET /api/v2/externalcontacts/organizations/schemas/{schemaId}/versions/{versionId}
 
 Get a specific version of a schema
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * externalContacts:customFields:view
 
@@ -1392,14 +1493,11 @@ apiInstance.getExternalcontactsOrganizationsSchemaVersion(schemaId, versionId)
 # DataSchema getExternalcontactsOrganizationsSchemaVersions(schemaId)
 
 
-
 GET /api/v2/externalcontacts/organizations/schemas/{schemaId}/versions
 
-Get all versions of an external organization&#39;s schema
+Get all versions of an external organization's schema
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * externalContacts:customFields:view
 
@@ -1445,14 +1543,11 @@ apiInstance.getExternalcontactsOrganizationsSchemaVersions(schemaId)
 # DataSchemaListing getExternalcontactsOrganizationsSchemas()
 
 
-
 GET /api/v2/externalcontacts/organizations/schemas
 
 Get a list of schemas.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * externalContacts:customFields:view
 
@@ -1493,14 +1588,11 @@ This endpoint does not need any parameter.
 # Relationship getExternalcontactsRelationship(relationshipId, opts)
 
 
-
 GET /api/v2/externalcontacts/relationships/{relationshipId}
 
 Fetch a relationship
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * externalContacts:externalOrganization:view
 
@@ -1550,14 +1642,11 @@ apiInstance.getExternalcontactsRelationship(relationshipId, opts)
 # ReverseWhitepagesLookupResult getExternalcontactsReversewhitepageslookup(lookupVal, opts)
 
 
-
 GET /api/v2/externalcontacts/reversewhitepageslookup
 
 Look up contacts and externalOrganizations based on an attribute. Maximum of 25 values returned.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * externalContacts:contact:view
 
@@ -1607,14 +1696,11 @@ apiInstance.getExternalcontactsReversewhitepageslookup(lookupVal, opts)
 # CursorContactListing getExternalcontactsScanContacts(opts)
 
 
-
 GET /api/v2/externalcontacts/scan/contacts
 
 Scan for external contacts using paging
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * externalContacts:contact:view
 
@@ -1632,7 +1718,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ExternalContactsApi();
 
 let opts = { 
-  'limit': 56, // Number | The number of contacts per page; must be between 10 and 200, default is 100)
+  'limit': 3.4, // Number | The number of contacts per page; must be between 10 and 200, default is 100)
   'cursor': "cursor_example" // String | Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL
 };
 
@@ -1664,14 +1750,11 @@ apiInstance.getExternalcontactsScanContacts(opts)
 # CursorNoteListing getExternalcontactsScanNotes(opts)
 
 
-
 GET /api/v2/externalcontacts/scan/notes
 
 Scan for notes using paging
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * externalContacts:contact:view
 
@@ -1689,7 +1772,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ExternalContactsApi();
 
 let opts = { 
-  'limit': 56, // Number | The number of notes per page; must be between 10 and 200, default is 100)
+  'limit': 3.4, // Number | The number of notes per page; must be between 10 and 200, default is 100)
   'cursor': "cursor_example" // String | Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL
 };
 
@@ -1721,14 +1804,11 @@ apiInstance.getExternalcontactsScanNotes(opts)
 # CursorOrganizationListing getExternalcontactsScanOrganizations(opts)
 
 
-
 GET /api/v2/externalcontacts/scan/organizations
 
 Scan for external organizations using paging
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * externalContacts:externalOrganization:view
 
@@ -1746,7 +1826,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ExternalContactsApi();
 
 let opts = { 
-  'limit': 56, // Number | The number of organizations per page; must be between 10 and 200, default is 100)
+  'limit': 3.4, // Number | The number of organizations per page; must be between 10 and 200, default is 100)
   'cursor': "cursor_example" // String | Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL
 };
 
@@ -1778,14 +1858,11 @@ apiInstance.getExternalcontactsScanOrganizations(opts)
 # CursorRelationshipListing getExternalcontactsScanRelationships(opts)
 
 
-
 GET /api/v2/externalcontacts/scan/relationships
 
 Scan for relationships
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * externalContacts:contact:view
 
@@ -1803,7 +1880,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ExternalContactsApi();
 
 let opts = { 
-  'limit': 56, // Number | The number of relationships per page; must be between 10 and 200, default is 100)
+  'limit': 3.4, // Number | The number of relationships per page; must be between 10 and 200, default is 100)
   'cursor': "cursor_example" // String | Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL
 };
 
@@ -1830,19 +1907,68 @@ apiInstance.getExternalcontactsScanRelationships(opts)
 
 **CursorRelationshipListing**
 
+<a name="patchExternalcontactsContactIdentifiers"></a>
+
+# ContactIdentifier patchExternalcontactsContactIdentifiers(contactId, body)
+
+
+PATCH /api/v2/externalcontacts/contacts/{contactId}/identifiers
+
+Claim or release identifiers for a contact
+
+Requires ANY permissions:
+
+* externalContacts:contact:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let contactId = "contactId_example"; // String | ExternalContact ID
+let body = {}; // Object | ClaimRequest
+
+apiInstance.patchExternalcontactsContactIdentifiers(contactId, body)
+  .then((data) => {
+    console.log(`patchExternalcontactsContactIdentifiers success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchExternalcontactsContactIdentifiers');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **contactId** | **String** | ExternalContact ID |  |
+ **body** | **Object** | ClaimRequest |  |
+{: class="table table-striped"}
+
+### Return type
+
+**ContactIdentifier**
+
 <a name="postExternalcontactsBulkContacts"></a>
 
 # BulkFetchContactsResponse postExternalcontactsBulkContacts(body)
-
 
 
 POST /api/v2/externalcontacts/bulk/contacts
 
 Bulk fetch contacts
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * externalContacts:contact:view
 
@@ -1888,14 +2014,11 @@ apiInstance.postExternalcontactsBulkContacts(body)
 # BulkContactsResponse postExternalcontactsBulkContactsAdd(body)
 
 
-
 POST /api/v2/externalcontacts/bulk/contacts/add
 
 Bulk add contacts
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * externalContacts:contact:add
 
@@ -1941,14 +2064,11 @@ apiInstance.postExternalcontactsBulkContactsAdd(body)
 # BulkDeleteResponse postExternalcontactsBulkContactsRemove(body)
 
 
-
 POST /api/v2/externalcontacts/bulk/contacts/remove
 
 Bulk remove contacts
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * externalContacts:contact:delete
 
@@ -1989,19 +2109,66 @@ apiInstance.postExternalcontactsBulkContactsRemove(body)
 
 **BulkDeleteResponse**
 
+<a name="postExternalcontactsBulkContactsUnresolved"></a>
+
+# BulkFetchContactsResponse postExternalcontactsBulkContactsUnresolved(body)
+
+
+POST /api/v2/externalcontacts/bulk/contacts/unresolved
+
+Bulk fetch unresolved ancestor contacts
+
+Requires ANY permissions:
+
+* externalContacts:contact:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let body = {}; // Object | Contact ids
+
+apiInstance.postExternalcontactsBulkContactsUnresolved(body)
+  .then((data) => {
+    console.log(`postExternalcontactsBulkContactsUnresolved success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postExternalcontactsBulkContactsUnresolved');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Contact ids |  |
+{: class="table table-striped"}
+
+### Return type
+
+**BulkFetchContactsResponse**
+
 <a name="postExternalcontactsBulkContactsUpdate"></a>
 
 # BulkContactsResponse postExternalcontactsBulkContactsUpdate(body)
-
 
 
 POST /api/v2/externalcontacts/bulk/contacts/update
 
 Bulk update contacts
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * externalContacts:contact:edit
 
@@ -2047,14 +2214,11 @@ apiInstance.postExternalcontactsBulkContactsUpdate(body)
 # BulkFetchNotesResponse postExternalcontactsBulkNotes(body)
 
 
-
 POST /api/v2/externalcontacts/bulk/notes
 
 Bulk fetch notes
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * externalContacts:contact:view
 * externalContacts:externalOrganization:view
@@ -2101,14 +2265,11 @@ apiInstance.postExternalcontactsBulkNotes(body)
 # BulkNotesResponse postExternalcontactsBulkNotesAdd(body)
 
 
-
 POST /api/v2/externalcontacts/bulk/notes/add
 
 Bulk add notes
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * externalContacts:contact:add
 * externalContacts:externalOrganization:add
@@ -2155,14 +2316,11 @@ apiInstance.postExternalcontactsBulkNotesAdd(body)
 # BulkDeleteResponse postExternalcontactsBulkNotesRemove(body)
 
 
-
 POST /api/v2/externalcontacts/bulk/notes/remove
 
 Bulk remove notes
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * externalContacts:contact:delete
 * externalContacts:externalOrganization:delete
@@ -2209,14 +2367,11 @@ apiInstance.postExternalcontactsBulkNotesRemove(body)
 # BulkNotesResponse postExternalcontactsBulkNotesUpdate(body)
 
 
-
 POST /api/v2/externalcontacts/bulk/notes/update
 
 Bulk update notes
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * externalContacts:contact:edit
 * externalContacts:externalOrganization:edit
@@ -2263,14 +2418,11 @@ apiInstance.postExternalcontactsBulkNotesUpdate(body)
 # BulkFetchOrganizationsResponse postExternalcontactsBulkOrganizations(body)
 
 
-
 POST /api/v2/externalcontacts/bulk/organizations
 
 Bulk fetch organizations
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * externalContacts:externalOrganization:view
 
@@ -2316,14 +2468,11 @@ apiInstance.postExternalcontactsBulkOrganizations(body)
 # BulkOrganizationsResponse postExternalcontactsBulkOrganizationsAdd(body)
 
 
-
 POST /api/v2/externalcontacts/bulk/organizations/add
 
 Bulk add organizations
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * externalContacts:externalOrganization:add
 
@@ -2369,14 +2518,11 @@ apiInstance.postExternalcontactsBulkOrganizationsAdd(body)
 # BulkDeleteResponse postExternalcontactsBulkOrganizationsRemove(body)
 
 
-
 POST /api/v2/externalcontacts/bulk/organizations/remove
 
 Bulk remove organizations
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * externalContacts:externalOrganization:delete
 
@@ -2422,14 +2568,11 @@ apiInstance.postExternalcontactsBulkOrganizationsRemove(body)
 # BulkOrganizationsResponse postExternalcontactsBulkOrganizationsUpdate(body)
 
 
-
 POST /api/v2/externalcontacts/bulk/organizations/update
 
 Bulk update organizations
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * externalContacts:externalOrganization:edit
 
@@ -2475,14 +2618,11 @@ apiInstance.postExternalcontactsBulkOrganizationsUpdate(body)
 # BulkFetchRelationshipsResponse postExternalcontactsBulkRelationships(body)
 
 
-
 POST /api/v2/externalcontacts/bulk/relationships
 
 Bulk fetch relationships
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * externalContacts:contact:view
 * externalContacts:externalOrganization:view
@@ -2529,14 +2669,11 @@ apiInstance.postExternalcontactsBulkRelationships(body)
 # BulkRelationshipsResponse postExternalcontactsBulkRelationshipsAdd(body)
 
 
-
 POST /api/v2/externalcontacts/bulk/relationships/add
 
 Bulk add relationships
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * externalContacts:contact:add
 * externalContacts:externalOrganization:add
@@ -2583,14 +2720,11 @@ apiInstance.postExternalcontactsBulkRelationshipsAdd(body)
 # BulkDeleteResponse postExternalcontactsBulkRelationshipsRemove(body)
 
 
-
 POST /api/v2/externalcontacts/bulk/relationships/remove
 
 Bulk remove relationships
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * externalContacts:contact:delete
 * externalContacts:externalOrganization:delete
@@ -2637,14 +2771,11 @@ apiInstance.postExternalcontactsBulkRelationshipsRemove(body)
 # BulkRelationshipsResponse postExternalcontactsBulkRelationshipsUpdate(body)
 
 
-
 POST /api/v2/externalcontacts/bulk/relationships/update
 
 Bulk update relationships
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * externalContacts:contact:edit
 * externalContacts:externalOrganization:edit
@@ -2691,14 +2822,11 @@ apiInstance.postExternalcontactsBulkRelationshipsUpdate(body)
 # Note postExternalcontactsContactNotes(contactId, body)
 
 
-
 POST /api/v2/externalcontacts/contacts/{contactId}/notes
 
 Create a note for an external contact
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * externalContacts:contact:edit
 
@@ -2741,19 +2869,66 @@ apiInstance.postExternalcontactsContactNotes(contactId, body)
 
 **Note**
 
+<a name="postExternalcontactsContactPromotion"></a>
+
+# ExternalContact postExternalcontactsContactPromotion(contactId)
+
+
+POST /api/v2/externalcontacts/contacts/{contactId}/promotion
+
+Promote an observed contact (ephemeral or identified) to a curated contact
+
+Requires ANY permissions:
+
+* externalContacts:identity:promote
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let contactId = "contactId_example"; // String | ExternalContact ID
+
+apiInstance.postExternalcontactsContactPromotion(contactId)
+  .then((data) => {
+    console.log(`postExternalcontactsContactPromotion success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postExternalcontactsContactPromotion');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **contactId** | **String** | ExternalContact ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**ExternalContact**
+
 <a name="postExternalcontactsContacts"></a>
 
 # ExternalContact postExternalcontactsContacts(body)
-
 
 
 POST /api/v2/externalcontacts/contacts
 
 Create an external contact
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * externalContacts:contact:add
 
@@ -2799,14 +2974,11 @@ apiInstance.postExternalcontactsContacts(body)
 # DataSchema postExternalcontactsContactsSchemas(body)
 
 
-
 POST /api/v2/externalcontacts/contacts/schemas
 
 Create a schema
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * externalContacts:customFields:add
 
@@ -2847,19 +3019,121 @@ apiInstance.postExternalcontactsContactsSchemas(body)
 
 **DataSchema**
 
+<a name="postExternalcontactsIdentifierlookup"></a>
+
+# ExternalContact postExternalcontactsIdentifierlookup(identifier)
+
+
+POST /api/v2/externalcontacts/identifierlookup
+
+Fetch a contact using an identifier type and value.
+
+Phone number identifier values must be provided with the country code and a leading + symbol. Example: "+1 704 298 4733"
+
+Requires ANY permissions:
+
+* externalContacts:contact:view
+* relate:contact:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let identifier = {}; // Object | 
+
+apiInstance.postExternalcontactsIdentifierlookup(identifier)
+  .then((data) => {
+    console.log(`postExternalcontactsIdentifierlookup success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postExternalcontactsIdentifierlookup');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **identifier** | **Object** |  |  |
+{: class="table table-striped"}
+
+### Return type
+
+**ExternalContact**
+
+<a name="postExternalcontactsMergeContacts"></a>
+
+# ExternalContact postExternalcontactsMergeContacts(body)
+
+
+POST /api/v2/externalcontacts/merge/contacts
+
+Merge two contacts into a new contact record
+
+Two curated contacts cannot be merged. Refer to the Contact Merging article on the Developer Center for details
+
+Requires ANY permissions:
+
+* externalContacts:identity:merge
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let body = {}; // Object | MergeRequest
+
+apiInstance.postExternalcontactsMergeContacts(body)
+  .then((data) => {
+    console.log(`postExternalcontactsMergeContacts success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postExternalcontactsMergeContacts');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | MergeRequest |  |
+{: class="table table-striped"}
+
+### Return type
+
+**ExternalContact**
+
 <a name="postExternalcontactsOrganizationNotes"></a>
 
 # Note postExternalcontactsOrganizationNotes(externalOrganizationId, body)
-
 
 
 POST /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes
 
 Create a note for an external organization
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * relate:externalOrganization:edit
 * externalContacts:externalOrganization:edit
@@ -2908,14 +3182,11 @@ apiInstance.postExternalcontactsOrganizationNotes(externalOrganizationId, body)
 # ExternalOrganization postExternalcontactsOrganizations(body)
 
 
-
 POST /api/v2/externalcontacts/organizations
 
 Create an external organization
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * relate:externalOrganization:add
 * externalContacts:externalOrganization:add
@@ -2962,14 +3233,11 @@ apiInstance.postExternalcontactsOrganizations(body)
 # DataSchema postExternalcontactsOrganizationsSchemas(body)
 
 
-
 POST /api/v2/externalcontacts/organizations/schemas
 
 Create a schema
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * externalContacts:customFields:add
 
@@ -3015,14 +3283,11 @@ apiInstance.postExternalcontactsOrganizationsSchemas(body)
 # Relationship postExternalcontactsRelationships(body)
 
 
-
 POST /api/v2/externalcontacts/relationships
 
 Create a relationship
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * externalContacts:externalOrganization:edit
 
@@ -3068,14 +3333,11 @@ apiInstance.postExternalcontactsRelationships(body)
 # ExternalContact putExternalcontactsContact(contactId, body)
 
 
-
 PUT /api/v2/externalcontacts/contacts/{contactId}
 
 Update an external contact
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * externalContacts:contact:edit
 
@@ -3123,14 +3385,11 @@ apiInstance.putExternalcontactsContact(contactId, body)
 # Note putExternalcontactsContactNote(contactId, noteId, body)
 
 
-
 PUT /api/v2/externalcontacts/contacts/{contactId}/notes/{noteId}
 
 Update a note for an external contact
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * externalContacts:contact:edit
 
@@ -3180,14 +3439,11 @@ apiInstance.putExternalcontactsContactNote(contactId, noteId, body)
 # DataSchema putExternalcontactsContactsSchema(schemaId, body)
 
 
-
 PUT /api/v2/externalcontacts/contacts/schemas/{schemaId}
 
 Update a schema
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * externalContacts:customFields:edit
 
@@ -3232,8 +3488,7 @@ apiInstance.putExternalcontactsContactsSchema(schemaId, body)
 
 <a name="putExternalcontactsConversation"></a>
 
-# void putExternalcontactsConversation(body, conversationId)
-
+# void putExternalcontactsConversation(conversationId, body)
 
 
 PUT /api/v2/externalcontacts/conversations/{conversationId}
@@ -3242,7 +3497,7 @@ Associate/disassociate an external contact with a conversation
 
 To associate, supply a value for the externalContactId.  To disassociate, do not include the property at all.
 
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * externalContacts:conversation:associate
 
@@ -3259,10 +3514,10 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ExternalContactsApi();
 
-let body = {}; // Object | ConversationAssociation
 let conversationId = "conversationId_example"; // String | Conversation ID
+let body = {}; // Object | ConversationAssociation
 
-apiInstance.putExternalcontactsConversation(body, conversationId)
+apiInstance.putExternalcontactsConversation(conversationId, body)
   .then(() => {
     console.log('putExternalcontactsConversation returned successfully.');
   })
@@ -3277,8 +3532,8 @@ apiInstance.putExternalcontactsConversation(body, conversationId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **Object** | ConversationAssociation |  |
  **conversationId** | **String** | Conversation ID |  |
+ **body** | **Object** | ConversationAssociation |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3290,14 +3545,11 @@ void (no response body)
 # ExternalOrganization putExternalcontactsOrganization(externalOrganizationId, body)
 
 
-
 PUT /api/v2/externalcontacts/organizations/{externalOrganizationId}
 
 Update an external organization
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * relate:externalOrganization:edit
 * externalContacts:externalOrganization:edit
@@ -3346,14 +3598,11 @@ apiInstance.putExternalcontactsOrganization(externalOrganizationId, body)
 # Note putExternalcontactsOrganizationNote(externalOrganizationId, noteId, body)
 
 
-
 PUT /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes/{noteId}
 
 Update a note for an external organization
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * externalContacts:externalOrganization:edit
 
@@ -3403,14 +3652,11 @@ apiInstance.putExternalcontactsOrganizationNote(externalOrganizationId, noteId, 
 # ExternalOrganizationTrustorLink putExternalcontactsOrganizationTrustorTrustorId(externalOrganizationId, trustorId)
 
 
-
 PUT /api/v2/externalcontacts/organizations/{externalOrganizationId}/trustor/{trustorId}
 
 Links a Trustor with an External Organization
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * externalContacts:externalOrganization:edit
 
@@ -3458,14 +3704,11 @@ apiInstance.putExternalcontactsOrganizationTrustorTrustorId(externalOrganization
 # DataSchema putExternalcontactsOrganizationsSchema(schemaId, body)
 
 
-
 PUT /api/v2/externalcontacts/organizations/schemas/{schemaId}
 
 Update a schema
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * externalContacts:customFields:edit
 
@@ -3513,14 +3756,11 @@ apiInstance.putExternalcontactsOrganizationsSchema(schemaId, body)
 # Relationship putExternalcontactsRelationship(relationshipId, body)
 
 
-
 PUT /api/v2/externalcontacts/relationships/{relationshipId}
 
 Update a relationship
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * externalContacts:externalOrganization:edit
 

@@ -16,6 +16,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getUsersSearch**](SearchApi.html#getUsersSearch) | **GET** /api/v2/users/search | Search users using the q64 value returned from a previous search
 [**getVoicemailSearch**](SearchApi.html#getVoicemailSearch) | **GET** /api/v2/voicemail/search | Search voicemails using the q64 value returned from a previous search
 [**postAnalyticsConversationsTranscriptsQuery**](SearchApi.html#postAnalyticsConversationsTranscriptsQuery) | **POST** /api/v2/analytics/conversations/transcripts/query | Search resources.
+[**postConversationsParticipantsAttributesSearch**](SearchApi.html#postConversationsParticipantsAttributesSearch) | **POST** /api/v2/conversations/participants/attributes/search | Search conversations
+[**postDocumentationAllSearch**](SearchApi.html#postDocumentationAllSearch) | **POST** /api/v2/documentation/all/search | Search all documents
 [**postDocumentationGknSearch**](SearchApi.html#postDocumentationGknSearch) | **POST** /api/v2/documentation/gkn/search | Search gkn documentation
 [**postDocumentationSearch**](SearchApi.html#postDocumentationSearch) | **POST** /api/v2/documentation/search | Search documentation
 [**postGroupsSearch**](SearchApi.html#postGroupsSearch) | **POST** /api/v2/groups/search | Search groups
@@ -24,7 +26,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postSearch**](SearchApi.html#postSearch) | **POST** /api/v2/search | Search resources.
 [**postSearchSuggest**](SearchApi.html#postSearchSuggest) | **POST** /api/v2/search/suggest | Suggest resources.
 [**postSpeechandtextanalyticsTranscriptsSearch**](SearchApi.html#postSpeechandtextanalyticsTranscriptsSearch) | **POST** /api/v2/speechandtextanalytics/transcripts/search | Search resources.
+[**postTeamsSearch**](SearchApi.html#postTeamsSearch) | **POST** /api/v2/teams/search | Search resources.
 [**postUsersSearch**](SearchApi.html#postUsersSearch) | **POST** /api/v2/users/search | Search users
+[**postUsersSearchConversationTarget**](SearchApi.html#postUsersSearchConversationTarget) | **POST** /api/v2/users/search/conversation/target | Search users as conversation targets
+[**postUsersSearchQueuemembersManage**](SearchApi.html#postUsersSearchQueuemembersManage) | **POST** /api/v2/users/search/queuemembers/manage | Search manage queue member
+[**postUsersSearchTeamsAssign**](SearchApi.html#postUsersSearchTeamsAssign) | **POST** /api/v2/users/search/teams/assign | Search users assigned to teams
 [**postVoicemailSearch**](SearchApi.html#postVoicemailSearch) | **POST** /api/v2/voicemail/search | Search voicemails
 {: class="table table-striped"}
 
@@ -33,15 +39,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 # GKNDocumentationSearchResponse getDocumentationGknSearch(q64)
 
 
-
 GET /api/v2/documentation/gkn/search
 
 Search gkn documentation using the q64 value returned from a previous search
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -82,15 +84,11 @@ apiInstance.getDocumentationGknSearch(q64)
 # DocumentationSearchResponse getDocumentationSearch(q64)
 
 
-
 GET /api/v2/documentation/search
 
 Search documentation using the q64 value returned from a previous search
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -131,15 +129,11 @@ apiInstance.getDocumentationSearch(q64)
 # GroupsSearchResponse getGroupsSearch(q64, opts)
 
 
-
 GET /api/v2/groups/search
 
 Search groups using the q64 value returned from a previous search
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -187,15 +181,11 @@ apiInstance.getGroupsSearch(q64, opts)
 # LocationsSearchResponse getLocationsSearch(q64, opts)
 
 
-
 GET /api/v2/locations/search
 
 Search locations using the q64 value returned from a previous search
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -243,14 +233,11 @@ apiInstance.getLocationsSearch(q64, opts)
 # JsonNodeSearchResponse getSearch(q64, opts)
 
 
-
 GET /api/v2/search
 
 Search using the q64 value returned from a previous search.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * directory:user:view
 
@@ -289,7 +276,7 @@ apiInstance.getSearch(q64, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **q64** | **String** | q64 |  |
- **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation, images, addressVerificationDetails |
+ **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, dateLastLogin, authorization.unusedRoles, team, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation, images, addressVerificationDetails |
  **profile** | **Boolean** | profile | [optional] [default to true] |
 {: class="table table-striped"}
 
@@ -302,14 +289,11 @@ apiInstance.getSearch(q64, opts)
 # JsonNodeSearchResponse getSearchSuggest(q64, opts)
 
 
-
 GET /api/v2/search/suggest
 
 Suggest resources using the q64 value returned from a previous suggest query.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * directory:user:view
 
@@ -348,7 +332,7 @@ apiInstance.getSearchSuggest(q64, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **q64** | **String** | q64 |  |
- **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation, images, addressVerificationDetails |
+ **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, dateLastLogin, authorization.unusedRoles, team, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation, images, addressVerificationDetails |
  **profile** | **Boolean** | profile | [optional] [default to true] |
 {: class="table table-striped"}
 
@@ -361,14 +345,11 @@ apiInstance.getSearchSuggest(q64, opts)
 # UsersSearchResponse getUsersSearch(q64, opts)
 
 
-
 GET /api/v2/users/search
 
 Search users using the q64 value returned from a previous search
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * directory:user:view
 
@@ -408,7 +389,7 @@ apiInstance.getUsersSearch(q64, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **q64** | **String** | q64 |  |
  **expand** | **[String]** | expand | [optional]  |
- **integrationPresenceSource** | **String** | integrationPresenceSource | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone, RingCentral |
+ **integrationPresenceSource** | **String** | integrationPresenceSource | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone, EightByEight |
 {: class="table table-striped"}
 
 ### Return type
@@ -420,15 +401,11 @@ apiInstance.getUsersSearch(q64, opts)
 # VoicemailsSearchResponse getVoicemailSearch(q64, opts)
 
 
-
 GET /api/v2/voicemail/search
 
 Search voicemails using the q64 value returned from a previous search
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -476,14 +453,11 @@ apiInstance.getVoicemailSearch(q64, opts)
 # AnalyticsConversationWithoutAttributesMultiGetResponse postAnalyticsConversationsTranscriptsQuery(body)
 
 
-
 POST /api/v2/analytics/conversations/transcripts/query
 
 Search resources.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * analytics:conversationDetail:view
 
@@ -524,20 +498,113 @@ apiInstance.postAnalyticsConversationsTranscriptsQuery(body)
 
 **AnalyticsConversationWithoutAttributesMultiGetResponse**
 
+<a name="postConversationsParticipantsAttributesSearch"></a>
+
+# JsonCursorSearchResponse postConversationsParticipantsAttributesSearch(body)
+
+
+POST /api/v2/conversations/participants/attributes/search
+
+Search conversations
+
+Requires ANY permissions:
+
+* conversation:participant:attributesview
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.SearchApi();
+
+let body = {}; // Object | Search request options
+
+apiInstance.postConversationsParticipantsAttributesSearch(body)
+  .then((data) => {
+    console.log(`postConversationsParticipantsAttributesSearch success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postConversationsParticipantsAttributesSearch');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Search request options |  |
+{: class="table table-striped"}
+
+### Return type
+
+**JsonCursorSearchResponse**
+
+<a name="postDocumentationAllSearch"></a>
+
+# JsonNodeSearchResponse postDocumentationAllSearch(body)
+
+
+POST /api/v2/documentation/all/search
+
+Search all documents
+
+postDocumentationAllSearch is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires NO permissions:
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+let apiInstance = new platformClient.SearchApi();
+
+let body = {}; // Object | Search request options
+
+apiInstance.postDocumentationAllSearch(body)
+  .then((data) => {
+    console.log(`postDocumentationAllSearch success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postDocumentationAllSearch');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Search request options |  |
+{: class="table table-striped"}
+
+### Return type
+
+**JsonNodeSearchResponse**
+
 <a name="postDocumentationGknSearch"></a>
 
 # GKNDocumentationSearchResponse postDocumentationGknSearch(body)
-
 
 
 POST /api/v2/documentation/gkn/search
 
 Search gkn documentation
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -578,15 +645,11 @@ apiInstance.postDocumentationGknSearch(body)
 # DocumentationSearchResponse postDocumentationSearch(body)
 
 
-
 POST /api/v2/documentation/search
 
 Search documentation
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -627,15 +690,11 @@ apiInstance.postDocumentationSearch(body)
 # GroupsSearchResponse postGroupsSearch(body)
 
 
-
 POST /api/v2/groups/search
 
 Search groups
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -678,15 +737,13 @@ apiInstance.postGroupsSearch(body)
 
 # KnowledgeSearchResponse postKnowledgeKnowledgebaseSearch(knowledgeBaseId, opts)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/search
 
 Search Documents
 
-
-
-Requires ALL permissions: 
+Requires ALL permissions:
 
 * knowledge:knowledgebase:search
 
@@ -736,15 +793,11 @@ apiInstance.postKnowledgeKnowledgebaseSearch(knowledgeBaseId, opts)
 # LocationsSearchResponse postLocationsSearch(body)
 
 
-
 POST /api/v2/locations/search
 
 Search locations
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -788,14 +841,11 @@ apiInstance.postLocationsSearch(body)
 # JsonNodeSearchResponse postSearch(body, opts)
 
 
-
 POST /api/v2/search
 
 Search resources.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * directory:user:view
 
@@ -845,14 +895,11 @@ apiInstance.postSearch(body, opts)
 # JsonNodeSearchResponse postSearchSuggest(body, opts)
 
 
-
 POST /api/v2/search/suggest
 
 Suggest resources.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * directory:user:view
 
@@ -902,14 +949,11 @@ apiInstance.postSearchSuggest(body, opts)
 # JsonSearchResponse postSpeechandtextanalyticsTranscriptsSearch(body)
 
 
-
 POST /api/v2/speechandtextanalytics/transcripts/search
 
 Search resources.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * analytics:conversationDetail:view
 * recording:recording:view
@@ -951,19 +995,66 @@ apiInstance.postSpeechandtextanalyticsTranscriptsSearch(body)
 
 **JsonSearchResponse**
 
+<a name="postTeamsSearch"></a>
+
+# TeamsSearchResponse postTeamsSearch(body)
+
+
+POST /api/v2/teams/search
+
+Search resources.
+
+Requires ANY permissions:
+
+* groups:team:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.SearchApi();
+
+let body = {}; // Object | Search request options
+
+apiInstance.postTeamsSearch(body)
+  .then((data) => {
+    console.log(`postTeamsSearch success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postTeamsSearch');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Search request options |  |
+{: class="table table-striped"}
+
+### Return type
+
+**TeamsSearchResponse**
+
 <a name="postUsersSearch"></a>
 
 # UsersSearchResponse postUsersSearch(body)
-
 
 
 POST /api/v2/users/search
 
 Search users
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * directory:user:view
 
@@ -1004,20 +1095,171 @@ apiInstance.postUsersSearch(body)
 
 **UsersSearchResponse**
 
+<a name="postUsersSearchConversationTarget"></a>
+
+# UsersSearchResponse postUsersSearchConversationTarget(body)
+
+
+POST /api/v2/users/search/conversation/target
+
+Search users as conversation targets
+
+postUsersSearchConversationTarget is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* conversation:communication:target
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.SearchApi();
+
+let body = {}; // Object | Search request options
+
+apiInstance.postUsersSearchConversationTarget(body)
+  .then((data) => {
+    console.log(`postUsersSearchConversationTarget success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postUsersSearchConversationTarget');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Search request options |  |
+{: class="table table-striped"}
+
+### Return type
+
+**UsersSearchResponse**
+
+<a name="postUsersSearchQueuemembersManage"></a>
+
+# UsersSearchResponse postUsersSearchQueuemembersManage(body)
+
+
+POST /api/v2/users/search/queuemembers/manage
+
+Search manage queue member
+
+postUsersSearchQueuemembersManage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* routing:queueMember:manage
+* routing:queue:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.SearchApi();
+
+let body = {}; // Object | Search request options
+
+apiInstance.postUsersSearchQueuemembersManage(body)
+  .then((data) => {
+    console.log(`postUsersSearchQueuemembersManage success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postUsersSearchQueuemembersManage');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Search request options |  |
+{: class="table table-striped"}
+
+### Return type
+
+**UsersSearchResponse**
+
+<a name="postUsersSearchTeamsAssign"></a>
+
+# UsersSearchResponse postUsersSearchTeamsAssign(body)
+
+
+POST /api/v2/users/search/teams/assign
+
+Search users assigned to teams
+
+Requires ANY permissions:
+
+* groups:team:assign
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.SearchApi();
+
+let body = {}; // Object | Search request options
+
+apiInstance.postUsersSearchTeamsAssign(body)
+  .then((data) => {
+    console.log(`postUsersSearchTeamsAssign success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postUsersSearchTeamsAssign');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Search request options |  |
+{: class="table table-striped"}
+
+### Return type
+
+**UsersSearchResponse**
+
 <a name="postVoicemailSearch"></a>
 
 # VoicemailsSearchResponse postVoicemailSearch(body)
-
 
 
 POST /api/v2/voicemail/search
 
 Search voicemails
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 

@@ -5,7 +5,7 @@ class StationsApi {
 	/**
 	 * Stations service.
 	 * @module purecloud-platform-client-v2/api/StationsApi
-	 * @version 124.0.0
+	 * @version 174.0.0
 	 */
 
 	/**
@@ -34,13 +34,13 @@ class StationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/stations/{stationId}/associateduser', 
 			'DELETE', 
-			{ 'stationId': stationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'stationId': stationId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -59,13 +59,13 @@ class StationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/stations/{stationId}', 
 			'GET', 
-			{ 'stationId': stationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'stationId': stationId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -90,58 +90,13 @@ class StationsApi {
 		return this.apiClient.callApi(
 			'/api/v2/stations', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'name': opts['name'],'userSelectable': opts['userSelectable'],'webRtcUserId': opts['webRtcUserId'],'id': opts['id'],'lineAppearanceId': opts['lineAppearanceId'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'name': opts['name'],'userSelectable': opts['userSelectable'],'webRtcUserId': opts['webRtcUserId'],'id': opts['id'],'lineAppearanceId': opts['lineAppearanceId'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get an organization&#39;s StationSettings
-	 * 
-	 */
-	getStationsSettings() { 
-
-		return this.apiClient.callApi(
-			'/api/v2/stations/settings', 
-			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'], 
-			['application/json']
-		);
-	}
-
-	/**
-	 * Patch an organization&#39;s StationSettings
-	 * 
-	 * @param {Object} body Station settings
-	 */
-	patchStationsSettings(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchStationsSettings';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/stations/settings', 
-			'PATCH', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}

@@ -5,7 +5,7 @@ class UserRecordingsApi {
 	/**
 	 * UserRecordings service.
 	 * @module purecloud-platform-client-v2/api/UserRecordingsApi
-	 * @version 124.0.0
+	 * @version 174.0.0
 	 */
 
 	/**
@@ -34,13 +34,13 @@ class UserRecordingsApi {
 		return this.apiClient.callApi(
 			'/api/v2/userrecordings/{recordingId}', 
 			'DELETE', 
-			{ 'recordingId': recordingId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'recordingId': recordingId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -63,13 +63,13 @@ class UserRecordingsApi {
 		return this.apiClient.callApi(
 			'/api/v2/userrecordings/{recordingId}', 
 			'GET', 
-			{ 'recordingId': recordingId }, 
-			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{ 'recordingId': recordingId },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -80,6 +80,7 @@ class UserRecordingsApi {
 	 * @param {String} recordingId User Recording ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.formatId The desired media format. (default to WEBM)
+	 * @param {Boolean} opts.async When set to true, api will return 202 response until the recording is ready for download
 	 */
 	getUserrecordingMedia(recordingId, opts) { 
 		opts = opts || {};
@@ -92,13 +93,13 @@ class UserRecordingsApi {
 		return this.apiClient.callApi(
 			'/api/v2/userrecordings/{recordingId}/media', 
 			'GET', 
-			{ 'recordingId': recordingId }, 
-			{ 'formatId': opts['formatId'] }, 
-			{  }, 
-			{  }, 
+			{ 'recordingId': recordingId },
+			{ 'formatId': opts['formatId'],'async': opts['async'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -118,13 +119,13 @@ class UserRecordingsApi {
 		return this.apiClient.callApi(
 			'/api/v2/userrecordings', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -138,13 +139,13 @@ class UserRecordingsApi {
 		return this.apiClient.callApi(
 			'/api/v2/userrecordings/summary', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -172,13 +173,13 @@ class UserRecordingsApi {
 		return this.apiClient.callApi(
 			'/api/v2/userrecordings/{recordingId}', 
 			'PUT', 
-			{ 'recordingId': recordingId }, 
-			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{ 'recordingId': recordingId },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}

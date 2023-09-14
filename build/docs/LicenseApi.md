@@ -9,12 +9,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 | ------------- | ------------- | ------------- |
 [**getLicenseDefinition**](LicenseApi.html#getLicenseDefinition) | **GET** /api/v2/license/definitions/{licenseId} | Get PureCloud license definition.
 [**getLicenseDefinitions**](LicenseApi.html#getLicenseDefinitions) | **GET** /api/v2/license/definitions | Get all PureCloud license definitions available for the organization.
-[**getLicenseToggle**](LicenseApi.html#getLicenseToggle) | **GET** /api/v2/license/toggles/{featureName} | Get PureCloud license feature toggle value.
+[**getLicenseToggle**](LicenseApi.html#getLicenseToggle) | **GET** /api/v2/license/toggles/{featureName} | Deprecated - no alternative required. This operation will always return 'true' for requested toggles
 [**getLicenseUser**](LicenseApi.html#getLicenseUser) | **GET** /api/v2/license/users/{userId} | Get licenses for specified user.
 [**getLicenseUsers**](LicenseApi.html#getLicenseUsers) | **GET** /api/v2/license/users | Get a page of users and their licenses
 [**postLicenseInfer**](LicenseApi.html#postLicenseInfer) | **POST** /api/v2/license/infer | Get a list of licenses inferred based on a list of roleIds
-[**postLicenseOrganization**](LicenseApi.html#postLicenseOrganization) | **POST** /api/v2/license/organization | Update the organization&#39;s license assignments in a batch.
-[**postLicenseToggle**](LicenseApi.html#postLicenseToggle) | **POST** /api/v2/license/toggles/{featureName} | Switch PureCloud license feature toggle value.
+[**postLicenseOrganization**](LicenseApi.html#postLicenseOrganization) | **POST** /api/v2/license/organization | Update the organization's license assignments in a batch.
+[**postLicenseToggle**](LicenseApi.html#postLicenseToggle) | **POST** /api/v2/license/toggles/{featureName} | Deprecated. No alternative required - this endpoint has no effect
 [**postLicenseUsers**](LicenseApi.html#postLicenseUsers) | **POST** /api/v2/license/users | Fetch user licenses in a batch.
 {: class="table table-striped"}
 
@@ -23,16 +23,14 @@ All URIs are relative to *https://api.mypurecloud.com*
 # LicenseDefinition getLicenseDefinition(licenseId)
 
 
-
 GET /api/v2/license/definitions/{licenseId}
 
 Get PureCloud license definition.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * authorization:grant:add
+* authorization:license:view
 
 ### Example Usage
 
@@ -76,16 +74,14 @@ apiInstance.getLicenseDefinition(licenseId)
 # [LicenseDefinition] getLicenseDefinitions()
 
 
-
 GET /api/v2/license/definitions
 
 Get all PureCloud license definitions available for the organization.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * authorization:grant:add
+* authorization:license:view
 
 ### Example Usage
 
@@ -124,16 +120,11 @@ This endpoint does not need any parameter.
 # LicenseOrgToggle getLicenseToggle(featureName)
 
 
-
 GET /api/v2/license/toggles/{featureName}
 
-Get PureCloud license feature toggle value.
+Deprecated - no alternative required. This operation will always return 'true' for requested toggles
 
-
-
-Requires ANY permissions: 
-
-* authorization:grant:add
+Requires NO permissions:
 
 ### Example Usage
 
@@ -177,16 +168,14 @@ apiInstance.getLicenseToggle(featureName)
 # LicenseUser getLicenseUser(userId)
 
 
-
 GET /api/v2/license/users/{userId}
 
 Get licenses for specified user.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * authorization:grant:add
+* authorization:license:view
 
 ### Example Usage
 
@@ -230,15 +219,13 @@ apiInstance.getLicenseUser(userId)
 # UserLicensesEntityListing getLicenseUsers(opts)
 
 
-
 GET /api/v2/license/users
 
 Get a page of users and their licenses
 
 Retrieve a page of users in an organization along with the licenses they possess.
 
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -286,15 +273,11 @@ apiInstance.getLicenseUsers(opts)
 # **[&#39;String&#39;]** postLicenseInfer(opts)
 
 
-
 POST /api/v2/license/infer
 
 Get a list of licenses inferred based on a list of roleIds
 
-
-
-Requires NO permissions: 
-
+Requires NO permissions:
 
 ### Example Usage
 
@@ -310,7 +293,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.LicenseApi();
 
 let opts = { 
-  'body': [{}] // Object | The roleIds to use while inferring licenses
+  'body': ["body_example"] // [String] | The roleIds to use while inferring licenses
 };
 
 apiInstance.postLicenseInfer(opts)
@@ -328,7 +311,7 @@ apiInstance.postLicenseInfer(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **Object** | The roleIds to use while inferring licenses | [optional]  |
+ **body** | **[String]** | The roleIds to use while inferring licenses | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -340,14 +323,11 @@ apiInstance.postLicenseInfer(opts)
 # [LicenseUpdateStatus] postLicenseOrganization(opts)
 
 
-
 POST /api/v2/license/organization
 
-Update the organization&#39;s license assignments in a batch.
+Update the organization's license assignments in a batch.
 
-
-
-Requires ANY permissions: 
+Requires ANY permissions:
 
 * authorization:grant:add
 
@@ -395,16 +375,11 @@ apiInstance.postLicenseOrganization(opts)
 # LicenseOrgToggle postLicenseToggle(featureName)
 
 
-
 POST /api/v2/license/toggles/{featureName}
 
-Switch PureCloud license feature toggle value.
+Deprecated. No alternative required - this endpoint has no effect
 
-
-
-Requires ANY permissions: 
-
-* authorization:grant:add
+Requires NO permissions:
 
 ### Example Usage
 
@@ -448,15 +423,14 @@ apiInstance.postLicenseToggle(featureName)
 # **{&#39;String&#39;: Object}** postLicenseUsers(opts)
 
 
-
 POST /api/v2/license/users
 
 Fetch user licenses in a batch.
 
+Requires ANY permissions:
 
-
-Requires NO permissions: 
-
+* authorization:grant:add
+* authorization:license:view
 
 ### Example Usage
 
@@ -472,7 +446,7 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.LicenseApi();
 
 let opts = { 
-  'body': [{}] // Object | The user IDs to fetch.
+  'body': ["body_example"] // [String] | The user IDs to fetch.
 };
 
 apiInstance.postLicenseUsers(opts)
@@ -490,7 +464,7 @@ apiInstance.postLicenseUsers(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **Object** | The user IDs to fetch. | [optional]  |
+ **body** | **[String]** | The user IDs to fetch. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

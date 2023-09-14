@@ -5,7 +5,7 @@ class OrganizationApi {
 	/**
 	 * Organization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationApi
-	 * @version 124.0.0
+	 * @version 174.0.0
 	 */
 
 	/**
@@ -24,6 +24,7 @@ class OrganizationApi {
 	 * Fetch field config for an entity type
 	 * 
 	 * @param {Object} type Field type
+	 * @deprecated
 	 */
 	getFieldconfig(type) { 
 		// verify the required parameter 'type' is set
@@ -34,53 +35,75 @@ class OrganizationApi {
 		return this.apiClient.callApi(
 			'/api/v2/fieldconfig', 
 			'GET', 
-			{  }, 
-			{ 'type': type }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'type': type },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Gets the organization's settings
+	 * 
+	 */
+	getOrganizationsAuthenticationSettings() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/organizations/authentication/settings', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
 	 * Get the list of domains that will be allowed to embed PureCloud applications
-	 * 
+	 * This route is deprecated, please use /api/v2/organizations/authentication/settings instead
+	 * @deprecated
 	 */
 	getOrganizationsEmbeddedintegration() { 
 
 		return this.apiClient.callApi(
 			'/api/v2/organizations/embeddedintegration', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
 	 * Get organization IP address whitelist settings
-	 * 
+	 * This route is deprecated, please use /api/v2/organizations/authentication/settings instead
+	 * @deprecated
 	 */
 	getOrganizationsIpaddressauthentication() { 
 
 		return this.apiClient.callApi(
 			'/api/v2/organizations/ipaddressauthentication', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -99,13 +122,13 @@ class OrganizationApi {
 		return this.apiClient.callApi(
 			'/api/v2/organizations/limits/changerequests/{requestId}', 
 			'GET', 
-			{ 'requestId': requestId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'requestId': requestId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -127,13 +150,13 @@ class OrganizationApi {
 		return this.apiClient.callApi(
 			'/api/v2/organizations/limits/changerequests', 
 			'GET', 
-			{  }, 
-			{ 'after': opts['after'],'before': opts['before'],'status': opts['status'],'pageSize': opts['pageSize'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'after': opts['after'],'before': opts['before'],'status': opts['status'],'pageSize': opts['pageSize'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -147,13 +170,13 @@ class OrganizationApi {
 		return this.apiClient.callApi(
 			'/api/v2/organizations/limits/docs', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -172,13 +195,13 @@ class OrganizationApi {
 		return this.apiClient.callApi(
 			'/api/v2/organizations/limits/namespaces/{namespaceName}', 
 			'GET', 
-			{ 'namespaceName': namespaceName }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'namespaceName': namespaceName },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -197,13 +220,13 @@ class OrganizationApi {
 		return this.apiClient.callApi(
 			'/api/v2/organizations/limits/namespaces/{namespaceName}/defaults', 
 			'GET', 
-			{ 'namespaceName': namespaceName }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'namespaceName': namespaceName },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -222,13 +245,13 @@ class OrganizationApi {
 		return this.apiClient.callApi(
 			'/api/v2/organizations/limits/namespaces', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -242,33 +265,59 @@ class OrganizationApi {
 		return this.apiClient.callApi(
 			'/api/v2/organizations/me', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Use PUT /api/v2/organizations/embeddedintegration instead
+	 * This route is deprecated, please use /api/v2/organizations/authentication/settings instead
 	 * 
+	 * @deprecated
 	 */
 	getOrganizationsWhitelist() { 
 
 		return this.apiClient.callApi(
 			'/api/v2/organizations/whitelist', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update the organization's settings
+	 * 
+	 * @param {Object} body Org settings
+	 */
+	patchOrganizationsAuthenticationSettings(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchOrganizationsAuthenticationSettings';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/organizations/authentication/settings', 
+			'PATCH', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -292,21 +341,22 @@ class OrganizationApi {
 		return this.apiClient.callApi(
 			'/api/v2/organizations/features/{featureName}', 
 			'PATCH', 
-			{ 'featureName': featureName }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'featureName': featureName },
+			{  },
+			{  },
+			{  },
 			enabled, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
 	 * Update the list of domains that will be allowed to embed PureCloud applications
-	 * 
+	 * This route is deprecated, please use /api/v2/organizations/authentication/settings instead
 	 * @param {Object} body Whitelist settings
+	 * @deprecated
 	 */
 	putOrganizationsEmbeddedintegration(body) { 
 		// verify the required parameter 'body' is set
@@ -317,21 +367,22 @@ class OrganizationApi {
 		return this.apiClient.callApi(
 			'/api/v2/organizations/embeddedintegration', 
 			'PUT', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
 	 * Update organization IP address whitelist settings
-	 * 
+	 * This route is deprecated, please use /api/v2/organizations/authentication/settings instead
 	 * @param {Object} body IP address Whitelist settings
+	 * @deprecated
 	 */
 	putOrganizationsIpaddressauthentication(body) { 
 		// verify the required parameter 'body' is set
@@ -342,13 +393,13 @@ class OrganizationApi {
 		return this.apiClient.callApi(
 			'/api/v2/organizations/ipaddressauthentication', 
 			'PUT', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -366,21 +417,22 @@ class OrganizationApi {
 		return this.apiClient.callApi(
 			'/api/v2/organizations/me', 
 			'PUT', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			opts['body'], 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Use PUT /api/v2/organizations/embeddedintegration instead
+	 * This route is deprecated, please use /api/v2/organizations/authentication/settings instead
 	 * 
 	 * @param {Object} body Whitelist settings
+	 * @deprecated
 	 */
 	putOrganizationsWhitelist(body) { 
 		// verify the required parameter 'body' is set
@@ -391,13 +443,13 @@ class OrganizationApi {
 		return this.apiClient.callApi(
 			'/api/v2/organizations/whitelist', 
 			'PUT', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}

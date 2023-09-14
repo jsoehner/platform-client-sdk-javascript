@@ -5,7 +5,7 @@ class WorkforceManagementApi {
 	/**
 	 * WorkforceManagement service.
 	 * @module purecloud-platform-client-v2/api/WorkforceManagementApi
-	 * @version 124.0.0
+	 * @version 174.0.0
 	 */
 
 	/**
@@ -23,7 +23,7 @@ class WorkforceManagementApi {
 	/**
 	 * Delete business unit
 	 * A business unit cannot be deleted if it contains one or more management units
-	 * @param {String} businessUnitId The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user.
+	 * @param {String} businessUnitId The ID of the business unit, or 'mine' for the business unit of the logged-in user.
 	 */
 	deleteWorkforcemanagementBusinessunit(businessUnitId) { 
 		// verify the required parameter 'businessUnitId' is set
@@ -34,13 +34,13 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}', 
 			'DELETE', 
-			{ 'businessUnitId': businessUnitId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'businessUnitId': businessUnitId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -48,7 +48,7 @@ class WorkforceManagementApi {
 	/**
 	 * Deletes an activity code
 	 * 
-	 * @param {String} businessUnitId The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user.
+	 * @param {String} businessUnitId The ID of the business unit, or 'mine' for the business unit of the logged-in user.
 	 * @param {String} activityCodeId The ID of the activity code to delete
 	 */
 	deleteWorkforcemanagementBusinessunitActivitycode(businessUnitId, activityCodeId) { 
@@ -64,13 +64,13 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes/{activityCodeId}', 
 			'DELETE', 
-			{ 'businessUnitId': businessUnitId,'activityCodeId': activityCodeId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'businessUnitId': businessUnitId,'activityCodeId': activityCodeId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -94,13 +94,13 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups/{planningGroupId}', 
 			'DELETE', 
-			{ 'businessUnitId': businessUnitId,'planningGroupId': planningGroupId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'businessUnitId': businessUnitId,'planningGroupId': planningGroupId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -124,13 +124,13 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs/{runId}', 
 			'DELETE', 
-			{ 'businessUnitId': businessUnitId,'runId': runId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'businessUnitId': businessUnitId,'runId': runId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -154,13 +154,13 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates/{serviceGoalTemplateId}', 
 			'DELETE', 
-			{ 'businessUnitId': businessUnitId,'serviceGoalTemplateId': serviceGoalTemplateId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'businessUnitId': businessUnitId,'serviceGoalTemplateId': serviceGoalTemplateId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -189,13 +189,13 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}', 
 			'DELETE', 
-			{ 'businessUnitId': businessUnitId,'weekId': weekId,'scheduleId': scheduleId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'businessUnitId': businessUnitId,'weekId': weekId,'scheduleId': scheduleId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -203,7 +203,7 @@ class WorkforceManagementApi {
 	/**
 	 * Delete a short term forecast
 	 * Must not be tied to any schedules
-	 * @param {String} businessUnitId The business unit ID of the business unit to which the forecast belongs
+	 * @param {String} businessUnitId The ID of the business unit to which the forecast belongs
 	 * @param {String} weekDateId The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {String} forecastId The ID of the forecast
 	 */
@@ -224,13 +224,13 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}', 
 			'DELETE', 
-			{ 'businessUnitId': businessUnitId,'weekDateId': weekDateId,'forecastId': forecastId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'businessUnitId': businessUnitId,'weekDateId': weekDateId,'forecastId': forecastId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -244,13 +244,13 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/calendar/url/ics', 
 			'DELETE', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -258,7 +258,7 @@ class WorkforceManagementApi {
 	/**
 	 * Delete management unit
 	 * 
-	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 	 */
 	deleteWorkforcemanagementManagementunit(managementUnitId) { 
 		// verify the required parameter 'managementUnitId' is set
@@ -269,13 +269,73 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/managementunits/{managementUnitId}', 
 			'DELETE', 
-			{ 'managementUnitId': managementUnitId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'managementUnitId': managementUnitId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Deletes a time off limit object
+	 * 
+	 * @param {String} managementUnitId The ID of the management unit.
+	 * @param {String} timeOffLimitId The ID of the time off limit object to delete
+	 */
+	deleteWorkforcemanagementManagementunitTimeofflimit(managementUnitId, timeOffLimitId) { 
+		// verify the required parameter 'managementUnitId' is set
+		if (managementUnitId === undefined || managementUnitId === null) {
+			throw 'Missing the required parameter "managementUnitId" when calling deleteWorkforcemanagementManagementunitTimeofflimit';
+		}
+		// verify the required parameter 'timeOffLimitId' is set
+		if (timeOffLimitId === undefined || timeOffLimitId === null) {
+			throw 'Missing the required parameter "timeOffLimitId" when calling deleteWorkforcemanagementManagementunitTimeofflimit';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/{timeOffLimitId}', 
+			'DELETE', 
+			{ 'managementUnitId': managementUnitId,'timeOffLimitId': timeOffLimitId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Deletes a time off plan
+	 * 
+	 * @param {String} managementUnitId The ID of the management unit
+	 * @param {String} timeOffPlanId The ID of the time off plan to delete
+	 */
+	deleteWorkforcemanagementManagementunitTimeoffplan(managementUnitId, timeOffPlanId) { 
+		// verify the required parameter 'managementUnitId' is set
+		if (managementUnitId === undefined || managementUnitId === null) {
+			throw 'Missing the required parameter "managementUnitId" when calling deleteWorkforcemanagementManagementunitTimeoffplan';
+		}
+		// verify the required parameter 'timeOffPlanId' is set
+		if (timeOffPlanId === undefined || timeOffPlanId === null) {
+			throw 'Missing the required parameter "timeOffPlanId" when calling deleteWorkforcemanagementManagementunitTimeoffplan';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans/{timeOffPlanId}', 
+			'DELETE', 
+			{ 'managementUnitId': managementUnitId,'timeOffPlanId': timeOffPlanId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -283,7 +343,7 @@ class WorkforceManagementApi {
 	/**
 	 * Delete a work plan
 	 * 
-	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 	 * @param {String} workPlanId The ID of the work plan to delete
 	 */
 	deleteWorkforcemanagementManagementunitWorkplan(managementUnitId, workPlanId) { 
@@ -299,13 +359,13 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId}', 
 			'DELETE', 
-			{ 'managementUnitId': managementUnitId,'workPlanId': workPlanId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'managementUnitId': managementUnitId,'workPlanId': workPlanId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -313,7 +373,7 @@ class WorkforceManagementApi {
 	/**
 	 * Delete a work plan rotation
 	 * 
-	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 	 * @param {String} workPlanRotationId The ID of the work plan rotation to be deleted
 	 */
 	deleteWorkforcemanagementManagementunitWorkplanrotation(managementUnitId, workPlanRotationId) { 
@@ -329,13 +389,13 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations/{workPlanRotationId}', 
 			'DELETE', 
-			{ 'managementUnitId': managementUnitId,'workPlanRotationId': workPlanRotationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'managementUnitId': managementUnitId,'workPlanRotationId': workPlanRotationId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -354,13 +414,113 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/adherence', 
 			'GET', 
-			{  }, 
-			{ 'userId': this.apiClient.buildCollectionParam(userId, 'multi') }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'userId': this.apiClient.buildCollectionParam(userId, 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get an adherence explanation for the current user
+	 * 
+	 * @param {String} explanationId The ID of the explanation to update
+	 */
+	getWorkforcemanagementAdherenceExplanation(explanationId) { 
+		// verify the required parameter 'explanationId' is set
+		if (explanationId === undefined || explanationId === null) {
+			throw 'Missing the required parameter "explanationId" when calling getWorkforcemanagementAdherenceExplanation';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/adherence/explanations/{explanationId}', 
+			'GET', 
+			{ 'explanationId': explanationId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Query the status of an adherence explanation operation. Only the user who started the operation can query the status
+	 * Job details are only retained if the initial request returned a 202 ACCEPTED response
+	 * @param {String} jobId The ID of the job
+	 */
+	getWorkforcemanagementAdherenceExplanationsJob(jobId) { 
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null) {
+			throw 'Missing the required parameter "jobId" when calling getWorkforcemanagementAdherenceExplanationsJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/adherence/explanations/jobs/{jobId}', 
+			'GET', 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Request to fetch the status of the historical adherence bulk job. Only the user who started the operation can query the status
+	 * Job details are only retained if the initial request returned a 202 ACCEPTED response
+	 * @param {String} jobId ID of the job to get
+	 */
+	getWorkforcemanagementAdherenceHistoricalBulkJob(jobId) { 
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null) {
+			throw 'Missing the required parameter "jobId" when calling getWorkforcemanagementAdherenceHistoricalBulkJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/adherence/historical/bulk/jobs/{jobId}', 
+			'GET', 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Query the status of a historical adherence request operation. Only the user who started the operation can query the status
+	 * Job details are only retained if the initial request returned a 202 ACCEPTED response
+	 * @param {String} jobId jobId
+	 */
+	getWorkforcemanagementAdherenceHistoricalJob(jobId) { 
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null) {
+			throw 'Missing the required parameter "jobId" when calling getWorkforcemanagementAdherenceHistoricalJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/adherence/historical/jobs/{jobId}', 
+			'GET', 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -379,13 +539,43 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/adhocmodelingjobs/{jobId}', 
 			'GET', 
-			{ 'jobId': jobId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get an adherence explanation
+	 * 
+	 * @param {String} agentId The ID of the agent to query
+	 * @param {String} explanationId The ID of the explanation to update
+	 */
+	getWorkforcemanagementAgentAdherenceExplanation(agentId, explanationId) { 
+		// verify the required parameter 'agentId' is set
+		if (agentId === undefined || agentId === null) {
+			throw 'Missing the required parameter "agentId" when calling getWorkforcemanagementAgentAdherenceExplanation';
+		}
+		// verify the required parameter 'explanationId' is set
+		if (explanationId === undefined || explanationId === null) {
+			throw 'Missing the required parameter "explanationId" when calling getWorkforcemanagementAgentAdherenceExplanation';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/agents/{agentId}/adherence/explanations/{explanationId}', 
+			'GET', 
+			{ 'agentId': agentId,'explanationId': explanationId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -404,13 +594,13 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/agents/{agentId}/managementunit', 
 			'GET', 
-			{ 'agentId': agentId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'agentId': agentId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -424,23 +614,23 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/agents/me/managementunit', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
 	 * Get business unit
-	 * Expanding \&quot;settings\&quot; will retrieve all settings.  All other expands will retrieve only the requested settings field(s).
-	 * @param {String} businessUnitId The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user.
+	 * Expanding "settings" will retrieve all settings.  All other expands will retrieve only the requested settings field(s).
+	 * @param {String} businessUnitId The ID of the business unit, or 'mine' for the business unit of the logged-in user.
 	 * @param {Object} opts Optional parameters
-	 * @param {Array.<String>} opts.expand 
+	 * @param {Array.<String>} opts.expand Include to access additional data on the business unit
 	 */
 	getWorkforcemanagementBusinessunit(businessUnitId, opts) { 
 		opts = opts || {};
@@ -453,13 +643,13 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}', 
 			'GET', 
-			{ 'businessUnitId': businessUnitId }, 
-			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{ 'businessUnitId': businessUnitId },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -467,7 +657,7 @@ class WorkforceManagementApi {
 	/**
 	 * Get an activity code
 	 * 
-	 * @param {String} businessUnitId The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user.
+	 * @param {String} businessUnitId The ID of the business unit, or 'mine' for the business unit of the logged-in user.
 	 * @param {String} activityCodeId The ID of the activity code to fetch
 	 */
 	getWorkforcemanagementBusinessunitActivitycode(businessUnitId, activityCodeId) { 
@@ -483,13 +673,13 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes/{activityCodeId}', 
 			'GET', 
-			{ 'businessUnitId': businessUnitId,'activityCodeId': activityCodeId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'businessUnitId': businessUnitId,'activityCodeId': activityCodeId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -497,7 +687,7 @@ class WorkforceManagementApi {
 	/**
 	 * Get activity codes
 	 * 
-	 * @param {String} businessUnitId The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user.
+	 * @param {String} businessUnitId The ID of the business unit, or 'mine' for the business unit of the logged-in user.
 	 */
 	getWorkforcemanagementBusinessunitActivitycodes(businessUnitId) { 
 		// verify the required parameter 'businessUnitId' is set
@@ -508,13 +698,13 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes', 
 			'GET', 
-			{ 'businessUnitId': businessUnitId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'businessUnitId': businessUnitId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -522,7 +712,7 @@ class WorkforceManagementApi {
 	/**
 	 * Get intraday planning groups for the given date
 	 * 
-	 * @param {String} businessUnitId The business unit ID of the business unit
+	 * @param {String} businessUnitId The ID of the business unit
 	 * @param {String} _date yyyy-MM-dd date string interpreted in the configured business unit time zone. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 */
 	getWorkforcemanagementBusinessunitIntradayPlanninggroups(businessUnitId, _date) { 
@@ -538,13 +728,13 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/intraday/planninggroups', 
 			'GET', 
-			{ 'businessUnitId': businessUnitId }, 
-			{ 'date': _date }, 
-			{  }, 
-			{  }, 
+			{ 'businessUnitId': businessUnitId },
+			{ 'date': _date },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -552,10 +742,10 @@ class WorkforceManagementApi {
 	/**
 	 * Get all authorized management units in the business unit
 	 * 
-	 * @param {String} businessUnitId The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user.
+	 * @param {String} businessUnitId The ID of the business unit, or 'mine' for the business unit of the logged-in user.
 	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.feature 
-	 * @param {String} opts.divisionId 
+	 * @param {Object} opts.feature If specified, the list of management units for which the user is authorized to use the requested feature will be returned
+	 * @param {String} opts.divisionId If specified, the list of management units belonging to the specified division will be returned
 	 */
 	getWorkforcemanagementBusinessunitManagementunits(businessUnitId, opts) { 
 		opts = opts || {};
@@ -568,13 +758,13 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/managementunits', 
 			'GET', 
-			{ 'businessUnitId': businessUnitId }, 
-			{ 'feature': opts['feature'],'divisionId': opts['divisionId'] }, 
-			{  }, 
-			{  }, 
+			{ 'businessUnitId': businessUnitId },
+			{ 'feature': opts['feature'],'divisionId': opts['divisionId'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -598,13 +788,13 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups/{planningGroupId}', 
 			'GET', 
-			{ 'businessUnitId': businessUnitId,'planningGroupId': planningGroupId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'businessUnitId': businessUnitId,'planningGroupId': planningGroupId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -623,13 +813,13 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups', 
 			'GET', 
-			{ 'businessUnitId': businessUnitId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'businessUnitId': businessUnitId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -653,13 +843,13 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs/{runId}', 
 			'GET', 
-			{ 'businessUnitId': businessUnitId,'runId': runId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'businessUnitId': businessUnitId,'runId': runId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -693,13 +883,13 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs/{runId}/result', 
 			'GET', 
-			{ 'businessUnitId': businessUnitId,'runId': runId }, 
-			{ 'managementUnitIds': this.apiClient.buildCollectionParam(managementUnitIds, 'multi'),'expand': this.apiClient.buildCollectionParam(expand, 'multi') }, 
-			{  }, 
-			{  }, 
+			{ 'businessUnitId': businessUnitId,'runId': runId },
+			{ 'managementUnitIds': this.apiClient.buildCollectionParam(managementUnitIds, 'multi'),'expand': this.apiClient.buildCollectionParam(expand, 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -718,13 +908,13 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs', 
 			'GET', 
-			{ 'businessUnitId': businessUnitId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'businessUnitId': businessUnitId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -734,8 +924,12 @@ class WorkforceManagementApi {
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit.
 	 * @param {String} serviceGoalTemplateId The ID of a service goal template to fetch
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.expand Include to access additional data on the service goal template
 	 */
-	getWorkforcemanagementBusinessunitServicegoaltemplate(businessUnitId, serviceGoalTemplateId) { 
+	getWorkforcemanagementBusinessunitServicegoaltemplate(businessUnitId, serviceGoalTemplateId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null) {
 			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitServicegoaltemplate';
@@ -748,13 +942,13 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates/{serviceGoalTemplateId}', 
 			'GET', 
-			{ 'businessUnitId': businessUnitId,'serviceGoalTemplateId': serviceGoalTemplateId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'businessUnitId': businessUnitId,'serviceGoalTemplateId': serviceGoalTemplateId },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -763,8 +957,12 @@ class WorkforceManagementApi {
 	 * Gets list of service goal templates
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit.
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.expand Include to access additional data on the service goal template
 	 */
-	getWorkforcemanagementBusinessunitServicegoaltemplates(businessUnitId) { 
+	getWorkforcemanagementBusinessunitServicegoaltemplates(businessUnitId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null) {
 			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitServicegoaltemplates';
@@ -773,13 +971,13 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates', 
 			'GET', 
-			{ 'businessUnitId': businessUnitId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'businessUnitId': businessUnitId },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -812,13 +1010,13 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}', 
 			'GET', 
-			{ 'businessUnitId': businessUnitId,'weekId': weekId,'scheduleId': scheduleId }, 
-			{ 'expand': opts['expand'] }, 
-			{  }, 
-			{  }, 
+			{ 'businessUnitId': businessUnitId,'weekId': weekId,'scheduleId': scheduleId },
+			{ 'expand': opts['expand'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -847,13 +1045,13 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/generationresults', 
 			'GET', 
-			{ 'businessUnitId': businessUnitId,'weekId': weekId,'scheduleId': scheduleId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'businessUnitId': businessUnitId,'weekId': weekId,'scheduleId': scheduleId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -886,19 +1084,19 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/headcountforecast', 
 			'GET', 
-			{ 'businessUnitId': businessUnitId,'weekId': weekId,'scheduleId': scheduleId }, 
-			{ 'forceDownload': opts['forceDownload'] }, 
-			{  }, 
-			{  }, 
+			{ 'businessUnitId': businessUnitId,'weekId': weekId,'scheduleId': scheduleId },
+			{ 'forceDownload': opts['forceDownload'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Loads agent&#39;s schedule history.
+	 * Loads agent's schedule history.
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit
 	 * @param {String} weekId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
@@ -926,22 +1124,22 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/history/agents/{agentId}', 
 			'GET', 
-			{ 'businessUnitId': businessUnitId,'weekId': weekId,'scheduleId': scheduleId,'agentId': agentId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'businessUnitId': businessUnitId,'weekId': weekId,'scheduleId': scheduleId,'agentId': agentId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
 	 * Get the list of week schedules for the specified week
-	 * Use \&quot;recent\&quot; (without quotes) for the `weekId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any schedule which spans the specified week
+	 * Use "recent" (without quotes) for the `weekId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any schedule which spans the specified week
 	 * @param {String} businessUnitId The ID of the business unit
-	 * @param {String} weekId First day of schedule week in yyyy-MM-dd format, or &#39;recent&#39; (without quotes) to get recent schedules
+	 * @param {String} weekId First day of schedule week in yyyy-MM-dd format, or 'recent' (without quotes) to get recent schedules
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.includeOnlyPublished includeOnlyPublished
 	 * @param {Object} opts.expand expand
@@ -961,13 +1159,13 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules', 
 			'GET', 
-			{ 'businessUnitId': businessUnitId,'weekId': weekId }, 
-			{ 'includeOnlyPublished': opts['includeOnlyPublished'],'expand': opts['expand'] }, 
-			{  }, 
-			{  }, 
+			{ 'businessUnitId': businessUnitId,'weekId': weekId },
+			{ 'includeOnlyPublished': opts['includeOnlyPublished'],'expand': opts['expand'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -975,11 +1173,11 @@ class WorkforceManagementApi {
 	/**
 	 * Get a short term forecast
 	 * 
-	 * @param {String} businessUnitId The business unit ID of the business unit to which the forecast belongs
+	 * @param {String} businessUnitId The ID of the business unit to which the forecast belongs
 	 * @param {String} weekDateId The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {String} forecastId The ID of the forecast
 	 * @param {Object} opts Optional parameters
-	 * @param {Array.<String>} opts.expand 
+	 * @param {Array.<String>} opts.expand Include to access additional data on the forecast
 	 */
 	getWorkforcemanagementBusinessunitWeekShorttermforecast(businessUnitId, weekDateId, forecastId, opts) { 
 		opts = opts || {};
@@ -1000,13 +1198,13 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}', 
 			'GET', 
-			{ 'businessUnitId': businessUnitId,'weekDateId': weekDateId,'forecastId': forecastId }, 
-			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{ 'businessUnitId': businessUnitId,'weekDateId': weekDateId,'forecastId': forecastId },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1014,7 +1212,7 @@ class WorkforceManagementApi {
 	/**
 	 * Get the result of a short term forecast calculation
 	 * Includes modifications unless you pass the doNotApplyModifications query parameter
-	 * @param {String} businessUnitId The business unit ID of the business unit to which the forecast belongs
+	 * @param {String} businessUnitId The ID of the business unit to which the forecast belongs
 	 * @param {String} weekDateId The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {String} forecastId The ID of the forecast
 	 * @param {Object} opts Optional parameters
@@ -1040,13 +1238,13 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/data', 
 			'GET', 
-			{ 'businessUnitId': businessUnitId,'weekDateId': weekDateId,'forecastId': forecastId }, 
-			{ 'weekNumber': opts['weekNumber'],'forceDownloadService': opts['forceDownloadService'] }, 
-			{  }, 
-			{  }, 
+			{ 'businessUnitId': businessUnitId,'weekDateId': weekDateId,'forecastId': forecastId },
+			{ 'weekNumber': opts['weekNumber'],'forceDownloadService': opts['forceDownloadService'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1054,7 +1252,7 @@ class WorkforceManagementApi {
 	/**
 	 * Gets the forecast generation results
 	 * 
-	 * @param {String} businessUnitId The business unit ID of the business unit to which the forecast belongs
+	 * @param {String} businessUnitId The ID of the business unit to which the forecast belongs
 	 * @param {String} weekDateId The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {String} forecastId The ID of the forecast
 	 */
@@ -1075,13 +1273,13 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/generationresults', 
 			'GET', 
-			{ 'businessUnitId': businessUnitId,'weekDateId': weekDateId,'forecastId': forecastId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'businessUnitId': businessUnitId,'weekDateId': weekDateId,'forecastId': forecastId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1089,7 +1287,7 @@ class WorkforceManagementApi {
 	/**
 	 * Get the result of a long term forecast calculation
 	 * Includes modifications unless you pass the doNotApplyModifications query parameter
-	 * @param {String} businessUnitId The business unit ID of the business unit to which the forecast belongs
+	 * @param {String} businessUnitId The ID of the business unit to which the forecast belongs
 	 * @param {String} weekDateId The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {String} forecastId The ID of the forecast
 	 * @param {Object} opts Optional parameters
@@ -1114,13 +1312,13 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/longtermforecastdata', 
 			'GET', 
-			{ 'businessUnitId': businessUnitId,'weekDateId': weekDateId,'forecastId': forecastId }, 
-			{ 'forceDownloadService': opts['forceDownloadService'] }, 
-			{  }, 
-			{  }, 
+			{ 'businessUnitId': businessUnitId,'weekDateId': weekDateId,'forecastId': forecastId },
+			{ 'forceDownloadService': opts['forceDownloadService'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1128,7 +1326,7 @@ class WorkforceManagementApi {
 	/**
 	 * Gets the forecast planning group snapshot
 	 * 
-	 * @param {String} businessUnitId The business unit ID of the business unit to which the forecast belongs
+	 * @param {String} businessUnitId The ID of the business unit to which the forecast belongs
 	 * @param {String} weekDateId The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {String} forecastId The ID of the forecast
 	 */
@@ -1149,22 +1347,22 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/planninggroups', 
 			'GET', 
-			{ 'businessUnitId': businessUnitId,'weekDateId': weekDateId,'forecastId': forecastId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'businessUnitId': businessUnitId,'weekDateId': weekDateId,'forecastId': forecastId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
 	 * Get short term forecasts
-	 * Use \&quot;recent\&quot; (without quotes) for the `weekDateId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any forecast which spans the specified week
-	 * @param {String} businessUnitId The business unit ID of the business unit to which the forecast belongs
-	 * @param {String} weekDateId The week start date of the forecast in yyyy-MM-dd format or &#39;recent&#39; (without quotes) to fetch recent forecasts
+	 * Use "recent" (without quotes) for the `weekDateId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any forecast which spans the specified week
+	 * @param {String} businessUnitId The ID of the business unit to which the forecast belongs
+	 * @param {String} weekDateId The week start date of the forecast in yyyy-MM-dd format or 'recent' (without quotes) to fetch recent forecasts
 	 */
 	getWorkforcemanagementBusinessunitWeekShorttermforecasts(businessUnitId, weekDateId) { 
 		// verify the required parameter 'businessUnitId' is set
@@ -1179,13 +1377,13 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts', 
 			'GET', 
-			{ 'businessUnitId': businessUnitId,'weekDateId': weekDateId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'businessUnitId': businessUnitId,'weekDateId': weekDateId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1194,8 +1392,8 @@ class WorkforceManagementApi {
 	 * Get business units
 	 * 
 	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.feature 
-	 * @param {String} opts.divisionId 
+	 * @param {Object} opts.feature If specified, the list of business units for which the user is authorized to use the requested feature will be returned
+	 * @param {String} opts.divisionId If specified, the list of business units belonging to the specified division will be returned
 	 */
 	getWorkforcemanagementBusinessunits(opts) { 
 		opts = opts || {};
@@ -1204,13 +1402,13 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/businessunits', 
 			'GET', 
-			{  }, 
-			{ 'feature': opts['feature'],'divisionId': opts['divisionId'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'feature': opts['feature'],'divisionId': opts['divisionId'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1228,13 +1426,13 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/businessunits/divisionviews', 
 			'GET', 
-			{  }, 
-			{ 'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1253,13 +1451,13 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/calendar/data/ics', 
 			'GET', 
-			{  }, 
-			{ 'calendarId': calendarId }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'calendarId': calendarId },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['text/calendar']
 		);
 	}
@@ -1273,13 +1471,13 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/calendar/url/ics', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1293,13 +1491,13 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/historicaldata/deletejob', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1313,13 +1511,58 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/historicaldata/importstatus', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get integrations
+	 * 
+	 */
+	getWorkforcemanagementIntegrationsHris() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/integrations/hris', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Query the results of time off types job
+	 * 
+	 * @param {String} jobId The ID of the job.
+	 */
+	getWorkforcemanagementIntegrationsHrisTimeofftypesJob(jobId) { 
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null) {
+			throw 'Missing the required parameter "jobId" when calling getWorkforcemanagementIntegrationsHrisTimeofftypesJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/integrations/hris/timeofftypes/jobs/{jobId}', 
+			'GET', 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1327,7 +1570,7 @@ class WorkforceManagementApi {
 	/**
 	 * Get management unit
 	 * settings.shortTermForecasting is deprecated and now lives on the business unit
-	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand 
 	 */
@@ -1342,21 +1585,22 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/managementunits/{managementUnitId}', 
 			'GET', 
-			{ 'managementUnitId': managementUnitId }, 
-			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{ 'managementUnitId': managementUnitId },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Get activity codes
+	 * Deprecated: Instead use /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes. Get the list of activity codes
 	 * 
-	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+	 * @deprecated
 	 */
 	getWorkforcemanagementManagementunitActivitycodes(managementUnitId) { 
 		// verify the required parameter 'managementUnitId' is set
@@ -1367,13 +1611,13 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/activitycodes', 
 			'GET', 
-			{ 'managementUnitId': managementUnitId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'managementUnitId': managementUnitId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1381,7 +1625,7 @@ class WorkforceManagementApi {
 	/**
 	 * Get a list of user schedule adherence records for the requested management unit
 	 * 
-	 * @param {String} managementUnitId The management unit ID of the management unit.
+	 * @param {String} managementUnitId The ID of the management unit
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service.  For testing/app development purposes
 	 */
@@ -1396,13 +1640,13 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/adherence', 
 			'GET', 
-			{ 'managementUnitId': managementUnitId }, 
-			{ 'forceDownloadService': opts['forceDownloadService'] }, 
-			{  }, 
-			{  }, 
+			{ 'managementUnitId': managementUnitId },
+			{ 'forceDownloadService': opts['forceDownloadService'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1410,7 +1654,7 @@ class WorkforceManagementApi {
 	/**
 	 * Get data for agent in the management unit
 	 * 
-	 * @param {String} managementUnitId The id of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 	 * @param {String} agentId The agent id
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.excludeCapabilities Excludes all capabilities of the agent such as queues, languages, and skills
@@ -1430,13 +1674,13 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/agents/{agentId}', 
 			'GET', 
-			{ 'managementUnitId': managementUnitId,'agentId': agentId }, 
-			{ 'excludeCapabilities': opts['excludeCapabilities'] }, 
-			{  }, 
-			{  }, 
+			{ 'managementUnitId': managementUnitId,'agentId': agentId },
+			{ 'excludeCapabilities': opts['excludeCapabilities'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1444,7 +1688,7 @@ class WorkforceManagementApi {
 	/**
 	 * Gets all the shift trades for a given agent
 	 * 
-	 * @param {String} managementUnitId The id of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 	 * @param {String} agentId The agent id
 	 */
 	getWorkforcemanagementManagementunitAgentShifttrades(managementUnitId, agentId) { 
@@ -1460,13 +1704,13 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/agents/{agentId}/shifttrades', 
 			'GET', 
-			{ 'managementUnitId': managementUnitId,'agentId': agentId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'managementUnitId': managementUnitId,'agentId': agentId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1474,7 +1718,7 @@ class WorkforceManagementApi {
 	/**
 	 * Gets a summary of all shift trades in the matched state
 	 * 
-	 * @param {String} managementUnitId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 	 */
 	getWorkforcemanagementManagementunitShifttradesMatched(managementUnitId) { 
 		// verify the required parameter 'managementUnitId' is set
@@ -1485,13 +1729,13 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/shifttrades/matched', 
 			'GET', 
-			{ 'managementUnitId': managementUnitId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'managementUnitId': managementUnitId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1499,7 +1743,7 @@ class WorkforceManagementApi {
 	/**
 	 * Gets list of users available for whom you can send direct shift trade requests
 	 * 
-	 * @param {String} managementUnitId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 	 */
 	getWorkforcemanagementManagementunitShifttradesUsers(managementUnitId) { 
 		// verify the required parameter 'managementUnitId' is set
@@ -1510,13 +1754,123 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/shifttrades/users', 
 			'GET', 
-			{ 'managementUnitId': managementUnitId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'managementUnitId': managementUnitId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Gets a time off limit object
+	 * Returns properties of time off limit object, but not daily values.
+	 * @param {String} managementUnitId The ID of the management unit.
+	 * @param {String} timeOffLimitId The ID of the time off limit to fetch
+	 */
+	getWorkforcemanagementManagementunitTimeofflimit(managementUnitId, timeOffLimitId) { 
+		// verify the required parameter 'managementUnitId' is set
+		if (managementUnitId === undefined || managementUnitId === null) {
+			throw 'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitTimeofflimit';
+		}
+		// verify the required parameter 'timeOffLimitId' is set
+		if (timeOffLimitId === undefined || timeOffLimitId === null) {
+			throw 'Missing the required parameter "timeOffLimitId" when calling getWorkforcemanagementManagementunitTimeofflimit';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/{timeOffLimitId}', 
+			'GET', 
+			{ 'managementUnitId': managementUnitId,'timeOffLimitId': timeOffLimitId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Gets a list of time off limit objects under management unit.
+	 * Currently only one time off limit object is allowed under management unit, so the list contains either 0 or 1 element.
+	 * @param {String} managementUnitId The ID of the management unit.
+	 */
+	getWorkforcemanagementManagementunitTimeofflimits(managementUnitId) { 
+		// verify the required parameter 'managementUnitId' is set
+		if (managementUnitId === undefined || managementUnitId === null) {
+			throw 'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitTimeofflimits';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits', 
+			'GET', 
+			{ 'managementUnitId': managementUnitId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Gets a time off plan
+	 * 
+	 * @param {String} managementUnitId The ID of the management unit
+	 * @param {String} timeOffPlanId The ID of the time off plan to fetch
+	 */
+	getWorkforcemanagementManagementunitTimeoffplan(managementUnitId, timeOffPlanId) { 
+		// verify the required parameter 'managementUnitId' is set
+		if (managementUnitId === undefined || managementUnitId === null) {
+			throw 'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitTimeoffplan';
+		}
+		// verify the required parameter 'timeOffPlanId' is set
+		if (timeOffPlanId === undefined || timeOffPlanId === null) {
+			throw 'Missing the required parameter "timeOffPlanId" when calling getWorkforcemanagementManagementunitTimeoffplan';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans/{timeOffPlanId}', 
+			'GET', 
+			{ 'managementUnitId': managementUnitId,'timeOffPlanId': timeOffPlanId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Gets a list of time off plans
+	 * 
+	 * @param {String} managementUnitId The ID of the management unit
+	 */
+	getWorkforcemanagementManagementunitTimeoffplans(managementUnitId) { 
+		// verify the required parameter 'managementUnitId' is set
+		if (managementUnitId === undefined || managementUnitId === null) {
+			throw 'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitTimeoffplans';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans', 
+			'GET', 
+			{ 'managementUnitId': managementUnitId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1524,7 +1878,7 @@ class WorkforceManagementApi {
 	/**
 	 * Get a time off request
 	 * 
-	 * @param {String} managementUnitId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 	 * @param {String} userId The userId to whom the Time Off Request applies.
 	 * @param {String} timeOffRequestId Time Off Request Id
 	 */
@@ -1545,13 +1899,48 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/{timeOffRequestId}', 
 			'GET', 
-			{ 'managementUnitId': managementUnitId,'userId': userId,'timeOffRequestId': timeOffRequestId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'managementUnitId': managementUnitId,'userId': userId,'timeOffRequestId': timeOffRequestId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Retrieves time off limit, allocated and waitlisted values according to specific time off request
+	 * 
+	 * @param {String} managementUnitId The ID of the management unit.
+	 * @param {String} userId The userId to whom the time off request applies.
+	 * @param {String} timeOffRequestId The ID of the time off request, which dates and activityCodeId determine limit values to retrieve
+	 */
+	getWorkforcemanagementManagementunitUserTimeoffrequestTimeofflimits(managementUnitId, userId, timeOffRequestId) { 
+		// verify the required parameter 'managementUnitId' is set
+		if (managementUnitId === undefined || managementUnitId === null) {
+			throw 'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitUserTimeoffrequestTimeofflimits';
+		}
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null) {
+			throw 'Missing the required parameter "userId" when calling getWorkforcemanagementManagementunitUserTimeoffrequestTimeofflimits';
+		}
+		// verify the required parameter 'timeOffRequestId' is set
+		if (timeOffRequestId === undefined || timeOffRequestId === null) {
+			throw 'Missing the required parameter "timeOffRequestId" when calling getWorkforcemanagementManagementunitUserTimeoffrequestTimeofflimits';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/{timeOffRequestId}/timeofflimits', 
+			'GET', 
+			{ 'managementUnitId': managementUnitId,'userId': userId,'timeOffRequestId': timeOffRequestId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1559,7 +1948,7 @@ class WorkforceManagementApi {
 	/**
 	 * Get a list of time off requests for a given user
 	 * 
-	 * @param {String} managementUnitId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 	 * @param {String} userId The userId to whom the Time Off Request applies.
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.recentlyReviewed Limit results to requests that have been reviewed within the preceding 30 days (default to false)
@@ -1579,13 +1968,13 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests', 
 			'GET', 
-			{ 'managementUnitId': managementUnitId,'userId': userId }, 
-			{ 'recentlyReviewed': opts['recentlyReviewed'] }, 
-			{  }, 
-			{  }, 
+			{ 'managementUnitId': managementUnitId,'userId': userId },
+			{ 'recentlyReviewed': opts['recentlyReviewed'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1593,7 +1982,7 @@ class WorkforceManagementApi {
 	/**
 	 * Get users in the management unit
 	 * 
-	 * @param {String} managementUnitId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 	 */
 	getWorkforcemanagementManagementunitUsers(managementUnitId) { 
 		// verify the required parameter 'managementUnitId' is set
@@ -1604,13 +1993,13 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/users', 
 			'GET', 
-			{ 'managementUnitId': managementUnitId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'managementUnitId': managementUnitId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1618,12 +2007,13 @@ class WorkforceManagementApi {
 	/**
 	 * Deprecated.  Use the equivalent business unit resource instead. Get a week schedule
 	 * 
-	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 	 * @param {String} weekId First day of schedule week in yyyy-MM-dd format.
 	 * @param {String} scheduleId The ID of the schedule to fetch
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.expand Which fields, if any, to expand
 	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service.  For testing/app development purposes
+	 * @deprecated
 	 */
 	getWorkforcemanagementManagementunitWeekSchedule(managementUnitId, weekId, scheduleId, opts) { 
 		opts = opts || {};
@@ -1644,13 +2034,13 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekId}/schedules/{scheduleId}', 
 			'GET', 
-			{ 'managementUnitId': managementUnitId,'weekId': weekId,'scheduleId': scheduleId }, 
-			{ 'expand': opts['expand'],'forceDownloadService': opts['forceDownloadService'] }, 
-			{  }, 
-			{  }, 
+			{ 'managementUnitId': managementUnitId,'weekId': weekId,'scheduleId': scheduleId },
+			{ 'expand': opts['expand'],'forceDownloadService': opts['forceDownloadService'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1658,12 +2048,13 @@ class WorkforceManagementApi {
 	/**
 	 * Deprecated.  Use the equivalent business unit resource instead. Get the list of schedules in a week in management unit
 	 * 
-	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 	 * @param {String} weekId First day of schedule week in yyyy-MM-dd format.
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.includeOnlyPublished Return only published schedules
 	 * @param {String} opts.earliestWeekDate The start date of the earliest week to query in yyyy-MM-dd format
 	 * @param {String} opts.latestWeekDate The start date of the latest week to query in yyyy-MM-dd format
+	 * @deprecated
 	 */
 	getWorkforcemanagementManagementunitWeekSchedules(managementUnitId, weekId, opts) { 
 		opts = opts || {};
@@ -1680,13 +2071,13 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekId}/schedules', 
 			'GET', 
-			{ 'managementUnitId': managementUnitId,'weekId': weekId }, 
-			{ 'includeOnlyPublished': opts['includeOnlyPublished'],'earliestWeekDate': opts['earliestWeekDate'],'latestWeekDate': opts['latestWeekDate'] }, 
-			{  }, 
-			{  }, 
+			{ 'managementUnitId': managementUnitId,'weekId': weekId },
+			{ 'includeOnlyPublished': opts['includeOnlyPublished'],'earliestWeekDate': opts['earliestWeekDate'],'latestWeekDate': opts['latestWeekDate'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1694,7 +2085,7 @@ class WorkforceManagementApi {
 	/**
 	 * Gets all the shift trades for a given week
 	 * 
-	 * @param {String} managementUnitId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 	 * @param {String} weekDateId The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.evaluateMatches Whether to evaluate the matches for violations (default to true)
@@ -1714,13 +2105,13 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades', 
 			'GET', 
-			{ 'managementUnitId': managementUnitId,'weekDateId': weekDateId }, 
-			{ 'evaluateMatches': opts['evaluateMatches'] }, 
-			{  }, 
-			{  }, 
+			{ 'managementUnitId': managementUnitId,'weekDateId': weekDateId },
+			{ 'evaluateMatches': opts['evaluateMatches'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1728,7 +2119,7 @@ class WorkforceManagementApi {
 	/**
 	 * Get a work plan
 	 * 
-	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 	 * @param {String} workPlanId The ID of the work plan to fetch
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.includeOnly limit response to the specified fields
@@ -1748,13 +2139,13 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId}', 
 			'GET', 
-			{ 'managementUnitId': managementUnitId,'workPlanId': workPlanId }, 
-			{ 'includeOnly': this.apiClient.buildCollectionParam(opts['includeOnly'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{ 'managementUnitId': managementUnitId,'workPlanId': workPlanId },
+			{ 'includeOnly': this.apiClient.buildCollectionParam(opts['includeOnly'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1762,7 +2153,7 @@ class WorkforceManagementApi {
 	/**
 	 * Get a work plan rotation
 	 * 
-	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 	 * @param {String} workPlanRotationId The ID of the work plan rotation to fetch
 	 */
 	getWorkforcemanagementManagementunitWorkplanrotation(managementUnitId, workPlanRotationId) { 
@@ -1778,13 +2169,13 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations/{workPlanRotationId}', 
 			'GET', 
-			{ 'managementUnitId': managementUnitId,'workPlanRotationId': workPlanRotationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'managementUnitId': managementUnitId,'workPlanRotationId': workPlanRotationId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1792,7 +2183,7 @@ class WorkforceManagementApi {
 	/**
 	 * Get work plan rotations
 	 * 
-	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand 
 	 */
@@ -1807,23 +2198,23 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations', 
 			'GET', 
-			{ 'managementUnitId': managementUnitId }, 
-			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{ 'managementUnitId': managementUnitId },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
 	 * Get work plans
-	 * \&quot;expand=details\&quot; is deprecated
-	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * "expand=details" is deprecated
+	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 	 * @param {Object} opts Optional parameters
-	 * @param {Array.<String>} opts.expand 
+	 * @param {Array.<String>} opts.expand Include to access additional data on the work plans
 	 */
 	getWorkforcemanagementManagementunitWorkplans(managementUnitId, opts) { 
 		opts = opts || {};
@@ -1836,13 +2227,13 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans', 
 			'GET', 
-			{ 'managementUnitId': managementUnitId }, 
-			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{ 'managementUnitId': managementUnitId },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1854,8 +2245,8 @@ class WorkforceManagementApi {
 	 * @param {Number} opts.pageSize Deprecated, paging is not supported
 	 * @param {Number} opts.pageNumber Deprecated, paging is not supported
 	 * @param {Object} opts.expand Deprecated, expand settings on the single MU route
-	 * @param {Object} opts.feature 
-	 * @param {String} opts.divisionId 
+	 * @param {Object} opts.feature If specified, the list of management units for which the user is authorized to use the requested feature will be returned
+	 * @param {String} opts.divisionId If specified, the list of management units belonging to the specified division will be returned
 	 */
 	getWorkforcemanagementManagementunits(opts) { 
 		opts = opts || {};
@@ -1864,13 +2255,13 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/managementunits', 
 			'GET', 
-			{  }, 
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'],'feature': opts['feature'],'divisionId': opts['divisionId'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': opts['expand'],'feature': opts['feature'],'divisionId': opts['divisionId'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1888,33 +2279,33 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/managementunits/divisionviews', 
 			'GET', 
-			{  }, 
-			{ 'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
 	 * Get a list of notifications for the current user
-	 * 
+	 * Notifications are only initially sent if you have the relevant Notify and Edit permissions
 	 */
 	getWorkforcemanagementNotifications() { 
 
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/notifications', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1933,13 +2324,13 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/schedulingjobs/{jobId}', 
 			'GET', 
-			{ 'jobId': jobId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1953,13 +2344,63 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/shifttrades', 
 			'GET', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Request to fetch the status of the historical shrinkage query
+	 * 
+	 * @param {String} jobId jobId
+	 */
+	getWorkforcemanagementShrinkageJob(jobId) { 
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null) {
+			throw 'Missing the required parameter "jobId" when calling getWorkforcemanagementShrinkageJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/shrinkage/jobs/{jobId}', 
+			'GET', 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Query the results of time off types job
+	 * 
+	 * @param {String} jobId The ID of the job.
+	 */
+	getWorkforcemanagementTimeoffbalanceJob(jobId) { 
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null) {
+			throw 'Missing the required parameter "jobId" when calling getWorkforcemanagementTimeoffbalanceJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/timeoffbalance/jobs/{jobId}', 
+			'GET', 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -1967,7 +2408,7 @@ class WorkforceManagementApi {
 	/**
 	 * Get a time off request for the current user
 	 * 
-	 * @param {String} timeOffRequestId Time Off Request Id
+	 * @param {String} timeOffRequestId The ID of the time off request
 	 */
 	getWorkforcemanagementTimeoffrequest(timeOffRequestId) { 
 		// verify the required parameter 'timeOffRequestId' is set
@@ -1978,13 +2419,38 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/timeoffrequests/{timeOffRequestId}', 
 			'GET', 
-			{ 'timeOffRequestId': timeOffRequestId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'timeOffRequestId': timeOffRequestId },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the daily waitlist positions of a time off request for the current user
+	 * 
+	 * @param {String} timeOffRequestId The ID of the time off request
+	 */
+	getWorkforcemanagementTimeoffrequestWaitlistpositions(timeOffRequestId) { 
+		// verify the required parameter 'timeOffRequestId' is set
+		if (timeOffRequestId === undefined || timeOffRequestId === null) {
+			throw 'Missing the required parameter "timeOffRequestId" when calling getWorkforcemanagementTimeoffrequestWaitlistpositions';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/timeoffrequests/{timeOffRequestId}/waitlistpositions', 
+			'GET', 
+			{ 'timeOffRequestId': timeOffRequestId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2002,13 +2468,48 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/timeoffrequests', 
 			'GET', 
-			{  }, 
-			{ 'recentlyReviewed': opts['recentlyReviewed'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'recentlyReviewed': opts['recentlyReviewed'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update an adherence explanation
+	 * 
+	 * @param {String} agentId The ID of the agent to query
+	 * @param {String} explanationId The ID of the explanation to update
+	 * @param {Object} body The request body
+	 */
+	patchWorkforcemanagementAgentAdherenceExplanation(agentId, explanationId, body) { 
+		// verify the required parameter 'agentId' is set
+		if (agentId === undefined || agentId === null) {
+			throw 'Missing the required parameter "agentId" when calling patchWorkforcemanagementAgentAdherenceExplanation';
+		}
+		// verify the required parameter 'explanationId' is set
+		if (explanationId === undefined || explanationId === null) {
+			throw 'Missing the required parameter "explanationId" when calling patchWorkforcemanagementAgentAdherenceExplanation';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchWorkforcemanagementAgentAdherenceExplanation';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/agents/{agentId}/adherence/explanations/{explanationId}', 
+			'PATCH', 
+			{ 'agentId': agentId,'explanationId': explanationId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2016,7 +2517,7 @@ class WorkforceManagementApi {
 	/**
 	 * Update business unit
 	 * 
-	 * @param {String} businessUnitId The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user.
+	 * @param {String} businessUnitId The ID of the business unit, or 'mine' for the business unit of the logged-in user.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body body
 	 */
@@ -2031,13 +2532,13 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}', 
 			'PATCH', 
-			{ 'businessUnitId': businessUnitId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'businessUnitId': businessUnitId },
+			{  },
+			{  },
+			{  },
 			opts['body'], 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2045,7 +2546,7 @@ class WorkforceManagementApi {
 	/**
 	 * Update an activity code
 	 * 
-	 * @param {String} businessUnitId The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user.
+	 * @param {String} businessUnitId The ID of the business unit, or 'mine' for the business unit of the logged-in user.
 	 * @param {String} activityCodeId The ID of the activity code to update
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body body
@@ -2065,13 +2566,13 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes/{activityCodeId}', 
 			'PATCH', 
-			{ 'businessUnitId': businessUnitId,'activityCodeId': activityCodeId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'businessUnitId': businessUnitId,'activityCodeId': activityCodeId },
+			{  },
+			{  },
+			{  },
 			opts['body'], 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2099,13 +2600,13 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups/{planningGroupId}', 
 			'PATCH', 
-			{ 'businessUnitId': businessUnitId,'planningGroupId': planningGroupId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'businessUnitId': businessUnitId,'planningGroupId': planningGroupId },
+			{  },
+			{  },
+			{  },
 			opts['body'], 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2133,13 +2634,13 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs/{runId}', 
 			'PATCH', 
-			{ 'businessUnitId': businessUnitId,'runId': runId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'businessUnitId': businessUnitId,'runId': runId },
+			{  },
+			{  },
+			{  },
 			opts['body'], 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2167,13 +2668,13 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates/{serviceGoalTemplateId}', 
 			'PATCH', 
-			{ 'businessUnitId': businessUnitId,'serviceGoalTemplateId': serviceGoalTemplateId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'businessUnitId': businessUnitId,'serviceGoalTemplateId': serviceGoalTemplateId },
+			{  },
+			{  },
+			{  },
 			opts['body'], 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2181,7 +2682,7 @@ class WorkforceManagementApi {
 	/**
 	 * Update the requested management unit
 	 * 
-	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body body
 	 */
@@ -2196,13 +2697,120 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/managementunits/{managementUnitId}', 
 			'PATCH', 
-			{ 'managementUnitId': managementUnitId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'managementUnitId': managementUnitId },
+			{  },
+			{  },
+			{  },
 			opts['body'], 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Updates a time off limit object.
+	 * Updates time off limit object properties, but not daily values.
+	 * @param {String} managementUnitId The ID of the management unit.
+	 * @param {String} timeOffLimitId The id of time off limit object to update
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body body
+	 */
+	patchWorkforcemanagementManagementunitTimeofflimit(managementUnitId, timeOffLimitId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'managementUnitId' is set
+		if (managementUnitId === undefined || managementUnitId === null) {
+			throw 'Missing the required parameter "managementUnitId" when calling patchWorkforcemanagementManagementunitTimeofflimit';
+		}
+		// verify the required parameter 'timeOffLimitId' is set
+		if (timeOffLimitId === undefined || timeOffLimitId === null) {
+			throw 'Missing the required parameter "timeOffLimitId" when calling patchWorkforcemanagementManagementunitTimeofflimit';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/{timeOffLimitId}', 
+			'PATCH', 
+			{ 'managementUnitId': managementUnitId,'timeOffLimitId': timeOffLimitId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Updates a time off plan
+	 * 
+	 * @param {String} managementUnitId The ID of the management unit
+	 * @param {String} timeOffPlanId The ID of the time off plan to update
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body body
+	 */
+	patchWorkforcemanagementManagementunitTimeoffplan(managementUnitId, timeOffPlanId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'managementUnitId' is set
+		if (managementUnitId === undefined || managementUnitId === null) {
+			throw 'Missing the required parameter "managementUnitId" when calling patchWorkforcemanagementManagementunitTimeoffplan';
+		}
+		// verify the required parameter 'timeOffPlanId' is set
+		if (timeOffPlanId === undefined || timeOffPlanId === null) {
+			throw 'Missing the required parameter "timeOffPlanId" when calling patchWorkforcemanagementManagementunitTimeoffplan';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans/{timeOffPlanId}', 
+			'PATCH', 
+			{ 'managementUnitId': managementUnitId,'timeOffPlanId': timeOffPlanId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Set integration status for a time off request.
+	 * 
+	 * @param {String} managementUnitId The ID of the management unit.
+	 * @param {String} timeOffRequestId The ID of the time off request.
+	 * @param {String} userId The ID of user to whom the time off request belongs.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body body
+	 */
+	patchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatus(managementUnitId, timeOffRequestId, userId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'managementUnitId' is set
+		if (managementUnitId === undefined || managementUnitId === null) {
+			throw 'Missing the required parameter "managementUnitId" when calling patchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatus';
+		}
+		// verify the required parameter 'timeOffRequestId' is set
+		if (timeOffRequestId === undefined || timeOffRequestId === null) {
+			throw 'Missing the required parameter "timeOffRequestId" when calling patchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatus';
+		}
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null) {
+			throw 'Missing the required parameter "userId" when calling patchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatus';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/{timeOffRequestId}/users/{userId}/integrationstatus', 
+			'PATCH', 
+			{ 'managementUnitId': managementUnitId,'timeOffRequestId': timeOffRequestId,'userId': userId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2210,7 +2818,7 @@ class WorkforceManagementApi {
 	/**
 	 * Update a time off request
 	 * 
-	 * @param {String} managementUnitId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 	 * @param {String} userId The id of the user the requested time off request belongs to
 	 * @param {String} timeOffRequestId The id of the time off request to update
 	 * @param {Object} opts Optional parameters
@@ -2235,13 +2843,13 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/{timeOffRequestId}', 
 			'PATCH', 
-			{ 'managementUnitId': managementUnitId,'userId': userId,'timeOffRequestId': timeOffRequestId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'managementUnitId': managementUnitId,'userId': userId,'timeOffRequestId': timeOffRequestId },
+			{  },
+			{  },
+			{  },
 			opts['body'], 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2249,12 +2857,12 @@ class WorkforceManagementApi {
 	/**
 	 * Updates a shift trade. This route can only be called by the initiating agent
 	 * 
-	 * @param {String} managementUnitId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 	 * @param {String} weekDateId The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-	 * @param {Object} body body
 	 * @param {String} tradeId The ID of the shift trade to update
+	 * @param {Object} body body
 	 */
-	patchWorkforcemanagementManagementunitWeekShifttrade(managementUnitId, weekDateId, body, tradeId) { 
+	patchWorkforcemanagementManagementunitWeekShifttrade(managementUnitId, weekDateId, tradeId, body) { 
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null) {
 			throw 'Missing the required parameter "managementUnitId" when calling patchWorkforcemanagementManagementunitWeekShifttrade';
@@ -2263,25 +2871,25 @@ class WorkforceManagementApi {
 		if (weekDateId === undefined || weekDateId === null) {
 			throw 'Missing the required parameter "weekDateId" when calling patchWorkforcemanagementManagementunitWeekShifttrade';
 		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchWorkforcemanagementManagementunitWeekShifttrade';
-		}
 		// verify the required parameter 'tradeId' is set
 		if (tradeId === undefined || tradeId === null) {
 			throw 'Missing the required parameter "tradeId" when calling patchWorkforcemanagementManagementunitWeekShifttrade';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchWorkforcemanagementManagementunitWeekShifttrade';
 		}
 
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/{tradeId}', 
 			'PATCH', 
-			{ 'managementUnitId': managementUnitId,'weekDateId': weekDateId,'tradeId': tradeId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'managementUnitId': managementUnitId,'weekDateId': weekDateId,'tradeId': tradeId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2289,11 +2897,11 @@ class WorkforceManagementApi {
 	/**
 	 * Update a work plan
 	 * 
-	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 	 * @param {String} workPlanId The ID of the work plan to update
 	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body body
 	 * @param {Object} opts.validationMode Allows to update work plan even if validation result is invalid
+	 * @param {Object} opts.body body
 	 */
 	patchWorkforcemanagementManagementunitWorkplan(managementUnitId, workPlanId, opts) { 
 		opts = opts || {};
@@ -2310,13 +2918,13 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId}', 
 			'PATCH', 
-			{ 'managementUnitId': managementUnitId,'workPlanId': workPlanId }, 
-			{ 'validationMode': opts['validationMode'] }, 
-			{  }, 
-			{  }, 
+			{ 'managementUnitId': managementUnitId,'workPlanId': workPlanId },
+			{ 'validationMode': opts['validationMode'] },
+			{  },
+			{  },
 			opts['body'], 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2324,7 +2932,7 @@ class WorkforceManagementApi {
 	/**
 	 * Update a work plan rotation
 	 * 
-	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 	 * @param {String} workPlanRotationId The ID of the work plan rotation to update
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body body
@@ -2344,13 +2952,13 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations/{workPlanRotationId}', 
 			'PATCH', 
-			{ 'managementUnitId': managementUnitId,'workPlanRotationId': workPlanRotationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'managementUnitId': managementUnitId,'workPlanRotationId': workPlanRotationId },
+			{  },
+			{  },
+			{  },
 			opts['body'], 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2358,7 +2966,7 @@ class WorkforceManagementApi {
 	/**
 	 * Update a time off request for the current user
 	 * 
-	 * @param {String} timeOffRequestId Time Off Request Id
+	 * @param {String} timeOffRequestId The ID of the time off request
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body body
 	 */
@@ -2373,22 +2981,78 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/timeoffrequests/{timeOffRequestId}', 
 			'PATCH', 
-			{ 'timeOffRequestId': timeOffRequestId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'timeOffRequestId': timeOffRequestId },
+			{  },
+			{  },
+			{  },
 			opts['body'], 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
-	 * Request a historical adherence report for users across management units
+	 * Submit an adherence explanation for the current user
+	 * 
+	 * @param {Object} body The request body
+	 */
+	postWorkforcemanagementAdherenceExplanations(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postWorkforcemanagementAdherenceExplanations';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/adherence/explanations', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Query adherence explanations for the current user
+	 * 
+	 * @param {Object} body The request body
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
+	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
+	 */
+	postWorkforcemanagementAdherenceExplanationsQuery(body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postWorkforcemanagementAdherenceExplanationsQuery';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/adherence/explanations/query', 
+			'POST', 
+			{  },
+			{ 'forceAsync': opts['forceAsync'],'forceDownloadService': opts['forceDownloadService'] },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Deprecated. Use bulk routes instead (/adherence/historical/bulk)
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body body
+	 * @deprecated
 	 */
 	postWorkforcemanagementAdherenceHistorical(opts) { 
 		opts = opts || {};
@@ -2397,13 +3061,175 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/adherence/historical', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			opts['body'], 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Request a historical adherence report in bulk
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body body
+	 */
+	postWorkforcemanagementAdherenceHistoricalBulk(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/adherence/historical/bulk', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Add an adherence explanation for the requested user
+	 * 
+	 * @param {String} agentId The ID of the agent to query
+	 * @param {Object} body The request body
+	 */
+	postWorkforcemanagementAgentAdherenceExplanations(agentId, body) { 
+		// verify the required parameter 'agentId' is set
+		if (agentId === undefined || agentId === null) {
+			throw 'Missing the required parameter "agentId" when calling postWorkforcemanagementAgentAdherenceExplanations';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postWorkforcemanagementAgentAdherenceExplanations';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/agents/{agentId}/adherence/explanations', 
+			'POST', 
+			{ 'agentId': agentId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Query adherence explanations for the given agent across a specified range
+	 * 
+	 * @param {String} agentId The ID of the agent to query
+	 * @param {Object} body The request body
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
+	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
+	 */
+	postWorkforcemanagementAgentAdherenceExplanationsQuery(agentId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'agentId' is set
+		if (agentId === undefined || agentId === null) {
+			throw 'Missing the required parameter "agentId" when calling postWorkforcemanagementAgentAdherenceExplanationsQuery';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postWorkforcemanagementAgentAdherenceExplanationsQuery';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/agents/{agentId}/adherence/explanations/query', 
+			'POST', 
+			{ 'agentId': agentId },
+			{ 'forceAsync': opts['forceAsync'],'forceDownloadService': opts['forceDownloadService'] },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Move agents in and out of management unit
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body body
+	 */
+	postWorkforcemanagementAgents(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/agents', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Query integrations for agents
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body body
+	 */
+	postWorkforcemanagementAgentsIntegrationsHrisQuery(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/agents/integrations/hris/query', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get agent possible work shifts for requested time frame
+	 * 
+	 * @param {Object} body body
+	 */
+	postWorkforcemanagementAgentsMePossibleworkshifts(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postWorkforcemanagementAgentsMePossibleworkshifts';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/agents/me/possibleworkshifts', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2421,13 +3247,13 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/agentschedules/mine', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			opts['body'], 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2435,7 +3261,7 @@ class WorkforceManagementApi {
 	/**
 	 * Create a new activity code
 	 * 
-	 * @param {String} businessUnitId The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user.
+	 * @param {String} businessUnitId The ID of the business unit, or 'mine' for the business unit of the logged-in user.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body body
 	 */
@@ -2450,13 +3276,48 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes', 
 			'POST', 
-			{ 'businessUnitId': businessUnitId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'businessUnitId': businessUnitId },
+			{  },
+			{  },
+			{  },
 			opts['body'], 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Query adherence explanations across an entire business unit for the requested period
+	 * 
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {Object} body The request body
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
+	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
+	 */
+	postWorkforcemanagementBusinessunitAdherenceExplanationsQuery(businessUnitId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null) {
+			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitAdherenceExplanationsQuery';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitAdherenceExplanationsQuery';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/explanations/query', 
+			'POST', 
+			{ 'businessUnitId': businessUnitId },
+			{ 'forceAsync': opts['forceAsync'],'forceDownloadService': opts['forceDownloadService'] },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2466,9 +3327,9 @@ class WorkforceManagementApi {
 	 * 
 	 * @param {String} businessUnitId The ID of the business unit
 	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
+	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
 	 * @param {Object} opts.body body
-	 * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
-	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service.  For testing/app development purposes
 	 */
 	postWorkforcemanagementBusinessunitAgentschedulesSearch(businessUnitId, opts) { 
 		opts = opts || {};
@@ -2481,13 +3342,13 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/agentschedules/search', 
 			'POST', 
-			{ 'businessUnitId': businessUnitId }, 
-			{ 'forceAsync': opts['forceAsync'],'forceDownloadService': opts['forceDownloadService'] }, 
-			{  }, 
-			{  }, 
+			{ 'businessUnitId': businessUnitId },
+			{ 'forceAsync': opts['forceAsync'],'forceDownloadService': opts['forceDownloadService'] },
+			{  },
+			{  },
 			opts['body'], 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2495,7 +3356,7 @@ class WorkforceManagementApi {
 	/**
 	 * Get intraday data for the given date for the requested planningGroupIds
 	 * 
-	 * @param {String} businessUnitId The business unit ID of the business unit
+	 * @param {String} businessUnitId The ID of the business unit
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
 	 * @param {Object} opts.body body
@@ -2511,13 +3372,13 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/intraday', 
 			'POST', 
-			{ 'businessUnitId': businessUnitId }, 
-			{ 'forceAsync': opts['forceAsync'] }, 
-			{  }, 
-			{  }, 
+			{ 'businessUnitId': businessUnitId },
+			{ 'forceAsync': opts['forceAsync'] },
+			{  },
+			{  },
 			opts['body'], 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2540,13 +3401,13 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups', 
 			'POST', 
-			{ 'businessUnitId': businessUnitId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'businessUnitId': businessUnitId },
+			{  },
+			{  },
+			{  },
 			opts['body'], 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2569,13 +3430,13 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates', 
 			'POST', 
-			{ 'businessUnitId': businessUnitId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'businessUnitId': businessUnitId },
+			{  },
+			{  },
+			{  },
 			opts['body'], 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2588,8 +3449,8 @@ class WorkforceManagementApi {
 	 * @param {String} scheduleId The ID of the schedule
 	 * @param {Object} body body
 	 * @param {Object} opts Optional parameters
-	 * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
-	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service.  For testing/app development purposes
+	 * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
+	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
 	 */
 	postWorkforcemanagementBusinessunitWeekScheduleAgentschedulesQuery(businessUnitId, weekId, scheduleId, body, opts) { 
 		opts = opts || {};
@@ -2614,13 +3475,13 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/agentschedules/query', 
 			'POST', 
-			{ 'businessUnitId': businessUnitId,'weekId': weekId,'scheduleId': scheduleId }, 
-			{ 'forceAsync': opts['forceAsync'],'forceDownloadService': opts['forceDownloadService'] }, 
-			{  }, 
-			{  }, 
+			{ 'businessUnitId': businessUnitId,'weekId': weekId,'scheduleId': scheduleId },
+			{ 'forceAsync': opts['forceAsync'],'forceDownloadService': opts['forceDownloadService'] },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2654,13 +3515,13 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/copy', 
 			'POST', 
-			{ 'businessUnitId': businessUnitId,'weekId': weekId,'scheduleId': scheduleId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'businessUnitId': businessUnitId,'weekId': weekId,'scheduleId': scheduleId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2694,13 +3555,93 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/reschedule', 
 			'POST', 
-			{ 'businessUnitId': businessUnitId,'weekId': weekId,'scheduleId': scheduleId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'businessUnitId': businessUnitId,'weekId': weekId,'scheduleId': scheduleId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Starts processing a schedule update
+	 * Call after uploading the schedule data to the url supplied by the /update/uploadurl route
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} weekId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {String} scheduleId The ID of the schedule
+	 * @param {Object} body body
+	 */
+	postWorkforcemanagementBusinessunitWeekScheduleUpdate(businessUnitId, weekId, scheduleId, body) { 
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null) {
+			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitWeekScheduleUpdate';
+		}
+		// verify the required parameter 'weekId' is set
+		if (weekId === undefined || weekId === null) {
+			throw 'Missing the required parameter "weekId" when calling postWorkforcemanagementBusinessunitWeekScheduleUpdate';
+		}
+		// verify the required parameter 'scheduleId' is set
+		if (scheduleId === undefined || scheduleId === null) {
+			throw 'Missing the required parameter "scheduleId" when calling postWorkforcemanagementBusinessunitWeekScheduleUpdate';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitWeekScheduleUpdate';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/update', 
+			'POST', 
+			{ 'businessUnitId': businessUnitId,'weekId': weekId,'scheduleId': scheduleId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Creates a signed upload URL for updating a schedule
+	 * Once the upload is complete, call the /{scheduleId}/update route to start the schedule update process
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} weekId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {String} scheduleId The ID of the schedule
+	 * @param {Object} body body
+	 */
+	postWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurl(businessUnitId, weekId, scheduleId, body) { 
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null) {
+			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurl';
+		}
+		// verify the required parameter 'weekId' is set
+		if (weekId === undefined || weekId === null) {
+			throw 'Missing the required parameter "weekId" when calling postWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurl';
+		}
+		// verify the required parameter 'scheduleId' is set
+		if (scheduleId === undefined || scheduleId === null) {
+			throw 'Missing the required parameter "scheduleId" when calling postWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurl';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurl';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/update/uploadurl', 
+			'POST', 
+			{ 'businessUnitId': businessUnitId,'weekId': weekId,'scheduleId': scheduleId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2729,13 +3670,13 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules', 
 			'POST', 
-			{ 'businessUnitId': businessUnitId,'weekId': weekId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'businessUnitId': businessUnitId,'weekId': weekId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2764,13 +3705,83 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/generate', 
 			'POST', 
-			{ 'businessUnitId': businessUnitId,'weekId': weekId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'businessUnitId': businessUnitId,'weekId': weekId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Starts processing a schedule import
+	 * Call after uploading the schedule data to the url supplied by the /import/uploadurl route
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} weekId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {Object} body 
+	 */
+	postWorkforcemanagementBusinessunitWeekSchedulesImport(businessUnitId, weekId, body) { 
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null) {
+			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitWeekSchedulesImport';
+		}
+		// verify the required parameter 'weekId' is set
+		if (weekId === undefined || weekId === null) {
+			throw 'Missing the required parameter "weekId" when calling postWorkforcemanagementBusinessunitWeekSchedulesImport';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitWeekSchedulesImport';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/import', 
+			'POST', 
+			{ 'businessUnitId': businessUnitId,'weekId': weekId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Creates a signed upload URL for importing a schedule
+	 * Once the upload is complete, call the /import route to start the schedule import process
+	 * @param {String} businessUnitId The ID of the business unit
+	 * @param {String} weekId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {Object} body body
+	 */
+	postWorkforcemanagementBusinessunitWeekSchedulesImportUploadurl(businessUnitId, weekId, body) { 
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null) {
+			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitWeekSchedulesImportUploadurl';
+		}
+		// verify the required parameter 'weekId' is set
+		if (weekId === undefined || weekId === null) {
+			throw 'Missing the required parameter "weekId" when calling postWorkforcemanagementBusinessunitWeekSchedulesImportUploadurl';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitWeekSchedulesImportUploadurl';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/import/uploadurl', 
+			'POST', 
+			{ 'businessUnitId': businessUnitId,'weekId': weekId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2778,7 +3789,7 @@ class WorkforceManagementApi {
 	/**
 	 * Copy a short term forecast
 	 * 
-	 * @param {String} businessUnitId The business unit ID of the business unit to which the forecast belongs
+	 * @param {String} businessUnitId The ID of the business unit to which the forecast belongs
 	 * @param {String} weekDateId The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {String} forecastId The ID of the forecast to copy
 	 * @param {Object} body body
@@ -2808,13 +3819,13 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/copy', 
 			'POST', 
-			{ 'businessUnitId': businessUnitId,'weekDateId': weekDateId,'forecastId': forecastId }, 
-			{ 'forceAsync': opts['forceAsync'] }, 
-			{  }, 
-			{  }, 
+			{ 'businessUnitId': businessUnitId,'weekDateId': weekDateId,'forecastId': forecastId },
+			{ 'forceAsync': opts['forceAsync'] },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2822,9 +3833,9 @@ class WorkforceManagementApi {
 	/**
 	 * Generate a short term forecast
 	 * 
-	 * @param {String} businessUnitId The business unit ID of the business unit to which the forecast belongs
+	 * @param {String} businessUnitId The ID of the business unit to which the forecast belongs
 	 * @param {String} weekDateId The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-	 * @param {Object} body 
+	 * @param {Object} body body
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
 	 */
@@ -2847,13 +3858,83 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/generate', 
 			'POST', 
-			{ 'businessUnitId': businessUnitId,'weekDateId': weekDateId }, 
-			{ 'forceAsync': opts['forceAsync'] }, 
-			{  }, 
-			{  }, 
+			{ 'businessUnitId': businessUnitId,'weekDateId': weekDateId },
+			{ 'forceAsync': opts['forceAsync'] },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Starts importing the uploaded short term forecast
+	 * Call after uploading the forecast data to the url supplied by the /import/uploadurl route
+	 * @param {String} businessUnitId The ID of the business unit to which the forecast belongs
+	 * @param {String} weekDateId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {Object} body body
+	 */
+	postWorkforcemanagementBusinessunitWeekShorttermforecastsImport(businessUnitId, weekDateId, body) { 
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null) {
+			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitWeekShorttermforecastsImport';
+		}
+		// verify the required parameter 'weekDateId' is set
+		if (weekDateId === undefined || weekDateId === null) {
+			throw 'Missing the required parameter "weekDateId" when calling postWorkforcemanagementBusinessunitWeekShorttermforecastsImport';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitWeekShorttermforecastsImport';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/import', 
+			'POST', 
+			{ 'businessUnitId': businessUnitId,'weekDateId': weekDateId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Creates a signed upload URL for importing a short term forecast
+	 * Once the upload is complete, call the /import route to start the short term forecast import process
+	 * @param {String} businessUnitId The ID of the business unit to which the forecast belongs
+	 * @param {String} weekDateId First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {Object} body body
+	 */
+	postWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploadurl(businessUnitId, weekDateId, body) { 
+		// verify the required parameter 'businessUnitId' is set
+		if (businessUnitId === undefined || businessUnitId === null) {
+			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploadurl';
+		}
+		// verify the required parameter 'weekDateId' is set
+		if (weekDateId === undefined || weekDateId === null) {
+			throw 'Missing the required parameter "weekDateId" when calling postWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploadurl';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploadurl';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/import/uploadurl', 
+			'POST', 
+			{ 'businessUnitId': businessUnitId,'weekDateId': weekDateId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2871,13 +3952,13 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/businessunits', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			opts['body'], 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2886,7 +3967,7 @@ class WorkforceManagementApi {
 	 * Create a newly generated calendar link for the current user; if the current user has previously generated one, the generated link will be returned
 	 * 
 	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.language A language tag (which is sometimes referred to as a \&quot;locale identifier\&quot;) to use to localize default activity code names in the ics-formatted calendar (default to en-US)
+	 * @param {String} opts.language A language tag (which is sometimes referred to as a locale identifier) to use to localize default activity code names in the ics-formatted calendar (default to en-US)
 	 */
 	postWorkforcemanagementCalendarUrlIcs(opts) { 
 		opts = opts || {};
@@ -2895,13 +3976,13 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/calendar/url/ics', 
 			'POST', 
-			{  }, 
-			{ 'language': opts['language'] }, 
-			{  }, 
-			{  }, 
+			{  },
+			{ 'language': opts['language'] },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2915,13 +3996,13 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/historicaldata/deletejob', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			null, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2939,13 +4020,38 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/historicaldata/validate', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			opts['body'], 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get list of time off types configured in integration
+	 * 
+	 * @param {String} hrisIntegrationId The ID of the HRIS integration for which time off types are queried.
+	 */
+	postWorkforcemanagementIntegrationsHriTimeofftypesJobs(hrisIntegrationId) { 
+		// verify the required parameter 'hrisIntegrationId' is set
+		if (hrisIntegrationId === undefined || hrisIntegrationId === null) {
+			throw 'Missing the required parameter "hrisIntegrationId" when calling postWorkforcemanagementIntegrationsHriTimeofftypesJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/integrations/hris/{hrisIntegrationId}/timeofftypes/jobs', 
+			'POST', 
+			{ 'hrisIntegrationId': hrisIntegrationId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2953,11 +4059,11 @@ class WorkforceManagementApi {
 	/**
 	 * Query published schedules for given given time range for set of users
 	 * 
-	 * @param {String} managementUnitId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
+	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes
 	 * @param {Object} opts.body body
-	 * @param {Boolean} opts.forceAsync Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
-	 * @param {Boolean} opts.forceDownloadService Force the result of this operation to be sent via download service.  For testing/app development purposes
 	 */
 	postWorkforcemanagementManagementunitAgentschedulesSearch(managementUnitId, opts) { 
 		opts = opts || {};
@@ -2970,13 +4076,13 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/agentschedules/search', 
 			'POST', 
-			{ 'managementUnitId': managementUnitId }, 
-			{ 'forceAsync': opts['forceAsync'],'forceDownloadService': opts['forceDownloadService'] }, 
-			{  }, 
-			{  }, 
+			{ 'managementUnitId': managementUnitId },
+			{ 'forceAsync': opts['forceAsync'],'forceDownloadService': opts['forceDownloadService'] },
+			{  },
+			{  },
 			opts['body'], 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -2984,7 +4090,7 @@ class WorkforceManagementApi {
 	/**
 	 * Request a historical adherence report
 	 * The maximum supported range for historical adherence queries is 31 days, or 7 days with includeExceptions = true
-	 * @param {String} managementUnitId The management unit ID of the management unit
+	 * @param {String} managementUnitId The ID of the management unit
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body body
 	 */
@@ -2999,13 +4105,13 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/historicaladherencequery', 
 			'POST', 
-			{ 'managementUnitId': managementUnitId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'managementUnitId': managementUnitId },
+			{  },
+			{  },
+			{  },
 			opts['body'], 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3013,7 +4119,7 @@ class WorkforceManagementApi {
 	/**
 	 * Move the requested management unit to a new business unit
 	 * Returns status 200 if the management unit is already in the requested business unit
-	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body body
 	 */
@@ -3028,13 +4134,13 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/move', 
 			'POST', 
-			{ 'managementUnitId': managementUnitId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'managementUnitId': managementUnitId },
+			{  },
+			{  },
+			{  },
 			opts['body'], 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3042,9 +4148,10 @@ class WorkforceManagementApi {
 	/**
 	 * Query published schedules for given given time range for set of users
 	 * 
-	 * @param {String} managementUnitId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body body
+	 * @deprecated
 	 */
 	postWorkforcemanagementManagementunitSchedulesSearch(managementUnitId, opts) { 
 		opts = opts || {};
@@ -3057,13 +4164,129 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/schedules/search', 
 			'POST', 
-			{ 'managementUnitId': managementUnitId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'managementUnitId': managementUnitId },
+			{  },
+			{  },
+			{  },
 			opts['body'], 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Request a historical shrinkage report
+	 * The maximum supported range for historical shrinkage queries is up to 32 days. Historical Shrinkage for a given date range can be queried in two modes - granular and aggregated. To see granular shrinkage information, provide granularity in the request body. 
+	 * @param {String} managementUnitId The ID of the management unit
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body body
+	 */
+	postWorkforcemanagementManagementunitShrinkageJobs(managementUnitId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'managementUnitId' is set
+		if (managementUnitId === undefined || managementUnitId === null) {
+			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitShrinkageJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/shrinkage/jobs', 
+			'POST', 
+			{ 'managementUnitId': managementUnitId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Creates a new time off limit object under management unit.
+	 * Only one limit object is allowed under management unit, so an attempt to create second object will fail.
+	 * @param {String} managementUnitId The ID of the management unit.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body body
+	 */
+	postWorkforcemanagementManagementunitTimeofflimits(managementUnitId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'managementUnitId' is set
+		if (managementUnitId === undefined || managementUnitId === null) {
+			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitTimeofflimits';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits', 
+			'POST', 
+			{ 'managementUnitId': managementUnitId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Retrieves time off limit related values based on a given set of filters.
+	 * 
+	 * @param {String} managementUnitId The ID of the management unit.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body body
+	 */
+	postWorkforcemanagementManagementunitTimeofflimitsValuesQuery(managementUnitId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'managementUnitId' is set
+		if (managementUnitId === undefined || managementUnitId === null) {
+			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitTimeofflimitsValuesQuery';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/values/query', 
+			'POST', 
+			{ 'managementUnitId': managementUnitId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Creates a new time off plan
+	 * 
+	 * @param {String} managementUnitId The ID of the management unit
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body body
+	 */
+	postWorkforcemanagementManagementunitTimeoffplans(managementUnitId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'managementUnitId' is set
+		if (managementUnitId === undefined || managementUnitId === null) {
+			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitTimeoffplans';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans', 
+			'POST', 
+			{ 'managementUnitId': managementUnitId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3071,7 +4294,7 @@ class WorkforceManagementApi {
 	/**
 	 * Create a new time off request
 	 * 
-	 * @param {String} managementUnitId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body body
 	 */
@@ -3086,13 +4309,42 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests', 
 			'POST', 
-			{ 'managementUnitId': managementUnitId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'managementUnitId': managementUnitId },
+			{  },
+			{  },
+			{  },
 			opts['body'], 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Retrieves integration statuses for a list of time off requests
+	 * 
+	 * @param {String} managementUnitId The ID of the management unit.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body body
+	 */
+	postWorkforcemanagementManagementunitTimeoffrequestsIntegrationstatusQuery(managementUnitId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'managementUnitId' is set
+		if (managementUnitId === undefined || managementUnitId === null) {
+			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitTimeoffrequestsIntegrationstatusQuery';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/integrationstatus/query', 
+			'POST', 
+			{ 'managementUnitId': managementUnitId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3100,7 +4352,7 @@ class WorkforceManagementApi {
 	/**
 	 * Fetches time off requests matching the conditions specified in the request body
 	 * Request body requires one of the following: User ID is specified, statuses == [Pending] or date range to be specified and less than or equal to 33 days.  All other fields are filters
-	 * @param {String} managementUnitId The muId of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body body
 	 */
@@ -3115,13 +4367,146 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/query', 
 			'POST', 
-			{ 'managementUnitId': managementUnitId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'managementUnitId': managementUnitId },
+			{  },
+			{  },
+			{  },
 			opts['body'], 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Retrieves daily waitlist position for a list of time off requests
+	 * 
+	 * @param {String} managementUnitId The ID of the management unit.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body body
+	 */
+	postWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositionsQuery(managementUnitId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'managementUnitId' is set
+		if (managementUnitId === undefined || managementUnitId === null) {
+			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositionsQuery';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/waitlistpositions/query', 
+			'POST', 
+			{ 'managementUnitId': managementUnitId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Query time off balances for a given user for specified activity code and dates
+	 * 
+	 * @param {String} managementUnitId The ID of the management unit
+	 * @param {String} userId The ID of the user
+	 * @param {Object} body The request body
+	 */
+	postWorkforcemanagementManagementunitUserTimeoffbalanceJobs(managementUnitId, userId, body) { 
+		// verify the required parameter 'managementUnitId' is set
+		if (managementUnitId === undefined || managementUnitId === null) {
+			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitUserTimeoffbalanceJobs';
+		}
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null) {
+			throw 'Missing the required parameter "userId" when calling postWorkforcemanagementManagementunitUserTimeoffbalanceJobs';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postWorkforcemanagementManagementunitUserTimeoffbalanceJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffbalance/jobs', 
+			'POST', 
+			{ 'managementUnitId': managementUnitId,'userId': userId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Query time off balances for dates spanned by a given time off request
+	 * 
+	 * @param {String} managementUnitId The ID of the management unit.
+	 * @param {String} userId The userId to whom the time off request applies.
+	 * @param {String} timeOffRequestId The time off request id.
+	 */
+	postWorkforcemanagementManagementunitUserTimeoffrequestTimeoffbalanceJobs(managementUnitId, userId, timeOffRequestId) { 
+		// verify the required parameter 'managementUnitId' is set
+		if (managementUnitId === undefined || managementUnitId === null) {
+			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitUserTimeoffrequestTimeoffbalanceJobs';
+		}
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null) {
+			throw 'Missing the required parameter "userId" when calling postWorkforcemanagementManagementunitUserTimeoffrequestTimeoffbalanceJobs';
+		}
+		// verify the required parameter 'timeOffRequestId' is set
+		if (timeOffRequestId === undefined || timeOffRequestId === null) {
+			throw 'Missing the required parameter "timeOffRequestId" when calling postWorkforcemanagementManagementunitUserTimeoffrequestTimeoffbalanceJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/{timeOffRequestId}/timeoffbalance/jobs', 
+			'POST', 
+			{ 'managementUnitId': managementUnitId,'userId': userId,'timeOffRequestId': timeOffRequestId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Estimates available time off for an agent
+	 * 
+	 * @param {String} managementUnitId The ID of the management unit
+	 * @param {String} userId The id of the user for whom the time off request estimate is requested
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body body
+	 */
+	postWorkforcemanagementManagementunitUserTimeoffrequestsEstimate(managementUnitId, userId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'managementUnitId' is set
+		if (managementUnitId === undefined || managementUnitId === null) {
+			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitUserTimeoffrequestsEstimate';
+		}
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null) {
+			throw 'Missing the required parameter "userId" when calling postWorkforcemanagementManagementunitUserTimeoffrequestsEstimate';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/estimate', 
+			'POST', 
+			{ 'managementUnitId': managementUnitId,'userId': userId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3129,12 +4514,12 @@ class WorkforceManagementApi {
 	/**
 	 * Matches a shift trade. This route can only be called by the receiving agent
 	 * 
-	 * @param {String} managementUnitId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 	 * @param {String} weekDateId The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-	 * @param {Object} body body
 	 * @param {String} tradeId The ID of the shift trade to update
+	 * @param {Object} body body
 	 */
-	postWorkforcemanagementManagementunitWeekShifttradeMatch(managementUnitId, weekDateId, body, tradeId) { 
+	postWorkforcemanagementManagementunitWeekShifttradeMatch(managementUnitId, weekDateId, tradeId, body) { 
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null) {
 			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitWeekShifttradeMatch';
@@ -3143,25 +4528,25 @@ class WorkforceManagementApi {
 		if (weekDateId === undefined || weekDateId === null) {
 			throw 'Missing the required parameter "weekDateId" when calling postWorkforcemanagementManagementunitWeekShifttradeMatch';
 		}
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postWorkforcemanagementManagementunitWeekShifttradeMatch';
-		}
 		// verify the required parameter 'tradeId' is set
 		if (tradeId === undefined || tradeId === null) {
 			throw 'Missing the required parameter "tradeId" when calling postWorkforcemanagementManagementunitWeekShifttradeMatch';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postWorkforcemanagementManagementunitWeekShifttradeMatch';
 		}
 
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/{tradeId}/match', 
 			'POST', 
-			{ 'managementUnitId': managementUnitId,'weekDateId': weekDateId,'tradeId': tradeId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'managementUnitId': managementUnitId,'weekDateId': weekDateId,'tradeId': tradeId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3169,7 +4554,7 @@ class WorkforceManagementApi {
 	/**
 	 * Adds a shift trade
 	 * 
-	 * @param {String} managementUnitId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 	 * @param {String} weekDateId The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {Object} body body
 	 */
@@ -3190,13 +4575,13 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades', 
 			'POST', 
-			{ 'managementUnitId': managementUnitId,'weekDateId': weekDateId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'managementUnitId': managementUnitId,'weekDateId': weekDateId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3204,7 +4589,7 @@ class WorkforceManagementApi {
 	/**
 	 * Searches for potential shift trade matches for the current agent
 	 * 
-	 * @param {String} managementUnitId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 	 * @param {String} weekDateId The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {Object} body body
 	 */
@@ -3225,21 +4610,21 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/search', 
 			'POST', 
-			{ 'managementUnitId': managementUnitId,'weekDateId': weekDateId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'managementUnitId': managementUnitId,'weekDateId': weekDateId },
+			{  },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
 
 	/**
 	 * Updates the state of a batch of shift trades
-	 * Admin functionality is not supported with \&quot;mine\&quot;.
-	 * @param {String} managementUnitId The management unit ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * Admin functionality is not supported with "mine".
+	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 	 * @param {String} weekDateId The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 	 * @param {Object} body body
 	 * @param {Object} opts Optional parameters
@@ -3264,13 +4649,13 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/state/bulk', 
 			'POST', 
-			{ 'managementUnitId': managementUnitId,'weekDateId': weekDateId }, 
-			{ 'forceAsync': opts['forceAsync'] }, 
-			{  }, 
-			{  }, 
+			{ 'managementUnitId': managementUnitId,'weekDateId': weekDateId },
+			{ 'forceAsync': opts['forceAsync'] },
+			{  },
+			{  },
 			body, 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3278,7 +4663,7 @@ class WorkforceManagementApi {
 	/**
 	 * Create a copy of work plan
 	 * 
-	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 	 * @param {String} workPlanId The ID of the work plan to create a copy
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body body
@@ -3298,13 +4683,13 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId}/copy', 
 			'POST', 
-			{ 'managementUnitId': managementUnitId,'workPlanId': workPlanId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'managementUnitId': managementUnitId,'workPlanId': workPlanId },
+			{  },
+			{  },
+			{  },
 			opts['body'], 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3312,11 +4697,11 @@ class WorkforceManagementApi {
 	/**
 	 * Validate Work Plan
 	 * 
-	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
-	 * @param {String} workPlanId The ID of the work plan to validate. For new work plan, use the word &#39;new&#39; for the ID.
+	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+	 * @param {String} workPlanId The ID of the work plan to validate. For new work plan, use the word 'new' for the ID.
 	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body body
 	 * @param {Array.<String>} opts.expand 
+	 * @param {Object} opts.body body
 	 */
 	postWorkforcemanagementManagementunitWorkplanValidate(managementUnitId, workPlanId, opts) { 
 		opts = opts || {};
@@ -3333,13 +4718,13 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId}/validate', 
 			'POST', 
-			{ 'managementUnitId': managementUnitId,'workPlanId': workPlanId }, 
-			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') }, 
-			{  }, 
-			{  }, 
+			{ 'managementUnitId': managementUnitId,'workPlanId': workPlanId },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
 			opts['body'], 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3347,7 +4732,7 @@ class WorkforceManagementApi {
 	/**
 	 * Create a copy of work plan rotation
 	 * 
-	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 	 * @param {String} workPlanRotationId The ID of the work plan rotation to create a copy
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body body
@@ -3367,13 +4752,13 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations/{workPlanRotationId}/copy', 
 			'POST', 
-			{ 'managementUnitId': managementUnitId,'workPlanRotationId': workPlanRotationId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'managementUnitId': managementUnitId,'workPlanRotationId': workPlanRotationId },
+			{  },
+			{  },
+			{  },
 			opts['body'], 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3381,7 +4766,7 @@ class WorkforceManagementApi {
 	/**
 	 * Create a new work plan rotation
 	 * 
-	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body body
 	 */
@@ -3396,13 +4781,13 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations', 
 			'POST', 
-			{ 'managementUnitId': managementUnitId }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{ 'managementUnitId': managementUnitId },
+			{  },
+			{  },
+			{  },
 			opts['body'], 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3410,10 +4795,10 @@ class WorkforceManagementApi {
 	/**
 	 * Create a new work plan
 	 * 
-	 * @param {String} managementUnitId The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user.
+	 * @param {String} managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body body
 	 * @param {Object} opts.validationMode Allows to create work plan even if the validation result is invalid
+	 * @param {Object} opts.body body
 	 */
 	postWorkforcemanagementManagementunitWorkplans(managementUnitId, opts) { 
 		opts = opts || {};
@@ -3426,13 +4811,13 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans', 
 			'POST', 
-			{ 'managementUnitId': managementUnitId }, 
-			{ 'validationMode': opts['validationMode'] }, 
-			{  }, 
-			{  }, 
+			{ 'managementUnitId': managementUnitId },
+			{ 'validationMode': opts['validationMode'] },
+			{  },
+			{  },
 			opts['body'], 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3450,13 +4835,13 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/managementunits', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			opts['body'], 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3474,13 +4859,13 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/notifications/update', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			opts['body'], 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3490,6 +4875,7 @@ class WorkforceManagementApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body body
+	 * @deprecated
 	 */
 	postWorkforcemanagementSchedules(opts) { 
 		opts = opts || {};
@@ -3498,13 +4884,120 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/schedules', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			opts['body'], 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Request a teams historical adherence report
+	 * The maximum supported range for historical adherence queries is 31 days, or 7 days with includeExceptions = true
+	 * @param {String} teamId The ID of the team
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body body
+	 */
+	postWorkforcemanagementTeamAdherenceHistorical(teamId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'teamId' is set
+		if (teamId === undefined || teamId === null) {
+			throw 'Missing the required parameter "teamId" when calling postWorkforcemanagementTeamAdherenceHistorical';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/teams/{teamId}/adherence/historical', 
+			'POST', 
+			{ 'teamId': teamId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Request a historical shrinkage report
+	 * The maximum supported range for historical shrinkage queries is up to 32 days
+	 * @param {String} teamId The ID of the team
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body body
+	 */
+	postWorkforcemanagementTeamShrinkageJobs(teamId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'teamId' is set
+		if (teamId === undefined || teamId === null) {
+			throw 'Missing the required parameter "teamId" when calling postWorkforcemanagementTeamShrinkageJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/teams/{teamId}/shrinkage/jobs', 
+			'POST', 
+			{ 'teamId': teamId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Query time off balances for the current user for specified activity code and dates
+	 * 
+	 * @param {Object} body The request body
+	 */
+	postWorkforcemanagementTimeoffbalanceJobs(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postWorkforcemanagementTimeoffbalanceJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/timeoffbalance/jobs', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Queries available time off for the current user
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body body
+	 */
+	postWorkforcemanagementTimeofflimitsAvailableQuery(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/timeofflimits/available/query', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}
@@ -3522,13 +5015,125 @@ class WorkforceManagementApi {
 		return this.apiClient.callApi(
 			'/api/v2/workforcemanagement/timeoffrequests', 
 			'POST', 
-			{  }, 
-			{  }, 
-			{  }, 
-			{  }, 
+			{  },
+			{  },
+			{  },
+			{  },
 			opts['body'], 
 			['PureCloud OAuth'], 
-			['application/json'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Estimates available time off for current user
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body body
+	 */
+	postWorkforcemanagementTimeoffrequestsEstimate(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/timeoffrequests/estimate', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Retrieves integration statuses for a list of current user time off requests
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body body
+	 */
+	postWorkforcemanagementTimeoffrequestsIntegrationstatusQuery(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/timeoffrequests/integrationstatus/query', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update integrations for agent
+	 * 
+	 * @param {String} agentId The ID of the agent
+	 * @param {Object} body body
+	 */
+	putWorkforcemanagementAgentIntegrationsHris(agentId, body) { 
+		// verify the required parameter 'agentId' is set
+		if (agentId === undefined || agentId === null) {
+			throw 'Missing the required parameter "agentId" when calling putWorkforcemanagementAgentIntegrationsHris';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putWorkforcemanagementAgentIntegrationsHris';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/agents/{agentId}/integrations/hris', 
+			'PUT', 
+			{ 'agentId': agentId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Sets daily values for a date range of time off limit object
+	 * Note that only limit daily values can be set through API, allocated and waitlisted values are read-only for time off limit API
+	 * @param {String} managementUnitId The ID of the management unit.
+	 * @param {String} timeOffLimitId The ID of the time off limit object to set values for
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body body
+	 */
+	putWorkforcemanagementManagementunitTimeofflimitValues(managementUnitId, timeOffLimitId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'managementUnitId' is set
+		if (managementUnitId === undefined || managementUnitId === null) {
+			throw 'Missing the required parameter "managementUnitId" when calling putWorkforcemanagementManagementunitTimeofflimitValues';
+		}
+		// verify the required parameter 'timeOffLimitId' is set
+		if (timeOffLimitId === undefined || timeOffLimitId === null) {
+			throw 'Missing the required parameter "timeOffLimitId" when calling putWorkforcemanagementManagementunitTimeofflimitValues';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/{timeOffLimitId}/values', 
+			'PUT', 
+			{ 'managementUnitId': managementUnitId,'timeOffLimitId': timeOffLimitId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
 			['application/json']
 		);
 	}

@@ -1,27 +1,32 @@
----
-title: WidgetsApi
----
+# WidgetsApi
+
 # platformClient.WidgetsApi
 
 All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-[**deleteWidgetsDeployment**](WidgetsApi.html#deleteWidgetsDeployment) | **DELETE** /api/v2/widgets/deployments/{deploymentId} | Delete a Widget deployment
-[**getWidgetsDeployment**](WidgetsApi.html#getWidgetsDeployment) | **GET** /api/v2/widgets/deployments/{deploymentId} | Get a Widget deployment
-[**getWidgetsDeployments**](WidgetsApi.html#getWidgetsDeployments) | **GET** /api/v2/widgets/deployments | List Widget deployments
-[**postWidgetsDeployments**](WidgetsApi.html#postWidgetsDeployments) | **POST** /api/v2/widgets/deployments | Create Widget deployment
-[**putWidgetsDeployment**](WidgetsApi.html#putWidgetsDeployment) | **PUT** /api/v2/widgets/deployments/{deploymentId} | Update a Widget deployment
-{: class="table table-striped"}
+[**deleteWidgetsDeployment**](WidgetsApi#deleteWidgetsDeployment) | **DELETE** /api/v2/widgets/deployments/{deploymentId} | Delete a Widget deployment
+[**getWidgetsDeployment**](WidgetsApi#getWidgetsDeployment) | **GET** /api/v2/widgets/deployments/{deploymentId} | Get a Widget deployment
+[**getWidgetsDeployments**](WidgetsApi#getWidgetsDeployments) | **GET** /api/v2/widgets/deployments | List Widget deployments
+[**postWidgetsDeployments**](WidgetsApi#postWidgetsDeployments) | **POST** /api/v2/widgets/deployments | Create Widget deployment
+[**putWidgetsDeployment**](WidgetsApi#putWidgetsDeployment) | **PUT** /api/v2/widgets/deployments/{deploymentId} | Update a Widget deployment
 
-<a name="deleteWidgetsDeployment"></a>
 
-# void deleteWidgetsDeployment(deploymentId)
 
+## deleteWidgetsDeployment
+
+> void deleteWidgetsDeployment(deploymentId)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 DELETE /api/v2/widgets/deployments/{deploymentId}
 
 Delete a Widget deployment
+
+This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/. 
 
 Requires ANY permissions:
 
@@ -36,7 +41,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WidgetsApi();
@@ -59,20 +64,25 @@ apiInstance.deleteWidgetsDeployment(deploymentId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **deploymentId** | **String** | Widget Config Id |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="getWidgetsDeployment"></a>
 
-# WidgetDeployment getWidgetsDeployment(deploymentId)
+## getWidgetsDeployment
 
+> WidgetDeployment getWidgetsDeployment(deploymentId)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 GET /api/v2/widgets/deployments/{deploymentId}
 
 Get a Widget deployment
+
+This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/. 
 
 Requires ANY permissions:
 
@@ -87,7 +97,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WidgetsApi();
@@ -110,20 +120,25 @@ apiInstance.getWidgetsDeployment(deploymentId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **deploymentId** | **String** | Widget Config Id |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **WidgetDeployment**
 
-<a name="getWidgetsDeployments"></a>
 
-# WidgetDeploymentEntityListing getWidgetsDeployments()
+## getWidgetsDeployments
 
+> WidgetDeploymentEntityListing getWidgetsDeployments()
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 GET /api/v2/widgets/deployments
 
 List Widget deployments
+
+This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/. 
 
 Requires ANY permissions:
 
@@ -138,7 +153,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WidgetsApi();
@@ -157,19 +172,24 @@ apiInstance.getWidgetsDeployments()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **WidgetDeploymentEntityListing**
 
-<a name="postWidgetsDeployments"></a>
 
-# WidgetDeployment postWidgetsDeployments(body)
+## postWidgetsDeployments
 
+> WidgetDeployment postWidgetsDeployments(body)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 POST /api/v2/widgets/deployments
 
 Create Widget deployment
+
+This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/. 
 
 Requires ANY permissions:
 
@@ -184,7 +204,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WidgetsApi();
@@ -207,20 +227,25 @@ apiInstance.postWidgetsDeployments(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Deployment |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **WidgetDeployment**
 
-<a name="putWidgetsDeployment"></a>
 
-# WidgetDeployment putWidgetsDeployment(deploymentId, body)
+## putWidgetsDeployment
 
+> WidgetDeployment putWidgetsDeployment(deploymentId, body)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 PUT /api/v2/widgets/deployments/{deploymentId}
 
 Update a Widget deployment
+
+This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/. 
 
 Requires ANY permissions:
 
@@ -235,7 +260,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WidgetsApi();
@@ -260,9 +285,10 @@ apiInstance.putWidgetsDeployment(deploymentId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **deploymentId** | **String** | Widget Config Id |  |
  **body** | **Object** | Deployment |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **WidgetDeployment**
 
+
+_purecloud-platform-client-v2@229.1.0_

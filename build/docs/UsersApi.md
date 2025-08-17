@@ -1,105 +1,173 @@
----
-title: UsersApi
----
+# UsersApi
+
 # platformClient.UsersApi
 
 All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-[**deleteAnalyticsUsersDetailsJob**](UsersApi.html#deleteAnalyticsUsersDetailsJob) | **DELETE** /api/v2/analytics/users/details/jobs/{jobId} | Delete/cancel an async request
-[**deleteAuthorizationSubjectDivisionRole**](UsersApi.html#deleteAuthorizationSubjectDivisionRole) | **DELETE** /api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{roleId} | Delete a grant of a role in a division
-[**deleteRoutingUserUtilization**](UsersApi.html#deleteRoutingUserUtilization) | **DELETE** /api/v2/routing/users/{userId}/utilization | Delete the user's max utilization settings and revert to the organization-wide default.
-[**deleteUser**](UsersApi.html#deleteUser) | **DELETE** /api/v2/users/{userId} | Delete user
-[**deleteUserRoutinglanguage**](UsersApi.html#deleteUserRoutinglanguage) | **DELETE** /api/v2/users/{userId}/routinglanguages/{languageId} | Remove routing language from user
-[**deleteUserRoutingskill**](UsersApi.html#deleteUserRoutingskill) | **DELETE** /api/v2/users/{userId}/routingskills/{skillId} | Remove routing skill from user
-[**deleteUserStationAssociatedstation**](UsersApi.html#deleteUserStationAssociatedstation) | **DELETE** /api/v2/users/{userId}/station/associatedstation | Clear associated station
-[**deleteUserStationDefaultstation**](UsersApi.html#deleteUserStationDefaultstation) | **DELETE** /api/v2/users/{userId}/station/defaultstation | Clear default station
-[**getAnalyticsUsersAggregatesJob**](UsersApi.html#getAnalyticsUsersAggregatesJob) | **GET** /api/v2/analytics/users/aggregates/jobs/{jobId} | Get status for async query for user aggregates
-[**getAnalyticsUsersAggregatesJobResults**](UsersApi.html#getAnalyticsUsersAggregatesJobResults) | **GET** /api/v2/analytics/users/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query
-[**getAnalyticsUsersDetailsJob**](UsersApi.html#getAnalyticsUsersDetailsJob) | **GET** /api/v2/analytics/users/details/jobs/{jobId} | Get status for async query for user details
-[**getAnalyticsUsersDetailsJobResults**](UsersApi.html#getAnalyticsUsersDetailsJobResults) | **GET** /api/v2/analytics/users/details/jobs/{jobId}/results | Fetch a page of results for an async query
-[**getAnalyticsUsersDetailsJobsAvailability**](UsersApi.html#getAnalyticsUsersDetailsJobsAvailability) | **GET** /api/v2/analytics/users/details/jobs/availability | Lookup the datalake availability date and time
-[**getAuthorizationDivisionspermittedMe**](UsersApi.html#getAuthorizationDivisionspermittedMe) | **GET** /api/v2/authorization/divisionspermitted/me | Returns which divisions the current user has the given permission in.
-[**getAuthorizationDivisionspermittedPagedMe**](UsersApi.html#getAuthorizationDivisionspermittedPagedMe) | **GET** /api/v2/authorization/divisionspermitted/paged/me | Returns which divisions the current user has the given permission in.
-[**getAuthorizationDivisionspermittedPagedSubjectId**](UsersApi.html#getAuthorizationDivisionspermittedPagedSubjectId) | **GET** /api/v2/authorization/divisionspermitted/paged/{subjectId} | Returns which divisions the specified user has the given permission in.
-[**getAuthorizationSubject**](UsersApi.html#getAuthorizationSubject) | **GET** /api/v2/authorization/subjects/{subjectId} | Returns a listing of roles and permissions for a user.
-[**getAuthorizationSubjectsMe**](UsersApi.html#getAuthorizationSubjectsMe) | **GET** /api/v2/authorization/subjects/me | Returns a listing of roles and permissions for the currently authenticated user.
-[**getFieldconfig**](UsersApi.html#getFieldconfig) | **GET** /api/v2/fieldconfig | Fetch field config for an entity type
-[**getProfilesUsers**](UsersApi.html#getProfilesUsers) | **GET** /api/v2/profiles/users | Get a user profile listing
-[**getRoutingUserUtilization**](UsersApi.html#getRoutingUserUtilization) | **GET** /api/v2/routing/users/{userId}/utilization | Get the user's max utilization settings.  If not configured, the organization-wide default is returned.
-[**getUser**](UsersApi.html#getUser) | **GET** /api/v2/users/{userId} | Get user.
-[**getUserAdjacents**](UsersApi.html#getUserAdjacents) | **GET** /api/v2/users/{userId}/adjacents | Get adjacents
-[**getUserCallforwarding**](UsersApi.html#getUserCallforwarding) | **GET** /api/v2/users/{userId}/callforwarding | Get a user's CallForwarding
-[**getUserDirectreports**](UsersApi.html#getUserDirectreports) | **GET** /api/v2/users/{userId}/directreports | Get direct reports
-[**getUserFavorites**](UsersApi.html#getUserFavorites) | **GET** /api/v2/users/{userId}/favorites | Deprecated; will be revived with new contract
-[**getUserGeolocation**](UsersApi.html#getUserGeolocation) | **GET** /api/v2/users/{userId}/geolocations/{clientId} | Get a user's Geolocation
-[**getUserOutofoffice**](UsersApi.html#getUserOutofoffice) | **GET** /api/v2/users/{userId}/outofoffice | Get a OutOfOffice
-[**getUserProfile**](UsersApi.html#getUserProfile) | **GET** /api/v2/users/{userId}/profile | Get user profile
-[**getUserProfileskills**](UsersApi.html#getUserProfileskills) | **GET** /api/v2/users/{userId}/profileskills | List profile skills for a user
-[**getUserQueues**](UsersApi.html#getUserQueues) | **GET** /api/v2/users/{userId}/queues | Get queues for user
-[**getUserRoles**](UsersApi.html#getUserRoles) | **GET** /api/v2/users/{subjectId}/roles | Returns a listing of roles and permissions for a user.
-[**getUserRoutinglanguages**](UsersApi.html#getUserRoutinglanguages) | **GET** /api/v2/users/{userId}/routinglanguages | List routing language for user
-[**getUserRoutingskills**](UsersApi.html#getUserRoutingskills) | **GET** /api/v2/users/{userId}/routingskills | List routing skills for user
-[**getUserRoutingstatus**](UsersApi.html#getUserRoutingstatus) | **GET** /api/v2/users/{userId}/routingstatus | Fetch the routing status of a user
-[**getUserSkillgroups**](UsersApi.html#getUserSkillgroups) | **GET** /api/v2/users/{userId}/skillgroups | Get skill groups for a user
-[**getUserState**](UsersApi.html#getUserState) | **GET** /api/v2/users/{userId}/state | Get user state information.
-[**getUserStation**](UsersApi.html#getUserStation) | **GET** /api/v2/users/{userId}/station | Get station information for user
-[**getUserSuperiors**](UsersApi.html#getUserSuperiors) | **GET** /api/v2/users/{userId}/superiors | Get superiors
-[**getUserTrustors**](UsersApi.html#getUserTrustors) | **GET** /api/v2/users/{userId}/trustors | List the organizations that have authorized/trusted the user.
-[**getUsers**](UsersApi.html#getUsers) | **GET** /api/v2/users | Get the list of available users.
-[**getUsersDevelopmentActivities**](UsersApi.html#getUsersDevelopmentActivities) | **GET** /api/v2/users/development/activities | Get list of Development Activities
-[**getUsersDevelopmentActivitiesMe**](UsersApi.html#getUsersDevelopmentActivitiesMe) | **GET** /api/v2/users/development/activities/me | Get list of Development Activities for current user
-[**getUsersDevelopmentActivity**](UsersApi.html#getUsersDevelopmentActivity) | **GET** /api/v2/users/development/activities/{activityId} | Get a Development Activity
-[**getUsersMe**](UsersApi.html#getUsersMe) | **GET** /api/v2/users/me | Get current user details.
-[**getUsersSearch**](UsersApi.html#getUsersSearch) | **GET** /api/v2/users/search | Search users using the q64 value returned from a previous search
-[**patchUser**](UsersApi.html#patchUser) | **PATCH** /api/v2/users/{userId} | Update user
-[**patchUserCallforwarding**](UsersApi.html#patchUserCallforwarding) | **PATCH** /api/v2/users/{userId}/callforwarding | Patch a user's CallForwarding
-[**patchUserGeolocation**](UsersApi.html#patchUserGeolocation) | **PATCH** /api/v2/users/{userId}/geolocations/{clientId} | Patch a user's Geolocation
-[**patchUserQueue**](UsersApi.html#patchUserQueue) | **PATCH** /api/v2/users/{userId}/queues/{queueId} | Join or unjoin a queue for a user
-[**patchUserQueues**](UsersApi.html#patchUserQueues) | **PATCH** /api/v2/users/{userId}/queues | Join or unjoin a set of queues for a user
-[**patchUserRoutinglanguage**](UsersApi.html#patchUserRoutinglanguage) | **PATCH** /api/v2/users/{userId}/routinglanguages/{languageId} | Update routing language proficiency or state.
-[**patchUserRoutinglanguagesBulk**](UsersApi.html#patchUserRoutinglanguagesBulk) | **PATCH** /api/v2/users/{userId}/routinglanguages/bulk | Add bulk routing language to user. Max limit 50 languages
-[**patchUserRoutingskillsBulk**](UsersApi.html#patchUserRoutingskillsBulk) | **PATCH** /api/v2/users/{userId}/routingskills/bulk | Bulk add routing skills to user
-[**patchUsersBulk**](UsersApi.html#patchUsersBulk) | **PATCH** /api/v2/users/bulk | Update bulk acd autoanswer on users
-[**postAnalyticsUsersActivityQuery**](UsersApi.html#postAnalyticsUsersActivityQuery) | **POST** /api/v2/analytics/users/activity/query | Query for user activity observations
-[**postAnalyticsUsersAggregatesJobs**](UsersApi.html#postAnalyticsUsersAggregatesJobs) | **POST** /api/v2/analytics/users/aggregates/jobs | Query for user aggregates asynchronously
-[**postAnalyticsUsersAggregatesQuery**](UsersApi.html#postAnalyticsUsersAggregatesQuery) | **POST** /api/v2/analytics/users/aggregates/query | Query for user aggregates
-[**postAnalyticsUsersDetailsJobs**](UsersApi.html#postAnalyticsUsersDetailsJobs) | **POST** /api/v2/analytics/users/details/jobs | Query for user details asynchronously
-[**postAnalyticsUsersDetailsQuery**](UsersApi.html#postAnalyticsUsersDetailsQuery) | **POST** /api/v2/analytics/users/details/query | Query for user details
-[**postAnalyticsUsersObservationsQuery**](UsersApi.html#postAnalyticsUsersObservationsQuery) | **POST** /api/v2/analytics/users/observations/query | Query for user observations
-[**postAuthorizationSubjectBulkadd**](UsersApi.html#postAuthorizationSubjectBulkadd) | **POST** /api/v2/authorization/subjects/{subjectId}/bulkadd | Bulk-grant roles and divisions to a subject.
-[**postAuthorizationSubjectBulkremove**](UsersApi.html#postAuthorizationSubjectBulkremove) | **POST** /api/v2/authorization/subjects/{subjectId}/bulkremove | Bulk-remove grants from a subject.
-[**postAuthorizationSubjectBulkreplace**](UsersApi.html#postAuthorizationSubjectBulkreplace) | **POST** /api/v2/authorization/subjects/{subjectId}/bulkreplace | Replace subject's roles and divisions with the exact list supplied in the request.
-[**postAuthorizationSubjectDivisionRole**](UsersApi.html#postAuthorizationSubjectDivisionRole) | **POST** /api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{roleId} | Make a grant of a role in a division
-[**postUserExternalid**](UsersApi.html#postUserExternalid) | **POST** /api/v2/users/{userId}/externalid | Create mapping between external identifier and user. Limit 100 per entity.
-[**postUserInvite**](UsersApi.html#postUserInvite) | **POST** /api/v2/users/{userId}/invite | Send an activation email to the user
-[**postUserPassword**](UsersApi.html#postUserPassword) | **POST** /api/v2/users/{userId}/password | Change a users password
-[**postUserRoutinglanguages**](UsersApi.html#postUserRoutinglanguages) | **POST** /api/v2/users/{userId}/routinglanguages | Add routing language to user
-[**postUserRoutingskills**](UsersApi.html#postUserRoutingskills) | **POST** /api/v2/users/{userId}/routingskills | Add routing skill to user
-[**postUsers**](UsersApi.html#postUsers) | **POST** /api/v2/users | Create user
-[**postUsersDevelopmentActivitiesAggregatesQuery**](UsersApi.html#postUsersDevelopmentActivitiesAggregatesQuery) | **POST** /api/v2/users/development/activities/aggregates/query | Retrieve aggregated development activity data
-[**postUsersMePassword**](UsersApi.html#postUsersMePassword) | **POST** /api/v2/users/me/password | Change your password
-[**postUsersSearch**](UsersApi.html#postUsersSearch) | **POST** /api/v2/users/search | Search users
-[**postUsersSearchConversationTarget**](UsersApi.html#postUsersSearchConversationTarget) | **POST** /api/v2/users/search/conversation/target | Search users as conversation targets
-[**postUsersSearchQueuemembersManage**](UsersApi.html#postUsersSearchQueuemembersManage) | **POST** /api/v2/users/search/queuemembers/manage | Search manage queue member
-[**postUsersSearchTeamsAssign**](UsersApi.html#postUsersSearchTeamsAssign) | **POST** /api/v2/users/search/teams/assign | Search users assigned to teams
-[**putRoutingUserUtilization**](UsersApi.html#putRoutingUserUtilization) | **PUT** /api/v2/routing/users/{userId}/utilization | Update the user's max utilization settings.  Include only those media types requiring custom configuration.
-[**putUserCallforwarding**](UsersApi.html#putUserCallforwarding) | **PUT** /api/v2/users/{userId}/callforwarding | Update a user's CallForwarding
-[**putUserOutofoffice**](UsersApi.html#putUserOutofoffice) | **PUT** /api/v2/users/{userId}/outofoffice | Update an OutOfOffice
-[**putUserProfileskills**](UsersApi.html#putUserProfileskills) | **PUT** /api/v2/users/{userId}/profileskills | Update profile skills for a user
-[**putUserRoles**](UsersApi.html#putUserRoles) | **PUT** /api/v2/users/{subjectId}/roles | Sets the user's roles
-[**putUserRoutingskill**](UsersApi.html#putUserRoutingskill) | **PUT** /api/v2/users/{userId}/routingskills/{skillId} | Update routing skill proficiency or state.
-[**putUserRoutingskillsBulk**](UsersApi.html#putUserRoutingskillsBulk) | **PUT** /api/v2/users/{userId}/routingskills/bulk | Replace all routing skills assigned to a user
-[**putUserRoutingstatus**](UsersApi.html#putUserRoutingstatus) | **PUT** /api/v2/users/{userId}/routingstatus | Update the routing status of a user
-[**putUserState**](UsersApi.html#putUserState) | **PUT** /api/v2/users/{userId}/state | Update user state information.
-[**putUserStationAssociatedstationStationId**](UsersApi.html#putUserStationAssociatedstationStationId) | **PUT** /api/v2/users/{userId}/station/associatedstation/{stationId} | Set associated station
-[**putUserStationDefaultstationStationId**](UsersApi.html#putUserStationDefaultstationStationId) | **PUT** /api/v2/users/{userId}/station/defaultstation/{stationId} | Set default station
-{: class="table table-striped"}
+[**deleteAnalyticsUsersAggregatesJob**](UsersApi#deleteAnalyticsUsersAggregatesJob) | **DELETE** /api/v2/analytics/users/aggregates/jobs/{jobId} | Delete/cancel an async request for user aggregates
+[**deleteAnalyticsUsersDetailsJob**](UsersApi#deleteAnalyticsUsersDetailsJob) | **DELETE** /api/v2/analytics/users/details/jobs/{jobId} | Delete/cancel an async request
+[**deleteAuthorizationSubjectDivisionRole**](UsersApi#deleteAuthorizationSubjectDivisionRole) | **DELETE** /api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{roleId} | Delete a grant of a role in a division
+[**deleteRoutingDirectroutingbackupSettingsMe**](UsersApi#deleteRoutingDirectroutingbackupSettingsMe) | **DELETE** /api/v2/routing/directroutingbackup/settings/me | Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default.
+[**deleteRoutingUserDirectroutingbackupSettings**](UsersApi#deleteRoutingUserDirectroutingbackupSettings) | **DELETE** /api/v2/routing/users/{userId}/directroutingbackup/settings | Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default.
+[**deleteRoutingUserUtilization**](UsersApi#deleteRoutingUserUtilization) | **DELETE** /api/v2/routing/users/{userId}/utilization | Delete the user's max utilization settings and revert to the organization-wide default.
+[**deleteUser**](UsersApi#deleteUser) | **DELETE** /api/v2/users/{userId} | Delete user
+[**deleteUserExternalidAuthorityNameExternalKey**](UsersApi#deleteUserExternalidAuthorityNameExternalKey) | **DELETE** /api/v2/users/{userId}/externalid/{authorityName}/{externalKey} | Delete the external identifier for user.
+[**deleteUserRoutinglanguage**](UsersApi#deleteUserRoutinglanguage) | **DELETE** /api/v2/users/{userId}/routinglanguages/{languageId} | Remove a routing language from a user
+[**deleteUserRoutingskill**](UsersApi#deleteUserRoutingskill) | **DELETE** /api/v2/users/{userId}/routingskills/{skillId} | Remove a routing skill from a user
+[**deleteUserStationAssociatedstation**](UsersApi#deleteUserStationAssociatedstation) | **DELETE** /api/v2/users/{userId}/station/associatedstation | Clear associated station
+[**deleteUserStationDefaultstation**](UsersApi#deleteUserStationDefaultstation) | **DELETE** /api/v2/users/{userId}/station/defaultstation | Clear default station
+[**deleteUserVerifier**](UsersApi#deleteUserVerifier) | **DELETE** /api/v2/users/{userId}/verifiers/{verifierId} | Delete a verifier
+[**getAnalyticsUsersAggregatesJob**](UsersApi#getAnalyticsUsersAggregatesJob) | **GET** /api/v2/analytics/users/aggregates/jobs/{jobId} | Get status for async query for user aggregates
+[**getAnalyticsUsersAggregatesJobResults**](UsersApi#getAnalyticsUsersAggregatesJobResults) | **GET** /api/v2/analytics/users/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query
+[**getAnalyticsUsersDetailsJob**](UsersApi#getAnalyticsUsersDetailsJob) | **GET** /api/v2/analytics/users/details/jobs/{jobId} | Get status for async query for user details
+[**getAnalyticsUsersDetailsJobResults**](UsersApi#getAnalyticsUsersDetailsJobResults) | **GET** /api/v2/analytics/users/details/jobs/{jobId}/results | Fetch a page of results for an async query
+[**getAnalyticsUsersDetailsJobsAvailability**](UsersApi#getAnalyticsUsersDetailsJobsAvailability) | **GET** /api/v2/analytics/users/details/jobs/availability | Lookup the datalake availability date and time
+[**getAuthorizationDivisionspermittedMe**](UsersApi#getAuthorizationDivisionspermittedMe) | **GET** /api/v2/authorization/divisionspermitted/me | Returns which divisions the current user has the given permission in.
+[**getAuthorizationDivisionspermittedPagedMe**](UsersApi#getAuthorizationDivisionspermittedPagedMe) | **GET** /api/v2/authorization/divisionspermitted/paged/me | Returns which divisions the current user has the given permission in.
+[**getAuthorizationDivisionspermittedPagedSubjectId**](UsersApi#getAuthorizationDivisionspermittedPagedSubjectId) | **GET** /api/v2/authorization/divisionspermitted/paged/{subjectId} | Returns which divisions the specified user has the given permission in.
+[**getAuthorizationSubject**](UsersApi#getAuthorizationSubject) | **GET** /api/v2/authorization/subjects/{subjectId} | Returns a listing of roles and permissions for a user.
+[**getAuthorizationSubjectsMe**](UsersApi#getAuthorizationSubjectsMe) | **GET** /api/v2/authorization/subjects/me | Returns a listing of roles and permissions for the currently authenticated user.
+[**getFieldconfig**](UsersApi#getFieldconfig) | **GET** /api/v2/fieldconfig | Fetch field config for an entity type
+[**getProfilesUsers**](UsersApi#getProfilesUsers) | **GET** /api/v2/profiles/users | Get a user profile listing
+[**getRoutingDirectroutingbackupSettingsMe**](UsersApi#getRoutingDirectroutingbackupSettingsMe) | **GET** /api/v2/routing/directroutingbackup/settings/me | Get the user's Direct Routing Backup settings.
+[**getRoutingUserDirectroutingbackupSettings**](UsersApi#getRoutingUserDirectroutingbackupSettings) | **GET** /api/v2/routing/users/{userId}/directroutingbackup/settings | Get the user's Direct Routing Backup settings.
+[**getRoutingUserUtilization**](UsersApi#getRoutingUserUtilization) | **GET** /api/v2/routing/users/{userId}/utilization | Get the user's max utilization settings.  If not configured, the organization-wide default is returned.
+[**getUser**](UsersApi#getUser) | **GET** /api/v2/users/{userId} | Get user.
+[**getUserAdjacents**](UsersApi#getUserAdjacents) | **GET** /api/v2/users/{userId}/adjacents | Get adjacents
+[**getUserCallforwarding**](UsersApi#getUserCallforwarding) | **GET** /api/v2/users/{userId}/callforwarding | Get a user's CallForwarding
+[**getUserDirectreports**](UsersApi#getUserDirectreports) | **GET** /api/v2/users/{userId}/directreports | Get direct reports
+[**getUserExternalid**](UsersApi#getUserExternalid) | **GET** /api/v2/users/{userId}/externalid | Get the external identifiers for a user.
+[**getUserExternalidAuthorityName**](UsersApi#getUserExternalidAuthorityName) | **GET** /api/v2/users/{userId}/externalid/{authorityName} | Get the external identifier of user for an authority.
+[**getUserFavorites**](UsersApi#getUserFavorites) | **GET** /api/v2/users/{userId}/favorites | Deprecated; will be revived with new contract
+[**getUserGeolocation**](UsersApi#getUserGeolocation) | **GET** /api/v2/users/{userId}/geolocations/{clientId} | Get a user's Geolocation
+[**getUserOutofoffice**](UsersApi#getUserOutofoffice) | **GET** /api/v2/users/{userId}/outofoffice | Get a OutOfOffice
+[**getUserProfile**](UsersApi#getUserProfile) | **GET** /api/v2/users/{userId}/profile | Get user profile
+[**getUserProfileskills**](UsersApi#getUserProfileskills) | **GET** /api/v2/users/{userId}/profileskills | List profile skills for a user
+[**getUserQueues**](UsersApi#getUserQueues) | **GET** /api/v2/users/{userId}/queues | Get queues for user
+[**getUserRoles**](UsersApi#getUserRoles) | **GET** /api/v2/users/{subjectId}/roles | Returns a listing of roles and permissions for a user.
+[**getUserRoutinglanguages**](UsersApi#getUserRoutinglanguages) | **GET** /api/v2/users/{userId}/routinglanguages | List routing languages assigned to a user
+[**getUserRoutingskills**](UsersApi#getUserRoutingskills) | **GET** /api/v2/users/{userId}/routingskills | List routing skills assigned to a user
+[**getUserRoutingstatus**](UsersApi#getUserRoutingstatus) | **GET** /api/v2/users/{userId}/routingstatus | Fetch the routing status of a user
+[**getUserSkillgroups**](UsersApi#getUserSkillgroups) | **GET** /api/v2/users/{userId}/skillgroups | Get skill groups for a user
+[**getUserState**](UsersApi#getUserState) | **GET** /api/v2/users/{userId}/state | Get user state information.
+[**getUserStation**](UsersApi#getUserStation) | **GET** /api/v2/users/{userId}/station | Get station information for user
+[**getUserSuperiors**](UsersApi#getUserSuperiors) | **GET** /api/v2/users/{userId}/superiors | Get superiors
+[**getUserTrustors**](UsersApi#getUserTrustors) | **GET** /api/v2/users/{userId}/trustors | List the organizations that have authorized/trusted the user.
+[**getUserVerifiers**](UsersApi#getUserVerifiers) | **GET** /api/v2/users/{userId}/verifiers | Get a list of verifiers
+[**getUsers**](UsersApi#getUsers) | **GET** /api/v2/users | Get the list of available users.
+[**getUsersChatsMe**](UsersApi#getUsersChatsMe) | **GET** /api/v2/users/chats/me | Get chats for a user
+[**getUsersDevelopmentActivities**](UsersApi#getUsersDevelopmentActivities) | **GET** /api/v2/users/development/activities | Get list of Development Activities
+[**getUsersDevelopmentActivitiesMe**](UsersApi#getUsersDevelopmentActivitiesMe) | **GET** /api/v2/users/development/activities/me | Get list of Development Activities for current user
+[**getUsersDevelopmentActivity**](UsersApi#getUsersDevelopmentActivity) | **GET** /api/v2/users/development/activities/{activityId} | Get a Development Activity
+[**getUsersExternalidAuthorityNameExternalKey**](UsersApi#getUsersExternalidAuthorityNameExternalKey) | **GET** /api/v2/users/externalid/{authorityName}/{externalKey} | Get the user associated with external identifier.
+[**getUsersMe**](UsersApi#getUsersMe) | **GET** /api/v2/users/me | Get current user details.
+[**getUsersQuery**](UsersApi#getUsersQuery) | **GET** /api/v2/users/query | Get list of available users, paged by cursor token, No division filtering available so directory:user:view permission for all divisions is required
+[**getUsersSearch**](UsersApi#getUsersSearch) | **GET** /api/v2/users/search | Search users using the q64 value returned from a previous search
+[**patchUser**](UsersApi#patchUser) | **PATCH** /api/v2/users/{userId} | Update user
+[**patchUserCallforwarding**](UsersApi#patchUserCallforwarding) | **PATCH** /api/v2/users/{userId}/callforwarding | Patch a user's CallForwarding
+[**patchUserGeolocation**](UsersApi#patchUserGeolocation) | **PATCH** /api/v2/users/{userId}/geolocations/{clientId} | Patch a user's Geolocation
+[**patchUserQueue**](UsersApi#patchUserQueue) | **PATCH** /api/v2/users/{userId}/queues/{queueId} | Join or unjoin a queue for a user
+[**patchUserQueues**](UsersApi#patchUserQueues) | **PATCH** /api/v2/users/{userId}/queues | Join or unjoin a set of queues for a user
+[**patchUserRoutinglanguage**](UsersApi#patchUserRoutinglanguage) | **PATCH** /api/v2/users/{userId}/routinglanguages/{languageId} | Update an assigned routing language's proficiency
+[**patchUserRoutinglanguagesBulk**](UsersApi#patchUserRoutinglanguagesBulk) | **PATCH** /api/v2/users/{userId}/routinglanguages/bulk | Assign multiple routing languages to a user. Max 50 routing languages in request body
+[**patchUserRoutingskillsBulk**](UsersApi#patchUserRoutingskillsBulk) | **PATCH** /api/v2/users/{userId}/routingskills/bulk | Assign multiple routing skills to a user
+[**patchUsersBulk**](UsersApi#patchUsersBulk) | **PATCH** /api/v2/users/bulk | Update bulk acd autoanswer on users. Max 50 users can be updated at a time.
+[**postAnalyticsUsersActivityQuery**](UsersApi#postAnalyticsUsersActivityQuery) | **POST** /api/v2/analytics/users/activity/query | Query for user activity observations
+[**postAnalyticsUsersAggregatesJobs**](UsersApi#postAnalyticsUsersAggregatesJobs) | **POST** /api/v2/analytics/users/aggregates/jobs | Query for user aggregates asynchronously
+[**postAnalyticsUsersAggregatesQuery**](UsersApi#postAnalyticsUsersAggregatesQuery) | **POST** /api/v2/analytics/users/aggregates/query | Query for user aggregates
+[**postAnalyticsUsersDetailsJobs**](UsersApi#postAnalyticsUsersDetailsJobs) | **POST** /api/v2/analytics/users/details/jobs | Query for user details asynchronously
+[**postAnalyticsUsersDetailsQuery**](UsersApi#postAnalyticsUsersDetailsQuery) | **POST** /api/v2/analytics/users/details/query | Query for user details
+[**postAnalyticsUsersObservationsQuery**](UsersApi#postAnalyticsUsersObservationsQuery) | **POST** /api/v2/analytics/users/observations/query | Query for user observations
+[**postAuthorizationSubjectBulkadd**](UsersApi#postAuthorizationSubjectBulkadd) | **POST** /api/v2/authorization/subjects/{subjectId}/bulkadd | Bulk-grant roles and divisions to a subject.
+[**postAuthorizationSubjectBulkremove**](UsersApi#postAuthorizationSubjectBulkremove) | **POST** /api/v2/authorization/subjects/{subjectId}/bulkremove | Bulk-remove grants from a subject.
+[**postAuthorizationSubjectBulkreplace**](UsersApi#postAuthorizationSubjectBulkreplace) | **POST** /api/v2/authorization/subjects/{subjectId}/bulkreplace | Replace subject's roles and divisions with the exact list supplied in the request.
+[**postAuthorizationSubjectDivisionRole**](UsersApi#postAuthorizationSubjectDivisionRole) | **POST** /api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{roleId} | Make a grant of a role in a division
+[**postUserExternalid**](UsersApi#postUserExternalid) | **POST** /api/v2/users/{userId}/externalid | Create mapping between external identifier and user. Limit 100 per entity.
+[**postUserInvite**](UsersApi#postUserInvite) | **POST** /api/v2/users/{userId}/invite | Send an activation email to the user
+[**postUserPassword**](UsersApi#postUserPassword) | **POST** /api/v2/users/{userId}/password | Change a users password
+[**postUserRoutinglanguages**](UsersApi#postUserRoutinglanguages) | **POST** /api/v2/users/{userId}/routinglanguages | Assign a routing language to a user
+[**postUserRoutingskills**](UsersApi#postUserRoutingskills) | **POST** /api/v2/users/{userId}/routingskills | Assign a routing skill to a user
+[**postUsers**](UsersApi#postUsers) | **POST** /api/v2/users | Create user
+[**postUsersDevelopmentActivitiesAggregatesQuery**](UsersApi#postUsersDevelopmentActivitiesAggregatesQuery) | **POST** /api/v2/users/development/activities/aggregates/query | Retrieve aggregated development activity data
+[**postUsersMePassword**](UsersApi#postUsersMePassword) | **POST** /api/v2/users/me/password | Change your password
+[**postUsersSearch**](UsersApi#postUsersSearch) | **POST** /api/v2/users/search | Search users
+[**postUsersSearchConversationTarget**](UsersApi#postUsersSearchConversationTarget) | **POST** /api/v2/users/search/conversation/target | Search users as conversation targets
+[**postUsersSearchQueuemembersManage**](UsersApi#postUsersSearchQueuemembersManage) | **POST** /api/v2/users/search/queuemembers/manage | Search manage queue member
+[**postUsersSearchTeamsAssign**](UsersApi#postUsersSearchTeamsAssign) | **POST** /api/v2/users/search/teams/assign | Search users assigned to teams
+[**putRoutingDirectroutingbackupSettingsMe**](UsersApi#putRoutingDirectroutingbackupSettingsMe) | **PUT** /api/v2/routing/directroutingbackup/settings/me | Update the user's Direct Routing Backup settings.
+[**putRoutingUserDirectroutingbackupSettings**](UsersApi#putRoutingUserDirectroutingbackupSettings) | **PUT** /api/v2/routing/users/{userId}/directroutingbackup/settings | Update the user's Direct Routing Backup settings.
+[**putRoutingUserUtilization**](UsersApi#putRoutingUserUtilization) | **PUT** /api/v2/routing/users/{userId}/utilization | Update the user's max utilization settings.  Include only those media types requiring custom configuration.
+[**putUserCallforwarding**](UsersApi#putUserCallforwarding) | **PUT** /api/v2/users/{userId}/callforwarding | Update a user's CallForwarding
+[**putUserOutofoffice**](UsersApi#putUserOutofoffice) | **PUT** /api/v2/users/{userId}/outofoffice | Update an OutOfOffice
+[**putUserProfileskills**](UsersApi#putUserProfileskills) | **PUT** /api/v2/users/{userId}/profileskills | Update profile skills for a user
+[**putUserRoles**](UsersApi#putUserRoles) | **PUT** /api/v2/users/{subjectId}/roles | Sets the user's roles
+[**putUserRoutingskill**](UsersApi#putUserRoutingskill) | **PUT** /api/v2/users/{userId}/routingskills/{skillId} | Update an assigned routing skill's proficiency
+[**putUserRoutingskillsBulk**](UsersApi#putUserRoutingskillsBulk) | **PUT** /api/v2/users/{userId}/routingskills/bulk | Assign multiple routing skills to a user, replacing any current assignments
+[**putUserRoutingstatus**](UsersApi#putUserRoutingstatus) | **PUT** /api/v2/users/{userId}/routingstatus | Update the routing status of a user
+[**putUserState**](UsersApi#putUserState) | **PUT** /api/v2/users/{userId}/state | Update user state information.
+[**putUserStationAssociatedstationStationId**](UsersApi#putUserStationAssociatedstationStationId) | **PUT** /api/v2/users/{userId}/station/associatedstation/{stationId} | Set associated station
+[**putUserStationDefaultstationStationId**](UsersApi#putUserStationDefaultstationStationId) | **PUT** /api/v2/users/{userId}/station/defaultstation/{stationId} | Set default station
+[**putUserVerifier**](UsersApi#putUserVerifier) | **PUT** /api/v2/users/{userId}/verifiers/{verifierId} | Update a verifier
 
-<a name="deleteAnalyticsUsersDetailsJob"></a>
 
-# void deleteAnalyticsUsersDetailsJob(jobId)
+
+## deleteAnalyticsUsersAggregatesJob
+
+> void deleteAnalyticsUsersAggregatesJob(jobId)
+
+
+DELETE /api/v2/analytics/users/aggregates/jobs/{jobId}
+
+Delete/cancel an async request for user aggregates
+
+deleteAnalyticsUsersAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* analytics:userAggregate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.UsersApi();
+
+let jobId = "jobId_example"; // String | jobId
+
+apiInstance.deleteAnalyticsUsersAggregatesJob(jobId)
+  .then(() => {
+    console.log('deleteAnalyticsUsersAggregatesJob returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteAnalyticsUsersAggregatesJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | jobId |  |
+
+### Return type
+
+void (no response body)
+
+
+## deleteAnalyticsUsersDetailsJob
+
+> void deleteAnalyticsUsersDetailsJob(jobId)
 
 
 DELETE /api/v2/analytics/users/details/jobs/{jobId}
@@ -118,7 +186,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UsersApi();
@@ -141,15 +209,15 @@ apiInstance.deleteAnalyticsUsersDetailsJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteAuthorizationSubjectDivisionRole"></a>
 
-# void deleteAuthorizationSubjectDivisionRole(subjectId, divisionId, roleId)
+## deleteAuthorizationSubjectDivisionRole
+
+> void deleteAuthorizationSubjectDivisionRole(subjectId, divisionId, roleId)
 
 
 DELETE /api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{roleId}
@@ -168,7 +236,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UsersApi();
@@ -195,15 +263,110 @@ apiInstance.deleteAuthorizationSubjectDivisionRole(subjectId, divisionId, roleId
  **subjectId** | **String** | Subject ID (user or group) |  |
  **divisionId** | **String** | the id of the division of the grant |  |
  **roleId** | **String** | the id of the role of the grant |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteRoutingUserUtilization"></a>
 
-# void deleteRoutingUserUtilization(userId)
+## deleteRoutingDirectroutingbackupSettingsMe
+
+> void deleteRoutingDirectroutingbackupSettingsMe()
+
+
+DELETE /api/v2/routing/directroutingbackup/settings/me
+
+Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default.
+
+Requires ANY permissions:
+
+* routing:directRoutingBackup:selfDelete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.UsersApi();
+
+apiInstance.deleteRoutingDirectroutingbackupSettingsMe()
+  .then(() => {
+    console.log('deleteRoutingDirectroutingbackupSettingsMe returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteRoutingDirectroutingbackupSettingsMe');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+void (no response body)
+
+
+## deleteRoutingUserDirectroutingbackupSettings
+
+> void deleteRoutingUserDirectroutingbackupSettings(userId)
+
+
+DELETE /api/v2/routing/users/{userId}/directroutingbackup/settings
+
+Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default.
+
+Requires ANY permissions:
+
+* routing:directRoutingBackup:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.UsersApi();
+
+let userId = "userId_example"; // String | User ID
+
+apiInstance.deleteRoutingUserDirectroutingbackupSettings(userId)
+  .then(() => {
+    console.log('deleteRoutingUserDirectroutingbackupSettings returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteRoutingUserDirectroutingbackupSettings');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String** | User ID |  |
+
+### Return type
+
+void (no response body)
+
+
+## deleteRoutingUserUtilization
+
+> void deleteRoutingUserUtilization(userId)
 
 
 DELETE /api/v2/routing/users/{userId}/utilization
@@ -222,7 +385,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UsersApi();
@@ -245,15 +408,15 @@ apiInstance.deleteRoutingUserUtilization(userId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteUser"></a>
 
-# **Object** deleteUser(userId)
+## deleteUser
+
+> **Object** deleteUser(userId)
 
 
 DELETE /api/v2/users/{userId}
@@ -262,6 +425,7 @@ Delete user
 
 Requires ANY permissions:
 
+* admin
 * directory:user:delete
 * directory:organization:admin
 
@@ -273,7 +437,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UsersApi();
@@ -296,20 +460,74 @@ apiInstance.deleteUser(userId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Object**
 
-<a name="deleteUserRoutinglanguage"></a>
 
-# void deleteUserRoutinglanguage(userId, languageId)
+## deleteUserExternalidAuthorityNameExternalKey
+
+> void deleteUserExternalidAuthorityNameExternalKey(userId, authorityName, externalKey)
+
+
+DELETE /api/v2/users/{userId}/externalid/{authorityName}/{externalKey}
+
+Delete the external identifier for user.
+
+Requires ANY permissions:
+
+* directory:user:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.UsersApi();
+
+let userId = "userId_example"; // String | User ID
+let authorityName = "authorityName_example"; // String | Authority Name
+let externalKey = "externalKey_example"; // String | External Key
+
+apiInstance.deleteUserExternalidAuthorityNameExternalKey(userId, authorityName, externalKey)
+  .then(() => {
+    console.log('deleteUserExternalidAuthorityNameExternalKey returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteUserExternalidAuthorityNameExternalKey');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String** | User ID |  |
+ **authorityName** | **String** | Authority Name |  |
+ **externalKey** | **String** | External Key |  |
+
+### Return type
+
+void (no response body)
+
+
+## deleteUserRoutinglanguage
+
+> void deleteUserRoutinglanguage(userId, languageId)
 
 
 DELETE /api/v2/users/{userId}/routinglanguages/{languageId}
 
-Remove routing language from user
+Remove a routing language from a user
 
 Requires ANY permissions:
 
@@ -324,7 +542,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UsersApi();
@@ -349,20 +567,20 @@ apiInstance.deleteUserRoutinglanguage(userId, languageId)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
  **languageId** | **String** | languageId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteUserRoutingskill"></a>
 
-# void deleteUserRoutingskill(userId, skillId)
+## deleteUserRoutingskill
+
+> void deleteUserRoutingskill(userId, skillId)
 
 
 DELETE /api/v2/users/{userId}/routingskills/{skillId}
 
-Remove routing skill from user
+Remove a routing skill from a user
 
 Requires ALL permissions:
 
@@ -376,7 +594,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UsersApi();
@@ -401,15 +619,15 @@ apiInstance.deleteUserRoutingskill(userId, skillId)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
  **skillId** | **String** | skillId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteUserStationAssociatedstation"></a>
 
-# void deleteUserStationAssociatedstation(userId)
+## deleteUserStationAssociatedstation
+
+> void deleteUserStationAssociatedstation(userId)
 
 
 DELETE /api/v2/users/{userId}/station/associatedstation
@@ -426,7 +644,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UsersApi();
@@ -449,15 +667,15 @@ apiInstance.deleteUserStationAssociatedstation(userId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteUserStationDefaultstation"></a>
 
-# void deleteUserStationDefaultstation(userId)
+## deleteUserStationDefaultstation
+
+> void deleteUserStationDefaultstation(userId)
 
 
 DELETE /api/v2/users/{userId}/station/defaultstation
@@ -477,7 +695,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UsersApi();
@@ -500,15 +718,67 @@ apiInstance.deleteUserStationDefaultstation(userId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="getAnalyticsUsersAggregatesJob"></a>
 
-# AsyncQueryStatus getAnalyticsUsersAggregatesJob(jobId)
+## deleteUserVerifier
+
+> void deleteUserVerifier(userId, verifierId)
+
+
+DELETE /api/v2/users/{userId}/verifiers/{verifierId}
+
+Delete a verifier
+
+Requires ANY permissions:
+
+* mfa:verifier:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.UsersApi();
+
+let userId = "userId_example"; // String | User ID
+let verifierId = "verifierId_example"; // String | Verifier ID
+
+apiInstance.deleteUserVerifier(userId, verifierId)
+  .then(() => {
+    console.log('deleteUserVerifier returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteUserVerifier');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String** | User ID |  |
+ **verifierId** | **String** | Verifier ID |  |
+
+### Return type
+
+void (no response body)
+
+
+## getAnalyticsUsersAggregatesJob
+
+> AsyncQueryStatus getAnalyticsUsersAggregatesJob(jobId)
 
 
 GET /api/v2/analytics/users/aggregates/jobs/{jobId}
@@ -529,7 +799,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UsersApi();
@@ -552,15 +822,15 @@ apiInstance.getAnalyticsUsersAggregatesJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AsyncQueryStatus**
 
-<a name="getAnalyticsUsersAggregatesJobResults"></a>
 
-# UserAsyncAggregateQueryResponse getAnalyticsUsersAggregatesJobResults(jobId, opts)
+## getAnalyticsUsersAggregatesJobResults
+
+> UserAsyncAggregateQueryResponse getAnalyticsUsersAggregatesJobResults(jobId, opts)
 
 
 GET /api/v2/analytics/users/aggregates/jobs/{jobId}/results
@@ -581,7 +851,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UsersApi();
@@ -608,15 +878,15 @@ apiInstance.getAnalyticsUsersAggregatesJobResults(jobId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
  **cursor** | **String** | Cursor token to retrieve next page | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **UserAsyncAggregateQueryResponse**
 
-<a name="getAnalyticsUsersDetailsJob"></a>
 
-# AsyncQueryStatus getAnalyticsUsersDetailsJob(jobId)
+## getAnalyticsUsersDetailsJob
+
+> AsyncQueryStatus getAnalyticsUsersDetailsJob(jobId)
 
 
 GET /api/v2/analytics/users/details/jobs/{jobId}
@@ -635,7 +905,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UsersApi();
@@ -658,15 +928,15 @@ apiInstance.getAnalyticsUsersDetailsJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AsyncQueryStatus**
 
-<a name="getAnalyticsUsersDetailsJobResults"></a>
 
-# AnalyticsUserDetailsAsyncQueryResponse getAnalyticsUsersDetailsJobResults(jobId, opts)
+## getAnalyticsUsersDetailsJobResults
+
+> AnalyticsUserDetailsAsyncQueryResponse getAnalyticsUsersDetailsJobResults(jobId, opts)
 
 
 GET /api/v2/analytics/users/details/jobs/{jobId}/results
@@ -685,7 +955,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UsersApi();
@@ -714,15 +984,15 @@ apiInstance.getAnalyticsUsersDetailsJobResults(jobId, opts)
  **jobId** | **String** | jobId |  |
  **cursor** | **String** | Indicates where to resume query results (not required for first page) | [optional]  |
  **pageSize** | **Number** | The desired maximum number of results | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AnalyticsUserDetailsAsyncQueryResponse**
 
-<a name="getAnalyticsUsersDetailsJobsAvailability"></a>
 
-# DataAvailabilityResponse getAnalyticsUsersDetailsJobsAvailability()
+## getAnalyticsUsersDetailsJobsAvailability
+
+> DataAvailabilityResponse getAnalyticsUsersDetailsJobsAvailability()
 
 
 GET /api/v2/analytics/users/details/jobs/availability
@@ -741,7 +1011,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UsersApi();
@@ -760,16 +1030,18 @@ apiInstance.getAnalyticsUsersDetailsJobsAvailability()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **DataAvailabilityResponse**
 
-<a name="getAuthorizationDivisionspermittedMe"></a>
 
-# [AuthzDivision] getAuthorizationDivisionspermittedMe(permission, opts)
+## getAuthorizationDivisionspermittedMe
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+> [AuthzDivision] getAuthorizationDivisionspermittedMe(permission, opts)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 GET /api/v2/authorization/divisionspermitted/me
 
@@ -787,7 +1059,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UsersApi();
@@ -814,15 +1086,15 @@ apiInstance.getAuthorizationDivisionspermittedMe(permission, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **permission** | **String** | The permission string, including the object to access, e.g. routing:queue:view |  |
  **name** | **String** | Search term to filter by division name | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **[AuthzDivision]**
 
-<a name="getAuthorizationDivisionspermittedPagedMe"></a>
 
-# DivsPermittedEntityListing getAuthorizationDivisionspermittedPagedMe(permission, opts)
+## getAuthorizationDivisionspermittedPagedMe
+
+> DivsPermittedEntityListing getAuthorizationDivisionspermittedPagedMe(permission, opts)
 
 
 GET /api/v2/authorization/divisionspermitted/paged/me
@@ -839,7 +1111,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UsersApi();
@@ -868,17 +1140,19 @@ apiInstance.getAuthorizationDivisionspermittedPagedMe(permission, opts)
  **permission** | **String** | The permission string, including the object to access, e.g. routing:queue:view |  |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
-{: class="table table-striped"}
 
 ### Return type
 
 **DivsPermittedEntityListing**
 
-<a name="getAuthorizationDivisionspermittedPagedSubjectId"></a>
 
-# DivsPermittedEntityListing getAuthorizationDivisionspermittedPagedSubjectId(subjectId, permission, opts)
+## getAuthorizationDivisionspermittedPagedSubjectId
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+> DivsPermittedEntityListing getAuthorizationDivisionspermittedPagedSubjectId(subjectId, permission, opts)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 GET /api/v2/authorization/divisionspermitted/paged/{subjectId}
 
@@ -896,7 +1170,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UsersApi();
@@ -927,15 +1201,15 @@ apiInstance.getAuthorizationDivisionspermittedPagedSubjectId(subjectId, permissi
  **permission** | **String** | The permission string, including the object to access, e.g. routing:queue:view |  |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
-{: class="table table-striped"}
 
 ### Return type
 
 **DivsPermittedEntityListing**
 
-<a name="getAuthorizationSubject"></a>
 
-# AuthzSubject getAuthorizationSubject(subjectId)
+## getAuthorizationSubject
+
+> AuthzSubject getAuthorizationSubject(subjectId, opts)
 
 
 GET /api/v2/authorization/subjects/{subjectId}
@@ -954,14 +1228,17 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UsersApi();
 
 let subjectId = "subjectId_example"; // String | Subject ID (user or group)
+let opts = { 
+  'includeDuplicates': false // Boolean | Include multiple entries with the same role and division but different subjects
+};
 
-apiInstance.getAuthorizationSubject(subjectId)
+apiInstance.getAuthorizationSubject(subjectId, opts)
   .then((data) => {
     console.log(`getAuthorizationSubject success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -977,15 +1254,16 @@ apiInstance.getAuthorizationSubject(subjectId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **subjectId** | **String** | Subject ID (user or group) |  |
-{: class="table table-striped"}
+ **includeDuplicates** | **Boolean** | Include multiple entries with the same role and division but different subjects | [optional] [default to false]<br />**Values**: true, false |
 
 ### Return type
 
 **AuthzSubject**
 
-<a name="getAuthorizationSubjectsMe"></a>
 
-# AuthzSubject getAuthorizationSubjectsMe()
+## getAuthorizationSubjectsMe
+
+> AuthzSubject getAuthorizationSubjectsMe(opts)
 
 
 GET /api/v2/authorization/subjects/me
@@ -1002,12 +1280,16 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UsersApi();
 
-apiInstance.getAuthorizationSubjectsMe()
+let opts = { 
+  'includeDuplicates': false // Boolean | Include multiple entries with the same role and division but different subjects
+};
+
+apiInstance.getAuthorizationSubjectsMe(opts)
   .then((data) => {
     console.log(`getAuthorizationSubjectsMe success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1019,18 +1301,23 @@ apiInstance.getAuthorizationSubjectsMe()
 
 ### Parameters
 
-This endpoint does not need any parameter.
 
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **includeDuplicates** | **Boolean** | Include multiple entries with the same role and division but different subjects | [optional] [default to false]<br />**Values**: true, false |
 
 ### Return type
 
 **AuthzSubject**
 
-<a name="getFieldconfig"></a>
 
-# FieldConfig getFieldconfig(type)
+## getFieldconfig
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+> FieldConfig getFieldconfig(type)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 GET /api/v2/fieldconfig
 
@@ -1046,7 +1333,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UsersApi();
@@ -1068,18 +1355,20 @@ apiInstance.getFieldconfig(type)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **type** | **String** | Field type | <br />**Values**: person, group, org, externalContact |
-{: class="table table-striped"}
+ **type** | **String** | Field type | <br />**Values**: person, group, org |
 
 ### Return type
 
 **FieldConfig**
 
-<a name="getProfilesUsers"></a>
 
-# UserProfileEntityListing getProfilesUsers(opts)
+## getProfilesUsers
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+> UserProfileEntityListing getProfilesUsers(opts)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 GET /api/v2/profiles/users
 
@@ -1097,7 +1386,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UsersApi();
@@ -1134,15 +1423,110 @@ apiInstance.getProfilesUsers(opts)
  **sortOrder** | **String** | Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
  **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization |
  **integrationPresenceSource** | **String** | Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an expand. | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone, EightByEight |
-{: class="table table-striped"}
 
 ### Return type
 
 **UserProfileEntityListing**
 
-<a name="getRoutingUserUtilization"></a>
 
-# AgentMaxUtilization getRoutingUserUtilization(userId)
+## getRoutingDirectroutingbackupSettingsMe
+
+> AgentDirectRoutingBackupSettings getRoutingDirectroutingbackupSettingsMe()
+
+
+GET /api/v2/routing/directroutingbackup/settings/me
+
+Get the user's Direct Routing Backup settings.
+
+Requires ANY permissions:
+
+* routing:directRoutingBackup:selfView
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.UsersApi();
+
+apiInstance.getRoutingDirectroutingbackupSettingsMe()
+  .then((data) => {
+    console.log(`getRoutingDirectroutingbackupSettingsMe success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getRoutingDirectroutingbackupSettingsMe');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+**AgentDirectRoutingBackupSettings**
+
+
+## getRoutingUserDirectroutingbackupSettings
+
+> AgentDirectRoutingBackupSettings getRoutingUserDirectroutingbackupSettings(userId)
+
+
+GET /api/v2/routing/users/{userId}/directroutingbackup/settings
+
+Get the user's Direct Routing Backup settings.
+
+Requires ANY permissions:
+
+* routing:directRoutingBackup:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.UsersApi();
+
+let userId = "userId_example"; // String | User ID
+
+apiInstance.getRoutingUserDirectroutingbackupSettings(userId)
+  .then((data) => {
+    console.log(`getRoutingUserDirectroutingbackupSettings success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getRoutingUserDirectroutingbackupSettings');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String** | User ID |  |
+
+### Return type
+
+**AgentDirectRoutingBackupSettings**
+
+
+## getRoutingUserUtilization
+
+> AgentMaxUtilizationResponse getRoutingUserUtilization(userId)
 
 
 GET /api/v2/routing/users/{userId}/utilization
@@ -1162,7 +1546,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UsersApi();
@@ -1185,15 +1569,15 @@ apiInstance.getRoutingUserUtilization(userId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-**AgentMaxUtilization**
+**AgentMaxUtilizationResponse**
 
-<a name="getUser"></a>
 
-# User getUser(userId, opts)
+## getUser
+
+> User getUser(userId, opts)
 
 
 GET /api/v2/users/{userId}
@@ -1210,14 +1594,14 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UsersApi();
 
 let userId = "userId_example"; // String | User ID
 let opts = { 
-  'expand': ["expand_example"], // [String] | Which fields, if any, to expand
+  'expand': ["expand_example"], // [String] | Which fields, if any, to expand. Note, expand parameters are resolved with a best effort approach and not guaranteed to be returned. If requested expand information is absolutely required, it's recommended to use specific API requests instead.
   'integrationPresenceSource': "integrationPresenceSource_example", // String | Gets an integration presence for a user instead of their default.
   'state': "active" // String | Search for a user with this state
 };
@@ -1238,18 +1622,18 @@ apiInstance.getUser(userId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
- **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, dateLastLogin, authorization.unusedRoles, team, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography |
+ **expand** | **[String]** | Which fields, if any, to expand. Note, expand parameters are resolved with a best effort approach and not guaranteed to be returned. If requested expand information is absolutely required, it's recommended to use specific API requests instead. | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, groups, profileSkills, certifications, locations, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, dateWelcomeSent |
  **integrationPresenceSource** | **String** | Gets an integration presence for a user instead of their default. | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone, EightByEight |
  **state** | **String** | Search for a user with this state | [optional] [default to active]<br />**Values**: active, deleted |
-{: class="table table-striped"}
 
 ### Return type
 
 **User**
 
-<a name="getUserAdjacents"></a>
 
-# Adjacents getUserAdjacents(userId, opts)
+## getUserAdjacents
+
+> Adjacents getUserAdjacents(userId, opts)
 
 
 GET /api/v2/users/{userId}/adjacents
@@ -1266,7 +1650,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UsersApi();
@@ -1292,16 +1676,16 @@ apiInstance.getUserAdjacents(userId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
- **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, dateLastLogin, authorization.unusedRoles, team, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography |
-{: class="table table-striped"}
+ **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, groups, profileSkills, certifications, locations, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, dateWelcomeSent |
 
 ### Return type
 
 **Adjacents**
 
-<a name="getUserCallforwarding"></a>
 
-# CallForwarding getUserCallforwarding(userId)
+## getUserCallforwarding
+
+> CallForwarding getUserCallforwarding(userId)
 
 
 GET /api/v2/users/{userId}/callforwarding
@@ -1318,7 +1702,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UsersApi();
@@ -1341,15 +1725,15 @@ apiInstance.getUserCallforwarding(userId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **CallForwarding**
 
-<a name="getUserDirectreports"></a>
 
-# [User] getUserDirectreports(userId, opts)
+## getUserDirectreports
+
+> [User] getUserDirectreports(userId, opts)
 
 
 GET /api/v2/users/{userId}/directreports
@@ -1366,7 +1750,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UsersApi();
@@ -1392,18 +1776,120 @@ apiInstance.getUserDirectreports(userId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
- **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, dateLastLogin, authorization.unusedRoles, team, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography |
-{: class="table table-striped"}
+ **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, groups, profileSkills, certifications, locations, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, dateWelcomeSent |
 
 ### Return type
 
 **[User]**
 
-<a name="getUserFavorites"></a>
 
-# UserEntityListing getUserFavorites(userId, opts)
+## getUserExternalid
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+> [UserExternalIdentifier] getUserExternalid(userId)
+
+
+GET /api/v2/users/{userId}/externalid
+
+Get the external identifiers for a user.
+
+Requires NO permissions:
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.UsersApi();
+
+let userId = "userId_example"; // String | User ID
+
+apiInstance.getUserExternalid(userId)
+  .then((data) => {
+    console.log(`getUserExternalid success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getUserExternalid');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String** | User ID |  |
+
+### Return type
+
+**[UserExternalIdentifier]**
+
+
+## getUserExternalidAuthorityName
+
+> UserExternalIdentifier getUserExternalidAuthorityName(userId, authorityName)
+
+
+GET /api/v2/users/{userId}/externalid/{authorityName}
+
+Get the external identifier of user for an authority.
+
+Authority name and external key are case sensitive.
+
+Requires NO permissions:
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.UsersApi();
+
+let userId = "userId_example"; // String | User ID
+let authorityName = "authorityName_example"; // String | Authority Name
+
+apiInstance.getUserExternalidAuthorityName(userId, authorityName)
+  .then((data) => {
+    console.log(`getUserExternalidAuthorityName success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getUserExternalidAuthorityName');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String** | User ID |  |
+ **authorityName** | **String** | Authority Name |  |
+
+### Return type
+
+**UserExternalIdentifier**
+
+
+## getUserFavorites
+
+> UserEntityListing getUserFavorites(userId, opts)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 GET /api/v2/users/{userId}/favorites
 
@@ -1419,7 +1905,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UsersApi();
@@ -1451,16 +1937,16 @@ apiInstance.getUserFavorites(userId, opts)
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **sortOrder** | **String** | Sort order | [optional] [default to ASC] |
- **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, dateLastLogin, authorization.unusedRoles, team, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography |
-{: class="table table-striped"}
+ **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, groups, profileSkills, certifications, locations, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, dateWelcomeSent |
 
 ### Return type
 
 **UserEntityListing**
 
-<a name="getUserGeolocation"></a>
 
-# Geolocation getUserGeolocation(userId, clientId)
+## getUserGeolocation
+
+> Geolocation getUserGeolocation(userId, clientId)
 
 
 GET /api/v2/users/{userId}/geolocations/{clientId}
@@ -1477,7 +1963,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UsersApi();
@@ -1502,15 +1988,15 @@ apiInstance.getUserGeolocation(userId, clientId)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | user Id |  |
  **clientId** | **String** | client Id |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Geolocation**
 
-<a name="getUserOutofoffice"></a>
 
-# OutOfOffice getUserOutofoffice(userId)
+## getUserOutofoffice
+
+> OutOfOffice getUserOutofoffice(userId)
 
 
 GET /api/v2/users/{userId}/outofoffice
@@ -1527,7 +2013,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UsersApi();
@@ -1550,17 +2036,19 @@ apiInstance.getUserOutofoffice(userId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **OutOfOffice**
 
-<a name="getUserProfile"></a>
 
-# UserProfile getUserProfile(userId, opts)
+## getUserProfile
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+> UserProfile getUserProfile(userId, opts)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 GET /api/v2/users/{userId}/profile
 
@@ -1578,7 +2066,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UsersApi();
@@ -1605,17 +2093,17 @@ apiInstance.getUserProfile(userId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | userId |  |
- **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, dateLastLogin, authorization.unusedRoles, team |
+ **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, groups |
  **integrationPresenceSource** | **String** | Gets an integration presence for a user instead of their default. | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone, EightByEight |
-{: class="table table-striped"}
 
 ### Return type
 
 **UserProfile**
 
-<a name="getUserProfileskills"></a>
 
-# **[&#39;String&#39;]** getUserProfileskills(userId)
+## getUserProfileskills
+
+> **[&#39;String&#39;]** getUserProfileskills(userId)
 
 
 GET /api/v2/users/{userId}/profileskills
@@ -1634,7 +2122,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UsersApi();
@@ -1657,15 +2145,15 @@ apiInstance.getUserProfileskills(userId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **[&#39;String&#39;]**
 
-<a name="getUserQueues"></a>
 
-# UserQueueEntityListing getUserQueues(userId, opts)
+## getUserQueues
+
+> UserQueueEntityListing getUserQueues(userId, opts)
 
 
 GET /api/v2/users/{userId}/queues
@@ -1675,8 +2163,6 @@ Get queues for user
 Requires ANY permissions:
 
 * routing:queue:view
-* routing:queue:join
-* routing:queueMember:manage
 
 ### Example Usage
 
@@ -1686,7 +2172,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UsersApi();
@@ -1719,15 +2205,15 @@ apiInstance.getUserQueues(userId, opts)
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **joined** | **Boolean** | Is joined to the queue | [optional] [default to true] |
  **divisionId** | **[String]** | Division ID(s) | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **UserQueueEntityListing**
 
-<a name="getUserRoles"></a>
 
-# UserAuthorization getUserRoles(subjectId)
+## getUserRoles
+
+> UserAuthorization getUserRoles(subjectId)
 
 
 GET /api/v2/users/{subjectId}/roles
@@ -1746,7 +2232,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UsersApi();
@@ -1769,20 +2255,20 @@ apiInstance.getUserRoles(subjectId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **subjectId** | **String** | User ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **UserAuthorization**
 
-<a name="getUserRoutinglanguages"></a>
 
-# UserLanguageEntityListing getUserRoutinglanguages(userId, opts)
+## getUserRoutinglanguages
+
+> UserLanguageEntityListing getUserRoutinglanguages(userId, opts)
 
 
 GET /api/v2/users/{userId}/routinglanguages
 
-List routing language for user
+List routing languages assigned to a user
 
 Requires NO permissions:
 
@@ -1794,7 +2280,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UsersApi();
@@ -1825,20 +2311,20 @@ apiInstance.getUserRoutinglanguages(userId, opts)
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **sortOrder** | **String** | Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
-{: class="table table-striped"}
 
 ### Return type
 
 **UserLanguageEntityListing**
 
-<a name="getUserRoutingskills"></a>
 
-# UserSkillEntityListing getUserRoutingskills(userId, opts)
+## getUserRoutingskills
+
+> UserSkillEntityListing getUserRoutingskills(userId, opts)
 
 
 GET /api/v2/users/{userId}/routingskills
 
-List routing skills for user
+List routing skills assigned to a user
 
 Requires NO permissions:
 
@@ -1850,7 +2336,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UsersApi();
@@ -1881,15 +2367,15 @@ apiInstance.getUserRoutingskills(userId, opts)
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **sortOrder** | **String** | Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
-{: class="table table-striped"}
 
 ### Return type
 
 **UserSkillEntityListing**
 
-<a name="getUserRoutingstatus"></a>
 
-# RoutingStatus getUserRoutingstatus(userId)
+## getUserRoutingstatus
+
+> RoutingStatus getUserRoutingstatus(userId)
 
 
 GET /api/v2/users/{userId}/routingstatus
@@ -1906,7 +2392,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UsersApi();
@@ -1929,15 +2415,15 @@ apiInstance.getUserRoutingstatus(userId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **RoutingStatus**
 
-<a name="getUserSkillgroups"></a>
 
-# UserSkillGroupEntityListing getUserSkillgroups(userId, opts)
+## getUserSkillgroups
+
+> UserSkillGroupEntityListing getUserSkillgroups(userId, opts)
 
 
 GET /api/v2/users/{userId}/skillgroups
@@ -1956,7 +2442,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UsersApi();
@@ -1987,15 +2473,15 @@ apiInstance.getUserSkillgroups(userId, opts)
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **after** | **String** | The cursor that points to the next page | [optional]  |
  **before** | **String** | The cursor that points to the previous page | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **UserSkillGroupEntityListing**
 
-<a name="getUserState"></a>
 
-# UserState getUserState(userId)
+## getUserState
+
+> UserState getUserState(userId)
 
 
 GET /api/v2/users/{userId}/state
@@ -2014,7 +2500,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UsersApi();
@@ -2037,15 +2523,15 @@ apiInstance.getUserState(userId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **UserState**
 
-<a name="getUserStation"></a>
 
-# UserStations getUserStation(userId)
+## getUserStation
+
+> UserStations getUserStation(userId)
 
 
 GET /api/v2/users/{userId}/station
@@ -2062,7 +2548,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UsersApi();
@@ -2085,15 +2571,15 @@ apiInstance.getUserStation(userId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **UserStations**
 
-<a name="getUserSuperiors"></a>
 
-# [User] getUserSuperiors(userId, opts)
+## getUserSuperiors
+
+> [User] getUserSuperiors(userId, opts)
 
 
 GET /api/v2/users/{userId}/superiors
@@ -2110,7 +2596,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UsersApi();
@@ -2136,16 +2622,16 @@ apiInstance.getUserSuperiors(userId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
- **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, dateLastLogin, authorization.unusedRoles, team, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography |
-{: class="table table-striped"}
+ **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, groups, profileSkills, certifications, locations, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, dateWelcomeSent |
 
 ### Return type
 
 **[User]**
 
-<a name="getUserTrustors"></a>
 
-# TrustorEntityListing getUserTrustors(userId, opts)
+## getUserTrustors
+
+> TrustorEntityListing getUserTrustors(userId, opts)
 
 
 GET /api/v2/users/{userId}/trustors
@@ -2164,7 +2650,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UsersApi();
@@ -2193,15 +2679,65 @@ apiInstance.getUserTrustors(userId, opts)
  **userId** | **String** | User ID |  |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
-{: class="table table-striped"}
 
 ### Return type
 
 **TrustorEntityListing**
 
-<a name="getUsers"></a>
 
-# UserEntityListing getUsers(opts)
+## getUserVerifiers
+
+> VerifierEntityListing getUserVerifiers(userId)
+
+
+GET /api/v2/users/{userId}/verifiers
+
+Get a list of verifiers
+
+Requires ANY permissions:
+
+* mfa:verifier:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.UsersApi();
+
+let userId = "userId_example"; // String | User ID
+
+apiInstance.getUserVerifiers(userId)
+  .then((data) => {
+    console.log(`getUserVerifiers success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getUserVerifiers');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String** | User ID |  |
+
+### Return type
+
+**VerifierEntityListing**
+
+
+## getUsers
+
+> UserEntityListing getUsers(opts)
 
 
 GET /api/v2/users
@@ -2218,7 +2754,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UsersApi();
@@ -2229,7 +2765,7 @@ let opts = {
   'id': ["id_example"], // [String] | A list of user IDs to fetch by bulk
   'jabberId': ["jabberId_example"], // [String] | A list of jabberIds to fetch by bulk (cannot be used with the id parameter)
   'sortOrder': "ASC", // String | Ascending or descending sort order
-  'expand': ["expand_example"], // [String] | Which fields, if any, to expand
+  'expand': ["expand_example"], // [String] | Which fields, if any, to expand. Note, expand parameters are resolved with a best effort approach and not guaranteed to be returned. If requested expand information is absolutely required, it's recommended to use specific API requests instead.
   'integrationPresenceSource': "integrationPresenceSource_example", // String | Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an expand. When using this parameter the maximum number of users that can be returned is 100.
   'state': "active" // String | Only list users of this state
 };
@@ -2254,18 +2790,75 @@ apiInstance.getUsers(opts)
  **id** | **[String]** | A list of user IDs to fetch by bulk | [optional]  |
  **jabberId** | **[String]** | A list of jabberIds to fetch by bulk (cannot be used with the id parameter) | [optional]  |
  **sortOrder** | **String** | Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ascending, descending |
- **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, dateLastLogin, authorization.unusedRoles, team, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography |
+ **expand** | **[String]** | Which fields, if any, to expand. Note, expand parameters are resolved with a best effort approach and not guaranteed to be returned. If requested expand information is absolutely required, it's recommended to use specific API requests instead. | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, groups, profileSkills, certifications, locations, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, dateWelcomeSent |
  **integrationPresenceSource** | **String** | Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an expand. When using this parameter the maximum number of users that can be returned is 100. | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone, EightByEight |
  **state** | **String** | Only list users of this state | [optional] [default to active]<br />**Values**: active, inactive, deleted, any |
-{: class="table table-striped"}
 
 ### Return type
 
 **UserEntityListing**
 
-<a name="getUsersDevelopmentActivities"></a>
 
-# DevelopmentActivityListing getUsersDevelopmentActivities(opts)
+## getUsersChatsMe
+
+> ChatItemCursorListing getUsersChatsMe(opts)
+
+
+GET /api/v2/users/chats/me
+
+Get chats for a user
+
+Requires ANY permissions:
+
+* chat:chat:access
+* user:chats:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.UsersApi();
+
+let opts = { 
+  'excludeClosed': true, // Boolean | Whether or not to exclude closed chats
+  'includePresence': true, // Boolean | Whether or not to include user presence
+  'after': "after_example" // String | The key to start after
+};
+
+apiInstance.getUsersChatsMe(opts)
+  .then((data) => {
+    console.log(`getUsersChatsMe success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getUsersChatsMe');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **excludeClosed** | **Boolean** | Whether or not to exclude closed chats | [optional]  |
+ **includePresence** | **Boolean** | Whether or not to include user presence | [optional]  |
+ **after** | **String** | The key to start after | [optional]  |
+
+### Return type
+
+**ChatItemCursorListing**
+
+
+## getUsersDevelopmentActivities
+
+> DevelopmentActivityListing getUsersDevelopmentActivities(opts)
 
 
 GET /api/v2/users/development/activities
@@ -2287,7 +2880,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UsersApi();
@@ -2302,7 +2895,7 @@ let opts = {
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
   'sortOrder': "Desc", // String | Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc)
-  'types': ["types_example"], // [String] | Specifies the activity types.
+  'types': ["types_example"], // [String] | Specifies the activity types. Informational, AssessedContent and Assessment are deprecated
   'statuses': ["statuses_example"], // [String] | Specifies the activity statuses to filter by
   'relationship': ["relationship_example"] // [String] | Specifies how the current user relation should be interpreted, and filters the activities returned to only the activities that have the specified relationship. If a value besides Attendee is specified, it will only return Coaching Appointments. If not specified, no filtering is applied.
 };
@@ -2331,18 +2924,18 @@ apiInstance.getUsersDevelopmentActivities(opts)
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **sortOrder** | **String** | Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc) | [optional] [default to Desc]<br />**Values**: Asc, Desc |
- **types** | **[String]** | Specifies the activity types. | [optional] <br />**Values**: Informational, Coaching, AssessedContent, Assessment |
- **statuses** | **[String]** | Specifies the activity statuses to filter by | [optional] <br />**Values**: Planned, InProgress, Completed, InvalidSchedule |
+ **types** | **[String]** | Specifies the activity types. Informational, AssessedContent and Assessment are deprecated | [optional] <br />**Values**: Informational, Coaching, AssessedContent, Assessment, External, Native |
+ **statuses** | **[String]** | Specifies the activity statuses to filter by | [optional] <br />**Values**: Planned, InProgress, Completed, InvalidSchedule, NotCompleted |
  **relationship** | **[String]** | Specifies how the current user relation should be interpreted, and filters the activities returned to only the activities that have the specified relationship. If a value besides Attendee is specified, it will only return Coaching Appointments. If not specified, no filtering is applied. | [optional] <br />**Values**: Creator, Facilitator, Attendee |
-{: class="table table-striped"}
 
 ### Return type
 
 **DevelopmentActivityListing**
 
-<a name="getUsersDevelopmentActivitiesMe"></a>
 
-# DevelopmentActivityListing getUsersDevelopmentActivitiesMe(opts)
+## getUsersDevelopmentActivitiesMe
+
+> DevelopmentActivityListing getUsersDevelopmentActivitiesMe(opts)
 
 
 GET /api/v2/users/development/activities/me
@@ -2361,7 +2954,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UsersApi();
@@ -2375,7 +2968,7 @@ let opts = {
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
   'sortOrder': "Desc", // String | Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc)
-  'types': ["types_example"], // [String] | Specifies the activity types.
+  'types': ["types_example"], // [String] | Specifies the activity types. Informational, AssessedContent and Assessment are deprecated
   'statuses': ["statuses_example"], // [String] | Specifies the activity statuses to filter by
   'relationship': ["relationship_example"] // [String] | Specifies how the current user relation should be interpreted, and filters the activities returned to only the activities that have the specified relationship. If a value besides Attendee is specified, it will only return Coaching Appointments. If not specified, no filtering is applied.
 };
@@ -2403,18 +2996,18 @@ apiInstance.getUsersDevelopmentActivitiesMe(opts)
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **sortOrder** | **String** | Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc) | [optional] [default to Desc]<br />**Values**: Asc, Desc |
- **types** | **[String]** | Specifies the activity types. | [optional] <br />**Values**: Informational, Coaching, AssessedContent, Assessment |
- **statuses** | **[String]** | Specifies the activity statuses to filter by | [optional] <br />**Values**: Planned, InProgress, Completed, InvalidSchedule |
+ **types** | **[String]** | Specifies the activity types. Informational, AssessedContent and Assessment are deprecated | [optional] <br />**Values**: Informational, Coaching, AssessedContent, Assessment, External, Native |
+ **statuses** | **[String]** | Specifies the activity statuses to filter by | [optional] <br />**Values**: Planned, InProgress, Completed, InvalidSchedule, NotCompleted |
  **relationship** | **[String]** | Specifies how the current user relation should be interpreted, and filters the activities returned to only the activities that have the specified relationship. If a value besides Attendee is specified, it will only return Coaching Appointments. If not specified, no filtering is applied. | [optional] <br />**Values**: Creator, Facilitator, Attendee |
-{: class="table table-striped"}
 
 ### Return type
 
 **DevelopmentActivityListing**
 
-<a name="getUsersDevelopmentActivity"></a>
 
-# DevelopmentActivity getUsersDevelopmentActivity(activityId, type)
+## getUsersDevelopmentActivity
+
+> DevelopmentActivity getUsersDevelopmentActivity(activityId, type)
 
 
 GET /api/v2/users/development/activities/{activityId}
@@ -2436,13 +3029,13 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UsersApi();
 
 let activityId = "activityId_example"; // String | Specifies the activity ID, maps to either assignment or appointment ID
-let type = "type_example"; // String | Specifies the activity type.
+let type = "type_example"; // String | Specifies the activity type. Informational, AssessedContent and Assessment are deprecated
 
 apiInstance.getUsersDevelopmentActivity(activityId, type)
   .then((data) => {
@@ -2460,16 +3053,72 @@ apiInstance.getUsersDevelopmentActivity(activityId, type)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **activityId** | **String** | Specifies the activity ID, maps to either assignment or appointment ID |  |
- **type** | **String** | Specifies the activity type. | <br />**Values**: Informational, Coaching, AssessedContent, Assessment, External |
-{: class="table table-striped"}
+ **type** | **String** | Specifies the activity type. Informational, AssessedContent and Assessment are deprecated | <br />**Values**: Informational, Coaching, AssessedContent, Assessment, External, Native |
 
 ### Return type
 
 **DevelopmentActivity**
 
-<a name="getUsersMe"></a>
 
-# UserMe getUsersMe(opts)
+## getUsersExternalidAuthorityNameExternalKey
+
+> User getUsersExternalidAuthorityNameExternalKey(authorityName, externalKey, opts)
+
+
+GET /api/v2/users/externalid/{authorityName}/{externalKey}
+
+Get the user associated with external identifier.
+
+Authority name and external key are case sensitive.
+
+Requires NO permissions:
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.UsersApi();
+
+let authorityName = "authorityName_example"; // String | Authority Name
+let externalKey = "externalKey_example"; // String | External Key
+let opts = { 
+  'expand': ["expand_example"] // [String] | Which fields, if any, to expand
+};
+
+apiInstance.getUsersExternalidAuthorityNameExternalKey(authorityName, externalKey, opts)
+  .then((data) => {
+    console.log(`getUsersExternalidAuthorityNameExternalKey success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getUsersExternalidAuthorityNameExternalKey');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **authorityName** | **String** | Authority Name |  |
+ **externalKey** | **String** | External Key |  |
+ **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, groups, profileSkills, certifications, locations, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, dateWelcomeSent |
+
+### Return type
+
+**User**
+
+
+## getUsersMe
+
+> UserMe getUsersMe(opts)
 
 
 GET /api/v2/users/me
@@ -2488,7 +3137,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UsersApi();
@@ -2513,17 +3162,81 @@ apiInstance.getUsersMe(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, dateLastLogin, authorization.unusedRoles, team, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, date, geolocationsettings, organization, presencedefinitions, divisionedpresencedefinitions, locationdefinitions, orgauthorization, orgproducts, favorites, superiors, directreports, adjacents, routingskills, routinglanguages, fieldconfigs, token, trustors, logCapture |
+ **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, groups, profileSkills, certifications, locations, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, dateWelcomeSent, date, geolocationsettings, organization, presencedefinitions, divisionedpresencedefinitions, locationdefinitions, orgauthorization, orgproducts, favorites, superiors, directreports, adjacents, routingskills, routinglanguages, fieldconfigs, token, trustors, logCapture, autoanswersettings |
  **integrationPresenceSource** | **String** | Get your presence for a given integration. This parameter will only be used when presence is provided as an expand. | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone, EightByEight |
-{: class="table table-striped"}
 
 ### Return type
 
 **UserMe**
 
-<a name="getUsersSearch"></a>
 
-# UsersSearchResponse getUsersSearch(q64, opts)
+## getUsersQuery
+
+> UserCursorEntityListing getUsersQuery(opts)
+
+
+GET /api/v2/users/query
+
+Get list of available users, paged by cursor token, No division filtering available so directory:user:view permission for all divisions is required
+
+getUsersQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* directory:user:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.UsersApi();
+
+let opts = { 
+  'cursor': "cursor_example", // String | Cursor token to retrieve next page
+  'pageSize': 25, // Number | Page size
+  'sortOrder': "ASC", // String | Ascending or descending sort order
+  'expand': ["expand_example"], // [String] | Which fields, if any, to expand. Note, expand parameters are resolved with a best effort approach and not guaranteed to be returned. If requested expand information is absolutely required, it's recommended to use specific API requests instead.
+  'integrationPresenceSource': "integrationPresenceSource_example", // String | Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an expand. When using this parameter the maximum number of users that can be returned is 100.
+  'state': "active" // String | Only list users of this state
+};
+
+apiInstance.getUsersQuery(opts)
+  .then((data) => {
+    console.log(`getUsersQuery success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getUsersQuery');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **cursor** | **String** | Cursor token to retrieve next page | [optional]  |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **sortOrder** | **String** | Ascending or descending sort order | [optional] [default to ASC]<br />**Values**: ASC, DESC |
+ **expand** | **[String]** | Which fields, if any, to expand. Note, expand parameters are resolved with a best effort approach and not guaranteed to be returned. If requested expand information is absolutely required, it's recommended to use specific API requests instead. | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, groups, profileSkills, certifications, locations, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, dateWelcomeSent |
+ **integrationPresenceSource** | **String** | Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an expand. When using this parameter the maximum number of users that can be returned is 100. | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone, EightByEight |
+ **state** | **String** | Only list users of this state | [optional] [default to active]<br />**Values**: active, inactive, deleted, any |
+
+### Return type
+
+**UserCursorEntityListing**
+
+
+## getUsersSearch
+
+> UsersSearchResponse getUsersSearch(q64, opts)
 
 
 GET /api/v2/users/search
@@ -2542,7 +3255,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UsersApi();
@@ -2571,15 +3284,15 @@ apiInstance.getUsersSearch(q64, opts)
  **q64** | **String** | q64 |  |
  **expand** | **[String]** | expand | [optional]  |
  **integrationPresenceSource** | **String** | integrationPresenceSource | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone, EightByEight |
-{: class="table table-striped"}
 
 ### Return type
 
 **UsersSearchResponse**
 
-<a name="patchUser"></a>
 
-# User patchUser(userId, body)
+## patchUser
+
+> User patchUser(userId, body)
 
 
 PATCH /api/v2/users/{userId}
@@ -2588,6 +3301,7 @@ Update user
 
 Requires ANY permissions:
 
+* admin
 * directory:user:edit
 * directory:organization:admin
 
@@ -2599,7 +3313,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UsersApi();
@@ -2624,15 +3338,15 @@ apiInstance.patchUser(userId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
  **body** | **Object** | User |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **User**
 
-<a name="patchUserCallforwarding"></a>
 
-# CallForwarding patchUserCallforwarding(userId, body)
+## patchUserCallforwarding
+
+> CallForwarding patchUserCallforwarding(userId, body)
 
 
 PATCH /api/v2/users/{userId}/callforwarding
@@ -2651,7 +3365,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UsersApi();
@@ -2676,15 +3390,15 @@ apiInstance.patchUserCallforwarding(userId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
  **body** | **Object** | Call forwarding |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **CallForwarding**
 
-<a name="patchUserGeolocation"></a>
 
-# Geolocation patchUserGeolocation(userId, clientId, body)
+## patchUserGeolocation
+
+> Geolocation patchUserGeolocation(userId, clientId, body)
 
 
 PATCH /api/v2/users/{userId}/geolocations/{clientId}
@@ -2703,7 +3417,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UsersApi();
@@ -2730,15 +3444,15 @@ apiInstance.patchUserGeolocation(userId, clientId, body)
  **userId** | **String** | user Id |  |
  **clientId** | **String** | client Id |  |
  **body** | **Object** | Geolocation |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Geolocation**
 
-<a name="patchUserQueue"></a>
 
-# UserQueue patchUserQueue(queueId, userId, body)
+## patchUserQueue
+
+> UserQueue patchUserQueue(queueId, userId, body)
 
 
 PATCH /api/v2/users/{userId}/queues/{queueId}
@@ -2758,7 +3472,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UsersApi();
@@ -2785,15 +3499,15 @@ apiInstance.patchUserQueue(queueId, userId, body)
  **queueId** | **String** | Queue ID |  |
  **userId** | **String** | User ID |  |
  **body** | **Object** | Queue Member |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **UserQueue**
 
-<a name="patchUserQueues"></a>
 
-# UserQueueEntityListing patchUserQueues(userId, body, opts)
+## patchUserQueues
+
+> UserQueueEntityListing patchUserQueues(userId, body, opts)
 
 
 PATCH /api/v2/users/{userId}/queues
@@ -2813,7 +3527,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UsersApi();
@@ -2842,20 +3556,20 @@ apiInstance.patchUserQueues(userId, body, opts)
  **userId** | **String** | User ID |  |
  **body** | **Object** | User Queues |  |
  **divisionId** | **[String]** | Division ID(s) | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **UserQueueEntityListing**
 
-<a name="patchUserRoutinglanguage"></a>
 
-# UserRoutingLanguage patchUserRoutinglanguage(userId, languageId, body)
+## patchUserRoutinglanguage
+
+> UserRoutingLanguage patchUserRoutinglanguage(userId, languageId, body)
 
 
 PATCH /api/v2/users/{userId}/routinglanguages/{languageId}
 
-Update routing language proficiency or state.
+Update an assigned routing language's proficiency
 
 Requires ANY permissions:
 
@@ -2870,7 +3584,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UsersApi();
@@ -2897,20 +3611,20 @@ apiInstance.patchUserRoutinglanguage(userId, languageId, body)
  **userId** | **String** | User ID |  |
  **languageId** | **String** | languageId |  |
  **body** | **Object** | Language |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **UserRoutingLanguage**
 
-<a name="patchUserRoutinglanguagesBulk"></a>
 
-# UserLanguageEntityListing patchUserRoutinglanguagesBulk(userId, body)
+## patchUserRoutinglanguagesBulk
+
+> UserLanguageEntityListing patchUserRoutinglanguagesBulk(userId, body)
 
 
 PATCH /api/v2/users/{userId}/routinglanguages/bulk
 
-Add bulk routing language to user. Max limit 50 languages
+Assign multiple routing languages to a user. Max 50 routing languages in request body
 
 Requires ANY permissions:
 
@@ -2925,7 +3639,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UsersApi();
@@ -2950,20 +3664,20 @@ apiInstance.patchUserRoutinglanguagesBulk(userId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
  **body** | **Object** | Language |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **UserLanguageEntityListing**
 
-<a name="patchUserRoutingskillsBulk"></a>
 
-# UserSkillEntityListing patchUserRoutingskillsBulk(userId, body)
+## patchUserRoutingskillsBulk
+
+> UserSkillEntityListing patchUserRoutingskillsBulk(userId, body)
 
 
 PATCH /api/v2/users/{userId}/routingskills/bulk
 
-Bulk add routing skills to user
+Assign multiple routing skills to a user
 
 Requires ANY permissions:
 
@@ -2977,7 +3691,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UsersApi();
@@ -3002,20 +3716,20 @@ apiInstance.patchUserRoutingskillsBulk(userId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
  **body** | **Object** | Skill |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **UserSkillEntityListing**
 
-<a name="patchUsersBulk"></a>
 
-# UserEntityListing patchUsersBulk(body)
+## patchUsersBulk
+
+> UserEntityListing patchUsersBulk(body)
 
 
 PATCH /api/v2/users/bulk
 
-Update bulk acd autoanswer on users
+Update bulk acd autoanswer on users. Max 50 users can be updated at a time.
 
 Requires ANY permissions:
 
@@ -3030,7 +3744,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UsersApi();
@@ -3053,22 +3767,20 @@ apiInstance.patchUsersBulk(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Users |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **UserEntityListing**
 
-<a name="postAnalyticsUsersActivityQuery"></a>
 
-# UserActivityResponse postAnalyticsUsersActivityQuery(body, opts)
+## postAnalyticsUsersActivityQuery
+
+> UserActivityResponse postAnalyticsUsersActivityQuery(body, opts)
 
 
 POST /api/v2/analytics/users/activity/query
 
 Query for user activity observations
-
-postAnalyticsUsersActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -3082,7 +3794,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UsersApi();
@@ -3111,15 +3823,15 @@ apiInstance.postAnalyticsUsersActivityQuery(body, opts)
  **body** | **Object** | query |  |
  **pageSize** | **Number** | The desired page size | [optional]  |
  **pageNumber** | **Number** | The desired page number | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **UserActivityResponse**
 
-<a name="postAnalyticsUsersAggregatesJobs"></a>
 
-# AsyncQueryResponse postAnalyticsUsersAggregatesJobs(body)
+## postAnalyticsUsersAggregatesJobs
+
+> AsyncQueryResponse postAnalyticsUsersAggregatesJobs(body)
 
 
 POST /api/v2/analytics/users/aggregates/jobs
@@ -3140,7 +3852,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UsersApi();
@@ -3163,15 +3875,15 @@ apiInstance.postAnalyticsUsersAggregatesJobs(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AsyncQueryResponse**
 
-<a name="postAnalyticsUsersAggregatesQuery"></a>
 
-# UserAggregateQueryResponse postAnalyticsUsersAggregatesQuery(body)
+## postAnalyticsUsersAggregatesQuery
+
+> UserAggregateQueryResponse postAnalyticsUsersAggregatesQuery(body)
 
 
 POST /api/v2/analytics/users/aggregates/query
@@ -3190,7 +3902,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UsersApi();
@@ -3213,15 +3925,15 @@ apiInstance.postAnalyticsUsersAggregatesQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **UserAggregateQueryResponse**
 
-<a name="postAnalyticsUsersDetailsJobs"></a>
 
-# AsyncQueryResponse postAnalyticsUsersDetailsJobs(body)
+## postAnalyticsUsersDetailsJobs
+
+> AsyncQueryResponse postAnalyticsUsersDetailsJobs(body)
 
 
 POST /api/v2/analytics/users/details/jobs
@@ -3240,7 +3952,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UsersApi();
@@ -3263,15 +3975,15 @@ apiInstance.postAnalyticsUsersDetailsJobs(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AsyncQueryResponse**
 
-<a name="postAnalyticsUsersDetailsQuery"></a>
 
-# AnalyticsUserDetailsQueryResponse postAnalyticsUsersDetailsQuery(body)
+## postAnalyticsUsersDetailsQuery
+
+> AnalyticsUserDetailsQueryResponse postAnalyticsUsersDetailsQuery(body)
 
 
 POST /api/v2/analytics/users/details/query
@@ -3290,7 +4002,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UsersApi();
@@ -3313,15 +4025,15 @@ apiInstance.postAnalyticsUsersDetailsQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AnalyticsUserDetailsQueryResponse**
 
-<a name="postAnalyticsUsersObservationsQuery"></a>
 
-# UserObservationQueryResponse postAnalyticsUsersObservationsQuery(body)
+## postAnalyticsUsersObservationsQuery
+
+> UserObservationQueryResponse postAnalyticsUsersObservationsQuery(body)
 
 
 POST /api/v2/analytics/users/observations/query
@@ -3340,7 +4052,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UsersApi();
@@ -3363,15 +4075,15 @@ apiInstance.postAnalyticsUsersObservationsQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **UserObservationQueryResponse**
 
-<a name="postAuthorizationSubjectBulkadd"></a>
 
-# void postAuthorizationSubjectBulkadd(subjectId, body, opts)
+## postAuthorizationSubjectBulkadd
+
+> void postAuthorizationSubjectBulkadd(subjectId, body, opts)
 
 
 POST /api/v2/authorization/subjects/{subjectId}/bulkadd
@@ -3390,7 +4102,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UsersApi();
@@ -3419,15 +4131,15 @@ apiInstance.postAuthorizationSubjectBulkadd(subjectId, body, opts)
  **subjectId** | **String** | Subject ID (user or group) |  |
  **body** | **Object** | Pairs of role and division IDs |  |
  **subjectType** | **String** | what the type of the subject is (PC_GROUP, PC_USER or PC_OAUTH_CLIENT) | [optional] [default to PC_USER] |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="postAuthorizationSubjectBulkremove"></a>
 
-# void postAuthorizationSubjectBulkremove(subjectId, body)
+## postAuthorizationSubjectBulkremove
+
+> void postAuthorizationSubjectBulkremove(subjectId, body)
 
 
 POST /api/v2/authorization/subjects/{subjectId}/bulkremove
@@ -3446,7 +4158,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UsersApi();
@@ -3471,15 +4183,15 @@ apiInstance.postAuthorizationSubjectBulkremove(subjectId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **subjectId** | **String** | Subject ID (user or group) |  |
  **body** | **Object** | Pairs of role and division IDs |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="postAuthorizationSubjectBulkreplace"></a>
 
-# void postAuthorizationSubjectBulkreplace(subjectId, body, opts)
+## postAuthorizationSubjectBulkreplace
+
+> void postAuthorizationSubjectBulkreplace(subjectId, body, opts)
 
 
 POST /api/v2/authorization/subjects/{subjectId}/bulkreplace
@@ -3501,7 +4213,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UsersApi();
@@ -3530,15 +4242,15 @@ apiInstance.postAuthorizationSubjectBulkreplace(subjectId, body, opts)
  **subjectId** | **String** | Subject ID (user or group) |  |
  **body** | **Object** | Pairs of role and division IDs |  |
  **subjectType** | **String** | what the type of the subject is (PC_GROUP, PC_USER or PC_OAUTH_CLIENT) | [optional] [default to PC_USER] |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="postAuthorizationSubjectDivisionRole"></a>
 
-# void postAuthorizationSubjectDivisionRole(subjectId, divisionId, roleId, opts)
+## postAuthorizationSubjectDivisionRole
+
+> void postAuthorizationSubjectDivisionRole(subjectId, divisionId, roleId, opts)
 
 
 POST /api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{roleId}
@@ -3557,7 +4269,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UsersApi();
@@ -3588,15 +4300,15 @@ apiInstance.postAuthorizationSubjectDivisionRole(subjectId, divisionId, roleId, 
  **divisionId** | **String** | the id of the division to which to make the grant |  |
  **roleId** | **String** | the id of the role to grant |  |
  **subjectType** | **String** | what the type of the subject is: PC_GROUP, PC_USER or PC_OAUTH_CLIENT (note: for cross-org authorization, please use the Organization Authorization endpoints) | [optional] [default to PC_USER] |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="postUserExternalid"></a>
 
-# [UserExternalIdentifier] postUserExternalid(userId, body)
+## postUserExternalid
+
+> [UserExternalIdentifier] postUserExternalid(userId, body)
 
 
 POST /api/v2/users/{userId}/externalid
@@ -3617,7 +4329,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UsersApi();
@@ -3642,15 +4354,15 @@ apiInstance.postUserExternalid(userId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
  **body** | **Object** |  |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **[UserExternalIdentifier]**
 
-<a name="postUserInvite"></a>
 
-# void postUserInvite(userId, opts)
+## postUserInvite
+
+> void postUserInvite(userId, opts)
 
 
 POST /api/v2/users/{userId}/invite
@@ -3659,7 +4371,9 @@ Send an activation email to the user
 
 Requires ANY permissions:
 
-* directory:user:add
+* admin
+* directory:organization:admin
+* directory:user:setPassword
 
 ### Example Usage
 
@@ -3669,7 +4383,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UsersApi();
@@ -3696,15 +4410,15 @@ apiInstance.postUserInvite(userId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
  **force** | **Boolean** | Resend the invitation even if one is already outstanding | [optional] [default to false] |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="postUserPassword"></a>
 
-# void postUserPassword(userId, body)
+## postUserPassword
+
+> void postUserPassword(userId, body)
 
 
 POST /api/v2/users/{userId}/password
@@ -3723,7 +4437,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UsersApi();
@@ -3748,20 +4462,20 @@ apiInstance.postUserPassword(userId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
  **body** | **Object** | Password |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="postUserRoutinglanguages"></a>
 
-# UserRoutingLanguage postUserRoutinglanguages(userId, body)
+## postUserRoutinglanguages
+
+> UserRoutingLanguage postUserRoutinglanguages(userId, body)
 
 
 POST /api/v2/users/{userId}/routinglanguages
 
-Add routing language to user
+Assign a routing language to a user
 
 Requires ANY permissions:
 
@@ -3776,7 +4490,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UsersApi();
@@ -3801,20 +4515,20 @@ apiInstance.postUserRoutinglanguages(userId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
  **body** | **Object** | Language |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **UserRoutingLanguage**
 
-<a name="postUserRoutingskills"></a>
 
-# UserRoutingSkill postUserRoutingskills(userId, body)
+## postUserRoutingskills
+
+> UserRoutingSkill postUserRoutingskills(userId, body)
 
 
 POST /api/v2/users/{userId}/routingskills
 
-Add routing skill to user
+Assign a routing skill to a user
 
 Requires ALL permissions:
 
@@ -3828,7 +4542,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UsersApi();
@@ -3853,15 +4567,15 @@ apiInstance.postUserRoutingskills(userId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
  **body** | **Object** | Skill |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **UserRoutingSkill**
 
-<a name="postUsers"></a>
 
-# User postUsers(body)
+## postUsers
+
+> User postUsers(body)
 
 
 POST /api/v2/users
@@ -3882,7 +4596,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UsersApi();
@@ -3905,15 +4619,15 @@ apiInstance.postUsers(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | User |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **User**
 
-<a name="postUsersDevelopmentActivitiesAggregatesQuery"></a>
 
-# DevelopmentActivityAggregateResponse postUsersDevelopmentActivitiesAggregatesQuery(body)
+## postUsersDevelopmentActivitiesAggregatesQuery
+
+> DevelopmentActivityAggregateResponse postUsersDevelopmentActivitiesAggregatesQuery(body)
 
 
 POST /api/v2/users/development/activities/aggregates/query
@@ -3935,7 +4649,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UsersApi();
@@ -3958,15 +4672,15 @@ apiInstance.postUsersDevelopmentActivitiesAggregatesQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Aggregate Request |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **DevelopmentActivityAggregateResponse**
 
-<a name="postUsersMePassword"></a>
 
-# void postUsersMePassword(body)
+## postUsersMePassword
+
+> void postUsersMePassword(body)
 
 
 POST /api/v2/users/me/password
@@ -3983,7 +4697,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UsersApi();
@@ -4006,15 +4720,15 @@ apiInstance.postUsersMePassword(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Password |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="postUsersSearch"></a>
 
-# UsersSearchResponse postUsersSearch(body)
+## postUsersSearch
+
+> UsersSearchResponse postUsersSearch(body)
 
 
 POST /api/v2/users/search
@@ -4033,7 +4747,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UsersApi();
@@ -4056,15 +4770,15 @@ apiInstance.postUsersSearch(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Search request options |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **UsersSearchResponse**
 
-<a name="postUsersSearchConversationTarget"></a>
 
-# UsersSearchResponse postUsersSearchConversationTarget(body)
+## postUsersSearchConversationTarget
+
+> UsersSearchResponse postUsersSearchConversationTarget(body)
 
 
 POST /api/v2/users/search/conversation/target
@@ -4085,7 +4799,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UsersApi();
@@ -4108,15 +4822,15 @@ apiInstance.postUsersSearchConversationTarget(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Search request options |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **UsersSearchResponse**
 
-<a name="postUsersSearchQueuemembersManage"></a>
 
-# UsersSearchResponse postUsersSearchQueuemembersManage(body)
+## postUsersSearchQueuemembersManage
+
+> UsersSearchResponse postUsersSearchQueuemembersManage(body)
 
 
 POST /api/v2/users/search/queuemembers/manage
@@ -4138,7 +4852,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UsersApi();
@@ -4161,15 +4875,15 @@ apiInstance.postUsersSearchQueuemembersManage(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Search request options |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **UsersSearchResponse**
 
-<a name="postUsersSearchTeamsAssign"></a>
 
-# UsersSearchResponse postUsersSearchTeamsAssign(body)
+## postUsersSearchTeamsAssign
+
+> UsersSearchResponse postUsersSearchTeamsAssign(body)
 
 
 POST /api/v2/users/search/teams/assign
@@ -4188,7 +4902,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UsersApi();
@@ -4211,15 +4925,117 @@ apiInstance.postUsersSearchTeamsAssign(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Search request options |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **UsersSearchResponse**
 
-<a name="putRoutingUserUtilization"></a>
 
-# AgentMaxUtilization putRoutingUserUtilization(userId, body)
+## putRoutingDirectroutingbackupSettingsMe
+
+> AgentDirectRoutingBackupSettings putRoutingDirectroutingbackupSettingsMe(body)
+
+
+PUT /api/v2/routing/directroutingbackup/settings/me
+
+Update the user's Direct Routing Backup settings.
+
+Requires ANY permissions:
+
+* routing:directRoutingBackup:selfEdit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.UsersApi();
+
+let body = {}; // Object | directRoutingBackup
+
+apiInstance.putRoutingDirectroutingbackupSettingsMe(body)
+  .then((data) => {
+    console.log(`putRoutingDirectroutingbackupSettingsMe success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putRoutingDirectroutingbackupSettingsMe');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | directRoutingBackup |  |
+
+### Return type
+
+**AgentDirectRoutingBackupSettings**
+
+
+## putRoutingUserDirectroutingbackupSettings
+
+> AgentDirectRoutingBackupSettings putRoutingUserDirectroutingbackupSettings(userId, body)
+
+
+PUT /api/v2/routing/users/{userId}/directroutingbackup/settings
+
+Update the user's Direct Routing Backup settings.
+
+Requires ANY permissions:
+
+* routing:directRoutingBackup:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.UsersApi();
+
+let userId = "userId_example"; // String | User ID
+let body = {}; // Object | directRoutingBackup
+
+apiInstance.putRoutingUserDirectroutingbackupSettings(userId, body)
+  .then((data) => {
+    console.log(`putRoutingUserDirectroutingbackupSettings success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putRoutingUserDirectroutingbackupSettings');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String** | User ID |  |
+ **body** | **Object** | directRoutingBackup |  |
+
+### Return type
+
+**AgentDirectRoutingBackupSettings**
+
+
+## putRoutingUserUtilization
+
+> AgentMaxUtilizationResponse putRoutingUserUtilization(userId, body)
 
 
 PUT /api/v2/routing/users/{userId}/utilization
@@ -4238,7 +5054,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UsersApi();
@@ -4263,15 +5079,15 @@ apiInstance.putRoutingUserUtilization(userId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
  **body** | **Object** | utilization |  |
-{: class="table table-striped"}
 
 ### Return type
 
-**AgentMaxUtilization**
+**AgentMaxUtilizationResponse**
 
-<a name="putUserCallforwarding"></a>
 
-# CallForwarding putUserCallforwarding(userId, body)
+## putUserCallforwarding
+
+> CallForwarding putUserCallforwarding(userId, body)
 
 
 PUT /api/v2/users/{userId}/callforwarding
@@ -4290,7 +5106,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UsersApi();
@@ -4315,15 +5131,15 @@ apiInstance.putUserCallforwarding(userId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
  **body** | **Object** | Call forwarding |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **CallForwarding**
 
-<a name="putUserOutofoffice"></a>
 
-# OutOfOffice putUserOutofoffice(userId, body)
+## putUserOutofoffice
+
+> OutOfOffice putUserOutofoffice(userId, body)
 
 
 PUT /api/v2/users/{userId}/outofoffice
@@ -4340,7 +5156,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UsersApi();
@@ -4365,15 +5181,15 @@ apiInstance.putUserOutofoffice(userId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
  **body** | **Object** | The updated OutOffOffice |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **OutOfOffice**
 
-<a name="putUserProfileskills"></a>
 
-# **[&#39;String&#39;]** putUserProfileskills(userId, body)
+## putUserProfileskills
+
+> **[&#39;String&#39;]** putUserProfileskills(userId, body)
 
 
 PUT /api/v2/users/{userId}/profileskills
@@ -4392,7 +5208,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UsersApi();
@@ -4417,15 +5233,15 @@ apiInstance.putUserProfileskills(userId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
  **body** | **[String]** | Skills |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **[&#39;String&#39;]**
 
-<a name="putUserRoles"></a>
 
-# UserAuthorization putUserRoles(subjectId, body)
+## putUserRoles
+
+> UserAuthorization putUserRoles(subjectId, body)
 
 
 PUT /api/v2/users/{subjectId}/roles
@@ -4444,7 +5260,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UsersApi();
@@ -4469,20 +5285,20 @@ apiInstance.putUserRoles(subjectId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **subjectId** | **String** | User ID |  |
  **body** | **[String]** | List of roles |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **UserAuthorization**
 
-<a name="putUserRoutingskill"></a>
 
-# UserRoutingSkill putUserRoutingskill(userId, skillId, body)
+## putUserRoutingskill
+
+> UserRoutingSkill putUserRoutingskill(userId, skillId, body)
 
 
 PUT /api/v2/users/{userId}/routingskills/{skillId}
 
-Update routing skill proficiency or state.
+Update an assigned routing skill's proficiency
 
 Requires ALL permissions:
 
@@ -4496,7 +5312,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UsersApi();
@@ -4523,20 +5339,20 @@ apiInstance.putUserRoutingskill(userId, skillId, body)
  **userId** | **String** | User ID |  |
  **skillId** | **String** | skillId |  |
  **body** | **Object** | Skill |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **UserRoutingSkill**
 
-<a name="putUserRoutingskillsBulk"></a>
 
-# UserSkillEntityListing putUserRoutingskillsBulk(userId, body)
+## putUserRoutingskillsBulk
+
+> UserSkillEntityListing putUserRoutingskillsBulk(userId, body)
 
 
 PUT /api/v2/users/{userId}/routingskills/bulk
 
-Replace all routing skills assigned to a user
+Assign multiple routing skills to a user, replacing any current assignments
 
 Requires ANY permissions:
 
@@ -4550,7 +5366,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UsersApi();
@@ -4575,15 +5391,15 @@ apiInstance.putUserRoutingskillsBulk(userId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
  **body** | **Object** | Skill |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **UserSkillEntityListing**
 
-<a name="putUserRoutingstatus"></a>
 
-# RoutingStatus putUserRoutingstatus(userId, body)
+## putUserRoutingstatus
+
+> RoutingStatus putUserRoutingstatus(userId, body)
 
 
 PUT /api/v2/users/{userId}/routingstatus
@@ -4600,7 +5416,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UsersApi();
@@ -4625,15 +5441,15 @@ apiInstance.putUserRoutingstatus(userId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
  **body** | **Object** | Routing Status |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **RoutingStatus**
 
-<a name="putUserState"></a>
 
-# UserState putUserState(userId, body)
+## putUserState
+
+> UserState putUserState(userId, body)
 
 
 PUT /api/v2/users/{userId}/state
@@ -4652,7 +5468,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UsersApi();
@@ -4677,15 +5493,15 @@ apiInstance.putUserState(userId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
  **body** | **Object** | User |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **UserState**
 
-<a name="putUserStationAssociatedstationStationId"></a>
 
-# void putUserStationAssociatedstationStationId(userId, stationId)
+## putUserStationAssociatedstationStationId
+
+> void putUserStationAssociatedstationStationId(userId, stationId)
 
 
 PUT /api/v2/users/{userId}/station/associatedstation/{stationId}
@@ -4702,7 +5518,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UsersApi();
@@ -4727,15 +5543,15 @@ apiInstance.putUserStationAssociatedstationStationId(userId, stationId)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
  **stationId** | **String** | stationId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="putUserStationDefaultstationStationId"></a>
 
-# void putUserStationDefaultstationStationId(userId, stationId)
+## putUserStationDefaultstationStationId
+
+> void putUserStationDefaultstationStationId(userId, stationId)
 
 
 PUT /api/v2/users/{userId}/station/defaultstation/{stationId}
@@ -4755,7 +5571,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UsersApi();
@@ -4780,9 +5596,64 @@ apiInstance.putUserStationDefaultstationStationId(userId, stationId)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
  **stationId** | **String** | stationId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
+
+## putUserVerifier
+
+> Verifier putUserVerifier(userId, verifierId, body)
+
+
+PUT /api/v2/users/{userId}/verifiers/{verifierId}
+
+Update a verifier
+
+Requires ANY permissions:
+
+* mfa:verifier:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.UsersApi();
+
+let userId = "userId_example"; // String | User ID
+let verifierId = "verifierId_example"; // String | Verifier ID
+let body = {}; // Object | Verifier Update
+
+apiInstance.putUserVerifier(userId, verifierId, body)
+  .then((data) => {
+    console.log(`putUserVerifier success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putUserVerifier');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String** | User ID |  |
+ **verifierId** | **String** | Verifier ID |  |
+ **body** | **Object** | Verifier Update |  |
+
+### Return type
+
+**Verifier**
+
+
+_purecloud-platform-client-v2@229.1.0_

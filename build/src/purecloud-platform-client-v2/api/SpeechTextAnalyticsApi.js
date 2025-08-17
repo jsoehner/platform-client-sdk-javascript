@@ -5,7 +5,7 @@ class SpeechTextAnalyticsApi {
 	/**
 	 * SpeechTextAnalytics service.
 	 * @module purecloud-platform-client-v2/api/SpeechTextAnalyticsApi
-	 * @version 174.0.0
+	 * @version 229.1.0
 	 */
 
 	/**
@@ -21,6 +21,56 @@ class SpeechTextAnalyticsApi {
 
 
 	/**
+	 * Delete a Speech and Text Analytics category by ID
+	 * 
+	 * @param {String} categoryId The id of the category
+	 */
+	deleteSpeechandtextanalyticsCategory(categoryId) { 
+		// verify the required parameter 'categoryId' is set
+		if (categoryId === undefined || categoryId === null || categoryId === '') {
+			throw 'Missing the required parameter "categoryId" when calling deleteSpeechandtextanalyticsCategory';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/speechandtextanalytics/categories/{categoryId}', 
+			'DELETE', 
+			{ 'categoryId': categoryId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete a Speech and Text Analytics DictionaryFeedback by Id
+	 * 
+	 * @param {String} dictionaryFeedbackId The Id of the Dictionary Feedback
+	 */
+	deleteSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId(dictionaryFeedbackId) { 
+		// verify the required parameter 'dictionaryFeedbackId' is set
+		if (dictionaryFeedbackId === undefined || dictionaryFeedbackId === null || dictionaryFeedbackId === '') {
+			throw 'Missing the required parameter "dictionaryFeedbackId" when calling deleteSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/speechandtextanalytics/dictionaryfeedback/{dictionaryFeedbackId}', 
+			'DELETE', 
+			{ 'dictionaryFeedbackId': dictionaryFeedbackId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Delete a Speech and Text Analytics program by id
 	 * 
 	 * @param {String} programId The id of the program
@@ -31,7 +81,7 @@ class SpeechTextAnalyticsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'programId' is set
-		if (programId === undefined || programId === null) {
+		if (programId === undefined || programId === null || programId === '') {
 			throw 'Missing the required parameter "programId" when calling deleteSpeechandtextanalyticsProgram';
 		}
 
@@ -40,6 +90,32 @@ class SpeechTextAnalyticsApi {
 			'DELETE', 
 			{ 'programId': programId },
 			{ 'forceDelete': opts['forceDelete'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete a Speech and Text Analytics Reprocessing job by Id
+	 * 
+	 * @param {String} jobId The Id of the Reprocessing job
+	 * deleteSpeechandtextanalyticsReprocessingJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	deleteSpeechandtextanalyticsReprocessingJob(jobId) { 
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null || jobId === '') {
+			throw 'Missing the required parameter "jobId" when calling deleteSpeechandtextanalyticsReprocessingJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/speechandtextanalytics/reprocessing/jobs/{jobId}', 
+			'DELETE', 
+			{ 'jobId': jobId },
+			{  },
 			{  },
 			{  },
 			null, 
@@ -76,7 +152,7 @@ class SpeechTextAnalyticsApi {
 	 */
 	deleteSpeechandtextanalyticsSentimentfeedbackSentimentFeedbackId(sentimentFeedbackId) { 
 		// verify the required parameter 'sentimentFeedbackId' is set
-		if (sentimentFeedbackId === undefined || sentimentFeedbackId === null) {
+		if (sentimentFeedbackId === undefined || sentimentFeedbackId === null || sentimentFeedbackId === '') {
 			throw 'Missing the required parameter "sentimentFeedbackId" when calling deleteSpeechandtextanalyticsSentimentfeedbackSentimentFeedbackId';
 		}
 
@@ -101,7 +177,7 @@ class SpeechTextAnalyticsApi {
 	 */
 	deleteSpeechandtextanalyticsTopic(topicId) { 
 		// verify the required parameter 'topicId' is set
-		if (topicId === undefined || topicId === null) {
+		if (topicId === undefined || topicId === null || topicId === '') {
 			throw 'Missing the required parameter "topicId" when calling deleteSpeechandtextanalyticsTopic';
 		}
 
@@ -120,13 +196,67 @@ class SpeechTextAnalyticsApi {
 	}
 
 	/**
+	 * Get the list of Speech and Text Analytics categories
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize The page size for the listing. The max that will be returned is 25. (default to 25)
+	 * @param {Number} opts.pageNumber The page number for the listing (default to 1)
+	 * @param {String} opts.name The category name filter applied to the listing
+	 * @param {Object} opts.sortOrder The sort order for the listing (default to asc)
+	 * @param {Object} opts.sortBy The field to sort by for the listing (default to name)
+	 * @param {Array.<String>} opts.ids Comma separated Category IDs to filter by. Cannot be used with other filters. Maximum of 25 IDs allowed.
+	 */
+	getSpeechandtextanalyticsCategories(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/speechandtextanalytics/categories', 
+			'GET', 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'name': opts['name'],'sortOrder': opts['sortOrder'],'sortBy': opts['sortBy'],'ids': this.apiClient.buildCollectionParam(opts['ids'], 'multi') },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a Speech and Text Analytics Category by ID
+	 * 
+	 * @param {String} categoryId The id of the category
+	 */
+	getSpeechandtextanalyticsCategory(categoryId) { 
+		// verify the required parameter 'categoryId' is set
+		if (categoryId === undefined || categoryId === null || categoryId === '') {
+			throw 'Missing the required parameter "categoryId" when calling getSpeechandtextanalyticsCategory';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/speechandtextanalytics/categories/{categoryId}', 
+			'GET', 
+			{ 'categoryId': categoryId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get Speech and Text Analytics for a specific conversation
 	 * 
 	 * @param {String} conversationId Conversation Id
 	 */
 	getSpeechandtextanalyticsConversation(conversationId) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getSpeechandtextanalyticsConversation';
 		}
 
@@ -145,6 +275,36 @@ class SpeechTextAnalyticsApi {
 	}
 
 	/**
+	 * Get the list of detected Speech and Text Analytics categories of conversation
+	 * 
+	 * @param {String} conversationId The id of the conversation
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize The page size for the listing. The max that will be returned is 50. (default to 25)
+	 * @param {Number} opts.pageNumber The page number for the listing (default to 1)
+	 */
+	getSpeechandtextanalyticsConversationCategories(conversationId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
+			throw 'Missing the required parameter "conversationId" when calling getSpeechandtextanalyticsConversationCategories';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/speechandtextanalytics/conversations/{conversationId}/categories', 
+			'GET', 
+			{ 'conversationId': conversationId },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get the pre-signed S3 URL for the transcript of a specific communication of a conversation
 	 * 
 	 * @param {String} conversationId Conversation ID
@@ -152,11 +312,11 @@ class SpeechTextAnalyticsApi {
 	 */
 	getSpeechandtextanalyticsConversationCommunicationTranscripturl(conversationId, communicationId) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getSpeechandtextanalyticsConversationCommunicationTranscripturl';
 		}
 		// verify the required parameter 'communicationId' is set
-		if (communicationId === undefined || communicationId === null) {
+		if (communicationId === undefined || communicationId === null || communicationId === '') {
 			throw 'Missing the required parameter "communicationId" when calling getSpeechandtextanalyticsConversationCommunicationTranscripturl';
 		}
 
@@ -182,11 +342,11 @@ class SpeechTextAnalyticsApi {
 	 */
 	getSpeechandtextanalyticsConversationCommunicationTranscripturls(conversationId, communicationId) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getSpeechandtextanalyticsConversationCommunicationTranscripturls';
 		}
 		// verify the required parameter 'communicationId' is set
-		if (communicationId === undefined || communicationId === null) {
+		if (communicationId === undefined || communicationId === null || communicationId === '') {
 			throw 'Missing the required parameter "communicationId" when calling getSpeechandtextanalyticsConversationCommunicationTranscripturls';
 		}
 
@@ -205,13 +365,114 @@ class SpeechTextAnalyticsApi {
 	}
 
 	/**
+	 * Get sentiment data
+	 * 
+	 * @param {String} conversationId The conversation ID of the sentiment data
+	 */
+	getSpeechandtextanalyticsConversationSentiments(conversationId) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
+			throw 'Missing the required parameter "conversationId" when calling getSpeechandtextanalyticsConversationSentiments';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/speechandtextanalytics/conversations/{conversationId}/sentiments', 
+			'GET', 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get conversation summaries by conversation id.
+	 * 
+	 * @param {String} conversationId The conversation ID of the summaries
+	 */
+	getSpeechandtextanalyticsConversationSummaries(conversationId) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
+			throw 'Missing the required parameter "conversationId" when calling getSpeechandtextanalyticsConversationSummaries';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/speechandtextanalytics/conversations/{conversationId}/summaries', 
+			'GET', 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the list of Speech and Text Analytics dictionary feedbacks
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.dialect The key for filter the listing by dialect, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard
+	 * @param {String} opts.nextPage The key for listing the next page
+	 * @param {Number} opts.pageSize The page size for the listing (default to 500)
+	 */
+	getSpeechandtextanalyticsDictionaryfeedback(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/speechandtextanalytics/dictionaryfeedback', 
+			'GET', 
+			{  },
+			{ 'dialect': opts['dialect'],'nextPage': opts['nextPage'],'pageSize': opts['pageSize'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a Speech and Text Analytics dictionary feedback by id
+	 * 
+	 * @param {String} dictionaryFeedbackId The Id of the Dictionary Feedback
+	 */
+	getSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId(dictionaryFeedbackId) { 
+		// verify the required parameter 'dictionaryFeedbackId' is set
+		if (dictionaryFeedbackId === undefined || dictionaryFeedbackId === null || dictionaryFeedbackId === '') {
+			throw 'Missing the required parameter "dictionaryFeedbackId" when calling getSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/speechandtextanalytics/dictionaryfeedback/{dictionaryFeedbackId}', 
+			'GET', 
+			{ 'dictionaryFeedbackId': dictionaryFeedbackId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get a Speech and Text Analytics program by id
 	 * 
 	 * @param {String} programId The id of the program
 	 */
 	getSpeechandtextanalyticsProgram(programId) { 
 		// verify the required parameter 'programId' is set
-		if (programId === undefined || programId === null) {
+		if (programId === undefined || programId === null || programId === '') {
 			throw 'Missing the required parameter "programId" when calling getSpeechandtextanalyticsProgram';
 		}
 
@@ -236,12 +497,37 @@ class SpeechTextAnalyticsApi {
 	 */
 	getSpeechandtextanalyticsProgramMappings(programId) { 
 		// verify the required parameter 'programId' is set
-		if (programId === undefined || programId === null) {
+		if (programId === undefined || programId === null || programId === '') {
 			throw 'Missing the required parameter "programId" when calling getSpeechandtextanalyticsProgramMappings';
 		}
 
 		return this.apiClient.callApi(
 			'/api/v2/speechandtextanalytics/programs/{programId}/mappings', 
+			'GET', 
+			{ 'programId': programId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get AI Insights settings of a program
+	 * 
+	 * @param {String} programId The id of the program
+	 */
+	getSpeechandtextanalyticsProgramSettingsInsights(programId) { 
+		// verify the required parameter 'programId' is set
+		if (programId === undefined || programId === null || programId === '') {
+			throw 'Missing the required parameter "programId" when calling getSpeechandtextanalyticsProgramSettingsInsights';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/speechandtextanalytics/programs/{programId}/settings/insights', 
 			'GET', 
 			{ 'programId': programId },
 			{  },
@@ -261,7 +547,7 @@ class SpeechTextAnalyticsApi {
 	 */
 	getSpeechandtextanalyticsProgramTranscriptionengines(programId) { 
 		// verify the required parameter 'programId' is set
-		if (programId === undefined || programId === null) {
+		if (programId === undefined || programId === null || programId === '') {
 			throw 'Missing the required parameter "programId" when calling getSpeechandtextanalyticsProgramTranscriptionengines';
 		}
 
@@ -312,7 +598,7 @@ class SpeechTextAnalyticsApi {
 	 */
 	getSpeechandtextanalyticsProgramsGeneralJob(jobId) { 
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getSpeechandtextanalyticsProgramsGeneralJob';
 		}
 
@@ -362,7 +648,7 @@ class SpeechTextAnalyticsApi {
 	 */
 	getSpeechandtextanalyticsProgramsPublishjob(jobId) { 
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getSpeechandtextanalyticsProgramsPublishjob';
 		}
 
@@ -371,6 +657,32 @@ class SpeechTextAnalyticsApi {
 			'GET', 
 			{ 'jobId': jobId },
 			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the list of program AI Insights settings for the organization
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize The page size for the listing. The max that will be returned is 100. (default to 100)
+	 * @param {Number} opts.pageNumber The page number for the listing (default to 1)
+	 * @param {Array.<String>} opts.programIds Comma separated Program IDs to filter by. Maximum of 50 IDs allowed.
+	 */
+	getSpeechandtextanalyticsProgramsSettingsInsights(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/speechandtextanalytics/programs/settings/insights', 
+			'GET', 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'programIds': this.apiClient.buildCollectionParam(opts['programIds'], 'multi') },
 			{  },
 			{  },
 			null, 
@@ -416,6 +728,86 @@ class SpeechTextAnalyticsApi {
 			'GET', 
 			{  },
 			{ 'nextPage': opts['nextPage'],'pageSize': opts['pageSize'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a Speech and Text Analytics reprocess job by id
+	 * 
+	 * @param {String} jobId The Id of the Reprocessing job
+	 * getSpeechandtextanalyticsReprocessingJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getSpeechandtextanalyticsReprocessingJob(jobId) { 
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null || jobId === '') {
+			throw 'Missing the required parameter "jobId" when calling getSpeechandtextanalyticsReprocessingJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/speechandtextanalytics/reprocessing/jobs/{jobId}', 
+			'GET', 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a Speech and Text Analytics Reprocessing interactions statuses by job id
+	 * 
+	 * @param {String} jobId The Id of the Reprocessing job
+	 * getSpeechandtextanalyticsReprocessingJobInteractions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getSpeechandtextanalyticsReprocessingJobInteractions(jobId) { 
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null || jobId === '') {
+			throw 'Missing the required parameter "jobId" when calling getSpeechandtextanalyticsReprocessingJobInteractions';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/speechandtextanalytics/reprocessing/jobs/{jobId}/interactions', 
+			'GET', 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the list of Speech and Text Analytics reprocess jobs
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize The page size for the listing. The max that will be returned is 100. Default is 25.
+	 * @param {Number} opts.pageNumber The page number for the listing. Defaults to 1.
+	 * @param {Object} opts.sortOrder Results are sorted by dateCreated. Please choose the sort order. The default is descending (desc).
+	 * @param {String} opts.name Case insensitive partial name to filter by.
+	 * getSpeechandtextanalyticsReprocessingJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getSpeechandtextanalyticsReprocessingJobs(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/speechandtextanalytics/reprocessing/jobs', 
+			'GET', 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortOrder': opts['sortOrder'],'name': opts['name'] },
 			{  },
 			{  },
 			null, 
@@ -496,7 +888,7 @@ class SpeechTextAnalyticsApi {
 	 */
 	getSpeechandtextanalyticsTopic(topicId) { 
 		// verify the required parameter 'topicId' is set
-		if (topicId === undefined || topicId === null) {
+		if (topicId === undefined || topicId === null || topicId === '') {
 			throw 'Missing the required parameter "topicId" when calling getSpeechandtextanalyticsTopic';
 		}
 
@@ -519,10 +911,11 @@ class SpeechTextAnalyticsApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.nextPage The key for listing the next page
-	 * @param {Number} opts.pageSize The page size for the listing (default to 20)
+	 * @param {Number} opts.pageSize The page size for the listing. The max that will be returned is 500. (default to 20)
 	 * @param {Object} opts.state Topic state. Defaults to latest
 	 * @param {String} opts.name Case insensitive partial name to filter by
 	 * @param {Array.<String>} opts.ids Comma separated Topic IDs to filter by. Cannot be used with other filters. Maximum of 50 IDs allowed.
+	 * @param {Array.<String>} opts.dialects Comma separated dialect strings to filter by. Maximum of 15 dialects allowed.
 	 * @param {Object} opts.sortBy Sort results by. Defaults to name
 	 * @param {Object} opts.sortOrder Sort order. Defaults to asc
 	 */
@@ -534,7 +927,7 @@ class SpeechTextAnalyticsApi {
 			'/api/v2/speechandtextanalytics/topics', 
 			'GET', 
 			{  },
-			{ 'nextPage': opts['nextPage'],'pageSize': opts['pageSize'],'state': opts['state'],'name': opts['name'],'ids': this.apiClient.buildCollectionParam(opts['ids'], 'multi'),'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] },
+			{ 'nextPage': opts['nextPage'],'pageSize': opts['pageSize'],'state': opts['state'],'name': opts['name'],'ids': this.apiClient.buildCollectionParam(opts['ids'], 'multi'),'dialects': this.apiClient.buildCollectionParam(opts['dialects'], 'multi'),'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] },
 			{  },
 			{  },
 			null, 
@@ -619,7 +1012,7 @@ class SpeechTextAnalyticsApi {
 	 */
 	getSpeechandtextanalyticsTopicsPublishjob(jobId) { 
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getSpeechandtextanalyticsTopicsPublishjob';
 		}
 
@@ -627,6 +1020,86 @@ class SpeechTextAnalyticsApi {
 			'/api/v2/speechandtextanalytics/topics/publishjobs/{jobId}', 
 			'GET', 
 			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a Speech and Text Analytics test topics phrase job by id
+	 * 
+	 * @param {String} jobId the id of the test topic phrase job
+	 */
+	getSpeechandtextanalyticsTopicsTestphraseJob(jobId) { 
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null || jobId === '') {
+			throw 'Missing the required parameter "jobId" when calling getSpeechandtextanalyticsTopicsTestphraseJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/speechandtextanalytics/topics/testphrase/jobs/{jobId}', 
+			'GET', 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Translate a single interaction recording (or an email conversation)
+	 * 
+	 * @param {String} languageId Target translation language
+	 * @param {String} conversationId Conversation id
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.communicationId Communication id associated with the conversation. Please provide a valid communicationId when requesting non-email interactions.
+	 * @param {String} opts.recordingId Recording id associated with the communication. Please provide a valid recordingId when requesting voice interactions.
+	 */
+	getSpeechandtextanalyticsTranslationsLanguageConversation(languageId, conversationId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'languageId' is set
+		if (languageId === undefined || languageId === null || languageId === '') {
+			throw 'Missing the required parameter "languageId" when calling getSpeechandtextanalyticsTranslationsLanguageConversation';
+		}
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
+			throw 'Missing the required parameter "conversationId" when calling getSpeechandtextanalyticsTranslationsLanguageConversation';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/speechandtextanalytics/translations/languages/{languageId}/conversations/{conversationId}', 
+			'GET', 
+			{ 'languageId': languageId,'conversationId': conversationId },
+			{ 'communicationId': opts['communicationId'],'recordingId': opts['recordingId'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get supported translation languages
+	 * 
+	 */
+	getSpeechandtextanalyticsTranslationsLanguages() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/speechandtextanalytics/translations/languages', 
+			'GET', 
+			{  },
 			{  },
 			{  },
 			{  },
@@ -651,6 +1124,56 @@ class SpeechTextAnalyticsApi {
 		return this.apiClient.callApi(
 			'/api/v2/speechandtextanalytics/settings', 
 			'PATCH', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create new Speech and Text Analytics category
+	 * 
+	 * @param {Object} body The category to create
+	 */
+	postSpeechandtextanalyticsCategories(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postSpeechandtextanalyticsCategories';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/speechandtextanalytics/categories', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create a Speech and Text Analytics DictionaryFeedback
+	 * 
+	 * @param {Object} body The DictionaryFeedback to create
+	 */
+	postSpeechandtextanalyticsDictionaryfeedback(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postSpeechandtextanalyticsDictionaryfeedback';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/speechandtextanalytics/dictionaryfeedback', 
+			'POST', 
 			{  },
 			{  },
 			{  },
@@ -725,6 +1248,32 @@ class SpeechTextAnalyticsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/speechandtextanalytics/programs/publishjobs', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create a Speech and Text Analytics reprocess job.
+	 * 
+	 * @param {Object} body The ReprocessJob to create
+	 * postSpeechandtextanalyticsReprocessingJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postSpeechandtextanalyticsReprocessingJobs(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postSpeechandtextanalyticsReprocessingJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/speechandtextanalytics/reprocessing/jobs', 
 			'POST', 
 			{  },
 			{  },
@@ -813,6 +1362,31 @@ class SpeechTextAnalyticsApi {
 	}
 
 	/**
+	 * Create new Speech and Text Analytics publish topics job
+	 * 
+	 * @param {Object} body The publish test topic phrase job to create
+	 */
+	postSpeechandtextanalyticsTopicsTestphraseJobs(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postSpeechandtextanalyticsTopicsTestphraseJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/speechandtextanalytics/topics/testphrase/jobs', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Search resources.
 	 * 
 	 * @param {Object} body Search request options
@@ -838,6 +1412,65 @@ class SpeechTextAnalyticsApi {
 	}
 
 	/**
+	 * Update a Speech and Text Analytics category by ID
+	 * 
+	 * @param {String} categoryId The id of the category
+	 * @param {Object} body The updated category
+	 */
+	putSpeechandtextanalyticsCategory(categoryId, body) { 
+		// verify the required parameter 'categoryId' is set
+		if (categoryId === undefined || categoryId === null || categoryId === '') {
+			throw 'Missing the required parameter "categoryId" when calling putSpeechandtextanalyticsCategory';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putSpeechandtextanalyticsCategory';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/speechandtextanalytics/categories/{categoryId}', 
+			'PUT', 
+			{ 'categoryId': categoryId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update existing Speech and Text Analytics dictionary feedback by id
+	 * 
+	 * @param {String} dictionaryFeedbackId The Id of the Dictionary Feedback
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 */
+	putSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId(dictionaryFeedbackId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'dictionaryFeedbackId' is set
+		if (dictionaryFeedbackId === undefined || dictionaryFeedbackId === null || dictionaryFeedbackId === '') {
+			throw 'Missing the required parameter "dictionaryFeedbackId" when calling putSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/speechandtextanalytics/dictionaryfeedback/{dictionaryFeedbackId}', 
+			'PUT', 
+			{ 'dictionaryFeedbackId': dictionaryFeedbackId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Update existing Speech and Text Analytics program
 	 * 
 	 * @param {String} programId The id of the program
@@ -845,7 +1478,7 @@ class SpeechTextAnalyticsApi {
 	 */
 	putSpeechandtextanalyticsProgram(programId, body) { 
 		// verify the required parameter 'programId' is set
-		if (programId === undefined || programId === null) {
+		if (programId === undefined || programId === null || programId === '') {
 			throw 'Missing the required parameter "programId" when calling putSpeechandtextanalyticsProgram';
 		}
 		// verify the required parameter 'body' is set
@@ -875,7 +1508,7 @@ class SpeechTextAnalyticsApi {
 	 */
 	putSpeechandtextanalyticsProgramMappings(programId, body) { 
 		// verify the required parameter 'programId' is set
-		if (programId === undefined || programId === null) {
+		if (programId === undefined || programId === null || programId === '') {
 			throw 'Missing the required parameter "programId" when calling putSpeechandtextanalyticsProgramMappings';
 		}
 		// verify the required parameter 'body' is set
@@ -898,6 +1531,36 @@ class SpeechTextAnalyticsApi {
 	}
 
 	/**
+	 * Update AI Insights settings of a program
+	 * 
+	 * @param {String} programId The id of the program
+	 * @param {Object} body Program AI Insights setting
+	 */
+	putSpeechandtextanalyticsProgramSettingsInsights(programId, body) { 
+		// verify the required parameter 'programId' is set
+		if (programId === undefined || programId === null || programId === '') {
+			throw 'Missing the required parameter "programId" when calling putSpeechandtextanalyticsProgramSettingsInsights';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putSpeechandtextanalyticsProgramSettingsInsights';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/speechandtextanalytics/programs/{programId}/settings/insights', 
+			'PUT', 
+			{ 'programId': programId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Update transcription engine settings of a program
 	 * 
 	 * @param {String} programId The id of the program
@@ -905,7 +1568,7 @@ class SpeechTextAnalyticsApi {
 	 */
 	putSpeechandtextanalyticsProgramTranscriptionengines(programId, body) { 
 		// verify the required parameter 'programId' is set
-		if (programId === undefined || programId === null) {
+		if (programId === undefined || programId === null || programId === '') {
 			throw 'Missing the required parameter "programId" when calling putSpeechandtextanalyticsProgramTranscriptionengines';
 		}
 		// verify the required parameter 'body' is set
@@ -960,7 +1623,7 @@ class SpeechTextAnalyticsApi {
 	 */
 	putSpeechandtextanalyticsTopic(topicId, body) { 
 		// verify the required parameter 'topicId' is set
-		if (topicId === undefined || topicId === null) {
+		if (topicId === undefined || topicId === null || topicId === '') {
 			throw 'Missing the required parameter "topicId" when calling putSpeechandtextanalyticsTopic';
 		}
 		// verify the required parameter 'body' is set

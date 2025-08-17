@@ -5,7 +5,7 @@ class JourneyApi {
 	/**
 	 * Journey service.
 	 * @module purecloud-platform-client-v2/api/JourneyApi
-	 * @version 174.0.0
+	 * @version 229.1.0
 	 */
 
 	/**
@@ -21,13 +21,39 @@ class JourneyApi {
 
 
 	/**
+	 * Delete/cancel an async request for journey aggregates
+	 * 
+	 * @param {String} jobId jobId
+	 * deleteAnalyticsJourneysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	deleteAnalyticsJourneysAggregatesJob(jobId) { 
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null || jobId === '') {
+			throw 'Missing the required parameter "jobId" when calling deleteAnalyticsJourneysAggregatesJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/journeys/aggregates/jobs/{jobId}', 
+			'DELETE', 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Delete single action map.
 	 * 
 	 * @param {String} actionMapId ID of the action map.
 	 */
 	deleteJourneyActionmap(actionMapId) { 
 		// verify the required parameter 'actionMapId' is set
-		if (actionMapId === undefined || actionMapId === null) {
+		if (actionMapId === undefined || actionMapId === null || actionMapId === '') {
 			throw 'Missing the required parameter "actionMapId" when calling deleteJourneyActionmap';
 		}
 
@@ -56,7 +82,7 @@ class JourneyApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'actionTemplateId' is set
-		if (actionTemplateId === undefined || actionTemplateId === null) {
+		if (actionTemplateId === undefined || actionTemplateId === null || actionTemplateId === '') {
 			throw 'Missing the required parameter "actionTemplateId" when calling deleteJourneyActiontemplate';
 		}
 
@@ -81,7 +107,7 @@ class JourneyApi {
 	 */
 	deleteJourneyOutcome(outcomeId) { 
 		// verify the required parameter 'outcomeId' is set
-		if (outcomeId === undefined || outcomeId === null) {
+		if (outcomeId === undefined || outcomeId === null || outcomeId === '') {
 			throw 'Missing the required parameter "outcomeId" when calling deleteJourneyOutcome';
 		}
 
@@ -106,7 +132,7 @@ class JourneyApi {
 	 */
 	deleteJourneyOutcomesPredictor(predictorId) { 
 		// verify the required parameter 'predictorId' is set
-		if (predictorId === undefined || predictorId === null) {
+		if (predictorId === undefined || predictorId === null || predictorId === '') {
 			throw 'Missing the required parameter "predictorId" when calling deleteJourneyOutcomesPredictor';
 		}
 
@@ -131,7 +157,7 @@ class JourneyApi {
 	 */
 	deleteJourneySegment(segmentId) { 
 		// verify the required parameter 'segmentId' is set
-		if (segmentId === undefined || segmentId === null) {
+		if (segmentId === undefined || segmentId === null || segmentId === '') {
 			throw 'Missing the required parameter "segmentId" when calling deleteJourneySegment';
 		}
 
@@ -150,6 +176,56 @@ class JourneyApi {
 	}
 
 	/**
+	 * Delete a Journey View by ID
+	 * deletes all versions
+	 * @param {String} viewId viewId
+	 */
+	deleteJourneyView(viewId) { 
+		// verify the required parameter 'viewId' is set
+		if (viewId === undefined || viewId === null || viewId === '') {
+			throw 'Missing the required parameter "viewId" when calling deleteJourneyView';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/views/{viewId}', 
+			'DELETE', 
+			{ 'viewId': viewId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete the Schedule of a JourneyView
+	 * 
+	 * @param {String} viewId Journey View Id
+	 */
+	deleteJourneyViewSchedules(viewId) { 
+		// verify the required parameter 'viewId' is set
+		if (viewId === undefined || viewId === null || viewId === '') {
+			throw 'Missing the required parameter "viewId" when calling deleteJourneyViewSchedules';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/views/{viewId}/schedules', 
+			'DELETE', 
+			{ 'viewId': viewId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get status for async query for journey aggregates
 	 * 
 	 * @param {String} jobId jobId
@@ -157,7 +233,7 @@ class JourneyApi {
 	 */
 	getAnalyticsJourneysAggregatesJob(jobId) { 
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getAnalyticsJourneysAggregatesJob';
 		}
 
@@ -187,7 +263,7 @@ class JourneyApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getAnalyticsJourneysAggregatesJobResults';
 		}
 
@@ -196,6 +272,36 @@ class JourneyApi {
 			'GET', 
 			{ 'jobId': jobId },
 			{ 'cursor': opts['cursor'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Retrieve segment assignments by external contact ID.
+	 * 
+	 * @param {String} contactId ExternalContact ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.includeMerged Indicates whether to return segment assignments from all external contacts in the merge-set of the given one.
+	 * @param {Number} opts.limit Number of entities to return. Default of 25, maximum of 500.
+	 */
+	getExternalcontactsContactJourneySegments(contactId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'contactId' is set
+		if (contactId === undefined || contactId === null || contactId === '') {
+			throw 'Missing the required parameter "contactId" when calling getExternalcontactsContactJourneySegments';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/contacts/{contactId}/journey/segments', 
+			'GET', 
+			{ 'contactId': contactId },
+			{ 'includeMerged': opts['includeMerged'],'limit': opts['limit'] },
 			{  },
 			{  },
 			null, 
@@ -218,7 +324,7 @@ class JourneyApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'contactId' is set
-		if (contactId === undefined || contactId === null) {
+		if (contactId === undefined || contactId === null || contactId === '') {
 			throw 'Missing the required parameter "contactId" when calling getExternalcontactsContactJourneySessions';
 		}
 
@@ -243,7 +349,7 @@ class JourneyApi {
 	 */
 	getJourneyActionmap(actionMapId) { 
 		// verify the required parameter 'actionMapId' is set
-		if (actionMapId === undefined || actionMapId === null) {
+		if (actionMapId === undefined || actionMapId === null || actionMapId === '') {
 			throw 'Missing the required parameter "actionMapId" when calling getJourneyActionmap';
 		}
 
@@ -299,7 +405,7 @@ class JourneyApi {
 	 */
 	getJourneyActionmapsEstimatesJob(jobId) { 
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getJourneyActionmapsEstimatesJob';
 		}
 
@@ -324,7 +430,7 @@ class JourneyApi {
 	 */
 	getJourneyActionmapsEstimatesJobResults(jobId) { 
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getJourneyActionmapsEstimatesJobResults';
 		}
 
@@ -349,7 +455,7 @@ class JourneyApi {
 	 */
 	getJourneyActiontarget(actionTargetId) { 
 		// verify the required parameter 'actionTargetId' is set
-		if (actionTargetId === undefined || actionTargetId === null) {
+		if (actionTargetId === undefined || actionTargetId === null || actionTargetId === '') {
 			throw 'Missing the required parameter "actionTargetId" when calling getJourneyActiontarget';
 		}
 
@@ -399,7 +505,7 @@ class JourneyApi {
 	 */
 	getJourneyActiontemplate(actionTemplateId) { 
 		// verify the required parameter 'actionTemplateId' is set
-		if (actionTemplateId === undefined || actionTemplateId === null) {
+		if (actionTemplateId === undefined || actionTemplateId === null || actionTemplateId === '') {
 			throw 'Missing the required parameter "actionTemplateId" when calling getJourneyActiontemplate';
 		}
 
@@ -448,13 +554,51 @@ class JourneyApi {
 	}
 
 	/**
+	 * Send a ping.
+	 * 
+	 * @param {String} deploymentId The ID of the deployment sending the ping.
+	 * @param {String} customerCookieId ID of the customer associated with the ping.
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.dl Document Location: 1) Web Page URL if overridden or URL fragment identifier (window.location.hash). OR  2) Application screen name that the ping request was sent from in the app. e.g. 'home' or 'help. Pings without this parameter will not return actions.
+	 * @param {String} opts.dt Document Title.  A human readable name for the page or screen
+	 * @param {String} opts.appNamespace Namespace of the application (e.g. com.genesys.bancodinero). Used for domain filtering in application sessions
+	 * @param {String} opts.sessionId UUID of the customer session. Use the same Session Id for all pings, AppEvents and ActionEvents in the session
+	 * @param {Number} opts.sinceLastBeaconMilliseconds How long (milliseconds) since the last app event or beacon was sent. The response may return a pollInternvalMilliseconds to reduce the frequency of pings.
+	 */
+	getJourneyDeploymentCustomerPing(deploymentId, customerCookieId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'deploymentId' is set
+		if (deploymentId === undefined || deploymentId === null || deploymentId === '') {
+			throw 'Missing the required parameter "deploymentId" when calling getJourneyDeploymentCustomerPing';
+		}
+		// verify the required parameter 'customerCookieId' is set
+		if (customerCookieId === undefined || customerCookieId === null || customerCookieId === '') {
+			throw 'Missing the required parameter "customerCookieId" when calling getJourneyDeploymentCustomerPing';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/deployments/{deploymentId}/customers/{customerCookieId}/ping', 
+			'GET', 
+			{ 'deploymentId': deploymentId,'customerCookieId': customerCookieId },
+			{ 'dl': opts['dl'],'dt': opts['dt'],'appNamespace': opts['appNamespace'],'sessionId': opts['sessionId'],'sinceLastBeaconMilliseconds': opts['sinceLastBeaconMilliseconds'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Retrieve a single outcome.
 	 * 
 	 * @param {String} outcomeId ID of the outcome.
 	 */
 	getJourneyOutcome(outcomeId) { 
 		// verify the required parameter 'outcomeId' is set
-		if (outcomeId === undefined || outcomeId === null) {
+		if (outcomeId === undefined || outcomeId === null || outcomeId === '') {
 			throw 'Missing the required parameter "outcomeId" when calling getJourneyOutcome';
 		}
 
@@ -509,7 +653,7 @@ class JourneyApi {
 	 */
 	getJourneyOutcomesAttributionsJob(jobId) { 
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getJourneyOutcomesAttributionsJob';
 		}
 
@@ -535,7 +679,7 @@ class JourneyApi {
 	 */
 	getJourneyOutcomesAttributionsJobResults(jobId) { 
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getJourneyOutcomesAttributionsJobResults';
 		}
 
@@ -560,7 +704,7 @@ class JourneyApi {
 	 */
 	getJourneyOutcomesPredictor(predictorId) { 
 		// verify the required parameter 'predictorId' is set
-		if (predictorId === undefined || predictorId === null) {
+		if (predictorId === undefined || predictorId === null || predictorId === '') {
 			throw 'Missing the required parameter "predictorId" when calling getJourneyOutcomesPredictor';
 		}
 
@@ -605,7 +749,7 @@ class JourneyApi {
 	 */
 	getJourneySegment(segmentId) { 
 		// verify the required parameter 'segmentId' is set
-		if (segmentId === undefined || segmentId === null) {
+		if (segmentId === undefined || segmentId === null || segmentId === '') {
 			throw 'Missing the required parameter "segmentId" when calling getJourneySegment';
 		}
 
@@ -660,7 +804,7 @@ class JourneyApi {
 	 */
 	getJourneySession(sessionId) { 
 		// verify the required parameter 'sessionId' is set
-		if (sessionId === undefined || sessionId === null) {
+		if (sessionId === undefined || sessionId === null || sessionId === '') {
 			throw 'Missing the required parameter "sessionId" when calling getJourneySession';
 		}
 
@@ -685,13 +829,13 @@ class JourneyApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
-	 * getJourneySessionEvents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 * @param {Object} opts.eventType A comma separated list of journey event types to include in the results.
 	 */
 	getJourneySessionEvents(sessionId, opts) { 
 		opts = opts || {};
 		
 		// verify the required parameter 'sessionId' is set
-		if (sessionId === undefined || sessionId === null) {
+		if (sessionId === undefined || sessionId === null || sessionId === '') {
 			throw 'Missing the required parameter "sessionId" when calling getJourneySessionEvents';
 		}
 
@@ -699,7 +843,7 @@ class JourneyApi {
 			'/api/v2/journey/sessions/{sessionId}/events', 
 			'GET', 
 			{ 'sessionId': sessionId },
-			{ 'pageSize': opts['pageSize'],'after': opts['after'] },
+			{ 'pageSize': opts['pageSize'],'after': opts['after'],'eventType': opts['eventType'] },
 			{  },
 			{  },
 			null, 
@@ -716,7 +860,7 @@ class JourneyApi {
 	 */
 	getJourneySessionOutcomescores(sessionId) { 
 		// verify the required parameter 'sessionId' is set
-		if (sessionId === undefined || sessionId === null) {
+		if (sessionId === undefined || sessionId === null || sessionId === '') {
 			throw 'Missing the required parameter "sessionId" when calling getJourneySessionOutcomescores';
 		}
 
@@ -735,29 +879,436 @@ class JourneyApi {
 	}
 
 	/**
-	 * Retrieve segment assignments by session ID.
-	 * 
-	 * @param {String} sessionId ID of the session to query for segment assignments.
-	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
-	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
-	 * @param {Object} opts.segmentScope Scope to filter on. If not specified, both session-scoped and customer-scoped assignments are returned.
-	 * @param {Object} opts.assignmentState Assignment state to filter on. If not specified, both assigned and unassigned assignments are returned.
-	 * getJourneySessionSegments is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 * Get a Journey View by ID
+	 * returns the latest version
+	 * @param {String} viewId viewId
 	 */
-	getJourneySessionSegments(sessionId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'sessionId' is set
-		if (sessionId === undefined || sessionId === null) {
-			throw 'Missing the required parameter "sessionId" when calling getJourneySessionSegments';
+	getJourneyView(viewId) { 
+		// verify the required parameter 'viewId' is set
+		if (viewId === undefined || viewId === null || viewId === '') {
+			throw 'Missing the required parameter "viewId" when calling getJourneyView';
 		}
 
 		return this.apiClient.callApi(
-			'/api/v2/journey/sessions/{sessionId}/segments', 
+			'/api/v2/journey/views/{viewId}', 
 			'GET', 
-			{ 'sessionId': sessionId },
-			{ 'pageSize': opts['pageSize'],'after': opts['after'],'segmentScope': opts['segmentScope'],'assignmentState': opts['assignmentState'] },
+			{ 'viewId': viewId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the Schedule for a JourneyView
+	 * 
+	 * @param {String} viewId Journey View Id
+	 */
+	getJourneyViewSchedules(viewId) { 
+		// verify the required parameter 'viewId' is set
+		if (viewId === undefined || viewId === null || viewId === '') {
+			throw 'Missing the required parameter "viewId" when calling getJourneyViewSchedules';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/views/{viewId}/schedules', 
+			'GET', 
+			{ 'viewId': viewId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a Journey View by ID and version
+	 * 
+	 * @param {String} viewId viewId
+	 * @param {String} versionId versionId
+	 */
+	getJourneyViewVersion(viewId, versionId) { 
+		// verify the required parameter 'viewId' is set
+		if (viewId === undefined || viewId === null || viewId === '') {
+			throw 'Missing the required parameter "viewId" when calling getJourneyViewVersion';
+		}
+		// verify the required parameter 'versionId' is set
+		if (versionId === undefined || versionId === null || versionId === '') {
+			throw 'Missing the required parameter "versionId" when calling getJourneyViewVersion';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/views/{viewId}/versions/{versionId}', 
+			'GET', 
+			{ 'viewId': viewId,'versionId': versionId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a Chart by ID
+	 * returns the latest version
+	 * @param {String} viewId viewId
+	 * @param {String} journeyViewVersion Journey View Version
+	 * @param {String} chartId chartId
+	 */
+	getJourneyViewVersionChart(viewId, journeyViewVersion, chartId) { 
+		// verify the required parameter 'viewId' is set
+		if (viewId === undefined || viewId === null || viewId === '') {
+			throw 'Missing the required parameter "viewId" when calling getJourneyViewVersionChart';
+		}
+		// verify the required parameter 'journeyViewVersion' is set
+		if (journeyViewVersion === undefined || journeyViewVersion === null || journeyViewVersion === '') {
+			throw 'Missing the required parameter "journeyViewVersion" when calling getJourneyViewVersionChart';
+		}
+		// verify the required parameter 'chartId' is set
+		if (chartId === undefined || chartId === null || chartId === '') {
+			throw 'Missing the required parameter "chartId" when calling getJourneyViewVersionChart';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/views/{viewId}/versions/{journeyViewVersion}/charts/{chartId}', 
+			'GET', 
+			{ 'viewId': viewId,'journeyViewVersion': journeyViewVersion,'chartId': chartId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a Chart by ID and version
+	 * 
+	 * @param {String} viewId viewId
+	 * @param {String} journeyViewVersion Journey View Version
+	 * @param {String} chartId chartId
+	 * @param {String} chartVersion chartVersion
+	 */
+	getJourneyViewVersionChartVersion(viewId, journeyViewVersion, chartId, chartVersion) { 
+		// verify the required parameter 'viewId' is set
+		if (viewId === undefined || viewId === null || viewId === '') {
+			throw 'Missing the required parameter "viewId" when calling getJourneyViewVersionChartVersion';
+		}
+		// verify the required parameter 'journeyViewVersion' is set
+		if (journeyViewVersion === undefined || journeyViewVersion === null || journeyViewVersion === '') {
+			throw 'Missing the required parameter "journeyViewVersion" when calling getJourneyViewVersionChartVersion';
+		}
+		// verify the required parameter 'chartId' is set
+		if (chartId === undefined || chartId === null || chartId === '') {
+			throw 'Missing the required parameter "chartId" when calling getJourneyViewVersionChartVersion';
+		}
+		// verify the required parameter 'chartVersion' is set
+		if (chartVersion === undefined || chartVersion === null || chartVersion === '') {
+			throw 'Missing the required parameter "chartVersion" when calling getJourneyViewVersionChartVersion';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/views/{viewId}/versions/{journeyViewVersion}/charts/{chartId}/versions/{chartVersion}', 
+			'GET', 
+			{ 'viewId': viewId,'journeyViewVersion': journeyViewVersion,'chartId': chartId,'chartVersion': chartVersion },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the job for a journey view version.
+	 * 
+	 * @param {String} viewId Journey View Id
+	 * @param {String} journeyVersionId Journey View Version
+	 * @param {String} jobId JobId
+	 */
+	getJourneyViewVersionJob(viewId, journeyVersionId, jobId) { 
+		// verify the required parameter 'viewId' is set
+		if (viewId === undefined || viewId === null || viewId === '') {
+			throw 'Missing the required parameter "viewId" when calling getJourneyViewVersionJob';
+		}
+		// verify the required parameter 'journeyVersionId' is set
+		if (journeyVersionId === undefined || journeyVersionId === null || journeyVersionId === '') {
+			throw 'Missing the required parameter "journeyVersionId" when calling getJourneyViewVersionJob';
+		}
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null || jobId === '') {
+			throw 'Missing the required parameter "jobId" when calling getJourneyViewVersionJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs/{jobId}', 
+			'GET', 
+			{ 'viewId': viewId,'journeyVersionId': journeyVersionId,'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the result of a job for a journey view version.
+	 * 
+	 * @param {String} viewId JourneyViewResult id
+	 * @param {String} journeyViewVersion Journey View Version
+	 * @param {String} jobId Id of the executing job
+	 */
+	getJourneyViewVersionJobResults(viewId, journeyViewVersion, jobId) { 
+		// verify the required parameter 'viewId' is set
+		if (viewId === undefined || viewId === null || viewId === '') {
+			throw 'Missing the required parameter "viewId" when calling getJourneyViewVersionJobResults';
+		}
+		// verify the required parameter 'journeyViewVersion' is set
+		if (journeyViewVersion === undefined || journeyViewVersion === null || journeyViewVersion === '') {
+			throw 'Missing the required parameter "journeyViewVersion" when calling getJourneyViewVersionJobResults';
+		}
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null || jobId === '') {
+			throw 'Missing the required parameter "jobId" when calling getJourneyViewVersionJobResults';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/views/{viewId}/versions/{journeyViewVersion}/jobs/{jobId}/results', 
+			'GET', 
+			{ 'viewId': viewId,'journeyViewVersion': journeyViewVersion,'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the chart result associated with a journey view job.
+	 * 
+	 * @param {String} viewId Journey View Id
+	 * @param {String} journeyVersionId Journey View Version
+	 * @param {String} jobId JobId
+	 * @param {String} chartId ChartId
+	 */
+	getJourneyViewVersionJobResultsChart(viewId, journeyVersionId, jobId, chartId) { 
+		// verify the required parameter 'viewId' is set
+		if (viewId === undefined || viewId === null || viewId === '') {
+			throw 'Missing the required parameter "viewId" when calling getJourneyViewVersionJobResultsChart';
+		}
+		// verify the required parameter 'journeyVersionId' is set
+		if (journeyVersionId === undefined || journeyVersionId === null || journeyVersionId === '') {
+			throw 'Missing the required parameter "journeyVersionId" when calling getJourneyViewVersionJobResultsChart';
+		}
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null || jobId === '') {
+			throw 'Missing the required parameter "jobId" when calling getJourneyViewVersionJobResultsChart';
+		}
+		// verify the required parameter 'chartId' is set
+		if (chartId === undefined || chartId === null || chartId === '') {
+			throw 'Missing the required parameter "chartId" when calling getJourneyViewVersionJobResultsChart';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs/{jobId}/results/charts/{chartId}', 
+			'GET', 
+			{ 'viewId': viewId,'journeyVersionId': journeyVersionId,'jobId': jobId,'chartId': chartId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the latest job of a journey view version.
+	 * 
+	 * @param {String} viewId Journey View Id
+	 * @param {String} journeyVersionId Journey View Version
+	 */
+	getJourneyViewVersionJobsLatest(viewId, journeyVersionId) { 
+		// verify the required parameter 'viewId' is set
+		if (viewId === undefined || viewId === null || viewId === '') {
+			throw 'Missing the required parameter "viewId" when calling getJourneyViewVersionJobsLatest';
+		}
+		// verify the required parameter 'journeyVersionId' is set
+		if (journeyVersionId === undefined || journeyVersionId === null || journeyVersionId === '') {
+			throw 'Missing the required parameter "journeyVersionId" when calling getJourneyViewVersionJobsLatest';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs/latest', 
+			'GET', 
+			{ 'viewId': viewId,'journeyVersionId': journeyVersionId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a list of Journey Views
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {String} opts.nameOrCreatedBy Journey View Name or Created By
+	 * @param {Object} opts.expand Parameter to request additional data to return in Journey payload
+	 * @param {String} opts.id Parameter to request a list of Journey Views by id, separated by commas. Limit of 100 items.
+	 */
+	getJourneyViews(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/views', 
+			'GET', 
+			{  },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'nameOrCreatedBy': opts['nameOrCreatedBy'],'expand': opts['expand'],'id': opts['id'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get details about the data available for journey queries including oldest and newest event dates
+	 * 
+	 */
+	getJourneyViewsDataDetails() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/views/data/details', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get an Event Definition
+	 * 
+	 * @param {String} eventDefinitionId Event Definition ID
+	 */
+	getJourneyViewsEventdefinition(eventDefinitionId) { 
+		// verify the required parameter 'eventDefinitionId' is set
+		if (eventDefinitionId === undefined || eventDefinitionId === null || eventDefinitionId === '') {
+			throw 'Missing the required parameter "eventDefinitionId" when calling getJourneyViewsEventdefinition';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/views/eventdefinitions/{eventDefinitionId}', 
+			'GET', 
+			{ 'eventDefinitionId': eventDefinitionId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a list of Event Definitions
+	 * 
+	 */
+	getJourneyViewsEventdefinitions() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/views/eventdefinitions', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the jobs for an organization.
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber The number of the page to return (default to 1)
+	 * @param {Number} opts.pageSize Max number of entities to return (default to 25)
+	 * @param {String} opts.interval An absolute timeframe for filtering the jobs, expressed as an ISO 8601 interval.
+	 * @param {String} opts.statuses Job statuses to filter for
+	 */
+	getJourneyViewsJobs(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/views/jobs', 
+			'GET', 
+			{  },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'interval': opts['interval'],'statuses': opts['statuses'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the journey schedules for an organization.
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber The number of the page to return (default to 1)
+	 * @param {Number} opts.pageSize Max number of entities to return (default to 25)
+	 */
+	getJourneyViewsSchedules(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/views/schedules', 
+			'GET', 
+			{  },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] },
 			{  },
 			{  },
 			null, 
@@ -778,7 +1329,7 @@ class JourneyApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'actionMapId' is set
-		if (actionMapId === undefined || actionMapId === null) {
+		if (actionMapId === undefined || actionMapId === null || actionMapId === '') {
 			throw 'Missing the required parameter "actionMapId" when calling patchJourneyActionmap';
 		}
 
@@ -807,7 +1358,7 @@ class JourneyApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'actionTargetId' is set
-		if (actionTargetId === undefined || actionTargetId === null) {
+		if (actionTargetId === undefined || actionTargetId === null || actionTargetId === '') {
 			throw 'Missing the required parameter "actionTargetId" when calling patchJourneyActiontarget';
 		}
 
@@ -836,7 +1387,7 @@ class JourneyApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'actionTemplateId' is set
-		if (actionTemplateId === undefined || actionTemplateId === null) {
+		if (actionTemplateId === undefined || actionTemplateId === null || actionTemplateId === '') {
 			throw 'Missing the required parameter "actionTemplateId" when calling patchJourneyActiontemplate';
 		}
 
@@ -865,7 +1416,7 @@ class JourneyApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'outcomeId' is set
-		if (outcomeId === undefined || outcomeId === null) {
+		if (outcomeId === undefined || outcomeId === null || outcomeId === '') {
 			throw 'Missing the required parameter "outcomeId" when calling patchJourneyOutcome';
 		}
 
@@ -894,7 +1445,7 @@ class JourneyApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'segmentId' is set
-		if (segmentId === undefined || segmentId === null) {
+		if (segmentId === undefined || segmentId === null || segmentId === '') {
 			throw 'Missing the required parameter "segmentId" when calling patchJourneySegment';
 		}
 
@@ -906,6 +1457,46 @@ class JourneyApi {
 			{  },
 			{  },
 			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update the job for a journey view version. Only the status can be changed and only to Cancelled
+	 * 
+	 * @param {String} viewId Journey View Id
+	 * @param {String} journeyVersionId Journey View Version
+	 * @param {String} jobId JobId
+	 * @param {Object} body journeyViewJob
+	 */
+	patchJourneyViewVersionJob(viewId, journeyVersionId, jobId, body) { 
+		// verify the required parameter 'viewId' is set
+		if (viewId === undefined || viewId === null || viewId === '') {
+			throw 'Missing the required parameter "viewId" when calling patchJourneyViewVersionJob';
+		}
+		// verify the required parameter 'journeyVersionId' is set
+		if (journeyVersionId === undefined || journeyVersionId === null || journeyVersionId === '') {
+			throw 'Missing the required parameter "journeyVersionId" when calling patchJourneyViewVersionJob';
+		}
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null || jobId === '') {
+			throw 'Missing the required parameter "jobId" when calling patchJourneyViewVersionJob';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchJourneyViewVersionJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs/{jobId}', 
+			'PATCH', 
+			{ 'viewId': viewId,'journeyVersionId': journeyVersionId,'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']
@@ -957,6 +1548,35 @@ class JourneyApi {
 			{  },
 			{  },
 			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Assign/Unassign up to 10 segments to/from an external contact or, if a segment is already assigned, update the expiry date of the segment assignment. Any unprocessed segment assignments are returned in the body for the client to retry, in the event of a partial success.
+	 * 
+	 * @param {String} contactId ExternalContact ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 */
+	postExternalcontactsContactJourneySegments(contactId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'contactId' is set
+		if (contactId === undefined || contactId === null || contactId === '') {
+			throw 'Missing the required parameter "contactId" when calling postExternalcontactsContactJourneySegments';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/externalcontacts/contacts/{contactId}/journey/segments', 
+			'POST', 
+			{ 'contactId': contactId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']
@@ -1037,18 +1657,47 @@ class JourneyApi {
 	}
 
 	/**
+	 * Sends an action event, which is used for changing the state of actions that have been offered to the user.
+	 * 
+	 * @param {String} deploymentId The ID of the deployment sending the beacon.
+	 * @param {Object} body 
+	 */
+	postJourneyDeploymentActionevent(deploymentId, body) { 
+		// verify the required parameter 'deploymentId' is set
+		if (deploymentId === undefined || deploymentId === null || deploymentId === '') {
+			throw 'Missing the required parameter "deploymentId" when calling postJourneyDeploymentActionevent';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postJourneyDeploymentActionevent';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/deployments/{deploymentId}/actionevent', 
+			'POST', 
+			{ 'deploymentId': deploymentId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Send a journey app event, used for tracking customer activity on an application.
 	 * 
 	 * @param {String} deploymentId The ID of the deployment sending the app event.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
-	 * postJourneyDeploymentAppevents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postJourneyDeploymentAppevents(deploymentId, opts) { 
 		opts = opts || {};
 		
 		// verify the required parameter 'deploymentId' is set
-		if (deploymentId === undefined || deploymentId === null) {
+		if (deploymentId === undefined || deploymentId === null || deploymentId === '') {
 			throw 'Missing the required parameter "deploymentId" when calling postJourneyDeploymentAppevents';
 		}
 
@@ -1056,6 +1705,59 @@ class JourneyApi {
 			'/api/v2/journey/deployments/{deploymentId}/appevents', 
 			'POST', 
 			{ 'deploymentId': deploymentId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Send a journey web event, used for tracking customer activity on a website.
+	 * 
+	 * @param {String} deploymentId The ID of the deployment sending the web event.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 */
+	postJourneyDeploymentWebevents(deploymentId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'deploymentId' is set
+		if (deploymentId === undefined || deploymentId === null || deploymentId === '') {
+			throw 'Missing the required parameter "deploymentId" when calling postJourneyDeploymentWebevents';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/deployments/{deploymentId}/webevents', 
+			'POST', 
+			{ 'deploymentId': deploymentId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Query for flow paths.
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 */
+	postJourneyFlowsPathsQuery(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/flows/paths/query', 
+			'POST', 
+			{  },
 			{  },
 			{  },
 			{  },
@@ -1157,6 +1859,210 @@ class JourneyApi {
 			{  },
 			{  },
 			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Add a new Schedule to a JourneyView
+	 * 
+	 * @param {String} viewId Journey View Id
+	 * @param {Object} body journeyViewSchedule
+	 */
+	postJourneyViewSchedules(viewId, body) { 
+		// verify the required parameter 'viewId' is set
+		if (viewId === undefined || viewId === null || viewId === '') {
+			throw 'Missing the required parameter "viewId" when calling postJourneyViewSchedules';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postJourneyViewSchedules';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/views/{viewId}/schedules', 
+			'POST', 
+			{ 'viewId': viewId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Submit a job request for a journey view version.
+	 * 
+	 * @param {String} viewId Journey View Id
+	 * @param {String} journeyVersionId Journey View Version
+	 */
+	postJourneyViewVersionJobs(viewId, journeyVersionId) { 
+		// verify the required parameter 'viewId' is set
+		if (viewId === undefined || viewId === null || viewId === '') {
+			throw 'Missing the required parameter "viewId" when calling postJourneyViewVersionJobs';
+		}
+		// verify the required parameter 'journeyVersionId' is set
+		if (journeyVersionId === undefined || journeyVersionId === null || journeyVersionId === '') {
+			throw 'Missing the required parameter "journeyVersionId" when calling postJourneyViewVersionJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs', 
+			'POST', 
+			{ 'viewId': viewId,'journeyVersionId': journeyVersionId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update a Journey View by ID
+	 * creates a new version
+	 * @param {String} viewId viewId
+	 * @param {Object} body JourneyView
+	 */
+	postJourneyViewVersions(viewId, body) { 
+		// verify the required parameter 'viewId' is set
+		if (viewId === undefined || viewId === null || viewId === '') {
+			throw 'Missing the required parameter "viewId" when calling postJourneyViewVersions';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postJourneyViewVersions';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/views/{viewId}/versions', 
+			'POST', 
+			{ 'viewId': viewId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create a new Journey View
+	 * 
+	 * @param {Object} body JourneyView
+	 */
+	postJourneyViews(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postJourneyViews';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/views', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Validate whether an encoding exist for a label/value combination.
+	 * True indicates a valid encoding
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<Object>} opts.body 
+	 */
+	postJourneyViewsEncodingsValidate(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/views/encodings/validate', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update the Schedule for a JourneyView
+	 * 
+	 * @param {String} viewId Journey View Id
+	 * @param {Object} body journeyViewSchedule
+	 */
+	putJourneyViewSchedules(viewId, body) { 
+		// verify the required parameter 'viewId' is set
+		if (viewId === undefined || viewId === null || viewId === '') {
+			throw 'Missing the required parameter "viewId" when calling putJourneyViewSchedules';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putJourneyViewSchedules';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/views/{viewId}/schedules', 
+			'PUT', 
+			{ 'viewId': viewId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update a Journey View by ID and version
+	 * does not create a new version
+	 * @param {String} viewId viewId
+	 * @param {String} versionId versionId
+	 * @param {Object} body JourneyView
+	 */
+	putJourneyViewVersion(viewId, versionId, body) { 
+		// verify the required parameter 'viewId' is set
+		if (viewId === undefined || viewId === null || viewId === '') {
+			throw 'Missing the required parameter "viewId" when calling putJourneyViewVersion';
+		}
+		// verify the required parameter 'versionId' is set
+		if (versionId === undefined || versionId === null || versionId === '') {
+			throw 'Missing the required parameter "versionId" when calling putJourneyViewVersion';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putJourneyViewVersion';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/journey/views/{viewId}/versions/{versionId}', 
+			'PUT', 
+			{ 'viewId': viewId,'versionId': versionId },
+			{  },
+			{  },
+			{  },
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']

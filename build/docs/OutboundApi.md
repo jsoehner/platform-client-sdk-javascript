@@ -1,149 +1,189 @@
----
-title: OutboundApi
----
+# OutboundApi
+
 # platformClient.OutboundApi
 
 All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-[**deleteOutboundAttemptlimit**](OutboundApi.html#deleteOutboundAttemptlimit) | **DELETE** /api/v2/outbound/attemptlimits/{attemptLimitsId} | Delete attempt limits
-[**deleteOutboundCallabletimeset**](OutboundApi.html#deleteOutboundCallabletimeset) | **DELETE** /api/v2/outbound/callabletimesets/{callableTimeSetId} | Delete callable time set
-[**deleteOutboundCallanalysisresponseset**](OutboundApi.html#deleteOutboundCallanalysisresponseset) | **DELETE** /api/v2/outbound/callanalysisresponsesets/{callAnalysisSetId} | Delete a dialer call analysis response set.
-[**deleteOutboundCampaign**](OutboundApi.html#deleteOutboundCampaign) | **DELETE** /api/v2/outbound/campaigns/{campaignId} | Delete a campaign.
-[**deleteOutboundCampaignProgress**](OutboundApi.html#deleteOutboundCampaignProgress) | **DELETE** /api/v2/outbound/campaigns/{campaignId}/progress | Reset campaign progress and recycle the campaign
-[**deleteOutboundCampaignrule**](OutboundApi.html#deleteOutboundCampaignrule) | **DELETE** /api/v2/outbound/campaignrules/{campaignRuleId} | Delete Campaign Rule
-[**deleteOutboundContactlist**](OutboundApi.html#deleteOutboundContactlist) | **DELETE** /api/v2/outbound/contactlists/{contactListId} | Delete a contact list.
-[**deleteOutboundContactlistContact**](OutboundApi.html#deleteOutboundContactlistContact) | **DELETE** /api/v2/outbound/contactlists/{contactListId}/contacts/{contactId} | Delete a contact.
-[**deleteOutboundContactlistContacts**](OutboundApi.html#deleteOutboundContactlistContacts) | **DELETE** /api/v2/outbound/contactlists/{contactListId}/contacts | Delete contacts from a contact list.
-[**deleteOutboundContactlistfilter**](OutboundApi.html#deleteOutboundContactlistfilter) | **DELETE** /api/v2/outbound/contactlistfilters/{contactListFilterId} | Delete Contact List Filter
-[**deleteOutboundContactlists**](OutboundApi.html#deleteOutboundContactlists) | **DELETE** /api/v2/outbound/contactlists | Delete multiple contact lists.
-[**deleteOutboundDigitalruleset**](OutboundApi.html#deleteOutboundDigitalruleset) | **DELETE** /api/v2/outbound/digitalrulesets/{digitalRuleSetId} | Delete an Outbound Digital Rule Set
-[**deleteOutboundDnclist**](OutboundApi.html#deleteOutboundDnclist) | **DELETE** /api/v2/outbound/dnclists/{dncListId} | Delete dialer DNC list
-[**deleteOutboundDnclistCustomexclusioncolumns**](OutboundApi.html#deleteOutboundDnclistCustomexclusioncolumns) | **DELETE** /api/v2/outbound/dnclists/{dncListId}/customexclusioncolumns | Deletes all or expired custom exclusion column entries from a DNC list.
-[**deleteOutboundDnclistEmailaddresses**](OutboundApi.html#deleteOutboundDnclistEmailaddresses) | **DELETE** /api/v2/outbound/dnclists/{dncListId}/emailaddresses | Deletes all or expired email addresses from a DNC list.
-[**deleteOutboundDnclistPhonenumbers**](OutboundApi.html#deleteOutboundDnclistPhonenumbers) | **DELETE** /api/v2/outbound/dnclists/{dncListId}/phonenumbers | Deletes all or expired phone numbers from a DNC list.
-[**deleteOutboundMessagingcampaign**](OutboundApi.html#deleteOutboundMessagingcampaign) | **DELETE** /api/v2/outbound/messagingcampaigns/{messagingCampaignId} | Delete an Outbound Messaging Campaign
-[**deleteOutboundMessagingcampaignProgress**](OutboundApi.html#deleteOutboundMessagingcampaignProgress) | **DELETE** /api/v2/outbound/messagingcampaigns/{messagingCampaignId}/progress | Reset messaging campaign progress and recycle the messaging campaign
-[**deleteOutboundRuleset**](OutboundApi.html#deleteOutboundRuleset) | **DELETE** /api/v2/outbound/rulesets/{ruleSetId} | Delete a Rule Set.
-[**deleteOutboundSchedulesCampaign**](OutboundApi.html#deleteOutboundSchedulesCampaign) | **DELETE** /api/v2/outbound/schedules/campaigns/{campaignId} | Delete a dialer campaign schedule.
-[**deleteOutboundSchedulesEmailcampaign**](OutboundApi.html#deleteOutboundSchedulesEmailcampaign) | **DELETE** /api/v2/outbound/schedules/emailcampaigns/{emailCampaignId} | Delete an email campaign schedule.
-[**deleteOutboundSchedulesMessagingcampaign**](OutboundApi.html#deleteOutboundSchedulesMessagingcampaign) | **DELETE** /api/v2/outbound/schedules/messagingcampaigns/{messagingCampaignId} | Delete a messaging campaign schedule.
-[**deleteOutboundSchedulesSequence**](OutboundApi.html#deleteOutboundSchedulesSequence) | **DELETE** /api/v2/outbound/schedules/sequences/{sequenceId} | Delete a dialer sequence schedule.
-[**deleteOutboundSequence**](OutboundApi.html#deleteOutboundSequence) | **DELETE** /api/v2/outbound/sequences/{sequenceId} | Delete a dialer campaign sequence.
-[**getOutboundAttemptlimit**](OutboundApi.html#getOutboundAttemptlimit) | **GET** /api/v2/outbound/attemptlimits/{attemptLimitsId} | Get attempt limits
-[**getOutboundAttemptlimits**](OutboundApi.html#getOutboundAttemptlimits) | **GET** /api/v2/outbound/attemptlimits | Query attempt limits list
-[**getOutboundCallabletimeset**](OutboundApi.html#getOutboundCallabletimeset) | **GET** /api/v2/outbound/callabletimesets/{callableTimeSetId} | Get callable time set
-[**getOutboundCallabletimesets**](OutboundApi.html#getOutboundCallabletimesets) | **GET** /api/v2/outbound/callabletimesets | Query callable time set list
-[**getOutboundCallanalysisresponseset**](OutboundApi.html#getOutboundCallanalysisresponseset) | **GET** /api/v2/outbound/callanalysisresponsesets/{callAnalysisSetId} | Get a dialer call analysis response set.
-[**getOutboundCallanalysisresponsesets**](OutboundApi.html#getOutboundCallanalysisresponsesets) | **GET** /api/v2/outbound/callanalysisresponsesets | Query a list of dialer call analysis response sets.
-[**getOutboundCampaign**](OutboundApi.html#getOutboundCampaign) | **GET** /api/v2/outbound/campaigns/{campaignId} | Get dialer campaign.
-[**getOutboundCampaignAgentownedmappingpreviewResults**](OutboundApi.html#getOutboundCampaignAgentownedmappingpreviewResults) | **GET** /api/v2/outbound/campaigns/{campaignId}/agentownedmappingpreview/results | Get a preview of how agents will be mapped to this campaign's contact list.
-[**getOutboundCampaignDiagnostics**](OutboundApi.html#getOutboundCampaignDiagnostics) | **GET** /api/v2/outbound/campaigns/{campaignId}/diagnostics | Get campaign diagnostics
-[**getOutboundCampaignInteractions**](OutboundApi.html#getOutboundCampaignInteractions) | **GET** /api/v2/outbound/campaigns/{campaignId}/interactions | Get dialer campaign interactions.
-[**getOutboundCampaignProgress**](OutboundApi.html#getOutboundCampaignProgress) | **GET** /api/v2/outbound/campaigns/{campaignId}/progress | Get campaign progress
-[**getOutboundCampaignStats**](OutboundApi.html#getOutboundCampaignStats) | **GET** /api/v2/outbound/campaigns/{campaignId}/stats | Get statistics about a Dialer Campaign
-[**getOutboundCampaignrule**](OutboundApi.html#getOutboundCampaignrule) | **GET** /api/v2/outbound/campaignrules/{campaignRuleId} | Get Campaign Rule
-[**getOutboundCampaignrules**](OutboundApi.html#getOutboundCampaignrules) | **GET** /api/v2/outbound/campaignrules | Query Campaign Rule list
-[**getOutboundCampaigns**](OutboundApi.html#getOutboundCampaigns) | **GET** /api/v2/outbound/campaigns | Query a list of dialer campaigns.
-[**getOutboundCampaignsAll**](OutboundApi.html#getOutboundCampaignsAll) | **GET** /api/v2/outbound/campaigns/all | Query across all types of campaigns by division
-[**getOutboundCampaignsAllDivisionviews**](OutboundApi.html#getOutboundCampaignsAllDivisionviews) | **GET** /api/v2/outbound/campaigns/all/divisionviews | Query across all types of campaigns
-[**getOutboundCampaignsDivisionview**](OutboundApi.html#getOutboundCampaignsDivisionview) | **GET** /api/v2/outbound/campaigns/divisionviews/{campaignId} | Get a basic Campaign information object
-[**getOutboundCampaignsDivisionviews**](OutboundApi.html#getOutboundCampaignsDivisionviews) | **GET** /api/v2/outbound/campaigns/divisionviews | Query a list of basic Campaign information objects
-[**getOutboundContactlist**](OutboundApi.html#getOutboundContactlist) | **GET** /api/v2/outbound/contactlists/{contactListId} | Get a dialer contact list.
-[**getOutboundContactlistContact**](OutboundApi.html#getOutboundContactlistContact) | **GET** /api/v2/outbound/contactlists/{contactListId}/contacts/{contactId} | Get a contact.
-[**getOutboundContactlistExport**](OutboundApi.html#getOutboundContactlistExport) | **GET** /api/v2/outbound/contactlists/{contactListId}/export | Get the URI of a contact list export.
-[**getOutboundContactlistImportstatus**](OutboundApi.html#getOutboundContactlistImportstatus) | **GET** /api/v2/outbound/contactlists/{contactListId}/importstatus | Get dialer contactList import status.
-[**getOutboundContactlistTimezonemappingpreview**](OutboundApi.html#getOutboundContactlistTimezonemappingpreview) | **GET** /api/v2/outbound/contactlists/{contactListId}/timezonemappingpreview | Preview the result of applying Automatic Time Zone Mapping to a contact list
-[**getOutboundContactlistfilter**](OutboundApi.html#getOutboundContactlistfilter) | **GET** /api/v2/outbound/contactlistfilters/{contactListFilterId} | Get Contact list filter
-[**getOutboundContactlistfilters**](OutboundApi.html#getOutboundContactlistfilters) | **GET** /api/v2/outbound/contactlistfilters | Query Contact list filters
-[**getOutboundContactlists**](OutboundApi.html#getOutboundContactlists) | **GET** /api/v2/outbound/contactlists | Query a list of contact lists.
-[**getOutboundContactlistsDivisionview**](OutboundApi.html#getOutboundContactlistsDivisionview) | **GET** /api/v2/outbound/contactlists/divisionviews/{contactListId} | Get a basic ContactList information object
-[**getOutboundContactlistsDivisionviews**](OutboundApi.html#getOutboundContactlistsDivisionviews) | **GET** /api/v2/outbound/contactlists/divisionviews | Query a list of simplified contact list objects.
-[**getOutboundDigitalruleset**](OutboundApi.html#getOutboundDigitalruleset) | **GET** /api/v2/outbound/digitalrulesets/{digitalRuleSetId} | Get an Outbound Digital Rule Set
-[**getOutboundDigitalrulesets**](OutboundApi.html#getOutboundDigitalrulesets) | **GET** /api/v2/outbound/digitalrulesets | Query a list of Outbound Digital Rule Sets
-[**getOutboundDnclist**](OutboundApi.html#getOutboundDnclist) | **GET** /api/v2/outbound/dnclists/{dncListId} | Get dialer DNC list
-[**getOutboundDnclistExport**](OutboundApi.html#getOutboundDnclistExport) | **GET** /api/v2/outbound/dnclists/{dncListId}/export | Get the URI of a DNC list export.
-[**getOutboundDnclistImportstatus**](OutboundApi.html#getOutboundDnclistImportstatus) | **GET** /api/v2/outbound/dnclists/{dncListId}/importstatus | Get dialer dncList import status.
-[**getOutboundDnclists**](OutboundApi.html#getOutboundDnclists) | **GET** /api/v2/outbound/dnclists | Query dialer DNC lists
-[**getOutboundDnclistsDivisionview**](OutboundApi.html#getOutboundDnclistsDivisionview) | **GET** /api/v2/outbound/dnclists/divisionviews/{dncListId} | Get a basic DncList information object
-[**getOutboundDnclistsDivisionviews**](OutboundApi.html#getOutboundDnclistsDivisionviews) | **GET** /api/v2/outbound/dnclists/divisionviews | Query a list of simplified dnc list objects.
-[**getOutboundEvent**](OutboundApi.html#getOutboundEvent) | **GET** /api/v2/outbound/events/{eventId} | Get Dialer Event
-[**getOutboundEvents**](OutboundApi.html#getOutboundEvents) | **GET** /api/v2/outbound/events | Query Event Logs
-[**getOutboundMessagingcampaign**](OutboundApi.html#getOutboundMessagingcampaign) | **GET** /api/v2/outbound/messagingcampaigns/{messagingCampaignId} | Get an Outbound Messaging Campaign
-[**getOutboundMessagingcampaignDiagnostics**](OutboundApi.html#getOutboundMessagingcampaignDiagnostics) | **GET** /api/v2/outbound/messagingcampaigns/{messagingCampaignId}/diagnostics | Get messaging campaign diagnostics
-[**getOutboundMessagingcampaignProgress**](OutboundApi.html#getOutboundMessagingcampaignProgress) | **GET** /api/v2/outbound/messagingcampaigns/{messagingCampaignId}/progress | Get messaging campaign's progress
-[**getOutboundMessagingcampaigns**](OutboundApi.html#getOutboundMessagingcampaigns) | **GET** /api/v2/outbound/messagingcampaigns | Query a list of Messaging Campaigns
-[**getOutboundMessagingcampaignsDivisionview**](OutboundApi.html#getOutboundMessagingcampaignsDivisionview) | **GET** /api/v2/outbound/messagingcampaigns/divisionviews/{messagingCampaignId} | Get a basic Messaging Campaign information object
-[**getOutboundMessagingcampaignsDivisionviews**](OutboundApi.html#getOutboundMessagingcampaignsDivisionviews) | **GET** /api/v2/outbound/messagingcampaigns/divisionviews | Query a list of basic Messaging Campaign information objects
-[**getOutboundRuleset**](OutboundApi.html#getOutboundRuleset) | **GET** /api/v2/outbound/rulesets/{ruleSetId} | Get a Rule Set by ID.
-[**getOutboundRulesets**](OutboundApi.html#getOutboundRulesets) | **GET** /api/v2/outbound/rulesets | Query a list of Rule Sets.
-[**getOutboundSchedulesCampaign**](OutboundApi.html#getOutboundSchedulesCampaign) | **GET** /api/v2/outbound/schedules/campaigns/{campaignId} | Get a dialer campaign schedule.
-[**getOutboundSchedulesCampaigns**](OutboundApi.html#getOutboundSchedulesCampaigns) | **GET** /api/v2/outbound/schedules/campaigns | Query for a list of dialer campaign schedules.
-[**getOutboundSchedulesEmailcampaign**](OutboundApi.html#getOutboundSchedulesEmailcampaign) | **GET** /api/v2/outbound/schedules/emailcampaigns/{emailCampaignId} | Get an email campaign schedule.
-[**getOutboundSchedulesEmailcampaigns**](OutboundApi.html#getOutboundSchedulesEmailcampaigns) | **GET** /api/v2/outbound/schedules/emailcampaigns | Query for a list of email campaign schedules.
-[**getOutboundSchedulesMessagingcampaign**](OutboundApi.html#getOutboundSchedulesMessagingcampaign) | **GET** /api/v2/outbound/schedules/messagingcampaigns/{messagingCampaignId} | Get a messaging campaign schedule.
-[**getOutboundSchedulesMessagingcampaigns**](OutboundApi.html#getOutboundSchedulesMessagingcampaigns) | **GET** /api/v2/outbound/schedules/messagingcampaigns | Query for a list of messaging campaign schedules.
-[**getOutboundSchedulesSequence**](OutboundApi.html#getOutboundSchedulesSequence) | **GET** /api/v2/outbound/schedules/sequences/{sequenceId} | Get a dialer sequence schedule.
-[**getOutboundSchedulesSequences**](OutboundApi.html#getOutboundSchedulesSequences) | **GET** /api/v2/outbound/schedules/sequences | Query for a list of dialer sequence schedules.
-[**getOutboundSequence**](OutboundApi.html#getOutboundSequence) | **GET** /api/v2/outbound/sequences/{sequenceId} | Get a dialer campaign sequence.
-[**getOutboundSequences**](OutboundApi.html#getOutboundSequences) | **GET** /api/v2/outbound/sequences | Query a list of dialer campaign sequences.
-[**getOutboundSettings**](OutboundApi.html#getOutboundSettings) | **GET** /api/v2/outbound/settings | Get the outbound settings for this organization
-[**getOutboundWrapupcodemappings**](OutboundApi.html#getOutboundWrapupcodemappings) | **GET** /api/v2/outbound/wrapupcodemappings | Get the Dialer wrap up code mapping.
-[**patchOutboundDnclistCustomexclusioncolumns**](OutboundApi.html#patchOutboundDnclistCustomexclusioncolumns) | **PATCH** /api/v2/outbound/dnclists/{dncListId}/customexclusioncolumns | Add entries to or delete entries from a DNC list.
-[**patchOutboundDnclistEmailaddresses**](OutboundApi.html#patchOutboundDnclistEmailaddresses) | **PATCH** /api/v2/outbound/dnclists/{dncListId}/emailaddresses | Add emails to or Delete emails from a DNC list.
-[**patchOutboundDnclistPhonenumbers**](OutboundApi.html#patchOutboundDnclistPhonenumbers) | **PATCH** /api/v2/outbound/dnclists/{dncListId}/phonenumbers | Add numbers to or delete numbers from a DNC list.
-[**patchOutboundSettings**](OutboundApi.html#patchOutboundSettings) | **PATCH** /api/v2/outbound/settings | Update the outbound settings for this organization
-[**postOutboundAttemptlimits**](OutboundApi.html#postOutboundAttemptlimits) | **POST** /api/v2/outbound/attemptlimits | Create attempt limits
-[**postOutboundAudits**](OutboundApi.html#postOutboundAudits) | **POST** /api/v2/outbound/audits | Retrieves audits for dialer.
-[**postOutboundCallabletimesets**](OutboundApi.html#postOutboundCallabletimesets) | **POST** /api/v2/outbound/callabletimesets | Create callable time set
-[**postOutboundCallanalysisresponsesets**](OutboundApi.html#postOutboundCallanalysisresponsesets) | **POST** /api/v2/outbound/callanalysisresponsesets | Create a dialer call analysis response set.
-[**postOutboundCampaignAgentownedmappingpreview**](OutboundApi.html#postOutboundCampaignAgentownedmappingpreview) | **POST** /api/v2/outbound/campaigns/{campaignId}/agentownedmappingpreview | Initiate request for a preview of how agents will be mapped to this campaign's contact list.
-[**postOutboundCampaignCallbackSchedule**](OutboundApi.html#postOutboundCampaignCallbackSchedule) | **POST** /api/v2/outbound/campaigns/{campaignId}/callback/schedule | Schedule a Callback for a Dialer Campaign (Deprecated)
-[**postOutboundCampaignrules**](OutboundApi.html#postOutboundCampaignrules) | **POST** /api/v2/outbound/campaignrules | Create Campaign Rule
-[**postOutboundCampaigns**](OutboundApi.html#postOutboundCampaigns) | **POST** /api/v2/outbound/campaigns | Create a campaign.
-[**postOutboundCampaignsProgress**](OutboundApi.html#postOutboundCampaignsProgress) | **POST** /api/v2/outbound/campaigns/progress | Get progress for a list of campaigns
-[**postOutboundContactlistClear**](OutboundApi.html#postOutboundContactlistClear) | **POST** /api/v2/outbound/contactlists/{contactListId}/clear | Deletes all contacts out of a list. All outstanding recalls or rule-scheduled callbacks for non-preview campaigns configured with the contactlist will be cancelled.
-[**postOutboundContactlistContacts**](OutboundApi.html#postOutboundContactlistContacts) | **POST** /api/v2/outbound/contactlists/{contactListId}/contacts | Add contacts to a contact list.
-[**postOutboundContactlistContactsBulk**](OutboundApi.html#postOutboundContactlistContactsBulk) | **POST** /api/v2/outbound/contactlists/{contactListId}/contacts/bulk | Get contacts from a contact list.
-[**postOutboundContactlistExport**](OutboundApi.html#postOutboundContactlistExport) | **POST** /api/v2/outbound/contactlists/{contactListId}/export | Initiate the export of a contact list.
-[**postOutboundContactlistfilters**](OutboundApi.html#postOutboundContactlistfilters) | **POST** /api/v2/outbound/contactlistfilters | Create Contact List Filter
-[**postOutboundContactlistfiltersPreview**](OutboundApi.html#postOutboundContactlistfiltersPreview) | **POST** /api/v2/outbound/contactlistfilters/preview | Get a preview of the output of a contact list filter
-[**postOutboundContactlists**](OutboundApi.html#postOutboundContactlists) | **POST** /api/v2/outbound/contactlists | Create a contact List.
-[**postOutboundConversationDnc**](OutboundApi.html#postOutboundConversationDnc) | **POST** /api/v2/outbound/conversations/{conversationId}/dnc | Add phone numbers to a Dialer DNC list.
-[**postOutboundDigitalrulesets**](OutboundApi.html#postOutboundDigitalrulesets) | **POST** /api/v2/outbound/digitalrulesets | Create an Outbound Digital Rule Set
-[**postOutboundDnclistEmailaddresses**](OutboundApi.html#postOutboundDnclistEmailaddresses) | **POST** /api/v2/outbound/dnclists/{dncListId}/emailaddresses | Add email addresses to a DNC list.
-[**postOutboundDnclistExport**](OutboundApi.html#postOutboundDnclistExport) | **POST** /api/v2/outbound/dnclists/{dncListId}/export | Initiate the export of a dnc list.
-[**postOutboundDnclistPhonenumbers**](OutboundApi.html#postOutboundDnclistPhonenumbers) | **POST** /api/v2/outbound/dnclists/{dncListId}/phonenumbers | Add phone numbers to a DNC list.
-[**postOutboundDnclists**](OutboundApi.html#postOutboundDnclists) | **POST** /api/v2/outbound/dnclists | Create dialer DNC list
-[**postOutboundMessagingcampaigns**](OutboundApi.html#postOutboundMessagingcampaigns) | **POST** /api/v2/outbound/messagingcampaigns | Create a Messaging Campaign
-[**postOutboundMessagingcampaignsProgress**](OutboundApi.html#postOutboundMessagingcampaignsProgress) | **POST** /api/v2/outbound/messagingcampaigns/progress | Get progress for a list of messaging campaigns
-[**postOutboundRulesets**](OutboundApi.html#postOutboundRulesets) | **POST** /api/v2/outbound/rulesets | Create a Rule Set.
-[**postOutboundSequences**](OutboundApi.html#postOutboundSequences) | **POST** /api/v2/outbound/sequences | Create a new campaign sequence.
-[**putOutboundAttemptlimit**](OutboundApi.html#putOutboundAttemptlimit) | **PUT** /api/v2/outbound/attemptlimits/{attemptLimitsId} | Update attempt limits
-[**putOutboundCallabletimeset**](OutboundApi.html#putOutboundCallabletimeset) | **PUT** /api/v2/outbound/callabletimesets/{callableTimeSetId} | Update callable time set
-[**putOutboundCallanalysisresponseset**](OutboundApi.html#putOutboundCallanalysisresponseset) | **PUT** /api/v2/outbound/callanalysisresponsesets/{callAnalysisSetId} | Update a dialer call analysis response set.
-[**putOutboundCampaign**](OutboundApi.html#putOutboundCampaign) | **PUT** /api/v2/outbound/campaigns/{campaignId} | Update a campaign.
-[**putOutboundCampaignAgent**](OutboundApi.html#putOutboundCampaignAgent) | **PUT** /api/v2/outbound/campaigns/{campaignId}/agents/{userId} | Send notification that an agent's state changed 
-[**putOutboundCampaignrule**](OutboundApi.html#putOutboundCampaignrule) | **PUT** /api/v2/outbound/campaignrules/{campaignRuleId} | Update Campaign Rule
-[**putOutboundContactlist**](OutboundApi.html#putOutboundContactlist) | **PUT** /api/v2/outbound/contactlists/{contactListId} | Update a contact list.
-[**putOutboundContactlistContact**](OutboundApi.html#putOutboundContactlistContact) | **PUT** /api/v2/outbound/contactlists/{contactListId}/contacts/{contactId} | Update a contact.
-[**putOutboundContactlistfilter**](OutboundApi.html#putOutboundContactlistfilter) | **PUT** /api/v2/outbound/contactlistfilters/{contactListFilterId} | Update Contact List Filter
-[**putOutboundDigitalruleset**](OutboundApi.html#putOutboundDigitalruleset) | **PUT** /api/v2/outbound/digitalrulesets/{digitalRuleSetId} | Update an Outbound Digital Rule Set
-[**putOutboundDnclist**](OutboundApi.html#putOutboundDnclist) | **PUT** /api/v2/outbound/dnclists/{dncListId} | Update dialer DNC list
-[**putOutboundMessagingcampaign**](OutboundApi.html#putOutboundMessagingcampaign) | **PUT** /api/v2/outbound/messagingcampaigns/{messagingCampaignId} | Update an Outbound Messaging Campaign
-[**putOutboundRuleset**](OutboundApi.html#putOutboundRuleset) | **PUT** /api/v2/outbound/rulesets/{ruleSetId} | Update a Rule Set.
-[**putOutboundSchedulesCampaign**](OutboundApi.html#putOutboundSchedulesCampaign) | **PUT** /api/v2/outbound/schedules/campaigns/{campaignId} | Update a new campaign schedule.
-[**putOutboundSchedulesEmailcampaign**](OutboundApi.html#putOutboundSchedulesEmailcampaign) | **PUT** /api/v2/outbound/schedules/emailcampaigns/{emailCampaignId} | Update an email campaign schedule.
-[**putOutboundSchedulesMessagingcampaign**](OutboundApi.html#putOutboundSchedulesMessagingcampaign) | **PUT** /api/v2/outbound/schedules/messagingcampaigns/{messagingCampaignId} | Update a new messaging campaign schedule.
-[**putOutboundSchedulesSequence**](OutboundApi.html#putOutboundSchedulesSequence) | **PUT** /api/v2/outbound/schedules/sequences/{sequenceId} | Update a new sequence schedule.
-[**putOutboundSequence**](OutboundApi.html#putOutboundSequence) | **PUT** /api/v2/outbound/sequences/{sequenceId} | Update a new campaign sequence.
-[**putOutboundWrapupcodemappings**](OutboundApi.html#putOutboundWrapupcodemappings) | **PUT** /api/v2/outbound/wrapupcodemappings | Update the Dialer wrap up code mapping.
-{: class="table table-striped"}
+[**deleteOutboundAttemptlimit**](OutboundApi#deleteOutboundAttemptlimit) | **DELETE** /api/v2/outbound/attemptlimits/{attemptLimitsId} | Delete attempt limits
+[**deleteOutboundCallabletimeset**](OutboundApi#deleteOutboundCallabletimeset) | **DELETE** /api/v2/outbound/callabletimesets/{callableTimeSetId} | Delete callable time set
+[**deleteOutboundCallanalysisresponseset**](OutboundApi#deleteOutboundCallanalysisresponseset) | **DELETE** /api/v2/outbound/callanalysisresponsesets/{callAnalysisSetId} | Delete a dialer call analysis response set.
+[**deleteOutboundCampaign**](OutboundApi#deleteOutboundCampaign) | **DELETE** /api/v2/outbound/campaigns/{campaignId} | Delete a campaign.
+[**deleteOutboundCampaignProgress**](OutboundApi#deleteOutboundCampaignProgress) | **DELETE** /api/v2/outbound/campaigns/{campaignId}/progress | Reset campaign progress and recycle the campaign
+[**deleteOutboundCampaignrule**](OutboundApi#deleteOutboundCampaignrule) | **DELETE** /api/v2/outbound/campaignrules/{campaignRuleId} | Delete Campaign Rule
+[**deleteOutboundContactlist**](OutboundApi#deleteOutboundContactlist) | **DELETE** /api/v2/outbound/contactlists/{contactListId} | Delete a contact list.
+[**deleteOutboundContactlistContact**](OutboundApi#deleteOutboundContactlistContact) | **DELETE** /api/v2/outbound/contactlists/{contactListId}/contacts/{contactId} | Delete a contact.
+[**deleteOutboundContactlistContacts**](OutboundApi#deleteOutboundContactlistContacts) | **DELETE** /api/v2/outbound/contactlists/{contactListId}/contacts | Delete contacts from a contact list.
+[**deleteOutboundContactlistfilter**](OutboundApi#deleteOutboundContactlistfilter) | **DELETE** /api/v2/outbound/contactlistfilters/{contactListFilterId} | Delete Contact List Filter
+[**deleteOutboundContactlists**](OutboundApi#deleteOutboundContactlists) | **DELETE** /api/v2/outbound/contactlists | Delete multiple contact lists.
+[**deleteOutboundContactlisttemplate**](OutboundApi#deleteOutboundContactlisttemplate) | **DELETE** /api/v2/outbound/contactlisttemplates/{contactListTemplateId} | Delete Contact List Template
+[**deleteOutboundContactlisttemplates**](OutboundApi#deleteOutboundContactlisttemplates) | **DELETE** /api/v2/outbound/contactlisttemplates | Delete multiple contact list templates.
+[**deleteOutboundDigitalruleset**](OutboundApi#deleteOutboundDigitalruleset) | **DELETE** /api/v2/outbound/digitalrulesets/{digitalRuleSetId} | Delete an Outbound Digital Rule Set
+[**deleteOutboundDnclist**](OutboundApi#deleteOutboundDnclist) | **DELETE** /api/v2/outbound/dnclists/{dncListId} | Delete dialer DNC list
+[**deleteOutboundDnclistCustomexclusioncolumns**](OutboundApi#deleteOutboundDnclistCustomexclusioncolumns) | **DELETE** /api/v2/outbound/dnclists/{dncListId}/customexclusioncolumns | Deletes all or expired custom exclusion column entries from a DNC list.
+[**deleteOutboundDnclistEmailaddresses**](OutboundApi#deleteOutboundDnclistEmailaddresses) | **DELETE** /api/v2/outbound/dnclists/{dncListId}/emailaddresses | Deletes all or expired email addresses from a DNC list.
+[**deleteOutboundDnclistPhonenumbers**](OutboundApi#deleteOutboundDnclistPhonenumbers) | **DELETE** /api/v2/outbound/dnclists/{dncListId}/phonenumbers | Deletes all or expired phone numbers from a DNC list.
+[**deleteOutboundDnclistWhatsappnumbers**](OutboundApi#deleteOutboundDnclistWhatsappnumbers) | **DELETE** /api/v2/outbound/dnclists/{dncListId}/whatsappnumbers | Deletes all or expired whatsApp numbers from a DNC list.
+[**deleteOutboundFilespecificationtemplate**](OutboundApi#deleteOutboundFilespecificationtemplate) | **DELETE** /api/v2/outbound/filespecificationtemplates/{fileSpecificationTemplateId} | Delete File Specification Template
+[**deleteOutboundFilespecificationtemplatesBulk**](OutboundApi#deleteOutboundFilespecificationtemplatesBulk) | **DELETE** /api/v2/outbound/filespecificationtemplates/bulk | Delete multiple file specification templates.
+[**deleteOutboundImporttemplate**](OutboundApi#deleteOutboundImporttemplate) | **DELETE** /api/v2/outbound/importtemplates/{importTemplateId} | Delete Import Template
+[**deleteOutboundImporttemplates**](OutboundApi#deleteOutboundImporttemplates) | **DELETE** /api/v2/outbound/importtemplates | Delete multiple import templates.
+[**deleteOutboundMessagingcampaign**](OutboundApi#deleteOutboundMessagingcampaign) | **DELETE** /api/v2/outbound/messagingcampaigns/{messagingCampaignId} | Delete an Outbound Messaging Campaign
+[**deleteOutboundMessagingcampaignProgress**](OutboundApi#deleteOutboundMessagingcampaignProgress) | **DELETE** /api/v2/outbound/messagingcampaigns/{messagingCampaignId}/progress | Reset messaging campaign progress and recycle the messaging campaign
+[**deleteOutboundRuleset**](OutboundApi#deleteOutboundRuleset) | **DELETE** /api/v2/outbound/rulesets/{ruleSetId} | Delete a Rule Set.
+[**deleteOutboundSchedulesCampaign**](OutboundApi#deleteOutboundSchedulesCampaign) | **DELETE** /api/v2/outbound/schedules/campaigns/{campaignId} | Delete a dialer campaign schedule.
+[**deleteOutboundSchedulesEmailcampaign**](OutboundApi#deleteOutboundSchedulesEmailcampaign) | **DELETE** /api/v2/outbound/schedules/emailcampaigns/{emailCampaignId} | Delete an email campaign schedule.
+[**deleteOutboundSchedulesMessagingcampaign**](OutboundApi#deleteOutboundSchedulesMessagingcampaign) | **DELETE** /api/v2/outbound/schedules/messagingcampaigns/{messagingCampaignId} | Delete a messaging campaign schedule.
+[**deleteOutboundSchedulesSequence**](OutboundApi#deleteOutboundSchedulesSequence) | **DELETE** /api/v2/outbound/schedules/sequences/{sequenceId} | Delete a dialer sequence schedule.
+[**deleteOutboundSchedulesWhatsappcampaign**](OutboundApi#deleteOutboundSchedulesWhatsappcampaign) | **DELETE** /api/v2/outbound/schedules/whatsappcampaigns/{whatsAppCampaignId} | Delete a WhatsApp campaign schedule.
+[**deleteOutboundSequence**](OutboundApi#deleteOutboundSequence) | **DELETE** /api/v2/outbound/sequences/{sequenceId} | Delete a dialer campaign sequence.
+[**getOutboundAttemptlimit**](OutboundApi#getOutboundAttemptlimit) | **GET** /api/v2/outbound/attemptlimits/{attemptLimitsId} | Get attempt limits
+[**getOutboundAttemptlimits**](OutboundApi#getOutboundAttemptlimits) | **GET** /api/v2/outbound/attemptlimits | Query attempt limits list
+[**getOutboundCallabletimeset**](OutboundApi#getOutboundCallabletimeset) | **GET** /api/v2/outbound/callabletimesets/{callableTimeSetId} | Get callable time set
+[**getOutboundCallabletimesets**](OutboundApi#getOutboundCallabletimesets) | **GET** /api/v2/outbound/callabletimesets | Query callable time set list
+[**getOutboundCallanalysisresponseset**](OutboundApi#getOutboundCallanalysisresponseset) | **GET** /api/v2/outbound/callanalysisresponsesets/{callAnalysisSetId} | Get a dialer call analysis response set.
+[**getOutboundCallanalysisresponsesets**](OutboundApi#getOutboundCallanalysisresponsesets) | **GET** /api/v2/outbound/callanalysisresponsesets | Query a list of dialer call analysis response sets.
+[**getOutboundCampaign**](OutboundApi#getOutboundCampaign) | **GET** /api/v2/outbound/campaigns/{campaignId} | Get dialer campaign.
+[**getOutboundCampaignAgentownedmappingpreviewResults**](OutboundApi#getOutboundCampaignAgentownedmappingpreviewResults) | **GET** /api/v2/outbound/campaigns/{campaignId}/agentownedmappingpreview/results | Get a preview of how agents will be mapped to this campaign's contact list.
+[**getOutboundCampaignDiagnostics**](OutboundApi#getOutboundCampaignDiagnostics) | **GET** /api/v2/outbound/campaigns/{campaignId}/diagnostics | Get campaign diagnostics
+[**getOutboundCampaignInteractions**](OutboundApi#getOutboundCampaignInteractions) | **GET** /api/v2/outbound/campaigns/{campaignId}/interactions | Get dialer campaign interactions.
+[**getOutboundCampaignLinedistribution**](OutboundApi#getOutboundCampaignLinedistribution) | **GET** /api/v2/outbound/campaigns/{campaignId}/linedistribution | Get line distribution information for campaigns using same Edge Group or Site as given campaign
+[**getOutboundCampaignProgress**](OutboundApi#getOutboundCampaignProgress) | **GET** /api/v2/outbound/campaigns/{campaignId}/progress | Get campaign progress
+[**getOutboundCampaignSkillcombinations**](OutboundApi#getOutboundCampaignSkillcombinations) | **GET** /api/v2/outbound/campaigns/{campaignId}/skillcombinations | Get the remaining and total contact count for each skill combination in a skills campaign
+[**getOutboundCampaignStats**](OutboundApi#getOutboundCampaignStats) | **GET** /api/v2/outbound/campaigns/{campaignId}/stats | Get statistics about a Dialer Campaign
+[**getOutboundCampaignrule**](OutboundApi#getOutboundCampaignrule) | **GET** /api/v2/outbound/campaignrules/{campaignRuleId} | Get Campaign Rule
+[**getOutboundCampaignrules**](OutboundApi#getOutboundCampaignrules) | **GET** /api/v2/outbound/campaignrules | Query Campaign Rule list
+[**getOutboundCampaigns**](OutboundApi#getOutboundCampaigns) | **GET** /api/v2/outbound/campaigns | Query a list of dialer campaigns.
+[**getOutboundCampaignsAll**](OutboundApi#getOutboundCampaignsAll) | **GET** /api/v2/outbound/campaigns/all | Query across all types of campaigns by division
+[**getOutboundCampaignsAllDivisionviews**](OutboundApi#getOutboundCampaignsAllDivisionviews) | **GET** /api/v2/outbound/campaigns/all/divisionviews | Query across all types of campaigns
+[**getOutboundCampaignsDivisionview**](OutboundApi#getOutboundCampaignsDivisionview) | **GET** /api/v2/outbound/campaigns/divisionviews/{campaignId} | Get a basic Campaign information object
+[**getOutboundCampaignsDivisionviews**](OutboundApi#getOutboundCampaignsDivisionviews) | **GET** /api/v2/outbound/campaigns/divisionviews | Query a list of basic Campaign information objects
+[**getOutboundContactlist**](OutboundApi#getOutboundContactlist) | **GET** /api/v2/outbound/contactlists/{contactListId} | Get a dialer contact list.
+[**getOutboundContactlistContact**](OutboundApi#getOutboundContactlistContact) | **GET** /api/v2/outbound/contactlists/{contactListId}/contacts/{contactId} | Get a contact.
+[**getOutboundContactlistContactsBulkJob**](OutboundApi#getOutboundContactlistContactsBulkJob) | **GET** /api/v2/outbound/contactlists/{contactListId}/contacts/bulk/jobs/{jobId} | Get bulk operation job.
+[**getOutboundContactlistContactsBulkJobs**](OutboundApi#getOutboundContactlistContactsBulkJobs) | **GET** /api/v2/outbound/contactlists/{contactListId}/contacts/bulk/jobs | Get 10 most recent bulk operation jobs associated with contact list.
+[**getOutboundContactlistExport**](OutboundApi#getOutboundContactlistExport) | **GET** /api/v2/outbound/contactlists/{contactListId}/export | Get the URI of a contact list export.
+[**getOutboundContactlistImportstatus**](OutboundApi#getOutboundContactlistImportstatus) | **GET** /api/v2/outbound/contactlists/{contactListId}/importstatus | Get dialer contactList import status.
+[**getOutboundContactlistTimezonemappingpreview**](OutboundApi#getOutboundContactlistTimezonemappingpreview) | **GET** /api/v2/outbound/contactlists/{contactListId}/timezonemappingpreview | Preview the result of applying Automatic Time Zone Mapping to a contact list
+[**getOutboundContactlistfilter**](OutboundApi#getOutboundContactlistfilter) | **GET** /api/v2/outbound/contactlistfilters/{contactListFilterId} | Get Contact list filter
+[**getOutboundContactlistfilters**](OutboundApi#getOutboundContactlistfilters) | **GET** /api/v2/outbound/contactlistfilters | Query Contact list filters
+[**getOutboundContactlists**](OutboundApi#getOutboundContactlists) | **GET** /api/v2/outbound/contactlists | Query a list of contact lists.
+[**getOutboundContactlistsDivisionview**](OutboundApi#getOutboundContactlistsDivisionview) | **GET** /api/v2/outbound/contactlists/divisionviews/{contactListId} | Get a basic ContactList information object
+[**getOutboundContactlistsDivisionviews**](OutboundApi#getOutboundContactlistsDivisionviews) | **GET** /api/v2/outbound/contactlists/divisionviews | Query a list of simplified contact list objects.
+[**getOutboundContactlisttemplate**](OutboundApi#getOutboundContactlisttemplate) | **GET** /api/v2/outbound/contactlisttemplates/{contactListTemplateId} | Get Contact List Template
+[**getOutboundContactlisttemplates**](OutboundApi#getOutboundContactlisttemplates) | **GET** /api/v2/outbound/contactlisttemplates | Query a list of contact list templates
+[**getOutboundDigitalruleset**](OutboundApi#getOutboundDigitalruleset) | **GET** /api/v2/outbound/digitalrulesets/{digitalRuleSetId} | Get an Outbound Digital Rule Set
+[**getOutboundDigitalrulesets**](OutboundApi#getOutboundDigitalrulesets) | **GET** /api/v2/outbound/digitalrulesets | Query a list of Outbound Digital Rule Sets
+[**getOutboundDnclist**](OutboundApi#getOutboundDnclist) | **GET** /api/v2/outbound/dnclists/{dncListId} | Get dialer DNC list
+[**getOutboundDnclistExport**](OutboundApi#getOutboundDnclistExport) | **GET** /api/v2/outbound/dnclists/{dncListId}/export | Get the URI of a DNC list export.
+[**getOutboundDnclistImportstatus**](OutboundApi#getOutboundDnclistImportstatus) | **GET** /api/v2/outbound/dnclists/{dncListId}/importstatus | Get dialer dncList import status.
+[**getOutboundDnclists**](OutboundApi#getOutboundDnclists) | **GET** /api/v2/outbound/dnclists | Query dialer DNC lists
+[**getOutboundDnclistsDivisionview**](OutboundApi#getOutboundDnclistsDivisionview) | **GET** /api/v2/outbound/dnclists/divisionviews/{dncListId} | Get a basic DncList information object
+[**getOutboundDnclistsDivisionviews**](OutboundApi#getOutboundDnclistsDivisionviews) | **GET** /api/v2/outbound/dnclists/divisionviews | Query a list of simplified dnc list objects.
+[**getOutboundEvent**](OutboundApi#getOutboundEvent) | **GET** /api/v2/outbound/events/{eventId} | Get Dialer Event
+[**getOutboundEvents**](OutboundApi#getOutboundEvents) | **GET** /api/v2/outbound/events | Query Event Logs
+[**getOutboundFilespecificationtemplate**](OutboundApi#getOutboundFilespecificationtemplate) | **GET** /api/v2/outbound/filespecificationtemplates/{fileSpecificationTemplateId} | Get File Specification Template
+[**getOutboundFilespecificationtemplates**](OutboundApi#getOutboundFilespecificationtemplates) | **GET** /api/v2/outbound/filespecificationtemplates | Query File Specification Templates
+[**getOutboundImporttemplate**](OutboundApi#getOutboundImporttemplate) | **GET** /api/v2/outbound/importtemplates/{importTemplateId} | Get Import Template
+[**getOutboundImporttemplateImportstatus**](OutboundApi#getOutboundImporttemplateImportstatus) | **GET** /api/v2/outbound/importtemplates/{importTemplateId}/importstatus | Get the import status for an import template.
+[**getOutboundImporttemplates**](OutboundApi#getOutboundImporttemplates) | **GET** /api/v2/outbound/importtemplates | Query Import Templates
+[**getOutboundMessagingcampaign**](OutboundApi#getOutboundMessagingcampaign) | **GET** /api/v2/outbound/messagingcampaigns/{messagingCampaignId} | Get an Outbound Messaging Campaign
+[**getOutboundMessagingcampaignDiagnostics**](OutboundApi#getOutboundMessagingcampaignDiagnostics) | **GET** /api/v2/outbound/messagingcampaigns/{messagingCampaignId}/diagnostics | Get messaging campaign diagnostics
+[**getOutboundMessagingcampaignProgress**](OutboundApi#getOutboundMessagingcampaignProgress) | **GET** /api/v2/outbound/messagingcampaigns/{messagingCampaignId}/progress | Get messaging campaign's progress
+[**getOutboundMessagingcampaigns**](OutboundApi#getOutboundMessagingcampaigns) | **GET** /api/v2/outbound/messagingcampaigns | Query a list of Messaging Campaigns
+[**getOutboundMessagingcampaignsDivisionview**](OutboundApi#getOutboundMessagingcampaignsDivisionview) | **GET** /api/v2/outbound/messagingcampaigns/divisionviews/{messagingCampaignId} | Get a basic Messaging Campaign information object
+[**getOutboundMessagingcampaignsDivisionviews**](OutboundApi#getOutboundMessagingcampaignsDivisionviews) | **GET** /api/v2/outbound/messagingcampaigns/divisionviews | Query a list of basic Messaging Campaign information objects
+[**getOutboundRuleset**](OutboundApi#getOutboundRuleset) | **GET** /api/v2/outbound/rulesets/{ruleSetId} | Get a Rule Set by ID.
+[**getOutboundRulesets**](OutboundApi#getOutboundRulesets) | **GET** /api/v2/outbound/rulesets | Query a list of Rule Sets.
+[**getOutboundSchedulesCampaign**](OutboundApi#getOutboundSchedulesCampaign) | **GET** /api/v2/outbound/schedules/campaigns/{campaignId} | Get a dialer campaign schedule.
+[**getOutboundSchedulesCampaigns**](OutboundApi#getOutboundSchedulesCampaigns) | **GET** /api/v2/outbound/schedules/campaigns | Query for a list of dialer campaign schedules.
+[**getOutboundSchedulesEmailcampaign**](OutboundApi#getOutboundSchedulesEmailcampaign) | **GET** /api/v2/outbound/schedules/emailcampaigns/{emailCampaignId} | Get an email campaign schedule.
+[**getOutboundSchedulesEmailcampaigns**](OutboundApi#getOutboundSchedulesEmailcampaigns) | **GET** /api/v2/outbound/schedules/emailcampaigns | Query for a list of email campaign schedules.
+[**getOutboundSchedulesMessagingcampaign**](OutboundApi#getOutboundSchedulesMessagingcampaign) | **GET** /api/v2/outbound/schedules/messagingcampaigns/{messagingCampaignId} | Get a messaging campaign schedule.
+[**getOutboundSchedulesMessagingcampaigns**](OutboundApi#getOutboundSchedulesMessagingcampaigns) | **GET** /api/v2/outbound/schedules/messagingcampaigns | Query for a list of messaging campaign schedules.
+[**getOutboundSchedulesSequence**](OutboundApi#getOutboundSchedulesSequence) | **GET** /api/v2/outbound/schedules/sequences/{sequenceId} | Get a dialer sequence schedule.
+[**getOutboundSchedulesSequences**](OutboundApi#getOutboundSchedulesSequences) | **GET** /api/v2/outbound/schedules/sequences | Query for a list of dialer sequence schedules.
+[**getOutboundSchedulesWhatsappcampaign**](OutboundApi#getOutboundSchedulesWhatsappcampaign) | **GET** /api/v2/outbound/schedules/whatsappcampaigns/{whatsAppCampaignId} | Get a WhatsApp campaign schedule.
+[**getOutboundSchedulesWhatsappcampaigns**](OutboundApi#getOutboundSchedulesWhatsappcampaigns) | **GET** /api/v2/outbound/schedules/whatsappcampaigns | Query for a list of WhatsApp campaign schedules.
+[**getOutboundSequence**](OutboundApi#getOutboundSequence) | **GET** /api/v2/outbound/sequences/{sequenceId} | Get a dialer campaign sequence.
+[**getOutboundSequences**](OutboundApi#getOutboundSequences) | **GET** /api/v2/outbound/sequences | Query a list of dialer campaign sequences.
+[**getOutboundSettings**](OutboundApi#getOutboundSettings) | **GET** /api/v2/outbound/settings | Get the outbound settings for this organization
+[**getOutboundWrapupcodemappings**](OutboundApi#getOutboundWrapupcodemappings) | **GET** /api/v2/outbound/wrapupcodemappings | Get the Dialer wrap up code mapping.
+[**patchOutboundCampaign**](OutboundApi#patchOutboundCampaign) | **PATCH** /api/v2/outbound/campaigns/{campaignId} | Update a campaign.
+[**patchOutboundDnclistCustomexclusioncolumns**](OutboundApi#patchOutboundDnclistCustomexclusioncolumns) | **PATCH** /api/v2/outbound/dnclists/{dncListId}/customexclusioncolumns | Add entries to or delete entries from a DNC list.
+[**patchOutboundDnclistEmailaddresses**](OutboundApi#patchOutboundDnclistEmailaddresses) | **PATCH** /api/v2/outbound/dnclists/{dncListId}/emailaddresses | Add emails to or Delete emails from a DNC list.
+[**patchOutboundDnclistPhonenumbers**](OutboundApi#patchOutboundDnclistPhonenumbers) | **PATCH** /api/v2/outbound/dnclists/{dncListId}/phonenumbers | Add numbers to or delete numbers from a DNC list.
+[**patchOutboundDnclistWhatsappnumbers**](OutboundApi#patchOutboundDnclistWhatsappnumbers) | **PATCH** /api/v2/outbound/dnclists/{dncListId}/whatsappnumbers | Add entries to or delete entries from a DNC list.
+[**patchOutboundSettings**](OutboundApi#patchOutboundSettings) | **PATCH** /api/v2/outbound/settings | Update the outbound settings for this organization
+[**postOutboundAttemptlimits**](OutboundApi#postOutboundAttemptlimits) | **POST** /api/v2/outbound/attemptlimits | Create attempt limits
+[**postOutboundCallabletimesets**](OutboundApi#postOutboundCallabletimesets) | **POST** /api/v2/outbound/callabletimesets | Create callable time set
+[**postOutboundCallanalysisresponsesets**](OutboundApi#postOutboundCallanalysisresponsesets) | **POST** /api/v2/outbound/callanalysisresponsesets | Create a dialer call analysis response set.
+[**postOutboundCampaignAgentownedmappingpreview**](OutboundApi#postOutboundCampaignAgentownedmappingpreview) | **POST** /api/v2/outbound/campaigns/{campaignId}/agentownedmappingpreview | Initiate request for a preview of how agents will be mapped to this campaign's contact list.
+[**postOutboundCampaignCallbackSchedule**](OutboundApi#postOutboundCampaignCallbackSchedule) | **POST** /api/v2/outbound/campaigns/{campaignId}/callback/schedule | Schedule a Callback for a Dialer Campaign (Deprecated)
+[**postOutboundCampaignStart**](OutboundApi#postOutboundCampaignStart) | **POST** /api/v2/outbound/campaigns/{campaignId}/start | Start the campaign
+[**postOutboundCampaignStop**](OutboundApi#postOutboundCampaignStop) | **POST** /api/v2/outbound/campaigns/{campaignId}/stop | Stop the campaign
+[**postOutboundCampaignrules**](OutboundApi#postOutboundCampaignrules) | **POST** /api/v2/outbound/campaignrules | Create Campaign Rule
+[**postOutboundCampaigns**](OutboundApi#postOutboundCampaigns) | **POST** /api/v2/outbound/campaigns | Create a campaign.
+[**postOutboundCampaignsProgress**](OutboundApi#postOutboundCampaignsProgress) | **POST** /api/v2/outbound/campaigns/progress | Get progress for a list of campaigns
+[**postOutboundContactlistClear**](OutboundApi#postOutboundContactlistClear) | **POST** /api/v2/outbound/contactlists/{contactListId}/clear | Deletes all contacts out of a list. All outstanding recalls or rule-scheduled callbacks for non-preview campaigns configured with the contactlist will be cancelled.
+[**postOutboundContactlistContacts**](OutboundApi#postOutboundContactlistContacts) | **POST** /api/v2/outbound/contactlists/{contactListId}/contacts | Add contacts to a contact list.
+[**postOutboundContactlistContactsBulk**](OutboundApi#postOutboundContactlistContactsBulk) | **POST** /api/v2/outbound/contactlists/{contactListId}/contacts/bulk | Get contacts from a contact list.
+[**postOutboundContactlistContactsBulkRemove**](OutboundApi#postOutboundContactlistContactsBulkRemove) | **POST** /api/v2/outbound/contactlists/{contactListId}/contacts/bulk/remove | Start an async job to delete contacts using a filter.
+[**postOutboundContactlistContactsBulkUpdate**](OutboundApi#postOutboundContactlistContactsBulkUpdate) | **POST** /api/v2/outbound/contactlists/{contactListId}/contacts/bulk/update | Start an async job to bulk edit contacts.
+[**postOutboundContactlistContactsSearch**](OutboundApi#postOutboundContactlistContactsSearch) | **POST** /api/v2/outbound/contactlists/{contactListId}/contacts/search | Query contacts from a contact list.
+[**postOutboundContactlistExport**](OutboundApi#postOutboundContactlistExport) | **POST** /api/v2/outbound/contactlists/{contactListId}/export | Initiate the export of a contact list.
+[**postOutboundContactlistfilters**](OutboundApi#postOutboundContactlistfilters) | **POST** /api/v2/outbound/contactlistfilters | Create Contact List Filter
+[**postOutboundContactlistfiltersBulkRetrieve**](OutboundApi#postOutboundContactlistfiltersBulkRetrieve) | **POST** /api/v2/outbound/contactlistfilters/bulk/retrieve | Retrieve multiple contact list filters
+[**postOutboundContactlistfiltersPreview**](OutboundApi#postOutboundContactlistfiltersPreview) | **POST** /api/v2/outbound/contactlistfilters/preview | Get a preview of the output of a contact list filter
+[**postOutboundContactlists**](OutboundApi#postOutboundContactlists) | **POST** /api/v2/outbound/contactlists | Create a contact List.
+[**postOutboundContactlisttemplates**](OutboundApi#postOutboundContactlisttemplates) | **POST** /api/v2/outbound/contactlisttemplates | Create Contact List Template
+[**postOutboundContactlisttemplatesBulkAdd**](OutboundApi#postOutboundContactlisttemplatesBulkAdd) | **POST** /api/v2/outbound/contactlisttemplates/bulk/add | Add multiple contact list templates
+[**postOutboundContactlisttemplatesBulkRetrieve**](OutboundApi#postOutboundContactlisttemplatesBulkRetrieve) | **POST** /api/v2/outbound/contactlisttemplates/bulk/retrieve | Get multiple contact list templates
+[**postOutboundConversationDnc**](OutboundApi#postOutboundConversationDnc) | **POST** /api/v2/outbound/conversations/{conversationId}/dnc | Add phone numbers to a Dialer DNC list.
+[**postOutboundDigitalrulesets**](OutboundApi#postOutboundDigitalrulesets) | **POST** /api/v2/outbound/digitalrulesets | Create an Outbound Digital Rule Set
+[**postOutboundDnclistEmailaddresses**](OutboundApi#postOutboundDnclistEmailaddresses) | **POST** /api/v2/outbound/dnclists/{dncListId}/emailaddresses | Add email addresses to a DNC list.
+[**postOutboundDnclistExport**](OutboundApi#postOutboundDnclistExport) | **POST** /api/v2/outbound/dnclists/{dncListId}/export | Initiate the export of a dnc list.
+[**postOutboundDnclistPhonenumbers**](OutboundApi#postOutboundDnclistPhonenumbers) | **POST** /api/v2/outbound/dnclists/{dncListId}/phonenumbers | Add phone numbers to a DNC list.
+[**postOutboundDnclists**](OutboundApi#postOutboundDnclists) | **POST** /api/v2/outbound/dnclists | Create dialer DNC list
+[**postOutboundFilespecificationtemplates**](OutboundApi#postOutboundFilespecificationtemplates) | **POST** /api/v2/outbound/filespecificationtemplates | Create File Specification Template
+[**postOutboundImporttemplates**](OutboundApi#postOutboundImporttemplates) | **POST** /api/v2/outbound/importtemplates | Create Import Template
+[**postOutboundImporttemplatesBulkAdd**](OutboundApi#postOutboundImporttemplatesBulkAdd) | **POST** /api/v2/outbound/importtemplates/bulk/add | Add multiple import templates
+[**postOutboundMessagingcampaignStart**](OutboundApi#postOutboundMessagingcampaignStart) | **POST** /api/v2/outbound/messagingcampaigns/{messagingCampaignId}/start | Start the campaign
+[**postOutboundMessagingcampaignStop**](OutboundApi#postOutboundMessagingcampaignStop) | **POST** /api/v2/outbound/messagingcampaigns/{messagingCampaignId}/stop | Stop the campaign
+[**postOutboundMessagingcampaigns**](OutboundApi#postOutboundMessagingcampaigns) | **POST** /api/v2/outbound/messagingcampaigns | Create a Messaging Campaign
+[**postOutboundMessagingcampaignsProgress**](OutboundApi#postOutboundMessagingcampaignsProgress) | **POST** /api/v2/outbound/messagingcampaigns/progress | Get progress for a list of messaging campaigns
+[**postOutboundRulesets**](OutboundApi#postOutboundRulesets) | **POST** /api/v2/outbound/rulesets | Create a Rule Set.
+[**postOutboundSequences**](OutboundApi#postOutboundSequences) | **POST** /api/v2/outbound/sequences | Create a new campaign sequence.
+[**putOutboundAttemptlimit**](OutboundApi#putOutboundAttemptlimit) | **PUT** /api/v2/outbound/attemptlimits/{attemptLimitsId} | Update attempt limits
+[**putOutboundCallabletimeset**](OutboundApi#putOutboundCallabletimeset) | **PUT** /api/v2/outbound/callabletimesets/{callableTimeSetId} | Update callable time set
+[**putOutboundCallanalysisresponseset**](OutboundApi#putOutboundCallanalysisresponseset) | **PUT** /api/v2/outbound/callanalysisresponsesets/{callAnalysisSetId} | Update a dialer call analysis response set.
+[**putOutboundCampaign**](OutboundApi#putOutboundCampaign) | **PUT** /api/v2/outbound/campaigns/{campaignId} | Update a campaign.
+[**putOutboundCampaignAgent**](OutboundApi#putOutboundCampaignAgent) | **PUT** /api/v2/outbound/campaigns/{campaignId}/agents/{userId} | Send notification that an agent's state changed 
+[**putOutboundCampaignrule**](OutboundApi#putOutboundCampaignrule) | **PUT** /api/v2/outbound/campaignrules/{campaignRuleId} | Update Campaign Rule
+[**putOutboundContactlist**](OutboundApi#putOutboundContactlist) | **PUT** /api/v2/outbound/contactlists/{contactListId} | Update a contact list.
+[**putOutboundContactlistContact**](OutboundApi#putOutboundContactlistContact) | **PUT** /api/v2/outbound/contactlists/{contactListId}/contacts/{contactId} | Update a contact.
+[**putOutboundContactlistfilter**](OutboundApi#putOutboundContactlistfilter) | **PUT** /api/v2/outbound/contactlistfilters/{contactListFilterId} | Update Contact List Filter
+[**putOutboundContactlisttemplate**](OutboundApi#putOutboundContactlisttemplate) | **PUT** /api/v2/outbound/contactlisttemplates/{contactListTemplateId} | Update a contact list template.
+[**putOutboundDigitalruleset**](OutboundApi#putOutboundDigitalruleset) | **PUT** /api/v2/outbound/digitalrulesets/{digitalRuleSetId} | Update an Outbound Digital Rule Set
+[**putOutboundDnclist**](OutboundApi#putOutboundDnclist) | **PUT** /api/v2/outbound/dnclists/{dncListId} | Update dialer DNC list
+[**putOutboundFilespecificationtemplate**](OutboundApi#putOutboundFilespecificationtemplate) | **PUT** /api/v2/outbound/filespecificationtemplates/{fileSpecificationTemplateId} | Update File Specification Template
+[**putOutboundImporttemplate**](OutboundApi#putOutboundImporttemplate) | **PUT** /api/v2/outbound/importtemplates/{importTemplateId} | Update Import Template
+[**putOutboundMessagingcampaign**](OutboundApi#putOutboundMessagingcampaign) | **PUT** /api/v2/outbound/messagingcampaigns/{messagingCampaignId} | Update an Outbound Messaging Campaign
+[**putOutboundRuleset**](OutboundApi#putOutboundRuleset) | **PUT** /api/v2/outbound/rulesets/{ruleSetId} | Update a Rule Set.
+[**putOutboundSchedulesCampaign**](OutboundApi#putOutboundSchedulesCampaign) | **PUT** /api/v2/outbound/schedules/campaigns/{campaignId} | Update a new campaign schedule.
+[**putOutboundSchedulesEmailcampaign**](OutboundApi#putOutboundSchedulesEmailcampaign) | **PUT** /api/v2/outbound/schedules/emailcampaigns/{emailCampaignId} | Update an email campaign schedule.
+[**putOutboundSchedulesMessagingcampaign**](OutboundApi#putOutboundSchedulesMessagingcampaign) | **PUT** /api/v2/outbound/schedules/messagingcampaigns/{messagingCampaignId} | Update a new messaging campaign schedule.
+[**putOutboundSchedulesSequence**](OutboundApi#putOutboundSchedulesSequence) | **PUT** /api/v2/outbound/schedules/sequences/{sequenceId} | Update a new sequence schedule.
+[**putOutboundSchedulesWhatsappcampaign**](OutboundApi#putOutboundSchedulesWhatsappcampaign) | **PUT** /api/v2/outbound/schedules/whatsappcampaigns/{whatsAppCampaignId} | Update a WhatsApp campaign schedule.
+[**putOutboundSequence**](OutboundApi#putOutboundSequence) | **PUT** /api/v2/outbound/sequences/{sequenceId} | Update a new campaign sequence.
+[**putOutboundWrapupcodemappings**](OutboundApi#putOutboundWrapupcodemappings) | **PUT** /api/v2/outbound/wrapupcodemappings | Update the Dialer wrap up code mapping.
 
-<a name="deleteOutboundAttemptlimit"></a>
 
-# void deleteOutboundAttemptlimit(attemptLimitsId)
+
+## deleteOutboundAttemptlimit
+
+> void deleteOutboundAttemptlimit(attemptLimitsId)
 
 
 DELETE /api/v2/outbound/attemptlimits/{attemptLimitsId}
@@ -162,7 +202,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -185,15 +225,15 @@ apiInstance.deleteOutboundAttemptlimit(attemptLimitsId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **attemptLimitsId** | **String** | Attempt limits ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteOutboundCallabletimeset"></a>
 
-# void deleteOutboundCallabletimeset(callableTimeSetId)
+## deleteOutboundCallabletimeset
+
+> void deleteOutboundCallabletimeset(callableTimeSetId)
 
 
 DELETE /api/v2/outbound/callabletimesets/{callableTimeSetId}
@@ -212,7 +252,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -235,15 +275,15 @@ apiInstance.deleteOutboundCallabletimeset(callableTimeSetId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **callableTimeSetId** | **String** | Callable Time Set ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteOutboundCallanalysisresponseset"></a>
 
-# void deleteOutboundCallanalysisresponseset(callAnalysisSetId)
+## deleteOutboundCallanalysisresponseset
+
+> void deleteOutboundCallanalysisresponseset(callAnalysisSetId)
 
 
 DELETE /api/v2/outbound/callanalysisresponsesets/{callAnalysisSetId}
@@ -262,7 +302,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -285,15 +325,15 @@ apiInstance.deleteOutboundCallanalysisresponseset(callAnalysisSetId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **callAnalysisSetId** | **String** | Call Analysis Response Set ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteOutboundCampaign"></a>
 
-# Campaign deleteOutboundCampaign(campaignId)
+## deleteOutboundCampaign
+
+> Campaign deleteOutboundCampaign(campaignId)
 
 
 DELETE /api/v2/outbound/campaigns/{campaignId}
@@ -312,7 +352,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -335,15 +375,15 @@ apiInstance.deleteOutboundCampaign(campaignId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **campaignId** | **String** | Campaign ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Campaign**
 
-<a name="deleteOutboundCampaignProgress"></a>
 
-# void deleteOutboundCampaignProgress(campaignId)
+## deleteOutboundCampaignProgress
+
+> void deleteOutboundCampaignProgress(campaignId)
 
 
 DELETE /api/v2/outbound/campaigns/{campaignId}/progress
@@ -353,6 +393,7 @@ Reset campaign progress and recycle the campaign
 Requires ANY permissions:
 
 * outbound:campaign:edit
+* outbound:campaign:recycle
 
 ### Example Usage
 
@@ -362,7 +403,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -385,15 +426,15 @@ apiInstance.deleteOutboundCampaignProgress(campaignId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **campaignId** | **String** | Campaign ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteOutboundCampaignrule"></a>
 
-# void deleteOutboundCampaignrule(campaignRuleId)
+## deleteOutboundCampaignrule
+
+> void deleteOutboundCampaignrule(campaignRuleId)
 
 
 DELETE /api/v2/outbound/campaignrules/{campaignRuleId}
@@ -412,7 +453,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -435,15 +476,15 @@ apiInstance.deleteOutboundCampaignrule(campaignRuleId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **campaignRuleId** | **String** | Campaign Rule ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteOutboundContactlist"></a>
 
-# void deleteOutboundContactlist(contactListId)
+## deleteOutboundContactlist
+
+> void deleteOutboundContactlist(contactListId)
 
 
 DELETE /api/v2/outbound/contactlists/{contactListId}
@@ -462,7 +503,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -485,15 +526,15 @@ apiInstance.deleteOutboundContactlist(contactListId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **contactListId** | **String** | ContactList ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteOutboundContactlistContact"></a>
 
-# void deleteOutboundContactlistContact(contactListId, contactId)
+## deleteOutboundContactlistContact
+
+> void deleteOutboundContactlistContact(contactListId, contactId)
 
 
 DELETE /api/v2/outbound/contactlists/{contactListId}/contacts/{contactId}
@@ -512,7 +553,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -537,15 +578,15 @@ apiInstance.deleteOutboundContactlistContact(contactListId, contactId)
 | ------------- | ------------- | ------------- | ------------- |
  **contactListId** | **String** | Contact List ID |  |
  **contactId** | **String** | Contact ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteOutboundContactlistContacts"></a>
 
-# void deleteOutboundContactlistContacts(contactListId, contactIds)
+## deleteOutboundContactlistContacts
+
+> void deleteOutboundContactlistContacts(contactListId, contactIds)
 
 
 DELETE /api/v2/outbound/contactlists/{contactListId}/contacts
@@ -564,7 +605,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -589,15 +630,15 @@ apiInstance.deleteOutboundContactlistContacts(contactListId, contactIds)
 | ------------- | ------------- | ------------- | ------------- |
  **contactListId** | **String** | Contact List ID |  |
  **contactIds** | **[String]** | ContactIds to delete. |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteOutboundContactlistfilter"></a>
 
-# void deleteOutboundContactlistfilter(contactListFilterId)
+## deleteOutboundContactlistfilter
+
+> void deleteOutboundContactlistfilter(contactListFilterId)
 
 
 DELETE /api/v2/outbound/contactlistfilters/{contactListFilterId}
@@ -616,7 +657,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -639,15 +680,15 @@ apiInstance.deleteOutboundContactlistfilter(contactListFilterId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **contactListFilterId** | **String** | Contact List Filter ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteOutboundContactlists"></a>
 
-# void deleteOutboundContactlists(id)
+## deleteOutboundContactlists
+
+> void deleteOutboundContactlists(id)
 
 
 DELETE /api/v2/outbound/contactlists
@@ -666,7 +707,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -689,15 +730,115 @@ apiInstance.deleteOutboundContactlists(id)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **id** | **[String]** | contact list id(s) to delete |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteOutboundDigitalruleset"></a>
 
-# void deleteOutboundDigitalruleset(digitalRuleSetId)
+## deleteOutboundContactlisttemplate
+
+> void deleteOutboundContactlisttemplate(contactListTemplateId)
+
+
+DELETE /api/v2/outbound/contactlisttemplates/{contactListTemplateId}
+
+Delete Contact List Template
+
+Requires ANY permissions:
+
+* outbound:contactListTemplate:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let contactListTemplateId = "contactListTemplateId_example"; // String | ContactListTemplate ID
+
+apiInstance.deleteOutboundContactlisttemplate(contactListTemplateId)
+  .then(() => {
+    console.log('deleteOutboundContactlisttemplate returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteOutboundContactlisttemplate');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **contactListTemplateId** | **String** | ContactListTemplate ID |  |
+
+### Return type
+
+void (no response body)
+
+
+## deleteOutboundContactlisttemplates
+
+> void deleteOutboundContactlisttemplates(id)
+
+
+DELETE /api/v2/outbound/contactlisttemplates
+
+Delete multiple contact list templates.
+
+Requires ANY permissions:
+
+* outbound:contactListTemplate:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let id = ["id_example"]; // [String] | contact list template id(s) to delete
+
+apiInstance.deleteOutboundContactlisttemplates(id)
+  .then(() => {
+    console.log('deleteOutboundContactlisttemplates returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteOutboundContactlisttemplates');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **id** | **[String]** | contact list template id(s) to delete |  |
+
+### Return type
+
+void (no response body)
+
+
+## deleteOutboundDigitalruleset
+
+> void deleteOutboundDigitalruleset(digitalRuleSetId)
 
 
 DELETE /api/v2/outbound/digitalrulesets/{digitalRuleSetId}
@@ -716,7 +857,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -739,15 +880,15 @@ apiInstance.deleteOutboundDigitalruleset(digitalRuleSetId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **digitalRuleSetId** | **String** | The Digital Rule Set ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteOutboundDnclist"></a>
 
-# void deleteOutboundDnclist(dncListId)
+## deleteOutboundDnclist
+
+> void deleteOutboundDnclist(dncListId)
 
 
 DELETE /api/v2/outbound/dnclists/{dncListId}
@@ -766,7 +907,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -789,15 +930,15 @@ apiInstance.deleteOutboundDnclist(dncListId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **dncListId** | **String** | DncList ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteOutboundDnclistCustomexclusioncolumns"></a>
 
-# void deleteOutboundDnclistCustomexclusioncolumns(dncListId, opts)
+## deleteOutboundDnclistCustomexclusioncolumns
+
+> void deleteOutboundDnclistCustomexclusioncolumns(dncListId, opts)
 
 
 DELETE /api/v2/outbound/dnclists/{dncListId}/customexclusioncolumns
@@ -818,7 +959,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -845,15 +986,15 @@ apiInstance.deleteOutboundDnclistCustomexclusioncolumns(dncListId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **dncListId** | **String** | DncList ID |  |
  **expiredOnly** | **Boolean** | Set to true to only remove DNC entries that are expired | [optional] [default to false] |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteOutboundDnclistEmailaddresses"></a>
 
-# void deleteOutboundDnclistEmailaddresses(dncListId, opts)
+## deleteOutboundDnclistEmailaddresses
+
+> void deleteOutboundDnclistEmailaddresses(dncListId, opts)
 
 
 DELETE /api/v2/outbound/dnclists/{dncListId}/emailaddresses
@@ -874,7 +1015,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -901,15 +1042,15 @@ apiInstance.deleteOutboundDnclistEmailaddresses(dncListId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **dncListId** | **String** | DncList ID |  |
  **expiredOnly** | **Boolean** | Set to true to only remove DNC entries that are expired | [optional] [default to false] |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteOutboundDnclistPhonenumbers"></a>
 
-# void deleteOutboundDnclistPhonenumbers(dncListId, opts)
+## deleteOutboundDnclistPhonenumbers
+
+> void deleteOutboundDnclistPhonenumbers(dncListId, opts)
 
 
 DELETE /api/v2/outbound/dnclists/{dncListId}/phonenumbers
@@ -930,7 +1071,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -957,15 +1098,271 @@ apiInstance.deleteOutboundDnclistPhonenumbers(dncListId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **dncListId** | **String** | DncList ID |  |
  **expiredOnly** | **Boolean** | Set to true to only remove DNC entries that are expired | [optional] [default to false] |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteOutboundMessagingcampaign"></a>
 
-# MessagingCampaign deleteOutboundMessagingcampaign(messagingCampaignId)
+## deleteOutboundDnclistWhatsappnumbers
+
+> void deleteOutboundDnclistWhatsappnumbers(dncListId, opts)
+
+
+DELETE /api/v2/outbound/dnclists/{dncListId}/whatsappnumbers
+
+Deletes all or expired whatsApp numbers from a DNC list.
+
+This operation is only for Internal DNC lists of whatsApp numbers
+
+Requires ANY permissions:
+
+* outbound:dnc:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let dncListId = "dncListId_example"; // String | DncList ID
+let opts = { 
+  'expiredOnly': false // Boolean | Set to true to only remove DNC whatsApp numbers that are expired
+};
+
+apiInstance.deleteOutboundDnclistWhatsappnumbers(dncListId, opts)
+  .then(() => {
+    console.log('deleteOutboundDnclistWhatsappnumbers returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteOutboundDnclistWhatsappnumbers');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **dncListId** | **String** | DncList ID |  |
+ **expiredOnly** | **Boolean** | Set to true to only remove DNC whatsApp numbers that are expired | [optional] [default to false] |
+
+### Return type
+
+void (no response body)
+
+
+## deleteOutboundFilespecificationtemplate
+
+> void deleteOutboundFilespecificationtemplate(fileSpecificationTemplateId)
+
+
+DELETE /api/v2/outbound/filespecificationtemplates/{fileSpecificationTemplateId}
+
+Delete File Specification Template
+
+Requires ANY permissions:
+
+* outbound:fileSpecificationTemplate:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let fileSpecificationTemplateId = "fileSpecificationTemplateId_example"; // String | File Specification Template ID
+
+apiInstance.deleteOutboundFilespecificationtemplate(fileSpecificationTemplateId)
+  .then(() => {
+    console.log('deleteOutboundFilespecificationtemplate returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteOutboundFilespecificationtemplate');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **fileSpecificationTemplateId** | **String** | File Specification Template ID |  |
+
+### Return type
+
+void (no response body)
+
+
+## deleteOutboundFilespecificationtemplatesBulk
+
+> void deleteOutboundFilespecificationtemplatesBulk(id)
+
+
+DELETE /api/v2/outbound/filespecificationtemplates/bulk
+
+Delete multiple file specification templates.
+
+Requires ANY permissions:
+
+* outbound:fileSpecificationTemplate:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let id = ["id_example"]; // [String] | File Specification template id(s) to delete
+
+apiInstance.deleteOutboundFilespecificationtemplatesBulk(id)
+  .then(() => {
+    console.log('deleteOutboundFilespecificationtemplatesBulk returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteOutboundFilespecificationtemplatesBulk');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **id** | **[String]** | File Specification template id(s) to delete |  |
+
+### Return type
+
+void (no response body)
+
+
+## deleteOutboundImporttemplate
+
+> void deleteOutboundImporttemplate(importTemplateId)
+
+
+DELETE /api/v2/outbound/importtemplates/{importTemplateId}
+
+Delete Import Template
+
+Requires ANY permissions:
+
+* outbound:importTemplate:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let importTemplateId = "importTemplateId_example"; // String | Import Template ID
+
+apiInstance.deleteOutboundImporttemplate(importTemplateId)
+  .then(() => {
+    console.log('deleteOutboundImporttemplate returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteOutboundImporttemplate');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **importTemplateId** | **String** | Import Template ID |  |
+
+### Return type
+
+void (no response body)
+
+
+## deleteOutboundImporttemplates
+
+> void deleteOutboundImporttemplates(id)
+
+
+DELETE /api/v2/outbound/importtemplates
+
+Delete multiple import templates.
+
+Requires ANY permissions:
+
+* outbound:importTemplate:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let id = ["id_example"]; // [String] | import template id(s) to delete
+
+apiInstance.deleteOutboundImporttemplates(id)
+  .then(() => {
+    console.log('deleteOutboundImporttemplates returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteOutboundImporttemplates');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **id** | **[String]** | import template id(s) to delete |  |
+
+### Return type
+
+void (no response body)
+
+
+## deleteOutboundMessagingcampaign
+
+> MessagingCampaign deleteOutboundMessagingcampaign(messagingCampaignId)
 
 
 DELETE /api/v2/outbound/messagingcampaigns/{messagingCampaignId}
@@ -976,6 +1373,7 @@ Requires ANY permissions:
 
 * outbound:messagingCampaign:delete
 * outbound:emailCampaign:delete
+* outbound:whatsAppCampaign:delete
 
 ### Example Usage
 
@@ -985,7 +1383,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -1008,25 +1406,31 @@ apiInstance.deleteOutboundMessagingcampaign(messagingCampaignId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **messagingCampaignId** | **String** | The Messaging Campaign ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **MessagingCampaign**
 
-<a name="deleteOutboundMessagingcampaignProgress"></a>
 
-# void deleteOutboundMessagingcampaignProgress(messagingCampaignId)
+## deleteOutboundMessagingcampaignProgress
+
+> void deleteOutboundMessagingcampaignProgress(messagingCampaignId)
 
 
 DELETE /api/v2/outbound/messagingcampaigns/{messagingCampaignId}/progress
 
 Reset messaging campaign progress and recycle the messaging campaign
 
+Documented permissions are applicable based on campaign type.
+
 Requires ANY permissions:
 
 * outbound:messagingCampaign:edit
+* outbound:messagingCampaign:recycle
 * outbound:emailCampaign:edit
+* outbound:emailCampaign:recycle
+* outbound:whatsAppCampaign:edit
+* outbound:whatsAppCampaign:recycle
 
 ### Example Usage
 
@@ -1036,7 +1440,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -1059,15 +1463,15 @@ apiInstance.deleteOutboundMessagingcampaignProgress(messagingCampaignId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **messagingCampaignId** | **String** | The Messaging Campaign ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteOutboundRuleset"></a>
 
-# void deleteOutboundRuleset(ruleSetId)
+## deleteOutboundRuleset
+
+> void deleteOutboundRuleset(ruleSetId)
 
 
 DELETE /api/v2/outbound/rulesets/{ruleSetId}
@@ -1086,7 +1490,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -1109,15 +1513,15 @@ apiInstance.deleteOutboundRuleset(ruleSetId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **ruleSetId** | **String** | Rule Set ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteOutboundSchedulesCampaign"></a>
 
-# void deleteOutboundSchedulesCampaign(campaignId)
+## deleteOutboundSchedulesCampaign
+
+> void deleteOutboundSchedulesCampaign(campaignId)
 
 
 DELETE /api/v2/outbound/schedules/campaigns/{campaignId}
@@ -1127,6 +1531,7 @@ Delete a dialer campaign schedule.
 Requires ANY permissions:
 
 * outbound:schedule:delete
+* outbound:campaign:deleteSchedule
 
 ### Example Usage
 
@@ -1136,7 +1541,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -1159,15 +1564,15 @@ apiInstance.deleteOutboundSchedulesCampaign(campaignId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **campaignId** | **String** | Campaign ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteOutboundSchedulesEmailcampaign"></a>
 
-# void deleteOutboundSchedulesEmailcampaign(emailCampaignId)
+## deleteOutboundSchedulesEmailcampaign
+
+> void deleteOutboundSchedulesEmailcampaign(emailCampaignId)
 
 
 DELETE /api/v2/outbound/schedules/emailcampaigns/{emailCampaignId}
@@ -1177,6 +1582,7 @@ Delete an email campaign schedule.
 Requires ANY permissions:
 
 * outbound:emailCampaignSchedule:delete
+* outbound:emailCampaign:deleteSchedule
 
 ### Example Usage
 
@@ -1186,7 +1592,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -1209,15 +1615,15 @@ apiInstance.deleteOutboundSchedulesEmailcampaign(emailCampaignId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **emailCampaignId** | **String** | Email Campaign ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteOutboundSchedulesMessagingcampaign"></a>
 
-# void deleteOutboundSchedulesMessagingcampaign(messagingCampaignId)
+## deleteOutboundSchedulesMessagingcampaign
+
+> void deleteOutboundSchedulesMessagingcampaign(messagingCampaignId)
 
 
 DELETE /api/v2/outbound/schedules/messagingcampaigns/{messagingCampaignId}
@@ -1227,6 +1633,7 @@ Delete a messaging campaign schedule.
 Requires ANY permissions:
 
 * outbound:messagingCampaignSchedule:delete
+* outbound:messagingCampaign:deleteSchedule
 
 ### Example Usage
 
@@ -1236,7 +1643,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -1259,15 +1666,15 @@ apiInstance.deleteOutboundSchedulesMessagingcampaign(messagingCampaignId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **messagingCampaignId** | **String** | Messaging Campaign ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteOutboundSchedulesSequence"></a>
 
-# void deleteOutboundSchedulesSequence(sequenceId)
+## deleteOutboundSchedulesSequence
+
+> void deleteOutboundSchedulesSequence(sequenceId)
 
 
 DELETE /api/v2/outbound/schedules/sequences/{sequenceId}
@@ -1277,6 +1684,7 @@ Delete a dialer sequence schedule.
 Requires ANY permissions:
 
 * outbound:schedule:delete
+* outbound:campaignSequenceSchedule:delete
 
 ### Example Usage
 
@@ -1286,7 +1694,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -1309,15 +1717,66 @@ apiInstance.deleteOutboundSchedulesSequence(sequenceId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **sequenceId** | **String** | Sequence ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteOutboundSequence"></a>
 
-# void deleteOutboundSequence(sequenceId)
+## deleteOutboundSchedulesWhatsappcampaign
+
+> void deleteOutboundSchedulesWhatsappcampaign(whatsAppCampaignId)
+
+
+DELETE /api/v2/outbound/schedules/whatsappcampaigns/{whatsAppCampaignId}
+
+Delete a WhatsApp campaign schedule.
+
+Requires ANY permissions:
+
+* outbound:whatsAppCampaignSchedule:delete
+* outbound:whatsAppCampaign:deleteSchedule
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let whatsAppCampaignId = "whatsAppCampaignId_example"; // String | WhatsApp Campaign ID
+
+apiInstance.deleteOutboundSchedulesWhatsappcampaign(whatsAppCampaignId)
+  .then(() => {
+    console.log('deleteOutboundSchedulesWhatsappcampaign returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteOutboundSchedulesWhatsappcampaign');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **whatsAppCampaignId** | **String** | WhatsApp Campaign ID |  |
+
+### Return type
+
+void (no response body)
+
+
+## deleteOutboundSequence
+
+> void deleteOutboundSequence(sequenceId)
 
 
 DELETE /api/v2/outbound/sequences/{sequenceId}
@@ -1336,7 +1795,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -1359,15 +1818,15 @@ apiInstance.deleteOutboundSequence(sequenceId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **sequenceId** | **String** | Campaign Sequence ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="getOutboundAttemptlimit"></a>
 
-# AttemptLimits getOutboundAttemptlimit(attemptLimitsId)
+## getOutboundAttemptlimit
+
+> AttemptLimits getOutboundAttemptlimit(attemptLimitsId)
 
 
 GET /api/v2/outbound/attemptlimits/{attemptLimitsId}
@@ -1386,7 +1845,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -1409,15 +1868,15 @@ apiInstance.getOutboundAttemptlimit(attemptLimitsId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **attemptLimitsId** | **String** | Attempt limits ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AttemptLimits**
 
-<a name="getOutboundAttemptlimits"></a>
 
-# AttemptLimitsEntityListing getOutboundAttemptlimits(opts)
+## getOutboundAttemptlimits
+
+> AttemptLimitsEntityListing getOutboundAttemptlimits(opts)
 
 
 GET /api/v2/outbound/attemptlimits
@@ -1436,7 +1895,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -1473,15 +1932,15 @@ apiInstance.getOutboundAttemptlimits(opts)
  **name** | **String** | Name | [optional]  |
  **sortBy** | **String** | Sort by | [optional]  |
  **sortOrder** | **String** | Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
-{: class="table table-striped"}
 
 ### Return type
 
 **AttemptLimitsEntityListing**
 
-<a name="getOutboundCallabletimeset"></a>
 
-# CallableTimeSet getOutboundCallabletimeset(callableTimeSetId)
+## getOutboundCallabletimeset
+
+> CallableTimeSet getOutboundCallabletimeset(callableTimeSetId)
 
 
 GET /api/v2/outbound/callabletimesets/{callableTimeSetId}
@@ -1500,7 +1959,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -1523,15 +1982,15 @@ apiInstance.getOutboundCallabletimeset(callableTimeSetId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **callableTimeSetId** | **String** | Callable Time Set ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **CallableTimeSet**
 
-<a name="getOutboundCallabletimesets"></a>
 
-# CallableTimeSetEntityListing getOutboundCallabletimesets(opts)
+## getOutboundCallabletimesets
+
+> CallableTimeSetEntityListing getOutboundCallabletimesets(opts)
 
 
 GET /api/v2/outbound/callabletimesets
@@ -1550,7 +2009,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -1587,15 +2046,15 @@ apiInstance.getOutboundCallabletimesets(opts)
  **name** | **String** | Name | [optional]  |
  **sortBy** | **String** | Sort by | [optional]  |
  **sortOrder** | **String** | Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
-{: class="table table-striped"}
 
 ### Return type
 
 **CallableTimeSetEntityListing**
 
-<a name="getOutboundCallanalysisresponseset"></a>
 
-# ResponseSet getOutboundCallanalysisresponseset(callAnalysisSetId)
+## getOutboundCallanalysisresponseset
+
+> ResponseSet getOutboundCallanalysisresponseset(callAnalysisSetId)
 
 
 GET /api/v2/outbound/callanalysisresponsesets/{callAnalysisSetId}
@@ -1614,7 +2073,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -1637,15 +2096,15 @@ apiInstance.getOutboundCallanalysisresponseset(callAnalysisSetId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **callAnalysisSetId** | **String** | Call Analysis Response Set ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ResponseSet**
 
-<a name="getOutboundCallanalysisresponsesets"></a>
 
-# ResponseSetEntityListing getOutboundCallanalysisresponsesets(opts)
+## getOutboundCallanalysisresponsesets
+
+> ResponseSetEntityListing getOutboundCallanalysisresponsesets(opts)
 
 
 GET /api/v2/outbound/callanalysisresponsesets
@@ -1664,7 +2123,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -1701,15 +2160,15 @@ apiInstance.getOutboundCallanalysisresponsesets(opts)
  **name** | **String** | Name | [optional]  |
  **sortBy** | **String** | Sort by | [optional]  |
  **sortOrder** | **String** | Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
-{: class="table table-striped"}
 
 ### Return type
 
 **ResponseSetEntityListing**
 
-<a name="getOutboundCampaign"></a>
 
-# Campaign getOutboundCampaign(campaignId)
+## getOutboundCampaign
+
+> Campaign getOutboundCampaign(campaignId)
 
 
 GET /api/v2/outbound/campaigns/{campaignId}
@@ -1728,7 +2187,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -1751,15 +2210,15 @@ apiInstance.getOutboundCampaign(campaignId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **campaignId** | **String** | Campaign ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Campaign**
 
-<a name="getOutboundCampaignAgentownedmappingpreviewResults"></a>
 
-# AgentOwnedMappingPreviewListing getOutboundCampaignAgentownedmappingpreviewResults(campaignId)
+## getOutboundCampaignAgentownedmappingpreviewResults
+
+> AgentOwnedMappingPreviewListing getOutboundCampaignAgentownedmappingpreviewResults(campaignId)
 
 
 GET /api/v2/outbound/campaigns/{campaignId}/agentownedmappingpreview/results
@@ -1780,7 +2239,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -1803,15 +2262,15 @@ apiInstance.getOutboundCampaignAgentownedmappingpreviewResults(campaignId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **campaignId** | **String** | Campaign ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AgentOwnedMappingPreviewListing**
 
-<a name="getOutboundCampaignDiagnostics"></a>
 
-# CampaignDiagnostics getOutboundCampaignDiagnostics(campaignId)
+## getOutboundCampaignDiagnostics
+
+> CampaignDiagnostics getOutboundCampaignDiagnostics(campaignId)
 
 
 GET /api/v2/outbound/campaigns/{campaignId}/diagnostics
@@ -1830,7 +2289,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -1853,15 +2312,15 @@ apiInstance.getOutboundCampaignDiagnostics(campaignId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **campaignId** | **String** | Campaign ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **CampaignDiagnostics**
 
-<a name="getOutboundCampaignInteractions"></a>
 
-# CampaignInteractions getOutboundCampaignInteractions(campaignId)
+## getOutboundCampaignInteractions
+
+> CampaignInteractions getOutboundCampaignInteractions(campaignId)
 
 
 GET /api/v2/outbound/campaigns/{campaignId}/interactions
@@ -1880,7 +2339,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -1903,15 +2362,79 @@ apiInstance.getOutboundCampaignInteractions(campaignId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **campaignId** | **String** | Campaign ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **CampaignInteractions**
 
-<a name="getOutboundCampaignProgress"></a>
 
-# CampaignProgress getOutboundCampaignProgress(campaignId)
+## getOutboundCampaignLinedistribution
+
+> CampaignOutboundLinesDistribution getOutboundCampaignLinedistribution(campaignId, opts)
+
+
+GET /api/v2/outbound/campaigns/{campaignId}/linedistribution
+
+Get line distribution information for campaigns using same Edge Group or Site as given campaign
+
+Requires ANY permissions:
+
+* outbound:lineDistribution:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let campaignId = "campaignId_example"; // String | Campaign ID
+let opts = { 
+  'includeOnlyActiveCampaigns': true, // Boolean | If true will return only active Campaigns
+  'edgeGroupId': "edgeGroupId_example", // String | Edge group to be used in line distribution calculations instead of current Campaign's Edge Group. Campaign's Site and Edge Group are mutually exclusive.
+  'siteId': "siteId_example", // String | Site to be used in line distribution calculations instead of current Campaign's Site.  Campaign's Site and Edge Group are mutually exclusive.
+  'useWeight': true, // Boolean | Enable usage of weight, this value overrides current Campaign's setting in line distribution calculations
+  'relativeWeight': 3.4, // Number | Relative weight to be used in line distribution calculations instead of current Campaign's relative weight
+  'outboundLineCount': 3.4 // Number | The number of outbound lines to be used in line distribution calculations, instead of current Campaign's Outbound Lines Count
+};
+
+apiInstance.getOutboundCampaignLinedistribution(campaignId, opts)
+  .then((data) => {
+    console.log(`getOutboundCampaignLinedistribution success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getOutboundCampaignLinedistribution');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **campaignId** | **String** | Campaign ID |  |
+ **includeOnlyActiveCampaigns** | **Boolean** | If true will return only active Campaigns | [optional] [default to true] |
+ **edgeGroupId** | **String** | Edge group to be used in line distribution calculations instead of current Campaign's Edge Group. Campaign's Site and Edge Group are mutually exclusive. | [optional]  |
+ **siteId** | **String** | Site to be used in line distribution calculations instead of current Campaign's Site.  Campaign's Site and Edge Group are mutually exclusive. | [optional]  |
+ **useWeight** | **Boolean** | Enable usage of weight, this value overrides current Campaign's setting in line distribution calculations | [optional]  |
+ **relativeWeight** | **Number** | Relative weight to be used in line distribution calculations instead of current Campaign's relative weight | [optional]  |
+ **outboundLineCount** | **Number** | The number of outbound lines to be used in line distribution calculations, instead of current Campaign's Outbound Lines Count | [optional]  |
+
+### Return type
+
+**CampaignOutboundLinesDistribution**
+
+
+## getOutboundCampaignProgress
+
+> CampaignProgress getOutboundCampaignProgress(campaignId)
 
 
 GET /api/v2/outbound/campaigns/{campaignId}/progress
@@ -1930,7 +2453,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -1953,15 +2476,71 @@ apiInstance.getOutboundCampaignProgress(campaignId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **campaignId** | **String** | Campaign ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **CampaignProgress**
 
-<a name="getOutboundCampaignStats"></a>
 
-# CampaignStats getOutboundCampaignStats(campaignId)
+## getOutboundCampaignSkillcombinations
+
+> PagedSkillCombinationListing getOutboundCampaignSkillcombinations(campaignId, opts)
+
+
+GET /api/v2/outbound/campaigns/{campaignId}/skillcombinations
+
+Get the remaining and total contact count for each skill combination in a skills campaign
+
+Requires ANY permissions:
+
+* outbound:campaign:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let campaignId = "campaignId_example"; // String | Campaign ID
+let opts = { 
+  'pageNumber': 1, // Number | Page number
+  'pageSize': 25 // Number | Page size
+};
+
+apiInstance.getOutboundCampaignSkillcombinations(campaignId, opts)
+  .then((data) => {
+    console.log(`getOutboundCampaignSkillcombinations success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getOutboundCampaignSkillcombinations');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **campaignId** | **String** | Campaign ID |  |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+
+### Return type
+
+**PagedSkillCombinationListing**
+
+
+## getOutboundCampaignStats
+
+> CampaignStats getOutboundCampaignStats(campaignId)
 
 
 GET /api/v2/outbound/campaigns/{campaignId}/stats
@@ -1980,7 +2559,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -2003,15 +2582,15 @@ apiInstance.getOutboundCampaignStats(campaignId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **campaignId** | **String** | Campaign ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **CampaignStats**
 
-<a name="getOutboundCampaignrule"></a>
 
-# CampaignRule getOutboundCampaignrule(campaignRuleId)
+## getOutboundCampaignrule
+
+> CampaignRule getOutboundCampaignrule(campaignRuleId)
 
 
 GET /api/v2/outbound/campaignrules/{campaignRuleId}
@@ -2030,7 +2609,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -2053,15 +2632,15 @@ apiInstance.getOutboundCampaignrule(campaignRuleId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **campaignRuleId** | **String** | Campaign Rule ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **CampaignRule**
 
-<a name="getOutboundCampaignrules"></a>
 
-# CampaignRuleEntityListing getOutboundCampaignrules(opts)
+## getOutboundCampaignrules
+
+> CampaignRuleEntityListing getOutboundCampaignrules(opts)
 
 
 GET /api/v2/outbound/campaignrules
@@ -2080,7 +2659,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -2117,15 +2696,15 @@ apiInstance.getOutboundCampaignrules(opts)
  **name** | **String** | Name | [optional]  |
  **sortBy** | **String** | Sort by | [optional]  |
  **sortOrder** | **String** | Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
-{: class="table table-striped"}
 
 ### Return type
 
 **CampaignRuleEntityListing**
 
-<a name="getOutboundCampaigns"></a>
 
-# CampaignEntityListing getOutboundCampaigns(opts)
+## getOutboundCampaigns
+
+> CampaignEntityListing getOutboundCampaigns(opts)
 
 
 GET /api/v2/outbound/campaigns
@@ -2144,7 +2723,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -2193,15 +2772,15 @@ apiInstance.getOutboundCampaigns(opts)
  **divisionId** | **[String]** | Division ID(s) | [optional]  |
  **sortBy** | **String** | Sort by | [optional]  |
  **sortOrder** | **String** | Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
-{: class="table table-striped"}
 
 ### Return type
 
 **CampaignEntityListing**
 
-<a name="getOutboundCampaignsAll"></a>
 
-# CommonCampaignEntityListing getOutboundCampaignsAll(opts)
+## getOutboundCampaignsAll
+
+> CommonCampaignEntityListing getOutboundCampaignsAll(opts)
 
 
 GET /api/v2/outbound/campaigns/all
@@ -2213,6 +2792,7 @@ Requires ANY permissions:
 * outbound:campaign:view
 * outbound:messagingCampaign:view
 * outbound:emailCampaign:view
+* outbound:whatsAppCampaign:view
 
 ### Example Usage
 
@@ -2222,7 +2802,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -2257,17 +2837,17 @@ apiInstance.getOutboundCampaignsAll(opts)
  **id** | **[String]** | Campaign ID(s) | [optional]  |
  **name** | **String** | Campaign name(s) | [optional]  |
  **divisionId** | **[String]** | Division ID(s) | [optional]  |
- **mediaType** | **[String]** | Media type(s) | [optional] <br />**Values**: email, sms, voice |
+ **mediaType** | **[String]** | Media type(s) | [optional] <br />**Values**: email, sms, voice, whatsapp |
  **sortOrder** | **String** | Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
-{: class="table table-striped"}
 
 ### Return type
 
 **CommonCampaignEntityListing**
 
-<a name="getOutboundCampaignsAllDivisionviews"></a>
 
-# CommonCampaignDivisionViewEntityListing getOutboundCampaignsAllDivisionviews(opts)
+## getOutboundCampaignsAllDivisionviews
+
+> CommonCampaignDivisionViewEntityListing getOutboundCampaignsAllDivisionviews(opts)
 
 
 GET /api/v2/outbound/campaigns/all/divisionviews
@@ -2279,6 +2859,7 @@ Requires ANY permissions:
 * outbound:campaign:search
 * outbound:messagingCampaign:search
 * outbound:emailCampaign:search
+* outbound:whatsAppCampaign:search
 
 ### Example Usage
 
@@ -2288,7 +2869,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -2323,17 +2904,17 @@ apiInstance.getOutboundCampaignsAllDivisionviews(opts)
  **id** | **[String]** | Campaign ID(s) | [optional]  |
  **name** | **String** | Campaign name(s) | [optional]  |
  **divisionId** | **[String]** | Division ID(s) | [optional]  |
- **mediaType** | **[String]** | Media type(s) | [optional] <br />**Values**: email, sms, voice |
+ **mediaType** | **[String]** | Media type(s) | [optional] <br />**Values**: email, sms, voice, whatsapp |
  **sortOrder** | **String** | Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
-{: class="table table-striped"}
 
 ### Return type
 
 **CommonCampaignDivisionViewEntityListing**
 
-<a name="getOutboundCampaignsDivisionview"></a>
 
-# CampaignDivisionView getOutboundCampaignsDivisionview(campaignId)
+## getOutboundCampaignsDivisionview
+
+> CampaignDivisionView getOutboundCampaignsDivisionview(campaignId)
 
 
 GET /api/v2/outbound/campaigns/divisionviews/{campaignId}
@@ -2354,7 +2935,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -2377,15 +2958,15 @@ apiInstance.getOutboundCampaignsDivisionview(campaignId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **campaignId** | **String** | Campaign ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **CampaignDivisionView**
 
-<a name="getOutboundCampaignsDivisionviews"></a>
 
-# CampaignDivisionViewListing getOutboundCampaignsDivisionviews(opts)
+## getOutboundCampaignsDivisionviews
+
+> CampaignDivisionViewListing getOutboundCampaignsDivisionviews(opts)
 
 
 GET /api/v2/outbound/campaigns/divisionviews
@@ -2406,7 +2987,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -2443,15 +3024,15 @@ apiInstance.getOutboundCampaignsDivisionviews(opts)
  **id** | **[String]** | id | [optional]  |
  **sortBy** | **String** | Sort by | [optional]  |
  **sortOrder** | **String** | Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
-{: class="table table-striped"}
 
 ### Return type
 
 **CampaignDivisionViewListing**
 
-<a name="getOutboundContactlist"></a>
 
-# ContactList getOutboundContactlist(contactListId, opts)
+## getOutboundContactlist
+
+> ContactList getOutboundContactlist(contactListId, opts)
 
 
 GET /api/v2/outbound/contactlists/{contactListId}
@@ -2470,7 +3051,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -2499,15 +3080,15 @@ apiInstance.getOutboundContactlist(contactListId, opts)
  **contactListId** | **String** | ContactList ID |  |
  **includeImportStatus** | **Boolean** | Import status | [optional] [default to false] |
  **includeSize** | **Boolean** | Include size | [optional] [default to false] |
-{: class="table table-striped"}
 
 ### Return type
 
 **ContactList**
 
-<a name="getOutboundContactlistContact"></a>
 
-# DialerContact getOutboundContactlistContact(contactListId, contactId)
+## getOutboundContactlistContact
+
+> DialerContact getOutboundContactlistContact(contactListId, contactId)
 
 
 GET /api/v2/outbound/contactlists/{contactListId}/contacts/{contactId}
@@ -2526,7 +3107,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -2551,15 +3132,117 @@ apiInstance.getOutboundContactlistContact(contactListId, contactId)
 | ------------- | ------------- | ------------- | ------------- |
  **contactListId** | **String** | Contact List ID |  |
  **contactId** | **String** | Contact ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **DialerContact**
 
-<a name="getOutboundContactlistExport"></a>
 
-# ExportUri getOutboundContactlistExport(contactListId, opts)
+## getOutboundContactlistContactsBulkJob
+
+> ContactsBulkOperationJob getOutboundContactlistContactsBulkJob(contactListId, jobId)
+
+
+GET /api/v2/outbound/contactlists/{contactListId}/contacts/bulk/jobs/{jobId}
+
+Get bulk operation job.
+
+Requires ANY permissions:
+
+* outbound:contactList:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let contactListId = "contactListId_example"; // String | Contact List ID
+let jobId = "jobId_example"; // String | Job ID
+
+apiInstance.getOutboundContactlistContactsBulkJob(contactListId, jobId)
+  .then((data) => {
+    console.log(`getOutboundContactlistContactsBulkJob success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getOutboundContactlistContactsBulkJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **contactListId** | **String** | Contact List ID |  |
+ **jobId** | **String** | Job ID |  |
+
+### Return type
+
+**ContactsBulkOperationJob**
+
+
+## getOutboundContactlistContactsBulkJobs
+
+> ContactsBulkOperationJobListing getOutboundContactlistContactsBulkJobs(contactListId)
+
+
+GET /api/v2/outbound/contactlists/{contactListId}/contacts/bulk/jobs
+
+Get 10 most recent bulk operation jobs associated with contact list.
+
+Requires ANY permissions:
+
+* outbound:contactList:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let contactListId = "contactListId_example"; // String | Contact List ID
+
+apiInstance.getOutboundContactlistContactsBulkJobs(contactListId)
+  .then((data) => {
+    console.log(`getOutboundContactlistContactsBulkJobs success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getOutboundContactlistContactsBulkJobs');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **contactListId** | **String** | Contact List ID |  |
+
+### Return type
+
+**ContactsBulkOperationJobListing**
+
+
+## getOutboundContactlistExport
+
+> ExportUri getOutboundContactlistExport(contactListId, opts)
 
 
 GET /api/v2/outbound/contactlists/{contactListId}/export
@@ -2579,7 +3262,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -2606,15 +3289,15 @@ apiInstance.getOutboundContactlistExport(contactListId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **contactListId** | **String** | ContactList ID |  |
  **download** | **String** | Redirect to download uri | [optional] [default to false] |
-{: class="table table-striped"}
 
 ### Return type
 
 **ExportUri**
 
-<a name="getOutboundContactlistImportstatus"></a>
 
-# ImportStatus getOutboundContactlistImportstatus(contactListId)
+## getOutboundContactlistImportstatus
+
+> ImportStatus getOutboundContactlistImportstatus(contactListId)
 
 
 GET /api/v2/outbound/contactlists/{contactListId}/importstatus
@@ -2633,7 +3316,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -2656,15 +3339,15 @@ apiInstance.getOutboundContactlistImportstatus(contactListId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **contactListId** | **String** | ContactList ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ImportStatus**
 
-<a name="getOutboundContactlistTimezonemappingpreview"></a>
 
-# TimeZoneMappingPreview getOutboundContactlistTimezonemappingpreview(contactListId)
+## getOutboundContactlistTimezonemappingpreview
+
+> TimeZoneMappingPreview getOutboundContactlistTimezonemappingpreview(contactListId)
 
 
 GET /api/v2/outbound/contactlists/{contactListId}/timezonemappingpreview
@@ -2683,7 +3366,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -2706,15 +3389,15 @@ apiInstance.getOutboundContactlistTimezonemappingpreview(contactListId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **contactListId** | **String** | ContactList ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **TimeZoneMappingPreview**
 
-<a name="getOutboundContactlistfilter"></a>
 
-# ContactListFilter getOutboundContactlistfilter(contactListFilterId)
+## getOutboundContactlistfilter
+
+> ContactListFilter getOutboundContactlistfilter(contactListFilterId)
 
 
 GET /api/v2/outbound/contactlistfilters/{contactListFilterId}
@@ -2733,7 +3416,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -2756,15 +3439,15 @@ apiInstance.getOutboundContactlistfilter(contactListFilterId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **contactListFilterId** | **String** | Contact List Filter ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ContactListFilter**
 
-<a name="getOutboundContactlistfilters"></a>
 
-# ContactListFilterEntityListing getOutboundContactlistfilters(opts)
+## getOutboundContactlistfilters
+
+> ContactListFilterEntityListing getOutboundContactlistfilters(opts)
 
 
 GET /api/v2/outbound/contactlistfilters
@@ -2783,7 +3466,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -2822,15 +3505,15 @@ apiInstance.getOutboundContactlistfilters(opts)
  **sortBy** | **String** | Sort by | [optional]  |
  **sortOrder** | **String** | Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
  **contactListId** | **String** | Contact List ID | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ContactListFilterEntityListing**
 
-<a name="getOutboundContactlists"></a>
 
-# ContactListEntityListing getOutboundContactlists(opts)
+## getOutboundContactlists
+
+> ContactListEntityListing getOutboundContactlists(opts)
 
 
 GET /api/v2/outbound/contactlists
@@ -2849,7 +3532,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -2894,15 +3577,15 @@ apiInstance.getOutboundContactlists(opts)
  **divisionId** | **[String]** | Division ID(s) | [optional]  |
  **sortBy** | **String** | Sort by | [optional]  |
  **sortOrder** | **String** | Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
-{: class="table table-striped"}
 
 ### Return type
 
 **ContactListEntityListing**
 
-<a name="getOutboundContactlistsDivisionview"></a>
 
-# ContactListDivisionView getOutboundContactlistsDivisionview(contactListId, opts)
+## getOutboundContactlistsDivisionview
+
+> ContactListDivisionView getOutboundContactlistsDivisionview(contactListId, opts)
 
 
 GET /api/v2/outbound/contactlists/divisionviews/{contactListId}
@@ -2923,7 +3606,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -2952,15 +3635,15 @@ apiInstance.getOutboundContactlistsDivisionview(contactListId, opts)
  **contactListId** | **String** | Contactlist ID |  |
  **includeImportStatus** | **Boolean** | Include import status | [optional] [default to false] |
  **includeSize** | **Boolean** | Include size | [optional] [default to false] |
-{: class="table table-striped"}
 
 ### Return type
 
 **ContactListDivisionView**
 
-<a name="getOutboundContactlistsDivisionviews"></a>
 
-# ContactListDivisionViewListing getOutboundContactlistsDivisionviews(opts)
+## getOutboundContactlistsDivisionviews
+
+> ContactListDivisionViewListing getOutboundContactlistsDivisionviews(opts)
 
 
 GET /api/v2/outbound/contactlists/divisionviews
@@ -2981,7 +3664,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -3022,15 +3705,129 @@ apiInstance.getOutboundContactlistsDivisionviews(opts)
  **id** | **[String]** | id | [optional]  |
  **sortBy** | **String** | Sort by | [optional]  |
  **sortOrder** | **String** | Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
-{: class="table table-striped"}
 
 ### Return type
 
 **ContactListDivisionViewListing**
 
-<a name="getOutboundDigitalruleset"></a>
 
-# DigitalRuleSet getOutboundDigitalruleset(digitalRuleSetId)
+## getOutboundContactlisttemplate
+
+> ContactListTemplate getOutboundContactlisttemplate(contactListTemplateId)
+
+
+GET /api/v2/outbound/contactlisttemplates/{contactListTemplateId}
+
+Get Contact List Template
+
+Requires ANY permissions:
+
+* outbound:contactListTemplate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let contactListTemplateId = "contactListTemplateId_example"; // String | ContactListTemplate ID
+
+apiInstance.getOutboundContactlisttemplate(contactListTemplateId)
+  .then((data) => {
+    console.log(`getOutboundContactlisttemplate success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getOutboundContactlisttemplate');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **contactListTemplateId** | **String** | ContactListTemplate ID |  |
+
+### Return type
+
+**ContactListTemplate**
+
+
+## getOutboundContactlisttemplates
+
+> ContactListTemplateEntityListing getOutboundContactlisttemplates(opts)
+
+
+GET /api/v2/outbound/contactlisttemplates
+
+Query a list of contact list templates
+
+Requires ANY permissions:
+
+* outbound:contactListTemplate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let opts = { 
+  'pageSize': 25, // Number | Page size. The max that will be returned is 100.
+  'pageNumber': 1, // Number | Page number
+  'allowEmptyResult': false, // Boolean | Whether to return an empty page when there are no results for that page
+  'filterType': "Prefix", // String | Filter type
+  'name': "name_example", // String | Name
+  'sortBy': "sortBy_example", // String | Sort by
+  'sortOrder': "a" // String | Sort order
+};
+
+apiInstance.getOutboundContactlisttemplates(opts)
+  .then((data) => {
+    console.log(`getOutboundContactlisttemplates success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getOutboundContactlisttemplates');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **pageSize** | **Number** | Page size. The max that will be returned is 100. | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **allowEmptyResult** | **Boolean** | Whether to return an empty page when there are no results for that page | [optional] [default to false] |
+ **filterType** | **String** | Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
+ **name** | **String** | Name | [optional]  |
+ **sortBy** | **String** | Sort by | [optional]  |
+ **sortOrder** | **String** | Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
+
+### Return type
+
+**ContactListTemplateEntityListing**
+
+
+## getOutboundDigitalruleset
+
+> DigitalRuleSet getOutboundDigitalruleset(digitalRuleSetId)
 
 
 GET /api/v2/outbound/digitalrulesets/{digitalRuleSetId}
@@ -3049,7 +3846,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -3072,15 +3869,15 @@ apiInstance.getOutboundDigitalruleset(digitalRuleSetId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **digitalRuleSetId** | **String** | The Digital Rule Set ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **DigitalRuleSet**
 
-<a name="getOutboundDigitalrulesets"></a>
 
-# DigitalRuleSetEntityListing getOutboundDigitalrulesets(opts)
+## getOutboundDigitalrulesets
+
+> DigitalRuleSetEntityListing getOutboundDigitalrulesets(opts)
 
 
 GET /api/v2/outbound/digitalrulesets
@@ -3099,7 +3896,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -3134,15 +3931,15 @@ apiInstance.getOutboundDigitalrulesets(opts)
  **sortOrder** | **String** | The direction to sort | [optional] [default to ascending]<br />**Values**: ascending, descending |
  **name** | **String** | Name | [optional]  |
  **id** | **[String]** | A list of digital rule set ids to bulk fetch | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **DigitalRuleSetEntityListing**
 
-<a name="getOutboundDnclist"></a>
 
-# DncList getOutboundDnclist(dncListId, opts)
+## getOutboundDnclist
+
+> DncList getOutboundDnclist(dncListId, opts)
 
 
 GET /api/v2/outbound/dnclists/{dncListId}
@@ -3161,7 +3958,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -3190,15 +3987,15 @@ apiInstance.getOutboundDnclist(dncListId, opts)
  **dncListId** | **String** | DncList ID |  |
  **includeImportStatus** | **Boolean** | Import status | [optional] [default to false] |
  **includeSize** | **Boolean** | Include size | [optional] [default to false] |
-{: class="table table-striped"}
 
 ### Return type
 
 **DncList**
 
-<a name="getOutboundDnclistExport"></a>
 
-# ExportUri getOutboundDnclistExport(dncListId, opts)
+## getOutboundDnclistExport
+
+> ExportUri getOutboundDnclistExport(dncListId, opts)
 
 
 GET /api/v2/outbound/dnclists/{dncListId}/export
@@ -3218,7 +4015,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -3245,15 +4042,15 @@ apiInstance.getOutboundDnclistExport(dncListId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **dncListId** | **String** | DncList ID |  |
  **download** | **String** | Redirect to download uri | [optional] [default to false] |
-{: class="table table-striped"}
 
 ### Return type
 
 **ExportUri**
 
-<a name="getOutboundDnclistImportstatus"></a>
 
-# ImportStatus getOutboundDnclistImportstatus(dncListId)
+## getOutboundDnclistImportstatus
+
+> ImportStatus getOutboundDnclistImportstatus(dncListId)
 
 
 GET /api/v2/outbound/dnclists/{dncListId}/importstatus
@@ -3272,7 +4069,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -3295,15 +4092,15 @@ apiInstance.getOutboundDnclistImportstatus(dncListId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **dncListId** | **String** | DncList ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ImportStatus**
 
-<a name="getOutboundDnclists"></a>
 
-# DncListEntityListing getOutboundDnclists(opts)
+## getOutboundDnclists
+
+> DncListEntityListing getOutboundDnclists(opts)
 
 
 GET /api/v2/outbound/dnclists
@@ -3322,7 +4119,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -3367,15 +4164,15 @@ apiInstance.getOutboundDnclists(opts)
  **divisionId** | **[String]** | Division ID(s) | [optional]  |
  **sortBy** | **String** | Sort by | [optional]  |
  **sortOrder** | **String** | Sort order | [optional] <br />**Values**: ascending, descending |
-{: class="table table-striped"}
 
 ### Return type
 
 **DncListEntityListing**
 
-<a name="getOutboundDnclistsDivisionview"></a>
 
-# DncListDivisionView getOutboundDnclistsDivisionview(dncListId, opts)
+## getOutboundDnclistsDivisionview
+
+> DncListDivisionView getOutboundDnclistsDivisionview(dncListId, opts)
 
 
 GET /api/v2/outbound/dnclists/divisionviews/{dncListId}
@@ -3396,7 +4193,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -3425,15 +4222,15 @@ apiInstance.getOutboundDnclistsDivisionview(dncListId, opts)
  **dncListId** | **String** | Dnclist ID |  |
  **includeImportStatus** | **Boolean** | Include import status | [optional] [default to false] |
  **includeSize** | **Boolean** | Include size | [optional] [default to false] |
-{: class="table table-striped"}
 
 ### Return type
 
 **DncListDivisionView**
 
-<a name="getOutboundDnclistsDivisionviews"></a>
 
-# DncListDivisionViewListing getOutboundDnclistsDivisionviews(opts)
+## getOutboundDnclistsDivisionviews
+
+> DncListDivisionViewListing getOutboundDnclistsDivisionviews(opts)
 
 
 GET /api/v2/outbound/dnclists/divisionviews
@@ -3454,7 +4251,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -3497,15 +4294,15 @@ apiInstance.getOutboundDnclistsDivisionviews(opts)
  **id** | **[String]** | id | [optional]  |
  **sortBy** | **String** | Sort by | [optional]  |
  **sortOrder** | **String** | Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
-{: class="table table-striped"}
 
 ### Return type
 
 **DncListDivisionViewListing**
 
-<a name="getOutboundEvent"></a>
 
-# EventLog getOutboundEvent(eventId)
+## getOutboundEvent
+
+> EventLog getOutboundEvent(eventId)
 
 
 GET /api/v2/outbound/events/{eventId}
@@ -3524,7 +4321,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -3547,15 +4344,15 @@ apiInstance.getOutboundEvent(eventId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **eventId** | **String** | Event Log ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **EventLog**
 
-<a name="getOutboundEvents"></a>
 
-# DialerEventEntityListing getOutboundEvents(opts)
+## getOutboundEvents
+
+> DialerEventEntityListing getOutboundEvents(opts)
 
 
 GET /api/v2/outbound/events
@@ -3574,7 +4371,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -3611,15 +4408,305 @@ apiInstance.getOutboundEvents(opts)
  **level** | **String** | Level | [optional]  |
  **sortBy** | **String** | Sort by | [optional]  |
  **sortOrder** | **String** | Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
-{: class="table table-striped"}
 
 ### Return type
 
 **DialerEventEntityListing**
 
-<a name="getOutboundMessagingcampaign"></a>
 
-# MessagingCampaign getOutboundMessagingcampaign(messagingCampaignId)
+## getOutboundFilespecificationtemplate
+
+> FileSpecificationTemplate getOutboundFilespecificationtemplate(fileSpecificationTemplateId)
+
+
+GET /api/v2/outbound/filespecificationtemplates/{fileSpecificationTemplateId}
+
+Get File Specification Template
+
+Requires ANY permissions:
+
+* outbound:fileSpecificationTemplate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let fileSpecificationTemplateId = "fileSpecificationTemplateId_example"; // String | File Specification Template ID
+
+apiInstance.getOutboundFilespecificationtemplate(fileSpecificationTemplateId)
+  .then((data) => {
+    console.log(`getOutboundFilespecificationtemplate success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getOutboundFilespecificationtemplate');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **fileSpecificationTemplateId** | **String** | File Specification Template ID |  |
+
+### Return type
+
+**FileSpecificationTemplate**
+
+
+## getOutboundFilespecificationtemplates
+
+> FileSpecificationTemplateEntityListing getOutboundFilespecificationtemplates(opts)
+
+
+GET /api/v2/outbound/filespecificationtemplates
+
+Query File Specification Templates
+
+Requires ANY permissions:
+
+* outbound:fileSpecificationTemplate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let opts = { 
+  'pageSize': 25, // Number | Page size. The max that will be returned is 100.
+  'pageNumber': 1, // Number | Page number
+  'allowEmptyResult': false, // Boolean | Whether to return an empty page when there are no results for that page
+  'filterType': "Prefix", // String | Filter type
+  'name': "name_example", // String | Name
+  'sortBy': "sortBy_example", // String | Sort by
+  'sortOrder': "a" // String | Sort order
+};
+
+apiInstance.getOutboundFilespecificationtemplates(opts)
+  .then((data) => {
+    console.log(`getOutboundFilespecificationtemplates success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getOutboundFilespecificationtemplates');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **pageSize** | **Number** | Page size. The max that will be returned is 100. | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **allowEmptyResult** | **Boolean** | Whether to return an empty page when there are no results for that page | [optional] [default to false] |
+ **filterType** | **String** | Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
+ **name** | **String** | Name | [optional]  |
+ **sortBy** | **String** | Sort by | [optional]  |
+ **sortOrder** | **String** | Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
+
+### Return type
+
+**FileSpecificationTemplateEntityListing**
+
+
+## getOutboundImporttemplate
+
+> ImportTemplate getOutboundImporttemplate(importTemplateId, opts)
+
+
+GET /api/v2/outbound/importtemplates/{importTemplateId}
+
+Get Import Template
+
+Requires ANY permissions:
+
+* outbound:importTemplate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let importTemplateId = "importTemplateId_example"; // String | Import Template ID
+let opts = { 
+  'includeImportStatus': false // Boolean | Import status
+};
+
+apiInstance.getOutboundImporttemplate(importTemplateId, opts)
+  .then((data) => {
+    console.log(`getOutboundImporttemplate success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getOutboundImporttemplate');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **importTemplateId** | **String** | Import Template ID |  |
+ **includeImportStatus** | **Boolean** | Import status | [optional] [default to false] |
+
+### Return type
+
+**ImportTemplate**
+
+
+## getOutboundImporttemplateImportstatus
+
+> ImportStatus getOutboundImporttemplateImportstatus(importTemplateId, opts)
+
+
+GET /api/v2/outbound/importtemplates/{importTemplateId}/importstatus
+
+Get the import status for an import template.
+
+Requires ANY permissions:
+
+* outbound:importTemplate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let importTemplateId = "importTemplateId_example"; // String | importTemplateId
+let opts = { 
+  'listNamePrefix': "listNamePrefix_example" // String | listNamePrefix
+};
+
+apiInstance.getOutboundImporttemplateImportstatus(importTemplateId, opts)
+  .then((data) => {
+    console.log(`getOutboundImporttemplateImportstatus success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getOutboundImporttemplateImportstatus');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **importTemplateId** | **String** | importTemplateId |  |
+ **listNamePrefix** | **String** | listNamePrefix | [optional]  |
+
+### Return type
+
+**ImportStatus**
+
+
+## getOutboundImporttemplates
+
+> ImportTemplateEntityListing getOutboundImporttemplates(opts)
+
+
+GET /api/v2/outbound/importtemplates
+
+Query Import Templates
+
+Requires ANY permissions:
+
+* outbound:importTemplate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let opts = { 
+  'includeImportStatus': false, // Boolean | Import status
+  'pageSize': 25, // Number | Page size. The max that will be returned is 100.
+  'pageNumber': 1, // Number | Page number
+  'allowEmptyResult': false, // Boolean | Whether to return an empty page when there are no results for that page
+  'filterType': "Prefix", // String | Filter type
+  'name': "name_example", // String | Name
+  'sortBy': "sortBy_example", // String | Sort by
+  'sortOrder': "a", // String | Sort order
+  'contactListTemplateId': "contactListTemplateId_example" // String | Contact List Template ID
+};
+
+apiInstance.getOutboundImporttemplates(opts)
+  .then((data) => {
+    console.log(`getOutboundImporttemplates success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getOutboundImporttemplates');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **includeImportStatus** | **Boolean** | Import status | [optional] [default to false] |
+ **pageSize** | **Number** | Page size. The max that will be returned is 100. | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **allowEmptyResult** | **Boolean** | Whether to return an empty page when there are no results for that page | [optional] [default to false] |
+ **filterType** | **String** | Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
+ **name** | **String** | Name | [optional]  |
+ **sortBy** | **String** | Sort by | [optional]  |
+ **sortOrder** | **String** | Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
+ **contactListTemplateId** | **String** | Contact List Template ID | [optional]  |
+
+### Return type
+
+**ImportTemplateEntityListing**
+
+
+## getOutboundMessagingcampaign
+
+> MessagingCampaign getOutboundMessagingcampaign(messagingCampaignId)
 
 
 GET /api/v2/outbound/messagingcampaigns/{messagingCampaignId}
@@ -3630,6 +4717,7 @@ Requires ANY permissions:
 
 * outbound:messagingCampaign:view
 * outbound:emailCampaign:view
+* outbound:whatsAppCampaign:view
 
 ### Example Usage
 
@@ -3639,7 +4727,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -3662,15 +4750,15 @@ apiInstance.getOutboundMessagingcampaign(messagingCampaignId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **messagingCampaignId** | **String** | The Messaging Campaign ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **MessagingCampaign**
 
-<a name="getOutboundMessagingcampaignDiagnostics"></a>
 
-# MessagingCampaignDiagnostics getOutboundMessagingcampaignDiagnostics(messagingCampaignId)
+## getOutboundMessagingcampaignDiagnostics
+
+> MessagingCampaignDiagnostics getOutboundMessagingcampaignDiagnostics(messagingCampaignId)
 
 
 GET /api/v2/outbound/messagingcampaigns/{messagingCampaignId}/diagnostics
@@ -3681,6 +4769,7 @@ Requires ANY permissions:
 
 * outbound:messagingCampaign:view
 * outbound:emailCampaign:view
+* outbound:whatsAppCampaign:view
 
 ### Example Usage
 
@@ -3690,7 +4779,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -3713,15 +4802,15 @@ apiInstance.getOutboundMessagingcampaignDiagnostics(messagingCampaignId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **messagingCampaignId** | **String** | The Messaging Campaign ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **MessagingCampaignDiagnostics**
 
-<a name="getOutboundMessagingcampaignProgress"></a>
 
-# CampaignProgress getOutboundMessagingcampaignProgress(messagingCampaignId)
+## getOutboundMessagingcampaignProgress
+
+> CampaignProgress getOutboundMessagingcampaignProgress(messagingCampaignId)
 
 
 GET /api/v2/outbound/messagingcampaigns/{messagingCampaignId}/progress
@@ -3732,6 +4821,7 @@ Requires ANY permissions:
 
 * outbound:messagingCampaign:view
 * outbound:emailCampaign:view
+* outbound:whatsAppCampaign:view
 
 ### Example Usage
 
@@ -3741,7 +4831,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -3764,15 +4854,15 @@ apiInstance.getOutboundMessagingcampaignProgress(messagingCampaignId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **messagingCampaignId** | **String** | The Messaging Campaign ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **CampaignProgress**
 
-<a name="getOutboundMessagingcampaigns"></a>
 
-# MessagingCampaignEntityListing getOutboundMessagingcampaigns(opts)
+## getOutboundMessagingcampaigns
+
+> MessagingCampaignEntityListing getOutboundMessagingcampaigns(opts)
 
 
 GET /api/v2/outbound/messagingcampaigns
@@ -3783,6 +4873,7 @@ Requires ANY permissions:
 
 * outbound:messagingCampaign:view
 * outbound:emailCampaign:view
+* outbound:whatsAppCampaign:view
 
 ### Example Usage
 
@@ -3792,7 +4883,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -3807,7 +4898,9 @@ let opts = {
   'divisionId': ["divisionId_example"], // [String] | Division ID(s)
   'type': "type_example", // String | Campaign Type
   'senderSmsPhoneNumber': "senderSmsPhoneNumber_example", // String | Sender SMS Phone Number
-  'id': ["id_example"] // [String] | A list of messaging campaign ids to bulk fetch
+  'id': ["id_example"], // [String] | A list of messaging campaign ids to bulk fetch
+  'contentTemplateId': "contentTemplateId_example", // String | Content template ID
+  'campaignStatus': "campaignStatus_example" // String | Campaign Status
 };
 
 apiInstance.getOutboundMessagingcampaigns(opts)
@@ -3832,18 +4925,20 @@ apiInstance.getOutboundMessagingcampaigns(opts)
  **name** | **String** | Name | [optional]  |
  **contactListId** | **String** | Contact List ID | [optional]  |
  **divisionId** | **[String]** | Division ID(s) | [optional]  |
- **type** | **String** | Campaign Type | [optional] <br />**Values**: EMAIL, SMS |
+ **type** | **String** | Campaign Type | [optional] <br />**Values**: EMAIL, SMS, WHATSAPP |
  **senderSmsPhoneNumber** | **String** | Sender SMS Phone Number | [optional]  |
  **id** | **[String]** | A list of messaging campaign ids to bulk fetch | [optional]  |
-{: class="table table-striped"}
+ **contentTemplateId** | **String** | Content template ID | [optional]  |
+ **campaignStatus** | **String** | Campaign Status | [optional] <br />**Values**: on, stopping, off, complete, invalid, forced_off, forced_stopping |
 
 ### Return type
 
 **MessagingCampaignEntityListing**
 
-<a name="getOutboundMessagingcampaignsDivisionview"></a>
 
-# MessagingCampaignDivisionView getOutboundMessagingcampaignsDivisionview(messagingCampaignId)
+## getOutboundMessagingcampaignsDivisionview
+
+> MessagingCampaignDivisionView getOutboundMessagingcampaignsDivisionview(messagingCampaignId)
 
 
 GET /api/v2/outbound/messagingcampaigns/divisionviews/{messagingCampaignId}
@@ -3856,6 +4951,7 @@ Requires ANY permissions:
 
 * outbound:messagingCampaign:search
 * outbound:emailCampaign:search
+* outbound:whatsAppCampaign:search
 
 ### Example Usage
 
@@ -3865,7 +4961,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -3888,15 +4984,15 @@ apiInstance.getOutboundMessagingcampaignsDivisionview(messagingCampaignId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **messagingCampaignId** | **String** | The Messaging Campaign ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **MessagingCampaignDivisionView**
 
-<a name="getOutboundMessagingcampaignsDivisionviews"></a>
 
-# MessagingCampaignDivisionViewEntityListing getOutboundMessagingcampaignsDivisionviews(opts)
+## getOutboundMessagingcampaignsDivisionviews
+
+> MessagingCampaignDivisionViewEntityListing getOutboundMessagingcampaignsDivisionviews(opts)
 
 
 GET /api/v2/outbound/messagingcampaigns/divisionviews
@@ -3909,6 +5005,7 @@ Requires ANY permissions:
 
 * outbound:messagingCampaign:search
 * outbound:emailCampaign:search
+* outbound:whatsAppCampaign:search
 
 ### Example Usage
 
@@ -3918,7 +5015,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -3930,7 +5027,9 @@ let opts = {
   'name': "name_example", // String | Name
   'type': "type_example", // String | Campaign Type
   'id': ["id_example"], // [String] | id
-  'senderSmsPhoneNumber': "senderSmsPhoneNumber_example" // String | Sender SMS Phone Number
+  'senderSmsPhoneNumber': "senderSmsPhoneNumber_example", // String | Sender SMS Phone Number
+  'contentTemplateId': "contentTemplateId_example", // String | Content template ID
+  'campaignStatus': "campaignStatus_example" // String | Campaign Status
 };
 
 apiInstance.getOutboundMessagingcampaignsDivisionviews(opts)
@@ -3952,18 +5051,20 @@ apiInstance.getOutboundMessagingcampaignsDivisionviews(opts)
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **sortOrder** | **String** | The direction to sort | [optional] [default to a]<br />**Values**: ascending, descending |
  **name** | **String** | Name | [optional]  |
- **type** | **String** | Campaign Type | [optional] <br />**Values**: EMAIL, SMS |
+ **type** | **String** | Campaign Type | [optional] <br />**Values**: EMAIL, SMS, WHATSAPP |
  **id** | **[String]** | id | [optional]  |
  **senderSmsPhoneNumber** | **String** | Sender SMS Phone Number | [optional]  |
-{: class="table table-striped"}
+ **contentTemplateId** | **String** | Content template ID | [optional]  |
+ **campaignStatus** | **String** | Campaign Status | [optional] <br />**Values**: on, stopping, off, complete, invalid, forced_off, forced_stopping |
 
 ### Return type
 
 **MessagingCampaignDivisionViewEntityListing**
 
-<a name="getOutboundRuleset"></a>
 
-# RuleSet getOutboundRuleset(ruleSetId)
+## getOutboundRuleset
+
+> RuleSet getOutboundRuleset(ruleSetId)
 
 
 GET /api/v2/outbound/rulesets/{ruleSetId}
@@ -3982,7 +5083,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -4005,15 +5106,15 @@ apiInstance.getOutboundRuleset(ruleSetId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **ruleSetId** | **String** | Rule Set ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **RuleSet**
 
-<a name="getOutboundRulesets"></a>
 
-# RuleSetEntityListing getOutboundRulesets(opts)
+## getOutboundRulesets
+
+> RuleSetEntityListing getOutboundRulesets(opts)
 
 
 GET /api/v2/outbound/rulesets
@@ -4032,7 +5133,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -4069,15 +5170,15 @@ apiInstance.getOutboundRulesets(opts)
  **name** | **String** | Name | [optional]  |
  **sortBy** | **String** | Sort by | [optional]  |
  **sortOrder** | **String** | Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
-{: class="table table-striped"}
 
 ### Return type
 
 **RuleSetEntityListing**
 
-<a name="getOutboundSchedulesCampaign"></a>
 
-# CampaignSchedule getOutboundSchedulesCampaign(campaignId)
+## getOutboundSchedulesCampaign
+
+> CampaignSchedule getOutboundSchedulesCampaign(campaignId)
 
 
 GET /api/v2/outbound/schedules/campaigns/{campaignId}
@@ -4087,6 +5188,7 @@ Get a dialer campaign schedule.
 Requires ANY permissions:
 
 * outbound:schedule:view
+* outbound:campaign:viewSchedule
 
 ### Example Usage
 
@@ -4096,7 +5198,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -4119,15 +5221,15 @@ apiInstance.getOutboundSchedulesCampaign(campaignId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **campaignId** | **String** | Campaign ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **CampaignSchedule**
 
-<a name="getOutboundSchedulesCampaigns"></a>
 
-# [CampaignSchedule] getOutboundSchedulesCampaigns()
+## getOutboundSchedulesCampaigns
+
+> [CampaignSchedule] getOutboundSchedulesCampaigns()
 
 
 GET /api/v2/outbound/schedules/campaigns
@@ -4137,6 +5239,7 @@ Query for a list of dialer campaign schedules.
 Requires ANY permissions:
 
 * outbound:schedule:view
+* outbound:campaign:viewSchedule
 
 ### Example Usage
 
@@ -4146,7 +5249,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -4165,14 +5268,14 @@ apiInstance.getOutboundSchedulesCampaigns()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **[CampaignSchedule]**
 
-<a name="getOutboundSchedulesEmailcampaign"></a>
 
-# EmailCampaignSchedule getOutboundSchedulesEmailcampaign(emailCampaignId)
+## getOutboundSchedulesEmailcampaign
+
+> EmailCampaignSchedule getOutboundSchedulesEmailcampaign(emailCampaignId)
 
 
 GET /api/v2/outbound/schedules/emailcampaigns/{emailCampaignId}
@@ -4182,6 +5285,7 @@ Get an email campaign schedule.
 Requires ANY permissions:
 
 * outbound:emailCampaignSchedule:view
+* outbound:emailCampaign:viewSchedule
 
 ### Example Usage
 
@@ -4191,7 +5295,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -4214,15 +5318,15 @@ apiInstance.getOutboundSchedulesEmailcampaign(emailCampaignId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **emailCampaignId** | **String** | Email Campaign ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **EmailCampaignSchedule**
 
-<a name="getOutboundSchedulesEmailcampaigns"></a>
 
-# MessagingCampaignScheduleEntityListing getOutboundSchedulesEmailcampaigns()
+## getOutboundSchedulesEmailcampaigns
+
+> EmailCampaignScheduleEntityListing getOutboundSchedulesEmailcampaigns()
 
 
 GET /api/v2/outbound/schedules/emailcampaigns
@@ -4232,6 +5336,7 @@ Query for a list of email campaign schedules.
 Requires ANY permissions:
 
 * outbound:emailCampaignSchedule:view
+* outbound:emailCampaign:viewSchedule
 
 ### Example Usage
 
@@ -4241,7 +5346,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -4260,14 +5365,14 @@ apiInstance.getOutboundSchedulesEmailcampaigns()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
-**MessagingCampaignScheduleEntityListing**
+**EmailCampaignScheduleEntityListing**
 
-<a name="getOutboundSchedulesMessagingcampaign"></a>
 
-# MessagingCampaignSchedule getOutboundSchedulesMessagingcampaign(messagingCampaignId)
+## getOutboundSchedulesMessagingcampaign
+
+> MessagingCampaignSchedule getOutboundSchedulesMessagingcampaign(messagingCampaignId)
 
 
 GET /api/v2/outbound/schedules/messagingcampaigns/{messagingCampaignId}
@@ -4277,6 +5382,7 @@ Get a messaging campaign schedule.
 Requires ANY permissions:
 
 * outbound:messagingCampaignSchedule:view
+* outbound:messagingCampaign:viewSchedule
 
 ### Example Usage
 
@@ -4286,7 +5392,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -4309,15 +5415,15 @@ apiInstance.getOutboundSchedulesMessagingcampaign(messagingCampaignId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **messagingCampaignId** | **String** | Messaging Campaign ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **MessagingCampaignSchedule**
 
-<a name="getOutboundSchedulesMessagingcampaigns"></a>
 
-# MessagingCampaignScheduleEntityListing getOutboundSchedulesMessagingcampaigns()
+## getOutboundSchedulesMessagingcampaigns
+
+> MessagingCampaignScheduleEntityListing getOutboundSchedulesMessagingcampaigns()
 
 
 GET /api/v2/outbound/schedules/messagingcampaigns
@@ -4327,6 +5433,7 @@ Query for a list of messaging campaign schedules.
 Requires ANY permissions:
 
 * outbound:messagingCampaignSchedule:view
+* outbound:messagingCampaign:viewSchedule
 
 ### Example Usage
 
@@ -4336,7 +5443,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -4355,14 +5462,14 @@ apiInstance.getOutboundSchedulesMessagingcampaigns()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **MessagingCampaignScheduleEntityListing**
 
-<a name="getOutboundSchedulesSequence"></a>
 
-# SequenceSchedule getOutboundSchedulesSequence(sequenceId)
+## getOutboundSchedulesSequence
+
+> SequenceSchedule getOutboundSchedulesSequence(sequenceId)
 
 
 GET /api/v2/outbound/schedules/sequences/{sequenceId}
@@ -4372,6 +5479,7 @@ Get a dialer sequence schedule.
 Requires ANY permissions:
 
 * outbound:schedule:view
+* outbound:campaignSequenceSchedule:view
 
 ### Example Usage
 
@@ -4381,7 +5489,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -4404,15 +5512,15 @@ apiInstance.getOutboundSchedulesSequence(sequenceId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **sequenceId** | **String** | Sequence ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **SequenceSchedule**
 
-<a name="getOutboundSchedulesSequences"></a>
 
-# [SequenceSchedule] getOutboundSchedulesSequences()
+## getOutboundSchedulesSequences
+
+> [SequenceSchedule] getOutboundSchedulesSequences()
 
 
 GET /api/v2/outbound/schedules/sequences
@@ -4422,6 +5530,7 @@ Query for a list of dialer sequence schedules.
 Requires ANY permissions:
 
 * outbound:schedule:view
+* outbound:campaignSequenceSchedule:view
 
 ### Example Usage
 
@@ -4431,7 +5540,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -4450,14 +5559,111 @@ apiInstance.getOutboundSchedulesSequences()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **[SequenceSchedule]**
 
-<a name="getOutboundSequence"></a>
 
-# CampaignSequence getOutboundSequence(sequenceId)
+## getOutboundSchedulesWhatsappcampaign
+
+> WhatsAppCampaignSchedule getOutboundSchedulesWhatsappcampaign(whatsAppCampaignId)
+
+
+GET /api/v2/outbound/schedules/whatsappcampaigns/{whatsAppCampaignId}
+
+Get a WhatsApp campaign schedule.
+
+Requires ANY permissions:
+
+* outbound:whatsAppCampaignSchedule:view
+* outbound:whatsAppCampaign:viewSchedule
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let whatsAppCampaignId = "whatsAppCampaignId_example"; // String | WhatsApp Campaign ID
+
+apiInstance.getOutboundSchedulesWhatsappcampaign(whatsAppCampaignId)
+  .then((data) => {
+    console.log(`getOutboundSchedulesWhatsappcampaign success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getOutboundSchedulesWhatsappcampaign');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **whatsAppCampaignId** | **String** | WhatsApp Campaign ID |  |
+
+### Return type
+
+**WhatsAppCampaignSchedule**
+
+
+## getOutboundSchedulesWhatsappcampaigns
+
+> WhatsAppCampaignScheduleEntityListing getOutboundSchedulesWhatsappcampaigns()
+
+
+GET /api/v2/outbound/schedules/whatsappcampaigns
+
+Query for a list of WhatsApp campaign schedules.
+
+Requires ANY permissions:
+
+* outbound:whatsAppCampaignSchedule:view
+* outbound:whatsAppCampaign:viewSchedule
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+apiInstance.getOutboundSchedulesWhatsappcampaigns()
+  .then((data) => {
+    console.log(`getOutboundSchedulesWhatsappcampaigns success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getOutboundSchedulesWhatsappcampaigns');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+**WhatsAppCampaignScheduleEntityListing**
+
+
+## getOutboundSequence
+
+> CampaignSequence getOutboundSequence(sequenceId)
 
 
 GET /api/v2/outbound/sequences/{sequenceId}
@@ -4476,7 +5682,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -4499,15 +5705,15 @@ apiInstance.getOutboundSequence(sequenceId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **sequenceId** | **String** | Campaign Sequence ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **CampaignSequence**
 
-<a name="getOutboundSequences"></a>
 
-# CampaignSequenceEntityListing getOutboundSequences(opts)
+## getOutboundSequences
+
+> CampaignSequenceEntityListing getOutboundSequences(opts)
 
 
 GET /api/v2/outbound/sequences
@@ -4526,7 +5732,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -4563,15 +5769,15 @@ apiInstance.getOutboundSequences(opts)
  **name** | **String** | Name | [optional]  |
  **sortBy** | **String** | Sort by | [optional]  |
  **sortOrder** | **String** | Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
-{: class="table table-striped"}
 
 ### Return type
 
 **CampaignSequenceEntityListing**
 
-<a name="getOutboundSettings"></a>
 
-# OutboundSettings getOutboundSettings()
+## getOutboundSettings
+
+> OutboundSettings getOutboundSettings()
 
 
 GET /api/v2/outbound/settings
@@ -4590,7 +5796,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -4609,14 +5815,14 @@ apiInstance.getOutboundSettings()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **OutboundSettings**
 
-<a name="getOutboundWrapupcodemappings"></a>
 
-# WrapUpCodeMapping getOutboundWrapupcodemappings()
+## getOutboundWrapupcodemappings
+
+> WrapUpCodeMapping getOutboundWrapupcodemappings()
 
 
 GET /api/v2/outbound/wrapupcodemappings
@@ -4635,7 +5841,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -4654,14 +5860,66 @@ apiInstance.getOutboundWrapupcodemappings()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **WrapUpCodeMapping**
 
-<a name="patchOutboundDnclistCustomexclusioncolumns"></a>
 
-# void patchOutboundDnclistCustomexclusioncolumns(dncListId, body)
+## patchOutboundCampaign
+
+> void patchOutboundCampaign(campaignId, body)
+
+
+PATCH /api/v2/outbound/campaigns/{campaignId}
+
+Update a campaign.
+
+Requires ALL permissions:
+
+* outbound:campaign:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let campaignId = "campaignId_example"; // String | Campaign ID
+let body = {}; // Object | CampaignPatchRequest
+
+apiInstance.patchOutboundCampaign(campaignId, body)
+  .then(() => {
+    console.log('patchOutboundCampaign returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchOutboundCampaign');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **campaignId** | **String** | Campaign ID |  |
+ **body** | **Object** | CampaignPatchRequest |  |
+
+### Return type
+
+void (no response body)
+
+
+## patchOutboundDnclistCustomexclusioncolumns
+
+> void patchOutboundDnclistCustomexclusioncolumns(dncListId, body)
 
 
 PATCH /api/v2/outbound/dnclists/{dncListId}/customexclusioncolumns
@@ -4682,7 +5940,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -4707,15 +5965,15 @@ apiInstance.patchOutboundDnclistCustomexclusioncolumns(dncListId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **dncListId** | **String** | DncList ID |  |
  **body** | **Object** | DNC Custom exclusion column entries |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="patchOutboundDnclistEmailaddresses"></a>
 
-# void patchOutboundDnclistEmailaddresses(dncListId, body)
+## patchOutboundDnclistEmailaddresses
+
+> void patchOutboundDnclistEmailaddresses(dncListId, body)
 
 
 PATCH /api/v2/outbound/dnclists/{dncListId}/emailaddresses
@@ -4736,7 +5994,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -4761,15 +6019,15 @@ apiInstance.patchOutboundDnclistEmailaddresses(dncListId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **dncListId** | **String** | DncList ID |  |
  **body** | **Object** | DNC Emails |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="patchOutboundDnclistPhonenumbers"></a>
 
-# void patchOutboundDnclistPhonenumbers(dncListId, body)
+## patchOutboundDnclistPhonenumbers
+
+> void patchOutboundDnclistPhonenumbers(dncListId, body)
 
 
 PATCH /api/v2/outbound/dnclists/{dncListId}/phonenumbers
@@ -4790,7 +6048,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -4815,15 +6073,69 @@ apiInstance.patchOutboundDnclistPhonenumbers(dncListId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **dncListId** | **String** | DncList ID |  |
  **body** | **Object** | DNC Phone Numbers |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="patchOutboundSettings"></a>
 
-# void patchOutboundSettings(body)
+## patchOutboundDnclistWhatsappnumbers
+
+> void patchOutboundDnclistWhatsappnumbers(dncListId, body)
+
+
+PATCH /api/v2/outbound/dnclists/{dncListId}/whatsappnumbers
+
+Add entries to or delete entries from a DNC list.
+
+Only Internal DNC lists may be deleted from
+
+Requires ANY permissions:
+
+* outbound:dnc:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let dncListId = "dncListId_example"; // String | DncList ID
+let body = {}; // Object | DNC whatsApp numbers
+
+apiInstance.patchOutboundDnclistWhatsappnumbers(dncListId, body)
+  .then(() => {
+    console.log('patchOutboundDnclistWhatsappnumbers returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchOutboundDnclistWhatsappnumbers');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **dncListId** | **String** | DncList ID |  |
+ **body** | **Object** | DNC whatsApp numbers |  |
+
+### Return type
+
+void (no response body)
+
+
+## patchOutboundSettings
+
+> void patchOutboundSettings(body, opts)
 
 
 PATCH /api/v2/outbound/settings
@@ -4842,14 +6154,17 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
 
 let body = {}; // Object | outboundSettings
+let opts = { 
+  'useMaxCallsPerAgentDecimal': true // Boolean | Use maxCallsPerAgent with decimal precision
+};
 
-apiInstance.patchOutboundSettings(body)
+apiInstance.patchOutboundSettings(body, opts)
   .then(() => {
     console.log('patchOutboundSettings returned successfully.');
   })
@@ -4865,15 +6180,16 @@ apiInstance.patchOutboundSettings(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | outboundSettings |  |
-{: class="table table-striped"}
+ **useMaxCallsPerAgentDecimal** | **Boolean** | Use maxCallsPerAgent with decimal precision | [optional] <br />**Values**: true, false |
 
 ### Return type
 
 void (no response body)
 
-<a name="postOutboundAttemptlimits"></a>
 
-# AttemptLimits postOutboundAttemptlimits(body)
+## postOutboundAttemptlimits
+
+> AttemptLimits postOutboundAttemptlimits(body)
 
 
 POST /api/v2/outbound/attemptlimits
@@ -4892,7 +6208,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -4915,77 +6231,15 @@ apiInstance.postOutboundAttemptlimits(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | AttemptLimits |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AttemptLimits**
 
-<a name="postOutboundAudits"></a>
 
-# AuditSearchResult postOutboundAudits(body, opts)
+## postOutboundCallabletimesets
 
-
-POST /api/v2/outbound/audits
-
-Retrieves audits for dialer.
-
-Requires ANY permissions:
-
-* outbound:audit:view
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.OutboundApi();
-
-let body = {}; // Object | AuditSearch
-let opts = { 
-  'pageSize': 25, // Number | Page size
-  'pageNumber': 1, // Number | Page number
-  'sortBy': "entity.name", // String | Sort by
-  'sortOrder': "ascending", // String | Sort order
-  'facetsOnly': false // Boolean | Facets only
-};
-
-apiInstance.postOutboundAudits(body, opts)
-  .then((data) => {
-    console.log(`postOutboundAudits success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling postOutboundAudits');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **body** | **Object** | AuditSearch |  |
- **pageSize** | **Number** | Page size | [optional] [default to 25] |
- **pageNumber** | **Number** | Page number | [optional] [default to 1] |
- **sortBy** | **String** | Sort by | [optional] [default to entity.name] |
- **sortOrder** | **String** | Sort order | [optional] [default to ascending] |
- **facetsOnly** | **Boolean** | Facets only | [optional] [default to false] |
-{: class="table table-striped"}
-
-### Return type
-
-**AuditSearchResult**
-
-<a name="postOutboundCallabletimesets"></a>
-
-# CallableTimeSet postOutboundCallabletimesets(body)
+> CallableTimeSet postOutboundCallabletimesets(body)
 
 
 POST /api/v2/outbound/callabletimesets
@@ -5004,7 +6258,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -5027,15 +6281,15 @@ apiInstance.postOutboundCallabletimesets(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | DialerCallableTimeSet |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **CallableTimeSet**
 
-<a name="postOutboundCallanalysisresponsesets"></a>
 
-# ResponseSet postOutboundCallanalysisresponsesets(body)
+## postOutboundCallanalysisresponsesets
+
+> ResponseSet postOutboundCallanalysisresponsesets(body)
 
 
 POST /api/v2/outbound/callanalysisresponsesets
@@ -5054,7 +6308,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -5077,15 +6331,15 @@ apiInstance.postOutboundCallanalysisresponsesets(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | ResponseSet |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ResponseSet**
 
-<a name="postOutboundCampaignAgentownedmappingpreview"></a>
 
-# **Object** postOutboundCampaignAgentownedmappingpreview(campaignId)
+## postOutboundCampaignAgentownedmappingpreview
+
+> **Object** postOutboundCampaignAgentownedmappingpreview(campaignId)
 
 
 POST /api/v2/outbound/campaigns/{campaignId}/agentownedmappingpreview
@@ -5106,7 +6360,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -5129,17 +6383,19 @@ apiInstance.postOutboundCampaignAgentownedmappingpreview(campaignId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **campaignId** | **String** | Campaign ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Object**
 
-<a name="postOutboundCampaignCallbackSchedule"></a>
 
-# ContactCallbackRequest postOutboundCampaignCallbackSchedule(campaignId, body)
+## postOutboundCampaignCallbackSchedule
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+> ContactCallbackRequest postOutboundCampaignCallbackSchedule(campaignId, body)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 POST /api/v2/outbound/campaigns/{campaignId}/callback/schedule
 
@@ -5157,7 +6413,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -5182,15 +6438,115 @@ apiInstance.postOutboundCampaignCallbackSchedule(campaignId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **campaignId** | **String** | Campaign ID |  |
  **body** | **Object** | ContactCallbackRequest |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ContactCallbackRequest**
 
-<a name="postOutboundCampaignrules"></a>
 
-# CampaignRule postOutboundCampaignrules(body)
+## postOutboundCampaignStart
+
+> void postOutboundCampaignStart(campaignId)
+
+
+POST /api/v2/outbound/campaigns/{campaignId}/start
+
+Start the campaign
+
+Requires ANY permissions:
+
+* outbound:campaign:start
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let campaignId = "campaignId_example"; // String | Campaign ID
+
+apiInstance.postOutboundCampaignStart(campaignId)
+  .then(() => {
+    console.log('postOutboundCampaignStart returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postOutboundCampaignStart');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **campaignId** | **String** | Campaign ID |  |
+
+### Return type
+
+void (no response body)
+
+
+## postOutboundCampaignStop
+
+> void postOutboundCampaignStop(campaignId)
+
+
+POST /api/v2/outbound/campaigns/{campaignId}/stop
+
+Stop the campaign
+
+Requires ANY permissions:
+
+* outbound:campaign:stop
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let campaignId = "campaignId_example"; // String | Campaign ID
+
+apiInstance.postOutboundCampaignStop(campaignId)
+  .then(() => {
+    console.log('postOutboundCampaignStop returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postOutboundCampaignStop');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **campaignId** | **String** | Campaign ID |  |
+
+### Return type
+
+void (no response body)
+
+
+## postOutboundCampaignrules
+
+> CampaignRule postOutboundCampaignrules(body)
 
 
 POST /api/v2/outbound/campaignrules
@@ -5209,7 +6565,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -5232,15 +6588,15 @@ apiInstance.postOutboundCampaignrules(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | CampaignRule |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **CampaignRule**
 
-<a name="postOutboundCampaigns"></a>
 
-# Campaign postOutboundCampaigns(body)
+## postOutboundCampaigns
+
+> Campaign postOutboundCampaigns(body, opts)
 
 
 POST /api/v2/outbound/campaigns
@@ -5259,14 +6615,17 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
 
 let body = {}; // Object | Campaign
+let opts = { 
+  'useMaxCallsPerAgentDecimal': true // Boolean | Use maxCallsPerAgent with decimal precision
+};
 
-apiInstance.postOutboundCampaigns(body)
+apiInstance.postOutboundCampaigns(body, opts)
   .then((data) => {
     console.log(`postOutboundCampaigns success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5282,15 +6641,16 @@ apiInstance.postOutboundCampaigns(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Campaign |  |
-{: class="table table-striped"}
+ **useMaxCallsPerAgentDecimal** | **Boolean** | Use maxCallsPerAgent with decimal precision | [optional] <br />**Values**: true, false |
 
 ### Return type
 
 **Campaign**
 
-<a name="postOutboundCampaignsProgress"></a>
 
-# [CampaignProgress] postOutboundCampaignsProgress(body)
+## postOutboundCampaignsProgress
+
+> [CampaignProgress] postOutboundCampaignsProgress(body)
 
 
 POST /api/v2/outbound/campaigns/progress
@@ -5309,7 +6669,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -5332,15 +6692,15 @@ apiInstance.postOutboundCampaignsProgress(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **[String]** | Campaign IDs |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **[CampaignProgress]**
 
-<a name="postOutboundContactlistClear"></a>
 
-# void postOutboundContactlistClear(contactListId)
+## postOutboundContactlistClear
+
+> void postOutboundContactlistClear(contactListId)
 
 
 POST /api/v2/outbound/contactlists/{contactListId}/clear
@@ -5359,7 +6719,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -5382,15 +6742,15 @@ apiInstance.postOutboundContactlistClear(contactListId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **contactListId** | **String** | Contact List ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="postOutboundContactlistContacts"></a>
 
-# [DialerContact] postOutboundContactlistContacts(contactListId, body, opts)
+## postOutboundContactlistContacts
+
+> [DialerContact] postOutboundContactlistContacts(contactListId, body, opts)
 
 
 POST /api/v2/outbound/contactlists/{contactListId}/contacts
@@ -5409,7 +6769,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -5442,15 +6802,15 @@ apiInstance.postOutboundContactlistContacts(contactListId, body, opts)
  **priority** | **Boolean** | Contact priority. True means the contact(s) will be dialed next; false means the contact will go to the end of the contact queue. | [optional]  |
  **clearSystemData** | **Boolean** | Clear system data. True means the system columns (attempts, callable status, etc) stored on the contact will be cleared if the contact already exists; false means they won't. | [optional]  |
  **doNotQueue** | **Boolean** | Do not queue. True means that updated contacts will not have their positions in the queue altered, so contacts that have already been dialed will not be redialed. For new contacts, this parameter has no effect; False means that updated contacts will be re-queued, according to the 'priority' parameter. | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **[DialerContact]**
 
-<a name="postOutboundContactlistContactsBulk"></a>
 
-# [DialerContact] postOutboundContactlistContactsBulk(contactListId, body)
+## postOutboundContactlistContactsBulk
+
+> [DialerContact] postOutboundContactlistContactsBulk(contactListId, body)
 
 
 POST /api/v2/outbound/contactlists/{contactListId}/contacts/bulk
@@ -5469,7 +6829,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -5494,15 +6854,171 @@ apiInstance.postOutboundContactlistContactsBulk(contactListId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **contactListId** | **String** | Contact List ID |  |
  **body** | **[String]** | ContactIds to get. |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **[DialerContact]**
 
-<a name="postOutboundContactlistExport"></a>
 
-# DomainEntityRef postOutboundContactlistExport(contactListId)
+## postOutboundContactlistContactsBulkRemove
+
+> ContactsBulkOperationJob postOutboundContactlistContactsBulkRemove(contactListId, body)
+
+
+POST /api/v2/outbound/contactlists/{contactListId}/contacts/bulk/remove
+
+Start an async job to delete contacts using a filter.
+
+Requires ANY permissions:
+
+* outbound:contact:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let contactListId = "contactListId_example"; // String | Contact List ID
+let body = {}; // Object | Contact filter information.
+
+apiInstance.postOutboundContactlistContactsBulkRemove(contactListId, body)
+  .then((data) => {
+    console.log(`postOutboundContactlistContactsBulkRemove success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postOutboundContactlistContactsBulkRemove');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **contactListId** | **String** | Contact List ID |  |
+ **body** | **Object** | Contact filter information. |  |
+
+### Return type
+
+**ContactsBulkOperationJob**
+
+
+## postOutboundContactlistContactsBulkUpdate
+
+> ContactsBulkOperationJob postOutboundContactlistContactsBulkUpdate(contactListId, body)
+
+
+POST /api/v2/outbound/contactlists/{contactListId}/contacts/bulk/update
+
+Start an async job to bulk edit contacts.
+
+Requires ANY permissions:
+
+* outbound:contact:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let contactListId = "contactListId_example"; // String | Contact List ID
+let body = {}; // Object | Contact bulk edit request information.
+
+apiInstance.postOutboundContactlistContactsBulkUpdate(contactListId, body)
+  .then((data) => {
+    console.log(`postOutboundContactlistContactsBulkUpdate success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postOutboundContactlistContactsBulkUpdate');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **contactListId** | **String** | Contact List ID |  |
+ **body** | **Object** | Contact bulk edit request information. |  |
+
+### Return type
+
+**ContactsBulkOperationJob**
+
+
+## postOutboundContactlistContactsSearch
+
+> ContactListingResponse postOutboundContactlistContactsSearch(contactListId, body)
+
+
+POST /api/v2/outbound/contactlists/{contactListId}/contacts/search
+
+Query contacts from a contact list.
+
+Requires ANY permissions:
+
+* outbound:contact:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let contactListId = "contactListId_example"; // String | Contact List ID
+let body = {}; // Object | Contact search parameters.
+
+apiInstance.postOutboundContactlistContactsSearch(contactListId, body)
+  .then((data) => {
+    console.log(`postOutboundContactlistContactsSearch success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postOutboundContactlistContactsSearch');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **contactListId** | **String** | Contact List ID |  |
+ **body** | **Object** | Contact search parameters. |  |
+
+### Return type
+
+**ContactListingResponse**
+
+
+## postOutboundContactlistExport
+
+> DomainEntityRef postOutboundContactlistExport(contactListId, opts)
 
 
 POST /api/v2/outbound/contactlists/{contactListId}/export
@@ -5524,14 +7040,17 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
 
 let contactListId = "contactListId_example"; // String | ContactList ID
+let opts = { 
+  'body': {} // Object | Export information to get
+};
 
-apiInstance.postOutboundContactlistExport(contactListId)
+apiInstance.postOutboundContactlistExport(contactListId, opts)
   .then((data) => {
     console.log(`postOutboundContactlistExport success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5547,15 +7066,16 @@ apiInstance.postOutboundContactlistExport(contactListId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **contactListId** | **String** | ContactList ID |  |
-{: class="table table-striped"}
+ **body** | **Object** | Export information to get | [optional]  |
 
 ### Return type
 
 **DomainEntityRef**
 
-<a name="postOutboundContactlistfilters"></a>
 
-# ContactListFilter postOutboundContactlistfilters(body)
+## postOutboundContactlistfilters
+
+> ContactListFilter postOutboundContactlistfilters(body)
 
 
 POST /api/v2/outbound/contactlistfilters
@@ -5574,7 +7094,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -5597,15 +7117,65 @@ apiInstance.postOutboundContactlistfilters(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | ContactListFilter |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ContactListFilter**
 
-<a name="postOutboundContactlistfiltersPreview"></a>
 
-# FilterPreviewResponse postOutboundContactlistfiltersPreview(body)
+## postOutboundContactlistfiltersBulkRetrieve
+
+> ContactListFilterEntityListing postOutboundContactlistfiltersBulkRetrieve(body)
+
+
+POST /api/v2/outbound/contactlistfilters/bulk/retrieve
+
+Retrieve multiple contact list filters
+
+Requires ANY permissions:
+
+* outbound:contactListFilter:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let body = {}; // Object | The contact list filters to retrieve
+
+apiInstance.postOutboundContactlistfiltersBulkRetrieve(body)
+  .then((data) => {
+    console.log(`postOutboundContactlistfiltersBulkRetrieve success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postOutboundContactlistfiltersBulkRetrieve');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | The contact list filters to retrieve |  |
+
+### Return type
+
+**ContactListFilterEntityListing**
+
+
+## postOutboundContactlistfiltersPreview
+
+> FilterPreviewResponse postOutboundContactlistfiltersPreview(body)
 
 
 POST /api/v2/outbound/contactlistfilters/preview
@@ -5624,7 +7194,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -5647,15 +7217,15 @@ apiInstance.postOutboundContactlistfiltersPreview(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | ContactListFilter |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **FilterPreviewResponse**
 
-<a name="postOutboundContactlists"></a>
 
-# ContactList postOutboundContactlists(body)
+## postOutboundContactlists
+
+> ContactList postOutboundContactlists(body)
 
 
 POST /api/v2/outbound/contactlists
@@ -5674,7 +7244,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -5697,15 +7267,165 @@ apiInstance.postOutboundContactlists(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | ContactList |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ContactList**
 
-<a name="postOutboundConversationDnc"></a>
 
-# void postOutboundConversationDnc(conversationId)
+## postOutboundContactlisttemplates
+
+> ContactListTemplate postOutboundContactlisttemplates(body)
+
+
+POST /api/v2/outbound/contactlisttemplates
+
+Create Contact List Template
+
+Requires ANY permissions:
+
+* outbound:contactListTemplate:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let body = {}; // Object | ContactListTemplate
+
+apiInstance.postOutboundContactlisttemplates(body)
+  .then((data) => {
+    console.log(`postOutboundContactlisttemplates success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postOutboundContactlisttemplates');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | ContactListTemplate |  |
+
+### Return type
+
+**ContactListTemplate**
+
+
+## postOutboundContactlisttemplatesBulkAdd
+
+> ContactListTemplateEntityListing postOutboundContactlisttemplatesBulkAdd(body)
+
+
+POST /api/v2/outbound/contactlisttemplates/bulk/add
+
+Add multiple contact list templates
+
+Requires ANY permissions:
+
+* outbound:contactListTemplate:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let body = [{}]; // Object | contact list template(s) to add
+
+apiInstance.postOutboundContactlisttemplatesBulkAdd(body)
+  .then((data) => {
+    console.log(`postOutboundContactlisttemplatesBulkAdd success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postOutboundContactlisttemplatesBulkAdd');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | contact list template(s) to add |  |
+
+### Return type
+
+**ContactListTemplateEntityListing**
+
+
+## postOutboundContactlisttemplatesBulkRetrieve
+
+> ContactListTemplateEntityListing postOutboundContactlisttemplatesBulkRetrieve(body)
+
+
+POST /api/v2/outbound/contactlisttemplates/bulk/retrieve
+
+Get multiple contact list templates
+
+Requires ANY permissions:
+
+* outbound:contactListTemplate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let body = {}; // Object | contact list templates to get
+
+apiInstance.postOutboundContactlisttemplatesBulkRetrieve(body)
+  .then((data) => {
+    console.log(`postOutboundContactlisttemplatesBulkRetrieve success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postOutboundContactlisttemplatesBulkRetrieve');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | contact list templates to get |  |
+
+### Return type
+
+**ContactListTemplateEntityListing**
+
+
+## postOutboundConversationDnc
+
+> void postOutboundConversationDnc(conversationId)
 
 
 POST /api/v2/outbound/conversations/{conversationId}/dnc
@@ -5724,7 +7444,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -5747,15 +7467,15 @@ apiInstance.postOutboundConversationDnc(conversationId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | Conversation ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="postOutboundDigitalrulesets"></a>
 
-# DigitalRuleSet postOutboundDigitalrulesets(body)
+## postOutboundDigitalrulesets
+
+> DigitalRuleSet postOutboundDigitalrulesets(body)
 
 
 POST /api/v2/outbound/digitalrulesets
@@ -5774,7 +7494,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -5797,15 +7517,15 @@ apiInstance.postOutboundDigitalrulesets(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Digital Rule Set |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **DigitalRuleSet**
 
-<a name="postOutboundDnclistEmailaddresses"></a>
 
-# void postOutboundDnclistEmailaddresses(dncListId, body)
+## postOutboundDnclistEmailaddresses
+
+> void postOutboundDnclistEmailaddresses(dncListId, body)
 
 
 POST /api/v2/outbound/dnclists/{dncListId}/emailaddresses
@@ -5826,7 +7546,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -5851,15 +7571,15 @@ apiInstance.postOutboundDnclistEmailaddresses(dncListId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **dncListId** | **String** | DncList ID |  |
  **body** | **[String]** | DNC email addresses |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="postOutboundDnclistExport"></a>
 
-# DomainEntityRef postOutboundDnclistExport(dncListId)
+## postOutboundDnclistExport
+
+> DomainEntityRef postOutboundDnclistExport(dncListId)
 
 
 POST /api/v2/outbound/dnclists/{dncListId}/export
@@ -5881,7 +7601,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -5904,15 +7624,15 @@ apiInstance.postOutboundDnclistExport(dncListId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **dncListId** | **String** | DncList ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **DomainEntityRef**
 
-<a name="postOutboundDnclistPhonenumbers"></a>
 
-# void postOutboundDnclistPhonenumbers(dncListId, body, opts)
+## postOutboundDnclistPhonenumbers
+
+> void postOutboundDnclistPhonenumbers(dncListId, body, opts)
 
 
 POST /api/v2/outbound/dnclists/{dncListId}/phonenumbers
@@ -5933,7 +7653,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -5962,15 +7682,15 @@ apiInstance.postOutboundDnclistPhonenumbers(dncListId, body, opts)
  **dncListId** | **String** | DncList ID |  |
  **body** | **[String]** | DNC Phone Numbers |  |
  **expirationDateTime** | **String** | Expiration date for DNC phone numbers in yyyy-MM-ddTHH:mmZ format | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="postOutboundDnclists"></a>
 
-# DncList postOutboundDnclists(body)
+## postOutboundDnclists
+
+> DncList postOutboundDnclists(body)
 
 
 POST /api/v2/outbound/dnclists
@@ -5989,7 +7709,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -6012,15 +7732,273 @@ apiInstance.postOutboundDnclists(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | DncList |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **DncList**
 
-<a name="postOutboundMessagingcampaigns"></a>
 
-# MessagingCampaign postOutboundMessagingcampaigns(body)
+## postOutboundFilespecificationtemplates
+
+> FileSpecificationTemplate postOutboundFilespecificationtemplates(body)
+
+
+POST /api/v2/outbound/filespecificationtemplates
+
+Create File Specification Template
+
+Requires ANY permissions:
+
+* outbound:fileSpecificationTemplate:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let body = {}; // Object | FileSpecificationTemplate
+
+apiInstance.postOutboundFilespecificationtemplates(body)
+  .then((data) => {
+    console.log(`postOutboundFilespecificationtemplates success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postOutboundFilespecificationtemplates');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | FileSpecificationTemplate |  |
+
+### Return type
+
+**FileSpecificationTemplate**
+
+
+## postOutboundImporttemplates
+
+> ImportTemplate postOutboundImporttemplates(body)
+
+
+POST /api/v2/outbound/importtemplates
+
+Create Import Template
+
+Requires ANY permissions:
+
+* outbound:importTemplate:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let body = {}; // Object | ImportTemplate
+
+apiInstance.postOutboundImporttemplates(body)
+  .then((data) => {
+    console.log(`postOutboundImporttemplates success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postOutboundImporttemplates');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | ImportTemplate |  |
+
+### Return type
+
+**ImportTemplate**
+
+
+## postOutboundImporttemplatesBulkAdd
+
+> ImportTemplateEntityListing postOutboundImporttemplatesBulkAdd(body)
+
+
+POST /api/v2/outbound/importtemplates/bulk/add
+
+Add multiple import templates
+
+Requires ANY permissions:
+
+* outbound:importTemplate:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let body = [{}]; // Object | import template(s) to add
+
+apiInstance.postOutboundImporttemplatesBulkAdd(body)
+  .then((data) => {
+    console.log(`postOutboundImporttemplatesBulkAdd success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postOutboundImporttemplatesBulkAdd');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | import template(s) to add |  |
+
+### Return type
+
+**ImportTemplateEntityListing**
+
+
+## postOutboundMessagingcampaignStart
+
+> void postOutboundMessagingcampaignStart(messagingCampaignId)
+
+
+POST /api/v2/outbound/messagingcampaigns/{messagingCampaignId}/start
+
+Start the campaign
+
+Documented permissions are applicable based on campaign type.
+
+Requires ANY permissions:
+
+* outbound:messagingCampaign:start
+* outbound:emailCampaign:start
+* outbound:whatsAppCampaign:start
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let messagingCampaignId = "messagingCampaignId_example"; // String | The Messaging Campaign ID
+
+apiInstance.postOutboundMessagingcampaignStart(messagingCampaignId)
+  .then(() => {
+    console.log('postOutboundMessagingcampaignStart returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postOutboundMessagingcampaignStart');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **messagingCampaignId** | **String** | The Messaging Campaign ID |  |
+
+### Return type
+
+void (no response body)
+
+
+## postOutboundMessagingcampaignStop
+
+> void postOutboundMessagingcampaignStop(messagingCampaignId)
+
+
+POST /api/v2/outbound/messagingcampaigns/{messagingCampaignId}/stop
+
+Stop the campaign
+
+Documented permissions are applicable based on campaign type.
+
+Requires ANY permissions:
+
+* outbound:messagingCampaign:stop
+* outbound:emailCampaign:stop
+* outbound:whatsAppCampaign:stop
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let messagingCampaignId = "messagingCampaignId_example"; // String | The Messaging Campaign ID
+
+apiInstance.postOutboundMessagingcampaignStop(messagingCampaignId)
+  .then(() => {
+    console.log('postOutboundMessagingcampaignStop returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postOutboundMessagingcampaignStop');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **messagingCampaignId** | **String** | The Messaging Campaign ID |  |
+
+### Return type
+
+void (no response body)
+
+
+## postOutboundMessagingcampaigns
+
+> MessagingCampaign postOutboundMessagingcampaigns(body)
 
 
 POST /api/v2/outbound/messagingcampaigns
@@ -6031,6 +8009,7 @@ Requires ANY permissions:
 
 * outbound:messagingCampaign:add
 * outbound:emailCampaign:add
+* outbound:whatsAppCampaign:add
 
 ### Example Usage
 
@@ -6040,7 +8019,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -6063,15 +8042,15 @@ apiInstance.postOutboundMessagingcampaigns(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Messaging Campaign |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **MessagingCampaign**
 
-<a name="postOutboundMessagingcampaignsProgress"></a>
 
-# [CampaignProgress] postOutboundMessagingcampaignsProgress(body)
+## postOutboundMessagingcampaignsProgress
+
+> [CampaignProgress] postOutboundMessagingcampaignsProgress(body)
 
 
 POST /api/v2/outbound/messagingcampaigns/progress
@@ -6082,6 +8061,7 @@ Requires ANY permissions:
 
 * outbound:messagingCampaign:view
 * outbound:emailCampaign:view
+* outbound:whatsAppCampaign:view
 
 ### Example Usage
 
@@ -6091,7 +8071,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -6114,15 +8094,15 @@ apiInstance.postOutboundMessagingcampaignsProgress(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **[String]** | Messaging Campaign IDs |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **[CampaignProgress]**
 
-<a name="postOutboundRulesets"></a>
 
-# RuleSet postOutboundRulesets(body)
+## postOutboundRulesets
+
+> RuleSet postOutboundRulesets(body)
 
 
 POST /api/v2/outbound/rulesets
@@ -6141,7 +8121,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -6164,15 +8144,15 @@ apiInstance.postOutboundRulesets(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | RuleSet |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **RuleSet**
 
-<a name="postOutboundSequences"></a>
 
-# CampaignSequence postOutboundSequences(body)
+## postOutboundSequences
+
+> CampaignSequence postOutboundSequences(body)
 
 
 POST /api/v2/outbound/sequences
@@ -6191,7 +8171,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -6214,15 +8194,15 @@ apiInstance.postOutboundSequences(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Organization |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **CampaignSequence**
 
-<a name="putOutboundAttemptlimit"></a>
 
-# AttemptLimits putOutboundAttemptlimit(attemptLimitsId, body)
+## putOutboundAttemptlimit
+
+> AttemptLimits putOutboundAttemptlimit(attemptLimitsId, body)
 
 
 PUT /api/v2/outbound/attemptlimits/{attemptLimitsId}
@@ -6241,7 +8221,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -6266,15 +8246,15 @@ apiInstance.putOutboundAttemptlimit(attemptLimitsId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **attemptLimitsId** | **String** | Attempt limits ID |  |
  **body** | **Object** | AttemptLimits |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AttemptLimits**
 
-<a name="putOutboundCallabletimeset"></a>
 
-# CallableTimeSet putOutboundCallabletimeset(callableTimeSetId, body)
+## putOutboundCallabletimeset
+
+> CallableTimeSet putOutboundCallabletimeset(callableTimeSetId, body)
 
 
 PUT /api/v2/outbound/callabletimesets/{callableTimeSetId}
@@ -6293,7 +8273,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -6318,15 +8298,15 @@ apiInstance.putOutboundCallabletimeset(callableTimeSetId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **callableTimeSetId** | **String** | Callable Time Set ID |  |
  **body** | **Object** | DialerCallableTimeSet |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **CallableTimeSet**
 
-<a name="putOutboundCallanalysisresponseset"></a>
 
-# ResponseSet putOutboundCallanalysisresponseset(callAnalysisSetId, body)
+## putOutboundCallanalysisresponseset
+
+> ResponseSet putOutboundCallanalysisresponseset(callAnalysisSetId, body)
 
 
 PUT /api/v2/outbound/callanalysisresponsesets/{callAnalysisSetId}
@@ -6345,7 +8325,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -6370,15 +8350,15 @@ apiInstance.putOutboundCallanalysisresponseset(callAnalysisSetId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **callAnalysisSetId** | **String** | Call Analysis Response Set ID |  |
  **body** | **Object** | ResponseSet |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ResponseSet**
 
-<a name="putOutboundCampaign"></a>
 
-# Campaign putOutboundCampaign(campaignId, body)
+## putOutboundCampaign
+
+> Campaign putOutboundCampaign(campaignId, body, opts)
 
 
 PUT /api/v2/outbound/campaigns/{campaignId}
@@ -6397,15 +8377,18 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
 
 let campaignId = "campaignId_example"; // String | Campaign ID
 let body = {}; // Object | Campaign
+let opts = { 
+  'useMaxCallsPerAgentDecimal': true // Boolean | Use maxCallsPerAgent with decimal precision
+};
 
-apiInstance.putOutboundCampaign(campaignId, body)
+apiInstance.putOutboundCampaign(campaignId, body, opts)
   .then((data) => {
     console.log(`putOutboundCampaign success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6422,15 +8405,16 @@ apiInstance.putOutboundCampaign(campaignId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **campaignId** | **String** | Campaign ID |  |
  **body** | **Object** | Campaign |  |
-{: class="table table-striped"}
+ **useMaxCallsPerAgentDecimal** | **Boolean** | Use maxCallsPerAgent with decimal precision | [optional] <br />**Values**: true, false |
 
 ### Return type
 
 **Campaign**
 
-<a name="putOutboundCampaignAgent"></a>
 
-# **&#39;String&#39;** putOutboundCampaignAgent(campaignId, userId, body)
+## putOutboundCampaignAgent
+
+> **&#39;String&#39;** putOutboundCampaignAgent(campaignId, userId, body)
 
 
 PUT /api/v2/outbound/campaigns/{campaignId}/agents/{userId}
@@ -6449,7 +8433,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -6476,15 +8460,15 @@ apiInstance.putOutboundCampaignAgent(campaignId, userId, body)
  **campaignId** | **String** | Campaign ID |  |
  **userId** | **String** | Agent's user ID |  |
  **body** | **Object** | agent |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **&#39;String&#39;**
 
-<a name="putOutboundCampaignrule"></a>
 
-# CampaignRule putOutboundCampaignrule(campaignRuleId, body)
+## putOutboundCampaignrule
+
+> CampaignRule putOutboundCampaignrule(campaignRuleId, body)
 
 
 PUT /api/v2/outbound/campaignrules/{campaignRuleId}
@@ -6503,7 +8487,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -6528,15 +8512,15 @@ apiInstance.putOutboundCampaignrule(campaignRuleId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **campaignRuleId** | **String** | Campaign Rule ID |  |
  **body** | **Object** | CampaignRule |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **CampaignRule**
 
-<a name="putOutboundContactlist"></a>
 
-# ContactList putOutboundContactlist(contactListId, body)
+## putOutboundContactlist
+
+> ContactList putOutboundContactlist(contactListId, body)
 
 
 PUT /api/v2/outbound/contactlists/{contactListId}
@@ -6555,7 +8539,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -6580,15 +8564,15 @@ apiInstance.putOutboundContactlist(contactListId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **contactListId** | **String** | ContactList ID |  |
  **body** | **Object** | ContactList |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ContactList**
 
-<a name="putOutboundContactlistContact"></a>
 
-# DialerContact putOutboundContactlistContact(contactListId, contactId, body)
+## putOutboundContactlistContact
+
+> DialerContact putOutboundContactlistContact(contactListId, contactId, body)
 
 
 PUT /api/v2/outbound/contactlists/{contactListId}/contacts/{contactId}
@@ -6607,7 +8591,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -6634,15 +8618,15 @@ apiInstance.putOutboundContactlistContact(contactListId, contactId, body)
  **contactListId** | **String** | Contact List ID |  |
  **contactId** | **String** | Contact ID |  |
  **body** | **Object** | Contact |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **DialerContact**
 
-<a name="putOutboundContactlistfilter"></a>
 
-# ContactListFilter putOutboundContactlistfilter(contactListFilterId, body)
+## putOutboundContactlistfilter
+
+> ContactListFilter putOutboundContactlistfilter(contactListFilterId, body)
 
 
 PUT /api/v2/outbound/contactlistfilters/{contactListFilterId}
@@ -6661,7 +8645,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -6686,15 +8670,67 @@ apiInstance.putOutboundContactlistfilter(contactListFilterId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **contactListFilterId** | **String** | Contact List Filter ID |  |
  **body** | **Object** | ContactListFilter |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ContactListFilter**
 
-<a name="putOutboundDigitalruleset"></a>
 
-# DigitalRuleSet putOutboundDigitalruleset(digitalRuleSetId, body)
+## putOutboundContactlisttemplate
+
+> ContactListTemplate putOutboundContactlisttemplate(contactListTemplateId, body)
+
+
+PUT /api/v2/outbound/contactlisttemplates/{contactListTemplateId}
+
+Update a contact list template.
+
+Requires ANY permissions:
+
+* outbound:contactListTemplate:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let contactListTemplateId = "contactListTemplateId_example"; // String | ContactListTemplate ID
+let body = {}; // Object | ContactListTemplate
+
+apiInstance.putOutboundContactlisttemplate(contactListTemplateId, body)
+  .then((data) => {
+    console.log(`putOutboundContactlisttemplate success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putOutboundContactlisttemplate');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **contactListTemplateId** | **String** | ContactListTemplate ID |  |
+ **body** | **Object** | ContactListTemplate |  |
+
+### Return type
+
+**ContactListTemplate**
+
+
+## putOutboundDigitalruleset
+
+> DigitalRuleSet putOutboundDigitalruleset(digitalRuleSetId, body)
 
 
 PUT /api/v2/outbound/digitalrulesets/{digitalRuleSetId}
@@ -6713,7 +8749,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -6738,15 +8774,15 @@ apiInstance.putOutboundDigitalruleset(digitalRuleSetId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **digitalRuleSetId** | **String** | The Digital Rule Set ID |  |
  **body** | **Object** | Digital Rule Set |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **DigitalRuleSet**
 
-<a name="putOutboundDnclist"></a>
 
-# DncList putOutboundDnclist(dncListId, body)
+## putOutboundDnclist
+
+> DncList putOutboundDnclist(dncListId, body)
 
 
 PUT /api/v2/outbound/dnclists/{dncListId}
@@ -6765,7 +8801,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -6790,15 +8826,119 @@ apiInstance.putOutboundDnclist(dncListId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **dncListId** | **String** | DncList ID |  |
  **body** | **Object** | DncList |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **DncList**
 
-<a name="putOutboundMessagingcampaign"></a>
 
-# MessagingCampaign putOutboundMessagingcampaign(messagingCampaignId, body)
+## putOutboundFilespecificationtemplate
+
+> FileSpecificationTemplate putOutboundFilespecificationtemplate(fileSpecificationTemplateId, body)
+
+
+PUT /api/v2/outbound/filespecificationtemplates/{fileSpecificationTemplateId}
+
+Update File Specification Template
+
+Requires ANY permissions:
+
+* outbound:fileSpecificationTemplate:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let fileSpecificationTemplateId = "fileSpecificationTemplateId_example"; // String | File Specification Template ID
+let body = {}; // Object | fileSpecificationTemplate
+
+apiInstance.putOutboundFilespecificationtemplate(fileSpecificationTemplateId, body)
+  .then((data) => {
+    console.log(`putOutboundFilespecificationtemplate success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putOutboundFilespecificationtemplate');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **fileSpecificationTemplateId** | **String** | File Specification Template ID |  |
+ **body** | **Object** | fileSpecificationTemplate |  |
+
+### Return type
+
+**FileSpecificationTemplate**
+
+
+## putOutboundImporttemplate
+
+> ImportTemplate putOutboundImporttemplate(importTemplateId, body)
+
+
+PUT /api/v2/outbound/importtemplates/{importTemplateId}
+
+Update Import Template
+
+Requires ANY permissions:
+
+* outbound:importTemplate:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let importTemplateId = "importTemplateId_example"; // String | Import Template ID
+let body = {}; // Object | importTemplate
+
+apiInstance.putOutboundImporttemplate(importTemplateId, body)
+  .then((data) => {
+    console.log(`putOutboundImporttemplate success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putOutboundImporttemplate');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **importTemplateId** | **String** | Import Template ID |  |
+ **body** | **Object** | importTemplate |  |
+
+### Return type
+
+**ImportTemplate**
+
+
+## putOutboundMessagingcampaign
+
+> MessagingCampaign putOutboundMessagingcampaign(messagingCampaignId, body)
 
 
 PUT /api/v2/outbound/messagingcampaigns/{messagingCampaignId}
@@ -6809,6 +8949,7 @@ Requires ANY permissions:
 
 * outbound:messagingCampaign:edit
 * outbound:emailCampaign:edit
+* outbound:whatsAppCampaign:edit
 
 ### Example Usage
 
@@ -6818,7 +8959,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -6843,15 +8984,15 @@ apiInstance.putOutboundMessagingcampaign(messagingCampaignId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **messagingCampaignId** | **String** | The Messaging Campaign ID |  |
  **body** | **Object** | MessagingCampaign |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **MessagingCampaign**
 
-<a name="putOutboundRuleset"></a>
 
-# RuleSet putOutboundRuleset(ruleSetId, body)
+## putOutboundRuleset
+
+> RuleSet putOutboundRuleset(ruleSetId, body)
 
 
 PUT /api/v2/outbound/rulesets/{ruleSetId}
@@ -6870,7 +9011,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -6895,15 +9036,15 @@ apiInstance.putOutboundRuleset(ruleSetId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **ruleSetId** | **String** | Rule Set ID |  |
  **body** | **Object** | RuleSet |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **RuleSet**
 
-<a name="putOutboundSchedulesCampaign"></a>
 
-# CampaignSchedule putOutboundSchedulesCampaign(campaignId, body)
+## putOutboundSchedulesCampaign
+
+> CampaignSchedule putOutboundSchedulesCampaign(campaignId, body)
 
 
 PUT /api/v2/outbound/schedules/campaigns/{campaignId}
@@ -6913,6 +9054,7 @@ Update a new campaign schedule.
 Requires ANY permissions:
 
 * outbound:schedule:edit
+* outbound:campaign:editSchedule
 
 ### Example Usage
 
@@ -6922,7 +9064,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -6947,15 +9089,15 @@ apiInstance.putOutboundSchedulesCampaign(campaignId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **campaignId** | **String** | Campaign ID |  |
  **body** | **Object** | CampaignSchedule |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **CampaignSchedule**
 
-<a name="putOutboundSchedulesEmailcampaign"></a>
 
-# EmailCampaignSchedule putOutboundSchedulesEmailcampaign(emailCampaignId, body)
+## putOutboundSchedulesEmailcampaign
+
+> EmailCampaignSchedule putOutboundSchedulesEmailcampaign(emailCampaignId, body)
 
 
 PUT /api/v2/outbound/schedules/emailcampaigns/{emailCampaignId}
@@ -6965,6 +9107,7 @@ Update an email campaign schedule.
 Requires ANY permissions:
 
 * outbound:emailCampaignSchedule:edit
+* outbound:emailCampaign:editSchedule
 
 ### Example Usage
 
@@ -6974,7 +9117,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -6999,15 +9142,15 @@ apiInstance.putOutboundSchedulesEmailcampaign(emailCampaignId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **emailCampaignId** | **String** | Email Campaign ID |  |
  **body** | **Object** | EmailCampaignSchedule |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **EmailCampaignSchedule**
 
-<a name="putOutboundSchedulesMessagingcampaign"></a>
 
-# MessagingCampaignSchedule putOutboundSchedulesMessagingcampaign(messagingCampaignId, body)
+## putOutboundSchedulesMessagingcampaign
+
+> MessagingCampaignSchedule putOutboundSchedulesMessagingcampaign(messagingCampaignId, body)
 
 
 PUT /api/v2/outbound/schedules/messagingcampaigns/{messagingCampaignId}
@@ -7017,6 +9160,7 @@ Update a new messaging campaign schedule.
 Requires ANY permissions:
 
 * outbound:messagingCampaignSchedule:edit
+* outbound:messagingCampaign:editSchedule
 
 ### Example Usage
 
@@ -7026,7 +9170,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -7051,15 +9195,15 @@ apiInstance.putOutboundSchedulesMessagingcampaign(messagingCampaignId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **messagingCampaignId** | **String** | Messaging Campaign ID |  |
  **body** | **Object** | MessagingCampaignSchedule |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **MessagingCampaignSchedule**
 
-<a name="putOutboundSchedulesSequence"></a>
 
-# SequenceSchedule putOutboundSchedulesSequence(sequenceId, body)
+## putOutboundSchedulesSequence
+
+> SequenceSchedule putOutboundSchedulesSequence(sequenceId, body)
 
 
 PUT /api/v2/outbound/schedules/sequences/{sequenceId}
@@ -7069,6 +9213,7 @@ Update a new sequence schedule.
 Requires ANY permissions:
 
 * outbound:schedule:edit
+* outbound:campaignSequenceSchedule:edit
 
 ### Example Usage
 
@@ -7078,7 +9223,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -7103,15 +9248,68 @@ apiInstance.putOutboundSchedulesSequence(sequenceId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **sequenceId** | **String** | Sequence ID |  |
  **body** | **Object** | SequenceSchedule |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **SequenceSchedule**
 
-<a name="putOutboundSequence"></a>
 
-# CampaignSequence putOutboundSequence(sequenceId, body)
+## putOutboundSchedulesWhatsappcampaign
+
+> WhatsAppCampaignSchedule putOutboundSchedulesWhatsappcampaign(whatsAppCampaignId, body)
+
+
+PUT /api/v2/outbound/schedules/whatsappcampaigns/{whatsAppCampaignId}
+
+Update a WhatsApp campaign schedule.
+
+Requires ANY permissions:
+
+* outbound:whatsAppCampaignSchedule:edit
+* outbound:whatsAppCampaign:editSchedule
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let whatsAppCampaignId = "whatsAppCampaignId_example"; // String | WhatsApp Campaign ID
+let body = {}; // Object | WhatsAppCampaignSchedule
+
+apiInstance.putOutboundSchedulesWhatsappcampaign(whatsAppCampaignId, body)
+  .then((data) => {
+    console.log(`putOutboundSchedulesWhatsappcampaign success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putOutboundSchedulesWhatsappcampaign');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **whatsAppCampaignId** | **String** | WhatsApp Campaign ID |  |
+ **body** | **Object** | WhatsAppCampaignSchedule |  |
+
+### Return type
+
+**WhatsAppCampaignSchedule**
+
+
+## putOutboundSequence
+
+> CampaignSequence putOutboundSequence(sequenceId, body)
 
 
 PUT /api/v2/outbound/sequences/{sequenceId}
@@ -7130,7 +9328,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -7155,15 +9353,15 @@ apiInstance.putOutboundSequence(sequenceId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **sequenceId** | **String** | Campaign Sequence ID |  |
  **body** | **Object** | Organization |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **CampaignSequence**
 
-<a name="putOutboundWrapupcodemappings"></a>
 
-# WrapUpCodeMapping putOutboundWrapupcodemappings(body)
+## putOutboundWrapupcodemappings
+
+> WrapUpCodeMapping putOutboundWrapupcodemappings(body)
 
 
 PUT /api/v2/outbound/wrapupcodemappings
@@ -7182,7 +9380,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
@@ -7205,9 +9403,10 @@ apiInstance.putOutboundWrapupcodemappings(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | wrapUpCodeMapping |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **WrapUpCodeMapping**
 
+
+_purecloud-platform-client-v2@229.1.0_

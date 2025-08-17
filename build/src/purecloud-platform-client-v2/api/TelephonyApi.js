@@ -5,7 +5,7 @@ class TelephonyApi {
 	/**
 	 * Telephony service.
 	 * @module purecloud-platform-client-v2/api/TelephonyApi
-	 * @version 174.0.0
+	 * @version 229.1.0
 	 */
 
 	/**
@@ -21,6 +21,53 @@ class TelephonyApi {
 
 
 	/**
+	 * Get an agent's greetings.
+	 * 
+	 * @param {String} agentId User ID
+	 * getTelephonyAgentGreetings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getTelephonyAgentGreetings(agentId) { 
+		// verify the required parameter 'agentId' is set
+		if (agentId === undefined || agentId === null || agentId === '') {
+			throw 'Missing the required parameter "agentId" when calling getTelephonyAgentGreetings';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/agents/{agentId}/greetings', 
+			'GET', 
+			{ 'agentId': agentId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the agent's own greetings.
+	 * 
+	 * getTelephonyAgentsGreetingsMe is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getTelephonyAgentsGreetingsMe() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/agents/greetings/me', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Retrieve the list of AWS regions media can stream through.
 	 * 
 	 */
@@ -31,6 +78,60 @@ class TelephonyApi {
 			'GET', 
 			{  },
 			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a SIP message.
+	 * Get the raw form of the SIP message
+	 * @param {String} conversationId Conversation id
+	 */
+	getTelephonySipmessagesConversation(conversationId) { 
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
+			throw 'Missing the required parameter "conversationId" when calling getTelephonySipmessagesConversation';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/sipmessages/conversations/{conversationId}', 
+			'GET', 
+			{ 'conversationId': conversationId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get SIP headers.
+	 * Get parsed SIP headers. Returns specific headers if key query parameters are added.
+	 * @param {String} conversationId Conversation id
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.keys comma-separated list of header identifiers to query. e.g. ruri,to,from
+	 */
+	getTelephonySipmessagesConversationHeaders(conversationId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'conversationId' is set
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
+			throw 'Missing the required parameter "conversationId" when calling getTelephonySipmessagesConversationHeaders';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/sipmessages/conversations/{conversationId}/headers', 
+			'GET', 
+			{ 'conversationId': conversationId },
+			{ 'keys': this.apiClient.buildCollectionParam(opts['keys'], 'multi') },
 			{  },
 			{  },
 			null, 
@@ -84,7 +185,7 @@ class TelephonyApi {
 	 */
 	getTelephonySiptracesDownloadDownloadId(downloadId) { 
 		// verify the required parameter 'downloadId' is set
-		if (downloadId === undefined || downloadId === null) {
+		if (downloadId === undefined || downloadId === null || downloadId === '') {
 			throw 'Missing the required parameter "downloadId" when calling getTelephonySiptracesDownloadDownloadId';
 		}
 
@@ -121,6 +222,63 @@ class TelephonyApi {
 			{  },
 			{  },
 			sIPSearchPublicRequest, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Updates an agent's greetings.
+	 * 
+	 * @param {String} agentId User ID
+	 * @param {Object} body Agent Greeting
+	 * putTelephonyAgentGreetings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	putTelephonyAgentGreetings(agentId, body) { 
+		// verify the required parameter 'agentId' is set
+		if (agentId === undefined || agentId === null || agentId === '') {
+			throw 'Missing the required parameter "agentId" when calling putTelephonyAgentGreetings';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putTelephonyAgentGreetings';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/agents/{agentId}/greetings', 
+			'PUT', 
+			{ 'agentId': agentId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Updates the agent's own greetings.
+	 * 
+	 * @param {Object} body Agent Greeting
+	 * putTelephonyAgentsGreetingsMe is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	putTelephonyAgentsGreetingsMe(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putTelephonyAgentsGreetingsMe';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/agents/greetings/me', 
+			'PUT', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']

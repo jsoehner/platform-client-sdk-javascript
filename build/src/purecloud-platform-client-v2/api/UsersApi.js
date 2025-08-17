@@ -5,7 +5,7 @@ class UsersApi {
 	/**
 	 * Users service.
 	 * @module purecloud-platform-client-v2/api/UsersApi
-	 * @version 174.0.0
+	 * @version 229.1.0
 	 */
 
 	/**
@@ -21,13 +21,39 @@ class UsersApi {
 
 
 	/**
+	 * Delete/cancel an async request for user aggregates
+	 * 
+	 * @param {String} jobId jobId
+	 * deleteAnalyticsUsersAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	deleteAnalyticsUsersAggregatesJob(jobId) { 
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null || jobId === '') {
+			throw 'Missing the required parameter "jobId" when calling deleteAnalyticsUsersAggregatesJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/users/aggregates/jobs/{jobId}', 
+			'DELETE', 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Delete/cancel an async request
 	 * 
 	 * @param {String} jobId jobId
 	 */
 	deleteAnalyticsUsersDetailsJob(jobId) { 
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling deleteAnalyticsUsersDetailsJob';
 		}
 
@@ -54,15 +80,15 @@ class UsersApi {
 	 */
 	deleteAuthorizationSubjectDivisionRole(subjectId, divisionId, roleId) { 
 		// verify the required parameter 'subjectId' is set
-		if (subjectId === undefined || subjectId === null) {
+		if (subjectId === undefined || subjectId === null || subjectId === '') {
 			throw 'Missing the required parameter "subjectId" when calling deleteAuthorizationSubjectDivisionRole';
 		}
 		// verify the required parameter 'divisionId' is set
-		if (divisionId === undefined || divisionId === null) {
+		if (divisionId === undefined || divisionId === null || divisionId === '') {
 			throw 'Missing the required parameter "divisionId" when calling deleteAuthorizationSubjectDivisionRole';
 		}
 		// verify the required parameter 'roleId' is set
-		if (roleId === undefined || roleId === null) {
+		if (roleId === undefined || roleId === null || roleId === '') {
 			throw 'Missing the required parameter "roleId" when calling deleteAuthorizationSubjectDivisionRole';
 		}
 
@@ -81,13 +107,58 @@ class UsersApi {
 	}
 
 	/**
+	 * Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default.
+	 * 
+	 */
+	deleteRoutingDirectroutingbackupSettingsMe() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/directroutingbackup/settings/me', 
+			'DELETE', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default.
+	 * 
+	 * @param {String} userId User ID
+	 */
+	deleteRoutingUserDirectroutingbackupSettings(userId) { 
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null || userId === '') {
+			throw 'Missing the required parameter "userId" when calling deleteRoutingUserDirectroutingbackupSettings';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/users/{userId}/directroutingbackup/settings', 
+			'DELETE', 
+			{ 'userId': userId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Delete the user's max utilization settings and revert to the organization-wide default.
 	 * 
 	 * @param {String} userId User ID
 	 */
 	deleteRoutingUserUtilization(userId) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling deleteRoutingUserUtilization';
 		}
 
@@ -112,7 +183,7 @@ class UsersApi {
 	 */
 	deleteUser(userId) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling deleteUser';
 		}
 
@@ -131,18 +202,53 @@ class UsersApi {
 	}
 
 	/**
-	 * Remove routing language from user
+	 * Delete the external identifier for user.
+	 * 
+	 * @param {String} userId User ID
+	 * @param {String} authorityName Authority Name
+	 * @param {String} externalKey External Key
+	 */
+	deleteUserExternalidAuthorityNameExternalKey(userId, authorityName, externalKey) { 
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null || userId === '') {
+			throw 'Missing the required parameter "userId" when calling deleteUserExternalidAuthorityNameExternalKey';
+		}
+		// verify the required parameter 'authorityName' is set
+		if (authorityName === undefined || authorityName === null || authorityName === '') {
+			throw 'Missing the required parameter "authorityName" when calling deleteUserExternalidAuthorityNameExternalKey';
+		}
+		// verify the required parameter 'externalKey' is set
+		if (externalKey === undefined || externalKey === null || externalKey === '') {
+			throw 'Missing the required parameter "externalKey" when calling deleteUserExternalidAuthorityNameExternalKey';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/users/{userId}/externalid/{authorityName}/{externalKey}', 
+			'DELETE', 
+			{ 'userId': userId,'authorityName': authorityName,'externalKey': externalKey },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Remove a routing language from a user
 	 * 
 	 * @param {String} userId User ID
 	 * @param {String} languageId languageId
 	 */
 	deleteUserRoutinglanguage(userId, languageId) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling deleteUserRoutinglanguage';
 		}
 		// verify the required parameter 'languageId' is set
-		if (languageId === undefined || languageId === null) {
+		if (languageId === undefined || languageId === null || languageId === '') {
 			throw 'Missing the required parameter "languageId" when calling deleteUserRoutinglanguage';
 		}
 
@@ -161,18 +267,18 @@ class UsersApi {
 	}
 
 	/**
-	 * Remove routing skill from user
+	 * Remove a routing skill from a user
 	 * 
 	 * @param {String} userId User ID
 	 * @param {String} skillId skillId
 	 */
 	deleteUserRoutingskill(userId, skillId) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling deleteUserRoutingskill';
 		}
 		// verify the required parameter 'skillId' is set
-		if (skillId === undefined || skillId === null) {
+		if (skillId === undefined || skillId === null || skillId === '') {
 			throw 'Missing the required parameter "skillId" when calling deleteUserRoutingskill';
 		}
 
@@ -197,7 +303,7 @@ class UsersApi {
 	 */
 	deleteUserStationAssociatedstation(userId) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling deleteUserStationAssociatedstation';
 		}
 
@@ -222,7 +328,7 @@ class UsersApi {
 	 */
 	deleteUserStationDefaultstation(userId) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling deleteUserStationDefaultstation';
 		}
 
@@ -241,6 +347,36 @@ class UsersApi {
 	}
 
 	/**
+	 * Delete a verifier
+	 * 
+	 * @param {String} userId User ID
+	 * @param {String} verifierId Verifier ID
+	 */
+	deleteUserVerifier(userId, verifierId) { 
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null || userId === '') {
+			throw 'Missing the required parameter "userId" when calling deleteUserVerifier';
+		}
+		// verify the required parameter 'verifierId' is set
+		if (verifierId === undefined || verifierId === null || verifierId === '') {
+			throw 'Missing the required parameter "verifierId" when calling deleteUserVerifier';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/users/{userId}/verifiers/{verifierId}', 
+			'DELETE', 
+			{ 'userId': userId,'verifierId': verifierId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get status for async query for user aggregates
 	 * 
 	 * @param {String} jobId jobId
@@ -248,7 +384,7 @@ class UsersApi {
 	 */
 	getAnalyticsUsersAggregatesJob(jobId) { 
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getAnalyticsUsersAggregatesJob';
 		}
 
@@ -278,7 +414,7 @@ class UsersApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getAnalyticsUsersAggregatesJobResults';
 		}
 
@@ -303,7 +439,7 @@ class UsersApi {
 	 */
 	getAnalyticsUsersDetailsJob(jobId) { 
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getAnalyticsUsersDetailsJob';
 		}
 
@@ -333,7 +469,7 @@ class UsersApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getAnalyticsUsersDetailsJobResults';
 		}
 
@@ -445,7 +581,7 @@ class UsersApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'subjectId' is set
-		if (subjectId === undefined || subjectId === null) {
+		if (subjectId === undefined || subjectId === null || subjectId === '') {
 			throw 'Missing the required parameter "subjectId" when calling getAuthorizationDivisionspermittedPagedSubjectId';
 		}
 		// verify the required parameter 'permission' is set
@@ -471,10 +607,14 @@ class UsersApi {
 	 * Returns a listing of roles and permissions for a user.
 	 * 
 	 * @param {String} subjectId Subject ID (user or group)
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.includeDuplicates Include multiple entries with the same role and division but different subjects (default to false)
 	 */
-	getAuthorizationSubject(subjectId) { 
+	getAuthorizationSubject(subjectId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'subjectId' is set
-		if (subjectId === undefined || subjectId === null) {
+		if (subjectId === undefined || subjectId === null || subjectId === '') {
 			throw 'Missing the required parameter "subjectId" when calling getAuthorizationSubject';
 		}
 
@@ -482,7 +622,7 @@ class UsersApi {
 			'/api/v2/authorization/subjects/{subjectId}', 
 			'GET', 
 			{ 'subjectId': subjectId },
-			{  },
+			{ 'includeDuplicates': opts['includeDuplicates'] },
 			{  },
 			{  },
 			null, 
@@ -495,14 +635,18 @@ class UsersApi {
 	/**
 	 * Returns a listing of roles and permissions for the currently authenticated user.
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.includeDuplicates Include multiple entries with the same role and division but different subjects (default to false)
 	 */
-	getAuthorizationSubjectsMe() { 
+	getAuthorizationSubjectsMe(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/authorization/subjects/me', 
 			'GET', 
 			{  },
-			{  },
+			{ 'includeDuplicates': opts['includeDuplicates'] },
 			{  },
 			{  },
 			null, 
@@ -570,13 +714,58 @@ class UsersApi {
 	}
 
 	/**
+	 * Get the user's Direct Routing Backup settings.
+	 * 
+	 */
+	getRoutingDirectroutingbackupSettingsMe() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/directroutingbackup/settings/me', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the user's Direct Routing Backup settings.
+	 * 
+	 * @param {String} userId User ID
+	 */
+	getRoutingUserDirectroutingbackupSettings(userId) { 
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null || userId === '') {
+			throw 'Missing the required parameter "userId" when calling getRoutingUserDirectroutingbackupSettings';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/users/{userId}/directroutingbackup/settings', 
+			'GET', 
+			{ 'userId': userId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get the user's max utilization settings.  If not configured, the organization-wide default is returned.
 	 * 
 	 * @param {String} userId User ID
 	 */
 	getRoutingUserUtilization(userId) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getRoutingUserUtilization';
 		}
 
@@ -599,7 +788,7 @@ class UsersApi {
 	 * 
 	 * @param {String} userId User ID
 	 * @param {Object} opts Optional parameters
-	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
+	 * @param {Array.<String>} opts.expand Which fields, if any, to expand. Note, expand parameters are resolved with a best effort approach and not guaranteed to be returned. If requested expand information is absolutely required, it's recommended to use specific API requests instead.
 	 * @param {Object} opts.integrationPresenceSource Gets an integration presence for a user instead of their default.
 	 * @param {Object} opts.state Search for a user with this state (default to active)
 	 */
@@ -607,7 +796,7 @@ class UsersApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getUser';
 		}
 
@@ -636,7 +825,7 @@ class UsersApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getUserAdjacents';
 		}
 
@@ -661,7 +850,7 @@ class UsersApi {
 	 */
 	getUserCallforwarding(userId) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getUserCallforwarding';
 		}
 
@@ -690,7 +879,7 @@ class UsersApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getUserDirectreports';
 		}
 
@@ -699,6 +888,61 @@ class UsersApi {
 			'GET', 
 			{ 'userId': userId },
 			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the external identifiers for a user.
+	 * 
+	 * @param {String} userId User ID
+	 */
+	getUserExternalid(userId) { 
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null || userId === '') {
+			throw 'Missing the required parameter "userId" when calling getUserExternalid';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/users/{userId}/externalid', 
+			'GET', 
+			{ 'userId': userId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the external identifier of user for an authority.
+	 * Authority name and external key are case sensitive.
+	 * @param {String} userId User ID
+	 * @param {String} authorityName Authority Name
+	 */
+	getUserExternalidAuthorityName(userId, authorityName) { 
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null || userId === '') {
+			throw 'Missing the required parameter "userId" when calling getUserExternalidAuthorityName';
+		}
+		// verify the required parameter 'authorityName' is set
+		if (authorityName === undefined || authorityName === null || authorityName === '') {
+			throw 'Missing the required parameter "authorityName" when calling getUserExternalidAuthorityName';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/users/{userId}/externalid/{authorityName}', 
+			'GET', 
+			{ 'userId': userId,'authorityName': authorityName },
+			{  },
 			{  },
 			{  },
 			null, 
@@ -723,7 +967,7 @@ class UsersApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getUserFavorites';
 		}
 
@@ -749,11 +993,11 @@ class UsersApi {
 	 */
 	getUserGeolocation(userId, clientId) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getUserGeolocation';
 		}
 		// verify the required parameter 'clientId' is set
-		if (clientId === undefined || clientId === null) {
+		if (clientId === undefined || clientId === null || clientId === '') {
 			throw 'Missing the required parameter "clientId" when calling getUserGeolocation';
 		}
 
@@ -778,7 +1022,7 @@ class UsersApi {
 	 */
 	getUserOutofoffice(userId) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getUserOutofoffice';
 		}
 
@@ -809,7 +1053,7 @@ class UsersApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getUserProfile';
 		}
 
@@ -834,7 +1078,7 @@ class UsersApi {
 	 */
 	getUserProfileskills(userId) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getUserProfileskills';
 		}
 
@@ -866,7 +1110,7 @@ class UsersApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getUserQueues';
 		}
 
@@ -891,7 +1135,7 @@ class UsersApi {
 	 */
 	getUserRoles(subjectId) { 
 		// verify the required parameter 'subjectId' is set
-		if (subjectId === undefined || subjectId === null) {
+		if (subjectId === undefined || subjectId === null || subjectId === '') {
 			throw 'Missing the required parameter "subjectId" when calling getUserRoles';
 		}
 
@@ -910,7 +1154,7 @@ class UsersApi {
 	}
 
 	/**
-	 * List routing language for user
+	 * List routing languages assigned to a user
 	 * 
 	 * @param {String} userId User ID
 	 * @param {Object} opts Optional parameters
@@ -922,7 +1166,7 @@ class UsersApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getUserRoutinglanguages';
 		}
 
@@ -941,7 +1185,7 @@ class UsersApi {
 	}
 
 	/**
-	 * List routing skills for user
+	 * List routing skills assigned to a user
 	 * 
 	 * @param {String} userId User ID
 	 * @param {Object} opts Optional parameters
@@ -953,7 +1197,7 @@ class UsersApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getUserRoutingskills';
 		}
 
@@ -978,7 +1222,7 @@ class UsersApi {
 	 */
 	getUserRoutingstatus(userId) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getUserRoutingstatus';
 		}
 
@@ -1009,7 +1253,7 @@ class UsersApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getUserSkillgroups';
 		}
 
@@ -1034,7 +1278,7 @@ class UsersApi {
 	 */
 	getUserState(userId) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getUserState';
 		}
 
@@ -1059,7 +1303,7 @@ class UsersApi {
 	 */
 	getUserStation(userId) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getUserStation';
 		}
 
@@ -1088,7 +1332,7 @@ class UsersApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getUserSuperiors';
 		}
 
@@ -1118,7 +1362,7 @@ class UsersApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getUserTrustors';
 		}
 
@@ -1137,6 +1381,31 @@ class UsersApi {
 	}
 
 	/**
+	 * Get a list of verifiers
+	 * 
+	 * @param {String} userId User ID
+	 */
+	getUserVerifiers(userId) { 
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null || userId === '') {
+			throw 'Missing the required parameter "userId" when calling getUserVerifiers';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/users/{userId}/verifiers', 
+			'GET', 
+			{ 'userId': userId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get the list of available users.
 	 * 
 	 * @param {Object} opts Optional parameters
@@ -1145,7 +1414,7 @@ class UsersApi {
 	 * @param {Array.<String>} opts.id A list of user IDs to fetch by bulk
 	 * @param {Array.<String>} opts.jabberId A list of jabberIds to fetch by bulk (cannot be used with the id parameter)
 	 * @param {Object} opts.sortOrder Ascending or descending sort order (default to ASC)
-	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
+	 * @param {Array.<String>} opts.expand Which fields, if any, to expand. Note, expand parameters are resolved with a best effort approach and not guaranteed to be returned. If requested expand information is absolutely required, it's recommended to use specific API requests instead.
 	 * @param {Object} opts.integrationPresenceSource Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an expand. When using this parameter the maximum number of users that can be returned is 100.
 	 * @param {Object} opts.state Only list users of this state (default to active)
 	 */
@@ -1168,6 +1437,32 @@ class UsersApi {
 	}
 
 	/**
+	 * Get chats for a user
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.excludeClosed Whether or not to exclude closed chats
+	 * @param {Boolean} opts.includePresence Whether or not to include user presence
+	 * @param {String} opts.after The key to start after
+	 */
+	getUsersChatsMe(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/users/chats/me', 
+			'GET', 
+			{  },
+			{ 'excludeClosed': opts['excludeClosed'],'includePresence': opts['includePresence'],'after': opts['after'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get list of Development Activities
 	 * Either moduleId or userId is required. Results are filtered based on the applicable permissions.
 	 * @param {Object} opts Optional parameters
@@ -1180,7 +1475,7 @@ class UsersApi {
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Object} opts.sortOrder Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc) (default to Desc)
-	 * @param {Array.<String>} opts.types Specifies the activity types.
+	 * @param {Array.<String>} opts.types Specifies the activity types. Informational, AssessedContent and Assessment are deprecated
 	 * @param {Array.<String>} opts.statuses Specifies the activity statuses to filter by
 	 * @param {Array.<String>} opts.relationship Specifies how the current user relation should be interpreted, and filters the activities returned to only the activities that have the specified relationship. If a value besides Attendee is specified, it will only return Coaching Appointments. If not specified, no filtering is applied.
 	 */
@@ -1214,7 +1509,7 @@ class UsersApi {
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Object} opts.sortOrder Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc) (default to Desc)
-	 * @param {Array.<String>} opts.types Specifies the activity types.
+	 * @param {Array.<String>} opts.types Specifies the activity types. Informational, AssessedContent and Assessment are deprecated
 	 * @param {Array.<String>} opts.statuses Specifies the activity statuses to filter by
 	 * @param {Array.<String>} opts.relationship Specifies how the current user relation should be interpreted, and filters the activities returned to only the activities that have the specified relationship. If a value besides Attendee is specified, it will only return Coaching Appointments. If not specified, no filtering is applied.
 	 */
@@ -1240,11 +1535,11 @@ class UsersApi {
 	 * Get a Development Activity
 	 * Permission not required if you are the attendee, creator or facilitator of the coaching appointment or you are the assigned user of the learning assignment.
 	 * @param {String} activityId Specifies the activity ID, maps to either assignment or appointment ID
-	 * @param {Object} type Specifies the activity type.
+	 * @param {Object} type Specifies the activity type. Informational, AssessedContent and Assessment are deprecated
 	 */
 	getUsersDevelopmentActivity(activityId, type) { 
 		// verify the required parameter 'activityId' is set
-		if (activityId === undefined || activityId === null) {
+		if (activityId === undefined || activityId === null || activityId === '') {
 			throw 'Missing the required parameter "activityId" when calling getUsersDevelopmentActivity';
 		}
 		// verify the required parameter 'type' is set
@@ -1257,6 +1552,40 @@ class UsersApi {
 			'GET', 
 			{ 'activityId': activityId },
 			{ 'type': type },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the user associated with external identifier.
+	 * Authority name and external key are case sensitive.
+	 * @param {String} authorityName Authority Name
+	 * @param {String} externalKey External Key
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
+	 */
+	getUsersExternalidAuthorityNameExternalKey(authorityName, externalKey, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'authorityName' is set
+		if (authorityName === undefined || authorityName === null || authorityName === '') {
+			throw 'Missing the required parameter "authorityName" when calling getUsersExternalidAuthorityNameExternalKey';
+		}
+		// verify the required parameter 'externalKey' is set
+		if (externalKey === undefined || externalKey === null || externalKey === '') {
+			throw 'Missing the required parameter "externalKey" when calling getUsersExternalidAuthorityNameExternalKey';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/users/externalid/{authorityName}/{externalKey}', 
+			'GET', 
+			{ 'authorityName': authorityName,'externalKey': externalKey },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
 			{  },
 			{  },
 			null, 
@@ -1282,6 +1611,36 @@ class UsersApi {
 			'GET', 
 			{  },
 			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'integrationPresenceSource': opts['integrationPresenceSource'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get list of available users, paged by cursor token, No division filtering available so directory:user:view permission for all divisions is required
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.cursor Cursor token to retrieve next page
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Object} opts.sortOrder Ascending or descending sort order (default to ASC)
+	 * @param {Array.<String>} opts.expand Which fields, if any, to expand. Note, expand parameters are resolved with a best effort approach and not guaranteed to be returned. If requested expand information is absolutely required, it's recommended to use specific API requests instead.
+	 * @param {Object} opts.integrationPresenceSource Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an expand. When using this parameter the maximum number of users that can be returned is 100.
+	 * @param {Object} opts.state Only list users of this state (default to active)
+	 * getUsersQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getUsersQuery(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/users/query', 
+			'GET', 
+			{  },
+			{ 'cursor': opts['cursor'],'pageSize': opts['pageSize'],'sortOrder': opts['sortOrder'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'integrationPresenceSource': opts['integrationPresenceSource'],'state': opts['state'] },
 			{  },
 			{  },
 			null, 
@@ -1329,7 +1688,7 @@ class UsersApi {
 	 */
 	patchUser(userId, body) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling patchUser';
 		}
 		// verify the required parameter 'body' is set
@@ -1359,7 +1718,7 @@ class UsersApi {
 	 */
 	patchUserCallforwarding(userId, body) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling patchUserCallforwarding';
 		}
 		// verify the required parameter 'body' is set
@@ -1390,11 +1749,11 @@ class UsersApi {
 	 */
 	patchUserGeolocation(userId, clientId, body) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling patchUserGeolocation';
 		}
 		// verify the required parameter 'clientId' is set
-		if (clientId === undefined || clientId === null) {
+		if (clientId === undefined || clientId === null || clientId === '') {
 			throw 'Missing the required parameter "clientId" when calling patchUserGeolocation';
 		}
 		// verify the required parameter 'body' is set
@@ -1425,11 +1784,11 @@ class UsersApi {
 	 */
 	patchUserQueue(queueId, userId, body) { 
 		// verify the required parameter 'queueId' is set
-		if (queueId === undefined || queueId === null) {
+		if (queueId === undefined || queueId === null || queueId === '') {
 			throw 'Missing the required parameter "queueId" when calling patchUserQueue';
 		}
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling patchUserQueue';
 		}
 		// verify the required parameter 'body' is set
@@ -1463,7 +1822,7 @@ class UsersApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling patchUserQueues';
 		}
 		// verify the required parameter 'body' is set
@@ -1486,7 +1845,7 @@ class UsersApi {
 	}
 
 	/**
-	 * Update routing language proficiency or state.
+	 * Update an assigned routing language's proficiency
 	 * 
 	 * @param {String} userId User ID
 	 * @param {String} languageId languageId
@@ -1494,11 +1853,11 @@ class UsersApi {
 	 */
 	patchUserRoutinglanguage(userId, languageId, body) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling patchUserRoutinglanguage';
 		}
 		// verify the required parameter 'languageId' is set
-		if (languageId === undefined || languageId === null) {
+		if (languageId === undefined || languageId === null || languageId === '') {
 			throw 'Missing the required parameter "languageId" when calling patchUserRoutinglanguage';
 		}
 		// verify the required parameter 'body' is set
@@ -1521,14 +1880,14 @@ class UsersApi {
 	}
 
 	/**
-	 * Add bulk routing language to user. Max limit 50 languages
+	 * Assign multiple routing languages to a user. Max 50 routing languages in request body
 	 * 
 	 * @param {String} userId User ID
 	 * @param {Array.<Object>} body Language
 	 */
 	patchUserRoutinglanguagesBulk(userId, body) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling patchUserRoutinglanguagesBulk';
 		}
 		// verify the required parameter 'body' is set
@@ -1551,14 +1910,14 @@ class UsersApi {
 	}
 
 	/**
-	 * Bulk add routing skills to user
+	 * Assign multiple routing skills to a user
 	 * 
 	 * @param {String} userId User ID
 	 * @param {Array.<Object>} body Skill
 	 */
 	patchUserRoutingskillsBulk(userId, body) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling patchUserRoutingskillsBulk';
 		}
 		// verify the required parameter 'body' is set
@@ -1581,7 +1940,7 @@ class UsersApi {
 	}
 
 	/**
-	 * Update bulk acd autoanswer on users
+	 * Update bulk acd autoanswer on users. Max 50 users can be updated at a time.
 	 * 
 	 * @param {Array.<Object>} body Users
 	 */
@@ -1612,7 +1971,6 @@ class UsersApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize The desired page size
 	 * @param {Number} opts.pageNumber The desired page number
-	 * postAnalyticsUsersActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAnalyticsUsersActivityQuery(body, opts) { 
 		opts = opts || {};
@@ -1774,7 +2132,7 @@ class UsersApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'subjectId' is set
-		if (subjectId === undefined || subjectId === null) {
+		if (subjectId === undefined || subjectId === null || subjectId === '') {
 			throw 'Missing the required parameter "subjectId" when calling postAuthorizationSubjectBulkadd';
 		}
 		// verify the required parameter 'body' is set
@@ -1804,7 +2162,7 @@ class UsersApi {
 	 */
 	postAuthorizationSubjectBulkremove(subjectId, body) { 
 		// verify the required parameter 'subjectId' is set
-		if (subjectId === undefined || subjectId === null) {
+		if (subjectId === undefined || subjectId === null || subjectId === '') {
 			throw 'Missing the required parameter "subjectId" when calling postAuthorizationSubjectBulkremove';
 		}
 		// verify the required parameter 'body' is set
@@ -1838,7 +2196,7 @@ class UsersApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'subjectId' is set
-		if (subjectId === undefined || subjectId === null) {
+		if (subjectId === undefined || subjectId === null || subjectId === '') {
 			throw 'Missing the required parameter "subjectId" when calling postAuthorizationSubjectBulkreplace';
 		}
 		// verify the required parameter 'body' is set
@@ -1873,15 +2231,15 @@ class UsersApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'subjectId' is set
-		if (subjectId === undefined || subjectId === null) {
+		if (subjectId === undefined || subjectId === null || subjectId === '') {
 			throw 'Missing the required parameter "subjectId" when calling postAuthorizationSubjectDivisionRole';
 		}
 		// verify the required parameter 'divisionId' is set
-		if (divisionId === undefined || divisionId === null) {
+		if (divisionId === undefined || divisionId === null || divisionId === '') {
 			throw 'Missing the required parameter "divisionId" when calling postAuthorizationSubjectDivisionRole';
 		}
 		// verify the required parameter 'roleId' is set
-		if (roleId === undefined || roleId === null) {
+		if (roleId === undefined || roleId === null || roleId === '') {
 			throw 'Missing the required parameter "roleId" when calling postAuthorizationSubjectDivisionRole';
 		}
 
@@ -1907,7 +2265,7 @@ class UsersApi {
 	 */
 	postUserExternalid(userId, body) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling postUserExternalid';
 		}
 		// verify the required parameter 'body' is set
@@ -1940,7 +2298,7 @@ class UsersApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling postUserInvite';
 		}
 
@@ -1966,7 +2324,7 @@ class UsersApi {
 	 */
 	postUserPassword(userId, body) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling postUserPassword';
 		}
 		// verify the required parameter 'body' is set
@@ -1989,14 +2347,14 @@ class UsersApi {
 	}
 
 	/**
-	 * Add routing language to user
+	 * Assign a routing language to a user
 	 * 
 	 * @param {String} userId User ID
 	 * @param {Object} body Language
 	 */
 	postUserRoutinglanguages(userId, body) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling postUserRoutinglanguages';
 		}
 		// verify the required parameter 'body' is set
@@ -2019,14 +2377,14 @@ class UsersApi {
 	}
 
 	/**
-	 * Add routing skill to user
+	 * Assign a routing skill to a user
 	 * 
 	 * @param {String} userId User ID
 	 * @param {Object} body Skill
 	 */
 	postUserRoutingskills(userId, body) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling postUserRoutingskills';
 		}
 		// verify the required parameter 'body' is set
@@ -2226,6 +2584,61 @@ class UsersApi {
 	}
 
 	/**
+	 * Update the user's Direct Routing Backup settings.
+	 * 
+	 * @param {Object} body directRoutingBackup
+	 */
+	putRoutingDirectroutingbackupSettingsMe(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putRoutingDirectroutingbackupSettingsMe';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/directroutingbackup/settings/me', 
+			'PUT', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update the user's Direct Routing Backup settings.
+	 * 
+	 * @param {String} userId User ID
+	 * @param {Object} body directRoutingBackup
+	 */
+	putRoutingUserDirectroutingbackupSettings(userId, body) { 
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null || userId === '') {
+			throw 'Missing the required parameter "userId" when calling putRoutingUserDirectroutingbackupSettings';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putRoutingUserDirectroutingbackupSettings';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/users/{userId}/directroutingbackup/settings', 
+			'PUT', 
+			{ 'userId': userId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Update the user's max utilization settings.  Include only those media types requiring custom configuration.
 	 * 
 	 * @param {String} userId User ID
@@ -2233,7 +2646,7 @@ class UsersApi {
 	 */
 	putRoutingUserUtilization(userId, body) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling putRoutingUserUtilization';
 		}
 		// verify the required parameter 'body' is set
@@ -2263,7 +2676,7 @@ class UsersApi {
 	 */
 	putUserCallforwarding(userId, body) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling putUserCallforwarding';
 		}
 		// verify the required parameter 'body' is set
@@ -2293,7 +2706,7 @@ class UsersApi {
 	 */
 	putUserOutofoffice(userId, body) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling putUserOutofoffice';
 		}
 		// verify the required parameter 'body' is set
@@ -2323,7 +2736,7 @@ class UsersApi {
 	 */
 	putUserProfileskills(userId, body) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling putUserProfileskills';
 		}
 		// verify the required parameter 'body' is set
@@ -2353,7 +2766,7 @@ class UsersApi {
 	 */
 	putUserRoles(subjectId, body) { 
 		// verify the required parameter 'subjectId' is set
-		if (subjectId === undefined || subjectId === null) {
+		if (subjectId === undefined || subjectId === null || subjectId === '') {
 			throw 'Missing the required parameter "subjectId" when calling putUserRoles';
 		}
 		// verify the required parameter 'body' is set
@@ -2376,7 +2789,7 @@ class UsersApi {
 	}
 
 	/**
-	 * Update routing skill proficiency or state.
+	 * Update an assigned routing skill's proficiency
 	 * 
 	 * @param {String} userId User ID
 	 * @param {String} skillId skillId
@@ -2384,11 +2797,11 @@ class UsersApi {
 	 */
 	putUserRoutingskill(userId, skillId, body) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling putUserRoutingskill';
 		}
 		// verify the required parameter 'skillId' is set
-		if (skillId === undefined || skillId === null) {
+		if (skillId === undefined || skillId === null || skillId === '') {
 			throw 'Missing the required parameter "skillId" when calling putUserRoutingskill';
 		}
 		// verify the required parameter 'body' is set
@@ -2411,14 +2824,14 @@ class UsersApi {
 	}
 
 	/**
-	 * Replace all routing skills assigned to a user
+	 * Assign multiple routing skills to a user, replacing any current assignments
 	 * 
 	 * @param {String} userId User ID
 	 * @param {Array.<Object>} body Skill
 	 */
 	putUserRoutingskillsBulk(userId, body) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling putUserRoutingskillsBulk';
 		}
 		// verify the required parameter 'body' is set
@@ -2448,7 +2861,7 @@ class UsersApi {
 	 */
 	putUserRoutingstatus(userId, body) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling putUserRoutingstatus';
 		}
 		// verify the required parameter 'body' is set
@@ -2478,7 +2891,7 @@ class UsersApi {
 	 */
 	putUserState(userId, body) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling putUserState';
 		}
 		// verify the required parameter 'body' is set
@@ -2508,11 +2921,11 @@ class UsersApi {
 	 */
 	putUserStationAssociatedstationStationId(userId, stationId) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling putUserStationAssociatedstationStationId';
 		}
 		// verify the required parameter 'stationId' is set
-		if (stationId === undefined || stationId === null) {
+		if (stationId === undefined || stationId === null || stationId === '') {
 			throw 'Missing the required parameter "stationId" when calling putUserStationAssociatedstationStationId';
 		}
 
@@ -2538,11 +2951,11 @@ class UsersApi {
 	 */
 	putUserStationDefaultstationStationId(userId, stationId) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling putUserStationDefaultstationStationId';
 		}
 		// verify the required parameter 'stationId' is set
-		if (stationId === undefined || stationId === null) {
+		if (stationId === undefined || stationId === null || stationId === '') {
 			throw 'Missing the required parameter "stationId" when calling putUserStationDefaultstationStationId';
 		}
 
@@ -2554,6 +2967,41 @@ class UsersApi {
 			{  },
 			{  },
 			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update a verifier
+	 * 
+	 * @param {String} userId User ID
+	 * @param {String} verifierId Verifier ID
+	 * @param {Object} body Verifier Update
+	 */
+	putUserVerifier(userId, verifierId, body) { 
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null || userId === '') {
+			throw 'Missing the required parameter "userId" when calling putUserVerifier';
+		}
+		// verify the required parameter 'verifierId' is set
+		if (verifierId === undefined || verifierId === null || verifierId === '') {
+			throw 'Missing the required parameter "verifierId" when calling putUserVerifier';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putUserVerifier';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/users/{userId}/verifiers/{verifierId}', 
+			'PUT', 
+			{ 'userId': userId,'verifierId': verifierId },
+			{  },
+			{  },
+			{  },
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']

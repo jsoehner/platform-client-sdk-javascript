@@ -1,187 +1,276 @@
----
-title: WorkforceManagementApi
----
+# WorkforceManagementApi
+
 # platformClient.WorkforceManagementApi
 
 All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-[**deleteWorkforcemanagementBusinessunit**](WorkforceManagementApi.html#deleteWorkforcemanagementBusinessunit) | **DELETE** /api/v2/workforcemanagement/businessunits/{businessUnitId} | Delete business unit
-[**deleteWorkforcemanagementBusinessunitActivitycode**](WorkforceManagementApi.html#deleteWorkforcemanagementBusinessunitActivitycode) | **DELETE** /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes/{activityCodeId} | Deletes an activity code
-[**deleteWorkforcemanagementBusinessunitPlanninggroup**](WorkforceManagementApi.html#deleteWorkforcemanagementBusinessunitPlanninggroup) | **DELETE** /api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups/{planningGroupId} | Deletes the planning group
-[**deleteWorkforcemanagementBusinessunitSchedulingRun**](WorkforceManagementApi.html#deleteWorkforcemanagementBusinessunitSchedulingRun) | **DELETE** /api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs/{runId} | Cancel a scheduling run
-[**deleteWorkforcemanagementBusinessunitServicegoaltemplate**](WorkforceManagementApi.html#deleteWorkforcemanagementBusinessunitServicegoaltemplate) | **DELETE** /api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates/{serviceGoalTemplateId} | Delete a service goal template
-[**deleteWorkforcemanagementBusinessunitWeekSchedule**](WorkforceManagementApi.html#deleteWorkforcemanagementBusinessunitWeekSchedule) | **DELETE** /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId} | Delete a schedule
-[**deleteWorkforcemanagementBusinessunitWeekShorttermforecast**](WorkforceManagementApi.html#deleteWorkforcemanagementBusinessunitWeekShorttermforecast) | **DELETE** /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId} | Delete a short term forecast
-[**deleteWorkforcemanagementCalendarUrlIcs**](WorkforceManagementApi.html#deleteWorkforcemanagementCalendarUrlIcs) | **DELETE** /api/v2/workforcemanagement/calendar/url/ics | Disable generated calendar link for the current user
-[**deleteWorkforcemanagementManagementunit**](WorkforceManagementApi.html#deleteWorkforcemanagementManagementunit) | **DELETE** /api/v2/workforcemanagement/managementunits/{managementUnitId} | Delete management unit
-[**deleteWorkforcemanagementManagementunitTimeofflimit**](WorkforceManagementApi.html#deleteWorkforcemanagementManagementunitTimeofflimit) | **DELETE** /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/{timeOffLimitId} | Deletes a time off limit object
-[**deleteWorkforcemanagementManagementunitTimeoffplan**](WorkforceManagementApi.html#deleteWorkforcemanagementManagementunitTimeoffplan) | **DELETE** /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans/{timeOffPlanId} | Deletes a time off plan
-[**deleteWorkforcemanagementManagementunitWorkplan**](WorkforceManagementApi.html#deleteWorkforcemanagementManagementunitWorkplan) | **DELETE** /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId} | Delete a work plan
-[**deleteWorkforcemanagementManagementunitWorkplanrotation**](WorkforceManagementApi.html#deleteWorkforcemanagementManagementunitWorkplanrotation) | **DELETE** /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations/{workPlanRotationId} | Delete a work plan rotation
-[**getWorkforcemanagementAdherence**](WorkforceManagementApi.html#getWorkforcemanagementAdherence) | **GET** /api/v2/workforcemanagement/adherence | Get a list of UserScheduleAdherence records for the requested users
-[**getWorkforcemanagementAdherenceExplanation**](WorkforceManagementApi.html#getWorkforcemanagementAdherenceExplanation) | **GET** /api/v2/workforcemanagement/adherence/explanations/{explanationId} | Get an adherence explanation for the current user
-[**getWorkforcemanagementAdherenceExplanationsJob**](WorkforceManagementApi.html#getWorkforcemanagementAdherenceExplanationsJob) | **GET** /api/v2/workforcemanagement/adherence/explanations/jobs/{jobId} | Query the status of an adherence explanation operation. Only the user who started the operation can query the status
-[**getWorkforcemanagementAdherenceHistoricalBulkJob**](WorkforceManagementApi.html#getWorkforcemanagementAdherenceHistoricalBulkJob) | **GET** /api/v2/workforcemanagement/adherence/historical/bulk/jobs/{jobId} | Request to fetch the status of the historical adherence bulk job. Only the user who started the operation can query the status
-[**getWorkforcemanagementAdherenceHistoricalJob**](WorkforceManagementApi.html#getWorkforcemanagementAdherenceHistoricalJob) | **GET** /api/v2/workforcemanagement/adherence/historical/jobs/{jobId} | Query the status of a historical adherence request operation. Only the user who started the operation can query the status
-[**getWorkforcemanagementAdhocmodelingjob**](WorkforceManagementApi.html#getWorkforcemanagementAdhocmodelingjob) | **GET** /api/v2/workforcemanagement/adhocmodelingjobs/{jobId} | Get status of the modeling job
-[**getWorkforcemanagementAgentAdherenceExplanation**](WorkforceManagementApi.html#getWorkforcemanagementAgentAdherenceExplanation) | **GET** /api/v2/workforcemanagement/agents/{agentId}/adherence/explanations/{explanationId} | Get an adherence explanation
-[**getWorkforcemanagementAgentManagementunit**](WorkforceManagementApi.html#getWorkforcemanagementAgentManagementunit) | **GET** /api/v2/workforcemanagement/agents/{agentId}/managementunit | Get the management unit to which the agent belongs
-[**getWorkforcemanagementAgentsMeManagementunit**](WorkforceManagementApi.html#getWorkforcemanagementAgentsMeManagementunit) | **GET** /api/v2/workforcemanagement/agents/me/managementunit | Get the management unit to which the currently logged in agent belongs
-[**getWorkforcemanagementBusinessunit**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunit) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId} | Get business unit
-[**getWorkforcemanagementBusinessunitActivitycode**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitActivitycode) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes/{activityCodeId} | Get an activity code
-[**getWorkforcemanagementBusinessunitActivitycodes**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitActivitycodes) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes | Get activity codes
-[**getWorkforcemanagementBusinessunitIntradayPlanninggroups**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitIntradayPlanninggroups) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/intraday/planninggroups | Get intraday planning groups for the given date
-[**getWorkforcemanagementBusinessunitManagementunits**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitManagementunits) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/managementunits | Get all authorized management units in the business unit
-[**getWorkforcemanagementBusinessunitPlanninggroup**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitPlanninggroup) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups/{planningGroupId} | Get a planning group
-[**getWorkforcemanagementBusinessunitPlanninggroups**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitPlanninggroups) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups | Gets list of planning groups
-[**getWorkforcemanagementBusinessunitSchedulingRun**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitSchedulingRun) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs/{runId} | Get a scheduling run
-[**getWorkforcemanagementBusinessunitSchedulingRunResult**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitSchedulingRunResult) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs/{runId}/result | Get the result of a rescheduling operation
-[**getWorkforcemanagementBusinessunitSchedulingRuns**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitSchedulingRuns) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs | Get the list of scheduling runs
-[**getWorkforcemanagementBusinessunitServicegoaltemplate**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitServicegoaltemplate) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates/{serviceGoalTemplateId} | Get a service goal template
-[**getWorkforcemanagementBusinessunitServicegoaltemplates**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitServicegoaltemplates) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates | Gets list of service goal templates
-[**getWorkforcemanagementBusinessunitWeekSchedule**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitWeekSchedule) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId} | Get the metadata for the schedule, describing which management units and agents are in the scheduleSchedule data can then be loaded with the query route
-[**getWorkforcemanagementBusinessunitWeekScheduleGenerationresults**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitWeekScheduleGenerationresults) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/generationresults | Get the generation results for a generated schedule
-[**getWorkforcemanagementBusinessunitWeekScheduleHeadcountforecast**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitWeekScheduleHeadcountforecast) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/headcountforecast | Get the headcount forecast by planning group for the schedule
-[**getWorkforcemanagementBusinessunitWeekScheduleHistoryAgent**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitWeekScheduleHistoryAgent) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/history/agents/{agentId} | Loads agent's schedule history.
-[**getWorkforcemanagementBusinessunitWeekSchedules**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitWeekSchedules) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules | Get the list of week schedules for the specified week
-[**getWorkforcemanagementBusinessunitWeekShorttermforecast**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitWeekShorttermforecast) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId} | Get a short term forecast
-[**getWorkforcemanagementBusinessunitWeekShorttermforecastData**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitWeekShorttermforecastData) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/data | Get the result of a short term forecast calculation
-[**getWorkforcemanagementBusinessunitWeekShorttermforecastGenerationresults**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitWeekShorttermforecastGenerationresults) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/generationresults | Gets the forecast generation results
-[**getWorkforcemanagementBusinessunitWeekShorttermforecastLongtermforecastdata**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitWeekShorttermforecastLongtermforecastdata) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/longtermforecastdata | Get the result of a long term forecast calculation
-[**getWorkforcemanagementBusinessunitWeekShorttermforecastPlanninggroups**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitWeekShorttermforecastPlanninggroups) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/planninggroups | Gets the forecast planning group snapshot
-[**getWorkforcemanagementBusinessunitWeekShorttermforecasts**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitWeekShorttermforecasts) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts | Get short term forecasts
-[**getWorkforcemanagementBusinessunits**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunits) | **GET** /api/v2/workforcemanagement/businessunits | Get business units
-[**getWorkforcemanagementBusinessunitsDivisionviews**](WorkforceManagementApi.html#getWorkforcemanagementBusinessunitsDivisionviews) | **GET** /api/v2/workforcemanagement/businessunits/divisionviews | Get business units across divisions
-[**getWorkforcemanagementCalendarDataIcs**](WorkforceManagementApi.html#getWorkforcemanagementCalendarDataIcs) | **GET** /api/v2/workforcemanagement/calendar/data/ics | Get ics formatted calendar based on shareable link
-[**getWorkforcemanagementCalendarUrlIcs**](WorkforceManagementApi.html#getWorkforcemanagementCalendarUrlIcs) | **GET** /api/v2/workforcemanagement/calendar/url/ics | Get existing calendar link for the current user
-[**getWorkforcemanagementHistoricaldataDeletejob**](WorkforceManagementApi.html#getWorkforcemanagementHistoricaldataDeletejob) | **GET** /api/v2/workforcemanagement/historicaldata/deletejob | Retrieves delete job status for historical data imports of the organization
-[**getWorkforcemanagementHistoricaldataImportstatus**](WorkforceManagementApi.html#getWorkforcemanagementHistoricaldataImportstatus) | **GET** /api/v2/workforcemanagement/historicaldata/importstatus | Retrieves status of the historical data imports of the organization
-[**getWorkforcemanagementIntegrationsHris**](WorkforceManagementApi.html#getWorkforcemanagementIntegrationsHris) | **GET** /api/v2/workforcemanagement/integrations/hris | Get integrations
-[**getWorkforcemanagementIntegrationsHrisTimeofftypesJob**](WorkforceManagementApi.html#getWorkforcemanagementIntegrationsHrisTimeofftypesJob) | **GET** /api/v2/workforcemanagement/integrations/hris/timeofftypes/jobs/{jobId} | Query the results of time off types job
-[**getWorkforcemanagementManagementunit**](WorkforceManagementApi.html#getWorkforcemanagementManagementunit) | **GET** /api/v2/workforcemanagement/managementunits/{managementUnitId} | Get management unit
-[**getWorkforcemanagementManagementunitActivitycodes**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitActivitycodes) | **GET** /api/v2/workforcemanagement/managementunits/{managementUnitId}/activitycodes | Deprecated: Instead use /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes. Get the list of activity codes
-[**getWorkforcemanagementManagementunitAdherence**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitAdherence) | **GET** /api/v2/workforcemanagement/managementunits/{managementUnitId}/adherence | Get a list of user schedule adherence records for the requested management unit
-[**getWorkforcemanagementManagementunitAgent**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitAgent) | **GET** /api/v2/workforcemanagement/managementunits/{managementUnitId}/agents/{agentId} | Get data for agent in the management unit
-[**getWorkforcemanagementManagementunitAgentShifttrades**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitAgentShifttrades) | **GET** /api/v2/workforcemanagement/managementunits/{managementUnitId}/agents/{agentId}/shifttrades | Gets all the shift trades for a given agent
-[**getWorkforcemanagementManagementunitShifttradesMatched**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitShifttradesMatched) | **GET** /api/v2/workforcemanagement/managementunits/{managementUnitId}/shifttrades/matched | Gets a summary of all shift trades in the matched state
-[**getWorkforcemanagementManagementunitShifttradesUsers**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitShifttradesUsers) | **GET** /api/v2/workforcemanagement/managementunits/{managementUnitId}/shifttrades/users | Gets list of users available for whom you can send direct shift trade requests
-[**getWorkforcemanagementManagementunitTimeofflimit**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitTimeofflimit) | **GET** /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/{timeOffLimitId} | Gets a time off limit object
-[**getWorkforcemanagementManagementunitTimeofflimits**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitTimeofflimits) | **GET** /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits | Gets a list of time off limit objects under management unit.
-[**getWorkforcemanagementManagementunitTimeoffplan**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitTimeoffplan) | **GET** /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans/{timeOffPlanId} | Gets a time off plan
-[**getWorkforcemanagementManagementunitTimeoffplans**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitTimeoffplans) | **GET** /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans | Gets a list of time off plans
-[**getWorkforcemanagementManagementunitUserTimeoffrequest**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitUserTimeoffrequest) | **GET** /api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/{timeOffRequestId} | Get a time off request
-[**getWorkforcemanagementManagementunitUserTimeoffrequestTimeofflimits**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitUserTimeoffrequestTimeofflimits) | **GET** /api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/{timeOffRequestId}/timeofflimits | Retrieves time off limit, allocated and waitlisted values according to specific time off request
-[**getWorkforcemanagementManagementunitUserTimeoffrequests**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitUserTimeoffrequests) | **GET** /api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests | Get a list of time off requests for a given user
-[**getWorkforcemanagementManagementunitUsers**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitUsers) | **GET** /api/v2/workforcemanagement/managementunits/{managementUnitId}/users | Get users in the management unit
-[**getWorkforcemanagementManagementunitWeekSchedule**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitWeekSchedule) | **GET** /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekId}/schedules/{scheduleId} | Deprecated.  Use the equivalent business unit resource instead. Get a week schedule
-[**getWorkforcemanagementManagementunitWeekSchedules**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitWeekSchedules) | **GET** /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekId}/schedules | Deprecated.  Use the equivalent business unit resource instead. Get the list of schedules in a week in management unit
-[**getWorkforcemanagementManagementunitWeekShifttrades**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitWeekShifttrades) | **GET** /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades | Gets all the shift trades for a given week
-[**getWorkforcemanagementManagementunitWorkplan**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitWorkplan) | **GET** /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId} | Get a work plan
-[**getWorkforcemanagementManagementunitWorkplanrotation**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitWorkplanrotation) | **GET** /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations/{workPlanRotationId} | Get a work plan rotation
-[**getWorkforcemanagementManagementunitWorkplanrotations**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitWorkplanrotations) | **GET** /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations | Get work plan rotations
-[**getWorkforcemanagementManagementunitWorkplans**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitWorkplans) | **GET** /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans | Get work plans
-[**getWorkforcemanagementManagementunits**](WorkforceManagementApi.html#getWorkforcemanagementManagementunits) | **GET** /api/v2/workforcemanagement/managementunits | Get management units
-[**getWorkforcemanagementManagementunitsDivisionviews**](WorkforceManagementApi.html#getWorkforcemanagementManagementunitsDivisionviews) | **GET** /api/v2/workforcemanagement/managementunits/divisionviews | Get management units across divisions
-[**getWorkforcemanagementNotifications**](WorkforceManagementApi.html#getWorkforcemanagementNotifications) | **GET** /api/v2/workforcemanagement/notifications | Get a list of notifications for the current user
-[**getWorkforcemanagementSchedulingjob**](WorkforceManagementApi.html#getWorkforcemanagementSchedulingjob) | **GET** /api/v2/workforcemanagement/schedulingjobs/{jobId} | Get status of the scheduling job
-[**getWorkforcemanagementShifttrades**](WorkforceManagementApi.html#getWorkforcemanagementShifttrades) | **GET** /api/v2/workforcemanagement/shifttrades | Gets all of my shift trades
-[**getWorkforcemanagementShrinkageJob**](WorkforceManagementApi.html#getWorkforcemanagementShrinkageJob) | **GET** /api/v2/workforcemanagement/shrinkage/jobs/{jobId} | Request to fetch the status of the historical shrinkage query
-[**getWorkforcemanagementTimeoffbalanceJob**](WorkforceManagementApi.html#getWorkforcemanagementTimeoffbalanceJob) | **GET** /api/v2/workforcemanagement/timeoffbalance/jobs/{jobId} | Query the results of time off types job
-[**getWorkforcemanagementTimeoffrequest**](WorkforceManagementApi.html#getWorkforcemanagementTimeoffrequest) | **GET** /api/v2/workforcemanagement/timeoffrequests/{timeOffRequestId} | Get a time off request for the current user
-[**getWorkforcemanagementTimeoffrequestWaitlistpositions**](WorkforceManagementApi.html#getWorkforcemanagementTimeoffrequestWaitlistpositions) | **GET** /api/v2/workforcemanagement/timeoffrequests/{timeOffRequestId}/waitlistpositions | Get the daily waitlist positions of a time off request for the current user
-[**getWorkforcemanagementTimeoffrequests**](WorkforceManagementApi.html#getWorkforcemanagementTimeoffrequests) | **GET** /api/v2/workforcemanagement/timeoffrequests | Get a list of time off requests for the current user
-[**patchWorkforcemanagementAgentAdherenceExplanation**](WorkforceManagementApi.html#patchWorkforcemanagementAgentAdherenceExplanation) | **PATCH** /api/v2/workforcemanagement/agents/{agentId}/adherence/explanations/{explanationId} | Update an adherence explanation
-[**patchWorkforcemanagementBusinessunit**](WorkforceManagementApi.html#patchWorkforcemanagementBusinessunit) | **PATCH** /api/v2/workforcemanagement/businessunits/{businessUnitId} | Update business unit
-[**patchWorkforcemanagementBusinessunitActivitycode**](WorkforceManagementApi.html#patchWorkforcemanagementBusinessunitActivitycode) | **PATCH** /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes/{activityCodeId} | Update an activity code
-[**patchWorkforcemanagementBusinessunitPlanninggroup**](WorkforceManagementApi.html#patchWorkforcemanagementBusinessunitPlanninggroup) | **PATCH** /api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups/{planningGroupId} | Updates the planning group
-[**patchWorkforcemanagementBusinessunitSchedulingRun**](WorkforceManagementApi.html#patchWorkforcemanagementBusinessunitSchedulingRun) | **PATCH** /api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs/{runId} | Mark a schedule run as applied
-[**patchWorkforcemanagementBusinessunitServicegoaltemplate**](WorkforceManagementApi.html#patchWorkforcemanagementBusinessunitServicegoaltemplate) | **PATCH** /api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates/{serviceGoalTemplateId} | Updates a service goal template
-[**patchWorkforcemanagementManagementunit**](WorkforceManagementApi.html#patchWorkforcemanagementManagementunit) | **PATCH** /api/v2/workforcemanagement/managementunits/{managementUnitId} | Update the requested management unit
-[**patchWorkforcemanagementManagementunitTimeofflimit**](WorkforceManagementApi.html#patchWorkforcemanagementManagementunitTimeofflimit) | **PATCH** /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/{timeOffLimitId} | Updates a time off limit object.
-[**patchWorkforcemanagementManagementunitTimeoffplan**](WorkforceManagementApi.html#patchWorkforcemanagementManagementunitTimeoffplan) | **PATCH** /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans/{timeOffPlanId} | Updates a time off plan
-[**patchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatus**](WorkforceManagementApi.html#patchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatus) | **PATCH** /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/{timeOffRequestId}/users/{userId}/integrationstatus | Set integration status for a time off request.
-[**patchWorkforcemanagementManagementunitUserTimeoffrequest**](WorkforceManagementApi.html#patchWorkforcemanagementManagementunitUserTimeoffrequest) | **PATCH** /api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/{timeOffRequestId} | Update a time off request
-[**patchWorkforcemanagementManagementunitWeekShifttrade**](WorkforceManagementApi.html#patchWorkforcemanagementManagementunitWeekShifttrade) | **PATCH** /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/{tradeId} | Updates a shift trade. This route can only be called by the initiating agent
-[**patchWorkforcemanagementManagementunitWorkplan**](WorkforceManagementApi.html#patchWorkforcemanagementManagementunitWorkplan) | **PATCH** /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId} | Update a work plan
-[**patchWorkforcemanagementManagementunitWorkplanrotation**](WorkforceManagementApi.html#patchWorkforcemanagementManagementunitWorkplanrotation) | **PATCH** /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations/{workPlanRotationId} | Update a work plan rotation
-[**patchWorkforcemanagementTimeoffrequest**](WorkforceManagementApi.html#patchWorkforcemanagementTimeoffrequest) | **PATCH** /api/v2/workforcemanagement/timeoffrequests/{timeOffRequestId} | Update a time off request for the current user
-[**postWorkforcemanagementAdherenceExplanations**](WorkforceManagementApi.html#postWorkforcemanagementAdherenceExplanations) | **POST** /api/v2/workforcemanagement/adherence/explanations | Submit an adherence explanation for the current user
-[**postWorkforcemanagementAdherenceExplanationsQuery**](WorkforceManagementApi.html#postWorkforcemanagementAdherenceExplanationsQuery) | **POST** /api/v2/workforcemanagement/adherence/explanations/query | Query adherence explanations for the current user
-[**postWorkforcemanagementAdherenceHistorical**](WorkforceManagementApi.html#postWorkforcemanagementAdherenceHistorical) | **POST** /api/v2/workforcemanagement/adherence/historical | Deprecated. Use bulk routes instead (/adherence/historical/bulk)
-[**postWorkforcemanagementAdherenceHistoricalBulk**](WorkforceManagementApi.html#postWorkforcemanagementAdherenceHistoricalBulk) | **POST** /api/v2/workforcemanagement/adherence/historical/bulk | Request a historical adherence report in bulk
-[**postWorkforcemanagementAgentAdherenceExplanations**](WorkforceManagementApi.html#postWorkforcemanagementAgentAdherenceExplanations) | **POST** /api/v2/workforcemanagement/agents/{agentId}/adherence/explanations | Add an adherence explanation for the requested user
-[**postWorkforcemanagementAgentAdherenceExplanationsQuery**](WorkforceManagementApi.html#postWorkforcemanagementAgentAdherenceExplanationsQuery) | **POST** /api/v2/workforcemanagement/agents/{agentId}/adherence/explanations/query | Query adherence explanations for the given agent across a specified range
-[**postWorkforcemanagementAgents**](WorkforceManagementApi.html#postWorkforcemanagementAgents) | **POST** /api/v2/workforcemanagement/agents | Move agents in and out of management unit
-[**postWorkforcemanagementAgentsIntegrationsHrisQuery**](WorkforceManagementApi.html#postWorkforcemanagementAgentsIntegrationsHrisQuery) | **POST** /api/v2/workforcemanagement/agents/integrations/hris/query | Query integrations for agents
-[**postWorkforcemanagementAgentsMePossibleworkshifts**](WorkforceManagementApi.html#postWorkforcemanagementAgentsMePossibleworkshifts) | **POST** /api/v2/workforcemanagement/agents/me/possibleworkshifts | Get agent possible work shifts for requested time frame
-[**postWorkforcemanagementAgentschedulesMine**](WorkforceManagementApi.html#postWorkforcemanagementAgentschedulesMine) | **POST** /api/v2/workforcemanagement/agentschedules/mine | Get published schedule for the current user
-[**postWorkforcemanagementBusinessunitActivitycodes**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitActivitycodes) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes | Create a new activity code
-[**postWorkforcemanagementBusinessunitAdherenceExplanationsQuery**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitAdherenceExplanationsQuery) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/explanations/query | Query adherence explanations across an entire business unit for the requested period
-[**postWorkforcemanagementBusinessunitAgentschedulesSearch**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitAgentschedulesSearch) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/agentschedules/search | Search published schedules
-[**postWorkforcemanagementBusinessunitIntraday**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitIntraday) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/intraday | Get intraday data for the given date for the requested planningGroupIds
-[**postWorkforcemanagementBusinessunitPlanninggroups**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitPlanninggroups) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups | Adds a new planning group
-[**postWorkforcemanagementBusinessunitServicegoaltemplates**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitServicegoaltemplates) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates | Adds a new service goal template
-[**postWorkforcemanagementBusinessunitWeekScheduleAgentschedulesQuery**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitWeekScheduleAgentschedulesQuery) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/agentschedules/query | Loads agent schedule data from the schedule. Used in combination with the metadata route
-[**postWorkforcemanagementBusinessunitWeekScheduleCopy**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitWeekScheduleCopy) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/copy | Copy a schedule
-[**postWorkforcemanagementBusinessunitWeekScheduleReschedule**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitWeekScheduleReschedule) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/reschedule | Start a rescheduling run
-[**postWorkforcemanagementBusinessunitWeekScheduleUpdate**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitWeekScheduleUpdate) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/update | Starts processing a schedule update
-[**postWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurl**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurl) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/update/uploadurl | Creates a signed upload URL for updating a schedule
-[**postWorkforcemanagementBusinessunitWeekSchedules**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitWeekSchedules) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules | Create a blank schedule
-[**postWorkforcemanagementBusinessunitWeekSchedulesGenerate**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitWeekSchedulesGenerate) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/generate | Generate a schedule
-[**postWorkforcemanagementBusinessunitWeekSchedulesImport**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitWeekSchedulesImport) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/import | Starts processing a schedule import
-[**postWorkforcemanagementBusinessunitWeekSchedulesImportUploadurl**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitWeekSchedulesImportUploadurl) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/import/uploadurl | Creates a signed upload URL for importing a schedule
-[**postWorkforcemanagementBusinessunitWeekShorttermforecastCopy**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitWeekShorttermforecastCopy) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/copy | Copy a short term forecast
-[**postWorkforcemanagementBusinessunitWeekShorttermforecastsGenerate**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitWeekShorttermforecastsGenerate) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/generate | Generate a short term forecast
-[**postWorkforcemanagementBusinessunitWeekShorttermforecastsImport**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitWeekShorttermforecastsImport) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/import | Starts importing the uploaded short term forecast
-[**postWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploadurl**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploadurl) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/import/uploadurl | Creates a signed upload URL for importing a short term forecast
-[**postWorkforcemanagementBusinessunits**](WorkforceManagementApi.html#postWorkforcemanagementBusinessunits) | **POST** /api/v2/workforcemanagement/businessunits | Add a new business unit
-[**postWorkforcemanagementCalendarUrlIcs**](WorkforceManagementApi.html#postWorkforcemanagementCalendarUrlIcs) | **POST** /api/v2/workforcemanagement/calendar/url/ics | Create a newly generated calendar link for the current user; if the current user has previously generated one, the generated link will be returned
-[**postWorkforcemanagementHistoricaldataDeletejob**](WorkforceManagementApi.html#postWorkforcemanagementHistoricaldataDeletejob) | **POST** /api/v2/workforcemanagement/historicaldata/deletejob | Delete the entries of the historical data imports in the organization
-[**postWorkforcemanagementHistoricaldataValidate**](WorkforceManagementApi.html#postWorkforcemanagementHistoricaldataValidate) | **POST** /api/v2/workforcemanagement/historicaldata/validate | Trigger validation process for historical import
-[**postWorkforcemanagementIntegrationsHriTimeofftypesJobs**](WorkforceManagementApi.html#postWorkforcemanagementIntegrationsHriTimeofftypesJobs) | **POST** /api/v2/workforcemanagement/integrations/hris/{hrisIntegrationId}/timeofftypes/jobs | Get list of time off types configured in integration
-[**postWorkforcemanagementManagementunitAgentschedulesSearch**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitAgentschedulesSearch) | **POST** /api/v2/workforcemanagement/managementunits/{managementUnitId}/agentschedules/search | Query published schedules for given given time range for set of users
-[**postWorkforcemanagementManagementunitHistoricaladherencequery**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitHistoricaladherencequery) | **POST** /api/v2/workforcemanagement/managementunits/{managementUnitId}/historicaladherencequery | Request a historical adherence report
-[**postWorkforcemanagementManagementunitMove**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitMove) | **POST** /api/v2/workforcemanagement/managementunits/{managementUnitId}/move | Move the requested management unit to a new business unit
-[**postWorkforcemanagementManagementunitSchedulesSearch**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitSchedulesSearch) | **POST** /api/v2/workforcemanagement/managementunits/{managementUnitId}/schedules/search | Query published schedules for given given time range for set of users
-[**postWorkforcemanagementManagementunitShrinkageJobs**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitShrinkageJobs) | **POST** /api/v2/workforcemanagement/managementunits/{managementUnitId}/shrinkage/jobs | Request a historical shrinkage report
-[**postWorkforcemanagementManagementunitTimeofflimits**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitTimeofflimits) | **POST** /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits | Creates a new time off limit object under management unit.
-[**postWorkforcemanagementManagementunitTimeofflimitsValuesQuery**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitTimeofflimitsValuesQuery) | **POST** /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/values/query | Retrieves time off limit related values based on a given set of filters.
-[**postWorkforcemanagementManagementunitTimeoffplans**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitTimeoffplans) | **POST** /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans | Creates a new time off plan
-[**postWorkforcemanagementManagementunitTimeoffrequests**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitTimeoffrequests) | **POST** /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests | Create a new time off request
-[**postWorkforcemanagementManagementunitTimeoffrequestsIntegrationstatusQuery**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitTimeoffrequestsIntegrationstatusQuery) | **POST** /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/integrationstatus/query | Retrieves integration statuses for a list of time off requests
-[**postWorkforcemanagementManagementunitTimeoffrequestsQuery**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitTimeoffrequestsQuery) | **POST** /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/query | Fetches time off requests matching the conditions specified in the request body
-[**postWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositionsQuery**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositionsQuery) | **POST** /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/waitlistpositions/query | Retrieves daily waitlist position for a list of time off requests
-[**postWorkforcemanagementManagementunitUserTimeoffbalanceJobs**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitUserTimeoffbalanceJobs) | **POST** /api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffbalance/jobs | Query time off balances for a given user for specified activity code and dates
-[**postWorkforcemanagementManagementunitUserTimeoffrequestTimeoffbalanceJobs**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitUserTimeoffrequestTimeoffbalanceJobs) | **POST** /api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/{timeOffRequestId}/timeoffbalance/jobs | Query time off balances for dates spanned by a given time off request
-[**postWorkforcemanagementManagementunitUserTimeoffrequestsEstimate**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitUserTimeoffrequestsEstimate) | **POST** /api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/estimate | Estimates available time off for an agent
-[**postWorkforcemanagementManagementunitWeekShifttradeMatch**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitWeekShifttradeMatch) | **POST** /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/{tradeId}/match | Matches a shift trade. This route can only be called by the receiving agent
-[**postWorkforcemanagementManagementunitWeekShifttrades**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitWeekShifttrades) | **POST** /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades | Adds a shift trade
-[**postWorkforcemanagementManagementunitWeekShifttradesSearch**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitWeekShifttradesSearch) | **POST** /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/search | Searches for potential shift trade matches for the current agent
-[**postWorkforcemanagementManagementunitWeekShifttradesStateBulk**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitWeekShifttradesStateBulk) | **POST** /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/state/bulk | Updates the state of a batch of shift trades
-[**postWorkforcemanagementManagementunitWorkplanCopy**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitWorkplanCopy) | **POST** /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId}/copy | Create a copy of work plan
-[**postWorkforcemanagementManagementunitWorkplanValidate**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitWorkplanValidate) | **POST** /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId}/validate | Validate Work Plan
-[**postWorkforcemanagementManagementunitWorkplanrotationCopy**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitWorkplanrotationCopy) | **POST** /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations/{workPlanRotationId}/copy | Create a copy of work plan rotation
-[**postWorkforcemanagementManagementunitWorkplanrotations**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitWorkplanrotations) | **POST** /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations | Create a new work plan rotation
-[**postWorkforcemanagementManagementunitWorkplans**](WorkforceManagementApi.html#postWorkforcemanagementManagementunitWorkplans) | **POST** /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans | Create a new work plan
-[**postWorkforcemanagementManagementunits**](WorkforceManagementApi.html#postWorkforcemanagementManagementunits) | **POST** /api/v2/workforcemanagement/managementunits | Add a management unit
-[**postWorkforcemanagementNotificationsUpdate**](WorkforceManagementApi.html#postWorkforcemanagementNotificationsUpdate) | **POST** /api/v2/workforcemanagement/notifications/update | Mark a list of notifications as read or unread
-[**postWorkforcemanagementSchedules**](WorkforceManagementApi.html#postWorkforcemanagementSchedules) | **POST** /api/v2/workforcemanagement/schedules | Get published schedule for the current user
-[**postWorkforcemanagementTeamAdherenceHistorical**](WorkforceManagementApi.html#postWorkforcemanagementTeamAdherenceHistorical) | **POST** /api/v2/workforcemanagement/teams/{teamId}/adherence/historical | Request a teams historical adherence report
-[**postWorkforcemanagementTeamShrinkageJobs**](WorkforceManagementApi.html#postWorkforcemanagementTeamShrinkageJobs) | **POST** /api/v2/workforcemanagement/teams/{teamId}/shrinkage/jobs | Request a historical shrinkage report
-[**postWorkforcemanagementTimeoffbalanceJobs**](WorkforceManagementApi.html#postWorkforcemanagementTimeoffbalanceJobs) | **POST** /api/v2/workforcemanagement/timeoffbalance/jobs | Query time off balances for the current user for specified activity code and dates
-[**postWorkforcemanagementTimeofflimitsAvailableQuery**](WorkforceManagementApi.html#postWorkforcemanagementTimeofflimitsAvailableQuery) | **POST** /api/v2/workforcemanagement/timeofflimits/available/query | Queries available time off for the current user
-[**postWorkforcemanagementTimeoffrequests**](WorkforceManagementApi.html#postWorkforcemanagementTimeoffrequests) | **POST** /api/v2/workforcemanagement/timeoffrequests | Create a time off request for the current user
-[**postWorkforcemanagementTimeoffrequestsEstimate**](WorkforceManagementApi.html#postWorkforcemanagementTimeoffrequestsEstimate) | **POST** /api/v2/workforcemanagement/timeoffrequests/estimate | Estimates available time off for current user
-[**postWorkforcemanagementTimeoffrequestsIntegrationstatusQuery**](WorkforceManagementApi.html#postWorkforcemanagementTimeoffrequestsIntegrationstatusQuery) | **POST** /api/v2/workforcemanagement/timeoffrequests/integrationstatus/query | Retrieves integration statuses for a list of current user time off requests
-[**putWorkforcemanagementAgentIntegrationsHris**](WorkforceManagementApi.html#putWorkforcemanagementAgentIntegrationsHris) | **PUT** /api/v2/workforcemanagement/agents/{agentId}/integrations/hris | Update integrations for agent
-[**putWorkforcemanagementManagementunitTimeofflimitValues**](WorkforceManagementApi.html#putWorkforcemanagementManagementunitTimeofflimitValues) | **PUT** /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/{timeOffLimitId}/values | Sets daily values for a date range of time off limit object
-{: class="table table-striped"}
+[**deleteWorkforcemanagementBusinessunit**](WorkforceManagementApi#deleteWorkforcemanagementBusinessunit) | **DELETE** /api/v2/workforcemanagement/businessunits/{businessUnitId} | Delete business unit
+[**deleteWorkforcemanagementBusinessunitActivitycode**](WorkforceManagementApi#deleteWorkforcemanagementBusinessunitActivitycode) | **DELETE** /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes/{activityCodeId} | Deletes an activity code
+[**deleteWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistory**](WorkforceManagementApi#deleteWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistory) | **DELETE** /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}/staffinggroupallocationshistory | Delete staffing group allocations history created for a capacity plan before the given date
+[**deleteWorkforcemanagementBusinessunitPlanninggroup**](WorkforceManagementApi#deleteWorkforcemanagementBusinessunitPlanninggroup) | **DELETE** /api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups/{planningGroupId} | Deletes the planning group
+[**deleteWorkforcemanagementBusinessunitSchedulingRun**](WorkforceManagementApi#deleteWorkforcemanagementBusinessunitSchedulingRun) | **DELETE** /api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs/{runId} | Cancel a scheduling run
+[**deleteWorkforcemanagementBusinessunitServicegoaltemplate**](WorkforceManagementApi#deleteWorkforcemanagementBusinessunitServicegoaltemplate) | **DELETE** /api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates/{serviceGoalTemplateId} | Delete a service goal template
+[**deleteWorkforcemanagementBusinessunitStaffinggroup**](WorkforceManagementApi#deleteWorkforcemanagementBusinessunitStaffinggroup) | **DELETE** /api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups/{staffingGroupId} | Deletes a staffing group
+[**deleteWorkforcemanagementBusinessunitTimeofflimit**](WorkforceManagementApi#deleteWorkforcemanagementBusinessunitTimeofflimit) | **DELETE** /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId} | Deletes a time-off limit object
+[**deleteWorkforcemanagementBusinessunitTimeoffplan**](WorkforceManagementApi#deleteWorkforcemanagementBusinessunitTimeoffplan) | **DELETE** /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans/{timeOffPlanId} | Deletes a time-off plan
+[**deleteWorkforcemanagementBusinessunitWeekSchedule**](WorkforceManagementApi#deleteWorkforcemanagementBusinessunitWeekSchedule) | **DELETE** /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId} | Delete a schedule
+[**deleteWorkforcemanagementBusinessunitWeekShorttermforecast**](WorkforceManagementApi#deleteWorkforcemanagementBusinessunitWeekShorttermforecast) | **DELETE** /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId} | Delete a short term forecast
+[**deleteWorkforcemanagementBusinessunitWorkplanbid**](WorkforceManagementApi#deleteWorkforcemanagementBusinessunitWorkplanbid) | **DELETE** /api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId} | Delete a work plan bid
+[**deleteWorkforcemanagementBusinessunitWorkplanbidGroup**](WorkforceManagementApi#deleteWorkforcemanagementBusinessunitWorkplanbidGroup) | **DELETE** /api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}/groups/{bidGroupId} | Delete a bid group by bid group Id
+[**deleteWorkforcemanagementCalendarUrlIcs**](WorkforceManagementApi#deleteWorkforcemanagementCalendarUrlIcs) | **DELETE** /api/v2/workforcemanagement/calendar/url/ics | Disable generated calendar link for the current user
+[**deleteWorkforcemanagementManagementunit**](WorkforceManagementApi#deleteWorkforcemanagementManagementunit) | **DELETE** /api/v2/workforcemanagement/managementunits/{managementUnitId} | Delete management unit
+[**deleteWorkforcemanagementManagementunitTimeofflimit**](WorkforceManagementApi#deleteWorkforcemanagementManagementunitTimeofflimit) | **DELETE** /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/{timeOffLimitId} | Deletes a time off limit object
+[**deleteWorkforcemanagementManagementunitTimeoffplan**](WorkforceManagementApi#deleteWorkforcemanagementManagementunitTimeoffplan) | **DELETE** /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans/{timeOffPlanId} | Deletes a time off plan
+[**deleteWorkforcemanagementManagementunitWorkplan**](WorkforceManagementApi#deleteWorkforcemanagementManagementunitWorkplan) | **DELETE** /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId} | Delete a work plan
+[**deleteWorkforcemanagementManagementunitWorkplanrotation**](WorkforceManagementApi#deleteWorkforcemanagementManagementunitWorkplanrotation) | **DELETE** /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations/{workPlanRotationId} | Delete a work plan rotation
+[**getWorkforcemanagementAdherence**](WorkforceManagementApi#getWorkforcemanagementAdherence) | **GET** /api/v2/workforcemanagement/adherence | Get a list of UserScheduleAdherence records for the requested users
+[**getWorkforcemanagementAdherenceExplanation**](WorkforceManagementApi#getWorkforcemanagementAdherenceExplanation) | **GET** /api/v2/workforcemanagement/adherence/explanations/{explanationId} | Get an adherence explanation for the current user
+[**getWorkforcemanagementAdherenceExplanationsJob**](WorkforceManagementApi#getWorkforcemanagementAdherenceExplanationsJob) | **GET** /api/v2/workforcemanagement/adherence/explanations/jobs/{jobId} | Query the status of an adherence explanation operation. Only the user who started the operation can query the status
+[**getWorkforcemanagementAdherenceHistoricalBulkJob**](WorkforceManagementApi#getWorkforcemanagementAdherenceHistoricalBulkJob) | **GET** /api/v2/workforcemanagement/adherence/historical/bulk/jobs/{jobId} | Request to fetch the status of the historical adherence bulk job. Only the user who started the operation can query the status
+[**getWorkforcemanagementAdherenceHistoricalJob**](WorkforceManagementApi#getWorkforcemanagementAdherenceHistoricalJob) | **GET** /api/v2/workforcemanagement/adherence/historical/jobs/{jobId} | Query the status of a historical adherence request operation. Only the user who started the operation can query the status
+[**getWorkforcemanagementAgentAdherenceExplanation**](WorkforceManagementApi#getWorkforcemanagementAgentAdherenceExplanation) | **GET** /api/v2/workforcemanagement/agents/{agentId}/adherence/explanations/{explanationId} | Get an adherence explanation
+[**getWorkforcemanagementAgentManagementunit**](WorkforceManagementApi#getWorkforcemanagementAgentManagementunit) | **GET** /api/v2/workforcemanagement/agents/{agentId}/managementunit | Get the management unit to which the agent belongs
+[**getWorkforcemanagementAgentsMeManagementunit**](WorkforceManagementApi#getWorkforcemanagementAgentsMeManagementunit) | **GET** /api/v2/workforcemanagement/agents/me/managementunit | Get the management unit to which the currently logged in agent belongs
+[**getWorkforcemanagementAlternativeshiftsOffersJob**](WorkforceManagementApi#getWorkforcemanagementAlternativeshiftsOffersJob) | **GET** /api/v2/workforcemanagement/alternativeshifts/offers/jobs/{jobId} | Query the status of an alternative shift offers operation. Only the user who started the operation can query the status
+[**getWorkforcemanagementAlternativeshiftsOffersSearchJob**](WorkforceManagementApi#getWorkforcemanagementAlternativeshiftsOffersSearchJob) | **GET** /api/v2/workforcemanagement/alternativeshifts/offers/search/jobs/{jobId} | Query the status of an alternative shift search offers operation. Only the user who started the operation can query the status
+[**getWorkforcemanagementAlternativeshiftsSettings**](WorkforceManagementApi#getWorkforcemanagementAlternativeshiftsSettings) | **GET** /api/v2/workforcemanagement/alternativeshifts/settings | Get alternative shifts settings from the current logged in agent’s business unit
+[**getWorkforcemanagementAlternativeshiftsTrade**](WorkforceManagementApi#getWorkforcemanagementAlternativeshiftsTrade) | **GET** /api/v2/workforcemanagement/alternativeshifts/trades/{tradeId} | Get my alternative shift trade by trade ID
+[**getWorkforcemanagementAlternativeshiftsTrades**](WorkforceManagementApi#getWorkforcemanagementAlternativeshiftsTrades) | **GET** /api/v2/workforcemanagement/alternativeshifts/trades | Get a list of my alternative shifts trades
+[**getWorkforcemanagementAlternativeshiftsTradesJob**](WorkforceManagementApi#getWorkforcemanagementAlternativeshiftsTradesJob) | **GET** /api/v2/workforcemanagement/alternativeshifts/trades/jobs/{jobId} | Query the status of an alternative shift trades operation. Only the user who started the operation can query the status
+[**getWorkforcemanagementAlternativeshiftsTradesStateJob**](WorkforceManagementApi#getWorkforcemanagementAlternativeshiftsTradesStateJob) | **GET** /api/v2/workforcemanagement/alternativeshifts/trades/state/jobs/{jobId} | Query the status of an alternative shift trade state operation. Only the user who started the operation can query the status
+[**getWorkforcemanagementBusinessunit**](WorkforceManagementApi#getWorkforcemanagementBusinessunit) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId} | Get business unit
+[**getWorkforcemanagementBusinessunitActivitycode**](WorkforceManagementApi#getWorkforcemanagementBusinessunitActivitycode) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes/{activityCodeId} | Get an activity code
+[**getWorkforcemanagementBusinessunitActivitycodes**](WorkforceManagementApi#getWorkforcemanagementBusinessunitActivitycodes) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes | Get activity codes
+[**getWorkforcemanagementBusinessunitActivityplan**](WorkforceManagementApi#getWorkforcemanagementBusinessunitActivityplan) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId} | Get an activity plan
+[**getWorkforcemanagementBusinessunitActivityplanRunsJob**](WorkforceManagementApi#getWorkforcemanagementBusinessunitActivityplanRunsJob) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/runs/jobs/{jobId} | Gets an activity plan run job
+[**getWorkforcemanagementBusinessunitActivityplans**](WorkforceManagementApi#getWorkforcemanagementBusinessunitActivityplans) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans | Get activity plans
+[**getWorkforcemanagementBusinessunitActivityplansJobs**](WorkforceManagementApi#getWorkforcemanagementBusinessunitActivityplansJobs) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/jobs | Gets the latest job for all activity plans in the business unit
+[**getWorkforcemanagementBusinessunitAlternativeshiftsSettings**](WorkforceManagementApi#getWorkforcemanagementBusinessunitAlternativeshiftsSettings) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/alternativeshifts/settings | Get alternative shifts settings for a business unit
+[**getWorkforcemanagementBusinessunitAlternativeshiftsTrade**](WorkforceManagementApi#getWorkforcemanagementBusinessunitAlternativeshiftsTrade) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/alternativeshifts/trades/{tradeId} | Get an alternative shifts trade in a business unit for a given trade ID
+[**getWorkforcemanagementBusinessunitAlternativeshiftsTradesSearchJob**](WorkforceManagementApi#getWorkforcemanagementBusinessunitAlternativeshiftsTradesSearchJob) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/alternativeshifts/trades/search/jobs/{jobId} | Query the status of an alternative shift search trade operation. Only the user who started the operation can query the status
+[**getWorkforcemanagementBusinessunitCapacityplan**](WorkforceManagementApi#getWorkforcemanagementBusinessunitCapacityplan) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId} | Get a capacity plan
+[**getWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations**](WorkforceManagementApi#getWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}/staffinggroupallocations | Get a capacity plan's staffing group allocations
+[**getWorkforcemanagementBusinessunitCapacityplanStaffingrequirements**](WorkforceManagementApi#getWorkforcemanagementBusinessunitCapacityplanStaffingrequirements) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}/staffingrequirements | Get a capacity plan's staffing requirements
+[**getWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecast**](WorkforceManagementApi#getWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecast) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplanning/longtermrequirements/automaticbestmethod/weeks/{weekDateId}/forecasts/{forecastId} | Get the latest long term staffing requirements for a business unit
+[**getWorkforcemanagementBusinessunitCapacityplans**](WorkforceManagementApi#getWorkforcemanagementBusinessunitCapacityplans) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans | Get list of capacity plans for a business unit
+[**getWorkforcemanagementBusinessunitIntradayPlanninggroups**](WorkforceManagementApi#getWorkforcemanagementBusinessunitIntradayPlanninggroups) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/intraday/planninggroups | Get intraday planning groups for the given date
+[**getWorkforcemanagementBusinessunitMainforecastContinuousforecastSession**](WorkforceManagementApi#getWorkforcemanagementBusinessunitMainforecastContinuousforecastSession) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/mainforecast/continuousforecast/session | Get the latest session for the business unit ID
+[**getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionId**](WorkforceManagementApi#getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionId) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/mainforecast/continuousforecast/session/{sessionId} | Get the session details for the session ID
+[**getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdSnapshotSnapshotId**](WorkforceManagementApi#getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdSnapshotSnapshotId) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/mainforecast/continuousforecast/session/{sessionId}/snapshot/{snapshotId} | Get the snapshot details for the snapshot ID
+[**getWorkforcemanagementBusinessunitManagementunits**](WorkforceManagementApi#getWorkforcemanagementBusinessunitManagementunits) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/managementunits | Get all authorized management units in the business unit
+[**getWorkforcemanagementBusinessunitPlanninggroup**](WorkforceManagementApi#getWorkforcemanagementBusinessunitPlanninggroup) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups/{planningGroupId} | Get a planning group
+[**getWorkforcemanagementBusinessunitPlanninggroups**](WorkforceManagementApi#getWorkforcemanagementBusinessunitPlanninggroups) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups | Gets list of planning groups
+[**getWorkforcemanagementBusinessunitSchedulingRun**](WorkforceManagementApi#getWorkforcemanagementBusinessunitSchedulingRun) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs/{runId} | Get a scheduling run
+[**getWorkforcemanagementBusinessunitSchedulingRunResult**](WorkforceManagementApi#getWorkforcemanagementBusinessunitSchedulingRunResult) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs/{runId}/result | Get the result of a rescheduling operation
+[**getWorkforcemanagementBusinessunitSchedulingRuns**](WorkforceManagementApi#getWorkforcemanagementBusinessunitSchedulingRuns) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs | Get the list of scheduling runs
+[**getWorkforcemanagementBusinessunitServicegoaltemplate**](WorkforceManagementApi#getWorkforcemanagementBusinessunitServicegoaltemplate) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates/{serviceGoalTemplateId} | Get a service goal template
+[**getWorkforcemanagementBusinessunitServicegoaltemplates**](WorkforceManagementApi#getWorkforcemanagementBusinessunitServicegoaltemplates) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates | Gets list of service goal templates
+[**getWorkforcemanagementBusinessunitStaffinggroup**](WorkforceManagementApi#getWorkforcemanagementBusinessunitStaffinggroup) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups/{staffingGroupId} | Gets a staffing group
+[**getWorkforcemanagementBusinessunitStaffinggroups**](WorkforceManagementApi#getWorkforcemanagementBusinessunitStaffinggroups) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups | Gets a list of staffing groups
+[**getWorkforcemanagementBusinessunitTimeofflimit**](WorkforceManagementApi#getWorkforcemanagementBusinessunitTimeofflimit) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId} | Gets a time-off limit object
+[**getWorkforcemanagementBusinessunitTimeofflimits**](WorkforceManagementApi#getWorkforcemanagementBusinessunitTimeofflimits) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits | Gets a list of time-off limit objects
+[**getWorkforcemanagementBusinessunitTimeoffplan**](WorkforceManagementApi#getWorkforcemanagementBusinessunitTimeoffplan) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans/{timeOffPlanId} | Gets a time-off plan
+[**getWorkforcemanagementBusinessunitTimeoffplans**](WorkforceManagementApi#getWorkforcemanagementBusinessunitTimeoffplans) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans | Gets a list of time-off plans
+[**getWorkforcemanagementBusinessunitWeekSchedule**](WorkforceManagementApi#getWorkforcemanagementBusinessunitWeekSchedule) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId} | Get the metadata for the schedule, describing which management units and agents are in the scheduleSchedule data can then be loaded with the query route
+[**getWorkforcemanagementBusinessunitWeekScheduleGenerationresults**](WorkforceManagementApi#getWorkforcemanagementBusinessunitWeekScheduleGenerationresults) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/generationresults | Get the generation results for a generated schedule
+[**getWorkforcemanagementBusinessunitWeekScheduleHeadcountforecast**](WorkforceManagementApi#getWorkforcemanagementBusinessunitWeekScheduleHeadcountforecast) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/headcountforecast | Get the headcount forecast by planning group for the schedule
+[**getWorkforcemanagementBusinessunitWeekScheduleHistoryAgent**](WorkforceManagementApi#getWorkforcemanagementBusinessunitWeekScheduleHistoryAgent) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/history/agents/{agentId} | Loads agent's schedule history.
+[**getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictions**](WorkforceManagementApi#getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictions) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/performancepredictions | Get the performance prediction for the associated schedule
+[**getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculation**](WorkforceManagementApi#getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculation) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/performancepredictions/recalculations/{recalculationId} | Get recalculated performance prediction result
+[**getWorkforcemanagementBusinessunitWeekSchedules**](WorkforceManagementApi#getWorkforcemanagementBusinessunitWeekSchedules) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules | Get the list of week schedules for the specified week
+[**getWorkforcemanagementBusinessunitWeekShorttermforecast**](WorkforceManagementApi#getWorkforcemanagementBusinessunitWeekShorttermforecast) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId} | Get a short term forecast
+[**getWorkforcemanagementBusinessunitWeekShorttermforecastData**](WorkforceManagementApi#getWorkforcemanagementBusinessunitWeekShorttermforecastData) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/data | Get the result of a short term forecast calculation
+[**getWorkforcemanagementBusinessunitWeekShorttermforecastGenerationresults**](WorkforceManagementApi#getWorkforcemanagementBusinessunitWeekShorttermforecastGenerationresults) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/generationresults | Gets the forecast generation results
+[**getWorkforcemanagementBusinessunitWeekShorttermforecastLongtermforecastdata**](WorkforceManagementApi#getWorkforcemanagementBusinessunitWeekShorttermforecastLongtermforecastdata) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/longtermforecastdata | Get the result of a long term forecast calculation
+[**getWorkforcemanagementBusinessunitWeekShorttermforecastPlanninggroups**](WorkforceManagementApi#getWorkforcemanagementBusinessunitWeekShorttermforecastPlanninggroups) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/planninggroups | Gets the forecast planning group snapshot
+[**getWorkforcemanagementBusinessunitWeekShorttermforecastStaffingrequirement**](WorkforceManagementApi#getWorkforcemanagementBusinessunitWeekShorttermforecastStaffingrequirement) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/staffingrequirement | Get the staffing requirement by planning group for a forecast
+[**getWorkforcemanagementBusinessunitWeekShorttermforecasts**](WorkforceManagementApi#getWorkforcemanagementBusinessunitWeekShorttermforecasts) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts | Get short term forecasts
+[**getWorkforcemanagementBusinessunitWorkplanbid**](WorkforceManagementApi#getWorkforcemanagementBusinessunitWorkplanbid) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId} | Get a work plan bid
+[**getWorkforcemanagementBusinessunitWorkplanbidGroup**](WorkforceManagementApi#getWorkforcemanagementBusinessunitWorkplanbidGroup) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}/groups/{bidGroupId} | Get a bid group by bid group Id
+[**getWorkforcemanagementBusinessunitWorkplanbidGroupPreferences**](WorkforceManagementApi#getWorkforcemanagementBusinessunitWorkplanbidGroupPreferences) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}/groups/{bidGroupId}/preferences | Gets the work plan preferences of all the agents in the work plan bid group
+[**getWorkforcemanagementBusinessunitWorkplanbidGroupsSummary**](WorkforceManagementApi#getWorkforcemanagementBusinessunitWorkplanbidGroupsSummary) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}/groups/summary | Get summary of bid groups that belong to a work plan bid
+[**getWorkforcemanagementBusinessunitWorkplanbids**](WorkforceManagementApi#getWorkforcemanagementBusinessunitWorkplanbids) | **GET** /api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids | Get list of work plan bids
+[**getWorkforcemanagementBusinessunits**](WorkforceManagementApi#getWorkforcemanagementBusinessunits) | **GET** /api/v2/workforcemanagement/businessunits | Get business units
+[**getWorkforcemanagementBusinessunitsDivisionviews**](WorkforceManagementApi#getWorkforcemanagementBusinessunitsDivisionviews) | **GET** /api/v2/workforcemanagement/businessunits/divisionviews | Get business units across divisions
+[**getWorkforcemanagementCalendarDataIcs**](WorkforceManagementApi#getWorkforcemanagementCalendarDataIcs) | **GET** /api/v2/workforcemanagement/calendar/data/ics | Get ics formatted calendar based on shareable link
+[**getWorkforcemanagementCalendarUrlIcs**](WorkforceManagementApi#getWorkforcemanagementCalendarUrlIcs) | **GET** /api/v2/workforcemanagement/calendar/url/ics | Get existing calendar link for the current user
+[**getWorkforcemanagementHistoricaldataBulkRemoveJob**](WorkforceManagementApi#getWorkforcemanagementHistoricaldataBulkRemoveJob) | **GET** /api/v2/workforcemanagement/historicaldata/bulk/remove/jobs/{jobId} | Retrieves delete job status for historical data imports associated with the job id
+[**getWorkforcemanagementHistoricaldataBulkRemoveJobs**](WorkforceManagementApi#getWorkforcemanagementHistoricaldataBulkRemoveJobs) | **GET** /api/v2/workforcemanagement/historicaldata/bulk/remove/jobs | Retrieves all delete job status for historical data
+[**getWorkforcemanagementHistoricaldataImportstatus**](WorkforceManagementApi#getWorkforcemanagementHistoricaldataImportstatus) | **GET** /api/v2/workforcemanagement/historicaldata/importstatus | Retrieves status of the historical data imports of the organization
+[**getWorkforcemanagementHistoricaldataImportstatusJobId**](WorkforceManagementApi#getWorkforcemanagementHistoricaldataImportstatusJobId) | **GET** /api/v2/workforcemanagement/historicaldata/importstatus/{jobId} | Retrieves status of the historical data imports associated with job id
+[**getWorkforcemanagementIntegrationsHris**](WorkforceManagementApi#getWorkforcemanagementIntegrationsHris) | **GET** /api/v2/workforcemanagement/integrations/hris | Get integrations
+[**getWorkforcemanagementIntegrationsHrisTimeofftypesJob**](WorkforceManagementApi#getWorkforcemanagementIntegrationsHrisTimeofftypesJob) | **GET** /api/v2/workforcemanagement/integrations/hris/timeofftypes/jobs/{jobId} | Query the results of time off types job
+[**getWorkforcemanagementManagementunit**](WorkforceManagementApi#getWorkforcemanagementManagementunit) | **GET** /api/v2/workforcemanagement/managementunits/{managementUnitId} | Get management unit
+[**getWorkforcemanagementManagementunitActivitycodes**](WorkforceManagementApi#getWorkforcemanagementManagementunitActivitycodes) | **GET** /api/v2/workforcemanagement/managementunits/{managementUnitId}/activitycodes | Deprecated: Instead use /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes. Get the list of activity codes
+[**getWorkforcemanagementManagementunitAdherence**](WorkforceManagementApi#getWorkforcemanagementManagementunitAdherence) | **GET** /api/v2/workforcemanagement/managementunits/{managementUnitId}/adherence | Get a list of user schedule adherence records for the requested management unit
+[**getWorkforcemanagementManagementunitAgent**](WorkforceManagementApi#getWorkforcemanagementManagementunitAgent) | **GET** /api/v2/workforcemanagement/managementunits/{managementUnitId}/agents/{agentId} | Get data for agent in the management unit
+[**getWorkforcemanagementManagementunitAgentShifttrades**](WorkforceManagementApi#getWorkforcemanagementManagementunitAgentShifttrades) | **GET** /api/v2/workforcemanagement/managementunits/{managementUnitId}/agents/{agentId}/shifttrades | Gets all the shift trades for a given agent
+[**getWorkforcemanagementManagementunitShifttradesMatched**](WorkforceManagementApi#getWorkforcemanagementManagementunitShifttradesMatched) | **GET** /api/v2/workforcemanagement/managementunits/{managementUnitId}/shifttrades/matched | Gets a summary of all shift trades in the matched state
+[**getWorkforcemanagementManagementunitShifttradesUsers**](WorkforceManagementApi#getWorkforcemanagementManagementunitShifttradesUsers) | **GET** /api/v2/workforcemanagement/managementunits/{managementUnitId}/shifttrades/users | Gets list of users available for whom you can send direct shift trade requests
+[**getWorkforcemanagementManagementunitTimeofflimit**](WorkforceManagementApi#getWorkforcemanagementManagementunitTimeofflimit) | **GET** /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/{timeOffLimitId} | Gets a time off limit object
+[**getWorkforcemanagementManagementunitTimeofflimits**](WorkforceManagementApi#getWorkforcemanagementManagementunitTimeofflimits) | **GET** /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits | Gets a list of time off limit objects under management unit.
+[**getWorkforcemanagementManagementunitTimeoffplan**](WorkforceManagementApi#getWorkforcemanagementManagementunitTimeoffplan) | **GET** /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans/{timeOffPlanId} | Gets a time off plan
+[**getWorkforcemanagementManagementunitTimeoffplans**](WorkforceManagementApi#getWorkforcemanagementManagementunitTimeoffplans) | **GET** /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans | Gets a list of time off plans
+[**getWorkforcemanagementManagementunitUserTimeoffrequest**](WorkforceManagementApi#getWorkforcemanagementManagementunitUserTimeoffrequest) | **GET** /api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/{timeOffRequestId} | Get a time off request
+[**getWorkforcemanagementManagementunitUserTimeoffrequestTimeofflimits**](WorkforceManagementApi#getWorkforcemanagementManagementunitUserTimeoffrequestTimeofflimits) | **GET** /api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/{timeOffRequestId}/timeofflimits | Retrieves time off limit, allocated and waitlisted values according to specific time off request
+[**getWorkforcemanagementManagementunitUserTimeoffrequests**](WorkforceManagementApi#getWorkforcemanagementManagementunitUserTimeoffrequests) | **GET** /api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests | Get a list of time off requests for a given user
+[**getWorkforcemanagementManagementunitUsers**](WorkforceManagementApi#getWorkforcemanagementManagementunitUsers) | **GET** /api/v2/workforcemanagement/managementunits/{managementUnitId}/users | Get users in the management unit
+[**getWorkforcemanagementManagementunitWeekSchedule**](WorkforceManagementApi#getWorkforcemanagementManagementunitWeekSchedule) | **GET** /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekId}/schedules/{scheduleId} | Deprecated.  Use the equivalent business unit resource instead. Get a week schedule
+[**getWorkforcemanagementManagementunitWeekSchedules**](WorkforceManagementApi#getWorkforcemanagementManagementunitWeekSchedules) | **GET** /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekId}/schedules | Deprecated.  Use the equivalent business unit resource instead. Get the list of schedules in a week in management unit
+[**getWorkforcemanagementManagementunitWeekShifttrades**](WorkforceManagementApi#getWorkforcemanagementManagementunitWeekShifttrades) | **GET** /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades | Gets all the shift trades for a given week
+[**getWorkforcemanagementManagementunitWorkplan**](WorkforceManagementApi#getWorkforcemanagementManagementunitWorkplan) | **GET** /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId} | Get a work plan
+[**getWorkforcemanagementManagementunitWorkplanrotation**](WorkforceManagementApi#getWorkforcemanagementManagementunitWorkplanrotation) | **GET** /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations/{workPlanRotationId} | Get a work plan rotation
+[**getWorkforcemanagementManagementunitWorkplanrotations**](WorkforceManagementApi#getWorkforcemanagementManagementunitWorkplanrotations) | **GET** /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations | Get work plan rotations
+[**getWorkforcemanagementManagementunitWorkplans**](WorkforceManagementApi#getWorkforcemanagementManagementunitWorkplans) | **GET** /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans | Get work plans
+[**getWorkforcemanagementManagementunits**](WorkforceManagementApi#getWorkforcemanagementManagementunits) | **GET** /api/v2/workforcemanagement/managementunits | Get management units
+[**getWorkforcemanagementManagementunitsDivisionviews**](WorkforceManagementApi#getWorkforcemanagementManagementunitsDivisionviews) | **GET** /api/v2/workforcemanagement/managementunits/divisionviews | Get management units across divisions
+[**getWorkforcemanagementNotifications**](WorkforceManagementApi#getWorkforcemanagementNotifications) | **GET** /api/v2/workforcemanagement/notifications | Get a list of notifications for the current user
+[**getWorkforcemanagementSchedulingjob**](WorkforceManagementApi#getWorkforcemanagementSchedulingjob) | **GET** /api/v2/workforcemanagement/schedulingjobs/{jobId} | Get status of the scheduling job
+[**getWorkforcemanagementShifttrades**](WorkforceManagementApi#getWorkforcemanagementShifttrades) | **GET** /api/v2/workforcemanagement/shifttrades | Gets all of my shift trades
+[**getWorkforcemanagementShrinkageJob**](WorkforceManagementApi#getWorkforcemanagementShrinkageJob) | **GET** /api/v2/workforcemanagement/shrinkage/jobs/{jobId} | Request to fetch the status of the historical shrinkage query
+[**getWorkforcemanagementTeamAdherence**](WorkforceManagementApi#getWorkforcemanagementTeamAdherence) | **GET** /api/v2/workforcemanagement/teams/{teamId}/adherence | Get a list of user schedule adherence records for the requested team
+[**getWorkforcemanagementTimeoffbalanceJob**](WorkforceManagementApi#getWorkforcemanagementTimeoffbalanceJob) | **GET** /api/v2/workforcemanagement/timeoffbalance/jobs/{jobId} | Query the results of time off types job
+[**getWorkforcemanagementTimeoffrequest**](WorkforceManagementApi#getWorkforcemanagementTimeoffrequest) | **GET** /api/v2/workforcemanagement/timeoffrequests/{timeOffRequestId} | Get a time off request for the current user
+[**getWorkforcemanagementTimeoffrequestWaitlistpositions**](WorkforceManagementApi#getWorkforcemanagementTimeoffrequestWaitlistpositions) | **GET** /api/v2/workforcemanagement/timeoffrequests/{timeOffRequestId}/waitlistpositions | Get the daily waitlist positions of a time off request for the current user
+[**getWorkforcemanagementTimeoffrequests**](WorkforceManagementApi#getWorkforcemanagementTimeoffrequests) | **GET** /api/v2/workforcemanagement/timeoffrequests | Get a list of time off requests for the current user
+[**getWorkforcemanagementUserWorkplanbidranks**](WorkforceManagementApi#getWorkforcemanagementUserWorkplanbidranks) | **GET** /api/v2/workforcemanagement/users/{userId}/workplanbidranks | Get work plan bid ranks for a user
+[**getWorkforcemanagementWorkplanbidPreferences**](WorkforceManagementApi#getWorkforcemanagementWorkplanbidPreferences) | **GET** /api/v2/workforcemanagement/workplanbids/{bidId}/preferences | Gets an agent's work plan bidding preference
+[**getWorkforcemanagementWorkplanbidWorkplans**](WorkforceManagementApi#getWorkforcemanagementWorkplanbidWorkplans) | **GET** /api/v2/workforcemanagement/workplanbids/{bidId}/workplans | Gets an agent's work plans for a bid
+[**getWorkforcemanagementWorkplanbids**](WorkforceManagementApi#getWorkforcemanagementWorkplanbids) | **GET** /api/v2/workforcemanagement/workplanbids | Gets the list of work plan bids that belong to an agent
+[**patchWorkforcemanagementAgentAdherenceExplanation**](WorkforceManagementApi#patchWorkforcemanagementAgentAdherenceExplanation) | **PATCH** /api/v2/workforcemanagement/agents/{agentId}/adherence/explanations/{explanationId} | Update an adherence explanation
+[**patchWorkforcemanagementAlternativeshiftsTrade**](WorkforceManagementApi#patchWorkforcemanagementAlternativeshiftsTrade) | **PATCH** /api/v2/workforcemanagement/alternativeshifts/trades/{tradeId} | Update my alternative shifts trade by trade ID
+[**patchWorkforcemanagementAlternativeshiftsTradesStateJobs**](WorkforceManagementApi#patchWorkforcemanagementAlternativeshiftsTradesStateJobs) | **PATCH** /api/v2/workforcemanagement/alternativeshifts/trades/state/jobs | Bulk update alternative shift trade states
+[**patchWorkforcemanagementBusinessunit**](WorkforceManagementApi#patchWorkforcemanagementBusinessunit) | **PATCH** /api/v2/workforcemanagement/businessunits/{businessUnitId} | Update business unit
+[**patchWorkforcemanagementBusinessunitActivitycode**](WorkforceManagementApi#patchWorkforcemanagementBusinessunitActivitycode) | **PATCH** /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes/{activityCodeId} | Update an activity code
+[**patchWorkforcemanagementBusinessunitActivityplan**](WorkforceManagementApi#patchWorkforcemanagementBusinessunitActivityplan) | **PATCH** /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId} | Update an activity plan
+[**patchWorkforcemanagementBusinessunitAlternativeshiftsSettings**](WorkforceManagementApi#patchWorkforcemanagementBusinessunitAlternativeshiftsSettings) | **PATCH** /api/v2/workforcemanagement/businessunits/{businessUnitId}/alternativeshifts/settings | Update alternative shifts settings for a business unit
+[**patchWorkforcemanagementBusinessunitCapacityplan**](WorkforceManagementApi#patchWorkforcemanagementBusinessunitCapacityplan) | **PATCH** /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId} | Update a capacity plan configuration
+[**patchWorkforcemanagementBusinessunitPlanninggroup**](WorkforceManagementApi#patchWorkforcemanagementBusinessunitPlanninggroup) | **PATCH** /api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups/{planningGroupId} | Updates the planning group
+[**patchWorkforcemanagementBusinessunitSchedulingRun**](WorkforceManagementApi#patchWorkforcemanagementBusinessunitSchedulingRun) | **PATCH** /api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs/{runId} | Mark a schedule run as applied
+[**patchWorkforcemanagementBusinessunitServicegoaltemplate**](WorkforceManagementApi#patchWorkforcemanagementBusinessunitServicegoaltemplate) | **PATCH** /api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates/{serviceGoalTemplateId} | Updates a service goal template
+[**patchWorkforcemanagementBusinessunitStaffinggroup**](WorkforceManagementApi#patchWorkforcemanagementBusinessunitStaffinggroup) | **PATCH** /api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups/{staffingGroupId} | Updates a staffing group
+[**patchWorkforcemanagementBusinessunitTimeoffplan**](WorkforceManagementApi#patchWorkforcemanagementBusinessunitTimeoffplan) | **PATCH** /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans/{timeOffPlanId} | Updates a time-off plan
+[**patchWorkforcemanagementBusinessunitWorkplanbid**](WorkforceManagementApi#patchWorkforcemanagementBusinessunitWorkplanbid) | **PATCH** /api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId} | Update work plan bid
+[**patchWorkforcemanagementBusinessunitWorkplanbidGroup**](WorkforceManagementApi#patchWorkforcemanagementBusinessunitWorkplanbidGroup) | **PATCH** /api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}/groups/{bidGroupId} | Update a bid group by bid group Id
+[**patchWorkforcemanagementBusinessunitWorkplanbidGroupPreferences**](WorkforceManagementApi#patchWorkforcemanagementBusinessunitWorkplanbidGroupPreferences) | **PATCH** /api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}/groups/{bidGroupId}/preferences | Overrides the assigned work plan for the specified agents
+[**patchWorkforcemanagementManagementunit**](WorkforceManagementApi#patchWorkforcemanagementManagementunit) | **PATCH** /api/v2/workforcemanagement/managementunits/{managementUnitId} | Update the requested management unit
+[**patchWorkforcemanagementManagementunitAgents**](WorkforceManagementApi#patchWorkforcemanagementManagementunitAgents) | **PATCH** /api/v2/workforcemanagement/managementunits/{managementUnitId}/agents | Update agent configurations
+[**patchWorkforcemanagementManagementunitAgentsWorkplansBulk**](WorkforceManagementApi#patchWorkforcemanagementManagementunitAgentsWorkplansBulk) | **PATCH** /api/v2/workforcemanagement/managementunits/{managementUnitId}/agents/workplans/bulk | Updates agent work plan configuration
+[**patchWorkforcemanagementManagementunitTimeofflimit**](WorkforceManagementApi#patchWorkforcemanagementManagementunitTimeofflimit) | **PATCH** /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/{timeOffLimitId} | Updates a time off limit object.
+[**patchWorkforcemanagementManagementunitTimeoffplan**](WorkforceManagementApi#patchWorkforcemanagementManagementunitTimeoffplan) | **PATCH** /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans/{timeOffPlanId} | Updates a time off plan
+[**patchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatus**](WorkforceManagementApi#patchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatus) | **PATCH** /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/{timeOffRequestId}/users/{userId}/integrationstatus | Set integration status for a time off request.
+[**patchWorkforcemanagementManagementunitUserTimeoffrequest**](WorkforceManagementApi#patchWorkforcemanagementManagementunitUserTimeoffrequest) | **PATCH** /api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/{timeOffRequestId} | Update a time off request
+[**patchWorkforcemanagementManagementunitWeekShifttrade**](WorkforceManagementApi#patchWorkforcemanagementManagementunitWeekShifttrade) | **PATCH** /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/{tradeId} | Updates a shift trade. This route can only be called by the initiating agent
+[**patchWorkforcemanagementManagementunitWorkplan**](WorkforceManagementApi#patchWorkforcemanagementManagementunitWorkplan) | **PATCH** /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId} | Update a work plan
+[**patchWorkforcemanagementManagementunitWorkplanrotation**](WorkforceManagementApi#patchWorkforcemanagementManagementunitWorkplanrotation) | **PATCH** /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations/{workPlanRotationId} | Update a work plan rotation
+[**patchWorkforcemanagementTimeoffrequest**](WorkforceManagementApi#patchWorkforcemanagementTimeoffrequest) | **PATCH** /api/v2/workforcemanagement/timeoffrequests/{timeOffRequestId} | Update a time off request for the current user
+[**patchWorkforcemanagementUserWorkplanbidranks**](WorkforceManagementApi#patchWorkforcemanagementUserWorkplanbidranks) | **PATCH** /api/v2/workforcemanagement/users/{userId}/workplanbidranks | Update work plan bid ranks for a user
+[**patchWorkforcemanagementUsersWorkplanbidranksBulk**](WorkforceManagementApi#patchWorkforcemanagementUsersWorkplanbidranksBulk) | **PATCH** /api/v2/workforcemanagement/users/workplanbidranks/bulk | Update bulk work plan bid ranks on users. Max 50 users can be updated at a time.
+[**patchWorkforcemanagementWorkplanbidPreferences**](WorkforceManagementApi#patchWorkforcemanagementWorkplanbidPreferences) | **PATCH** /api/v2/workforcemanagement/workplanbids/{bidId}/preferences | Update an agent's work plan bidding preference
+[**postWorkforcemanagementAdherenceExplanations**](WorkforceManagementApi#postWorkforcemanagementAdherenceExplanations) | **POST** /api/v2/workforcemanagement/adherence/explanations | Submit an adherence explanation for the current user
+[**postWorkforcemanagementAdherenceExplanationsQuery**](WorkforceManagementApi#postWorkforcemanagementAdherenceExplanationsQuery) | **POST** /api/v2/workforcemanagement/adherence/explanations/query | Query adherence explanations for the current user
+[**postWorkforcemanagementAdherenceHistorical**](WorkforceManagementApi#postWorkforcemanagementAdherenceHistorical) | **POST** /api/v2/workforcemanagement/adherence/historical | Deprecated. Use bulk routes instead (/adherence/historical/bulk)
+[**postWorkforcemanagementAdherenceHistoricalBulk**](WorkforceManagementApi#postWorkforcemanagementAdherenceHistoricalBulk) | **POST** /api/v2/workforcemanagement/adherence/historical/bulk | Request a historical adherence report in bulk
+[**postWorkforcemanagementAgentAdherenceExplanations**](WorkforceManagementApi#postWorkforcemanagementAgentAdherenceExplanations) | **POST** /api/v2/workforcemanagement/agents/{agentId}/adherence/explanations | Add an adherence explanation for the requested user
+[**postWorkforcemanagementAgentAdherenceExplanationsQuery**](WorkforceManagementApi#postWorkforcemanagementAgentAdherenceExplanationsQuery) | **POST** /api/v2/workforcemanagement/agents/{agentId}/adherence/explanations/query | Query adherence explanations for the given agent across a specified range
+[**postWorkforcemanagementAgents**](WorkforceManagementApi#postWorkforcemanagementAgents) | **POST** /api/v2/workforcemanagement/agents | Move agents in and out of management unit
+[**postWorkforcemanagementAgentsIntegrationsHrisQuery**](WorkforceManagementApi#postWorkforcemanagementAgentsIntegrationsHrisQuery) | **POST** /api/v2/workforcemanagement/agents/integrations/hris/query | Query integrations for agents
+[**postWorkforcemanagementAgentsMePossibleworkshifts**](WorkforceManagementApi#postWorkforcemanagementAgentsMePossibleworkshifts) | **POST** /api/v2/workforcemanagement/agents/me/possibleworkshifts | Get agent possible work shifts for requested time frame
+[**postWorkforcemanagementAgentschedulesMine**](WorkforceManagementApi#postWorkforcemanagementAgentschedulesMine) | **POST** /api/v2/workforcemanagement/agentschedules/mine | Get published schedule for the current user
+[**postWorkforcemanagementAlternativeshiftsOffersJobs**](WorkforceManagementApi#postWorkforcemanagementAlternativeshiftsOffersJobs) | **POST** /api/v2/workforcemanagement/alternativeshifts/offers/jobs | Request a list of alternative shift offers for a given schedule
+[**postWorkforcemanagementAlternativeshiftsOffersSearchJobs**](WorkforceManagementApi#postWorkforcemanagementAlternativeshiftsOffersSearchJobs) | **POST** /api/v2/workforcemanagement/alternativeshifts/offers/search/jobs | Request a search of alternative shift offers for a given shift
+[**postWorkforcemanagementAlternativeshiftsTrades**](WorkforceManagementApi#postWorkforcemanagementAlternativeshiftsTrades) | **POST** /api/v2/workforcemanagement/alternativeshifts/trades | Create my alternative shift trade using an existing offer's jobId
+[**postWorkforcemanagementBusinessunitActivitycodes**](WorkforceManagementApi#postWorkforcemanagementBusinessunitActivitycodes) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes | Create a new activity code
+[**postWorkforcemanagementBusinessunitActivityplanRunsJobs**](WorkforceManagementApi#postWorkforcemanagementBusinessunitActivityplanRunsJobs) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/runs/jobs | Run an activity plan manually
+[**postWorkforcemanagementBusinessunitActivityplans**](WorkforceManagementApi#postWorkforcemanagementBusinessunitActivityplans) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans | Create an activity plan
+[**postWorkforcemanagementBusinessunitAdherenceExplanationsQuery**](WorkforceManagementApi#postWorkforcemanagementBusinessunitAdherenceExplanationsQuery) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/explanations/query | Query adherence explanations across an entire business unit for the requested period
+[**postWorkforcemanagementBusinessunitAgentschedulesSearch**](WorkforceManagementApi#postWorkforcemanagementBusinessunitAgentschedulesSearch) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/agentschedules/search | Search published schedules
+[**postWorkforcemanagementBusinessunitAlternativeshiftsTradesSearch**](WorkforceManagementApi#postWorkforcemanagementBusinessunitAlternativeshiftsTradesSearch) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/alternativeshifts/trades/search | List alternative shifts trades for a given management unit or agent
+[**postWorkforcemanagementBusinessunitCapacityplanCopy**](WorkforceManagementApi#postWorkforcemanagementBusinessunitCapacityplanCopy) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}/copy | Copy a capacity plan
+[**postWorkforcemanagementBusinessunitCapacityplanRequirementGenerate**](WorkforceManagementApi#postWorkforcemanagementBusinessunitCapacityplanRequirementGenerate) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}/requirement/generate | Regenerate requirements for capacity plan
+[**postWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations**](WorkforceManagementApi#postWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}/staffinggroupallocations | Create staffing group allocations for a capacity plan
+[**postWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistoryQuery**](WorkforceManagementApi#postWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistoryQuery) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}/staffinggroupallocationshistory/query | Query staffing groups allocations history for a capacity plan
+[**postWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastForceregenerate**](WorkforceManagementApi#postWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastForceregenerate) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplanning/longtermrequirements/automaticbestmethod/weeks/{weekDateId}/forecasts/{forecastId}/forceregenerate | Force regenerate the latest long term staffing requirements for a business unit
+[**postWorkforcemanagementBusinessunitCapacityplans**](WorkforceManagementApi#postWorkforcemanagementBusinessunitCapacityplans) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans | Create a new capacity plan
+[**postWorkforcemanagementBusinessunitCapacityplansBulkRemove**](WorkforceManagementApi#postWorkforcemanagementBusinessunitCapacityplansBulkRemove) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/bulk/remove | Delete capacity plans in a business unit
+[**postWorkforcemanagementBusinessunitIntraday**](WorkforceManagementApi#postWorkforcemanagementBusinessunitIntraday) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/intraday | Get intraday data for the given date for the requested planningGroupIds
+[**postWorkforcemanagementBusinessunitPlanninggroups**](WorkforceManagementApi#postWorkforcemanagementBusinessunitPlanninggroups) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups | Adds a new planning group
+[**postWorkforcemanagementBusinessunitServicegoaltemplates**](WorkforceManagementApi#postWorkforcemanagementBusinessunitServicegoaltemplates) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates | Adds a new service goal template
+[**postWorkforcemanagementBusinessunitStaffinggroups**](WorkforceManagementApi#postWorkforcemanagementBusinessunitStaffinggroups) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups | Creates a new staffing group
+[**postWorkforcemanagementBusinessunitStaffinggroupsPlanninggroupsQuery**](WorkforceManagementApi#postWorkforcemanagementBusinessunitStaffinggroupsPlanninggroupsQuery) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups/planninggroups/query | Gets a list of planning group to staffing groups list association
+[**postWorkforcemanagementBusinessunitStaffinggroupsQuery**](WorkforceManagementApi#postWorkforcemanagementBusinessunitStaffinggroupsQuery) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups/query | Gets staffing group associations for a list of user IDs
+[**postWorkforcemanagementBusinessunitTimeofflimits**](WorkforceManagementApi#postWorkforcemanagementBusinessunitTimeofflimits) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits | Creates a new time-off limit object
+[**postWorkforcemanagementBusinessunitTimeofflimitsValuesQuery**](WorkforceManagementApi#postWorkforcemanagementBusinessunitTimeofflimitsValuesQuery) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/values/query | Retrieves time-off limit related values based on a given set of filters.
+[**postWorkforcemanagementBusinessunitTimeoffplans**](WorkforceManagementApi#postWorkforcemanagementBusinessunitTimeoffplans) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans | Creates a new time-off plan
+[**postWorkforcemanagementBusinessunitWeekScheduleAgentschedulesQuery**](WorkforceManagementApi#postWorkforcemanagementBusinessunitWeekScheduleAgentschedulesQuery) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/agentschedules/query | Loads agent schedule data from the schedule. Used in combination with the metadata route
+[**postWorkforcemanagementBusinessunitWeekScheduleCopy**](WorkforceManagementApi#postWorkforcemanagementBusinessunitWeekScheduleCopy) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/copy | Copy a schedule
+[**postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculations**](WorkforceManagementApi#postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculations) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/performancepredictions/recalculations | Request a daily recalculation of the performance prediction for the associated schedule
+[**postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsUploadurl**](WorkforceManagementApi#postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsUploadurl) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/performancepredictions/recalculations/uploadurl | Upload daily activity changes to be able to request a performance prediction recalculation
+[**postWorkforcemanagementBusinessunitWeekScheduleReschedule**](WorkforceManagementApi#postWorkforcemanagementBusinessunitWeekScheduleReschedule) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/reschedule | Start a rescheduling run
+[**postWorkforcemanagementBusinessunitWeekScheduleUpdate**](WorkforceManagementApi#postWorkforcemanagementBusinessunitWeekScheduleUpdate) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/update | Starts processing a schedule update
+[**postWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurl**](WorkforceManagementApi#postWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurl) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/update/uploadurl | Creates a signed upload URL for updating a schedule
+[**postWorkforcemanagementBusinessunitWeekSchedules**](WorkforceManagementApi#postWorkforcemanagementBusinessunitWeekSchedules) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules | Create a blank schedule
+[**postWorkforcemanagementBusinessunitWeekSchedulesGenerate**](WorkforceManagementApi#postWorkforcemanagementBusinessunitWeekSchedulesGenerate) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/generate | Generate a schedule
+[**postWorkforcemanagementBusinessunitWeekSchedulesImport**](WorkforceManagementApi#postWorkforcemanagementBusinessunitWeekSchedulesImport) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/import | Starts processing a schedule import
+[**postWorkforcemanagementBusinessunitWeekSchedulesImportUploadurl**](WorkforceManagementApi#postWorkforcemanagementBusinessunitWeekSchedulesImportUploadurl) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/import/uploadurl | Creates a signed upload URL for importing a schedule
+[**postWorkforcemanagementBusinessunitWeekShorttermforecastCopy**](WorkforceManagementApi#postWorkforcemanagementBusinessunitWeekShorttermforecastCopy) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/copy | Copy a short term forecast
+[**postWorkforcemanagementBusinessunitWeekShorttermforecastsGenerate**](WorkforceManagementApi#postWorkforcemanagementBusinessunitWeekShorttermforecastsGenerate) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/generate | Generate a short term forecast
+[**postWorkforcemanagementBusinessunitWeekShorttermforecastsImport**](WorkforceManagementApi#postWorkforcemanagementBusinessunitWeekShorttermforecastsImport) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/import | Starts importing the uploaded short term forecast
+[**postWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploadurl**](WorkforceManagementApi#postWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploadurl) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/import/uploadurl | Creates a signed upload URL for importing a short term forecast
+[**postWorkforcemanagementBusinessunitWorkplanbidCopy**](WorkforceManagementApi#postWorkforcemanagementBusinessunitWorkplanbidCopy) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}/copy | Copy a work plan bid
+[**postWorkforcemanagementBusinessunitWorkplanbidGroups**](WorkforceManagementApi#postWorkforcemanagementBusinessunitWorkplanbidGroups) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}/groups | Add a bid group in a given work plan bid
+[**postWorkforcemanagementBusinessunitWorkplanbids**](WorkforceManagementApi#postWorkforcemanagementBusinessunitWorkplanbids) | **POST** /api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids | Create a new work plan bid
+[**postWorkforcemanagementBusinessunits**](WorkforceManagementApi#postWorkforcemanagementBusinessunits) | **POST** /api/v2/workforcemanagement/businessunits | Add a new business unit
+[**postWorkforcemanagementCalendarUrlIcs**](WorkforceManagementApi#postWorkforcemanagementCalendarUrlIcs) | **POST** /api/v2/workforcemanagement/calendar/url/ics | Create a newly generated calendar link for the current user; if the current user has previously generated one, the generated link will be returned
+[**postWorkforcemanagementHistoricaldataBulkRemoveJobs**](WorkforceManagementApi#postWorkforcemanagementHistoricaldataBulkRemoveJobs) | **POST** /api/v2/workforcemanagement/historicaldata/bulk/remove/jobs | Delete the list of the historical data import entries
+[**postWorkforcemanagementHistoricaldataValidate**](WorkforceManagementApi#postWorkforcemanagementHistoricaldataValidate) | **POST** /api/v2/workforcemanagement/historicaldata/validate | Trigger validation process for historical import
+[**postWorkforcemanagementIntegrationsHriTimeofftypesJobs**](WorkforceManagementApi#postWorkforcemanagementIntegrationsHriTimeofftypesJobs) | **POST** /api/v2/workforcemanagement/integrations/hris/{hrisIntegrationId}/timeofftypes/jobs | Get list of time off types configured in integration
+[**postWorkforcemanagementManagementunitAgentsWorkplansQuery**](WorkforceManagementApi#postWorkforcemanagementManagementunitAgentsWorkplansQuery) | **POST** /api/v2/workforcemanagement/managementunits/{managementUnitId}/agents/workplans/query | Get agents work plans configuration
+[**postWorkforcemanagementManagementunitAgentschedulesSearch**](WorkforceManagementApi#postWorkforcemanagementManagementunitAgentschedulesSearch) | **POST** /api/v2/workforcemanagement/managementunits/{managementUnitId}/agentschedules/search | Query published schedules for given given time range for set of users
+[**postWorkforcemanagementManagementunitHistoricaladherencequery**](WorkforceManagementApi#postWorkforcemanagementManagementunitHistoricaladherencequery) | **POST** /api/v2/workforcemanagement/managementunits/{managementUnitId}/historicaladherencequery | Request a historical adherence report
+[**postWorkforcemanagementManagementunitMove**](WorkforceManagementApi#postWorkforcemanagementManagementunitMove) | **POST** /api/v2/workforcemanagement/managementunits/{managementUnitId}/move | Move the requested management unit to a new business unit
+[**postWorkforcemanagementManagementunitSchedulesSearch**](WorkforceManagementApi#postWorkforcemanagementManagementunitSchedulesSearch) | **POST** /api/v2/workforcemanagement/managementunits/{managementUnitId}/schedules/search | Query published schedules for given given time range for set of users
+[**postWorkforcemanagementManagementunitShrinkageJobs**](WorkforceManagementApi#postWorkforcemanagementManagementunitShrinkageJobs) | **POST** /api/v2/workforcemanagement/managementunits/{managementUnitId}/shrinkage/jobs | Request a historical shrinkage report
+[**postWorkforcemanagementManagementunitTimeofflimits**](WorkforceManagementApi#postWorkforcemanagementManagementunitTimeofflimits) | **POST** /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits | Creates a new time off limit object under management unit.
+[**postWorkforcemanagementManagementunitTimeofflimitsValuesQuery**](WorkforceManagementApi#postWorkforcemanagementManagementunitTimeofflimitsValuesQuery) | **POST** /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/values/query | Retrieves time off limit related values based on a given set of filters.
+[**postWorkforcemanagementManagementunitTimeoffplans**](WorkforceManagementApi#postWorkforcemanagementManagementunitTimeoffplans) | **POST** /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans | Creates a new time off plan
+[**postWorkforcemanagementManagementunitTimeoffrequests**](WorkforceManagementApi#postWorkforcemanagementManagementunitTimeoffrequests) | **POST** /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests | Create a new time off request
+[**postWorkforcemanagementManagementunitTimeoffrequestsIntegrationstatusQuery**](WorkforceManagementApi#postWorkforcemanagementManagementunitTimeoffrequestsIntegrationstatusQuery) | **POST** /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/integrationstatus/query | Retrieves integration statuses for a list of time off requests
+[**postWorkforcemanagementManagementunitTimeoffrequestsQuery**](WorkforceManagementApi#postWorkforcemanagementManagementunitTimeoffrequestsQuery) | **POST** /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/query | Fetches time off requests matching the conditions specified in the request body
+[**postWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositionsQuery**](WorkforceManagementApi#postWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositionsQuery) | **POST** /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/waitlistpositions/query | Retrieves daily waitlist position for a list of time off requests
+[**postWorkforcemanagementManagementunitUserTimeoffbalanceJobs**](WorkforceManagementApi#postWorkforcemanagementManagementunitUserTimeoffbalanceJobs) | **POST** /api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffbalance/jobs | Query time off balances for a given user for specified activity code and dates
+[**postWorkforcemanagementManagementunitUserTimeoffrequestTimeoffbalanceJobs**](WorkforceManagementApi#postWorkforcemanagementManagementunitUserTimeoffrequestTimeoffbalanceJobs) | **POST** /api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/{timeOffRequestId}/timeoffbalance/jobs | Query time off balances for dates spanned by a given time off request
+[**postWorkforcemanagementManagementunitUserTimeoffrequestsEstimate**](WorkforceManagementApi#postWorkforcemanagementManagementunitUserTimeoffrequestsEstimate) | **POST** /api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/estimate | Estimates available time off for an agent
+[**postWorkforcemanagementManagementunitWeekShifttradeMatch**](WorkforceManagementApi#postWorkforcemanagementManagementunitWeekShifttradeMatch) | **POST** /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/{tradeId}/match | Matches a shift trade. This route can only be called by the receiving agent
+[**postWorkforcemanagementManagementunitWeekShifttrades**](WorkforceManagementApi#postWorkforcemanagementManagementunitWeekShifttrades) | **POST** /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades | Adds a shift trade
+[**postWorkforcemanagementManagementunitWeekShifttradesSearch**](WorkforceManagementApi#postWorkforcemanagementManagementunitWeekShifttradesSearch) | **POST** /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/search | Searches for potential shift trade matches for the current agent
+[**postWorkforcemanagementManagementunitWeekShifttradesStateBulk**](WorkforceManagementApi#postWorkforcemanagementManagementunitWeekShifttradesStateBulk) | **POST** /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/state/bulk | Updates the state of a batch of shift trades
+[**postWorkforcemanagementManagementunitWorkplanCopy**](WorkforceManagementApi#postWorkforcemanagementManagementunitWorkplanCopy) | **POST** /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId}/copy | Create a copy of work plan
+[**postWorkforcemanagementManagementunitWorkplanValidate**](WorkforceManagementApi#postWorkforcemanagementManagementunitWorkplanValidate) | **POST** /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId}/validate | Validate Work Plan
+[**postWorkforcemanagementManagementunitWorkplanrotationCopy**](WorkforceManagementApi#postWorkforcemanagementManagementunitWorkplanrotationCopy) | **POST** /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations/{workPlanRotationId}/copy | Create a copy of work plan rotation
+[**postWorkforcemanagementManagementunitWorkplanrotations**](WorkforceManagementApi#postWorkforcemanagementManagementunitWorkplanrotations) | **POST** /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations | Create a new work plan rotation
+[**postWorkforcemanagementManagementunitWorkplans**](WorkforceManagementApi#postWorkforcemanagementManagementunitWorkplans) | **POST** /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans | Create a new work plan
+[**postWorkforcemanagementManagementunits**](WorkforceManagementApi#postWorkforcemanagementManagementunits) | **POST** /api/v2/workforcemanagement/managementunits | Add a management unit
+[**postWorkforcemanagementNotificationsUpdate**](WorkforceManagementApi#postWorkforcemanagementNotificationsUpdate) | **POST** /api/v2/workforcemanagement/notifications/update | Mark a list of notifications as read or unread
+[**postWorkforcemanagementSchedules**](WorkforceManagementApi#postWorkforcemanagementSchedules) | **POST** /api/v2/workforcemanagement/schedules | Get published schedule for the current user
+[**postWorkforcemanagementTeamAdherenceHistorical**](WorkforceManagementApi#postWorkforcemanagementTeamAdherenceHistorical) | **POST** /api/v2/workforcemanagement/teams/{teamId}/adherence/historical | Request a teams historical adherence report
+[**postWorkforcemanagementTeamShrinkageJobs**](WorkforceManagementApi#postWorkforcemanagementTeamShrinkageJobs) | **POST** /api/v2/workforcemanagement/teams/{teamId}/shrinkage/jobs | Request a historical shrinkage report
+[**postWorkforcemanagementTimeoffbalanceJobs**](WorkforceManagementApi#postWorkforcemanagementTimeoffbalanceJobs) | **POST** /api/v2/workforcemanagement/timeoffbalance/jobs | Query time off balances for the current user for specified activity code and dates
+[**postWorkforcemanagementTimeofflimitsAvailableQuery**](WorkforceManagementApi#postWorkforcemanagementTimeofflimitsAvailableQuery) | **POST** /api/v2/workforcemanagement/timeofflimits/available/query | Queries available time off for the current user
+[**postWorkforcemanagementTimeoffrequests**](WorkforceManagementApi#postWorkforcemanagementTimeoffrequests) | **POST** /api/v2/workforcemanagement/timeoffrequests | Create a time off request for the current user
+[**postWorkforcemanagementTimeoffrequestsEstimate**](WorkforceManagementApi#postWorkforcemanagementTimeoffrequestsEstimate) | **POST** /api/v2/workforcemanagement/timeoffrequests/estimate | Estimates available time off for current user
+[**postWorkforcemanagementTimeoffrequestsIntegrationstatusQuery**](WorkforceManagementApi#postWorkforcemanagementTimeoffrequestsIntegrationstatusQuery) | **POST** /api/v2/workforcemanagement/timeoffrequests/integrationstatus/query | Retrieves integration statuses for a list of current user time off requests
+[**putWorkforcemanagementAgentIntegrationsHris**](WorkforceManagementApi#putWorkforcemanagementAgentIntegrationsHris) | **PUT** /api/v2/workforcemanagement/agents/{agentId}/integrations/hris | Update integrations for agent
+[**putWorkforcemanagementBusinessunitTimeofflimitValues**](WorkforceManagementApi#putWorkforcemanagementBusinessunitTimeofflimitValues) | **PUT** /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values | Sets daily values for a date range of time-off limit object
+[**putWorkforcemanagementManagementunitTimeofflimitValues**](WorkforceManagementApi#putWorkforcemanagementManagementunitTimeofflimitValues) | **PUT** /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/{timeOffLimitId}/values | Sets daily values for a date range of time off limit object
 
-<a name="deleteWorkforcemanagementBusinessunit"></a>
 
-# void deleteWorkforcemanagementBusinessunit(businessUnitId)
+
+## deleteWorkforcemanagementBusinessunit
+
+> void deleteWorkforcemanagementBusinessunit(businessUnitId)
 
 
 DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}
@@ -202,7 +291,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -225,15 +314,15 @@ apiInstance.deleteWorkforcemanagementBusinessunit(businessUnitId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit, or 'mine' for the business unit of the logged-in user. |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteWorkforcemanagementBusinessunitActivitycode"></a>
 
-# void deleteWorkforcemanagementBusinessunitActivitycode(businessUnitId, activityCodeId)
+## deleteWorkforcemanagementBusinessunitActivitycode
+
+> void deleteWorkforcemanagementBusinessunitActivitycode(businessUnitId, activityCodeId)
 
 
 DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes/{activityCodeId}
@@ -252,7 +341,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -277,15 +366,71 @@ apiInstance.deleteWorkforcemanagementBusinessunitActivitycode(businessUnitId, ac
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit, or 'mine' for the business unit of the logged-in user. |  |
  **activityCodeId** | **String** | The ID of the activity code to delete |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteWorkforcemanagementBusinessunitPlanninggroup"></a>
 
-# void deleteWorkforcemanagementBusinessunitPlanninggroup(businessUnitId, planningGroupId)
+## deleteWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistory
+
+> void deleteWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistory(businessUnitId, capacityPlanId, opts)
+
+
+DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}/staffinggroupallocationshistory
+
+Delete staffing group allocations history created for a capacity plan before the given date
+
+Requires ANY permissions:
+
+* wfm:capacityPlan:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let capacityPlanId = "capacityPlanId_example"; // String | The ID of the capacity plan
+let opts = { 
+  'beforeDateId': "beforeDateId_example" // String | The date to delete records that are created on or before this date in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+};
+
+apiInstance.deleteWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistory(businessUnitId, capacityPlanId, opts)
+  .then(() => {
+    console.log('deleteWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistory returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistory');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **capacityPlanId** | **String** | The ID of the capacity plan |  |
+ **beforeDateId** | **String** | The date to delete records that are created on or before this date in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
+
+### Return type
+
+void (no response body)
+
+
+## deleteWorkforcemanagementBusinessunitPlanninggroup
+
+> void deleteWorkforcemanagementBusinessunitPlanninggroup(businessUnitId, planningGroupId)
 
 
 DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups/{planningGroupId}
@@ -304,7 +449,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -329,15 +474,15 @@ apiInstance.deleteWorkforcemanagementBusinessunitPlanninggroup(businessUnitId, p
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit. |  |
  **planningGroupId** | **String** | The ID of a planning group to delete |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteWorkforcemanagementBusinessunitSchedulingRun"></a>
 
-# void deleteWorkforcemanagementBusinessunitSchedulingRun(businessUnitId, runId)
+## deleteWorkforcemanagementBusinessunitSchedulingRun
+
+> void deleteWorkforcemanagementBusinessunitSchedulingRun(businessUnitId, runId)
 
 
 DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs/{runId}
@@ -356,7 +501,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -381,15 +526,15 @@ apiInstance.deleteWorkforcemanagementBusinessunitSchedulingRun(businessUnitId, r
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit |  |
  **runId** | **String** | The ID of the schedule run |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteWorkforcemanagementBusinessunitServicegoaltemplate"></a>
 
-# void deleteWorkforcemanagementBusinessunitServicegoaltemplate(businessUnitId, serviceGoalTemplateId)
+## deleteWorkforcemanagementBusinessunitServicegoaltemplate
+
+> void deleteWorkforcemanagementBusinessunitServicegoaltemplate(businessUnitId, serviceGoalTemplateId)
 
 
 DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates/{serviceGoalTemplateId}
@@ -408,7 +553,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -433,15 +578,171 @@ apiInstance.deleteWorkforcemanagementBusinessunitServicegoaltemplate(businessUni
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit. |  |
  **serviceGoalTemplateId** | **String** | The ID of the service goal template to delete |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteWorkforcemanagementBusinessunitWeekSchedule"></a>
 
-# BuAsyncScheduleResponse deleteWorkforcemanagementBusinessunitWeekSchedule(businessUnitId, weekId, scheduleId)
+## deleteWorkforcemanagementBusinessunitStaffinggroup
+
+> void deleteWorkforcemanagementBusinessunitStaffinggroup(businessUnitId, staffingGroupId)
+
+
+DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups/{staffingGroupId}
+
+Deletes a staffing group
+
+Requires ANY permissions:
+
+* wfm:staffingGroup:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let staffingGroupId = "staffingGroupId_example"; // String | The ID of the staffing group to delete
+
+apiInstance.deleteWorkforcemanagementBusinessunitStaffinggroup(businessUnitId, staffingGroupId)
+  .then(() => {
+    console.log('deleteWorkforcemanagementBusinessunitStaffinggroup returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteWorkforcemanagementBusinessunitStaffinggroup');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **staffingGroupId** | **String** | The ID of the staffing group to delete |  |
+
+### Return type
+
+void (no response body)
+
+
+## deleteWorkforcemanagementBusinessunitTimeofflimit
+
+> void deleteWorkforcemanagementBusinessunitTimeofflimit(businessUnitId, timeOffLimitId)
+
+
+DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}
+
+Deletes a time-off limit object
+
+Requires ANY permissions:
+
+* wfm:timeOffLimit:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let timeOffLimitId = "timeOffLimitId_example"; // String | The ID of the time-off limit object to delete
+
+apiInstance.deleteWorkforcemanagementBusinessunitTimeofflimit(businessUnitId, timeOffLimitId)
+  .then(() => {
+    console.log('deleteWorkforcemanagementBusinessunitTimeofflimit returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteWorkforcemanagementBusinessunitTimeofflimit');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **timeOffLimitId** | **String** | The ID of the time-off limit object to delete |  |
+
+### Return type
+
+void (no response body)
+
+
+## deleteWorkforcemanagementBusinessunitTimeoffplan
+
+> void deleteWorkforcemanagementBusinessunitTimeoffplan(businessUnitId, timeOffPlanId)
+
+
+DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans/{timeOffPlanId}
+
+Deletes a time-off plan
+
+Requires ANY permissions:
+
+* wfm:timeOffPlan:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let timeOffPlanId = "timeOffPlanId_example"; // String | The ID of the time-off plan to delete
+
+apiInstance.deleteWorkforcemanagementBusinessunitTimeoffplan(businessUnitId, timeOffPlanId)
+  .then(() => {
+    console.log('deleteWorkforcemanagementBusinessunitTimeoffplan returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteWorkforcemanagementBusinessunitTimeoffplan');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **timeOffPlanId** | **String** | The ID of the time-off plan to delete |  |
+
+### Return type
+
+void (no response body)
+
+
+## deleteWorkforcemanagementBusinessunitWeekSchedule
+
+> BuAsyncScheduleResponse deleteWorkforcemanagementBusinessunitWeekSchedule(businessUnitId, weekId, scheduleId)
 
 
 DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}
@@ -460,7 +761,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -487,15 +788,15 @@ apiInstance.deleteWorkforcemanagementBusinessunitWeekSchedule(businessUnitId, we
  **businessUnitId** | **String** | The ID of the business unit |  |
  **weekId** | **String** | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **scheduleId** | **String** | The ID of the schedule |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **BuAsyncScheduleResponse**
 
-<a name="deleteWorkforcemanagementBusinessunitWeekShorttermforecast"></a>
 
-# void deleteWorkforcemanagementBusinessunitWeekShorttermforecast(businessUnitId, weekDateId, forecastId)
+## deleteWorkforcemanagementBusinessunitWeekShorttermforecast
+
+> void deleteWorkforcemanagementBusinessunitWeekShorttermforecast(businessUnitId, weekDateId, forecastId)
 
 
 DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}
@@ -516,7 +817,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -543,15 +844,121 @@ apiInstance.deleteWorkforcemanagementBusinessunitWeekShorttermforecast(businessU
  **businessUnitId** | **String** | The ID of the business unit to which the forecast belongs |  |
  **weekDateId** | **String** | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **forecastId** | **String** | The ID of the forecast |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteWorkforcemanagementCalendarUrlIcs"></a>
 
-# void deleteWorkforcemanagementCalendarUrlIcs()
+## deleteWorkforcemanagementBusinessunitWorkplanbid
+
+> void deleteWorkforcemanagementBusinessunitWorkplanbid(businessUnitId, bidId)
+
+
+DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}
+
+Delete a work plan bid
+
+Requires ANY permissions:
+
+* wfm:workPlanBid:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let bidId = "bidId_example"; // String | The ID of the work plan bid
+
+apiInstance.deleteWorkforcemanagementBusinessunitWorkplanbid(businessUnitId, bidId)
+  .then(() => {
+    console.log('deleteWorkforcemanagementBusinessunitWorkplanbid returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteWorkforcemanagementBusinessunitWorkplanbid');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **bidId** | **String** | The ID of the work plan bid |  |
+
+### Return type
+
+void (no response body)
+
+
+## deleteWorkforcemanagementBusinessunitWorkplanbidGroup
+
+> void deleteWorkforcemanagementBusinessunitWorkplanbidGroup(businessUnitId, bidId, bidGroupId)
+
+
+DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}/groups/{bidGroupId}
+
+Delete a bid group by bid group Id
+
+Requires ANY permissions:
+
+* wfm:workPlanBidGroup:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let bidId = "bidId_example"; // String | The work plan bid id of the bid groups
+let bidGroupId = "bidGroupId_example"; // String | Work Plan Bid Group id
+
+apiInstance.deleteWorkforcemanagementBusinessunitWorkplanbidGroup(businessUnitId, bidId, bidGroupId)
+  .then(() => {
+    console.log('deleteWorkforcemanagementBusinessunitWorkplanbidGroup returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteWorkforcemanagementBusinessunitWorkplanbidGroup');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **bidId** | **String** | The work plan bid id of the bid groups |  |
+ **bidGroupId** | **String** | Work Plan Bid Group id |  |
+
+### Return type
+
+void (no response body)
+
+
+## deleteWorkforcemanagementCalendarUrlIcs
+
+> void deleteWorkforcemanagementCalendarUrlIcs()
 
 
 DELETE /api/v2/workforcemanagement/calendar/url/ics
@@ -570,7 +977,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -589,14 +996,14 @@ apiInstance.deleteWorkforcemanagementCalendarUrlIcs()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 void (no response body)
 
-<a name="deleteWorkforcemanagementManagementunit"></a>
 
-# void deleteWorkforcemanagementManagementunit(managementUnitId)
+## deleteWorkforcemanagementManagementunit
+
+> void deleteWorkforcemanagementManagementunit(managementUnitId)
 
 
 DELETE /api/v2/workforcemanagement/managementunits/{managementUnitId}
@@ -615,7 +1022,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -638,15 +1045,15 @@ apiInstance.deleteWorkforcemanagementManagementunit(managementUnitId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteWorkforcemanagementManagementunitTimeofflimit"></a>
 
-# void deleteWorkforcemanagementManagementunitTimeofflimit(managementUnitId, timeOffLimitId)
+## deleteWorkforcemanagementManagementunitTimeofflimit
+
+> void deleteWorkforcemanagementManagementunitTimeofflimit(managementUnitId, timeOffLimitId)
 
 
 DELETE /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/{timeOffLimitId}
@@ -665,7 +1072,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -690,15 +1097,15 @@ apiInstance.deleteWorkforcemanagementManagementunitTimeofflimit(managementUnitId
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit. |  |
  **timeOffLimitId** | **String** | The ID of the time off limit object to delete |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteWorkforcemanagementManagementunitTimeoffplan"></a>
 
-# void deleteWorkforcemanagementManagementunitTimeoffplan(managementUnitId, timeOffPlanId)
+## deleteWorkforcemanagementManagementunitTimeoffplan
+
+> void deleteWorkforcemanagementManagementunitTimeoffplan(managementUnitId, timeOffPlanId)
 
 
 DELETE /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans/{timeOffPlanId}
@@ -717,7 +1124,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -742,15 +1149,15 @@ apiInstance.deleteWorkforcemanagementManagementunitTimeoffplan(managementUnitId,
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit |  |
  **timeOffPlanId** | **String** | The ID of the time off plan to delete |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteWorkforcemanagementManagementunitWorkplan"></a>
 
-# void deleteWorkforcemanagementManagementunitWorkplan(managementUnitId, workPlanId)
+## deleteWorkforcemanagementManagementunitWorkplan
+
+> void deleteWorkforcemanagementManagementunitWorkplan(managementUnitId, workPlanId)
 
 
 DELETE /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId}
@@ -769,7 +1176,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -794,15 +1201,15 @@ apiInstance.deleteWorkforcemanagementManagementunitWorkplan(managementUnitId, wo
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
  **workPlanId** | **String** | The ID of the work plan to delete |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteWorkforcemanagementManagementunitWorkplanrotation"></a>
 
-# void deleteWorkforcemanagementManagementunitWorkplanrotation(managementUnitId, workPlanRotationId)
+## deleteWorkforcemanagementManagementunitWorkplanrotation
+
+> void deleteWorkforcemanagementManagementunitWorkplanrotation(managementUnitId, workPlanRotationId)
 
 
 DELETE /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations/{workPlanRotationId}
@@ -821,7 +1228,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -846,15 +1253,15 @@ apiInstance.deleteWorkforcemanagementManagementunitWorkplanrotation(managementUn
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
  **workPlanRotationId** | **String** | The ID of the work plan rotation to be deleted |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="getWorkforcemanagementAdherence"></a>
 
-# [UserScheduleAdherence] getWorkforcemanagementAdherence(userId)
+## getWorkforcemanagementAdherence
+
+> [UserScheduleAdherence] getWorkforcemanagementAdherence(userId)
 
 
 GET /api/v2/workforcemanagement/adherence
@@ -873,7 +1280,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -896,15 +1303,15 @@ apiInstance.getWorkforcemanagementAdherence(userId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **[String]** | User Id(s) for which to fetch current schedule adherence information.  Min 1, Max of 100 userIds per request |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **[UserScheduleAdherence]**
 
-<a name="getWorkforcemanagementAdherenceExplanation"></a>
 
-# AdherenceExplanationResponse getWorkforcemanagementAdherenceExplanation(explanationId)
+## getWorkforcemanagementAdherenceExplanation
+
+> AdherenceExplanationResponse getWorkforcemanagementAdherenceExplanation(explanationId)
 
 
 GET /api/v2/workforcemanagement/adherence/explanations/{explanationId}
@@ -923,7 +1330,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -946,15 +1353,15 @@ apiInstance.getWorkforcemanagementAdherenceExplanation(explanationId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **explanationId** | **String** | The ID of the explanation to update |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AdherenceExplanationResponse**
 
-<a name="getWorkforcemanagementAdherenceExplanationsJob"></a>
 
-# AdherenceExplanationJob getWorkforcemanagementAdherenceExplanationsJob(jobId)
+## getWorkforcemanagementAdherenceExplanationsJob
+
+> AdherenceExplanationJob getWorkforcemanagementAdherenceExplanationsJob(jobId)
 
 
 GET /api/v2/workforcemanagement/adherence/explanations/jobs/{jobId}
@@ -973,7 +1380,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -996,15 +1403,15 @@ apiInstance.getWorkforcemanagementAdherenceExplanationsJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | The ID of the job |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AdherenceExplanationJob**
 
-<a name="getWorkforcemanagementAdherenceHistoricalBulkJob"></a>
 
-# WfmHistoricalAdherenceBulkResponse getWorkforcemanagementAdherenceHistoricalBulkJob(jobId)
+## getWorkforcemanagementAdherenceHistoricalBulkJob
+
+> WfmHistoricalAdherenceBulkResponse getWorkforcemanagementAdherenceHistoricalBulkJob(jobId)
 
 
 GET /api/v2/workforcemanagement/adherence/historical/bulk/jobs/{jobId}
@@ -1023,7 +1430,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -1046,15 +1453,15 @@ apiInstance.getWorkforcemanagementAdherenceHistoricalBulkJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | ID of the job to get |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **WfmHistoricalAdherenceBulkResponse**
 
-<a name="getWorkforcemanagementAdherenceHistoricalJob"></a>
 
-# WfmHistoricalAdherenceResponse getWorkforcemanagementAdherenceHistoricalJob(jobId)
+## getWorkforcemanagementAdherenceHistoricalJob
+
+> WfmHistoricalAdherenceResponse getWorkforcemanagementAdherenceHistoricalJob(jobId)
 
 
 GET /api/v2/workforcemanagement/adherence/historical/jobs/{jobId}
@@ -1075,7 +1482,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -1098,65 +1505,15 @@ apiInstance.getWorkforcemanagementAdherenceHistoricalJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **WfmHistoricalAdherenceResponse**
 
-<a name="getWorkforcemanagementAdhocmodelingjob"></a>
 
-# ModelingStatusResponse getWorkforcemanagementAdhocmodelingjob(jobId)
+## getWorkforcemanagementAgentAdherenceExplanation
 
-
-GET /api/v2/workforcemanagement/adhocmodelingjobs/{jobId}
-
-Get status of the modeling job
-
-Requires ANY permissions:
-
-* wfm:adhocModel:view
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.WorkforceManagementApi();
-
-let jobId = "jobId_example"; // String | The id of the modeling job
-
-apiInstance.getWorkforcemanagementAdhocmodelingjob(jobId)
-  .then((data) => {
-    console.log(`getWorkforcemanagementAdhocmodelingjob success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling getWorkforcemanagementAdhocmodelingjob');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **jobId** | **String** | The id of the modeling job |  |
-{: class="table table-striped"}
-
-### Return type
-
-**ModelingStatusResponse**
-
-<a name="getWorkforcemanagementAgentAdherenceExplanation"></a>
-
-# AdherenceExplanationResponse getWorkforcemanagementAgentAdherenceExplanation(agentId, explanationId)
+> AdherenceExplanationResponse getWorkforcemanagementAgentAdherenceExplanation(agentId, explanationId)
 
 
 GET /api/v2/workforcemanagement/agents/{agentId}/adherence/explanations/{explanationId}
@@ -1175,7 +1532,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -1200,15 +1557,15 @@ apiInstance.getWorkforcemanagementAgentAdherenceExplanation(agentId, explanation
 | ------------- | ------------- | ------------- | ------------- |
  **agentId** | **String** | The ID of the agent to query |  |
  **explanationId** | **String** | The ID of the explanation to update |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AdherenceExplanationResponse**
 
-<a name="getWorkforcemanagementAgentManagementunit"></a>
 
-# AgentManagementUnitReference getWorkforcemanagementAgentManagementunit(agentId)
+## getWorkforcemanagementAgentManagementunit
+
+> AgentManagementUnitReference getWorkforcemanagementAgentManagementunit(agentId)
 
 
 GET /api/v2/workforcemanagement/agents/{agentId}/managementunit
@@ -1233,7 +1590,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -1256,15 +1613,15 @@ apiInstance.getWorkforcemanagementAgentManagementunit(agentId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **agentId** | **String** | The ID of the agent to look up |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AgentManagementUnitReference**
 
-<a name="getWorkforcemanagementAgentsMeManagementunit"></a>
 
-# AgentManagementUnitReference getWorkforcemanagementAgentsMeManagementunit()
+## getWorkforcemanagementAgentsMeManagementunit
+
+> AgentManagementUnitReference getWorkforcemanagementAgentsMeManagementunit()
 
 
 GET /api/v2/workforcemanagement/agents/me/managementunit
@@ -1340,7 +1697,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -1359,14 +1716,369 @@ apiInstance.getWorkforcemanagementAgentsMeManagementunit()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **AgentManagementUnitReference**
 
-<a name="getWorkforcemanagementBusinessunit"></a>
 
-# BusinessUnitResponse getWorkforcemanagementBusinessunit(businessUnitId, opts)
+## getWorkforcemanagementAlternativeshiftsOffersJob
+
+> AlternativeShiftJobResponse getWorkforcemanagementAlternativeshiftsOffersJob(jobId)
+
+
+GET /api/v2/workforcemanagement/alternativeshifts/offers/jobs/{jobId}
+
+Query the status of an alternative shift offers operation. Only the user who started the operation can query the status
+
+Job details are only retained if the initial request returned a 202 ACCEPTED response
+
+Requires ANY permissions:
+
+* wfm:agentAlternativeShift:submit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let jobId = "jobId_example"; // String | The ID of the job
+
+apiInstance.getWorkforcemanagementAlternativeshiftsOffersJob(jobId)
+  .then((data) => {
+    console.log(`getWorkforcemanagementAlternativeshiftsOffersJob success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementAlternativeshiftsOffersJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | The ID of the job |  |
+
+### Return type
+
+**AlternativeShiftJobResponse**
+
+
+## getWorkforcemanagementAlternativeshiftsOffersSearchJob
+
+> AlternativeShiftJobResponse getWorkforcemanagementAlternativeshiftsOffersSearchJob(jobId)
+
+
+GET /api/v2/workforcemanagement/alternativeshifts/offers/search/jobs/{jobId}
+
+Query the status of an alternative shift search offers operation. Only the user who started the operation can query the status
+
+Job details are only retained if the initial request returned a 202 ACCEPTED response
+
+Requires ANY permissions:
+
+* wfm:agentAlternativeShift:submit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let jobId = "jobId_example"; // String | The ID of the job
+
+apiInstance.getWorkforcemanagementAlternativeshiftsOffersSearchJob(jobId)
+  .then((data) => {
+    console.log(`getWorkforcemanagementAlternativeshiftsOffersSearchJob success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementAlternativeshiftsOffersSearchJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | The ID of the job |  |
+
+### Return type
+
+**AlternativeShiftJobResponse**
+
+
+## getWorkforcemanagementAlternativeshiftsSettings
+
+> AlternativeShiftBuSettingsResponse getWorkforcemanagementAlternativeshiftsSettings()
+
+
+GET /api/v2/workforcemanagement/alternativeshifts/settings
+
+Get alternative shifts settings from the current logged in agent’s business unit
+
+Requires ANY permissions:
+
+* wfm:agentAlternativeShift:submit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+apiInstance.getWorkforcemanagementAlternativeshiftsSettings()
+  .then((data) => {
+    console.log(`getWorkforcemanagementAlternativeshiftsSettings success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementAlternativeshiftsSettings');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+**AlternativeShiftBuSettingsResponse**
+
+
+## getWorkforcemanagementAlternativeshiftsTrade
+
+> AlternativeShiftTradeResponse getWorkforcemanagementAlternativeshiftsTrade(tradeId)
+
+
+GET /api/v2/workforcemanagement/alternativeshifts/trades/{tradeId}
+
+Get my alternative shift trade by trade ID
+
+Requires ANY permissions:
+
+* wfm:agentAlternativeShift:submit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let tradeId = "tradeId_example"; // String | The ID of the alternative shift trade
+
+apiInstance.getWorkforcemanagementAlternativeshiftsTrade(tradeId)
+  .then((data) => {
+    console.log(`getWorkforcemanagementAlternativeshiftsTrade success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementAlternativeshiftsTrade');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **tradeId** | **String** | The ID of the alternative shift trade |  |
+
+### Return type
+
+**AlternativeShiftTradeResponse**
+
+
+## getWorkforcemanagementAlternativeshiftsTrades
+
+> ListAlternativeShiftTradesResponse getWorkforcemanagementAlternativeshiftsTrades(opts)
+
+
+GET /api/v2/workforcemanagement/alternativeshifts/trades
+
+Get a list of my alternative shifts trades
+
+Requires ANY permissions:
+
+* wfm:agentAlternativeShift:submit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let opts = { 
+  'forceAsync': true // Boolean | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
+};
+
+apiInstance.getWorkforcemanagementAlternativeshiftsTrades(opts)
+  .then((data) => {
+    console.log(`getWorkforcemanagementAlternativeshiftsTrades success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementAlternativeshiftsTrades');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **forceAsync** | **Boolean** | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes | [optional]  |
+
+### Return type
+
+**ListAlternativeShiftTradesResponse**
+
+
+## getWorkforcemanagementAlternativeshiftsTradesJob
+
+> AlternativeShiftJobResponse getWorkforcemanagementAlternativeshiftsTradesJob(jobId)
+
+
+GET /api/v2/workforcemanagement/alternativeshifts/trades/jobs/{jobId}
+
+Query the status of an alternative shift trades operation. Only the user who started the operation can query the status
+
+Job details are only retained if the initial request returned a 202 ACCEPTED response
+
+Requires ANY permissions:
+
+* wfm:agentAlternativeShift:submit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let jobId = "jobId_example"; // String | The ID of the job
+
+apiInstance.getWorkforcemanagementAlternativeshiftsTradesJob(jobId)
+  .then((data) => {
+    console.log(`getWorkforcemanagementAlternativeshiftsTradesJob success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementAlternativeshiftsTradesJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | The ID of the job |  |
+
+### Return type
+
+**AlternativeShiftJobResponse**
+
+
+## getWorkforcemanagementAlternativeshiftsTradesStateJob
+
+> AlternativeShiftJobResponse getWorkforcemanagementAlternativeshiftsTradesStateJob(jobId)
+
+
+GET /api/v2/workforcemanagement/alternativeshifts/trades/state/jobs/{jobId}
+
+Query the status of an alternative shift trade state operation. Only the user who started the operation can query the status
+
+Job details are only retained if the initial request returned a 202 ACCEPTED response
+
+Requires ANY permissions:
+
+* wfm:alternativeShift:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let jobId = "jobId_example"; // String | The ID of the job
+
+apiInstance.getWorkforcemanagementAlternativeshiftsTradesStateJob(jobId)
+  .then((data) => {
+    console.log(`getWorkforcemanagementAlternativeshiftsTradesStateJob success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementAlternativeshiftsTradesStateJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | The ID of the job |  |
+
+### Return type
+
+**AlternativeShiftJobResponse**
+
+
+## getWorkforcemanagementBusinessunit
+
+> BusinessUnitResponse getWorkforcemanagementBusinessunit(businessUnitId, opts)
 
 
 GET /api/v2/workforcemanagement/businessunits/{businessUnitId}
@@ -1446,6 +2158,8 @@ Requires ANY permissions:
 * wfm:workPlanRotation:view
 * coaching:appointment:add
 * coaching:appointment:edit
+* learning:assignment:add
+* learning:assignment:reschedule
 
 ### Example Usage
 
@@ -1455,14 +2169,15 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit, or 'mine' for the business unit of the logged-in user.
 let opts = { 
-  'expand': ["expand_example"] // [String] | Include to access additional data on the business unit
+  'expand': ["expand_example"], // [String] | Include to access additional data on the business unit
+  'includeSchedulingDefaultMessageSeverities': true // Boolean | Whether to include scheduling default message severities
 };
 
 apiInstance.getWorkforcemanagementBusinessunit(businessUnitId, opts)
@@ -1481,16 +2196,17 @@ apiInstance.getWorkforcemanagementBusinessunit(businessUnitId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit, or 'mine' for the business unit of the logged-in user. |  |
- **expand** | **[String]** | Include to access additional data on the business unit | [optional] <br />**Values**: settings, settings.timeZone, settings.startDayOfWeek, settings.shortTermForecasting, settings.scheduling |
-{: class="table table-striped"}
+ **expand** | **[String]** | Include to access additional data on the business unit | [optional] <br />**Values**: settings, settings.timeZone, settings.startDayOfWeek, settings.shortTermForecasting, settings.scheduling, settings.notifications.scheduling, settings.learning, settings.coaching |
+ **includeSchedulingDefaultMessageSeverities** | **Boolean** | Whether to include scheduling default message severities | [optional]  |
 
 ### Return type
 
 **BusinessUnitResponse**
 
-<a name="getWorkforcemanagementBusinessunitActivitycode"></a>
 
-# BusinessUnitActivityCode getWorkforcemanagementBusinessunitActivitycode(businessUnitId, activityCodeId)
+## getWorkforcemanagementBusinessunitActivitycode
+
+> BusinessUnitActivityCode getWorkforcemanagementBusinessunitActivitycode(businessUnitId, activityCodeId)
 
 
 GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes/{activityCodeId}
@@ -1509,7 +2225,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -1534,15 +2250,15 @@ apiInstance.getWorkforcemanagementBusinessunitActivitycode(businessUnitId, activ
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit, or 'mine' for the business unit of the logged-in user. |  |
  **activityCodeId** | **String** | The ID of the activity code to fetch |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **BusinessUnitActivityCode**
 
-<a name="getWorkforcemanagementBusinessunitActivitycodes"></a>
 
-# BusinessUnitActivityCodeListing getWorkforcemanagementBusinessunitActivitycodes(businessUnitId)
+## getWorkforcemanagementBusinessunitActivitycodes
+
+> BusinessUnitActivityCodeListing getWorkforcemanagementBusinessunitActivitycodes(businessUnitId, opts)
 
 
 GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes
@@ -1619,14 +2335,17 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit, or 'mine' for the business unit of the logged-in user.
+let opts = { 
+  'forceDownloadService': true // Boolean | Force the result of this operation to be sent via download service. For testing/app development purposes
+};
 
-apiInstance.getWorkforcemanagementBusinessunitActivitycodes(businessUnitId)
+apiInstance.getWorkforcemanagementBusinessunitActivitycodes(businessUnitId, opts)
   .then((data) => {
     console.log(`getWorkforcemanagementBusinessunitActivitycodes success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1642,15 +2361,642 @@ apiInstance.getWorkforcemanagementBusinessunitActivitycodes(businessUnitId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit, or 'mine' for the business unit of the logged-in user. |  |
-{: class="table table-striped"}
+ **forceDownloadService** | **Boolean** | Force the result of this operation to be sent via download service. For testing/app development purposes | [optional]  |
 
 ### Return type
 
 **BusinessUnitActivityCodeListing**
 
-<a name="getWorkforcemanagementBusinessunitIntradayPlanninggroups"></a>
 
-# WfmIntradayPlanningGroupListing getWorkforcemanagementBusinessunitIntradayPlanninggroups(businessUnitId, _date)
+## getWorkforcemanagementBusinessunitActivityplan
+
+> ActivityPlanResponse getWorkforcemanagementBusinessunitActivityplan(businessUnitId, activityPlanId)
+
+
+GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}
+
+Get an activity plan
+
+Requires ANY permissions:
+
+* wfm:activityPlan:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let activityPlanId = "activityPlanId_example"; // String | The ID of the activity plan to fetch
+
+apiInstance.getWorkforcemanagementBusinessunitActivityplan(businessUnitId, activityPlanId)
+  .then((data) => {
+    console.log(`getWorkforcemanagementBusinessunitActivityplan success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementBusinessunitActivityplan');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **activityPlanId** | **String** | The ID of the activity plan to fetch |  |
+
+### Return type
+
+**ActivityPlanResponse**
+
+
+## getWorkforcemanagementBusinessunitActivityplanRunsJob
+
+> ActivityPlanRunJobResponse getWorkforcemanagementBusinessunitActivityplanRunsJob(businessUnitId, activityPlanId, jobId)
+
+
+GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/runs/jobs/{jobId}
+
+Gets an activity plan run job
+
+Requires ANY permissions:
+
+* wfm:activityPlanRunJob:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let activityPlanId = "activityPlanId_example"; // String | The ID of the activity plan associated with the run job
+let jobId = "jobId_example"; // String | The ID of the activity plan run job
+
+apiInstance.getWorkforcemanagementBusinessunitActivityplanRunsJob(businessUnitId, activityPlanId, jobId)
+  .then((data) => {
+    console.log(`getWorkforcemanagementBusinessunitActivityplanRunsJob success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementBusinessunitActivityplanRunsJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **activityPlanId** | **String** | The ID of the activity plan associated with the run job |  |
+ **jobId** | **String** | The ID of the activity plan run job |  |
+
+### Return type
+
+**ActivityPlanRunJobResponse**
+
+
+## getWorkforcemanagementBusinessunitActivityplans
+
+> ActivityPlanListing getWorkforcemanagementBusinessunitActivityplans(businessUnitId, opts)
+
+
+GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans
+
+Get activity plans
+
+Requires ANY permissions:
+
+* wfm:activityPlan:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let opts = { 
+  'state': "state_example" // String | Optionally filter by activity plan state
+};
+
+apiInstance.getWorkforcemanagementBusinessunitActivityplans(businessUnitId, opts)
+  .then((data) => {
+    console.log(`getWorkforcemanagementBusinessunitActivityplans success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementBusinessunitActivityplans');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **state** | **String** | Optionally filter by activity plan state | [optional] <br />**Values**: Active, Inactive |
+
+### Return type
+
+**ActivityPlanListing**
+
+
+## getWorkforcemanagementBusinessunitActivityplansJobs
+
+> ActivityPlanJobListing getWorkforcemanagementBusinessunitActivityplansJobs(businessUnitId)
+
+
+GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/jobs
+
+Gets the latest job for all activity plans in the business unit
+
+Requires ANY permissions:
+
+* wfm:activityPlan:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+
+apiInstance.getWorkforcemanagementBusinessunitActivityplansJobs(businessUnitId)
+  .then((data) => {
+    console.log(`getWorkforcemanagementBusinessunitActivityplansJobs success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementBusinessunitActivityplansJobs');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+
+### Return type
+
+**ActivityPlanJobListing**
+
+
+## getWorkforcemanagementBusinessunitAlternativeshiftsSettings
+
+> AlternativeShiftBuSettingsResponse getWorkforcemanagementBusinessunitAlternativeshiftsSettings(businessUnitId)
+
+
+GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/alternativeshifts/settings
+
+Get alternative shifts settings for a business unit
+
+Requires ANY permissions:
+
+* wfm:businessUnit:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+
+apiInstance.getWorkforcemanagementBusinessunitAlternativeshiftsSettings(businessUnitId)
+  .then((data) => {
+    console.log(`getWorkforcemanagementBusinessunitAlternativeshiftsSettings success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementBusinessunitAlternativeshiftsSettings');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+
+### Return type
+
+**AlternativeShiftBuSettingsResponse**
+
+
+## getWorkforcemanagementBusinessunitAlternativeshiftsTrade
+
+> AlternativeShiftTradeResponse getWorkforcemanagementBusinessunitAlternativeshiftsTrade(businessUnitId, tradeId)
+
+
+GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/alternativeshifts/trades/{tradeId}
+
+Get an alternative shifts trade in a business unit for a given trade ID
+
+Requires ANY permissions:
+
+* wfm:alternativeShift:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let tradeId = "tradeId_example"; // String | The ID of the alternative shift trade
+
+apiInstance.getWorkforcemanagementBusinessunitAlternativeshiftsTrade(businessUnitId, tradeId)
+  .then((data) => {
+    console.log(`getWorkforcemanagementBusinessunitAlternativeshiftsTrade success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementBusinessunitAlternativeshiftsTrade');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **tradeId** | **String** | The ID of the alternative shift trade |  |
+
+### Return type
+
+**AlternativeShiftTradeResponse**
+
+
+## getWorkforcemanagementBusinessunitAlternativeshiftsTradesSearchJob
+
+> BuAlternativeShiftJobResponse getWorkforcemanagementBusinessunitAlternativeshiftsTradesSearchJob(businessUnitId, jobId)
+
+
+GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/alternativeshifts/trades/search/jobs/{jobId}
+
+Query the status of an alternative shift search trade operation. Only the user who started the operation can query the status
+
+Job details are only retained if the initial request returned a 202 ACCEPTED response
+
+Requires ANY permissions:
+
+* wfm:alternativeShift:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let jobId = "jobId_example"; // String | The ID of the job
+
+apiInstance.getWorkforcemanagementBusinessunitAlternativeshiftsTradesSearchJob(businessUnitId, jobId)
+  .then((data) => {
+    console.log(`getWorkforcemanagementBusinessunitAlternativeshiftsTradesSearchJob success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementBusinessunitAlternativeshiftsTradesSearchJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **jobId** | **String** | The ID of the job |  |
+
+### Return type
+
+**BuAlternativeShiftJobResponse**
+
+
+## getWorkforcemanagementBusinessunitCapacityplan
+
+> CapacityPlanResponse getWorkforcemanagementBusinessunitCapacityplan(businessUnitId, capacityPlanId)
+
+
+GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}
+
+Get a capacity plan
+
+Requires ANY permissions:
+
+* wfm:capacityPlan:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let capacityPlanId = "capacityPlanId_example"; // String | The ID of the capacity plan
+
+apiInstance.getWorkforcemanagementBusinessunitCapacityplan(businessUnitId, capacityPlanId)
+  .then((data) => {
+    console.log(`getWorkforcemanagementBusinessunitCapacityplan success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementBusinessunitCapacityplan');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **capacityPlanId** | **String** | The ID of the capacity plan |  |
+
+### Return type
+
+**CapacityPlanResponse**
+
+
+## getWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations
+
+> CapacityPlanStaffingGroupAllocationsResponse getWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations(businessUnitId, capacityPlanId)
+
+
+GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}/staffinggroupallocations
+
+Get a capacity plan's staffing group allocations
+
+Requires ANY permissions:
+
+* wfm:capacityPlan:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let capacityPlanId = "capacityPlanId_example"; // String | The ID of the capacity plan
+
+apiInstance.getWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations(businessUnitId, capacityPlanId)
+  .then((data) => {
+    console.log(`getWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **capacityPlanId** | **String** | The ID of the capacity plan |  |
+
+### Return type
+
+**CapacityPlanStaffingGroupAllocationsResponse**
+
+
+## getWorkforcemanagementBusinessunitCapacityplanStaffingrequirements
+
+> CapacityPlanStaffingRequirementResult getWorkforcemanagementBusinessunitCapacityplanStaffingrequirements(businessUnitId, capacityPlanId)
+
+
+GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}/staffingrequirements
+
+Get a capacity plan's staffing requirements
+
+Requires ANY permissions:
+
+* wfm:capacityPlan:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let capacityPlanId = "capacityPlanId_example"; // String | The ID of the capacity plan
+
+apiInstance.getWorkforcemanagementBusinessunitCapacityplanStaffingrequirements(businessUnitId, capacityPlanId)
+  .then((data) => {
+    console.log(`getWorkforcemanagementBusinessunitCapacityplanStaffingrequirements success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementBusinessunitCapacityplanStaffingrequirements');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **capacityPlanId** | **String** | The ID of the capacity plan |  |
+
+### Return type
+
+**CapacityPlanStaffingRequirementResult**
+
+
+## getWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecast
+
+> LongTermRequirementsResponse getWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecast(businessUnitId, weekDateId, forecastId)
+
+
+GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplanning/longtermrequirements/automaticbestmethod/weeks/{weekDateId}/forecasts/{forecastId}
+
+Get the latest long term staffing requirements for a business unit
+
+Requires ANY permissions:
+
+* wfm:longTermStaffing:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | 
+let weekDateId = "weekDateId_example"; // String | weekDateId of forecast, format yyyy-MM-dd. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let forecastId = "forecastId_example"; // String | forecastId of forecast
+
+apiInstance.getWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecast(businessUnitId, weekDateId, forecastId)
+  .then((data) => {
+    console.log(`getWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecast success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecast');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** |  |  |
+ **weekDateId** | **String** | weekDateId of forecast, format yyyy-MM-dd. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+ **forecastId** | **String** | forecastId of forecast |  |
+
+### Return type
+
+**LongTermRequirementsResponse**
+
+
+## getWorkforcemanagementBusinessunitCapacityplans
+
+> CapacityPlansListResponse getWorkforcemanagementBusinessunitCapacityplans(businessUnitId)
+
+
+GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans
+
+Get list of capacity plans for a business unit
+
+Requires ANY permissions:
+
+* wfm:capacityPlan:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+
+apiInstance.getWorkforcemanagementBusinessunitCapacityplans(businessUnitId)
+  .then((data) => {
+    console.log(`getWorkforcemanagementBusinessunitCapacityplans success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementBusinessunitCapacityplans');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+
+### Return type
+
+**CapacityPlansListResponse**
+
+
+## getWorkforcemanagementBusinessunitIntradayPlanninggroups
+
+> WfmIntradayPlanningGroupListing getWorkforcemanagementBusinessunitIntradayPlanninggroups(businessUnitId, _date)
 
 
 GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/intraday/planninggroups
@@ -1669,7 +3015,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -1694,15 +3040,177 @@ apiInstance.getWorkforcemanagementBusinessunitIntradayPlanninggroups(businessUni
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit |  |
  **_date** | **String** | yyyy-MM-dd date string interpreted in the configured business unit time zone. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **WfmIntradayPlanningGroupListing**
 
-<a name="getWorkforcemanagementBusinessunitManagementunits"></a>
 
-# ManagementUnitListing getWorkforcemanagementBusinessunitManagementunits(businessUnitId, opts)
+## getWorkforcemanagementBusinessunitMainforecastContinuousforecastSession
+
+> ContinuousForecastGetSessionResponse getWorkforcemanagementBusinessunitMainforecastContinuousforecastSession(businessUnitId)
+
+
+GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/mainforecast/continuousforecast/session
+
+Get the latest session for the business unit ID
+
+getWorkforcemanagementBusinessunitMainforecastContinuousforecastSession is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* wfm:mainForecast:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | 
+
+apiInstance.getWorkforcemanagementBusinessunitMainforecastContinuousforecastSession(businessUnitId)
+  .then((data) => {
+    console.log(`getWorkforcemanagementBusinessunitMainforecastContinuousforecastSession success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementBusinessunitMainforecastContinuousforecastSession');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** |  |  |
+
+### Return type
+
+**ContinuousForecastGetSessionResponse**
+
+
+## getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionId
+
+> ContinuousForecastSessionResponse getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionId(businessUnitId, sessionId)
+
+
+GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/mainforecast/continuousforecast/session/{sessionId}
+
+Get the session details for the session ID
+
+getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* wfm:mainForecast:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | 
+let sessionId = "sessionId_example"; // String | 
+
+apiInstance.getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionId(businessUnitId, sessionId)
+  .then((data) => {
+    console.log(`getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionId success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionId');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** |  |  |
+ **sessionId** | **String** |  |  |
+
+### Return type
+
+**ContinuousForecastSessionResponse**
+
+
+## getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdSnapshotSnapshotId
+
+> ContinuousForecastSnapshotResponse getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdSnapshotSnapshotId(businessUnitId, sessionId, snapshotId)
+
+
+GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/mainforecast/continuousforecast/session/{sessionId}/snapshot/{snapshotId}
+
+Get the snapshot details for the snapshot ID
+
+getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdSnapshotSnapshotId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* wfm:mainForecast:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | 
+let sessionId = "sessionId_example"; // String | 
+let snapshotId = "snapshotId_example"; // String | 
+
+apiInstance.getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdSnapshotSnapshotId(businessUnitId, sessionId, snapshotId)
+  .then((data) => {
+    console.log(`getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdSnapshotSnapshotId success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementBusinessunitMainforecastContinuousforecastSessionSessionIdSnapshotSnapshotId');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** |  |  |
+ **sessionId** | **String** |  |  |
+ **snapshotId** | **String** |  |  |
+
+### Return type
+
+**ContinuousForecastSnapshotResponse**
+
+
+## getWorkforcemanagementBusinessunitManagementunits
+
+> ManagementUnitListing getWorkforcemanagementBusinessunitManagementunits(businessUnitId, opts)
 
 
 GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/managementunits
@@ -1719,7 +3227,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -1746,17 +3254,17 @@ apiInstance.getWorkforcemanagementBusinessunitManagementunits(businessUnitId, op
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit, or 'mine' for the business unit of the logged-in user. |  |
- **feature** | **String** | If specified, the list of management units for which the user is authorized to use the requested feature will be returned | [optional] <br />**Values**: AgentSchedule, AgentTimeOffRequest, Coaching, Learning, ActivityCodes, Agents, BuActivityCodes, BusinessUnits, HistoricalAdherence, HistoricalShrinkage, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalTemplates, PlanningGroups, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, StaffingGroups, TimeOffPlans, TimeOffRequests, TimeOffLimits, WorkPlanRotations, WorkPlans |
+ **feature** | **String** | If specified, the list of management units for which the user is authorized to use the requested feature will be returned | [optional] <br />**Values**: AgentHistoricalAdherence, AgentHistoricalAdherenceConformance, AgentSchedule, AgentTimeOffRequest, AgentWorkPlanBid, AlternativeShift, Coaching, Learning, AgentUnavailableTimes, ActivityCodes, ActivityPlans, UnavailableTimes, Agents, BuActivityCodes, BusinessUnits, CapacityPlan, ContinuousForecast, HistoricalAdherence, HistoricalShrinkage, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalTemplates, PlanningGroups, LongTermStaffing, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, StaffingGroups, TimeOffPlans, TimeOffRequests, TimeOffLimits, WorkPlanBids, WorkPlanBidGroups, WorkPlanRotations, WorkPlans |
  **divisionId** | **String** | If specified, the list of management units belonging to the specified division will be returned | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ManagementUnitListing**
 
-<a name="getWorkforcemanagementBusinessunitPlanninggroup"></a>
 
-# PlanningGroup getWorkforcemanagementBusinessunitPlanninggroup(businessUnitId, planningGroupId)
+## getWorkforcemanagementBusinessunitPlanninggroup
+
+> PlanningGroup getWorkforcemanagementBusinessunitPlanninggroup(businessUnitId, planningGroupId)
 
 
 GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups/{planningGroupId}
@@ -1775,7 +3283,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -1800,15 +3308,15 @@ apiInstance.getWorkforcemanagementBusinessunitPlanninggroup(businessUnitId, plan
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit. |  |
  **planningGroupId** | **String** | The ID of a planning group to fetch |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **PlanningGroup**
 
-<a name="getWorkforcemanagementBusinessunitPlanninggroups"></a>
 
-# PlanningGroupList getWorkforcemanagementBusinessunitPlanninggroups(businessUnitId)
+## getWorkforcemanagementBusinessunitPlanninggroups
+
+> PlanningGroupList getWorkforcemanagementBusinessunitPlanninggroups(businessUnitId)
 
 
 GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups
@@ -1832,7 +3340,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -1855,15 +3363,15 @@ apiInstance.getWorkforcemanagementBusinessunitPlanninggroups(businessUnitId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit. |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **PlanningGroupList**
 
-<a name="getWorkforcemanagementBusinessunitSchedulingRun"></a>
 
-# BuScheduleRun getWorkforcemanagementBusinessunitSchedulingRun(businessUnitId, runId)
+## getWorkforcemanagementBusinessunitSchedulingRun
+
+> BuScheduleRun getWorkforcemanagementBusinessunitSchedulingRun(businessUnitId, runId)
 
 
 GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs/{runId}
@@ -1883,7 +3391,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -1908,15 +3416,15 @@ apiInstance.getWorkforcemanagementBusinessunitSchedulingRun(businessUnitId, runI
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit |  |
  **runId** | **String** | The ID of the schedule run |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **BuScheduleRun**
 
-<a name="getWorkforcemanagementBusinessunitSchedulingRunResult"></a>
 
-# BuRescheduleResult getWorkforcemanagementBusinessunitSchedulingRunResult(businessUnitId, runId, managementUnitIds, expand)
+## getWorkforcemanagementBusinessunitSchedulingRunResult
+
+> BuRescheduleResult getWorkforcemanagementBusinessunitSchedulingRunResult(businessUnitId, runId, managementUnitIds, expand)
 
 
 GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs/{runId}/result
@@ -1936,7 +3444,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -1965,15 +3473,15 @@ apiInstance.getWorkforcemanagementBusinessunitSchedulingRunResult(businessUnitId
  **runId** | **String** | The ID of the schedule run |  |
  **managementUnitIds** | **[String]** | The IDs of the management units for which to fetch the reschedule results |  |
  **expand** | **[String]** | The fields to expand. Omitting will return an empty response | <br />**Values**: headcountForecast, generationResults, agentSchedules |
-{: class="table table-striped"}
 
 ### Return type
 
 **BuRescheduleResult**
 
-<a name="getWorkforcemanagementBusinessunitSchedulingRuns"></a>
 
-# BuScheduleRunListing getWorkforcemanagementBusinessunitSchedulingRuns(businessUnitId)
+## getWorkforcemanagementBusinessunitSchedulingRuns
+
+> BuScheduleRunListing getWorkforcemanagementBusinessunitSchedulingRuns(businessUnitId)
 
 
 GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs
@@ -1993,7 +3501,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -2016,15 +3524,15 @@ apiInstance.getWorkforcemanagementBusinessunitSchedulingRuns(businessUnitId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **BuScheduleRunListing**
 
-<a name="getWorkforcemanagementBusinessunitServicegoaltemplate"></a>
 
-# ServiceGoalTemplate getWorkforcemanagementBusinessunitServicegoaltemplate(businessUnitId, serviceGoalTemplateId, opts)
+## getWorkforcemanagementBusinessunitServicegoaltemplate
+
+> ServiceGoalTemplate getWorkforcemanagementBusinessunitServicegoaltemplate(businessUnitId, serviceGoalTemplateId, opts)
 
 
 GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates/{serviceGoalTemplateId}
@@ -2043,7 +3551,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -2072,15 +3580,15 @@ apiInstance.getWorkforcemanagementBusinessunitServicegoaltemplate(businessUnitId
  **businessUnitId** | **String** | The ID of the business unit. |  |
  **serviceGoalTemplateId** | **String** | The ID of a service goal template to fetch |  |
  **expand** | **[String]** | Include to access additional data on the service goal template | [optional] <br />**Values**: impactOverride |
-{: class="table table-striped"}
 
 ### Return type
 
 **ServiceGoalTemplate**
 
-<a name="getWorkforcemanagementBusinessunitServicegoaltemplates"></a>
 
-# ServiceGoalTemplateList getWorkforcemanagementBusinessunitServicegoaltemplates(businessUnitId, opts)
+## getWorkforcemanagementBusinessunitServicegoaltemplates
+
+> ServiceGoalTemplateList getWorkforcemanagementBusinessunitServicegoaltemplates(businessUnitId, opts)
 
 
 GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates
@@ -2101,7 +3609,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -2128,15 +3636,340 @@ apiInstance.getWorkforcemanagementBusinessunitServicegoaltemplates(businessUnitI
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit. |  |
  **expand** | **[String]** | Include to access additional data on the service goal template | [optional] <br />**Values**: impactOverride |
-{: class="table table-striped"}
 
 ### Return type
 
 **ServiceGoalTemplateList**
 
-<a name="getWorkforcemanagementBusinessunitWeekSchedule"></a>
 
-# BuScheduleMetadata getWorkforcemanagementBusinessunitWeekSchedule(businessUnitId, weekId, scheduleId, opts)
+## getWorkforcemanagementBusinessunitStaffinggroup
+
+> StaffingGroupResponse getWorkforcemanagementBusinessunitStaffinggroup(businessUnitId, staffingGroupId)
+
+
+GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups/{staffingGroupId}
+
+Gets a staffing group
+
+Requires ANY permissions:
+
+* wfm:staffingGroup:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let staffingGroupId = "staffingGroupId_example"; // String | The ID of the staffing group to fetch
+
+apiInstance.getWorkforcemanagementBusinessunitStaffinggroup(businessUnitId, staffingGroupId)
+  .then((data) => {
+    console.log(`getWorkforcemanagementBusinessunitStaffinggroup success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementBusinessunitStaffinggroup');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **staffingGroupId** | **String** | The ID of the staffing group to fetch |  |
+
+### Return type
+
+**StaffingGroupResponse**
+
+
+## getWorkforcemanagementBusinessunitStaffinggroups
+
+> StaffingGroupListing getWorkforcemanagementBusinessunitStaffinggroups(businessUnitId, opts)
+
+
+GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups
+
+Gets a list of staffing groups
+
+Requires ANY permissions:
+
+* wfm:staffingGroup:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let opts = { 
+  'managementUnitId': "managementUnitId_example", // String | The ID of the management unit to get management unit specific staffing groups
+  'forceDownloadService': true // Boolean | Force the result of this operation to be sent via download service. For testing/app development purposes
+};
+
+apiInstance.getWorkforcemanagementBusinessunitStaffinggroups(businessUnitId, opts)
+  .then((data) => {
+    console.log(`getWorkforcemanagementBusinessunitStaffinggroups success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementBusinessunitStaffinggroups');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **managementUnitId** | **String** | The ID of the management unit to get management unit specific staffing groups | [optional]  |
+ **forceDownloadService** | **Boolean** | Force the result of this operation to be sent via download service. For testing/app development purposes | [optional]  |
+
+### Return type
+
+**StaffingGroupListing**
+
+
+## getWorkforcemanagementBusinessunitTimeofflimit
+
+> BuTimeOffLimitResponse getWorkforcemanagementBusinessunitTimeofflimit(businessUnitId, timeOffLimitId)
+
+
+GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}
+
+Gets a time-off limit object
+
+Returns properties of time-off limit object, but not daily values
+
+Requires ANY permissions:
+
+* wfm:timeOffLimit:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let timeOffLimitId = "timeOffLimitId_example"; // String | The ID of the time-off limit to fetch
+
+apiInstance.getWorkforcemanagementBusinessunitTimeofflimit(businessUnitId, timeOffLimitId)
+  .then((data) => {
+    console.log(`getWorkforcemanagementBusinessunitTimeofflimit success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementBusinessunitTimeofflimit');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **timeOffLimitId** | **String** | The ID of the time-off limit to fetch |  |
+
+### Return type
+
+**BuTimeOffLimitResponse**
+
+
+## getWorkforcemanagementBusinessunitTimeofflimits
+
+> BuTimeOffLimitListing getWorkforcemanagementBusinessunitTimeofflimits(businessUnitId, opts)
+
+
+GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits
+
+Gets a list of time-off limit objects
+
+Requires ANY permissions:
+
+* wfm:timeOffLimit:view
+* wfm:timeOffPlan:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let opts = { 
+  'managementUnitId': "managementUnitId_example" // String | The ID of the management unit to get management unit specific time-off limit objects
+};
+
+apiInstance.getWorkforcemanagementBusinessunitTimeofflimits(businessUnitId, opts)
+  .then((data) => {
+    console.log(`getWorkforcemanagementBusinessunitTimeofflimits success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementBusinessunitTimeofflimits');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **managementUnitId** | **String** | The ID of the management unit to get management unit specific time-off limit objects | [optional]  |
+
+### Return type
+
+**BuTimeOffLimitListing**
+
+
+## getWorkforcemanagementBusinessunitTimeoffplan
+
+> BuTimeOffPlanResponse getWorkforcemanagementBusinessunitTimeoffplan(businessUnitId, timeOffPlanId)
+
+
+GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans/{timeOffPlanId}
+
+Gets a time-off plan
+
+Requires ANY permissions:
+
+* wfm:timeOffPlan:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let timeOffPlanId = "timeOffPlanId_example"; // String | The ID of the time-off plan to fetch
+
+apiInstance.getWorkforcemanagementBusinessunitTimeoffplan(businessUnitId, timeOffPlanId)
+  .then((data) => {
+    console.log(`getWorkforcemanagementBusinessunitTimeoffplan success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementBusinessunitTimeoffplan');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **timeOffPlanId** | **String** | The ID of the time-off plan to fetch |  |
+
+### Return type
+
+**BuTimeOffPlanResponse**
+
+
+## getWorkforcemanagementBusinessunitTimeoffplans
+
+> BuTimeOffPlanListing getWorkforcemanagementBusinessunitTimeoffplans(businessUnitId, opts)
+
+
+GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans
+
+Gets a list of time-off plans
+
+Requires ANY permissions:
+
+* wfm:timeOffPlan:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let opts = { 
+  'managementUnitId': "managementUnitId_example", // String | The ID of the management unit to get management unit specific staffing groups
+  'forceDownloadService': true // Boolean | Force the result of this operation to be sent via download service. For testing/app development purposes
+};
+
+apiInstance.getWorkforcemanagementBusinessunitTimeoffplans(businessUnitId, opts)
+  .then((data) => {
+    console.log(`getWorkforcemanagementBusinessunitTimeoffplans success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementBusinessunitTimeoffplans');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **managementUnitId** | **String** | The ID of the management unit to get management unit specific staffing groups | [optional]  |
+ **forceDownloadService** | **Boolean** | Force the result of this operation to be sent via download service. For testing/app development purposes | [optional]  |
+
+### Return type
+
+**BuTimeOffPlanListing**
+
+
+## getWorkforcemanagementBusinessunitWeekSchedule
+
+> BuScheduleMetadata getWorkforcemanagementBusinessunitWeekSchedule(businessUnitId, weekId, scheduleId, opts)
 
 
 GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}
@@ -2156,7 +3989,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -2187,15 +4020,15 @@ apiInstance.getWorkforcemanagementBusinessunitWeekSchedule(businessUnitId, weekI
  **weekId** | **String** | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **scheduleId** | **String** | The ID of the schedule |  |
  **expand** | **String** | expand | [optional] <br />**Values**: managementUnits.agents |
-{: class="table table-striped"}
 
 ### Return type
 
 **BuScheduleMetadata**
 
-<a name="getWorkforcemanagementBusinessunitWeekScheduleGenerationresults"></a>
 
-# ScheduleGenerationResult getWorkforcemanagementBusinessunitWeekScheduleGenerationresults(businessUnitId, weekId, scheduleId)
+## getWorkforcemanagementBusinessunitWeekScheduleGenerationresults
+
+> ScheduleGenerationResult getWorkforcemanagementBusinessunitWeekScheduleGenerationresults(businessUnitId, weekId, scheduleId)
 
 
 GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/generationresults
@@ -2215,7 +4048,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -2242,15 +4075,15 @@ apiInstance.getWorkforcemanagementBusinessunitWeekScheduleGenerationresults(busi
  **businessUnitId** | **String** | The ID of the business unit |  |
  **weekId** | **String** | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **scheduleId** | **String** | The ID of the schedule |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ScheduleGenerationResult**
 
-<a name="getWorkforcemanagementBusinessunitWeekScheduleHeadcountforecast"></a>
 
-# BuHeadcountForecastResponse getWorkforcemanagementBusinessunitWeekScheduleHeadcountforecast(businessUnitId, weekId, scheduleId, opts)
+## getWorkforcemanagementBusinessunitWeekScheduleHeadcountforecast
+
+> BuHeadcountForecastResponse getWorkforcemanagementBusinessunitWeekScheduleHeadcountforecast(businessUnitId, weekId, scheduleId, opts)
 
 
 GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/headcountforecast
@@ -2270,7 +4103,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -2301,15 +4134,15 @@ apiInstance.getWorkforcemanagementBusinessunitWeekScheduleHeadcountforecast(busi
  **weekId** | **String** | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **scheduleId** | **String** | The ID of the schedule |  |
  **forceDownload** | **Boolean** | Whether to force the result to come via download url.  For testing purposes only | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **BuHeadcountForecastResponse**
 
-<a name="getWorkforcemanagementBusinessunitWeekScheduleHistoryAgent"></a>
 
-# BuAgentScheduleHistoryResponse getWorkforcemanagementBusinessunitWeekScheduleHistoryAgent(businessUnitId, weekId, scheduleId, agentId)
+## getWorkforcemanagementBusinessunitWeekScheduleHistoryAgent
+
+> BuAgentScheduleHistoryResponse getWorkforcemanagementBusinessunitWeekScheduleHistoryAgent(businessUnitId, weekId, scheduleId, agentId)
 
 
 GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/history/agents/{agentId}
@@ -2329,7 +4162,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -2358,15 +4191,127 @@ apiInstance.getWorkforcemanagementBusinessunitWeekScheduleHistoryAgent(businessU
  **weekId** | **String** | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **scheduleId** | **String** | The ID of the schedule |  |
  **agentId** | **String** | THe ID of the agent |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **BuAgentScheduleHistoryResponse**
 
-<a name="getWorkforcemanagementBusinessunitWeekSchedules"></a>
 
-# BuScheduleListing getWorkforcemanagementBusinessunitWeekSchedules(businessUnitId, weekId, opts)
+## getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictions
+
+> PerformancePredictionResponse getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictions(businessUnitId, weekId, scheduleId)
+
+
+GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/performancepredictions
+
+Get the performance prediction for the associated schedule
+
+Requires ANY permissions:
+
+* wfm:schedule:view
+* wfm:publishedSchedule:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit to which the performance prediction belongs
+let weekId = "weekId_example"; // String | First day of schedule week in yyyy-MM-dd format
+let scheduleId = "scheduleId_example"; // String | The ID of the schedule the performance prediction belongs to
+
+apiInstance.getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictions(businessUnitId, weekId, scheduleId)
+  .then((data) => {
+    console.log(`getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictions success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictions');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit to which the performance prediction belongs |  |
+ **weekId** | **String** | First day of schedule week in yyyy-MM-dd format |  |
+ **scheduleId** | **String** | The ID of the schedule the performance prediction belongs to |  |
+
+### Return type
+
+**PerformancePredictionResponse**
+
+
+## getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculation
+
+> PerformancePredictionRecalculationResponse getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculation(businessUnitId, weekId, scheduleId, recalculationId)
+
+
+GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/performancepredictions/recalculations/{recalculationId}
+
+Get recalculated performance prediction result
+
+Requires ANY permissions:
+
+* wfm:schedule:view
+* wfm:publishedSchedule:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit to which the performance prediction belongs
+let weekId = "weekId_example"; // String | First day of schedule week in yyyy-MM-dd format
+let scheduleId = "scheduleId_example"; // String | The ID of the schedule the recalculation belongs to
+let recalculationId = "recalculationId_example"; // String | The ID of the recalculation request
+
+apiInstance.getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculation(businessUnitId, weekId, scheduleId, recalculationId)
+  .then((data) => {
+    console.log(`getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculation success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculation');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit to which the performance prediction belongs |  |
+ **weekId** | **String** | First day of schedule week in yyyy-MM-dd format |  |
+ **scheduleId** | **String** | The ID of the schedule the recalculation belongs to |  |
+ **recalculationId** | **String** | The ID of the recalculation request |  |
+
+### Return type
+
+**PerformancePredictionRecalculationResponse**
+
+
+## getWorkforcemanagementBusinessunitWeekSchedules
+
+> BuScheduleListing getWorkforcemanagementBusinessunitWeekSchedules(businessUnitId, weekId, opts)
 
 
 GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules
@@ -2388,7 +4333,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -2419,15 +4364,15 @@ apiInstance.getWorkforcemanagementBusinessunitWeekSchedules(businessUnitId, week
  **weekId** | **String** | First day of schedule week in yyyy-MM-dd format, or 'recent' (without quotes) to get recent schedules |  |
  **includeOnlyPublished** | **Boolean** | includeOnlyPublished | [optional]  |
  **expand** | **String** | expand | [optional] <br />**Values**: forecast.description |
-{: class="table table-striped"}
 
 ### Return type
 
 **BuScheduleListing**
 
-<a name="getWorkforcemanagementBusinessunitWeekShorttermforecast"></a>
 
-# BuShortTermForecast getWorkforcemanagementBusinessunitWeekShorttermforecast(businessUnitId, weekDateId, forecastId, opts)
+## getWorkforcemanagementBusinessunitWeekShorttermforecast
+
+> BuShortTermForecast getWorkforcemanagementBusinessunitWeekShorttermforecast(businessUnitId, weekDateId, forecastId, opts)
 
 
 GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}
@@ -2446,7 +4391,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -2477,15 +4422,15 @@ apiInstance.getWorkforcemanagementBusinessunitWeekShorttermforecast(businessUnit
  **weekDateId** | **String** | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **forecastId** | **String** | The ID of the forecast |  |
  **expand** | **[String]** | Include to access additional data on the forecast | [optional] <br />**Values**: planningGroups, generationResults |
-{: class="table table-striped"}
 
 ### Return type
 
 **BuShortTermForecast**
 
-<a name="getWorkforcemanagementBusinessunitWeekShorttermforecastData"></a>
 
-# BuForecastResultResponse getWorkforcemanagementBusinessunitWeekShorttermforecastData(businessUnitId, weekDateId, forecastId, opts)
+## getWorkforcemanagementBusinessunitWeekShorttermforecastData
+
+> BuForecastResultResponse getWorkforcemanagementBusinessunitWeekShorttermforecastData(businessUnitId, weekDateId, forecastId, opts)
 
 
 GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/data
@@ -2506,7 +4451,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -2539,15 +4484,15 @@ apiInstance.getWorkforcemanagementBusinessunitWeekShorttermforecastData(business
  **forecastId** | **String** | The ID of the forecast |  |
  **weekNumber** | **Number** | The week number to fetch (for multi-week forecasts) | [optional]  |
  **forceDownloadService** | **Boolean** | Force the result of this operation to be sent via download service.  For testing/app development purposes | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **BuForecastResultResponse**
 
-<a name="getWorkforcemanagementBusinessunitWeekShorttermforecastGenerationresults"></a>
 
-# BuForecastGenerationResult getWorkforcemanagementBusinessunitWeekShorttermforecastGenerationresults(businessUnitId, weekDateId, forecastId)
+## getWorkforcemanagementBusinessunitWeekShorttermforecastGenerationresults
+
+> BuForecastGenerationResult getWorkforcemanagementBusinessunitWeekShorttermforecastGenerationresults(businessUnitId, weekDateId, forecastId)
 
 
 GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/generationresults
@@ -2566,7 +4511,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -2593,15 +4538,15 @@ apiInstance.getWorkforcemanagementBusinessunitWeekShorttermforecastGenerationres
  **businessUnitId** | **String** | The ID of the business unit to which the forecast belongs |  |
  **weekDateId** | **String** | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **forecastId** | **String** | The ID of the forecast |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **BuForecastGenerationResult**
 
-<a name="getWorkforcemanagementBusinessunitWeekShorttermforecastLongtermforecastdata"></a>
 
-# LongTermForecastResultResponse getWorkforcemanagementBusinessunitWeekShorttermforecastLongtermforecastdata(businessUnitId, weekDateId, forecastId, opts)
+## getWorkforcemanagementBusinessunitWeekShorttermforecastLongtermforecastdata
+
+> LongTermForecastResultResponse getWorkforcemanagementBusinessunitWeekShorttermforecastLongtermforecastdata(businessUnitId, weekDateId, forecastId, opts)
 
 
 GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/longtermforecastdata
@@ -2622,7 +4567,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -2653,15 +4598,15 @@ apiInstance.getWorkforcemanagementBusinessunitWeekShorttermforecastLongtermforec
  **weekDateId** | **String** | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **forecastId** | **String** | The ID of the forecast |  |
  **forceDownloadService** | **Boolean** | Force the result of this operation to be sent via download service.  For testing/app development purposes | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **LongTermForecastResultResponse**
 
-<a name="getWorkforcemanagementBusinessunitWeekShorttermforecastPlanninggroups"></a>
 
-# ForecastPlanningGroupsResponse getWorkforcemanagementBusinessunitWeekShorttermforecastPlanninggroups(businessUnitId, weekDateId, forecastId)
+## getWorkforcemanagementBusinessunitWeekShorttermforecastPlanninggroups
+
+> ForecastPlanningGroupsResponse getWorkforcemanagementBusinessunitWeekShorttermforecastPlanninggroups(businessUnitId, weekDateId, forecastId)
 
 
 GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/planninggroups
@@ -2682,7 +4627,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -2709,15 +4654,73 @@ apiInstance.getWorkforcemanagementBusinessunitWeekShorttermforecastPlanninggroup
  **businessUnitId** | **String** | The ID of the business unit to which the forecast belongs |  |
  **weekDateId** | **String** | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **forecastId** | **String** | The ID of the forecast |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ForecastPlanningGroupsResponse**
 
-<a name="getWorkforcemanagementBusinessunitWeekShorttermforecasts"></a>
 
-# BuShortTermForecastListing getWorkforcemanagementBusinessunitWeekShorttermforecasts(businessUnitId, weekDateId)
+## getWorkforcemanagementBusinessunitWeekShorttermforecastStaffingrequirement
+
+> BuForecastStaffingRequirementsResultResponse getWorkforcemanagementBusinessunitWeekShorttermforecastStaffingrequirement(businessUnitId, weekDateId, forecastId, opts)
+
+
+GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/staffingrequirement
+
+Get the staffing requirement by planning group for a forecast
+
+Requires ANY permissions:
+
+* wfm:staffingRequirement:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit to which the forecast belongs
+let weekDateId = "weekDateId_example"; // String | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let forecastId = "forecastId_example"; // String | The ID of the forecast
+let opts = { 
+  'weekNumbers': ["weekNumbers_example"] // [String] | The week numbers to fetch (for multi-week forecasts) staffing requirements. Returns all week data if the list is not specified
+};
+
+apiInstance.getWorkforcemanagementBusinessunitWeekShorttermforecastStaffingrequirement(businessUnitId, weekDateId, forecastId, opts)
+  .then((data) => {
+    console.log(`getWorkforcemanagementBusinessunitWeekShorttermforecastStaffingrequirement success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementBusinessunitWeekShorttermforecastStaffingrequirement');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit to which the forecast belongs |  |
+ **weekDateId** | **String** | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+ **forecastId** | **String** | The ID of the forecast |  |
+ **weekNumbers** | **[String]** | The week numbers to fetch (for multi-week forecasts) staffing requirements. Returns all week data if the list is not specified | [optional]  |
+
+### Return type
+
+**BuForecastStaffingRequirementsResultResponse**
+
+
+## getWorkforcemanagementBusinessunitWeekShorttermforecasts
+
+> BuShortTermForecastListing getWorkforcemanagementBusinessunitWeekShorttermforecasts(businessUnitId, weekDateId)
 
 
 GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts
@@ -2739,7 +4742,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -2764,15 +4767,277 @@ apiInstance.getWorkforcemanagementBusinessunitWeekShorttermforecasts(businessUni
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit to which the forecast belongs |  |
  **weekDateId** | **String** | The week start date of the forecast in yyyy-MM-dd format or 'recent' (without quotes) to fetch recent forecasts |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **BuShortTermForecastListing**
 
-<a name="getWorkforcemanagementBusinessunits"></a>
 
-# BusinessUnitListing getWorkforcemanagementBusinessunits(opts)
+## getWorkforcemanagementBusinessunitWorkplanbid
+
+> WorkPlanBid getWorkforcemanagementBusinessunitWorkplanbid(businessUnitId, bidId)
+
+
+GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}
+
+Get a work plan bid
+
+Requires ANY permissions:
+
+* wfm:workPlanBid:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let bidId = "bidId_example"; // String | The id of the workplanbid
+
+apiInstance.getWorkforcemanagementBusinessunitWorkplanbid(businessUnitId, bidId)
+  .then((data) => {
+    console.log(`getWorkforcemanagementBusinessunitWorkplanbid success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementBusinessunitWorkplanbid');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **bidId** | **String** | The id of the workplanbid |  |
+
+### Return type
+
+**WorkPlanBid**
+
+
+## getWorkforcemanagementBusinessunitWorkplanbidGroup
+
+> WorkPlanBidGroupResponse getWorkforcemanagementBusinessunitWorkplanbidGroup(businessUnitId, bidId, bidGroupId)
+
+
+GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}/groups/{bidGroupId}
+
+Get a bid group by bid group Id
+
+Requires ANY permissions:
+
+* wfm:workPlanBidGroup:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let bidId = "bidId_example"; // String | The work plan bid id of the bid groups
+let bidGroupId = "bidGroupId_example"; // String | Work Plan Bid Group id
+
+apiInstance.getWorkforcemanagementBusinessunitWorkplanbidGroup(businessUnitId, bidId, bidGroupId)
+  .then((data) => {
+    console.log(`getWorkforcemanagementBusinessunitWorkplanbidGroup success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementBusinessunitWorkplanbidGroup');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **bidId** | **String** | The work plan bid id of the bid groups |  |
+ **bidGroupId** | **String** | Work Plan Bid Group id |  |
+
+### Return type
+
+**WorkPlanBidGroupResponse**
+
+
+## getWorkforcemanagementBusinessunitWorkplanbidGroupPreferences
+
+> AdminAgentWorkPlanPreferenceResponse getWorkforcemanagementBusinessunitWorkplanbidGroupPreferences(businessUnitId, bidId, bidGroupId)
+
+
+GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}/groups/{bidGroupId}/preferences
+
+Gets the work plan preferences of all the agents in the work plan bid group
+
+Requires ANY permissions:
+
+* wfm:workPlanBidGroup:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let bidId = "bidId_example"; // String | The work plan bid id of the bid groups
+let bidGroupId = "bidGroupId_example"; // String | The ID of the work plan bid group
+
+apiInstance.getWorkforcemanagementBusinessunitWorkplanbidGroupPreferences(businessUnitId, bidId, bidGroupId)
+  .then((data) => {
+    console.log(`getWorkforcemanagementBusinessunitWorkplanbidGroupPreferences success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementBusinessunitWorkplanbidGroupPreferences');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **bidId** | **String** | The work plan bid id of the bid groups |  |
+ **bidGroupId** | **String** | The ID of the work plan bid group |  |
+
+### Return type
+
+**AdminAgentWorkPlanPreferenceResponse**
+
+
+## getWorkforcemanagementBusinessunitWorkplanbidGroupsSummary
+
+> WorkPlanBidGroupSummaryList getWorkforcemanagementBusinessunitWorkplanbidGroupsSummary(businessUnitId, bidId)
+
+
+GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}/groups/summary
+
+Get summary of bid groups that belong to a work plan bid
+
+Requires ANY permissions:
+
+* wfm:workPlanBidGroup:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let bidId = "bidId_example"; // String | The work plan bid id of the bid groups
+
+apiInstance.getWorkforcemanagementBusinessunitWorkplanbidGroupsSummary(businessUnitId, bidId)
+  .then((data) => {
+    console.log(`getWorkforcemanagementBusinessunitWorkplanbidGroupsSummary success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementBusinessunitWorkplanbidGroupsSummary');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **bidId** | **String** | The work plan bid id of the bid groups |  |
+
+### Return type
+
+**WorkPlanBidGroupSummaryList**
+
+
+## getWorkforcemanagementBusinessunitWorkplanbids
+
+> WorkPlanBidListResponse getWorkforcemanagementBusinessunitWorkplanbids(businessUnitId)
+
+
+GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids
+
+Get list of work plan bids
+
+Requires ANY permissions:
+
+* wfm:workPlanBid:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+
+apiInstance.getWorkforcemanagementBusinessunitWorkplanbids(businessUnitId)
+  .then((data) => {
+    console.log(`getWorkforcemanagementBusinessunitWorkplanbids success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementBusinessunitWorkplanbids');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+
+### Return type
+
+**WorkPlanBidListResponse**
+
+
+## getWorkforcemanagementBusinessunits
+
+> BusinessUnitListing getWorkforcemanagementBusinessunits(opts)
 
 
 GET /api/v2/workforcemanagement/businessunits
@@ -2789,7 +5054,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -2814,17 +5079,17 @@ apiInstance.getWorkforcemanagementBusinessunits(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **feature** | **String** | If specified, the list of business units for which the user is authorized to use the requested feature will be returned | [optional] <br />**Values**: AgentSchedule, AgentTimeOffRequest, Coaching, Learning, ActivityCodes, Agents, BuActivityCodes, BusinessUnits, HistoricalAdherence, HistoricalShrinkage, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalTemplates, PlanningGroups, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, StaffingGroups, TimeOffPlans, TimeOffRequests, TimeOffLimits, WorkPlanRotations, WorkPlans |
+ **feature** | **String** | If specified, the list of business units for which the user is authorized to use the requested feature will be returned | [optional] <br />**Values**: AgentHistoricalAdherence, AgentHistoricalAdherenceConformance, AgentSchedule, AgentTimeOffRequest, AgentWorkPlanBid, AlternativeShift, Coaching, Learning, AgentUnavailableTimes, ActivityCodes, ActivityPlans, UnavailableTimes, Agents, BuActivityCodes, BusinessUnits, CapacityPlan, ContinuousForecast, HistoricalAdherence, HistoricalShrinkage, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalTemplates, PlanningGroups, LongTermStaffing, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, StaffingGroups, TimeOffPlans, TimeOffRequests, TimeOffLimits, WorkPlanBids, WorkPlanBidGroups, WorkPlanRotations, WorkPlans |
  **divisionId** | **String** | If specified, the list of business units belonging to the specified division will be returned | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **BusinessUnitListing**
 
-<a name="getWorkforcemanagementBusinessunitsDivisionviews"></a>
 
-# BusinessUnitListing getWorkforcemanagementBusinessunitsDivisionviews(opts)
+## getWorkforcemanagementBusinessunitsDivisionviews
+
+> BusinessUnitListing getWorkforcemanagementBusinessunitsDivisionviews(opts)
 
 
 GET /api/v2/workforcemanagement/businessunits/divisionviews
@@ -2843,7 +5108,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -2868,15 +5133,15 @@ apiInstance.getWorkforcemanagementBusinessunitsDivisionviews(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **divisionId** | **[String]** | The divisionIds to filter by. If omitted, will return business units in all divisions | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **BusinessUnitListing**
 
-<a name="getWorkforcemanagementCalendarDataIcs"></a>
 
-# **&#39;String&#39;** getWorkforcemanagementCalendarDataIcs(calendarId)
+## getWorkforcemanagementCalendarDataIcs
+
+> **&#39;String&#39;** getWorkforcemanagementCalendarDataIcs(calendarId)
 
 
 GET /api/v2/workforcemanagement/calendar/data/ics
@@ -2913,15 +5178,15 @@ apiInstance.getWorkforcemanagementCalendarDataIcs(calendarId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **calendarId** | **String** | The id of the ics-formatted calendar |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **&#39;String&#39;**
 
-<a name="getWorkforcemanagementCalendarUrlIcs"></a>
 
-# CalendarUrlResponse getWorkforcemanagementCalendarUrlIcs()
+## getWorkforcemanagementCalendarUrlIcs
+
+> CalendarUrlResponse getWorkforcemanagementCalendarUrlIcs()
 
 
 GET /api/v2/workforcemanagement/calendar/url/ics
@@ -2941,7 +5206,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -2960,19 +5225,19 @@ apiInstance.getWorkforcemanagementCalendarUrlIcs()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **CalendarUrlResponse**
 
-<a name="getWorkforcemanagementHistoricaldataDeletejob"></a>
 
-# HistoricalImportDeleteJobResponse getWorkforcemanagementHistoricaldataDeletejob()
+## getWorkforcemanagementHistoricaldataBulkRemoveJob
+
+> HistoricalImportDeleteFilesJobResponse getWorkforcemanagementHistoricaldataBulkRemoveJob(jobId)
 
 
-GET /api/v2/workforcemanagement/historicaldata/deletejob
+GET /api/v2/workforcemanagement/historicaldata/bulk/remove/jobs/{jobId}
 
-Retrieves delete job status for historical data imports of the organization
+Retrieves delete job status for historical data imports associated with the job id
 
 Requires ALL permissions:
 
@@ -2986,17 +5251,67 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-apiInstance.getWorkforcemanagementHistoricaldataDeletejob()
+let jobId = "jobId_example"; // String | The job ID of the historical data delete request
+
+apiInstance.getWorkforcemanagementHistoricaldataBulkRemoveJob(jobId)
   .then((data) => {
-    console.log(`getWorkforcemanagementHistoricaldataDeletejob success! data: ${JSON.stringify(data, null, 2)}`);
+    console.log(`getWorkforcemanagementHistoricaldataBulkRemoveJob success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch((err) => {
-    console.log('There was a failure calling getWorkforcemanagementHistoricaldataDeletejob');
+    console.log('There was a failure calling getWorkforcemanagementHistoricaldataBulkRemoveJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | The job ID of the historical data delete request |  |
+
+### Return type
+
+**HistoricalImportDeleteFilesJobResponse**
+
+
+## getWorkforcemanagementHistoricaldataBulkRemoveJobs
+
+> HistoricalImportOverallDeleteStatusResponse getWorkforcemanagementHistoricaldataBulkRemoveJobs()
+
+
+GET /api/v2/workforcemanagement/historicaldata/bulk/remove/jobs
+
+Retrieves all delete job status for historical data
+
+Requires ALL permissions:
+
+* wfm:historicalData:upload
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+apiInstance.getWorkforcemanagementHistoricaldataBulkRemoveJobs()
+  .then((data) => {
+    console.log(`getWorkforcemanagementHistoricaldataBulkRemoveJobs success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementHistoricaldataBulkRemoveJobs');
     console.error(err);
   });
 ```
@@ -3005,14 +5320,14 @@ apiInstance.getWorkforcemanagementHistoricaldataDeletejob()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
-**HistoricalImportDeleteJobResponse**
+**HistoricalImportOverallDeleteStatusResponse**
 
-<a name="getWorkforcemanagementHistoricaldataImportstatus"></a>
 
-# HistoricalImportStatusListing getWorkforcemanagementHistoricaldataImportstatus()
+## getWorkforcemanagementHistoricaldataImportstatus
+
+> HistoricalImportStatusListing getWorkforcemanagementHistoricaldataImportstatus()
 
 
 GET /api/v2/workforcemanagement/historicaldata/importstatus
@@ -3031,7 +5346,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -3050,14 +5365,64 @@ apiInstance.getWorkforcemanagementHistoricaldataImportstatus()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **HistoricalImportStatusListing**
 
-<a name="getWorkforcemanagementIntegrationsHris"></a>
 
-# WfmIntegrationListing getWorkforcemanagementIntegrationsHris()
+## getWorkforcemanagementHistoricaldataImportstatusJobId
+
+> HistoricalImportStatusJobResponse getWorkforcemanagementHistoricaldataImportstatusJobId(jobId)
+
+
+GET /api/v2/workforcemanagement/historicaldata/importstatus/{jobId}
+
+Retrieves status of the historical data imports associated with job id
+
+Requires ALL permissions:
+
+* wfm:historicalData:upload
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let jobId = "jobId_example"; // String | The job Id of the historical data import request
+
+apiInstance.getWorkforcemanagementHistoricaldataImportstatusJobId(jobId)
+  .then((data) => {
+    console.log(`getWorkforcemanagementHistoricaldataImportstatusJobId success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementHistoricaldataImportstatusJobId');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | The job Id of the historical data import request |  |
+
+### Return type
+
+**HistoricalImportStatusJobResponse**
+
+
+## getWorkforcemanagementIntegrationsHris
+
+> WfmIntegrationListing getWorkforcemanagementIntegrationsHris()
 
 
 GET /api/v2/workforcemanagement/integrations/hris
@@ -3076,7 +5441,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -3095,14 +5460,14 @@ apiInstance.getWorkforcemanagementIntegrationsHris()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **WfmIntegrationListing**
 
-<a name="getWorkforcemanagementIntegrationsHrisTimeofftypesJob"></a>
 
-# HrisTimeOffTypesJobResponse getWorkforcemanagementIntegrationsHrisTimeofftypesJob(jobId)
+## getWorkforcemanagementIntegrationsHrisTimeofftypesJob
+
+> HrisTimeOffTypesJobResponse getWorkforcemanagementIntegrationsHrisTimeofftypesJob(jobId)
 
 
 GET /api/v2/workforcemanagement/integrations/hris/timeofftypes/jobs/{jobId}
@@ -3119,7 +5484,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -3142,15 +5507,15 @@ apiInstance.getWorkforcemanagementIntegrationsHrisTimeofftypesJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | The ID of the job. |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **HrisTimeOffTypesJobResponse**
 
-<a name="getWorkforcemanagementManagementunit"></a>
 
-# ManagementUnit getWorkforcemanagementManagementunit(managementUnitId, opts)
+## getWorkforcemanagementManagementunit
+
+> ManagementUnit getWorkforcemanagementManagementunit(managementUnitId, opts)
 
 
 GET /api/v2/workforcemanagement/managementunits/{managementUnitId}
@@ -3234,7 +5599,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -3261,17 +5626,19 @@ apiInstance.getWorkforcemanagementManagementunit(managementUnitId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
  **expand** | **[String]** |  | [optional] <br />**Values**: settings, settings.adherence, settings.timeOff, settings.scheduling, settings.shortTermForecasting, settings.shiftTrading |
-{: class="table table-striped"}
 
 ### Return type
 
 **ManagementUnit**
 
-<a name="getWorkforcemanagementManagementunitActivitycodes"></a>
 
-# ActivityCodeContainer getWorkforcemanagementManagementunitActivitycodes(managementUnitId)
+## getWorkforcemanagementManagementunitActivitycodes
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+> ActivityCodeContainer getWorkforcemanagementManagementunitActivitycodes(managementUnitId)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/activitycodes
 
@@ -3329,7 +5696,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -3352,15 +5719,15 @@ apiInstance.getWorkforcemanagementManagementunitActivitycodes(managementUnitId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ActivityCodeContainer**
 
-<a name="getWorkforcemanagementManagementunitAdherence"></a>
 
-# UserScheduleAdherenceListing getWorkforcemanagementManagementunitAdherence(managementUnitId, opts)
+## getWorkforcemanagementManagementunitAdherence
+
+> UserScheduleAdherenceListing getWorkforcemanagementManagementunitAdherence(managementUnitId, opts)
 
 
 GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/adherence
@@ -3379,7 +5746,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -3406,15 +5773,15 @@ apiInstance.getWorkforcemanagementManagementunitAdherence(managementUnitId, opts
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit |  |
  **forceDownloadService** | **Boolean** | Force the result of this operation to be sent via download service.  For testing/app development purposes | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **UserScheduleAdherenceListing**
 
-<a name="getWorkforcemanagementManagementunitAgent"></a>
 
-# WfmAgent getWorkforcemanagementManagementunitAgent(managementUnitId, agentId, opts)
+## getWorkforcemanagementManagementunitAgent
+
+> WfmAgent getWorkforcemanagementManagementunitAgent(managementUnitId, agentId, opts)
 
 
 GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/agents/{agentId}
@@ -3433,7 +5800,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -3441,7 +5808,8 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 let agentId = "agentId_example"; // String | The agent id
 let opts = { 
-  'excludeCapabilities': true // Boolean | Excludes all capabilities of the agent such as queues, languages, and skills
+  'excludeCapabilities': true, // Boolean | Excludes all capabilities of the agent such as queues, languages, and skills
+  'expand': ["expand_example"] // [String] | 
 };
 
 apiInstance.getWorkforcemanagementManagementunitAgent(managementUnitId, agentId, opts)
@@ -3462,15 +5830,16 @@ apiInstance.getWorkforcemanagementManagementunitAgent(managementUnitId, agentId,
  **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
  **agentId** | **String** | The agent id |  |
  **excludeCapabilities** | **Boolean** | Excludes all capabilities of the agent such as queues, languages, and skills | [optional]  |
-{: class="table table-striped"}
+ **expand** | **[String]** |  | [optional] <br />**Values**: workPlanOverrides |
 
 ### Return type
 
 **WfmAgent**
 
-<a name="getWorkforcemanagementManagementunitAgentShifttrades"></a>
 
-# ShiftTradeListResponse getWorkforcemanagementManagementunitAgentShifttrades(managementUnitId, agentId)
+## getWorkforcemanagementManagementunitAgentShifttrades
+
+> ShiftTradeListResponse getWorkforcemanagementManagementunitAgentShifttrades(managementUnitId, agentId)
 
 
 GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/agents/{agentId}/shifttrades
@@ -3490,7 +5859,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -3515,15 +5884,15 @@ apiInstance.getWorkforcemanagementManagementunitAgentShifttrades(managementUnitI
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
  **agentId** | **String** | The agent id |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ShiftTradeListResponse**
 
-<a name="getWorkforcemanagementManagementunitShifttradesMatched"></a>
 
-# ShiftTradeMatchesSummaryResponse getWorkforcemanagementManagementunitShifttradesMatched(managementUnitId)
+## getWorkforcemanagementManagementunitShifttradesMatched
+
+> ShiftTradeMatchesSummaryResponse getWorkforcemanagementManagementunitShifttradesMatched(managementUnitId)
 
 
 GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/shifttrades/matched
@@ -3543,7 +5912,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -3566,15 +5935,15 @@ apiInstance.getWorkforcemanagementManagementunitShifttradesMatched(managementUni
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ShiftTradeMatchesSummaryResponse**
 
-<a name="getWorkforcemanagementManagementunitShifttradesUsers"></a>
 
-# WfmUserEntityListing getWorkforcemanagementManagementunitShifttradesUsers(managementUnitId)
+## getWorkforcemanagementManagementunitShifttradesUsers
+
+> WfmUserEntityListing getWorkforcemanagementManagementunitShifttradesUsers(managementUnitId)
 
 
 GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/shifttrades/users
@@ -3593,7 +5962,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -3616,15 +5985,15 @@ apiInstance.getWorkforcemanagementManagementunitShifttradesUsers(managementUnitI
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **WfmUserEntityListing**
 
-<a name="getWorkforcemanagementManagementunitTimeofflimit"></a>
 
-# TimeOffLimit getWorkforcemanagementManagementunitTimeofflimit(managementUnitId, timeOffLimitId)
+## getWorkforcemanagementManagementunitTimeofflimit
+
+> TimeOffLimit getWorkforcemanagementManagementunitTimeofflimit(managementUnitId, timeOffLimitId)
 
 
 GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/{timeOffLimitId}
@@ -3645,7 +6014,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -3670,15 +6039,15 @@ apiInstance.getWorkforcemanagementManagementunitTimeofflimit(managementUnitId, t
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit. |  |
  **timeOffLimitId** | **String** | The ID of the time off limit to fetch |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **TimeOffLimit**
 
-<a name="getWorkforcemanagementManagementunitTimeofflimits"></a>
 
-# TimeOffLimitListing getWorkforcemanagementManagementunitTimeofflimits(managementUnitId)
+## getWorkforcemanagementManagementunitTimeofflimits
+
+> TimeOffLimitListing getWorkforcemanagementManagementunitTimeofflimits(managementUnitId)
 
 
 GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits
@@ -3700,7 +6069,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -3723,15 +6092,15 @@ apiInstance.getWorkforcemanagementManagementunitTimeofflimits(managementUnitId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit. |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **TimeOffLimitListing**
 
-<a name="getWorkforcemanagementManagementunitTimeoffplan"></a>
 
-# TimeOffPlan getWorkforcemanagementManagementunitTimeoffplan(managementUnitId, timeOffPlanId)
+## getWorkforcemanagementManagementunitTimeoffplan
+
+> TimeOffPlan getWorkforcemanagementManagementunitTimeoffplan(managementUnitId, timeOffPlanId)
 
 
 GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans/{timeOffPlanId}
@@ -3750,7 +6119,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -3775,15 +6144,15 @@ apiInstance.getWorkforcemanagementManagementunitTimeoffplan(managementUnitId, ti
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit |  |
  **timeOffPlanId** | **String** | The ID of the time off plan to fetch |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **TimeOffPlan**
 
-<a name="getWorkforcemanagementManagementunitTimeoffplans"></a>
 
-# TimeOffPlanListing getWorkforcemanagementManagementunitTimeoffplans(managementUnitId)
+## getWorkforcemanagementManagementunitTimeoffplans
+
+> TimeOffPlanListing getWorkforcemanagementManagementunitTimeoffplans(managementUnitId)
 
 
 GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans
@@ -3802,7 +6171,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -3825,15 +6194,15 @@ apiInstance.getWorkforcemanagementManagementunitTimeoffplans(managementUnitId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **TimeOffPlanListing**
 
-<a name="getWorkforcemanagementManagementunitUserTimeoffrequest"></a>
 
-# TimeOffRequestResponse getWorkforcemanagementManagementunitUserTimeoffrequest(managementUnitId, userId, timeOffRequestId)
+## getWorkforcemanagementManagementunitUserTimeoffrequest
+
+> TimeOffRequestResponse getWorkforcemanagementManagementunitUserTimeoffrequest(managementUnitId, userId, timeOffRequestId)
 
 
 GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/{timeOffRequestId}
@@ -3852,7 +6221,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -3879,15 +6248,15 @@ apiInstance.getWorkforcemanagementManagementunitUserTimeoffrequest(managementUni
  **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
  **userId** | **String** | The userId to whom the Time Off Request applies. |  |
  **timeOffRequestId** | **String** | Time Off Request Id |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **TimeOffRequestResponse**
 
-<a name="getWorkforcemanagementManagementunitUserTimeoffrequestTimeofflimits"></a>
 
-# QueryTimeOffLimitValuesResponse getWorkforcemanagementManagementunitUserTimeoffrequestTimeofflimits(managementUnitId, userId, timeOffRequestId)
+## getWorkforcemanagementManagementunitUserTimeoffrequestTimeofflimits
+
+> QueryTimeOffLimitValuesResponse getWorkforcemanagementManagementunitUserTimeoffrequestTimeofflimits(managementUnitId, userId, timeOffRequestId)
 
 
 GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/{timeOffRequestId}/timeofflimits
@@ -3907,7 +6276,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -3934,15 +6303,15 @@ apiInstance.getWorkforcemanagementManagementunitUserTimeoffrequestTimeofflimits(
  **managementUnitId** | **String** | The ID of the management unit. |  |
  **userId** | **String** | The userId to whom the time off request applies. |  |
  **timeOffRequestId** | **String** | The ID of the time off request, which dates and activityCodeId determine limit values to retrieve |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **QueryTimeOffLimitValuesResponse**
 
-<a name="getWorkforcemanagementManagementunitUserTimeoffrequests"></a>
 
-# TimeOffRequestList getWorkforcemanagementManagementunitUserTimeoffrequests(managementUnitId, userId, opts)
+## getWorkforcemanagementManagementunitUserTimeoffrequests
+
+> TimeOffRequestList getWorkforcemanagementManagementunitUserTimeoffrequests(managementUnitId, userId)
 
 
 GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests
@@ -3961,18 +6330,15 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 let userId = "userId_example"; // String | The userId to whom the Time Off Request applies.
-let opts = { 
-  'recentlyReviewed': false // Boolean | Limit results to requests that have been reviewed within the preceding 30 days
-};
 
-apiInstance.getWorkforcemanagementManagementunitUserTimeoffrequests(managementUnitId, userId, opts)
+apiInstance.getWorkforcemanagementManagementunitUserTimeoffrequests(managementUnitId, userId)
   .then((data) => {
     console.log(`getWorkforcemanagementManagementunitUserTimeoffrequests success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3989,16 +6355,15 @@ apiInstance.getWorkforcemanagementManagementunitUserTimeoffrequests(managementUn
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
  **userId** | **String** | The userId to whom the Time Off Request applies. |  |
- **recentlyReviewed** | **Boolean** | Limit results to requests that have been reviewed within the preceding 30 days | [optional] [default to false] |
-{: class="table table-striped"}
 
 ### Return type
 
 **TimeOffRequestList**
 
-<a name="getWorkforcemanagementManagementunitUsers"></a>
 
-# WfmUserEntityListing getWorkforcemanagementManagementunitUsers(managementUnitId)
+## getWorkforcemanagementManagementunitUsers
+
+> WfmUserEntityListing getWorkforcemanagementManagementunitUsers(managementUnitId)
 
 
 GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/users
@@ -4025,7 +6390,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -4048,17 +6413,19 @@ apiInstance.getWorkforcemanagementManagementunitUsers(managementUnitId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **WfmUserEntityListing**
 
-<a name="getWorkforcemanagementManagementunitWeekSchedule"></a>
 
-# WeekScheduleResponse getWorkforcemanagementManagementunitWeekSchedule(managementUnitId, weekId, scheduleId, opts)
+## getWorkforcemanagementManagementunitWeekSchedule
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+> WeekScheduleResponse getWorkforcemanagementManagementunitWeekSchedule(managementUnitId, weekId, scheduleId, opts)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekId}/schedules/{scheduleId}
 
@@ -4077,7 +6444,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -4110,17 +6477,19 @@ apiInstance.getWorkforcemanagementManagementunitWeekSchedule(managementUnitId, w
  **scheduleId** | **String** | The ID of the schedule to fetch |  |
  **expand** | **String** | Which fields, if any, to expand | [optional] <br />**Values**: generationResults, headcountForecast |
  **forceDownloadService** | **Boolean** | Force the result of this operation to be sent via download service.  For testing/app development purposes | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **WeekScheduleResponse**
 
-<a name="getWorkforcemanagementManagementunitWeekSchedules"></a>
 
-# WeekScheduleListResponse getWorkforcemanagementManagementunitWeekSchedules(managementUnitId, weekId, opts)
+## getWorkforcemanagementManagementunitWeekSchedules
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+> WeekScheduleListResponse getWorkforcemanagementManagementunitWeekSchedules(managementUnitId, weekId, opts)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekId}/schedules
 
@@ -4139,7 +6508,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -4172,15 +6541,15 @@ apiInstance.getWorkforcemanagementManagementunitWeekSchedules(managementUnitId, 
  **includeOnlyPublished** | **Boolean** | Return only published schedules | [optional]  |
  **earliestWeekDate** | **String** | The start date of the earliest week to query in yyyy-MM-dd format | [optional]  |
  **latestWeekDate** | **String** | The start date of the latest week to query in yyyy-MM-dd format | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **WeekScheduleListResponse**
 
-<a name="getWorkforcemanagementManagementunitWeekShifttrades"></a>
 
-# WeekShiftTradeListResponse getWorkforcemanagementManagementunitWeekShifttrades(managementUnitId, weekDateId, opts)
+## getWorkforcemanagementManagementunitWeekShifttrades
+
+> WeekShiftTradeListResponse getWorkforcemanagementManagementunitWeekShifttrades(managementUnitId, weekDateId, opts)
 
 
 GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades
@@ -4200,15 +6569,17 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-let weekDateId = "weekDateId_example"; // String | The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let weekDateId = "weekDateId_example"; // String | The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let opts = { 
-  'evaluateMatches': true // Boolean | Whether to evaluate the matches for violations
+  'evaluateMatches': true, // Boolean | Whether to evaluate the matches for violations
+  'includeCrossWeekShifts': false, // Boolean | Whether to include all shift trades with either the initiating shift or the receiving shift in the week
+  'forceDownloadService': true // Boolean | Force the result of this operation to be sent via download service. For testing/app development purposes
 };
 
 apiInstance.getWorkforcemanagementManagementunitWeekShifttrades(managementUnitId, weekDateId, opts)
@@ -4227,17 +6598,19 @@ apiInstance.getWorkforcemanagementManagementunitWeekShifttrades(managementUnitId
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
- **weekDateId** | **String** | The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+ **weekDateId** | **String** | The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **evaluateMatches** | **Boolean** | Whether to evaluate the matches for violations | [optional] [default to true] |
-{: class="table table-striped"}
+ **includeCrossWeekShifts** | **Boolean** | Whether to include all shift trades with either the initiating shift or the receiving shift in the week | [optional] [default to false] |
+ **forceDownloadService** | **Boolean** | Force the result of this operation to be sent via download service. For testing/app development purposes | [optional]  |
 
 ### Return type
 
 **WeekShiftTradeListResponse**
 
-<a name="getWorkforcemanagementManagementunitWorkplan"></a>
 
-# WorkPlan getWorkforcemanagementManagementunitWorkplan(managementUnitId, workPlanId, opts)
+## getWorkforcemanagementManagementunitWorkplan
+
+> WorkPlan getWorkforcemanagementManagementunitWorkplan(managementUnitId, workPlanId, opts)
 
 
 GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId}
@@ -4258,7 +6631,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -4287,15 +6660,15 @@ apiInstance.getWorkforcemanagementManagementunitWorkplan(managementUnitId, workP
  **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
  **workPlanId** | **String** | The ID of the work plan to fetch |  |
  **includeOnly** | **[String]** | limit response to the specified fields | [optional] <br />**Values**: agentCount, agents, optionalDays, shifts, shiftStartVariances |
-{: class="table table-striped"}
 
 ### Return type
 
 **WorkPlan**
 
-<a name="getWorkforcemanagementManagementunitWorkplanrotation"></a>
 
-# WorkPlanRotationResponse getWorkforcemanagementManagementunitWorkplanrotation(managementUnitId, workPlanRotationId)
+## getWorkforcemanagementManagementunitWorkplanrotation
+
+> WorkPlanRotationResponse getWorkforcemanagementManagementunitWorkplanrotation(managementUnitId, workPlanRotationId)
 
 
 GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations/{workPlanRotationId}
@@ -4314,7 +6687,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -4339,15 +6712,15 @@ apiInstance.getWorkforcemanagementManagementunitWorkplanrotation(managementUnitI
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
  **workPlanRotationId** | **String** | The ID of the work plan rotation to fetch |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **WorkPlanRotationResponse**
 
-<a name="getWorkforcemanagementManagementunitWorkplanrotations"></a>
 
-# WorkPlanRotationListResponse getWorkforcemanagementManagementunitWorkplanrotations(managementUnitId, opts)
+## getWorkforcemanagementManagementunitWorkplanrotations
+
+> WorkPlanRotationListResponse getWorkforcemanagementManagementunitWorkplanrotations(managementUnitId, opts)
 
 
 GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations
@@ -4367,7 +6740,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -4394,15 +6767,15 @@ apiInstance.getWorkforcemanagementManagementunitWorkplanrotations(managementUnit
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
  **expand** | **[String]** |  | [optional] <br />**Values**: agents |
-{: class="table table-striped"}
 
 ### Return type
 
 **WorkPlanRotationListResponse**
 
-<a name="getWorkforcemanagementManagementunitWorkplans"></a>
 
-# WorkPlanListResponse getWorkforcemanagementManagementunitWorkplans(managementUnitId, opts)
+## getWorkforcemanagementManagementunitWorkplans
+
+> WorkPlanListResponse getWorkforcemanagementManagementunitWorkplans(managementUnitId, opts)
 
 
 GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans
@@ -4427,14 +6800,15 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 let opts = { 
-  'expand': ["expand_example"] // [String] | Include to access additional data on the work plans
+  'expand': ["expand_example"], // [String] | Include to access additional data on the work plans
+  'exclude': ["exclude_example"] // [String] | Exclude specific data on the work plans from the response
 };
 
 apiInstance.getWorkforcemanagementManagementunitWorkplans(managementUnitId, opts)
@@ -4454,15 +6828,16 @@ apiInstance.getWorkforcemanagementManagementunitWorkplans(managementUnitId, opts
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
  **expand** | **[String]** | Include to access additional data on the work plans | [optional] <br />**Values**: agentCount, agents, optionalDays, shifts, shiftStartVariances, details |
-{: class="table table-striped"}
+ **exclude** | **[String]** | Exclude specific data on the work plans from the response | [optional] <br />**Values**: shifts.activities |
 
 ### Return type
 
 **WorkPlanListResponse**
 
-<a name="getWorkforcemanagementManagementunits"></a>
 
-# ManagementUnitListing getWorkforcemanagementManagementunits(opts)
+## getWorkforcemanagementManagementunits
+
+> ManagementUnitListing getWorkforcemanagementManagementunits(opts)
 
 
 GET /api/v2/workforcemanagement/managementunits
@@ -4479,7 +6854,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -4510,17 +6885,17 @@ apiInstance.getWorkforcemanagementManagementunits(opts)
  **pageSize** | **Number** | Deprecated, paging is not supported | [optional]  |
  **pageNumber** | **Number** | Deprecated, paging is not supported | [optional]  |
  **expand** | **String** | Deprecated, expand settings on the single MU route | [optional] <br />**Values**: details |
- **feature** | **String** | If specified, the list of management units for which the user is authorized to use the requested feature will be returned | [optional] <br />**Values**: AgentSchedule, AgentTimeOffRequest, Coaching, Learning, ActivityCodes, Agents, BuActivityCodes, BusinessUnits, HistoricalAdherence, HistoricalShrinkage, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalTemplates, PlanningGroups, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, StaffingGroups, TimeOffPlans, TimeOffRequests, TimeOffLimits, WorkPlanRotations, WorkPlans |
+ **feature** | **String** | If specified, the list of management units for which the user is authorized to use the requested feature will be returned | [optional] <br />**Values**: AgentHistoricalAdherence, AgentHistoricalAdherenceConformance, AgentSchedule, AgentTimeOffRequest, AgentWorkPlanBid, AlternativeShift, Coaching, Learning, AgentUnavailableTimes, ActivityCodes, ActivityPlans, UnavailableTimes, Agents, BuActivityCodes, BusinessUnits, CapacityPlan, ContinuousForecast, HistoricalAdherence, HistoricalShrinkage, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalTemplates, PlanningGroups, LongTermStaffing, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, StaffingGroups, TimeOffPlans, TimeOffRequests, TimeOffLimits, WorkPlanBids, WorkPlanBidGroups, WorkPlanRotations, WorkPlans |
  **divisionId** | **String** | If specified, the list of management units belonging to the specified division will be returned | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ManagementUnitListing**
 
-<a name="getWorkforcemanagementManagementunitsDivisionviews"></a>
 
-# ManagementUnitListing getWorkforcemanagementManagementunitsDivisionviews(opts)
+## getWorkforcemanagementManagementunitsDivisionviews
+
+> ManagementUnitListing getWorkforcemanagementManagementunitsDivisionviews(opts)
 
 
 GET /api/v2/workforcemanagement/managementunits/divisionviews
@@ -4539,7 +6914,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -4564,15 +6939,15 @@ apiInstance.getWorkforcemanagementManagementunitsDivisionviews(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **divisionId** | **[String]** | The divisionIds to filter by. If omitted, will return all divisions | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ManagementUnitListing**
 
-<a name="getWorkforcemanagementNotifications"></a>
 
-# NotificationsResponse getWorkforcemanagementNotifications()
+## getWorkforcemanagementNotifications
+
+> NotificationsResponse getWorkforcemanagementNotifications()
 
 
 GET /api/v2/workforcemanagement/notifications
@@ -4591,7 +6966,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -4610,14 +6985,14 @@ apiInstance.getWorkforcemanagementNotifications()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **NotificationsResponse**
 
-<a name="getWorkforcemanagementSchedulingjob"></a>
 
-# SchedulingStatusResponse getWorkforcemanagementSchedulingjob(jobId)
+## getWorkforcemanagementSchedulingjob
+
+> SchedulingStatusResponse getWorkforcemanagementSchedulingjob(jobId)
 
 
 GET /api/v2/workforcemanagement/schedulingjobs/{jobId}
@@ -4636,7 +7011,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -4659,15 +7034,15 @@ apiInstance.getWorkforcemanagementSchedulingjob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | The id of the scheduling job |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **SchedulingStatusResponse**
 
-<a name="getWorkforcemanagementShifttrades"></a>
 
-# ShiftTradeListResponse getWorkforcemanagementShifttrades()
+## getWorkforcemanagementShifttrades
+
+> ShiftTradeListResponse getWorkforcemanagementShifttrades()
 
 
 GET /api/v2/workforcemanagement/shifttrades
@@ -4688,7 +7063,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -4707,14 +7082,14 @@ apiInstance.getWorkforcemanagementShifttrades()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **ShiftTradeListResponse**
 
-<a name="getWorkforcemanagementShrinkageJob"></a>
 
-# WfmHistoricalShrinkageResponse getWorkforcemanagementShrinkageJob(jobId)
+## getWorkforcemanagementShrinkageJob
+
+> WfmHistoricalShrinkageResponse getWorkforcemanagementShrinkageJob(jobId)
 
 
 GET /api/v2/workforcemanagement/shrinkage/jobs/{jobId}
@@ -4731,7 +7106,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -4754,15 +7129,65 @@ apiInstance.getWorkforcemanagementShrinkageJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **WfmHistoricalShrinkageResponse**
 
-<a name="getWorkforcemanagementTimeoffbalanceJob"></a>
 
-# TimeOffBalanceJobResponse getWorkforcemanagementTimeoffbalanceJob(jobId)
+## getWorkforcemanagementTeamAdherence
+
+> UserScheduleAdherenceListing getWorkforcemanagementTeamAdherence(teamId)
+
+
+GET /api/v2/workforcemanagement/teams/{teamId}/adherence
+
+Get a list of user schedule adherence records for the requested team
+
+Requires ANY permissions:
+
+* wfm:realtimeAdherence:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let teamId = "teamId_example"; // String | The ID of the team
+
+apiInstance.getWorkforcemanagementTeamAdherence(teamId)
+  .then((data) => {
+    console.log(`getWorkforcemanagementTeamAdherence success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementTeamAdherence');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **teamId** | **String** | The ID of the team |  |
+
+### Return type
+
+**UserScheduleAdherenceListing**
+
+
+## getWorkforcemanagementTimeoffbalanceJob
+
+> TimeOffBalanceJobResponse getWorkforcemanagementTimeoffbalanceJob(jobId)
 
 
 GET /api/v2/workforcemanagement/timeoffbalance/jobs/{jobId}
@@ -4779,7 +7204,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -4802,15 +7227,15 @@ apiInstance.getWorkforcemanagementTimeoffbalanceJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | The ID of the job. |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **TimeOffBalanceJobResponse**
 
-<a name="getWorkforcemanagementTimeoffrequest"></a>
 
-# TimeOffRequestResponse getWorkforcemanagementTimeoffrequest(timeOffRequestId)
+## getWorkforcemanagementTimeoffrequest
+
+> TimeOffRequestResponse getWorkforcemanagementTimeoffrequest(timeOffRequestId)
 
 
 GET /api/v2/workforcemanagement/timeoffrequests/{timeOffRequestId}
@@ -4830,7 +7255,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -4853,15 +7278,15 @@ apiInstance.getWorkforcemanagementTimeoffrequest(timeOffRequestId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **timeOffRequestId** | **String** | The ID of the time off request |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **TimeOffRequestResponse**
 
-<a name="getWorkforcemanagementTimeoffrequestWaitlistpositions"></a>
 
-# WaitlistPositionListing getWorkforcemanagementTimeoffrequestWaitlistpositions(timeOffRequestId)
+## getWorkforcemanagementTimeoffrequestWaitlistpositions
+
+> WaitlistPositionListing getWorkforcemanagementTimeoffrequestWaitlistpositions(timeOffRequestId)
 
 
 GET /api/v2/workforcemanagement/timeoffrequests/{timeOffRequestId}/waitlistpositions
@@ -4880,7 +7305,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -4903,15 +7328,15 @@ apiInstance.getWorkforcemanagementTimeoffrequestWaitlistpositions(timeOffRequest
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **timeOffRequestId** | **String** | The ID of the time off request |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **WaitlistPositionListing**
 
-<a name="getWorkforcemanagementTimeoffrequests"></a>
 
-# TimeOffRequestList getWorkforcemanagementTimeoffrequests(opts)
+## getWorkforcemanagementTimeoffrequests
+
+> TimeOffRequestList getWorkforcemanagementTimeoffrequests()
 
 
 GET /api/v2/workforcemanagement/timeoffrequests
@@ -4931,16 +7356,12 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let opts = { 
-  'recentlyReviewed': false // Boolean | Limit results to requests that have been reviewed within the preceding 30 days
-};
-
-apiInstance.getWorkforcemanagementTimeoffrequests(opts)
+apiInstance.getWorkforcemanagementTimeoffrequests()
   .then((data) => {
     console.log(`getWorkforcemanagementTimeoffrequests success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4952,19 +7373,211 @@ apiInstance.getWorkforcemanagementTimeoffrequests(opts)
 
 ### Parameters
 
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **recentlyReviewed** | **Boolean** | Limit results to requests that have been reviewed within the preceding 30 days | [optional] [default to false] |
-{: class="table table-striped"}
+This endpoint does not need any parameter.
 
 ### Return type
 
 **TimeOffRequestList**
 
-<a name="patchWorkforcemanagementAgentAdherenceExplanation"></a>
 
-# AdherenceExplanationAsyncResponse patchWorkforcemanagementAgentAdherenceExplanation(agentId, explanationId, body)
+## getWorkforcemanagementUserWorkplanbidranks
+
+> WorkPlanBidRanks getWorkforcemanagementUserWorkplanbidranks(userId)
+
+
+GET /api/v2/workforcemanagement/users/{userId}/workplanbidranks
+
+Get work plan bid ranks for a user
+
+Requires ANY permissions:
+
+* wfm:workPlanBid:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let userId = "userId_example"; // String | The userId to whom the work plan bid ranks apply.
+
+apiInstance.getWorkforcemanagementUserWorkplanbidranks(userId)
+  .then((data) => {
+    console.log(`getWorkforcemanagementUserWorkplanbidranks success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementUserWorkplanbidranks');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String** | The userId to whom the work plan bid ranks apply. |  |
+
+### Return type
+
+**WorkPlanBidRanks**
+
+
+## getWorkforcemanagementWorkplanbidPreferences
+
+> AgentWorkPlanBiddingPreferenceResponse getWorkforcemanagementWorkplanbidPreferences(bidId)
+
+
+GET /api/v2/workforcemanagement/workplanbids/{bidId}/preferences
+
+Gets an agent's work plan bidding preference
+
+Requires ANY permissions:
+
+* wfm:agentWorkPlanBid:submit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let bidId = "bidId_example"; // String | The ID of the work plan bid
+
+apiInstance.getWorkforcemanagementWorkplanbidPreferences(bidId)
+  .then((data) => {
+    console.log(`getWorkforcemanagementWorkplanbidPreferences success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementWorkplanbidPreferences');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **bidId** | **String** | The ID of the work plan bid |  |
+
+### Return type
+
+**AgentWorkPlanBiddingPreferenceResponse**
+
+
+## getWorkforcemanagementWorkplanbidWorkplans
+
+> AgentWorkPlanListResponse getWorkforcemanagementWorkplanbidWorkplans(bidId)
+
+
+GET /api/v2/workforcemanagement/workplanbids/{bidId}/workplans
+
+Gets an agent's work plans for a bid
+
+Requires ANY permissions:
+
+* wfm:agentWorkPlanBid:submit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let bidId = "bidId_example"; // String | The ID of the work plan bid
+
+apiInstance.getWorkforcemanagementWorkplanbidWorkplans(bidId)
+  .then((data) => {
+    console.log(`getWorkforcemanagementWorkplanbidWorkplans success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementWorkplanbidWorkplans');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **bidId** | **String** | The ID of the work plan bid |  |
+
+### Return type
+
+**AgentWorkPlanListResponse**
+
+
+## getWorkforcemanagementWorkplanbids
+
+> AgentWorkPlanBids getWorkforcemanagementWorkplanbids()
+
+
+GET /api/v2/workforcemanagement/workplanbids
+
+Gets the list of work plan bids that belong to an agent
+
+Requires ANY permissions:
+
+* wfm:agentWorkPlanBid:submit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+apiInstance.getWorkforcemanagementWorkplanbids()
+  .then((data) => {
+    console.log(`getWorkforcemanagementWorkplanbids success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getWorkforcemanagementWorkplanbids');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+**AgentWorkPlanBids**
+
+
+## patchWorkforcemanagementAgentAdherenceExplanation
+
+> AdherenceExplanationAsyncResponse patchWorkforcemanagementAgentAdherenceExplanation(agentId, explanationId, body)
 
 
 PATCH /api/v2/workforcemanagement/agents/{agentId}/adherence/explanations/{explanationId}
@@ -4983,7 +7596,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -5010,15 +7623,117 @@ apiInstance.patchWorkforcemanagementAgentAdherenceExplanation(agentId, explanati
  **agentId** | **String** | The ID of the agent to query |  |
  **explanationId** | **String** | The ID of the explanation to update |  |
  **body** | **Object** | The request body |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AdherenceExplanationAsyncResponse**
 
-<a name="patchWorkforcemanagementBusinessunit"></a>
 
-# BusinessUnitResponse patchWorkforcemanagementBusinessunit(businessUnitId, opts)
+## patchWorkforcemanagementAlternativeshiftsTrade
+
+> AlternativeShiftTradeResponse patchWorkforcemanagementAlternativeshiftsTrade(tradeId, body)
+
+
+PATCH /api/v2/workforcemanagement/alternativeshifts/trades/{tradeId}
+
+Update my alternative shifts trade by trade ID
+
+Requires ANY permissions:
+
+* wfm:agentAlternativeShift:submit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let tradeId = "tradeId_example"; // String | The ID of the alternative shift trade
+let body = {}; // Object | body
+
+apiInstance.patchWorkforcemanagementAlternativeshiftsTrade(tradeId, body)
+  .then((data) => {
+    console.log(`patchWorkforcemanagementAlternativeshiftsTrade success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchWorkforcemanagementAlternativeshiftsTrade');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **tradeId** | **String** | The ID of the alternative shift trade |  |
+ **body** | **Object** | body |  |
+
+### Return type
+
+**AlternativeShiftTradeResponse**
+
+
+## patchWorkforcemanagementAlternativeshiftsTradesStateJobs
+
+> AlternativeShiftAsyncResponse patchWorkforcemanagementAlternativeshiftsTradesStateJobs(body)
+
+
+PATCH /api/v2/workforcemanagement/alternativeshifts/trades/state/jobs
+
+Bulk update alternative shift trade states
+
+Requires ANY permissions:
+
+* wfm:alternativeShift:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let body = {}; // Object | The request body
+
+apiInstance.patchWorkforcemanagementAlternativeshiftsTradesStateJobs(body)
+  .then((data) => {
+    console.log(`patchWorkforcemanagementAlternativeshiftsTradesStateJobs success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchWorkforcemanagementAlternativeshiftsTradesStateJobs');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | The request body |  |
+
+### Return type
+
+**AlternativeShiftAsyncResponse**
+
+
+## patchWorkforcemanagementBusinessunit
+
+> BusinessUnitResponse patchWorkforcemanagementBusinessunit(businessUnitId, body, opts)
 
 
 PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}
@@ -5037,17 +7752,18 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit, or 'mine' for the business unit of the logged-in user.
+let body = {}; // Object | body
 let opts = { 
-  'body': {} // Object | body
+  'includeSchedulingDefaultMessageSeverities': true // Boolean | Whether to include scheduling default message severities
 };
 
-apiInstance.patchWorkforcemanagementBusinessunit(businessUnitId, opts)
+apiInstance.patchWorkforcemanagementBusinessunit(businessUnitId, body, opts)
   .then((data) => {
     console.log(`patchWorkforcemanagementBusinessunit success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5063,16 +7779,17 @@ apiInstance.patchWorkforcemanagementBusinessunit(businessUnitId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit, or 'mine' for the business unit of the logged-in user. |  |
- **body** | **Object** | body | [optional]  |
-{: class="table table-striped"}
+ **body** | **Object** | body |  |
+ **includeSchedulingDefaultMessageSeverities** | **Boolean** | Whether to include scheduling default message severities | [optional]  |
 
 ### Return type
 
 **BusinessUnitResponse**
 
-<a name="patchWorkforcemanagementBusinessunitActivitycode"></a>
 
-# BusinessUnitActivityCode patchWorkforcemanagementBusinessunitActivitycode(businessUnitId, activityCodeId, opts)
+## patchWorkforcemanagementBusinessunitActivitycode
+
+> BusinessUnitActivityCode patchWorkforcemanagementBusinessunitActivitycode(businessUnitId, activityCodeId, body)
 
 
 PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes/{activityCodeId}
@@ -5091,18 +7808,16 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit, or 'mine' for the business unit of the logged-in user.
 let activityCodeId = "activityCodeId_example"; // String | The ID of the activity code to update
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.patchWorkforcemanagementBusinessunitActivitycode(businessUnitId, activityCodeId, opts)
+apiInstance.patchWorkforcemanagementBusinessunitActivitycode(businessUnitId, activityCodeId, body)
   .then((data) => {
     console.log(`patchWorkforcemanagementBusinessunitActivitycode success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5119,16 +7834,178 @@ apiInstance.patchWorkforcemanagementBusinessunitActivitycode(businessUnitId, act
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit, or 'mine' for the business unit of the logged-in user. |  |
  **activityCodeId** | **String** | The ID of the activity code to update |  |
- **body** | **Object** | body | [optional]  |
-{: class="table table-striped"}
+ **body** | **Object** | body |  |
 
 ### Return type
 
 **BusinessUnitActivityCode**
 
-<a name="patchWorkforcemanagementBusinessunitPlanninggroup"></a>
 
-# PlanningGroup patchWorkforcemanagementBusinessunitPlanninggroup(businessUnitId, planningGroupId, opts)
+## patchWorkforcemanagementBusinessunitActivityplan
+
+> ActivityPlanResponse patchWorkforcemanagementBusinessunitActivityplan(businessUnitId, activityPlanId, body)
+
+
+PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}
+
+Update an activity plan
+
+If a job associated with the activity plan is in Processing state the activity plan cannot be updated
+
+Requires ANY permissions:
+
+* wfm:activityPlan:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let activityPlanId = "activityPlanId_example"; // String | The ID of the activity plan to update
+let body = {}; // Object | body
+
+apiInstance.patchWorkforcemanagementBusinessunitActivityplan(businessUnitId, activityPlanId, body)
+  .then((data) => {
+    console.log(`patchWorkforcemanagementBusinessunitActivityplan success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchWorkforcemanagementBusinessunitActivityplan');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **activityPlanId** | **String** | The ID of the activity plan to update |  |
+ **body** | **Object** | body |  |
+
+### Return type
+
+**ActivityPlanResponse**
+
+
+## patchWorkforcemanagementBusinessunitAlternativeshiftsSettings
+
+> AlternativeShiftBuSettingsResponse patchWorkforcemanagementBusinessunitAlternativeshiftsSettings(businessUnitId, body)
+
+
+PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/alternativeshifts/settings
+
+Update alternative shifts settings for a business unit
+
+Requires ANY permissions:
+
+* wfm:businessUnit:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let body = {}; // Object | body
+
+apiInstance.patchWorkforcemanagementBusinessunitAlternativeshiftsSettings(businessUnitId, body)
+  .then((data) => {
+    console.log(`patchWorkforcemanagementBusinessunitAlternativeshiftsSettings success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchWorkforcemanagementBusinessunitAlternativeshiftsSettings');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **body** | **Object** | body |  |
+
+### Return type
+
+**AlternativeShiftBuSettingsResponse**
+
+
+## patchWorkforcemanagementBusinessunitCapacityplan
+
+> CapacityPlanResponse patchWorkforcemanagementBusinessunitCapacityplan(businessUnitId, capacityPlanId, body)
+
+
+PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}
+
+Update a capacity plan configuration
+
+Requires ANY permissions:
+
+* wfm:capacityPlan:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let capacityPlanId = "capacityPlanId_example"; // String | The ID of the capacity plan
+let body = {}; // Object | body
+
+apiInstance.patchWorkforcemanagementBusinessunitCapacityplan(businessUnitId, capacityPlanId, body)
+  .then((data) => {
+    console.log(`patchWorkforcemanagementBusinessunitCapacityplan success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchWorkforcemanagementBusinessunitCapacityplan');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **capacityPlanId** | **String** | The ID of the capacity plan |  |
+ **body** | **Object** | body |  |
+
+### Return type
+
+**CapacityPlanResponse**
+
+
+## patchWorkforcemanagementBusinessunitPlanninggroup
+
+> PlanningGroup patchWorkforcemanagementBusinessunitPlanninggroup(businessUnitId, planningGroupId, body)
 
 
 PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups/{planningGroupId}
@@ -5147,18 +8024,16 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit.
 let planningGroupId = "planningGroupId_example"; // String | The ID of a planning group to update
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.patchWorkforcemanagementBusinessunitPlanninggroup(businessUnitId, planningGroupId, opts)
+apiInstance.patchWorkforcemanagementBusinessunitPlanninggroup(businessUnitId, planningGroupId, body)
   .then((data) => {
     console.log(`patchWorkforcemanagementBusinessunitPlanninggroup success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5175,16 +8050,16 @@ apiInstance.patchWorkforcemanagementBusinessunitPlanninggroup(businessUnitId, pl
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit. |  |
  **planningGroupId** | **String** | The ID of a planning group to update |  |
- **body** | **Object** | body | [optional]  |
-{: class="table table-striped"}
+ **body** | **Object** | body |  |
 
 ### Return type
 
 **PlanningGroup**
 
-<a name="patchWorkforcemanagementBusinessunitSchedulingRun"></a>
 
-# void patchWorkforcemanagementBusinessunitSchedulingRun(businessUnitId, runId, opts)
+## patchWorkforcemanagementBusinessunitSchedulingRun
+
+> void patchWorkforcemanagementBusinessunitSchedulingRun(businessUnitId, runId, body)
 
 
 PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs/{runId}
@@ -5203,18 +8078,16 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
 let runId = "runId_example"; // String | The ID of the schedule run
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.patchWorkforcemanagementBusinessunitSchedulingRun(businessUnitId, runId, opts)
+apiInstance.patchWorkforcemanagementBusinessunitSchedulingRun(businessUnitId, runId, body)
   .then(() => {
     console.log('patchWorkforcemanagementBusinessunitSchedulingRun returned successfully.');
   })
@@ -5231,16 +8104,16 @@ apiInstance.patchWorkforcemanagementBusinessunitSchedulingRun(businessUnitId, ru
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit |  |
  **runId** | **String** | The ID of the schedule run |  |
- **body** | **Object** | body | [optional]  |
-{: class="table table-striped"}
+ **body** | **Object** | body |  |
 
 ### Return type
 
 void (no response body)
 
-<a name="patchWorkforcemanagementBusinessunitServicegoaltemplate"></a>
 
-# ServiceGoalTemplate patchWorkforcemanagementBusinessunitServicegoaltemplate(businessUnitId, serviceGoalTemplateId, opts)
+## patchWorkforcemanagementBusinessunitServicegoaltemplate
+
+> ServiceGoalTemplate patchWorkforcemanagementBusinessunitServicegoaltemplate(businessUnitId, serviceGoalTemplateId, body)
 
 
 PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates/{serviceGoalTemplateId}
@@ -5259,18 +8132,16 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit.
 let serviceGoalTemplateId = "serviceGoalTemplateId_example"; // String | The ID of a service goal template to update
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.patchWorkforcemanagementBusinessunitServicegoaltemplate(businessUnitId, serviceGoalTemplateId, opts)
+apiInstance.patchWorkforcemanagementBusinessunitServicegoaltemplate(businessUnitId, serviceGoalTemplateId, body)
   .then((data) => {
     console.log(`patchWorkforcemanagementBusinessunitServicegoaltemplate success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5287,16 +8158,290 @@ apiInstance.patchWorkforcemanagementBusinessunitServicegoaltemplate(businessUnit
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit. |  |
  **serviceGoalTemplateId** | **String** | The ID of a service goal template to update |  |
- **body** | **Object** | body | [optional]  |
-{: class="table table-striped"}
+ **body** | **Object** | body |  |
 
 ### Return type
 
 **ServiceGoalTemplate**
 
-<a name="patchWorkforcemanagementManagementunit"></a>
 
-# ManagementUnit patchWorkforcemanagementManagementunit(managementUnitId, opts)
+## patchWorkforcemanagementBusinessunitStaffinggroup
+
+> StaffingGroupResponse patchWorkforcemanagementBusinessunitStaffinggroup(businessUnitId, staffingGroupId, body)
+
+
+PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups/{staffingGroupId}
+
+Updates a staffing group
+
+Requires ANY permissions:
+
+* wfm:staffingGroup:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let staffingGroupId = "staffingGroupId_example"; // String | The ID of the staffing group to update
+let body = {}; // Object | body
+
+apiInstance.patchWorkforcemanagementBusinessunitStaffinggroup(businessUnitId, staffingGroupId, body)
+  .then((data) => {
+    console.log(`patchWorkforcemanagementBusinessunitStaffinggroup success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchWorkforcemanagementBusinessunitStaffinggroup');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **staffingGroupId** | **String** | The ID of the staffing group to update |  |
+ **body** | **Object** | body |  |
+
+### Return type
+
+**StaffingGroupResponse**
+
+
+## patchWorkforcemanagementBusinessunitTimeoffplan
+
+> BuTimeOffPlanResponse patchWorkforcemanagementBusinessunitTimeoffplan(businessUnitId, timeOffPlanId, body)
+
+
+PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans/{timeOffPlanId}
+
+Updates a time-off plan
+
+Requires ANY permissions:
+
+* wfm:timeOffPlan:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let timeOffPlanId = "timeOffPlanId_example"; // String | The ID of the time-off plan to update
+let body = {}; // Object | body
+
+apiInstance.patchWorkforcemanagementBusinessunitTimeoffplan(businessUnitId, timeOffPlanId, body)
+  .then((data) => {
+    console.log(`patchWorkforcemanagementBusinessunitTimeoffplan success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchWorkforcemanagementBusinessunitTimeoffplan');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **timeOffPlanId** | **String** | The ID of the time-off plan to update |  |
+ **body** | **Object** | body |  |
+
+### Return type
+
+**BuTimeOffPlanResponse**
+
+
+## patchWorkforcemanagementBusinessunitWorkplanbid
+
+> WorkPlanBid patchWorkforcemanagementBusinessunitWorkplanbid(businessUnitId, bidId, body)
+
+
+PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}
+
+Update work plan bid
+
+Requires ANY permissions:
+
+* wfm:workPlanBid:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let bidId = "bidId_example"; // String | The id of the workplanbid
+let body = {}; // Object | The work plan bid to be updated
+
+apiInstance.patchWorkforcemanagementBusinessunitWorkplanbid(businessUnitId, bidId, body)
+  .then((data) => {
+    console.log(`patchWorkforcemanagementBusinessunitWorkplanbid success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchWorkforcemanagementBusinessunitWorkplanbid');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **bidId** | **String** | The id of the workplanbid |  |
+ **body** | **Object** | The work plan bid to be updated |  |
+
+### Return type
+
+**WorkPlanBid**
+
+
+## patchWorkforcemanagementBusinessunitWorkplanbidGroup
+
+> WorkPlanBidGroupResponse patchWorkforcemanagementBusinessunitWorkplanbidGroup(businessUnitId, bidId, bidGroupId, body)
+
+
+PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}/groups/{bidGroupId}
+
+Update a bid group by bid group Id
+
+Requires ANY permissions:
+
+* wfm:workPlanBidGroup:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let bidId = "bidId_example"; // String | The work plan bid id of the bid groups
+let bidGroupId = "bidGroupId_example"; // String | Work Plan Bid Group id
+let body = {}; // Object | body
+
+apiInstance.patchWorkforcemanagementBusinessunitWorkplanbidGroup(businessUnitId, bidId, bidGroupId, body)
+  .then((data) => {
+    console.log(`patchWorkforcemanagementBusinessunitWorkplanbidGroup success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchWorkforcemanagementBusinessunitWorkplanbidGroup');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **bidId** | **String** | The work plan bid id of the bid groups |  |
+ **bidGroupId** | **String** | Work Plan Bid Group id |  |
+ **body** | **Object** | body |  |
+
+### Return type
+
+**WorkPlanBidGroupResponse**
+
+
+## patchWorkforcemanagementBusinessunitWorkplanbidGroupPreferences
+
+> AdminAgentWorkPlanPreferenceResponse patchWorkforcemanagementBusinessunitWorkplanbidGroupPreferences(businessUnitId, bidId, bidGroupId, body)
+
+
+PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}/groups/{bidGroupId}/preferences
+
+Overrides the assigned work plan for the specified agents
+
+Requires ANY permissions:
+
+* wfm:workPlanBidGroup:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let bidId = "bidId_example"; // String | The work plan bid id of the bid groups
+let bidGroupId = "bidGroupId_example"; // String | The ID of the work plan bid group
+let body = {}; // Object | body
+
+apiInstance.patchWorkforcemanagementBusinessunitWorkplanbidGroupPreferences(businessUnitId, bidId, bidGroupId, body)
+  .then((data) => {
+    console.log(`patchWorkforcemanagementBusinessunitWorkplanbidGroupPreferences success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchWorkforcemanagementBusinessunitWorkplanbidGroupPreferences');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **bidId** | **String** | The work plan bid id of the bid groups |  |
+ **bidGroupId** | **String** | The ID of the work plan bid group |  |
+ **body** | **Object** | body |  |
+
+### Return type
+
+**AdminAgentWorkPlanPreferenceResponse**
+
+
+## patchWorkforcemanagementManagementunit
+
+> ManagementUnit patchWorkforcemanagementManagementunit(managementUnitId, body)
 
 
 PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}
@@ -5315,17 +8460,15 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.patchWorkforcemanagementManagementunit(managementUnitId, opts)
+apiInstance.patchWorkforcemanagementManagementunit(managementUnitId, body)
   .then((data) => {
     console.log(`patchWorkforcemanagementManagementunit success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5341,16 +8484,120 @@ apiInstance.patchWorkforcemanagementManagementunit(managementUnitId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
- **body** | **Object** | body | [optional]  |
-{: class="table table-striped"}
+ **body** | **Object** | body |  |
 
 ### Return type
 
 **ManagementUnit**
 
-<a name="patchWorkforcemanagementManagementunitTimeofflimit"></a>
 
-# TimeOffLimit patchWorkforcemanagementManagementunitTimeofflimit(managementUnitId, timeOffLimitId, opts)
+## patchWorkforcemanagementManagementunitAgents
+
+> void patchWorkforcemanagementManagementunitAgents(managementUnitId, body)
+
+
+PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/agents
+
+Update agent configurations
+
+Requires ANY permissions:
+
+* wfm:agent:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+let body = {}; // Object | body
+
+apiInstance.patchWorkforcemanagementManagementunitAgents(managementUnitId, body)
+  .then(() => {
+    console.log('patchWorkforcemanagementManagementunitAgents returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchWorkforcemanagementManagementunitAgents');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
+ **body** | **Object** | body |  |
+
+### Return type
+
+void (no response body)
+
+
+## patchWorkforcemanagementManagementunitAgentsWorkplansBulk
+
+> UpdateMuAgentWorkPlansBatchResponse patchWorkforcemanagementManagementunitAgentsWorkplansBulk(managementUnitId, body)
+
+
+PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/agents/workplans/bulk
+
+Updates agent work plan configuration
+
+Requires ANY permissions:
+
+* wfm:workPlan:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+let body = {}; // Object | body
+
+apiInstance.patchWorkforcemanagementManagementunitAgentsWorkplansBulk(managementUnitId, body)
+  .then((data) => {
+    console.log(`patchWorkforcemanagementManagementunitAgentsWorkplansBulk success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchWorkforcemanagementManagementunitAgentsWorkplansBulk');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
+ **body** | **Object** | body |  |
+
+### Return type
+
+**UpdateMuAgentWorkPlansBatchResponse**
+
+
+## patchWorkforcemanagementManagementunitTimeofflimit
+
+> TimeOffLimit patchWorkforcemanagementManagementunitTimeofflimit(managementUnitId, timeOffLimitId, body)
 
 
 PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/{timeOffLimitId}
@@ -5371,18 +8618,16 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit.
 let timeOffLimitId = "timeOffLimitId_example"; // String | The id of time off limit object to update
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.patchWorkforcemanagementManagementunitTimeofflimit(managementUnitId, timeOffLimitId, opts)
+apiInstance.patchWorkforcemanagementManagementunitTimeofflimit(managementUnitId, timeOffLimitId, body)
   .then((data) => {
     console.log(`patchWorkforcemanagementManagementunitTimeofflimit success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5399,16 +8644,16 @@ apiInstance.patchWorkforcemanagementManagementunitTimeofflimit(managementUnitId,
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit. |  |
  **timeOffLimitId** | **String** | The id of time off limit object to update |  |
- **body** | **Object** | body | [optional]  |
-{: class="table table-striped"}
+ **body** | **Object** | body |  |
 
 ### Return type
 
 **TimeOffLimit**
 
-<a name="patchWorkforcemanagementManagementunitTimeoffplan"></a>
 
-# TimeOffPlan patchWorkforcemanagementManagementunitTimeoffplan(managementUnitId, timeOffPlanId, opts)
+## patchWorkforcemanagementManagementunitTimeoffplan
+
+> TimeOffPlan patchWorkforcemanagementManagementunitTimeoffplan(managementUnitId, timeOffPlanId, body)
 
 
 PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans/{timeOffPlanId}
@@ -5427,18 +8672,16 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit
 let timeOffPlanId = "timeOffPlanId_example"; // String | The ID of the time off plan to update
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.patchWorkforcemanagementManagementunitTimeoffplan(managementUnitId, timeOffPlanId, opts)
+apiInstance.patchWorkforcemanagementManagementunitTimeoffplan(managementUnitId, timeOffPlanId, body)
   .then((data) => {
     console.log(`patchWorkforcemanagementManagementunitTimeoffplan success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5455,16 +8698,16 @@ apiInstance.patchWorkforcemanagementManagementunitTimeoffplan(managementUnitId, 
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit |  |
  **timeOffPlanId** | **String** | The ID of the time off plan to update |  |
- **body** | **Object** | body | [optional]  |
-{: class="table table-striped"}
+ **body** | **Object** | body |  |
 
 ### Return type
 
 **TimeOffPlan**
 
-<a name="patchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatus"></a>
 
-# UserTimeOffIntegrationStatusResponse patchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatus(managementUnitId, timeOffRequestId, userId, opts)
+## patchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatus
+
+> UserTimeOffIntegrationStatusResponse patchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatus(managementUnitId, timeOffRequestId, userId, body)
 
 
 PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/{timeOffRequestId}/users/{userId}/integrationstatus
@@ -5483,7 +8726,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -5491,11 +8734,9 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit.
 let timeOffRequestId = "timeOffRequestId_example"; // String | The ID of the time off request.
 let userId = "userId_example"; // String | The ID of user to whom the time off request belongs.
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.patchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatus(managementUnitId, timeOffRequestId, userId, opts)
+apiInstance.patchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatus(managementUnitId, timeOffRequestId, userId, body)
   .then((data) => {
     console.log(`patchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatus success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5513,16 +8754,16 @@ apiInstance.patchWorkforcemanagementManagementunitTimeoffrequestUserIntegrations
  **managementUnitId** | **String** | The ID of the management unit. |  |
  **timeOffRequestId** | **String** | The ID of the time off request. |  |
  **userId** | **String** | The ID of user to whom the time off request belongs. |  |
- **body** | **Object** | body | [optional]  |
-{: class="table table-striped"}
+ **body** | **Object** | body |  |
 
 ### Return type
 
 **UserTimeOffIntegrationStatusResponse**
 
-<a name="patchWorkforcemanagementManagementunitUserTimeoffrequest"></a>
 
-# TimeOffRequestResponse patchWorkforcemanagementManagementunitUserTimeoffrequest(managementUnitId, userId, timeOffRequestId, opts)
+## patchWorkforcemanagementManagementunitUserTimeoffrequest
+
+> TimeOffRequestResponse patchWorkforcemanagementManagementunitUserTimeoffrequest(managementUnitId, userId, timeOffRequestId, body)
 
 
 PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/{timeOffRequestId}
@@ -5541,7 +8782,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -5549,11 +8790,9 @@ let apiInstance = new platformClient.WorkforceManagementApi();
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 let userId = "userId_example"; // String | The id of the user the requested time off request belongs to
 let timeOffRequestId = "timeOffRequestId_example"; // String | The id of the time off request to update
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.patchWorkforcemanagementManagementunitUserTimeoffrequest(managementUnitId, userId, timeOffRequestId, opts)
+apiInstance.patchWorkforcemanagementManagementunitUserTimeoffrequest(managementUnitId, userId, timeOffRequestId, body)
   .then((data) => {
     console.log(`patchWorkforcemanagementManagementunitUserTimeoffrequest success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5571,16 +8810,16 @@ apiInstance.patchWorkforcemanagementManagementunitUserTimeoffrequest(managementU
  **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
  **userId** | **String** | The id of the user the requested time off request belongs to |  |
  **timeOffRequestId** | **String** | The id of the time off request to update |  |
- **body** | **Object** | body | [optional]  |
-{: class="table table-striped"}
+ **body** | **Object** | body |  |
 
 ### Return type
 
 **TimeOffRequestResponse**
 
-<a name="patchWorkforcemanagementManagementunitWeekShifttrade"></a>
 
-# ShiftTradeResponse patchWorkforcemanagementManagementunitWeekShifttrade(managementUnitId, weekDateId, tradeId, body)
+## patchWorkforcemanagementManagementunitWeekShifttrade
+
+> ShiftTradeResponse patchWorkforcemanagementManagementunitWeekShifttrade(managementUnitId, weekDateId, tradeId, body)
 
 
 PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/{tradeId}
@@ -5599,13 +8838,13 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-let weekDateId = "weekDateId_example"; // String | The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let weekDateId = "weekDateId_example"; // String | The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let tradeId = "tradeId_example"; // String | The ID of the shift trade to update
 let body = {}; // Object | body
 
@@ -5625,18 +8864,18 @@ apiInstance.patchWorkforcemanagementManagementunitWeekShifttrade(managementUnitI
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
- **weekDateId** | **String** | The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+ **weekDateId** | **String** | The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **tradeId** | **String** | The ID of the shift trade to update |  |
  **body** | **Object** | body |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ShiftTradeResponse**
 
-<a name="patchWorkforcemanagementManagementunitWorkplan"></a>
 
-# WorkPlan patchWorkforcemanagementManagementunitWorkplan(managementUnitId, workPlanId, opts)
+## patchWorkforcemanagementManagementunitWorkplan
+
+> WorkPlan patchWorkforcemanagementManagementunitWorkplan(managementUnitId, workPlanId, body, opts)
 
 
 PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId}
@@ -5655,19 +8894,19 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 let workPlanId = "workPlanId_example"; // String | The ID of the work plan to update
+let body = {}; // Object | body
 let opts = { 
-  'validationMode': "validationMode_example", // String | Allows to update work plan even if validation result is invalid
-  'body': {} // Object | body
+  'validationMode': "validationMode_example" // String | Allows to update work plan even if validation result is invalid
 };
 
-apiInstance.patchWorkforcemanagementManagementunitWorkplan(managementUnitId, workPlanId, opts)
+apiInstance.patchWorkforcemanagementManagementunitWorkplan(managementUnitId, workPlanId, body, opts)
   .then((data) => {
     console.log(`patchWorkforcemanagementManagementunitWorkplan success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5684,17 +8923,17 @@ apiInstance.patchWorkforcemanagementManagementunitWorkplan(managementUnitId, wor
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
  **workPlanId** | **String** | The ID of the work plan to update |  |
+ **body** | **Object** | body |  |
  **validationMode** | **String** | Allows to update work plan even if validation result is invalid | [optional] <br />**Values**: Ignore |
- **body** | **Object** | body | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **WorkPlan**
 
-<a name="patchWorkforcemanagementManagementunitWorkplanrotation"></a>
 
-# WorkPlanRotationResponse patchWorkforcemanagementManagementunitWorkplanrotation(managementUnitId, workPlanRotationId, opts)
+## patchWorkforcemanagementManagementunitWorkplanrotation
+
+> WorkPlanRotationResponse patchWorkforcemanagementManagementunitWorkplanrotation(managementUnitId, workPlanRotationId, body)
 
 
 PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations/{workPlanRotationId}
@@ -5713,18 +8952,16 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 let workPlanRotationId = "workPlanRotationId_example"; // String | The ID of the work plan rotation to update
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.patchWorkforcemanagementManagementunitWorkplanrotation(managementUnitId, workPlanRotationId, opts)
+apiInstance.patchWorkforcemanagementManagementunitWorkplanrotation(managementUnitId, workPlanRotationId, body)
   .then((data) => {
     console.log(`patchWorkforcemanagementManagementunitWorkplanrotation success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5741,16 +8978,16 @@ apiInstance.patchWorkforcemanagementManagementunitWorkplanrotation(managementUni
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
  **workPlanRotationId** | **String** | The ID of the work plan rotation to update |  |
- **body** | **Object** | body | [optional]  |
-{: class="table table-striped"}
+ **body** | **Object** | body |  |
 
 ### Return type
 
 **WorkPlanRotationResponse**
 
-<a name="patchWorkforcemanagementTimeoffrequest"></a>
 
-# TimeOffRequestResponse patchWorkforcemanagementTimeoffrequest(timeOffRequestId, opts)
+## patchWorkforcemanagementTimeoffrequest
+
+> TimeOffRequestResponse patchWorkforcemanagementTimeoffrequest(timeOffRequestId, body)
 
 
 PATCH /api/v2/workforcemanagement/timeoffrequests/{timeOffRequestId}
@@ -5769,17 +9006,15 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let timeOffRequestId = "timeOffRequestId_example"; // String | The ID of the time off request
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.patchWorkforcemanagementTimeoffrequest(timeOffRequestId, opts)
+apiInstance.patchWorkforcemanagementTimeoffrequest(timeOffRequestId, body)
   .then((data) => {
     console.log(`patchWorkforcemanagementTimeoffrequest success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5795,16 +9030,170 @@ apiInstance.patchWorkforcemanagementTimeoffrequest(timeOffRequestId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **timeOffRequestId** | **String** | The ID of the time off request |  |
- **body** | **Object** | body | [optional]  |
-{: class="table table-striped"}
+ **body** | **Object** | body |  |
 
 ### Return type
 
 **TimeOffRequestResponse**
 
-<a name="postWorkforcemanagementAdherenceExplanations"></a>
 
-# AdherenceExplanationAsyncResponse postWorkforcemanagementAdherenceExplanations(body)
+## patchWorkforcemanagementUserWorkplanbidranks
+
+> WorkPlanBidRanks patchWorkforcemanagementUserWorkplanbidranks(userId, body)
+
+
+PATCH /api/v2/workforcemanagement/users/{userId}/workplanbidranks
+
+Update work plan bid ranks for a user
+
+Requires ANY permissions:
+
+* wfm:workPlanBid:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let userId = "userId_example"; // String | The userId to whom the work plan bid ranks apply.
+let body = {}; // Object | body
+
+apiInstance.patchWorkforcemanagementUserWorkplanbidranks(userId, body)
+  .then((data) => {
+    console.log(`patchWorkforcemanagementUserWorkplanbidranks success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchWorkforcemanagementUserWorkplanbidranks');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String** | The userId to whom the work plan bid ranks apply. |  |
+ **body** | **Object** | body |  |
+
+### Return type
+
+**WorkPlanBidRanks**
+
+
+## patchWorkforcemanagementUsersWorkplanbidranksBulk
+
+> EntityListing patchWorkforcemanagementUsersWorkplanbidranksBulk(body)
+
+
+PATCH /api/v2/workforcemanagement/users/workplanbidranks/bulk
+
+Update bulk work plan bid ranks on users. Max 50 users can be updated at a time.
+
+Requires ANY permissions:
+
+* wfm:workPlanBid:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let body = [{}]; // Object | Users
+
+apiInstance.patchWorkforcemanagementUsersWorkplanbidranksBulk(body)
+  .then((data) => {
+    console.log(`patchWorkforcemanagementUsersWorkplanbidranksBulk success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchWorkforcemanagementUsersWorkplanbidranksBulk');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Users |  |
+
+### Return type
+
+**EntityListing**
+
+
+## patchWorkforcemanagementWorkplanbidPreferences
+
+> AgentWorkPlanBiddingPreferenceResponse patchWorkforcemanagementWorkplanbidPreferences(bidId, body)
+
+
+PATCH /api/v2/workforcemanagement/workplanbids/{bidId}/preferences
+
+Update an agent's work plan bidding preference
+
+Requires ANY permissions:
+
+* wfm:agentWorkPlanBid:submit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let bidId = "bidId_example"; // String | The ID of the work plan bid
+let body = {}; // Object | body
+
+apiInstance.patchWorkforcemanagementWorkplanbidPreferences(bidId, body)
+  .then((data) => {
+    console.log(`patchWorkforcemanagementWorkplanbidPreferences success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchWorkforcemanagementWorkplanbidPreferences');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **bidId** | **String** | The ID of the work plan bid |  |
+ **body** | **Object** | body |  |
+
+### Return type
+
+**AgentWorkPlanBiddingPreferenceResponse**
+
+
+## postWorkforcemanagementAdherenceExplanations
+
+> AdherenceExplanationAsyncResponse postWorkforcemanagementAdherenceExplanations(body)
 
 
 POST /api/v2/workforcemanagement/adherence/explanations
@@ -5823,7 +9212,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -5846,15 +9235,15 @@ apiInstance.postWorkforcemanagementAdherenceExplanations(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | The request body |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AdherenceExplanationAsyncResponse**
 
-<a name="postWorkforcemanagementAdherenceExplanationsQuery"></a>
 
-# QueryAdherenceExplanationsResponse postWorkforcemanagementAdherenceExplanationsQuery(body, opts)
+## postWorkforcemanagementAdherenceExplanationsQuery
+
+> QueryAdherenceExplanationsResponse postWorkforcemanagementAdherenceExplanationsQuery(body, opts)
 
 
 POST /api/v2/workforcemanagement/adherence/explanations/query
@@ -5873,7 +9262,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -5902,17 +9291,19 @@ apiInstance.postWorkforcemanagementAdherenceExplanationsQuery(body, opts)
  **body** | **Object** | The request body |  |
  **forceAsync** | **Boolean** | Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes | [optional]  |
  **forceDownloadService** | **Boolean** | Force the result of this operation to be sent via download service. For testing/app development purposes | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **QueryAdherenceExplanationsResponse**
 
-<a name="postWorkforcemanagementAdherenceHistorical"></a>
 
-# WfmHistoricalAdherenceResponse postWorkforcemanagementAdherenceHistorical(opts)
+## postWorkforcemanagementAdherenceHistorical
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+> WfmHistoricalAdherenceResponse postWorkforcemanagementAdherenceHistorical(opts)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 POST /api/v2/workforcemanagement/adherence/historical
 
@@ -5930,7 +9321,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -5955,15 +9346,15 @@ apiInstance.postWorkforcemanagementAdherenceHistorical(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | body | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **WfmHistoricalAdherenceResponse**
 
-<a name="postWorkforcemanagementAdherenceHistoricalBulk"></a>
 
-# WfmHistoricalAdherenceBulkResponse postWorkforcemanagementAdherenceHistoricalBulk(opts)
+## postWorkforcemanagementAdherenceHistoricalBulk
+
+> WfmHistoricalAdherenceBulkResponse postWorkforcemanagementAdherenceHistoricalBulk(body)
 
 
 POST /api/v2/workforcemanagement/adherence/historical/bulk
@@ -5982,16 +9373,14 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.postWorkforcemanagementAdherenceHistoricalBulk(opts)
+apiInstance.postWorkforcemanagementAdherenceHistoricalBulk(body)
   .then((data) => {
     console.log(`postWorkforcemanagementAdherenceHistoricalBulk success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6006,16 +9395,16 @@ apiInstance.postWorkforcemanagementAdherenceHistoricalBulk(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **Object** | body | [optional]  |
-{: class="table table-striped"}
+ **body** | **Object** | body |  |
 
 ### Return type
 
 **WfmHistoricalAdherenceBulkResponse**
 
-<a name="postWorkforcemanagementAgentAdherenceExplanations"></a>
 
-# AdherenceExplanationAsyncResponse postWorkforcemanagementAgentAdherenceExplanations(agentId, body)
+## postWorkforcemanagementAgentAdherenceExplanations
+
+> AdherenceExplanationAsyncResponse postWorkforcemanagementAgentAdherenceExplanations(agentId, body)
 
 
 POST /api/v2/workforcemanagement/agents/{agentId}/adherence/explanations
@@ -6034,7 +9423,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -6059,15 +9448,15 @@ apiInstance.postWorkforcemanagementAgentAdherenceExplanations(agentId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **agentId** | **String** | The ID of the agent to query |  |
  **body** | **Object** | The request body |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AdherenceExplanationAsyncResponse**
 
-<a name="postWorkforcemanagementAgentAdherenceExplanationsQuery"></a>
 
-# AgentQueryAdherenceExplanationsResponse postWorkforcemanagementAgentAdherenceExplanationsQuery(agentId, body, opts)
+## postWorkforcemanagementAgentAdherenceExplanationsQuery
+
+> AgentQueryAdherenceExplanationsResponse postWorkforcemanagementAgentAdherenceExplanationsQuery(agentId, body, opts)
 
 
 POST /api/v2/workforcemanagement/agents/{agentId}/adherence/explanations/query
@@ -6086,7 +9475,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -6117,15 +9506,15 @@ apiInstance.postWorkforcemanagementAgentAdherenceExplanationsQuery(agentId, body
  **body** | **Object** | The request body |  |
  **forceAsync** | **Boolean** | Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes | [optional]  |
  **forceDownloadService** | **Boolean** | Force the result of this operation to be sent via download service. For testing/app development purposes | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AgentQueryAdherenceExplanationsResponse**
 
-<a name="postWorkforcemanagementAgents"></a>
 
-# MoveAgentsResponse postWorkforcemanagementAgents(opts)
+## postWorkforcemanagementAgents
+
+> MoveAgentsResponse postWorkforcemanagementAgents(body)
 
 
 POST /api/v2/workforcemanagement/agents
@@ -6144,16 +9533,14 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.postWorkforcemanagementAgents(opts)
+apiInstance.postWorkforcemanagementAgents(body)
   .then((data) => {
     console.log(`postWorkforcemanagementAgents success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6168,16 +9555,16 @@ apiInstance.postWorkforcemanagementAgents(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **Object** | body | [optional]  |
-{: class="table table-striped"}
+ **body** | **Object** | body |  |
 
 ### Return type
 
 **MoveAgentsResponse**
 
-<a name="postWorkforcemanagementAgentsIntegrationsHrisQuery"></a>
 
-# AgentsIntegrationsListing postWorkforcemanagementAgentsIntegrationsHrisQuery(opts)
+## postWorkforcemanagementAgentsIntegrationsHrisQuery
+
+> AgentsIntegrationsListing postWorkforcemanagementAgentsIntegrationsHrisQuery(body)
 
 
 POST /api/v2/workforcemanagement/agents/integrations/hris/query
@@ -6196,16 +9583,14 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.postWorkforcemanagementAgentsIntegrationsHrisQuery(opts)
+apiInstance.postWorkforcemanagementAgentsIntegrationsHrisQuery(body)
   .then((data) => {
     console.log(`postWorkforcemanagementAgentsIntegrationsHrisQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6220,16 +9605,16 @@ apiInstance.postWorkforcemanagementAgentsIntegrationsHrisQuery(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **Object** | body | [optional]  |
-{: class="table table-striped"}
+ **body** | **Object** | body |  |
 
 ### Return type
 
 **AgentsIntegrationsListing**
 
-<a name="postWorkforcemanagementAgentsMePossibleworkshifts"></a>
 
-# AgentPossibleWorkShiftsResponse postWorkforcemanagementAgentsMePossibleworkshifts(body)
+## postWorkforcemanagementAgentsMePossibleworkshifts
+
+> AgentPossibleWorkShiftsResponse postWorkforcemanagementAgentsMePossibleworkshifts(body)
 
 
 POST /api/v2/workforcemanagement/agents/me/possibleworkshifts
@@ -6248,7 +9633,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -6271,15 +9656,15 @@ apiInstance.postWorkforcemanagementAgentsMePossibleworkshifts(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | body |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AgentPossibleWorkShiftsResponse**
 
-<a name="postWorkforcemanagementAgentschedulesMine"></a>
 
-# BuCurrentAgentScheduleSearchResponse postWorkforcemanagementAgentschedulesMine(opts)
+## postWorkforcemanagementAgentschedulesMine
+
+> BuCurrentAgentScheduleSearchResponse postWorkforcemanagementAgentschedulesMine(body)
 
 
 POST /api/v2/workforcemanagement/agentschedules/mine
@@ -6298,16 +9683,14 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.postWorkforcemanagementAgentschedulesMine(opts)
+apiInstance.postWorkforcemanagementAgentschedulesMine(body)
   .then((data) => {
     console.log(`postWorkforcemanagementAgentschedulesMine success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6322,16 +9705,166 @@ apiInstance.postWorkforcemanagementAgentschedulesMine(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **Object** | body | [optional]  |
-{: class="table table-striped"}
+ **body** | **Object** | body |  |
 
 ### Return type
 
 **BuCurrentAgentScheduleSearchResponse**
 
-<a name="postWorkforcemanagementBusinessunitActivitycodes"></a>
 
-# BusinessUnitActivityCode postWorkforcemanagementBusinessunitActivitycodes(businessUnitId, opts)
+## postWorkforcemanagementAlternativeshiftsOffersJobs
+
+> AlternativeShiftAsyncResponse postWorkforcemanagementAlternativeshiftsOffersJobs(body)
+
+
+POST /api/v2/workforcemanagement/alternativeshifts/offers/jobs
+
+Request a list of alternative shift offers for a given schedule
+
+Requires ANY permissions:
+
+* wfm:agentAlternativeShift:submit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let body = {}; // Object | The request body
+
+apiInstance.postWorkforcemanagementAlternativeshiftsOffersJobs(body)
+  .then((data) => {
+    console.log(`postWorkforcemanagementAlternativeshiftsOffersJobs success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postWorkforcemanagementAlternativeshiftsOffersJobs');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | The request body |  |
+
+### Return type
+
+**AlternativeShiftAsyncResponse**
+
+
+## postWorkforcemanagementAlternativeshiftsOffersSearchJobs
+
+> AlternativeShiftAsyncResponse postWorkforcemanagementAlternativeshiftsOffersSearchJobs(body)
+
+
+POST /api/v2/workforcemanagement/alternativeshifts/offers/search/jobs
+
+Request a search of alternative shift offers for a given shift
+
+Requires ANY permissions:
+
+* wfm:agentAlternativeShift:submit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let body = {}; // Object | The request body
+
+apiInstance.postWorkforcemanagementAlternativeshiftsOffersSearchJobs(body)
+  .then((data) => {
+    console.log(`postWorkforcemanagementAlternativeshiftsOffersSearchJobs success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postWorkforcemanagementAlternativeshiftsOffersSearchJobs');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | The request body |  |
+
+### Return type
+
+**AlternativeShiftAsyncResponse**
+
+
+## postWorkforcemanagementAlternativeshiftsTrades
+
+> AlternativeShiftTradeResponse postWorkforcemanagementAlternativeshiftsTrades(body)
+
+
+POST /api/v2/workforcemanagement/alternativeshifts/trades
+
+Create my alternative shift trade using an existing offer's jobId
+
+Requires ANY permissions:
+
+* wfm:agentAlternativeShift:submit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let body = {}; // Object | The request body
+
+apiInstance.postWorkforcemanagementAlternativeshiftsTrades(body)
+  .then((data) => {
+    console.log(`postWorkforcemanagementAlternativeshiftsTrades success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postWorkforcemanagementAlternativeshiftsTrades');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | The request body |  |
+
+### Return type
+
+**AlternativeShiftTradeResponse**
+
+
+## postWorkforcemanagementBusinessunitActivitycodes
+
+> BusinessUnitActivityCode postWorkforcemanagementBusinessunitActivitycodes(businessUnitId, body)
 
 
 POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes
@@ -6350,17 +9883,15 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit, or 'mine' for the business unit of the logged-in user.
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.postWorkforcemanagementBusinessunitActivitycodes(businessUnitId, opts)
+apiInstance.postWorkforcemanagementBusinessunitActivitycodes(businessUnitId, body)
   .then((data) => {
     console.log(`postWorkforcemanagementBusinessunitActivitycodes success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6376,16 +9907,122 @@ apiInstance.postWorkforcemanagementBusinessunitActivitycodes(businessUnitId, opt
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit, or 'mine' for the business unit of the logged-in user. |  |
- **body** | **Object** | body | [optional]  |
-{: class="table table-striped"}
+ **body** | **Object** | body |  |
 
 ### Return type
 
 **BusinessUnitActivityCode**
 
-<a name="postWorkforcemanagementBusinessunitAdherenceExplanationsQuery"></a>
 
-# BuQueryAdherenceExplanationsResponse postWorkforcemanagementBusinessunitAdherenceExplanationsQuery(businessUnitId, body, opts)
+## postWorkforcemanagementBusinessunitActivityplanRunsJobs
+
+> ActivityPlanJobResponse postWorkforcemanagementBusinessunitActivityplanRunsJobs(businessUnitId, activityPlanId)
+
+
+POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/runs/jobs
+
+Run an activity plan manually
+
+Triggers a job running the activity plan. The activity plan cannot be updated until the job completes
+
+Requires ANY permissions:
+
+* wfm:activityPlanRunJob:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let activityPlanId = "activityPlanId_example"; // String | The ID of the activity plan to run
+
+apiInstance.postWorkforcemanagementBusinessunitActivityplanRunsJobs(businessUnitId, activityPlanId)
+  .then((data) => {
+    console.log(`postWorkforcemanagementBusinessunitActivityplanRunsJobs success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postWorkforcemanagementBusinessunitActivityplanRunsJobs');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **activityPlanId** | **String** | The ID of the activity plan to run |  |
+
+### Return type
+
+**ActivityPlanJobResponse**
+
+
+## postWorkforcemanagementBusinessunitActivityplans
+
+> ActivityPlanResponse postWorkforcemanagementBusinessunitActivityplans(businessUnitId, body)
+
+
+POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans
+
+Create an activity plan
+
+Requires ANY permissions:
+
+* wfm:activityPlan:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let body = {}; // Object | body
+
+apiInstance.postWorkforcemanagementBusinessunitActivityplans(businessUnitId, body)
+  .then((data) => {
+    console.log(`postWorkforcemanagementBusinessunitActivityplans success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postWorkforcemanagementBusinessunitActivityplans');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **body** | **Object** | body |  |
+
+### Return type
+
+**ActivityPlanResponse**
+
+
+## postWorkforcemanagementBusinessunitAdherenceExplanationsQuery
+
+> BuQueryAdherenceExplanationsResponse postWorkforcemanagementBusinessunitAdherenceExplanationsQuery(businessUnitId, body, opts)
 
 
 POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/explanations/query
@@ -6404,7 +10041,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -6435,15 +10072,15 @@ apiInstance.postWorkforcemanagementBusinessunitAdherenceExplanationsQuery(busine
  **body** | **Object** | The request body |  |
  **forceAsync** | **Boolean** | Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes | [optional]  |
  **forceDownloadService** | **Boolean** | Force the result of this operation to be sent via download service. For testing/app development purposes | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **BuQueryAdherenceExplanationsResponse**
 
-<a name="postWorkforcemanagementBusinessunitAgentschedulesSearch"></a>
 
-# BuAsyncAgentSchedulesSearchResponse postWorkforcemanagementBusinessunitAgentschedulesSearch(businessUnitId, opts)
+## postWorkforcemanagementBusinessunitAgentschedulesSearch
+
+> BuAsyncAgentSchedulesSearchResponse postWorkforcemanagementBusinessunitAgentschedulesSearch(businessUnitId, body, opts)
 
 
 POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/agentschedules/search
@@ -6463,19 +10100,19 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let body = {}; // Object | body
 let opts = { 
   'forceAsync': true, // Boolean | Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
-  'forceDownloadService': true, // Boolean | Force the result of this operation to be sent via download service. For testing/app development purposes
-  'body': {} // Object | body
+  'forceDownloadService': true // Boolean | Force the result of this operation to be sent via download service. For testing/app development purposes
 };
 
-apiInstance.postWorkforcemanagementBusinessunitAgentschedulesSearch(businessUnitId, opts)
+apiInstance.postWorkforcemanagementBusinessunitAgentschedulesSearch(businessUnitId, body, opts)
   .then((data) => {
     console.log(`postWorkforcemanagementBusinessunitAgentschedulesSearch success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6491,18 +10128,446 @@ apiInstance.postWorkforcemanagementBusinessunitAgentschedulesSearch(businessUnit
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit |  |
+ **body** | **Object** | body |  |
  **forceAsync** | **Boolean** | Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes | [optional]  |
  **forceDownloadService** | **Boolean** | Force the result of this operation to be sent via download service. For testing/app development purposes | [optional]  |
- **body** | **Object** | body | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **BuAsyncAgentSchedulesSearchResponse**
 
-<a name="postWorkforcemanagementBusinessunitIntraday"></a>
 
-# AsyncIntradayResponse postWorkforcemanagementBusinessunitIntraday(businessUnitId, opts)
+## postWorkforcemanagementBusinessunitAlternativeshiftsTradesSearch
+
+> BuListAlternativeShiftTradesResponse postWorkforcemanagementBusinessunitAlternativeshiftsTradesSearch(businessUnitId, body, opts)
+
+
+POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/alternativeshifts/trades/search
+
+List alternative shifts trades for a given management unit or agent
+
+Requires ANY permissions:
+
+* wfm:alternativeShift:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let body = {}; // Object | The request body
+let opts = { 
+  'forceAsync': true // Boolean | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
+};
+
+apiInstance.postWorkforcemanagementBusinessunitAlternativeshiftsTradesSearch(businessUnitId, body, opts)
+  .then((data) => {
+    console.log(`postWorkforcemanagementBusinessunitAlternativeshiftsTradesSearch success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postWorkforcemanagementBusinessunitAlternativeshiftsTradesSearch');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **body** | **Object** | The request body |  |
+ **forceAsync** | **Boolean** | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes | [optional]  |
+
+### Return type
+
+**BuListAlternativeShiftTradesResponse**
+
+
+## postWorkforcemanagementBusinessunitCapacityplanCopy
+
+> CapacityPlanResponse postWorkforcemanagementBusinessunitCapacityplanCopy(businessUnitId, capacityPlanId, body)
+
+
+POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}/copy
+
+Copy a capacity plan
+
+Requires ANY permissions:
+
+* wfm:capacityPlan:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let capacityPlanId = "capacityPlanId_example"; // String | The ID of the capacity plan
+let body = {}; // Object | body
+
+apiInstance.postWorkforcemanagementBusinessunitCapacityplanCopy(businessUnitId, capacityPlanId, body)
+  .then((data) => {
+    console.log(`postWorkforcemanagementBusinessunitCapacityplanCopy success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postWorkforcemanagementBusinessunitCapacityplanCopy');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **capacityPlanId** | **String** | The ID of the capacity plan |  |
+ **body** | **Object** | body |  |
+
+### Return type
+
+**CapacityPlanResponse**
+
+
+## postWorkforcemanagementBusinessunitCapacityplanRequirementGenerate
+
+> CapacityPlanStaffingRequirementResult postWorkforcemanagementBusinessunitCapacityplanRequirementGenerate(businessUnitId, capacityPlanId)
+
+
+POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}/requirement/generate
+
+Regenerate requirements for capacity plan
+
+Requires ANY permissions:
+
+* wfm:capacityPlan:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let capacityPlanId = "capacityPlanId_example"; // String | The ID of the capacity plan
+
+apiInstance.postWorkforcemanagementBusinessunitCapacityplanRequirementGenerate(businessUnitId, capacityPlanId)
+  .then((data) => {
+    console.log(`postWorkforcemanagementBusinessunitCapacityplanRequirementGenerate success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postWorkforcemanagementBusinessunitCapacityplanRequirementGenerate');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **capacityPlanId** | **String** | The ID of the capacity plan |  |
+
+### Return type
+
+**CapacityPlanStaffingRequirementResult**
+
+
+## postWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations
+
+> CapacityPlanStaffingGroupMetricChangeResponse postWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations(businessUnitId, capacityPlanId, body)
+
+
+POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}/staffinggroupallocations
+
+Create staffing group allocations for a capacity plan
+
+Requires ANY permissions:
+
+* wfm:capacityPlan:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let capacityPlanId = "capacityPlanId_example"; // String | The ID of the capacity plan
+let body = {}; // Object | 
+
+apiInstance.postWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations(businessUnitId, capacityPlanId, body)
+  .then((data) => {
+    console.log(`postWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocations');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **capacityPlanId** | **String** | The ID of the capacity plan |  |
+ **body** | **Object** |  |  |
+
+### Return type
+
+**CapacityPlanStaffingGroupMetricChangeResponse**
+
+
+## postWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistoryQuery
+
+> CapacityPlanStaffingGroupMetricChangeHistoryListResponse postWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistoryQuery(businessUnitId, capacityPlanId, body)
+
+
+POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/{capacityPlanId}/staffinggroupallocationshistory/query
+
+Query staffing groups allocations history for a capacity plan
+
+Requires ANY permissions:
+
+* wfm:capacityPlan:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let capacityPlanId = "capacityPlanId_example"; // String | The ID of the capacity plan
+let body = {}; // Object | 
+
+apiInstance.postWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistoryQuery(businessUnitId, capacityPlanId, body)
+  .then((data) => {
+    console.log(`postWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistoryQuery success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistoryQuery');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **capacityPlanId** | **String** | The ID of the capacity plan |  |
+ **body** | **Object** |  |  |
+
+### Return type
+
+**CapacityPlanStaffingGroupMetricChangeHistoryListResponse**
+
+
+## postWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastForceregenerate
+
+> LongTermRequirementsResponse postWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastForceregenerate(businessUnitId, weekDateId, forecastId)
+
+
+POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplanning/longtermrequirements/automaticbestmethod/weeks/{weekDateId}/forecasts/{forecastId}/forceregenerate
+
+Force regenerate the latest long term staffing requirements for a business unit
+
+Requires ANY permissions:
+
+* wfm:longTermStaffing:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | 
+let weekDateId = "weekDateId_example"; // String | weekDateId of forecast, format yyyy-MM-dd. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let forecastId = "forecastId_example"; // String | forecastId of forecast
+
+apiInstance.postWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastForceregenerate(businessUnitId, weekDateId, forecastId)
+  .then((data) => {
+    console.log(`postWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastForceregenerate success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastForceregenerate');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** |  |  |
+ **weekDateId** | **String** | weekDateId of forecast, format yyyy-MM-dd. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+ **forecastId** | **String** | forecastId of forecast |  |
+
+### Return type
+
+**LongTermRequirementsResponse**
+
+
+## postWorkforcemanagementBusinessunitCapacityplans
+
+> CapacityPlanResponse postWorkforcemanagementBusinessunitCapacityplans(businessUnitId, body)
+
+
+POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans
+
+Create a new capacity plan
+
+Requires ANY permissions:
+
+* wfm:capacityPlan:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let body = {}; // Object | body
+
+apiInstance.postWorkforcemanagementBusinessunitCapacityplans(businessUnitId, body)
+  .then((data) => {
+    console.log(`postWorkforcemanagementBusinessunitCapacityplans success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postWorkforcemanagementBusinessunitCapacityplans');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **body** | **Object** | body |  |
+
+### Return type
+
+**CapacityPlanResponse**
+
+
+## postWorkforcemanagementBusinessunitCapacityplansBulkRemove
+
+> void postWorkforcemanagementBusinessunitCapacityplansBulkRemove(businessUnitId, body)
+
+
+POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/bulk/remove
+
+Delete capacity plans in a business unit
+
+Requires ANY permissions:
+
+* wfm:capacityPlan:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let body = {}; // Object | body
+
+apiInstance.postWorkforcemanagementBusinessunitCapacityplansBulkRemove(businessUnitId, body)
+  .then(() => {
+    console.log('postWorkforcemanagementBusinessunitCapacityplansBulkRemove returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postWorkforcemanagementBusinessunitCapacityplansBulkRemove');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **body** | **Object** | body |  |
+
+### Return type
+
+void (no response body)
+
+
+## postWorkforcemanagementBusinessunitIntraday
+
+> AsyncIntradayResponse postWorkforcemanagementBusinessunitIntraday(businessUnitId, body, opts)
 
 
 POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/intraday
@@ -6521,18 +10586,18 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let body = {}; // Object | body
 let opts = { 
-  'forceAsync': true, // Boolean | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
-  'body': {} // Object | body
+  'forceAsync': true // Boolean | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
 };
 
-apiInstance.postWorkforcemanagementBusinessunitIntraday(businessUnitId, opts)
+apiInstance.postWorkforcemanagementBusinessunitIntraday(businessUnitId, body, opts)
   .then((data) => {
     console.log(`postWorkforcemanagementBusinessunitIntraday success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6548,17 +10613,17 @@ apiInstance.postWorkforcemanagementBusinessunitIntraday(businessUnitId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit |  |
+ **body** | **Object** | body |  |
  **forceAsync** | **Boolean** | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes | [optional]  |
- **body** | **Object** | body | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AsyncIntradayResponse**
 
-<a name="postWorkforcemanagementBusinessunitPlanninggroups"></a>
 
-# PlanningGroup postWorkforcemanagementBusinessunitPlanninggroups(businessUnitId, opts)
+## postWorkforcemanagementBusinessunitPlanninggroups
+
+> PlanningGroup postWorkforcemanagementBusinessunitPlanninggroups(businessUnitId, body)
 
 
 POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups
@@ -6577,17 +10642,15 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit.
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.postWorkforcemanagementBusinessunitPlanninggroups(businessUnitId, opts)
+apiInstance.postWorkforcemanagementBusinessunitPlanninggroups(businessUnitId, body)
   .then((data) => {
     console.log(`postWorkforcemanagementBusinessunitPlanninggroups success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6603,16 +10666,16 @@ apiInstance.postWorkforcemanagementBusinessunitPlanninggroups(businessUnitId, op
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit. |  |
- **body** | **Object** | body | [optional]  |
-{: class="table table-striped"}
+ **body** | **Object** | body |  |
 
 ### Return type
 
 **PlanningGroup**
 
-<a name="postWorkforcemanagementBusinessunitServicegoaltemplates"></a>
 
-# ServiceGoalTemplate postWorkforcemanagementBusinessunitServicegoaltemplates(businessUnitId, opts)
+## postWorkforcemanagementBusinessunitServicegoaltemplates
+
+> ServiceGoalTemplate postWorkforcemanagementBusinessunitServicegoaltemplates(businessUnitId, body)
 
 
 POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates
@@ -6631,17 +10694,15 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit.
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.postWorkforcemanagementBusinessunitServicegoaltemplates(businessUnitId, opts)
+apiInstance.postWorkforcemanagementBusinessunitServicegoaltemplates(businessUnitId, body)
   .then((data) => {
     console.log(`postWorkforcemanagementBusinessunitServicegoaltemplates success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6657,16 +10718,332 @@ apiInstance.postWorkforcemanagementBusinessunitServicegoaltemplates(businessUnit
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **businessUnitId** | **String** | The ID of the business unit. |  |
- **body** | **Object** | body | [optional]  |
-{: class="table table-striped"}
+ **body** | **Object** | body |  |
 
 ### Return type
 
 **ServiceGoalTemplate**
 
-<a name="postWorkforcemanagementBusinessunitWeekScheduleAgentschedulesQuery"></a>
 
-# BuAsyncAgentSchedulesQueryResponse postWorkforcemanagementBusinessunitWeekScheduleAgentschedulesQuery(businessUnitId, weekId, scheduleId, body, opts)
+## postWorkforcemanagementBusinessunitStaffinggroups
+
+> StaffingGroupResponse postWorkforcemanagementBusinessunitStaffinggroups(businessUnitId, body)
+
+
+POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups
+
+Creates a new staffing group
+
+Requires ANY permissions:
+
+* wfm:staffingGroup:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let body = {}; // Object | body
+
+apiInstance.postWorkforcemanagementBusinessunitStaffinggroups(businessUnitId, body)
+  .then((data) => {
+    console.log(`postWorkforcemanagementBusinessunitStaffinggroups success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postWorkforcemanagementBusinessunitStaffinggroups');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **body** | **Object** | body |  |
+
+### Return type
+
+**StaffingGroupResponse**
+
+
+## postWorkforcemanagementBusinessunitStaffinggroupsPlanninggroupsQuery
+
+> PlanningGroupToStaffingGroupsListing postWorkforcemanagementBusinessunitStaffinggroupsPlanninggroupsQuery(businessUnitId, body)
+
+
+POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups/planninggroups/query
+
+Gets a list of planning group to staffing groups list association
+
+Requires ANY permissions:
+
+* wfm:staffingGroup:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let body = {}; // Object | body
+
+apiInstance.postWorkforcemanagementBusinessunitStaffinggroupsPlanninggroupsQuery(businessUnitId, body)
+  .then((data) => {
+    console.log(`postWorkforcemanagementBusinessunitStaffinggroupsPlanninggroupsQuery success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postWorkforcemanagementBusinessunitStaffinggroupsPlanninggroupsQuery');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **body** | **Object** | body |  |
+
+### Return type
+
+**PlanningGroupToStaffingGroupsListing**
+
+
+## postWorkforcemanagementBusinessunitStaffinggroupsQuery
+
+> UserStaffingGroupListing postWorkforcemanagementBusinessunitStaffinggroupsQuery(businessUnitId, body, opts)
+
+
+POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups/query
+
+Gets staffing group associations for a list of user IDs
+
+Requires ANY permissions:
+
+* wfm:staffingGroup:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let body = {}; // Object | body
+let opts = { 
+  'forceDownloadService': true // Boolean | Force the result of this operation to be sent via download service
+};
+
+apiInstance.postWorkforcemanagementBusinessunitStaffinggroupsQuery(businessUnitId, body, opts)
+  .then((data) => {
+    console.log(`postWorkforcemanagementBusinessunitStaffinggroupsQuery success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postWorkforcemanagementBusinessunitStaffinggroupsQuery');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **body** | **Object** | body |  |
+ **forceDownloadService** | **Boolean** | Force the result of this operation to be sent via download service | [optional]  |
+
+### Return type
+
+**UserStaffingGroupListing**
+
+
+## postWorkforcemanagementBusinessunitTimeofflimits
+
+> BuTimeOffLimitResponse postWorkforcemanagementBusinessunitTimeofflimits(businessUnitId, body)
+
+
+POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits
+
+Creates a new time-off limit object
+
+Requires ANY permissions:
+
+* wfm:timeOffLimit:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let body = {}; // Object | body
+
+apiInstance.postWorkforcemanagementBusinessunitTimeofflimits(businessUnitId, body)
+  .then((data) => {
+    console.log(`postWorkforcemanagementBusinessunitTimeofflimits success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postWorkforcemanagementBusinessunitTimeofflimits');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **body** | **Object** | body |  |
+
+### Return type
+
+**BuTimeOffLimitResponse**
+
+
+## postWorkforcemanagementBusinessunitTimeofflimitsValuesQuery
+
+> BuTimeOffLimitValuesResponse postWorkforcemanagementBusinessunitTimeofflimitsValuesQuery(businessUnitId, body)
+
+
+POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/values/query
+
+Retrieves time-off limit related values based on a given set of filters.
+
+Requires ANY permissions:
+
+* wfm:timeOffLimit:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let body = {}; // Object | body
+
+apiInstance.postWorkforcemanagementBusinessunitTimeofflimitsValuesQuery(businessUnitId, body)
+  .then((data) => {
+    console.log(`postWorkforcemanagementBusinessunitTimeofflimitsValuesQuery success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postWorkforcemanagementBusinessunitTimeofflimitsValuesQuery');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **body** | **Object** | body |  |
+
+### Return type
+
+**BuTimeOffLimitValuesResponse**
+
+
+## postWorkforcemanagementBusinessunitTimeoffplans
+
+> BuTimeOffPlanResponse postWorkforcemanagementBusinessunitTimeoffplans(businessUnitId, body)
+
+
+POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans
+
+Creates a new time-off plan
+
+Requires ANY permissions:
+
+* wfm:timeOffPlan:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let body = {}; // Object | body
+
+apiInstance.postWorkforcemanagementBusinessunitTimeoffplans(businessUnitId, body)
+  .then((data) => {
+    console.log(`postWorkforcemanagementBusinessunitTimeoffplans success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postWorkforcemanagementBusinessunitTimeoffplans');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **body** | **Object** | body |  |
+
+### Return type
+
+**BuTimeOffPlanResponse**
+
+
+## postWorkforcemanagementBusinessunitWeekScheduleAgentschedulesQuery
+
+> BuAsyncAgentSchedulesQueryResponse postWorkforcemanagementBusinessunitWeekScheduleAgentschedulesQuery(businessUnitId, weekId, scheduleId, body, opts)
 
 
 POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/agentschedules/query
@@ -6686,7 +11063,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -6721,15 +11098,15 @@ apiInstance.postWorkforcemanagementBusinessunitWeekScheduleAgentschedulesQuery(b
  **body** | **Object** | body |  |
  **forceAsync** | **Boolean** | Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes | [optional]  |
  **forceDownloadService** | **Boolean** | Force the result of this operation to be sent via download service. For testing/app development purposes | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **BuAsyncAgentSchedulesQueryResponse**
 
-<a name="postWorkforcemanagementBusinessunitWeekScheduleCopy"></a>
 
-# BuAsyncScheduleResponse postWorkforcemanagementBusinessunitWeekScheduleCopy(businessUnitId, weekId, scheduleId, body)
+## postWorkforcemanagementBusinessunitWeekScheduleCopy
+
+> BuAsyncScheduleResponse postWorkforcemanagementBusinessunitWeekScheduleCopy(businessUnitId, weekId, scheduleId, body)
 
 
 POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/copy
@@ -6748,7 +11125,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -6777,15 +11154,127 @@ apiInstance.postWorkforcemanagementBusinessunitWeekScheduleCopy(businessUnitId, 
  **weekId** | **String** | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **scheduleId** | **String** | The ID of the schedule to copy |  |
  **body** | **Object** | body |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **BuAsyncScheduleResponse**
 
-<a name="postWorkforcemanagementBusinessunitWeekScheduleReschedule"></a>
 
-# BuAsyncScheduleRunResponse postWorkforcemanagementBusinessunitWeekScheduleReschedule(businessUnitId, weekId, scheduleId, body)
+## postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculations
+
+> PerformancePredictionRecalculationResponse postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculations(businessUnitId, weekId, scheduleId, body)
+
+
+POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/performancepredictions/recalculations
+
+Request a daily recalculation of the performance prediction for the associated schedule
+
+Requires ANY permissions:
+
+* wfm:schedule:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit to which the performance prediction belongs
+let weekId = "weekId_example"; // String | First day of schedule week in yyyy-MM-dd format
+let scheduleId = "scheduleId_example"; // String | The ID of the schedule the performance prediction belongs to
+let body = {}; // Object | body
+
+apiInstance.postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculations(businessUnitId, weekId, scheduleId, body)
+  .then((data) => {
+    console.log(`postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculations success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculations');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit to which the performance prediction belongs |  |
+ **weekId** | **String** | First day of schedule week in yyyy-MM-dd format |  |
+ **scheduleId** | **String** | The ID of the schedule the performance prediction belongs to |  |
+ **body** | **Object** | body |  |
+
+### Return type
+
+**PerformancePredictionRecalculationResponse**
+
+
+## postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsUploadurl
+
+> PerformancePredictionRecalculationUploadResponse postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsUploadurl(businessUnitId, weekId, scheduleId, body)
+
+
+POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/performancepredictions/recalculations/uploadurl
+
+Upload daily activity changes to be able to request a performance prediction recalculation
+
+Requires ANY permissions:
+
+* wfm:schedule:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit to which the performance prediction belongs
+let weekId = "weekId_example"; // String | First day of schedule week in yyyy-MM-dd format
+let scheduleId = "scheduleId_example"; // String | The ID of the schedule the performance prediction belongs to
+let body = {}; // Object | body
+
+apiInstance.postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsUploadurl(businessUnitId, weekId, scheduleId, body)
+  .then((data) => {
+    console.log(`postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsUploadurl success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postWorkforcemanagementBusinessunitWeekSchedulePerformancepredictionsRecalculationsUploadurl');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit to which the performance prediction belongs |  |
+ **weekId** | **String** | First day of schedule week in yyyy-MM-dd format |  |
+ **scheduleId** | **String** | The ID of the schedule the performance prediction belongs to |  |
+ **body** | **Object** | body |  |
+
+### Return type
+
+**PerformancePredictionRecalculationUploadResponse**
+
+
+## postWorkforcemanagementBusinessunitWeekScheduleReschedule
+
+> BuAsyncScheduleRunResponse postWorkforcemanagementBusinessunitWeekScheduleReschedule(businessUnitId, weekId, scheduleId, body)
 
 
 POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/reschedule
@@ -6804,7 +11293,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -6833,15 +11322,15 @@ apiInstance.postWorkforcemanagementBusinessunitWeekScheduleReschedule(businessUn
  **weekId** | **String** | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **scheduleId** | **String** | The ID of the schedule |  |
  **body** | **Object** | body |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **BuAsyncScheduleRunResponse**
 
-<a name="postWorkforcemanagementBusinessunitWeekScheduleUpdate"></a>
 
-# BuAsyncScheduleResponse postWorkforcemanagementBusinessunitWeekScheduleUpdate(businessUnitId, weekId, scheduleId, body)
+## postWorkforcemanagementBusinessunitWeekScheduleUpdate
+
+> BuAsyncScheduleResponse postWorkforcemanagementBusinessunitWeekScheduleUpdate(businessUnitId, weekId, scheduleId, body)
 
 
 POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/update
@@ -6862,7 +11351,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -6891,15 +11380,15 @@ apiInstance.postWorkforcemanagementBusinessunitWeekScheduleUpdate(businessUnitId
  **weekId** | **String** | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **scheduleId** | **String** | The ID of the schedule |  |
  **body** | **Object** | body |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **BuAsyncScheduleResponse**
 
-<a name="postWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurl"></a>
 
-# UpdateScheduleUploadResponse postWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurl(businessUnitId, weekId, scheduleId, body)
+## postWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurl
+
+> UpdateScheduleUploadResponse postWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurl(businessUnitId, weekId, scheduleId, body)
 
 
 POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/update/uploadurl
@@ -6920,7 +11409,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -6949,15 +11438,15 @@ apiInstance.postWorkforcemanagementBusinessunitWeekScheduleUpdateUploadurl(busin
  **weekId** | **String** | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **scheduleId** | **String** | The ID of the schedule |  |
  **body** | **Object** | body |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **UpdateScheduleUploadResponse**
 
-<a name="postWorkforcemanagementBusinessunitWeekSchedules"></a>
 
-# BuScheduleMetadata postWorkforcemanagementBusinessunitWeekSchedules(businessUnitId, weekId, body)
+## postWorkforcemanagementBusinessunitWeekSchedules
+
+> BuScheduleMetadata postWorkforcemanagementBusinessunitWeekSchedules(businessUnitId, weekId, body)
 
 
 POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules
@@ -6976,7 +11465,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -7003,15 +11492,15 @@ apiInstance.postWorkforcemanagementBusinessunitWeekSchedules(businessUnitId, wee
  **businessUnitId** | **String** | The ID of the business unit |  |
  **weekId** | **String** | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **body** | **Object** | body |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **BuScheduleMetadata**
 
-<a name="postWorkforcemanagementBusinessunitWeekSchedulesGenerate"></a>
 
-# BuAsyncScheduleRunResponse postWorkforcemanagementBusinessunitWeekSchedulesGenerate(businessUnitId, weekId, body)
+## postWorkforcemanagementBusinessunitWeekSchedulesGenerate
+
+> BuAsyncScheduleRunResponse postWorkforcemanagementBusinessunitWeekSchedulesGenerate(businessUnitId, weekId, body)
 
 
 POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/generate
@@ -7030,7 +11519,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -7057,15 +11546,15 @@ apiInstance.postWorkforcemanagementBusinessunitWeekSchedulesGenerate(businessUni
  **businessUnitId** | **String** | The ID of the business unit |  |
  **weekId** | **String** | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **body** | **Object** | body |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **BuAsyncScheduleRunResponse**
 
-<a name="postWorkforcemanagementBusinessunitWeekSchedulesImport"></a>
 
-# ScheduleUploadProcessingResponse postWorkforcemanagementBusinessunitWeekSchedulesImport(businessUnitId, weekId, body)
+## postWorkforcemanagementBusinessunitWeekSchedulesImport
+
+> ScheduleUploadProcessingResponse postWorkforcemanagementBusinessunitWeekSchedulesImport(businessUnitId, weekId, body)
 
 
 POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/import
@@ -7086,7 +11575,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -7113,15 +11602,15 @@ apiInstance.postWorkforcemanagementBusinessunitWeekSchedulesImport(businessUnitI
  **businessUnitId** | **String** | The ID of the business unit |  |
  **weekId** | **String** | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **body** | **Object** |  |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ScheduleUploadProcessingResponse**
 
-<a name="postWorkforcemanagementBusinessunitWeekSchedulesImportUploadurl"></a>
 
-# ImportScheduleUploadResponse postWorkforcemanagementBusinessunitWeekSchedulesImportUploadurl(businessUnitId, weekId, body)
+## postWorkforcemanagementBusinessunitWeekSchedulesImportUploadurl
+
+> ImportScheduleUploadResponse postWorkforcemanagementBusinessunitWeekSchedulesImportUploadurl(businessUnitId, weekId, body)
 
 
 POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/import/uploadurl
@@ -7142,7 +11631,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -7169,15 +11658,15 @@ apiInstance.postWorkforcemanagementBusinessunitWeekSchedulesImportUploadurl(busi
  **businessUnitId** | **String** | The ID of the business unit |  |
  **weekId** | **String** | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **body** | **Object** | body |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ImportScheduleUploadResponse**
 
-<a name="postWorkforcemanagementBusinessunitWeekShorttermforecastCopy"></a>
 
-# AsyncForecastOperationResult postWorkforcemanagementBusinessunitWeekShorttermforecastCopy(businessUnitId, weekDateId, forecastId, body, opts)
+## postWorkforcemanagementBusinessunitWeekShorttermforecastCopy
+
+> AsyncForecastOperationResult postWorkforcemanagementBusinessunitWeekShorttermforecastCopy(businessUnitId, weekDateId, forecastId, body, opts)
 
 
 POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/copy
@@ -7196,7 +11685,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -7229,15 +11718,15 @@ apiInstance.postWorkforcemanagementBusinessunitWeekShorttermforecastCopy(busines
  **forecastId** | **String** | The ID of the forecast to copy |  |
  **body** | **Object** | body |  |
  **forceAsync** | **Boolean** | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AsyncForecastOperationResult**
 
-<a name="postWorkforcemanagementBusinessunitWeekShorttermforecastsGenerate"></a>
 
-# AsyncForecastOperationResult postWorkforcemanagementBusinessunitWeekShorttermforecastsGenerate(businessUnitId, weekDateId, body, opts)
+## postWorkforcemanagementBusinessunitWeekShorttermforecastsGenerate
+
+> AsyncForecastOperationResult postWorkforcemanagementBusinessunitWeekShorttermforecastsGenerate(businessUnitId, weekDateId, body, opts)
 
 
 POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/generate
@@ -7256,7 +11745,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -7287,15 +11776,15 @@ apiInstance.postWorkforcemanagementBusinessunitWeekShorttermforecastsGenerate(bu
  **weekDateId** | **String** | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **body** | **Object** | body |  |
  **forceAsync** | **Boolean** | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AsyncForecastOperationResult**
 
-<a name="postWorkforcemanagementBusinessunitWeekShorttermforecastsImport"></a>
 
-# ImportForecastResponse postWorkforcemanagementBusinessunitWeekShorttermforecastsImport(businessUnitId, weekDateId, body)
+## postWorkforcemanagementBusinessunitWeekShorttermforecastsImport
+
+> ImportForecastResponse postWorkforcemanagementBusinessunitWeekShorttermforecastsImport(businessUnitId, weekDateId, body)
 
 
 POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/import
@@ -7316,7 +11805,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -7343,15 +11832,15 @@ apiInstance.postWorkforcemanagementBusinessunitWeekShorttermforecastsImport(busi
  **businessUnitId** | **String** | The ID of the business unit to which the forecast belongs |  |
  **weekDateId** | **String** | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **body** | **Object** | body |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ImportForecastResponse**
 
-<a name="postWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploadurl"></a>
 
-# ImportForecastUploadResponse postWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploadurl(businessUnitId, weekDateId, body)
+## postWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploadurl
+
+> ImportForecastUploadResponse postWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploadurl(businessUnitId, weekDateId, body)
 
 
 POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/import/uploadurl
@@ -7372,7 +11861,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -7399,15 +11888,175 @@ apiInstance.postWorkforcemanagementBusinessunitWeekShorttermforecastsImportUploa
  **businessUnitId** | **String** | The ID of the business unit to which the forecast belongs |  |
  **weekDateId** | **String** | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **body** | **Object** | body |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ImportForecastUploadResponse**
 
-<a name="postWorkforcemanagementBusinessunits"></a>
 
-# BusinessUnitResponse postWorkforcemanagementBusinessunits(opts)
+## postWorkforcemanagementBusinessunitWorkplanbidCopy
+
+> WorkPlanBid postWorkforcemanagementBusinessunitWorkplanbidCopy(businessUnitId, bidId, body)
+
+
+POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}/copy
+
+Copy a work plan bid
+
+Requires ANY permissions:
+
+* wfm:workPlanBid:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let bidId = "bidId_example"; // String | The ID of the work plan bid to copy
+let body = {}; // Object | body
+
+apiInstance.postWorkforcemanagementBusinessunitWorkplanbidCopy(businessUnitId, bidId, body)
+  .then((data) => {
+    console.log(`postWorkforcemanagementBusinessunitWorkplanbidCopy success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postWorkforcemanagementBusinessunitWorkplanbidCopy');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **bidId** | **String** | The ID of the work plan bid to copy |  |
+ **body** | **Object** | body |  |
+
+### Return type
+
+**WorkPlanBid**
+
+
+## postWorkforcemanagementBusinessunitWorkplanbidGroups
+
+> WorkPlanBidGroupResponse postWorkforcemanagementBusinessunitWorkplanbidGroups(businessUnitId, bidId, body)
+
+
+POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}/groups
+
+Add a bid group in a given work plan bid
+
+Requires ANY permissions:
+
+* wfm:workPlanBidGroup:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let bidId = "bidId_example"; // String | The work plan bid id of the bid groups
+let body = {}; // Object | body
+
+apiInstance.postWorkforcemanagementBusinessunitWorkplanbidGroups(businessUnitId, bidId, body)
+  .then((data) => {
+    console.log(`postWorkforcemanagementBusinessunitWorkplanbidGroups success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postWorkforcemanagementBusinessunitWorkplanbidGroups');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **bidId** | **String** | The work plan bid id of the bid groups |  |
+ **body** | **Object** | body |  |
+
+### Return type
+
+**WorkPlanBidGroupResponse**
+
+
+## postWorkforcemanagementBusinessunitWorkplanbids
+
+> WorkPlanBid postWorkforcemanagementBusinessunitWorkplanbids(businessUnitId, body)
+
+
+POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids
+
+Create a new work plan bid
+
+Requires ANY permissions:
+
+* wfm:workPlanBid:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let body = {}; // Object | The work plan bid to be created
+
+apiInstance.postWorkforcemanagementBusinessunitWorkplanbids(businessUnitId, body)
+  .then((data) => {
+    console.log(`postWorkforcemanagementBusinessunitWorkplanbids success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postWorkforcemanagementBusinessunitWorkplanbids');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **body** | **Object** | The work plan bid to be created |  |
+
+### Return type
+
+**WorkPlanBid**
+
+
+## postWorkforcemanagementBusinessunits
+
+> BusinessUnitResponse postWorkforcemanagementBusinessunits(body, opts)
 
 
 POST /api/v2/workforcemanagement/businessunits
@@ -7428,16 +12077,17 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
+let body = {}; // Object | body
 let opts = { 
-  'body': {} // Object | body
+  'includeSchedulingDefaultMessageSeverities': true // Boolean | Whether to include scheduling default message severities
 };
 
-apiInstance.postWorkforcemanagementBusinessunits(opts)
+apiInstance.postWorkforcemanagementBusinessunits(body, opts)
   .then((data) => {
     console.log(`postWorkforcemanagementBusinessunits success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -7452,16 +12102,17 @@ apiInstance.postWorkforcemanagementBusinessunits(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **Object** | body | [optional]  |
-{: class="table table-striped"}
+ **body** | **Object** | body |  |
+ **includeSchedulingDefaultMessageSeverities** | **Boolean** | Whether to include scheduling default message severities | [optional]  |
 
 ### Return type
 
 **BusinessUnitResponse**
 
-<a name="postWorkforcemanagementCalendarUrlIcs"></a>
 
-# CalendarUrlResponse postWorkforcemanagementCalendarUrlIcs(opts)
+## postWorkforcemanagementCalendarUrlIcs
+
+> CalendarUrlResponse postWorkforcemanagementCalendarUrlIcs(opts)
 
 
 POST /api/v2/workforcemanagement/calendar/url/ics
@@ -7481,7 +12132,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -7506,20 +12157,20 @@ apiInstance.postWorkforcemanagementCalendarUrlIcs(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **language** | **String** | A language tag (which is sometimes referred to as a locale identifier) to use to localize default activity code names in the ics-formatted calendar | [optional] [default to en-US] |
-{: class="table table-striped"}
 
 ### Return type
 
 **CalendarUrlResponse**
 
-<a name="postWorkforcemanagementHistoricaldataDeletejob"></a>
 
-# HistoricalImportDeleteJobResponse postWorkforcemanagementHistoricaldataDeletejob()
+## postWorkforcemanagementHistoricaldataBulkRemoveJobs
+
+> HistoricalImportDeleteFilesJobResponse postWorkforcemanagementHistoricaldataBulkRemoveJobs(body)
 
 
-POST /api/v2/workforcemanagement/historicaldata/deletejob
+POST /api/v2/workforcemanagement/historicaldata/bulk/remove/jobs
 
-Delete the entries of the historical data imports in the organization
+Delete the list of the historical data import entries
 
 Requires ALL permissions:
 
@@ -7533,33 +12184,38 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-apiInstance.postWorkforcemanagementHistoricaldataDeletejob()
+let body = {}; // Object | body
+
+apiInstance.postWorkforcemanagementHistoricaldataBulkRemoveJobs(body)
   .then((data) => {
-    console.log(`postWorkforcemanagementHistoricaldataDeletejob success! data: ${JSON.stringify(data, null, 2)}`);
+    console.log(`postWorkforcemanagementHistoricaldataBulkRemoveJobs success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch((err) => {
-    console.log('There was a failure calling postWorkforcemanagementHistoricaldataDeletejob');
+    console.log('There was a failure calling postWorkforcemanagementHistoricaldataBulkRemoveJobs');
     console.error(err);
   });
 ```
 
 ### Parameters
 
-This endpoint does not need any parameter.
 
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | body |  |
 
 ### Return type
 
-**HistoricalImportDeleteJobResponse**
+**HistoricalImportDeleteFilesJobResponse**
 
-<a name="postWorkforcemanagementHistoricaldataValidate"></a>
 
-# void postWorkforcemanagementHistoricaldataValidate(opts)
+## postWorkforcemanagementHistoricaldataValidate
+
+> ValidationServiceAsyncResponse postWorkforcemanagementHistoricaldataValidate(body)
 
 
 POST /api/v2/workforcemanagement/historicaldata/validate
@@ -7578,18 +12234,16 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.postWorkforcemanagementHistoricaldataValidate(opts)
-  .then(() => {
-    console.log('postWorkforcemanagementHistoricaldataValidate returned successfully.');
+apiInstance.postWorkforcemanagementHistoricaldataValidate(body)
+  .then((data) => {
+    console.log(`postWorkforcemanagementHistoricaldataValidate success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch((err) => {
     console.log('There was a failure calling postWorkforcemanagementHistoricaldataValidate');
@@ -7602,16 +12256,16 @@ apiInstance.postWorkforcemanagementHistoricaldataValidate(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **Object** | body | [optional]  |
-{: class="table table-striped"}
+ **body** | **Object** | body |  |
 
 ### Return type
 
-void (no response body)
+**ValidationServiceAsyncResponse**
 
-<a name="postWorkforcemanagementIntegrationsHriTimeofftypesJobs"></a>
 
-# HrisTimeOffTypesResponse postWorkforcemanagementIntegrationsHriTimeofftypesJobs(hrisIntegrationId)
+## postWorkforcemanagementIntegrationsHriTimeofftypesJobs
+
+> HrisTimeOffTypesResponse postWorkforcemanagementIntegrationsHriTimeofftypesJobs(hrisIntegrationId)
 
 
 POST /api/v2/workforcemanagement/integrations/hris/{hrisIntegrationId}/timeofftypes/jobs
@@ -7630,7 +12284,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -7653,15 +12307,71 @@ apiInstance.postWorkforcemanagementIntegrationsHriTimeofftypesJobs(hrisIntegrati
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **hrisIntegrationId** | **String** | The ID of the HRIS integration for which time off types are queried. |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **HrisTimeOffTypesResponse**
 
-<a name="postWorkforcemanagementManagementunitAgentschedulesSearch"></a>
 
-# BuAsyncAgentSchedulesSearchResponse postWorkforcemanagementManagementunitAgentschedulesSearch(managementUnitId, opts)
+## postWorkforcemanagementManagementunitAgentsWorkplansQuery
+
+> AgentsWorkPlansResponse postWorkforcemanagementManagementunitAgentsWorkplansQuery(managementUnitId, body, opts)
+
+
+POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/agents/workplans/query
+
+Get agents work plans configuration
+
+Requires ANY permissions:
+
+* wfm:workPlan:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+let body = {}; // Object | body
+let opts = { 
+  'forceDownloadService': true // Boolean | Force the result of this operation to be sent via download service. For testing/app development purposes
+};
+
+apiInstance.postWorkforcemanagementManagementunitAgentsWorkplansQuery(managementUnitId, body, opts)
+  .then((data) => {
+    console.log(`postWorkforcemanagementManagementunitAgentsWorkplansQuery success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postWorkforcemanagementManagementunitAgentsWorkplansQuery');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
+ **body** | **Object** | body |  |
+ **forceDownloadService** | **Boolean** | Force the result of this operation to be sent via download service. For testing/app development purposes | [optional]  |
+
+### Return type
+
+**AgentsWorkPlansResponse**
+
+
+## postWorkforcemanagementManagementunitAgentschedulesSearch
+
+> BuAsyncAgentSchedulesSearchResponse postWorkforcemanagementManagementunitAgentschedulesSearch(managementUnitId, body, opts)
 
 
 POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/agentschedules/search
@@ -7681,19 +12391,19 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+let body = {}; // Object | body
 let opts = { 
   'forceAsync': true, // Boolean | Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes
-  'forceDownloadService': true, // Boolean | Force the result of this operation to be sent via download service. For testing/app development purposes
-  'body': {} // Object | body
+  'forceDownloadService': true // Boolean | Force the result of this operation to be sent via download service. For testing/app development purposes
 };
 
-apiInstance.postWorkforcemanagementManagementunitAgentschedulesSearch(managementUnitId, opts)
+apiInstance.postWorkforcemanagementManagementunitAgentschedulesSearch(managementUnitId, body, opts)
   .then((data) => {
     console.log(`postWorkforcemanagementManagementunitAgentschedulesSearch success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -7709,18 +12419,18 @@ apiInstance.postWorkforcemanagementManagementunitAgentschedulesSearch(management
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
+ **body** | **Object** | body |  |
  **forceAsync** | **Boolean** | Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes | [optional]  |
  **forceDownloadService** | **Boolean** | Force the result of this operation to be sent via download service. For testing/app development purposes | [optional]  |
- **body** | **Object** | body | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **BuAsyncAgentSchedulesSearchResponse**
 
-<a name="postWorkforcemanagementManagementunitHistoricaladherencequery"></a>
 
-# WfmHistoricalAdherenceResponse postWorkforcemanagementManagementunitHistoricaladherencequery(managementUnitId, opts)
+## postWorkforcemanagementManagementunitHistoricaladherencequery
+
+> WfmHistoricalAdherenceResponse postWorkforcemanagementManagementunitHistoricaladherencequery(managementUnitId, body)
 
 
 POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/historicaladherencequery
@@ -7741,17 +12451,15 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.postWorkforcemanagementManagementunitHistoricaladherencequery(managementUnitId, opts)
+apiInstance.postWorkforcemanagementManagementunitHistoricaladherencequery(managementUnitId, body)
   .then((data) => {
     console.log(`postWorkforcemanagementManagementunitHistoricaladherencequery success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -7767,16 +12475,16 @@ apiInstance.postWorkforcemanagementManagementunitHistoricaladherencequery(manage
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit |  |
- **body** | **Object** | body | [optional]  |
-{: class="table table-striped"}
+ **body** | **Object** | body |  |
 
 ### Return type
 
 **WfmHistoricalAdherenceResponse**
 
-<a name="postWorkforcemanagementManagementunitMove"></a>
 
-# MoveManagementUnitResponse postWorkforcemanagementManagementunitMove(managementUnitId, opts)
+## postWorkforcemanagementManagementunitMove
+
+> MoveManagementUnitResponse postWorkforcemanagementManagementunitMove(managementUnitId, body)
 
 
 POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/move
@@ -7797,17 +12505,15 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.postWorkforcemanagementManagementunitMove(managementUnitId, opts)
+apiInstance.postWorkforcemanagementManagementunitMove(managementUnitId, body)
   .then((data) => {
     console.log(`postWorkforcemanagementManagementunitMove success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -7823,18 +12529,20 @@ apiInstance.postWorkforcemanagementManagementunitMove(managementUnitId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
- **body** | **Object** | body | [optional]  |
-{: class="table table-striped"}
+ **body** | **Object** | body |  |
 
 ### Return type
 
 **MoveManagementUnitResponse**
 
-<a name="postWorkforcemanagementManagementunitSchedulesSearch"></a>
 
-# UserScheduleContainer postWorkforcemanagementManagementunitSchedulesSearch(managementUnitId, opts)
+## postWorkforcemanagementManagementunitSchedulesSearch
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+> UserScheduleContainer postWorkforcemanagementManagementunitSchedulesSearch(managementUnitId, body)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/schedules/search
 
@@ -7853,17 +12561,15 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.postWorkforcemanagementManagementunitSchedulesSearch(managementUnitId, opts)
+apiInstance.postWorkforcemanagementManagementunitSchedulesSearch(managementUnitId, body)
   .then((data) => {
     console.log(`postWorkforcemanagementManagementunitSchedulesSearch success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -7879,16 +12585,16 @@ apiInstance.postWorkforcemanagementManagementunitSchedulesSearch(managementUnitI
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
- **body** | **Object** | body | [optional]  |
-{: class="table table-striped"}
+ **body** | **Object** | body |  |
 
 ### Return type
 
 **UserScheduleContainer**
 
-<a name="postWorkforcemanagementManagementunitShrinkageJobs"></a>
 
-# WfmHistoricalShrinkageResponse postWorkforcemanagementManagementunitShrinkageJobs(managementUnitId, opts)
+## postWorkforcemanagementManagementunitShrinkageJobs
+
+> WfmHistoricalShrinkageResponse postWorkforcemanagementManagementunitShrinkageJobs(managementUnitId, body)
 
 
 POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/shrinkage/jobs
@@ -7909,17 +12615,15 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.postWorkforcemanagementManagementunitShrinkageJobs(managementUnitId, opts)
+apiInstance.postWorkforcemanagementManagementunitShrinkageJobs(managementUnitId, body)
   .then((data) => {
     console.log(`postWorkforcemanagementManagementunitShrinkageJobs success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -7935,16 +12639,16 @@ apiInstance.postWorkforcemanagementManagementunitShrinkageJobs(managementUnitId,
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit |  |
- **body** | **Object** | body | [optional]  |
-{: class="table table-striped"}
+ **body** | **Object** | body |  |
 
 ### Return type
 
 **WfmHistoricalShrinkageResponse**
 
-<a name="postWorkforcemanagementManagementunitTimeofflimits"></a>
 
-# TimeOffLimit postWorkforcemanagementManagementunitTimeofflimits(managementUnitId, opts)
+## postWorkforcemanagementManagementunitTimeofflimits
+
+> TimeOffLimit postWorkforcemanagementManagementunitTimeofflimits(managementUnitId, body)
 
 
 POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits
@@ -7965,17 +12669,15 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit.
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.postWorkforcemanagementManagementunitTimeofflimits(managementUnitId, opts)
+apiInstance.postWorkforcemanagementManagementunitTimeofflimits(managementUnitId, body)
   .then((data) => {
     console.log(`postWorkforcemanagementManagementunitTimeofflimits success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -7991,16 +12693,16 @@ apiInstance.postWorkforcemanagementManagementunitTimeofflimits(managementUnitId,
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit. |  |
- **body** | **Object** | body | [optional]  |
-{: class="table table-striped"}
+ **body** | **Object** | body |  |
 
 ### Return type
 
 **TimeOffLimit**
 
-<a name="postWorkforcemanagementManagementunitTimeofflimitsValuesQuery"></a>
 
-# QueryTimeOffLimitValuesResponse postWorkforcemanagementManagementunitTimeofflimitsValuesQuery(managementUnitId, opts)
+## postWorkforcemanagementManagementunitTimeofflimitsValuesQuery
+
+> QueryTimeOffLimitValuesResponse postWorkforcemanagementManagementunitTimeofflimitsValuesQuery(managementUnitId, body)
 
 
 POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/values/query
@@ -8019,17 +12721,15 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit.
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.postWorkforcemanagementManagementunitTimeofflimitsValuesQuery(managementUnitId, opts)
+apiInstance.postWorkforcemanagementManagementunitTimeofflimitsValuesQuery(managementUnitId, body)
   .then((data) => {
     console.log(`postWorkforcemanagementManagementunitTimeofflimitsValuesQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -8045,16 +12745,16 @@ apiInstance.postWorkforcemanagementManagementunitTimeofflimitsValuesQuery(manage
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit. |  |
- **body** | **Object** | body | [optional]  |
-{: class="table table-striped"}
+ **body** | **Object** | body |  |
 
 ### Return type
 
 **QueryTimeOffLimitValuesResponse**
 
-<a name="postWorkforcemanagementManagementunitTimeoffplans"></a>
 
-# TimeOffPlan postWorkforcemanagementManagementunitTimeoffplans(managementUnitId, opts)
+## postWorkforcemanagementManagementunitTimeoffplans
+
+> TimeOffPlan postWorkforcemanagementManagementunitTimeoffplans(managementUnitId, body)
 
 
 POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans
@@ -8073,17 +12773,15 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.postWorkforcemanagementManagementunitTimeoffplans(managementUnitId, opts)
+apiInstance.postWorkforcemanagementManagementunitTimeoffplans(managementUnitId, body)
   .then((data) => {
     console.log(`postWorkforcemanagementManagementunitTimeoffplans success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -8099,16 +12797,16 @@ apiInstance.postWorkforcemanagementManagementunitTimeoffplans(managementUnitId, 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit |  |
- **body** | **Object** | body | [optional]  |
-{: class="table table-striped"}
+ **body** | **Object** | body |  |
 
 ### Return type
 
 **TimeOffPlan**
 
-<a name="postWorkforcemanagementManagementunitTimeoffrequests"></a>
 
-# TimeOffRequestList postWorkforcemanagementManagementunitTimeoffrequests(managementUnitId, opts)
+## postWorkforcemanagementManagementunitTimeoffrequests
+
+> TimeOffRequestList postWorkforcemanagementManagementunitTimeoffrequests(managementUnitId, body)
 
 
 POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests
@@ -8127,17 +12825,15 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.postWorkforcemanagementManagementunitTimeoffrequests(managementUnitId, opts)
+apiInstance.postWorkforcemanagementManagementunitTimeoffrequests(managementUnitId, body)
   .then((data) => {
     console.log(`postWorkforcemanagementManagementunitTimeoffrequests success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -8153,16 +12849,16 @@ apiInstance.postWorkforcemanagementManagementunitTimeoffrequests(managementUnitI
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
- **body** | **Object** | body | [optional]  |
-{: class="table table-striped"}
+ **body** | **Object** | body |  |
 
 ### Return type
 
 **TimeOffRequestList**
 
-<a name="postWorkforcemanagementManagementunitTimeoffrequestsIntegrationstatusQuery"></a>
 
-# UserTimeOffIntegrationStatusResponseListing postWorkforcemanagementManagementunitTimeoffrequestsIntegrationstatusQuery(managementUnitId, opts)
+## postWorkforcemanagementManagementunitTimeoffrequestsIntegrationstatusQuery
+
+> UserTimeOffIntegrationStatusResponseListing postWorkforcemanagementManagementunitTimeoffrequestsIntegrationstatusQuery(managementUnitId, body)
 
 
 POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/integrationstatus/query
@@ -8181,17 +12877,15 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit.
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.postWorkforcemanagementManagementunitTimeoffrequestsIntegrationstatusQuery(managementUnitId, opts)
+apiInstance.postWorkforcemanagementManagementunitTimeoffrequestsIntegrationstatusQuery(managementUnitId, body)
   .then((data) => {
     console.log(`postWorkforcemanagementManagementunitTimeoffrequestsIntegrationstatusQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -8207,16 +12901,16 @@ apiInstance.postWorkforcemanagementManagementunitTimeoffrequestsIntegrationstatu
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit. |  |
- **body** | **Object** | body | [optional]  |
-{: class="table table-striped"}
+ **body** | **Object** | body |  |
 
 ### Return type
 
 **UserTimeOffIntegrationStatusResponseListing**
 
-<a name="postWorkforcemanagementManagementunitTimeoffrequestsQuery"></a>
 
-# TimeOffRequestListing postWorkforcemanagementManagementunitTimeoffrequestsQuery(managementUnitId, opts)
+## postWorkforcemanagementManagementunitTimeoffrequestsQuery
+
+> TimeOffRequestListing postWorkforcemanagementManagementunitTimeoffrequestsQuery(managementUnitId, body, opts)
 
 
 POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/query
@@ -8237,17 +12931,18 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+let body = {}; // Object | body
 let opts = { 
-  'body': {} // Object | body
+  'forceDownloadService': true // Boolean | Force the result of this operation to be sent via download service. For testing/app development purposes
 };
 
-apiInstance.postWorkforcemanagementManagementunitTimeoffrequestsQuery(managementUnitId, opts)
+apiInstance.postWorkforcemanagementManagementunitTimeoffrequestsQuery(managementUnitId, body, opts)
   .then((data) => {
     console.log(`postWorkforcemanagementManagementunitTimeoffrequestsQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -8263,16 +12958,17 @@ apiInstance.postWorkforcemanagementManagementunitTimeoffrequestsQuery(management
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
- **body** | **Object** | body | [optional]  |
-{: class="table table-striped"}
+ **body** | **Object** | body |  |
+ **forceDownloadService** | **Boolean** | Force the result of this operation to be sent via download service. For testing/app development purposes | [optional]  |
 
 ### Return type
 
 **TimeOffRequestListing**
 
-<a name="postWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositionsQuery"></a>
 
-# WaitlistPositionListing postWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositionsQuery(managementUnitId, opts)
+## postWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositionsQuery
+
+> WaitlistPositionListing postWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositionsQuery(managementUnitId, body)
 
 
 POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/waitlistpositions/query
@@ -8291,17 +12987,15 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit.
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.postWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositionsQuery(managementUnitId, opts)
+apiInstance.postWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositionsQuery(managementUnitId, body)
   .then((data) => {
     console.log(`postWorkforcemanagementManagementunitTimeoffrequestsWaitlistpositionsQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -8317,16 +13011,16 @@ apiInstance.postWorkforcemanagementManagementunitTimeoffrequestsWaitlistposition
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit. |  |
- **body** | **Object** | body | [optional]  |
-{: class="table table-striped"}
+ **body** | **Object** | body |  |
 
 ### Return type
 
 **WaitlistPositionListing**
 
-<a name="postWorkforcemanagementManagementunitUserTimeoffbalanceJobs"></a>
 
-# TimeOffBalancesResponse postWorkforcemanagementManagementunitUserTimeoffbalanceJobs(managementUnitId, userId, body)
+## postWorkforcemanagementManagementunitUserTimeoffbalanceJobs
+
+> TimeOffBalancesResponse postWorkforcemanagementManagementunitUserTimeoffbalanceJobs(managementUnitId, userId, body)
 
 
 POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffbalance/jobs
@@ -8345,7 +13039,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -8372,15 +13066,15 @@ apiInstance.postWorkforcemanagementManagementunitUserTimeoffbalanceJobs(manageme
  **managementUnitId** | **String** | The ID of the management unit |  |
  **userId** | **String** | The ID of the user |  |
  **body** | **Object** | The request body |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **TimeOffBalancesResponse**
 
-<a name="postWorkforcemanagementManagementunitUserTimeoffrequestTimeoffbalanceJobs"></a>
 
-# TimeOffBalancesResponse postWorkforcemanagementManagementunitUserTimeoffrequestTimeoffbalanceJobs(managementUnitId, userId, timeOffRequestId)
+## postWorkforcemanagementManagementunitUserTimeoffrequestTimeoffbalanceJobs
+
+> TimeOffBalancesResponse postWorkforcemanagementManagementunitUserTimeoffrequestTimeoffbalanceJobs(managementUnitId, userId, timeOffRequestId)
 
 
 POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/{timeOffRequestId}/timeoffbalance/jobs
@@ -8399,7 +13093,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -8426,15 +13120,15 @@ apiInstance.postWorkforcemanagementManagementunitUserTimeoffrequestTimeoffbalanc
  **managementUnitId** | **String** | The ID of the management unit. |  |
  **userId** | **String** | The userId to whom the time off request applies. |  |
  **timeOffRequestId** | **String** | The time off request id. |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **TimeOffBalancesResponse**
 
-<a name="postWorkforcemanagementManagementunitUserTimeoffrequestsEstimate"></a>
 
-# EstimateAvailableTimeOffResponse postWorkforcemanagementManagementunitUserTimeoffrequestsEstimate(managementUnitId, userId, opts)
+## postWorkforcemanagementManagementunitUserTimeoffrequestsEstimate
+
+> EstimateAvailableTimeOffResponse postWorkforcemanagementManagementunitUserTimeoffrequestsEstimate(managementUnitId, userId, body)
 
 
 POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/estimate
@@ -8453,18 +13147,16 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit
 let userId = "userId_example"; // String | The id of the user for whom the time off request estimate is requested
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.postWorkforcemanagementManagementunitUserTimeoffrequestsEstimate(managementUnitId, userId, opts)
+apiInstance.postWorkforcemanagementManagementunitUserTimeoffrequestsEstimate(managementUnitId, userId, body)
   .then((data) => {
     console.log(`postWorkforcemanagementManagementunitUserTimeoffrequestsEstimate success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -8481,16 +13173,16 @@ apiInstance.postWorkforcemanagementManagementunitUserTimeoffrequestsEstimate(man
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit |  |
  **userId** | **String** | The id of the user for whom the time off request estimate is requested |  |
- **body** | **Object** | body | [optional]  |
-{: class="table table-striped"}
+ **body** | **Object** | body |  |
 
 ### Return type
 
 **EstimateAvailableTimeOffResponse**
 
-<a name="postWorkforcemanagementManagementunitWeekShifttradeMatch"></a>
 
-# MatchShiftTradeResponse postWorkforcemanagementManagementunitWeekShifttradeMatch(managementUnitId, weekDateId, tradeId, body)
+## postWorkforcemanagementManagementunitWeekShifttradeMatch
+
+> MatchShiftTradeResponse postWorkforcemanagementManagementunitWeekShifttradeMatch(managementUnitId, weekDateId, tradeId, body)
 
 
 POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/{tradeId}/match
@@ -8509,13 +13201,13 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-let weekDateId = "weekDateId_example"; // String | The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let weekDateId = "weekDateId_example"; // String | The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let tradeId = "tradeId_example"; // String | The ID of the shift trade to update
 let body = {}; // Object | body
 
@@ -8535,18 +13227,18 @@ apiInstance.postWorkforcemanagementManagementunitWeekShifttradeMatch(managementU
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
- **weekDateId** | **String** | The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+ **weekDateId** | **String** | The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **tradeId** | **String** | The ID of the shift trade to update |  |
  **body** | **Object** | body |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **MatchShiftTradeResponse**
 
-<a name="postWorkforcemanagementManagementunitWeekShifttrades"></a>
 
-# ShiftTradeResponse postWorkforcemanagementManagementunitWeekShifttrades(managementUnitId, weekDateId, body)
+## postWorkforcemanagementManagementunitWeekShifttrades
+
+> ShiftTradeResponse postWorkforcemanagementManagementunitWeekShifttrades(managementUnitId, weekDateId, body)
 
 
 POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades
@@ -8565,13 +13257,13 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-let weekDateId = "weekDateId_example"; // String | The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let weekDateId = "weekDateId_example"; // String | The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let body = {}; // Object | body
 
 apiInstance.postWorkforcemanagementManagementunitWeekShifttrades(managementUnitId, weekDateId, body)
@@ -8590,17 +13282,17 @@ apiInstance.postWorkforcemanagementManagementunitWeekShifttrades(managementUnitI
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
- **weekDateId** | **String** | The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+ **weekDateId** | **String** | The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **body** | **Object** | body |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ShiftTradeResponse**
 
-<a name="postWorkforcemanagementManagementunitWeekShifttradesSearch"></a>
 
-# SearchShiftTradesResponse postWorkforcemanagementManagementunitWeekShifttradesSearch(managementUnitId, weekDateId, body)
+## postWorkforcemanagementManagementunitWeekShifttradesSearch
+
+> SearchShiftTradesResponse postWorkforcemanagementManagementunitWeekShifttradesSearch(managementUnitId, weekDateId, body, opts)
 
 
 POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/search
@@ -8619,16 +13311,19 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-let weekDateId = "weekDateId_example"; // String | The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let weekDateId = "weekDateId_example"; // String | The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let body = {}; // Object | body
+let opts = { 
+  'forceDownloadService': true // Boolean | Force the result of this operation to be sent via download service. For testing/app development purposes
+};
 
-apiInstance.postWorkforcemanagementManagementunitWeekShifttradesSearch(managementUnitId, weekDateId, body)
+apiInstance.postWorkforcemanagementManagementunitWeekShifttradesSearch(managementUnitId, weekDateId, body, opts)
   .then((data) => {
     console.log(`postWorkforcemanagementManagementunitWeekShifttradesSearch success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -8644,17 +13339,18 @@ apiInstance.postWorkforcemanagementManagementunitWeekShifttradesSearch(managemen
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
- **weekDateId** | **String** | The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+ **weekDateId** | **String** | The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **body** | **Object** | body |  |
-{: class="table table-striped"}
+ **forceDownloadService** | **Boolean** | Force the result of this operation to be sent via download service. For testing/app development purposes | [optional]  |
 
 ### Return type
 
 **SearchShiftTradesResponse**
 
-<a name="postWorkforcemanagementManagementunitWeekShifttradesStateBulk"></a>
 
-# BulkUpdateShiftTradeStateResponse postWorkforcemanagementManagementunitWeekShifttradesStateBulk(managementUnitId, weekDateId, body, opts)
+## postWorkforcemanagementManagementunitWeekShifttradesStateBulk
+
+> BulkUpdateShiftTradeStateResponse postWorkforcemanagementManagementunitWeekShifttradesStateBulk(managementUnitId, weekDateId, body, opts)
 
 
 POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/state/bulk
@@ -8676,13 +13372,13 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-let weekDateId = "weekDateId_example"; // String | The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let weekDateId = "weekDateId_example"; // String | The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let body = {}; // Object | body
 let opts = { 
   'forceAsync': true // Boolean | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
@@ -8704,18 +13400,18 @@ apiInstance.postWorkforcemanagementManagementunitWeekShifttradesStateBulk(manage
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
- **weekDateId** | **String** | The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+ **weekDateId** | **String** | The start week date of the initiating shift in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **body** | **Object** | body |  |
  **forceAsync** | **Boolean** | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **BulkUpdateShiftTradeStateResponse**
 
-<a name="postWorkforcemanagementManagementunitWorkplanCopy"></a>
 
-# WorkPlan postWorkforcemanagementManagementunitWorkplanCopy(managementUnitId, workPlanId, opts)
+## postWorkforcemanagementManagementunitWorkplanCopy
+
+> WorkPlan postWorkforcemanagementManagementunitWorkplanCopy(managementUnitId, workPlanId, body)
 
 
 POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId}/copy
@@ -8734,18 +13430,16 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 let workPlanId = "workPlanId_example"; // String | The ID of the work plan to create a copy
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.postWorkforcemanagementManagementunitWorkplanCopy(managementUnitId, workPlanId, opts)
+apiInstance.postWorkforcemanagementManagementunitWorkplanCopy(managementUnitId, workPlanId, body)
   .then((data) => {
     console.log(`postWorkforcemanagementManagementunitWorkplanCopy success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -8762,16 +13456,16 @@ apiInstance.postWorkforcemanagementManagementunitWorkplanCopy(managementUnitId, 
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
  **workPlanId** | **String** | The ID of the work plan to create a copy |  |
- **body** | **Object** | body | [optional]  |
-{: class="table table-striped"}
+ **body** | **Object** | body |  |
 
 ### Return type
 
 **WorkPlan**
 
-<a name="postWorkforcemanagementManagementunitWorkplanValidate"></a>
 
-# ValidateWorkPlanResponse postWorkforcemanagementManagementunitWorkplanValidate(managementUnitId, workPlanId, opts)
+## postWorkforcemanagementManagementunitWorkplanValidate
+
+> ValidateWorkPlanResponse postWorkforcemanagementManagementunitWorkplanValidate(managementUnitId, workPlanId, body, opts)
 
 
 POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId}/validate
@@ -8791,19 +13485,19 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 let workPlanId = "workPlanId_example"; // String | The ID of the work plan to validate. For new work plan, use the word 'new' for the ID.
+let body = {}; // Object | body
 let opts = { 
-  'expand': ["expand_example"], // [String] | 
-  'body': {} // Object | body
+  'expand': ["expand_example"] // [String] | 
 };
 
-apiInstance.postWorkforcemanagementManagementunitWorkplanValidate(managementUnitId, workPlanId, opts)
+apiInstance.postWorkforcemanagementManagementunitWorkplanValidate(managementUnitId, workPlanId, body, opts)
   .then((data) => {
     console.log(`postWorkforcemanagementManagementunitWorkplanValidate success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -8820,17 +13514,17 @@ apiInstance.postWorkforcemanagementManagementunitWorkplanValidate(managementUnit
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
  **workPlanId** | **String** | The ID of the work plan to validate. For new work plan, use the word 'new' for the ID. |  |
+ **body** | **Object** | body |  |
  **expand** | **[String]** |  | [optional] <br />**Values**: messages |
- **body** | **Object** | body | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ValidateWorkPlanResponse**
 
-<a name="postWorkforcemanagementManagementunitWorkplanrotationCopy"></a>
 
-# WorkPlanRotationResponse postWorkforcemanagementManagementunitWorkplanrotationCopy(managementUnitId, workPlanRotationId, opts)
+## postWorkforcemanagementManagementunitWorkplanrotationCopy
+
+> WorkPlanRotationResponse postWorkforcemanagementManagementunitWorkplanrotationCopy(managementUnitId, workPlanRotationId, body)
 
 
 POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations/{workPlanRotationId}/copy
@@ -8849,18 +13543,16 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 let workPlanRotationId = "workPlanRotationId_example"; // String | The ID of the work plan rotation to create a copy
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.postWorkforcemanagementManagementunitWorkplanrotationCopy(managementUnitId, workPlanRotationId, opts)
+apiInstance.postWorkforcemanagementManagementunitWorkplanrotationCopy(managementUnitId, workPlanRotationId, body)
   .then((data) => {
     console.log(`postWorkforcemanagementManagementunitWorkplanrotationCopy success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -8877,16 +13569,16 @@ apiInstance.postWorkforcemanagementManagementunitWorkplanrotationCopy(management
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
  **workPlanRotationId** | **String** | The ID of the work plan rotation to create a copy |  |
- **body** | **Object** | body | [optional]  |
-{: class="table table-striped"}
+ **body** | **Object** | body |  |
 
 ### Return type
 
 **WorkPlanRotationResponse**
 
-<a name="postWorkforcemanagementManagementunitWorkplanrotations"></a>
 
-# WorkPlanRotationResponse postWorkforcemanagementManagementunitWorkplanrotations(managementUnitId, opts)
+## postWorkforcemanagementManagementunitWorkplanrotations
+
+> WorkPlanRotationResponse postWorkforcemanagementManagementunitWorkplanrotations(managementUnitId, body)
 
 
 POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations
@@ -8905,17 +13597,15 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.postWorkforcemanagementManagementunitWorkplanrotations(managementUnitId, opts)
+apiInstance.postWorkforcemanagementManagementunitWorkplanrotations(managementUnitId, body)
   .then((data) => {
     console.log(`postWorkforcemanagementManagementunitWorkplanrotations success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -8931,16 +13621,16 @@ apiInstance.postWorkforcemanagementManagementunitWorkplanrotations(managementUni
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
- **body** | **Object** | body | [optional]  |
-{: class="table table-striped"}
+ **body** | **Object** | body |  |
 
 ### Return type
 
 **WorkPlanRotationResponse**
 
-<a name="postWorkforcemanagementManagementunitWorkplans"></a>
 
-# WorkPlan postWorkforcemanagementManagementunitWorkplans(managementUnitId, opts)
+## postWorkforcemanagementManagementunitWorkplans
+
+> WorkPlan postWorkforcemanagementManagementunitWorkplans(managementUnitId, body, opts)
 
 
 POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans
@@ -8959,18 +13649,18 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+let body = {}; // Object | body
 let opts = { 
-  'validationMode': "validationMode_example", // String | Allows to create work plan even if the validation result is invalid
-  'body': {} // Object | body
+  'validationMode': "validationMode_example" // String | Allows to create work plan even if the validation result is invalid
 };
 
-apiInstance.postWorkforcemanagementManagementunitWorkplans(managementUnitId, opts)
+apiInstance.postWorkforcemanagementManagementunitWorkplans(managementUnitId, body, opts)
   .then((data) => {
     console.log(`postWorkforcemanagementManagementunitWorkplans success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -8986,17 +13676,17 @@ apiInstance.postWorkforcemanagementManagementunitWorkplans(managementUnitId, opt
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit, or 'mine' for the management unit of the logged-in user. |  |
+ **body** | **Object** | body |  |
  **validationMode** | **String** | Allows to create work plan even if the validation result is invalid | [optional] <br />**Values**: Ignore |
- **body** | **Object** | body | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **WorkPlan**
 
-<a name="postWorkforcemanagementManagementunits"></a>
 
-# ManagementUnit postWorkforcemanagementManagementunits(opts)
+## postWorkforcemanagementManagementunits
+
+> ManagementUnit postWorkforcemanagementManagementunits(body)
 
 
 POST /api/v2/workforcemanagement/managementunits
@@ -9017,16 +13707,14 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.postWorkforcemanagementManagementunits(opts)
+apiInstance.postWorkforcemanagementManagementunits(body)
   .then((data) => {
     console.log(`postWorkforcemanagementManagementunits success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -9041,16 +13729,16 @@ apiInstance.postWorkforcemanagementManagementunits(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **Object** | body | [optional]  |
-{: class="table table-striped"}
+ **body** | **Object** | body |  |
 
 ### Return type
 
 **ManagementUnit**
 
-<a name="postWorkforcemanagementNotificationsUpdate"></a>
 
-# UpdateNotificationsResponse postWorkforcemanagementNotificationsUpdate(opts)
+## postWorkforcemanagementNotificationsUpdate
+
+> UpdateNotificationsResponse postWorkforcemanagementNotificationsUpdate(body)
 
 
 POST /api/v2/workforcemanagement/notifications/update
@@ -9067,16 +13755,14 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.postWorkforcemanagementNotificationsUpdate(opts)
+apiInstance.postWorkforcemanagementNotificationsUpdate(body)
   .then((data) => {
     console.log(`postWorkforcemanagementNotificationsUpdate success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -9091,18 +13777,20 @@ apiInstance.postWorkforcemanagementNotificationsUpdate(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **Object** | body | [optional]  |
-{: class="table table-striped"}
+ **body** | **Object** | body |  |
 
 ### Return type
 
 **UpdateNotificationsResponse**
 
-<a name="postWorkforcemanagementSchedules"></a>
 
-# UserScheduleContainer postWorkforcemanagementSchedules(opts)
+## postWorkforcemanagementSchedules
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+> UserScheduleContainer postWorkforcemanagementSchedules(opts)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 POST /api/v2/workforcemanagement/schedules
 
@@ -9120,7 +13808,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -9145,15 +13833,15 @@ apiInstance.postWorkforcemanagementSchedules(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | body | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **UserScheduleContainer**
 
-<a name="postWorkforcemanagementTeamAdherenceHistorical"></a>
 
-# WfmHistoricalAdherenceResponse postWorkforcemanagementTeamAdherenceHistorical(teamId, opts)
+## postWorkforcemanagementTeamAdherenceHistorical
+
+> WfmHistoricalAdherenceResponse postWorkforcemanagementTeamAdherenceHistorical(teamId, body)
 
 
 POST /api/v2/workforcemanagement/teams/{teamId}/adherence/historical
@@ -9174,17 +13862,15 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let teamId = "teamId_example"; // String | The ID of the team
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.postWorkforcemanagementTeamAdherenceHistorical(teamId, opts)
+apiInstance.postWorkforcemanagementTeamAdherenceHistorical(teamId, body)
   .then((data) => {
     console.log(`postWorkforcemanagementTeamAdherenceHistorical success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -9200,16 +13886,16 @@ apiInstance.postWorkforcemanagementTeamAdherenceHistorical(teamId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **teamId** | **String** | The ID of the team |  |
- **body** | **Object** | body | [optional]  |
-{: class="table table-striped"}
+ **body** | **Object** | body |  |
 
 ### Return type
 
 **WfmHistoricalAdherenceResponse**
 
-<a name="postWorkforcemanagementTeamShrinkageJobs"></a>
 
-# WfmHistoricalShrinkageResponse postWorkforcemanagementTeamShrinkageJobs(teamId, opts)
+## postWorkforcemanagementTeamShrinkageJobs
+
+> WfmHistoricalShrinkageResponse postWorkforcemanagementTeamShrinkageJobs(teamId, body)
 
 
 POST /api/v2/workforcemanagement/teams/{teamId}/shrinkage/jobs
@@ -9230,17 +13916,15 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let teamId = "teamId_example"; // String | The ID of the team
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.postWorkforcemanagementTeamShrinkageJobs(teamId, opts)
+apiInstance.postWorkforcemanagementTeamShrinkageJobs(teamId, body)
   .then((data) => {
     console.log(`postWorkforcemanagementTeamShrinkageJobs success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -9256,16 +13940,16 @@ apiInstance.postWorkforcemanagementTeamShrinkageJobs(teamId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **teamId** | **String** | The ID of the team |  |
- **body** | **Object** | body | [optional]  |
-{: class="table table-striped"}
+ **body** | **Object** | body |  |
 
 ### Return type
 
 **WfmHistoricalShrinkageResponse**
 
-<a name="postWorkforcemanagementTimeoffbalanceJobs"></a>
 
-# TimeOffBalancesResponse postWorkforcemanagementTimeoffbalanceJobs(body)
+## postWorkforcemanagementTimeoffbalanceJobs
+
+> TimeOffBalancesResponse postWorkforcemanagementTimeoffbalanceJobs(body)
 
 
 POST /api/v2/workforcemanagement/timeoffbalance/jobs
@@ -9284,7 +13968,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -9307,15 +13991,15 @@ apiInstance.postWorkforcemanagementTimeoffbalanceJobs(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | The request body |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **TimeOffBalancesResponse**
 
-<a name="postWorkforcemanagementTimeofflimitsAvailableQuery"></a>
 
-# AvailableTimeOffResponse postWorkforcemanagementTimeofflimitsAvailableQuery(opts)
+## postWorkforcemanagementTimeofflimitsAvailableQuery
+
+> AvailableTimeOffResponse postWorkforcemanagementTimeofflimitsAvailableQuery(body)
 
 
 POST /api/v2/workforcemanagement/timeofflimits/available/query
@@ -9334,16 +14018,14 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.postWorkforcemanagementTimeofflimitsAvailableQuery(opts)
+apiInstance.postWorkforcemanagementTimeofflimitsAvailableQuery(body)
   .then((data) => {
     console.log(`postWorkforcemanagementTimeofflimitsAvailableQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -9358,16 +14040,16 @@ apiInstance.postWorkforcemanagementTimeofflimitsAvailableQuery(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **Object** | body | [optional]  |
-{: class="table table-striped"}
+ **body** | **Object** | body |  |
 
 ### Return type
 
 **AvailableTimeOffResponse**
 
-<a name="postWorkforcemanagementTimeoffrequests"></a>
 
-# TimeOffRequestResponse postWorkforcemanagementTimeoffrequests(opts)
+## postWorkforcemanagementTimeoffrequests
+
+> TimeOffRequestResponse postWorkforcemanagementTimeoffrequests(body)
 
 
 POST /api/v2/workforcemanagement/timeoffrequests
@@ -9386,16 +14068,14 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.postWorkforcemanagementTimeoffrequests(opts)
+apiInstance.postWorkforcemanagementTimeoffrequests(body)
   .then((data) => {
     console.log(`postWorkforcemanagementTimeoffrequests success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -9410,16 +14090,16 @@ apiInstance.postWorkforcemanagementTimeoffrequests(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **Object** | body | [optional]  |
-{: class="table table-striped"}
+ **body** | **Object** | body |  |
 
 ### Return type
 
 **TimeOffRequestResponse**
 
-<a name="postWorkforcemanagementTimeoffrequestsEstimate"></a>
 
-# EstimateAvailableTimeOffResponse postWorkforcemanagementTimeoffrequestsEstimate(opts)
+## postWorkforcemanagementTimeoffrequestsEstimate
+
+> EstimateAvailableTimeOffResponse postWorkforcemanagementTimeoffrequestsEstimate(body)
 
 
 POST /api/v2/workforcemanagement/timeoffrequests/estimate
@@ -9438,16 +14118,14 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.postWorkforcemanagementTimeoffrequestsEstimate(opts)
+apiInstance.postWorkforcemanagementTimeoffrequestsEstimate(body)
   .then((data) => {
     console.log(`postWorkforcemanagementTimeoffrequestsEstimate success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -9462,16 +14140,16 @@ apiInstance.postWorkforcemanagementTimeoffrequestsEstimate(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **Object** | body | [optional]  |
-{: class="table table-striped"}
+ **body** | **Object** | body |  |
 
 ### Return type
 
 **EstimateAvailableTimeOffResponse**
 
-<a name="postWorkforcemanagementTimeoffrequestsIntegrationstatusQuery"></a>
 
-# TimeOffIntegrationStatusResponseListing postWorkforcemanagementTimeoffrequestsIntegrationstatusQuery(opts)
+## postWorkforcemanagementTimeoffrequestsIntegrationstatusQuery
+
+> TimeOffIntegrationStatusResponseListing postWorkforcemanagementTimeoffrequestsIntegrationstatusQuery(body)
 
 
 POST /api/v2/workforcemanagement/timeoffrequests/integrationstatus/query
@@ -9490,16 +14168,14 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.postWorkforcemanagementTimeoffrequestsIntegrationstatusQuery(opts)
+apiInstance.postWorkforcemanagementTimeoffrequestsIntegrationstatusQuery(body)
   .then((data) => {
     console.log(`postWorkforcemanagementTimeoffrequestsIntegrationstatusQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -9514,16 +14190,16 @@ apiInstance.postWorkforcemanagementTimeoffrequestsIntegrationstatusQuery(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **Object** | body | [optional]  |
-{: class="table table-striped"}
+ **body** | **Object** | body |  |
 
 ### Return type
 
 **TimeOffIntegrationStatusResponseListing**
 
-<a name="putWorkforcemanagementAgentIntegrationsHris"></a>
 
-# AgentIntegrationsResponse putWorkforcemanagementAgentIntegrationsHris(agentId, body)
+## putWorkforcemanagementAgentIntegrationsHris
+
+> AgentIntegrationsResponse putWorkforcemanagementAgentIntegrationsHris(agentId, body)
 
 
 PUT /api/v2/workforcemanagement/agents/{agentId}/integrations/hris
@@ -9542,7 +14218,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
@@ -9567,15 +14243,71 @@ apiInstance.putWorkforcemanagementAgentIntegrationsHris(agentId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **agentId** | **String** | The ID of the agent |  |
  **body** | **Object** | body |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AgentIntegrationsResponse**
 
-<a name="putWorkforcemanagementManagementunitTimeofflimitValues"></a>
 
-# TimeOffLimit putWorkforcemanagementManagementunitTimeofflimitValues(managementUnitId, timeOffLimitId, opts)
+## putWorkforcemanagementBusinessunitTimeofflimitValues
+
+> BuTimeOffLimitResponse putWorkforcemanagementBusinessunitTimeofflimitValues(businessUnitId, timeOffLimitId, body)
+
+
+PUT /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values
+
+Sets daily values for a date range of time-off limit object
+
+Note that only limit daily values can be set through API, allocated and waitlisted values are read-only for time-off limit API
+
+Requires ANY permissions:
+
+* wfm:timeOffLimit:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.WorkforceManagementApi();
+
+let businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+let timeOffLimitId = "timeOffLimitId_example"; // String | The ID of the time-off limit object to set values for
+let body = {}; // Object | body
+
+apiInstance.putWorkforcemanagementBusinessunitTimeofflimitValues(businessUnitId, timeOffLimitId, body)
+  .then((data) => {
+    console.log(`putWorkforcemanagementBusinessunitTimeofflimitValues success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putWorkforcemanagementBusinessunitTimeofflimitValues');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **businessUnitId** | **String** | The ID of the business unit |  |
+ **timeOffLimitId** | **String** | The ID of the time-off limit object to set values for |  |
+ **body** | **Object** | body |  |
+
+### Return type
+
+**BuTimeOffLimitResponse**
+
+
+## putWorkforcemanagementManagementunitTimeofflimitValues
+
+> TimeOffLimit putWorkforcemanagementManagementunitTimeofflimitValues(managementUnitId, timeOffLimitId, body)
 
 
 PUT /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/{timeOffLimitId}/values
@@ -9596,18 +14328,16 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.WorkforceManagementApi();
 
 let managementUnitId = "managementUnitId_example"; // String | The ID of the management unit.
 let timeOffLimitId = "timeOffLimitId_example"; // String | The ID of the time off limit object to set values for
-let opts = { 
-  'body': {} // Object | body
-};
+let body = {}; // Object | body
 
-apiInstance.putWorkforcemanagementManagementunitTimeofflimitValues(managementUnitId, timeOffLimitId, opts)
+apiInstance.putWorkforcemanagementManagementunitTimeofflimitValues(managementUnitId, timeOffLimitId, body)
   .then((data) => {
     console.log(`putWorkforcemanagementManagementunitTimeofflimitValues success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -9624,10 +14354,11 @@ apiInstance.putWorkforcemanagementManagementunitTimeofflimitValues(managementUni
 | ------------- | ------------- | ------------- | ------------- |
  **managementUnitId** | **String** | The ID of the management unit. |  |
  **timeOffLimitId** | **String** | The ID of the time off limit object to set values for |  |
- **body** | **Object** | body | [optional]  |
-{: class="table table-striped"}
+ **body** | **Object** | body |  |
 
 ### Return type
 
 **TimeOffLimit**
 
+
+_purecloud-platform-client-v2@229.1.0_

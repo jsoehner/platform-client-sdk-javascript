@@ -5,7 +5,7 @@ class SearchApi {
 	/**
 	 * Search service.
 	 * @module purecloud-platform-client-v2/api/SearchApi
-	 * @version 174.0.0
+	 * @version 229.1.0
 	 */
 
 	/**
@@ -189,6 +189,35 @@ class SearchApi {
 	}
 
 	/**
+	 * Search sites using the q64 value returned from a previous search
+	 * 
+	 * @param {String} q64 q64
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.expand expand
+	 */
+	getTelephonyProvidersEdgesSitesSearch(q64, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'q64' is set
+		if (q64 === undefined || q64 === null) {
+			throw 'Missing the required parameter "q64" when calling getTelephonyProvidersEdgesSitesSearch';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/providers/edges/sites/search', 
+			'GET', 
+			{  },
+			{ 'q64': q64,'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Search users using the q64 value returned from a previous search
 	 * 
 	 * @param {String} q64 q64
@@ -241,31 +270,6 @@ class SearchApi {
 			{  },
 			{  },
 			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Search resources.
-	 * 
-	 * @param {Object} body Search request options
-	 */
-	postAnalyticsConversationsTranscriptsQuery(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postAnalyticsConversationsTranscriptsQuery';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/analytics/conversations/transcripts/query', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']
@@ -410,7 +414,7 @@ class SearchApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseSearch';
 		}
 
@@ -549,6 +553,31 @@ class SearchApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/teams/search', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Search sites
+	 * 
+	 * @param {Object} body Search request options
+	 */
+	postTelephonyProvidersEdgesSitesSearch(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postTelephonyProvidersEdgesSitesSearch';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/telephony/providers/edges/sites/search', 
 			'POST', 
 			{  },
 			{  },

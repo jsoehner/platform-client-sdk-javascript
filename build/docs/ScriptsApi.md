@@ -1,31 +1,32 @@
----
-title: ScriptsApi
----
+# ScriptsApi
+
 # platformClient.ScriptsApi
 
 All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-[**getScript**](ScriptsApi.html#getScript) | **GET** /api/v2/scripts/{scriptId} | Get a script
-[**getScriptPage**](ScriptsApi.html#getScriptPage) | **GET** /api/v2/scripts/{scriptId}/pages/{pageId} | Get a page
-[**getScriptPages**](ScriptsApi.html#getScriptPages) | **GET** /api/v2/scripts/{scriptId}/pages | Get the list of pages
-[**getScripts**](ScriptsApi.html#getScripts) | **GET** /api/v2/scripts | Get the list of scripts
-[**getScriptsDivisionviews**](ScriptsApi.html#getScriptsDivisionviews) | **GET** /api/v2/scripts/divisionviews | Get the metadata for a list of scripts
-[**getScriptsPublished**](ScriptsApi.html#getScriptsPublished) | **GET** /api/v2/scripts/published | Get the published scripts.
-[**getScriptsPublishedDivisionviews**](ScriptsApi.html#getScriptsPublishedDivisionviews) | **GET** /api/v2/scripts/published/divisionviews | Get the published scripts metadata.
-[**getScriptsPublishedScriptId**](ScriptsApi.html#getScriptsPublishedScriptId) | **GET** /api/v2/scripts/published/{scriptId} | Get the published script.
-[**getScriptsPublishedScriptIdPage**](ScriptsApi.html#getScriptsPublishedScriptIdPage) | **GET** /api/v2/scripts/published/{scriptId}/pages/{pageId} | Get the published page.
-[**getScriptsPublishedScriptIdPages**](ScriptsApi.html#getScriptsPublishedScriptIdPages) | **GET** /api/v2/scripts/published/{scriptId}/pages | Get the list of published pages
-[**getScriptsPublishedScriptIdVariables**](ScriptsApi.html#getScriptsPublishedScriptIdVariables) | **GET** /api/v2/scripts/published/{scriptId}/variables | Get the published variables
-[**getScriptsUploadStatus**](ScriptsApi.html#getScriptsUploadStatus) | **GET** /api/v2/scripts/uploads/{uploadId}/status | Get the upload status of an imported script
-[**postScriptExport**](ScriptsApi.html#postScriptExport) | **POST** /api/v2/scripts/{scriptId}/export | Export a script via download service.
-[**postScriptsPublished**](ScriptsApi.html#postScriptsPublished) | **POST** /api/v2/scripts/published | Publish a script.
-{: class="table table-striped"}
+[**getScript**](ScriptsApi#getScript) | **GET** /api/v2/scripts/{scriptId} | Get a script
+[**getScriptPage**](ScriptsApi#getScriptPage) | **GET** /api/v2/scripts/{scriptId}/pages/{pageId} | Get a page
+[**getScriptPages**](ScriptsApi#getScriptPages) | **GET** /api/v2/scripts/{scriptId}/pages | Get the list of pages
+[**getScripts**](ScriptsApi#getScripts) | **GET** /api/v2/scripts | Get the list of scripts
+[**getScriptsDivisionviews**](ScriptsApi#getScriptsDivisionviews) | **GET** /api/v2/scripts/divisionviews | Get the metadata for a list of scripts
+[**getScriptsPublished**](ScriptsApi#getScriptsPublished) | **GET** /api/v2/scripts/published | Get the published scripts.
+[**getScriptsPublishedDivisionviewVariables**](ScriptsApi#getScriptsPublishedDivisionviewVariables) | **GET** /api/v2/scripts/published/divisionviews/{scriptId}/variables | Get the published variables
+[**getScriptsPublishedDivisionviews**](ScriptsApi#getScriptsPublishedDivisionviews) | **GET** /api/v2/scripts/published/divisionviews | Get the published scripts metadata.
+[**getScriptsPublishedScriptId**](ScriptsApi#getScriptsPublishedScriptId) | **GET** /api/v2/scripts/published/{scriptId} | Get the published script.
+[**getScriptsPublishedScriptIdPage**](ScriptsApi#getScriptsPublishedScriptIdPage) | **GET** /api/v2/scripts/published/{scriptId}/pages/{pageId} | Get the published page.
+[**getScriptsPublishedScriptIdPages**](ScriptsApi#getScriptsPublishedScriptIdPages) | **GET** /api/v2/scripts/published/{scriptId}/pages | Get the list of published pages
+[**getScriptsPublishedScriptIdVariables**](ScriptsApi#getScriptsPublishedScriptIdVariables) | **GET** /api/v2/scripts/published/{scriptId}/variables | Get the published variables
+[**getScriptsUploadStatus**](ScriptsApi#getScriptsUploadStatus) | **GET** /api/v2/scripts/uploads/{uploadId}/status | Get the upload status of an imported script
+[**postScriptExport**](ScriptsApi#postScriptExport) | **POST** /api/v2/scripts/{scriptId}/export | Export a script via download service.
+[**postScriptsPublished**](ScriptsApi#postScriptsPublished) | **POST** /api/v2/scripts/published | Publish a script.
 
-<a name="getScript"></a>
 
-# Script getScript(scriptId)
+
+## getScript
+
+> Script getScript(scriptId)
 
 
 GET /api/v2/scripts/{scriptId}
@@ -44,7 +45,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ScriptsApi();
@@ -67,15 +68,15 @@ apiInstance.getScript(scriptId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **scriptId** | **String** | Script ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Script**
 
-<a name="getScriptPage"></a>
 
-# Page getScriptPage(scriptId, pageId, opts)
+## getScriptPage
+
+> Page getScriptPage(scriptId, pageId, opts)
 
 
 GET /api/v2/scripts/{scriptId}/pages/{pageId}
@@ -94,7 +95,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ScriptsApi();
@@ -123,15 +124,15 @@ apiInstance.getScriptPage(scriptId, pageId, opts)
  **scriptId** | **String** | Script ID |  |
  **pageId** | **String** | Page ID |  |
  **scriptDataVersion** | **String** | Advanced usage - controls the data version of the script | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Page**
 
-<a name="getScriptPages"></a>
 
-# [Page] getScriptPages(scriptId, opts)
+## getScriptPages
+
+> [Page] getScriptPages(scriptId, opts)
 
 
 GET /api/v2/scripts/{scriptId}/pages
@@ -150,7 +151,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ScriptsApi();
@@ -177,15 +178,15 @@ apiInstance.getScriptPages(scriptId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **scriptId** | **String** | Script ID |  |
  **scriptDataVersion** | **String** | Advanced usage - controls the data version of the script | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **[Page]**
 
-<a name="getScripts"></a>
 
-# ScriptEntityListing getScripts(opts)
+## getScripts
+
+> ScriptEntityListing getScripts(opts)
 
 
 GET /api/v2/scripts
@@ -204,7 +205,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ScriptsApi();
@@ -243,19 +244,19 @@ apiInstance.getScripts(opts)
  **name** | **String** | Name filter | [optional]  |
  **feature** | **String** | Feature filter | [optional]  |
  **flowId** | **String** | Secure flow id filter | [optional]  |
- **sortBy** | **String** | SortBy | [optional] <br />**Values**: modifiedDate, createdDate |
+ **sortBy** | **String** | SortBy | [optional] <br />**Values**: modifiedDate, createdDate, name |
  **sortOrder** | **String** | SortOrder | [optional] <br />**Values**: ascending, descending |
  **scriptDataVersion** | **String** | Advanced usage - controls the data version of the script | [optional]  |
  **divisionIds** | **String** | Filters scripts to requested divisionIds | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ScriptEntityListing**
 
-<a name="getScriptsDivisionviews"></a>
 
-# ScriptEntityListing getScriptsDivisionviews(opts)
+## getScriptsDivisionviews
+
+> ScriptEntityListing getScriptsDivisionviews(opts)
 
 
 GET /api/v2/scripts/divisionviews
@@ -274,7 +275,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ScriptsApi();
@@ -313,19 +314,19 @@ apiInstance.getScriptsDivisionviews(opts)
  **name** | **String** | Name filter | [optional]  |
  **feature** | **String** | Feature filter | [optional]  |
  **flowId** | **String** | Secure flow id filter | [optional]  |
- **sortBy** | **String** | SortBy | [optional] <br />**Values**: modifiedDate, createdDate |
+ **sortBy** | **String** | SortBy | [optional] <br />**Values**: modifiedDate, createdDate, name |
  **sortOrder** | **String** | SortOrder | [optional] <br />**Values**: ascending, descending |
  **scriptDataVersion** | **String** | Advanced usage - controls the data version of the script | [optional]  |
  **divisionIds** | **String** | Filters scripts to requested divisionIds | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ScriptEntityListing**
 
-<a name="getScriptsPublished"></a>
 
-# ScriptEntityListing getScriptsPublished(opts)
+## getScriptsPublished
+
+> ScriptEntityListing getScriptsPublished(opts)
 
 
 GET /api/v2/scripts/published
@@ -344,7 +345,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ScriptsApi();
@@ -383,15 +384,75 @@ apiInstance.getScriptsPublished(opts)
  **flowId** | **String** | Secure flow id filter | [optional]  |
  **scriptDataVersion** | **String** | Advanced usage - controls the data version of the script | [optional]  |
  **divisionIds** | **String** | Filters scripts to requested divisionIds | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ScriptEntityListing**
 
-<a name="getScriptsPublishedDivisionviews"></a>
 
-# ScriptEntityListing getScriptsPublishedDivisionviews(opts)
+## getScriptsPublishedDivisionviewVariables
+
+> **Object** getScriptsPublishedDivisionviewVariables(scriptId, opts)
+
+
+GET /api/v2/scripts/published/divisionviews/{scriptId}/variables
+
+Get the published variables
+
+Requires ANY permissions:
+
+* scripter:publishedScript:search
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ScriptsApi();
+
+let scriptId = "scriptId_example"; // String | Script ID
+let opts = { 
+  'input': "input_example", // String | input
+  'output': "output_example", // String | output
+  'type': "type_example", // String | type
+  'scriptDataVersion': "scriptDataVersion_example" // String | Advanced usage - controls the data version of the script
+};
+
+apiInstance.getScriptsPublishedDivisionviewVariables(scriptId, opts)
+  .then((data) => {
+    console.log(`getScriptsPublishedDivisionviewVariables success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getScriptsPublishedDivisionviewVariables');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **scriptId** | **String** | Script ID |  |
+ **input** | **String** | input | [optional] <br />**Values**: true, false |
+ **output** | **String** | output | [optional] <br />**Values**: true, false |
+ **type** | **String** | type | [optional] <br />**Values**: string, number, boolean |
+ **scriptDataVersion** | **String** | Advanced usage - controls the data version of the script | [optional]  |
+
+### Return type
+
+**Object**
+
+
+## getScriptsPublishedDivisionviews
+
+> ScriptEntityListing getScriptsPublishedDivisionviews(opts)
 
 
 GET /api/v2/scripts/published/divisionviews
@@ -410,7 +471,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ScriptsApi();
@@ -449,15 +510,15 @@ apiInstance.getScriptsPublishedDivisionviews(opts)
  **flowId** | **String** | Secure flow id filter | [optional]  |
  **scriptDataVersion** | **String** | Advanced usage - controls the data version of the script | [optional]  |
  **divisionIds** | **String** | Filters scripts to requested divisionIds | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ScriptEntityListing**
 
-<a name="getScriptsPublishedScriptId"></a>
 
-# Script getScriptsPublishedScriptId(scriptId, opts)
+## getScriptsPublishedScriptId
+
+> Script getScriptsPublishedScriptId(scriptId, opts)
 
 
 GET /api/v2/scripts/published/{scriptId}
@@ -476,7 +537,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ScriptsApi();
@@ -503,15 +564,15 @@ apiInstance.getScriptsPublishedScriptId(scriptId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **scriptId** | **String** | Script ID |  |
  **scriptDataVersion** | **String** | Advanced usage - controls the data version of the script | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Script**
 
-<a name="getScriptsPublishedScriptIdPage"></a>
 
-# Page getScriptsPublishedScriptIdPage(scriptId, pageId, opts)
+## getScriptsPublishedScriptIdPage
+
+> Page getScriptsPublishedScriptIdPage(scriptId, pageId, opts)
 
 
 GET /api/v2/scripts/published/{scriptId}/pages/{pageId}
@@ -530,7 +591,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ScriptsApi();
@@ -559,15 +620,15 @@ apiInstance.getScriptsPublishedScriptIdPage(scriptId, pageId, opts)
  **scriptId** | **String** | Script ID |  |
  **pageId** | **String** | Page ID |  |
  **scriptDataVersion** | **String** | Advanced usage - controls the data version of the script | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Page**
 
-<a name="getScriptsPublishedScriptIdPages"></a>
 
-# [Page] getScriptsPublishedScriptIdPages(scriptId, opts)
+## getScriptsPublishedScriptIdPages
+
+> [Page] getScriptsPublishedScriptIdPages(scriptId, opts)
 
 
 GET /api/v2/scripts/published/{scriptId}/pages
@@ -586,7 +647,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ScriptsApi();
@@ -613,15 +674,15 @@ apiInstance.getScriptsPublishedScriptIdPages(scriptId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **scriptId** | **String** | Script ID |  |
  **scriptDataVersion** | **String** | Advanced usage - controls the data version of the script | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **[Page]**
 
-<a name="getScriptsPublishedScriptIdVariables"></a>
 
-# **Object** getScriptsPublishedScriptIdVariables(scriptId, opts)
+## getScriptsPublishedScriptIdVariables
+
+> **Object** getScriptsPublishedScriptIdVariables(scriptId, opts)
 
 
 GET /api/v2/scripts/published/{scriptId}/variables
@@ -640,7 +701,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ScriptsApi();
@@ -673,15 +734,15 @@ apiInstance.getScriptsPublishedScriptIdVariables(scriptId, opts)
  **output** | **String** | output | [optional] <br />**Values**: true, false |
  **type** | **String** | type | [optional] <br />**Values**: string, number, boolean |
  **scriptDataVersion** | **String** | Advanced usage - controls the data version of the script | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Object**
 
-<a name="getScriptsUploadStatus"></a>
 
-# ImportScriptStatusResponse getScriptsUploadStatus(uploadId, opts)
+## getScriptsUploadStatus
+
+> ImportScriptStatusResponse getScriptsUploadStatus(uploadId, opts)
 
 
 GET /api/v2/scripts/uploads/{uploadId}/status
@@ -690,7 +751,7 @@ Get the upload status of an imported script
 
 Requires ANY permissions:
 
-* scripter:script:search
+* scripter:script:view
 
 ### Example Usage
 
@@ -700,7 +761,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ScriptsApi();
@@ -727,15 +788,15 @@ apiInstance.getScriptsUploadStatus(uploadId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **uploadId** | **String** | Upload ID |  |
  **longPoll** | **Boolean** | Enable longPolling endpoint | [optional] [default to false] |
-{: class="table table-striped"}
 
 ### Return type
 
 **ImportScriptStatusResponse**
 
-<a name="postScriptExport"></a>
 
-# ExportScriptResponse postScriptExport(scriptId, opts)
+## postScriptExport
+
+> ExportScriptResponse postScriptExport(scriptId, opts)
 
 
 POST /api/v2/scripts/{scriptId}/export
@@ -754,7 +815,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ScriptsApi();
@@ -781,15 +842,15 @@ apiInstance.postScriptExport(scriptId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **scriptId** | **String** | Script ID |  |
  **body** | **Object** |  | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ExportScriptResponse**
 
-<a name="postScriptsPublished"></a>
 
-# Script postScriptsPublished(opts)
+## postScriptsPublished
+
+> Script postScriptsPublished(opts)
 
 
 POST /api/v2/scripts/published
@@ -808,7 +869,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ScriptsApi();
@@ -835,9 +896,10 @@ apiInstance.postScriptsPublished(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **scriptDataVersion** | **String** | Advanced usage - controls the data version of the script | [optional]  |
  **body** | **Object** | body | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Script**
 
+
+_purecloud-platform-client-v2@229.1.0_

@@ -5,7 +5,7 @@ class PresenceApi {
 	/**
 	 * Presence service.
 	 * @module purecloud-platform-client-v2/api/PresenceApi
-	 * @version 174.0.0
+	 * @version 229.1.0
 	 */
 
 	/**
@@ -24,11 +24,10 @@ class PresenceApi {
 	 * Delete a Presence Definition
 	 * 
 	 * @param {String} definitionId Presence Definition ID
-	 * deletePresenceDefinition is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	deletePresenceDefinition0(definitionId) { 
 		// verify the required parameter 'definitionId' is set
-		if (definitionId === undefined || definitionId === null) {
+		if (definitionId === undefined || definitionId === null || definitionId === '') {
 			throw 'Missing the required parameter "definitionId" when calling deletePresenceDefinition0';
 		}
 
@@ -53,7 +52,7 @@ class PresenceApi {
 	 */
 	deletePresenceSource(sourceId) { 
 		// verify the required parameter 'sourceId' is set
-		if (sourceId === undefined || sourceId === null) {
+		if (sourceId === undefined || sourceId === null || sourceId === '') {
 			throw 'Missing the required parameter "sourceId" when calling deletePresenceSource';
 		}
 
@@ -72,13 +71,14 @@ class PresenceApi {
 	}
 
 	/**
-	 * Delete a Presence Definition
+	 * Delete a Presence Definition. Apps should migrate to use DELETE /api/v2/presence/definitions/{definitionId} instead
 	 * 
 	 * @param {String} presenceId Organization Presence ID
+	 * @deprecated
 	 */
 	deletePresencedefinition(presenceId) { 
 		// verify the required parameter 'presenceId' is set
-		if (presenceId === undefined || presenceId === null) {
+		if (presenceId === undefined || presenceId === null || presenceId === '') {
 			throw 'Missing the required parameter "presenceId" when calling deletePresencedefinition';
 		}
 
@@ -100,11 +100,14 @@ class PresenceApi {
 	 * Get a Presence Definition
 	 * 
 	 * @param {String} definitionId Presence Definition ID
-	 * getPresenceDefinition is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.localeCode The locale code to fetch for the presence definition. Use ALL to fetch everything.
 	 */
-	getPresenceDefinition0(definitionId) { 
+	getPresenceDefinition0(definitionId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'definitionId' is set
-		if (definitionId === undefined || definitionId === null) {
+		if (definitionId === undefined || definitionId === null || definitionId === '') {
 			throw 'Missing the required parameter "definitionId" when calling getPresenceDefinition0';
 		}
 
@@ -112,7 +115,7 @@ class PresenceApi {
 			'/api/v2/presence/definitions/{definitionId}', 
 			'GET', 
 			{ 'definitionId': definitionId },
-			{  },
+			{ 'localeCode': opts['localeCode'] },
 			{  },
 			{  },
 			null, 
@@ -128,7 +131,7 @@ class PresenceApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.deactivated Deactivated query can be TRUE or FALSE (default to false)
 	 * @param {Array.<String>} opts.divisionId One or more division IDs. If nothing is provided, the definitions associated withthe list of divisions that the user has access to will be returned.
-	 * getPresenceDefinitions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 * @param {Object} opts.localeCode The locale code to fetch for the presence definition. Use ALL to fetch everything.
 	 */
 	getPresenceDefinitions0(opts) { 
 		opts = opts || {};
@@ -138,7 +141,7 @@ class PresenceApi {
 			'/api/v2/presence/definitions', 
 			'GET', 
 			{  },
-			{ 'deactivated': opts['deactivated'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') },
+			{ 'deactivated': opts['deactivated'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi'),'localeCode': opts['localeCode'] },
 			{  },
 			{  },
 			null, 
@@ -175,7 +178,7 @@ class PresenceApi {
 	 */
 	getPresenceSource(sourceId) { 
 		// verify the required parameter 'sourceId' is set
-		if (sourceId === undefined || sourceId === null) {
+		if (sourceId === undefined || sourceId === null || sourceId === '') {
 			throw 'Missing the required parameter "sourceId" when calling getPresenceSource';
 		}
 
@@ -224,7 +227,7 @@ class PresenceApi {
 	 */
 	getPresenceUserPrimarysource(userId) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getPresenceUserPrimarysource';
 		}
 
@@ -243,17 +246,18 @@ class PresenceApi {
 	}
 
 	/**
-	 * Get a Presence Definition
+	 * Get a Presence Definition. Apps should migrate to use GET /api/v2/presence/definitions/{definitionId} instead
 	 * 
 	 * @param {String} presenceId Organization Presence ID
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.localeCode The locale code to fetch for the presence definition. Use ALL to fetch everything.
+	 * @deprecated
 	 */
 	getPresencedefinition(presenceId, opts) { 
 		opts = opts || {};
 		
 		// verify the required parameter 'presenceId' is set
-		if (presenceId === undefined || presenceId === null) {
+		if (presenceId === undefined || presenceId === null || presenceId === '') {
 			throw 'Missing the required parameter "presenceId" when calling getPresencedefinition';
 		}
 
@@ -272,13 +276,14 @@ class PresenceApi {
 	}
 
 	/**
-	 * Get an Organization's list of Presence Definitions
+	 * Get an Organization's list of Presence Definitions. Apps should migrate to use GET /api/v2/presence/definitions instead
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {String} opts.deleted Deleted query can be TRUE, FALSE or ALL (default to false)
 	 * @param {String} opts.localeCode The locale code to fetch for each presence definition. Use ALL to fetch everything.
+	 * @deprecated
 	 */
 	getPresencedefinitions(opts) { 
 		opts = opts || {};
@@ -326,11 +331,11 @@ class PresenceApi {
 	 */
 	getUserPresence(userId, sourceId) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getUserPresence';
 		}
 		// verify the required parameter 'sourceId' is set
-		if (sourceId === undefined || sourceId === null) {
+		if (sourceId === undefined || sourceId === null || sourceId === '') {
 			throw 'Missing the required parameter "sourceId" when calling getUserPresence';
 		}
 
@@ -355,7 +360,7 @@ class PresenceApi {
 	 */
 	getUserPresencesPurecloud(userId) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getUserPresencesPurecloud';
 		}
 
@@ -384,7 +389,7 @@ class PresenceApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'sourceId' is set
-		if (sourceId === undefined || sourceId === null) {
+		if (sourceId === undefined || sourceId === null || sourceId === '') {
 			throw 'Missing the required parameter "sourceId" when calling getUsersPresenceBulk';
 		}
 
@@ -435,11 +440,11 @@ class PresenceApi {
 	 */
 	patchUserPresence(userId, sourceId, body) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling patchUserPresence';
 		}
 		// verify the required parameter 'sourceId' is set
-		if (sourceId === undefined || sourceId === null) {
+		if (sourceId === undefined || sourceId === null || sourceId === '') {
 			throw 'Missing the required parameter "sourceId" when calling patchUserPresence';
 		}
 		// verify the required parameter 'body' is set
@@ -469,7 +474,7 @@ class PresenceApi {
 	 */
 	patchUserPresencesPurecloud(userId, body) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling patchUserPresencesPurecloud';
 		}
 		// verify the required parameter 'body' is set
@@ -495,7 +500,6 @@ class PresenceApi {
 	 * Create a Presence Definition
 	 * 
 	 * @param {Object} body The Presence Definition to create
-	 * postPresenceDefinitions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postPresenceDefinitions0(body) { 
 		// verify the required parameter 'body' is set
@@ -543,9 +547,10 @@ class PresenceApi {
 	}
 
 	/**
-	 * Create a Presence Definition
+	 * Create a Presence Definition. Apps should migrate to use POST /api/v2/presence/definitions instead
 	 * 
 	 * @param {Object} body The Presence Definition to create
+	 * @deprecated
 	 */
 	postPresencedefinitions(body) { 
 		// verify the required parameter 'body' is set
@@ -572,11 +577,10 @@ class PresenceApi {
 	 * 
 	 * @param {String} definitionId Presence Definition ID
 	 * @param {Object} body The updated Presence Definition
-	 * putPresenceDefinition is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	putPresenceDefinition0(definitionId, body) { 
 		// verify the required parameter 'definitionId' is set
-		if (definitionId === undefined || definitionId === null) {
+		if (definitionId === undefined || definitionId === null || definitionId === '') {
 			throw 'Missing the required parameter "definitionId" when calling putPresenceDefinition0';
 		}
 		// verify the required parameter 'body' is set
@@ -631,7 +635,7 @@ class PresenceApi {
 	 */
 	putPresenceSource(sourceId, body) { 
 		// verify the required parameter 'sourceId' is set
-		if (sourceId === undefined || sourceId === null) {
+		if (sourceId === undefined || sourceId === null || sourceId === '') {
 			throw 'Missing the required parameter "sourceId" when calling putPresenceSource';
 		}
 		// verify the required parameter 'body' is set
@@ -661,7 +665,7 @@ class PresenceApi {
 	 */
 	putPresenceUserPrimarysource(userId, body) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling putPresenceUserPrimarysource';
 		}
 		// verify the required parameter 'body' is set
@@ -684,14 +688,15 @@ class PresenceApi {
 	}
 
 	/**
-	 * Update a Presence Definition
+	 * Update a Presence Definition. Apps should migrate to use PUT /api/v2/presence/definitions/{definitionId} instead)
 	 * 
 	 * @param {String} presenceId Organization Presence ID
 	 * @param {Object} body The OrganizationPresence to update
+	 * @deprecated
 	 */
 	putPresencedefinition(presenceId, body) { 
 		// verify the required parameter 'presenceId' is set
-		if (presenceId === undefined || presenceId === null) {
+		if (presenceId === undefined || presenceId === null || presenceId === '') {
 			throw 'Missing the required parameter "presenceId" when calling putPresencedefinition';
 		}
 		// verify the required parameter 'body' is set

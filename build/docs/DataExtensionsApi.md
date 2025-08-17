@@ -1,20 +1,20 @@
----
-title: DataExtensionsApi
----
+# DataExtensionsApi
+
 # platformClient.DataExtensionsApi
 
 All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-[**getDataextensionsCoretype**](DataExtensionsApi.html#getDataextensionsCoretype) | **GET** /api/v2/dataextensions/coretypes/{coretypeName} | Get a specific named core type.
-[**getDataextensionsCoretypes**](DataExtensionsApi.html#getDataextensionsCoretypes) | **GET** /api/v2/dataextensions/coretypes | Get the core types from which all schemas are built.
-[**getDataextensionsLimits**](DataExtensionsApi.html#getDataextensionsLimits) | **GET** /api/v2/dataextensions/limits | Get quantitative limits on schemas
-{: class="table table-striped"}
+[**getDataextensionsCoretype**](DataExtensionsApi#getDataextensionsCoretype) | **GET** /api/v2/dataextensions/coretypes/{coretypeName} | Get a specific named core type.
+[**getDataextensionsCoretypes**](DataExtensionsApi#getDataextensionsCoretypes) | **GET** /api/v2/dataextensions/coretypes | Get the core types from which all schemas are built.
+[**getDataextensionsLimits**](DataExtensionsApi#getDataextensionsLimits) | **GET** /api/v2/dataextensions/limits | Get quantitative limits on schemas
 
-<a name="getDataextensionsCoretype"></a>
 
-# Coretype getDataextensionsCoretype(coretypeName)
+
+## getDataextensionsCoretype
+
+> Coretype getDataextensionsCoretype(coretypeName)
 
 
 GET /api/v2/dataextensions/coretypes/{coretypeName}
@@ -33,7 +33,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.DataExtensionsApi();
@@ -56,15 +56,15 @@ apiInstance.getDataextensionsCoretype(coretypeName)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **coretypeName** | **String** | The core type's name | <br />**Values**: text, longtext, url, identifier, enum, date, datetime, integer, number, checkbox, tag |
-{: class="table table-striped"}
 
 ### Return type
 
 **Coretype**
 
-<a name="getDataextensionsCoretypes"></a>
 
-# CoretypeListing getDataextensionsCoretypes()
+## getDataextensionsCoretypes
+
+> CoretypeListing getDataextensionsCoretypes()
 
 
 GET /api/v2/dataextensions/coretypes
@@ -83,7 +83,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.DataExtensionsApi();
@@ -102,14 +102,14 @@ apiInstance.getDataextensionsCoretypes()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **CoretypeListing**
 
-<a name="getDataextensionsLimits"></a>
 
-# SchemaQuantityLimits getDataextensionsLimits()
+## getDataextensionsLimits
+
+> SchemaQuantityLimits getDataextensionsLimits()
 
 
 GET /api/v2/dataextensions/limits
@@ -128,7 +128,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.DataExtensionsApi();
@@ -147,8 +147,9 @@ apiInstance.getDataextensionsLimits()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **SchemaQuantityLimits**
 
+
+_purecloud-platform-client-v2@229.1.0_

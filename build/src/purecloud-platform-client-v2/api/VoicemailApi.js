@@ -5,7 +5,7 @@ class VoicemailApi {
 	/**
 	 * Voicemail service.
 	 * @module purecloud-platform-client-v2/api/VoicemailApi
-	 * @version 174.0.0
+	 * @version 229.1.0
 	 */
 
 	/**
@@ -27,7 +27,7 @@ class VoicemailApi {
 	 */
 	deleteVoicemailMessage(messageId) { 
 		// verify the required parameter 'messageId' is set
-		if (messageId === undefined || messageId === null) {
+		if (messageId === undefined || messageId === null || messageId === '') {
 			throw 'Missing the required parameter "messageId" when calling deleteVoicemailMessage';
 		}
 
@@ -72,7 +72,7 @@ class VoicemailApi {
 	 */
 	getVoicemailGroupMailbox(groupId) { 
 		// verify the required parameter 'groupId' is set
-		if (groupId === undefined || groupId === null) {
+		if (groupId === undefined || groupId === null || groupId === '') {
 			throw 'Missing the required parameter "groupId" when calling getVoicemailGroupMailbox';
 		}
 
@@ -102,7 +102,7 @@ class VoicemailApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'groupId' is set
-		if (groupId === undefined || groupId === null) {
+		if (groupId === undefined || groupId === null || groupId === '') {
 			throw 'Missing the required parameter "groupId" when calling getVoicemailGroupMessages';
 		}
 
@@ -127,7 +127,7 @@ class VoicemailApi {
 	 */
 	getVoicemailGroupPolicy(groupId) { 
 		// verify the required parameter 'groupId' is set
-		if (groupId === undefined || groupId === null) {
+		if (groupId === undefined || groupId === null || groupId === '') {
 			throw 'Missing the required parameter "groupId" when calling getVoicemailGroupPolicy';
 		}
 
@@ -241,7 +241,7 @@ class VoicemailApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'messageId' is set
-		if (messageId === undefined || messageId === null) {
+		if (messageId === undefined || messageId === null || messageId === '') {
 			throw 'Missing the required parameter "messageId" when calling getVoicemailMessage';
 		}
 
@@ -261,7 +261,7 @@ class VoicemailApi {
 
 	/**
 	 * Get media playback URI for this voicemail message
-	 * 
+	 * API should migrate to use GET api/v2/voicemail/messages/{messageId}/downloads
 	 * @param {String} messageId Message ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.formatId The desired media format. (default to WEBM)
@@ -270,7 +270,7 @@ class VoicemailApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'messageId' is set
-		if (messageId === undefined || messageId === null) {
+		if (messageId === undefined || messageId === null || messageId === '') {
 			throw 'Missing the required parameter "messageId" when calling getVoicemailMessageMedia';
 		}
 
@@ -345,7 +345,7 @@ class VoicemailApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'queueId' is set
-		if (queueId === undefined || queueId === null) {
+		if (queueId === undefined || queueId === null || queueId === '') {
 			throw 'Missing the required parameter "queueId" when calling getVoicemailQueueMessages';
 		}
 
@@ -393,13 +393,68 @@ class VoicemailApi {
 	}
 
 	/**
+	 * Get a user's mailbox information
+	 * 
+	 * @param {String} userId userId
+	 */
+	getVoicemailUserMailbox(userId) { 
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null || userId === '') {
+			throw 'Missing the required parameter "userId" when calling getVoicemailUserMailbox';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/voicemail/users/{userId}/mailbox', 
+			'GET', 
+			{ 'userId': userId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * List voicemail messages
+	 * 
+	 * @param {String} userId User ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 */
+	getVoicemailUserMessages(userId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null || userId === '') {
+			throw 'Missing the required parameter "userId" when calling getVoicemailUserMessages';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/voicemail/users/{userId}/messages', 
+			'GET', 
+			{ 'userId': userId },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get a user's voicemail policy
 	 * 
 	 * @param {String} userId User ID
 	 */
 	getVoicemailUserpolicy(userId) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getVoicemailUserpolicy';
 		}
 
@@ -425,7 +480,7 @@ class VoicemailApi {
 	 */
 	patchVoicemailGroupPolicy(groupId, body) { 
 		// verify the required parameter 'groupId' is set
-		if (groupId === undefined || groupId === null) {
+		if (groupId === undefined || groupId === null || groupId === '') {
 			throw 'Missing the required parameter "groupId" when calling patchVoicemailGroupPolicy';
 		}
 		// verify the required parameter 'body' is set
@@ -480,7 +535,7 @@ class VoicemailApi {
 	 */
 	patchVoicemailMessage(messageId, body) { 
 		// verify the required parameter 'messageId' is set
-		if (messageId === undefined || messageId === null) {
+		if (messageId === undefined || messageId === null || messageId === '') {
 			throw 'Missing the required parameter "messageId" when calling patchVoicemailMessage';
 		}
 		// verify the required parameter 'body' is set
@@ -510,7 +565,7 @@ class VoicemailApi {
 	 */
 	patchVoicemailUserpolicy(userId, body) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling patchVoicemailUserpolicy';
 		}
 		// verify the required parameter 'body' is set
@@ -589,7 +644,7 @@ class VoicemailApi {
 	 */
 	putVoicemailMessage(messageId, body) { 
 		// verify the required parameter 'messageId' is set
-		if (messageId === undefined || messageId === null) {
+		if (messageId === undefined || messageId === null || messageId === '') {
 			throw 'Missing the required parameter "messageId" when calling putVoicemailMessage';
 		}
 		// verify the required parameter 'body' is set
@@ -644,7 +699,7 @@ class VoicemailApi {
 	 */
 	putVoicemailUserpolicy(userId, body) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling putVoicemailUserpolicy';
 		}
 		// verify the required parameter 'body' is set

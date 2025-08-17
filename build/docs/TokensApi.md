@@ -1,23 +1,23 @@
----
-title: TokensApi
----
+# TokensApi
+
 # platformClient.TokensApi
 
 All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-[**deleteToken**](TokensApi.html#deleteToken) | **DELETE** /api/v2/tokens/{userId} | Delete all auth tokens for the specified user.
-[**deleteTokensMe**](TokensApi.html#deleteTokensMe) | **DELETE** /api/v2/tokens/me | Delete auth token used to make the request.
-[**getTokensMe**](TokensApi.html#getTokensMe) | **GET** /api/v2/tokens/me | Fetch information about the current token
-[**getTokensTimeout**](TokensApi.html#getTokensTimeout) | **GET** /api/v2/tokens/timeout | Get the current Idle Token Timeout Value
-[**headTokensMe**](TokensApi.html#headTokensMe) | **HEAD** /api/v2/tokens/me | Verify user token
-[**putTokensTimeout**](TokensApi.html#putTokensTimeout) | **PUT** /api/v2/tokens/timeout | Update or Enable/Disable the Idle Token Timeout
-{: class="table table-striped"}
+[**deleteToken**](TokensApi#deleteToken) | **DELETE** /api/v2/tokens/{userId} | Delete all auth tokens for the specified user.
+[**deleteTokensMe**](TokensApi#deleteTokensMe) | **DELETE** /api/v2/tokens/me | Delete auth token used to make the request.
+[**getTokensMe**](TokensApi#getTokensMe) | **GET** /api/v2/tokens/me | Fetch information about the current token
+[**getTokensTimeout**](TokensApi#getTokensTimeout) | **GET** /api/v2/tokens/timeout | Get the current Idle Token Timeout Value
+[**headTokensMe**](TokensApi#headTokensMe) | **HEAD** /api/v2/tokens/me | Verify user token
+[**putTokensTimeout**](TokensApi#putTokensTimeout) | **PUT** /api/v2/tokens/timeout | Update or Enable/Disable the Idle Token Timeout
 
-<a name="deleteToken"></a>
 
-# void deleteToken(userId)
+
+## deleteToken
+
+> void deleteToken(userId)
 
 
 DELETE /api/v2/tokens/{userId}
@@ -36,7 +36,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.TokensApi();
@@ -59,15 +59,15 @@ apiInstance.deleteToken(userId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | User ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteTokensMe"></a>
 
-# void deleteTokensMe()
+## deleteTokensMe
+
+> void deleteTokensMe()
 
 
 DELETE /api/v2/tokens/me
@@ -84,7 +84,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.TokensApi();
@@ -103,14 +103,14 @@ apiInstance.deleteTokensMe()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 void (no response body)
 
-<a name="getTokensMe"></a>
 
-# TokenInfo getTokensMe(opts)
+## getTokensMe
+
+> TokenInfo getTokensMe(opts)
 
 
 GET /api/v2/tokens/me
@@ -127,7 +127,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.TokensApi();
@@ -152,26 +152,22 @@ apiInstance.getTokensMe(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **preserveIdleTTL** | **Boolean** | preserveIdleTTL indicates whether the idle token timeout should be reset or preserved. If preserveIdleTTL is true, then TTL value is not reset. If unset or false, the value is reset. | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **TokenInfo**
 
-<a name="getTokensTimeout"></a>
 
-# IdleTokenTimeout getTokensTimeout()
+## getTokensTimeout
+
+> IdleTokenTimeout getTokensTimeout()
 
 
 GET /api/v2/tokens/timeout
 
 Get the current Idle Token Timeout Value
 
-getTokensTimeout is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
-Requires ANY permissions:
-
-* directory:organization:admin
+Requires NO permissions:
 
 ### Example Usage
 
@@ -181,7 +177,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.TokensApi();
@@ -200,14 +196,14 @@ apiInstance.getTokensTimeout()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **IdleTokenTimeout**
 
-<a name="headTokensMe"></a>
 
-# void headTokensMe()
+## headTokensMe
+
+> void headTokensMe()
 
 
 HEAD /api/v2/tokens/me
@@ -224,7 +220,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.TokensApi();
@@ -243,21 +239,19 @@ apiInstance.headTokensMe()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 void (no response body)
 
-<a name="putTokensTimeout"></a>
 
-# IdleTokenTimeout putTokensTimeout(opts)
+## putTokensTimeout
+
+> IdleTokenTimeout putTokensTimeout(opts)
 
 
 PUT /api/v2/tokens/timeout
 
 Update or Enable/Disable the Idle Token Timeout
-
-putTokensTimeout is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -271,7 +265,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.TokensApi();
@@ -296,9 +290,10 @@ apiInstance.putTokensTimeout(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** |  | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **IdleTokenTimeout**
 
+
+_purecloud-platform-client-v2@229.1.0_

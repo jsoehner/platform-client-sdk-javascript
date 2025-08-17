@@ -5,7 +5,7 @@ class TaskManagementApi {
 	/**
 	 * TaskManagement service.
 	 * @module purecloud-platform-client-v2/api/TaskManagementApi
-	 * @version 174.0.0
+	 * @version 229.1.0
 	 */
 
 	/**
@@ -24,11 +24,10 @@ class TaskManagementApi {
 	 * Delete a workbin
 	 * 
 	 * @param {String} workbinId Workbin ID
-	 * deleteTaskmanagementWorkbin is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	deleteTaskmanagementWorkbin(workbinId) { 
 		// verify the required parameter 'workbinId' is set
-		if (workbinId === undefined || workbinId === null) {
+		if (workbinId === undefined || workbinId === null || workbinId === '') {
 			throw 'Missing the required parameter "workbinId" when calling deleteTaskmanagementWorkbin';
 		}
 
@@ -50,11 +49,10 @@ class TaskManagementApi {
 	 * Delete a workitem
 	 * 
 	 * @param {String} workitemId Workitem ID
-	 * deleteTaskmanagementWorkitem is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	deleteTaskmanagementWorkitem(workitemId) { 
 		// verify the required parameter 'workitemId' is set
-		if (workitemId === undefined || workitemId === null) {
+		if (workitemId === undefined || workitemId === null || workitemId === '') {
 			throw 'Missing the required parameter "workitemId" when calling deleteTaskmanagementWorkitem';
 		}
 
@@ -73,14 +71,63 @@ class TaskManagementApi {
 	}
 
 	/**
+	 * Delete a bulk add job
+	 * 
+	 * @param {String} bulkJobId Bulk job id
+	 */
+	deleteTaskmanagementWorkitemsBulkAddJob(bulkJobId) { 
+		// verify the required parameter 'bulkJobId' is set
+		if (bulkJobId === undefined || bulkJobId === null || bulkJobId === '') {
+			throw 'Missing the required parameter "bulkJobId" when calling deleteTaskmanagementWorkitemsBulkAddJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/taskmanagement/workitems/bulk/add/jobs/{bulkJobId}', 
+			'DELETE', 
+			{ 'bulkJobId': bulkJobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete a Bulk job
+	 * 
+	 * @param {String} bulkJobId Bulk job id
+	 */
+	deleteTaskmanagementWorkitemsBulkTerminateJob(bulkJobId) { 
+		// verify the required parameter 'bulkJobId' is set
+		if (bulkJobId === undefined || bulkJobId === null || bulkJobId === '') {
+			throw 'Missing the required parameter "bulkJobId" when calling deleteTaskmanagementWorkitemsBulkTerminateJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/taskmanagement/workitems/bulk/terminate/jobs/{bulkJobId}', 
+			'DELETE', 
+			{ 'bulkJobId': bulkJobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Delete a schema
 	 * 
 	 * @param {String} schemaId Schema ID
-	 * deleteTaskmanagementWorkitemsSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	deleteTaskmanagementWorkitemsSchema(schemaId) { 
 		// verify the required parameter 'schemaId' is set
-		if (schemaId === undefined || schemaId === null) {
+		if (schemaId === undefined || schemaId === null || schemaId === '') {
 			throw 'Missing the required parameter "schemaId" when calling deleteTaskmanagementWorkitemsSchema';
 		}
 
@@ -102,11 +149,10 @@ class TaskManagementApi {
 	 * Delete a worktype
 	 * 
 	 * @param {String} worktypeId Worktype id
-	 * deleteTaskmanagementWorktype is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	deleteTaskmanagementWorktype(worktypeId) { 
 		// verify the required parameter 'worktypeId' is set
-		if (worktypeId === undefined || worktypeId === null) {
+		if (worktypeId === undefined || worktypeId === null || worktypeId === '') {
 			throw 'Missing the required parameter "worktypeId" when calling deleteTaskmanagementWorktype';
 		}
 
@@ -125,19 +171,108 @@ class TaskManagementApi {
 	}
 
 	/**
+	 * Delete a date based rule
+	 * 
+	 * @param {String} worktypeId Worktype id
+	 * @param {String} ruleId ruleId
+	 */
+	deleteTaskmanagementWorktypeFlowsDatebasedRule(worktypeId, ruleId) { 
+		// verify the required parameter 'worktypeId' is set
+		if (worktypeId === undefined || worktypeId === null || worktypeId === '') {
+			throw 'Missing the required parameter "worktypeId" when calling deleteTaskmanagementWorktypeFlowsDatebasedRule';
+		}
+		// verify the required parameter 'ruleId' is set
+		if (ruleId === undefined || ruleId === null || ruleId === '') {
+			throw 'Missing the required parameter "ruleId" when calling deleteTaskmanagementWorktypeFlowsDatebasedRule';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/taskmanagement/worktypes/{worktypeId}/flows/datebased/rules/{ruleId}', 
+			'DELETE', 
+			{ 'worktypeId': worktypeId,'ruleId': ruleId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete a rule
+	 * 
+	 * @param {String} worktypeId Worktype id
+	 * @param {String} ruleId ruleId
+	 */
+	deleteTaskmanagementWorktypeFlowsOnattributechangeRule(worktypeId, ruleId) { 
+		// verify the required parameter 'worktypeId' is set
+		if (worktypeId === undefined || worktypeId === null || worktypeId === '') {
+			throw 'Missing the required parameter "worktypeId" when calling deleteTaskmanagementWorktypeFlowsOnattributechangeRule';
+		}
+		// verify the required parameter 'ruleId' is set
+		if (ruleId === undefined || ruleId === null || ruleId === '') {
+			throw 'Missing the required parameter "ruleId" when calling deleteTaskmanagementWorktypeFlowsOnattributechangeRule';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/taskmanagement/worktypes/{worktypeId}/flows/onattributechange/rules/{ruleId}', 
+			'DELETE', 
+			{ 'worktypeId': worktypeId,'ruleId': ruleId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete a rule
+	 * 
+	 * @param {String} worktypeId Worktype id
+	 * @param {String} ruleId ruleId
+	 */
+	deleteTaskmanagementWorktypeFlowsOncreateRule(worktypeId, ruleId) { 
+		// verify the required parameter 'worktypeId' is set
+		if (worktypeId === undefined || worktypeId === null || worktypeId === '') {
+			throw 'Missing the required parameter "worktypeId" when calling deleteTaskmanagementWorktypeFlowsOncreateRule';
+		}
+		// verify the required parameter 'ruleId' is set
+		if (ruleId === undefined || ruleId === null || ruleId === '') {
+			throw 'Missing the required parameter "ruleId" when calling deleteTaskmanagementWorktypeFlowsOncreateRule';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/taskmanagement/worktypes/{worktypeId}/flows/oncreate/rules/{ruleId}', 
+			'DELETE', 
+			{ 'worktypeId': worktypeId,'ruleId': ruleId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Delete a status
 	 * 
 	 * @param {String} worktypeId Worktype id
 	 * @param {String} statusId Status id
-	 * deleteTaskmanagementWorktypeStatus is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	deleteTaskmanagementWorktypeStatus(worktypeId, statusId) { 
 		// verify the required parameter 'worktypeId' is set
-		if (worktypeId === undefined || worktypeId === null) {
+		if (worktypeId === undefined || worktypeId === null || worktypeId === '') {
 			throw 'Missing the required parameter "worktypeId" when calling deleteTaskmanagementWorktypeStatus';
 		}
 		// verify the required parameter 'statusId' is set
-		if (statusId === undefined || statusId === null) {
+		if (statusId === undefined || statusId === null || statusId === '') {
 			throw 'Missing the required parameter "statusId" when calling deleteTaskmanagementWorktypeStatus';
 		}
 
@@ -159,11 +294,10 @@ class TaskManagementApi {
 	 * Get a workbin
 	 * 
 	 * @param {String} workbinId Workbin ID
-	 * getTaskmanagementWorkbin is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getTaskmanagementWorkbin(workbinId) { 
 		// verify the required parameter 'workbinId' is set
-		if (workbinId === undefined || workbinId === null) {
+		if (workbinId === undefined || workbinId === null || workbinId === '') {
 			throw 'Missing the required parameter "workbinId" when calling getTaskmanagementWorkbin';
 		}
 
@@ -189,13 +323,12 @@ class TaskManagementApi {
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {Number} opts.pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (default to 25)
 	 * @param {Object} opts.sortOrder Ascending or descending sort order (default to descending)
-	 * getTaskmanagementWorkbinHistory is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getTaskmanagementWorkbinHistory(workbinId, opts) { 
 		opts = opts || {};
 		
 		// verify the required parameter 'workbinId' is set
-		if (workbinId === undefined || workbinId === null) {
+		if (workbinId === undefined || workbinId === null || workbinId === '') {
 			throw 'Missing the required parameter "workbinId" when calling getTaskmanagementWorkbinHistory';
 		}
 
@@ -218,11 +351,10 @@ class TaskManagementApi {
 	 * 
 	 * @param {String} workbinId Workbin ID
 	 * @param {Number} entityVersion Workbin version
-	 * getTaskmanagementWorkbinVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getTaskmanagementWorkbinVersion(workbinId, entityVersion) { 
 		// verify the required parameter 'workbinId' is set
-		if (workbinId === undefined || workbinId === null) {
+		if (workbinId === undefined || workbinId === null || workbinId === '') {
 			throw 'Missing the required parameter "workbinId" when calling getTaskmanagementWorkbinVersion';
 		}
 		// verify the required parameter 'entityVersion' is set
@@ -252,13 +384,12 @@ class TaskManagementApi {
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {Number} opts.pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (default to 25)
 	 * @param {Object} opts.sortOrder Ascending or descending sort order (default to descending)
-	 * getTaskmanagementWorkbinVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getTaskmanagementWorkbinVersions(workbinId, opts) { 
 		opts = opts || {};
 		
 		// verify the required parameter 'workbinId' is set
-		if (workbinId === undefined || workbinId === null) {
+		if (workbinId === undefined || workbinId === null || workbinId === '') {
 			throw 'Missing the required parameter "workbinId" when calling getTaskmanagementWorkbinVersions';
 		}
 
@@ -282,13 +413,12 @@ class TaskManagementApi {
 	 * @param {String} workitemId Workitem ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.expands Which fields to expand. Comma separated if more than one.
-	 * getTaskmanagementWorkitem is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getTaskmanagementWorkitem(workitemId, opts) { 
 		opts = opts || {};
 		
 		// verify the required parameter 'workitemId' is set
-		if (workitemId === undefined || workitemId === null) {
+		if (workitemId === undefined || workitemId === null || workitemId === '') {
 			throw 'Missing the required parameter "workitemId" when calling getTaskmanagementWorkitem';
 		}
 
@@ -314,13 +444,12 @@ class TaskManagementApi {
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {Number} opts.pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (default to 25)
 	 * @param {Object} opts.sortOrder Ascending or descending sort order (default to descending)
-	 * getTaskmanagementWorkitemHistory is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getTaskmanagementWorkitemHistory(workitemId, opts) { 
 		opts = opts || {};
 		
 		// verify the required parameter 'workitemId' is set
-		if (workitemId === undefined || workitemId === null) {
+		if (workitemId === undefined || workitemId === null || workitemId === '') {
 			throw 'Missing the required parameter "workitemId" when calling getTaskmanagementWorkitemHistory';
 		}
 
@@ -348,17 +477,16 @@ class TaskManagementApi {
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {Number} opts.pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 50. (default to 25)
 	 * @param {Object} opts.sortOrder Ascending or descending sort order (default to descending)
-	 * getTaskmanagementWorkitemUserWrapups is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getTaskmanagementWorkitemUserWrapups(workitemId, userId, opts) { 
 		opts = opts || {};
 		
 		// verify the required parameter 'workitemId' is set
-		if (workitemId === undefined || workitemId === null) {
+		if (workitemId === undefined || workitemId === null || workitemId === '') {
 			throw 'Missing the required parameter "workitemId" when calling getTaskmanagementWorkitemUserWrapups';
 		}
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getTaskmanagementWorkitemUserWrapups';
 		}
 
@@ -381,11 +509,10 @@ class TaskManagementApi {
 	 * 
 	 * @param {String} workitemId Workitem ID
 	 * @param {Number} entityVersion Workitem version
-	 * getTaskmanagementWorkitemVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getTaskmanagementWorkitemVersion(workitemId, entityVersion) { 
 		// verify the required parameter 'workitemId' is set
-		if (workitemId === undefined || workitemId === null) {
+		if (workitemId === undefined || workitemId === null || workitemId === '') {
 			throw 'Missing the required parameter "workitemId" when calling getTaskmanagementWorkitemVersion';
 		}
 		// verify the required parameter 'entityVersion' is set
@@ -415,13 +542,12 @@ class TaskManagementApi {
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {Number} opts.pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (default to 25)
 	 * @param {Object} opts.sortOrder Ascending or descending sort order (default to descending)
-	 * getTaskmanagementWorkitemVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getTaskmanagementWorkitemVersions(workitemId, opts) { 
 		opts = opts || {};
 		
 		// verify the required parameter 'workitemId' is set
-		if (workitemId === undefined || workitemId === null) {
+		if (workitemId === undefined || workitemId === null || workitemId === '') {
 			throw 'Missing the required parameter "workitemId" when calling getTaskmanagementWorkitemVersions';
 		}
 
@@ -448,13 +574,12 @@ class TaskManagementApi {
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {Number} opts.pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 50. (default to 25)
 	 * @param {Object} opts.sortOrder Ascending or descending sort order (default to descending)
-	 * getTaskmanagementWorkitemWrapups is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getTaskmanagementWorkitemWrapups(workitemId, opts) { 
 		opts = opts || {};
 		
 		// verify the required parameter 'workitemId' is set
-		if (workitemId === undefined || workitemId === null) {
+		if (workitemId === undefined || workitemId === null || workitemId === '') {
 			throw 'Missing the required parameter "workitemId" when calling getTaskmanagementWorkitemWrapups';
 		}
 
@@ -473,14 +598,190 @@ class TaskManagementApi {
 	}
 
 	/**
+	 * Get the bulk add job associated with the job id.
+	 * 
+	 * @param {String} bulkJobId Bulk job id
+	 */
+	getTaskmanagementWorkitemsBulkAddJob(bulkJobId) { 
+		// verify the required parameter 'bulkJobId' is set
+		if (bulkJobId === undefined || bulkJobId === null || bulkJobId === '') {
+			throw 'Missing the required parameter "bulkJobId" when calling getTaskmanagementWorkitemsBulkAddJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/taskmanagement/workitems/bulk/add/jobs/{bulkJobId}', 
+			'GET', 
+			{ 'bulkJobId': bulkJobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get bulk add job results.
+	 * 
+	 * @param {String} bulkJobId Bulk job id
+	 */
+	getTaskmanagementWorkitemsBulkAddJobResults(bulkJobId) { 
+		// verify the required parameter 'bulkJobId' is set
+		if (bulkJobId === undefined || bulkJobId === null || bulkJobId === '') {
+			throw 'Missing the required parameter "bulkJobId" when calling getTaskmanagementWorkitemsBulkAddJobResults';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/taskmanagement/workitems/bulk/add/jobs/{bulkJobId}/results', 
+			'GET', 
+			{ 'bulkJobId': bulkJobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get bulk jobs created by the currently logged in user.
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
+	 * @param {Number} opts.pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (default to 25)
+	 * @param {Object} opts.sortOrder Ascending or descending sort order (default to descending)
+	 * @param {Object} opts.action The bulk job action.
+	 */
+	getTaskmanagementWorkitemsBulkJobsUsersMe(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/taskmanagement/workitems/bulk/jobs/users/me', 
+			'GET', 
+			{  },
+			{ 'after': opts['after'],'pageSize': opts['pageSize'],'sortOrder': opts['sortOrder'],'action': opts['action'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the bulk job associated with the job id.
+	 * 
+	 * @param {String} bulkJobId Bulk job id
+	 */
+	getTaskmanagementWorkitemsBulkTerminateJob(bulkJobId) { 
+		// verify the required parameter 'bulkJobId' is set
+		if (bulkJobId === undefined || bulkJobId === null || bulkJobId === '') {
+			throw 'Missing the required parameter "bulkJobId" when calling getTaskmanagementWorkitemsBulkTerminateJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/taskmanagement/workitems/bulk/terminate/jobs/{bulkJobId}', 
+			'GET', 
+			{ 'bulkJobId': bulkJobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get bulk terminate job results.
+	 * 
+	 * @param {String} bulkJobId Bulk job id
+	 */
+	getTaskmanagementWorkitemsBulkTerminateJobResults(bulkJobId) { 
+		// verify the required parameter 'bulkJobId' is set
+		if (bulkJobId === undefined || bulkJobId === null || bulkJobId === '') {
+			throw 'Missing the required parameter "bulkJobId" when calling getTaskmanagementWorkitemsBulkTerminateJobResults';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/taskmanagement/workitems/bulk/terminate/jobs/{bulkJobId}/results', 
+			'GET', 
+			{ 'bulkJobId': bulkJobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the workitem query job associated with the job id.
+	 * 
+	 * @param {String} jobId jobId
+	 */
+	getTaskmanagementWorkitemsQueryJob(jobId) { 
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null || jobId === '') {
+			throw 'Missing the required parameter "jobId" when calling getTaskmanagementWorkitemsQueryJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/taskmanagement/workitems/query/jobs/{jobId}', 
+			'GET', 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get results from for workitem query job 
+	 * 
+	 * @param {String} jobId jobId
+	 */
+	getTaskmanagementWorkitemsQueryJobResults(jobId) { 
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null || jobId === '') {
+			throw 'Missing the required parameter "jobId" when calling getTaskmanagementWorkitemsQueryJobResults';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/taskmanagement/workitems/query/jobs/{jobId}/results', 
+			'GET', 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get a schema
 	 * 
 	 * @param {String} schemaId Schema ID
-	 * getTaskmanagementWorkitemsSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getTaskmanagementWorkitemsSchema(schemaId) { 
 		// verify the required parameter 'schemaId' is set
-		if (schemaId === undefined || schemaId === null) {
+		if (schemaId === undefined || schemaId === null || schemaId === '') {
 			throw 'Missing the required parameter "schemaId" when calling getTaskmanagementWorkitemsSchema';
 		}
 
@@ -503,15 +804,14 @@ class TaskManagementApi {
 	 * 
 	 * @param {String} schemaId Schema ID
 	 * @param {String} versionId Schema version
-	 * getTaskmanagementWorkitemsSchemaVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getTaskmanagementWorkitemsSchemaVersion(schemaId, versionId) { 
 		// verify the required parameter 'schemaId' is set
-		if (schemaId === undefined || schemaId === null) {
+		if (schemaId === undefined || schemaId === null || schemaId === '') {
 			throw 'Missing the required parameter "schemaId" when calling getTaskmanagementWorkitemsSchemaVersion';
 		}
 		// verify the required parameter 'versionId' is set
-		if (versionId === undefined || versionId === null) {
+		if (versionId === undefined || versionId === null || versionId === '') {
 			throw 'Missing the required parameter "versionId" when calling getTaskmanagementWorkitemsSchemaVersion';
 		}
 
@@ -533,11 +833,10 @@ class TaskManagementApi {
 	 * Get all versions of a schema
 	 * 
 	 * @param {String} schemaId Schema ID
-	 * getTaskmanagementWorkitemsSchemaVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getTaskmanagementWorkitemsSchemaVersions(schemaId) { 
 		// verify the required parameter 'schemaId' is set
-		if (schemaId === undefined || schemaId === null) {
+		if (schemaId === undefined || schemaId === null || schemaId === '') {
 			throw 'Missing the required parameter "schemaId" when calling getTaskmanagementWorkitemsSchemaVersions';
 		}
 
@@ -558,7 +857,6 @@ class TaskManagementApi {
 	/**
 	 * Get a list of schemas.
 	 * 
-	 * getTaskmanagementWorkitemsSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getTaskmanagementWorkitemsSchemas() { 
 
@@ -577,18 +875,82 @@ class TaskManagementApi {
 	}
 
 	/**
+	 * Get a specific named core type.
+	 * 
+	 * @param {String} coreTypeName Name of the core type
+	 */
+	getTaskmanagementWorkitemsSchemasCoretype(coreTypeName) { 
+		// verify the required parameter 'coreTypeName' is set
+		if (coreTypeName === undefined || coreTypeName === null || coreTypeName === '') {
+			throw 'Missing the required parameter "coreTypeName" when calling getTaskmanagementWorkitemsSchemasCoretype';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/taskmanagement/workitems/schemas/coretypes/{coreTypeName}', 
+			'GET', 
+			{ 'coreTypeName': coreTypeName },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the core types from which all schemas are built.
+	 * 
+	 */
+	getTaskmanagementWorkitemsSchemasCoretypes() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/taskmanagement/workitems/schemas/coretypes', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get quantitative limits on schemas
+	 * 
+	 */
+	getTaskmanagementWorkitemsSchemasLimits() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/taskmanagement/workitems/schemas/limits', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get a worktype
 	 * 
 	 * @param {String} worktypeId Worktype id
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expands Which fields, if any, to expand.
-	 * getTaskmanagementWorktype is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getTaskmanagementWorktype(worktypeId, opts) { 
 		opts = opts || {};
 		
 		// verify the required parameter 'worktypeId' is set
-		if (worktypeId === undefined || worktypeId === null) {
+		if (worktypeId === undefined || worktypeId === null || worktypeId === '') {
 			throw 'Missing the required parameter "worktypeId" when calling getTaskmanagementWorktype';
 		}
 
@@ -607,6 +969,186 @@ class TaskManagementApi {
 	}
 
 	/**
+	 * Get a date based rule
+	 * 
+	 * @param {String} worktypeId Worktype id
+	 * @param {String} ruleId ruleId
+	 */
+	getTaskmanagementWorktypeFlowsDatebasedRule(worktypeId, ruleId) { 
+		// verify the required parameter 'worktypeId' is set
+		if (worktypeId === undefined || worktypeId === null || worktypeId === '') {
+			throw 'Missing the required parameter "worktypeId" when calling getTaskmanagementWorktypeFlowsDatebasedRule';
+		}
+		// verify the required parameter 'ruleId' is set
+		if (ruleId === undefined || ruleId === null || ruleId === '') {
+			throw 'Missing the required parameter "ruleId" when calling getTaskmanagementWorktypeFlowsDatebasedRule';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/taskmanagement/worktypes/{worktypeId}/flows/datebased/rules/{ruleId}', 
+			'GET', 
+			{ 'worktypeId': worktypeId,'ruleId': ruleId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get all date based rules for a worktype
+	 * 
+	 * @param {String} worktypeId Worktype id
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
+	 * @param {Number} opts.pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (default to 25)
+	 */
+	getTaskmanagementWorktypeFlowsDatebasedRules(worktypeId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'worktypeId' is set
+		if (worktypeId === undefined || worktypeId === null || worktypeId === '') {
+			throw 'Missing the required parameter "worktypeId" when calling getTaskmanagementWorktypeFlowsDatebasedRules';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/taskmanagement/worktypes/{worktypeId}/flows/datebased/rules', 
+			'GET', 
+			{ 'worktypeId': worktypeId },
+			{ 'after': opts['after'],'pageSize': opts['pageSize'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get an attribute change rule
+	 * 
+	 * @param {String} worktypeId Worktype id
+	 * @param {String} ruleId ruleId
+	 */
+	getTaskmanagementWorktypeFlowsOnattributechangeRule(worktypeId, ruleId) { 
+		// verify the required parameter 'worktypeId' is set
+		if (worktypeId === undefined || worktypeId === null || worktypeId === '') {
+			throw 'Missing the required parameter "worktypeId" when calling getTaskmanagementWorktypeFlowsOnattributechangeRule';
+		}
+		// verify the required parameter 'ruleId' is set
+		if (ruleId === undefined || ruleId === null || ruleId === '') {
+			throw 'Missing the required parameter "ruleId" when calling getTaskmanagementWorktypeFlowsOnattributechangeRule';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/taskmanagement/worktypes/{worktypeId}/flows/onattributechange/rules/{ruleId}', 
+			'GET', 
+			{ 'worktypeId': worktypeId,'ruleId': ruleId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get all attribute-change rules for a worktype
+	 * 
+	 * @param {String} worktypeId Worktype id
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
+	 * @param {Number} opts.pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (default to 25)
+	 */
+	getTaskmanagementWorktypeFlowsOnattributechangeRules(worktypeId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'worktypeId' is set
+		if (worktypeId === undefined || worktypeId === null || worktypeId === '') {
+			throw 'Missing the required parameter "worktypeId" when calling getTaskmanagementWorktypeFlowsOnattributechangeRules';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/taskmanagement/worktypes/{worktypeId}/flows/onattributechange/rules', 
+			'GET', 
+			{ 'worktypeId': worktypeId },
+			{ 'after': opts['after'],'pageSize': opts['pageSize'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get an on-create rule
+	 * 
+	 * @param {String} worktypeId Worktype id
+	 * @param {String} ruleId ruleId
+	 */
+	getTaskmanagementWorktypeFlowsOncreateRule(worktypeId, ruleId) { 
+		// verify the required parameter 'worktypeId' is set
+		if (worktypeId === undefined || worktypeId === null || worktypeId === '') {
+			throw 'Missing the required parameter "worktypeId" when calling getTaskmanagementWorktypeFlowsOncreateRule';
+		}
+		// verify the required parameter 'ruleId' is set
+		if (ruleId === undefined || ruleId === null || ruleId === '') {
+			throw 'Missing the required parameter "ruleId" when calling getTaskmanagementWorktypeFlowsOncreateRule';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/taskmanagement/worktypes/{worktypeId}/flows/oncreate/rules/{ruleId}', 
+			'GET', 
+			{ 'worktypeId': worktypeId,'ruleId': ruleId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get all on-create rules for a worktype
+	 * 
+	 * @param {String} worktypeId Worktype id
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
+	 * @param {Number} opts.pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (default to 25)
+	 */
+	getTaskmanagementWorktypeFlowsOncreateRules(worktypeId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'worktypeId' is set
+		if (worktypeId === undefined || worktypeId === null || worktypeId === '') {
+			throw 'Missing the required parameter "worktypeId" when calling getTaskmanagementWorktypeFlowsOncreateRules';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/taskmanagement/worktypes/{worktypeId}/flows/oncreate/rules', 
+			'GET', 
+			{ 'worktypeId': worktypeId },
+			{ 'after': opts['after'],'pageSize': opts['pageSize'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get a listing of a worktype's attribute change history
 	 * 
 	 * @param {String} worktypeId Worktype id
@@ -614,13 +1156,13 @@ class TaskManagementApi {
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {Number} opts.pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (default to 25)
 	 * @param {Object} opts.sortOrder Ascending or descending sort order (default to descending)
-	 * getTaskmanagementWorktypeHistory is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 * @param {Array.<String>} opts.fields Comma-separated list of fields. The response will contain only versions created as a result of changes to these fields.
 	 */
 	getTaskmanagementWorktypeHistory(worktypeId, opts) { 
 		opts = opts || {};
 		
 		// verify the required parameter 'worktypeId' is set
-		if (worktypeId === undefined || worktypeId === null) {
+		if (worktypeId === undefined || worktypeId === null || worktypeId === '') {
 			throw 'Missing the required parameter "worktypeId" when calling getTaskmanagementWorktypeHistory';
 		}
 
@@ -628,7 +1170,7 @@ class TaskManagementApi {
 			'/api/v2/taskmanagement/worktypes/{worktypeId}/history', 
 			'GET', 
 			{ 'worktypeId': worktypeId },
-			{ 'after': opts['after'],'pageSize': opts['pageSize'],'sortOrder': opts['sortOrder'] },
+			{ 'after': opts['after'],'pageSize': opts['pageSize'],'sortOrder': opts['sortOrder'],'fields': this.apiClient.buildCollectionParam(opts['fields'], 'multi') },
 			{  },
 			{  },
 			null, 
@@ -643,15 +1185,14 @@ class TaskManagementApi {
 	 * 
 	 * @param {String} worktypeId Worktype id
 	 * @param {String} statusId Status id
-	 * getTaskmanagementWorktypeStatus is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getTaskmanagementWorktypeStatus(worktypeId, statusId) { 
 		// verify the required parameter 'worktypeId' is set
-		if (worktypeId === undefined || worktypeId === null) {
+		if (worktypeId === undefined || worktypeId === null || worktypeId === '') {
 			throw 'Missing the required parameter "worktypeId" when calling getTaskmanagementWorktypeStatus';
 		}
 		// verify the required parameter 'statusId' is set
-		if (statusId === undefined || statusId === null) {
+		if (statusId === undefined || statusId === null || statusId === '') {
 			throw 'Missing the required parameter "statusId" when calling getTaskmanagementWorktypeStatus';
 		}
 
@@ -670,15 +1211,39 @@ class TaskManagementApi {
 	}
 
 	/**
+	 * Get list of statuses for this worktype.
+	 * 
+	 * @param {String} worktypeId Worktype id
+	 */
+	getTaskmanagementWorktypeStatuses(worktypeId) { 
+		// verify the required parameter 'worktypeId' is set
+		if (worktypeId === undefined || worktypeId === null || worktypeId === '') {
+			throw 'Missing the required parameter "worktypeId" when calling getTaskmanagementWorktypeStatuses';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/taskmanagement/worktypes/{worktypeId}/statuses', 
+			'GET', 
+			{ 'worktypeId': worktypeId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get a version of a worktype
 	 * 
 	 * @param {String} worktypeId Worktype id
 	 * @param {Number} entityVersion Worktype version
-	 * getTaskmanagementWorktypeVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getTaskmanagementWorktypeVersion(worktypeId, entityVersion) { 
 		// verify the required parameter 'worktypeId' is set
-		if (worktypeId === undefined || worktypeId === null) {
+		if (worktypeId === undefined || worktypeId === null || worktypeId === '') {
 			throw 'Missing the required parameter "worktypeId" when calling getTaskmanagementWorktypeVersion';
 		}
 		// verify the required parameter 'entityVersion' is set
@@ -708,13 +1273,12 @@ class TaskManagementApi {
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {Number} opts.pageSize Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (default to 25)
 	 * @param {Object} opts.sortOrder Ascending or descending sort order (default to descending)
-	 * getTaskmanagementWorktypeVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getTaskmanagementWorktypeVersions(worktypeId, opts) { 
 		opts = opts || {};
 		
 		// verify the required parameter 'worktypeId' is set
-		if (worktypeId === undefined || worktypeId === null) {
+		if (worktypeId === undefined || worktypeId === null || worktypeId === '') {
 			throw 'Missing the required parameter "worktypeId" when calling getTaskmanagementWorktypeVersions';
 		}
 
@@ -737,11 +1301,10 @@ class TaskManagementApi {
 	 * 
 	 * @param {String} workbinId Workbin ID
 	 * @param {Object} body Json with attributes and their new values: {description:new description, name:new name}.
-	 * patchTaskmanagementWorkbin is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	patchTaskmanagementWorkbin(workbinId, body) { 
 		// verify the required parameter 'workbinId' is set
-		if (workbinId === undefined || workbinId === null) {
+		if (workbinId === undefined || workbinId === null || workbinId === '') {
 			throw 'Missing the required parameter "workbinId" when calling patchTaskmanagementWorkbin';
 		}
 		// verify the required parameter 'body' is set
@@ -768,11 +1331,10 @@ class TaskManagementApi {
 	 * 
 	 * @param {String} workitemId Workitem ID
 	 * @param {Object} body Workitem
-	 * patchTaskmanagementWorkitem is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	patchTaskmanagementWorkitem(workitemId, body) { 
 		// verify the required parameter 'workitemId' is set
-		if (workitemId === undefined || workitemId === null) {
+		if (workitemId === undefined || workitemId === null || workitemId === '') {
 			throw 'Missing the required parameter "workitemId" when calling patchTaskmanagementWorkitem';
 		}
 		// verify the required parameter 'body' is set
@@ -799,11 +1361,10 @@ class TaskManagementApi {
 	 * 
 	 * @param {String} workitemId Workitem ID
 	 * @param {Object} body Targeted user
-	 * patchTaskmanagementWorkitemAssignment is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	patchTaskmanagementWorkitemAssignment(workitemId, body) { 
 		// verify the required parameter 'workitemId' is set
-		if (workitemId === undefined || workitemId === null) {
+		if (workitemId === undefined || workitemId === null || workitemId === '') {
 			throw 'Missing the required parameter "workitemId" when calling patchTaskmanagementWorkitemAssignment';
 		}
 		// verify the required parameter 'body' is set
@@ -831,15 +1392,14 @@ class TaskManagementApi {
 	 * @param {String} workitemId The ID of the Workitem.
 	 * @param {String} userId The ID of the user
 	 * @param {Object} body Request body to add/remove a wrapup code for a workitem
-	 * patchTaskmanagementWorkitemUserWrapups is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	patchTaskmanagementWorkitemUserWrapups(workitemId, userId, body) { 
 		// verify the required parameter 'workitemId' is set
-		if (workitemId === undefined || workitemId === null) {
+		if (workitemId === undefined || workitemId === null || workitemId === '') {
 			throw 'Missing the required parameter "workitemId" when calling patchTaskmanagementWorkitemUserWrapups';
 		}
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling patchTaskmanagementWorkitemUserWrapups';
 		}
 		// verify the required parameter 'body' is set
@@ -866,11 +1426,10 @@ class TaskManagementApi {
 	 * 
 	 * @param {String} workitemId The ID of the Workitem.
 	 * @param {Object} body Request body to add/remove the wrapup code for workitem
-	 * patchTaskmanagementWorkitemUsersMeWrapups is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	patchTaskmanagementWorkitemUsersMeWrapups(workitemId, body) { 
 		// verify the required parameter 'workitemId' is set
-		if (workitemId === undefined || workitemId === null) {
+		if (workitemId === undefined || workitemId === null || workitemId === '') {
 			throw 'Missing the required parameter "workitemId" when calling patchTaskmanagementWorkitemUsersMeWrapups';
 		}
 		// verify the required parameter 'body' is set
@@ -893,19 +1452,79 @@ class TaskManagementApi {
 	}
 
 	/**
+	 * Update workitem bulk add job.
+	 * 
+	 * @param {String} bulkJobId Bulk job id
+	 * @param {Object} body Bulk add job update request
+	 */
+	patchTaskmanagementWorkitemsBulkAddJob(bulkJobId, body) { 
+		// verify the required parameter 'bulkJobId' is set
+		if (bulkJobId === undefined || bulkJobId === null || bulkJobId === '') {
+			throw 'Missing the required parameter "bulkJobId" when calling patchTaskmanagementWorkitemsBulkAddJob';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchTaskmanagementWorkitemsBulkAddJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/taskmanagement/workitems/bulk/add/jobs/{bulkJobId}', 
+			'PATCH', 
+			{ 'bulkJobId': bulkJobId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update workitem bulk terminate job.
+	 * 
+	 * @param {String} bulkJobId Bulk job id
+	 * @param {Object} body Bulk job update request
+	 */
+	patchTaskmanagementWorkitemsBulkTerminateJob(bulkJobId, body) { 
+		// verify the required parameter 'bulkJobId' is set
+		if (bulkJobId === undefined || bulkJobId === null || bulkJobId === '') {
+			throw 'Missing the required parameter "bulkJobId" when calling patchTaskmanagementWorkitemsBulkTerminateJob';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchTaskmanagementWorkitemsBulkTerminateJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/taskmanagement/workitems/bulk/terminate/jobs/{bulkJobId}', 
+			'PATCH', 
+			{ 'bulkJobId': bulkJobId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Update the attributes of a worktype
 	 * 
 	 * @param {String} worktypeId Worktype id
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body body
-	 * patchTaskmanagementWorktype is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 * @param {Object} body Worktype
 	 */
-	patchTaskmanagementWorktype(worktypeId, opts) { 
-		opts = opts || {};
-		
+	patchTaskmanagementWorktype(worktypeId, body) { 
 		// verify the required parameter 'worktypeId' is set
-		if (worktypeId === undefined || worktypeId === null) {
+		if (worktypeId === undefined || worktypeId === null || worktypeId === '') {
 			throw 'Missing the required parameter "worktypeId" when calling patchTaskmanagementWorktype';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchTaskmanagementWorktype';
 		}
 
 		return this.apiClient.callApi(
@@ -915,7 +1534,112 @@ class TaskManagementApi {
 			{  },
 			{  },
 			{  },
-			opts['body'], 
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update the attributes of a date based rule
+	 * 
+	 * @param {String} worktypeId Worktype id
+	 * @param {String} ruleId ruleId
+	 * @param {Object} body Rule
+	 */
+	patchTaskmanagementWorktypeFlowsDatebasedRule(worktypeId, ruleId, body) { 
+		// verify the required parameter 'worktypeId' is set
+		if (worktypeId === undefined || worktypeId === null || worktypeId === '') {
+			throw 'Missing the required parameter "worktypeId" when calling patchTaskmanagementWorktypeFlowsDatebasedRule';
+		}
+		// verify the required parameter 'ruleId' is set
+		if (ruleId === undefined || ruleId === null || ruleId === '') {
+			throw 'Missing the required parameter "ruleId" when calling patchTaskmanagementWorktypeFlowsDatebasedRule';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchTaskmanagementWorktypeFlowsDatebasedRule';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/taskmanagement/worktypes/{worktypeId}/flows/datebased/rules/{ruleId}', 
+			'PATCH', 
+			{ 'worktypeId': worktypeId,'ruleId': ruleId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update the attributes of a rule
+	 * 
+	 * @param {String} worktypeId Worktype id
+	 * @param {String} ruleId ruleId
+	 * @param {Object} body Rule
+	 */
+	patchTaskmanagementWorktypeFlowsOnattributechangeRule(worktypeId, ruleId, body) { 
+		// verify the required parameter 'worktypeId' is set
+		if (worktypeId === undefined || worktypeId === null || worktypeId === '') {
+			throw 'Missing the required parameter "worktypeId" when calling patchTaskmanagementWorktypeFlowsOnattributechangeRule';
+		}
+		// verify the required parameter 'ruleId' is set
+		if (ruleId === undefined || ruleId === null || ruleId === '') {
+			throw 'Missing the required parameter "ruleId" when calling patchTaskmanagementWorktypeFlowsOnattributechangeRule';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchTaskmanagementWorktypeFlowsOnattributechangeRule';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/taskmanagement/worktypes/{worktypeId}/flows/onattributechange/rules/{ruleId}', 
+			'PATCH', 
+			{ 'worktypeId': worktypeId,'ruleId': ruleId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update the attributes of a rule
+	 * 
+	 * @param {String} worktypeId Worktype id
+	 * @param {String} ruleId ruleId
+	 * @param {Object} body Rule
+	 */
+	patchTaskmanagementWorktypeFlowsOncreateRule(worktypeId, ruleId, body) { 
+		// verify the required parameter 'worktypeId' is set
+		if (worktypeId === undefined || worktypeId === null || worktypeId === '') {
+			throw 'Missing the required parameter "worktypeId" when calling patchTaskmanagementWorktypeFlowsOncreateRule';
+		}
+		// verify the required parameter 'ruleId' is set
+		if (ruleId === undefined || ruleId === null || ruleId === '') {
+			throw 'Missing the required parameter "ruleId" when calling patchTaskmanagementWorktypeFlowsOncreateRule';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchTaskmanagementWorktypeFlowsOncreateRule';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/taskmanagement/worktypes/{worktypeId}/flows/oncreate/rules/{ruleId}', 
+			'PATCH', 
+			{ 'worktypeId': worktypeId,'ruleId': ruleId },
+			{  },
+			{  },
+			{  },
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']
@@ -927,20 +1651,20 @@ class TaskManagementApi {
 	 * 
 	 * @param {String} worktypeId Worktype id
 	 * @param {String} statusId Status id
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body body
-	 * patchTaskmanagementWorktypeStatus is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 * @param {Object} body Status
 	 */
-	patchTaskmanagementWorktypeStatus(worktypeId, statusId, opts) { 
-		opts = opts || {};
-		
+	patchTaskmanagementWorktypeStatus(worktypeId, statusId, body) { 
 		// verify the required parameter 'worktypeId' is set
-		if (worktypeId === undefined || worktypeId === null) {
+		if (worktypeId === undefined || worktypeId === null || worktypeId === '') {
 			throw 'Missing the required parameter "worktypeId" when calling patchTaskmanagementWorktypeStatus';
 		}
 		// verify the required parameter 'statusId' is set
-		if (statusId === undefined || statusId === null) {
+		if (statusId === undefined || statusId === null || statusId === '') {
 			throw 'Missing the required parameter "statusId" when calling patchTaskmanagementWorktypeStatus';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchTaskmanagementWorktypeStatus';
 		}
 
 		return this.apiClient.callApi(
@@ -950,7 +1674,7 @@ class TaskManagementApi {
 			{  },
 			{  },
 			{  },
-			opts['body'], 
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']
@@ -960,13 +1684,13 @@ class TaskManagementApi {
 	/**
 	 * Create a workbin
 	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body body
-	 * postTaskmanagementWorkbins is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 * @param {Object} body Workbin
 	 */
-	postTaskmanagementWorkbins(opts) { 
-		opts = opts || {};
-		
+	postTaskmanagementWorkbins(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postTaskmanagementWorkbins';
+		}
 
 		return this.apiClient.callApi(
 			'/api/v2/taskmanagement/workbins', 
@@ -975,7 +1699,7 @@ class TaskManagementApi {
 			{  },
 			{  },
 			{  },
-			opts['body'], 
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']
@@ -986,7 +1710,6 @@ class TaskManagementApi {
 	 * Query for workbins
 	 * 
 	 * @param {Object} body QueryPostRequest
-	 * postTaskmanagementWorkbinsQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postTaskmanagementWorkbinsQuery(body) { 
 		// verify the required parameter 'body' is set
@@ -1012,11 +1735,10 @@ class TaskManagementApi {
 	 * Cancel the assignment process for a workitem that is currently queued for assignment through ACD.
 	 * 
 	 * @param {String} workitemId Workitem ID
-	 * postTaskmanagementWorkitemAcdCancel is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postTaskmanagementWorkitemAcdCancel(workitemId) { 
 		// verify the required parameter 'workitemId' is set
-		if (workitemId === undefined || workitemId === null) {
+		if (workitemId === undefined || workitemId === null || workitemId === '') {
 			throw 'Missing the required parameter "workitemId" when calling postTaskmanagementWorkitemAcdCancel';
 		}
 
@@ -1038,11 +1760,10 @@ class TaskManagementApi {
 	 * Disconnect the assignee of the workitem
 	 * 
 	 * @param {String} workitemId Workitem ID
-	 * postTaskmanagementWorkitemDisconnect is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postTaskmanagementWorkitemDisconnect(workitemId) { 
 		// verify the required parameter 'workitemId' is set
-		if (workitemId === undefined || workitemId === null) {
+		if (workitemId === undefined || workitemId === null || workitemId === '') {
 			throw 'Missing the required parameter "workitemId" when calling postTaskmanagementWorkitemDisconnect';
 		}
 
@@ -1066,13 +1787,12 @@ class TaskManagementApi {
 	 * @param {String} workitemId Workitem ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body Terminated request
-	 * postTaskmanagementWorkitemTerminate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postTaskmanagementWorkitemTerminate(workitemId, opts) { 
 		opts = opts || {};
 		
 		// verify the required parameter 'workitemId' is set
-		if (workitemId === undefined || workitemId === null) {
+		if (workitemId === undefined || workitemId === null || workitemId === '') {
 			throw 'Missing the required parameter "workitemId" when calling postTaskmanagementWorkitemTerminate';
 		}
 
@@ -1094,7 +1814,6 @@ class TaskManagementApi {
 	 * Create a workitem
 	 * 
 	 * @param {Object} body Workitem
-	 * postTaskmanagementWorkitems is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postTaskmanagementWorkitems(body) { 
 		// verify the required parameter 'body' is set
@@ -1104,6 +1823,56 @@ class TaskManagementApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/taskmanagement/workitems', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create a workitem bulk add job.
+	 * 
+	 * @param {Object} body Bulk job definition.
+	 */
+	postTaskmanagementWorkitemsBulkAddJobs(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postTaskmanagementWorkitemsBulkAddJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/taskmanagement/workitems/bulk/add/jobs', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create a workitem bulk terminate job.
+	 * 
+	 * @param {Object} body Bulk job definition.
+	 */
+	postTaskmanagementWorkitemsBulkTerminateJobs(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postTaskmanagementWorkitemsBulkTerminateJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/taskmanagement/workitems/bulk/terminate/jobs', 
 			'POST', 
 			{  },
 			{  },
@@ -1143,10 +1912,34 @@ class TaskManagementApi {
 	}
 
 	/**
+	 * Create a workitem query job
+	 * 
+	 * @param {Object} body WorkitemQueryJobCreate
+	 */
+	postTaskmanagementWorkitemsQueryJobs(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postTaskmanagementWorkitemsQueryJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/taskmanagement/workitems/query/jobs', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Create a schema
 	 * 
 	 * @param {Object} body Schema
-	 * postTaskmanagementWorkitemsSchemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postTaskmanagementWorkitemsSchemas(body) { 
 		// verify the required parameter 'body' is set
@@ -1169,19 +1962,109 @@ class TaskManagementApi {
 	}
 
 	/**
+	 * Add a date based rule to a worktype
+	 * 
+	 * @param {String} worktypeId Worktype id
+	 * @param {Object} body Rule
+	 */
+	postTaskmanagementWorktypeFlowsDatebasedRules(worktypeId, body) { 
+		// verify the required parameter 'worktypeId' is set
+		if (worktypeId === undefined || worktypeId === null || worktypeId === '') {
+			throw 'Missing the required parameter "worktypeId" when calling postTaskmanagementWorktypeFlowsDatebasedRules';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postTaskmanagementWorktypeFlowsDatebasedRules';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/taskmanagement/worktypes/{worktypeId}/flows/datebased/rules', 
+			'POST', 
+			{ 'worktypeId': worktypeId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Add an attribute-change rule to a worktype
+	 * 
+	 * @param {String} worktypeId Worktype id
+	 * @param {Object} body Rule
+	 */
+	postTaskmanagementWorktypeFlowsOnattributechangeRules(worktypeId, body) { 
+		// verify the required parameter 'worktypeId' is set
+		if (worktypeId === undefined || worktypeId === null || worktypeId === '') {
+			throw 'Missing the required parameter "worktypeId" when calling postTaskmanagementWorktypeFlowsOnattributechangeRules';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postTaskmanagementWorktypeFlowsOnattributechangeRules';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/taskmanagement/worktypes/{worktypeId}/flows/onattributechange/rules', 
+			'POST', 
+			{ 'worktypeId': worktypeId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Add an on-create rule to a worktype
+	 * 
+	 * @param {String} worktypeId Worktype id
+	 * @param {Object} body Rule
+	 */
+	postTaskmanagementWorktypeFlowsOncreateRules(worktypeId, body) { 
+		// verify the required parameter 'worktypeId' is set
+		if (worktypeId === undefined || worktypeId === null || worktypeId === '') {
+			throw 'Missing the required parameter "worktypeId" when calling postTaskmanagementWorktypeFlowsOncreateRules';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postTaskmanagementWorktypeFlowsOncreateRules';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/taskmanagement/worktypes/{worktypeId}/flows/oncreate/rules', 
+			'POST', 
+			{ 'worktypeId': worktypeId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Add a status to a worktype
 	 * 
 	 * @param {String} worktypeId Worktype id
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body body
-	 * postTaskmanagementWorktypeStatuses is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 * @param {Object} body Status
 	 */
-	postTaskmanagementWorktypeStatuses(worktypeId, opts) { 
-		opts = opts || {};
-		
+	postTaskmanagementWorktypeStatuses(worktypeId, body) { 
 		// verify the required parameter 'worktypeId' is set
-		if (worktypeId === undefined || worktypeId === null) {
+		if (worktypeId === undefined || worktypeId === null || worktypeId === '') {
 			throw 'Missing the required parameter "worktypeId" when calling postTaskmanagementWorktypeStatuses';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postTaskmanagementWorktypeStatuses';
 		}
 
 		return this.apiClient.callApi(
@@ -1191,7 +2074,7 @@ class TaskManagementApi {
 			{  },
 			{  },
 			{  },
-			opts['body'], 
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']
@@ -1201,13 +2084,13 @@ class TaskManagementApi {
 	/**
 	 * Create a worktype
 	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body body
-	 * postTaskmanagementWorktypes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 * @param {Object} body Worktype
 	 */
-	postTaskmanagementWorktypes(opts) { 
-		opts = opts || {};
-		
+	postTaskmanagementWorktypes(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postTaskmanagementWorktypes';
+		}
 
 		return this.apiClient.callApi(
 			'/api/v2/taskmanagement/worktypes', 
@@ -1216,7 +2099,7 @@ class TaskManagementApi {
 			{  },
 			{  },
 			{  },
-			opts['body'], 
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']
@@ -1227,7 +2110,6 @@ class TaskManagementApi {
 	 * Query for worktypes
 	 * 
 	 * @param {Object} body QueryPostRequest
-	 * postTaskmanagementWorktypesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postTaskmanagementWorktypesQuery(body) { 
 		// verify the required parameter 'body' is set
@@ -1254,11 +2136,10 @@ class TaskManagementApi {
 	 * 
 	 * @param {String} schemaId Schema ID
 	 * @param {Object} body Data Schema
-	 * putTaskmanagementWorkitemsSchema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	putTaskmanagementWorkitemsSchema(schemaId, body) { 
 		// verify the required parameter 'schemaId' is set
-		if (schemaId === undefined || schemaId === null) {
+		if (schemaId === undefined || schemaId === null || schemaId === '') {
 			throw 'Missing the required parameter "schemaId" when calling putTaskmanagementWorkitemsSchema';
 		}
 		// verify the required parameter 'body' is set

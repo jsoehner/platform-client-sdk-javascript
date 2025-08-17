@@ -5,7 +5,7 @@ class AuditApi {
 	/**
 	 * Audit service.
 	 * @module purecloud-platform-client-v2/api/AuditApi
-	 * @version 174.0.0
+	 * @version 229.1.0
 	 */
 
 	/**
@@ -67,7 +67,7 @@ class AuditApi {
 	 */
 	getAuditsQueryTransactionId(transactionId) { 
 		// verify the required parameter 'transactionId' is set
-		if (transactionId === undefined || transactionId === null) {
+		if (transactionId === undefined || transactionId === null || transactionId === '') {
 			throw 'Missing the required parameter "transactionId" when calling getAuditsQueryTransactionId';
 		}
 
@@ -93,12 +93,13 @@ class AuditApi {
 	 * @param {String} opts.cursor Indicates where to resume query results (not required for first page)
 	 * @param {Number} opts.pageSize Indicates maximum number of results in response. Default page size is 25 results. The maximum page size is 500. (default to 25)
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
+	 * @param {Boolean} opts.allowRedirect Result sets with large amounts of data will respond with a download url
 	 */
 	getAuditsQueryTransactionIdResults(transactionId, opts) { 
 		opts = opts || {};
 		
 		// verify the required parameter 'transactionId' is set
-		if (transactionId === undefined || transactionId === null) {
+		if (transactionId === undefined || transactionId === null || transactionId === '') {
 			throw 'Missing the required parameter "transactionId" when calling getAuditsQueryTransactionIdResults';
 		}
 
@@ -106,7 +107,7 @@ class AuditApi {
 			'/api/v2/audits/query/{transactionId}/results', 
 			'GET', 
 			{ 'transactionId': transactionId },
-			{ 'cursor': opts['cursor'],'pageSize': opts['pageSize'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{ 'cursor': opts['cursor'],'pageSize': opts['pageSize'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'allowRedirect': opts['allowRedirect'] },
 			{  },
 			{  },
 			null, 
@@ -158,6 +159,35 @@ class AuditApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/audits/query/realtime', 
+			'POST', 
+			{  },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Often a single action results in multiple audits. The endpoint retrieves all audits created by the same action as the given audit id.
+	 * 
+	 * @param {Object} body query
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
+	 */
+	postAuditsQueryRealtimeRelated(body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postAuditsQueryRealtimeRelated';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/audits/query/realtime/related', 
 			'POST', 
 			{  },
 			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },

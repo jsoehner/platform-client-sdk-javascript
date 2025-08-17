@@ -1,34 +1,35 @@
----
-title: ResponseManagementApi
----
+# ResponseManagementApi
+
 # platformClient.ResponseManagementApi
 
 All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-[**deleteResponsemanagementLibrary**](ResponseManagementApi.html#deleteResponsemanagementLibrary) | **DELETE** /api/v2/responsemanagement/libraries/{libraryId} | Delete an existing response library.
-[**deleteResponsemanagementResponse**](ResponseManagementApi.html#deleteResponsemanagementResponse) | **DELETE** /api/v2/responsemanagement/responses/{responseId} | Delete an existing response.
-[**deleteResponsemanagementResponseasset**](ResponseManagementApi.html#deleteResponsemanagementResponseasset) | **DELETE** /api/v2/responsemanagement/responseassets/{responseAssetId} | Delete response asset
-[**getResponsemanagementLibraries**](ResponseManagementApi.html#getResponsemanagementLibraries) | **GET** /api/v2/responsemanagement/libraries | Gets a list of existing response libraries.
-[**getResponsemanagementLibrary**](ResponseManagementApi.html#getResponsemanagementLibrary) | **GET** /api/v2/responsemanagement/libraries/{libraryId} | Get details about an existing response library.
-[**getResponsemanagementResponse**](ResponseManagementApi.html#getResponsemanagementResponse) | **GET** /api/v2/responsemanagement/responses/{responseId} | Get details about an existing response.
-[**getResponsemanagementResponseasset**](ResponseManagementApi.html#getResponsemanagementResponseasset) | **GET** /api/v2/responsemanagement/responseassets/{responseAssetId} | Get response asset information
-[**getResponsemanagementResponseassetsStatusStatusId**](ResponseManagementApi.html#getResponsemanagementResponseassetsStatusStatusId) | **GET** /api/v2/responsemanagement/responseassets/status/{statusId} | Get response asset upload status
-[**getResponsemanagementResponses**](ResponseManagementApi.html#getResponsemanagementResponses) | **GET** /api/v2/responsemanagement/responses | Gets a list of existing responses.
-[**postResponsemanagementLibraries**](ResponseManagementApi.html#postResponsemanagementLibraries) | **POST** /api/v2/responsemanagement/libraries | Create a response library.
-[**postResponsemanagementResponseassetsSearch**](ResponseManagementApi.html#postResponsemanagementResponseassetsSearch) | **POST** /api/v2/responsemanagement/responseassets/search | Search response assets
-[**postResponsemanagementResponseassetsUploads**](ResponseManagementApi.html#postResponsemanagementResponseassetsUploads) | **POST** /api/v2/responsemanagement/responseassets/uploads | Creates pre-signed url for uploading response asset
-[**postResponsemanagementResponses**](ResponseManagementApi.html#postResponsemanagementResponses) | **POST** /api/v2/responsemanagement/responses | Create a response.
-[**postResponsemanagementResponsesQuery**](ResponseManagementApi.html#postResponsemanagementResponsesQuery) | **POST** /api/v2/responsemanagement/responses/query | Query responses
-[**putResponsemanagementLibrary**](ResponseManagementApi.html#putResponsemanagementLibrary) | **PUT** /api/v2/responsemanagement/libraries/{libraryId} | Update an existing response library.
-[**putResponsemanagementResponse**](ResponseManagementApi.html#putResponsemanagementResponse) | **PUT** /api/v2/responsemanagement/responses/{responseId} | Update an existing response.
-[**putResponsemanagementResponseasset**](ResponseManagementApi.html#putResponsemanagementResponseasset) | **PUT** /api/v2/responsemanagement/responseassets/{responseAssetId} | Update response asset
-{: class="table table-striped"}
+[**deleteResponsemanagementLibrary**](ResponseManagementApi#deleteResponsemanagementLibrary) | **DELETE** /api/v2/responsemanagement/libraries/{libraryId} | Delete an existing response library.
+[**deleteResponsemanagementResponse**](ResponseManagementApi#deleteResponsemanagementResponse) | **DELETE** /api/v2/responsemanagement/responses/{responseId} | Delete an existing response.
+[**deleteResponsemanagementResponseasset**](ResponseManagementApi#deleteResponsemanagementResponseasset) | **DELETE** /api/v2/responsemanagement/responseassets/{responseAssetId} | Delete response asset
+[**getResponsemanagementLibraries**](ResponseManagementApi#getResponsemanagementLibraries) | **GET** /api/v2/responsemanagement/libraries | Gets a list of existing response libraries.
+[**getResponsemanagementLibrary**](ResponseManagementApi#getResponsemanagementLibrary) | **GET** /api/v2/responsemanagement/libraries/{libraryId} | Get details about an existing response library.
+[**getResponsemanagementResponse**](ResponseManagementApi#getResponsemanagementResponse) | **GET** /api/v2/responsemanagement/responses/{responseId} | Get details about an existing response.
+[**getResponsemanagementResponseasset**](ResponseManagementApi#getResponsemanagementResponseasset) | **GET** /api/v2/responsemanagement/responseassets/{responseAssetId} | Get response asset information
+[**getResponsemanagementResponseassetsStatusStatusId**](ResponseManagementApi#getResponsemanagementResponseassetsStatusStatusId) | **GET** /api/v2/responsemanagement/responseassets/status/{statusId} | Get response asset upload status
+[**getResponsemanagementResponses**](ResponseManagementApi#getResponsemanagementResponses) | **GET** /api/v2/responsemanagement/responses | Gets a list of existing responses.
+[**postResponsemanagementLibraries**](ResponseManagementApi#postResponsemanagementLibraries) | **POST** /api/v2/responsemanagement/libraries | Create a response library.
+[**postResponsemanagementLibrariesBulk**](ResponseManagementApi#postResponsemanagementLibrariesBulk) | **POST** /api/v2/responsemanagement/libraries/bulk | Get response libraries.
+[**postResponsemanagementResponseassetsSearch**](ResponseManagementApi#postResponsemanagementResponseassetsSearch) | **POST** /api/v2/responsemanagement/responseassets/search | Search response assets
+[**postResponsemanagementResponseassetsUploads**](ResponseManagementApi#postResponsemanagementResponseassetsUploads) | **POST** /api/v2/responsemanagement/responseassets/uploads | Creates pre-signed url for uploading response asset
+[**postResponsemanagementResponses**](ResponseManagementApi#postResponsemanagementResponses) | **POST** /api/v2/responsemanagement/responses | Create a response.
+[**postResponsemanagementResponsesQuery**](ResponseManagementApi#postResponsemanagementResponsesQuery) | **POST** /api/v2/responsemanagement/responses/query | Query responses
+[**putResponsemanagementLibrary**](ResponseManagementApi#putResponsemanagementLibrary) | **PUT** /api/v2/responsemanagement/libraries/{libraryId} | Update an existing response library.
+[**putResponsemanagementResponse**](ResponseManagementApi#putResponsemanagementResponse) | **PUT** /api/v2/responsemanagement/responses/{responseId} | Update an existing response.
+[**putResponsemanagementResponseasset**](ResponseManagementApi#putResponsemanagementResponseasset) | **PUT** /api/v2/responsemanagement/responseassets/{responseAssetId} | Update response asset
 
-<a name="deleteResponsemanagementLibrary"></a>
 
-# void deleteResponsemanagementLibrary(libraryId)
+
+## deleteResponsemanagementLibrary
+
+> void deleteResponsemanagementLibrary(libraryId)
 
 
 DELETE /api/v2/responsemanagement/libraries/{libraryId}
@@ -49,7 +50,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ResponseManagementApi();
@@ -72,15 +73,15 @@ apiInstance.deleteResponsemanagementLibrary(libraryId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **libraryId** | **String** | Library ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteResponsemanagementResponse"></a>
 
-# void deleteResponsemanagementResponse(responseId)
+## deleteResponsemanagementResponse
+
+> void deleteResponsemanagementResponse(responseId)
 
 
 DELETE /api/v2/responsemanagement/responses/{responseId}
@@ -101,7 +102,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ResponseManagementApi();
@@ -124,15 +125,15 @@ apiInstance.deleteResponsemanagementResponse(responseId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **responseId** | **String** | Response ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteResponsemanagementResponseasset"></a>
 
-# void deleteResponsemanagementResponseasset(responseAssetId)
+## deleteResponsemanagementResponseasset
+
+> void deleteResponsemanagementResponseasset(responseAssetId)
 
 
 DELETE /api/v2/responsemanagement/responseassets/{responseAssetId}
@@ -151,7 +152,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ResponseManagementApi();
@@ -174,15 +175,15 @@ apiInstance.deleteResponsemanagementResponseasset(responseAssetId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **responseAssetId** | **String** | Asset Id |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="getResponsemanagementLibraries"></a>
 
-# LibraryEntityListing getResponsemanagementLibraries(opts)
+## getResponsemanagementLibraries
+
+> LibraryEntityListing getResponsemanagementLibraries(opts)
 
 
 GET /api/v2/responsemanagement/libraries
@@ -201,7 +202,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ResponseManagementApi();
@@ -232,15 +233,15 @@ apiInstance.getResponsemanagementLibraries(opts)
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **messagingTemplateFilter** | **String** | Returns a list of libraries that contain responses with at least one messaging template defined for a specific message channel | [optional] <br />**Values**: whatsapp |
  **libraryPrefix** | **String** | Returns a list of libraries that contain the prefix provided | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **LibraryEntityListing**
 
-<a name="getResponsemanagementLibrary"></a>
 
-# Library getResponsemanagementLibrary(libraryId)
+## getResponsemanagementLibrary
+
+> Library getResponsemanagementLibrary(libraryId)
 
 
 GET /api/v2/responsemanagement/libraries/{libraryId}
@@ -259,7 +260,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ResponseManagementApi();
@@ -282,15 +283,15 @@ apiInstance.getResponsemanagementLibrary(libraryId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **libraryId** | **String** | Library ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Library**
 
-<a name="getResponsemanagementResponse"></a>
 
-# Response getResponsemanagementResponse(responseId, opts)
+## getResponsemanagementResponse
+
+> Response getResponsemanagementResponse(responseId, opts)
 
 
 GET /api/v2/responsemanagement/responses/{responseId}
@@ -309,7 +310,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ResponseManagementApi();
@@ -336,15 +337,15 @@ apiInstance.getResponsemanagementResponse(responseId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **responseId** | **String** | Response ID |  |
  **expand** | **String** | Expand instructions for the return value. | [optional] <br />**Values**: substitutionsSchema |
-{: class="table table-striped"}
 
 ### Return type
 
 **Response**
 
-<a name="getResponsemanagementResponseasset"></a>
 
-# ResponseAsset getResponsemanagementResponseasset(responseAssetId)
+## getResponsemanagementResponseasset
+
+> ResponseAsset getResponsemanagementResponseasset(responseAssetId)
 
 
 GET /api/v2/responsemanagement/responseassets/{responseAssetId}
@@ -363,7 +364,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ResponseManagementApi();
@@ -386,15 +387,15 @@ apiInstance.getResponsemanagementResponseasset(responseAssetId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **responseAssetId** | **String** | Asset Id |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ResponseAsset**
 
-<a name="getResponsemanagementResponseassetsStatusStatusId"></a>
 
-# ResponseAssetStatus getResponsemanagementResponseassetsStatusStatusId(statusId)
+## getResponsemanagementResponseassetsStatusStatusId
+
+> ResponseAssetStatus getResponsemanagementResponseassetsStatusStatusId(statusId)
 
 
 GET /api/v2/responsemanagement/responseassets/status/{statusId}
@@ -413,7 +414,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ResponseManagementApi();
@@ -436,15 +437,15 @@ apiInstance.getResponsemanagementResponseassetsStatusStatusId(statusId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **statusId** | **String** | Status Id |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ResponseAssetStatus**
 
-<a name="getResponsemanagementResponses"></a>
 
-# ResponseEntityListing getResponsemanagementResponses(libraryId, opts)
+## getResponsemanagementResponses
+
+> ResponseEntityListing getResponsemanagementResponses(libraryId, opts)
 
 
 GET /api/v2/responsemanagement/responses
@@ -463,7 +464,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ResponseManagementApi();
@@ -494,15 +495,15 @@ apiInstance.getResponsemanagementResponses(libraryId, opts)
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **expand** | **String** | Expand instructions for the return value. | [optional] <br />**Values**: substitutionsSchema |
-{: class="table table-striped"}
 
 ### Return type
 
 **ResponseEntityListing**
 
-<a name="postResponsemanagementLibraries"></a>
 
-# Library postResponsemanagementLibraries(body)
+## postResponsemanagementLibraries
+
+> Library postResponsemanagementLibraries(body)
 
 
 POST /api/v2/responsemanagement/libraries
@@ -521,7 +522,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ResponseManagementApi();
@@ -544,15 +545,65 @@ apiInstance.postResponsemanagementLibraries(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Library |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Library**
 
-<a name="postResponsemanagementResponseassetsSearch"></a>
 
-# ResponseAssetSearchResults postResponsemanagementResponseassetsSearch(body, opts)
+## postResponsemanagementLibrariesBulk
+
+> LibraryEntityListing postResponsemanagementLibrariesBulk(body)
+
+
+POST /api/v2/responsemanagement/libraries/bulk
+
+Get response libraries.
+
+Requires ANY permissions:
+
+* responses:library:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ResponseManagementApi();
+
+let body = {}; // Object | LibraryIDs (max allowed 50)
+
+apiInstance.postResponsemanagementLibrariesBulk(body)
+  .then((data) => {
+    console.log(`postResponsemanagementLibrariesBulk success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postResponsemanagementLibrariesBulk');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | LibraryIDs (max allowed 50) |  |
+
+### Return type
+
+**LibraryEntityListing**
+
+
+## postResponsemanagementResponseassetsSearch
+
+> ResponseAssetSearchResults postResponsemanagementResponseassetsSearch(body, opts)
 
 
 POST /api/v2/responsemanagement/responseassets/search
@@ -571,7 +622,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ResponseManagementApi();
@@ -598,15 +649,15 @@ apiInstance.postResponsemanagementResponseassetsSearch(body, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | request |  |
  **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: user, division |
-{: class="table table-striped"}
 
 ### Return type
 
 **ResponseAssetSearchResults**
 
-<a name="postResponsemanagementResponseassetsUploads"></a>
 
-# CreateResponseAssetResponse postResponsemanagementResponseassetsUploads(body)
+## postResponsemanagementResponseassetsUploads
+
+> CreateResponseAssetResponse postResponsemanagementResponseassetsUploads(body)
 
 
 POST /api/v2/responsemanagement/responseassets/uploads
@@ -625,7 +676,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ResponseManagementApi();
@@ -648,15 +699,15 @@ apiInstance.postResponsemanagementResponseassetsUploads(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | request |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **CreateResponseAssetResponse**
 
-<a name="postResponsemanagementResponses"></a>
 
-# Response postResponsemanagementResponses(body, opts)
+## postResponsemanagementResponses
+
+> Response postResponsemanagementResponses(body, opts)
 
 
 POST /api/v2/responsemanagement/responses
@@ -675,7 +726,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ResponseManagementApi();
@@ -702,15 +753,15 @@ apiInstance.postResponsemanagementResponses(body, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Response |  |
  **expand** | **String** | Expand instructions for the return value. | [optional] <br />**Values**: substitutionsSchema |
-{: class="table table-striped"}
 
 ### Return type
 
 **Response**
 
-<a name="postResponsemanagementResponsesQuery"></a>
 
-# ResponseQueryResults postResponsemanagementResponsesQuery(body)
+## postResponsemanagementResponsesQuery
+
+> ResponseQueryResults postResponsemanagementResponsesQuery(body)
 
 
 POST /api/v2/responsemanagement/responses/query
@@ -729,7 +780,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ResponseManagementApi();
@@ -752,15 +803,15 @@ apiInstance.postResponsemanagementResponsesQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Response |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ResponseQueryResults**
 
-<a name="putResponsemanagementLibrary"></a>
 
-# Library putResponsemanagementLibrary(libraryId, body)
+## putResponsemanagementLibrary
+
+> Library putResponsemanagementLibrary(libraryId, body)
 
 
 PUT /api/v2/responsemanagement/libraries/{libraryId}
@@ -781,7 +832,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ResponseManagementApi();
@@ -806,15 +857,15 @@ apiInstance.putResponsemanagementLibrary(libraryId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **libraryId** | **String** | Library ID |  |
  **body** | **Object** | Library |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Library**
 
-<a name="putResponsemanagementResponse"></a>
 
-# Response putResponsemanagementResponse(responseId, body, opts)
+## putResponsemanagementResponse
+
+> Response putResponsemanagementResponse(responseId, body, opts)
 
 
 PUT /api/v2/responsemanagement/responses/{responseId}
@@ -835,7 +886,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ResponseManagementApi();
@@ -864,15 +915,15 @@ apiInstance.putResponsemanagementResponse(responseId, body, opts)
  **responseId** | **String** | Response ID |  |
  **body** | **Object** | Response |  |
  **expand** | **String** | Expand instructions for the return value. | [optional] <br />**Values**: substitutionsSchema |
-{: class="table table-striped"}
 
 ### Return type
 
 **Response**
 
-<a name="putResponsemanagementResponseasset"></a>
 
-# ResponseAsset putResponsemanagementResponseasset(responseAssetId, body)
+## putResponsemanagementResponseasset
+
+> ResponseAsset putResponsemanagementResponseasset(responseAssetId, body)
 
 
 PUT /api/v2/responsemanagement/responseassets/{responseAssetId}
@@ -891,7 +942,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ResponseManagementApi();
@@ -916,9 +967,10 @@ apiInstance.putResponsemanagementResponseasset(responseAssetId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **responseAssetId** | **String** | Asset Id |  |
  **body** | **Object** | request |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ResponseAsset**
 
+
+_purecloud-platform-client-v2@229.1.0_

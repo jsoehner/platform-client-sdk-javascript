@@ -5,7 +5,7 @@ class OrganizationAuthorizationApi {
 	/**
 	 * OrganizationAuthorization service.
 	 * @module purecloud-platform-client-v2/api/OrganizationAuthorizationApi
-	 * @version 174.0.0
+	 * @version 229.1.0
 	 */
 
 	/**
@@ -27,7 +27,7 @@ class OrganizationAuthorizationApi {
 	 */
 	deleteOrgauthorizationTrustee(trusteeOrgId) { 
 		// verify the required parameter 'trusteeOrgId' is set
-		if (trusteeOrgId === undefined || trusteeOrgId === null) {
+		if (trusteeOrgId === undefined || trusteeOrgId === null || trusteeOrgId === '') {
 			throw 'Missing the required parameter "trusteeOrgId" when calling deleteOrgauthorizationTrustee';
 		}
 
@@ -53,11 +53,11 @@ class OrganizationAuthorizationApi {
 	 */
 	deleteOrgauthorizationTrusteeCloneduser(trusteeOrgId, trusteeUserId) { 
 		// verify the required parameter 'trusteeOrgId' is set
-		if (trusteeOrgId === undefined || trusteeOrgId === null) {
+		if (trusteeOrgId === undefined || trusteeOrgId === null || trusteeOrgId === '') {
 			throw 'Missing the required parameter "trusteeOrgId" when calling deleteOrgauthorizationTrusteeCloneduser';
 		}
 		// verify the required parameter 'trusteeUserId' is set
-		if (trusteeUserId === undefined || trusteeUserId === null) {
+		if (trusteeUserId === undefined || trusteeUserId === null || trusteeUserId === '') {
 			throw 'Missing the required parameter "trusteeUserId" when calling deleteOrgauthorizationTrusteeCloneduser';
 		}
 
@@ -83,11 +83,11 @@ class OrganizationAuthorizationApi {
 	 */
 	deleteOrgauthorizationTrusteeGroup(trusteeOrgId, trusteeGroupId) { 
 		// verify the required parameter 'trusteeOrgId' is set
-		if (trusteeOrgId === undefined || trusteeOrgId === null) {
+		if (trusteeOrgId === undefined || trusteeOrgId === null || trusteeOrgId === '') {
 			throw 'Missing the required parameter "trusteeOrgId" when calling deleteOrgauthorizationTrusteeGroup';
 		}
 		// verify the required parameter 'trusteeGroupId' is set
-		if (trusteeGroupId === undefined || trusteeGroupId === null) {
+		if (trusteeGroupId === undefined || trusteeGroupId === null || trusteeGroupId === '') {
 			throw 'Missing the required parameter "trusteeGroupId" when calling deleteOrgauthorizationTrusteeGroup';
 		}
 
@@ -113,11 +113,11 @@ class OrganizationAuthorizationApi {
 	 */
 	deleteOrgauthorizationTrusteeGroupRoles(trusteeOrgId, trusteeGroupId) { 
 		// verify the required parameter 'trusteeOrgId' is set
-		if (trusteeOrgId === undefined || trusteeOrgId === null) {
+		if (trusteeOrgId === undefined || trusteeOrgId === null || trusteeOrgId === '') {
 			throw 'Missing the required parameter "trusteeOrgId" when calling deleteOrgauthorizationTrusteeGroupRoles';
 		}
 		// verify the required parameter 'trusteeGroupId' is set
-		if (trusteeGroupId === undefined || trusteeGroupId === null) {
+		if (trusteeGroupId === undefined || trusteeGroupId === null || trusteeGroupId === '') {
 			throw 'Missing the required parameter "trusteeGroupId" when calling deleteOrgauthorizationTrusteeGroupRoles';
 		}
 
@@ -143,11 +143,11 @@ class OrganizationAuthorizationApi {
 	 */
 	deleteOrgauthorizationTrusteeUser(trusteeOrgId, trusteeUserId) { 
 		// verify the required parameter 'trusteeOrgId' is set
-		if (trusteeOrgId === undefined || trusteeOrgId === null) {
+		if (trusteeOrgId === undefined || trusteeOrgId === null || trusteeOrgId === '') {
 			throw 'Missing the required parameter "trusteeOrgId" when calling deleteOrgauthorizationTrusteeUser';
 		}
 		// verify the required parameter 'trusteeUserId' is set
-		if (trusteeUserId === undefined || trusteeUserId === null) {
+		if (trusteeUserId === undefined || trusteeUserId === null || trusteeUserId === '') {
 			throw 'Missing the required parameter "trusteeUserId" when calling deleteOrgauthorizationTrusteeUser';
 		}
 
@@ -173,11 +173,11 @@ class OrganizationAuthorizationApi {
 	 */
 	deleteOrgauthorizationTrusteeUserRoles(trusteeOrgId, trusteeUserId) { 
 		// verify the required parameter 'trusteeOrgId' is set
-		if (trusteeOrgId === undefined || trusteeOrgId === null) {
+		if (trusteeOrgId === undefined || trusteeOrgId === null || trusteeOrgId === '') {
 			throw 'Missing the required parameter "trusteeOrgId" when calling deleteOrgauthorizationTrusteeUserRoles';
 		}
 		// verify the required parameter 'trusteeUserId' is set
-		if (trusteeUserId === undefined || trusteeUserId === null) {
+		if (trusteeUserId === undefined || trusteeUserId === null || trusteeUserId === '') {
 			throw 'Missing the required parameter "trusteeUserId" when calling deleteOrgauthorizationTrusteeUserRoles';
 		}
 
@@ -228,7 +228,7 @@ class OrganizationAuthorizationApi {
 	 */
 	deleteOrgauthorizationTrustor(trustorOrgId) { 
 		// verify the required parameter 'trustorOrgId' is set
-		if (trustorOrgId === undefined || trustorOrgId === null) {
+		if (trustorOrgId === undefined || trustorOrgId === null || trustorOrgId === '') {
 			throw 'Missing the required parameter "trustorOrgId" when calling deleteOrgauthorizationTrustor';
 		}
 
@@ -254,11 +254,11 @@ class OrganizationAuthorizationApi {
 	 */
 	deleteOrgauthorizationTrustorCloneduser(trustorOrgId, trusteeUserId) { 
 		// verify the required parameter 'trustorOrgId' is set
-		if (trustorOrgId === undefined || trustorOrgId === null) {
+		if (trustorOrgId === undefined || trustorOrgId === null || trustorOrgId === '') {
 			throw 'Missing the required parameter "trustorOrgId" when calling deleteOrgauthorizationTrustorCloneduser';
 		}
 		// verify the required parameter 'trusteeUserId' is set
-		if (trusteeUserId === undefined || trusteeUserId === null) {
+		if (trusteeUserId === undefined || trusteeUserId === null || trusteeUserId === '') {
 			throw 'Missing the required parameter "trusteeUserId" when calling deleteOrgauthorizationTrustorCloneduser';
 		}
 
@@ -284,11 +284,11 @@ class OrganizationAuthorizationApi {
 	 */
 	deleteOrgauthorizationTrustorGroup(trustorOrgId, trustorGroupId) { 
 		// verify the required parameter 'trustorOrgId' is set
-		if (trustorOrgId === undefined || trustorOrgId === null) {
+		if (trustorOrgId === undefined || trustorOrgId === null || trustorOrgId === '') {
 			throw 'Missing the required parameter "trustorOrgId" when calling deleteOrgauthorizationTrustorGroup';
 		}
 		// verify the required parameter 'trustorGroupId' is set
-		if (trustorGroupId === undefined || trustorGroupId === null) {
+		if (trustorGroupId === undefined || trustorGroupId === null || trustorGroupId === '') {
 			throw 'Missing the required parameter "trustorGroupId" when calling deleteOrgauthorizationTrustorGroup';
 		}
 
@@ -314,11 +314,11 @@ class OrganizationAuthorizationApi {
 	 */
 	deleteOrgauthorizationTrustorUser(trustorOrgId, trusteeUserId) { 
 		// verify the required parameter 'trustorOrgId' is set
-		if (trustorOrgId === undefined || trustorOrgId === null) {
+		if (trustorOrgId === undefined || trustorOrgId === null || trustorOrgId === '') {
 			throw 'Missing the required parameter "trustorOrgId" when calling deleteOrgauthorizationTrustorUser';
 		}
 		// verify the required parameter 'trusteeUserId' is set
-		if (trusteeUserId === undefined || trusteeUserId === null) {
+		if (trusteeUserId === undefined || trusteeUserId === null || trusteeUserId === '') {
 			throw 'Missing the required parameter "trusteeUserId" when calling deleteOrgauthorizationTrustorUser';
 		}
 
@@ -369,7 +369,7 @@ class OrganizationAuthorizationApi {
 	 */
 	getOrgauthorizationPairing(pairingId) { 
 		// verify the required parameter 'pairingId' is set
-		if (pairingId === undefined || pairingId === null) {
+		if (pairingId === undefined || pairingId === null || pairingId === '') {
 			throw 'Missing the required parameter "pairingId" when calling getOrgauthorizationPairing';
 		}
 
@@ -394,7 +394,7 @@ class OrganizationAuthorizationApi {
 	 */
 	getOrgauthorizationTrustee(trusteeOrgId) { 
 		// verify the required parameter 'trusteeOrgId' is set
-		if (trusteeOrgId === undefined || trusteeOrgId === null) {
+		if (trusteeOrgId === undefined || trusteeOrgId === null || trusteeOrgId === '') {
 			throw 'Missing the required parameter "trusteeOrgId" when calling getOrgauthorizationTrustee';
 		}
 
@@ -419,7 +419,7 @@ class OrganizationAuthorizationApi {
 	 */
 	getOrgauthorizationTrusteeClonedusers(trusteeOrgId) { 
 		// verify the required parameter 'trusteeOrgId' is set
-		if (trusteeOrgId === undefined || trusteeOrgId === null) {
+		if (trusteeOrgId === undefined || trusteeOrgId === null || trusteeOrgId === '') {
 			throw 'Missing the required parameter "trusteeOrgId" when calling getOrgauthorizationTrusteeClonedusers';
 		}
 
@@ -445,11 +445,11 @@ class OrganizationAuthorizationApi {
 	 */
 	getOrgauthorizationTrusteeGroup(trusteeOrgId, trusteeGroupId) { 
 		// verify the required parameter 'trusteeOrgId' is set
-		if (trusteeOrgId === undefined || trusteeOrgId === null) {
+		if (trusteeOrgId === undefined || trusteeOrgId === null || trusteeOrgId === '') {
 			throw 'Missing the required parameter "trusteeOrgId" when calling getOrgauthorizationTrusteeGroup';
 		}
 		// verify the required parameter 'trusteeGroupId' is set
-		if (trusteeGroupId === undefined || trusteeGroupId === null) {
+		if (trusteeGroupId === undefined || trusteeGroupId === null || trusteeGroupId === '') {
 			throw 'Missing the required parameter "trusteeGroupId" when calling getOrgauthorizationTrusteeGroup';
 		}
 
@@ -475,11 +475,11 @@ class OrganizationAuthorizationApi {
 	 */
 	getOrgauthorizationTrusteeGroupRoles(trusteeOrgId, trusteeGroupId) { 
 		// verify the required parameter 'trusteeOrgId' is set
-		if (trusteeOrgId === undefined || trusteeOrgId === null) {
+		if (trusteeOrgId === undefined || trusteeOrgId === null || trusteeOrgId === '') {
 			throw 'Missing the required parameter "trusteeOrgId" when calling getOrgauthorizationTrusteeGroupRoles';
 		}
 		// verify the required parameter 'trusteeGroupId' is set
-		if (trusteeGroupId === undefined || trusteeGroupId === null) {
+		if (trusteeGroupId === undefined || trusteeGroupId === null || trusteeGroupId === '') {
 			throw 'Missing the required parameter "trusteeGroupId" when calling getOrgauthorizationTrusteeGroupRoles';
 		}
 
@@ -509,7 +509,7 @@ class OrganizationAuthorizationApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'trusteeOrgId' is set
-		if (trusteeOrgId === undefined || trusteeOrgId === null) {
+		if (trusteeOrgId === undefined || trusteeOrgId === null || trusteeOrgId === '') {
 			throw 'Missing the required parameter "trusteeOrgId" when calling getOrgauthorizationTrusteeGroups';
 		}
 
@@ -535,11 +535,11 @@ class OrganizationAuthorizationApi {
 	 */
 	getOrgauthorizationTrusteeUser(trusteeOrgId, trusteeUserId) { 
 		// verify the required parameter 'trusteeOrgId' is set
-		if (trusteeOrgId === undefined || trusteeOrgId === null) {
+		if (trusteeOrgId === undefined || trusteeOrgId === null || trusteeOrgId === '') {
 			throw 'Missing the required parameter "trusteeOrgId" when calling getOrgauthorizationTrusteeUser';
 		}
 		// verify the required parameter 'trusteeUserId' is set
-		if (trusteeUserId === undefined || trusteeUserId === null) {
+		if (trusteeUserId === undefined || trusteeUserId === null || trusteeUserId === '') {
 			throw 'Missing the required parameter "trusteeUserId" when calling getOrgauthorizationTrusteeUser';
 		}
 
@@ -565,11 +565,11 @@ class OrganizationAuthorizationApi {
 	 */
 	getOrgauthorizationTrusteeUserRoles(trusteeOrgId, trusteeUserId) { 
 		// verify the required parameter 'trusteeOrgId' is set
-		if (trusteeOrgId === undefined || trusteeOrgId === null) {
+		if (trusteeOrgId === undefined || trusteeOrgId === null || trusteeOrgId === '') {
 			throw 'Missing the required parameter "trusteeOrgId" when calling getOrgauthorizationTrusteeUserRoles';
 		}
 		// verify the required parameter 'trusteeUserId' is set
-		if (trusteeUserId === undefined || trusteeUserId === null) {
+		if (trusteeUserId === undefined || trusteeUserId === null || trusteeUserId === '') {
 			throw 'Missing the required parameter "trusteeUserId" when calling getOrgauthorizationTrusteeUserRoles';
 		}
 
@@ -599,7 +599,7 @@ class OrganizationAuthorizationApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'trusteeOrgId' is set
-		if (trusteeOrgId === undefined || trusteeOrgId === null) {
+		if (trusteeOrgId === undefined || trusteeOrgId === null || trusteeOrgId === '') {
 			throw 'Missing the required parameter "trusteeOrgId" when calling getOrgauthorizationTrusteeUsers';
 		}
 
@@ -643,6 +643,26 @@ class OrganizationAuthorizationApi {
 	}
 
 	/**
+	 * Get Customer Care organization ids.
+	 * 
+	 */
+	getOrgauthorizationTrusteesCare() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/orgauthorization/trustees/care', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get organization authorization trust with Customer Care, if one exists.
 	 * 
 	 */
@@ -669,7 +689,7 @@ class OrganizationAuthorizationApi {
 	 */
 	getOrgauthorizationTrustor(trustorOrgId) { 
 		// verify the required parameter 'trustorOrgId' is set
-		if (trustorOrgId === undefined || trustorOrgId === null) {
+		if (trustorOrgId === undefined || trustorOrgId === null || trustorOrgId === '') {
 			throw 'Missing the required parameter "trustorOrgId" when calling getOrgauthorizationTrustor';
 		}
 
@@ -695,11 +715,11 @@ class OrganizationAuthorizationApi {
 	 */
 	getOrgauthorizationTrustorCloneduser(trustorOrgId, trusteeUserId) { 
 		// verify the required parameter 'trustorOrgId' is set
-		if (trustorOrgId === undefined || trustorOrgId === null) {
+		if (trustorOrgId === undefined || trustorOrgId === null || trustorOrgId === '') {
 			throw 'Missing the required parameter "trustorOrgId" when calling getOrgauthorizationTrustorCloneduser';
 		}
 		// verify the required parameter 'trusteeUserId' is set
-		if (trusteeUserId === undefined || trusteeUserId === null) {
+		if (trusteeUserId === undefined || trusteeUserId === null || trusteeUserId === '') {
 			throw 'Missing the required parameter "trusteeUserId" when calling getOrgauthorizationTrustorCloneduser';
 		}
 
@@ -724,7 +744,7 @@ class OrganizationAuthorizationApi {
 	 */
 	getOrgauthorizationTrustorClonedusers(trustorOrgId) { 
 		// verify the required parameter 'trustorOrgId' is set
-		if (trustorOrgId === undefined || trustorOrgId === null) {
+		if (trustorOrgId === undefined || trustorOrgId === null || trustorOrgId === '') {
 			throw 'Missing the required parameter "trustorOrgId" when calling getOrgauthorizationTrustorClonedusers';
 		}
 
@@ -750,11 +770,11 @@ class OrganizationAuthorizationApi {
 	 */
 	getOrgauthorizationTrustorGroup(trustorOrgId, trustorGroupId) { 
 		// verify the required parameter 'trustorOrgId' is set
-		if (trustorOrgId === undefined || trustorOrgId === null) {
+		if (trustorOrgId === undefined || trustorOrgId === null || trustorOrgId === '') {
 			throw 'Missing the required parameter "trustorOrgId" when calling getOrgauthorizationTrustorGroup';
 		}
 		// verify the required parameter 'trustorGroupId' is set
-		if (trustorGroupId === undefined || trustorGroupId === null) {
+		if (trustorGroupId === undefined || trustorGroupId === null || trustorGroupId === '') {
 			throw 'Missing the required parameter "trustorGroupId" when calling getOrgauthorizationTrustorGroup';
 		}
 
@@ -784,7 +804,7 @@ class OrganizationAuthorizationApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'trustorOrgId' is set
-		if (trustorOrgId === undefined || trustorOrgId === null) {
+		if (trustorOrgId === undefined || trustorOrgId === null || trustorOrgId === '') {
 			throw 'Missing the required parameter "trustorOrgId" when calling getOrgauthorizationTrustorGroups';
 		}
 
@@ -810,11 +830,11 @@ class OrganizationAuthorizationApi {
 	 */
 	getOrgauthorizationTrustorUser(trustorOrgId, trusteeUserId) { 
 		// verify the required parameter 'trustorOrgId' is set
-		if (trustorOrgId === undefined || trustorOrgId === null) {
+		if (trustorOrgId === undefined || trustorOrgId === null || trustorOrgId === '') {
 			throw 'Missing the required parameter "trustorOrgId" when calling getOrgauthorizationTrustorUser';
 		}
 		// verify the required parameter 'trusteeUserId' is set
-		if (trusteeUserId === undefined || trusteeUserId === null) {
+		if (trusteeUserId === undefined || trusteeUserId === null || trusteeUserId === '') {
 			throw 'Missing the required parameter "trusteeUserId" when calling getOrgauthorizationTrustorUser';
 		}
 
@@ -844,7 +864,7 @@ class OrganizationAuthorizationApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'trustorOrgId' is set
-		if (trustorOrgId === undefined || trustorOrgId === null) {
+		if (trustorOrgId === undefined || trustorOrgId === null || trustorOrgId === '') {
 			throw 'Missing the required parameter "trustorOrgId" when calling getOrgauthorizationTrustorUsers';
 		}
 
@@ -920,7 +940,7 @@ class OrganizationAuthorizationApi {
 	 */
 	postOrgauthorizationTrusteeGroups(trusteeOrgId, body) { 
 		// verify the required parameter 'trusteeOrgId' is set
-		if (trusteeOrgId === undefined || trusteeOrgId === null) {
+		if (trusteeOrgId === undefined || trusteeOrgId === null || trusteeOrgId === '') {
 			throw 'Missing the required parameter "trusteeOrgId" when calling postOrgauthorizationTrusteeGroups';
 		}
 		// verify the required parameter 'body' is set
@@ -950,7 +970,7 @@ class OrganizationAuthorizationApi {
 	 */
 	postOrgauthorizationTrusteeUsers(trusteeOrgId, body) { 
 		// verify the required parameter 'trusteeOrgId' is set
-		if (trusteeOrgId === undefined || trusteeOrgId === null) {
+		if (trusteeOrgId === undefined || trusteeOrgId === null || trusteeOrgId === '') {
 			throw 'Missing the required parameter "trusteeOrgId" when calling postOrgauthorizationTrusteeUsers';
 		}
 		// verify the required parameter 'body' is set
@@ -1035,6 +1055,33 @@ class OrganizationAuthorizationApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.assignDefaultRole Assign Admin role to default pairing with Customer Care
 	 * @param {Boolean} opts.autoExpire Automatically expire pairing after 30 days
+	 * @param {Boolean} opts.assignFullAccess Grant Customer Care full access to the organization
+	 * @param {Boolean} opts.allowTrustedUserAccess Make Customer Care a Trusted User
+	 */
+	postOrgauthorizationTrusteesCare(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/orgauthorization/trustees/care', 
+			'POST', 
+			{  },
+			{ 'assignDefaultRole': opts['assignDefaultRole'],'autoExpire': opts['autoExpire'],'assignFullAccess': opts['assignFullAccess'],'allowTrustedUserAccess': opts['allowTrustedUserAccess'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create a new organization authorization trust with Customer Care. This is required to grant your regional Customer Care organization access to your organization.
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.assignDefaultRole Assign Admin role to default pairing with Customer Care
+	 * @param {Boolean} opts.autoExpire Automatically expire pairing after 30 days
 	 */
 	postOrgauthorizationTrusteesDefault(opts) { 
 		opts = opts || {};
@@ -1094,7 +1141,7 @@ class OrganizationAuthorizationApi {
 	 */
 	putOrgauthorizationTrustee(trusteeOrgId, body) { 
 		// verify the required parameter 'trusteeOrgId' is set
-		if (trusteeOrgId === undefined || trusteeOrgId === null) {
+		if (trusteeOrgId === undefined || trusteeOrgId === null || trusteeOrgId === '') {
 			throw 'Missing the required parameter "trusteeOrgId" when calling putOrgauthorizationTrustee';
 		}
 		// verify the required parameter 'body' is set
@@ -1125,11 +1172,11 @@ class OrganizationAuthorizationApi {
 	 */
 	putOrgauthorizationTrusteeGroupRoledivisions(trusteeOrgId, trusteeGroupId, body) { 
 		// verify the required parameter 'trusteeOrgId' is set
-		if (trusteeOrgId === undefined || trusteeOrgId === null) {
+		if (trusteeOrgId === undefined || trusteeOrgId === null || trusteeOrgId === '') {
 			throw 'Missing the required parameter "trusteeOrgId" when calling putOrgauthorizationTrusteeGroupRoledivisions';
 		}
 		// verify the required parameter 'trusteeGroupId' is set
-		if (trusteeGroupId === undefined || trusteeGroupId === null) {
+		if (trusteeGroupId === undefined || trusteeGroupId === null || trusteeGroupId === '') {
 			throw 'Missing the required parameter "trusteeGroupId" when calling putOrgauthorizationTrusteeGroupRoledivisions';
 		}
 		// verify the required parameter 'body' is set
@@ -1160,11 +1207,11 @@ class OrganizationAuthorizationApi {
 	 */
 	putOrgauthorizationTrusteeGroupRoles(trusteeOrgId, trusteeGroupId, body) { 
 		// verify the required parameter 'trusteeOrgId' is set
-		if (trusteeOrgId === undefined || trusteeOrgId === null) {
+		if (trusteeOrgId === undefined || trusteeOrgId === null || trusteeOrgId === '') {
 			throw 'Missing the required parameter "trusteeOrgId" when calling putOrgauthorizationTrusteeGroupRoles';
 		}
 		// verify the required parameter 'trusteeGroupId' is set
-		if (trusteeGroupId === undefined || trusteeGroupId === null) {
+		if (trusteeGroupId === undefined || trusteeGroupId === null || trusteeGroupId === '') {
 			throw 'Missing the required parameter "trusteeGroupId" when calling putOrgauthorizationTrusteeGroupRoles';
 		}
 		// verify the required parameter 'body' is set
@@ -1195,11 +1242,11 @@ class OrganizationAuthorizationApi {
 	 */
 	putOrgauthorizationTrusteeUserRoledivisions(trusteeOrgId, trusteeUserId, body) { 
 		// verify the required parameter 'trusteeOrgId' is set
-		if (trusteeOrgId === undefined || trusteeOrgId === null) {
+		if (trusteeOrgId === undefined || trusteeOrgId === null || trusteeOrgId === '') {
 			throw 'Missing the required parameter "trusteeOrgId" when calling putOrgauthorizationTrusteeUserRoledivisions';
 		}
 		// verify the required parameter 'trusteeUserId' is set
-		if (trusteeUserId === undefined || trusteeUserId === null) {
+		if (trusteeUserId === undefined || trusteeUserId === null || trusteeUserId === '') {
 			throw 'Missing the required parameter "trusteeUserId" when calling putOrgauthorizationTrusteeUserRoledivisions';
 		}
 		// verify the required parameter 'body' is set
@@ -1230,11 +1277,11 @@ class OrganizationAuthorizationApi {
 	 */
 	putOrgauthorizationTrusteeUserRoles(trusteeOrgId, trusteeUserId, body) { 
 		// verify the required parameter 'trusteeOrgId' is set
-		if (trusteeOrgId === undefined || trusteeOrgId === null) {
+		if (trusteeOrgId === undefined || trusteeOrgId === null || trusteeOrgId === '') {
 			throw 'Missing the required parameter "trusteeOrgId" when calling putOrgauthorizationTrusteeUserRoles';
 		}
 		// verify the required parameter 'trusteeUserId' is set
-		if (trusteeUserId === undefined || trusteeUserId === null) {
+		if (trusteeUserId === undefined || trusteeUserId === null || trusteeUserId === '') {
 			throw 'Missing the required parameter "trusteeUserId" when calling putOrgauthorizationTrusteeUserRoles';
 		}
 		// verify the required parameter 'body' is set
@@ -1264,11 +1311,11 @@ class OrganizationAuthorizationApi {
 	 */
 	putOrgauthorizationTrustorCloneduser(trustorOrgId, trusteeUserId) { 
 		// verify the required parameter 'trustorOrgId' is set
-		if (trustorOrgId === undefined || trustorOrgId === null) {
+		if (trustorOrgId === undefined || trustorOrgId === null || trustorOrgId === '') {
 			throw 'Missing the required parameter "trustorOrgId" when calling putOrgauthorizationTrustorCloneduser';
 		}
 		// verify the required parameter 'trusteeUserId' is set
-		if (trusteeUserId === undefined || trusteeUserId === null) {
+		if (trusteeUserId === undefined || trusteeUserId === null || trusteeUserId === '') {
 			throw 'Missing the required parameter "trusteeUserId" when calling putOrgauthorizationTrustorCloneduser';
 		}
 
@@ -1294,11 +1341,11 @@ class OrganizationAuthorizationApi {
 	 */
 	putOrgauthorizationTrustorGroup(trustorOrgId, trustorGroupId) { 
 		// verify the required parameter 'trustorOrgId' is set
-		if (trustorOrgId === undefined || trustorOrgId === null) {
+		if (trustorOrgId === undefined || trustorOrgId === null || trustorOrgId === '') {
 			throw 'Missing the required parameter "trustorOrgId" when calling putOrgauthorizationTrustorGroup';
 		}
 		// verify the required parameter 'trustorGroupId' is set
-		if (trustorGroupId === undefined || trustorGroupId === null) {
+		if (trustorGroupId === undefined || trustorGroupId === null || trustorGroupId === '') {
 			throw 'Missing the required parameter "trustorGroupId" when calling putOrgauthorizationTrustorGroup';
 		}
 
@@ -1324,11 +1371,11 @@ class OrganizationAuthorizationApi {
 	 */
 	putOrgauthorizationTrustorUser(trustorOrgId, trusteeUserId) { 
 		// verify the required parameter 'trustorOrgId' is set
-		if (trustorOrgId === undefined || trustorOrgId === null) {
+		if (trustorOrgId === undefined || trustorOrgId === null || trustorOrgId === '') {
 			throw 'Missing the required parameter "trustorOrgId" when calling putOrgauthorizationTrustorUser';
 		}
 		// verify the required parameter 'trusteeUserId' is set
-		if (trusteeUserId === undefined || trusteeUserId === null) {
+		if (trusteeUserId === undefined || trusteeUserId === null || trusteeUserId === '') {
 			throw 'Missing the required parameter "trusteeUserId" when calling putOrgauthorizationTrustorUser';
 		}
 

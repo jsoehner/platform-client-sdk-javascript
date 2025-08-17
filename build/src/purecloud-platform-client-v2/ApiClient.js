@@ -1,10 +1,12 @@
-import { default as axios } from 'axios';
 import Configuration from './configuration.js';
+import DefaultHttpClient from './DefaultHttpClient.js';
+import AbstractHttpClient from './AbstractHttpClient.js';
+import HttpRequestOptions from './HttpRequestOptions.js';
 import { default as qs } from 'qs';
 
 /**
  * @module purecloud-platform-client-v2/ApiClient
- * @version 174.0.0
+ * @version 229.1.0
  */
 class ApiClient {
 	/**
@@ -99,7 +101,7 @@ class ApiClient {
 		/**
 		 * The default HTTP timeout for all API calls.
 		 * @type {Number}
-		 * @default 60000
+		 * @default 16000
 		 */
 		this.timeout = 16000;
 
@@ -108,6 +110,9 @@ class ApiClient {
 
 		// Transparently request a new access token when it expires (Code Authorization only)
 		this.refreshInProgress = false;
+
+		this.httpClient;
+		this.proxyAgent;
 
 		this.config = new Configuration();
 
@@ -202,6 +207,126 @@ class ApiClient {
 		this.config.setEnvironment(environment);
 	}
 
+    /**
+     * @description Sets the dynamic HttpClient used by the client
+     * @param {object} httpClient - HttpClient to be injected
+     */
+    setHttpClient(httpClient) {
+        if (!(httpClient instanceof AbstractHttpClient)) {
+            throw new Error("httpclient must be an instance of AbstractHttpClient. See DefaultltHttpClient for a prototype");
+        }
+        this.httpClient = httpClient;
+    }
+
+	/**
+     * @description Gets the HttpClient used by the client
+     */
+	getHttpClient() {
+		if (this.httpClient) {
+			return this.httpClient;
+		} else {
+			this.httpClient =  new DefaultHttpClient(this.timeout, this.proxyAgent);
+			return this.httpClient;
+		}
+    }
+
+    /**
+      * @description Sets the certificate paths if MTLS authentication is needed
+      * @param {string} certPath - path for certs
+      * @param {string} keyPath - path for key
+      * @param {string} caPath - path for public certs
+      */
+	setMTLSCertificates(certPath, keyPath, caPath) {
+	    if (typeof window === 'undefined') {
+	    	const agentOptions = {}
+			if (certPath) {
+				agentOptions.cert = require('fs').readFileSync(certPath);
+			}
+
+			if (keyPath) {
+				agentOptions.key = require('fs').readFileSync(keyPath);
+			}
+
+			if (caPath) {
+				agentOptions.ca = require('fs').readFileSync(caPath);
+			}
+
+			agentOptions.rejectUnauthorized = true
+
+			this.proxyAgent = new require('https').Agent(agentOptions);
+			const httpClient = this.getHttpClient();
+			httpClient.setHttpsAgent(this.proxyAgent);
+	    } else {
+	         throw new Error("MTLS authentication is managed by the Browser itself. MTLS certificates cannot be set via code on Browser.");
+	    }
+    }
+
+    /**
+         * @description Sets preHook functions for the httpClient
+         * @param {string} preHook - method definition for prehook
+         */
+        setPreHook(preHook) {
+    		const httpClient = this.getHttpClient();
+    		httpClient.setPreHook(preHook);
+        }
+
+    /**
+          * @description Sets postHook functions for the httpClient
+          * @param {string} postHook - method definition for posthook
+          */
+         setPostHook(postHook) {
+        	const httpClient = this.getHttpClient();
+        	httpClient.setPostHook(postHook);
+         }
+
+    /**
+     * @description Sets the certificate content if MTLS authentication is needed
+     * @param {string} certContent - content for certs
+     * @param {string} keyContent - content for key
+     * @param {string} caContent - content for public certs
+     */
+    setMTLSContents(certContent, keyContent, caContent) {
+		if (typeof window === 'undefined') {
+	    	const agentOptions = {}
+			if (certContent) {
+				agentOptions.cert = certContent;
+			}
+
+			if (keyContent) {
+				agentOptions.key = keyContent;
+			}
+
+			if (caContent) {
+				agentOptions.ca = caContent;
+			}
+
+			agentOptions.rejectUnauthorized = true
+
+			this.proxyAgent = new require('https').Agent(agentOptions);
+			const httpClient = this.getHttpClient();
+			httpClient.setHttpsAgent(this.proxyAgent);
+	    } else {
+	         throw new Error("MTLS authentication is managed by the Browser itself. MTLS certificates cannot be set via code on Browser.");
+	    }
+    }
+
+
+
+	/**
+	 * @description Sets the gateway used by the session
+	 * @param {object} gateway - Gateway Configuration interface
+	 * @param {string} gateway.host - The address of the gateway.
+	 * @param {string} gateway.protocol - (optional) The protocol to use. It will default to "https" if the parameter is not defined or empty.
+	 * @param {string} gateway.port - (optional) The port to target. This parameter can be defined if a non default port is used and needs to be specified in the url (value must be greater than 0).
+	 * @param {string} gateway.path_params_login - (optional) An arbitrary string to be appended to the gateway url path for Login requests.
+	 * @param {string} gateway.path_params_api - (optional) An arbitrary string to be appended to the gateway url path for API requests.
+	 * @param {string} gateway.username - (optional) Not used at this stage (for a possible future use).
+	 * @param {string} gateway.password - (optional) Not used at this stage (for a possible future use).
+	 */
+	setGateway(gateway) {
+		this.config.setGateway(gateway);
+	}
+
 	/**
 	 * @description Initiates the implicit grant login flow. Will attempt to load the token from local storage, if enabled.
 	 * @param {string} clientId - The client ID of an OAuth Implicit Grant client
@@ -266,6 +391,7 @@ class ApiClient {
 	loginClientCredentialsGrant(clientId, clientSecret) {
 		this.clientId = clientId;
 		var authHeader = Buffer.from(`${clientId}:${clientSecret}`).toString('base64');
+		var loginBasePath = this.config.getConfUrl('login', `https://login.${this.config.environment}`);
 
 		return new Promise((resolve, reject) => {
 			// Block browsers from using client credentials
@@ -276,20 +402,17 @@ class ApiClient {
 			const headers = {
 				'Authorization': `Basic ${authHeader}`
 			}
-			axios({
-				method: `POST`,
-				url: `https://login.${this.config.environment}/oauth/token`,
-				headers: headers,
-				data: 'grant_type=client_credentials',
-				httpsAgent: this.proxyAgent
-			})
-				.then((response) => {
+
+            var requestOptions = new HttpRequestOptions(`${loginBasePath}/oauth/token`, `POST`, headers, null, 'grant_type=client_credentials', this.timeout);
+            const httpClient = this.getHttpClient();
+			httpClient.request(requestOptions)
+			       .then((response) => {
 					// Logging
 					this.config.logger.log(
 						'trace',
 						response.status,
 						'POST',
-						`https://login.${this.config.environment}/oauth/token`,
+						`${loginBasePath}/oauth/token`,
 						headers,
 						response.headers,
 						{ grant_type: 'client_credentials' },
@@ -299,7 +422,7 @@ class ApiClient {
 						'debug',
 						response.status,
 						'POST',
-						`https://login.${this.config.environment}/oauth/token`,
+						`${loginBasePath}/oauth/token`,
 						headers,
 						undefined,
 						{ grant_type: 'client_credentials' },
@@ -323,7 +446,7 @@ class ApiClient {
 							'error',
 							error.response.status,
 							'POST',
-							`https://login.${this.config.environment}/oauth/token`,
+							`${loginBasePath}/oauth/token`,
 							headers,
 							error.response.headers,
 							{ grant_type: 'client_credentials' },
@@ -344,6 +467,7 @@ class ApiClient {
 	 */
     loginSaml2BearerGrant(clientId, clientSecret, orgName, assertion) {
 		this.clientId = clientId;
+		var loginBasePath = this.config.getConfUrl('login', `https://login.${this.config.environment}`);
 		return new Promise((resolve, reject) => {
 			if (typeof window !== 'undefined') {
 				reject(new Error('The saml2bearer grant is not supported in a browser.'));
@@ -369,7 +493,7 @@ class ApiClient {
 						'trace',
 						response.status,
 						'POST',
-						`https://login.${this.config.environment}/oauth/token`,
+						`${loginBasePath}/oauth/token`,
 						request.headers,
 						response.headers,
 						bodyParam,
@@ -379,7 +503,7 @@ class ApiClient {
 						'debug',
 						response.status,
 						'POST',
-						`https://login.${this.config.environment}/oauth/token`,
+						`${loginBasePath}/oauth/token`,
 						request.headers,
 						undefined,
 						bodyParam,
@@ -403,7 +527,7 @@ class ApiClient {
 							'error',
 							error.response.status,
 							'POST',
-							`https://login.${this.config.environment}/oauth/token`,
+							`${loginBasePath}/oauth/token`,
 							request.headers,
 							error.response.headers,
 							bodyParam,
@@ -414,6 +538,338 @@ class ApiClient {
 				});
 		});
 	}
+
+	/**
+	 * @description Completes the PKCE Code Authorization.
+	 * @param {string} clientId - The client ID of an OAuth Code Authorization Grant client
+	 * @param {string} codeVerifier - code verifier used to generate the code challenge
+	 * @param {string} authCode - Authorization code
+	 * @param {string} redirectUri - Authorized redirect URI for your Code Authorization client
+	 */
+    authorizePKCEGrant(clientId, codeVerifier, authCode, redirectUri) {
+		this.clientId = clientId;
+		var loginBasePath = this.config.getConfUrl('login', `https://login.${this.config.environment}`);
+		return new Promise((resolve, reject) => {
+            var headers = {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            };
+            var data = qs.stringify({ grant_type: 'authorization_code',
+                code: authCode,
+                code_verifier: codeVerifier,
+                client_id: clientId,
+                redirect_uri: redirectUri });
+
+			var requestOptions = new HttpRequestOptions(`${loginBasePath}/oauth/token`, `POST`, headers, null, data, this.timeout);
+            const httpClient = this.getHttpClient();
+
+			var bodyParam = {
+				grant_type: 'authorization_code',
+                code: authCode,
+                code_verifier: codeVerifier,
+                client_id: clientId,
+                redirect_uri: redirectUri,
+			};
+			// Handle response
+			httpClient.request(requestOptions)
+			.then((response) => {
+				// Logging
+				this.config.logger.log(
+					'trace',
+					response.status,
+					'POST',
+					`${loginBasePath}/oauth/token`,
+					requestOptions.headers,
+					response.headers,
+					bodyParam,
+					undefined
+				);
+				this.config.logger.log(
+					'debug',
+					response.status,
+					'POST',
+					`${loginBasePath}/oauth/token`,
+					requestOptions.headers,
+					undefined,
+					bodyParam,
+					undefined
+				);
+
+				// Get access token from response
+				var access_token = response.data.access_token;
+
+				this.setAccessToken(access_token);
+				this.authData.tokenExpiryTime = new Date().getTime() + response.data['expires_in'] * 1000;
+				this.authData.tokenExpiryTimeString = new Date(this.authData.tokenExpiryTime).toUTCString();
+
+				// Return auth data
+				resolve(this.authData);
+			})
+			.catch((error) => {
+				// Log error
+				if (error.response) {
+					this.config.logger.log(
+						'error',
+						error.response.status,
+						'POST',
+						`${loginBasePath}/oauth/token`,
+						requestOptions.headers,
+						error.response.headers,
+						bodyParam,
+						error.response.data
+					);
+				}
+
+				reject(error);
+			});
+
+		});
+	}
+
+	/**
+	 * @description Generate a random string used as PKCE Code Verifier - length = 43 to 128.
+	 * @param {number} nChar - code length
+	 */
+	generatePKCECodeVerifier(nChar) {
+		if (nChar < 43 || nChar > 128) {
+			throw new Error(`PKCE Code Verifier (length) must be between 43 and 128 characters`);
+		}
+		// Check for window
+		if (typeof window === 'undefined') {
+			try {
+				const getRandomValues = require('crypto').getRandomValues;
+				const unreservedCharacters = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-._~";
+				let randomString = Array.from(getRandomValues(new Uint32Array(nChar)))
+					.map((x) => unreservedCharacters[x % unreservedCharacters.length])
+					.join('');
+				return randomString;
+			} catch (err) {
+				throw new Error(`Crypto module is missing/not supported.`);
+			}
+		} else {
+			const unreservedCharacters = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-._~";
+			let randomString = Array.from(crypto.getRandomValues(new Uint32Array(nChar)))
+				.map((x) => unreservedCharacters[x % unreservedCharacters.length])
+				.join('');
+			return randomString;
+		}
+	}
+
+	/**
+	 * @description Compute Base64Url PKCE Code Challenge from Code Verifier.
+	 * @param {string} code - code verifier used to generate the code challenge
+	 */
+	computePKCECodeChallenge(code) {
+		if (code.length < 43 || code.length > 128) {
+			throw new Error(`PKCE Code Verifier (length) must be between 43 and 128 characters`);
+		}
+		// Check for window
+		if (typeof window === 'undefined') {
+			// nodejs
+			try {
+				const createHash = require('crypto').createHash;
+				const utf8 = new TextEncoder().encode(code);
+				return new Promise((resolve, reject) => {
+					const hashHex = createHash('sha256').update(utf8).digest();
+					const hashBase64Url = Buffer.from(hashHex).toString('base64url');
+					resolve(hashBase64Url);
+				});
+			} catch (err) {
+				throw new Error(`Crypto module is missing/not supported.`);
+			}
+		} else {
+			// browser
+			const utf8 = new TextEncoder().encode(code);
+			return new Promise((resolve, reject) => {
+				window.crypto.subtle.digest("SHA-256", utf8).then((hashBuffer) => {
+					const hashBase64 = Buffer.from(hashBuffer).toString('base64');
+					let hashBase64Url = hashBase64.replaceAll("+", "-").replaceAll("/", "_");
+					hashBase64Url = hashBase64Url.split("=")[0];
+					resolve(hashBase64Url);
+				})
+				.catch((error) => {
+					// Handle failure
+					return reject(new Error(`Code Challenge Error ${error}`));
+				});
+			});
+		}
+	}
+
+	/**
+    * @description Initiates the pkce auth code grant login flow. Will attempt to load the token from local storage, if enabled.
+    * @param {string} clientId - The client ID of an OAuth Implicit Grant client
+    * @param {string} redirectUri - The redirect URI of the OAuth Implicit Grant client
+    * @param {object} opts - (optional) Additional options
+    * @param {string} opts.state - (optional) An arbitrary string to be passed back with the login response. Used for client apps to associate login responses with a request.
+    * @param {string} opts.org - (optional) The organization name that would normally used when specifying an organization name when logging in. This is only used when a provider is also specified.
+    * @param {string} opts.provider - (optional) Authentication provider to log in with e.g. okta, adfs, salesforce, onelogin. This is only used when an org is also specified.
+    * @param {string} codeVerifier - (optional) code verifier used to generate the code challenge
+    */
+    loginPKCEGrant(clientId, redirectUri, opts, codeVerifier) {
+		// Need Local Storage or non null codeVerifier as parameter
+		if (!this.hasLocalStorage && !codeVerifier) {
+			throw new Error(`loginPKCEGrant requires Local Storage or codeVerifier as input parameter`);
+		}
+        // Check for auth code in query
+        const query = this._setValuesFromUrlQuery();
+
+        this.clientId = clientId;
+        this.redirectUri = redirectUri;
+
+		this.codeVerifier = codeVerifier;
+
+        if (!opts) opts = {};
+
+        return new Promise((resolve, reject) => {
+            // Abort if org and provider are not set together
+            if (opts.org && !opts.provider) {
+                reject(new Error('opts.provider must be set if opts.org is set'));
+            } else if (opts.provider && !opts.org) {
+            	reject(new Error('opts.org must be set if opts.provider is set'));
+            }
+
+            // Abort on auth error
+            if (query && query.error) {
+				// remove codeVerifier from session storage
+				if (this.hasLocalStorage) {
+					sessionStorage.removeItem(`genesys_cloud_sdk_pkce_code_verifier`);
+				}
+				// reset access token if any was stored
+				this._saveSettings({ accessToken: undefined });
+                return reject(new Error(`[${query.error}] ${query.error_description}`));
+            }
+
+            // Get token on auth code
+            if (query && query.code) {
+				if (!this.codeVerifier) {
+					// load codeVerifier from session storage
+					if (this.hasLocalStorage) {
+						this.codeVerifier = sessionStorage.getItem(`genesys_cloud_sdk_pkce_code_verifier`);
+					}
+				}
+                this.authorizePKCEGrant(this.clientId, this.codeVerifier, query.code, this.redirectUri)
+                  .then(() => {
+                      // Do authenticated things
+                      this._testTokenAccess()
+                      .then(() => {
+                        if (!this.authData.state && query.state)
+                          this.authData.state = query.state;
+						// remove codeVerifier from session storage
+						if (this.hasLocalStorage) {
+							sessionStorage.removeItem(`genesys_cloud_sdk_pkce_code_verifier`);
+						}
+                        resolve(this.authData);
+                      })
+                      .catch((error) => {
+                        // Handle failure response
+                        this._saveSettings({ accessToken: undefined});
+						// remove codeVerifier from session storage
+						if (this.hasLocalStorage) {
+							sessionStorage.removeItem(`genesys_cloud_sdk_pkce_code_verifier`);
+						}
+                        return reject(new Error(`[${error.name}] ${error.msg}`));
+                      });
+                  })
+                  .catch((error) => {
+                    // Handle failure response
+                    this._saveSettings({ accessToken: undefined});
+					// remove codeVerifier from session storage
+					if (this.hasLocalStorage) {
+						sessionStorage.removeItem(`genesys_cloud_sdk_pkce_code_verifier`);
+					}
+                    return reject(new Error(`[${error.name}] ${error.msg}`));
+                  });
+            } else {
+                // Test token (if previously stored) and proceed with login
+                this._testTokenAccess()
+                  .then(() => {
+                    if (!this.authData.state && opts.state)
+                      this.authData.state = opts.state;
+                    resolve(this.authData);
+                  })
+                  .catch((error) => {
+					if (!this.codeVerifier) {
+						this.codeVerifier = this.generatePKCECodeVerifier(128);
+						// save codeVerifier in session storage
+						if (this.hasLocalStorage) {
+							sessionStorage.setItem(`genesys_cloud_sdk_pkce_code_verifier`, this.codeVerifier);
+						}
+					}
+                    this.computePKCECodeChallenge(this.codeVerifier)
+					.then((codeChallenge) => {
+                      var tokenQuery = {
+                        client_id: encodeURIComponent(this.clientId),
+                        redirect_uri: encodeURIComponent(this.redirectUri),
+                        code_challenge: encodeURIComponent(codeChallenge),
+                        response_type: 'code',
+                        code_challenge_method: 'S256'
+                      };
+                      if (opts.state) tokenQuery.state = encodeURIComponent(opts.state);
+                      if (opts.org) tokenQuery.org = encodeURIComponent(opts.org);
+                      if (opts.provider) tokenQuery.provider = encodeURIComponent(opts.provider);
+
+                      var url = this._buildAuthUrl('oauth/authorize', tokenQuery);
+                      window.location.replace(url);
+                    })
+                    .catch((err) => {
+                      return reject(new Error(`[${err.name}]`));
+                    });
+                  });
+            }
+		});
+	}
+
+    /**
+    * @description Parses the URL Query, grabs the code, and clears the query param. If no code is found, no action is taken.
+    */
+    _setValuesFromUrlQuery() {
+        // Check for window
+        if (!(typeof window !== 'undefined' && window.location.search)) return;
+
+        // Process query string
+        let query = {};
+        let queryParams = new URLSearchParams(window.location.search);
+        let code = queryParams.get('code');
+        let error = queryParams.get('error');
+		let errorDescription = queryParams.get('error_description');
+        let state = queryParams.get('state');
+
+        // Check for error
+        if (error) {
+            query.error = error;
+			if (errorDescription) {
+				query.error_description = errorDescription;
+			}
+            return query;
+        }
+
+        // Everything goes in here because we only want to act if we found an access token
+        if (code) {
+            query.code = code;
+            if (state) {
+				query.state = state;
+            }
+        }
+
+		// Remove code from URL
+		// Credit: https://stackoverflow.com/questions/1397329/how-to-remove-the-hash-from-window-location-with-javascript-without-page-refresh/5298684#5298684
+		var scrollV, scrollH, loc = window.location;
+		if ('replaceState' in history) {
+			history.replaceState('', document.title, loc.pathname);
+		} else {
+			// Prevent scrolling by storing the page's current scroll offset
+			scrollV = document.body.scrollTop;
+			scrollH = document.body.scrollLeft;
+
+			// Remove code
+			history.pushState('', document.title, loc.pathname);
+
+			// Restore the scroll offset, should be flicker free
+			document.body.scrollTop = scrollV;
+			document.body.scrollLeft = scrollH;
+		}
+
+		return query;
+    }
 
 	/**
 	 * @description Initiates the Code Authorization. Only available in node apps.
@@ -479,6 +935,8 @@ class ApiClient {
 	 * @param {function} reject - Promise reject callback
 	 */
 	_handleCodeAuthorizationResponse(request, bodyParam, resolve, reject) {
+		var loginBasePath = this.config.getConfUrl('login', `https://login.${this.config.environment}`);
+
 		request
 			.then((response) => {
 				// Logging
@@ -486,7 +944,7 @@ class ApiClient {
 					'trace',
 					response.status,
 					'POST',
-					`https://login.${this.config.environment}/oauth/token`,
+					`${loginBasePath}/oauth/token`,
 					request.headers,
 					response.headers,
 					bodyParam,
@@ -496,7 +954,7 @@ class ApiClient {
 					'debug',
 					response.status,
 					'POST',
-					`https://login.${this.config.environment}/oauth/token`,
+					`${loginBasePath}/oauth/token`,
 					request.headers,
 					undefined,
 					bodyParam,
@@ -522,7 +980,7 @@ class ApiClient {
 						'error',
 						error.response.status,
 						'POST',
-						`https://login.${this.config.environment}/oauth/token`,
+						`${loginBasePath}/oauth/token`,
 						request.headers,
 						error.response.headers,
 						bodyParam,
@@ -540,17 +998,14 @@ class ApiClient {
 	 * @param {object} data - data to url form encode
 	 */
 	_formAuthRequest(encodedData, data) {
-		var request = axios({
-			method: `POST`,
-			url: `https://login.${this.config.environment}/oauth/token`,
-			headers: {
-				'Authorization': 'Basic ' + encodedData,
-				'Content-Type': 'application/x-www-form-urlencoded'
-			},
-			data: qs.stringify(data)
-		});
-
-		return request;
+		var loginBasePath = this.config.getConfUrl('login', `https://login.${this.config.environment}`);
+		var headers = {
+			'Authorization': 'Basic ' + encodedData,
+			'Content-Type': 'application/x-www-form-urlencoded'
+		};
+		var requestOptions = new HttpRequestOptions(`${loginBasePath}/oauth/token`, `POST`, headers, null, qs.stringify(data), this.timeout);
+		const httpClient = this.getHttpClient();
+		return httpClient.request(requestOptions);
 	}
 
 	/**
@@ -731,7 +1186,8 @@ class ApiClient {
 	 */
 	_buildAuthUrl(path, query) {
 		if (!query) query = {};
-		return Object.keys(query).reduce((url, key) => !query[key] ? url : `${url}&${key}=${query[key]}`, `${this.config.authUrl}/${path}?`);
+		var loginBasePath = this.config.getConfUrl('login', this.config.authUrl);
+		return Object.keys(query).reduce((url, key) => !query[key] ? url : `${url}&${key}=${query[key]}`, `${loginBasePath}/${path}?`);
 	}
 
 	/**
@@ -745,6 +1201,9 @@ class ApiClient {
 		}
 		if (param instanceof Date) {
 			return param.toJSON();
+		}
+		if (param instanceof Boolean) {
+			return param.toString().toLowerCase();
 		}
 		return param.toString();
 	}
@@ -790,7 +1249,7 @@ class ApiClient {
 		if (!path.match(/^\//)) {
 			path = `/${path}`;
 		}
-		var url = this.config.basePath + path;
+		var url = this.config.getConfUrl('api', this.config.basePath) + path;
 		url = url.replace(/\{([\w-]+)\}/g, (fullMatch, key) => {
 			var value;
 			if (pathParams.hasOwnProperty(key)) {
@@ -941,15 +1400,15 @@ class ApiClient {
 							data[auth.name] = auth.apiKey;
 						}
 						if (auth['in'] === 'header') {
-							request.headers = this.addHeaders(request.headers, data);
+							request.headers =  this.addHeaders(request.headers, data);
 						} else {
-							request.params = this.serialize(data);
+							request.setParams(this.serialize(data));
 						}
 					}
 					break;
 				case 'oauth2':
 					if (auth.accessToken) {
-						request.headers = this.addHeaders(request.headers, {'Authorization': `Bearer ${auth.accessToken}`});
+						request.headers =  this.addHeaders(request.headers, {'Authorization': `Bearer ${auth.accessToken}`});
 					}
 					break;
 				default:
@@ -959,12 +1418,17 @@ class ApiClient {
 	}
 
 	/**
-	 * @description Sets the proxy agent axios will use for requests 
+	 * @description Sets the proxy agent axios will use for requests
 	 * @param {any} agent - The proxy agent
 	 */
 	setProxyAgent(agent) {
-		this.proxyAgent = agent
+		this.proxyAgent = agent;
+		const httpClient = this.getHttpClient();
+		httpClient.setHttpsAgent(this.proxyAgent);
 	}
+
+
+
 
 	/**
 	 * Invokes the REST service using the supplied settings and parameters.
@@ -986,13 +1450,7 @@ class ApiClient {
 			sendRequest(this);
 			function sendRequest(that) {
 				var url = that.buildUrl(path, pathParams);
-				var request = {
-					method: httpMethod,
-					url: url,	
-					httpsAgent: that.proxyAgent,
-					timeout: that.timeout,
-					params: that.serialize(queryParams)
-				};
+			    var request = new HttpRequestOptions(url, httpMethod, null, that.serialize(queryParams), null, that.timeout);
 
 				// apply authentications
 				that.applyAuthToRequest(request, authNames);
@@ -1010,7 +1468,7 @@ class ApiClient {
 				}
 
 				if (contentType === 'application/x-www-form-urlencoded') {
-					request.data = that.normalizeParams(formParams);
+					request.setData(that.normalizeParams(formParams));
 				} else if (contentType == 'multipart/form-data') {
 					var _formParams = that.normalizeParams(formParams);
 					for (var key in _formParams) {
@@ -1018,18 +1476,20 @@ class ApiClient {
 							// Looks like axios handles files and forms the same way
 							var formData = new FormData();
 							formData.set(key, _formParams[key]);
-							request.data = formData;
+							request.setData(formData);
 						}
 					}
 				} else if (bodyParam) {
-					request.data = bodyParam;
+					request.setData(bodyParam);
 				}
 
 				var accept = that.jsonPreferredMime(accepts);
 				if (accept) {
 					request.headers['Accept'] = accept;
 				}
-				axios.request(request)
+
+				const httpClient = that.getHttpClient();
+				httpClient.request(request)
 					.then((response) => {
 						// Build response object
 						var data = (that.returnExtended === true) ? {
@@ -1050,8 +1510,8 @@ class ApiClient {
 					})
 					.catch((error) => {
 						var data = error
-						if (error.response && error.response.status == 401 && that.config.refresh_access_token && that.authData.refreshToken !== "") {
-							that._handleExpiredAccessToken()
+						if (error.response && error.response.status == 401 && that.config.refresh_access_token && that.authData.refreshToken && that.authData.refreshToken !== "") {
+						    that._handleExpiredAccessToken()
 								.then(() => {
 									sendRequest(that);
 								})

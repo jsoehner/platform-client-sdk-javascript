@@ -5,7 +5,7 @@ class TokensApi {
 	/**
 	 * Tokens service.
 	 * @module purecloud-platform-client-v2/api/TokensApi
-	 * @version 174.0.0
+	 * @version 229.1.0
 	 */
 
 	/**
@@ -27,7 +27,7 @@ class TokensApi {
 	 */
 	deleteToken(userId) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling deleteToken';
 		}
 
@@ -92,7 +92,6 @@ class TokensApi {
 	/**
 	 * Get the current Idle Token Timeout Value
 	 * 
-	 * getTokensTimeout is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getTokensTimeout() { 
 
@@ -135,7 +134,6 @@ class TokensApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
-	 * putTokensTimeout is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	putTokensTimeout(opts) { 
 		opts = opts || {};

@@ -1,23 +1,76 @@
----
-title: FlowsApi
----
+# FlowsApi
+
 # platformClient.FlowsApi
 
 All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-[**getAnalyticsFlowsAggregatesJob**](FlowsApi.html#getAnalyticsFlowsAggregatesJob) | **GET** /api/v2/analytics/flows/aggregates/jobs/{jobId} | Get status for async query for Flow aggregates
-[**getAnalyticsFlowsAggregatesJobResults**](FlowsApi.html#getAnalyticsFlowsAggregatesJobResults) | **GET** /api/v2/analytics/flows/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query
-[**postAnalyticsFlowsActivityQuery**](FlowsApi.html#postAnalyticsFlowsActivityQuery) | **POST** /api/v2/analytics/flows/activity/query | Query for flow activity observations
-[**postAnalyticsFlowsAggregatesJobs**](FlowsApi.html#postAnalyticsFlowsAggregatesJobs) | **POST** /api/v2/analytics/flows/aggregates/jobs | Query for flow aggregates asynchronously
-[**postAnalyticsFlowsAggregatesQuery**](FlowsApi.html#postAnalyticsFlowsAggregatesQuery) | **POST** /api/v2/analytics/flows/aggregates/query | Query for flow aggregates
-[**postAnalyticsFlowsObservationsQuery**](FlowsApi.html#postAnalyticsFlowsObservationsQuery) | **POST** /api/v2/analytics/flows/observations/query | Query for flow observations
-{: class="table table-striped"}
+[**deleteAnalyticsFlowsAggregatesJob**](FlowsApi#deleteAnalyticsFlowsAggregatesJob) | **DELETE** /api/v2/analytics/flows/aggregates/jobs/{jobId} | Delete/cancel an async request for flow aggregates
+[**getAnalyticsFlowsAggregatesJob**](FlowsApi#getAnalyticsFlowsAggregatesJob) | **GET** /api/v2/analytics/flows/aggregates/jobs/{jobId} | Get status for async query for Flow aggregates
+[**getAnalyticsFlowsAggregatesJobResults**](FlowsApi#getAnalyticsFlowsAggregatesJobResults) | **GET** /api/v2/analytics/flows/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query
+[**postAnalyticsFlowsActivityQuery**](FlowsApi#postAnalyticsFlowsActivityQuery) | **POST** /api/v2/analytics/flows/activity/query | Query for flow activity observations
+[**postAnalyticsFlowsAggregatesJobs**](FlowsApi#postAnalyticsFlowsAggregatesJobs) | **POST** /api/v2/analytics/flows/aggregates/jobs | Query for flow aggregates asynchronously
+[**postAnalyticsFlowsAggregatesQuery**](FlowsApi#postAnalyticsFlowsAggregatesQuery) | **POST** /api/v2/analytics/flows/aggregates/query | Query for flow aggregates
+[**postAnalyticsFlowsObservationsQuery**](FlowsApi#postAnalyticsFlowsObservationsQuery) | **POST** /api/v2/analytics/flows/observations/query | Query for flow observations
 
-<a name="getAnalyticsFlowsAggregatesJob"></a>
 
-# AsyncQueryStatus getAnalyticsFlowsAggregatesJob(jobId)
+
+## deleteAnalyticsFlowsAggregatesJob
+
+> void deleteAnalyticsFlowsAggregatesJob(jobId)
+
+
+DELETE /api/v2/analytics/flows/aggregates/jobs/{jobId}
+
+Delete/cancel an async request for flow aggregates
+
+deleteAnalyticsFlowsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* analytics:flowAggregate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.FlowsApi();
+
+let jobId = "jobId_example"; // String | jobId
+
+apiInstance.deleteAnalyticsFlowsAggregatesJob(jobId)
+  .then(() => {
+    console.log('deleteAnalyticsFlowsAggregatesJob returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteAnalyticsFlowsAggregatesJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | jobId |  |
+
+### Return type
+
+void (no response body)
+
+
+## getAnalyticsFlowsAggregatesJob
+
+> AsyncQueryStatus getAnalyticsFlowsAggregatesJob(jobId)
 
 
 GET /api/v2/analytics/flows/aggregates/jobs/{jobId}
@@ -38,7 +91,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.FlowsApi();
@@ -61,15 +114,15 @@ apiInstance.getAnalyticsFlowsAggregatesJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AsyncQueryStatus**
 
-<a name="getAnalyticsFlowsAggregatesJobResults"></a>
 
-# FlowAsyncAggregateQueryResponse getAnalyticsFlowsAggregatesJobResults(jobId, opts)
+## getAnalyticsFlowsAggregatesJobResults
+
+> FlowAsyncAggregateQueryResponse getAnalyticsFlowsAggregatesJobResults(jobId, opts)
 
 
 GET /api/v2/analytics/flows/aggregates/jobs/{jobId}/results
@@ -90,7 +143,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.FlowsApi();
@@ -117,22 +170,20 @@ apiInstance.getAnalyticsFlowsAggregatesJobResults(jobId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
  **cursor** | **String** | Cursor token to retrieve next page | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **FlowAsyncAggregateQueryResponse**
 
-<a name="postAnalyticsFlowsActivityQuery"></a>
 
-# FlowActivityResponse postAnalyticsFlowsActivityQuery(body, opts)
+## postAnalyticsFlowsActivityQuery
+
+> FlowActivityResponse postAnalyticsFlowsActivityQuery(body, opts)
 
 
 POST /api/v2/analytics/flows/activity/query
 
 Query for flow activity observations
-
-postAnalyticsFlowsActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -146,7 +197,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.FlowsApi();
@@ -175,15 +226,15 @@ apiInstance.postAnalyticsFlowsActivityQuery(body, opts)
  **body** | **Object** | query |  |
  **pageSize** | **Number** | The desired page size | [optional]  |
  **pageNumber** | **Number** | The desired page number | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **FlowActivityResponse**
 
-<a name="postAnalyticsFlowsAggregatesJobs"></a>
 
-# AsyncQueryResponse postAnalyticsFlowsAggregatesJobs(body)
+## postAnalyticsFlowsAggregatesJobs
+
+> AsyncQueryResponse postAnalyticsFlowsAggregatesJobs(body)
 
 
 POST /api/v2/analytics/flows/aggregates/jobs
@@ -204,7 +255,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.FlowsApi();
@@ -227,15 +278,15 @@ apiInstance.postAnalyticsFlowsAggregatesJobs(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AsyncQueryResponse**
 
-<a name="postAnalyticsFlowsAggregatesQuery"></a>
 
-# FlowAggregateQueryResponse postAnalyticsFlowsAggregatesQuery(body)
+## postAnalyticsFlowsAggregatesQuery
+
+> FlowAggregateQueryResponse postAnalyticsFlowsAggregatesQuery(body)
 
 
 POST /api/v2/analytics/flows/aggregates/query
@@ -254,7 +305,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.FlowsApi();
@@ -277,15 +328,15 @@ apiInstance.postAnalyticsFlowsAggregatesQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **FlowAggregateQueryResponse**
 
-<a name="postAnalyticsFlowsObservationsQuery"></a>
 
-# FlowObservationQueryResponse postAnalyticsFlowsObservationsQuery(body)
+## postAnalyticsFlowsObservationsQuery
+
+> FlowObservationQueryResponse postAnalyticsFlowsObservationsQuery(body)
 
 
 POST /api/v2/analytics/flows/observations/query
@@ -304,7 +355,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.FlowsApi();
@@ -327,9 +378,10 @@ apiInstance.postAnalyticsFlowsObservationsQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **FlowObservationQueryResponse**
 
+
+_purecloud-platform-client-v2@229.1.0_

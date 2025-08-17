@@ -5,7 +5,7 @@ class ObjectsApi {
 	/**
 	 * Objects service.
 	 * @module purecloud-platform-client-v2/api/ObjectsApi
-	 * @version 174.0.0
+	 * @version 229.1.0
 	 */
 
 	/**
@@ -25,13 +25,13 @@ class ObjectsApi {
 	 * 
 	 * @param {String} divisionId Division ID
 	 * @param {Object} opts Optional parameters
-	 * @param {Boolean} opts.force Force delete this division as well as the grants and objects associated with it (default to false)
+	 * @param {Boolean} opts.force DEPRECATED -  Force delete this division. Warning: This option may cause any remaining objects in this division to be inaccessible. (default to false)
 	 */
 	deleteAuthorizationDivision(divisionId, opts) { 
 		opts = opts || {};
 		
 		// verify the required parameter 'divisionId' is set
-		if (divisionId === undefined || divisionId === null) {
+		if (divisionId === undefined || divisionId === null || divisionId === '') {
 			throw 'Missing the required parameter "divisionId" when calling deleteAuthorizationDivision';
 		}
 
@@ -60,7 +60,7 @@ class ObjectsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'divisionId' is set
-		if (divisionId === undefined || divisionId === null) {
+		if (divisionId === undefined || divisionId === null || divisionId === '') {
 			throw 'Missing the required parameter "divisionId" when calling getAuthorizationDivision';
 		}
 
@@ -111,6 +111,31 @@ class ObjectsApi {
 	}
 
 	/**
+	 * Get a list of soft deleted divisions for the org
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 */
+	getAuthorizationDivisionsDeleted(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/authorization/divisions/deleted', 
+			'GET', 
+			{  },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Retrieve the home division for the organization.
 	 * Will not include object counts.
 	 */
@@ -151,6 +176,34 @@ class ObjectsApi {
 	}
 
 	/**
+	 * Retrieve a list of all divisions defined for the organization with cursor
+	 * Use "after" and "before" param to fetch next/previous page}
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
+	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
+	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
+	 * @param {Array.<String>} opts.id Optionally request specific divisions by their IDs
+	 * @param {String} opts.name Optionally request specific divisions by division name
+	 */
+	getAuthorizationDivisionsQuery(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/authorization/divisions/query', 
+			'GET', 
+			{  },
+			{ 'before': opts['before'],'after': opts['after'],'pageSize': opts['pageSize'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'name': opts['name'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Assign a list of objects to a division
 	 * Set the division of a specified list of objects. The objects must all be of the same type, one of:  CAMPAIGN, MANAGEMENTUNIT, FLOW, QUEUE, DATATABLES or USER.  The body of the request is a list of object IDs, which are expected to be  GUIDs, e.g. ["206ce31f-61ec-40ed-a8b1-be6f06303998","250a754e-f5e4-4f51-800f-a92f09d3bf8c"]
 	 * @param {String} divisionId Division ID
@@ -159,11 +212,11 @@ class ObjectsApi {
 	 */
 	postAuthorizationDivisionObject(divisionId, objectType, body) { 
 		// verify the required parameter 'divisionId' is set
-		if (divisionId === undefined || divisionId === null) {
+		if (divisionId === undefined || divisionId === null || divisionId === '') {
 			throw 'Missing the required parameter "divisionId" when calling postAuthorizationDivisionObject';
 		}
 		// verify the required parameter 'objectType' is set
-		if (objectType === undefined || objectType === null) {
+		if (objectType === undefined || objectType === null || objectType === '') {
 			throw 'Missing the required parameter "objectType" when calling postAuthorizationDivisionObject';
 		}
 		// verify the required parameter 'body' is set
@@ -193,7 +246,7 @@ class ObjectsApi {
 	 */
 	postAuthorizationDivisionRestore(divisionId, body) { 
 		// verify the required parameter 'divisionId' is set
-		if (divisionId === undefined || divisionId === null) {
+		if (divisionId === undefined || divisionId === null || divisionId === '') {
 			throw 'Missing the required parameter "divisionId" when calling postAuthorizationDivisionRestore';
 		}
 		// verify the required parameter 'body' is set
@@ -248,7 +301,7 @@ class ObjectsApi {
 	 */
 	putAuthorizationDivision(divisionId, body) { 
 		// verify the required parameter 'divisionId' is set
-		if (divisionId === undefined || divisionId === null) {
+		if (divisionId === undefined || divisionId === null || divisionId === '') {
 			throw 'Missing the required parameter "divisionId" when calling putAuthorizationDivision';
 		}
 		// verify the required parameter 'body' is set

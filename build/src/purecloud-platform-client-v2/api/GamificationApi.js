@@ -5,7 +5,7 @@ class GamificationApi {
 	/**
 	 * Gamification service.
 	 * @module purecloud-platform-client-v2/api/GamificationApi
-	 * @version 174.0.0
+	 * @version 229.1.0
 	 */
 
 	/**
@@ -27,7 +27,7 @@ class GamificationApi {
 	 */
 	deleteEmployeeperformanceExternalmetricsDefinition(metricId) { 
 		// verify the required parameter 'metricId' is set
-		if (metricId === undefined || metricId === null) {
+		if (metricId === undefined || metricId === null || metricId === '') {
 			throw 'Missing the required parameter "metricId" when calling deleteEmployeeperformanceExternalmetricsDefinition';
 		}
 
@@ -46,13 +46,38 @@ class GamificationApi {
 	}
 
 	/**
+	 * Delete a Contest by Id
+	 * 
+	 * @param {String} contestId The ID of the contest
+	 */
+	deleteGamificationContest(contestId) { 
+		// verify the required parameter 'contestId' is set
+		if (contestId === undefined || contestId === null || contestId === '') {
+			throw 'Missing the required parameter "contestId" when calling deleteGamificationContest';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/gamification/contests/{contestId}', 
+			'DELETE', 
+			{ 'contestId': contestId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get an External Metric Definition
 	 * 
 	 * @param {String} metricId Specifies the External Metric Definition ID
 	 */
 	getEmployeeperformanceExternalmetricsDefinition(metricId) { 
 		// verify the required parameter 'metricId' is set
-		if (metricId === undefined || metricId === null) {
+		if (metricId === undefined || metricId === null || metricId === '') {
 			throw 'Missing the required parameter "metricId" when calling getEmployeeperformanceExternalmetricsDefinition';
 		}
 
@@ -86,6 +111,236 @@ class GamificationApi {
 			'GET', 
 			{  },
 			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a Contest by Id
+	 * 
+	 * @param {String} contestId The ID of the contest
+	 */
+	getGamificationContest(contestId) { 
+		// verify the required parameter 'contestId' is set
+		if (contestId === undefined || contestId === null || contestId === '') {
+			throw 'Missing the required parameter "contestId" when calling getGamificationContest';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/gamification/contests/{contestId}', 
+			'GET', 
+			{ 'contestId': contestId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get Contest Scores (Admin)
+	 * 
+	 * @param {String} contestId The ID of the contest
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber  (default to 1)
+	 * @param {Number} opts.pageSize  (default to 25)
+	 * @param {String} opts.workday Target querying workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {Object} opts.returnsView Desired response results (default to All)
+	 */
+	getGamificationContestAgentsScores(contestId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'contestId' is set
+		if (contestId === undefined || contestId === null || contestId === '') {
+			throw 'Missing the required parameter "contestId" when calling getGamificationContestAgentsScores';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/gamification/contests/{contestId}/agents/scores', 
+			'GET', 
+			{ 'contestId': contestId },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'workday': opts['workday'],'returnsView': opts['returnsView'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get Contest Scores for the requesting Agent/Supervisor
+	 * 
+	 * @param {String} contestId The ID of the contest
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber  (default to 1)
+	 * @param {Number} opts.pageSize  (default to 25)
+	 * @param {String} opts.workday Target querying workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {Object} opts.returnsView Desired response results (Supervisor Only) (default to All)
+	 */
+	getGamificationContestAgentsScoresMe(contestId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'contestId' is set
+		if (contestId === undefined || contestId === null || contestId === '') {
+			throw 'Missing the required parameter "contestId" when calling getGamificationContestAgentsScoresMe';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/gamification/contests/{contestId}/agents/scores/me', 
+			'GET', 
+			{ 'contestId': contestId },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'workday': opts['workday'],'returnsView': opts['returnsView'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a Contest Score Trend (Average Trend)
+	 * 
+	 * @param {String} contestId The ID of the contest
+	 */
+	getGamificationContestAgentsScoresTrends(contestId) { 
+		// verify the required parameter 'contestId' is set
+		if (contestId === undefined || contestId === null || contestId === '') {
+			throw 'Missing the required parameter "contestId" when calling getGamificationContestAgentsScoresTrends';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/gamification/contests/{contestId}/agents/scores/trends', 
+			'GET', 
+			{ 'contestId': contestId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a Contest Score Trend for the requesting Agent
+	 * 
+	 * @param {String} contestId The ID of the contest
+	 */
+	getGamificationContestAgentsScoresTrendsMe(contestId) { 
+		// verify the required parameter 'contestId' is set
+		if (contestId === undefined || contestId === null || contestId === '') {
+			throw 'Missing the required parameter "contestId" when calling getGamificationContestAgentsScoresTrendsMe';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/gamification/contests/{contestId}/agents/scores/trends/me', 
+			'GET', 
+			{ 'contestId': contestId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a Contest Prize Image by Id
+	 * 
+	 * @param {String} contestId The ID of the contest
+	 * @param {String} prizeImageId The ID of the prize image
+	 */
+	getGamificationContestPrizeimage(contestId, prizeImageId) { 
+		// verify the required parameter 'contestId' is set
+		if (contestId === undefined || contestId === null || contestId === '') {
+			throw 'Missing the required parameter "contestId" when calling getGamificationContestPrizeimage';
+		}
+		// verify the required parameter 'prizeImageId' is set
+		if (prizeImageId === undefined || prizeImageId === null || prizeImageId === '') {
+			throw 'Missing the required parameter "prizeImageId" when calling getGamificationContestPrizeimage';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/gamification/contests/{contestId}/prizeimages/{prizeImageId}', 
+			'GET', 
+			{ 'contestId': contestId,'prizeImageId': prizeImageId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a List of Contests (Admin)
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber  (default to 1)
+	 * @param {Number} opts.pageSize  (default to 25)
+	 * @param {String} opts.dateStart Start date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {String} opts.dateEnd End date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {Array.<String>} opts.status 
+	 * @param {Object} opts.sortBy  (default to dateStart)
+	 * @param {Object} opts.sortOrder  (default to desc)
+	 */
+	getGamificationContests(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/gamification/contests', 
+			'GET', 
+			{  },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'dateStart': opts['dateStart'],'dateEnd': opts['dateEnd'],'status': this.apiClient.buildCollectionParam(opts['status'], 'multi'),'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a List of Contests (Agent/Supervisor)
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber  (default to 1)
+	 * @param {Number} opts.pageSize  (default to 25)
+	 * @param {String} opts.dateStart Start date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {String} opts.dateEnd End date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {Array.<String>} opts.status 
+	 * @param {Object} opts.sortBy  (default to dateStart)
+	 * @param {Object} opts.sortOrder  (default to desc)
+	 * @param {Object} opts.view  (default to participant)
+	 */
+	getGamificationContestsMe(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/gamification/contests/me', 
+			'GET', 
+			{  },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'dateStart': opts['dateStart'],'dateEnd': opts['dateEnd'],'status': this.apiClient.buildCollectionParam(opts['status'], 'multi'),'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'view': opts['view'] },
 			{  },
 			{  },
 			null, 
@@ -345,6 +600,62 @@ class GamificationApi {
 	}
 
 	/**
+	 * Get insights rankings
+	 * 
+	 * @param {Object} filterType Filter type for the query request.
+	 * @param {String} filterId ID for the filter type.
+	 * @param {Object} granularity Granularity
+	 * @param {String} comparativePeriodStartWorkday The start work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {String} primaryPeriodStartWorkday The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+	 * @param {Object} sortKey Sort key
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.sortMetricId Sort Metric Id
+	 * @param {Number} opts.sectionSize The number of top and bottom users to return before ties
+	 * @param {String} opts.userIds A list of up to 100 comma-separated user Ids
+	 */
+	getGamificationInsightsRankings(filterType, filterId, granularity, comparativePeriodStartWorkday, primaryPeriodStartWorkday, sortKey, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'filterType' is set
+		if (filterType === undefined || filterType === null) {
+			throw 'Missing the required parameter "filterType" when calling getGamificationInsightsRankings';
+		}
+		// verify the required parameter 'filterId' is set
+		if (filterId === undefined || filterId === null) {
+			throw 'Missing the required parameter "filterId" when calling getGamificationInsightsRankings';
+		}
+		// verify the required parameter 'granularity' is set
+		if (granularity === undefined || granularity === null) {
+			throw 'Missing the required parameter "granularity" when calling getGamificationInsightsRankings';
+		}
+		// verify the required parameter 'comparativePeriodStartWorkday' is set
+		if (comparativePeriodStartWorkday === undefined || comparativePeriodStartWorkday === null) {
+			throw 'Missing the required parameter "comparativePeriodStartWorkday" when calling getGamificationInsightsRankings';
+		}
+		// verify the required parameter 'primaryPeriodStartWorkday' is set
+		if (primaryPeriodStartWorkday === undefined || primaryPeriodStartWorkday === null) {
+			throw 'Missing the required parameter "primaryPeriodStartWorkday" when calling getGamificationInsightsRankings';
+		}
+		// verify the required parameter 'sortKey' is set
+		if (sortKey === undefined || sortKey === null) {
+			throw 'Missing the required parameter "sortKey" when calling getGamificationInsightsRankings';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/gamification/insights/rankings', 
+			'GET', 
+			{  },
+			{ 'filterType': filterType,'filterId': filterId,'granularity': granularity,'comparativePeriodStartWorkday': comparativePeriodStartWorkday,'primaryPeriodStartWorkday': primaryPeriodStartWorkday,'sortKey': sortKey,'sortMetricId': opts['sortMetricId'],'sectionSize': opts['sectionSize'],'userIds': opts['userIds'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get insights user trend for the current user
 	 * 
 	 * @param {Object} filterType Filter type for the query request.
@@ -411,7 +722,7 @@ class GamificationApi {
 	 */
 	getGamificationInsightsUserDetails(userId, filterType, filterId, granularity, comparativePeriodStartWorkday, primaryPeriodStartWorkday) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getGamificationInsightsUserDetails';
 		}
 		// verify the required parameter 'filterType' is set
@@ -463,7 +774,7 @@ class GamificationApi {
 	 */
 	getGamificationInsightsUserTrends(userId, filterType, filterId, granularity, comparativePeriodStartWorkday, comparativePeriodEndWorkday, primaryPeriodStartWorkday, primaryPeriodEndWorkday) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getGamificationInsightsUserTrends';
 		}
 		// verify the required parameter 'filterType' is set
@@ -644,7 +955,7 @@ class GamificationApi {
 	 */
 	getGamificationMetricdefinition(metricDefinitionId) { 
 		// verify the required parameter 'metricDefinitionId' is set
-		if (metricDefinitionId === undefined || metricDefinitionId === null) {
+		if (metricDefinitionId === undefined || metricDefinitionId === null || metricDefinitionId === '') {
 			throw 'Missing the required parameter "metricDefinitionId" when calling getGamificationMetricdefinition';
 		}
 
@@ -689,7 +1000,7 @@ class GamificationApi {
 	 */
 	getGamificationProfile(profileId) { 
 		// verify the required parameter 'profileId' is set
-		if (profileId === undefined || profileId === null) {
+		if (profileId === undefined || profileId === null || profileId === '') {
 			throw 'Missing the required parameter "profileId" when calling getGamificationProfile';
 		}
 
@@ -714,7 +1025,7 @@ class GamificationApi {
 	 */
 	getGamificationProfileMembers(profileId) { 
 		// verify the required parameter 'profileId' is set
-		if (profileId === undefined || profileId === null) {
+		if (profileId === undefined || profileId === null || profileId === '') {
 			throw 'Missing the required parameter "profileId" when calling getGamificationProfileMembers';
 		}
 
@@ -744,11 +1055,11 @@ class GamificationApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'profileId' is set
-		if (profileId === undefined || profileId === null) {
+		if (profileId === undefined || profileId === null || profileId === '') {
 			throw 'Missing the required parameter "profileId" when calling getGamificationProfileMetric';
 		}
 		// verify the required parameter 'metricId' is set
-		if (metricId === undefined || metricId === null) {
+		if (metricId === undefined || metricId === null || metricId === '') {
 			throw 'Missing the required parameter "metricId" when calling getGamificationProfileMetric';
 		}
 
@@ -779,7 +1090,7 @@ class GamificationApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'profileId' is set
-		if (profileId === undefined || profileId === null) {
+		if (profileId === undefined || profileId === null || profileId === '') {
 			throw 'Missing the required parameter "profileId" when calling getGamificationProfileMetrics';
 		}
 
@@ -808,7 +1119,7 @@ class GamificationApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'profileId' is set
-		if (profileId === undefined || profileId === null) {
+		if (profileId === undefined || profileId === null || profileId === '') {
 			throw 'Missing the required parameter "profileId" when calling getGamificationProfileMetricsObjectivedetails';
 		}
 
@@ -857,7 +1168,7 @@ class GamificationApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getGamificationProfilesUser';
 		}
 
@@ -1078,15 +1389,15 @@ class GamificationApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'profileId' is set
-		if (profileId === undefined || profileId === null) {
+		if (profileId === undefined || profileId === null || profileId === '') {
 			throw 'Missing the required parameter "profileId" when calling getGamificationScorecardsProfileMetricUserValuesTrends';
 		}
 		// verify the required parameter 'metricId' is set
-		if (metricId === undefined || metricId === null) {
+		if (metricId === undefined || metricId === null || metricId === '') {
 			throw 'Missing the required parameter "metricId" when calling getGamificationScorecardsProfileMetricUserValuesTrends';
 		}
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getGamificationScorecardsProfileMetricUserValuesTrends';
 		}
 		// verify the required parameter 'startWorkday' is set
@@ -1129,11 +1440,11 @@ class GamificationApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'profileId' is set
-		if (profileId === undefined || profileId === null) {
+		if (profileId === undefined || profileId === null || profileId === '') {
 			throw 'Missing the required parameter "profileId" when calling getGamificationScorecardsProfileMetricUsersValuesTrends';
 		}
 		// verify the required parameter 'metricId' is set
-		if (metricId === undefined || metricId === null) {
+		if (metricId === undefined || metricId === null || metricId === '') {
 			throw 'Missing the required parameter "metricId" when calling getGamificationScorecardsProfileMetricUsersValuesTrends';
 		}
 		// verify the required parameter 'filterType' is set
@@ -1179,11 +1490,11 @@ class GamificationApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'profileId' is set
-		if (profileId === undefined || profileId === null) {
+		if (profileId === undefined || profileId === null || profileId === '') {
 			throw 'Missing the required parameter "profileId" when calling getGamificationScorecardsProfileMetricValuesTrends';
 		}
 		// verify the required parameter 'metricId' is set
-		if (metricId === undefined || metricId === null) {
+		if (metricId === undefined || metricId === null || metricId === '') {
 			throw 'Missing the required parameter "metricId" when calling getGamificationScorecardsProfileMetricValuesTrends';
 		}
 		// verify the required parameter 'startWorkday' is set
@@ -1221,7 +1532,7 @@ class GamificationApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getGamificationScorecardsUser';
 		}
 		// verify the required parameter 'workday' is set
@@ -1252,7 +1563,7 @@ class GamificationApi {
 	 */
 	getGamificationScorecardsUserAttendance(userId, startWorkday, endWorkday) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getGamificationScorecardsUserAttendance';
 		}
 		// verify the required parameter 'startWorkday' is set
@@ -1285,7 +1596,7 @@ class GamificationApi {
 	 */
 	getGamificationScorecardsUserBestpoints(userId) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getGamificationScorecardsUserBestpoints';
 		}
 
@@ -1311,7 +1622,7 @@ class GamificationApi {
 	 */
 	getGamificationScorecardsUserPointsAlltime(userId, endWorkday) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getGamificationScorecardsUserPointsAlltime';
 		}
 		// verify the required parameter 'endWorkday' is set
@@ -1346,7 +1657,7 @@ class GamificationApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getGamificationScorecardsUserPointsTrends';
 		}
 		// verify the required parameter 'startWorkday' is set
@@ -1385,7 +1696,7 @@ class GamificationApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getGamificationScorecardsUserValuesTrends';
 		}
 		// verify the required parameter 'startWorkday' is set
@@ -1621,7 +1932,7 @@ class GamificationApi {
 	 */
 	getGamificationTemplate(templateId) { 
 		// verify the required parameter 'templateId' is set
-		if (templateId === undefined || templateId === null) {
+		if (templateId === undefined || templateId === null || templateId === '') {
 			throw 'Missing the required parameter "templateId" when calling getGamificationTemplate';
 		}
 
@@ -1667,7 +1978,7 @@ class GamificationApi {
 	 */
 	patchEmployeeperformanceExternalmetricsDefinition(metricId, body) { 
 		// verify the required parameter 'metricId' is set
-		if (metricId === undefined || metricId === null) {
+		if (metricId === undefined || metricId === null || metricId === '') {
 			throw 'Missing the required parameter "metricId" when calling patchEmployeeperformanceExternalmetricsDefinition';
 		}
 		// verify the required parameter 'body' is set
@@ -1679,6 +1990,36 @@ class GamificationApi {
 			'/api/v2/employeeperformance/externalmetrics/definitions/{metricId}', 
 			'PATCH', 
 			{ 'metricId': metricId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Finalize a Contest by Id
+	 * 
+	 * @param {String} contestId The ID of the contest
+	 * @param {Object} body Finalize Contest
+	 */
+	patchGamificationContest(contestId, body) { 
+		// verify the required parameter 'contestId' is set
+		if (contestId === undefined || contestId === null || contestId === '') {
+			throw 'Missing the required parameter "contestId" when calling patchGamificationContest';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchGamificationContest';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/gamification/contests/{contestId}', 
+			'PATCH', 
+			{ 'contestId': contestId },
 			{  },
 			{  },
 			{  },
@@ -1738,13 +2079,63 @@ class GamificationApi {
 	}
 
 	/**
+	 * Creates a Contest
+	 * 
+	 * @param {Object} body Create Contest
+	 */
+	postGamificationContests(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postGamificationContests';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/gamification/contests', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Generates pre-signed URL to upload a prize image for gamification contests
+	 * 
+	 * @param {Object} body query
+	 */
+	postGamificationContestsUploadsPrizeimages(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postGamificationContestsUploadsPrizeimages';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/gamification/contests/uploads/prizeimages', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Activate a performance profile
 	 * 
 	 * @param {String} profileId performanceProfileId
 	 */
 	postGamificationProfileActivate(profileId) { 
 		// verify the required parameter 'profileId' is set
-		if (profileId === undefined || profileId === null) {
+		if (profileId === undefined || profileId === null || profileId === '') {
 			throw 'Missing the required parameter "profileId" when calling postGamificationProfileActivate';
 		}
 
@@ -1769,7 +2160,7 @@ class GamificationApi {
 	 */
 	postGamificationProfileDeactivate(profileId) { 
 		// verify the required parameter 'profileId' is set
-		if (profileId === undefined || profileId === null) {
+		if (profileId === undefined || profileId === null || profileId === '') {
 			throw 'Missing the required parameter "profileId" when calling postGamificationProfileDeactivate';
 		}
 
@@ -1795,7 +2186,7 @@ class GamificationApi {
 	 */
 	postGamificationProfileMembers(profileId, body) { 
 		// verify the required parameter 'profileId' is set
-		if (profileId === undefined || profileId === null) {
+		if (profileId === undefined || profileId === null || profileId === '') {
 			throw 'Missing the required parameter "profileId" when calling postGamificationProfileMembers';
 		}
 		// verify the required parameter 'body' is set
@@ -1825,7 +2216,7 @@ class GamificationApi {
 	 */
 	postGamificationProfileMembersValidate(profileId, body) { 
 		// verify the required parameter 'profileId' is set
-		if (profileId === undefined || profileId === null) {
+		if (profileId === undefined || profileId === null || profileId === '') {
 			throw 'Missing the required parameter "profileId" when calling postGamificationProfileMembersValidate';
 		}
 		// verify the required parameter 'body' is set
@@ -1856,11 +2247,11 @@ class GamificationApi {
 	 */
 	postGamificationProfileMetricLink(sourceProfileId, sourceMetricId, body) { 
 		// verify the required parameter 'sourceProfileId' is set
-		if (sourceProfileId === undefined || sourceProfileId === null) {
+		if (sourceProfileId === undefined || sourceProfileId === null || sourceProfileId === '') {
 			throw 'Missing the required parameter "sourceProfileId" when calling postGamificationProfileMetricLink';
 		}
 		// verify the required parameter 'sourceMetricId' is set
-		if (sourceMetricId === undefined || sourceMetricId === null) {
+		if (sourceMetricId === undefined || sourceMetricId === null || sourceMetricId === '') {
 			throw 'Missing the required parameter "sourceMetricId" when calling postGamificationProfileMetricLink';
 		}
 		// verify the required parameter 'body' is set
@@ -1890,7 +2281,7 @@ class GamificationApi {
 	 */
 	postGamificationProfileMetrics(profileId, body) { 
 		// verify the required parameter 'profileId' is set
-		if (profileId === undefined || profileId === null) {
+		if (profileId === undefined || profileId === null || profileId === '') {
 			throw 'Missing the required parameter "profileId" when calling postGamificationProfileMetrics';
 		}
 		// verify the required parameter 'body' is set
@@ -1949,7 +2340,7 @@ class GamificationApi {
 	 */
 	postGamificationProfilesUserQuery(userId, body) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling postGamificationProfilesUserQuery';
 		}
 		// verify the required parameter 'body' is set
@@ -1997,6 +2388,36 @@ class GamificationApi {
 	}
 
 	/**
+	 * Update a Contest by Id
+	 * 
+	 * @param {String} contestId The ID of the contest
+	 * @param {Object} body Contest
+	 */
+	putGamificationContest(contestId, body) { 
+		// verify the required parameter 'contestId' is set
+		if (contestId === undefined || contestId === null || contestId === '') {
+			throw 'Missing the required parameter "contestId" when calling putGamificationContest';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putGamificationContest';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/gamification/contests/{contestId}', 
+			'PUT', 
+			{ 'contestId': contestId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Updates a performance profile
 	 * 
 	 * @param {String} profileId performanceProfileId
@@ -2007,7 +2428,7 @@ class GamificationApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'profileId' is set
-		if (profileId === undefined || profileId === null) {
+		if (profileId === undefined || profileId === null || profileId === '') {
 			throw 'Missing the required parameter "profileId" when calling putGamificationProfile';
 		}
 
@@ -2034,11 +2455,11 @@ class GamificationApi {
 	 */
 	putGamificationProfileMetric(profileId, metricId, body) { 
 		// verify the required parameter 'profileId' is set
-		if (profileId === undefined || profileId === null) {
+		if (profileId === undefined || profileId === null || profileId === '') {
 			throw 'Missing the required parameter "profileId" when calling putGamificationProfileMetric';
 		}
 		// verify the required parameter 'metricId' is set
-		if (metricId === undefined || metricId === null) {
+		if (metricId === undefined || metricId === null || metricId === '') {
 			throw 'Missing the required parameter "metricId" when calling putGamificationProfileMetric';
 		}
 		// verify the required parameter 'body' is set

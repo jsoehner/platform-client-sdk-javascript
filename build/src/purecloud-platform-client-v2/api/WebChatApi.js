@@ -5,7 +5,7 @@ class WebChatApi {
 	/**
 	 * WebChat service.
 	 * @module purecloud-platform-client-v2/api/WebChatApi
-	 * @version 174.0.0
+	 * @version 229.1.0
 	 */
 
 	/**
@@ -28,7 +28,7 @@ class WebChatApi {
 	 */
 	deleteWebchatDeployment(deploymentId) { 
 		// verify the required parameter 'deploymentId' is set
-		if (deploymentId === undefined || deploymentId === null) {
+		if (deploymentId === undefined || deploymentId === null || deploymentId === '') {
 			throw 'Missing the required parameter "deploymentId" when calling deleteWebchatDeployment';
 		}
 
@@ -48,17 +48,18 @@ class WebChatApi {
 
 	/**
 	 * Remove a member from a chat conversation
-	 * 
+	 * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/
 	 * @param {String} conversationId conversationId
 	 * @param {String} memberId memberId
+	 * @deprecated
 	 */
 	deleteWebchatGuestConversationMember(conversationId, memberId) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling deleteWebchatGuestConversationMember';
 		}
 		// verify the required parameter 'memberId' is set
-		if (memberId === undefined || memberId === null) {
+		if (memberId === undefined || memberId === null || memberId === '') {
 			throw 'Missing the required parameter "memberId" when calling deleteWebchatGuestConversationMember';
 		}
 
@@ -104,7 +105,7 @@ class WebChatApi {
 	 */
 	getWebchatDeployment(deploymentId) { 
 		// verify the required parameter 'deploymentId' is set
-		if (deploymentId === undefined || deploymentId === null) {
+		if (deploymentId === undefined || deploymentId === null || deploymentId === '') {
 			throw 'Missing the required parameter "deploymentId" when calling getWebchatDeployment';
 		}
 
@@ -145,17 +146,18 @@ class WebChatApi {
 
 	/**
 	 * Get a media request in the conversation
-	 * 
+	 * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
 	 * @param {String} conversationId conversationId
 	 * @param {String} mediaRequestId mediaRequestId
+	 * @deprecated
 	 */
 	getWebchatGuestConversationMediarequest(conversationId, mediaRequestId) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getWebchatGuestConversationMediarequest';
 		}
 		// verify the required parameter 'mediaRequestId' is set
-		if (mediaRequestId === undefined || mediaRequestId === null) {
+		if (mediaRequestId === undefined || mediaRequestId === null || mediaRequestId === '') {
 			throw 'Missing the required parameter "mediaRequestId" when calling getWebchatGuestConversationMediarequest';
 		}
 
@@ -175,12 +177,13 @@ class WebChatApi {
 
 	/**
 	 * Get all media requests to the guest in the conversation
-	 * 
+	 * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/
 	 * @param {String} conversationId conversationId
+	 * @deprecated
 	 */
 	getWebchatGuestConversationMediarequests(conversationId) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getWebchatGuestConversationMediarequests';
 		}
 
@@ -200,17 +203,18 @@ class WebChatApi {
 
 	/**
 	 * Get a web chat conversation member
-	 * 
+	 * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/
 	 * @param {String} conversationId conversationId
 	 * @param {String} memberId memberId
+	 * @deprecated
 	 */
 	getWebchatGuestConversationMember(conversationId, memberId) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getWebchatGuestConversationMember';
 		}
 		// verify the required parameter 'memberId' is set
-		if (memberId === undefined || memberId === null) {
+		if (memberId === undefined || memberId === null || memberId === '') {
 			throw 'Missing the required parameter "memberId" when calling getWebchatGuestConversationMember';
 		}
 
@@ -230,18 +234,19 @@ class WebChatApi {
 
 	/**
 	 * Get the members of a chat conversation.
-	 * 
+	 * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/
 	 * @param {String} conversationId conversationId
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize The number of entries to return per page, or omitted for the default. (default to 25)
 	 * @param {Number} opts.pageNumber The page number to return, or omitted for the first page. (default to 1)
 	 * @param {Boolean} opts.excludeDisconnectedMembers If true, the results will not contain members who have a DISCONNECTED state. (default to false)
+	 * @deprecated
 	 */
 	getWebchatGuestConversationMembers(conversationId, opts) { 
 		opts = opts || {};
 		
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getWebchatGuestConversationMembers';
 		}
 
@@ -261,17 +266,18 @@ class WebChatApi {
 
 	/**
 	 * Get a web chat conversation message
-	 * 
+	 * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/
 	 * @param {String} conversationId conversationId
 	 * @param {String} messageId messageId
+	 * @deprecated
 	 */
 	getWebchatGuestConversationMessage(conversationId, messageId) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getWebchatGuestConversationMessage';
 		}
 		// verify the required parameter 'messageId' is set
-		if (messageId === undefined || messageId === null) {
+		if (messageId === undefined || messageId === null || messageId === '') {
 			throw 'Missing the required parameter "messageId" when calling getWebchatGuestConversationMessage';
 		}
 
@@ -291,19 +297,20 @@ class WebChatApi {
 
 	/**
 	 * Get the messages of a chat conversation.
-	 * 
+	 * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/
 	 * @param {String} conversationId conversationId
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.after If available, get the messages chronologically after the id of this message
 	 * @param {String} opts.before If available, get the messages chronologically before the id of this message
 	 * @param {Object} opts.sortOrder Sort order (default to ascending)
 	 * @param {Number} opts.maxResults Limit the returned number of messages, up to a maximum of 100 (default to 100)
+	 * @deprecated
 	 */
 	getWebchatGuestConversationMessages(conversationId, opts) { 
 		opts = opts || {};
 		
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getWebchatGuestConversationMessages';
 		}
 
@@ -343,18 +350,19 @@ class WebChatApi {
 
 	/**
 	 * Update a media request in the conversation, setting the state to ACCEPTED/DECLINED/ERRORED
-	 * 
+	 * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
 	 * @param {String} conversationId conversationId
 	 * @param {String} mediaRequestId mediaRequestId
 	 * @param {Object} body Request
+	 * @deprecated
 	 */
 	patchWebchatGuestConversationMediarequest(conversationId, mediaRequestId, body) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling patchWebchatGuestConversationMediarequest';
 		}
 		// verify the required parameter 'mediaRequestId' is set
-		if (mediaRequestId === undefined || mediaRequestId === null) {
+		if (mediaRequestId === undefined || mediaRequestId === null || mediaRequestId === '') {
 			throw 'Missing the required parameter "mediaRequestId" when calling patchWebchatGuestConversationMediarequest';
 		}
 		// verify the required parameter 'body' is set
@@ -404,18 +412,19 @@ class WebChatApi {
 
 	/**
 	 * Send a message in a chat conversation.
-	 * 
+	 * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/
 	 * @param {String} conversationId conversationId
 	 * @param {String} memberId memberId
 	 * @param {Object} body Message
+	 * @deprecated
 	 */
 	postWebchatGuestConversationMemberMessages(conversationId, memberId, body) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postWebchatGuestConversationMemberMessages';
 		}
 		// verify the required parameter 'memberId' is set
-		if (memberId === undefined || memberId === null) {
+		if (memberId === undefined || memberId === null || memberId === '') {
 			throw 'Missing the required parameter "memberId" when calling postWebchatGuestConversationMemberMessages';
 		}
 		// verify the required parameter 'body' is set
@@ -439,17 +448,18 @@ class WebChatApi {
 
 	/**
 	 * Send a typing-indicator in a chat conversation.
-	 * 
+	 * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/
 	 * @param {String} conversationId conversationId
 	 * @param {String} memberId memberId
+	 * @deprecated
 	 */
 	postWebchatGuestConversationMemberTyping(conversationId, memberId) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postWebchatGuestConversationMemberTyping';
 		}
 		// verify the required parameter 'memberId' is set
-		if (memberId === undefined || memberId === null) {
+		if (memberId === undefined || memberId === null || memberId === '') {
 			throw 'Missing the required parameter "memberId" when calling postWebchatGuestConversationMemberTyping';
 		}
 
@@ -469,8 +479,9 @@ class WebChatApi {
 
 	/**
 	 * Create an ACD chat conversation from an external customer.
-	 * This endpoint will create a new ACD Chat conversation under the specified Chat Deployment.  The conversation will begin with a guest member in it (with a role=CUSTOMER) according to the customer information that is supplied. If the guest member is authenticated, the memberAuthToken field should include his JWT as generated by the POST /api/v2/signeddata resource; if the guest member is anonymous (and the Deployment permits it) this field can be omitted.  The returned data includes the IDs of the conversation created, along with a newly-create JWT token that you can supply to all future endpoints as authentication to perform operations against that conversation. After successfully creating a conversation, you should connect a websocket to the event stream named in the eventStreamUri field of the response; the conversation is not routed until the event stream is attached.
+	 * This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/. This endpoint will create a new ACD Chat conversation under the specified Chat Deployment. The conversation will begin with a guest member in it (with a role=CUSTOMER) according to the customer information that is supplied. If the guest member is authenticated, the memberAuthToken field should include his JWT as generated by the POST /api/v2/signeddata resource; if the guest member is anonymous (and the Deployment permits it) this field can be omitted. The returned data includes the IDs of the conversation created, along with a newly-create JWT token that you can supply to all future endpoints as authentication to perform operations against that conversation. After successfully creating a conversation, you should connect a websocket to the event stream named in the eventStreamUri field of the response; the conversation is not routed until the event stream is attached.
 	 * @param {Object} body CreateConversationRequest
+	 * @deprecated
 	 */
 	postWebchatGuestConversations(body) { 
 		// verify the required parameter 'body' is set
@@ -501,7 +512,7 @@ class WebChatApi {
 	 */
 	putWebchatDeployment(deploymentId, body) { 
 		// verify the required parameter 'deploymentId' is set
-		if (deploymentId === undefined || deploymentId === null) {
+		if (deploymentId === undefined || deploymentId === null || deploymentId === '') {
 			throw 'Missing the required parameter "deploymentId" when calling putWebchatDeployment';
 		}
 		// verify the required parameter 'body' is set

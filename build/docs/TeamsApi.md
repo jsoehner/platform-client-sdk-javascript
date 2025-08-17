@@ -1,27 +1,27 @@
----
-title: TeamsApi
----
+# TeamsApi
+
 # platformClient.TeamsApi
 
 All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-[**deleteTeam**](TeamsApi.html#deleteTeam) | **DELETE** /api/v2/teams/{teamId} | Delete team
-[**deleteTeamMembers**](TeamsApi.html#deleteTeamMembers) | **DELETE** /api/v2/teams/{teamId}/members | Delete team members
-[**getTeam**](TeamsApi.html#getTeam) | **GET** /api/v2/teams/{teamId} | Get team
-[**getTeamMembers**](TeamsApi.html#getTeamMembers) | **GET** /api/v2/teams/{teamId}/members | Get team membership
-[**getTeams**](TeamsApi.html#getTeams) | **GET** /api/v2/teams | Get Team listing
-[**patchTeam**](TeamsApi.html#patchTeam) | **PATCH** /api/v2/teams/{teamId} | Update team
-[**postAnalyticsTeamsActivityQuery**](TeamsApi.html#postAnalyticsTeamsActivityQuery) | **POST** /api/v2/analytics/teams/activity/query | Query for team activity observations
-[**postTeamMembers**](TeamsApi.html#postTeamMembers) | **POST** /api/v2/teams/{teamId}/members | Add team members
-[**postTeams**](TeamsApi.html#postTeams) | **POST** /api/v2/teams | Create a team
-[**postTeamsSearch**](TeamsApi.html#postTeamsSearch) | **POST** /api/v2/teams/search | Search resources.
-{: class="table table-striped"}
+[**deleteTeam**](TeamsApi#deleteTeam) | **DELETE** /api/v2/teams/{teamId} | Delete team
+[**deleteTeamMembers**](TeamsApi#deleteTeamMembers) | **DELETE** /api/v2/teams/{teamId}/members | Delete team members
+[**getTeam**](TeamsApi#getTeam) | **GET** /api/v2/teams/{teamId} | Get team
+[**getTeamMembers**](TeamsApi#getTeamMembers) | **GET** /api/v2/teams/{teamId}/members | Get team membership
+[**getTeams**](TeamsApi#getTeams) | **GET** /api/v2/teams | Get Team listing
+[**patchTeam**](TeamsApi#patchTeam) | **PATCH** /api/v2/teams/{teamId} | Update team
+[**postAnalyticsTeamsActivityQuery**](TeamsApi#postAnalyticsTeamsActivityQuery) | **POST** /api/v2/analytics/teams/activity/query | Query for team activity observations
+[**postTeamMembers**](TeamsApi#postTeamMembers) | **POST** /api/v2/teams/{teamId}/members | Add team members
+[**postTeams**](TeamsApi#postTeams) | **POST** /api/v2/teams | Create a team
+[**postTeamsSearch**](TeamsApi#postTeamsSearch) | **POST** /api/v2/teams/search | Search resources.
 
-<a name="deleteTeam"></a>
 
-# void deleteTeam(teamId)
+
+## deleteTeam
+
+> void deleteTeam(teamId)
 
 
 DELETE /api/v2/teams/{teamId}
@@ -40,7 +40,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.TeamsApi();
@@ -63,15 +63,15 @@ apiInstance.deleteTeam(teamId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **teamId** | **String** | Team ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteTeamMembers"></a>
 
-# void deleteTeamMembers(teamId, id)
+## deleteTeamMembers
+
+> void deleteTeamMembers(teamId, id)
 
 
 DELETE /api/v2/teams/{teamId}/members
@@ -90,7 +90,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.TeamsApi();
@@ -115,15 +115,15 @@ apiInstance.deleteTeamMembers(teamId, id)
 | ------------- | ------------- | ------------- | ------------- |
  **teamId** | **String** | Team ID |  |
  **id** | **String** | Comma separated list of member ids to remove |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="getTeam"></a>
 
-# Team getTeam(teamId)
+## getTeam
+
+> Team getTeam(teamId, opts)
 
 
 GET /api/v2/teams/{teamId}
@@ -142,14 +142,17 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.TeamsApi();
 
 let teamId = "teamId_example"; // String | Team ID
+let opts = { 
+  'expand': "expand_example" // String | Expand the division name
+};
 
-apiInstance.getTeam(teamId)
+apiInstance.getTeam(teamId, opts)
   .then((data) => {
     console.log(`getTeam success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -165,15 +168,16 @@ apiInstance.getTeam(teamId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **teamId** | **String** | Team ID |  |
-{: class="table table-striped"}
+ **expand** | **String** | Expand the division name | [optional] <br />**Values**: entities.division |
 
 ### Return type
 
 **Team**
 
-<a name="getTeamMembers"></a>
 
-# TeamMemberEntityListing getTeamMembers(teamId, opts)
+## getTeamMembers
+
+> TeamMemberEntityListing getTeamMembers(teamId, opts)
 
 
 GET /api/v2/teams/{teamId}/members
@@ -192,7 +196,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.TeamsApi();
@@ -225,15 +229,15 @@ apiInstance.getTeamMembers(teamId, opts)
  **before** | **String** | The cursor that points to the previous item in the complete list of teams | [optional]  |
  **after** | **String** | The cursor that points to the next item in the complete list of teams | [optional]  |
  **expand** | **String** | Expand the name on each user | [optional] <br />**Values**: entities |
-{: class="table table-striped"}
 
 ### Return type
 
 **TeamMemberEntityListing**
 
-<a name="getTeams"></a>
 
-# TeamEntityListing getTeams(opts)
+## getTeams
+
+> TeamEntityListing getTeams(opts)
 
 
 GET /api/v2/teams
@@ -252,7 +256,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.TeamsApi();
@@ -262,7 +266,7 @@ let opts = {
   'name': "name_example", // String | Return only teams whose names start with this value (case-insensitive matching)
   'after': "after_example", // String | The cursor that points to the next item in the complete list of teams
   'before': "before_example", // String | The cursor that points to the previous item in the complete list of teams
-  'expand': "expand_example" // String | Expand the name on each user
+  'expand': "expand_example" // String | Expand the division on each team
 };
 
 apiInstance.getTeams(opts)
@@ -284,16 +288,16 @@ apiInstance.getTeams(opts)
  **name** | **String** | Return only teams whose names start with this value (case-insensitive matching) | [optional]  |
  **after** | **String** | The cursor that points to the next item in the complete list of teams | [optional]  |
  **before** | **String** | The cursor that points to the previous item in the complete list of teams | [optional]  |
- **expand** | **String** | Expand the name on each user | [optional] <br />**Values**: entities.division |
-{: class="table table-striped"}
+ **expand** | **String** | Expand the division on each team | [optional] <br />**Values**: entities.division |
 
 ### Return type
 
 **TeamEntityListing**
 
-<a name="patchTeam"></a>
 
-# Team patchTeam(teamId, body)
+## patchTeam
+
+> Team patchTeam(teamId, body)
 
 
 PATCH /api/v2/teams/{teamId}
@@ -312,7 +316,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.TeamsApi();
@@ -337,22 +341,20 @@ apiInstance.patchTeam(teamId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **teamId** | **String** | Team ID |  |
  **body** | **Object** | Team |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Team**
 
-<a name="postAnalyticsTeamsActivityQuery"></a>
 
-# TeamActivityResponse postAnalyticsTeamsActivityQuery(body, opts)
+## postAnalyticsTeamsActivityQuery
+
+> TeamActivityResponse postAnalyticsTeamsActivityQuery(body, opts)
 
 
 POST /api/v2/analytics/teams/activity/query
 
 Query for team activity observations
-
-postAnalyticsTeamsActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -366,7 +368,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.TeamsApi();
@@ -395,15 +397,15 @@ apiInstance.postAnalyticsTeamsActivityQuery(body, opts)
  **body** | **Object** | query |  |
  **pageSize** | **Number** | The desired page size | [optional]  |
  **pageNumber** | **Number** | The desired page number | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **TeamActivityResponse**
 
-<a name="postTeamMembers"></a>
 
-# TeamMemberAddListingResponse postTeamMembers(teamId, body)
+## postTeamMembers
+
+> TeamMemberAddListingResponse postTeamMembers(teamId, body)
 
 
 POST /api/v2/teams/{teamId}/members
@@ -422,7 +424,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.TeamsApi();
@@ -447,15 +449,15 @@ apiInstance.postTeamMembers(teamId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **teamId** | **String** | Team ID |  |
  **body** | **Object** | TeamMembers |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **TeamMemberAddListingResponse**
 
-<a name="postTeams"></a>
 
-# Team postTeams(body)
+## postTeams
+
+> Team postTeams(body)
 
 
 POST /api/v2/teams
@@ -474,7 +476,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.TeamsApi();
@@ -497,15 +499,15 @@ apiInstance.postTeams(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Team |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Team**
 
-<a name="postTeamsSearch"></a>
 
-# TeamsSearchResponse postTeamsSearch(body)
+## postTeamsSearch
+
+> TeamsSearchResponse postTeamsSearch(body)
 
 
 POST /api/v2/teams/search
@@ -524,7 +526,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.TeamsApi();
@@ -547,9 +549,10 @@ apiInstance.postTeamsSearch(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Search request options |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **TeamsSearchResponse**
 
+
+_purecloud-platform-client-v2@229.1.0_

@@ -5,7 +5,7 @@ class TeamsApi {
 	/**
 	 * Teams service.
 	 * @module purecloud-platform-client-v2/api/TeamsApi
-	 * @version 174.0.0
+	 * @version 229.1.0
 	 */
 
 	/**
@@ -27,7 +27,7 @@ class TeamsApi {
 	 */
 	deleteTeam(teamId) { 
 		// verify the required parameter 'teamId' is set
-		if (teamId === undefined || teamId === null) {
+		if (teamId === undefined || teamId === null || teamId === '') {
 			throw 'Missing the required parameter "teamId" when calling deleteTeam';
 		}
 
@@ -53,7 +53,7 @@ class TeamsApi {
 	 */
 	deleteTeamMembers(teamId, id) { 
 		// verify the required parameter 'teamId' is set
-		if (teamId === undefined || teamId === null) {
+		if (teamId === undefined || teamId === null || teamId === '') {
 			throw 'Missing the required parameter "teamId" when calling deleteTeamMembers';
 		}
 		// verify the required parameter 'id' is set
@@ -79,10 +79,14 @@ class TeamsApi {
 	 * Get team
 	 * 
 	 * @param {String} teamId Team ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.expand Expand the division name
 	 */
-	getTeam(teamId) { 
+	getTeam(teamId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'teamId' is set
-		if (teamId === undefined || teamId === null) {
+		if (teamId === undefined || teamId === null || teamId === '') {
 			throw 'Missing the required parameter "teamId" when calling getTeam';
 		}
 
@@ -90,7 +94,7 @@ class TeamsApi {
 			'/api/v2/teams/{teamId}', 
 			'GET', 
 			{ 'teamId': teamId },
-			{  },
+			{ 'expand': opts['expand'] },
 			{  },
 			{  },
 			null, 
@@ -114,7 +118,7 @@ class TeamsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'teamId' is set
-		if (teamId === undefined || teamId === null) {
+		if (teamId === undefined || teamId === null || teamId === '') {
 			throw 'Missing the required parameter "teamId" when calling getTeamMembers';
 		}
 
@@ -140,7 +144,7 @@ class TeamsApi {
 	 * @param {String} opts.name Return only teams whose names start with this value (case-insensitive matching)
 	 * @param {String} opts.after The cursor that points to the next item in the complete list of teams
 	 * @param {String} opts.before The cursor that points to the previous item in the complete list of teams
-	 * @param {Object} opts.expand Expand the name on each user
+	 * @param {Object} opts.expand Expand the division on each team
 	 */
 	getTeams(opts) { 
 		opts = opts || {};
@@ -168,7 +172,7 @@ class TeamsApi {
 	 */
 	patchTeam(teamId, body) { 
 		// verify the required parameter 'teamId' is set
-		if (teamId === undefined || teamId === null) {
+		if (teamId === undefined || teamId === null || teamId === '') {
 			throw 'Missing the required parameter "teamId" when calling patchTeam';
 		}
 		// verify the required parameter 'body' is set
@@ -197,7 +201,6 @@ class TeamsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize The desired page size
 	 * @param {Number} opts.pageNumber The desired page number
-	 * postAnalyticsTeamsActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAnalyticsTeamsActivityQuery(body, opts) { 
 		opts = opts || {};
@@ -229,7 +232,7 @@ class TeamsApi {
 	 */
 	postTeamMembers(teamId, body) { 
 		// verify the required parameter 'teamId' is set
-		if (teamId === undefined || teamId === null) {
+		if (teamId === undefined || teamId === null || teamId === '') {
 			throw 'Missing the required parameter "teamId" when calling postTeamMembers';
 		}
 		// verify the required parameter 'body' is set

@@ -5,7 +5,7 @@ class OutboundApi {
 	/**
 	 * Outbound service.
 	 * @module purecloud-platform-client-v2/api/OutboundApi
-	 * @version 174.0.0
+	 * @version 229.1.0
 	 */
 
 	/**
@@ -27,7 +27,7 @@ class OutboundApi {
 	 */
 	deleteOutboundAttemptlimit(attemptLimitsId) { 
 		// verify the required parameter 'attemptLimitsId' is set
-		if (attemptLimitsId === undefined || attemptLimitsId === null) {
+		if (attemptLimitsId === undefined || attemptLimitsId === null || attemptLimitsId === '') {
 			throw 'Missing the required parameter "attemptLimitsId" when calling deleteOutboundAttemptlimit';
 		}
 
@@ -52,7 +52,7 @@ class OutboundApi {
 	 */
 	deleteOutboundCallabletimeset(callableTimeSetId) { 
 		// verify the required parameter 'callableTimeSetId' is set
-		if (callableTimeSetId === undefined || callableTimeSetId === null) {
+		if (callableTimeSetId === undefined || callableTimeSetId === null || callableTimeSetId === '') {
 			throw 'Missing the required parameter "callableTimeSetId" when calling deleteOutboundCallabletimeset';
 		}
 
@@ -77,7 +77,7 @@ class OutboundApi {
 	 */
 	deleteOutboundCallanalysisresponseset(callAnalysisSetId) { 
 		// verify the required parameter 'callAnalysisSetId' is set
-		if (callAnalysisSetId === undefined || callAnalysisSetId === null) {
+		if (callAnalysisSetId === undefined || callAnalysisSetId === null || callAnalysisSetId === '') {
 			throw 'Missing the required parameter "callAnalysisSetId" when calling deleteOutboundCallanalysisresponseset';
 		}
 
@@ -102,7 +102,7 @@ class OutboundApi {
 	 */
 	deleteOutboundCampaign(campaignId) { 
 		// verify the required parameter 'campaignId' is set
-		if (campaignId === undefined || campaignId === null) {
+		if (campaignId === undefined || campaignId === null || campaignId === '') {
 			throw 'Missing the required parameter "campaignId" when calling deleteOutboundCampaign';
 		}
 
@@ -127,7 +127,7 @@ class OutboundApi {
 	 */
 	deleteOutboundCampaignProgress(campaignId) { 
 		// verify the required parameter 'campaignId' is set
-		if (campaignId === undefined || campaignId === null) {
+		if (campaignId === undefined || campaignId === null || campaignId === '') {
 			throw 'Missing the required parameter "campaignId" when calling deleteOutboundCampaignProgress';
 		}
 
@@ -152,7 +152,7 @@ class OutboundApi {
 	 */
 	deleteOutboundCampaignrule(campaignRuleId) { 
 		// verify the required parameter 'campaignRuleId' is set
-		if (campaignRuleId === undefined || campaignRuleId === null) {
+		if (campaignRuleId === undefined || campaignRuleId === null || campaignRuleId === '') {
 			throw 'Missing the required parameter "campaignRuleId" when calling deleteOutboundCampaignrule';
 		}
 
@@ -177,7 +177,7 @@ class OutboundApi {
 	 */
 	deleteOutboundContactlist(contactListId) { 
 		// verify the required parameter 'contactListId' is set
-		if (contactListId === undefined || contactListId === null) {
+		if (contactListId === undefined || contactListId === null || contactListId === '') {
 			throw 'Missing the required parameter "contactListId" when calling deleteOutboundContactlist';
 		}
 
@@ -203,11 +203,11 @@ class OutboundApi {
 	 */
 	deleteOutboundContactlistContact(contactListId, contactId) { 
 		// verify the required parameter 'contactListId' is set
-		if (contactListId === undefined || contactListId === null) {
+		if (contactListId === undefined || contactListId === null || contactListId === '') {
 			throw 'Missing the required parameter "contactListId" when calling deleteOutboundContactlistContact';
 		}
 		// verify the required parameter 'contactId' is set
-		if (contactId === undefined || contactId === null) {
+		if (contactId === undefined || contactId === null || contactId === '') {
 			throw 'Missing the required parameter "contactId" when calling deleteOutboundContactlistContact';
 		}
 
@@ -233,7 +233,7 @@ class OutboundApi {
 	 */
 	deleteOutboundContactlistContacts(contactListId, contactIds) { 
 		// verify the required parameter 'contactListId' is set
-		if (contactListId === undefined || contactListId === null) {
+		if (contactListId === undefined || contactListId === null || contactListId === '') {
 			throw 'Missing the required parameter "contactListId" when calling deleteOutboundContactlistContacts';
 		}
 		// verify the required parameter 'contactIds' is set
@@ -262,7 +262,7 @@ class OutboundApi {
 	 */
 	deleteOutboundContactlistfilter(contactListFilterId) { 
 		// verify the required parameter 'contactListFilterId' is set
-		if (contactListFilterId === undefined || contactListFilterId === null) {
+		if (contactListFilterId === undefined || contactListFilterId === null || contactListFilterId === '') {
 			throw 'Missing the required parameter "contactListFilterId" when calling deleteOutboundContactlistfilter';
 		}
 
@@ -306,13 +306,63 @@ class OutboundApi {
 	}
 
 	/**
+	 * Delete Contact List Template
+	 * 
+	 * @param {String} contactListTemplateId ContactListTemplate ID
+	 */
+	deleteOutboundContactlisttemplate(contactListTemplateId) { 
+		// verify the required parameter 'contactListTemplateId' is set
+		if (contactListTemplateId === undefined || contactListTemplateId === null || contactListTemplateId === '') {
+			throw 'Missing the required parameter "contactListTemplateId" when calling deleteOutboundContactlisttemplate';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/contactlisttemplates/{contactListTemplateId}', 
+			'DELETE', 
+			{ 'contactListTemplateId': contactListTemplateId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete multiple contact list templates.
+	 * 
+	 * @param {Array.<String>} id contact list template id(s) to delete
+	 */
+	deleteOutboundContactlisttemplates(id) { 
+		// verify the required parameter 'id' is set
+		if (id === undefined || id === null) {
+			throw 'Missing the required parameter "id" when calling deleteOutboundContactlisttemplates';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/contactlisttemplates', 
+			'DELETE', 
+			{  },
+			{ 'id': this.apiClient.buildCollectionParam(id, 'multi') },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Delete an Outbound Digital Rule Set
 	 * 
 	 * @param {String} digitalRuleSetId The Digital Rule Set ID
 	 */
 	deleteOutboundDigitalruleset(digitalRuleSetId) { 
 		// verify the required parameter 'digitalRuleSetId' is set
-		if (digitalRuleSetId === undefined || digitalRuleSetId === null) {
+		if (digitalRuleSetId === undefined || digitalRuleSetId === null || digitalRuleSetId === '') {
 			throw 'Missing the required parameter "digitalRuleSetId" when calling deleteOutboundDigitalruleset';
 		}
 
@@ -337,7 +387,7 @@ class OutboundApi {
 	 */
 	deleteOutboundDnclist(dncListId) { 
 		// verify the required parameter 'dncListId' is set
-		if (dncListId === undefined || dncListId === null) {
+		if (dncListId === undefined || dncListId === null || dncListId === '') {
 			throw 'Missing the required parameter "dncListId" when calling deleteOutboundDnclist';
 		}
 
@@ -366,7 +416,7 @@ class OutboundApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'dncListId' is set
-		if (dncListId === undefined || dncListId === null) {
+		if (dncListId === undefined || dncListId === null || dncListId === '') {
 			throw 'Missing the required parameter "dncListId" when calling deleteOutboundDnclistCustomexclusioncolumns';
 		}
 
@@ -395,7 +445,7 @@ class OutboundApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'dncListId' is set
-		if (dncListId === undefined || dncListId === null) {
+		if (dncListId === undefined || dncListId === null || dncListId === '') {
 			throw 'Missing the required parameter "dncListId" when calling deleteOutboundDnclistEmailaddresses';
 		}
 
@@ -424,7 +474,7 @@ class OutboundApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'dncListId' is set
-		if (dncListId === undefined || dncListId === null) {
+		if (dncListId === undefined || dncListId === null || dncListId === '') {
 			throw 'Missing the required parameter "dncListId" when calling deleteOutboundDnclistPhonenumbers';
 		}
 
@@ -443,13 +493,142 @@ class OutboundApi {
 	}
 
 	/**
+	 * Deletes all or expired whatsApp numbers from a DNC list.
+	 * This operation is only for Internal DNC lists of whatsApp numbers
+	 * @param {String} dncListId DncList ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.expiredOnly Set to true to only remove DNC whatsApp numbers that are expired (default to false)
+	 */
+	deleteOutboundDnclistWhatsappnumbers(dncListId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'dncListId' is set
+		if (dncListId === undefined || dncListId === null || dncListId === '') {
+			throw 'Missing the required parameter "dncListId" when calling deleteOutboundDnclistWhatsappnumbers';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/dnclists/{dncListId}/whatsappnumbers', 
+			'DELETE', 
+			{ 'dncListId': dncListId },
+			{ 'expiredOnly': opts['expiredOnly'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete File Specification Template
+	 * 
+	 * @param {String} fileSpecificationTemplateId File Specification Template ID
+	 */
+	deleteOutboundFilespecificationtemplate(fileSpecificationTemplateId) { 
+		// verify the required parameter 'fileSpecificationTemplateId' is set
+		if (fileSpecificationTemplateId === undefined || fileSpecificationTemplateId === null || fileSpecificationTemplateId === '') {
+			throw 'Missing the required parameter "fileSpecificationTemplateId" when calling deleteOutboundFilespecificationtemplate';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/filespecificationtemplates/{fileSpecificationTemplateId}', 
+			'DELETE', 
+			{ 'fileSpecificationTemplateId': fileSpecificationTemplateId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete multiple file specification templates.
+	 * 
+	 * @param {Array.<String>} id File Specification template id(s) to delete
+	 */
+	deleteOutboundFilespecificationtemplatesBulk(id) { 
+		// verify the required parameter 'id' is set
+		if (id === undefined || id === null) {
+			throw 'Missing the required parameter "id" when calling deleteOutboundFilespecificationtemplatesBulk';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/filespecificationtemplates/bulk', 
+			'DELETE', 
+			{  },
+			{ 'id': this.apiClient.buildCollectionParam(id, 'multi') },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete Import Template
+	 * 
+	 * @param {String} importTemplateId Import Template ID
+	 */
+	deleteOutboundImporttemplate(importTemplateId) { 
+		// verify the required parameter 'importTemplateId' is set
+		if (importTemplateId === undefined || importTemplateId === null || importTemplateId === '') {
+			throw 'Missing the required parameter "importTemplateId" when calling deleteOutboundImporttemplate';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/importtemplates/{importTemplateId}', 
+			'DELETE', 
+			{ 'importTemplateId': importTemplateId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete multiple import templates.
+	 * 
+	 * @param {Array.<String>} id import template id(s) to delete
+	 */
+	deleteOutboundImporttemplates(id) { 
+		// verify the required parameter 'id' is set
+		if (id === undefined || id === null) {
+			throw 'Missing the required parameter "id" when calling deleteOutboundImporttemplates';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/importtemplates', 
+			'DELETE', 
+			{  },
+			{ 'id': this.apiClient.buildCollectionParam(id, 'multi') },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Delete an Outbound Messaging Campaign
 	 * 
 	 * @param {String} messagingCampaignId The Messaging Campaign ID
 	 */
 	deleteOutboundMessagingcampaign(messagingCampaignId) { 
 		// verify the required parameter 'messagingCampaignId' is set
-		if (messagingCampaignId === undefined || messagingCampaignId === null) {
+		if (messagingCampaignId === undefined || messagingCampaignId === null || messagingCampaignId === '') {
 			throw 'Missing the required parameter "messagingCampaignId" when calling deleteOutboundMessagingcampaign';
 		}
 
@@ -469,12 +648,12 @@ class OutboundApi {
 
 	/**
 	 * Reset messaging campaign progress and recycle the messaging campaign
-	 * 
+	 * Documented permissions are applicable based on campaign type.
 	 * @param {String} messagingCampaignId The Messaging Campaign ID
 	 */
 	deleteOutboundMessagingcampaignProgress(messagingCampaignId) { 
 		// verify the required parameter 'messagingCampaignId' is set
-		if (messagingCampaignId === undefined || messagingCampaignId === null) {
+		if (messagingCampaignId === undefined || messagingCampaignId === null || messagingCampaignId === '') {
 			throw 'Missing the required parameter "messagingCampaignId" when calling deleteOutboundMessagingcampaignProgress';
 		}
 
@@ -499,7 +678,7 @@ class OutboundApi {
 	 */
 	deleteOutboundRuleset(ruleSetId) { 
 		// verify the required parameter 'ruleSetId' is set
-		if (ruleSetId === undefined || ruleSetId === null) {
+		if (ruleSetId === undefined || ruleSetId === null || ruleSetId === '') {
 			throw 'Missing the required parameter "ruleSetId" when calling deleteOutboundRuleset';
 		}
 
@@ -524,7 +703,7 @@ class OutboundApi {
 	 */
 	deleteOutboundSchedulesCampaign(campaignId) { 
 		// verify the required parameter 'campaignId' is set
-		if (campaignId === undefined || campaignId === null) {
+		if (campaignId === undefined || campaignId === null || campaignId === '') {
 			throw 'Missing the required parameter "campaignId" when calling deleteOutboundSchedulesCampaign';
 		}
 
@@ -549,7 +728,7 @@ class OutboundApi {
 	 */
 	deleteOutboundSchedulesEmailcampaign(emailCampaignId) { 
 		// verify the required parameter 'emailCampaignId' is set
-		if (emailCampaignId === undefined || emailCampaignId === null) {
+		if (emailCampaignId === undefined || emailCampaignId === null || emailCampaignId === '') {
 			throw 'Missing the required parameter "emailCampaignId" when calling deleteOutboundSchedulesEmailcampaign';
 		}
 
@@ -574,7 +753,7 @@ class OutboundApi {
 	 */
 	deleteOutboundSchedulesMessagingcampaign(messagingCampaignId) { 
 		// verify the required parameter 'messagingCampaignId' is set
-		if (messagingCampaignId === undefined || messagingCampaignId === null) {
+		if (messagingCampaignId === undefined || messagingCampaignId === null || messagingCampaignId === '') {
 			throw 'Missing the required parameter "messagingCampaignId" when calling deleteOutboundSchedulesMessagingcampaign';
 		}
 
@@ -599,7 +778,7 @@ class OutboundApi {
 	 */
 	deleteOutboundSchedulesSequence(sequenceId) { 
 		// verify the required parameter 'sequenceId' is set
-		if (sequenceId === undefined || sequenceId === null) {
+		if (sequenceId === undefined || sequenceId === null || sequenceId === '') {
 			throw 'Missing the required parameter "sequenceId" when calling deleteOutboundSchedulesSequence';
 		}
 
@@ -618,13 +797,38 @@ class OutboundApi {
 	}
 
 	/**
+	 * Delete a WhatsApp campaign schedule.
+	 * 
+	 * @param {String} whatsAppCampaignId WhatsApp Campaign ID
+	 */
+	deleteOutboundSchedulesWhatsappcampaign(whatsAppCampaignId) { 
+		// verify the required parameter 'whatsAppCampaignId' is set
+		if (whatsAppCampaignId === undefined || whatsAppCampaignId === null || whatsAppCampaignId === '') {
+			throw 'Missing the required parameter "whatsAppCampaignId" when calling deleteOutboundSchedulesWhatsappcampaign';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/schedules/whatsappcampaigns/{whatsAppCampaignId}', 
+			'DELETE', 
+			{ 'whatsAppCampaignId': whatsAppCampaignId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Delete a dialer campaign sequence.
 	 * 
 	 * @param {String} sequenceId Campaign Sequence ID
 	 */
 	deleteOutboundSequence(sequenceId) { 
 		// verify the required parameter 'sequenceId' is set
-		if (sequenceId === undefined || sequenceId === null) {
+		if (sequenceId === undefined || sequenceId === null || sequenceId === '') {
 			throw 'Missing the required parameter "sequenceId" when calling deleteOutboundSequence';
 		}
 
@@ -649,7 +853,7 @@ class OutboundApi {
 	 */
 	getOutboundAttemptlimit(attemptLimitsId) { 
 		// verify the required parameter 'attemptLimitsId' is set
-		if (attemptLimitsId === undefined || attemptLimitsId === null) {
+		if (attemptLimitsId === undefined || attemptLimitsId === null || attemptLimitsId === '') {
 			throw 'Missing the required parameter "attemptLimitsId" when calling getOutboundAttemptlimit';
 		}
 
@@ -704,7 +908,7 @@ class OutboundApi {
 	 */
 	getOutboundCallabletimeset(callableTimeSetId) { 
 		// verify the required parameter 'callableTimeSetId' is set
-		if (callableTimeSetId === undefined || callableTimeSetId === null) {
+		if (callableTimeSetId === undefined || callableTimeSetId === null || callableTimeSetId === '') {
 			throw 'Missing the required parameter "callableTimeSetId" when calling getOutboundCallabletimeset';
 		}
 
@@ -759,7 +963,7 @@ class OutboundApi {
 	 */
 	getOutboundCallanalysisresponseset(callAnalysisSetId) { 
 		// verify the required parameter 'callAnalysisSetId' is set
-		if (callAnalysisSetId === undefined || callAnalysisSetId === null) {
+		if (callAnalysisSetId === undefined || callAnalysisSetId === null || callAnalysisSetId === '') {
 			throw 'Missing the required parameter "callAnalysisSetId" when calling getOutboundCallanalysisresponseset';
 		}
 
@@ -814,7 +1018,7 @@ class OutboundApi {
 	 */
 	getOutboundCampaign(campaignId) { 
 		// verify the required parameter 'campaignId' is set
-		if (campaignId === undefined || campaignId === null) {
+		if (campaignId === undefined || campaignId === null || campaignId === '') {
 			throw 'Missing the required parameter "campaignId" when calling getOutboundCampaign';
 		}
 
@@ -839,7 +1043,7 @@ class OutboundApi {
 	 */
 	getOutboundCampaignAgentownedmappingpreviewResults(campaignId) { 
 		// verify the required parameter 'campaignId' is set
-		if (campaignId === undefined || campaignId === null) {
+		if (campaignId === undefined || campaignId === null || campaignId === '') {
 			throw 'Missing the required parameter "campaignId" when calling getOutboundCampaignAgentownedmappingpreviewResults';
 		}
 
@@ -864,7 +1068,7 @@ class OutboundApi {
 	 */
 	getOutboundCampaignDiagnostics(campaignId) { 
 		// verify the required parameter 'campaignId' is set
-		if (campaignId === undefined || campaignId === null) {
+		if (campaignId === undefined || campaignId === null || campaignId === '') {
 			throw 'Missing the required parameter "campaignId" when calling getOutboundCampaignDiagnostics';
 		}
 
@@ -889,7 +1093,7 @@ class OutboundApi {
 	 */
 	getOutboundCampaignInteractions(campaignId) { 
 		// verify the required parameter 'campaignId' is set
-		if (campaignId === undefined || campaignId === null) {
+		if (campaignId === undefined || campaignId === null || campaignId === '') {
 			throw 'Missing the required parameter "campaignId" when calling getOutboundCampaignInteractions';
 		}
 
@@ -908,13 +1112,47 @@ class OutboundApi {
 	}
 
 	/**
+	 * Get line distribution information for campaigns using same Edge Group or Site as given campaign
+	 * 
+	 * @param {String} campaignId Campaign ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.includeOnlyActiveCampaigns If true will return only active Campaigns (default to true)
+	 * @param {String} opts.edgeGroupId Edge group to be used in line distribution calculations instead of current Campaign's Edge Group. Campaign's Site and Edge Group are mutually exclusive.
+	 * @param {String} opts.siteId Site to be used in line distribution calculations instead of current Campaign's Site.  Campaign's Site and Edge Group are mutually exclusive.
+	 * @param {Boolean} opts.useWeight Enable usage of weight, this value overrides current Campaign's setting in line distribution calculations
+	 * @param {Number} opts.relativeWeight Relative weight to be used in line distribution calculations instead of current Campaign's relative weight
+	 * @param {Number} opts.outboundLineCount The number of outbound lines to be used in line distribution calculations, instead of current Campaign's Outbound Lines Count
+	 */
+	getOutboundCampaignLinedistribution(campaignId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'campaignId' is set
+		if (campaignId === undefined || campaignId === null || campaignId === '') {
+			throw 'Missing the required parameter "campaignId" when calling getOutboundCampaignLinedistribution';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/campaigns/{campaignId}/linedistribution', 
+			'GET', 
+			{ 'campaignId': campaignId },
+			{ 'includeOnlyActiveCampaigns': opts['includeOnlyActiveCampaigns'],'edgeGroupId': opts['edgeGroupId'],'siteId': opts['siteId'],'useWeight': opts['useWeight'],'relativeWeight': opts['relativeWeight'],'outboundLineCount': opts['outboundLineCount'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get campaign progress
 	 * 
 	 * @param {String} campaignId Campaign ID
 	 */
 	getOutboundCampaignProgress(campaignId) { 
 		// verify the required parameter 'campaignId' is set
-		if (campaignId === undefined || campaignId === null) {
+		if (campaignId === undefined || campaignId === null || campaignId === '') {
 			throw 'Missing the required parameter "campaignId" when calling getOutboundCampaignProgress';
 		}
 
@@ -933,13 +1171,43 @@ class OutboundApi {
 	}
 
 	/**
+	 * Get the remaining and total contact count for each skill combination in a skills campaign
+	 * 
+	 * @param {String} campaignId Campaign ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 */
+	getOutboundCampaignSkillcombinations(campaignId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'campaignId' is set
+		if (campaignId === undefined || campaignId === null || campaignId === '') {
+			throw 'Missing the required parameter "campaignId" when calling getOutboundCampaignSkillcombinations';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/campaigns/{campaignId}/skillcombinations', 
+			'GET', 
+			{ 'campaignId': campaignId },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get statistics about a Dialer Campaign
 	 * 
 	 * @param {String} campaignId Campaign ID
 	 */
 	getOutboundCampaignStats(campaignId) { 
 		// verify the required parameter 'campaignId' is set
-		if (campaignId === undefined || campaignId === null) {
+		if (campaignId === undefined || campaignId === null || campaignId === '') {
 			throw 'Missing the required parameter "campaignId" when calling getOutboundCampaignStats';
 		}
 
@@ -964,7 +1232,7 @@ class OutboundApi {
 	 */
 	getOutboundCampaignrule(campaignRuleId) { 
 		// verify the required parameter 'campaignRuleId' is set
-		if (campaignRuleId === undefined || campaignRuleId === null) {
+		if (campaignRuleId === undefined || campaignRuleId === null || campaignRuleId === '') {
 			throw 'Missing the required parameter "campaignRuleId" when calling getOutboundCampaignrule';
 		}
 
@@ -1115,7 +1383,7 @@ class OutboundApi {
 	 */
 	getOutboundCampaignsDivisionview(campaignId) { 
 		// verify the required parameter 'campaignId' is set
-		if (campaignId === undefined || campaignId === null) {
+		if (campaignId === undefined || campaignId === null || campaignId === '') {
 			throw 'Missing the required parameter "campaignId" when calling getOutboundCampaignsDivisionview';
 		}
 
@@ -1175,7 +1443,7 @@ class OutboundApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'contactListId' is set
-		if (contactListId === undefined || contactListId === null) {
+		if (contactListId === undefined || contactListId === null || contactListId === '') {
 			throw 'Missing the required parameter "contactListId" when calling getOutboundContactlist';
 		}
 
@@ -1201,11 +1469,11 @@ class OutboundApi {
 	 */
 	getOutboundContactlistContact(contactListId, contactId) { 
 		// verify the required parameter 'contactListId' is set
-		if (contactListId === undefined || contactListId === null) {
+		if (contactListId === undefined || contactListId === null || contactListId === '') {
 			throw 'Missing the required parameter "contactListId" when calling getOutboundContactlistContact';
 		}
 		// verify the required parameter 'contactId' is set
-		if (contactId === undefined || contactId === null) {
+		if (contactId === undefined || contactId === null || contactId === '') {
 			throw 'Missing the required parameter "contactId" when calling getOutboundContactlistContact';
 		}
 
@@ -1213,6 +1481,61 @@ class OutboundApi {
 			'/api/v2/outbound/contactlists/{contactListId}/contacts/{contactId}', 
 			'GET', 
 			{ 'contactListId': contactListId,'contactId': contactId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get bulk operation job.
+	 * 
+	 * @param {String} contactListId Contact List ID
+	 * @param {String} jobId Job ID
+	 */
+	getOutboundContactlistContactsBulkJob(contactListId, jobId) { 
+		// verify the required parameter 'contactListId' is set
+		if (contactListId === undefined || contactListId === null || contactListId === '') {
+			throw 'Missing the required parameter "contactListId" when calling getOutboundContactlistContactsBulkJob';
+		}
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null || jobId === '') {
+			throw 'Missing the required parameter "jobId" when calling getOutboundContactlistContactsBulkJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/contactlists/{contactListId}/contacts/bulk/jobs/{jobId}', 
+			'GET', 
+			{ 'contactListId': contactListId,'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get 10 most recent bulk operation jobs associated with contact list.
+	 * 
+	 * @param {String} contactListId Contact List ID
+	 */
+	getOutboundContactlistContactsBulkJobs(contactListId) { 
+		// verify the required parameter 'contactListId' is set
+		if (contactListId === undefined || contactListId === null || contactListId === '') {
+			throw 'Missing the required parameter "contactListId" when calling getOutboundContactlistContactsBulkJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/contactlists/{contactListId}/contacts/bulk/jobs', 
+			'GET', 
+			{ 'contactListId': contactListId },
 			{  },
 			{  },
 			{  },
@@ -1234,7 +1557,7 @@ class OutboundApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'contactListId' is set
-		if (contactListId === undefined || contactListId === null) {
+		if (contactListId === undefined || contactListId === null || contactListId === '') {
 			throw 'Missing the required parameter "contactListId" when calling getOutboundContactlistExport';
 		}
 
@@ -1259,7 +1582,7 @@ class OutboundApi {
 	 */
 	getOutboundContactlistImportstatus(contactListId) { 
 		// verify the required parameter 'contactListId' is set
-		if (contactListId === undefined || contactListId === null) {
+		if (contactListId === undefined || contactListId === null || contactListId === '') {
 			throw 'Missing the required parameter "contactListId" when calling getOutboundContactlistImportstatus';
 		}
 
@@ -1284,7 +1607,7 @@ class OutboundApi {
 	 */
 	getOutboundContactlistTimezonemappingpreview(contactListId) { 
 		// verify the required parameter 'contactListId' is set
-		if (contactListId === undefined || contactListId === null) {
+		if (contactListId === undefined || contactListId === null || contactListId === '') {
 			throw 'Missing the required parameter "contactListId" when calling getOutboundContactlistTimezonemappingpreview';
 		}
 
@@ -1309,7 +1632,7 @@ class OutboundApi {
 	 */
 	getOutboundContactlistfilter(contactListFilterId) { 
 		// verify the required parameter 'contactListFilterId' is set
-		if (contactListFilterId === undefined || contactListFilterId === null) {
+		if (contactListFilterId === undefined || contactListFilterId === null || contactListFilterId === '') {
 			throw 'Missing the required parameter "contactListFilterId" when calling getOutboundContactlistfilter';
 		}
 
@@ -1404,7 +1727,7 @@ class OutboundApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'contactListId' is set
-		if (contactListId === undefined || contactListId === null) {
+		if (contactListId === undefined || contactListId === null || contactListId === '') {
 			throw 'Missing the required parameter "contactListId" when calling getOutboundContactlistsDivisionview';
 		}
 
@@ -1455,13 +1778,68 @@ class OutboundApi {
 	}
 
 	/**
+	 * Get Contact List Template
+	 * 
+	 * @param {String} contactListTemplateId ContactListTemplate ID
+	 */
+	getOutboundContactlisttemplate(contactListTemplateId) { 
+		// verify the required parameter 'contactListTemplateId' is set
+		if (contactListTemplateId === undefined || contactListTemplateId === null || contactListTemplateId === '') {
+			throw 'Missing the required parameter "contactListTemplateId" when calling getOutboundContactlisttemplate';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/contactlisttemplates/{contactListTemplateId}', 
+			'GET', 
+			{ 'contactListTemplateId': contactListTemplateId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Query a list of contact list templates
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize Page size. The max that will be returned is 100. (default to 25)
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Boolean} opts.allowEmptyResult Whether to return an empty page when there are no results for that page (default to false)
+	 * @param {Object} opts.filterType Filter type (default to Prefix)
+	 * @param {String} opts.name Name
+	 * @param {String} opts.sortBy Sort by
+	 * @param {Object} opts.sortOrder Sort order (default to a)
+	 */
+	getOutboundContactlisttemplates(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/contactlisttemplates', 
+			'GET', 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'allowEmptyResult': opts['allowEmptyResult'],'filterType': opts['filterType'],'name': opts['name'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get an Outbound Digital Rule Set
 	 * 
 	 * @param {String} digitalRuleSetId The Digital Rule Set ID
 	 */
 	getOutboundDigitalruleset(digitalRuleSetId) { 
 		// verify the required parameter 'digitalRuleSetId' is set
-		if (digitalRuleSetId === undefined || digitalRuleSetId === null) {
+		if (digitalRuleSetId === undefined || digitalRuleSetId === null || digitalRuleSetId === '') {
 			throw 'Missing the required parameter "digitalRuleSetId" when calling getOutboundDigitalruleset';
 		}
 
@@ -1520,7 +1898,7 @@ class OutboundApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'dncListId' is set
-		if (dncListId === undefined || dncListId === null) {
+		if (dncListId === undefined || dncListId === null || dncListId === '') {
 			throw 'Missing the required parameter "dncListId" when calling getOutboundDnclist';
 		}
 
@@ -1549,7 +1927,7 @@ class OutboundApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'dncListId' is set
-		if (dncListId === undefined || dncListId === null) {
+		if (dncListId === undefined || dncListId === null || dncListId === '') {
 			throw 'Missing the required parameter "dncListId" when calling getOutboundDnclistExport';
 		}
 
@@ -1574,7 +1952,7 @@ class OutboundApi {
 	 */
 	getOutboundDnclistImportstatus(dncListId) { 
 		// verify the required parameter 'dncListId' is set
-		if (dncListId === undefined || dncListId === null) {
+		if (dncListId === undefined || dncListId === null || dncListId === '') {
 			throw 'Missing the required parameter "dncListId" when calling getOutboundDnclistImportstatus';
 		}
 
@@ -1638,7 +2016,7 @@ class OutboundApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'dncListId' is set
-		if (dncListId === undefined || dncListId === null) {
+		if (dncListId === undefined || dncListId === null || dncListId === '') {
 			throw 'Missing the required parameter "dncListId" when calling getOutboundDnclistsDivisionview';
 		}
 
@@ -1696,7 +2074,7 @@ class OutboundApi {
 	 */
 	getOutboundEvent(eventId) { 
 		// verify the required parameter 'eventId' is set
-		if (eventId === undefined || eventId === null) {
+		if (eventId === undefined || eventId === null || eventId === '') {
 			throw 'Missing the required parameter "eventId" when calling getOutboundEvent';
 		}
 
@@ -1745,13 +2123,158 @@ class OutboundApi {
 	}
 
 	/**
+	 * Get File Specification Template
+	 * 
+	 * @param {String} fileSpecificationTemplateId File Specification Template ID
+	 */
+	getOutboundFilespecificationtemplate(fileSpecificationTemplateId) { 
+		// verify the required parameter 'fileSpecificationTemplateId' is set
+		if (fileSpecificationTemplateId === undefined || fileSpecificationTemplateId === null || fileSpecificationTemplateId === '') {
+			throw 'Missing the required parameter "fileSpecificationTemplateId" when calling getOutboundFilespecificationtemplate';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/filespecificationtemplates/{fileSpecificationTemplateId}', 
+			'GET', 
+			{ 'fileSpecificationTemplateId': fileSpecificationTemplateId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Query File Specification Templates
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize Page size. The max that will be returned is 100. (default to 25)
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Boolean} opts.allowEmptyResult Whether to return an empty page when there are no results for that page (default to false)
+	 * @param {Object} opts.filterType Filter type (default to Prefix)
+	 * @param {String} opts.name Name
+	 * @param {String} opts.sortBy Sort by
+	 * @param {Object} opts.sortOrder Sort order (default to a)
+	 */
+	getOutboundFilespecificationtemplates(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/filespecificationtemplates', 
+			'GET', 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'allowEmptyResult': opts['allowEmptyResult'],'filterType': opts['filterType'],'name': opts['name'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get Import Template
+	 * 
+	 * @param {String} importTemplateId Import Template ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.includeImportStatus Import status (default to false)
+	 */
+	getOutboundImporttemplate(importTemplateId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'importTemplateId' is set
+		if (importTemplateId === undefined || importTemplateId === null || importTemplateId === '') {
+			throw 'Missing the required parameter "importTemplateId" when calling getOutboundImporttemplate';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/importtemplates/{importTemplateId}', 
+			'GET', 
+			{ 'importTemplateId': importTemplateId },
+			{ 'includeImportStatus': opts['includeImportStatus'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the import status for an import template.
+	 * 
+	 * @param {String} importTemplateId importTemplateId
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.listNamePrefix listNamePrefix
+	 */
+	getOutboundImporttemplateImportstatus(importTemplateId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'importTemplateId' is set
+		if (importTemplateId === undefined || importTemplateId === null || importTemplateId === '') {
+			throw 'Missing the required parameter "importTemplateId" when calling getOutboundImporttemplateImportstatus';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/importtemplates/{importTemplateId}/importstatus', 
+			'GET', 
+			{ 'importTemplateId': importTemplateId },
+			{ 'listNamePrefix': opts['listNamePrefix'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Query Import Templates
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.includeImportStatus Import status (default to false)
+	 * @param {Number} opts.pageSize Page size. The max that will be returned is 100. (default to 25)
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Boolean} opts.allowEmptyResult Whether to return an empty page when there are no results for that page (default to false)
+	 * @param {Object} opts.filterType Filter type (default to Prefix)
+	 * @param {String} opts.name Name
+	 * @param {String} opts.sortBy Sort by
+	 * @param {Object} opts.sortOrder Sort order (default to a)
+	 * @param {String} opts.contactListTemplateId Contact List Template ID
+	 */
+	getOutboundImporttemplates(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/importtemplates', 
+			'GET', 
+			{  },
+			{ 'includeImportStatus': opts['includeImportStatus'],'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'allowEmptyResult': opts['allowEmptyResult'],'filterType': opts['filterType'],'name': opts['name'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'contactListTemplateId': opts['contactListTemplateId'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get an Outbound Messaging Campaign
 	 * 
 	 * @param {String} messagingCampaignId The Messaging Campaign ID
 	 */
 	getOutboundMessagingcampaign(messagingCampaignId) { 
 		// verify the required parameter 'messagingCampaignId' is set
-		if (messagingCampaignId === undefined || messagingCampaignId === null) {
+		if (messagingCampaignId === undefined || messagingCampaignId === null || messagingCampaignId === '') {
 			throw 'Missing the required parameter "messagingCampaignId" when calling getOutboundMessagingcampaign';
 		}
 
@@ -1776,7 +2299,7 @@ class OutboundApi {
 	 */
 	getOutboundMessagingcampaignDiagnostics(messagingCampaignId) { 
 		// verify the required parameter 'messagingCampaignId' is set
-		if (messagingCampaignId === undefined || messagingCampaignId === null) {
+		if (messagingCampaignId === undefined || messagingCampaignId === null || messagingCampaignId === '') {
 			throw 'Missing the required parameter "messagingCampaignId" when calling getOutboundMessagingcampaignDiagnostics';
 		}
 
@@ -1801,7 +2324,7 @@ class OutboundApi {
 	 */
 	getOutboundMessagingcampaignProgress(messagingCampaignId) { 
 		// verify the required parameter 'messagingCampaignId' is set
-		if (messagingCampaignId === undefined || messagingCampaignId === null) {
+		if (messagingCampaignId === undefined || messagingCampaignId === null || messagingCampaignId === '') {
 			throw 'Missing the required parameter "messagingCampaignId" when calling getOutboundMessagingcampaignProgress';
 		}
 
@@ -1833,6 +2356,8 @@ class OutboundApi {
 	 * @param {Object} opts.type Campaign Type
 	 * @param {String} opts.senderSmsPhoneNumber Sender SMS Phone Number
 	 * @param {Array.<String>} opts.id A list of messaging campaign ids to bulk fetch
+	 * @param {String} opts.contentTemplateId Content template ID
+	 * @param {Object} opts.campaignStatus Campaign Status
 	 */
 	getOutboundMessagingcampaigns(opts) { 
 		opts = opts || {};
@@ -1842,7 +2367,7 @@ class OutboundApi {
 			'/api/v2/outbound/messagingcampaigns', 
 			'GET', 
 			{  },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'name': opts['name'],'contactListId': opts['contactListId'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi'),'type': opts['type'],'senderSmsPhoneNumber': opts['senderSmsPhoneNumber'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi') },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'name': opts['name'],'contactListId': opts['contactListId'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi'),'type': opts['type'],'senderSmsPhoneNumber': opts['senderSmsPhoneNumber'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'contentTemplateId': opts['contentTemplateId'],'campaignStatus': opts['campaignStatus'] },
 			{  },
 			{  },
 			null, 
@@ -1859,7 +2384,7 @@ class OutboundApi {
 	 */
 	getOutboundMessagingcampaignsDivisionview(messagingCampaignId) { 
 		// verify the required parameter 'messagingCampaignId' is set
-		if (messagingCampaignId === undefined || messagingCampaignId === null) {
+		if (messagingCampaignId === undefined || messagingCampaignId === null || messagingCampaignId === '') {
 			throw 'Missing the required parameter "messagingCampaignId" when calling getOutboundMessagingcampaignsDivisionview';
 		}
 
@@ -1888,6 +2413,8 @@ class OutboundApi {
 	 * @param {Object} opts.type Campaign Type
 	 * @param {Array.<String>} opts.id id
 	 * @param {String} opts.senderSmsPhoneNumber Sender SMS Phone Number
+	 * @param {String} opts.contentTemplateId Content template ID
+	 * @param {Object} opts.campaignStatus Campaign Status
 	 */
 	getOutboundMessagingcampaignsDivisionviews(opts) { 
 		opts = opts || {};
@@ -1897,7 +2424,7 @@ class OutboundApi {
 			'/api/v2/outbound/messagingcampaigns/divisionviews', 
 			'GET', 
 			{  },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortOrder': opts['sortOrder'],'name': opts['name'],'type': opts['type'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'senderSmsPhoneNumber': opts['senderSmsPhoneNumber'] },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortOrder': opts['sortOrder'],'name': opts['name'],'type': opts['type'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'senderSmsPhoneNumber': opts['senderSmsPhoneNumber'],'contentTemplateId': opts['contentTemplateId'],'campaignStatus': opts['campaignStatus'] },
 			{  },
 			{  },
 			null, 
@@ -1914,7 +2441,7 @@ class OutboundApi {
 	 */
 	getOutboundRuleset(ruleSetId) { 
 		// verify the required parameter 'ruleSetId' is set
-		if (ruleSetId === undefined || ruleSetId === null) {
+		if (ruleSetId === undefined || ruleSetId === null || ruleSetId === '') {
 			throw 'Missing the required parameter "ruleSetId" when calling getOutboundRuleset';
 		}
 
@@ -1969,7 +2496,7 @@ class OutboundApi {
 	 */
 	getOutboundSchedulesCampaign(campaignId) { 
 		// verify the required parameter 'campaignId' is set
-		if (campaignId === undefined || campaignId === null) {
+		if (campaignId === undefined || campaignId === null || campaignId === '') {
 			throw 'Missing the required parameter "campaignId" when calling getOutboundSchedulesCampaign';
 		}
 
@@ -2014,7 +2541,7 @@ class OutboundApi {
 	 */
 	getOutboundSchedulesEmailcampaign(emailCampaignId) { 
 		// verify the required parameter 'emailCampaignId' is set
-		if (emailCampaignId === undefined || emailCampaignId === null) {
+		if (emailCampaignId === undefined || emailCampaignId === null || emailCampaignId === '') {
 			throw 'Missing the required parameter "emailCampaignId" when calling getOutboundSchedulesEmailcampaign';
 		}
 
@@ -2059,7 +2586,7 @@ class OutboundApi {
 	 */
 	getOutboundSchedulesMessagingcampaign(messagingCampaignId) { 
 		// verify the required parameter 'messagingCampaignId' is set
-		if (messagingCampaignId === undefined || messagingCampaignId === null) {
+		if (messagingCampaignId === undefined || messagingCampaignId === null || messagingCampaignId === '') {
 			throw 'Missing the required parameter "messagingCampaignId" when calling getOutboundSchedulesMessagingcampaign';
 		}
 
@@ -2104,7 +2631,7 @@ class OutboundApi {
 	 */
 	getOutboundSchedulesSequence(sequenceId) { 
 		// verify the required parameter 'sequenceId' is set
-		if (sequenceId === undefined || sequenceId === null) {
+		if (sequenceId === undefined || sequenceId === null || sequenceId === '') {
 			throw 'Missing the required parameter "sequenceId" when calling getOutboundSchedulesSequence';
 		}
 
@@ -2143,13 +2670,58 @@ class OutboundApi {
 	}
 
 	/**
+	 * Get a WhatsApp campaign schedule.
+	 * 
+	 * @param {String} whatsAppCampaignId WhatsApp Campaign ID
+	 */
+	getOutboundSchedulesWhatsappcampaign(whatsAppCampaignId) { 
+		// verify the required parameter 'whatsAppCampaignId' is set
+		if (whatsAppCampaignId === undefined || whatsAppCampaignId === null || whatsAppCampaignId === '') {
+			throw 'Missing the required parameter "whatsAppCampaignId" when calling getOutboundSchedulesWhatsappcampaign';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/schedules/whatsappcampaigns/{whatsAppCampaignId}', 
+			'GET', 
+			{ 'whatsAppCampaignId': whatsAppCampaignId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Query for a list of WhatsApp campaign schedules.
+	 * 
+	 */
+	getOutboundSchedulesWhatsappcampaigns() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/schedules/whatsappcampaigns', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get a dialer campaign sequence.
 	 * 
 	 * @param {String} sequenceId Campaign Sequence ID
 	 */
 	getOutboundSequence(sequenceId) { 
 		// verify the required parameter 'sequenceId' is set
-		if (sequenceId === undefined || sequenceId === null) {
+		if (sequenceId === undefined || sequenceId === null || sequenceId === '') {
 			throw 'Missing the required parameter "sequenceId" when calling getOutboundSequence';
 		}
 
@@ -2238,6 +2810,36 @@ class OutboundApi {
 	}
 
 	/**
+	 * Update a campaign.
+	 * 
+	 * @param {String} campaignId Campaign ID
+	 * @param {Object} body CampaignPatchRequest
+	 */
+	patchOutboundCampaign(campaignId, body) { 
+		// verify the required parameter 'campaignId' is set
+		if (campaignId === undefined || campaignId === null || campaignId === '') {
+			throw 'Missing the required parameter "campaignId" when calling patchOutboundCampaign';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchOutboundCampaign';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/campaigns/{campaignId}', 
+			'PATCH', 
+			{ 'campaignId': campaignId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Add entries to or delete entries from a DNC list.
 	 * Only Internal DNC lists may be deleted from
 	 * @param {String} dncListId DncList ID
@@ -2245,7 +2847,7 @@ class OutboundApi {
 	 */
 	patchOutboundDnclistCustomexclusioncolumns(dncListId, body) { 
 		// verify the required parameter 'dncListId' is set
-		if (dncListId === undefined || dncListId === null) {
+		if (dncListId === undefined || dncListId === null || dncListId === '') {
 			throw 'Missing the required parameter "dncListId" when calling patchOutboundDnclistCustomexclusioncolumns';
 		}
 		// verify the required parameter 'body' is set
@@ -2275,7 +2877,7 @@ class OutboundApi {
 	 */
 	patchOutboundDnclistEmailaddresses(dncListId, body) { 
 		// verify the required parameter 'dncListId' is set
-		if (dncListId === undefined || dncListId === null) {
+		if (dncListId === undefined || dncListId === null || dncListId === '') {
 			throw 'Missing the required parameter "dncListId" when calling patchOutboundDnclistEmailaddresses';
 		}
 		// verify the required parameter 'body' is set
@@ -2305,7 +2907,7 @@ class OutboundApi {
 	 */
 	patchOutboundDnclistPhonenumbers(dncListId, body) { 
 		// verify the required parameter 'dncListId' is set
-		if (dncListId === undefined || dncListId === null) {
+		if (dncListId === undefined || dncListId === null || dncListId === '') {
 			throw 'Missing the required parameter "dncListId" when calling patchOutboundDnclistPhonenumbers';
 		}
 		// verify the required parameter 'body' is set
@@ -2328,11 +2930,45 @@ class OutboundApi {
 	}
 
 	/**
+	 * Add entries to or delete entries from a DNC list.
+	 * Only Internal DNC lists may be deleted from
+	 * @param {String} dncListId DncList ID
+	 * @param {Object} body DNC whatsApp numbers
+	 */
+	patchOutboundDnclistWhatsappnumbers(dncListId, body) { 
+		// verify the required parameter 'dncListId' is set
+		if (dncListId === undefined || dncListId === null || dncListId === '') {
+			throw 'Missing the required parameter "dncListId" when calling patchOutboundDnclistWhatsappnumbers';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchOutboundDnclistWhatsappnumbers';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/dnclists/{dncListId}/whatsappnumbers', 
+			'PATCH', 
+			{ 'dncListId': dncListId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Update the outbound settings for this organization
 	 * 
 	 * @param {Object} body outboundSettings
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.useMaxCallsPerAgentDecimal Use maxCallsPerAgent with decimal precision
 	 */
-	patchOutboundSettings(body) { 
+	patchOutboundSettings(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling patchOutboundSettings';
@@ -2342,7 +2978,7 @@ class OutboundApi {
 			'/api/v2/outbound/settings', 
 			'PATCH', 
 			{  },
-			{  },
+			{ 'useMaxCallsPerAgentDecimal': opts['useMaxCallsPerAgentDecimal'] },
 			{  },
 			{  },
 			body, 
@@ -2368,39 +3004,6 @@ class OutboundApi {
 			'POST', 
 			{  },
 			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Retrieves audits for dialer.
-	 * 
-	 * @param {Object} body AuditSearch
-	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageSize Page size (default to 25)
-	 * @param {Number} opts.pageNumber Page number (default to 1)
-	 * @param {String} opts.sortBy Sort by (default to entity.name)
-	 * @param {String} opts.sortOrder Sort order (default to ascending)
-	 * @param {Boolean} opts.facetsOnly Facets only (default to false)
-	 */
-	postOutboundAudits(body, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postOutboundAudits';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/outbound/audits', 
-			'POST', 
-			{  },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'facetsOnly': opts['facetsOnly'] },
 			{  },
 			{  },
 			body, 
@@ -2467,7 +3070,7 @@ class OutboundApi {
 	 */
 	postOutboundCampaignAgentownedmappingpreview(campaignId) { 
 		// verify the required parameter 'campaignId' is set
-		if (campaignId === undefined || campaignId === null) {
+		if (campaignId === undefined || campaignId === null || campaignId === '') {
 			throw 'Missing the required parameter "campaignId" when calling postOutboundCampaignAgentownedmappingpreview';
 		}
 
@@ -2494,7 +3097,7 @@ class OutboundApi {
 	 */
 	postOutboundCampaignCallbackSchedule(campaignId, body) { 
 		// verify the required parameter 'campaignId' is set
-		if (campaignId === undefined || campaignId === null) {
+		if (campaignId === undefined || campaignId === null || campaignId === '') {
 			throw 'Missing the required parameter "campaignId" when calling postOutboundCampaignCallbackSchedule';
 		}
 		// verify the required parameter 'body' is set
@@ -2510,6 +3113,56 @@ class OutboundApi {
 			{  },
 			{  },
 			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Start the campaign
+	 * 
+	 * @param {String} campaignId Campaign ID
+	 */
+	postOutboundCampaignStart(campaignId) { 
+		// verify the required parameter 'campaignId' is set
+		if (campaignId === undefined || campaignId === null || campaignId === '') {
+			throw 'Missing the required parameter "campaignId" when calling postOutboundCampaignStart';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/campaigns/{campaignId}/start', 
+			'POST', 
+			{ 'campaignId': campaignId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Stop the campaign
+	 * 
+	 * @param {String} campaignId Campaign ID
+	 */
+	postOutboundCampaignStop(campaignId) { 
+		// verify the required parameter 'campaignId' is set
+		if (campaignId === undefined || campaignId === null || campaignId === '') {
+			throw 'Missing the required parameter "campaignId" when calling postOutboundCampaignStop';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/campaigns/{campaignId}/stop', 
+			'POST', 
+			{ 'campaignId': campaignId },
+			{  },
+			{  },
+			{  },
+			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']
@@ -2545,8 +3198,12 @@ class OutboundApi {
 	 * Create a campaign.
 	 * 
 	 * @param {Object} body Campaign
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.useMaxCallsPerAgentDecimal Use maxCallsPerAgent with decimal precision
 	 */
-	postOutboundCampaigns(body) { 
+	postOutboundCampaigns(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postOutboundCampaigns';
@@ -2556,7 +3213,7 @@ class OutboundApi {
 			'/api/v2/outbound/campaigns', 
 			'POST', 
 			{  },
-			{  },
+			{ 'useMaxCallsPerAgentDecimal': opts['useMaxCallsPerAgentDecimal'] },
 			{  },
 			{  },
 			body, 
@@ -2598,7 +3255,7 @@ class OutboundApi {
 	 */
 	postOutboundContactlistClear(contactListId) { 
 		// verify the required parameter 'contactListId' is set
-		if (contactListId === undefined || contactListId === null) {
+		if (contactListId === undefined || contactListId === null || contactListId === '') {
 			throw 'Missing the required parameter "contactListId" when calling postOutboundContactlistClear';
 		}
 
@@ -2630,7 +3287,7 @@ class OutboundApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'contactListId' is set
-		if (contactListId === undefined || contactListId === null) {
+		if (contactListId === undefined || contactListId === null || contactListId === '') {
 			throw 'Missing the required parameter "contactListId" when calling postOutboundContactlistContacts';
 		}
 		// verify the required parameter 'body' is set
@@ -2660,7 +3317,7 @@ class OutboundApi {
 	 */
 	postOutboundContactlistContactsBulk(contactListId, body) { 
 		// verify the required parameter 'contactListId' is set
-		if (contactListId === undefined || contactListId === null) {
+		if (contactListId === undefined || contactListId === null || contactListId === '') {
 			throw 'Missing the required parameter "contactListId" when calling postOutboundContactlistContactsBulk';
 		}
 		// verify the required parameter 'body' is set
@@ -2683,13 +3340,107 @@ class OutboundApi {
 	}
 
 	/**
+	 * Start an async job to delete contacts using a filter.
+	 * 
+	 * @param {String} contactListId Contact List ID
+	 * @param {Object} body Contact filter information.
+	 */
+	postOutboundContactlistContactsBulkRemove(contactListId, body) { 
+		// verify the required parameter 'contactListId' is set
+		if (contactListId === undefined || contactListId === null || contactListId === '') {
+			throw 'Missing the required parameter "contactListId" when calling postOutboundContactlistContactsBulkRemove';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postOutboundContactlistContactsBulkRemove';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/contactlists/{contactListId}/contacts/bulk/remove', 
+			'POST', 
+			{ 'contactListId': contactListId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Start an async job to bulk edit contacts.
+	 * 
+	 * @param {String} contactListId Contact List ID
+	 * @param {Object} body Contact bulk edit request information.
+	 */
+	postOutboundContactlistContactsBulkUpdate(contactListId, body) { 
+		// verify the required parameter 'contactListId' is set
+		if (contactListId === undefined || contactListId === null || contactListId === '') {
+			throw 'Missing the required parameter "contactListId" when calling postOutboundContactlistContactsBulkUpdate';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postOutboundContactlistContactsBulkUpdate';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/contactlists/{contactListId}/contacts/bulk/update', 
+			'POST', 
+			{ 'contactListId': contactListId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Query contacts from a contact list.
+	 * 
+	 * @param {String} contactListId Contact List ID
+	 * @param {Object} body Contact search parameters.
+	 */
+	postOutboundContactlistContactsSearch(contactListId, body) { 
+		// verify the required parameter 'contactListId' is set
+		if (contactListId === undefined || contactListId === null || contactListId === '') {
+			throw 'Missing the required parameter "contactListId" when calling postOutboundContactlistContactsSearch';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postOutboundContactlistContactsSearch';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/contactlists/{contactListId}/contacts/search', 
+			'POST', 
+			{ 'contactListId': contactListId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Initiate the export of a contact list.
 	 * Returns 200 if received OK.
 	 * @param {String} contactListId ContactList ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body Export information to get
 	 */
-	postOutboundContactlistExport(contactListId) { 
+	postOutboundContactlistExport(contactListId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'contactListId' is set
-		if (contactListId === undefined || contactListId === null) {
+		if (contactListId === undefined || contactListId === null || contactListId === '') {
 			throw 'Missing the required parameter "contactListId" when calling postOutboundContactlistExport';
 		}
 
@@ -2700,7 +3451,7 @@ class OutboundApi {
 			{  },
 			{  },
 			{  },
-			null, 
+			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']
@@ -2720,6 +3471,31 @@ class OutboundApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/outbound/contactlistfilters', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Retrieve multiple contact list filters
+	 * 
+	 * @param {Object} body The contact list filters to retrieve
+	 */
+	postOutboundContactlistfiltersBulkRetrieve(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postOutboundContactlistfiltersBulkRetrieve';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/contactlistfilters/bulk/retrieve', 
 			'POST', 
 			{  },
 			{  },
@@ -2783,13 +3559,88 @@ class OutboundApi {
 	}
 
 	/**
+	 * Create Contact List Template
+	 * 
+	 * @param {Object} body ContactListTemplate
+	 */
+	postOutboundContactlisttemplates(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postOutboundContactlisttemplates';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/contactlisttemplates', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Add multiple contact list templates
+	 * 
+	 * @param {Array.<Object>} body contact list template(s) to add
+	 */
+	postOutboundContactlisttemplatesBulkAdd(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postOutboundContactlisttemplatesBulkAdd';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/contactlisttemplates/bulk/add', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get multiple contact list templates
+	 * 
+	 * @param {Object} body contact list templates to get
+	 */
+	postOutboundContactlisttemplatesBulkRetrieve(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postOutboundContactlisttemplatesBulkRetrieve';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/contactlisttemplates/bulk/retrieve', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Add phone numbers to a Dialer DNC list.
 	 * 
 	 * @param {String} conversationId Conversation ID
 	 */
 	postOutboundConversationDnc(conversationId) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postOutboundConversationDnc';
 		}
 
@@ -2840,7 +3691,7 @@ class OutboundApi {
 	 */
 	postOutboundDnclistEmailaddresses(dncListId, body) { 
 		// verify the required parameter 'dncListId' is set
-		if (dncListId === undefined || dncListId === null) {
+		if (dncListId === undefined || dncListId === null || dncListId === '') {
 			throw 'Missing the required parameter "dncListId" when calling postOutboundDnclistEmailaddresses';
 		}
 		// verify the required parameter 'body' is set
@@ -2869,7 +3720,7 @@ class OutboundApi {
 	 */
 	postOutboundDnclistExport(dncListId) { 
 		// verify the required parameter 'dncListId' is set
-		if (dncListId === undefined || dncListId === null) {
+		if (dncListId === undefined || dncListId === null || dncListId === '') {
 			throw 'Missing the required parameter "dncListId" when calling postOutboundDnclistExport';
 		}
 
@@ -2899,7 +3750,7 @@ class OutboundApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'dncListId' is set
-		if (dncListId === undefined || dncListId === null) {
+		if (dncListId === undefined || dncListId === null || dncListId === '') {
 			throw 'Missing the required parameter "dncListId" when calling postOutboundDnclistPhonenumbers';
 		}
 		// verify the required parameter 'body' is set
@@ -2940,6 +3791,131 @@ class OutboundApi {
 			{  },
 			{  },
 			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create File Specification Template
+	 * 
+	 * @param {Object} body FileSpecificationTemplate
+	 */
+	postOutboundFilespecificationtemplates(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postOutboundFilespecificationtemplates';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/filespecificationtemplates', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create Import Template
+	 * 
+	 * @param {Object} body ImportTemplate
+	 */
+	postOutboundImporttemplates(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postOutboundImporttemplates';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/importtemplates', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Add multiple import templates
+	 * 
+	 * @param {Array.<Object>} body import template(s) to add
+	 */
+	postOutboundImporttemplatesBulkAdd(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postOutboundImporttemplatesBulkAdd';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/importtemplates/bulk/add', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Start the campaign
+	 * Documented permissions are applicable based on campaign type.
+	 * @param {String} messagingCampaignId The Messaging Campaign ID
+	 */
+	postOutboundMessagingcampaignStart(messagingCampaignId) { 
+		// verify the required parameter 'messagingCampaignId' is set
+		if (messagingCampaignId === undefined || messagingCampaignId === null || messagingCampaignId === '') {
+			throw 'Missing the required parameter "messagingCampaignId" when calling postOutboundMessagingcampaignStart';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/messagingcampaigns/{messagingCampaignId}/start', 
+			'POST', 
+			{ 'messagingCampaignId': messagingCampaignId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Stop the campaign
+	 * Documented permissions are applicable based on campaign type.
+	 * @param {String} messagingCampaignId The Messaging Campaign ID
+	 */
+	postOutboundMessagingcampaignStop(messagingCampaignId) { 
+		// verify the required parameter 'messagingCampaignId' is set
+		if (messagingCampaignId === undefined || messagingCampaignId === null || messagingCampaignId === '') {
+			throw 'Missing the required parameter "messagingCampaignId" when calling postOutboundMessagingcampaignStop';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/messagingcampaigns/{messagingCampaignId}/stop', 
+			'POST', 
+			{ 'messagingCampaignId': messagingCampaignId },
+			{  },
+			{  },
+			{  },
+			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']
@@ -3054,7 +4030,7 @@ class OutboundApi {
 	 */
 	putOutboundAttemptlimit(attemptLimitsId, body) { 
 		// verify the required parameter 'attemptLimitsId' is set
-		if (attemptLimitsId === undefined || attemptLimitsId === null) {
+		if (attemptLimitsId === undefined || attemptLimitsId === null || attemptLimitsId === '') {
 			throw 'Missing the required parameter "attemptLimitsId" when calling putOutboundAttemptlimit';
 		}
 		// verify the required parameter 'body' is set
@@ -3084,7 +4060,7 @@ class OutboundApi {
 	 */
 	putOutboundCallabletimeset(callableTimeSetId, body) { 
 		// verify the required parameter 'callableTimeSetId' is set
-		if (callableTimeSetId === undefined || callableTimeSetId === null) {
+		if (callableTimeSetId === undefined || callableTimeSetId === null || callableTimeSetId === '') {
 			throw 'Missing the required parameter "callableTimeSetId" when calling putOutboundCallabletimeset';
 		}
 		// verify the required parameter 'body' is set
@@ -3114,7 +4090,7 @@ class OutboundApi {
 	 */
 	putOutboundCallanalysisresponseset(callAnalysisSetId, body) { 
 		// verify the required parameter 'callAnalysisSetId' is set
-		if (callAnalysisSetId === undefined || callAnalysisSetId === null) {
+		if (callAnalysisSetId === undefined || callAnalysisSetId === null || callAnalysisSetId === '') {
 			throw 'Missing the required parameter "callAnalysisSetId" when calling putOutboundCallanalysisresponseset';
 		}
 		// verify the required parameter 'body' is set
@@ -3141,10 +4117,14 @@ class OutboundApi {
 	 * 
 	 * @param {String} campaignId Campaign ID
 	 * @param {Object} body Campaign
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.useMaxCallsPerAgentDecimal Use maxCallsPerAgent with decimal precision
 	 */
-	putOutboundCampaign(campaignId, body) { 
+	putOutboundCampaign(campaignId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'campaignId' is set
-		if (campaignId === undefined || campaignId === null) {
+		if (campaignId === undefined || campaignId === null || campaignId === '') {
 			throw 'Missing the required parameter "campaignId" when calling putOutboundCampaign';
 		}
 		// verify the required parameter 'body' is set
@@ -3156,7 +4136,7 @@ class OutboundApi {
 			'/api/v2/outbound/campaigns/{campaignId}', 
 			'PUT', 
 			{ 'campaignId': campaignId },
-			{  },
+			{ 'useMaxCallsPerAgentDecimal': opts['useMaxCallsPerAgentDecimal'] },
 			{  },
 			{  },
 			body, 
@@ -3175,11 +4155,11 @@ class OutboundApi {
 	 */
 	putOutboundCampaignAgent(campaignId, userId, body) { 
 		// verify the required parameter 'campaignId' is set
-		if (campaignId === undefined || campaignId === null) {
+		if (campaignId === undefined || campaignId === null || campaignId === '') {
 			throw 'Missing the required parameter "campaignId" when calling putOutboundCampaignAgent';
 		}
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling putOutboundCampaignAgent';
 		}
 		// verify the required parameter 'body' is set
@@ -3209,7 +4189,7 @@ class OutboundApi {
 	 */
 	putOutboundCampaignrule(campaignRuleId, body) { 
 		// verify the required parameter 'campaignRuleId' is set
-		if (campaignRuleId === undefined || campaignRuleId === null) {
+		if (campaignRuleId === undefined || campaignRuleId === null || campaignRuleId === '') {
 			throw 'Missing the required parameter "campaignRuleId" when calling putOutboundCampaignrule';
 		}
 		// verify the required parameter 'body' is set
@@ -3239,7 +4219,7 @@ class OutboundApi {
 	 */
 	putOutboundContactlist(contactListId, body) { 
 		// verify the required parameter 'contactListId' is set
-		if (contactListId === undefined || contactListId === null) {
+		if (contactListId === undefined || contactListId === null || contactListId === '') {
 			throw 'Missing the required parameter "contactListId" when calling putOutboundContactlist';
 		}
 		// verify the required parameter 'body' is set
@@ -3270,11 +4250,11 @@ class OutboundApi {
 	 */
 	putOutboundContactlistContact(contactListId, contactId, body) { 
 		// verify the required parameter 'contactListId' is set
-		if (contactListId === undefined || contactListId === null) {
+		if (contactListId === undefined || contactListId === null || contactListId === '') {
 			throw 'Missing the required parameter "contactListId" when calling putOutboundContactlistContact';
 		}
 		// verify the required parameter 'contactId' is set
-		if (contactId === undefined || contactId === null) {
+		if (contactId === undefined || contactId === null || contactId === '') {
 			throw 'Missing the required parameter "contactId" when calling putOutboundContactlistContact';
 		}
 		// verify the required parameter 'body' is set
@@ -3304,7 +4284,7 @@ class OutboundApi {
 	 */
 	putOutboundContactlistfilter(contactListFilterId, body) { 
 		// verify the required parameter 'contactListFilterId' is set
-		if (contactListFilterId === undefined || contactListFilterId === null) {
+		if (contactListFilterId === undefined || contactListFilterId === null || contactListFilterId === '') {
 			throw 'Missing the required parameter "contactListFilterId" when calling putOutboundContactlistfilter';
 		}
 		// verify the required parameter 'body' is set
@@ -3327,6 +4307,36 @@ class OutboundApi {
 	}
 
 	/**
+	 * Update a contact list template.
+	 * 
+	 * @param {String} contactListTemplateId ContactListTemplate ID
+	 * @param {Object} body ContactListTemplate
+	 */
+	putOutboundContactlisttemplate(contactListTemplateId, body) { 
+		// verify the required parameter 'contactListTemplateId' is set
+		if (contactListTemplateId === undefined || contactListTemplateId === null || contactListTemplateId === '') {
+			throw 'Missing the required parameter "contactListTemplateId" when calling putOutboundContactlisttemplate';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putOutboundContactlisttemplate';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/contactlisttemplates/{contactListTemplateId}', 
+			'PUT', 
+			{ 'contactListTemplateId': contactListTemplateId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Update an Outbound Digital Rule Set
 	 * 
 	 * @param {String} digitalRuleSetId The Digital Rule Set ID
@@ -3334,7 +4344,7 @@ class OutboundApi {
 	 */
 	putOutboundDigitalruleset(digitalRuleSetId, body) { 
 		// verify the required parameter 'digitalRuleSetId' is set
-		if (digitalRuleSetId === undefined || digitalRuleSetId === null) {
+		if (digitalRuleSetId === undefined || digitalRuleSetId === null || digitalRuleSetId === '') {
 			throw 'Missing the required parameter "digitalRuleSetId" when calling putOutboundDigitalruleset';
 		}
 		// verify the required parameter 'body' is set
@@ -3364,7 +4374,7 @@ class OutboundApi {
 	 */
 	putOutboundDnclist(dncListId, body) { 
 		// verify the required parameter 'dncListId' is set
-		if (dncListId === undefined || dncListId === null) {
+		if (dncListId === undefined || dncListId === null || dncListId === '') {
 			throw 'Missing the required parameter "dncListId" when calling putOutboundDnclist';
 		}
 		// verify the required parameter 'body' is set
@@ -3387,6 +4397,66 @@ class OutboundApi {
 	}
 
 	/**
+	 * Update File Specification Template
+	 * 
+	 * @param {String} fileSpecificationTemplateId File Specification Template ID
+	 * @param {Object} body fileSpecificationTemplate
+	 */
+	putOutboundFilespecificationtemplate(fileSpecificationTemplateId, body) { 
+		// verify the required parameter 'fileSpecificationTemplateId' is set
+		if (fileSpecificationTemplateId === undefined || fileSpecificationTemplateId === null || fileSpecificationTemplateId === '') {
+			throw 'Missing the required parameter "fileSpecificationTemplateId" when calling putOutboundFilespecificationtemplate';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putOutboundFilespecificationtemplate';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/filespecificationtemplates/{fileSpecificationTemplateId}', 
+			'PUT', 
+			{ 'fileSpecificationTemplateId': fileSpecificationTemplateId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update Import Template
+	 * 
+	 * @param {String} importTemplateId Import Template ID
+	 * @param {Object} body importTemplate
+	 */
+	putOutboundImporttemplate(importTemplateId, body) { 
+		// verify the required parameter 'importTemplateId' is set
+		if (importTemplateId === undefined || importTemplateId === null || importTemplateId === '') {
+			throw 'Missing the required parameter "importTemplateId" when calling putOutboundImporttemplate';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putOutboundImporttemplate';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/importtemplates/{importTemplateId}', 
+			'PUT', 
+			{ 'importTemplateId': importTemplateId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Update an Outbound Messaging Campaign
 	 * 
 	 * @param {String} messagingCampaignId The Messaging Campaign ID
@@ -3394,7 +4464,7 @@ class OutboundApi {
 	 */
 	putOutboundMessagingcampaign(messagingCampaignId, body) { 
 		// verify the required parameter 'messagingCampaignId' is set
-		if (messagingCampaignId === undefined || messagingCampaignId === null) {
+		if (messagingCampaignId === undefined || messagingCampaignId === null || messagingCampaignId === '') {
 			throw 'Missing the required parameter "messagingCampaignId" when calling putOutboundMessagingcampaign';
 		}
 		// verify the required parameter 'body' is set
@@ -3424,7 +4494,7 @@ class OutboundApi {
 	 */
 	putOutboundRuleset(ruleSetId, body) { 
 		// verify the required parameter 'ruleSetId' is set
-		if (ruleSetId === undefined || ruleSetId === null) {
+		if (ruleSetId === undefined || ruleSetId === null || ruleSetId === '') {
 			throw 'Missing the required parameter "ruleSetId" when calling putOutboundRuleset';
 		}
 		// verify the required parameter 'body' is set
@@ -3454,7 +4524,7 @@ class OutboundApi {
 	 */
 	putOutboundSchedulesCampaign(campaignId, body) { 
 		// verify the required parameter 'campaignId' is set
-		if (campaignId === undefined || campaignId === null) {
+		if (campaignId === undefined || campaignId === null || campaignId === '') {
 			throw 'Missing the required parameter "campaignId" when calling putOutboundSchedulesCampaign';
 		}
 		// verify the required parameter 'body' is set
@@ -3484,7 +4554,7 @@ class OutboundApi {
 	 */
 	putOutboundSchedulesEmailcampaign(emailCampaignId, body) { 
 		// verify the required parameter 'emailCampaignId' is set
-		if (emailCampaignId === undefined || emailCampaignId === null) {
+		if (emailCampaignId === undefined || emailCampaignId === null || emailCampaignId === '') {
 			throw 'Missing the required parameter "emailCampaignId" when calling putOutboundSchedulesEmailcampaign';
 		}
 		// verify the required parameter 'body' is set
@@ -3514,7 +4584,7 @@ class OutboundApi {
 	 */
 	putOutboundSchedulesMessagingcampaign(messagingCampaignId, body) { 
 		// verify the required parameter 'messagingCampaignId' is set
-		if (messagingCampaignId === undefined || messagingCampaignId === null) {
+		if (messagingCampaignId === undefined || messagingCampaignId === null || messagingCampaignId === '') {
 			throw 'Missing the required parameter "messagingCampaignId" when calling putOutboundSchedulesMessagingcampaign';
 		}
 		// verify the required parameter 'body' is set
@@ -3544,7 +4614,7 @@ class OutboundApi {
 	 */
 	putOutboundSchedulesSequence(sequenceId, body) { 
 		// verify the required parameter 'sequenceId' is set
-		if (sequenceId === undefined || sequenceId === null) {
+		if (sequenceId === undefined || sequenceId === null || sequenceId === '') {
 			throw 'Missing the required parameter "sequenceId" when calling putOutboundSchedulesSequence';
 		}
 		// verify the required parameter 'body' is set
@@ -3567,6 +4637,36 @@ class OutboundApi {
 	}
 
 	/**
+	 * Update a WhatsApp campaign schedule.
+	 * 
+	 * @param {String} whatsAppCampaignId WhatsApp Campaign ID
+	 * @param {Object} body WhatsAppCampaignSchedule
+	 */
+	putOutboundSchedulesWhatsappcampaign(whatsAppCampaignId, body) { 
+		// verify the required parameter 'whatsAppCampaignId' is set
+		if (whatsAppCampaignId === undefined || whatsAppCampaignId === null || whatsAppCampaignId === '') {
+			throw 'Missing the required parameter "whatsAppCampaignId" when calling putOutboundSchedulesWhatsappcampaign';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putOutboundSchedulesWhatsappcampaign';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/outbound/schedules/whatsappcampaigns/{whatsAppCampaignId}', 
+			'PUT', 
+			{ 'whatsAppCampaignId': whatsAppCampaignId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Update a new campaign sequence.
 	 * 
 	 * @param {String} sequenceId Campaign Sequence ID
@@ -3574,7 +4674,7 @@ class OutboundApi {
 	 */
 	putOutboundSequence(sequenceId, body) { 
 		// verify the required parameter 'sequenceId' is set
-		if (sequenceId === undefined || sequenceId === null) {
+		if (sequenceId === undefined || sequenceId === null || sequenceId === '') {
 			throw 'Missing the required parameter "sequenceId" when calling putOutboundSequence';
 		}
 		// verify the required parameter 'body' is set

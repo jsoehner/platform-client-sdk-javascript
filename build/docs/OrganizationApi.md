@@ -1,37 +1,40 @@
----
-title: OrganizationApi
----
+# OrganizationApi
+
 # platformClient.OrganizationApi
 
 All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-[**getFieldconfig**](OrganizationApi.html#getFieldconfig) | **GET** /api/v2/fieldconfig | Fetch field config for an entity type
-[**getOrganizationsAuthenticationSettings**](OrganizationApi.html#getOrganizationsAuthenticationSettings) | **GET** /api/v2/organizations/authentication/settings | Gets the organization's settings
-[**getOrganizationsEmbeddedintegration**](OrganizationApi.html#getOrganizationsEmbeddedintegration) | **GET** /api/v2/organizations/embeddedintegration | Get the list of domains that will be allowed to embed PureCloud applications
-[**getOrganizationsIpaddressauthentication**](OrganizationApi.html#getOrganizationsIpaddressauthentication) | **GET** /api/v2/organizations/ipaddressauthentication | Get organization IP address whitelist settings
-[**getOrganizationsLimitsChangerequest**](OrganizationApi.html#getOrganizationsLimitsChangerequest) | **GET** /api/v2/organizations/limits/changerequests/{requestId} | Get a limit change request
-[**getOrganizationsLimitsChangerequests**](OrganizationApi.html#getOrganizationsLimitsChangerequests) | **GET** /api/v2/organizations/limits/changerequests | Get the available limit change requests
-[**getOrganizationsLimitsDocs**](OrganizationApi.html#getOrganizationsLimitsDocs) | **GET** /api/v2/organizations/limits/docs | Get a link to the limit documentation
-[**getOrganizationsLimitsNamespace**](OrganizationApi.html#getOrganizationsLimitsNamespace) | **GET** /api/v2/organizations/limits/namespaces/{namespaceName} | Get the effective limits in a namespace for an organization
-[**getOrganizationsLimitsNamespaceDefaults**](OrganizationApi.html#getOrganizationsLimitsNamespaceDefaults) | **GET** /api/v2/organizations/limits/namespaces/{namespaceName}/defaults | Get the default limits in a namespace for an organization
-[**getOrganizationsLimitsNamespaces**](OrganizationApi.html#getOrganizationsLimitsNamespaces) | **GET** /api/v2/organizations/limits/namespaces | Get the available limit namespaces
-[**getOrganizationsMe**](OrganizationApi.html#getOrganizationsMe) | **GET** /api/v2/organizations/me | Get organization.
-[**getOrganizationsWhitelist**](OrganizationApi.html#getOrganizationsWhitelist) | **GET** /api/v2/organizations/whitelist | This route is deprecated, please use /api/v2/organizations/authentication/settings instead
-[**patchOrganizationsAuthenticationSettings**](OrganizationApi.html#patchOrganizationsAuthenticationSettings) | **PATCH** /api/v2/organizations/authentication/settings | Update the organization's settings
-[**patchOrganizationsFeature**](OrganizationApi.html#patchOrganizationsFeature) | **PATCH** /api/v2/organizations/features/{featureName} | Update organization
-[**putOrganizationsEmbeddedintegration**](OrganizationApi.html#putOrganizationsEmbeddedintegration) | **PUT** /api/v2/organizations/embeddedintegration | Update the list of domains that will be allowed to embed PureCloud applications
-[**putOrganizationsIpaddressauthentication**](OrganizationApi.html#putOrganizationsIpaddressauthentication) | **PUT** /api/v2/organizations/ipaddressauthentication | Update organization IP address whitelist settings
-[**putOrganizationsMe**](OrganizationApi.html#putOrganizationsMe) | **PUT** /api/v2/organizations/me | Update organization.
-[**putOrganizationsWhitelist**](OrganizationApi.html#putOrganizationsWhitelist) | **PUT** /api/v2/organizations/whitelist | This route is deprecated, please use /api/v2/organizations/authentication/settings instead
-{: class="table table-striped"}
+[**getFieldconfig**](OrganizationApi#getFieldconfig) | **GET** /api/v2/fieldconfig | Fetch field config for an entity type
+[**getOrganizationsAuthenticationSettings**](OrganizationApi#getOrganizationsAuthenticationSettings) | **GET** /api/v2/organizations/authentication/settings | Gets the organization's settings
+[**getOrganizationsEmbeddedintegration**](OrganizationApi#getOrganizationsEmbeddedintegration) | **GET** /api/v2/organizations/embeddedintegration | Get the list of domains that will be allowed to embed PureCloud applications
+[**getOrganizationsIpaddressauthentication**](OrganizationApi#getOrganizationsIpaddressauthentication) | **GET** /api/v2/organizations/ipaddressauthentication | Get organization IP address whitelist settings
+[**getOrganizationsLimitsChangerequest**](OrganizationApi#getOrganizationsLimitsChangerequest) | **GET** /api/v2/organizations/limits/changerequests/{requestId} | Get a limit change request
+[**getOrganizationsLimitsChangerequests**](OrganizationApi#getOrganizationsLimitsChangerequests) | **GET** /api/v2/organizations/limits/changerequests | Get the available limit change requests
+[**getOrganizationsLimitsDocs**](OrganizationApi#getOrganizationsLimitsDocs) | **GET** /api/v2/organizations/limits/docs | Get limit documentation
+[**getOrganizationsLimitsDocsFreetrial**](OrganizationApi#getOrganizationsLimitsDocsFreetrial) | **GET** /api/v2/organizations/limits/docs/freetrial | Get free trial limit documentation
+[**getOrganizationsLimitsNamespace**](OrganizationApi#getOrganizationsLimitsNamespace) | **GET** /api/v2/organizations/limits/namespaces/{namespaceName} | Get the effective limits in a namespace for an organization
+[**getOrganizationsLimitsNamespaceDefaults**](OrganizationApi#getOrganizationsLimitsNamespaceDefaults) | **GET** /api/v2/organizations/limits/namespaces/{namespaceName}/defaults | Get the default limits in a namespace for an organization
+[**getOrganizationsLimitsNamespaces**](OrganizationApi#getOrganizationsLimitsNamespaces) | **GET** /api/v2/organizations/limits/namespaces | Get the available limit namespaces
+[**getOrganizationsMe**](OrganizationApi#getOrganizationsMe) | **GET** /api/v2/organizations/me | Get organization.
+[**getOrganizationsWhitelist**](OrganizationApi#getOrganizationsWhitelist) | **GET** /api/v2/organizations/whitelist | This route is deprecated, please use /api/v2/organizations/authentication/settings instead
+[**patchOrganizationsAuthenticationSettings**](OrganizationApi#patchOrganizationsAuthenticationSettings) | **PATCH** /api/v2/organizations/authentication/settings | Update the organization's settings
+[**patchOrganizationsFeature**](OrganizationApi#patchOrganizationsFeature) | **PATCH** /api/v2/organizations/features/{featureName} | Update organization
+[**putOrganizationsEmbeddedintegration**](OrganizationApi#putOrganizationsEmbeddedintegration) | **PUT** /api/v2/organizations/embeddedintegration | Update the list of domains that will be allowed to embed PureCloud applications
+[**putOrganizationsIpaddressauthentication**](OrganizationApi#putOrganizationsIpaddressauthentication) | **PUT** /api/v2/organizations/ipaddressauthentication | Update organization IP address whitelist settings
+[**putOrganizationsMe**](OrganizationApi#putOrganizationsMe) | **PUT** /api/v2/organizations/me | Update organization.
+[**putOrganizationsWhitelist**](OrganizationApi#putOrganizationsWhitelist) | **PUT** /api/v2/organizations/whitelist | This route is deprecated, please use /api/v2/organizations/authentication/settings instead
 
-<a name="getFieldconfig"></a>
 
-# FieldConfig getFieldconfig(type)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+## getFieldconfig
+
+> FieldConfig getFieldconfig(type)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 GET /api/v2/fieldconfig
 
@@ -47,7 +50,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OrganizationApi();
@@ -69,16 +72,16 @@ apiInstance.getFieldconfig(type)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **type** | **String** | Field type | <br />**Values**: person, group, org, externalContact |
-{: class="table table-striped"}
+ **type** | **String** | Field type | <br />**Values**: person, group, org |
 
 ### Return type
 
 **FieldConfig**
 
-<a name="getOrganizationsAuthenticationSettings"></a>
 
-# OrgAuthSettings getOrganizationsAuthenticationSettings()
+## getOrganizationsAuthenticationSettings
+
+> OrgAuthSettings getOrganizationsAuthenticationSettings()
 
 
 GET /api/v2/organizations/authentication/settings
@@ -97,7 +100,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OrganizationApi();
@@ -116,16 +119,18 @@ apiInstance.getOrganizationsAuthenticationSettings()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **OrgAuthSettings**
 
-<a name="getOrganizationsEmbeddedintegration"></a>
 
-# EmbeddedIntegration getOrganizationsEmbeddedintegration()
+## getOrganizationsEmbeddedintegration
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+> EmbeddedIntegration getOrganizationsEmbeddedintegration()
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 GET /api/v2/organizations/embeddedintegration
 
@@ -143,7 +148,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OrganizationApi();
@@ -162,16 +167,18 @@ apiInstance.getOrganizationsEmbeddedintegration()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **EmbeddedIntegration**
 
-<a name="getOrganizationsIpaddressauthentication"></a>
 
-# IpAddressAuthentication getOrganizationsIpaddressauthentication()
+## getOrganizationsIpaddressauthentication
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+> IpAddressAuthentication getOrganizationsIpaddressauthentication()
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 GET /api/v2/organizations/ipaddressauthentication
 
@@ -191,7 +198,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OrganizationApi();
@@ -210,14 +217,14 @@ apiInstance.getOrganizationsIpaddressauthentication()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **IpAddressAuthentication**
 
-<a name="getOrganizationsLimitsChangerequest"></a>
 
-# LimitChangeRequestDetails getOrganizationsLimitsChangerequest(requestId)
+## getOrganizationsLimitsChangerequest
+
+> LimitChangeRequestDetails getOrganizationsLimitsChangerequest(requestId)
 
 
 GET /api/v2/organizations/limits/changerequests/{requestId}
@@ -236,7 +243,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OrganizationApi();
@@ -259,15 +266,15 @@ apiInstance.getOrganizationsLimitsChangerequest(requestId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **requestId** | **String** | Unique id for the limit change request |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **LimitChangeRequestDetails**
 
-<a name="getOrganizationsLimitsChangerequests"></a>
 
-# LimitChangeRequestsEntityListing getOrganizationsLimitsChangerequests(opts)
+## getOrganizationsLimitsChangerequests
+
+> LimitChangeRequestsEntityListing getOrganizationsLimitsChangerequests(opts)
 
 
 GET /api/v2/organizations/limits/changerequests
@@ -288,7 +295,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OrganizationApi();
@@ -321,20 +328,20 @@ apiInstance.getOrganizationsLimitsChangerequests(opts)
  **status** | **String** | Status of the request to be filtered by | [optional] <br />**Values**: Approved, Rejected, Rollback, Pending, Open, SecondaryApprovalNamespacesAdded, ReviewerApproved, ReviewerRejected, ReviewerRollback, ImplementingChange, ChangeImplemented, ImplementingRollback, RollbackImplemented |
  **pageSize** | **Number** | Page Size | [optional] [default to 25] |
  **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: statusHistory |
-{: class="table table-striped"}
 
 ### Return type
 
 **LimitChangeRequestsEntityListing**
 
-<a name="getOrganizationsLimitsDocs"></a>
 
-# UrlResponse getOrganizationsLimitsDocs()
+## getOrganizationsLimitsDocs
+
+> LimitDocumentation getOrganizationsLimitsDocs()
 
 
 GET /api/v2/organizations/limits/docs
 
-Get a link to the limit documentation
+Get limit documentation
 
 Requires NO permissions:
 
@@ -346,7 +353,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OrganizationApi();
@@ -365,23 +372,21 @@ apiInstance.getOrganizationsLimitsDocs()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
-**UrlResponse**
-
-<a name="getOrganizationsLimitsNamespace"></a>
-
-# LimitsEntityListing getOrganizationsLimitsNamespace(namespaceName)
+**LimitDocumentation**
 
 
-GET /api/v2/organizations/limits/namespaces/{namespaceName}
+## getOrganizationsLimitsDocsFreetrial
 
-Get the effective limits in a namespace for an organization
+> FreeTrialLimitDocs getOrganizationsLimitsDocsFreetrial()
 
-Requires ANY permissions:
 
-* limits:organization:view
+GET /api/v2/organizations/limits/docs/freetrial
+
+Get free trial limit documentation
+
+Requires NO permissions:
 
 ### Example Usage
 
@@ -391,7 +396,50 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OrganizationApi();
+
+apiInstance.getOrganizationsLimitsDocsFreetrial()
+  .then((data) => {
+    console.log(`getOrganizationsLimitsDocsFreetrial success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getOrganizationsLimitsDocsFreetrial');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+**FreeTrialLimitDocs**
+
+
+## getOrganizationsLimitsNamespace
+
+> LimitsEntityListing getOrganizationsLimitsNamespace(namespaceName)
+
+
+GET /api/v2/organizations/limits/namespaces/{namespaceName}
+
+Get the effective limits in a namespace for an organization
+
+Requires NO permissions:
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OrganizationApi();
@@ -414,15 +462,15 @@ apiInstance.getOrganizationsLimitsNamespace(namespaceName)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **namespaceName** | **String** | The namespace to fetch limits for |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **LimitsEntityListing**
 
-<a name="getOrganizationsLimitsNamespaceDefaults"></a>
 
-# LimitsEntityListing getOrganizationsLimitsNamespaceDefaults(namespaceName)
+## getOrganizationsLimitsNamespaceDefaults
+
+> LimitsEntityListing getOrganizationsLimitsNamespaceDefaults(namespaceName)
 
 
 GET /api/v2/organizations/limits/namespaces/{namespaceName}/defaults
@@ -439,7 +487,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OrganizationApi();
@@ -462,24 +510,22 @@ apiInstance.getOrganizationsLimitsNamespaceDefaults(namespaceName)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **namespaceName** | **String** | The namespace to fetch defaults limits for |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **LimitsEntityListing**
 
-<a name="getOrganizationsLimitsNamespaces"></a>
 
-# **Object** getOrganizationsLimitsNamespaces(opts)
+## getOrganizationsLimitsNamespaces
+
+> **Object** getOrganizationsLimitsNamespaces(opts)
 
 
 GET /api/v2/organizations/limits/namespaces
 
 Get the available limit namespaces
 
-Requires ANY permissions:
-
-* limits:organization:view
+Requires NO permissions:
 
 ### Example Usage
 
@@ -489,7 +535,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OrganizationApi();
@@ -516,15 +562,15 @@ apiInstance.getOrganizationsLimitsNamespaces(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **pageSize** | **Number** | Page size | [optional] [default to 100] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
-{: class="table table-striped"}
 
 ### Return type
 
 **Object**
 
-<a name="getOrganizationsMe"></a>
 
-# Organization getOrganizationsMe()
+## getOrganizationsMe
+
+> Organization getOrganizationsMe()
 
 
 GET /api/v2/organizations/me
@@ -541,7 +587,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OrganizationApi();
@@ -560,16 +606,18 @@ apiInstance.getOrganizationsMe()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **Organization**
 
-<a name="getOrganizationsWhitelist"></a>
 
-# OrgWhitelistSettings getOrganizationsWhitelist()
+## getOrganizationsWhitelist
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+> OrgWhitelistSettings getOrganizationsWhitelist()
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 GET /api/v2/organizations/whitelist
 
@@ -585,7 +633,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OrganizationApi();
@@ -604,14 +652,14 @@ apiInstance.getOrganizationsWhitelist()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **OrgWhitelistSettings**
 
-<a name="patchOrganizationsAuthenticationSettings"></a>
 
-# OrgAuthSettings patchOrganizationsAuthenticationSettings(body)
+## patchOrganizationsAuthenticationSettings
+
+> OrgAuthSettings patchOrganizationsAuthenticationSettings(body)
 
 
 PATCH /api/v2/organizations/authentication/settings
@@ -630,7 +678,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OrganizationApi();
@@ -653,15 +701,15 @@ apiInstance.patchOrganizationsAuthenticationSettings(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Org settings |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **OrgAuthSettings**
 
-<a name="patchOrganizationsFeature"></a>
 
-# OrganizationFeatures patchOrganizationsFeature(featureName, enabled)
+## patchOrganizationsFeature
+
+> OrganizationFeatures patchOrganizationsFeature(featureName, enabled)
 
 
 PATCH /api/v2/organizations/features/{featureName}
@@ -680,7 +728,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OrganizationApi();
@@ -705,17 +753,19 @@ apiInstance.patchOrganizationsFeature(featureName, enabled)
 | ------------- | ------------- | ------------- | ------------- |
  **featureName** | **String** | Organization feature | <br />**Values**: realtimeCIC, purecloud, hipaa, ucEnabled, pci, purecloudVoice, xmppFederation, chat, informalPhotos, directory, contactCenter, unifiedCommunications, custserv |
  **enabled** | **Object** | New state of feature |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **OrganizationFeatures**
 
-<a name="putOrganizationsEmbeddedintegration"></a>
 
-# EmbeddedIntegration putOrganizationsEmbeddedintegration(body)
+## putOrganizationsEmbeddedintegration
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+> EmbeddedIntegration putOrganizationsEmbeddedintegration(body)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 PUT /api/v2/organizations/embeddedintegration
 
@@ -735,7 +785,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OrganizationApi();
@@ -758,17 +808,19 @@ apiInstance.putOrganizationsEmbeddedintegration(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Whitelist settings |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **EmbeddedIntegration**
 
-<a name="putOrganizationsIpaddressauthentication"></a>
 
-# IpAddressAuthentication putOrganizationsIpaddressauthentication(body)
+## putOrganizationsIpaddressauthentication
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+> IpAddressAuthentication putOrganizationsIpaddressauthentication(body)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 PUT /api/v2/organizations/ipaddressauthentication
 
@@ -788,7 +840,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OrganizationApi();
@@ -811,15 +863,15 @@ apiInstance.putOrganizationsIpaddressauthentication(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | IP address Whitelist settings |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **IpAddressAuthentication**
 
-<a name="putOrganizationsMe"></a>
 
-# Organization putOrganizationsMe(opts)
+## putOrganizationsMe
+
+> Organization putOrganizationsMe(opts)
 
 
 PUT /api/v2/organizations/me
@@ -838,7 +890,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OrganizationApi();
@@ -863,17 +915,19 @@ apiInstance.putOrganizationsMe(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Organization | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Organization**
 
-<a name="putOrganizationsWhitelist"></a>
 
-# OrgWhitelistSettings putOrganizationsWhitelist(body)
+## putOrganizationsWhitelist
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+> OrgWhitelistSettings putOrganizationsWhitelist(body)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 PUT /api/v2/organizations/whitelist
 
@@ -891,7 +945,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OrganizationApi();
@@ -914,9 +968,10 @@ apiInstance.putOrganizationsWhitelist(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Whitelist settings |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **OrgWhitelistSettings**
 
+
+_purecloud-platform-client-v2@229.1.0_

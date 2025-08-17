@@ -1,51 +1,105 @@
----
-title: IdentityProviderApi
----
+# IdentityProviderApi
+
 # platformClient.IdentityProviderApi
 
 All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-[**deleteIdentityprovidersAdfs**](IdentityProviderApi.html#deleteIdentityprovidersAdfs) | **DELETE** /api/v2/identityproviders/adfs | Delete ADFS Identity Provider
-[**deleteIdentityprovidersCic**](IdentityProviderApi.html#deleteIdentityprovidersCic) | **DELETE** /api/v2/identityproviders/cic | Delete Customer Interaction Center (CIC) Identity Provider
-[**deleteIdentityprovidersGeneric**](IdentityProviderApi.html#deleteIdentityprovidersGeneric) | **DELETE** /api/v2/identityproviders/generic | Delete Generic SAML Identity Provider
-[**deleteIdentityprovidersGsuite**](IdentityProviderApi.html#deleteIdentityprovidersGsuite) | **DELETE** /api/v2/identityproviders/gsuite | Delete G Suite Identity Provider
-[**deleteIdentityprovidersIdentitynow**](IdentityProviderApi.html#deleteIdentityprovidersIdentitynow) | **DELETE** /api/v2/identityproviders/identitynow | Delete IdentityNow Provider
-[**deleteIdentityprovidersOkta**](IdentityProviderApi.html#deleteIdentityprovidersOkta) | **DELETE** /api/v2/identityproviders/okta | Delete Okta Identity Provider
-[**deleteIdentityprovidersOnelogin**](IdentityProviderApi.html#deleteIdentityprovidersOnelogin) | **DELETE** /api/v2/identityproviders/onelogin | Delete OneLogin Identity Provider
-[**deleteIdentityprovidersPing**](IdentityProviderApi.html#deleteIdentityprovidersPing) | **DELETE** /api/v2/identityproviders/ping | Delete Ping Identity Provider
-[**deleteIdentityprovidersPurecloud**](IdentityProviderApi.html#deleteIdentityprovidersPurecloud) | **DELETE** /api/v2/identityproviders/purecloud | Delete PureCloud Identity Provider
-[**deleteIdentityprovidersPureengage**](IdentityProviderApi.html#deleteIdentityprovidersPureengage) | **DELETE** /api/v2/identityproviders/pureengage | Delete PureEngage Identity Provider
-[**deleteIdentityprovidersSalesforce**](IdentityProviderApi.html#deleteIdentityprovidersSalesforce) | **DELETE** /api/v2/identityproviders/salesforce | Delete Salesforce Identity Provider
-[**getIdentityproviders**](IdentityProviderApi.html#getIdentityproviders) | **GET** /api/v2/identityproviders | The list of identity providers
-[**getIdentityprovidersAdfs**](IdentityProviderApi.html#getIdentityprovidersAdfs) | **GET** /api/v2/identityproviders/adfs | Get ADFS Identity Provider
-[**getIdentityprovidersCic**](IdentityProviderApi.html#getIdentityprovidersCic) | **GET** /api/v2/identityproviders/cic | Get Customer Interaction Center (CIC) Identity Provider
-[**getIdentityprovidersGeneric**](IdentityProviderApi.html#getIdentityprovidersGeneric) | **GET** /api/v2/identityproviders/generic | Get Generic SAML Identity Provider
-[**getIdentityprovidersGsuite**](IdentityProviderApi.html#getIdentityprovidersGsuite) | **GET** /api/v2/identityproviders/gsuite | Get G Suite Identity Provider
-[**getIdentityprovidersIdentitynow**](IdentityProviderApi.html#getIdentityprovidersIdentitynow) | **GET** /api/v2/identityproviders/identitynow | Get IdentityNow Provider
-[**getIdentityprovidersOkta**](IdentityProviderApi.html#getIdentityprovidersOkta) | **GET** /api/v2/identityproviders/okta | Get Okta Identity Provider
-[**getIdentityprovidersOnelogin**](IdentityProviderApi.html#getIdentityprovidersOnelogin) | **GET** /api/v2/identityproviders/onelogin | Get OneLogin Identity Provider
-[**getIdentityprovidersPing**](IdentityProviderApi.html#getIdentityprovidersPing) | **GET** /api/v2/identityproviders/ping | Get Ping Identity Provider
-[**getIdentityprovidersPurecloud**](IdentityProviderApi.html#getIdentityprovidersPurecloud) | **GET** /api/v2/identityproviders/purecloud | Get PureCloud Identity Provider
-[**getIdentityprovidersPureengage**](IdentityProviderApi.html#getIdentityprovidersPureengage) | **GET** /api/v2/identityproviders/pureengage | Get PureEngage Identity Provider
-[**getIdentityprovidersSalesforce**](IdentityProviderApi.html#getIdentityprovidersSalesforce) | **GET** /api/v2/identityproviders/salesforce | Get Salesforce Identity Provider
-[**putIdentityprovidersAdfs**](IdentityProviderApi.html#putIdentityprovidersAdfs) | **PUT** /api/v2/identityproviders/adfs | Update/Create ADFS Identity Provider
-[**putIdentityprovidersCic**](IdentityProviderApi.html#putIdentityprovidersCic) | **PUT** /api/v2/identityproviders/cic | Update/Create Customer Interaction Center (CIC) Identity Provider
-[**putIdentityprovidersGeneric**](IdentityProviderApi.html#putIdentityprovidersGeneric) | **PUT** /api/v2/identityproviders/generic | Update/Create Generic SAML Identity Provider
-[**putIdentityprovidersGsuite**](IdentityProviderApi.html#putIdentityprovidersGsuite) | **PUT** /api/v2/identityproviders/gsuite | Update/Create G Suite Identity Provider
-[**putIdentityprovidersIdentitynow**](IdentityProviderApi.html#putIdentityprovidersIdentitynow) | **PUT** /api/v2/identityproviders/identitynow | Update/Create IdentityNow Provider
-[**putIdentityprovidersOkta**](IdentityProviderApi.html#putIdentityprovidersOkta) | **PUT** /api/v2/identityproviders/okta | Update/Create Okta Identity Provider
-[**putIdentityprovidersOnelogin**](IdentityProviderApi.html#putIdentityprovidersOnelogin) | **PUT** /api/v2/identityproviders/onelogin | Update/Create OneLogin Identity Provider
-[**putIdentityprovidersPing**](IdentityProviderApi.html#putIdentityprovidersPing) | **PUT** /api/v2/identityproviders/ping | Update/Create Ping Identity Provider
-[**putIdentityprovidersPurecloud**](IdentityProviderApi.html#putIdentityprovidersPurecloud) | **PUT** /api/v2/identityproviders/purecloud | Update/Create PureCloud Identity Provider
-[**putIdentityprovidersPureengage**](IdentityProviderApi.html#putIdentityprovidersPureengage) | **PUT** /api/v2/identityproviders/pureengage | Update/Create PureEngage Identity Provider
-[**putIdentityprovidersSalesforce**](IdentityProviderApi.html#putIdentityprovidersSalesforce) | **PUT** /api/v2/identityproviders/salesforce | Update/Create Salesforce Identity Provider
-{: class="table table-striped"}
+[**deleteIdentityprovider**](IdentityProviderApi#deleteIdentityprovider) | **DELETE** /api/v2/identityproviders/{providerId} | Delete Identity Provider
+[**deleteIdentityprovidersAdfs**](IdentityProviderApi#deleteIdentityprovidersAdfs) | **DELETE** /api/v2/identityproviders/adfs | Delete ADFS Identity Provider
+[**deleteIdentityprovidersCic**](IdentityProviderApi#deleteIdentityprovidersCic) | **DELETE** /api/v2/identityproviders/cic | Delete Customer Interaction Center (CIC) Identity Provider
+[**deleteIdentityprovidersGeneric**](IdentityProviderApi#deleteIdentityprovidersGeneric) | **DELETE** /api/v2/identityproviders/generic | Delete Generic SAML Identity Provider
+[**deleteIdentityprovidersGsuite**](IdentityProviderApi#deleteIdentityprovidersGsuite) | **DELETE** /api/v2/identityproviders/gsuite | Delete G Suite Identity Provider
+[**deleteIdentityprovidersIdentitynow**](IdentityProviderApi#deleteIdentityprovidersIdentitynow) | **DELETE** /api/v2/identityproviders/identitynow | Delete IdentityNow Provider
+[**deleteIdentityprovidersOkta**](IdentityProviderApi#deleteIdentityprovidersOkta) | **DELETE** /api/v2/identityproviders/okta | Delete Okta Identity Provider
+[**deleteIdentityprovidersOnelogin**](IdentityProviderApi#deleteIdentityprovidersOnelogin) | **DELETE** /api/v2/identityproviders/onelogin | Delete OneLogin Identity Provider
+[**deleteIdentityprovidersPing**](IdentityProviderApi#deleteIdentityprovidersPing) | **DELETE** /api/v2/identityproviders/ping | Delete Ping Identity Provider
+[**deleteIdentityprovidersPurecloud**](IdentityProviderApi#deleteIdentityprovidersPurecloud) | **DELETE** /api/v2/identityproviders/purecloud | Delete PureCloud Identity Provider
+[**deleteIdentityprovidersPureengage**](IdentityProviderApi#deleteIdentityprovidersPureengage) | **DELETE** /api/v2/identityproviders/pureengage | Delete PureEngage Identity Provider
+[**deleteIdentityprovidersSalesforce**](IdentityProviderApi#deleteIdentityprovidersSalesforce) | **DELETE** /api/v2/identityproviders/salesforce | Delete Salesforce Identity Provider
+[**getIdentityprovider**](IdentityProviderApi#getIdentityprovider) | **GET** /api/v2/identityproviders/{providerId} | Get Identity Provider
+[**getIdentityproviders**](IdentityProviderApi#getIdentityproviders) | **GET** /api/v2/identityproviders | The list of identity providers
+[**getIdentityprovidersAdfs**](IdentityProviderApi#getIdentityprovidersAdfs) | **GET** /api/v2/identityproviders/adfs | Get ADFS Identity Provider
+[**getIdentityprovidersCic**](IdentityProviderApi#getIdentityprovidersCic) | **GET** /api/v2/identityproviders/cic | Get Customer Interaction Center (CIC) Identity Provider
+[**getIdentityprovidersGeneric**](IdentityProviderApi#getIdentityprovidersGeneric) | **GET** /api/v2/identityproviders/generic | Get Generic SAML Identity Provider
+[**getIdentityprovidersGsuite**](IdentityProviderApi#getIdentityprovidersGsuite) | **GET** /api/v2/identityproviders/gsuite | Get G Suite Identity Provider
+[**getIdentityprovidersIdentitynow**](IdentityProviderApi#getIdentityprovidersIdentitynow) | **GET** /api/v2/identityproviders/identitynow | Get IdentityNow Provider
+[**getIdentityprovidersOkta**](IdentityProviderApi#getIdentityprovidersOkta) | **GET** /api/v2/identityproviders/okta | Get Okta Identity Provider
+[**getIdentityprovidersOnelogin**](IdentityProviderApi#getIdentityprovidersOnelogin) | **GET** /api/v2/identityproviders/onelogin | Get OneLogin Identity Provider
+[**getIdentityprovidersPing**](IdentityProviderApi#getIdentityprovidersPing) | **GET** /api/v2/identityproviders/ping | Get Ping Identity Provider
+[**getIdentityprovidersPurecloud**](IdentityProviderApi#getIdentityprovidersPurecloud) | **GET** /api/v2/identityproviders/purecloud | Get PureCloud Identity Provider
+[**getIdentityprovidersPureengage**](IdentityProviderApi#getIdentityprovidersPureengage) | **GET** /api/v2/identityproviders/pureengage | Get PureEngage Identity Provider
+[**getIdentityprovidersSalesforce**](IdentityProviderApi#getIdentityprovidersSalesforce) | **GET** /api/v2/identityproviders/salesforce | Get Salesforce Identity Provider
+[**postIdentityproviders**](IdentityProviderApi#postIdentityproviders) | **POST** /api/v2/identityproviders | Create Identity Provider
+[**putIdentityprovider**](IdentityProviderApi#putIdentityprovider) | **PUT** /api/v2/identityproviders/{providerId} | Update Identity Provider
+[**putIdentityprovidersAdfs**](IdentityProviderApi#putIdentityprovidersAdfs) | **PUT** /api/v2/identityproviders/adfs | Update/Create ADFS Identity Provider
+[**putIdentityprovidersCic**](IdentityProviderApi#putIdentityprovidersCic) | **PUT** /api/v2/identityproviders/cic | Update/Create Customer Interaction Center (CIC) Identity Provider
+[**putIdentityprovidersGeneric**](IdentityProviderApi#putIdentityprovidersGeneric) | **PUT** /api/v2/identityproviders/generic | Update/Create Generic SAML Identity Provider
+[**putIdentityprovidersGsuite**](IdentityProviderApi#putIdentityprovidersGsuite) | **PUT** /api/v2/identityproviders/gsuite | Update/Create G Suite Identity Provider
+[**putIdentityprovidersIdentitynow**](IdentityProviderApi#putIdentityprovidersIdentitynow) | **PUT** /api/v2/identityproviders/identitynow | Update/Create IdentityNow Provider
+[**putIdentityprovidersOkta**](IdentityProviderApi#putIdentityprovidersOkta) | **PUT** /api/v2/identityproviders/okta | Update/Create Okta Identity Provider
+[**putIdentityprovidersOnelogin**](IdentityProviderApi#putIdentityprovidersOnelogin) | **PUT** /api/v2/identityproviders/onelogin | Update/Create OneLogin Identity Provider
+[**putIdentityprovidersPing**](IdentityProviderApi#putIdentityprovidersPing) | **PUT** /api/v2/identityproviders/ping | Update/Create Ping Identity Provider
+[**putIdentityprovidersPurecloud**](IdentityProviderApi#putIdentityprovidersPurecloud) | **PUT** /api/v2/identityproviders/purecloud | Update/Create PureCloud Identity Provider
+[**putIdentityprovidersPureengage**](IdentityProviderApi#putIdentityprovidersPureengage) | **PUT** /api/v2/identityproviders/pureengage | Update/Create PureEngage Identity Provider
+[**putIdentityprovidersSalesforce**](IdentityProviderApi#putIdentityprovidersSalesforce) | **PUT** /api/v2/identityproviders/salesforce | Update/Create Salesforce Identity Provider
 
-<a name="deleteIdentityprovidersAdfs"></a>
 
-# **Object** deleteIdentityprovidersAdfs()
+
+## deleteIdentityprovider
+
+> void deleteIdentityprovider(providerId)
+
+
+DELETE /api/v2/identityproviders/{providerId}
+
+Delete Identity Provider
+
+Requires ANY permissions:
+
+* sso:provider:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.IdentityProviderApi();
+
+let providerId = "providerId_example"; // String | Provider ID
+
+apiInstance.deleteIdentityprovider(providerId)
+  .then(() => {
+    console.log('deleteIdentityprovider returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteIdentityprovider');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **providerId** | **String** | Provider ID |  |
+
+### Return type
+
+void (no response body)
+
+
+## deleteIdentityprovidersAdfs
+
+> **Object** deleteIdentityprovidersAdfs()
 
 
 DELETE /api/v2/identityproviders/adfs
@@ -64,7 +118,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.IdentityProviderApi();
@@ -83,14 +137,14 @@ apiInstance.deleteIdentityprovidersAdfs()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **Object**
 
-<a name="deleteIdentityprovidersCic"></a>
 
-# **Object** deleteIdentityprovidersCic()
+## deleteIdentityprovidersCic
+
+> **Object** deleteIdentityprovidersCic()
 
 
 DELETE /api/v2/identityproviders/cic
@@ -109,7 +163,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.IdentityProviderApi();
@@ -128,14 +182,14 @@ apiInstance.deleteIdentityprovidersCic()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **Object**
 
-<a name="deleteIdentityprovidersGeneric"></a>
 
-# **Object** deleteIdentityprovidersGeneric()
+## deleteIdentityprovidersGeneric
+
+> **Object** deleteIdentityprovidersGeneric()
 
 
 DELETE /api/v2/identityproviders/generic
@@ -154,7 +208,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.IdentityProviderApi();
@@ -173,14 +227,14 @@ apiInstance.deleteIdentityprovidersGeneric()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **Object**
 
-<a name="deleteIdentityprovidersGsuite"></a>
 
-# **Object** deleteIdentityprovidersGsuite()
+## deleteIdentityprovidersGsuite
+
+> **Object** deleteIdentityprovidersGsuite()
 
 
 DELETE /api/v2/identityproviders/gsuite
@@ -199,7 +253,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.IdentityProviderApi();
@@ -218,14 +272,14 @@ apiInstance.deleteIdentityprovidersGsuite()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **Object**
 
-<a name="deleteIdentityprovidersIdentitynow"></a>
 
-# **Object** deleteIdentityprovidersIdentitynow()
+## deleteIdentityprovidersIdentitynow
+
+> **Object** deleteIdentityprovidersIdentitynow()
 
 
 DELETE /api/v2/identityproviders/identitynow
@@ -244,7 +298,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.IdentityProviderApi();
@@ -263,14 +317,14 @@ apiInstance.deleteIdentityprovidersIdentitynow()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **Object**
 
-<a name="deleteIdentityprovidersOkta"></a>
 
-# **Object** deleteIdentityprovidersOkta()
+## deleteIdentityprovidersOkta
+
+> **Object** deleteIdentityprovidersOkta()
 
 
 DELETE /api/v2/identityproviders/okta
@@ -289,7 +343,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.IdentityProviderApi();
@@ -308,14 +362,14 @@ apiInstance.deleteIdentityprovidersOkta()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **Object**
 
-<a name="deleteIdentityprovidersOnelogin"></a>
 
-# **Object** deleteIdentityprovidersOnelogin()
+## deleteIdentityprovidersOnelogin
+
+> **Object** deleteIdentityprovidersOnelogin()
 
 
 DELETE /api/v2/identityproviders/onelogin
@@ -334,7 +388,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.IdentityProviderApi();
@@ -353,14 +407,14 @@ apiInstance.deleteIdentityprovidersOnelogin()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **Object**
 
-<a name="deleteIdentityprovidersPing"></a>
 
-# **Object** deleteIdentityprovidersPing()
+## deleteIdentityprovidersPing
+
+> **Object** deleteIdentityprovidersPing()
 
 
 DELETE /api/v2/identityproviders/ping
@@ -379,7 +433,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.IdentityProviderApi();
@@ -398,14 +452,14 @@ apiInstance.deleteIdentityprovidersPing()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **Object**
 
-<a name="deleteIdentityprovidersPurecloud"></a>
 
-# **Object** deleteIdentityprovidersPurecloud()
+## deleteIdentityprovidersPurecloud
+
+> **Object** deleteIdentityprovidersPurecloud()
 
 
 DELETE /api/v2/identityproviders/purecloud
@@ -424,7 +478,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.IdentityProviderApi();
@@ -443,14 +497,14 @@ apiInstance.deleteIdentityprovidersPurecloud()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **Object**
 
-<a name="deleteIdentityprovidersPureengage"></a>
 
-# **Object** deleteIdentityprovidersPureengage()
+## deleteIdentityprovidersPureengage
+
+> **Object** deleteIdentityprovidersPureengage()
 
 
 DELETE /api/v2/identityproviders/pureengage
@@ -469,7 +523,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.IdentityProviderApi();
@@ -488,14 +542,14 @@ apiInstance.deleteIdentityprovidersPureengage()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **Object**
 
-<a name="deleteIdentityprovidersSalesforce"></a>
 
-# **Object** deleteIdentityprovidersSalesforce()
+## deleteIdentityprovidersSalesforce
+
+> **Object** deleteIdentityprovidersSalesforce()
 
 
 DELETE /api/v2/identityproviders/salesforce
@@ -514,7 +568,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.IdentityProviderApi();
@@ -533,14 +587,64 @@ apiInstance.deleteIdentityprovidersSalesforce()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **Object**
 
-<a name="getIdentityproviders"></a>
 
-# OAuthProviderEntityListing getIdentityproviders()
+## getIdentityprovider
+
+> CustomProvider getIdentityprovider(providerId)
+
+
+GET /api/v2/identityproviders/{providerId}
+
+Get Identity Provider
+
+Requires ANY permissions:
+
+* sso:provider:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.IdentityProviderApi();
+
+let providerId = "providerId_example"; // String | Provider ID
+
+apiInstance.getIdentityprovider(providerId)
+  .then((data) => {
+    console.log(`getIdentityprovider success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getIdentityprovider');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **providerId** | **String** | Provider ID |  |
+
+### Return type
+
+**CustomProvider**
+
+
+## getIdentityproviders
+
+> IdentityProviderEntityListing getIdentityproviders()
 
 
 GET /api/v2/identityproviders
@@ -559,7 +663,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.IdentityProviderApi();
@@ -578,14 +682,14 @@ apiInstance.getIdentityproviders()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
-**OAuthProviderEntityListing**
+**IdentityProviderEntityListing**
 
-<a name="getIdentityprovidersAdfs"></a>
 
-# ADFS getIdentityprovidersAdfs()
+## getIdentityprovidersAdfs
+
+> ADFS getIdentityprovidersAdfs()
 
 
 GET /api/v2/identityproviders/adfs
@@ -604,7 +708,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.IdentityProviderApi();
@@ -623,14 +727,14 @@ apiInstance.getIdentityprovidersAdfs()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **ADFS**
 
-<a name="getIdentityprovidersCic"></a>
 
-# CustomerInteractionCenter getIdentityprovidersCic()
+## getIdentityprovidersCic
+
+> CustomerInteractionCenter getIdentityprovidersCic()
 
 
 GET /api/v2/identityproviders/cic
@@ -649,7 +753,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.IdentityProviderApi();
@@ -668,14 +772,14 @@ apiInstance.getIdentityprovidersCic()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **CustomerInteractionCenter**
 
-<a name="getIdentityprovidersGeneric"></a>
 
-# GenericSAML getIdentityprovidersGeneric()
+## getIdentityprovidersGeneric
+
+> GenericSAML getIdentityprovidersGeneric()
 
 
 GET /api/v2/identityproviders/generic
@@ -694,7 +798,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.IdentityProviderApi();
@@ -713,14 +817,14 @@ apiInstance.getIdentityprovidersGeneric()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **GenericSAML**
 
-<a name="getIdentityprovidersGsuite"></a>
 
-# GSuite getIdentityprovidersGsuite()
+## getIdentityprovidersGsuite
+
+> GSuite getIdentityprovidersGsuite()
 
 
 GET /api/v2/identityproviders/gsuite
@@ -739,7 +843,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.IdentityProviderApi();
@@ -758,14 +862,14 @@ apiInstance.getIdentityprovidersGsuite()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **GSuite**
 
-<a name="getIdentityprovidersIdentitynow"></a>
 
-# IdentityNow getIdentityprovidersIdentitynow()
+## getIdentityprovidersIdentitynow
+
+> IdentityNow getIdentityprovidersIdentitynow()
 
 
 GET /api/v2/identityproviders/identitynow
@@ -784,7 +888,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.IdentityProviderApi();
@@ -803,14 +907,14 @@ apiInstance.getIdentityprovidersIdentitynow()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **IdentityNow**
 
-<a name="getIdentityprovidersOkta"></a>
 
-# Okta getIdentityprovidersOkta()
+## getIdentityprovidersOkta
+
+> Okta getIdentityprovidersOkta()
 
 
 GET /api/v2/identityproviders/okta
@@ -829,7 +933,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.IdentityProviderApi();
@@ -848,14 +952,14 @@ apiInstance.getIdentityprovidersOkta()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **Okta**
 
-<a name="getIdentityprovidersOnelogin"></a>
 
-# OneLogin getIdentityprovidersOnelogin()
+## getIdentityprovidersOnelogin
+
+> OneLogin getIdentityprovidersOnelogin()
 
 
 GET /api/v2/identityproviders/onelogin
@@ -874,7 +978,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.IdentityProviderApi();
@@ -893,14 +997,14 @@ apiInstance.getIdentityprovidersOnelogin()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **OneLogin**
 
-<a name="getIdentityprovidersPing"></a>
 
-# PingIdentity getIdentityprovidersPing()
+## getIdentityprovidersPing
+
+> PingIdentity getIdentityprovidersPing()
 
 
 GET /api/v2/identityproviders/ping
@@ -919,7 +1023,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.IdentityProviderApi();
@@ -938,14 +1042,14 @@ apiInstance.getIdentityprovidersPing()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **PingIdentity**
 
-<a name="getIdentityprovidersPurecloud"></a>
 
-# PureCloud getIdentityprovidersPurecloud()
+## getIdentityprovidersPurecloud
+
+> PureCloud getIdentityprovidersPurecloud()
 
 
 GET /api/v2/identityproviders/purecloud
@@ -964,7 +1068,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.IdentityProviderApi();
@@ -983,14 +1087,14 @@ apiInstance.getIdentityprovidersPurecloud()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **PureCloud**
 
-<a name="getIdentityprovidersPureengage"></a>
 
-# PureEngage getIdentityprovidersPureengage()
+## getIdentityprovidersPureengage
+
+> PureEngage getIdentityprovidersPureengage()
 
 
 GET /api/v2/identityproviders/pureengage
@@ -1009,7 +1113,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.IdentityProviderApi();
@@ -1028,14 +1132,14 @@ apiInstance.getIdentityprovidersPureengage()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **PureEngage**
 
-<a name="getIdentityprovidersSalesforce"></a>
 
-# Salesforce getIdentityprovidersSalesforce()
+## getIdentityprovidersSalesforce
+
+> Salesforce getIdentityprovidersSalesforce()
 
 
 GET /api/v2/identityproviders/salesforce
@@ -1054,7 +1158,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.IdentityProviderApi();
@@ -1073,14 +1177,116 @@ apiInstance.getIdentityprovidersSalesforce()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **Salesforce**
 
-<a name="putIdentityprovidersAdfs"></a>
 
-# OAuthProvider putIdentityprovidersAdfs(body)
+## postIdentityproviders
+
+> CustomProvider postIdentityproviders(body)
+
+
+POST /api/v2/identityproviders
+
+Create Identity Provider
+
+Requires ANY permissions:
+
+* sso:provider:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.IdentityProviderApi();
+
+let body = {}; // Object | Provider
+
+apiInstance.postIdentityproviders(body)
+  .then((data) => {
+    console.log(`postIdentityproviders success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postIdentityproviders');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Provider |  |
+
+### Return type
+
+**CustomProvider**
+
+
+## putIdentityprovider
+
+> CustomProvider putIdentityprovider(providerId, body)
+
+
+PUT /api/v2/identityproviders/{providerId}
+
+Update Identity Provider
+
+Requires ANY permissions:
+
+* sso:provider:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.IdentityProviderApi();
+
+let providerId = "providerId_example"; // String | Provider ID
+let body = {}; // Object | Provider
+
+apiInstance.putIdentityprovider(providerId, body)
+  .then((data) => {
+    console.log(`putIdentityprovider success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putIdentityprovider');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **providerId** | **String** | Provider ID |  |
+ **body** | **Object** | Provider |  |
+
+### Return type
+
+**CustomProvider**
+
+
+## putIdentityprovidersAdfs
+
+> IdentityProvider putIdentityprovidersAdfs(body)
 
 
 PUT /api/v2/identityproviders/adfs
@@ -1100,7 +1306,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.IdentityProviderApi();
@@ -1123,15 +1329,15 @@ apiInstance.putIdentityprovidersAdfs(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Provider |  |
-{: class="table table-striped"}
 
 ### Return type
 
-**OAuthProvider**
+**IdentityProvider**
 
-<a name="putIdentityprovidersCic"></a>
 
-# OAuthProvider putIdentityprovidersCic(body)
+## putIdentityprovidersCic
+
+> IdentityProvider putIdentityprovidersCic(body)
 
 
 PUT /api/v2/identityproviders/cic
@@ -1151,7 +1357,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.IdentityProviderApi();
@@ -1174,15 +1380,15 @@ apiInstance.putIdentityprovidersCic(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Provider |  |
-{: class="table table-striped"}
 
 ### Return type
 
-**OAuthProvider**
+**IdentityProvider**
 
-<a name="putIdentityprovidersGeneric"></a>
 
-# OAuthProvider putIdentityprovidersGeneric(body)
+## putIdentityprovidersGeneric
+
+> IdentityProvider putIdentityprovidersGeneric(body)
 
 
 PUT /api/v2/identityproviders/generic
@@ -1202,7 +1408,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.IdentityProviderApi();
@@ -1225,15 +1431,15 @@ apiInstance.putIdentityprovidersGeneric(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Provider |  |
-{: class="table table-striped"}
 
 ### Return type
 
-**OAuthProvider**
+**IdentityProvider**
 
-<a name="putIdentityprovidersGsuite"></a>
 
-# OAuthProvider putIdentityprovidersGsuite(body)
+## putIdentityprovidersGsuite
+
+> IdentityProvider putIdentityprovidersGsuite(body)
 
 
 PUT /api/v2/identityproviders/gsuite
@@ -1253,7 +1459,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.IdentityProviderApi();
@@ -1276,15 +1482,15 @@ apiInstance.putIdentityprovidersGsuite(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Provider |  |
-{: class="table table-striped"}
 
 ### Return type
 
-**OAuthProvider**
+**IdentityProvider**
 
-<a name="putIdentityprovidersIdentitynow"></a>
 
-# IdentityNow putIdentityprovidersIdentitynow(body)
+## putIdentityprovidersIdentitynow
+
+> IdentityNow putIdentityprovidersIdentitynow(body)
 
 
 PUT /api/v2/identityproviders/identitynow
@@ -1304,7 +1510,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.IdentityProviderApi();
@@ -1327,15 +1533,15 @@ apiInstance.putIdentityprovidersIdentitynow(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Provider |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **IdentityNow**
 
-<a name="putIdentityprovidersOkta"></a>
 
-# OAuthProvider putIdentityprovidersOkta(body)
+## putIdentityprovidersOkta
+
+> IdentityProvider putIdentityprovidersOkta(body)
 
 
 PUT /api/v2/identityproviders/okta
@@ -1355,7 +1561,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.IdentityProviderApi();
@@ -1378,15 +1584,15 @@ apiInstance.putIdentityprovidersOkta(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Provider |  |
-{: class="table table-striped"}
 
 ### Return type
 
-**OAuthProvider**
+**IdentityProvider**
 
-<a name="putIdentityprovidersOnelogin"></a>
 
-# OAuthProvider putIdentityprovidersOnelogin(body)
+## putIdentityprovidersOnelogin
+
+> IdentityProvider putIdentityprovidersOnelogin(body)
 
 
 PUT /api/v2/identityproviders/onelogin
@@ -1406,7 +1612,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.IdentityProviderApi();
@@ -1429,15 +1635,15 @@ apiInstance.putIdentityprovidersOnelogin(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Provider |  |
-{: class="table table-striped"}
 
 ### Return type
 
-**OAuthProvider**
+**IdentityProvider**
 
-<a name="putIdentityprovidersPing"></a>
 
-# OAuthProvider putIdentityprovidersPing(body)
+## putIdentityprovidersPing
+
+> IdentityProvider putIdentityprovidersPing(body)
 
 
 PUT /api/v2/identityproviders/ping
@@ -1457,7 +1663,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.IdentityProviderApi();
@@ -1480,15 +1686,15 @@ apiInstance.putIdentityprovidersPing(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Provider |  |
-{: class="table table-striped"}
 
 ### Return type
 
-**OAuthProvider**
+**IdentityProvider**
 
-<a name="putIdentityprovidersPurecloud"></a>
 
-# OAuthProvider putIdentityprovidersPurecloud(body)
+## putIdentityprovidersPurecloud
+
+> IdentityProvider putIdentityprovidersPurecloud(body)
 
 
 PUT /api/v2/identityproviders/purecloud
@@ -1508,7 +1714,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.IdentityProviderApi();
@@ -1531,15 +1737,15 @@ apiInstance.putIdentityprovidersPurecloud(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Provider |  |
-{: class="table table-striped"}
 
 ### Return type
 
-**OAuthProvider**
+**IdentityProvider**
 
-<a name="putIdentityprovidersPureengage"></a>
 
-# OAuthProvider putIdentityprovidersPureengage(body)
+## putIdentityprovidersPureengage
+
+> IdentityProvider putIdentityprovidersPureengage(body)
 
 
 PUT /api/v2/identityproviders/pureengage
@@ -1559,7 +1765,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.IdentityProviderApi();
@@ -1582,15 +1788,15 @@ apiInstance.putIdentityprovidersPureengage(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Provider |  |
-{: class="table table-striped"}
 
 ### Return type
 
-**OAuthProvider**
+**IdentityProvider**
 
-<a name="putIdentityprovidersSalesforce"></a>
 
-# OAuthProvider putIdentityprovidersSalesforce(body)
+## putIdentityprovidersSalesforce
+
+> IdentityProvider putIdentityprovidersSalesforce(body)
 
 
 PUT /api/v2/identityproviders/salesforce
@@ -1610,7 +1816,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.IdentityProviderApi();
@@ -1633,9 +1839,10 @@ apiInstance.putIdentityprovidersSalesforce(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Provider |  |
-{: class="table table-striped"}
 
 ### Return type
 
-**OAuthProvider**
+**IdentityProvider**
 
+
+_purecloud-platform-client-v2@229.1.0_

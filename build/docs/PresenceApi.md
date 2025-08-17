@@ -1,51 +1,49 @@
----
-title: PresenceApi
----
+# PresenceApi
+
 # platformClient.PresenceApi
 
 All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-[**deletePresenceDefinition0**](PresenceApi.html#deletePresenceDefinition0) | **DELETE** /api/v2/presence/definitions/{definitionId} | Delete a Presence Definition
-[**deletePresenceSource**](PresenceApi.html#deletePresenceSource) | **DELETE** /api/v2/presence/sources/{sourceId} | Delete a Presence Source
-[**deletePresencedefinition**](PresenceApi.html#deletePresencedefinition) | **DELETE** /api/v2/presencedefinitions/{presenceId} | Delete a Presence Definition
-[**getPresenceDefinition0**](PresenceApi.html#getPresenceDefinition0) | **GET** /api/v2/presence/definitions/{definitionId} | Get a Presence Definition
-[**getPresenceDefinitions0**](PresenceApi.html#getPresenceDefinitions0) | **GET** /api/v2/presence/definitions | Get a list of Presence Definitions
-[**getPresenceSettings**](PresenceApi.html#getPresenceSettings) | **GET** /api/v2/presence/settings | Get the presence settings
-[**getPresenceSource**](PresenceApi.html#getPresenceSource) | **GET** /api/v2/presence/sources/{sourceId} | Get a Presence Source
-[**getPresenceSources**](PresenceApi.html#getPresenceSources) | **GET** /api/v2/presence/sources | Get a list of Presence Sources
-[**getPresenceUserPrimarysource**](PresenceApi.html#getPresenceUserPrimarysource) | **GET** /api/v2/presence/users/{userId}/primarysource | Get a user's Primary Presence Source
-[**getPresencedefinition**](PresenceApi.html#getPresencedefinition) | **GET** /api/v2/presencedefinitions/{presenceId} | Get a Presence Definition
-[**getPresencedefinitions**](PresenceApi.html#getPresencedefinitions) | **GET** /api/v2/presencedefinitions | Get an Organization's list of Presence Definitions
-[**getSystempresences**](PresenceApi.html#getSystempresences) | **GET** /api/v2/systempresences | Get the list of SystemPresences
-[**getUserPresence**](PresenceApi.html#getUserPresence) | **GET** /api/v2/users/{userId}/presences/{sourceId} | Get a user's Presence
-[**getUserPresencesPurecloud**](PresenceApi.html#getUserPresencesPurecloud) | **GET** /api/v2/users/{userId}/presences/purecloud | Get a user's Genesys Cloud presence.
-[**getUsersPresenceBulk**](PresenceApi.html#getUsersPresenceBulk) | **GET** /api/v2/users/presences/{sourceId}/bulk | Get bulk user presences for a single presence source
-[**getUsersPresencesPurecloudBulk**](PresenceApi.html#getUsersPresencesPurecloudBulk) | **GET** /api/v2/users/presences/purecloud/bulk | Get bulk user presences for a Genesys Cloud (PURECLOUD) presence source
-[**patchUserPresence**](PresenceApi.html#patchUserPresence) | **PATCH** /api/v2/users/{userId}/presences/{sourceId} | Patch a user's Presence
-[**patchUserPresencesPurecloud**](PresenceApi.html#patchUserPresencesPurecloud) | **PATCH** /api/v2/users/{userId}/presences/purecloud | Patch a Genesys Cloud user's presence
-[**postPresenceDefinitions0**](PresenceApi.html#postPresenceDefinitions0) | **POST** /api/v2/presence/definitions | Create a Presence Definition
-[**postPresenceSources**](PresenceApi.html#postPresenceSources) | **POST** /api/v2/presence/sources | Create a Presence Source
-[**postPresencedefinitions**](PresenceApi.html#postPresencedefinitions) | **POST** /api/v2/presencedefinitions | Create a Presence Definition
-[**putPresenceDefinition0**](PresenceApi.html#putPresenceDefinition0) | **PUT** /api/v2/presence/definitions/{definitionId} | Update a Presence Definition
-[**putPresenceSettings**](PresenceApi.html#putPresenceSettings) | **PUT** /api/v2/presence/settings | Update the presence settings
-[**putPresenceSource**](PresenceApi.html#putPresenceSource) | **PUT** /api/v2/presence/sources/{sourceId} | Update a Presence Source
-[**putPresenceUserPrimarysource**](PresenceApi.html#putPresenceUserPrimarysource) | **PUT** /api/v2/presence/users/{userId}/primarysource | Update a user's Primary Presence Source
-[**putPresencedefinition**](PresenceApi.html#putPresencedefinition) | **PUT** /api/v2/presencedefinitions/{presenceId} | Update a Presence Definition
-[**putUsersPresencesBulk**](PresenceApi.html#putUsersPresencesBulk) | **PUT** /api/v2/users/presences/bulk | Update bulk user Presences
-{: class="table table-striped"}
+[**deletePresenceDefinition0**](PresenceApi#deletePresenceDefinition0) | **DELETE** /api/v2/presence/definitions/{definitionId} | Delete a Presence Definition
+[**deletePresenceSource**](PresenceApi#deletePresenceSource) | **DELETE** /api/v2/presence/sources/{sourceId} | Delete a Presence Source
+[**deletePresencedefinition**](PresenceApi#deletePresencedefinition) | **DELETE** /api/v2/presencedefinitions/{presenceId} | Delete a Presence Definition. Apps should migrate to use DELETE /api/v2/presence/definitions/{definitionId} instead
+[**getPresenceDefinition0**](PresenceApi#getPresenceDefinition0) | **GET** /api/v2/presence/definitions/{definitionId} | Get a Presence Definition
+[**getPresenceDefinitions0**](PresenceApi#getPresenceDefinitions0) | **GET** /api/v2/presence/definitions | Get a list of Presence Definitions
+[**getPresenceSettings**](PresenceApi#getPresenceSettings) | **GET** /api/v2/presence/settings | Get the presence settings
+[**getPresenceSource**](PresenceApi#getPresenceSource) | **GET** /api/v2/presence/sources/{sourceId} | Get a Presence Source
+[**getPresenceSources**](PresenceApi#getPresenceSources) | **GET** /api/v2/presence/sources | Get a list of Presence Sources
+[**getPresenceUserPrimarysource**](PresenceApi#getPresenceUserPrimarysource) | **GET** /api/v2/presence/users/{userId}/primarysource | Get a user's Primary Presence Source
+[**getPresencedefinition**](PresenceApi#getPresencedefinition) | **GET** /api/v2/presencedefinitions/{presenceId} | Get a Presence Definition. Apps should migrate to use GET /api/v2/presence/definitions/{definitionId} instead
+[**getPresencedefinitions**](PresenceApi#getPresencedefinitions) | **GET** /api/v2/presencedefinitions | Get an Organization's list of Presence Definitions. Apps should migrate to use GET /api/v2/presence/definitions instead
+[**getSystempresences**](PresenceApi#getSystempresences) | **GET** /api/v2/systempresences | Get the list of SystemPresences
+[**getUserPresence**](PresenceApi#getUserPresence) | **GET** /api/v2/users/{userId}/presences/{sourceId} | Get a user's Presence
+[**getUserPresencesPurecloud**](PresenceApi#getUserPresencesPurecloud) | **GET** /api/v2/users/{userId}/presences/purecloud | Get a user's Genesys Cloud presence.
+[**getUsersPresenceBulk**](PresenceApi#getUsersPresenceBulk) | **GET** /api/v2/users/presences/{sourceId}/bulk | Get bulk user presences for a single presence source
+[**getUsersPresencesPurecloudBulk**](PresenceApi#getUsersPresencesPurecloudBulk) | **GET** /api/v2/users/presences/purecloud/bulk | Get bulk user presences for a Genesys Cloud (PURECLOUD) presence source
+[**patchUserPresence**](PresenceApi#patchUserPresence) | **PATCH** /api/v2/users/{userId}/presences/{sourceId} | Patch a user's Presence
+[**patchUserPresencesPurecloud**](PresenceApi#patchUserPresencesPurecloud) | **PATCH** /api/v2/users/{userId}/presences/purecloud | Patch a Genesys Cloud user's presence
+[**postPresenceDefinitions0**](PresenceApi#postPresenceDefinitions0) | **POST** /api/v2/presence/definitions | Create a Presence Definition
+[**postPresenceSources**](PresenceApi#postPresenceSources) | **POST** /api/v2/presence/sources | Create a Presence Source
+[**postPresencedefinitions**](PresenceApi#postPresencedefinitions) | **POST** /api/v2/presencedefinitions | Create a Presence Definition. Apps should migrate to use POST /api/v2/presence/definitions instead
+[**putPresenceDefinition0**](PresenceApi#putPresenceDefinition0) | **PUT** /api/v2/presence/definitions/{definitionId} | Update a Presence Definition
+[**putPresenceSettings**](PresenceApi#putPresenceSettings) | **PUT** /api/v2/presence/settings | Update the presence settings
+[**putPresenceSource**](PresenceApi#putPresenceSource) | **PUT** /api/v2/presence/sources/{sourceId} | Update a Presence Source
+[**putPresenceUserPrimarysource**](PresenceApi#putPresenceUserPrimarysource) | **PUT** /api/v2/presence/users/{userId}/primarysource | Update a user's Primary Presence Source
+[**putPresencedefinition**](PresenceApi#putPresencedefinition) | **PUT** /api/v2/presencedefinitions/{presenceId} | Update a Presence Definition. Apps should migrate to use PUT /api/v2/presence/definitions/{definitionId} instead)
+[**putUsersPresencesBulk**](PresenceApi#putUsersPresencesBulk) | **PUT** /api/v2/users/presences/bulk | Update bulk user Presences
 
-<a name="deletePresenceDefinition0"></a>
 
-# void deletePresenceDefinition0(definitionId)
+
+## deletePresenceDefinition0
+
+> void deletePresenceDefinition0(definitionId)
 
 
 DELETE /api/v2/presence/definitions/{definitionId}
 
 Delete a Presence Definition
-
-deletePresenceDefinition0 is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -60,7 +58,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.PresenceApi();
@@ -83,15 +81,15 @@ apiInstance.deletePresenceDefinition0(definitionId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **definitionId** | **String** | Presence Definition ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deletePresenceSource"></a>
 
-# void deletePresenceSource(sourceId)
+## deletePresenceSource
+
+> void deletePresenceSource(sourceId)
 
 
 DELETE /api/v2/presence/sources/{sourceId}
@@ -111,7 +109,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.PresenceApi();
@@ -134,20 +132,23 @@ apiInstance.deletePresenceSource(sourceId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **sourceId** | **String** | Presence Source ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deletePresencedefinition"></a>
 
-# void deletePresencedefinition(presenceId)
+## deletePresencedefinition
 
+> void deletePresencedefinition(presenceId)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 DELETE /api/v2/presencedefinitions/{presenceId}
 
-Delete a Presence Definition
+Delete a Presence Definition. Apps should migrate to use DELETE /api/v2/presence/definitions/{definitionId} instead
 
 Requires ALL permissions:
 
@@ -161,7 +162,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.PresenceApi();
@@ -184,22 +185,20 @@ apiInstance.deletePresencedefinition(presenceId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **presenceId** | **String** | Organization Presence ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="getPresenceDefinition0"></a>
 
-# OrganizationPresenceDefinition getPresenceDefinition0(definitionId)
+## getPresenceDefinition0
+
+> OrganizationPresenceDefinition getPresenceDefinition0(definitionId, opts)
 
 
 GET /api/v2/presence/definitions/{definitionId}
 
 Get a Presence Definition
-
-getPresenceDefinition0 is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ALL permissions:
 
@@ -213,14 +212,17 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.PresenceApi();
 
 let definitionId = "definitionId_example"; // String | Presence Definition ID
+let opts = { 
+  'localeCode': "localeCode_example" // String | The locale code to fetch for the presence definition. Use ALL to fetch everything.
+};
 
-apiInstance.getPresenceDefinition0(definitionId)
+apiInstance.getPresenceDefinition0(definitionId, opts)
   .then((data) => {
     console.log(`getPresenceDefinition0 success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -236,22 +238,21 @@ apiInstance.getPresenceDefinition0(definitionId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **definitionId** | **String** | Presence Definition ID |  |
-{: class="table table-striped"}
+ **localeCode** | **String** | The locale code to fetch for the presence definition. Use ALL to fetch everything. | [optional] <br />**Values**: ALL, he, fr, en_US, da, de, it, cs, es, fi, ar, ja, ko, nl, no, pl, pt_BR, pt_PT, ru, sv, th, tr, uk, zh_CN, zh_TW |
 
 ### Return type
 
 **OrganizationPresenceDefinition**
 
-<a name="getPresenceDefinitions0"></a>
 
-# OrganizationPresenceDefinitionEntityListing getPresenceDefinitions0(opts)
+## getPresenceDefinitions0
+
+> OrganizationPresenceDefinitionEntityListing getPresenceDefinitions0(opts)
 
 
 GET /api/v2/presence/definitions
 
 Get a list of Presence Definitions
-
-getPresenceDefinitions0 is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ALL permissions:
 
@@ -265,14 +266,15 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.PresenceApi();
 
 let opts = { 
   'deactivated': "false", // String | Deactivated query can be TRUE or FALSE
-  'divisionId': ["divisionId_example"] // [String] | One or more division IDs. If nothing is provided, the definitions associated withthe list of divisions that the user has access to will be returned.
+  'divisionId': ["divisionId_example"], // [String] | One or more division IDs. If nothing is provided, the definitions associated withthe list of divisions that the user has access to will be returned.
+  'localeCode': "localeCode_example" // String | The locale code to fetch for the presence definition. Use ALL to fetch everything.
 };
 
 apiInstance.getPresenceDefinitions0(opts)
@@ -292,15 +294,16 @@ apiInstance.getPresenceDefinitions0(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **deactivated** | **String** | Deactivated query can be TRUE or FALSE | [optional] [default to false] |
  **divisionId** | **[String]** | One or more division IDs. If nothing is provided, the definitions associated withthe list of divisions that the user has access to will be returned. | [optional]  |
-{: class="table table-striped"}
+ **localeCode** | **String** | The locale code to fetch for the presence definition. Use ALL to fetch everything. | [optional] <br />**Values**: ALL, he, fr, en_US, da, de, it, cs, es, fi, ar, ja, ko, nl, no, pl, pt_BR, pt_PT, ru, sv, th, tr, uk, zh_CN, zh_TW |
 
 ### Return type
 
 **OrganizationPresenceDefinitionEntityListing**
 
-<a name="getPresenceSettings"></a>
 
-# PresenceSettings getPresenceSettings()
+## getPresenceSettings
+
+> PresenceSettings getPresenceSettings()
 
 
 GET /api/v2/presence/settings
@@ -319,7 +322,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.PresenceApi();
@@ -338,14 +341,14 @@ apiInstance.getPresenceSettings()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **PresenceSettings**
 
-<a name="getPresenceSource"></a>
 
-# Source getPresenceSource(sourceId)
+## getPresenceSource
+
+> Source getPresenceSource(sourceId)
 
 
 GET /api/v2/presence/sources/{sourceId}
@@ -364,7 +367,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.PresenceApi();
@@ -387,15 +390,15 @@ apiInstance.getPresenceSource(sourceId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **sourceId** | **String** | Presence Source ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Source**
 
-<a name="getPresenceSources"></a>
 
-# SourceEntityListing getPresenceSources(opts)
+## getPresenceSources
+
+> SourceEntityListing getPresenceSources(opts)
 
 
 GET /api/v2/presence/sources
@@ -414,7 +417,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.PresenceApi();
@@ -439,15 +442,15 @@ apiInstance.getPresenceSources(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **deactivated** | **String** | Deactivated query can be TRUE or FALSE | [optional] [default to false] |
-{: class="table table-striped"}
 
 ### Return type
 
 **SourceEntityListing**
 
-<a name="getPresenceUserPrimarysource"></a>
 
-# UserPrimarySource getPresenceUserPrimarysource(userId)
+## getPresenceUserPrimarysource
+
+> UserPrimarySource getPresenceUserPrimarysource(userId)
 
 
 GET /api/v2/presence/users/{userId}/primarysource
@@ -466,7 +469,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.PresenceApi();
@@ -489,20 +492,23 @@ apiInstance.getPresenceUserPrimarysource(userId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | user ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **UserPrimarySource**
 
-<a name="getPresencedefinition"></a>
 
-# OrganizationPresence getPresencedefinition(presenceId, opts)
+## getPresencedefinition
 
+> OrganizationPresence getPresencedefinition(presenceId, opts)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 GET /api/v2/presencedefinitions/{presenceId}
 
-Get a Presence Definition
+Get a Presence Definition. Apps should migrate to use GET /api/v2/presence/definitions/{definitionId} instead
 
 Requires ALL permissions:
 
@@ -516,7 +522,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.PresenceApi();
@@ -543,20 +549,23 @@ apiInstance.getPresencedefinition(presenceId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **presenceId** | **String** | Organization Presence ID |  |
  **localeCode** | **String** | The locale code to fetch for the presence definition. Use ALL to fetch everything. | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **OrganizationPresence**
 
-<a name="getPresencedefinitions"></a>
 
-# OrganizationPresenceEntityListing getPresencedefinitions(opts)
+## getPresencedefinitions
 
+> OrganizationPresenceEntityListing getPresencedefinitions(opts)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 GET /api/v2/presencedefinitions
 
-Get an Organization's list of Presence Definitions
+Get an Organization's list of Presence Definitions. Apps should migrate to use GET /api/v2/presence/definitions instead
 
 Requires NO permissions:
 
@@ -568,7 +577,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.PresenceApi();
@@ -599,15 +608,15 @@ apiInstance.getPresencedefinitions(opts)
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **deleted** | **String** | Deleted query can be TRUE, FALSE or ALL | [optional] [default to false] |
  **localeCode** | **String** | The locale code to fetch for each presence definition. Use ALL to fetch everything. | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **OrganizationPresenceEntityListing**
 
-<a name="getSystempresences"></a>
 
-# [SystemPresence] getSystempresences()
+## getSystempresences
+
+> [SystemPresence] getSystempresences()
 
 
 GET /api/v2/systempresences
@@ -624,7 +633,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.PresenceApi();
@@ -643,14 +652,14 @@ apiInstance.getSystempresences()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **[SystemPresence]**
 
-<a name="getUserPresence"></a>
 
-# UserPresence getUserPresence(userId, sourceId)
+## getUserPresence
+
+> UserPresence getUserPresence(userId, sourceId)
 
 
 GET /api/v2/users/{userId}/presences/{sourceId}
@@ -669,7 +678,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.PresenceApi();
@@ -694,15 +703,15 @@ apiInstance.getUserPresence(userId, sourceId)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | user Id |  |
  **sourceId** | **String** | Presence source ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **UserPresence**
 
-<a name="getUserPresencesPurecloud"></a>
 
-# UserPresence getUserPresencesPurecloud(userId)
+## getUserPresencesPurecloud
+
+> UserPresence getUserPresencesPurecloud(userId)
 
 
 GET /api/v2/users/{userId}/presences/purecloud
@@ -721,7 +730,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.PresenceApi();
@@ -744,15 +753,15 @@ apiInstance.getUserPresencesPurecloud(userId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | user Id |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **UserPresence**
 
-<a name="getUsersPresenceBulk"></a>
 
-# [UcUserPresence] getUsersPresenceBulk(sourceId, opts)
+## getUsersPresenceBulk
+
+> [UcUserPresence] getUsersPresenceBulk(sourceId, opts)
 
 
 GET /api/v2/users/presences/{sourceId}/bulk
@@ -769,7 +778,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.PresenceApi();
@@ -796,15 +805,15 @@ apiInstance.getUsersPresenceBulk(sourceId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **sourceId** | **String** | The requested presence source ID. |  |
  **id** | **[String]** | A comma separated list of user IDs to fetch their presence status in bulk. Limit 50. | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **[UcUserPresence]**
 
-<a name="getUsersPresencesPurecloudBulk"></a>
 
-# [UcUserPresence] getUsersPresencesPurecloudBulk(opts)
+## getUsersPresencesPurecloudBulk
+
+> [UcUserPresence] getUsersPresencesPurecloudBulk(opts)
 
 
 GET /api/v2/users/presences/purecloud/bulk
@@ -821,7 +830,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.PresenceApi();
@@ -846,15 +855,15 @@ apiInstance.getUsersPresencesPurecloudBulk(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **id** | **[String]** | A comma separated list of user IDs to fetch their presence status in bulk. Limit 50. | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **[UcUserPresence]**
 
-<a name="patchUserPresence"></a>
 
-# UserPresence patchUserPresence(userId, sourceId, body)
+## patchUserPresence
+
+> UserPresence patchUserPresence(userId, sourceId, body)
 
 
 PATCH /api/v2/users/{userId}/presences/{sourceId}
@@ -873,7 +882,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.PresenceApi();
@@ -900,15 +909,15 @@ apiInstance.patchUserPresence(userId, sourceId, body)
  **userId** | **String** | user Id |  |
  **sourceId** | **String** | Presence source ID |  |
  **body** | **Object** | User presence |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **UserPresence**
 
-<a name="patchUserPresencesPurecloud"></a>
 
-# UserPresence patchUserPresencesPurecloud(userId, body)
+## patchUserPresencesPurecloud
+
+> UserPresence patchUserPresencesPurecloud(userId, body)
 
 
 PATCH /api/v2/users/{userId}/presences/purecloud
@@ -927,7 +936,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.PresenceApi();
@@ -952,22 +961,20 @@ apiInstance.patchUserPresencesPurecloud(userId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | user Id |  |
  **body** | **Object** | User presence |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **UserPresence**
 
-<a name="postPresenceDefinitions0"></a>
 
-# OrganizationPresenceDefinition postPresenceDefinitions0(body)
+## postPresenceDefinitions0
+
+> OrganizationPresenceDefinition postPresenceDefinitions0(body)
 
 
 POST /api/v2/presence/definitions
 
 Create a Presence Definition
-
-postPresenceDefinitions0 is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ALL permissions:
 
@@ -981,7 +988,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.PresenceApi();
@@ -1004,15 +1011,15 @@ apiInstance.postPresenceDefinitions0(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | The Presence Definition to create |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **OrganizationPresenceDefinition**
 
-<a name="postPresenceSources"></a>
 
-# Source postPresenceSources(body)
+## postPresenceSources
+
+> Source postPresenceSources(body)
 
 
 POST /api/v2/presence/sources
@@ -1031,7 +1038,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.PresenceApi();
@@ -1054,20 +1061,23 @@ apiInstance.postPresenceSources(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | The Presence Source to create |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Source**
 
-<a name="postPresencedefinitions"></a>
 
-# OrganizationPresence postPresencedefinitions(body)
+## postPresencedefinitions
 
+> OrganizationPresence postPresencedefinitions(body)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 POST /api/v2/presencedefinitions
 
-Create a Presence Definition
+Create a Presence Definition. Apps should migrate to use POST /api/v2/presence/definitions instead
 
 Requires ALL permissions:
 
@@ -1081,7 +1091,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.PresenceApi();
@@ -1104,22 +1114,20 @@ apiInstance.postPresencedefinitions(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | The Presence Definition to create |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **OrganizationPresence**
 
-<a name="putPresenceDefinition0"></a>
 
-# OrganizationPresenceDefinition putPresenceDefinition0(definitionId, body)
+## putPresenceDefinition0
+
+> OrganizationPresenceDefinition putPresenceDefinition0(definitionId, body)
 
 
 PUT /api/v2/presence/definitions/{definitionId}
 
 Update a Presence Definition
-
-putPresenceDefinition0 is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ALL permissions:
 
@@ -1133,7 +1141,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.PresenceApi();
@@ -1158,15 +1166,15 @@ apiInstance.putPresenceDefinition0(definitionId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **definitionId** | **String** | Presence Definition ID |  |
  **body** | **Object** | The updated Presence Definition |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **OrganizationPresenceDefinition**
 
-<a name="putPresenceSettings"></a>
 
-# PresenceSettings putPresenceSettings(body)
+## putPresenceSettings
+
+> PresenceSettings putPresenceSettings(body)
 
 
 PUT /api/v2/presence/settings
@@ -1185,7 +1193,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.PresenceApi();
@@ -1208,15 +1216,15 @@ apiInstance.putPresenceSettings(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Presence Settings |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **PresenceSettings**
 
-<a name="putPresenceSource"></a>
 
-# Source putPresenceSource(sourceId, body)
+## putPresenceSource
+
+> Source putPresenceSource(sourceId, body)
 
 
 PUT /api/v2/presence/sources/{sourceId}
@@ -1235,7 +1243,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.PresenceApi();
@@ -1260,15 +1268,15 @@ apiInstance.putPresenceSource(sourceId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **sourceId** | **String** | Presence Source ID |  |
  **body** | **Object** | The updated Presence Source |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Source**
 
-<a name="putPresenceUserPrimarysource"></a>
 
-# UserPrimarySource putPresenceUserPrimarysource(userId, body)
+## putPresenceUserPrimarysource
+
+> UserPrimarySource putPresenceUserPrimarysource(userId, body)
 
 
 PUT /api/v2/presence/users/{userId}/primarysource
@@ -1287,7 +1295,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.PresenceApi();
@@ -1312,20 +1320,23 @@ apiInstance.putPresenceUserPrimarysource(userId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | user ID |  |
  **body** | **Object** | Primary Source |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **UserPrimarySource**
 
-<a name="putPresencedefinition"></a>
 
-# OrganizationPresence putPresencedefinition(presenceId, body)
+## putPresencedefinition
 
+> OrganizationPresence putPresencedefinition(presenceId, body)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 PUT /api/v2/presencedefinitions/{presenceId}
 
-Update a Presence Definition
+Update a Presence Definition. Apps should migrate to use PUT /api/v2/presence/definitions/{definitionId} instead)
 
 Requires ALL permissions:
 
@@ -1339,7 +1350,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.PresenceApi();
@@ -1364,15 +1375,15 @@ apiInstance.putPresencedefinition(presenceId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **presenceId** | **String** | Organization Presence ID |  |
  **body** | **Object** | The OrganizationPresence to update |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **OrganizationPresence**
 
-<a name="putUsersPresencesBulk"></a>
 
-# [UserPresence] putUsersPresencesBulk(body)
+## putUsersPresencesBulk
+
+> [UserPresence] putUsersPresencesBulk(body)
 
 
 PUT /api/v2/users/presences/bulk
@@ -1391,7 +1402,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.PresenceApi();
@@ -1414,9 +1425,10 @@ apiInstance.putUsersPresencesBulk(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | List of User presences |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **[UserPresence]**
 
+
+_purecloud-platform-client-v2@229.1.0_

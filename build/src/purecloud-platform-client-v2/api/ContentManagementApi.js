@@ -5,7 +5,7 @@ class ContentManagementApi {
 	/**
 	 * ContentManagement service.
 	 * @module purecloud-platform-client-v2/api/ContentManagementApi
-	 * @version 174.0.0
+	 * @version 229.1.0
 	 */
 
 	/**
@@ -31,7 +31,7 @@ class ContentManagementApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'documentId' is set
-		if (documentId === undefined || documentId === null) {
+		if (documentId === undefined || documentId === null || documentId === '') {
 			throw 'Missing the required parameter "documentId" when calling deleteContentmanagementDocument';
 		}
 
@@ -56,7 +56,7 @@ class ContentManagementApi {
 	 */
 	deleteContentmanagementShare(shareId) { 
 		// verify the required parameter 'shareId' is set
-		if (shareId === undefined || shareId === null) {
+		if (shareId === undefined || shareId === null || shareId === '') {
 			throw 'Missing the required parameter "shareId" when calling deleteContentmanagementShare';
 		}
 
@@ -81,7 +81,7 @@ class ContentManagementApi {
 	 */
 	deleteContentmanagementStatusStatusId(statusId) { 
 		// verify the required parameter 'statusId' is set
-		if (statusId === undefined || statusId === null) {
+		if (statusId === undefined || statusId === null || statusId === '') {
 			throw 'Missing the required parameter "statusId" when calling deleteContentmanagementStatusStatusId';
 		}
 
@@ -110,7 +110,7 @@ class ContentManagementApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'workspaceId' is set
-		if (workspaceId === undefined || workspaceId === null) {
+		if (workspaceId === undefined || workspaceId === null || workspaceId === '') {
 			throw 'Missing the required parameter "workspaceId" when calling deleteContentmanagementWorkspace';
 		}
 
@@ -136,11 +136,11 @@ class ContentManagementApi {
 	 */
 	deleteContentmanagementWorkspaceMember(workspaceId, memberId) { 
 		// verify the required parameter 'workspaceId' is set
-		if (workspaceId === undefined || workspaceId === null) {
+		if (workspaceId === undefined || workspaceId === null || workspaceId === '') {
 			throw 'Missing the required parameter "workspaceId" when calling deleteContentmanagementWorkspaceMember';
 		}
 		// verify the required parameter 'memberId' is set
-		if (memberId === undefined || memberId === null) {
+		if (memberId === undefined || memberId === null || memberId === '') {
 			throw 'Missing the required parameter "memberId" when calling deleteContentmanagementWorkspaceMember';
 		}
 
@@ -166,11 +166,11 @@ class ContentManagementApi {
 	 */
 	deleteContentmanagementWorkspaceTagvalue(workspaceId, tagId) { 
 		// verify the required parameter 'workspaceId' is set
-		if (workspaceId === undefined || workspaceId === null) {
+		if (workspaceId === undefined || workspaceId === null || workspaceId === '') {
 			throw 'Missing the required parameter "workspaceId" when calling deleteContentmanagementWorkspaceTagvalue';
 		}
 		// verify the required parameter 'tagId' is set
-		if (tagId === undefined || tagId === null) {
+		if (tagId === undefined || tagId === null || tagId === '') {
 			throw 'Missing the required parameter "tagId" when calling deleteContentmanagementWorkspaceTagvalue';
 		}
 
@@ -199,7 +199,7 @@ class ContentManagementApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'documentId' is set
-		if (documentId === undefined || documentId === null) {
+		if (documentId === undefined || documentId === null || documentId === '') {
 			throw 'Missing the required parameter "documentId" when calling getContentmanagementDocument';
 		}
 
@@ -208,41 +208,6 @@ class ContentManagementApi {
 			'GET', 
 			{ 'documentId': documentId },
 			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get a list of audits for a document.
-	 * This api is deprecated, use https://developer.genesys.cloud/platform/audit/ instead.
-	 * @param {String} documentId Document ID
-	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageSize Page size (default to 25)
-	 * @param {Number} opts.pageNumber Page number (default to 1)
-	 * @param {String} opts.transactionFilter Transaction filter
-	 * @param {String} opts.level level (default to USER)
-	 * @param {String} opts.sortBy Sort by
-	 * @param {String} opts.sortOrder Sort order (default to ascending)
-	 * @deprecated
-	 */
-	getContentmanagementDocumentAudits(documentId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'documentId' is set
-		if (documentId === undefined || documentId === null) {
-			throw 'Missing the required parameter "documentId" when calling getContentmanagementDocumentAudits';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/contentmanagement/documents/{documentId}/audits', 
-			'GET', 
-			{ 'documentId': documentId },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'transactionFilter': opts['transactionFilter'],'level': opts['level'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'] },
 			{  },
 			{  },
 			null, 
@@ -264,7 +229,7 @@ class ContentManagementApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'documentId' is set
-		if (documentId === undefined || documentId === null) {
+		if (documentId === undefined || documentId === null || documentId === '') {
 			throw 'Missing the required parameter "documentId" when calling getContentmanagementDocumentContent';
 		}
 
@@ -357,7 +322,7 @@ class ContentManagementApi {
 	 */
 	getContentmanagementSecurityprofile(securityProfileId) { 
 		// verify the required parameter 'securityProfileId' is set
-		if (securityProfileId === undefined || securityProfileId === null) {
+		if (securityProfileId === undefined || securityProfileId === null || securityProfileId === '') {
 			throw 'Missing the required parameter "securityProfileId" when calling getContentmanagementSecurityprofile';
 		}
 
@@ -406,7 +371,7 @@ class ContentManagementApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'shareId' is set
-		if (shareId === undefined || shareId === null) {
+		if (shareId === undefined || shareId === null || shareId === '') {
 			throw 'Missing the required parameter "shareId" when calling getContentmanagementShare';
 		}
 
@@ -429,7 +394,6 @@ class ContentManagementApi {
 	 * This method requires the download sharing URI obtained in the get document response (downloadSharingUri). Documents may be shared between users in the same workspace. Documents may also be shared between any user by creating a content management share.
 	 * @param {String} sharedId Shared ID
 	 * @param {Object} opts Optional parameters
-	 * @param {Boolean} opts.redirect Turn on or off redirect (default to true)
 	 * @param {Object} opts.disposition Request how the share content will be downloaded: attached as a file or inline. Default is attachment. (default to attachment)
 	 * @param {String} opts.contentType The requested format for the specified document. If supported, the document will be returned in that format. Example contentType=audio/wav
 	 * @param {Object} opts.expand Expand some document fields
@@ -438,7 +402,7 @@ class ContentManagementApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'sharedId' is set
-		if (sharedId === undefined || sharedId === null) {
+		if (sharedId === undefined || sharedId === null || sharedId === '') {
 			throw 'Missing the required parameter "sharedId" when calling getContentmanagementSharedSharedId';
 		}
 
@@ -446,7 +410,7 @@ class ContentManagementApi {
 			'/api/v2/contentmanagement/shared/{sharedId}', 
 			'GET', 
 			{ 'sharedId': sharedId },
-			{ 'redirect': opts['redirect'],'disposition': opts['disposition'],'contentType': opts['contentType'],'expand': opts['expand'] },
+			{ 'disposition': opts['disposition'],'contentType': opts['contentType'],'expand': opts['expand'] },
 			{  },
 			{  },
 			null, 
@@ -515,7 +479,7 @@ class ContentManagementApi {
 	 */
 	getContentmanagementStatusStatusId(statusId) { 
 		// verify the required parameter 'statusId' is set
-		if (statusId === undefined || statusId === null) {
+		if (statusId === undefined || statusId === null || statusId === '') {
 			throw 'Missing the required parameter "statusId" when calling getContentmanagementStatusStatusId';
 		}
 
@@ -564,7 +528,7 @@ class ContentManagementApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'workspaceId' is set
-		if (workspaceId === undefined || workspaceId === null) {
+		if (workspaceId === undefined || workspaceId === null || workspaceId === '') {
 			throw 'Missing the required parameter "workspaceId" when calling getContentmanagementWorkspace';
 		}
 
@@ -597,7 +561,7 @@ class ContentManagementApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'workspaceId' is set
-		if (workspaceId === undefined || workspaceId === null) {
+		if (workspaceId === undefined || workspaceId === null || workspaceId === '') {
 			throw 'Missing the required parameter "workspaceId" when calling getContentmanagementWorkspaceDocuments';
 		}
 
@@ -627,11 +591,11 @@ class ContentManagementApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'workspaceId' is set
-		if (workspaceId === undefined || workspaceId === null) {
+		if (workspaceId === undefined || workspaceId === null || workspaceId === '') {
 			throw 'Missing the required parameter "workspaceId" when calling getContentmanagementWorkspaceMember';
 		}
 		// verify the required parameter 'memberId' is set
-		if (memberId === undefined || memberId === null) {
+		if (memberId === undefined || memberId === null || memberId === '') {
 			throw 'Missing the required parameter "memberId" when calling getContentmanagementWorkspaceMember';
 		}
 
@@ -662,7 +626,7 @@ class ContentManagementApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'workspaceId' is set
-		if (workspaceId === undefined || workspaceId === null) {
+		if (workspaceId === undefined || workspaceId === null || workspaceId === '') {
 			throw 'Missing the required parameter "workspaceId" when calling getContentmanagementWorkspaceMembers';
 		}
 
@@ -692,11 +656,11 @@ class ContentManagementApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'workspaceId' is set
-		if (workspaceId === undefined || workspaceId === null) {
+		if (workspaceId === undefined || workspaceId === null || workspaceId === '') {
 			throw 'Missing the required parameter "workspaceId" when calling getContentmanagementWorkspaceTagvalue';
 		}
 		// verify the required parameter 'tagId' is set
-		if (tagId === undefined || tagId === null) {
+		if (tagId === undefined || tagId === null || tagId === '') {
 			throw 'Missing the required parameter "tagId" when calling getContentmanagementWorkspaceTagvalue';
 		}
 
@@ -728,7 +692,7 @@ class ContentManagementApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'workspaceId' is set
-		if (workspaceId === undefined || workspaceId === null) {
+		if (workspaceId === undefined || workspaceId === null || workspaceId === '') {
 			throw 'Missing the required parameter "workspaceId" when calling getContentmanagementWorkspaceTagvalues';
 		}
 
@@ -774,32 +738,6 @@ class ContentManagementApi {
 	}
 
 	/**
-	 * Query audits
-	 * This api is deprecated, use https://developer.genesys.cloud/platform/audit/ instead.
-	 * @param {Object} body Allows for a filtered query returning facet information
-	 * @deprecated
-	 */
-	postContentmanagementAuditquery(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postContentmanagementAuditquery';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/contentmanagement/auditquery', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Update a document.
 	 * 
 	 * @param {String} documentId Document ID
@@ -812,7 +750,7 @@ class ContentManagementApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'documentId' is set
-		if (documentId === undefined || documentId === null) {
+		if (documentId === undefined || documentId === null || documentId === '') {
 			throw 'Missing the required parameter "documentId" when calling postContentmanagementDocument';
 		}
 		// verify the required parameter 'body' is set
@@ -846,7 +784,7 @@ class ContentManagementApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'documentId' is set
-		if (documentId === undefined || documentId === null) {
+		if (documentId === undefined || documentId === null || documentId === '') {
 			throw 'Missing the required parameter "documentId" when calling postContentmanagementDocumentContent';
 		}
 		// verify the required parameter 'body' is set
@@ -961,7 +899,7 @@ class ContentManagementApi {
 	 */
 	postContentmanagementWorkspaceTagvalues(workspaceId, body) { 
 		// verify the required parameter 'workspaceId' is set
-		if (workspaceId === undefined || workspaceId === null) {
+		if (workspaceId === undefined || workspaceId === null || workspaceId === '') {
 			throw 'Missing the required parameter "workspaceId" when calling postContentmanagementWorkspaceTagvalues';
 		}
 		// verify the required parameter 'body' is set
@@ -995,7 +933,7 @@ class ContentManagementApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'workspaceId' is set
-		if (workspaceId === undefined || workspaceId === null) {
+		if (workspaceId === undefined || workspaceId === null || workspaceId === '') {
 			throw 'Missing the required parameter "workspaceId" when calling postContentmanagementWorkspaceTagvaluesQuery';
 		}
 		// verify the required parameter 'body' is set
@@ -1050,7 +988,7 @@ class ContentManagementApi {
 	 */
 	putContentmanagementWorkspace(workspaceId, body) { 
 		// verify the required parameter 'workspaceId' is set
-		if (workspaceId === undefined || workspaceId === null) {
+		if (workspaceId === undefined || workspaceId === null || workspaceId === '') {
 			throw 'Missing the required parameter "workspaceId" when calling putContentmanagementWorkspace';
 		}
 		// verify the required parameter 'body' is set
@@ -1081,11 +1019,11 @@ class ContentManagementApi {
 	 */
 	putContentmanagementWorkspaceMember(workspaceId, memberId, body) { 
 		// verify the required parameter 'workspaceId' is set
-		if (workspaceId === undefined || workspaceId === null) {
+		if (workspaceId === undefined || workspaceId === null || workspaceId === '') {
 			throw 'Missing the required parameter "workspaceId" when calling putContentmanagementWorkspaceMember';
 		}
 		// verify the required parameter 'memberId' is set
-		if (memberId === undefined || memberId === null) {
+		if (memberId === undefined || memberId === null || memberId === '') {
 			throw 'Missing the required parameter "memberId" when calling putContentmanagementWorkspaceMember';
 		}
 		// verify the required parameter 'body' is set
@@ -1116,11 +1054,11 @@ class ContentManagementApi {
 	 */
 	putContentmanagementWorkspaceTagvalue(workspaceId, tagId, body) { 
 		// verify the required parameter 'workspaceId' is set
-		if (workspaceId === undefined || workspaceId === null) {
+		if (workspaceId === undefined || workspaceId === null || workspaceId === '') {
 			throw 'Missing the required parameter "workspaceId" when calling putContentmanagementWorkspaceTagvalue';
 		}
 		// verify the required parameter 'tagId' is set
-		if (tagId === undefined || tagId === null) {
+		if (tagId === undefined || tagId === null || tagId === '') {
 			throw 'Missing the required parameter "tagId" when calling putContentmanagementWorkspaceTagvalue';
 		}
 		// verify the required parameter 'body' is set

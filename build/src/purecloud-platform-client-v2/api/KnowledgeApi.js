@@ -5,7 +5,7 @@ class KnowledgeApi {
 	/**
 	 * Knowledge service.
 	 * @module purecloud-platform-client-v2/api/KnowledgeApi
-	 * @version 174.0.0
+	 * @version 229.1.0
 	 */
 
 	/**
@@ -27,7 +27,7 @@ class KnowledgeApi {
 	 */
 	deleteKnowledgeKnowledgebase(knowledgeBaseId) { 
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling deleteKnowledgeKnowledgebase';
 		}
 
@@ -53,11 +53,11 @@ class KnowledgeApi {
 	 */
 	deleteKnowledgeKnowledgebaseCategory(knowledgeBaseId, categoryId) { 
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling deleteKnowledgeKnowledgebaseCategory';
 		}
 		// verify the required parameter 'categoryId' is set
-		if (categoryId === undefined || categoryId === null) {
+		if (categoryId === undefined || categoryId === null || categoryId === '') {
 			throw 'Missing the required parameter "categoryId" when calling deleteKnowledgeKnowledgebaseCategory';
 		}
 
@@ -83,11 +83,11 @@ class KnowledgeApi {
 	 */
 	deleteKnowledgeKnowledgebaseDocument(knowledgeBaseId, documentId) { 
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling deleteKnowledgeKnowledgebaseDocument';
 		}
 		// verify the required parameter 'documentId' is set
-		if (documentId === undefined || documentId === null) {
+		if (documentId === undefined || documentId === null || documentId === '') {
 			throw 'Missing the required parameter "documentId" when calling deleteKnowledgeKnowledgebaseDocument';
 		}
 
@@ -114,15 +114,15 @@ class KnowledgeApi {
 	 */
 	deleteKnowledgeKnowledgebaseDocumentVariation(documentVariationId, documentId, knowledgeBaseId) { 
 		// verify the required parameter 'documentVariationId' is set
-		if (documentVariationId === undefined || documentVariationId === null) {
+		if (documentVariationId === undefined || documentVariationId === null || documentVariationId === '') {
 			throw 'Missing the required parameter "documentVariationId" when calling deleteKnowledgeKnowledgebaseDocumentVariation';
 		}
 		// verify the required parameter 'documentId' is set
-		if (documentId === undefined || documentId === null) {
+		if (documentId === undefined || documentId === null || documentId === '') {
 			throw 'Missing the required parameter "documentId" when calling deleteKnowledgeKnowledgebaseDocumentVariation';
 		}
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling deleteKnowledgeKnowledgebaseDocumentVariation';
 		}
 
@@ -148,11 +148,11 @@ class KnowledgeApi {
 	 */
 	deleteKnowledgeKnowledgebaseExportJob(knowledgeBaseId, exportJobId) { 
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling deleteKnowledgeKnowledgebaseExportJob';
 		}
 		// verify the required parameter 'exportJobId' is set
-		if (exportJobId === undefined || exportJobId === null) {
+		if (exportJobId === undefined || exportJobId === null || exportJobId === '') {
 			throw 'Missing the required parameter "exportJobId" when calling deleteKnowledgeKnowledgebaseExportJob';
 		}
 
@@ -178,11 +178,11 @@ class KnowledgeApi {
 	 */
 	deleteKnowledgeKnowledgebaseImportJob(knowledgeBaseId, importJobId) { 
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling deleteKnowledgeKnowledgebaseImportJob';
 		}
 		// verify the required parameter 'importJobId' is set
-		if (importJobId === undefined || importJobId === null) {
+		if (importJobId === undefined || importJobId === null || importJobId === '') {
 			throw 'Missing the required parameter "importJobId" when calling deleteKnowledgeKnowledgebaseImportJob';
 		}
 
@@ -208,11 +208,11 @@ class KnowledgeApi {
 	 */
 	deleteKnowledgeKnowledgebaseLabel(knowledgeBaseId, labelId) { 
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling deleteKnowledgeKnowledgebaseLabel';
 		}
 		// verify the required parameter 'labelId' is set
-		if (labelId === undefined || labelId === null) {
+		if (labelId === undefined || labelId === null || labelId === '') {
 			throw 'Missing the required parameter "labelId" when calling deleteKnowledgeKnowledgebaseLabel';
 		}
 
@@ -240,15 +240,15 @@ class KnowledgeApi {
 	 */
 	deleteKnowledgeKnowledgebaseLanguageCategory(categoryId, knowledgeBaseId, languageCode) { 
 		// verify the required parameter 'categoryId' is set
-		if (categoryId === undefined || categoryId === null) {
+		if (categoryId === undefined || categoryId === null || categoryId === '') {
 			throw 'Missing the required parameter "categoryId" when calling deleteKnowledgeKnowledgebaseLanguageCategory';
 		}
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling deleteKnowledgeKnowledgebaseLanguageCategory';
 		}
 		// verify the required parameter 'languageCode' is set
-		if (languageCode === undefined || languageCode === null) {
+		if (languageCode === undefined || languageCode === null || languageCode === '') {
 			throw 'Missing the required parameter "languageCode" when calling deleteKnowledgeKnowledgebaseLanguageCategory';
 		}
 
@@ -276,15 +276,15 @@ class KnowledgeApi {
 	 */
 	deleteKnowledgeKnowledgebaseLanguageDocument(documentId, knowledgeBaseId, languageCode) { 
 		// verify the required parameter 'documentId' is set
-		if (documentId === undefined || documentId === null) {
+		if (documentId === undefined || documentId === null || documentId === '') {
 			throw 'Missing the required parameter "documentId" when calling deleteKnowledgeKnowledgebaseLanguageDocument';
 		}
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling deleteKnowledgeKnowledgebaseLanguageDocument';
 		}
 		// verify the required parameter 'languageCode' is set
-		if (languageCode === undefined || languageCode === null) {
+		if (languageCode === undefined || languageCode === null || languageCode === '') {
 			throw 'Missing the required parameter "languageCode" when calling deleteKnowledgeKnowledgebaseLanguageDocument';
 		}
 
@@ -312,15 +312,15 @@ class KnowledgeApi {
 	 */
 	deleteKnowledgeKnowledgebaseLanguageDocumentsImport(knowledgeBaseId, languageCode, importId) { 
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling deleteKnowledgeKnowledgebaseLanguageDocumentsImport';
 		}
 		// verify the required parameter 'languageCode' is set
-		if (languageCode === undefined || languageCode === null) {
+		if (languageCode === undefined || languageCode === null || languageCode === '') {
 			throw 'Missing the required parameter "languageCode" when calling deleteKnowledgeKnowledgebaseLanguageDocumentsImport';
 		}
 		// verify the required parameter 'importId' is set
-		if (importId === undefined || importId === null) {
+		if (importId === undefined || importId === null || importId === '') {
 			throw 'Missing the required parameter "importId" when calling deleteKnowledgeKnowledgebaseLanguageDocumentsImport';
 		}
 
@@ -328,6 +328,96 @@ class KnowledgeApi {
 			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/imports/{importId}', 
 			'DELETE', 
 			{ 'knowledgeBaseId': knowledgeBaseId,'languageCode': languageCode,'importId': importId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete Salesforce Knowledge integration source
+	 * 
+	 * @param {String} knowledgeBaseId Knowledge base ID
+	 * @param {String} sourceId Source ID
+	 */
+	deleteKnowledgeKnowledgebaseSourcesSalesforceSourceId(knowledgeBaseId, sourceId) { 
+		// verify the required parameter 'knowledgeBaseId' is set
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
+			throw 'Missing the required parameter "knowledgeBaseId" when calling deleteKnowledgeKnowledgebaseSourcesSalesforceSourceId';
+		}
+		// verify the required parameter 'sourceId' is set
+		if (sourceId === undefined || sourceId === null || sourceId === '') {
+			throw 'Missing the required parameter "sourceId" when calling deleteKnowledgeKnowledgebaseSourcesSalesforceSourceId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/salesforce/{sourceId}', 
+			'DELETE', 
+			{ 'knowledgeBaseId': knowledgeBaseId,'sourceId': sourceId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete ServiceNow Knowledge integration source
+	 * 
+	 * @param {String} knowledgeBaseId Knowledge base ID
+	 * @param {String} sourceId Source ID
+	 */
+	deleteKnowledgeKnowledgebaseSourcesServicenowSourceId(knowledgeBaseId, sourceId) { 
+		// verify the required parameter 'knowledgeBaseId' is set
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
+			throw 'Missing the required parameter "knowledgeBaseId" when calling deleteKnowledgeKnowledgebaseSourcesServicenowSourceId';
+		}
+		// verify the required parameter 'sourceId' is set
+		if (sourceId === undefined || sourceId === null || sourceId === '') {
+			throw 'Missing the required parameter "sourceId" when calling deleteKnowledgeKnowledgebaseSourcesServicenowSourceId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/servicenow/{sourceId}', 
+			'DELETE', 
+			{ 'knowledgeBaseId': knowledgeBaseId,'sourceId': sourceId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete synchronization job
+	 * 
+	 * @param {String} knowledgeBaseId Knowledge base ID
+	 * @param {String} syncJobId Synchronization job ID
+	 */
+	deleteKnowledgeKnowledgebaseSynchronizeJob(knowledgeBaseId, syncJobId) { 
+		// verify the required parameter 'knowledgeBaseId' is set
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
+			throw 'Missing the required parameter "knowledgeBaseId" when calling deleteKnowledgeKnowledgebaseSynchronizeJob';
+		}
+		// verify the required parameter 'syncJobId' is set
+		if (syncJobId === undefined || syncJobId === null || syncJobId === '') {
+			throw 'Missing the required parameter "syncJobId" when calling deleteKnowledgeKnowledgebaseSynchronizeJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/synchronize/jobs/{syncJobId}', 
+			'DELETE', 
+			{ 'knowledgeBaseId': knowledgeBaseId,'syncJobId': syncJobId },
 			{  },
 			{  },
 			{  },
@@ -357,7 +447,7 @@ class KnowledgeApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'sessionId' is set
-		if (sessionId === undefined || sessionId === null) {
+		if (sessionId === undefined || sessionId === null || sessionId === '') {
 			throw 'Missing the required parameter "sessionId" when calling getKnowledgeGuestSessionCategories';
 		}
 
@@ -383,11 +473,11 @@ class KnowledgeApi {
 	 */
 	getKnowledgeGuestSessionDocument(sessionId, documentId) { 
 		// verify the required parameter 'sessionId' is set
-		if (sessionId === undefined || sessionId === null) {
+		if (sessionId === undefined || sessionId === null || sessionId === '') {
 			throw 'Missing the required parameter "sessionId" when calling getKnowledgeGuestSessionDocument';
 		}
 		// verify the required parameter 'documentId' is set
-		if (documentId === undefined || documentId === null) {
+		if (documentId === undefined || documentId === null || documentId === '') {
 			throw 'Missing the required parameter "documentId" when calling getKnowledgeGuestSessionDocument';
 		}
 
@@ -417,7 +507,7 @@ class KnowledgeApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'sessionId' is set
-		if (sessionId === undefined || sessionId === null) {
+		if (sessionId === undefined || sessionId === null || sessionId === '') {
 			throw 'Missing the required parameter "sessionId" when calling getKnowledgeGuestSessionDocuments';
 		}
 
@@ -436,13 +526,42 @@ class KnowledgeApi {
 	}
 
 	/**
+	 * Get sync options available for a knowledge-connect integration
+	 * 
+	 * @param {String} integrationId Integration ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.knowledgeBaseIds Narrowing down filtering option results by knowledge base.
+	 */
+	getKnowledgeIntegrationOptions(integrationId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'integrationId' is set
+		if (integrationId === undefined || integrationId === null || integrationId === '') {
+			throw 'Missing the required parameter "integrationId" when calling getKnowledgeIntegrationOptions';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/integrations/{integrationId}/options', 
+			'GET', 
+			{ 'integrationId': integrationId },
+			{ 'knowledgeBaseIds': this.apiClient.buildCollectionParam(opts['knowledgeBaseIds'], 'multi') },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get knowledge base
 	 * 
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 */
 	getKnowledgeKnowledgebase(knowledgeBaseId) { 
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebase';
 		}
 
@@ -479,7 +598,7 @@ class KnowledgeApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseCategories';
 		}
 
@@ -505,11 +624,11 @@ class KnowledgeApi {
 	 */
 	getKnowledgeKnowledgebaseCategory(knowledgeBaseId, categoryId) { 
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseCategory';
 		}
 		// verify the required parameter 'categoryId' is set
-		if (categoryId === undefined || categoryId === null) {
+		if (categoryId === undefined || categoryId === null || categoryId === '') {
 			throw 'Missing the required parameter "categoryId" when calling getKnowledgeKnowledgebaseCategory';
 		}
 
@@ -540,11 +659,11 @@ class KnowledgeApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseDocument';
 		}
 		// verify the required parameter 'documentId' is set
-		if (documentId === undefined || documentId === null) {
+		if (documentId === undefined || documentId === null || documentId === '') {
 			throw 'Missing the required parameter "documentId" when calling getKnowledgeKnowledgebaseDocument';
 		}
 
@@ -584,11 +703,11 @@ class KnowledgeApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseDocumentFeedback';
 		}
 		// verify the required parameter 'documentId' is set
-		if (documentId === undefined || documentId === null) {
+		if (documentId === undefined || documentId === null || documentId === '') {
 			throw 'Missing the required parameter "documentId" when calling getKnowledgeKnowledgebaseDocumentFeedback';
 		}
 
@@ -615,15 +734,15 @@ class KnowledgeApi {
 	 */
 	getKnowledgeKnowledgebaseDocumentFeedbackFeedbackId(knowledgeBaseId, documentId, feedbackId) { 
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseDocumentFeedbackFeedbackId';
 		}
 		// verify the required parameter 'documentId' is set
-		if (documentId === undefined || documentId === null) {
+		if (documentId === undefined || documentId === null || documentId === '') {
 			throw 'Missing the required parameter "documentId" when calling getKnowledgeKnowledgebaseDocumentFeedbackFeedbackId';
 		}
 		// verify the required parameter 'feedbackId' is set
-		if (feedbackId === undefined || feedbackId === null) {
+		if (feedbackId === undefined || feedbackId === null || feedbackId === '') {
 			throw 'Missing the required parameter "feedbackId" when calling getKnowledgeKnowledgebaseDocumentFeedbackFeedbackId';
 		}
 
@@ -649,20 +768,21 @@ class KnowledgeApi {
 	 * @param {String} knowledgeBaseId Globally unique identifier for a knowledge base.
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.documentState The state of the document.
+	 * @param {Array.<String>} opts.expand The specified entity attributes will be filled. Comma separated values expected.
 	 */
 	getKnowledgeKnowledgebaseDocumentVariation(documentVariationId, documentId, knowledgeBaseId, opts) { 
 		opts = opts || {};
 		
 		// verify the required parameter 'documentVariationId' is set
-		if (documentVariationId === undefined || documentVariationId === null) {
+		if (documentVariationId === undefined || documentVariationId === null || documentVariationId === '') {
 			throw 'Missing the required parameter "documentVariationId" when calling getKnowledgeKnowledgebaseDocumentVariation';
 		}
 		// verify the required parameter 'documentId' is set
-		if (documentId === undefined || documentId === null) {
+		if (documentId === undefined || documentId === null || documentId === '') {
 			throw 'Missing the required parameter "documentId" when calling getKnowledgeKnowledgebaseDocumentVariation';
 		}
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseDocumentVariation';
 		}
 
@@ -670,7 +790,7 @@ class KnowledgeApi {
 			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/variations/{documentVariationId}', 
 			'GET', 
 			{ 'documentVariationId': documentVariationId,'documentId': documentId,'knowledgeBaseId': knowledgeBaseId },
-			{ 'documentState': opts['documentState'] },
+			{ 'documentState': opts['documentState'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
 			{  },
 			{  },
 			null, 
@@ -690,16 +810,17 @@ class KnowledgeApi {
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
 	 * @param {Object} opts.documentState The state of the document.
+	 * @param {Array.<String>} opts.expand The specified entity attributes will be filled. Comma separated values expected.
 	 */
 	getKnowledgeKnowledgebaseDocumentVariations(knowledgeBaseId, documentId, opts) { 
 		opts = opts || {};
 		
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseDocumentVariations';
 		}
 		// verify the required parameter 'documentId' is set
-		if (documentId === undefined || documentId === null) {
+		if (documentId === undefined || documentId === null || documentId === '') {
 			throw 'Missing the required parameter "documentId" when calling getKnowledgeKnowledgebaseDocumentVariations';
 		}
 
@@ -707,7 +828,7 @@ class KnowledgeApi {
 			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/variations', 
 			'GET', 
 			{ 'knowledgeBaseId': knowledgeBaseId,'documentId': documentId },
-			{ 'before': opts['before'],'after': opts['after'],'pageSize': opts['pageSize'],'documentState': opts['documentState'] },
+			{ 'before': opts['before'],'after': opts['after'],'pageSize': opts['pageSize'],'documentState': opts['documentState'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
 			{  },
 			{  },
 			null, 
@@ -730,15 +851,15 @@ class KnowledgeApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseDocumentVersion';
 		}
 		// verify the required parameter 'documentId' is set
-		if (documentId === undefined || documentId === null) {
+		if (documentId === undefined || documentId === null || documentId === '') {
 			throw 'Missing the required parameter "documentId" when calling getKnowledgeKnowledgebaseDocumentVersion';
 		}
 		// verify the required parameter 'versionId' is set
-		if (versionId === undefined || versionId === null) {
+		if (versionId === undefined || versionId === null || versionId === '') {
 			throw 'Missing the required parameter "versionId" when calling getKnowledgeKnowledgebaseDocumentVersion';
 		}
 
@@ -766,19 +887,19 @@ class KnowledgeApi {
 	 */
 	getKnowledgeKnowledgebaseDocumentVersionVariation(knowledgeBaseId, documentId, versionId, variationId) { 
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseDocumentVersionVariation';
 		}
 		// verify the required parameter 'documentId' is set
-		if (documentId === undefined || documentId === null) {
+		if (documentId === undefined || documentId === null || documentId === '') {
 			throw 'Missing the required parameter "documentId" when calling getKnowledgeKnowledgebaseDocumentVersionVariation';
 		}
 		// verify the required parameter 'versionId' is set
-		if (versionId === undefined || versionId === null) {
+		if (versionId === undefined || versionId === null || versionId === '') {
 			throw 'Missing the required parameter "versionId" when calling getKnowledgeKnowledgebaseDocumentVersionVariation';
 		}
 		// verify the required parameter 'variationId' is set
-		if (variationId === undefined || variationId === null) {
+		if (variationId === undefined || variationId === null || variationId === '') {
 			throw 'Missing the required parameter "variationId" when calling getKnowledgeKnowledgebaseDocumentVersionVariation';
 		}
 
@@ -811,15 +932,15 @@ class KnowledgeApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseDocumentVersionVariations';
 		}
 		// verify the required parameter 'documentId' is set
-		if (documentId === undefined || documentId === null) {
+		if (documentId === undefined || documentId === null || documentId === '') {
 			throw 'Missing the required parameter "documentId" when calling getKnowledgeKnowledgebaseDocumentVersionVariations';
 		}
 		// verify the required parameter 'versionId' is set
-		if (versionId === undefined || versionId === null) {
+		if (versionId === undefined || versionId === null || versionId === '') {
 			throw 'Missing the required parameter "versionId" when calling getKnowledgeKnowledgebaseDocumentVersionVariations';
 		}
 
@@ -852,11 +973,11 @@ class KnowledgeApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseDocumentVersions';
 		}
 		// verify the required parameter 'documentId' is set
-		if (documentId === undefined || documentId === null) {
+		if (documentId === undefined || documentId === null || documentId === '') {
 			throw 'Missing the required parameter "documentId" when calling getKnowledgeKnowledgebaseDocumentVersions';
 		}
 
@@ -895,7 +1016,7 @@ class KnowledgeApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseDocuments';
 		}
 
@@ -921,11 +1042,11 @@ class KnowledgeApi {
 	 */
 	getKnowledgeKnowledgebaseExportJob(knowledgeBaseId, exportJobId) { 
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseExportJob';
 		}
 		// verify the required parameter 'exportJobId' is set
-		if (exportJobId === undefined || exportJobId === null) {
+		if (exportJobId === undefined || exportJobId === null || exportJobId === '') {
 			throw 'Missing the required parameter "exportJobId" when calling getKnowledgeKnowledgebaseExportJob';
 		}
 
@@ -955,11 +1076,11 @@ class KnowledgeApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseImportJob';
 		}
 		// verify the required parameter 'importJobId' is set
-		if (importJobId === undefined || importJobId === null) {
+		if (importJobId === undefined || importJobId === null || importJobId === '') {
 			throw 'Missing the required parameter "importJobId" when calling getKnowledgeKnowledgebaseImportJob';
 		}
 
@@ -985,11 +1106,11 @@ class KnowledgeApi {
 	 */
 	getKnowledgeKnowledgebaseLabel(knowledgeBaseId, labelId) { 
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseLabel';
 		}
 		// verify the required parameter 'labelId' is set
-		if (labelId === undefined || labelId === null) {
+		if (labelId === undefined || labelId === null || labelId === '') {
 			throw 'Missing the required parameter "labelId" when calling getKnowledgeKnowledgebaseLabel';
 		}
 
@@ -1022,7 +1143,7 @@ class KnowledgeApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseLabels';
 		}
 
@@ -1057,11 +1178,11 @@ class KnowledgeApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseLanguageCategories';
 		}
 		// verify the required parameter 'languageCode' is set
-		if (languageCode === undefined || languageCode === null) {
+		if (languageCode === undefined || languageCode === null || languageCode === '') {
 			throw 'Missing the required parameter "languageCode" when calling getKnowledgeKnowledgebaseLanguageCategories';
 		}
 
@@ -1089,15 +1210,15 @@ class KnowledgeApi {
 	 */
 	getKnowledgeKnowledgebaseLanguageCategory(categoryId, knowledgeBaseId, languageCode) { 
 		// verify the required parameter 'categoryId' is set
-		if (categoryId === undefined || categoryId === null) {
+		if (categoryId === undefined || categoryId === null || categoryId === '') {
 			throw 'Missing the required parameter "categoryId" when calling getKnowledgeKnowledgebaseLanguageCategory';
 		}
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseLanguageCategory';
 		}
 		// verify the required parameter 'languageCode' is set
-		if (languageCode === undefined || languageCode === null) {
+		if (languageCode === undefined || languageCode === null || languageCode === '') {
 			throw 'Missing the required parameter "languageCode" when calling getKnowledgeKnowledgebaseLanguageCategory';
 		}
 
@@ -1125,15 +1246,15 @@ class KnowledgeApi {
 	 */
 	getKnowledgeKnowledgebaseLanguageDocument(documentId, knowledgeBaseId, languageCode) { 
 		// verify the required parameter 'documentId' is set
-		if (documentId === undefined || documentId === null) {
+		if (documentId === undefined || documentId === null || documentId === '') {
 			throw 'Missing the required parameter "documentId" when calling getKnowledgeKnowledgebaseLanguageDocument';
 		}
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseLanguageDocument';
 		}
 		// verify the required parameter 'languageCode' is set
-		if (languageCode === undefined || languageCode === null) {
+		if (languageCode === undefined || languageCode === null || languageCode === '') {
 			throw 'Missing the required parameter "languageCode" when calling getKnowledgeKnowledgebaseLanguageDocument';
 		}
 
@@ -1159,23 +1280,22 @@ class KnowledgeApi {
 	 * @param {Object} languageCode Language code, format: iso2-LOCALE
 	 * @param {String} uploadId UploadId
 	 * @deprecated
-	 * getKnowledgeKnowledgebaseLanguageDocumentUpload is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getKnowledgeKnowledgebaseLanguageDocumentUpload(documentId, knowledgeBaseId, languageCode, uploadId) { 
 		// verify the required parameter 'documentId' is set
-		if (documentId === undefined || documentId === null) {
+		if (documentId === undefined || documentId === null || documentId === '') {
 			throw 'Missing the required parameter "documentId" when calling getKnowledgeKnowledgebaseLanguageDocumentUpload';
 		}
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseLanguageDocumentUpload';
 		}
 		// verify the required parameter 'languageCode' is set
-		if (languageCode === undefined || languageCode === null) {
+		if (languageCode === undefined || languageCode === null || languageCode === '') {
 			throw 'Missing the required parameter "languageCode" when calling getKnowledgeKnowledgebaseLanguageDocumentUpload';
 		}
 		// verify the required parameter 'uploadId' is set
-		if (uploadId === undefined || uploadId === null) {
+		if (uploadId === undefined || uploadId === null || uploadId === '') {
 			throw 'Missing the required parameter "uploadId" when calling getKnowledgeKnowledgebaseLanguageDocumentUpload';
 		}
 
@@ -1214,11 +1334,11 @@ class KnowledgeApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseLanguageDocuments';
 		}
 		// verify the required parameter 'languageCode' is set
-		if (languageCode === undefined || languageCode === null) {
+		if (languageCode === undefined || languageCode === null || languageCode === '') {
 			throw 'Missing the required parameter "languageCode" when calling getKnowledgeKnowledgebaseLanguageDocuments';
 		}
 
@@ -1246,15 +1366,15 @@ class KnowledgeApi {
 	 */
 	getKnowledgeKnowledgebaseLanguageDocumentsImport(knowledgeBaseId, languageCode, importId) { 
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseLanguageDocumentsImport';
 		}
 		// verify the required parameter 'languageCode' is set
-		if (languageCode === undefined || languageCode === null) {
+		if (languageCode === undefined || languageCode === null || languageCode === '') {
 			throw 'Missing the required parameter "languageCode" when calling getKnowledgeKnowledgebaseLanguageDocumentsImport';
 		}
 		// verify the required parameter 'importId' is set
-		if (importId === undefined || importId === null) {
+		if (importId === undefined || importId === null || importId === '') {
 			throw 'Missing the required parameter "importId" when calling getKnowledgeKnowledgebaseLanguageDocumentsImport';
 		}
 
@@ -1282,15 +1402,15 @@ class KnowledgeApi {
 	 */
 	getKnowledgeKnowledgebaseLanguageTraining(knowledgeBaseId, languageCode, trainingId) { 
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseLanguageTraining';
 		}
 		// verify the required parameter 'languageCode' is set
-		if (languageCode === undefined || languageCode === null) {
+		if (languageCode === undefined || languageCode === null || languageCode === '') {
 			throw 'Missing the required parameter "languageCode" when calling getKnowledgeKnowledgebaseLanguageTraining';
 		}
 		// verify the required parameter 'trainingId' is set
-		if (trainingId === undefined || trainingId === null) {
+		if (trainingId === undefined || trainingId === null || trainingId === '') {
 			throw 'Missing the required parameter "trainingId" when calling getKnowledgeKnowledgebaseLanguageTraining';
 		}
 
@@ -1325,11 +1445,11 @@ class KnowledgeApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseLanguageTrainings';
 		}
 		// verify the required parameter 'languageCode' is set
-		if (languageCode === undefined || languageCode === null) {
+		if (languageCode === undefined || languageCode === null || languageCode === '') {
 			throw 'Missing the required parameter "languageCode" when calling getKnowledgeKnowledgebaseLanguageTrainings';
 		}
 
@@ -1338,6 +1458,230 @@ class KnowledgeApi {
 			'GET', 
 			{ 'knowledgeBaseId': knowledgeBaseId,'languageCode': languageCode },
 			{ 'before': opts['before'],'after': opts['after'],'limit': opts['limit'],'pageSize': opts['pageSize'],'knowledgeDocumentsState': opts['knowledgeDocumentsState'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get operations
+	 * 
+	 * @param {String} knowledgeBaseId Knowledge base ID
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
+	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
+	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
+	 * @param {Array.<String>} opts.userId If specified, retrieves operations associated with user ids, comma separated values expected.
+	 * @param {Array.<String>} opts.type If specified, retrieves operations with specified operation type, comma separated values expected.
+	 * @param {Array.<String>} opts.status If specified, retrieves operations with specified operation status, comma separated values expected.
+	 * @param {String} opts.interval Retrieves the operations modified in specified date and time range. If the after and before cursor parameters are within this interval, it would return valid data, otherwise it throws an error.The dates in the interval are represented in ISO-8601 format: YYYY-MM-DDThh:mm:ssZ/YYYY-MM-DDThh:mm:ssZ
+	 * @param {Array.<String>} opts.sourceId If specified, retrieves operations associated with source ids, comma separated values expected.
+	 */
+	getKnowledgeKnowledgebaseOperations(knowledgeBaseId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'knowledgeBaseId' is set
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
+			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseOperations';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/operations', 
+			'GET', 
+			{ 'knowledgeBaseId': knowledgeBaseId },
+			{ 'before': opts['before'],'after': opts['after'],'pageSize': opts['pageSize'],'userId': this.apiClient.buildCollectionParam(opts['userId'], 'multi'),'type': this.apiClient.buildCollectionParam(opts['type'], 'multi'),'status': this.apiClient.buildCollectionParam(opts['status'], 'multi'),'interval': opts['interval'],'sourceId': this.apiClient.buildCollectionParam(opts['sourceId'], 'multi') },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get ids of operation creator users and oauth clients
+	 * 
+	 * @param {String} knowledgeBaseId Knowledge base ID
+	 */
+	getKnowledgeKnowledgebaseOperationsUsersQuery(knowledgeBaseId) { 
+		// verify the required parameter 'knowledgeBaseId' is set
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
+			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseOperationsUsersQuery';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/operations/users/query', 
+			'GET', 
+			{ 'knowledgeBaseId': knowledgeBaseId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get parse job report
+	 * 
+	 * @param {String} knowledgeBaseId Knowledge base ID
+	 * @param {String} parseJobId Parse job ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.expand If expand contains 'urls' downloadURL and failedEntitiesURL will be filled.
+	 */
+	getKnowledgeKnowledgebaseParseJob(knowledgeBaseId, parseJobId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'knowledgeBaseId' is set
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
+			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseParseJob';
+		}
+		// verify the required parameter 'parseJobId' is set
+		if (parseJobId === undefined || parseJobId === null || parseJobId === '') {
+			throw 'Missing the required parameter "parseJobId" when calling getKnowledgeKnowledgebaseParseJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs/{parseJobId}', 
+			'GET', 
+			{ 'knowledgeBaseId': knowledgeBaseId,'parseJobId': parseJobId },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get Knowledge integration sources
+	 * 
+	 * @param {String} knowledgeBaseId Knowledge base ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.type If specified, retrieves integration sources with specified integration type.
+	 * @param {Array.<String>} opts.expand The specified entity attributes will be filled. Comma separated values expected.
+	 * @param {Array.<String>} opts.ids If specified, retrieves integration sources with specified IDs.
+	 */
+	getKnowledgeKnowledgebaseSources(knowledgeBaseId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'knowledgeBaseId' is set
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
+			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseSources';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources', 
+			'GET', 
+			{ 'knowledgeBaseId': knowledgeBaseId },
+			{ 'type': opts['type'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'ids': this.apiClient.buildCollectionParam(opts['ids'], 'multi') },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get Salesforce Knowledge integration source
+	 * 
+	 * @param {String} knowledgeBaseId Knowledge base ID
+	 * @param {String} sourceId Source ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.expand The specified entity attributes will be filled. Comma separated values expected.
+	 */
+	getKnowledgeKnowledgebaseSourcesSalesforceSourceId(knowledgeBaseId, sourceId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'knowledgeBaseId' is set
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
+			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseSourcesSalesforceSourceId';
+		}
+		// verify the required parameter 'sourceId' is set
+		if (sourceId === undefined || sourceId === null || sourceId === '') {
+			throw 'Missing the required parameter "sourceId" when calling getKnowledgeKnowledgebaseSourcesSalesforceSourceId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/salesforce/{sourceId}', 
+			'GET', 
+			{ 'knowledgeBaseId': knowledgeBaseId,'sourceId': sourceId },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get ServiceNow Knowledge integration source
+	 * 
+	 * @param {String} knowledgeBaseId Knowledge base ID
+	 * @param {String} sourceId Source ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.expand The specified entity attributes will be filled. Comma separated values expected.
+	 */
+	getKnowledgeKnowledgebaseSourcesServicenowSourceId(knowledgeBaseId, sourceId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'knowledgeBaseId' is set
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
+			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseSourcesServicenowSourceId';
+		}
+		// verify the required parameter 'sourceId' is set
+		if (sourceId === undefined || sourceId === null || sourceId === '') {
+			throw 'Missing the required parameter "sourceId" when calling getKnowledgeKnowledgebaseSourcesServicenowSourceId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/servicenow/{sourceId}', 
+			'GET', 
+			{ 'knowledgeBaseId': knowledgeBaseId,'sourceId': sourceId },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get synchronization job report
+	 * 
+	 * @param {String} knowledgeBaseId Knowledge base ID
+	 * @param {String} syncJobId Synchronization job ID
+	 */
+	getKnowledgeKnowledgebaseSynchronizeJob(knowledgeBaseId, syncJobId) { 
+		// verify the required parameter 'knowledgeBaseId' is set
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
+			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseSynchronizeJob';
+		}
+		// verify the required parameter 'syncJobId' is set
+		if (syncJobId === undefined || syncJobId === null || syncJobId === '') {
+			throw 'Missing the required parameter "syncJobId" when calling getKnowledgeKnowledgebaseSynchronizeJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/synchronize/jobs/{syncJobId}', 
+			'GET', 
+			{ 'knowledgeBaseId': knowledgeBaseId,'syncJobId': syncJobId },
+			{  },
 			{  },
 			{  },
 			null, 
@@ -1361,11 +1705,11 @@ class KnowledgeApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseUnansweredGroup';
 		}
 		// verify the required parameter 'groupId' is set
-		if (groupId === undefined || groupId === null) {
+		if (groupId === undefined || groupId === null || groupId === '') {
 			throw 'Missing the required parameter "groupId" when calling getKnowledgeKnowledgebaseUnansweredGroup';
 		}
 
@@ -1398,15 +1742,15 @@ class KnowledgeApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseUnansweredGroupPhrasegroup';
 		}
 		// verify the required parameter 'groupId' is set
-		if (groupId === undefined || groupId === null) {
+		if (groupId === undefined || groupId === null || groupId === '') {
 			throw 'Missing the required parameter "groupId" when calling getKnowledgeKnowledgebaseUnansweredGroupPhrasegroup';
 		}
 		// verify the required parameter 'phraseGroupId' is set
-		if (phraseGroupId === undefined || phraseGroupId === null) {
+		if (phraseGroupId === undefined || phraseGroupId === null || phraseGroupId === '') {
 			throw 'Missing the required parameter "phraseGroupId" when calling getKnowledgeKnowledgebaseUnansweredGroupPhrasegroup';
 		}
 
@@ -1437,7 +1781,7 @@ class KnowledgeApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseUnansweredGroups';
 		}
 
@@ -1446,6 +1790,36 @@ class KnowledgeApi {
 			'GET', 
 			{ 'knowledgeBaseId': knowledgeBaseId },
 			{ 'app': opts['app'],'dateStart': opts['dateStart'],'dateEnd': opts['dateEnd'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get content upload from URL job status
+	 * 
+	 * @param {String} knowledgeBaseId Knowledge base ID
+	 * @param {String} jobId Upload job ID
+	 */
+	getKnowledgeKnowledgebaseUploadsUrlsJob(knowledgeBaseId, jobId) { 
+		// verify the required parameter 'knowledgeBaseId' is set
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
+			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseUploadsUrlsJob';
+		}
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null || jobId === '') {
+			throw 'Missing the required parameter "jobId" when calling getKnowledgeKnowledgebaseUploadsUrlsJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/uploads/urls/jobs/{jobId}', 
+			'GET', 
+			{ 'knowledgeBaseId': knowledgeBaseId,'jobId': jobId },
+			{  },
 			{  },
 			{  },
 			null, 
@@ -1496,11 +1870,11 @@ class KnowledgeApi {
 	 */
 	patchKnowledgeGuestSessionDocumentsSearchSearchId(sessionId, searchId, body) { 
 		// verify the required parameter 'sessionId' is set
-		if (sessionId === undefined || sessionId === null) {
+		if (sessionId === undefined || sessionId === null || sessionId === '') {
 			throw 'Missing the required parameter "sessionId" when calling patchKnowledgeGuestSessionDocumentsSearchSearchId';
 		}
 		// verify the required parameter 'searchId' is set
-		if (searchId === undefined || searchId === null) {
+		if (searchId === undefined || searchId === null || searchId === '') {
 			throw 'Missing the required parameter "searchId" when calling patchKnowledgeGuestSessionDocumentsSearchSearchId';
 		}
 		// verify the required parameter 'body' is set
@@ -1530,7 +1904,7 @@ class KnowledgeApi {
 	 */
 	patchKnowledgeKnowledgebase(knowledgeBaseId, body) { 
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling patchKnowledgeKnowledgebase';
 		}
 		// verify the required parameter 'body' is set
@@ -1561,11 +1935,11 @@ class KnowledgeApi {
 	 */
 	patchKnowledgeKnowledgebaseCategory(knowledgeBaseId, categoryId, body) { 
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling patchKnowledgeKnowledgebaseCategory';
 		}
 		// verify the required parameter 'categoryId' is set
-		if (categoryId === undefined || categoryId === null) {
+		if (categoryId === undefined || categoryId === null || categoryId === '') {
 			throw 'Missing the required parameter "categoryId" when calling patchKnowledgeKnowledgebaseCategory';
 		}
 		// verify the required parameter 'body' is set
@@ -1596,11 +1970,11 @@ class KnowledgeApi {
 	 */
 	patchKnowledgeKnowledgebaseDocument(knowledgeBaseId, documentId, body) { 
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling patchKnowledgeKnowledgebaseDocument';
 		}
 		// verify the required parameter 'documentId' is set
-		if (documentId === undefined || documentId === null) {
+		if (documentId === undefined || documentId === null || documentId === '') {
 			throw 'Missing the required parameter "documentId" when calling patchKnowledgeKnowledgebaseDocument';
 		}
 		// verify the required parameter 'body' is set
@@ -1623,6 +1997,45 @@ class KnowledgeApi {
 	}
 
 	/**
+	 * Update feedback on a document
+	 * 
+	 * @param {String} knowledgeBaseId Knowledge base ID.
+	 * @param {String} documentId Document ID.
+	 * @param {String} feedbackId Feedback ID.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 */
+	patchKnowledgeKnowledgebaseDocumentFeedbackFeedbackId(knowledgeBaseId, documentId, feedbackId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'knowledgeBaseId' is set
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
+			throw 'Missing the required parameter "knowledgeBaseId" when calling patchKnowledgeKnowledgebaseDocumentFeedbackFeedbackId';
+		}
+		// verify the required parameter 'documentId' is set
+		if (documentId === undefined || documentId === null || documentId === '') {
+			throw 'Missing the required parameter "documentId" when calling patchKnowledgeKnowledgebaseDocumentFeedbackFeedbackId';
+		}
+		// verify the required parameter 'feedbackId' is set
+		if (feedbackId === undefined || feedbackId === null || feedbackId === '') {
+			throw 'Missing the required parameter "feedbackId" when calling patchKnowledgeKnowledgebaseDocumentFeedbackFeedbackId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/feedback/{feedbackId}', 
+			'PATCH', 
+			{ 'knowledgeBaseId': knowledgeBaseId,'documentId': documentId,'feedbackId': feedbackId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Update a variation for a document.
 	 * 
 	 * @param {String} documentVariationId Globally unique identifier for a document variation.
@@ -1632,15 +2045,15 @@ class KnowledgeApi {
 	 */
 	patchKnowledgeKnowledgebaseDocumentVariation(documentVariationId, documentId, knowledgeBaseId, body) { 
 		// verify the required parameter 'documentVariationId' is set
-		if (documentVariationId === undefined || documentVariationId === null) {
+		if (documentVariationId === undefined || documentVariationId === null || documentVariationId === '') {
 			throw 'Missing the required parameter "documentVariationId" when calling patchKnowledgeKnowledgebaseDocumentVariation';
 		}
 		// verify the required parameter 'documentId' is set
-		if (documentId === undefined || documentId === null) {
+		if (documentId === undefined || documentId === null || documentId === '') {
 			throw 'Missing the required parameter "documentId" when calling patchKnowledgeKnowledgebaseDocumentVariation';
 		}
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling patchKnowledgeKnowledgebaseDocumentVariation';
 		}
 		// verify the required parameter 'body' is set
@@ -1674,11 +2087,11 @@ class KnowledgeApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling patchKnowledgeKnowledgebaseDocumentsSearchSearchId';
 		}
 		// verify the required parameter 'searchId' is set
-		if (searchId === undefined || searchId === null) {
+		if (searchId === undefined || searchId === null || searchId === '') {
 			throw 'Missing the required parameter "searchId" when calling patchKnowledgeKnowledgebaseDocumentsSearchSearchId';
 		}
 
@@ -1705,11 +2118,11 @@ class KnowledgeApi {
 	 */
 	patchKnowledgeKnowledgebaseImportJob(knowledgeBaseId, importJobId, body) { 
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling patchKnowledgeKnowledgebaseImportJob';
 		}
 		// verify the required parameter 'importJobId' is set
-		if (importJobId === undefined || importJobId === null) {
+		if (importJobId === undefined || importJobId === null || importJobId === '') {
 			throw 'Missing the required parameter "importJobId" when calling patchKnowledgeKnowledgebaseImportJob';
 		}
 		// verify the required parameter 'body' is set
@@ -1740,11 +2153,11 @@ class KnowledgeApi {
 	 */
 	patchKnowledgeKnowledgebaseLabel(knowledgeBaseId, labelId, body) { 
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling patchKnowledgeKnowledgebaseLabel';
 		}
 		// verify the required parameter 'labelId' is set
-		if (labelId === undefined || labelId === null) {
+		if (labelId === undefined || labelId === null || labelId === '') {
 			throw 'Missing the required parameter "labelId" when calling patchKnowledgeKnowledgebaseLabel';
 		}
 		// verify the required parameter 'body' is set
@@ -1777,15 +2190,15 @@ class KnowledgeApi {
 	 */
 	patchKnowledgeKnowledgebaseLanguageCategory(categoryId, knowledgeBaseId, languageCode, body) { 
 		// verify the required parameter 'categoryId' is set
-		if (categoryId === undefined || categoryId === null) {
+		if (categoryId === undefined || categoryId === null || categoryId === '') {
 			throw 'Missing the required parameter "categoryId" when calling patchKnowledgeKnowledgebaseLanguageCategory';
 		}
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling patchKnowledgeKnowledgebaseLanguageCategory';
 		}
 		// verify the required parameter 'languageCode' is set
-		if (languageCode === undefined || languageCode === null) {
+		if (languageCode === undefined || languageCode === null || languageCode === '') {
 			throw 'Missing the required parameter "languageCode" when calling patchKnowledgeKnowledgebaseLanguageCategory';
 		}
 		// verify the required parameter 'body' is set
@@ -1818,15 +2231,15 @@ class KnowledgeApi {
 	 */
 	patchKnowledgeKnowledgebaseLanguageDocument(documentId, knowledgeBaseId, languageCode, body) { 
 		// verify the required parameter 'documentId' is set
-		if (documentId === undefined || documentId === null) {
+		if (documentId === undefined || documentId === null || documentId === '') {
 			throw 'Missing the required parameter "documentId" when calling patchKnowledgeKnowledgebaseLanguageDocument';
 		}
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling patchKnowledgeKnowledgebaseLanguageDocument';
 		}
 		// verify the required parameter 'languageCode' is set
-		if (languageCode === undefined || languageCode === null) {
+		if (languageCode === undefined || languageCode === null || languageCode === '') {
 			throw 'Missing the required parameter "languageCode" when calling patchKnowledgeKnowledgebaseLanguageDocument';
 		}
 		// verify the required parameter 'body' is set
@@ -1858,11 +2271,11 @@ class KnowledgeApi {
 	 */
 	patchKnowledgeKnowledgebaseLanguageDocuments(knowledgeBaseId, languageCode, body) { 
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling patchKnowledgeKnowledgebaseLanguageDocuments';
 		}
 		// verify the required parameter 'languageCode' is set
-		if (languageCode === undefined || languageCode === null) {
+		if (languageCode === undefined || languageCode === null || languageCode === '') {
 			throw 'Missing the required parameter "languageCode" when calling patchKnowledgeKnowledgebaseLanguageDocuments';
 		}
 		// verify the required parameter 'body' is set
@@ -1895,15 +2308,15 @@ class KnowledgeApi {
 	 */
 	patchKnowledgeKnowledgebaseLanguageDocumentsImport(knowledgeBaseId, languageCode, importId, body) { 
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling patchKnowledgeKnowledgebaseLanguageDocumentsImport';
 		}
 		// verify the required parameter 'languageCode' is set
-		if (languageCode === undefined || languageCode === null) {
+		if (languageCode === undefined || languageCode === null || languageCode === '') {
 			throw 'Missing the required parameter "languageCode" when calling patchKnowledgeKnowledgebaseLanguageDocumentsImport';
 		}
 		// verify the required parameter 'importId' is set
-		if (importId === undefined || importId === null) {
+		if (importId === undefined || importId === null || importId === '') {
 			throw 'Missing the required parameter "importId" when calling patchKnowledgeKnowledgebaseLanguageDocumentsImport';
 		}
 		// verify the required parameter 'body' is set
@@ -1926,6 +2339,76 @@ class KnowledgeApi {
 	}
 
 	/**
+	 * Send update to the parse operation
+	 * 
+	 * @param {String} knowledgeBaseId Knowledge base ID
+	 * @param {String} parseJobId Parse job ID
+	 * @param {Object} body 
+	 */
+	patchKnowledgeKnowledgebaseParseJob(knowledgeBaseId, parseJobId, body) { 
+		// verify the required parameter 'knowledgeBaseId' is set
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
+			throw 'Missing the required parameter "knowledgeBaseId" when calling patchKnowledgeKnowledgebaseParseJob';
+		}
+		// verify the required parameter 'parseJobId' is set
+		if (parseJobId === undefined || parseJobId === null || parseJobId === '') {
+			throw 'Missing the required parameter "parseJobId" when calling patchKnowledgeKnowledgebaseParseJob';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchKnowledgeKnowledgebaseParseJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs/{parseJobId}', 
+			'PATCH', 
+			{ 'knowledgeBaseId': knowledgeBaseId,'parseJobId': parseJobId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update synchronization job
+	 * 
+	 * @param {String} knowledgeBaseId Knowledge base ID
+	 * @param {String} syncJobId Synchronization job ID
+	 * @param {Object} body 
+	 */
+	patchKnowledgeKnowledgebaseSynchronizeJob(knowledgeBaseId, syncJobId, body) { 
+		// verify the required parameter 'knowledgeBaseId' is set
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
+			throw 'Missing the required parameter "knowledgeBaseId" when calling patchKnowledgeKnowledgebaseSynchronizeJob';
+		}
+		// verify the required parameter 'syncJobId' is set
+		if (syncJobId === undefined || syncJobId === null || syncJobId === '') {
+			throw 'Missing the required parameter "syncJobId" when calling patchKnowledgeKnowledgebaseSynchronizeJob';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchKnowledgeKnowledgebaseSynchronizeJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/synchronize/jobs/{syncJobId}', 
+			'PATCH', 
+			{ 'knowledgeBaseId': knowledgeBaseId,'syncJobId': syncJobId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Update a Knowledge base unanswered phrase group
 	 * 
 	 * @param {String} knowledgeBaseId Knowledge base ID
@@ -1935,15 +2418,15 @@ class KnowledgeApi {
 	 */
 	patchKnowledgeKnowledgebaseUnansweredGroupPhrasegroup(knowledgeBaseId, groupId, phraseGroupId, body) { 
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling patchKnowledgeKnowledgebaseUnansweredGroupPhrasegroup';
 		}
 		// verify the required parameter 'groupId' is set
-		if (groupId === undefined || groupId === null) {
+		if (groupId === undefined || groupId === null || groupId === '') {
 			throw 'Missing the required parameter "groupId" when calling patchKnowledgeKnowledgebaseUnansweredGroupPhrasegroup';
 		}
 		// verify the required parameter 'phraseGroupId' is set
-		if (phraseGroupId === undefined || phraseGroupId === null) {
+		if (phraseGroupId === undefined || phraseGroupId === null || phraseGroupId === '') {
 			throw 'Missing the required parameter "phraseGroupId" when calling patchKnowledgeKnowledgebaseUnansweredGroupPhrasegroup';
 		}
 		// verify the required parameter 'body' is set
@@ -1991,6 +2474,40 @@ class KnowledgeApi {
 	}
 
 	/**
+	 * Indicate that the document was copied by the user.
+	 * 
+	 * @param {String} sessionId Knowledge guest session ID.
+	 * @param {String} documentId Document ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 */
+	postKnowledgeGuestSessionDocumentCopies(sessionId, documentId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'sessionId' is set
+		if (sessionId === undefined || sessionId === null || sessionId === '') {
+			throw 'Missing the required parameter "sessionId" when calling postKnowledgeGuestSessionDocumentCopies';
+		}
+		// verify the required parameter 'documentId' is set
+		if (documentId === undefined || documentId === null || documentId === '') {
+			throw 'Missing the required parameter "documentId" when calling postKnowledgeGuestSessionDocumentCopies';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/guest/sessions/{sessionId}/documents/{documentId}/copies', 
+			'POST', 
+			{ 'sessionId': sessionId,'documentId': documentId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Give feedback on a document
 	 * 
 	 * @param {String} sessionId Knowledge guest session ID.
@@ -2002,11 +2519,11 @@ class KnowledgeApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'sessionId' is set
-		if (sessionId === undefined || sessionId === null) {
+		if (sessionId === undefined || sessionId === null || sessionId === '') {
 			throw 'Missing the required parameter "sessionId" when calling postKnowledgeGuestSessionDocumentFeedback';
 		}
 		// verify the required parameter 'documentId' is set
-		if (documentId === undefined || documentId === null) {
+		if (documentId === undefined || documentId === null || documentId === '') {
 			throw 'Missing the required parameter "documentId" when calling postKnowledgeGuestSessionDocumentFeedback';
 		}
 
@@ -2014,6 +2531,99 @@ class KnowledgeApi {
 			'/api/v2/knowledge/guest/sessions/{sessionId}/documents/{documentId}/feedback', 
 			'POST', 
 			{ 'sessionId': sessionId,'documentId': documentId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create view event for a document.
+	 * 
+	 * @param {String} sessionId Knowledge guest session ID.
+	 * @param {String} documentId Document ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 */
+	postKnowledgeGuestSessionDocumentViews(sessionId, documentId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'sessionId' is set
+		if (sessionId === undefined || sessionId === null || sessionId === '') {
+			throw 'Missing the required parameter "sessionId" when calling postKnowledgeGuestSessionDocumentViews';
+		}
+		// verify the required parameter 'documentId' is set
+		if (documentId === undefined || documentId === null || documentId === '') {
+			throw 'Missing the required parameter "documentId" when calling postKnowledgeGuestSessionDocumentViews';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/guest/sessions/{sessionId}/documents/{documentId}/views', 
+			'POST', 
+			{ 'sessionId': sessionId,'documentId': documentId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Answer documents.
+	 * 
+	 * @param {String} sessionId Knowledge guest session ID.
+	 * @param {Object} body 
+	 */
+	postKnowledgeGuestSessionDocumentsAnswers(sessionId, body) { 
+		// verify the required parameter 'sessionId' is set
+		if (sessionId === undefined || sessionId === null || sessionId === '') {
+			throw 'Missing the required parameter "sessionId" when calling postKnowledgeGuestSessionDocumentsAnswers';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postKnowledgeGuestSessionDocumentsAnswers';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/guest/sessions/{sessionId}/documents/answers', 
+			'POST', 
+			{ 'sessionId': sessionId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Indicate that documents were presented to the user.
+	 * 
+	 * @param {String} sessionId Knowledge guest session ID.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 */
+	postKnowledgeGuestSessionDocumentsPresentations(sessionId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'sessionId' is set
+		if (sessionId === undefined || sessionId === null || sessionId === '') {
+			throw 'Missing the required parameter "sessionId" when calling postKnowledgeGuestSessionDocumentsPresentations';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/guest/sessions/{sessionId}/documents/presentations', 
+			'POST', 
+			{ 'sessionId': sessionId },
 			{  },
 			{  },
 			{  },
@@ -2036,7 +2646,7 @@ class KnowledgeApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'sessionId' is set
-		if (sessionId === undefined || sessionId === null) {
+		if (sessionId === undefined || sessionId === null || sessionId === '') {
 			throw 'Missing the required parameter "sessionId" when calling postKnowledgeGuestSessionDocumentsSearch';
 		}
 
@@ -2065,7 +2675,7 @@ class KnowledgeApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'sessionId' is set
-		if (sessionId === undefined || sessionId === null) {
+		if (sessionId === undefined || sessionId === null || sessionId === '') {
 			throw 'Missing the required parameter "sessionId" when calling postKnowledgeGuestSessionDocumentsSearchSuggestions';
 		}
 
@@ -2116,7 +2726,7 @@ class KnowledgeApi {
 	 */
 	postKnowledgeKnowledgebaseCategories(knowledgeBaseId, body) { 
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseCategories';
 		}
 		// verify the required parameter 'body' is set
@@ -2139,6 +2749,69 @@ class KnowledgeApi {
 	}
 
 	/**
+	 * Search for chunks in a knowledge base
+	 * 
+	 * @param {String} knowledgeBaseId Knowledge Base ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 */
+	postKnowledgeKnowledgebaseChunksSearch(knowledgeBaseId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'knowledgeBaseId' is set
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
+			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseChunksSearch';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/chunks/search', 
+			'POST', 
+			{ 'knowledgeBaseId': knowledgeBaseId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Indicate that the document was copied by the user.
+	 * 
+	 * @param {String} knowledgeBaseId Knowledge base ID.
+	 * @param {String} documentId Document ID.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 */
+	postKnowledgeKnowledgebaseDocumentCopies(knowledgeBaseId, documentId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'knowledgeBaseId' is set
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
+			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseDocumentCopies';
+		}
+		// verify the required parameter 'documentId' is set
+		if (documentId === undefined || documentId === null || documentId === '') {
+			throw 'Missing the required parameter "documentId" when calling postKnowledgeKnowledgebaseDocumentCopies';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/copies', 
+			'POST', 
+			{ 'knowledgeBaseId': knowledgeBaseId,'documentId': documentId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Give feedback on a document
 	 * 
 	 * @param {String} knowledgeBaseId Knowledge base ID.
@@ -2150,11 +2823,11 @@ class KnowledgeApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseDocumentFeedback';
 		}
 		// verify the required parameter 'documentId' is set
-		if (documentId === undefined || documentId === null) {
+		if (documentId === undefined || documentId === null || documentId === '') {
 			throw 'Missing the required parameter "documentId" when calling postKnowledgeKnowledgebaseDocumentFeedback';
 		}
 
@@ -2181,11 +2854,11 @@ class KnowledgeApi {
 	 */
 	postKnowledgeKnowledgebaseDocumentVariations(knowledgeBaseId, documentId, body) { 
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseDocumentVariations';
 		}
 		// verify the required parameter 'documentId' is set
-		if (documentId === undefined || documentId === null) {
+		if (documentId === undefined || documentId === null || documentId === '') {
 			throw 'Missing the required parameter "documentId" when calling postKnowledgeKnowledgebaseDocumentVariations';
 		}
 		// verify the required parameter 'body' is set
@@ -2216,11 +2889,11 @@ class KnowledgeApi {
 	 */
 	postKnowledgeKnowledgebaseDocumentVersions(knowledgeBaseId, documentId, body) { 
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseDocumentVersions';
 		}
 		// verify the required parameter 'documentId' is set
-		if (documentId === undefined || documentId === null) {
+		if (documentId === undefined || documentId === null || documentId === '') {
 			throw 'Missing the required parameter "documentId" when calling postKnowledgeKnowledgebaseDocumentVersions';
 		}
 		// verify the required parameter 'body' is set
@@ -2254,11 +2927,11 @@ class KnowledgeApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseDocumentViews';
 		}
 		// verify the required parameter 'documentId' is set
-		if (documentId === undefined || documentId === null) {
+		if (documentId === undefined || documentId === null || documentId === '') {
 			throw 'Missing the required parameter "documentId" when calling postKnowledgeKnowledgebaseDocumentViews';
 		}
 
@@ -2284,7 +2957,7 @@ class KnowledgeApi {
 	 */
 	postKnowledgeKnowledgebaseDocuments(knowledgeBaseId, body) { 
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseDocuments';
 		}
 		// verify the required parameter 'body' is set
@@ -2307,15 +2980,44 @@ class KnowledgeApi {
 	}
 
 	/**
+	 * Answer documents.
+	 * 
+	 * @param {String} knowledgeBaseId Knowledge base ID
+	 * @param {Object} body 
+	 */
+	postKnowledgeKnowledgebaseDocumentsAnswers(knowledgeBaseId, body) { 
+		// verify the required parameter 'knowledgeBaseId' is set
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
+			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseDocumentsAnswers';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postKnowledgeKnowledgebaseDocumentsAnswers';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/answers', 
+			'POST', 
+			{ 'knowledgeBaseId': knowledgeBaseId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Bulk remove documents.
 	 * 
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {Object} body 
-	 * postKnowledgeKnowledgebaseDocumentsBulkRemove is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postKnowledgeKnowledgebaseDocumentsBulkRemove(knowledgeBaseId, body) { 
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseDocumentsBulkRemove';
 		}
 		// verify the required parameter 'body' is set
@@ -2342,11 +3044,10 @@ class KnowledgeApi {
 	 * 
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {Object} body 
-	 * postKnowledgeKnowledgebaseDocumentsBulkUpdate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postKnowledgeKnowledgebaseDocumentsBulkUpdate(knowledgeBaseId, body) { 
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseDocumentsBulkUpdate';
 		}
 		// verify the required parameter 'body' is set
@@ -2369,6 +3070,65 @@ class KnowledgeApi {
 	}
 
 	/**
+	 * Indicate that documents were presented to the user.
+	 * 
+	 * @param {String} knowledgeBaseId Knowledge base ID.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 */
+	postKnowledgeKnowledgebaseDocumentsPresentations(knowledgeBaseId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'knowledgeBaseId' is set
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
+			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseDocumentsPresentations';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/presentations', 
+			'POST', 
+			{ 'knowledgeBaseId': knowledgeBaseId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Query for knowledge documents.
+	 * 
+	 * @param {String} knowledgeBaseId Knowledge Base ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.expand Fields, if any, to expand for each document in the search result matching the query.
+	 * @param {Object} opts.body 
+	 */
+	postKnowledgeKnowledgebaseDocumentsQuery(knowledgeBaseId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'knowledgeBaseId' is set
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
+			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseDocumentsQuery';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/query', 
+			'POST', 
+			{ 'knowledgeBaseId': knowledgeBaseId },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Search the documents in a knowledge base.
 	 * 
 	 * @param {String} knowledgeBaseId The ID of knowledge base containing the documents to query.
@@ -2380,7 +3140,7 @@ class KnowledgeApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseDocumentsSearch';
 		}
 
@@ -2409,7 +3169,7 @@ class KnowledgeApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseDocumentsSearchSuggestions';
 		}
 
@@ -2432,11 +3192,10 @@ class KnowledgeApi {
 	 * 
 	 * @param {String} knowledgeBaseId Knowledge base ID
 	 * @param {Object} body 
-	 * postKnowledgeKnowledgebaseDocumentsVersionsBulkAdd is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postKnowledgeKnowledgebaseDocumentsVersionsBulkAdd(knowledgeBaseId, body) { 
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseDocumentsVersionsBulkAdd';
 		}
 		// verify the required parameter 'body' is set
@@ -2466,7 +3225,7 @@ class KnowledgeApi {
 	 */
 	postKnowledgeKnowledgebaseExportJobs(knowledgeBaseId, body) { 
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseExportJobs';
 		}
 		// verify the required parameter 'body' is set
@@ -2496,7 +3255,7 @@ class KnowledgeApi {
 	 */
 	postKnowledgeKnowledgebaseImportJobs(knowledgeBaseId, body) { 
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseImportJobs';
 		}
 		// verify the required parameter 'body' is set
@@ -2526,7 +3285,7 @@ class KnowledgeApi {
 	 */
 	postKnowledgeKnowledgebaseLabels(knowledgeBaseId, body) { 
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseLabels';
 		}
 		// verify the required parameter 'body' is set
@@ -2558,11 +3317,11 @@ class KnowledgeApi {
 	 */
 	postKnowledgeKnowledgebaseLanguageCategories(knowledgeBaseId, languageCode, body) { 
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseLanguageCategories';
 		}
 		// verify the required parameter 'languageCode' is set
-		if (languageCode === undefined || languageCode === null) {
+		if (languageCode === undefined || languageCode === null || languageCode === '') {
 			throw 'Missing the required parameter "languageCode" when calling postKnowledgeKnowledgebaseLanguageCategories';
 		}
 		// verify the required parameter 'body' is set
@@ -2592,19 +3351,18 @@ class KnowledgeApi {
 	 * @param {Object} languageCode Language code, format: iso2-LOCALE
 	 * @param {Object} body 
 	 * @deprecated
-	 * postKnowledgeKnowledgebaseLanguageDocumentUploads is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postKnowledgeKnowledgebaseLanguageDocumentUploads(documentId, knowledgeBaseId, languageCode, body) { 
 		// verify the required parameter 'documentId' is set
-		if (documentId === undefined || documentId === null) {
+		if (documentId === undefined || documentId === null || documentId === '') {
 			throw 'Missing the required parameter "documentId" when calling postKnowledgeKnowledgebaseLanguageDocumentUploads';
 		}
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseLanguageDocumentUploads';
 		}
 		// verify the required parameter 'languageCode' is set
-		if (languageCode === undefined || languageCode === null) {
+		if (languageCode === undefined || languageCode === null || languageCode === '') {
 			throw 'Missing the required parameter "languageCode" when calling postKnowledgeKnowledgebaseLanguageDocumentUploads';
 		}
 		// verify the required parameter 'body' is set
@@ -2636,11 +3394,11 @@ class KnowledgeApi {
 	 */
 	postKnowledgeKnowledgebaseLanguageDocuments(knowledgeBaseId, languageCode, body) { 
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseLanguageDocuments';
 		}
 		// verify the required parameter 'languageCode' is set
-		if (languageCode === undefined || languageCode === null) {
+		if (languageCode === undefined || languageCode === null || languageCode === '') {
 			throw 'Missing the required parameter "languageCode" when calling postKnowledgeKnowledgebaseLanguageDocuments';
 		}
 		// verify the required parameter 'body' is set
@@ -2672,11 +3430,11 @@ class KnowledgeApi {
 	 */
 	postKnowledgeKnowledgebaseLanguageDocumentsImports(knowledgeBaseId, languageCode, body) { 
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseLanguageDocumentsImports';
 		}
 		// verify the required parameter 'languageCode' is set
-		if (languageCode === undefined || languageCode === null) {
+		if (languageCode === undefined || languageCode === null || languageCode === '') {
 			throw 'Missing the required parameter "languageCode" when calling postKnowledgeKnowledgebaseLanguageDocumentsImports';
 		}
 		// verify the required parameter 'body' is set
@@ -2708,15 +3466,15 @@ class KnowledgeApi {
 	 */
 	postKnowledgeKnowledgebaseLanguageTrainingPromote(knowledgeBaseId, languageCode, trainingId) { 
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseLanguageTrainingPromote';
 		}
 		// verify the required parameter 'languageCode' is set
-		if (languageCode === undefined || languageCode === null) {
+		if (languageCode === undefined || languageCode === null || languageCode === '') {
 			throw 'Missing the required parameter "languageCode" when calling postKnowledgeKnowledgebaseLanguageTrainingPromote';
 		}
 		// verify the required parameter 'trainingId' is set
-		if (trainingId === undefined || trainingId === null) {
+		if (trainingId === undefined || trainingId === null || trainingId === '') {
 			throw 'Missing the required parameter "trainingId" when calling postKnowledgeKnowledgebaseLanguageTrainingPromote';
 		}
 
@@ -2743,11 +3501,11 @@ class KnowledgeApi {
 	 */
 	postKnowledgeKnowledgebaseLanguageTrainings(knowledgeBaseId, languageCode) { 
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseLanguageTrainings';
 		}
 		// verify the required parameter 'languageCode' is set
-		if (languageCode === undefined || languageCode === null) {
+		if (languageCode === undefined || languageCode === null || languageCode === '') {
 			throw 'Missing the required parameter "languageCode" when calling postKnowledgeKnowledgebaseLanguageTrainings';
 		}
 
@@ -2766,6 +3524,71 @@ class KnowledgeApi {
 	}
 
 	/**
+	 * Import the parsed articles
+	 * 
+	 * @param {String} knowledgeBaseId Knowledge base ID
+	 * @param {String} parseJobId Parse job ID
+	 * @param {Object} body 
+	 */
+	postKnowledgeKnowledgebaseParseJobImport(knowledgeBaseId, parseJobId, body) { 
+		// verify the required parameter 'knowledgeBaseId' is set
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
+			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseParseJobImport';
+		}
+		// verify the required parameter 'parseJobId' is set
+		if (parseJobId === undefined || parseJobId === null || parseJobId === '') {
+			throw 'Missing the required parameter "parseJobId" when calling postKnowledgeKnowledgebaseParseJobImport';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postKnowledgeKnowledgebaseParseJobImport';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs/{parseJobId}/import', 
+			'POST', 
+			{ 'knowledgeBaseId': knowledgeBaseId,'parseJobId': parseJobId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create parse job
+	 * 
+	 * @param {String} knowledgeBaseId Knowledge base ID
+	 * @param {Object} body 
+	 */
+	postKnowledgeKnowledgebaseParseJobs(knowledgeBaseId, body) { 
+		// verify the required parameter 'knowledgeBaseId' is set
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
+			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseParseJobs';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postKnowledgeKnowledgebaseParseJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs', 
+			'POST', 
+			{ 'knowledgeBaseId': knowledgeBaseId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Search Documents
 	 * 
 	 * @param {String} knowledgeBaseId Knowledge base ID
@@ -2777,7 +3600,7 @@ class KnowledgeApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'knowledgeBaseId' is set
-		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
 			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseSearch';
 		}
 
@@ -2789,6 +3612,194 @@ class KnowledgeApi {
 			{  },
 			{  },
 			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create Salesforce Knowledge integration source
+	 * 
+	 * @param {String} knowledgeBaseId Knowledge base ID
+	 * @param {Object} body 
+	 */
+	postKnowledgeKnowledgebaseSourcesSalesforce(knowledgeBaseId, body) { 
+		// verify the required parameter 'knowledgeBaseId' is set
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
+			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseSourcesSalesforce';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postKnowledgeKnowledgebaseSourcesSalesforce';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/salesforce', 
+			'POST', 
+			{ 'knowledgeBaseId': knowledgeBaseId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Start sync on Salesforce Knowledge integration source
+	 * 
+	 * @param {String} knowledgeBaseId Knowledge base ID
+	 * @param {String} sourceId Source ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 */
+	postKnowledgeKnowledgebaseSourcesSalesforceSourceIdSync(knowledgeBaseId, sourceId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'knowledgeBaseId' is set
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
+			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseSourcesSalesforceSourceIdSync';
+		}
+		// verify the required parameter 'sourceId' is set
+		if (sourceId === undefined || sourceId === null || sourceId === '') {
+			throw 'Missing the required parameter "sourceId" when calling postKnowledgeKnowledgebaseSourcesSalesforceSourceIdSync';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/salesforce/{sourceId}/sync', 
+			'POST', 
+			{ 'knowledgeBaseId': knowledgeBaseId,'sourceId': sourceId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create ServiceNow Knowledge integration source
+	 * 
+	 * @param {String} knowledgeBaseId Knowledge base ID
+	 * @param {Object} body 
+	 */
+	postKnowledgeKnowledgebaseSourcesServicenow(knowledgeBaseId, body) { 
+		// verify the required parameter 'knowledgeBaseId' is set
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
+			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseSourcesServicenow';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postKnowledgeKnowledgebaseSourcesServicenow';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/servicenow', 
+			'POST', 
+			{ 'knowledgeBaseId': knowledgeBaseId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Start synchronization on ServiceNow Knowledge integration source
+	 * 
+	 * @param {String} knowledgeBaseId Knowledge base ID
+	 * @param {String} sourceId Source ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 */
+	postKnowledgeKnowledgebaseSourcesServicenowSourceIdSync(knowledgeBaseId, sourceId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'knowledgeBaseId' is set
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
+			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseSourcesServicenowSourceIdSync';
+		}
+		// verify the required parameter 'sourceId' is set
+		if (sourceId === undefined || sourceId === null || sourceId === '') {
+			throw 'Missing the required parameter "sourceId" when calling postKnowledgeKnowledgebaseSourcesServicenowSourceIdSync';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/servicenow/{sourceId}/sync', 
+			'POST', 
+			{ 'knowledgeBaseId': knowledgeBaseId,'sourceId': sourceId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create synchronization job
+	 * 
+	 * @param {String} knowledgeBaseId Knowledge base ID
+	 * @param {Object} body 
+	 */
+	postKnowledgeKnowledgebaseSynchronizeJobs(knowledgeBaseId, body) { 
+		// verify the required parameter 'knowledgeBaseId' is set
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
+			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseSynchronizeJobs';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postKnowledgeKnowledgebaseSynchronizeJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/synchronize/jobs', 
+			'POST', 
+			{ 'knowledgeBaseId': knowledgeBaseId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create content upload from URL job
+	 * 
+	 * @param {String} knowledgeBaseId Knowledge base ID
+	 * @param {Object} body uploadRequest
+	 */
+	postKnowledgeKnowledgebaseUploadsUrlsJobs(knowledgeBaseId, body) { 
+		// verify the required parameter 'knowledgeBaseId' is set
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
+			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseUploadsUrlsJobs';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postKnowledgeKnowledgebaseUploadsUrlsJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/uploads/urls/jobs', 
+			'POST', 
+			{ 'knowledgeBaseId': knowledgeBaseId },
+			{  },
+			{  },
+			{  },
+			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']
@@ -2810,6 +3821,76 @@ class KnowledgeApi {
 			'/api/v2/knowledge/knowledgebases', 
 			'POST', 
 			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update Salesforce Knowledge integration source
+	 * 
+	 * @param {String} knowledgeBaseId Knowledge base ID
+	 * @param {String} sourceId Source ID
+	 * @param {Object} body 
+	 */
+	putKnowledgeKnowledgebaseSourcesSalesforceSourceId(knowledgeBaseId, sourceId, body) { 
+		// verify the required parameter 'knowledgeBaseId' is set
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
+			throw 'Missing the required parameter "knowledgeBaseId" when calling putKnowledgeKnowledgebaseSourcesSalesforceSourceId';
+		}
+		// verify the required parameter 'sourceId' is set
+		if (sourceId === undefined || sourceId === null || sourceId === '') {
+			throw 'Missing the required parameter "sourceId" when calling putKnowledgeKnowledgebaseSourcesSalesforceSourceId';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putKnowledgeKnowledgebaseSourcesSalesforceSourceId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/salesforce/{sourceId}', 
+			'PUT', 
+			{ 'knowledgeBaseId': knowledgeBaseId,'sourceId': sourceId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update ServiceNow Knowledge integration source
+	 * 
+	 * @param {String} knowledgeBaseId Knowledge base ID
+	 * @param {String} sourceId Source ID
+	 * @param {Object} body 
+	 */
+	putKnowledgeKnowledgebaseSourcesServicenowSourceId(knowledgeBaseId, sourceId, body) { 
+		// verify the required parameter 'knowledgeBaseId' is set
+		if (knowledgeBaseId === undefined || knowledgeBaseId === null || knowledgeBaseId === '') {
+			throw 'Missing the required parameter "knowledgeBaseId" when calling putKnowledgeKnowledgebaseSourcesServicenowSourceId';
+		}
+		// verify the required parameter 'sourceId' is set
+		if (sourceId === undefined || sourceId === null || sourceId === '') {
+			throw 'Missing the required parameter "sourceId" when calling putKnowledgeKnowledgebaseSourcesServicenowSourceId';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putKnowledgeKnowledgebaseSourcesServicenowSourceId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/servicenow/{sourceId}', 
+			'PUT', 
+			{ 'knowledgeBaseId': knowledgeBaseId,'sourceId': sourceId },
 			{  },
 			{  },
 			{  },

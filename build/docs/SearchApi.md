@@ -1,42 +1,43 @@
----
-title: SearchApi
----
+# SearchApi
+
 # platformClient.SearchApi
 
 All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-[**getDocumentationGknSearch**](SearchApi.html#getDocumentationGknSearch) | **GET** /api/v2/documentation/gkn/search | Search gkn documentation using the q64 value returned from a previous search
-[**getDocumentationSearch**](SearchApi.html#getDocumentationSearch) | **GET** /api/v2/documentation/search | Search documentation using the q64 value returned from a previous search
-[**getGroupsSearch**](SearchApi.html#getGroupsSearch) | **GET** /api/v2/groups/search | Search groups using the q64 value returned from a previous search
-[**getLocationsSearch**](SearchApi.html#getLocationsSearch) | **GET** /api/v2/locations/search | Search locations using the q64 value returned from a previous search
-[**getSearch**](SearchApi.html#getSearch) | **GET** /api/v2/search | Search using the q64 value returned from a previous search.
-[**getSearchSuggest**](SearchApi.html#getSearchSuggest) | **GET** /api/v2/search/suggest | Suggest resources using the q64 value returned from a previous suggest query.
-[**getUsersSearch**](SearchApi.html#getUsersSearch) | **GET** /api/v2/users/search | Search users using the q64 value returned from a previous search
-[**getVoicemailSearch**](SearchApi.html#getVoicemailSearch) | **GET** /api/v2/voicemail/search | Search voicemails using the q64 value returned from a previous search
-[**postAnalyticsConversationsTranscriptsQuery**](SearchApi.html#postAnalyticsConversationsTranscriptsQuery) | **POST** /api/v2/analytics/conversations/transcripts/query | Search resources.
-[**postConversationsParticipantsAttributesSearch**](SearchApi.html#postConversationsParticipantsAttributesSearch) | **POST** /api/v2/conversations/participants/attributes/search | Search conversations
-[**postDocumentationAllSearch**](SearchApi.html#postDocumentationAllSearch) | **POST** /api/v2/documentation/all/search | Search all documents
-[**postDocumentationGknSearch**](SearchApi.html#postDocumentationGknSearch) | **POST** /api/v2/documentation/gkn/search | Search gkn documentation
-[**postDocumentationSearch**](SearchApi.html#postDocumentationSearch) | **POST** /api/v2/documentation/search | Search documentation
-[**postGroupsSearch**](SearchApi.html#postGroupsSearch) | **POST** /api/v2/groups/search | Search groups
-[**postKnowledgeKnowledgebaseSearch**](SearchApi.html#postKnowledgeKnowledgebaseSearch) | **POST** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/search | Search Documents
-[**postLocationsSearch**](SearchApi.html#postLocationsSearch) | **POST** /api/v2/locations/search | Search locations
-[**postSearch**](SearchApi.html#postSearch) | **POST** /api/v2/search | Search resources.
-[**postSearchSuggest**](SearchApi.html#postSearchSuggest) | **POST** /api/v2/search/suggest | Suggest resources.
-[**postSpeechandtextanalyticsTranscriptsSearch**](SearchApi.html#postSpeechandtextanalyticsTranscriptsSearch) | **POST** /api/v2/speechandtextanalytics/transcripts/search | Search resources.
-[**postTeamsSearch**](SearchApi.html#postTeamsSearch) | **POST** /api/v2/teams/search | Search resources.
-[**postUsersSearch**](SearchApi.html#postUsersSearch) | **POST** /api/v2/users/search | Search users
-[**postUsersSearchConversationTarget**](SearchApi.html#postUsersSearchConversationTarget) | **POST** /api/v2/users/search/conversation/target | Search users as conversation targets
-[**postUsersSearchQueuemembersManage**](SearchApi.html#postUsersSearchQueuemembersManage) | **POST** /api/v2/users/search/queuemembers/manage | Search manage queue member
-[**postUsersSearchTeamsAssign**](SearchApi.html#postUsersSearchTeamsAssign) | **POST** /api/v2/users/search/teams/assign | Search users assigned to teams
-[**postVoicemailSearch**](SearchApi.html#postVoicemailSearch) | **POST** /api/v2/voicemail/search | Search voicemails
-{: class="table table-striped"}
+[**getDocumentationGknSearch**](SearchApi#getDocumentationGknSearch) | **GET** /api/v2/documentation/gkn/search | Search gkn documentation using the q64 value returned from a previous search
+[**getDocumentationSearch**](SearchApi#getDocumentationSearch) | **GET** /api/v2/documentation/search | Search documentation using the q64 value returned from a previous search
+[**getGroupsSearch**](SearchApi#getGroupsSearch) | **GET** /api/v2/groups/search | Search groups using the q64 value returned from a previous search
+[**getLocationsSearch**](SearchApi#getLocationsSearch) | **GET** /api/v2/locations/search | Search locations using the q64 value returned from a previous search
+[**getSearch**](SearchApi#getSearch) | **GET** /api/v2/search | Search using the q64 value returned from a previous search.
+[**getSearchSuggest**](SearchApi#getSearchSuggest) | **GET** /api/v2/search/suggest | Suggest resources using the q64 value returned from a previous suggest query.
+[**getTelephonyProvidersEdgesSitesSearch**](SearchApi#getTelephonyProvidersEdgesSitesSearch) | **GET** /api/v2/telephony/providers/edges/sites/search | Search sites using the q64 value returned from a previous search
+[**getUsersSearch**](SearchApi#getUsersSearch) | **GET** /api/v2/users/search | Search users using the q64 value returned from a previous search
+[**getVoicemailSearch**](SearchApi#getVoicemailSearch) | **GET** /api/v2/voicemail/search | Search voicemails using the q64 value returned from a previous search
+[**postConversationsParticipantsAttributesSearch**](SearchApi#postConversationsParticipantsAttributesSearch) | **POST** /api/v2/conversations/participants/attributes/search | Search conversations
+[**postDocumentationAllSearch**](SearchApi#postDocumentationAllSearch) | **POST** /api/v2/documentation/all/search | Search all documents
+[**postDocumentationGknSearch**](SearchApi#postDocumentationGknSearch) | **POST** /api/v2/documentation/gkn/search | Search gkn documentation
+[**postDocumentationSearch**](SearchApi#postDocumentationSearch) | **POST** /api/v2/documentation/search | Search documentation
+[**postGroupsSearch**](SearchApi#postGroupsSearch) | **POST** /api/v2/groups/search | Search groups
+[**postKnowledgeKnowledgebaseSearch**](SearchApi#postKnowledgeKnowledgebaseSearch) | **POST** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/search | Search Documents
+[**postLocationsSearch**](SearchApi#postLocationsSearch) | **POST** /api/v2/locations/search | Search locations
+[**postSearch**](SearchApi#postSearch) | **POST** /api/v2/search | Search resources.
+[**postSearchSuggest**](SearchApi#postSearchSuggest) | **POST** /api/v2/search/suggest | Suggest resources.
+[**postSpeechandtextanalyticsTranscriptsSearch**](SearchApi#postSpeechandtextanalyticsTranscriptsSearch) | **POST** /api/v2/speechandtextanalytics/transcripts/search | Search resources.
+[**postTeamsSearch**](SearchApi#postTeamsSearch) | **POST** /api/v2/teams/search | Search resources.
+[**postTelephonyProvidersEdgesSitesSearch**](SearchApi#postTelephonyProvidersEdgesSitesSearch) | **POST** /api/v2/telephony/providers/edges/sites/search | Search sites
+[**postUsersSearch**](SearchApi#postUsersSearch) | **POST** /api/v2/users/search | Search users
+[**postUsersSearchConversationTarget**](SearchApi#postUsersSearchConversationTarget) | **POST** /api/v2/users/search/conversation/target | Search users as conversation targets
+[**postUsersSearchQueuemembersManage**](SearchApi#postUsersSearchQueuemembersManage) | **POST** /api/v2/users/search/queuemembers/manage | Search manage queue member
+[**postUsersSearchTeamsAssign**](SearchApi#postUsersSearchTeamsAssign) | **POST** /api/v2/users/search/teams/assign | Search users assigned to teams
+[**postVoicemailSearch**](SearchApi#postVoicemailSearch) | **POST** /api/v2/voicemail/search | Search voicemails
 
-<a name="getDocumentationGknSearch"></a>
 
-# GKNDocumentationSearchResponse getDocumentationGknSearch(q64)
+
+## getDocumentationGknSearch
+
+> GKNDocumentationSearchResponse getDocumentationGknSearch(q64)
 
 
 GET /api/v2/documentation/gkn/search
@@ -73,15 +74,15 @@ apiInstance.getDocumentationGknSearch(q64)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **q64** | **String** | q64 |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **GKNDocumentationSearchResponse**
 
-<a name="getDocumentationSearch"></a>
 
-# DocumentationSearchResponse getDocumentationSearch(q64)
+## getDocumentationSearch
+
+> DocumentationSearchResponse getDocumentationSearch(q64)
 
 
 GET /api/v2/documentation/search
@@ -118,15 +119,15 @@ apiInstance.getDocumentationSearch(q64)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **q64** | **String** | q64 |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **DocumentationSearchResponse**
 
-<a name="getGroupsSearch"></a>
 
-# GroupsSearchResponse getGroupsSearch(q64, opts)
+## getGroupsSearch
+
+> GroupsSearchResponse getGroupsSearch(q64, opts)
 
 
 GET /api/v2/groups/search
@@ -143,7 +144,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.SearchApi();
@@ -170,15 +171,15 @@ apiInstance.getGroupsSearch(q64, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **q64** | **String** | q64 |  |
  **expand** | **[String]** | expand | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **GroupsSearchResponse**
 
-<a name="getLocationsSearch"></a>
 
-# LocationsSearchResponse getLocationsSearch(q64, opts)
+## getLocationsSearch
+
+> LocationsSearchResponse getLocationsSearch(q64, opts)
 
 
 GET /api/v2/locations/search
@@ -195,7 +196,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.SearchApi();
@@ -222,15 +223,15 @@ apiInstance.getLocationsSearch(q64, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **q64** | **String** | q64 |  |
  **expand** | **[String]** | Provides more details about a specified resource | [optional] <br />**Values**: images, addressVerificationDetails |
-{: class="table table-striped"}
 
 ### Return type
 
 **LocationsSearchResponse**
 
-<a name="getSearch"></a>
 
-# JsonNodeSearchResponse getSearch(q64, opts)
+## getSearch
+
+> JsonNodeSearchResponse getSearch(q64, opts)
 
 
 GET /api/v2/search
@@ -249,7 +250,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.SearchApi();
@@ -276,17 +277,17 @@ apiInstance.getSearch(q64, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **q64** | **String** | q64 |  |
- **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, dateLastLogin, authorization.unusedRoles, team, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation, images, addressVerificationDetails |
+ **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, groups, profileSkills, certifications, locations, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, dateWelcomeSent, callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation, conversations, transcription, images, addressVerificationDetails |
  **profile** | **Boolean** | profile | [optional] [default to true] |
-{: class="table table-striped"}
 
 ### Return type
 
 **JsonNodeSearchResponse**
 
-<a name="getSearchSuggest"></a>
 
-# JsonNodeSearchResponse getSearchSuggest(q64, opts)
+## getSearchSuggest
+
+> JsonNodeSearchResponse getSearchSuggest(q64, opts)
 
 
 GET /api/v2/search/suggest
@@ -305,7 +306,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.SearchApi();
@@ -332,17 +333,72 @@ apiInstance.getSearchSuggest(q64, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **q64** | **String** | q64 |  |
- **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, dateLastLogin, authorization.unusedRoles, team, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation, images, addressVerificationDetails |
+ **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, groups, profileSkills, certifications, locations, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, dateWelcomeSent, callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation, conversations, transcription, images, addressVerificationDetails |
  **profile** | **Boolean** | profile | [optional] [default to true] |
-{: class="table table-striped"}
 
 ### Return type
 
 **JsonNodeSearchResponse**
 
-<a name="getUsersSearch"></a>
 
-# UsersSearchResponse getUsersSearch(q64, opts)
+## getTelephonyProvidersEdgesSitesSearch
+
+> SitesSearchResponse getTelephonyProvidersEdgesSitesSearch(q64, opts)
+
+
+GET /api/v2/telephony/providers/edges/sites/search
+
+Search sites using the q64 value returned from a previous search
+
+Requires ANY permissions:
+
+* telephony:plugin:all
+* telephony:sites:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.SearchApi();
+
+let q64 = "q64_example"; // String | q64
+let opts = { 
+  'expand': ["expand_example"] // [String] | expand
+};
+
+apiInstance.getTelephonyProvidersEdgesSitesSearch(q64, opts)
+  .then((data) => {
+    console.log(`getTelephonyProvidersEdgesSitesSearch success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getTelephonyProvidersEdgesSitesSearch');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **q64** | **String** | q64 |  |
+ **expand** | **[String]** | expand | [optional]  |
+
+### Return type
+
+**SitesSearchResponse**
+
+
+## getUsersSearch
+
+> UsersSearchResponse getUsersSearch(q64, opts)
 
 
 GET /api/v2/users/search
@@ -361,7 +417,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.SearchApi();
@@ -390,15 +446,15 @@ apiInstance.getUsersSearch(q64, opts)
  **q64** | **String** | q64 |  |
  **expand** | **[String]** | expand | [optional]  |
  **integrationPresenceSource** | **String** | integrationPresenceSource | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone, EightByEight |
-{: class="table table-striped"}
 
 ### Return type
 
 **UsersSearchResponse**
 
-<a name="getVoicemailSearch"></a>
 
-# VoicemailsSearchResponse getVoicemailSearch(q64, opts)
+## getVoicemailSearch
+
+> VoicemailsSearchResponse getVoicemailSearch(q64, opts)
 
 
 GET /api/v2/voicemail/search
@@ -415,7 +471,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.SearchApi();
@@ -442,65 +498,15 @@ apiInstance.getVoicemailSearch(q64, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **q64** | **String** | q64 |  |
  **expand** | **[String]** | expand | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **VoicemailsSearchResponse**
 
-<a name="postAnalyticsConversationsTranscriptsQuery"></a>
 
-# AnalyticsConversationWithoutAttributesMultiGetResponse postAnalyticsConversationsTranscriptsQuery(body)
+## postConversationsParticipantsAttributesSearch
 
-
-POST /api/v2/analytics/conversations/transcripts/query
-
-Search resources.
-
-Requires ANY permissions:
-
-* analytics:conversationDetail:view
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.SearchApi();
-
-let body = {}; // Object | Search request options
-
-apiInstance.postAnalyticsConversationsTranscriptsQuery(body)
-  .then((data) => {
-    console.log(`postAnalyticsConversationsTranscriptsQuery success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling postAnalyticsConversationsTranscriptsQuery');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **body** | **Object** | Search request options |  |
-{: class="table table-striped"}
-
-### Return type
-
-**AnalyticsConversationWithoutAttributesMultiGetResponse**
-
-<a name="postConversationsParticipantsAttributesSearch"></a>
-
-# JsonCursorSearchResponse postConversationsParticipantsAttributesSearch(body)
+> JsonCursorSearchResponse postConversationsParticipantsAttributesSearch(body)
 
 
 POST /api/v2/conversations/participants/attributes/search
@@ -519,7 +525,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.SearchApi();
@@ -542,15 +548,15 @@ apiInstance.postConversationsParticipantsAttributesSearch(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Search request options |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **JsonCursorSearchResponse**
 
-<a name="postDocumentationAllSearch"></a>
 
-# JsonNodeSearchResponse postDocumentationAllSearch(body)
+## postDocumentationAllSearch
+
+> JsonNodeSearchResponse postDocumentationAllSearch(body)
 
 
 POST /api/v2/documentation/all/search
@@ -589,15 +595,15 @@ apiInstance.postDocumentationAllSearch(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Search request options |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **JsonNodeSearchResponse**
 
-<a name="postDocumentationGknSearch"></a>
 
-# GKNDocumentationSearchResponse postDocumentationGknSearch(body)
+## postDocumentationGknSearch
+
+> GKNDocumentationSearchResponse postDocumentationGknSearch(body)
 
 
 POST /api/v2/documentation/gkn/search
@@ -634,15 +640,15 @@ apiInstance.postDocumentationGknSearch(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Search request options |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **GKNDocumentationSearchResponse**
 
-<a name="postDocumentationSearch"></a>
 
-# DocumentationSearchResponse postDocumentationSearch(body)
+## postDocumentationSearch
+
+> DocumentationSearchResponse postDocumentationSearch(body)
 
 
 POST /api/v2/documentation/search
@@ -679,15 +685,15 @@ apiInstance.postDocumentationSearch(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Search request options |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **DocumentationSearchResponse**
 
-<a name="postGroupsSearch"></a>
 
-# GroupsSearchResponse postGroupsSearch(body)
+## postGroupsSearch
+
+> GroupsSearchResponse postGroupsSearch(body)
 
 
 POST /api/v2/groups/search
@@ -704,7 +710,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.SearchApi();
@@ -727,17 +733,19 @@ apiInstance.postGroupsSearch(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Search request options |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **GroupsSearchResponse**
 
-<a name="postKnowledgeKnowledgebaseSearch"></a>
 
-# KnowledgeSearchResponse postKnowledgeKnowledgebaseSearch(knowledgeBaseId, opts)
+## postKnowledgeKnowledgebaseSearch
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+> KnowledgeSearchResponse postKnowledgeKnowledgebaseSearch(knowledgeBaseId, opts)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/search
 
@@ -755,7 +763,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.SearchApi();
@@ -782,15 +790,15 @@ apiInstance.postKnowledgeKnowledgebaseSearch(knowledgeBaseId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **knowledgeBaseId** | **String** | Knowledge base ID |  |
  **body** | **Object** |  | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **KnowledgeSearchResponse**
 
-<a name="postLocationsSearch"></a>
 
-# LocationsSearchResponse postLocationsSearch(body)
+## postLocationsSearch
+
+> LocationsSearchResponse postLocationsSearch(body)
 
 
 POST /api/v2/locations/search
@@ -807,7 +815,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.SearchApi();
@@ -830,15 +838,15 @@ apiInstance.postLocationsSearch(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Search request options |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **LocationsSearchResponse**
 
-<a name="postSearch"></a>
 
-# JsonNodeSearchResponse postSearch(body, opts)
+## postSearch
+
+> JsonNodeSearchResponse postSearch(body, opts)
 
 
 POST /api/v2/search
@@ -857,7 +865,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.SearchApi();
@@ -884,15 +892,15 @@ apiInstance.postSearch(body, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Search request options |  |
  **profile** | **Boolean** | profile | [optional] [default to true] |
-{: class="table table-striped"}
 
 ### Return type
 
 **JsonNodeSearchResponse**
 
-<a name="postSearchSuggest"></a>
 
-# JsonNodeSearchResponse postSearchSuggest(body, opts)
+## postSearchSuggest
+
+> JsonNodeSearchResponse postSearchSuggest(body, opts)
 
 
 POST /api/v2/search/suggest
@@ -911,7 +919,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.SearchApi();
@@ -938,15 +946,15 @@ apiInstance.postSearchSuggest(body, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Search request options |  |
  **profile** | **Boolean** | profile | [optional] [default to true] |
-{: class="table table-striped"}
 
 ### Return type
 
 **JsonNodeSearchResponse**
 
-<a name="postSpeechandtextanalyticsTranscriptsSearch"></a>
 
-# JsonSearchResponse postSpeechandtextanalyticsTranscriptsSearch(body)
+## postSpeechandtextanalyticsTranscriptsSearch
+
+> JsonSearchResponse postSpeechandtextanalyticsTranscriptsSearch(body)
 
 
 POST /api/v2/speechandtextanalytics/transcripts/search
@@ -957,6 +965,7 @@ Requires ANY permissions:
 
 * analytics:conversationDetail:view
 * recording:recording:view
+* recording:recordingSegment:view
 
 ### Example Usage
 
@@ -966,7 +975,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.SearchApi();
@@ -989,15 +998,15 @@ apiInstance.postSpeechandtextanalyticsTranscriptsSearch(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Search request options |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **JsonSearchResponse**
 
-<a name="postTeamsSearch"></a>
 
-# TeamsSearchResponse postTeamsSearch(body)
+## postTeamsSearch
+
+> TeamsSearchResponse postTeamsSearch(body)
 
 
 POST /api/v2/teams/search
@@ -1016,7 +1025,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.SearchApi();
@@ -1039,15 +1048,66 @@ apiInstance.postTeamsSearch(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Search request options |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **TeamsSearchResponse**
 
-<a name="postUsersSearch"></a>
 
-# UsersSearchResponse postUsersSearch(body)
+## postTelephonyProvidersEdgesSitesSearch
+
+> SitesSearchResponse postTelephonyProvidersEdgesSitesSearch(body)
+
+
+POST /api/v2/telephony/providers/edges/sites/search
+
+Search sites
+
+Requires ANY permissions:
+
+* telephony:plugin:all
+* telephony:sites:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.SearchApi();
+
+let body = {}; // Object | Search request options
+
+apiInstance.postTelephonyProvidersEdgesSitesSearch(body)
+  .then((data) => {
+    console.log(`postTelephonyProvidersEdgesSitesSearch success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postTelephonyProvidersEdgesSitesSearch');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Search request options |  |
+
+### Return type
+
+**SitesSearchResponse**
+
+
+## postUsersSearch
+
+> UsersSearchResponse postUsersSearch(body)
 
 
 POST /api/v2/users/search
@@ -1066,7 +1126,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.SearchApi();
@@ -1089,15 +1149,15 @@ apiInstance.postUsersSearch(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Search request options |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **UsersSearchResponse**
 
-<a name="postUsersSearchConversationTarget"></a>
 
-# UsersSearchResponse postUsersSearchConversationTarget(body)
+## postUsersSearchConversationTarget
+
+> UsersSearchResponse postUsersSearchConversationTarget(body)
 
 
 POST /api/v2/users/search/conversation/target
@@ -1118,7 +1178,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.SearchApi();
@@ -1141,15 +1201,15 @@ apiInstance.postUsersSearchConversationTarget(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Search request options |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **UsersSearchResponse**
 
-<a name="postUsersSearchQueuemembersManage"></a>
 
-# UsersSearchResponse postUsersSearchQueuemembersManage(body)
+## postUsersSearchQueuemembersManage
+
+> UsersSearchResponse postUsersSearchQueuemembersManage(body)
 
 
 POST /api/v2/users/search/queuemembers/manage
@@ -1171,7 +1231,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.SearchApi();
@@ -1194,15 +1254,15 @@ apiInstance.postUsersSearchQueuemembersManage(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Search request options |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **UsersSearchResponse**
 
-<a name="postUsersSearchTeamsAssign"></a>
 
-# UsersSearchResponse postUsersSearchTeamsAssign(body)
+## postUsersSearchTeamsAssign
+
+> UsersSearchResponse postUsersSearchTeamsAssign(body)
 
 
 POST /api/v2/users/search/teams/assign
@@ -1221,7 +1281,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.SearchApi();
@@ -1244,15 +1304,15 @@ apiInstance.postUsersSearchTeamsAssign(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Search request options |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **UsersSearchResponse**
 
-<a name="postVoicemailSearch"></a>
 
-# VoicemailsSearchResponse postVoicemailSearch(body)
+## postVoicemailSearch
+
+> VoicemailsSearchResponse postVoicemailSearch(body)
 
 
 POST /api/v2/voicemail/search
@@ -1269,7 +1329,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.SearchApi();
@@ -1292,9 +1352,10 @@ apiInstance.postVoicemailSearch(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Search request options |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **VoicemailsSearchResponse**
 
+
+_purecloud-platform-client-v2@229.1.0_

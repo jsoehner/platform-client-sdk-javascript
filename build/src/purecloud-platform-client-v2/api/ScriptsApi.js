@@ -5,7 +5,7 @@ class ScriptsApi {
 	/**
 	 * Scripts service.
 	 * @module purecloud-platform-client-v2/api/ScriptsApi
-	 * @version 174.0.0
+	 * @version 229.1.0
 	 */
 
 	/**
@@ -27,7 +27,7 @@ class ScriptsApi {
 	 */
 	getScript(scriptId) { 
 		// verify the required parameter 'scriptId' is set
-		if (scriptId === undefined || scriptId === null) {
+		if (scriptId === undefined || scriptId === null || scriptId === '') {
 			throw 'Missing the required parameter "scriptId" when calling getScript';
 		}
 
@@ -57,11 +57,11 @@ class ScriptsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'scriptId' is set
-		if (scriptId === undefined || scriptId === null) {
+		if (scriptId === undefined || scriptId === null || scriptId === '') {
 			throw 'Missing the required parameter "scriptId" when calling getScriptPage';
 		}
 		// verify the required parameter 'pageId' is set
-		if (pageId === undefined || pageId === null) {
+		if (pageId === undefined || pageId === null || pageId === '') {
 			throw 'Missing the required parameter "pageId" when calling getScriptPage';
 		}
 
@@ -90,7 +90,7 @@ class ScriptsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'scriptId' is set
-		if (scriptId === undefined || scriptId === null) {
+		if (scriptId === undefined || scriptId === null || scriptId === '') {
 			throw 'Missing the required parameter "scriptId" when calling getScriptPages';
 		}
 
@@ -206,6 +206,38 @@ class ScriptsApi {
 	}
 
 	/**
+	 * Get the published variables
+	 * 
+	 * @param {String} scriptId Script ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.input input
+	 * @param {Object} opts.output output
+	 * @param {Object} opts.type type
+	 * @param {String} opts.scriptDataVersion Advanced usage - controls the data version of the script
+	 */
+	getScriptsPublishedDivisionviewVariables(scriptId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'scriptId' is set
+		if (scriptId === undefined || scriptId === null || scriptId === '') {
+			throw 'Missing the required parameter "scriptId" when calling getScriptsPublishedDivisionviewVariables';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/scripts/published/divisionviews/{scriptId}/variables', 
+			'GET', 
+			{ 'scriptId': scriptId },
+			{ 'input': opts['input'],'output': opts['output'],'type': opts['type'],'scriptDataVersion': opts['scriptDataVersion'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get the published scripts metadata.
 	 * 
 	 * @param {Object} opts Optional parameters
@@ -247,7 +279,7 @@ class ScriptsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'scriptId' is set
-		if (scriptId === undefined || scriptId === null) {
+		if (scriptId === undefined || scriptId === null || scriptId === '') {
 			throw 'Missing the required parameter "scriptId" when calling getScriptsPublishedScriptId';
 		}
 
@@ -277,11 +309,11 @@ class ScriptsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'scriptId' is set
-		if (scriptId === undefined || scriptId === null) {
+		if (scriptId === undefined || scriptId === null || scriptId === '') {
 			throw 'Missing the required parameter "scriptId" when calling getScriptsPublishedScriptIdPage';
 		}
 		// verify the required parameter 'pageId' is set
-		if (pageId === undefined || pageId === null) {
+		if (pageId === undefined || pageId === null || pageId === '') {
 			throw 'Missing the required parameter "pageId" when calling getScriptsPublishedScriptIdPage';
 		}
 
@@ -310,7 +342,7 @@ class ScriptsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'scriptId' is set
-		if (scriptId === undefined || scriptId === null) {
+		if (scriptId === undefined || scriptId === null || scriptId === '') {
 			throw 'Missing the required parameter "scriptId" when calling getScriptsPublishedScriptIdPages';
 		}
 
@@ -342,7 +374,7 @@ class ScriptsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'scriptId' is set
-		if (scriptId === undefined || scriptId === null) {
+		if (scriptId === undefined || scriptId === null || scriptId === '') {
 			throw 'Missing the required parameter "scriptId" when calling getScriptsPublishedScriptIdVariables';
 		}
 
@@ -371,7 +403,7 @@ class ScriptsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'uploadId' is set
-		if (uploadId === undefined || uploadId === null) {
+		if (uploadId === undefined || uploadId === null || uploadId === '') {
 			throw 'Missing the required parameter "uploadId" when calling getScriptsUploadStatus';
 		}
 
@@ -400,7 +432,7 @@ class ScriptsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'scriptId' is set
-		if (scriptId === undefined || scriptId === null) {
+		if (scriptId === undefined || scriptId === null || scriptId === '') {
 			throw 'Missing the required parameter "scriptId" when calling postScriptExport';
 		}
 

@@ -5,7 +5,7 @@ class AuthorizationApi {
 	/**
 	 * Authorization service.
 	 * @module purecloud-platform-client-v2/api/AuthorizationApi
-	 * @version 174.0.0
+	 * @version 229.1.0
 	 */
 
 	/**
@@ -25,13 +25,13 @@ class AuthorizationApi {
 	 * 
 	 * @param {String} divisionId Division ID
 	 * @param {Object} opts Optional parameters
-	 * @param {Boolean} opts.force Force delete this division as well as the grants and objects associated with it (default to false)
+	 * @param {Boolean} opts.force DEPRECATED -  Force delete this division. Warning: This option may cause any remaining objects in this division to be inaccessible. (default to false)
 	 */
 	deleteAuthorizationDivision(divisionId, opts) { 
 		opts = opts || {};
 		
 		// verify the required parameter 'divisionId' is set
-		if (divisionId === undefined || divisionId === null) {
+		if (divisionId === undefined || divisionId === null || divisionId === '') {
 			throw 'Missing the required parameter "divisionId" when calling deleteAuthorizationDivision';
 		}
 
@@ -50,13 +50,44 @@ class AuthorizationApi {
 	}
 
 	/**
+	 * Delete an access control policy
+	 * 
+	 * @param {String} targetName The domain:entity:action target to which the policy is applied
+	 * @param {String} subjectId The ID of the subject to which the policy is applied
+	 * deleteAuthorizationPoliciesTargetSubjectSubjectId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	deleteAuthorizationPoliciesTargetSubjectSubjectId(targetName, subjectId) { 
+		// verify the required parameter 'targetName' is set
+		if (targetName === undefined || targetName === null || targetName === '') {
+			throw 'Missing the required parameter "targetName" when calling deleteAuthorizationPoliciesTargetSubjectSubjectId';
+		}
+		// verify the required parameter 'subjectId' is set
+		if (subjectId === undefined || subjectId === null || subjectId === '') {
+			throw 'Missing the required parameter "subjectId" when calling deleteAuthorizationPoliciesTargetSubjectSubjectId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/authorization/policies/targets/{targetName}/subject/{subjectId}', 
+			'DELETE', 
+			{ 'targetName': targetName,'subjectId': subjectId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Delete an organization role.
 	 * 
 	 * @param {String} roleId Role ID
 	 */
 	deleteAuthorizationRole(roleId) { 
 		// verify the required parameter 'roleId' is set
-		if (roleId === undefined || roleId === null) {
+		if (roleId === undefined || roleId === null || roleId === '') {
 			throw 'Missing the required parameter "roleId" when calling deleteAuthorizationRole';
 		}
 
@@ -83,15 +114,15 @@ class AuthorizationApi {
 	 */
 	deleteAuthorizationSubjectDivisionRole(subjectId, divisionId, roleId) { 
 		// verify the required parameter 'subjectId' is set
-		if (subjectId === undefined || subjectId === null) {
+		if (subjectId === undefined || subjectId === null || subjectId === '') {
 			throw 'Missing the required parameter "subjectId" when calling deleteAuthorizationSubjectDivisionRole';
 		}
 		// verify the required parameter 'divisionId' is set
-		if (divisionId === undefined || divisionId === null) {
+		if (divisionId === undefined || divisionId === null || divisionId === '') {
 			throw 'Missing the required parameter "divisionId" when calling deleteAuthorizationSubjectDivisionRole';
 		}
 		// verify the required parameter 'roleId' is set
-		if (roleId === undefined || roleId === null) {
+		if (roleId === undefined || roleId === null || roleId === '') {
 			throw 'Missing the required parameter "roleId" when calling deleteAuthorizationSubjectDivisionRole';
 		}
 
@@ -120,7 +151,7 @@ class AuthorizationApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'divisionId' is set
-		if (divisionId === undefined || divisionId === null) {
+		if (divisionId === undefined || divisionId === null || divisionId === '') {
 			throw 'Missing the required parameter "divisionId" when calling getAuthorizationDivision';
 		}
 
@@ -150,7 +181,7 @@ class AuthorizationApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'divisionId' is set
-		if (divisionId === undefined || divisionId === null) {
+		if (divisionId === undefined || divisionId === null || divisionId === '') {
 			throw 'Missing the required parameter "divisionId" when calling getAuthorizationDivisionGrants';
 		}
 
@@ -201,6 +232,31 @@ class AuthorizationApi {
 	}
 
 	/**
+	 * Get a list of soft deleted divisions for the org
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 */
+	getAuthorizationDivisionsDeleted(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/authorization/divisions/deleted', 
+			'GET', 
+			{  },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Retrieve the home division for the organization.
 	 * Will not include object counts.
 	 */
@@ -231,6 +287,34 @@ class AuthorizationApi {
 			'GET', 
 			{  },
 			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Retrieve a list of all divisions defined for the organization with cursor
+	 * Use "after" and "before" param to fetch next/previous page}
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
+	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
+	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
+	 * @param {Array.<String>} opts.id Optionally request specific divisions by their IDs
+	 * @param {String} opts.name Optionally request specific divisions by division name
+	 */
+	getAuthorizationDivisionsQuery(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/authorization/divisions/query', 
+			'GET', 
+			{  },
+			{ 'before': opts['before'],'after': opts['after'],'pageSize': opts['pageSize'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'name': opts['name'] },
 			{  },
 			{  },
 			null, 
@@ -314,7 +398,7 @@ class AuthorizationApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'subjectId' is set
-		if (subjectId === undefined || subjectId === null) {
+		if (subjectId === undefined || subjectId === null || subjectId === '') {
 			throw 'Missing the required parameter "subjectId" when calling getAuthorizationDivisionspermittedPagedSubjectId';
 		}
 		// verify the required parameter 'permission' is set
@@ -364,6 +448,198 @@ class AuthorizationApi {
 	}
 
 	/**
+	 * Get a page of access policies for an organization
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
+	 * @param {Number} opts.pageSize Number of entities to return. Maximum of 200. (default to 25)
+	 * getAuthorizationPolicies is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getAuthorizationPolicies(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/authorization/policies', 
+			'GET', 
+			{  },
+			{ 'after': opts['after'],'pageSize': opts['pageSize'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a page of access policies for a given subject
+	 * 
+	 * @param {String} subjectId The ID of the subject to which policies are applied
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
+	 * @param {Number} opts.pageSize Number of entities to return. Maximum of 200. (default to 25)
+	 * getAuthorizationPoliciesSubjectSubjectId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getAuthorizationPoliciesSubjectSubjectId(subjectId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'subjectId' is set
+		if (subjectId === undefined || subjectId === null || subjectId === '') {
+			throw 'Missing the required parameter "subjectId" when calling getAuthorizationPoliciesSubjectSubjectId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/authorization/policies/subject/{subjectId}', 
+			'GET', 
+			{ 'subjectId': subjectId },
+			{ 'after': opts['after'],'pageSize': opts['pageSize'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a page of access policies for a given policy target
+	 * 
+	 * @param {String} targetName The domain:entity:action resource target to which policies are applied
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
+	 * @param {Number} opts.pageSize Number of entities to return. Maximum of 200. (default to 25)
+	 * getAuthorizationPoliciesTarget is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getAuthorizationPoliciesTarget(targetName, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'targetName' is set
+		if (targetName === undefined || targetName === null || targetName === '') {
+			throw 'Missing the required parameter "targetName" when calling getAuthorizationPoliciesTarget';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/authorization/policies/targets/{targetName}', 
+			'GET', 
+			{ 'targetName': targetName },
+			{ 'after': opts['after'],'pageSize': opts['pageSize'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get an access control policy for a specified resource target and subject
+	 * 
+	 * @param {String} targetName The domain:entity:action resource target to which the policy is applied
+	 * @param {String} subjectId The ID of the subject to which the policy is applied
+	 * getAuthorizationPoliciesTargetSubjectSubjectId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getAuthorizationPoliciesTargetSubjectSubjectId(targetName, subjectId) { 
+		// verify the required parameter 'targetName' is set
+		if (targetName === undefined || targetName === null || targetName === '') {
+			throw 'Missing the required parameter "targetName" when calling getAuthorizationPoliciesTargetSubjectSubjectId';
+		}
+		// verify the required parameter 'subjectId' is set
+		if (subjectId === undefined || subjectId === null || subjectId === '') {
+			throw 'Missing the required parameter "subjectId" when calling getAuthorizationPoliciesTargetSubjectSubjectId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/authorization/policies/targets/{targetName}/subject/{subjectId}', 
+			'GET', 
+			{ 'targetName': targetName,'subjectId': subjectId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a map of policy targets to valid attributes for those targets
+	 * 
+	 * getAuthorizationPoliciesTargets is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getAuthorizationPoliciesTargets() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/authorization/policies/targets', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get an access control policy with the specified policy ID
+	 * 
+	 * @param {String} policyId The ID of the policy to retrieve
+	 * getAuthorizationPolicy is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getAuthorizationPolicy(policyId) { 
+		// verify the required parameter 'policyId' is set
+		if (policyId === undefined || policyId === null || policyId === '') {
+			throw 'Missing the required parameter "policyId" when calling getAuthorizationPolicy';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/authorization/policies/{policyId}', 
+			'GET', 
+			{ 'policyId': policyId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the list of attributes used to evaluate an access control policy with the specified policy ID
+	 * 
+	 * @param {String} policyId The ID of the policy to retrieve attributes
+	 * getAuthorizationPolicyAttributes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getAuthorizationPolicyAttributes(policyId) { 
+		// verify the required parameter 'policyId' is set
+		if (policyId === undefined || policyId === null || policyId === '') {
+			throw 'Missing the required parameter "policyId" when calling getAuthorizationPolicyAttributes';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/authorization/policies/{policyId}/attributes', 
+			'GET', 
+			{ 'policyId': policyId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get the list of enabled products
 	 * Gets the list of enabled products. Some example product names are: collaborateFree, collaboratePro, communicate, and engage.
 	 */
@@ -388,14 +664,14 @@ class AuthorizationApi {
 	 * Get the organization role specified by its ID.
 	 * @param {String} roleId Role ID
 	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.userCount Fetch the count of users who have this role granted in at least one division (default to true)
+	 * @param {Object} opts.userCount Fetch the count of users who have this role granted in at least one division. Setting this value or defaulting to 'true' can lead to slower load times or timeouts for role queries with large member counts. (default to true)
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand. unusedPermissions returns the permissions not used for the role
 	 */
 	getAuthorizationRole(roleId, opts) { 
 		opts = opts || {};
 		
 		// verify the required parameter 'roleId' is set
-		if (roleId === undefined || roleId === null) {
+		if (roleId === undefined || roleId === null || roleId === '') {
 			throw 'Missing the required parameter "roleId" when calling getAuthorizationRole';
 		}
 
@@ -421,11 +697,11 @@ class AuthorizationApi {
 	 */
 	getAuthorizationRoleComparedefaultRightRoleId(leftRoleId, rightRoleId) { 
 		// verify the required parameter 'leftRoleId' is set
-		if (leftRoleId === undefined || leftRoleId === null) {
+		if (leftRoleId === undefined || leftRoleId === null || leftRoleId === '') {
 			throw 'Missing the required parameter "leftRoleId" when calling getAuthorizationRoleComparedefaultRightRoleId';
 		}
 		// verify the required parameter 'rightRoleId' is set
-		if (rightRoleId === undefined || rightRoleId === null) {
+		if (rightRoleId === undefined || rightRoleId === null || rightRoleId === '') {
 			throw 'Missing the required parameter "rightRoleId" when calling getAuthorizationRoleComparedefaultRightRoleId';
 		}
 
@@ -459,7 +735,7 @@ class AuthorizationApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'roleId' is set
-		if (roleId === undefined || roleId === null) {
+		if (roleId === undefined || roleId === null || roleId === '') {
 			throw 'Missing the required parameter "roleId" when calling getAuthorizationRoleSubjectgrants';
 		}
 
@@ -489,7 +765,7 @@ class AuthorizationApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'roleId' is set
-		if (roleId === undefined || roleId === null) {
+		if (roleId === undefined || roleId === null || roleId === '') {
 			throw 'Missing the required parameter "roleId" when calling getAuthorizationRoleUsers';
 		}
 
@@ -542,6 +818,26 @@ class AuthorizationApi {
 	}
 
 	/**
+	 * Get authorization role settings
+	 * 
+	 */
+	getAuthorizationRolesSettings() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/authorization/roles/settings', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get authorization settings
 	 * 
 	 */
@@ -565,10 +861,14 @@ class AuthorizationApi {
 	 * Returns a listing of roles and permissions for a user.
 	 * 
 	 * @param {String} subjectId Subject ID (user or group)
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.includeDuplicates Include multiple entries with the same role and division but different subjects (default to false)
 	 */
-	getAuthorizationSubject(subjectId) { 
+	getAuthorizationSubject(subjectId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'subjectId' is set
-		if (subjectId === undefined || subjectId === null) {
+		if (subjectId === undefined || subjectId === null || subjectId === '') {
 			throw 'Missing the required parameter "subjectId" when calling getAuthorizationSubject';
 		}
 
@@ -576,7 +876,7 @@ class AuthorizationApi {
 			'/api/v2/authorization/subjects/{subjectId}', 
 			'GET', 
 			{ 'subjectId': subjectId },
-			{  },
+			{ 'includeDuplicates': opts['includeDuplicates'] },
 			{  },
 			{  },
 			null, 
@@ -589,14 +889,18 @@ class AuthorizationApi {
 	/**
 	 * Returns a listing of roles and permissions for the currently authenticated user.
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.includeDuplicates Include multiple entries with the same role and division but different subjects (default to false)
 	 */
-	getAuthorizationSubjectsMe() { 
+	getAuthorizationSubjectsMe(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/authorization/subjects/me', 
 			'GET', 
 			{  },
-			{  },
+			{ 'includeDuplicates': opts['includeDuplicates'] },
 			{  },
 			{  },
 			null, 
@@ -637,7 +941,7 @@ class AuthorizationApi {
 	 */
 	getUserRoles(subjectId) { 
 		// verify the required parameter 'subjectId' is set
-		if (subjectId === undefined || subjectId === null) {
+		if (subjectId === undefined || subjectId === null || subjectId === '') {
 			throw 'Missing the required parameter "subjectId" when calling getUserRoles';
 		}
 
@@ -663,7 +967,7 @@ class AuthorizationApi {
 	 */
 	patchAuthorizationRole(roleId, body) { 
 		// verify the required parameter 'roleId' is set
-		if (roleId === undefined || roleId === null) {
+		if (roleId === undefined || roleId === null || roleId === '') {
 			throw 'Missing the required parameter "roleId" when calling patchAuthorizationRole';
 		}
 		// verify the required parameter 'body' is set
@@ -719,11 +1023,11 @@ class AuthorizationApi {
 	 */
 	postAuthorizationDivisionObject(divisionId, objectType, body) { 
 		// verify the required parameter 'divisionId' is set
-		if (divisionId === undefined || divisionId === null) {
+		if (divisionId === undefined || divisionId === null || divisionId === '') {
 			throw 'Missing the required parameter "divisionId" when calling postAuthorizationDivisionObject';
 		}
 		// verify the required parameter 'objectType' is set
-		if (objectType === undefined || objectType === null) {
+		if (objectType === undefined || objectType === null || objectType === '') {
 			throw 'Missing the required parameter "objectType" when calling postAuthorizationDivisionObject';
 		}
 		// verify the required parameter 'body' is set
@@ -753,7 +1057,7 @@ class AuthorizationApi {
 	 */
 	postAuthorizationDivisionRestore(divisionId, body) { 
 		// verify the required parameter 'divisionId' is set
-		if (divisionId === undefined || divisionId === null) {
+		if (divisionId === undefined || divisionId === null || divisionId === '') {
 			throw 'Missing the required parameter "divisionId" when calling postAuthorizationDivisionRestore';
 		}
 		// verify the required parameter 'body' is set
@@ -801,6 +1105,99 @@ class AuthorizationApi {
 	}
 
 	/**
+	 * Add an access control policy for a specified resource target and subject
+	 * 
+	 * @param {String} targetName The domain:entity:action target to which the policy will be applied
+	 * @param {Object} body Access control policy
+	 * postAuthorizationPoliciesTarget is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postAuthorizationPoliciesTarget(targetName, body) { 
+		// verify the required parameter 'targetName' is set
+		if (targetName === undefined || targetName === null || targetName === '') {
+			throw 'Missing the required parameter "targetName" when calling postAuthorizationPoliciesTarget';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postAuthorizationPoliciesTarget';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/authorization/policies/targets/{targetName}', 
+			'POST', 
+			{ 'targetName': targetName },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Validate the conditions and attributes of an access control policy for a specified resource target
+	 * 
+	 * @param {String} targetName The domain:entity:action target to which the policy will be applied
+	 * @param {Object} body Access control policy
+	 * postAuthorizationPoliciesTargetValidate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postAuthorizationPoliciesTargetValidate(targetName, body) { 
+		// verify the required parameter 'targetName' is set
+		if (targetName === undefined || targetName === null || targetName === '') {
+			throw 'Missing the required parameter "targetName" when calling postAuthorizationPoliciesTargetValidate';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postAuthorizationPoliciesTargetValidate';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/authorization/policies/targets/{targetName}/validate', 
+			'POST', 
+			{ 'targetName': targetName },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Simulate a request and evaluate the specified policy ID against the provided values
+	 * 
+	 * @param {String} policyId The ID of the policy to test the simulated data against
+	 * @param {Object} body A map of attribute names to type and simulated data value
+	 * postAuthorizationPolicySimulate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postAuthorizationPolicySimulate(policyId, body) { 
+		// verify the required parameter 'policyId' is set
+		if (policyId === undefined || policyId === null || policyId === '') {
+			throw 'Missing the required parameter "policyId" when calling postAuthorizationPolicySimulate';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postAuthorizationPolicySimulate';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/authorization/policies/{policyId}/simulate', 
+			'POST', 
+			{ 'policyId': policyId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Bulk-grant subjects and divisions with an organization role.
 	 * 
 	 * @param {String} roleId Role ID
@@ -812,7 +1209,7 @@ class AuthorizationApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'roleId' is set
-		if (roleId === undefined || roleId === null) {
+		if (roleId === undefined || roleId === null || roleId === '') {
 			throw 'Missing the required parameter "roleId" when calling postAuthorizationRole';
 		}
 		// verify the required parameter 'body' is set
@@ -843,11 +1240,11 @@ class AuthorizationApi {
 	 */
 	postAuthorizationRoleComparedefaultRightRoleId(leftRoleId, rightRoleId, body) { 
 		// verify the required parameter 'leftRoleId' is set
-		if (leftRoleId === undefined || leftRoleId === null) {
+		if (leftRoleId === undefined || leftRoleId === null || leftRoleId === '') {
 			throw 'Missing the required parameter "leftRoleId" when calling postAuthorizationRoleComparedefaultRightRoleId';
 		}
 		// verify the required parameter 'rightRoleId' is set
-		if (rightRoleId === undefined || rightRoleId === null) {
+		if (rightRoleId === undefined || rightRoleId === null || rightRoleId === '') {
 			throw 'Missing the required parameter "rightRoleId" when calling postAuthorizationRoleComparedefaultRightRoleId';
 		}
 		// verify the required parameter 'body' is set
@@ -930,7 +1327,7 @@ class AuthorizationApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'subjectId' is set
-		if (subjectId === undefined || subjectId === null) {
+		if (subjectId === undefined || subjectId === null || subjectId === '') {
 			throw 'Missing the required parameter "subjectId" when calling postAuthorizationSubjectBulkadd';
 		}
 		// verify the required parameter 'body' is set
@@ -960,7 +1357,7 @@ class AuthorizationApi {
 	 */
 	postAuthorizationSubjectBulkremove(subjectId, body) { 
 		// verify the required parameter 'subjectId' is set
-		if (subjectId === undefined || subjectId === null) {
+		if (subjectId === undefined || subjectId === null || subjectId === '') {
 			throw 'Missing the required parameter "subjectId" when calling postAuthorizationSubjectBulkremove';
 		}
 		// verify the required parameter 'body' is set
@@ -994,7 +1391,7 @@ class AuthorizationApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'subjectId' is set
-		if (subjectId === undefined || subjectId === null) {
+		if (subjectId === undefined || subjectId === null || subjectId === '') {
 			throw 'Missing the required parameter "subjectId" when calling postAuthorizationSubjectBulkreplace';
 		}
 		// verify the required parameter 'body' is set
@@ -1029,15 +1426,15 @@ class AuthorizationApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'subjectId' is set
-		if (subjectId === undefined || subjectId === null) {
+		if (subjectId === undefined || subjectId === null || subjectId === '') {
 			throw 'Missing the required parameter "subjectId" when calling postAuthorizationSubjectDivisionRole';
 		}
 		// verify the required parameter 'divisionId' is set
-		if (divisionId === undefined || divisionId === null) {
+		if (divisionId === undefined || divisionId === null || divisionId === '') {
 			throw 'Missing the required parameter "divisionId" when calling postAuthorizationSubjectDivisionRole';
 		}
 		// verify the required parameter 'roleId' is set
-		if (roleId === undefined || roleId === null) {
+		if (roleId === undefined || roleId === null || roleId === '') {
 			throw 'Missing the required parameter "roleId" when calling postAuthorizationSubjectDivisionRole';
 		}
 
@@ -1063,7 +1460,7 @@ class AuthorizationApi {
 	 */
 	putAuthorizationDivision(divisionId, body) { 
 		// verify the required parameter 'divisionId' is set
-		if (divisionId === undefined || divisionId === null) {
+		if (divisionId === undefined || divisionId === null || divisionId === '') {
 			throw 'Missing the required parameter "divisionId" when calling putAuthorizationDivision';
 		}
 		// verify the required parameter 'body' is set
@@ -1086,6 +1483,68 @@ class AuthorizationApi {
 	}
 
 	/**
+	 * Add an access control policy for a specified resource target and subject, overwriting any existing policy
+	 * 
+	 * @param {String} targetName The domain:entity:action target to which the policy will be applied
+	 * @param {Object} body Access control policy
+	 * putAuthorizationPoliciesTarget is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	putAuthorizationPoliciesTarget(targetName, body) { 
+		// verify the required parameter 'targetName' is set
+		if (targetName === undefined || targetName === null || targetName === '') {
+			throw 'Missing the required parameter "targetName" when calling putAuthorizationPoliciesTarget';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putAuthorizationPoliciesTarget';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/authorization/policies/targets/{targetName}', 
+			'PUT', 
+			{ 'targetName': targetName },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update an access control policy with a given ID
+	 * 
+	 * @param {String} policyId The ID of the policy to update
+	 * @param {Object} body Access control policy
+	 * putAuthorizationPolicy is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	putAuthorizationPolicy(policyId, body) { 
+		// verify the required parameter 'policyId' is set
+		if (policyId === undefined || policyId === null || policyId === '') {
+			throw 'Missing the required parameter "policyId" when calling putAuthorizationPolicy';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putAuthorizationPolicy';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/authorization/policies/{policyId}', 
+			'PUT', 
+			{ 'policyId': policyId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Update an organization role.
 	 * Update
 	 * @param {String} roleId Role ID
@@ -1093,7 +1552,7 @@ class AuthorizationApi {
 	 */
 	putAuthorizationRole(roleId, body) { 
 		// verify the required parameter 'roleId' is set
-		if (roleId === undefined || roleId === null) {
+		if (roleId === undefined || roleId === null || roleId === '') {
 			throw 'Missing the required parameter "roleId" when calling putAuthorizationRole';
 		}
 		// verify the required parameter 'body' is set
@@ -1123,7 +1582,7 @@ class AuthorizationApi {
 	 */
 	putAuthorizationRoleUsersAdd(roleId, body) { 
 		// verify the required parameter 'roleId' is set
-		if (roleId === undefined || roleId === null) {
+		if (roleId === undefined || roleId === null || roleId === '') {
 			throw 'Missing the required parameter "roleId" when calling putAuthorizationRoleUsersAdd';
 		}
 		// verify the required parameter 'body' is set
@@ -1153,7 +1612,7 @@ class AuthorizationApi {
 	 */
 	putAuthorizationRoleUsersRemove(roleId, body) { 
 		// verify the required parameter 'roleId' is set
-		if (roleId === undefined || roleId === null) {
+		if (roleId === undefined || roleId === null || roleId === '') {
 			throw 'Missing the required parameter "roleId" when calling putAuthorizationRoleUsersRemove';
 		}
 		// verify the required parameter 'body' is set
@@ -1201,6 +1660,31 @@ class AuthorizationApi {
 	}
 
 	/**
+	 * Change authorization role settings
+	 * Change role settings
+	 * @param {Object} body Authorization Role Settings
+	 */
+	putAuthorizationRolesSettings(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putAuthorizationRolesSettings';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/authorization/roles/settings', 
+			'PUT', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Sets the user's roles
 	 * 
 	 * @param {String} subjectId User ID
@@ -1208,7 +1692,7 @@ class AuthorizationApi {
 	 */
 	putUserRoles(subjectId, body) { 
 		// verify the required parameter 'subjectId' is set
-		if (subjectId === undefined || subjectId === null) {
+		if (subjectId === undefined || subjectId === null || subjectId === '') {
 			throw 'Missing the required parameter "subjectId" when calling putUserRoles';
 		}
 		// verify the required parameter 'body' is set

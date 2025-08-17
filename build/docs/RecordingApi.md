@@ -1,75 +1,74 @@
----
-title: RecordingApi
----
+# RecordingApi
+
 # platformClient.RecordingApi
 
 All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-[**deleteConversationRecordingAnnotation**](RecordingApi.html#deleteConversationRecordingAnnotation) | **DELETE** /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations/{annotationId} | Delete annotation
-[**deleteOrphanrecording**](RecordingApi.html#deleteOrphanrecording) | **DELETE** /api/v2/orphanrecordings/{orphanId} | Deletes a single orphan recording
-[**deleteRecordingCrossplatformMediaretentionpolicies**](RecordingApi.html#deleteRecordingCrossplatformMediaretentionpolicies) | **DELETE** /api/v2/recording/crossplatform/mediaretentionpolicies | Delete media retention policies
-[**deleteRecordingCrossplatformMediaretentionpolicy**](RecordingApi.html#deleteRecordingCrossplatformMediaretentionpolicy) | **DELETE** /api/v2/recording/crossplatform/mediaretentionpolicies/{policyId} | Delete a media retention policy
-[**deleteRecordingJob**](RecordingApi.html#deleteRecordingJob) | **DELETE** /api/v2/recording/jobs/{jobId} | Delete the recording bulk job
-[**deleteRecordingMediaretentionpolicies**](RecordingApi.html#deleteRecordingMediaretentionpolicies) | **DELETE** /api/v2/recording/mediaretentionpolicies | Delete media retention policies
-[**deleteRecordingMediaretentionpolicy**](RecordingApi.html#deleteRecordingMediaretentionpolicy) | **DELETE** /api/v2/recording/mediaretentionpolicies/{policyId} | Delete a media retention policy
-[**getConversationRecording**](RecordingApi.html#getConversationRecording) | **GET** /api/v2/conversations/{conversationId}/recordings/{recordingId} | Gets a specific recording.
-[**getConversationRecordingAnnotation**](RecordingApi.html#getConversationRecordingAnnotation) | **GET** /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations/{annotationId} | Get annotation
-[**getConversationRecordingAnnotations**](RecordingApi.html#getConversationRecordingAnnotations) | **GET** /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations | Get annotations for recording
-[**getConversationRecordingmetadata**](RecordingApi.html#getConversationRecordingmetadata) | **GET** /api/v2/conversations/{conversationId}/recordingmetadata | Get recording metadata for a conversation. Does not return playable media. Annotations won't be included in the response if either recording:recording:view or recording:annotation:view permission is missing.
-[**getConversationRecordingmetadataRecordingId**](RecordingApi.html#getConversationRecordingmetadataRecordingId) | **GET** /api/v2/conversations/{conversationId}/recordingmetadata/{recordingId} | Get metadata for a specific recording. Does not return playable media.
-[**getConversationRecordings**](RecordingApi.html#getConversationRecordings) | **GET** /api/v2/conversations/{conversationId}/recordings | Get all of a Conversation's Recordings.
-[**getOrphanrecording**](RecordingApi.html#getOrphanrecording) | **GET** /api/v2/orphanrecordings/{orphanId} | Gets a single orphan recording
-[**getOrphanrecordingMedia**](RecordingApi.html#getOrphanrecordingMedia) | **GET** /api/v2/orphanrecordings/{orphanId}/media | Gets the media of a single orphan recording
-[**getOrphanrecordings**](RecordingApi.html#getOrphanrecordings) | **GET** /api/v2/orphanrecordings | Gets all orphan recordings
-[**getRecordingBatchrequest**](RecordingApi.html#getRecordingBatchrequest) | **GET** /api/v2/recording/batchrequests/{jobId} | Get the status and results for a batch request job, only the user that submitted the job may retrieve results
-[**getRecordingCrossplatformMediaretentionpolicies**](RecordingApi.html#getRecordingCrossplatformMediaretentionpolicies) | **GET** /api/v2/recording/crossplatform/mediaretentionpolicies | Gets media retention policy list with query options to filter on name and enabled.
-[**getRecordingCrossplatformMediaretentionpolicy**](RecordingApi.html#getRecordingCrossplatformMediaretentionpolicy) | **GET** /api/v2/recording/crossplatform/mediaretentionpolicies/{policyId} | Get a media retention policy
-[**getRecordingJob**](RecordingApi.html#getRecordingJob) | **GET** /api/v2/recording/jobs/{jobId} | Get the status of the job associated with the job id.
-[**getRecordingJobFailedrecordings**](RecordingApi.html#getRecordingJobFailedrecordings) | **GET** /api/v2/recording/jobs/{jobId}/failedrecordings | Get IDs of recordings that the bulk job failed for
-[**getRecordingJobs**](RecordingApi.html#getRecordingJobs) | **GET** /api/v2/recording/jobs | Get the status of all jobs within the user's organization
-[**getRecordingKeyconfiguration**](RecordingApi.html#getRecordingKeyconfiguration) | **GET** /api/v2/recording/keyconfigurations/{keyConfigurationId} | Get the encryption key configurations
-[**getRecordingKeyconfigurations**](RecordingApi.html#getRecordingKeyconfigurations) | **GET** /api/v2/recording/keyconfigurations | Get a list of key configurations data
-[**getRecordingMediaretentionpolicies**](RecordingApi.html#getRecordingMediaretentionpolicies) | **GET** /api/v2/recording/mediaretentionpolicies | Gets media retention policy list with query options to filter on name and enabled.
-[**getRecordingMediaretentionpolicy**](RecordingApi.html#getRecordingMediaretentionpolicy) | **GET** /api/v2/recording/mediaretentionpolicies/{policyId} | Get a media retention policy
-[**getRecordingRecordingkeys**](RecordingApi.html#getRecordingRecordingkeys) | **GET** /api/v2/recording/recordingkeys | Get encryption key list
-[**getRecordingRecordingkeysRotationschedule**](RecordingApi.html#getRecordingRecordingkeysRotationschedule) | **GET** /api/v2/recording/recordingkeys/rotationschedule | Get key rotation schedule
-[**getRecordingSettings**](RecordingApi.html#getRecordingSettings) | **GET** /api/v2/recording/settings | Get the Recording Settings for the Organization
-[**getRecordingUploadsReport**](RecordingApi.html#getRecordingUploadsReport) | **GET** /api/v2/recording/uploads/reports/{reportId} | Get the status of a recording upload status report
-[**getRecordingsRetentionQuery**](RecordingApi.html#getRecordingsRetentionQuery) | **GET** /api/v2/recordings/retention/query | Query for recording retention data
-[**getRecordingsScreensessions**](RecordingApi.html#getRecordingsScreensessions) | **GET** /api/v2/recordings/screensessions | Retrieves a paged listing of screen recording sessions
-[**patchRecordingCrossplatformMediaretentionpolicy**](RecordingApi.html#patchRecordingCrossplatformMediaretentionpolicy) | **PATCH** /api/v2/recording/crossplatform/mediaretentionpolicies/{policyId} | Patch a media retention policy
-[**patchRecordingMediaretentionpolicy**](RecordingApi.html#patchRecordingMediaretentionpolicy) | **PATCH** /api/v2/recording/mediaretentionpolicies/{policyId} | Patch a media retention policy
-[**patchRecordingsScreensession**](RecordingApi.html#patchRecordingsScreensession) | **PATCH** /api/v2/recordings/screensessions/{recordingSessionId} | Update a screen recording session
-[**postConversationRecordingAnnotations**](RecordingApi.html#postConversationRecordingAnnotations) | **POST** /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations | Create annotation
-[**postRecordingBatchrequests**](RecordingApi.html#postRecordingBatchrequests) | **POST** /api/v2/recording/batchrequests | Submit a batch download request for recordings. Recordings in response will be in their original format/codec - configured in the Trunk configuration.
-[**postRecordingCrossplatformMediaretentionpolicies**](RecordingApi.html#postRecordingCrossplatformMediaretentionpolicies) | **POST** /api/v2/recording/crossplatform/mediaretentionpolicies | Create media retention policy
-[**postRecordingJobs**](RecordingApi.html#postRecordingJobs) | **POST** /api/v2/recording/jobs | Create a recording bulk job.
-[**postRecordingKeyconfigurations**](RecordingApi.html#postRecordingKeyconfigurations) | **POST** /api/v2/recording/keyconfigurations | Setup configurations for encryption key creation
-[**postRecordingKeyconfigurationsValidate**](RecordingApi.html#postRecordingKeyconfigurationsValidate) | **POST** /api/v2/recording/keyconfigurations/validate | Validate encryption key configurations without saving it
-[**postRecordingLocalkeys**](RecordingApi.html#postRecordingLocalkeys) | **POST** /api/v2/recording/localkeys | create a local key management recording key
-[**postRecordingMediaretentionpolicies**](RecordingApi.html#postRecordingMediaretentionpolicies) | **POST** /api/v2/recording/mediaretentionpolicies | Create media retention policy
-[**postRecordingRecordingkeys**](RecordingApi.html#postRecordingRecordingkeys) | **POST** /api/v2/recording/recordingkeys | Create encryption key
-[**postRecordingUploadsReports**](RecordingApi.html#postRecordingUploadsReports) | **POST** /api/v2/recording/uploads/reports | Creates a recording upload status report
-[**postRecordingsDeletionprotection**](RecordingApi.html#postRecordingsDeletionprotection) | **POST** /api/v2/recordings/deletionprotection | Get a list of conversations with protected recordings
-[**postRecordingsScreensessionsAcknowledge**](RecordingApi.html#postRecordingsScreensessionsAcknowledge) | **POST** /api/v2/recordings/screensessions/acknowledge | Acknowledge a screen recording.
-[**postRecordingsScreensessionsMetadata**](RecordingApi.html#postRecordingsScreensessionsMetadata) | **POST** /api/v2/recordings/screensessions/metadata | Provide meta-data a screen recording.
-[**putConversationRecording**](RecordingApi.html#putConversationRecording) | **PUT** /api/v2/conversations/{conversationId}/recordings/{recordingId} | Updates the retention records on a recording.
-[**putConversationRecordingAnnotation**](RecordingApi.html#putConversationRecordingAnnotation) | **PUT** /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations/{annotationId} | Update annotation
-[**putOrphanrecording**](RecordingApi.html#putOrphanrecording) | **PUT** /api/v2/orphanrecordings/{orphanId} | Updates an orphan recording to a regular recording with retention values
-[**putRecordingCrossplatformMediaretentionpolicy**](RecordingApi.html#putRecordingCrossplatformMediaretentionpolicy) | **PUT** /api/v2/recording/crossplatform/mediaretentionpolicies/{policyId} | Update a media retention policy
-[**putRecordingJob**](RecordingApi.html#putRecordingJob) | **PUT** /api/v2/recording/jobs/{jobId} | Execute the recording bulk job.
-[**putRecordingKeyconfiguration**](RecordingApi.html#putRecordingKeyconfiguration) | **PUT** /api/v2/recording/keyconfigurations/{keyConfigurationId} | Update the encryption key configurations
-[**putRecordingMediaretentionpolicy**](RecordingApi.html#putRecordingMediaretentionpolicy) | **PUT** /api/v2/recording/mediaretentionpolicies/{policyId} | Update a media retention policy
-[**putRecordingRecordingkeysRotationschedule**](RecordingApi.html#putRecordingRecordingkeysRotationschedule) | **PUT** /api/v2/recording/recordingkeys/rotationschedule | Update key rotation schedule
-[**putRecordingSettings**](RecordingApi.html#putRecordingSettings) | **PUT** /api/v2/recording/settings | Update the Recording Settings for the Organization
-[**putRecordingsDeletionprotection**](RecordingApi.html#putRecordingsDeletionprotection) | **PUT** /api/v2/recordings/deletionprotection | Apply or revoke recording protection for conversations
-{: class="table table-striped"}
+[**deleteConversationRecordingAnnotation**](RecordingApi#deleteConversationRecordingAnnotation) | **DELETE** /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations/{annotationId} | Delete annotation
+[**deleteOrphanrecording**](RecordingApi#deleteOrphanrecording) | **DELETE** /api/v2/orphanrecordings/{orphanId} | Deletes a single orphan recording
+[**deleteRecordingCrossplatformMediaretentionpolicies**](RecordingApi#deleteRecordingCrossplatformMediaretentionpolicies) | **DELETE** /api/v2/recording/crossplatform/mediaretentionpolicies | Delete media retention policies
+[**deleteRecordingCrossplatformMediaretentionpolicy**](RecordingApi#deleteRecordingCrossplatformMediaretentionpolicy) | **DELETE** /api/v2/recording/crossplatform/mediaretentionpolicies/{policyId} | Delete a media retention policy
+[**deleteRecordingJob**](RecordingApi#deleteRecordingJob) | **DELETE** /api/v2/recording/jobs/{jobId} | Delete the recording bulk job
+[**deleteRecordingMediaretentionpolicies**](RecordingApi#deleteRecordingMediaretentionpolicies) | **DELETE** /api/v2/recording/mediaretentionpolicies | Delete media retention policies
+[**deleteRecordingMediaretentionpolicy**](RecordingApi#deleteRecordingMediaretentionpolicy) | **DELETE** /api/v2/recording/mediaretentionpolicies/{policyId} | Delete a media retention policy
+[**getConversationRecording**](RecordingApi#getConversationRecording) | **GET** /api/v2/conversations/{conversationId}/recordings/{recordingId} | Gets a specific recording.
+[**getConversationRecordingAnnotation**](RecordingApi#getConversationRecordingAnnotation) | **GET** /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations/{annotationId} | Get annotation
+[**getConversationRecordingAnnotations**](RecordingApi#getConversationRecordingAnnotations) | **GET** /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations | Get annotations for recording
+[**getConversationRecordingmetadata**](RecordingApi#getConversationRecordingmetadata) | **GET** /api/v2/conversations/{conversationId}/recordingmetadata | Get recording metadata for a conversation. Does not return playable media nor system annotations. Bookmark annotations will be excluded if either recording:recording:view or recording:annotation:view permission is missing.
+[**getConversationRecordingmetadataRecordingId**](RecordingApi#getConversationRecordingmetadataRecordingId) | **GET** /api/v2/conversations/{conversationId}/recordingmetadata/{recordingId} | Get metadata for a specific recording. Does not return playable media.
+[**getConversationRecordings**](RecordingApi#getConversationRecordings) | **GET** /api/v2/conversations/{conversationId}/recordings | Get all of a Conversation's Recordings.
+[**getOrphanrecording**](RecordingApi#getOrphanrecording) | **GET** /api/v2/orphanrecordings/{orphanId} | Gets a single orphan recording
+[**getOrphanrecordingMedia**](RecordingApi#getOrphanrecordingMedia) | **GET** /api/v2/orphanrecordings/{orphanId}/media | Gets the media of a single orphan recording
+[**getOrphanrecordings**](RecordingApi#getOrphanrecordings) | **GET** /api/v2/orphanrecordings | Gets all orphan recordings
+[**getRecordingBatchrequest**](RecordingApi#getRecordingBatchrequest) | **GET** /api/v2/recording/batchrequests/{jobId} | Get the status and results for a batch request job, only the user that submitted the job may retrieve results. Each result may contain either a URL to a recording or an error; additionally, a recording could be associated with multiple results.
+[**getRecordingCrossplatformMediaretentionpolicies**](RecordingApi#getRecordingCrossplatformMediaretentionpolicies) | **GET** /api/v2/recording/crossplatform/mediaretentionpolicies | Gets media retention policy list with query options to filter on name and enabled.
+[**getRecordingCrossplatformMediaretentionpolicy**](RecordingApi#getRecordingCrossplatformMediaretentionpolicy) | **GET** /api/v2/recording/crossplatform/mediaretentionpolicies/{policyId} | Get a media retention policy
+[**getRecordingJob**](RecordingApi#getRecordingJob) | **GET** /api/v2/recording/jobs/{jobId} | Get the status of the job associated with the job id.
+[**getRecordingJobFailedrecordings**](RecordingApi#getRecordingJobFailedrecordings) | **GET** /api/v2/recording/jobs/{jobId}/failedrecordings | Get IDs of recordings that the bulk job failed for
+[**getRecordingJobs**](RecordingApi#getRecordingJobs) | **GET** /api/v2/recording/jobs | Get the status of all jobs within the user's organization
+[**getRecordingKeyconfiguration**](RecordingApi#getRecordingKeyconfiguration) | **GET** /api/v2/recording/keyconfigurations/{keyConfigurationId} | Get the encryption key configurations
+[**getRecordingKeyconfigurations**](RecordingApi#getRecordingKeyconfigurations) | **GET** /api/v2/recording/keyconfigurations | Get a list of key configurations data
+[**getRecordingMediaretentionpolicies**](RecordingApi#getRecordingMediaretentionpolicies) | **GET** /api/v2/recording/mediaretentionpolicies | Gets media retention policy list with query options to filter on name and enabled.
+[**getRecordingMediaretentionpolicy**](RecordingApi#getRecordingMediaretentionpolicy) | **GET** /api/v2/recording/mediaretentionpolicies/{policyId} | Get a media retention policy
+[**getRecordingRecordingkeys**](RecordingApi#getRecordingRecordingkeys) | **GET** /api/v2/recording/recordingkeys | Get encryption key list
+[**getRecordingRecordingkeysRotationschedule**](RecordingApi#getRecordingRecordingkeysRotationschedule) | **GET** /api/v2/recording/recordingkeys/rotationschedule | Get key rotation schedule
+[**getRecordingSettings**](RecordingApi#getRecordingSettings) | **GET** /api/v2/recording/settings | Get the Recording Settings for the Organization
+[**getRecordingUploadsReport**](RecordingApi#getRecordingUploadsReport) | **GET** /api/v2/recording/uploads/reports/{reportId} | Get the status of a recording upload status report
+[**getRecordingsRetentionQuery**](RecordingApi#getRecordingsRetentionQuery) | **GET** /api/v2/recordings/retention/query | Query for recording retention data
+[**getRecordingsScreensessionsDetails**](RecordingApi#getRecordingsScreensessionsDetails) | **GET** /api/v2/recordings/screensessions/details | Retrieves an object containing the total number of concurrent active screen recordings
+[**patchRecordingCrossplatformMediaretentionpolicy**](RecordingApi#patchRecordingCrossplatformMediaretentionpolicy) | **PATCH** /api/v2/recording/crossplatform/mediaretentionpolicies/{policyId} | Patch a media retention policy
+[**patchRecordingMediaretentionpolicy**](RecordingApi#patchRecordingMediaretentionpolicy) | **PATCH** /api/v2/recording/mediaretentionpolicies/{policyId} | Patch a media retention policy
+[**postConversationRecordingAnnotations**](RecordingApi#postConversationRecordingAnnotations) | **POST** /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations | Create annotation
+[**postRecordingBatchrequests**](RecordingApi#postRecordingBatchrequests) | **POST** /api/v2/recording/batchrequests | Submit a batch download request for recordings. Recordings in response will be in their original format/codec - configured in the Trunk configuration.
+[**postRecordingCrossplatformMediaretentionpolicies**](RecordingApi#postRecordingCrossplatformMediaretentionpolicies) | **POST** /api/v2/recording/crossplatform/mediaretentionpolicies | Create media retention policy
+[**postRecordingJobs**](RecordingApi#postRecordingJobs) | **POST** /api/v2/recording/jobs | Create a recording bulk job.
+[**postRecordingKeyconfigurations**](RecordingApi#postRecordingKeyconfigurations) | **POST** /api/v2/recording/keyconfigurations | Setup configurations for encryption key creation
+[**postRecordingKeyconfigurationsValidate**](RecordingApi#postRecordingKeyconfigurationsValidate) | **POST** /api/v2/recording/keyconfigurations/validate | Validate encryption key configurations without saving it
+[**postRecordingLocalkeys**](RecordingApi#postRecordingLocalkeys) | **POST** /api/v2/recording/localkeys | create a local key management recording key
+[**postRecordingMediaretentionpolicies**](RecordingApi#postRecordingMediaretentionpolicies) | **POST** /api/v2/recording/mediaretentionpolicies | Create media retention policy
+[**postRecordingRecordingkeys**](RecordingApi#postRecordingRecordingkeys) | **POST** /api/v2/recording/recordingkeys | Create encryption key
+[**postRecordingUploadsReports**](RecordingApi#postRecordingUploadsReports) | **POST** /api/v2/recording/uploads/reports | Creates a recording upload status report
+[**postRecordingsDeletionprotection**](RecordingApi#postRecordingsDeletionprotection) | **POST** /api/v2/recordings/deletionprotection | Get a list of conversations with protected recordings
+[**postRecordingsScreensessionsAcknowledge**](RecordingApi#postRecordingsScreensessionsAcknowledge) | **POST** /api/v2/recordings/screensessions/acknowledge | Acknowledge a screen recording.
+[**postRecordingsScreensessionsMetadata**](RecordingApi#postRecordingsScreensessionsMetadata) | **POST** /api/v2/recordings/screensessions/metadata | Provide meta-data a screen recording.
+[**putConversationRecording**](RecordingApi#putConversationRecording) | **PUT** /api/v2/conversations/{conversationId}/recordings/{recordingId} | Updates the retention records on a recording.
+[**putConversationRecordingAnnotation**](RecordingApi#putConversationRecordingAnnotation) | **PUT** /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations/{annotationId} | Update annotation
+[**putOrphanrecording**](RecordingApi#putOrphanrecording) | **PUT** /api/v2/orphanrecordings/{orphanId} | Updates an orphan recording to a regular recording with retention values
+[**putRecordingCrossplatformMediaretentionpolicy**](RecordingApi#putRecordingCrossplatformMediaretentionpolicy) | **PUT** /api/v2/recording/crossplatform/mediaretentionpolicies/{policyId} | Update a media retention policy
+[**putRecordingJob**](RecordingApi#putRecordingJob) | **PUT** /api/v2/recording/jobs/{jobId} | Execute the recording bulk job.
+[**putRecordingKeyconfiguration**](RecordingApi#putRecordingKeyconfiguration) | **PUT** /api/v2/recording/keyconfigurations/{keyConfigurationId} | Update the encryption key configurations
+[**putRecordingMediaretentionpolicy**](RecordingApi#putRecordingMediaretentionpolicy) | **PUT** /api/v2/recording/mediaretentionpolicies/{policyId} | Update a media retention policy
+[**putRecordingRecordingkeysRotationschedule**](RecordingApi#putRecordingRecordingkeysRotationschedule) | **PUT** /api/v2/recording/recordingkeys/rotationschedule | Update key rotation schedule
+[**putRecordingSettings**](RecordingApi#putRecordingSettings) | **PUT** /api/v2/recording/settings | Update the Recording Settings for the Organization
+[**putRecordingsDeletionprotection**](RecordingApi#putRecordingsDeletionprotection) | **PUT** /api/v2/recordings/deletionprotection | Apply or revoke recording protection for conversations
 
-<a name="deleteConversationRecordingAnnotation"></a>
 
-# void deleteConversationRecordingAnnotation(conversationId, recordingId, annotationId)
+
+## deleteConversationRecordingAnnotation
+
+> void deleteConversationRecordingAnnotation(conversationId, recordingId, annotationId)
 
 
 DELETE /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations/{annotationId}
@@ -88,7 +87,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.RecordingApi();
@@ -115,15 +114,15 @@ apiInstance.deleteConversationRecordingAnnotation(conversationId, recordingId, a
  **conversationId** | **String** | Conversation ID |  |
  **recordingId** | **String** | Recording ID |  |
  **annotationId** | **String** | Annotation ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteOrphanrecording"></a>
 
-# OrphanRecording deleteOrphanrecording(orphanId)
+## deleteOrphanrecording
+
+> OrphanRecording deleteOrphanrecording(orphanId)
 
 
 DELETE /api/v2/orphanrecordings/{orphanId}
@@ -142,7 +141,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.RecordingApi();
@@ -165,15 +164,15 @@ apiInstance.deleteOrphanrecording(orphanId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **orphanId** | **String** | Orphan ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **OrphanRecording**
 
-<a name="deleteRecordingCrossplatformMediaretentionpolicies"></a>
 
-# void deleteRecordingCrossplatformMediaretentionpolicies(ids)
+## deleteRecordingCrossplatformMediaretentionpolicies
+
+> void deleteRecordingCrossplatformMediaretentionpolicies(ids)
 
 
 DELETE /api/v2/recording/crossplatform/mediaretentionpolicies
@@ -194,7 +193,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.RecordingApi();
@@ -217,15 +216,15 @@ apiInstance.deleteRecordingCrossplatformMediaretentionpolicies(ids)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **ids** | **String** |  |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteRecordingCrossplatformMediaretentionpolicy"></a>
 
-# void deleteRecordingCrossplatformMediaretentionpolicy(policyId)
+## deleteRecordingCrossplatformMediaretentionpolicy
+
+> void deleteRecordingCrossplatformMediaretentionpolicy(policyId)
 
 
 DELETE /api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}
@@ -244,7 +243,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.RecordingApi();
@@ -267,15 +266,15 @@ apiInstance.deleteRecordingCrossplatformMediaretentionpolicy(policyId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **policyId** | **String** | Policy ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteRecordingJob"></a>
 
-# void deleteRecordingJob(jobId)
+## deleteRecordingJob
+
+> void deleteRecordingJob(jobId)
 
 
 DELETE /api/v2/recording/jobs/{jobId}
@@ -294,7 +293,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.RecordingApi();
@@ -317,15 +316,15 @@ apiInstance.deleteRecordingJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteRecordingMediaretentionpolicies"></a>
 
-# void deleteRecordingMediaretentionpolicies(ids)
+## deleteRecordingMediaretentionpolicies
+
+> void deleteRecordingMediaretentionpolicies(ids)
 
 
 DELETE /api/v2/recording/mediaretentionpolicies
@@ -346,7 +345,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.RecordingApi();
@@ -369,15 +368,15 @@ apiInstance.deleteRecordingMediaretentionpolicies(ids)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **ids** | **String** |  |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteRecordingMediaretentionpolicy"></a>
 
-# void deleteRecordingMediaretentionpolicy(policyId)
+## deleteRecordingMediaretentionpolicy
+
+> void deleteRecordingMediaretentionpolicy(policyId)
 
 
 DELETE /api/v2/recording/mediaretentionpolicies/{policyId}
@@ -396,7 +395,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.RecordingApi();
@@ -419,15 +418,15 @@ apiInstance.deleteRecordingMediaretentionpolicy(policyId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **policyId** | **String** | Policy ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="getConversationRecording"></a>
 
-# Recording getConversationRecording(conversationId, recordingId, opts)
+## getConversationRecording
+
+> Recording getConversationRecording(conversationId, recordingId, opts)
 
 
 GET /api/v2/conversations/{conversationId}/recordings/{recordingId}
@@ -447,7 +446,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.RecordingApi();
@@ -461,7 +460,7 @@ let opts = {
   'messageFormatId': "ZIP", // String | The desired media format when downloading a message recording. Valid values:ZIP,NONE
   'download': false, // Boolean | requesting a download format of the recording. Valid values:true,false
   'fileName': "fileName_example", // String | the name of the downloaded fileName
-  'locale': "locale_example", // String | The locale for the requested file when downloading, as an ISO 639-1 code
+  'locale': "locale_example", // String | The locale for the requested file when downloading or for redacting sensitive information in requested files, as an ISO 639-1 code
   'mediaFormats': ["mediaFormats_example"] // [String] | All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3
 };
 
@@ -488,17 +487,17 @@ apiInstance.getConversationRecording(conversationId, recordingId, opts)
  **messageFormatId** | **String** | The desired media format when downloading a message recording. Valid values:ZIP,NONE | [optional] [default to ZIP]<br />**Values**: ZIP, NONE |
  **download** | **Boolean** | requesting a download format of the recording. Valid values:true,false | [optional] [default to false]<br />**Values**: true, false |
  **fileName** | **String** | the name of the downloaded fileName | [optional]  |
- **locale** | **String** | The locale for the requested file when downloading, as an ISO 639-1 code | [optional]  |
+ **locale** | **String** | The locale for the requested file when downloading or for redacting sensitive information in requested files, as an ISO 639-1 code | [optional]  |
  **mediaFormats** | **[String]** | All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3 | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Recording**
 
-<a name="getConversationRecordingAnnotation"></a>
 
-# Annotation getConversationRecordingAnnotation(conversationId, recordingId, annotationId)
+## getConversationRecordingAnnotation
+
+> Annotation getConversationRecordingAnnotation(conversationId, recordingId, annotationId)
 
 
 GET /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations/{annotationId}
@@ -517,7 +516,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.RecordingApi();
@@ -544,15 +543,15 @@ apiInstance.getConversationRecordingAnnotation(conversationId, recordingId, anno
  **conversationId** | **String** | Conversation ID |  |
  **recordingId** | **String** | Recording ID |  |
  **annotationId** | **String** | Annotation ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Annotation**
 
-<a name="getConversationRecordingAnnotations"></a>
 
-# [Annotation] getConversationRecordingAnnotations(conversationId, recordingId)
+## getConversationRecordingAnnotations
+
+> [Annotation] getConversationRecordingAnnotations(conversationId, recordingId)
 
 
 GET /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations
@@ -571,7 +570,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.RecordingApi();
@@ -596,20 +595,20 @@ apiInstance.getConversationRecordingAnnotations(conversationId, recordingId)
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | Conversation ID |  |
  **recordingId** | **String** | Recording ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **[Annotation]**
 
-<a name="getConversationRecordingmetadata"></a>
 
-# [RecordingMetadata] getConversationRecordingmetadata(conversationId)
+## getConversationRecordingmetadata
+
+> [RecordingMetadata] getConversationRecordingmetadata(conversationId)
 
 
 GET /api/v2/conversations/{conversationId}/recordingmetadata
 
-Get recording metadata for a conversation. Does not return playable media. Annotations won't be included in the response if either recording:recording:view or recording:annotation:view permission is missing.
+Get recording metadata for a conversation. Does not return playable media nor system annotations. Bookmark annotations will be excluded if either recording:recording:view or recording:annotation:view permission is missing.
 
 Requires ANY permissions:
 
@@ -624,7 +623,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.RecordingApi();
@@ -647,15 +646,15 @@ apiInstance.getConversationRecordingmetadata(conversationId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | Conversation ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **[RecordingMetadata]**
 
-<a name="getConversationRecordingmetadataRecordingId"></a>
 
-# RecordingMetadata getConversationRecordingmetadataRecordingId(conversationId, recordingId)
+## getConversationRecordingmetadataRecordingId
+
+> RecordingMetadata getConversationRecordingmetadataRecordingId(conversationId, recordingId)
 
 
 GET /api/v2/conversations/{conversationId}/recordingmetadata/{recordingId}
@@ -675,7 +674,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.RecordingApi();
@@ -700,15 +699,15 @@ apiInstance.getConversationRecordingmetadataRecordingId(conversationId, recordin
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | Conversation ID |  |
  **recordingId** | **String** | Recording ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **RecordingMetadata**
 
-<a name="getConversationRecordings"></a>
 
-# [Recording] getConversationRecordings(conversationId, opts)
+## getConversationRecordings
+
+> [Recording] getConversationRecordings(conversationId, opts)
 
 
 GET /api/v2/conversations/{conversationId}/recordings
@@ -728,7 +727,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.RecordingApi();
@@ -737,7 +736,9 @@ let conversationId = "conversationId_example"; // String | Conversation ID
 let opts = { 
   'maxWaitMs': 5000, // Number | The maximum number of milliseconds to wait for the recording to be ready. Must be a positive value.
   'formatId': "WEBM", // String | The desired media format. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3,NONE.
-  'mediaFormats': ["mediaFormats_example"] // [String] | All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3.
+  'mediaFormats': ["mediaFormats_example"], // [String] | All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3.
+  'locale': "locale_example", // String | The locale used for redacting sensitive information in requested files, as an ISO 639-1 code
+  'includePauseAnnotationsForScreenRecordings': false // Boolean | Include applicable Secure Pause annotations from all audio recordings to all screen recordings
 };
 
 apiInstance.getConversationRecordings(conversationId, opts)
@@ -759,15 +760,17 @@ apiInstance.getConversationRecordings(conversationId, opts)
  **maxWaitMs** | **Number** | The maximum number of milliseconds to wait for the recording to be ready. Must be a positive value. | [optional] [default to 5000] |
  **formatId** | **String** | The desired media format. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3,NONE. | [optional] [default to WEBM]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE |
  **mediaFormats** | **[String]** | All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3. | [optional]  |
-{: class="table table-striped"}
+ **locale** | **String** | The locale used for redacting sensitive information in requested files, as an ISO 639-1 code | [optional]  |
+ **includePauseAnnotationsForScreenRecordings** | **Boolean** | Include applicable Secure Pause annotations from all audio recordings to all screen recordings | [optional] [default to false] |
 
 ### Return type
 
 **[Recording]**
 
-<a name="getOrphanrecording"></a>
 
-# OrphanRecording getOrphanrecording(orphanId)
+## getOrphanrecording
+
+> OrphanRecording getOrphanrecording(orphanId)
 
 
 GET /api/v2/orphanrecordings/{orphanId}
@@ -786,7 +789,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.RecordingApi();
@@ -809,15 +812,15 @@ apiInstance.getOrphanrecording(orphanId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **orphanId** | **String** | Orphan ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **OrphanRecording**
 
-<a name="getOrphanrecordingMedia"></a>
 
-# Recording getOrphanrecordingMedia(orphanId, opts)
+## getOrphanrecordingMedia
+
+> Recording getOrphanrecordingMedia(orphanId, opts)
 
 
 GET /api/v2/orphanrecordings/{orphanId}/media
@@ -838,7 +841,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.RecordingApi();
@@ -879,15 +882,15 @@ apiInstance.getOrphanrecordingMedia(orphanId, opts)
  **fileName** | **String** | the name of the downloaded fileName | [optional]  |
  **locale** | **String** | The locale for the requested file when downloading, as an ISO 639-1 code | [optional]  |
  **mediaFormats** | **[String]** | All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3 | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Recording**
 
-<a name="getOrphanrecordings"></a>
 
-# OrphanRecordingListing getOrphanrecordings(opts)
+## getOrphanrecordings
+
+> OrphanRecordingListing getOrphanrecordings(opts)
 
 
 GET /api/v2/orphanrecordings
@@ -906,7 +909,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.RecordingApi();
@@ -945,20 +948,20 @@ apiInstance.getOrphanrecordings(opts)
  **previousPage** | **String** | Previous page token | [optional]  |
  **hasConversation** | **Boolean** | Filter resulting orphans by whether the conversation is known. False returns all orphans for the organization. | [optional] [default to false] |
  **media** | **String** | Filter resulting orphans based on their media type | [optional] <br />**Values**: Call, Screen |
-{: class="table table-striped"}
 
 ### Return type
 
 **OrphanRecordingListing**
 
-<a name="getRecordingBatchrequest"></a>
 
-# BatchDownloadJobStatusResult getRecordingBatchrequest(jobId)
+## getRecordingBatchrequest
+
+> BatchDownloadJobStatusResult getRecordingBatchrequest(jobId)
 
 
 GET /api/v2/recording/batchrequests/{jobId}
 
-Get the status and results for a batch request job, only the user that submitted the job may retrieve results
+Get the status and results for a batch request job, only the user that submitted the job may retrieve results. Each result may contain either a URL to a recording or an error; additionally, a recording could be associated with multiple results.
 
 Requires NO permissions:
 
@@ -970,7 +973,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.RecordingApi();
@@ -993,15 +996,15 @@ apiInstance.getRecordingBatchrequest(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **BatchDownloadJobStatusResult**
 
-<a name="getRecordingCrossplatformMediaretentionpolicies"></a>
 
-# PolicyEntityListing getRecordingCrossplatformMediaretentionpolicies(opts)
+## getRecordingCrossplatformMediaretentionpolicies
+
+> PolicyEntityListing getRecordingCrossplatformMediaretentionpolicies(opts)
 
 
 GET /api/v2/recording/crossplatform/mediaretentionpolicies
@@ -1022,7 +1025,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.RecordingApi();
@@ -1067,15 +1070,15 @@ apiInstance.getRecordingCrossplatformMediaretentionpolicies(opts)
  **summary** | **Boolean** | provides a less verbose response of policy lists. | [optional] [default to false] |
  **hasErrors** | **Boolean** | provides a way to fetch all policies with errors or policies that do not have errors | [optional]  |
  **deleteDaysThreshold** | **Number** | provides a way to fetch all policies with any actions having deleteDays exceeding the provided value | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **PolicyEntityListing**
 
-<a name="getRecordingCrossplatformMediaretentionpolicy"></a>
 
-# CrossPlatformPolicy getRecordingCrossplatformMediaretentionpolicy(policyId)
+## getRecordingCrossplatformMediaretentionpolicy
+
+> CrossPlatformPolicy getRecordingCrossplatformMediaretentionpolicy(policyId)
 
 
 GET /api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}
@@ -1094,7 +1097,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.RecordingApi();
@@ -1117,15 +1120,15 @@ apiInstance.getRecordingCrossplatformMediaretentionpolicy(policyId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **policyId** | **String** | Policy ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **CrossPlatformPolicy**
 
-<a name="getRecordingJob"></a>
 
-# RecordingJob getRecordingJob(jobId)
+## getRecordingJob
+
+> RecordingJob getRecordingJob(jobId)
 
 
 GET /api/v2/recording/jobs/{jobId}
@@ -1144,7 +1147,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.RecordingApi();
@@ -1167,15 +1170,15 @@ apiInstance.getRecordingJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **RecordingJob**
 
-<a name="getRecordingJobFailedrecordings"></a>
 
-# FailedRecordingEntityListing getRecordingJobFailedrecordings(jobId, opts)
+## getRecordingJobFailedrecordings
+
+> FailedRecordingEntityListing getRecordingJobFailedrecordings(jobId, opts)
 
 
 GET /api/v2/recording/jobs/{jobId}/failedrecordings
@@ -1194,7 +1197,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.RecordingApi();
@@ -1203,7 +1206,7 @@ let jobId = "jobId_example"; // String | jobId
 let opts = { 
   'pageSize': 25, // Number | Page size. Maximum is 100.
   'pageNumber': 1, // Number | Page number
-  'includeTotal': true, // Boolean | If false, cursor will be used to locate the page instead of pageNumber.
+  'includeTotal': true, // Boolean | If false, cursor will be used to locate the page instead of pageNumber. It is recommended to set it to false for improved performance.
   'cursor': "cursor_example" // String | Indicates where to resume query results (not required for first page)
 };
 
@@ -1225,17 +1228,17 @@ apiInstance.getRecordingJobFailedrecordings(jobId, opts)
  **jobId** | **String** | jobId |  |
  **pageSize** | **Number** | Page size. Maximum is 100. | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
- **includeTotal** | **Boolean** | If false, cursor will be used to locate the page instead of pageNumber. | [optional]  |
+ **includeTotal** | **Boolean** | If false, cursor will be used to locate the page instead of pageNumber. It is recommended to set it to false for improved performance. | [optional]  |
  **cursor** | **String** | Indicates where to resume query results (not required for first page) | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **FailedRecordingEntityListing**
 
-<a name="getRecordingJobs"></a>
 
-# RecordingJobEntityListing getRecordingJobs(opts)
+## getRecordingJobs
+
+> RecordingJobEntityListing getRecordingJobs(opts)
 
 
 GET /api/v2/recording/jobs
@@ -1254,7 +1257,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.RecordingApi();
@@ -1266,7 +1269,7 @@ let opts = {
   'state': "state_example", // String | Filter by state
   'showOnlyMyJobs': true, // Boolean | Show only my jobs
   'jobType': "jobType_example", // String | Job Type (Can be left empty for both)
-  'includeTotal': true, // Boolean | If false, cursor will be used to locate the page instead of pageNumber.
+  'includeTotal': true, // Boolean | If false, cursor will be used to locate the page instead of pageNumber. It is recommended to set it to false for improved performance.
   'cursor': "cursor_example" // String | Indicates where to resume query results (not required for first page)
 };
 
@@ -1290,18 +1293,18 @@ apiInstance.getRecordingJobs(opts)
  **sortBy** | **String** | Sort by | [optional] [default to userId]<br />**Values**: userId, dateCreated |
  **state** | **String** | Filter by state | [optional] <br />**Values**: FULFILLED, PENDING, READY, PROCESSING, CANCELLED, FAILED |
  **showOnlyMyJobs** | **Boolean** | Show only my jobs | [optional]  |
- **jobType** | **String** | Job Type (Can be left empty for both) | [optional] <br />**Values**: DELETE, EXPORT |
- **includeTotal** | **Boolean** | If false, cursor will be used to locate the page instead of pageNumber. | [optional]  |
+ **jobType** | **String** | Job Type (Can be left empty for both) | [optional] <br />**Values**: ARCHIVE, DELETE, EXPORT |
+ **includeTotal** | **Boolean** | If false, cursor will be used to locate the page instead of pageNumber. It is recommended to set it to false for improved performance. | [optional]  |
  **cursor** | **String** | Indicates where to resume query results (not required for first page) | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **RecordingJobEntityListing**
 
-<a name="getRecordingKeyconfiguration"></a>
 
-# RecordingEncryptionConfiguration getRecordingKeyconfiguration(keyConfigurationId)
+## getRecordingKeyconfiguration
+
+> RecordingEncryptionConfiguration getRecordingKeyconfiguration(keyConfigurationId)
 
 
 GET /api/v2/recording/keyconfigurations/{keyConfigurationId}
@@ -1320,7 +1323,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.RecordingApi();
@@ -1343,15 +1346,15 @@ apiInstance.getRecordingKeyconfiguration(keyConfigurationId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **keyConfigurationId** | **String** | Key Configurations Id |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **RecordingEncryptionConfiguration**
 
-<a name="getRecordingKeyconfigurations"></a>
 
-# RecordingEncryptionConfigurationListing getRecordingKeyconfigurations()
+## getRecordingKeyconfigurations
+
+> RecordingEncryptionConfigurationListing getRecordingKeyconfigurations()
 
 
 GET /api/v2/recording/keyconfigurations
@@ -1370,7 +1373,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.RecordingApi();
@@ -1389,14 +1392,14 @@ apiInstance.getRecordingKeyconfigurations()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **RecordingEncryptionConfigurationListing**
 
-<a name="getRecordingMediaretentionpolicies"></a>
 
-# PolicyEntityListing getRecordingMediaretentionpolicies(opts)
+## getRecordingMediaretentionpolicies
+
+> PolicyEntityListing getRecordingMediaretentionpolicies(opts)
 
 
 GET /api/v2/recording/mediaretentionpolicies
@@ -1417,7 +1420,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.RecordingApi();
@@ -1462,15 +1465,15 @@ apiInstance.getRecordingMediaretentionpolicies(opts)
  **summary** | **Boolean** | provides a less verbose response of policy lists. | [optional] [default to false] |
  **hasErrors** | **Boolean** | provides a way to fetch all policies with errors or policies that do not have errors | [optional]  |
  **deleteDaysThreshold** | **Number** | provides a way to fetch all policies with any actions having deleteDays exceeding the provided value | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **PolicyEntityListing**
 
-<a name="getRecordingMediaretentionpolicy"></a>
 
-# Policy getRecordingMediaretentionpolicy(policyId)
+## getRecordingMediaretentionpolicy
+
+> Policy getRecordingMediaretentionpolicy(policyId)
 
 
 GET /api/v2/recording/mediaretentionpolicies/{policyId}
@@ -1489,7 +1492,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.RecordingApi();
@@ -1512,15 +1515,15 @@ apiInstance.getRecordingMediaretentionpolicy(policyId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **policyId** | **String** | Policy ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Policy**
 
-<a name="getRecordingRecordingkeys"></a>
 
-# EncryptionKeyEntityListing getRecordingRecordingkeys(opts)
+## getRecordingRecordingkeys
+
+> EncryptionKeyEntityListing getRecordingRecordingkeys(opts)
 
 
 GET /api/v2/recording/recordingkeys
@@ -1539,7 +1542,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.RecordingApi();
@@ -1566,15 +1569,15 @@ apiInstance.getRecordingRecordingkeys(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
-{: class="table table-striped"}
 
 ### Return type
 
 **EncryptionKeyEntityListing**
 
-<a name="getRecordingRecordingkeysRotationschedule"></a>
 
-# KeyRotationSchedule getRecordingRecordingkeysRotationschedule()
+## getRecordingRecordingkeysRotationschedule
+
+> KeyRotationSchedule getRecordingRecordingkeysRotationschedule()
 
 
 GET /api/v2/recording/recordingkeys/rotationschedule
@@ -1593,7 +1596,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.RecordingApi();
@@ -1612,24 +1615,21 @@ apiInstance.getRecordingRecordingkeysRotationschedule()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **KeyRotationSchedule**
 
-<a name="getRecordingSettings"></a>
 
-# RecordingSettings getRecordingSettings(opts)
+## getRecordingSettings
+
+> RecordingSettings getRecordingSettings(opts)
 
 
 GET /api/v2/recording/settings
 
 Get the Recording Settings for the Organization
 
-Requires ANY permissions:
-
-* recording:screenRecording:view
-* recording:settings:editScreenRecordings
+Requires NO permissions:
 
 ### Example Usage
 
@@ -1639,7 +1639,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.RecordingApi();
@@ -1664,15 +1664,15 @@ apiInstance.getRecordingSettings(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **createDefault** | **Boolean** | If no settings are found, a new one is created with default values | [optional] [default to false] |
-{: class="table table-striped"}
 
 ### Return type
 
 **RecordingSettings**
 
-<a name="getRecordingUploadsReport"></a>
 
-# RecordingUploadReport getRecordingUploadsReport(reportId)
+## getRecordingUploadsReport
+
+> RecordingUploadReport getRecordingUploadsReport(reportId)
 
 
 GET /api/v2/recording/uploads/reports/{reportId}
@@ -1691,7 +1691,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.RecordingApi();
@@ -1714,15 +1714,15 @@ apiInstance.getRecordingUploadsReport(reportId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **reportId** | **String** | reportId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **RecordingUploadReport**
 
-<a name="getRecordingsRetentionQuery"></a>
 
-# RecordingRetentionCursorEntityListing getRecordingsRetentionQuery(retentionThresholdDays, opts)
+## getRecordingsRetentionQuery
+
+> RecordingRetentionCursorEntityListing getRecordingsRetentionQuery(retentionThresholdDays, opts)
 
 
 GET /api/v2/recordings/retention/query
@@ -1741,7 +1741,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.RecordingApi();
@@ -1770,20 +1770,20 @@ apiInstance.getRecordingsRetentionQuery(retentionThresholdDays, opts)
  **retentionThresholdDays** | **Number** | Fetch retention data for recordings retained for more days than the provided value. |  |
  **cursor** | **String** | Indicates where to resume query results (not required for first page) | [optional]  |
  **pageSize** | **Number** | Page size. Maximum is 500. | [optional] [default to 25] |
-{: class="table table-striped"}
 
 ### Return type
 
 **RecordingRetentionCursorEntityListing**
 
-<a name="getRecordingsScreensessions"></a>
 
-# ScreenRecordingSessionListing getRecordingsScreensessions(opts)
+## getRecordingsScreensessionsDetails
+
+> ScreenRecordingActiveSessions getRecordingsScreensessionsDetails()
 
 
-GET /api/v2/recordings/screensessions
+GET /api/v2/recordings/screensessions/details
 
-Retrieves a paged listing of screen recording sessions
+Retrieves an object containing the total number of concurrent active screen recordings
 
 Requires ANY permissions:
 
@@ -1797,42 +1797,33 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.RecordingApi();
 
-let opts = { 
-  'pageSize': 25, // Number | Page size
-  'pageNumber': 1 // Number | Page number
-};
-
-apiInstance.getRecordingsScreensessions(opts)
+apiInstance.getRecordingsScreensessionsDetails()
   .then((data) => {
-    console.log(`getRecordingsScreensessions success! data: ${JSON.stringify(data, null, 2)}`);
+    console.log(`getRecordingsScreensessionsDetails success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch((err) => {
-    console.log('There was a failure calling getRecordingsScreensessions');
+    console.log('There was a failure calling getRecordingsScreensessionsDetails');
     console.error(err);
   });
 ```
 
 ### Parameters
 
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **pageSize** | **Number** | Page size | [optional] [default to 25] |
- **pageNumber** | **Number** | Page number | [optional] [default to 1] |
-{: class="table table-striped"}
+This endpoint does not need any parameter.
 
 ### Return type
 
-**ScreenRecordingSessionListing**
+**ScreenRecordingActiveSessions**
 
-<a name="patchRecordingCrossplatformMediaretentionpolicy"></a>
 
-# CrossPlatformPolicy patchRecordingCrossplatformMediaretentionpolicy(policyId, body)
+## patchRecordingCrossplatformMediaretentionpolicy
+
+> CrossPlatformPolicy patchRecordingCrossplatformMediaretentionpolicy(policyId, body)
 
 
 PATCH /api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}
@@ -1851,7 +1842,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.RecordingApi();
@@ -1876,15 +1867,15 @@ apiInstance.patchRecordingCrossplatformMediaretentionpolicy(policyId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **policyId** | **String** | Policy ID |  |
  **body** | **Object** | Policy |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **CrossPlatformPolicy**
 
-<a name="patchRecordingMediaretentionpolicy"></a>
 
-# Policy patchRecordingMediaretentionpolicy(policyId, body)
+## patchRecordingMediaretentionpolicy
+
+> Policy patchRecordingMediaretentionpolicy(policyId, body)
 
 
 PATCH /api/v2/recording/mediaretentionpolicies/{policyId}
@@ -1903,7 +1894,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.RecordingApi();
@@ -1928,69 +1919,15 @@ apiInstance.patchRecordingMediaretentionpolicy(policyId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **policyId** | **String** | Policy ID |  |
  **body** | **Object** | Policy |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Policy**
 
-<a name="patchRecordingsScreensession"></a>
 
-# void patchRecordingsScreensession(recordingSessionId, opts)
+## postConversationRecordingAnnotations
 
-
-PATCH /api/v2/recordings/screensessions/{recordingSessionId}
-
-Update a screen recording session
-
-Requires ANY permissions:
-
-* recording:screenRecording:stop
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.RecordingApi();
-
-let recordingSessionId = "recordingSessionId_example"; // String | Screen recording session ID
-let opts = { 
-  'body': {} // Object | 
-};
-
-apiInstance.patchRecordingsScreensession(recordingSessionId, opts)
-  .then(() => {
-    console.log('patchRecordingsScreensession returned successfully.');
-  })
-  .catch((err) => {
-    console.log('There was a failure calling patchRecordingsScreensession');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **recordingSessionId** | **String** | Screen recording session ID |  |
- **body** | **Object** |  | [optional]  |
-{: class="table table-striped"}
-
-### Return type
-
-void (no response body)
-
-<a name="postConversationRecordingAnnotations"></a>
-
-# Annotation postConversationRecordingAnnotations(conversationId, recordingId, body)
+> Annotation postConversationRecordingAnnotations(conversationId, recordingId, body)
 
 
 POST /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations
@@ -2009,7 +1946,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.RecordingApi();
@@ -2036,15 +1973,15 @@ apiInstance.postConversationRecordingAnnotations(conversationId, recordingId, bo
  **conversationId** | **String** | Conversation ID |  |
  **recordingId** | **String** | Recording ID |  |
  **body** | **Object** | annotation |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Annotation**
 
-<a name="postRecordingBatchrequests"></a>
 
-# BatchDownloadJobSubmissionResult postRecordingBatchrequests(body)
+## postRecordingBatchrequests
+
+> BatchDownloadJobSubmissionResult postRecordingBatchrequests(body)
 
 
 POST /api/v2/recording/batchrequests
@@ -2064,7 +2001,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.RecordingApi();
@@ -2087,15 +2024,15 @@ apiInstance.postRecordingBatchrequests(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Job submission criteria |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **BatchDownloadJobSubmissionResult**
 
-<a name="postRecordingCrossplatformMediaretentionpolicies"></a>
 
-# CrossPlatformPolicy postRecordingCrossplatformMediaretentionpolicies(body)
+## postRecordingCrossplatformMediaretentionpolicies
+
+> CrossPlatformPolicy postRecordingCrossplatformMediaretentionpolicies(body)
 
 
 POST /api/v2/recording/crossplatform/mediaretentionpolicies
@@ -2116,7 +2053,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.RecordingApi();
@@ -2139,15 +2076,15 @@ apiInstance.postRecordingCrossplatformMediaretentionpolicies(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Policy |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **CrossPlatformPolicy**
 
-<a name="postRecordingJobs"></a>
 
-# RecordingJob postRecordingJobs(body)
+## postRecordingJobs
+
+> RecordingJob postRecordingJobs(body)
 
 
 POST /api/v2/recording/jobs
@@ -2168,7 +2105,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.RecordingApi();
@@ -2191,15 +2128,15 @@ apiInstance.postRecordingJobs(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **RecordingJob**
 
-<a name="postRecordingKeyconfigurations"></a>
 
-# RecordingEncryptionConfiguration postRecordingKeyconfigurations(body)
+## postRecordingKeyconfigurations
+
+> RecordingEncryptionConfiguration postRecordingKeyconfigurations(body)
 
 
 POST /api/v2/recording/keyconfigurations
@@ -2218,7 +2155,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.RecordingApi();
@@ -2241,15 +2178,15 @@ apiInstance.postRecordingKeyconfigurations(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Encryption Configuration |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **RecordingEncryptionConfiguration**
 
-<a name="postRecordingKeyconfigurationsValidate"></a>
 
-# RecordingEncryptionConfiguration postRecordingKeyconfigurationsValidate(body)
+## postRecordingKeyconfigurationsValidate
+
+> RecordingEncryptionConfiguration postRecordingKeyconfigurationsValidate(body)
 
 
 POST /api/v2/recording/keyconfigurations/validate
@@ -2268,7 +2205,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.RecordingApi();
@@ -2291,15 +2228,15 @@ apiInstance.postRecordingKeyconfigurationsValidate(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Encryption Configuration |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **RecordingEncryptionConfiguration**
 
-<a name="postRecordingLocalkeys"></a>
 
-# EncryptionKey postRecordingLocalkeys(body)
+## postRecordingLocalkeys
+
+> EncryptionKey postRecordingLocalkeys(body)
 
 
 POST /api/v2/recording/localkeys
@@ -2318,7 +2255,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.RecordingApi();
@@ -2341,15 +2278,15 @@ apiInstance.postRecordingLocalkeys(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Local Encryption body |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **EncryptionKey**
 
-<a name="postRecordingMediaretentionpolicies"></a>
 
-# Policy postRecordingMediaretentionpolicies(body)
+## postRecordingMediaretentionpolicies
+
+> Policy postRecordingMediaretentionpolicies(body)
 
 
 POST /api/v2/recording/mediaretentionpolicies
@@ -2370,7 +2307,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.RecordingApi();
@@ -2393,15 +2330,15 @@ apiInstance.postRecordingMediaretentionpolicies(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Policy |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Policy**
 
-<a name="postRecordingRecordingkeys"></a>
 
-# EncryptionKey postRecordingRecordingkeys()
+## postRecordingRecordingkeys
+
+> EncryptionKey postRecordingRecordingkeys()
 
 
 POST /api/v2/recording/recordingkeys
@@ -2420,7 +2357,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.RecordingApi();
@@ -2439,14 +2376,14 @@ apiInstance.postRecordingRecordingkeys()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **EncryptionKey**
 
-<a name="postRecordingUploadsReports"></a>
 
-# RecordingUploadReport postRecordingUploadsReports(body)
+## postRecordingUploadsReports
+
+> RecordingUploadReport postRecordingUploadsReports(body)
 
 
 POST /api/v2/recording/uploads/reports
@@ -2465,7 +2402,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.RecordingApi();
@@ -2488,15 +2425,15 @@ apiInstance.postRecordingUploadsReports(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Report parameters |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **RecordingUploadReport**
 
-<a name="postRecordingsDeletionprotection"></a>
 
-# [AddressableEntityRef] postRecordingsDeletionprotection(body)
+## postRecordingsDeletionprotection
+
+> [AddressableEntityRef] postRecordingsDeletionprotection(body)
 
 
 POST /api/v2/recordings/deletionprotection
@@ -2513,7 +2450,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.RecordingApi();
@@ -2536,15 +2473,15 @@ apiInstance.postRecordingsDeletionprotection(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | conversationIds |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **[AddressableEntityRef]**
 
-<a name="postRecordingsScreensessionsAcknowledge"></a>
 
-# void postRecordingsScreensessionsAcknowledge(body)
+## postRecordingsScreensessionsAcknowledge
+
+> void postRecordingsScreensessionsAcknowledge(body)
 
 
 POST /api/v2/recordings/screensessions/acknowledge
@@ -2561,7 +2498,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.RecordingApi();
@@ -2584,15 +2521,15 @@ apiInstance.postRecordingsScreensessionsAcknowledge(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | AcknowledgeScreenRecordingRequest |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="postRecordingsScreensessionsMetadata"></a>
 
-# void postRecordingsScreensessionsMetadata(body)
+## postRecordingsScreensessionsMetadata
+
+> void postRecordingsScreensessionsMetadata(body)
 
 
 POST /api/v2/recordings/screensessions/metadata
@@ -2609,7 +2546,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.RecordingApi();
@@ -2632,15 +2569,15 @@ apiInstance.postRecordingsScreensessionsMetadata(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | ScreenRecordingMetaDataRequest |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="putConversationRecording"></a>
 
-# Recording putConversationRecording(conversationId, recordingId, body, opts)
+## putConversationRecording
+
+> Recording putConversationRecording(conversationId, recordingId, body, opts)
 
 
 PUT /api/v2/conversations/{conversationId}/recordings/{recordingId}
@@ -2663,7 +2600,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.RecordingApi();
@@ -2694,15 +2631,15 @@ apiInstance.putConversationRecording(conversationId, recordingId, body, opts)
  **recordingId** | **String** | Recording ID |  |
  **body** | **Object** | recording |  |
  **clearExport** | **Boolean** | Whether to clear the pending export for the recording | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Recording**
 
-<a name="putConversationRecordingAnnotation"></a>
 
-# Annotation putConversationRecordingAnnotation(conversationId, recordingId, annotationId, body)
+## putConversationRecordingAnnotation
+
+> Annotation putConversationRecordingAnnotation(conversationId, recordingId, annotationId, body)
 
 
 PUT /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations/{annotationId}
@@ -2723,7 +2660,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.RecordingApi();
@@ -2752,15 +2689,15 @@ apiInstance.putConversationRecordingAnnotation(conversationId, recordingId, anno
  **recordingId** | **String** | Recording ID |  |
  **annotationId** | **String** | Annotation ID |  |
  **body** | **Object** | annotation |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Annotation**
 
-<a name="putOrphanrecording"></a>
 
-# Recording putOrphanrecording(orphanId, opts)
+## putOrphanrecording
+
+> Recording putOrphanrecording(orphanId, opts)
 
 
 PUT /api/v2/orphanrecordings/{orphanId}
@@ -2781,7 +2718,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.RecordingApi();
@@ -2808,15 +2745,15 @@ apiInstance.putOrphanrecording(orphanId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **orphanId** | **String** | Orphan ID |  |
  **body** | **Object** |  | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Recording**
 
-<a name="putRecordingCrossplatformMediaretentionpolicy"></a>
 
-# CrossPlatformPolicy putRecordingCrossplatformMediaretentionpolicy(policyId, body)
+## putRecordingCrossplatformMediaretentionpolicy
+
+> CrossPlatformPolicy putRecordingCrossplatformMediaretentionpolicy(policyId, body)
 
 
 PUT /api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}
@@ -2837,7 +2774,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.RecordingApi();
@@ -2862,15 +2799,15 @@ apiInstance.putRecordingCrossplatformMediaretentionpolicy(policyId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **policyId** | **String** | Policy ID |  |
  **body** | **Object** | Policy |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **CrossPlatformPolicy**
 
-<a name="putRecordingJob"></a>
 
-# RecordingJob putRecordingJob(jobId, body)
+## putRecordingJob
+
+> RecordingJob putRecordingJob(jobId, body)
 
 
 PUT /api/v2/recording/jobs/{jobId}
@@ -2893,7 +2830,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.RecordingApi();
@@ -2918,15 +2855,15 @@ apiInstance.putRecordingJob(jobId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
  **body** | **Object** | query |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **RecordingJob**
 
-<a name="putRecordingKeyconfiguration"></a>
 
-# RecordingEncryptionConfiguration putRecordingKeyconfiguration(keyConfigurationId, body)
+## putRecordingKeyconfiguration
+
+> RecordingEncryptionConfiguration putRecordingKeyconfiguration(keyConfigurationId, body)
 
 
 PUT /api/v2/recording/keyconfigurations/{keyConfigurationId}
@@ -2945,7 +2882,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.RecordingApi();
@@ -2970,15 +2907,15 @@ apiInstance.putRecordingKeyconfiguration(keyConfigurationId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **keyConfigurationId** | **String** | Key Configurations Id |  |
  **body** | **Object** | Encryption key configuration metadata |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **RecordingEncryptionConfiguration**
 
-<a name="putRecordingMediaretentionpolicy"></a>
 
-# Policy putRecordingMediaretentionpolicy(policyId, body)
+## putRecordingMediaretentionpolicy
+
+> Policy putRecordingMediaretentionpolicy(policyId, body)
 
 
 PUT /api/v2/recording/mediaretentionpolicies/{policyId}
@@ -2999,7 +2936,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.RecordingApi();
@@ -3024,15 +2961,15 @@ apiInstance.putRecordingMediaretentionpolicy(policyId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **policyId** | **String** | Policy ID |  |
  **body** | **Object** | Policy |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Policy**
 
-<a name="putRecordingRecordingkeysRotationschedule"></a>
 
-# KeyRotationSchedule putRecordingRecordingkeysRotationschedule(body)
+## putRecordingRecordingkeysRotationschedule
+
+> KeyRotationSchedule putRecordingRecordingkeysRotationschedule(body)
 
 
 PUT /api/v2/recording/recordingkeys/rotationschedule
@@ -3051,7 +2988,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.RecordingApi();
@@ -3074,15 +3011,15 @@ apiInstance.putRecordingRecordingkeysRotationschedule(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | KeyRotationSchedule |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **KeyRotationSchedule**
 
-<a name="putRecordingSettings"></a>
 
-# RecordingSettings putRecordingSettings(body)
+## putRecordingSettings
+
+> RecordingSettings putRecordingSettings(body)
 
 
 PUT /api/v2/recording/settings
@@ -3092,6 +3029,8 @@ Update the Recording Settings for the Organization
 Requires ANY permissions:
 
 * recording:settings:editScreenRecordings
+* recording:settings:editRegionalStorage
+* recording:settings:editUrlExpiration
 
 ### Example Usage
 
@@ -3101,7 +3040,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.RecordingApi();
@@ -3124,15 +3063,15 @@ apiInstance.putRecordingSettings(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Recording settings |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **RecordingSettings**
 
-<a name="putRecordingsDeletionprotection"></a>
 
-# void putRecordingsDeletionprotection(opts)
+## putRecordingsDeletionprotection
+
+> void putRecordingsDeletionprotection(opts)
 
 
 PUT /api/v2/recordings/deletionprotection
@@ -3152,7 +3091,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.RecordingApi();
@@ -3179,9 +3118,10 @@ apiInstance.putRecordingsDeletionprotection(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **protect** | **Boolean** | Check for apply, uncheck for revoke (each action requires the respective permission) | [optional] [default to true] |
  **body** | **Object** |  | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
+
+_purecloud-platform-client-v2@229.1.0_

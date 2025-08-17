@@ -1,26 +1,28 @@
----
-title: ObjectsApi
----
+# ObjectsApi
+
 # platformClient.ObjectsApi
 
 All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-[**deleteAuthorizationDivision**](ObjectsApi.html#deleteAuthorizationDivision) | **DELETE** /api/v2/authorization/divisions/{divisionId} | Delete a division.
-[**getAuthorizationDivision**](ObjectsApi.html#getAuthorizationDivision) | **GET** /api/v2/authorization/divisions/{divisionId} | Returns an authorization division.
-[**getAuthorizationDivisions**](ObjectsApi.html#getAuthorizationDivisions) | **GET** /api/v2/authorization/divisions | Retrieve a list of all divisions defined for the organization
-[**getAuthorizationDivisionsHome**](ObjectsApi.html#getAuthorizationDivisionsHome) | **GET** /api/v2/authorization/divisions/home | Retrieve the home division for the organization.
-[**getAuthorizationDivisionsLimit**](ObjectsApi.html#getAuthorizationDivisionsLimit) | **GET** /api/v2/authorization/divisions/limit | Returns the maximum allowed number of divisions.
-[**postAuthorizationDivisionObject**](ObjectsApi.html#postAuthorizationDivisionObject) | **POST** /api/v2/authorization/divisions/{divisionId}/objects/{objectType} | Assign a list of objects to a division
-[**postAuthorizationDivisionRestore**](ObjectsApi.html#postAuthorizationDivisionRestore) | **POST** /api/v2/authorization/divisions/{divisionId}/restore | Recreate a previously deleted division.
-[**postAuthorizationDivisions**](ObjectsApi.html#postAuthorizationDivisions) | **POST** /api/v2/authorization/divisions | Create a division.
-[**putAuthorizationDivision**](ObjectsApi.html#putAuthorizationDivision) | **PUT** /api/v2/authorization/divisions/{divisionId} | Update a division.
-{: class="table table-striped"}
+[**deleteAuthorizationDivision**](ObjectsApi#deleteAuthorizationDivision) | **DELETE** /api/v2/authorization/divisions/{divisionId} | Delete a division.
+[**getAuthorizationDivision**](ObjectsApi#getAuthorizationDivision) | **GET** /api/v2/authorization/divisions/{divisionId} | Returns an authorization division.
+[**getAuthorizationDivisions**](ObjectsApi#getAuthorizationDivisions) | **GET** /api/v2/authorization/divisions | Retrieve a list of all divisions defined for the organization
+[**getAuthorizationDivisionsDeleted**](ObjectsApi#getAuthorizationDivisionsDeleted) | **GET** /api/v2/authorization/divisions/deleted | Get a list of soft deleted divisions for the org
+[**getAuthorizationDivisionsHome**](ObjectsApi#getAuthorizationDivisionsHome) | **GET** /api/v2/authorization/divisions/home | Retrieve the home division for the organization.
+[**getAuthorizationDivisionsLimit**](ObjectsApi#getAuthorizationDivisionsLimit) | **GET** /api/v2/authorization/divisions/limit | Returns the maximum allowed number of divisions.
+[**getAuthorizationDivisionsQuery**](ObjectsApi#getAuthorizationDivisionsQuery) | **GET** /api/v2/authorization/divisions/query | Retrieve a list of all divisions defined for the organization with cursor
+[**postAuthorizationDivisionObject**](ObjectsApi#postAuthorizationDivisionObject) | **POST** /api/v2/authorization/divisions/{divisionId}/objects/{objectType} | Assign a list of objects to a division
+[**postAuthorizationDivisionRestore**](ObjectsApi#postAuthorizationDivisionRestore) | **POST** /api/v2/authorization/divisions/{divisionId}/restore | Recreate a previously deleted division.
+[**postAuthorizationDivisions**](ObjectsApi#postAuthorizationDivisions) | **POST** /api/v2/authorization/divisions | Create a division.
+[**putAuthorizationDivision**](ObjectsApi#putAuthorizationDivision) | **PUT** /api/v2/authorization/divisions/{divisionId} | Update a division.
 
-<a name="deleteAuthorizationDivision"></a>
 
-# void deleteAuthorizationDivision(divisionId, opts)
+
+## deleteAuthorizationDivision
+
+> void deleteAuthorizationDivision(divisionId, opts)
 
 
 DELETE /api/v2/authorization/divisions/{divisionId}
@@ -39,14 +41,14 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ObjectsApi();
 
 let divisionId = "divisionId_example"; // String | Division ID
 let opts = { 
-  'force': false // Boolean | Force delete this division as well as the grants and objects associated with it
+  'force': false // Boolean | DEPRECATED -  Force delete this division. Warning: This option may cause any remaining objects in this division to be inaccessible.
 };
 
 apiInstance.deleteAuthorizationDivision(divisionId, opts)
@@ -65,16 +67,16 @@ apiInstance.deleteAuthorizationDivision(divisionId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **divisionId** | **String** | Division ID |  |
- **force** | **Boolean** | Force delete this division as well as the grants and objects associated with it | [optional] [default to false] |
-{: class="table table-striped"}
+ **force** | **Boolean** | DEPRECATED -  Force delete this division. Warning: This option may cause any remaining objects in this division to be inaccessible. | [optional] [default to false] |
 
 ### Return type
 
 void (no response body)
 
-<a name="getAuthorizationDivision"></a>
 
-# AuthzDivision getAuthorizationDivision(divisionId, opts)
+## getAuthorizationDivision
+
+> AuthzDivision getAuthorizationDivision(divisionId, opts)
 
 
 GET /api/v2/authorization/divisions/{divisionId}
@@ -91,7 +93,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ObjectsApi();
@@ -118,15 +120,15 @@ apiInstance.getAuthorizationDivision(divisionId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **divisionId** | **String** | Division ID |  |
  **objectCount** | **Boolean** | Get count of objects in this division, grouped by type | [optional] [default to false]<br />**Values**: true, false |
-{: class="table table-striped"}
 
 ### Return type
 
 **AuthzDivision**
 
-<a name="getAuthorizationDivisions"></a>
 
-# AuthzDivisionEntityListing getAuthorizationDivisions(opts)
+## getAuthorizationDivisions
+
+> AuthzDivisionEntityListing getAuthorizationDivisions(opts)
 
 
 GET /api/v2/authorization/divisions
@@ -145,7 +147,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ObjectsApi();
@@ -186,15 +188,69 @@ apiInstance.getAuthorizationDivisions(opts)
  **objectCount** | **Boolean** | Include the count of objects contained in the division | [optional] [default to false] |
  **id** | **[String]** | Optionally request specific divisions by their IDs | [optional]  |
  **name** | **String** | Search term to filter by division name | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AuthzDivisionEntityListing**
 
-<a name="getAuthorizationDivisionsHome"></a>
 
-# AuthzDivision getAuthorizationDivisionsHome()
+## getAuthorizationDivisionsDeleted
+
+> AuthzDivisionEntityListing getAuthorizationDivisionsDeleted(opts)
+
+
+GET /api/v2/authorization/divisions/deleted
+
+Get a list of soft deleted divisions for the org
+
+Requires ANY permissions:
+
+* authorization:divisionDeleted:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ObjectsApi();
+
+let opts = { 
+  'pageNumber': 1, // Number | Page number
+  'pageSize': 25 // Number | Page size
+};
+
+apiInstance.getAuthorizationDivisionsDeleted(opts)
+  .then((data) => {
+    console.log(`getAuthorizationDivisionsDeleted success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getAuthorizationDivisionsDeleted');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+
+### Return type
+
+**AuthzDivisionEntityListing**
+
+
+## getAuthorizationDivisionsHome
+
+> AuthzDivision getAuthorizationDivisionsHome()
 
 
 GET /api/v2/authorization/divisions/home
@@ -213,7 +269,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ObjectsApi();
@@ -232,14 +288,14 @@ apiInstance.getAuthorizationDivisionsHome()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **AuthzDivision**
 
-<a name="getAuthorizationDivisionsLimit"></a>
 
-# **&#39;Number&#39;** getAuthorizationDivisionsLimit()
+## getAuthorizationDivisionsLimit
+
+> **&#39;Number&#39;** getAuthorizationDivisionsLimit()
 
 
 GET /api/v2/authorization/divisions/limit
@@ -256,7 +312,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ObjectsApi();
@@ -275,14 +331,74 @@ apiInstance.getAuthorizationDivisionsLimit()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **&#39;Number&#39;**
 
-<a name="postAuthorizationDivisionObject"></a>
 
-# void postAuthorizationDivisionObject(divisionId, objectType, body)
+## getAuthorizationDivisionsQuery
+
+> AuthzDivisionCursorListing getAuthorizationDivisionsQuery(opts)
+
+
+GET /api/v2/authorization/divisions/query
+
+Retrieve a list of all divisions defined for the organization with cursor
+
+Use "after" and "before" param to fetch next/previous page}
+
+Requires NO permissions:
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ObjectsApi();
+
+let opts = { 
+  'before': "before_example", // String | The cursor that points to the start of the set of entities that has been returned.
+  'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
+  'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 200.
+  'id': ["id_example"], // [String] | Optionally request specific divisions by their IDs
+  'name': "name_example" // String | Optionally request specific divisions by division name
+};
+
+apiInstance.getAuthorizationDivisionsQuery(opts)
+  .then((data) => {
+    console.log(`getAuthorizationDivisionsQuery success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getAuthorizationDivisionsQuery');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **before** | **String** | The cursor that points to the start of the set of entities that has been returned. | [optional]  |
+ **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
+ **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
+ **id** | **[String]** | Optionally request specific divisions by their IDs | [optional]  |
+ **name** | **String** | Optionally request specific divisions by division name | [optional]  |
+
+### Return type
+
+**AuthzDivisionCursorListing**
+
+
+## postAuthorizationDivisionObject
+
+> void postAuthorizationDivisionObject(divisionId, objectType, body)
 
 
 POST /api/v2/authorization/divisions/{divisionId}/objects/{objectType}
@@ -301,7 +417,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ObjectsApi();
@@ -328,15 +444,15 @@ apiInstance.postAuthorizationDivisionObject(divisionId, objectType, body)
  **divisionId** | **String** | Division ID |  |
  **objectType** | **String** | The type of the objects. Must be one of the valid object types | <br />**Values**: QUEUE, CAMPAIGN, CONTACTLIST, DNCLIST, EMAILCAMPAIGN, MESSAGINGCAMPAIGN, MANAGEMENTUNIT, BUSINESSUNIT, FLOW, FLOWMILESTONE, FLOWOUTCOME, USER, CALLROUTE, EMERGENCYGROUPS, ROUTINGSCHEDULES, ROUTINGSCHEDULEGROUPS, DATATABLES, TEAM, WORKBIN, WORKTYPE, EXTENSIONPOOL, SKILLGROUP, SCRIPT |
  **body** | **[String]** | Object Id List |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="postAuthorizationDivisionRestore"></a>
 
-# AuthzDivision postAuthorizationDivisionRestore(divisionId, body)
+## postAuthorizationDivisionRestore
+
+> AuthzDivision postAuthorizationDivisionRestore(divisionId, body)
 
 
 POST /api/v2/authorization/divisions/{divisionId}/restore
@@ -355,7 +471,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ObjectsApi();
@@ -380,15 +496,15 @@ apiInstance.postAuthorizationDivisionRestore(divisionId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **divisionId** | **String** | Division ID |  |
  **body** | **Object** | Recreated division data |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AuthzDivision**
 
-<a name="postAuthorizationDivisions"></a>
 
-# AuthzDivision postAuthorizationDivisions(body)
+## postAuthorizationDivisions
+
+> AuthzDivision postAuthorizationDivisions(body)
 
 
 POST /api/v2/authorization/divisions
@@ -408,7 +524,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ObjectsApi();
@@ -431,15 +547,15 @@ apiInstance.postAuthorizationDivisions(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Division |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AuthzDivision**
 
-<a name="putAuthorizationDivision"></a>
 
-# AuthzDivision putAuthorizationDivision(divisionId, body)
+## putAuthorizationDivision
+
+> AuthzDivision putAuthorizationDivision(divisionId, body)
 
 
 PUT /api/v2/authorization/divisions/{divisionId}
@@ -458,7 +574,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ObjectsApi();
@@ -483,9 +599,10 @@ apiInstance.putAuthorizationDivision(divisionId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **divisionId** | **String** | Division ID |  |
  **body** | **Object** | Updated division data |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AuthzDivision**
 
+
+_purecloud-platform-client-v2@229.1.0_

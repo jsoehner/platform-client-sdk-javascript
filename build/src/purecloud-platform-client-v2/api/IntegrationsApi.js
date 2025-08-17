@@ -5,7 +5,7 @@ class IntegrationsApi {
 	/**
 	 * Integrations service.
 	 * @module purecloud-platform-client-v2/api/IntegrationsApi
-	 * @version 174.0.0
+	 * @version 229.1.0
 	 */
 
 	/**
@@ -27,7 +27,7 @@ class IntegrationsApi {
 	 */
 	deleteIntegration(integrationId) { 
 		// verify the required parameter 'integrationId' is set
-		if (integrationId === undefined || integrationId === null) {
+		if (integrationId === undefined || integrationId === null || integrationId === '') {
 			throw 'Missing the required parameter "integrationId" when calling deleteIntegration';
 		}
 
@@ -52,7 +52,7 @@ class IntegrationsApi {
 	 */
 	deleteIntegrationsAction(actionId) { 
 		// verify the required parameter 'actionId' is set
-		if (actionId === undefined || actionId === null) {
+		if (actionId === undefined || actionId === null || actionId === '') {
 			throw 'Missing the required parameter "actionId" when calling deleteIntegrationsAction';
 		}
 
@@ -77,7 +77,7 @@ class IntegrationsApi {
 	 */
 	deleteIntegrationsActionDraft(actionId) { 
 		// verify the required parameter 'actionId' is set
-		if (actionId === undefined || actionId === null) {
+		if (actionId === undefined || actionId === null || actionId === '') {
 			throw 'Missing the required parameter "actionId" when calling deleteIntegrationsActionDraft';
 		}
 
@@ -102,7 +102,7 @@ class IntegrationsApi {
 	 */
 	deleteIntegrationsCredential(credentialId) { 
 		// verify the required parameter 'credentialId' is set
-		if (credentialId === undefined || credentialId === null) {
+		if (credentialId === undefined || credentialId === null || credentialId === '') {
 			throw 'Missing the required parameter "credentialId" when calling deleteIntegrationsCredential';
 		}
 
@@ -136,7 +136,7 @@ class IntegrationsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'integrationId' is set
-		if (integrationId === undefined || integrationId === null) {
+		if (integrationId === undefined || integrationId === null || integrationId === '') {
 			throw 'Missing the required parameter "integrationId" when calling getIntegration';
 		}
 
@@ -161,7 +161,7 @@ class IntegrationsApi {
 	 */
 	getIntegrationConfigCurrent(integrationId) { 
 		// verify the required parameter 'integrationId' is set
-		if (integrationId === undefined || integrationId === null) {
+		if (integrationId === undefined || integrationId === null || integrationId === '') {
 			throw 'Missing the required parameter "integrationId" when calling getIntegrationConfigCurrent';
 		}
 
@@ -214,13 +214,14 @@ class IntegrationsApi {
 	 * @param {String} actionId actionId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.expand Indicates a field in the response which should be expanded.
+	 * @param {Object} opts.flatten Indicates the response should be reformatted, based on Architect's flattening format. (default to false)
 	 * @param {Object} opts.includeConfig Return config in response. (default to false)
 	 */
 	getIntegrationsAction(actionId, opts) { 
 		opts = opts || {};
 		
 		// verify the required parameter 'actionId' is set
-		if (actionId === undefined || actionId === null) {
+		if (actionId === undefined || actionId === null || actionId === '') {
 			throw 'Missing the required parameter "actionId" when calling getIntegrationsAction';
 		}
 
@@ -228,7 +229,7 @@ class IntegrationsApi {
 			'/api/v2/integrations/actions/{actionId}', 
 			'GET', 
 			{ 'actionId': actionId },
-			{ 'expand': opts['expand'],'includeConfig': opts['includeConfig'] },
+			{ 'expand': opts['expand'],'flatten': opts['flatten'],'includeConfig': opts['includeConfig'] },
 			{  },
 			{  },
 			null, 
@@ -244,13 +245,14 @@ class IntegrationsApi {
 	 * @param {String} actionId actionId
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.expand Indicates a field in the response which should be expanded.
+	 * @param {Object} opts.flatten Indicates the response should be reformatted, based on Architect's flattening format. (default to false)
 	 * @param {Object} opts.includeConfig Return config in response. (default to false)
 	 */
 	getIntegrationsActionDraft(actionId, opts) { 
 		opts = opts || {};
 		
 		// verify the required parameter 'actionId' is set
-		if (actionId === undefined || actionId === null) {
+		if (actionId === undefined || actionId === null || actionId === '') {
 			throw 'Missing the required parameter "actionId" when calling getIntegrationsActionDraft';
 		}
 
@@ -258,7 +260,32 @@ class IntegrationsApi {
 			'/api/v2/integrations/actions/{actionId}/draft', 
 			'GET', 
 			{ 'actionId': actionId },
-			{ 'expand': opts['expand'],'includeConfig': opts['includeConfig'] },
+			{ 'expand': opts['expand'],'flatten': opts['flatten'],'includeConfig': opts['includeConfig'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get draft function settings for Action
+	 * 
+	 * @param {String} actionId actionId
+	 */
+	getIntegrationsActionDraftFunction(actionId) { 
+		// verify the required parameter 'actionId' is set
+		if (actionId === undefined || actionId === null || actionId === '') {
+			throw 'Missing the required parameter "actionId" when calling getIntegrationsActionDraftFunction';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/actions/{actionId}/draft/function', 
+			'GET', 
+			{ 'actionId': actionId },
+			{  },
 			{  },
 			{  },
 			null, 
@@ -273,14 +300,18 @@ class IntegrationsApi {
 	 * 
 	 * @param {String} actionId actionId
 	 * @param {String} fileName Name of schema file to be retrieved for this draft.
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.flatten Indicates the response should be reformatted, based on Architect's flattening format. (default to false)
 	 */
-	getIntegrationsActionDraftSchema(actionId, fileName) { 
+	getIntegrationsActionDraftSchema(actionId, fileName, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'actionId' is set
-		if (actionId === undefined || actionId === null) {
+		if (actionId === undefined || actionId === null || actionId === '') {
 			throw 'Missing the required parameter "actionId" when calling getIntegrationsActionDraftSchema';
 		}
 		// verify the required parameter 'fileName' is set
-		if (fileName === undefined || fileName === null) {
+		if (fileName === undefined || fileName === null || fileName === '') {
 			throw 'Missing the required parameter "fileName" when calling getIntegrationsActionDraftSchema';
 		}
 
@@ -288,7 +319,7 @@ class IntegrationsApi {
 			'/api/v2/integrations/actions/{actionId}/draft/schemas/{fileName}', 
 			'GET', 
 			{ 'actionId': actionId,'fileName': fileName },
-			{  },
+			{ 'flatten': opts['flatten'] },
 			{  },
 			{  },
 			null, 
@@ -306,11 +337,11 @@ class IntegrationsApi {
 	 */
 	getIntegrationsActionDraftTemplate(actionId, fileName) { 
 		// verify the required parameter 'actionId' is set
-		if (actionId === undefined || actionId === null) {
+		if (actionId === undefined || actionId === null || actionId === '') {
 			throw 'Missing the required parameter "actionId" when calling getIntegrationsActionDraftTemplate';
 		}
 		// verify the required parameter 'fileName' is set
-		if (fileName === undefined || fileName === null) {
+		if (fileName === undefined || fileName === null || fileName === '') {
 			throw 'Missing the required parameter "fileName" when calling getIntegrationsActionDraftTemplate';
 		}
 
@@ -335,7 +366,7 @@ class IntegrationsApi {
 	 */
 	getIntegrationsActionDraftValidation(actionId) { 
 		// verify the required parameter 'actionId' is set
-		if (actionId === undefined || actionId === null) {
+		if (actionId === undefined || actionId === null || actionId === '') {
 			throw 'Missing the required parameter "actionId" when calling getIntegrationsActionDraftValidation';
 		}
 
@@ -354,18 +385,47 @@ class IntegrationsApi {
 	}
 
 	/**
+	 * Get published function settings for Action
+	 * 
+	 * @param {String} actionId actionId
+	 */
+	getIntegrationsActionFunction(actionId) { 
+		// verify the required parameter 'actionId' is set
+		if (actionId === undefined || actionId === null || actionId === '') {
+			throw 'Missing the required parameter "actionId" when calling getIntegrationsActionFunction';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/actions/{actionId}/function', 
+			'GET', 
+			{ 'actionId': actionId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Retrieve schema for an action based on filename.
 	 * 
 	 * @param {String} actionId actionId
 	 * @param {String} fileName Name of schema file to be retrieved for this action.
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.flatten Indicates the response should be reformatted, based on Architect's flattening format. (default to false)
 	 */
-	getIntegrationsActionSchema(actionId, fileName) { 
+	getIntegrationsActionSchema(actionId, fileName, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'actionId' is set
-		if (actionId === undefined || actionId === null) {
+		if (actionId === undefined || actionId === null || actionId === '') {
 			throw 'Missing the required parameter "actionId" when calling getIntegrationsActionSchema';
 		}
 		// verify the required parameter 'fileName' is set
-		if (fileName === undefined || fileName === null) {
+		if (fileName === undefined || fileName === null || fileName === '') {
 			throw 'Missing the required parameter "fileName" when calling getIntegrationsActionSchema';
 		}
 
@@ -373,7 +433,7 @@ class IntegrationsApi {
 			'/api/v2/integrations/actions/{actionId}/schemas/{fileName}', 
 			'GET', 
 			{ 'actionId': actionId,'fileName': fileName },
-			{  },
+			{ 'flatten': opts['flatten'] },
 			{  },
 			{  },
 			null, 
@@ -391,11 +451,11 @@ class IntegrationsApi {
 	 */
 	getIntegrationsActionTemplate(actionId, fileName) { 
 		// verify the required parameter 'actionId' is set
-		if (actionId === undefined || actionId === null) {
+		if (actionId === undefined || actionId === null || actionId === '') {
 			throw 'Missing the required parameter "actionId" when calling getIntegrationsActionTemplate';
 		}
 		// verify the required parameter 'fileName' is set
-		if (fileName === undefined || fileName === null) {
+		if (fileName === undefined || fileName === null || fileName === '') {
 			throw 'Missing the required parameter "fileName" when calling getIntegrationsActionTemplate';
 		}
 
@@ -478,6 +538,51 @@ class IntegrationsApi {
 	}
 
 	/**
+	 * Retrieves the available mTLS client certificates in use. This endpoint will return inconsistent results while a certificate rotation is in progress.
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.status Indicates the validity of the certificate in question.
+	 * @param {Object} opts.type Indicates the type of the certificate.
+	 */
+	getIntegrationsActionsCertificates(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/actions/certificates', 
+			'GET', 
+			{  },
+			{ 'status': opts['status'],'type': opts['type'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Retrieves basic info about trusted root CA certificates
+	 * 
+	 */
+	getIntegrationsActionsCertificatesTruststore() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/actions/certificates/truststore', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Retrieves all action drafts associated with the filters passed in via query param.
 	 * 
 	 * @param {Object} opts Optional parameters
@@ -512,6 +617,123 @@ class IntegrationsApi {
 	}
 
 	/**
+	 * Get action function settings for Action
+	 * 
+	 */
+	getIntegrationsActionsFunctionsRuntimes() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/actions/functions/runtimes', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a specific Bot details
+	 * 
+	 * @param {String} integrationId The integration ID for this group of bots
+	 * @param {String} botId The bot ID for this bot
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.version Specific Version
+	 * getIntegrationsBotconnectorBot is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getIntegrationsBotconnectorBot(integrationId, botId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'integrationId' is set
+		if (integrationId === undefined || integrationId === null || integrationId === '') {
+			throw 'Missing the required parameter "integrationId" when calling getIntegrationsBotconnectorBot';
+		}
+		// verify the required parameter 'botId' is set
+		if (botId === undefined || botId === null || botId === '') {
+			throw 'Missing the required parameter "botId" when calling getIntegrationsBotconnectorBot';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/botconnectors/{integrationId}/bots/{botId}', 
+			'GET', 
+			{ 'integrationId': integrationId,'botId': botId },
+			{ 'version': opts['version'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the list of bots for this integration.
+	 * 
+	 * @param {String} integrationId The integration ID for this group of bots.
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * getIntegrationsBotconnectorBots is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getIntegrationsBotconnectorBots(integrationId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'integrationId' is set
+		if (integrationId === undefined || integrationId === null || integrationId === '') {
+			throw 'Missing the required parameter "integrationId" when calling getIntegrationsBotconnectorBots';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/botconnectors/{integrationId}/bots', 
+			'GET', 
+			{ 'integrationId': integrationId },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the summary list of bots for this integration.
+	 * 
+	 * @param {String} integrationId The integration ID for this group of bots.
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * getIntegrationsBotconnectorBotsSummaries is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getIntegrationsBotconnectorBotsSummaries(integrationId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'integrationId' is set
+		if (integrationId === undefined || integrationId === null || integrationId === '') {
+			throw 'Missing the required parameter "integrationId" when calling getIntegrationsBotconnectorBotsSummaries';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/botconnectors/{integrationId}/bots/summaries', 
+			'GET', 
+			{ 'integrationId': integrationId },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get a specific botConnector bot, plus versions, for this integration
 	 * 
 	 * @param {String} integrationId The integration ID for this group of bots
@@ -523,11 +745,11 @@ class IntegrationsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'integrationId' is set
-		if (integrationId === undefined || integrationId === null) {
+		if (integrationId === undefined || integrationId === null || integrationId === '') {
 			throw 'Missing the required parameter "integrationId" when calling getIntegrationsBotconnectorIntegrationIdBot';
 		}
 		// verify the required parameter 'botId' is set
-		if (botId === undefined || botId === null) {
+		if (botId === undefined || botId === null || botId === '') {
 			throw 'Missing the required parameter "botId" when calling getIntegrationsBotconnectorIntegrationIdBot';
 		}
 
@@ -558,11 +780,11 @@ class IntegrationsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'integrationId' is set
-		if (integrationId === undefined || integrationId === null) {
+		if (integrationId === undefined || integrationId === null || integrationId === '') {
 			throw 'Missing the required parameter "integrationId" when calling getIntegrationsBotconnectorIntegrationIdBotVersions';
 		}
 		// verify the required parameter 'botId' is set
-		if (botId === undefined || botId === null) {
+		if (botId === undefined || botId === null || botId === '') {
 			throw 'Missing the required parameter "botId" when calling getIntegrationsBotconnectorIntegrationIdBotVersions';
 		}
 
@@ -587,7 +809,7 @@ class IntegrationsApi {
 	 */
 	getIntegrationsBotconnectorIntegrationIdBots(integrationId) { 
 		// verify the required parameter 'integrationId' is set
-		if (integrationId === undefined || integrationId === null) {
+		if (integrationId === undefined || integrationId === null || integrationId === '') {
 			throw 'Missing the required parameter "integrationId" when calling getIntegrationsBotconnectorIntegrationIdBots';
 		}
 
@@ -617,7 +839,7 @@ class IntegrationsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'integrationId' is set
-		if (integrationId === undefined || integrationId === null) {
+		if (integrationId === undefined || integrationId === null || integrationId === '') {
 			throw 'Missing the required parameter "integrationId" when calling getIntegrationsBotconnectorIntegrationIdBotsSummaries';
 		}
 
@@ -666,7 +888,7 @@ class IntegrationsApi {
 
 	/**
 	 * UC integration client application configuration.
-	 * This endpoint returns basic UI configuration data for all Unified Communications integrations client applications enabled for the current organization.
+	 * Deprecated: Please use GET /integrations/unifiedcommunications/clientapps instead. This endpoint returns basic UI configuration data for all Unified Communications integrations client applications enabled for the current organization.
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize The total page size requested (default to 25)
 	 * @param {Number} opts.pageNumber The page number requested (default to 1)
@@ -674,6 +896,7 @@ class IntegrationsApi {
 	 * @param {Array.<String>} opts.expand variable name requested by expand list
 	 * @param {String} opts.nextPage next page token
 	 * @param {String} opts.previousPage Previous page token
+	 * @deprecated
 	 */
 	getIntegrationsClientappsUnifiedcommunications(opts) { 
 		opts = opts || {};
@@ -700,7 +923,7 @@ class IntegrationsApi {
 	 */
 	getIntegrationsCredential(credentialId) { 
 		// verify the required parameter 'credentialId' is set
-		if (credentialId === undefined || credentialId === null) {
+		if (credentialId === undefined || credentialId === null || credentialId === '') {
 			throw 'Missing the required parameter "credentialId" when calling getIntegrationsCredential';
 		}
 
@@ -720,10 +943,11 @@ class IntegrationsApi {
 
 	/**
 	 * List multiple sets of credentials
-	 * 
+	 * This endpoint is deprecated. Please see the Listing API (GET /api/v2/integrations/credentials/listing)
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @deprecated
 	 */
 	getIntegrationsCredentials(opts) { 
 		opts = opts || {};
@@ -734,6 +958,32 @@ class IntegrationsApi {
 			'GET', 
 			{  },
 			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * List multiple sets of credentials using cursor-based paging
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
+	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
+	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
+	 */
+	getIntegrationsCredentialsListing(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/credentials/listing', 
+			'GET', 
+			{  },
+			{ 'before': opts['before'],'after': opts['after'],'pageSize': opts['pageSize'] },
 			{  },
 			{  },
 			null, 
@@ -764,13 +1014,63 @@ class IntegrationsApi {
 	}
 
 	/**
+	 * Get a list of Audio Connector integrations
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 */
+	getIntegrationsSpeechAudioconnector(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/speech/audioconnector', 
+			'GET', 
+			{  },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get an Audio Connector integration
+	 * 
+	 * @param {String} integrationId The integration ID
+	 */
+	getIntegrationsSpeechAudioconnectorIntegrationId(integrationId) { 
+		// verify the required parameter 'integrationId' is set
+		if (integrationId === undefined || integrationId === null || integrationId === '') {
+			throw 'Missing the required parameter "integrationId" when calling getIntegrationsSpeechAudioconnectorIntegrationId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/speech/audioconnector/{integrationId}', 
+			'GET', 
+			{ 'integrationId': integrationId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get details about a Dialogflow agent
 	 * 
 	 * @param {String} agentId The agent ID
 	 */
 	getIntegrationsSpeechDialogflowAgent(agentId) { 
 		// verify the required parameter 'agentId' is set
-		if (agentId === undefined || agentId === null) {
+		if (agentId === undefined || agentId === null || agentId === '') {
 			throw 'Missing the required parameter "agentId" when calling getIntegrationsSpeechDialogflowAgent';
 		}
 
@@ -815,13 +1115,64 @@ class IntegrationsApi {
 	}
 
 	/**
+	 * Get details about a Dialogflow CX agent
+	 * 
+	 * @param {String} agentId The agent ID
+	 */
+	getIntegrationsSpeechDialogflowcxAgent(agentId) { 
+		// verify the required parameter 'agentId' is set
+		if (agentId === undefined || agentId === null || agentId === '') {
+			throw 'Missing the required parameter "agentId" when calling getIntegrationsSpeechDialogflowcxAgent';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/speech/dialogflowcx/agents/{agentId}', 
+			'GET', 
+			{ 'agentId': agentId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a list of Dialogflow CX agents in the customers' Google accounts
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {String} opts.name Filter on agent name
+	 */
+	getIntegrationsSpeechDialogflowcxAgents(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/speech/dialogflowcx/agents', 
+			'GET', 
+			{  },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'name': opts['name'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get details about a Lex bot alias
 	 * 
 	 * @param {String} aliasId The alias ID
 	 */
 	getIntegrationsSpeechLexBotAlias(aliasId) { 
 		// verify the required parameter 'aliasId' is set
-		if (aliasId === undefined || aliasId === null) {
+		if (aliasId === undefined || aliasId === null || aliasId === '') {
 			throw 'Missing the required parameter "aliasId" when calling getIntegrationsSpeechLexBotAlias';
 		}
 
@@ -853,7 +1204,7 @@ class IntegrationsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'botId' is set
-		if (botId === undefined || botId === null) {
+		if (botId === undefined || botId === null || botId === '') {
 			throw 'Missing the required parameter "botId" when calling getIntegrationsSpeechLexBotBotIdAliases';
 		}
 
@@ -898,6 +1249,89 @@ class IntegrationsApi {
 	}
 
 	/**
+	 * Get details about a Lex V2 bot alias
+	 * 
+	 * @param {String} aliasId The Alias ID
+	 */
+	getIntegrationsSpeechLexv2BotAlias(aliasId) { 
+		// verify the required parameter 'aliasId' is set
+		if (aliasId === undefined || aliasId === null || aliasId === '') {
+			throw 'Missing the required parameter "aliasId" when calling getIntegrationsSpeechLexv2BotAlias';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/speech/lexv2/bot/alias/{aliasId}', 
+			'GET', 
+			{ 'aliasId': aliasId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a list of aliases for a Lex V2 bot
+	 * 
+	 * @param {String} botId The Bot ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Object} opts.status Filter on alias status
+	 * @param {String} opts.name Filter on alias name
+	 */
+	getIntegrationsSpeechLexv2BotBotIdAliases(botId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'botId' is set
+		if (botId === undefined || botId === null || botId === '') {
+			throw 'Missing the required parameter "botId" when calling getIntegrationsSpeechLexv2BotBotIdAliases';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/speech/lexv2/bot/{botId}/aliases', 
+			'GET', 
+			{ 'botId': botId },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'status': opts['status'],'name': opts['name'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a list of Lex V2 bots
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {String} opts.name Filter on bot name
+	 */
+	getIntegrationsSpeechLexv2Bots(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/speech/lexv2/bots', 
+			'GET', 
+			{  },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'name': opts['name'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get a Nuance bot in the specified Integration
 	 * 
 	 * @param {String} nuanceIntegrationId The integration ID for this group of bots
@@ -905,17 +1339,16 @@ class IntegrationsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand expand
 	 * @param {Object} opts.targetChannel targetChannel
-	 * getIntegrationsSpeechNuanceNuanceIntegrationIdBot is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getIntegrationsSpeechNuanceNuanceIntegrationIdBot(nuanceIntegrationId, botId, opts) { 
 		opts = opts || {};
 		
 		// verify the required parameter 'nuanceIntegrationId' is set
-		if (nuanceIntegrationId === undefined || nuanceIntegrationId === null) {
+		if (nuanceIntegrationId === undefined || nuanceIntegrationId === null || nuanceIntegrationId === '') {
 			throw 'Missing the required parameter "nuanceIntegrationId" when calling getIntegrationsSpeechNuanceNuanceIntegrationIdBot';
 		}
 		// verify the required parameter 'botId' is set
-		if (botId === undefined || botId === null) {
+		if (botId === undefined || botId === null || botId === '') {
 			throw 'Missing the required parameter "botId" when calling getIntegrationsSpeechNuanceNuanceIntegrationIdBot';
 		}
 
@@ -939,19 +1372,18 @@ class IntegrationsApi {
 	 * @param {String} nuanceIntegrationId The integration ID for this group of bots
 	 * @param {String} botId The Nuance bot ID
 	 * @param {String} jobId The asynchronous job ID
-	 * getIntegrationsSpeechNuanceNuanceIntegrationIdBotJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getIntegrationsSpeechNuanceNuanceIntegrationIdBotJob(nuanceIntegrationId, botId, jobId) { 
 		// verify the required parameter 'nuanceIntegrationId' is set
-		if (nuanceIntegrationId === undefined || nuanceIntegrationId === null) {
+		if (nuanceIntegrationId === undefined || nuanceIntegrationId === null || nuanceIntegrationId === '') {
 			throw 'Missing the required parameter "nuanceIntegrationId" when calling getIntegrationsSpeechNuanceNuanceIntegrationIdBotJob';
 		}
 		// verify the required parameter 'botId' is set
-		if (botId === undefined || botId === null) {
+		if (botId === undefined || botId === null || botId === '') {
 			throw 'Missing the required parameter "botId" when calling getIntegrationsSpeechNuanceNuanceIntegrationIdBotJob';
 		}
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getIntegrationsSpeechNuanceNuanceIntegrationIdBotJob';
 		}
 
@@ -975,19 +1407,18 @@ class IntegrationsApi {
 	 * @param {String} nuanceIntegrationId The integration ID for this group of bots
 	 * @param {String} botId The Nuance bot ID
 	 * @param {String} jobId The asynchronous job ID
-	 * getIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResults(nuanceIntegrationId, botId, jobId) { 
 		// verify the required parameter 'nuanceIntegrationId' is set
-		if (nuanceIntegrationId === undefined || nuanceIntegrationId === null) {
+		if (nuanceIntegrationId === undefined || nuanceIntegrationId === null || nuanceIntegrationId === '') {
 			throw 'Missing the required parameter "nuanceIntegrationId" when calling getIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResults';
 		}
 		// verify the required parameter 'botId' is set
-		if (botId === undefined || botId === null) {
+		if (botId === undefined || botId === null || botId === '') {
 			throw 'Missing the required parameter "botId" when calling getIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResults';
 		}
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResults';
 		}
 
@@ -1013,13 +1444,12 @@ class IntegrationsApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Boolean} opts.onlyRegisteredBots Limit bots to the ones configured for Genesys Cloud usage (default to true)
-	 * getIntegrationsSpeechNuanceNuanceIntegrationIdBots is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getIntegrationsSpeechNuanceNuanceIntegrationIdBots(nuanceIntegrationId, opts) { 
 		opts = opts || {};
 		
 		// verify the required parameter 'nuanceIntegrationId' is set
-		if (nuanceIntegrationId === undefined || nuanceIntegrationId === null) {
+		if (nuanceIntegrationId === undefined || nuanceIntegrationId === null || nuanceIntegrationId === '') {
 			throw 'Missing the required parameter "nuanceIntegrationId" when calling getIntegrationsSpeechNuanceNuanceIntegrationIdBots';
 		}
 
@@ -1042,15 +1472,14 @@ class IntegrationsApi {
 	 * 
 	 * @param {String} nuanceIntegrationId The integration ID for this group of bots
 	 * @param {String} jobId The asynchronous job ID
-	 * getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJob(nuanceIntegrationId, jobId) { 
 		// verify the required parameter 'nuanceIntegrationId' is set
-		if (nuanceIntegrationId === undefined || nuanceIntegrationId === null) {
+		if (nuanceIntegrationId === undefined || nuanceIntegrationId === null || nuanceIntegrationId === '') {
 			throw 'Missing the required parameter "nuanceIntegrationId" when calling getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJob';
 		}
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJob';
 		}
 
@@ -1073,15 +1502,14 @@ class IntegrationsApi {
 	 * 
 	 * @param {String} nuanceIntegrationId The integration ID for this group of bots
 	 * @param {String} jobId The asynchronous job ID
-	 * getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResults(nuanceIntegrationId, jobId) { 
 		// verify the required parameter 'nuanceIntegrationId' is set
-		if (nuanceIntegrationId === undefined || nuanceIntegrationId === null) {
+		if (nuanceIntegrationId === undefined || nuanceIntegrationId === null || nuanceIntegrationId === '') {
 			throw 'Missing the required parameter "nuanceIntegrationId" when calling getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResults';
 		}
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResults';
 		}
 
@@ -1090,6 +1518,57 @@ class IntegrationsApi {
 			'GET', 
 			{ 'nuanceIntegrationId': nuanceIntegrationId,'jobId': jobId },
 			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get details about a STT engine
+	 * 
+	 * @param {String} engineId The engine ID
+	 */
+	getIntegrationsSpeechSttEngine(engineId) { 
+		// verify the required parameter 'engineId' is set
+		if (engineId === undefined || engineId === null || engineId === '') {
+			throw 'Missing the required parameter "engineId" when calling getIntegrationsSpeechSttEngine';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/speech/stt/engines/{engineId}', 
+			'GET', 
+			{ 'engineId': engineId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a list of STT engines enabled for org
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {String} opts.name Filter on engine name
+	 */
+	getIntegrationsSpeechSttEngines(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/speech/stt/engines', 
+			'GET', 
+			{  },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'name': opts['name'] },
 			{  },
 			{  },
 			null, 
@@ -1110,7 +1589,7 @@ class IntegrationsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'engineId' is set
-		if (engineId === undefined || engineId === null) {
+		if (engineId === undefined || engineId === null || engineId === '') {
 			throw 'Missing the required parameter "engineId" when calling getIntegrationsSpeechTtsEngine';
 		}
 
@@ -1136,11 +1615,11 @@ class IntegrationsApi {
 	 */
 	getIntegrationsSpeechTtsEngineVoice(engineId, voiceId) { 
 		// verify the required parameter 'engineId' is set
-		if (engineId === undefined || engineId === null) {
+		if (engineId === undefined || engineId === null || engineId === '') {
 			throw 'Missing the required parameter "engineId" when calling getIntegrationsSpeechTtsEngineVoice';
 		}
 		// verify the required parameter 'voiceId' is set
-		if (voiceId === undefined || voiceId === null) {
+		if (voiceId === undefined || voiceId === null || voiceId === '') {
 			throw 'Missing the required parameter "voiceId" when calling getIntegrationsSpeechTtsEngineVoice';
 		}
 
@@ -1170,7 +1649,7 @@ class IntegrationsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'engineId' is set
-		if (engineId === undefined || engineId === null) {
+		if (engineId === undefined || engineId === null || engineId === '') {
 			throw 'Missing the required parameter "engineId" when calling getIntegrationsSpeechTtsEngineVoices';
 		}
 
@@ -1243,7 +1722,7 @@ class IntegrationsApi {
 	 */
 	getIntegrationsType(typeId) { 
 		// verify the required parameter 'typeId' is set
-		if (typeId === undefined || typeId === null) {
+		if (typeId === undefined || typeId === null || typeId === '') {
 			throw 'Missing the required parameter "typeId" when calling getIntegrationsType';
 		}
 
@@ -1269,11 +1748,11 @@ class IntegrationsApi {
 	 */
 	getIntegrationsTypeConfigschema(typeId, configType) { 
 		// verify the required parameter 'typeId' is set
-		if (typeId === undefined || typeId === null) {
+		if (typeId === undefined || typeId === null || typeId === '') {
 			throw 'Missing the required parameter "typeId" when calling getIntegrationsTypeConfigschema';
 		}
 		// verify the required parameter 'configType' is set
-		if (configType === undefined || configType === null) {
+		if (configType === undefined || configType === null || configType === '') {
 			throw 'Missing the required parameter "configType" when calling getIntegrationsTypeConfigschema';
 		}
 
@@ -1308,6 +1787,60 @@ class IntegrationsApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/integrations/types', 
+			'GET', 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * UC integration client application configuration.
+	 * This endpoint returns basic UI configuration data for the specified Unified Communications integration client application.
+	 * @param {String} ucIntegrationId 3rd Party Service Type
+	 */
+	getIntegrationsUnifiedcommunicationsClientapp(ucIntegrationId) { 
+		// verify the required parameter 'ucIntegrationId' is set
+		if (ucIntegrationId === undefined || ucIntegrationId === null || ucIntegrationId === '') {
+			throw 'Missing the required parameter "ucIntegrationId" when calling getIntegrationsUnifiedcommunicationsClientapp';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/unifiedcommunications/clientapps/{ucIntegrationId}', 
+			'GET', 
+			{ 'ucIntegrationId': ucIntegrationId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * List UC integration client application configurations.
+	 * This endpoint returns basic UI configuration data for all Unified Communications integrations client applications enabled.
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize The total page size requested (default to 25)
+	 * @param {Number} opts.pageNumber The page number requested (default to 1)
+	 * @param {String} opts.sortBy variable name requested to sort by
+	 * @param {Array.<String>} opts.expand variable name requested by expand list
+	 * @param {String} opts.nextPage next page token
+	 * @param {String} opts.previousPage Previous page token
+	 */
+	getIntegrationsUnifiedcommunicationsClientapps(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/unifiedcommunications/clientapps', 
 			'GET', 
 			{  },
 			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'] },
@@ -1367,7 +1900,7 @@ class IntegrationsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'integrationId' is set
-		if (integrationId === undefined || integrationId === null) {
+		if (integrationId === undefined || integrationId === null || integrationId === '') {
 			throw 'Missing the required parameter "integrationId" when calling patchIntegration';
 		}
 
@@ -1393,7 +1926,7 @@ class IntegrationsApi {
 	 */
 	patchIntegrationsAction(actionId, body) { 
 		// verify the required parameter 'actionId' is set
-		if (actionId === undefined || actionId === null) {
+		if (actionId === undefined || actionId === null || actionId === '') {
 			throw 'Missing the required parameter "actionId" when calling patchIntegrationsAction';
 		}
 		// verify the required parameter 'body' is set
@@ -1423,7 +1956,7 @@ class IntegrationsApi {
 	 */
 	patchIntegrationsActionDraft(actionId, body) { 
 		// verify the required parameter 'actionId' is set
-		if (actionId === undefined || actionId === null) {
+		if (actionId === undefined || actionId === null || actionId === '') {
 			throw 'Missing the required parameter "actionId" when calling patchIntegrationsActionDraft';
 		}
 		// verify the required parameter 'body' is set
@@ -1476,7 +2009,7 @@ class IntegrationsApi {
 	 */
 	postIntegrationsActionDraft(actionId) { 
 		// verify the required parameter 'actionId' is set
-		if (actionId === undefined || actionId === null) {
+		if (actionId === undefined || actionId === null || actionId === '') {
 			throw 'Missing the required parameter "actionId" when calling postIntegrationsActionDraft';
 		}
 
@@ -1495,6 +2028,36 @@ class IntegrationsApi {
 	}
 
 	/**
+	 * Create upload presigned URL for draft function package file.
+	 * 
+	 * @param {String} actionId actionId
+	 * @param {Object} body Input used to request URL upload.
+	 */
+	postIntegrationsActionDraftFunctionUpload(actionId, body) { 
+		// verify the required parameter 'actionId' is set
+		if (actionId === undefined || actionId === null || actionId === '') {
+			throw 'Missing the required parameter "actionId" when calling postIntegrationsActionDraftFunctionUpload';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postIntegrationsActionDraftFunctionUpload';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/actions/{actionId}/draft/function/upload', 
+			'POST', 
+			{ 'actionId': actionId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Publish a Draft and make it the active Action configuration
 	 * 
 	 * @param {String} actionId actionId
@@ -1502,7 +2065,7 @@ class IntegrationsApi {
 	 */
 	postIntegrationsActionDraftPublish(actionId, body) { 
 		// verify the required parameter 'actionId' is set
-		if (actionId === undefined || actionId === null) {
+		if (actionId === undefined || actionId === null || actionId === '') {
 			throw 'Missing the required parameter "actionId" when calling postIntegrationsActionDraftPublish';
 		}
 		// verify the required parameter 'body' is set
@@ -1529,10 +2092,14 @@ class IntegrationsApi {
 	 * 
 	 * @param {String} actionId actionId
 	 * @param {Object.<String, {String: Object}>} body Map of parameters used for variable substitution.
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.flatten Indicates the response should be reformatted, based on Architect's flattening format. (default to false)
 	 */
-	postIntegrationsActionDraftTest(actionId, body) { 
+	postIntegrationsActionDraftTest(actionId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'actionId' is set
-		if (actionId === undefined || actionId === null) {
+		if (actionId === undefined || actionId === null || actionId === '') {
 			throw 'Missing the required parameter "actionId" when calling postIntegrationsActionDraftTest';
 		}
 		// verify the required parameter 'body' is set
@@ -1544,7 +2111,7 @@ class IntegrationsApi {
 			'/api/v2/integrations/actions/{actionId}/draft/test', 
 			'POST', 
 			{ 'actionId': actionId },
-			{  },
+			{ 'flatten': opts['flatten'] },
 			{  },
 			{  },
 			body, 
@@ -1559,10 +2126,14 @@ class IntegrationsApi {
 	 * 
 	 * @param {String} actionId actionId
 	 * @param {Object.<String, {String: Object}>} body Map of parameters used for variable substitution.
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.flatten Indicates the response should be reformatted, based on Architect's flattening format. (default to false)
 	 */
-	postIntegrationsActionExecute(actionId, body) { 
+	postIntegrationsActionExecute(actionId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'actionId' is set
-		if (actionId === undefined || actionId === null) {
+		if (actionId === undefined || actionId === null || actionId === '') {
 			throw 'Missing the required parameter "actionId" when calling postIntegrationsActionExecute';
 		}
 		// verify the required parameter 'body' is set
@@ -1574,7 +2145,7 @@ class IntegrationsApi {
 			'/api/v2/integrations/actions/{actionId}/execute', 
 			'POST', 
 			{ 'actionId': actionId },
-			{  },
+			{ 'flatten': opts['flatten'] },
 			{  },
 			{  },
 			body, 
@@ -1589,10 +2160,14 @@ class IntegrationsApi {
 	 * 
 	 * @param {String} actionId actionId
 	 * @param {Object.<String, {String: Object}>} body Map of parameters used for variable substitution.
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.flatten Indicates the response should be reformatted, based on Architect's flattening format. (default to false)
 	 */
-	postIntegrationsActionTest(actionId, body) { 
+	postIntegrationsActionTest(actionId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'actionId' is set
-		if (actionId === undefined || actionId === null) {
+		if (actionId === undefined || actionId === null || actionId === '') {
 			throw 'Missing the required parameter "actionId" when calling postIntegrationsActionTest';
 		}
 		// verify the required parameter 'body' is set
@@ -1604,7 +2179,7 @@ class IntegrationsApi {
 			'/api/v2/integrations/actions/{actionId}/test', 
 			'POST', 
 			{ 'actionId': actionId },
-			{  },
+			{ 'flatten': opts['flatten'] },
 			{  },
 			{  },
 			body, 
@@ -1615,7 +2190,7 @@ class IntegrationsApi {
 	}
 
 	/**
-	 * Create a new Action
+	 * Create a new Action. Not supported for 'Function Integration' actions. Function integrations must be created as drafts to allow managing of uploading required ZIP function package before they may be used as a published action.
 	 * 
 	 * @param {Object} body Input used to create Action.
 	 */
@@ -1665,6 +2240,58 @@ class IntegrationsApi {
 	}
 
 	/**
+	 * Send an incoming message to the bot.
+	 * 
+	 * @param {Object} body Incoming Message Request
+	 * postIntegrationsBotconnectorsIncomingMessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postIntegrationsBotconnectorsIncomingMessages(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postIntegrationsBotconnectorsIncomingMessages';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/botconnectors/incoming/messages', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Send an outgoing message to the end user.
+	 * 
+	 * @param {Object} body Outgoing Message Request
+	 * postIntegrationsBotconnectorsOutgoingMessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postIntegrationsBotconnectorsOutgoingMessages(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postIntegrationsBotconnectorsOutgoingMessages';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/botconnectors/outgoing/messages', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Create a set of credentials
 	 * 
 	 * @param {Object} opts Optional parameters
@@ -1696,17 +2323,16 @@ class IntegrationsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand expand
 	 * @param {String} opts.body targetChannel
-	 * postIntegrationsSpeechNuanceNuanceIntegrationIdBotJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postIntegrationsSpeechNuanceNuanceIntegrationIdBotJobs(nuanceIntegrationId, botId, opts) { 
 		opts = opts || {};
 		
 		// verify the required parameter 'nuanceIntegrationId' is set
-		if (nuanceIntegrationId === undefined || nuanceIntegrationId === null) {
+		if (nuanceIntegrationId === undefined || nuanceIntegrationId === null || nuanceIntegrationId === '') {
 			throw 'Missing the required parameter "nuanceIntegrationId" when calling postIntegrationsSpeechNuanceNuanceIntegrationIdBotJobs';
 		}
 		// verify the required parameter 'botId' is set
-		if (botId === undefined || botId === null) {
+		if (botId === undefined || botId === null || botId === '') {
 			throw 'Missing the required parameter "botId" when calling postIntegrationsSpeechNuanceNuanceIntegrationIdBotJobs';
 		}
 
@@ -1732,13 +2358,12 @@ class IntegrationsApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Boolean} opts.onlyRegisteredBots Limit bots to the ones configured for Genesys Cloud usage (default to true)
-	 * postIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobs(nuanceIntegrationId, opts) { 
 		opts = opts || {};
 		
 		// verify the required parameter 'nuanceIntegrationId' is set
-		if (nuanceIntegrationId === undefined || nuanceIntegrationId === null) {
+		if (nuanceIntegrationId === undefined || nuanceIntegrationId === null || nuanceIntegrationId === '') {
 			throw 'Missing the required parameter "nuanceIntegrationId" when calling postIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobs';
 		}
 
@@ -1761,11 +2386,10 @@ class IntegrationsApi {
 	 * 
 	 * @param {String} nuanceIntegrationId The integration ID for this group of bots
 	 * @param {Object} settings 
-	 * postIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidate(nuanceIntegrationId, settings) { 
 		// verify the required parameter 'nuanceIntegrationId' is set
-		if (nuanceIntegrationId === undefined || nuanceIntegrationId === null) {
+		if (nuanceIntegrationId === undefined || nuanceIntegrationId === null || nuanceIntegrationId === '') {
 			throw 'Missing the required parameter "nuanceIntegrationId" when calling postIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidate';
 		}
 		// verify the required parameter 'settings' is set
@@ -1788,6 +2412,36 @@ class IntegrationsApi {
 	}
 
 	/**
+	 * Invoke Webhook
+	 * 
+	 * @param {String} tokenId The token of the webhook to be invoked
+	 * @param {Object.<String, {String: Object}>} body Webhook Invocation Payload
+	 */
+	postIntegrationsWebhookEvents(tokenId, body) { 
+		// verify the required parameter 'tokenId' is set
+		if (tokenId === undefined || tokenId === null || tokenId === '') {
+			throw 'Missing the required parameter "tokenId" when calling postIntegrationsWebhookEvents';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postIntegrationsWebhookEvents';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/webhooks/{tokenId}/events', 
+			'POST', 
+			{ 'tokenId': tokenId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Update integration configuration.
 	 * 
 	 * @param {String} integrationId Integration Id
@@ -1798,7 +2452,7 @@ class IntegrationsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'integrationId' is set
-		if (integrationId === undefined || integrationId === null) {
+		if (integrationId === undefined || integrationId === null || integrationId === '') {
 			throw 'Missing the required parameter "integrationId" when calling putIntegrationConfigCurrent';
 		}
 
@@ -1817,6 +2471,36 @@ class IntegrationsApi {
 	}
 
 	/**
+	 * Update draft function settings.
+	 * 
+	 * @param {String} actionId actionId
+	 * @param {Object} body Input used to update function settings.
+	 */
+	putIntegrationsActionDraftFunction(actionId, body) { 
+		// verify the required parameter 'actionId' is set
+		if (actionId === undefined || actionId === null || actionId === '') {
+			throw 'Missing the required parameter "actionId" when calling putIntegrationsActionDraftFunction';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putIntegrationsActionDraftFunction';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/integrations/actions/{actionId}/draft/function', 
+			'PUT', 
+			{ 'actionId': actionId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Set a list of botConnector bots plus versions for this integration
 	 * 
 	 * @param {String} integrationId The integration ID for this group of bots
@@ -1824,7 +2508,7 @@ class IntegrationsApi {
 	 */
 	putIntegrationsBotconnectorIntegrationIdBots(integrationId, botList) { 
 		// verify the required parameter 'integrationId' is set
-		if (integrationId === undefined || integrationId === null) {
+		if (integrationId === undefined || integrationId === null || integrationId === '') {
 			throw 'Missing the required parameter "integrationId" when calling putIntegrationsBotconnectorIntegrationIdBots';
 		}
 		// verify the required parameter 'botList' is set
@@ -1857,7 +2541,7 @@ class IntegrationsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'credentialId' is set
-		if (credentialId === undefined || credentialId === null) {
+		if (credentialId === undefined || credentialId === null || credentialId === '') {
 			throw 'Missing the required parameter "credentialId" when calling putIntegrationsCredential';
 		}
 
@@ -1880,11 +2564,10 @@ class IntegrationsApi {
 	 * 
 	 * @param {String} nuanceIntegrationId The integration ID for this group of bots
 	 * @param {Object} settings 
-	 * putIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	putIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettings(nuanceIntegrationId, settings) { 
 		// verify the required parameter 'nuanceIntegrationId' is set
-		if (nuanceIntegrationId === undefined || nuanceIntegrationId === null) {
+		if (nuanceIntegrationId === undefined || nuanceIntegrationId === null || nuanceIntegrationId === '') {
 			throw 'Missing the required parameter "nuanceIntegrationId" when calling putIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettings';
 		}
 		// verify the required parameter 'settings' is set
@@ -1939,7 +2622,7 @@ class IntegrationsApi {
 	 */
 	putIntegrationsUnifiedcommunicationThirdpartypresences(ucIntegrationId, body) { 
 		// verify the required parameter 'ucIntegrationId' is set
-		if (ucIntegrationId === undefined || ucIntegrationId === null) {
+		if (ucIntegrationId === undefined || ucIntegrationId === null || ucIntegrationId === '') {
 			throw 'Missing the required parameter "ucIntegrationId" when calling putIntegrationsUnifiedcommunicationThirdpartypresences';
 		}
 		// verify the required parameter 'body' is set

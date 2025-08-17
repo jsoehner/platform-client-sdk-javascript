@@ -1,80 +1,94 @@
----
-title: GamificationApi
----
+# GamificationApi
+
 # platformClient.GamificationApi
 
 All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-[**deleteEmployeeperformanceExternalmetricsDefinition**](GamificationApi.html#deleteEmployeeperformanceExternalmetricsDefinition) | **DELETE** /api/v2/employeeperformance/externalmetrics/definitions/{metricId} | Delete an External Metric Definition
-[**getEmployeeperformanceExternalmetricsDefinition**](GamificationApi.html#getEmployeeperformanceExternalmetricsDefinition) | **GET** /api/v2/employeeperformance/externalmetrics/definitions/{metricId} | Get an External Metric Definition
-[**getEmployeeperformanceExternalmetricsDefinitions**](GamificationApi.html#getEmployeeperformanceExternalmetricsDefinitions) | **GET** /api/v2/employeeperformance/externalmetrics/definitions | Get a list of External Metric Definitions of an organization, sorted by name in ascending order
-[**getGamificationInsights**](GamificationApi.html#getGamificationInsights) | **GET** /api/v2/gamification/insights | Get insights summary
-[**getGamificationInsightsDetails**](GamificationApi.html#getGamificationInsightsDetails) | **GET** /api/v2/gamification/insights/details | Get insights details for the current user
-[**getGamificationInsightsGroupsTrends**](GamificationApi.html#getGamificationInsightsGroupsTrends) | **GET** /api/v2/gamification/insights/groups/trends | Get insights overall trend for the current user
-[**getGamificationInsightsGroupsTrendsAll**](GamificationApi.html#getGamificationInsightsGroupsTrendsAll) | **GET** /api/v2/gamification/insights/groups/trends/all | Get insights overall trend
-[**getGamificationInsightsMembers**](GamificationApi.html#getGamificationInsightsMembers) | **GET** /api/v2/gamification/insights/members | Query users in a profile during a period of time
-[**getGamificationInsightsTrends**](GamificationApi.html#getGamificationInsightsTrends) | **GET** /api/v2/gamification/insights/trends | Get insights user trend for the current user
-[**getGamificationInsightsUserDetails**](GamificationApi.html#getGamificationInsightsUserDetails) | **GET** /api/v2/gamification/insights/users/{userId}/details | Get insights details for the user
-[**getGamificationInsightsUserTrends**](GamificationApi.html#getGamificationInsightsUserTrends) | **GET** /api/v2/gamification/insights/users/{userId}/trends | Get insights user trend for the user
-[**getGamificationLeaderboard**](GamificationApi.html#getGamificationLeaderboard) | **GET** /api/v2/gamification/leaderboard | Leaderboard of the requesting user's division or performance profile
-[**getGamificationLeaderboardAll**](GamificationApi.html#getGamificationLeaderboardAll) | **GET** /api/v2/gamification/leaderboard/all | Leaderboard by filter type
-[**getGamificationLeaderboardAllBestpoints**](GamificationApi.html#getGamificationLeaderboardAllBestpoints) | **GET** /api/v2/gamification/leaderboard/all/bestpoints | Best Points by division or performance profile
-[**getGamificationLeaderboardBestpoints**](GamificationApi.html#getGamificationLeaderboardBestpoints) | **GET** /api/v2/gamification/leaderboard/bestpoints | Best Points of the requesting user's current performance profile or division
-[**getGamificationMetricdefinition**](GamificationApi.html#getGamificationMetricdefinition) | **GET** /api/v2/gamification/metricdefinitions/{metricDefinitionId} | Metric definition by id
-[**getGamificationMetricdefinitions**](GamificationApi.html#getGamificationMetricdefinitions) | **GET** /api/v2/gamification/metricdefinitions | All metric definitions
-[**getGamificationProfile**](GamificationApi.html#getGamificationProfile) | **GET** /api/v2/gamification/profiles/{profileId} | Performance profile by id
-[**getGamificationProfileMembers**](GamificationApi.html#getGamificationProfileMembers) | **GET** /api/v2/gamification/profiles/{profileId}/members | Members of a given performance profile
-[**getGamificationProfileMetric**](GamificationApi.html#getGamificationProfileMetric) | **GET** /api/v2/gamification/profiles/{profileId}/metrics/{metricId} | Performance profile gamified metric by id
-[**getGamificationProfileMetrics**](GamificationApi.html#getGamificationProfileMetrics) | **GET** /api/v2/gamification/profiles/{profileId}/metrics | All gamified metrics for a given performance profile
-[**getGamificationProfileMetricsObjectivedetails**](GamificationApi.html#getGamificationProfileMetricsObjectivedetails) | **GET** /api/v2/gamification/profiles/{profileId}/metrics/objectivedetails | All metrics for a given performance profile with objective details such as order and maxPoints
-[**getGamificationProfiles**](GamificationApi.html#getGamificationProfiles) | **GET** /api/v2/gamification/profiles | All performance profiles
-[**getGamificationProfilesUser**](GamificationApi.html#getGamificationProfilesUser) | **GET** /api/v2/gamification/profiles/users/{userId} | Performance profile of a user
-[**getGamificationProfilesUsersMe**](GamificationApi.html#getGamificationProfilesUsersMe) | **GET** /api/v2/gamification/profiles/users/me | Performance profile of the requesting user
-[**getGamificationScorecards**](GamificationApi.html#getGamificationScorecards) | **GET** /api/v2/gamification/scorecards | Workday performance metrics of the requesting user
-[**getGamificationScorecardsAttendance**](GamificationApi.html#getGamificationScorecardsAttendance) | **GET** /api/v2/gamification/scorecards/attendance | Attendance status metrics of the requesting user
-[**getGamificationScorecardsBestpoints**](GamificationApi.html#getGamificationScorecardsBestpoints) | **GET** /api/v2/gamification/scorecards/bestpoints | Best points of the requesting user
-[**getGamificationScorecardsPointsAlltime**](GamificationApi.html#getGamificationScorecardsPointsAlltime) | **GET** /api/v2/gamification/scorecards/points/alltime | All-time points of the requesting user
-[**getGamificationScorecardsPointsAverage**](GamificationApi.html#getGamificationScorecardsPointsAverage) | **GET** /api/v2/gamification/scorecards/points/average | Average points of the requesting user's division or performance profile
-[**getGamificationScorecardsPointsTrends**](GamificationApi.html#getGamificationScorecardsPointsTrends) | **GET** /api/v2/gamification/scorecards/points/trends | Points trends of the requesting user
-[**getGamificationScorecardsProfileMetricUserValuesTrends**](GamificationApi.html#getGamificationScorecardsProfileMetricUserValuesTrends) | **GET** /api/v2/gamification/scorecards/profiles/{profileId}/metrics/{metricId}/users/{userId}/values/trends | Average performance values trends by metric of a user
-[**getGamificationScorecardsProfileMetricUsersValuesTrends**](GamificationApi.html#getGamificationScorecardsProfileMetricUsersValuesTrends) | **GET** /api/v2/gamification/scorecards/profiles/{profileId}/metrics/{metricId}/users/values/trends | Average performance values trends by metric of a division or a performance profile
-[**getGamificationScorecardsProfileMetricValuesTrends**](GamificationApi.html#getGamificationScorecardsProfileMetricValuesTrends) | **GET** /api/v2/gamification/scorecards/profiles/{profileId}/metrics/{metricId}/values/trends | Average performance values trends by metric of the requesting user
-[**getGamificationScorecardsUser**](GamificationApi.html#getGamificationScorecardsUser) | **GET** /api/v2/gamification/scorecards/users/{userId} | Workday performance metrics for a user
-[**getGamificationScorecardsUserAttendance**](GamificationApi.html#getGamificationScorecardsUserAttendance) | **GET** /api/v2/gamification/scorecards/users/{userId}/attendance | Attendance status metrics for a user
-[**getGamificationScorecardsUserBestpoints**](GamificationApi.html#getGamificationScorecardsUserBestpoints) | **GET** /api/v2/gamification/scorecards/users/{userId}/bestpoints | Best points of a user
-[**getGamificationScorecardsUserPointsAlltime**](GamificationApi.html#getGamificationScorecardsUserPointsAlltime) | **GET** /api/v2/gamification/scorecards/users/{userId}/points/alltime | All-time points for a user
-[**getGamificationScorecardsUserPointsTrends**](GamificationApi.html#getGamificationScorecardsUserPointsTrends) | **GET** /api/v2/gamification/scorecards/users/{userId}/points/trends | Points trend for a user
-[**getGamificationScorecardsUserValuesTrends**](GamificationApi.html#getGamificationScorecardsUserValuesTrends) | **GET** /api/v2/gamification/scorecards/users/{userId}/values/trends | Values trends of a user
-[**getGamificationScorecardsUsersPointsAverage**](GamificationApi.html#getGamificationScorecardsUsersPointsAverage) | **GET** /api/v2/gamification/scorecards/users/points/average | Workday average points by target group
-[**getGamificationScorecardsUsersValuesAverage**](GamificationApi.html#getGamificationScorecardsUsersValuesAverage) | **GET** /api/v2/gamification/scorecards/users/values/average | Workday average values by target group
-[**getGamificationScorecardsUsersValuesTrends**](GamificationApi.html#getGamificationScorecardsUsersValuesTrends) | **GET** /api/v2/gamification/scorecards/users/values/trends | Values trend by target group
-[**getGamificationScorecardsValuesAverage**](GamificationApi.html#getGamificationScorecardsValuesAverage) | **GET** /api/v2/gamification/scorecards/values/average | Average values of the requesting user's division or performance profile
-[**getGamificationScorecardsValuesTrends**](GamificationApi.html#getGamificationScorecardsValuesTrends) | **GET** /api/v2/gamification/scorecards/values/trends | Values trends of the requesting user or group
-[**getGamificationStatus**](GamificationApi.html#getGamificationStatus) | **GET** /api/v2/gamification/status | Gamification activation status
-[**getGamificationTemplate**](GamificationApi.html#getGamificationTemplate) | **GET** /api/v2/gamification/templates/{templateId} | Objective template by id
-[**getGamificationTemplates**](GamificationApi.html#getGamificationTemplates) | **GET** /api/v2/gamification/templates | All objective templates
-[**patchEmployeeperformanceExternalmetricsDefinition**](GamificationApi.html#patchEmployeeperformanceExternalmetricsDefinition) | **PATCH** /api/v2/employeeperformance/externalmetrics/definitions/{metricId} | Update External Metric Definition
-[**postEmployeeperformanceExternalmetricsData**](GamificationApi.html#postEmployeeperformanceExternalmetricsData) | **POST** /api/v2/employeeperformance/externalmetrics/data | Write External Metric Data
-[**postEmployeeperformanceExternalmetricsDefinitions**](GamificationApi.html#postEmployeeperformanceExternalmetricsDefinitions) | **POST** /api/v2/employeeperformance/externalmetrics/definitions | Create External Metric Definition
-[**postGamificationProfileActivate**](GamificationApi.html#postGamificationProfileActivate) | **POST** /api/v2/gamification/profiles/{profileId}/activate | Activate a performance profile
-[**postGamificationProfileDeactivate**](GamificationApi.html#postGamificationProfileDeactivate) | **POST** /api/v2/gamification/profiles/{profileId}/deactivate | Deactivate a performance profile
-[**postGamificationProfileMembers**](GamificationApi.html#postGamificationProfileMembers) | **POST** /api/v2/gamification/profiles/{profileId}/members | Assign members to a given performance profile
-[**postGamificationProfileMembersValidate**](GamificationApi.html#postGamificationProfileMembersValidate) | **POST** /api/v2/gamification/profiles/{profileId}/members/validate | Validate member assignment
-[**postGamificationProfileMetricLink**](GamificationApi.html#postGamificationProfileMetricLink) | **POST** /api/v2/gamification/profiles/{sourceProfileId}/metrics/{sourceMetricId}/link | Creates a linked metric
-[**postGamificationProfileMetrics**](GamificationApi.html#postGamificationProfileMetrics) | **POST** /api/v2/gamification/profiles/{profileId}/metrics | Creates a gamified metric with a given metric definition and metric objective under in a performance profile
-[**postGamificationProfiles**](GamificationApi.html#postGamificationProfiles) | **POST** /api/v2/gamification/profiles | Create a new custom performance profile
-[**postGamificationProfilesUserQuery**](GamificationApi.html#postGamificationProfilesUserQuery) | **POST** /api/v2/gamification/profiles/users/{userId}/query | Query performance profiles in date range for a user
-[**postGamificationProfilesUsersMeQuery**](GamificationApi.html#postGamificationProfilesUsersMeQuery) | **POST** /api/v2/gamification/profiles/users/me/query | Query performance profiles in date range for the current user
-[**putGamificationProfile**](GamificationApi.html#putGamificationProfile) | **PUT** /api/v2/gamification/profiles/{profileId} | Updates a performance profile
-[**putGamificationProfileMetric**](GamificationApi.html#putGamificationProfileMetric) | **PUT** /api/v2/gamification/profiles/{profileId}/metrics/{metricId} | Updates a metric in performance profile
-[**putGamificationStatus**](GamificationApi.html#putGamificationStatus) | **PUT** /api/v2/gamification/status | Update gamification activation status
-{: class="table table-striped"}
+[**deleteEmployeeperformanceExternalmetricsDefinition**](GamificationApi#deleteEmployeeperformanceExternalmetricsDefinition) | **DELETE** /api/v2/employeeperformance/externalmetrics/definitions/{metricId} | Delete an External Metric Definition
+[**deleteGamificationContest**](GamificationApi#deleteGamificationContest) | **DELETE** /api/v2/gamification/contests/{contestId} | Delete a Contest by Id
+[**getEmployeeperformanceExternalmetricsDefinition**](GamificationApi#getEmployeeperformanceExternalmetricsDefinition) | **GET** /api/v2/employeeperformance/externalmetrics/definitions/{metricId} | Get an External Metric Definition
+[**getEmployeeperformanceExternalmetricsDefinitions**](GamificationApi#getEmployeeperformanceExternalmetricsDefinitions) | **GET** /api/v2/employeeperformance/externalmetrics/definitions | Get a list of External Metric Definitions of an organization, sorted by name in ascending order
+[**getGamificationContest**](GamificationApi#getGamificationContest) | **GET** /api/v2/gamification/contests/{contestId} | Get a Contest by Id
+[**getGamificationContestAgentsScores**](GamificationApi#getGamificationContestAgentsScores) | **GET** /api/v2/gamification/contests/{contestId}/agents/scores | Get Contest Scores (Admin)
+[**getGamificationContestAgentsScoresMe**](GamificationApi#getGamificationContestAgentsScoresMe) | **GET** /api/v2/gamification/contests/{contestId}/agents/scores/me | Get Contest Scores for the requesting Agent/Supervisor
+[**getGamificationContestAgentsScoresTrends**](GamificationApi#getGamificationContestAgentsScoresTrends) | **GET** /api/v2/gamification/contests/{contestId}/agents/scores/trends | Get a Contest Score Trend (Average Trend)
+[**getGamificationContestAgentsScoresTrendsMe**](GamificationApi#getGamificationContestAgentsScoresTrendsMe) | **GET** /api/v2/gamification/contests/{contestId}/agents/scores/trends/me | Get a Contest Score Trend for the requesting Agent
+[**getGamificationContestPrizeimage**](GamificationApi#getGamificationContestPrizeimage) | **GET** /api/v2/gamification/contests/{contestId}/prizeimages/{prizeImageId} | Get a Contest Prize Image by Id
+[**getGamificationContests**](GamificationApi#getGamificationContests) | **GET** /api/v2/gamification/contests | Get a List of Contests (Admin)
+[**getGamificationContestsMe**](GamificationApi#getGamificationContestsMe) | **GET** /api/v2/gamification/contests/me | Get a List of Contests (Agent/Supervisor)
+[**getGamificationInsights**](GamificationApi#getGamificationInsights) | **GET** /api/v2/gamification/insights | Get insights summary
+[**getGamificationInsightsDetails**](GamificationApi#getGamificationInsightsDetails) | **GET** /api/v2/gamification/insights/details | Get insights details for the current user
+[**getGamificationInsightsGroupsTrends**](GamificationApi#getGamificationInsightsGroupsTrends) | **GET** /api/v2/gamification/insights/groups/trends | Get insights overall trend for the current user
+[**getGamificationInsightsGroupsTrendsAll**](GamificationApi#getGamificationInsightsGroupsTrendsAll) | **GET** /api/v2/gamification/insights/groups/trends/all | Get insights overall trend
+[**getGamificationInsightsMembers**](GamificationApi#getGamificationInsightsMembers) | **GET** /api/v2/gamification/insights/members | Query users in a profile during a period of time
+[**getGamificationInsightsRankings**](GamificationApi#getGamificationInsightsRankings) | **GET** /api/v2/gamification/insights/rankings | Get insights rankings
+[**getGamificationInsightsTrends**](GamificationApi#getGamificationInsightsTrends) | **GET** /api/v2/gamification/insights/trends | Get insights user trend for the current user
+[**getGamificationInsightsUserDetails**](GamificationApi#getGamificationInsightsUserDetails) | **GET** /api/v2/gamification/insights/users/{userId}/details | Get insights details for the user
+[**getGamificationInsightsUserTrends**](GamificationApi#getGamificationInsightsUserTrends) | **GET** /api/v2/gamification/insights/users/{userId}/trends | Get insights user trend for the user
+[**getGamificationLeaderboard**](GamificationApi#getGamificationLeaderboard) | **GET** /api/v2/gamification/leaderboard | Leaderboard of the requesting user's division or performance profile
+[**getGamificationLeaderboardAll**](GamificationApi#getGamificationLeaderboardAll) | **GET** /api/v2/gamification/leaderboard/all | Leaderboard by filter type
+[**getGamificationLeaderboardAllBestpoints**](GamificationApi#getGamificationLeaderboardAllBestpoints) | **GET** /api/v2/gamification/leaderboard/all/bestpoints | Best Points by division or performance profile
+[**getGamificationLeaderboardBestpoints**](GamificationApi#getGamificationLeaderboardBestpoints) | **GET** /api/v2/gamification/leaderboard/bestpoints | Best Points of the requesting user's current performance profile or division
+[**getGamificationMetricdefinition**](GamificationApi#getGamificationMetricdefinition) | **GET** /api/v2/gamification/metricdefinitions/{metricDefinitionId} | Metric definition by id
+[**getGamificationMetricdefinitions**](GamificationApi#getGamificationMetricdefinitions) | **GET** /api/v2/gamification/metricdefinitions | All metric definitions
+[**getGamificationProfile**](GamificationApi#getGamificationProfile) | **GET** /api/v2/gamification/profiles/{profileId} | Performance profile by id
+[**getGamificationProfileMembers**](GamificationApi#getGamificationProfileMembers) | **GET** /api/v2/gamification/profiles/{profileId}/members | Members of a given performance profile
+[**getGamificationProfileMetric**](GamificationApi#getGamificationProfileMetric) | **GET** /api/v2/gamification/profiles/{profileId}/metrics/{metricId} | Performance profile gamified metric by id
+[**getGamificationProfileMetrics**](GamificationApi#getGamificationProfileMetrics) | **GET** /api/v2/gamification/profiles/{profileId}/metrics | All gamified metrics for a given performance profile
+[**getGamificationProfileMetricsObjectivedetails**](GamificationApi#getGamificationProfileMetricsObjectivedetails) | **GET** /api/v2/gamification/profiles/{profileId}/metrics/objectivedetails | All metrics for a given performance profile with objective details such as order and maxPoints
+[**getGamificationProfiles**](GamificationApi#getGamificationProfiles) | **GET** /api/v2/gamification/profiles | All performance profiles
+[**getGamificationProfilesUser**](GamificationApi#getGamificationProfilesUser) | **GET** /api/v2/gamification/profiles/users/{userId} | Performance profile of a user
+[**getGamificationProfilesUsersMe**](GamificationApi#getGamificationProfilesUsersMe) | **GET** /api/v2/gamification/profiles/users/me | Performance profile of the requesting user
+[**getGamificationScorecards**](GamificationApi#getGamificationScorecards) | **GET** /api/v2/gamification/scorecards | Workday performance metrics of the requesting user
+[**getGamificationScorecardsAttendance**](GamificationApi#getGamificationScorecardsAttendance) | **GET** /api/v2/gamification/scorecards/attendance | Attendance status metrics of the requesting user
+[**getGamificationScorecardsBestpoints**](GamificationApi#getGamificationScorecardsBestpoints) | **GET** /api/v2/gamification/scorecards/bestpoints | Best points of the requesting user
+[**getGamificationScorecardsPointsAlltime**](GamificationApi#getGamificationScorecardsPointsAlltime) | **GET** /api/v2/gamification/scorecards/points/alltime | All-time points of the requesting user
+[**getGamificationScorecardsPointsAverage**](GamificationApi#getGamificationScorecardsPointsAverage) | **GET** /api/v2/gamification/scorecards/points/average | Average points of the requesting user's division or performance profile
+[**getGamificationScorecardsPointsTrends**](GamificationApi#getGamificationScorecardsPointsTrends) | **GET** /api/v2/gamification/scorecards/points/trends | Points trends of the requesting user
+[**getGamificationScorecardsProfileMetricUserValuesTrends**](GamificationApi#getGamificationScorecardsProfileMetricUserValuesTrends) | **GET** /api/v2/gamification/scorecards/profiles/{profileId}/metrics/{metricId}/users/{userId}/values/trends | Average performance values trends by metric of a user
+[**getGamificationScorecardsProfileMetricUsersValuesTrends**](GamificationApi#getGamificationScorecardsProfileMetricUsersValuesTrends) | **GET** /api/v2/gamification/scorecards/profiles/{profileId}/metrics/{metricId}/users/values/trends | Average performance values trends by metric of a division or a performance profile
+[**getGamificationScorecardsProfileMetricValuesTrends**](GamificationApi#getGamificationScorecardsProfileMetricValuesTrends) | **GET** /api/v2/gamification/scorecards/profiles/{profileId}/metrics/{metricId}/values/trends | Average performance values trends by metric of the requesting user
+[**getGamificationScorecardsUser**](GamificationApi#getGamificationScorecardsUser) | **GET** /api/v2/gamification/scorecards/users/{userId} | Workday performance metrics for a user
+[**getGamificationScorecardsUserAttendance**](GamificationApi#getGamificationScorecardsUserAttendance) | **GET** /api/v2/gamification/scorecards/users/{userId}/attendance | Attendance status metrics for a user
+[**getGamificationScorecardsUserBestpoints**](GamificationApi#getGamificationScorecardsUserBestpoints) | **GET** /api/v2/gamification/scorecards/users/{userId}/bestpoints | Best points of a user
+[**getGamificationScorecardsUserPointsAlltime**](GamificationApi#getGamificationScorecardsUserPointsAlltime) | **GET** /api/v2/gamification/scorecards/users/{userId}/points/alltime | All-time points for a user
+[**getGamificationScorecardsUserPointsTrends**](GamificationApi#getGamificationScorecardsUserPointsTrends) | **GET** /api/v2/gamification/scorecards/users/{userId}/points/trends | Points trend for a user
+[**getGamificationScorecardsUserValuesTrends**](GamificationApi#getGamificationScorecardsUserValuesTrends) | **GET** /api/v2/gamification/scorecards/users/{userId}/values/trends | Values trends of a user
+[**getGamificationScorecardsUsersPointsAverage**](GamificationApi#getGamificationScorecardsUsersPointsAverage) | **GET** /api/v2/gamification/scorecards/users/points/average | Workday average points by target group
+[**getGamificationScorecardsUsersValuesAverage**](GamificationApi#getGamificationScorecardsUsersValuesAverage) | **GET** /api/v2/gamification/scorecards/users/values/average | Workday average values by target group
+[**getGamificationScorecardsUsersValuesTrends**](GamificationApi#getGamificationScorecardsUsersValuesTrends) | **GET** /api/v2/gamification/scorecards/users/values/trends | Values trend by target group
+[**getGamificationScorecardsValuesAverage**](GamificationApi#getGamificationScorecardsValuesAverage) | **GET** /api/v2/gamification/scorecards/values/average | Average values of the requesting user's division or performance profile
+[**getGamificationScorecardsValuesTrends**](GamificationApi#getGamificationScorecardsValuesTrends) | **GET** /api/v2/gamification/scorecards/values/trends | Values trends of the requesting user or group
+[**getGamificationStatus**](GamificationApi#getGamificationStatus) | **GET** /api/v2/gamification/status | Gamification activation status
+[**getGamificationTemplate**](GamificationApi#getGamificationTemplate) | **GET** /api/v2/gamification/templates/{templateId} | Objective template by id
+[**getGamificationTemplates**](GamificationApi#getGamificationTemplates) | **GET** /api/v2/gamification/templates | All objective templates
+[**patchEmployeeperformanceExternalmetricsDefinition**](GamificationApi#patchEmployeeperformanceExternalmetricsDefinition) | **PATCH** /api/v2/employeeperformance/externalmetrics/definitions/{metricId} | Update External Metric Definition
+[**patchGamificationContest**](GamificationApi#patchGamificationContest) | **PATCH** /api/v2/gamification/contests/{contestId} | Finalize a Contest by Id
+[**postEmployeeperformanceExternalmetricsData**](GamificationApi#postEmployeeperformanceExternalmetricsData) | **POST** /api/v2/employeeperformance/externalmetrics/data | Write External Metric Data
+[**postEmployeeperformanceExternalmetricsDefinitions**](GamificationApi#postEmployeeperformanceExternalmetricsDefinitions) | **POST** /api/v2/employeeperformance/externalmetrics/definitions | Create External Metric Definition
+[**postGamificationContests**](GamificationApi#postGamificationContests) | **POST** /api/v2/gamification/contests | Creates a Contest
+[**postGamificationContestsUploadsPrizeimages**](GamificationApi#postGamificationContestsUploadsPrizeimages) | **POST** /api/v2/gamification/contests/uploads/prizeimages | Generates pre-signed URL to upload a prize image for gamification contests
+[**postGamificationProfileActivate**](GamificationApi#postGamificationProfileActivate) | **POST** /api/v2/gamification/profiles/{profileId}/activate | Activate a performance profile
+[**postGamificationProfileDeactivate**](GamificationApi#postGamificationProfileDeactivate) | **POST** /api/v2/gamification/profiles/{profileId}/deactivate | Deactivate a performance profile
+[**postGamificationProfileMembers**](GamificationApi#postGamificationProfileMembers) | **POST** /api/v2/gamification/profiles/{profileId}/members | Assign members to a given performance profile
+[**postGamificationProfileMembersValidate**](GamificationApi#postGamificationProfileMembersValidate) | **POST** /api/v2/gamification/profiles/{profileId}/members/validate | Validate member assignment
+[**postGamificationProfileMetricLink**](GamificationApi#postGamificationProfileMetricLink) | **POST** /api/v2/gamification/profiles/{sourceProfileId}/metrics/{sourceMetricId}/link | Creates a linked metric
+[**postGamificationProfileMetrics**](GamificationApi#postGamificationProfileMetrics) | **POST** /api/v2/gamification/profiles/{profileId}/metrics | Creates a gamified metric with a given metric definition and metric objective under in a performance profile
+[**postGamificationProfiles**](GamificationApi#postGamificationProfiles) | **POST** /api/v2/gamification/profiles | Create a new custom performance profile
+[**postGamificationProfilesUserQuery**](GamificationApi#postGamificationProfilesUserQuery) | **POST** /api/v2/gamification/profiles/users/{userId}/query | Query performance profiles in date range for a user
+[**postGamificationProfilesUsersMeQuery**](GamificationApi#postGamificationProfilesUsersMeQuery) | **POST** /api/v2/gamification/profiles/users/me/query | Query performance profiles in date range for the current user
+[**putGamificationContest**](GamificationApi#putGamificationContest) | **PUT** /api/v2/gamification/contests/{contestId} | Update a Contest by Id
+[**putGamificationProfile**](GamificationApi#putGamificationProfile) | **PUT** /api/v2/gamification/profiles/{profileId} | Updates a performance profile
+[**putGamificationProfileMetric**](GamificationApi#putGamificationProfileMetric) | **PUT** /api/v2/gamification/profiles/{profileId}/metrics/{metricId} | Updates a metric in performance profile
+[**putGamificationStatus**](GamificationApi#putGamificationStatus) | **PUT** /api/v2/gamification/status | Update gamification activation status
 
-<a name="deleteEmployeeperformanceExternalmetricsDefinition"></a>
 
-# void deleteEmployeeperformanceExternalmetricsDefinition(metricId)
+
+## deleteEmployeeperformanceExternalmetricsDefinition
+
+> void deleteEmployeeperformanceExternalmetricsDefinition(metricId)
 
 
 DELETE /api/v2/employeeperformance/externalmetrics/definitions/{metricId}
@@ -93,7 +107,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.GamificationApi();
@@ -116,15 +130,66 @@ apiInstance.deleteEmployeeperformanceExternalmetricsDefinition(metricId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **metricId** | **String** | Specifies the External Metric Definition ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="getEmployeeperformanceExternalmetricsDefinition"></a>
 
-# ExternalMetricDefinition getEmployeeperformanceExternalmetricsDefinition(metricId)
+## deleteGamificationContest
+
+> void deleteGamificationContest(contestId)
+
+
+DELETE /api/v2/gamification/contests/{contestId}
+
+Delete a Contest by Id
+
+Requires ANY permissions:
+
+* gamification:contest:delete
+* gamification:contest:deleteAll
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.GamificationApi();
+
+let contestId = "contestId_example"; // String | The ID of the contest
+
+apiInstance.deleteGamificationContest(contestId)
+  .then(() => {
+    console.log('deleteGamificationContest returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteGamificationContest');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **contestId** | **String** | The ID of the contest |  |
+
+### Return type
+
+void (no response body)
+
+
+## getEmployeeperformanceExternalmetricsDefinition
+
+> ExternalMetricDefinition getEmployeeperformanceExternalmetricsDefinition(metricId)
 
 
 GET /api/v2/employeeperformance/externalmetrics/definitions/{metricId}
@@ -143,7 +208,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.GamificationApi();
@@ -166,15 +231,15 @@ apiInstance.getEmployeeperformanceExternalmetricsDefinition(metricId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **metricId** | **String** | Specifies the External Metric Definition ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ExternalMetricDefinition**
 
-<a name="getEmployeeperformanceExternalmetricsDefinitions"></a>
 
-# ExternalMetricDefinitionListing getEmployeeperformanceExternalmetricsDefinitions(opts)
+## getEmployeeperformanceExternalmetricsDefinitions
+
+> ExternalMetricDefinitionListing getEmployeeperformanceExternalmetricsDefinitions(opts)
 
 
 GET /api/v2/employeeperformance/externalmetrics/definitions
@@ -193,7 +258,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.GamificationApi();
@@ -220,15 +285,468 @@ apiInstance.getEmployeeperformanceExternalmetricsDefinitions(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
-{: class="table table-striped"}
 
 ### Return type
 
 **ExternalMetricDefinitionListing**
 
-<a name="getGamificationInsights"></a>
 
-# InsightsSummary getGamificationInsights(filterType, filterId, granularity, comparativePeriodStartWorkday, primaryPeriodStartWorkday, opts)
+## getGamificationContest
+
+> ContestsResponse getGamificationContest(contestId)
+
+
+GET /api/v2/gamification/contests/{contestId}
+
+Get a Contest by Id
+
+Requires ANY permissions:
+
+* gamification:contest:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.GamificationApi();
+
+let contestId = "contestId_example"; // String | The ID of the contest
+
+apiInstance.getGamificationContest(contestId)
+  .then((data) => {
+    console.log(`getGamificationContest success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getGamificationContest');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **contestId** | **String** | The ID of the contest |  |
+
+### Return type
+
+**ContestsResponse**
+
+
+## getGamificationContestAgentsScores
+
+> ContestScoresAgentsPagedList getGamificationContestAgentsScores(contestId, opts)
+
+
+GET /api/v2/gamification/contests/{contestId}/agents/scores
+
+Get Contest Scores (Admin)
+
+Requires ANY permissions:
+
+* gamification:contest:viewAll
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.GamificationApi();
+
+let contestId = "contestId_example"; // String | The ID of the contest
+let opts = { 
+  'pageNumber': 1, // Number | 
+  'pageSize': 25, // Number | 
+  'workday': "workday_example", // String | Target querying workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+  'returnsView': "All" // String | Desired response results
+};
+
+apiInstance.getGamificationContestAgentsScores(contestId, opts)
+  .then((data) => {
+    console.log(`getGamificationContestAgentsScores success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getGamificationContestAgentsScores');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **contestId** | **String** | The ID of the contest |  |
+ **pageNumber** | **Number** |  | [optional] [default to 1] |
+ **pageSize** | **Number** |  | [optional] [default to 25] |
+ **workday** | **String** | Target querying workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
+ **returnsView** | **String** | Desired response results | [optional] [default to All]<br />**Values**: All, TopAndBottom |
+
+### Return type
+
+**ContestScoresAgentsPagedList**
+
+
+## getGamificationContestAgentsScoresMe
+
+> ContestScoresAgentsPagedList getGamificationContestAgentsScoresMe(contestId, opts)
+
+
+GET /api/v2/gamification/contests/{contestId}/agents/scores/me
+
+Get Contest Scores for the requesting Agent/Supervisor
+
+Requires ALL permissions:
+
+* gamification:contest:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.GamificationApi();
+
+let contestId = "contestId_example"; // String | The ID of the contest
+let opts = { 
+  'pageNumber': 1, // Number | 
+  'pageSize': 25, // Number | 
+  'workday': "workday_example", // String | Target querying workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+  'returnsView': "All" // String | Desired response results (Supervisor Only)
+};
+
+apiInstance.getGamificationContestAgentsScoresMe(contestId, opts)
+  .then((data) => {
+    console.log(`getGamificationContestAgentsScoresMe success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getGamificationContestAgentsScoresMe');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **contestId** | **String** | The ID of the contest |  |
+ **pageNumber** | **Number** |  | [optional] [default to 1] |
+ **pageSize** | **Number** |  | [optional] [default to 25] |
+ **workday** | **String** | Target querying workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
+ **returnsView** | **String** | Desired response results (Supervisor Only) | [optional] [default to All]<br />**Values**: All, TopAndBottom |
+
+### Return type
+
+**ContestScoresAgentsPagedList**
+
+
+## getGamificationContestAgentsScoresTrends
+
+> ContestScoresGroupTrendList getGamificationContestAgentsScoresTrends(contestId)
+
+
+GET /api/v2/gamification/contests/{contestId}/agents/scores/trends
+
+Get a Contest Score Trend (Average Trend)
+
+Requires ANY permissions:
+
+* gamification:contest:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.GamificationApi();
+
+let contestId = "contestId_example"; // String | The ID of the contest
+
+apiInstance.getGamificationContestAgentsScoresTrends(contestId)
+  .then((data) => {
+    console.log(`getGamificationContestAgentsScoresTrends success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getGamificationContestAgentsScoresTrends');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **contestId** | **String** | The ID of the contest |  |
+
+### Return type
+
+**ContestScoresGroupTrendList**
+
+
+## getGamificationContestAgentsScoresTrendsMe
+
+> ContestScoresAgentTrendList getGamificationContestAgentsScoresTrendsMe(contestId)
+
+
+GET /api/v2/gamification/contests/{contestId}/agents/scores/trends/me
+
+Get a Contest Score Trend for the requesting Agent
+
+Requires ANY permissions:
+
+* gamification:contest:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.GamificationApi();
+
+let contestId = "contestId_example"; // String | The ID of the contest
+
+apiInstance.getGamificationContestAgentsScoresTrendsMe(contestId)
+  .then((data) => {
+    console.log(`getGamificationContestAgentsScoresTrendsMe success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getGamificationContestAgentsScoresTrendsMe');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **contestId** | **String** | The ID of the contest |  |
+
+### Return type
+
+**ContestScoresAgentTrendList**
+
+
+## getGamificationContestPrizeimage
+
+> PrizeImages getGamificationContestPrizeimage(contestId, prizeImageId)
+
+
+GET /api/v2/gamification/contests/{contestId}/prizeimages/{prizeImageId}
+
+Get a Contest Prize Image by Id
+
+Requires ANY permissions:
+
+* gamification:contest:view
+* gamification:contest:viewAll
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.GamificationApi();
+
+let contestId = "contestId_example"; // String | The ID of the contest
+let prizeImageId = "prizeImageId_example"; // String | The ID of the prize image
+
+apiInstance.getGamificationContestPrizeimage(contestId, prizeImageId)
+  .then((data) => {
+    console.log(`getGamificationContestPrizeimage success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getGamificationContestPrizeimage');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **contestId** | **String** | The ID of the contest |  |
+ **prizeImageId** | **String** | The ID of the prize image |  |
+
+### Return type
+
+**PrizeImages**
+
+
+## getGamificationContests
+
+> GetContestsEssentialsListing getGamificationContests(opts)
+
+
+GET /api/v2/gamification/contests
+
+Get a List of Contests (Admin)
+
+Requires ANY permissions:
+
+* gamification:contest:viewAll
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.GamificationApi();
+
+let opts = { 
+  'pageNumber': 1, // Number | 
+  'pageSize': 25, // Number | 
+  'dateStart': "dateStart_example", // String | Start date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+  'dateEnd': "dateEnd_example", // String | End date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+  'status': ["status_example"], // [String] | 
+  'sortBy': "dateStart", // String | 
+  'sortOrder': "desc" // String | 
+};
+
+apiInstance.getGamificationContests(opts)
+  .then((data) => {
+    console.log(`getGamificationContests success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getGamificationContests');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **pageNumber** | **Number** |  | [optional] [default to 1] |
+ **pageSize** | **Number** |  | [optional] [default to 25] |
+ **dateStart** | **String** | Start date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
+ **dateEnd** | **String** | End date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
+ **status** | **[String]** |  | [optional] <br />**Values**: Upcoming, Ongoing, Pending, RecentlyCompleted, Completed, Cancelled |
+ **sortBy** | **String** |  | [optional] [default to dateStart]<br />**Values**: title, dateStart, dateEnd, dateFinalized, status, profile, participantCount |
+ **sortOrder** | **String** |  | [optional] [default to desc]<br />**Values**: asc, desc |
+
+### Return type
+
+**GetContestsEssentialsListing**
+
+
+## getGamificationContestsMe
+
+> GetContestsEssentialsListing getGamificationContestsMe(opts)
+
+
+GET /api/v2/gamification/contests/me
+
+Get a List of Contests (Agent/Supervisor)
+
+Requires ALL permissions:
+
+* gamification:contest:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.GamificationApi();
+
+let opts = { 
+  'pageNumber': 1, // Number | 
+  'pageSize': 25, // Number | 
+  'dateStart': "dateStart_example", // String | Start date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+  'dateEnd': "dateEnd_example", // String | End date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+  'status': ["status_example"], // [String] | 
+  'sortBy': "dateStart", // String | 
+  'sortOrder': "desc", // String | 
+  'view': "participant" // String | 
+};
+
+apiInstance.getGamificationContestsMe(opts)
+  .then((data) => {
+    console.log(`getGamificationContestsMe success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getGamificationContestsMe');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **pageNumber** | **Number** |  | [optional] [default to 1] |
+ **pageSize** | **Number** |  | [optional] [default to 25] |
+ **dateStart** | **String** | Start date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
+ **dateEnd** | **String** | End date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
+ **status** | **[String]** |  | [optional] <br />**Values**: Upcoming, Ongoing, Pending, RecentlyCompleted, Completed, Cancelled |
+ **sortBy** | **String** |  | [optional] [default to dateStart]<br />**Values**: title, dateStart, dateEnd, dateFinalized, status, profile, participantCount |
+ **sortOrder** | **String** |  | [optional] [default to desc]<br />**Values**: asc, desc |
+ **view** | **String** |  | [optional] [default to participant]<br />**Values**: participant, creator |
+
+### Return type
+
+**GetContestsEssentialsListing**
+
+
+## getGamificationInsights
+
+> InsightsSummary getGamificationInsights(filterType, filterId, granularity, comparativePeriodStartWorkday, primaryPeriodStartWorkday, opts)
 
 
 GET /api/v2/gamification/insights
@@ -247,7 +765,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.GamificationApi();
@@ -292,15 +810,15 @@ apiInstance.getGamificationInsights(filterType, filterId, granularity, comparati
  **sortMetricId** | **String** | Sort Metric Id | [optional]  |
  **sortOrder** | **String** | Sort order | [optional] [default to asc]<br />**Values**: asc, desc |
  **userIds** | **String** | A list of up to 100 comma-separated user Ids | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **InsightsSummary**
 
-<a name="getGamificationInsightsDetails"></a>
 
-# InsightsDetails getGamificationInsightsDetails(filterType, filterId, granularity, comparativePeriodStartWorkday, primaryPeriodStartWorkday)
+## getGamificationInsightsDetails
+
+> InsightsDetails getGamificationInsightsDetails(filterType, filterId, granularity, comparativePeriodStartWorkday, primaryPeriodStartWorkday)
 
 
 GET /api/v2/gamification/insights/details
@@ -319,7 +837,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.GamificationApi();
@@ -350,15 +868,15 @@ apiInstance.getGamificationInsightsDetails(filterType, filterId, granularity, co
  **granularity** | **String** | Granularity | <br />**Values**: Weekly, Monthly |
  **comparativePeriodStartWorkday** | **String** | The start work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **primaryPeriodStartWorkday** | **String** | The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **InsightsDetails**
 
-<a name="getGamificationInsightsGroupsTrends"></a>
 
-# InsightsTrend getGamificationInsightsGroupsTrends(filterType, filterId, granularity, comparativePeriodStartWorkday, comparativePeriodEndWorkday, primaryPeriodStartWorkday, primaryPeriodEndWorkday)
+## getGamificationInsightsGroupsTrends
+
+> InsightsTrend getGamificationInsightsGroupsTrends(filterType, filterId, granularity, comparativePeriodStartWorkday, comparativePeriodEndWorkday, primaryPeriodStartWorkday, primaryPeriodEndWorkday)
 
 
 GET /api/v2/gamification/insights/groups/trends
@@ -377,7 +895,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.GamificationApi();
@@ -412,15 +930,15 @@ apiInstance.getGamificationInsightsGroupsTrends(filterType, filterId, granularit
  **comparativePeriodEndWorkday** | **String** | The end work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **primaryPeriodStartWorkday** | **String** | The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **primaryPeriodEndWorkday** | **String** | The end work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **InsightsTrend**
 
-<a name="getGamificationInsightsGroupsTrendsAll"></a>
 
-# InsightsTrend getGamificationInsightsGroupsTrendsAll(filterType, filterId, granularity, comparativePeriodStartWorkday, comparativePeriodEndWorkday, primaryPeriodStartWorkday, primaryPeriodEndWorkday)
+## getGamificationInsightsGroupsTrendsAll
+
+> InsightsTrend getGamificationInsightsGroupsTrendsAll(filterType, filterId, granularity, comparativePeriodStartWorkday, comparativePeriodEndWorkday, primaryPeriodStartWorkday, primaryPeriodEndWorkday)
 
 
 GET /api/v2/gamification/insights/groups/trends/all
@@ -439,7 +957,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.GamificationApi();
@@ -474,15 +992,15 @@ apiInstance.getGamificationInsightsGroupsTrendsAll(filterType, filterId, granula
  **comparativePeriodEndWorkday** | **String** | The end work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **primaryPeriodStartWorkday** | **String** | The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **primaryPeriodEndWorkday** | **String** | The end work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **InsightsTrend**
 
-<a name="getGamificationInsightsMembers"></a>
 
-# InsightsAgents getGamificationInsightsMembers(filterType, filterId, granularity, startWorkday)
+## getGamificationInsightsMembers
+
+> InsightsAgents getGamificationInsightsMembers(filterType, filterId, granularity, startWorkday)
 
 
 GET /api/v2/gamification/insights/members
@@ -501,7 +1019,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.GamificationApi();
@@ -530,15 +1048,83 @@ apiInstance.getGamificationInsightsMembers(filterType, filterId, granularity, st
  **filterId** | **String** | ID for the filter type. |  |
  **granularity** | **String** | Granularity | <br />**Values**: Weekly, Monthly |
  **startWorkday** | **String** | The start work day. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **InsightsAgents**
 
-<a name="getGamificationInsightsTrends"></a>
 
-# UserInsightsTrend getGamificationInsightsTrends(filterType, filterId, granularity, comparativePeriodStartWorkday, comparativePeriodEndWorkday, primaryPeriodStartWorkday, primaryPeriodEndWorkday)
+## getGamificationInsightsRankings
+
+> InsightsRankings getGamificationInsightsRankings(filterType, filterId, granularity, comparativePeriodStartWorkday, primaryPeriodStartWorkday, sortKey, opts)
+
+
+GET /api/v2/gamification/insights/rankings
+
+Get insights rankings
+
+Requires ANY permissions:
+
+* gamification:insights:viewAll
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.GamificationApi();
+
+let filterType = "filterType_example"; // String | Filter type for the query request.
+let filterId = "filterId_example"; // String | ID for the filter type.
+let granularity = "granularity_example"; // String | Granularity
+let comparativePeriodStartWorkday = "comparativePeriodStartWorkday_example"; // String | The start work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let primaryPeriodStartWorkday = "primaryPeriodStartWorkday_example"; // String | The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let sortKey = "sortKey_example"; // String | Sort key
+let opts = { 
+  'sortMetricId': "sortMetricId_example", // String | Sort Metric Id
+  'sectionSize': 3.4, // Number | The number of top and bottom users to return before ties
+  'userIds': "userIds_example" // String | A list of up to 100 comma-separated user Ids
+};
+
+apiInstance.getGamificationInsightsRankings(filterType, filterId, granularity, comparativePeriodStartWorkday, primaryPeriodStartWorkday, sortKey, opts)
+  .then((data) => {
+    console.log(`getGamificationInsightsRankings success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getGamificationInsightsRankings');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **filterType** | **String** | Filter type for the query request. | <br />**Values**: PerformanceProfile, Division |
+ **filterId** | **String** | ID for the filter type. |  |
+ **granularity** | **String** | Granularity | <br />**Values**: Weekly, Monthly |
+ **comparativePeriodStartWorkday** | **String** | The start work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+ **primaryPeriodStartWorkday** | **String** | The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+ **sortKey** | **String** | Sort key | <br />**Values**: percentOfGoal, percentOfGoalChange, overallPercentOfGoal, overallPercentOfGoalChange, value, valueChange |
+ **sortMetricId** | **String** | Sort Metric Id | [optional]  |
+ **sectionSize** | **Number** | The number of top and bottom users to return before ties | [optional]  |
+ **userIds** | **String** | A list of up to 100 comma-separated user Ids | [optional]  |
+
+### Return type
+
+**InsightsRankings**
+
+
+## getGamificationInsightsTrends
+
+> UserInsightsTrend getGamificationInsightsTrends(filterType, filterId, granularity, comparativePeriodStartWorkday, comparativePeriodEndWorkday, primaryPeriodStartWorkday, primaryPeriodEndWorkday)
 
 
 GET /api/v2/gamification/insights/trends
@@ -557,7 +1143,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.GamificationApi();
@@ -592,15 +1178,15 @@ apiInstance.getGamificationInsightsTrends(filterType, filterId, granularity, com
  **comparativePeriodEndWorkday** | **String** | The end work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **primaryPeriodStartWorkday** | **String** | The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **primaryPeriodEndWorkday** | **String** | The end work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **UserInsightsTrend**
 
-<a name="getGamificationInsightsUserDetails"></a>
 
-# InsightsDetails getGamificationInsightsUserDetails(userId, filterType, filterId, granularity, comparativePeriodStartWorkday, primaryPeriodStartWorkday)
+## getGamificationInsightsUserDetails
+
+> InsightsDetails getGamificationInsightsUserDetails(userId, filterType, filterId, granularity, comparativePeriodStartWorkday, primaryPeriodStartWorkday)
 
 
 GET /api/v2/gamification/insights/users/{userId}/details
@@ -619,7 +1205,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.GamificationApi();
@@ -652,15 +1238,15 @@ apiInstance.getGamificationInsightsUserDetails(userId, filterType, filterId, gra
  **granularity** | **String** | Granularity | <br />**Values**: Weekly, Monthly |
  **comparativePeriodStartWorkday** | **String** | The start work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **primaryPeriodStartWorkday** | **String** | The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **InsightsDetails**
 
-<a name="getGamificationInsightsUserTrends"></a>
 
-# UserInsightsTrend getGamificationInsightsUserTrends(userId, filterType, filterId, granularity, comparativePeriodStartWorkday, comparativePeriodEndWorkday, primaryPeriodStartWorkday, primaryPeriodEndWorkday)
+## getGamificationInsightsUserTrends
+
+> UserInsightsTrend getGamificationInsightsUserTrends(userId, filterType, filterId, granularity, comparativePeriodStartWorkday, comparativePeriodEndWorkday, primaryPeriodStartWorkday, primaryPeriodEndWorkday)
 
 
 GET /api/v2/gamification/insights/users/{userId}/trends
@@ -679,7 +1265,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.GamificationApi();
@@ -716,15 +1302,15 @@ apiInstance.getGamificationInsightsUserTrends(userId, filterType, filterId, gran
  **comparativePeriodEndWorkday** | **String** | The end work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **primaryPeriodStartWorkday** | **String** | The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **primaryPeriodEndWorkday** | **String** | The end work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **UserInsightsTrend**
 
-<a name="getGamificationLeaderboard"></a>
 
-# Leaderboard getGamificationLeaderboard(startWorkday, endWorkday, opts)
+## getGamificationLeaderboard
+
+> Leaderboard getGamificationLeaderboard(startWorkday, endWorkday, opts)
 
 
 GET /api/v2/gamification/leaderboard
@@ -743,7 +1329,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.GamificationApi();
@@ -772,15 +1358,15 @@ apiInstance.getGamificationLeaderboard(startWorkday, endWorkday, opts)
  **startWorkday** | **String** | Start workday to retrieve for the leaderboard. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **endWorkday** | **String** | End workday to retrieve for the leaderboard. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **metricId** | **String** | Metric Id for which the leaderboard is to be generated. The total points is used if nothing is given. | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Leaderboard**
 
-<a name="getGamificationLeaderboardAll"></a>
 
-# Leaderboard getGamificationLeaderboardAll(filterType, filterId, startWorkday, endWorkday, opts)
+## getGamificationLeaderboardAll
+
+> Leaderboard getGamificationLeaderboardAll(filterType, filterId, startWorkday, endWorkday, opts)
 
 
 GET /api/v2/gamification/leaderboard/all
@@ -799,7 +1385,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.GamificationApi();
@@ -832,15 +1418,15 @@ apiInstance.getGamificationLeaderboardAll(filterType, filterId, startWorkday, en
  **startWorkday** | **String** | Start workday to retrieve for the leaderboard. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **endWorkday** | **String** | End workday to retrieve for the leaderboard. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **metricId** | **String** | Metric Id for which the leaderboard is to be generated. The total points is used if nothing is given. | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Leaderboard**
 
-<a name="getGamificationLeaderboardAllBestpoints"></a>
 
-# OverallBestPoints getGamificationLeaderboardAllBestpoints(filterType, filterId)
+## getGamificationLeaderboardAllBestpoints
+
+> OverallBestPoints getGamificationLeaderboardAllBestpoints(filterType, filterId)
 
 
 GET /api/v2/gamification/leaderboard/all/bestpoints
@@ -859,7 +1445,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.GamificationApi();
@@ -884,15 +1470,15 @@ apiInstance.getGamificationLeaderboardAllBestpoints(filterType, filterId)
 | ------------- | ------------- | ------------- | ------------- |
  **filterType** | **String** | Filter type for the query request. | <br />**Values**: PerformanceProfile, Division |
  **filterId** | **String** | ID for the filter type. For example, division or performance profile Id |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **OverallBestPoints**
 
-<a name="getGamificationLeaderboardBestpoints"></a>
 
-# OverallBestPoints getGamificationLeaderboardBestpoints()
+## getGamificationLeaderboardBestpoints
+
+> OverallBestPoints getGamificationLeaderboardBestpoints()
 
 
 GET /api/v2/gamification/leaderboard/bestpoints
@@ -911,7 +1497,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.GamificationApi();
@@ -930,14 +1516,14 @@ apiInstance.getGamificationLeaderboardBestpoints()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **OverallBestPoints**
 
-<a name="getGamificationMetricdefinition"></a>
 
-# MetricDefinition getGamificationMetricdefinition(metricDefinitionId)
+## getGamificationMetricdefinition
+
+> MetricDefinition getGamificationMetricdefinition(metricDefinitionId)
 
 
 GET /api/v2/gamification/metricdefinitions/{metricDefinitionId}
@@ -956,7 +1542,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.GamificationApi();
@@ -979,15 +1565,15 @@ apiInstance.getGamificationMetricdefinition(metricDefinitionId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **metricDefinitionId** | **String** | metric definition id |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **MetricDefinition**
 
-<a name="getGamificationMetricdefinitions"></a>
 
-# GetMetricDefinitionsResponse getGamificationMetricdefinitions()
+## getGamificationMetricdefinitions
+
+> GetMetricDefinitionsResponse getGamificationMetricdefinitions()
 
 
 GET /api/v2/gamification/metricdefinitions
@@ -1008,7 +1594,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.GamificationApi();
@@ -1027,14 +1613,14 @@ apiInstance.getGamificationMetricdefinitions()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **GetMetricDefinitionsResponse**
 
-<a name="getGamificationProfile"></a>
 
-# PerformanceProfile getGamificationProfile(profileId)
+## getGamificationProfile
+
+> PerformanceProfile getGamificationProfile(profileId)
 
 
 GET /api/v2/gamification/profiles/{profileId}
@@ -1055,7 +1641,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.GamificationApi();
@@ -1078,15 +1664,15 @@ apiInstance.getGamificationProfile(profileId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **profileId** | **String** | performanceProfileId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **PerformanceProfile**
 
-<a name="getGamificationProfileMembers"></a>
 
-# MemberListing getGamificationProfileMembers(profileId)
+## getGamificationProfileMembers
+
+> MemberListing getGamificationProfileMembers(profileId)
 
 
 GET /api/v2/gamification/profiles/{profileId}/members
@@ -1105,7 +1691,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.GamificationApi();
@@ -1128,15 +1714,15 @@ apiInstance.getGamificationProfileMembers(profileId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **profileId** | **String** | Profile Id |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **MemberListing**
 
-<a name="getGamificationProfileMetric"></a>
 
-# Metric getGamificationProfileMetric(profileId, metricId, opts)
+## getGamificationProfileMetric
+
+> Metric getGamificationProfileMetric(profileId, metricId, opts)
 
 
 GET /api/v2/gamification/profiles/{profileId}/metrics/{metricId}
@@ -1157,7 +1743,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.GamificationApi();
@@ -1186,15 +1772,15 @@ apiInstance.getGamificationProfileMetric(profileId, metricId, opts)
  **profileId** | **String** | Performance Profile Id |  |
  **metricId** | **String** | Metric Id |  |
  **workday** | **String** | The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Metric**
 
-<a name="getGamificationProfileMetrics"></a>
 
-# GetMetricResponse getGamificationProfileMetrics(profileId, opts)
+## getGamificationProfileMetrics
+
+> GetMetricResponse getGamificationProfileMetrics(profileId, opts)
 
 
 GET /api/v2/gamification/profiles/{profileId}/metrics
@@ -1215,7 +1801,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.GamificationApi();
@@ -1246,15 +1832,15 @@ apiInstance.getGamificationProfileMetrics(profileId, opts)
  **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: objective |
  **workday** | **String** | The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
  **metricIds** | **String** | List of metric ids to filter the response (Optional, comma-separated). | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **GetMetricResponse**
 
-<a name="getGamificationProfileMetricsObjectivedetails"></a>
 
-# GetMetricsResponse getGamificationProfileMetricsObjectivedetails(profileId, opts)
+## getGamificationProfileMetricsObjectivedetails
+
+> GetMetricsResponse getGamificationProfileMetricsObjectivedetails(profileId, opts)
 
 
 GET /api/v2/gamification/profiles/{profileId}/metrics/objectivedetails
@@ -1275,7 +1861,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.GamificationApi();
@@ -1302,15 +1888,15 @@ apiInstance.getGamificationProfileMetricsObjectivedetails(profileId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **profileId** | **String** | Performance Profile Id |  |
  **workday** | **String** | The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **GetMetricsResponse**
 
-<a name="getGamificationProfiles"></a>
 
-# GetProfilesResponse getGamificationProfiles()
+## getGamificationProfiles
+
+> GetProfilesResponse getGamificationProfiles()
 
 
 GET /api/v2/gamification/profiles
@@ -1331,7 +1917,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.GamificationApi();
@@ -1350,14 +1936,14 @@ apiInstance.getGamificationProfiles()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **GetProfilesResponse**
 
-<a name="getGamificationProfilesUser"></a>
 
-# PerformanceProfile getGamificationProfilesUser(userId, opts)
+## getGamificationProfilesUser
+
+> PerformanceProfile getGamificationProfilesUser(userId, opts)
 
 
 GET /api/v2/gamification/profiles/users/{userId}
@@ -1378,7 +1964,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.GamificationApi();
@@ -1405,15 +1991,15 @@ apiInstance.getGamificationProfilesUser(userId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** |  |  |
  **workday** | **String** | Target querying workday. If not provided, then queries the current performance profile. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **PerformanceProfile**
 
-<a name="getGamificationProfilesUsersMe"></a>
 
-# PerformanceProfile getGamificationProfilesUsersMe(opts)
+## getGamificationProfilesUsersMe
+
+> PerformanceProfile getGamificationProfilesUsersMe(opts)
 
 
 GET /api/v2/gamification/profiles/users/me
@@ -1430,7 +2016,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.GamificationApi();
@@ -1455,15 +2041,15 @@ apiInstance.getGamificationProfilesUsersMe(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **workday** | **String** | Target querying workday. If not provided, then queries the current performance profile. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **PerformanceProfile**
 
-<a name="getGamificationScorecards"></a>
 
-# WorkdayMetricListing getGamificationScorecards(workday, opts)
+## getGamificationScorecards
+
+> WorkdayMetricListing getGamificationScorecards(workday, opts)
 
 
 GET /api/v2/gamification/scorecards
@@ -1482,7 +2068,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.GamificationApi();
@@ -1509,15 +2095,15 @@ apiInstance.getGamificationScorecards(workday, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **workday** | **String** | Target querying workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: objective |
-{: class="table table-striped"}
 
 ### Return type
 
 **WorkdayMetricListing**
 
-<a name="getGamificationScorecardsAttendance"></a>
 
-# AttendanceStatusListing getGamificationScorecardsAttendance(startWorkday, endWorkday)
+## getGamificationScorecardsAttendance
+
+> AttendanceStatusListing getGamificationScorecardsAttendance(startWorkday, endWorkday)
 
 
 GET /api/v2/gamification/scorecards/attendance
@@ -1536,7 +2122,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.GamificationApi();
@@ -1561,15 +2147,15 @@ apiInstance.getGamificationScorecardsAttendance(startWorkday, endWorkday)
 | ------------- | ------------- | ------------- | ------------- |
  **startWorkday** | **String** | Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **endWorkday** | **String** | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AttendanceStatusListing**
 
-<a name="getGamificationScorecardsBestpoints"></a>
 
-# UserBestPoints getGamificationScorecardsBestpoints()
+## getGamificationScorecardsBestpoints
+
+> UserBestPoints getGamificationScorecardsBestpoints()
 
 
 GET /api/v2/gamification/scorecards/bestpoints
@@ -1588,7 +2174,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.GamificationApi();
@@ -1607,14 +2193,14 @@ apiInstance.getGamificationScorecardsBestpoints()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **UserBestPoints**
 
-<a name="getGamificationScorecardsPointsAlltime"></a>
 
-# AllTimePoints getGamificationScorecardsPointsAlltime(endWorkday)
+## getGamificationScorecardsPointsAlltime
+
+> AllTimePoints getGamificationScorecardsPointsAlltime(endWorkday)
 
 
 GET /api/v2/gamification/scorecards/points/alltime
@@ -1633,7 +2219,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.GamificationApi();
@@ -1656,15 +2242,15 @@ apiInstance.getGamificationScorecardsPointsAlltime(endWorkday)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **endWorkday** | **String** | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AllTimePoints**
 
-<a name="getGamificationScorecardsPointsAverage"></a>
 
-# SingleWorkdayAveragePoints getGamificationScorecardsPointsAverage(workday)
+## getGamificationScorecardsPointsAverage
+
+> SingleWorkdayAveragePoints getGamificationScorecardsPointsAverage(workday)
 
 
 GET /api/v2/gamification/scorecards/points/average
@@ -1683,7 +2269,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.GamificationApi();
@@ -1706,15 +2292,15 @@ apiInstance.getGamificationScorecardsPointsAverage(workday)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **workday** | **String** | The target workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **SingleWorkdayAveragePoints**
 
-<a name="getGamificationScorecardsPointsTrends"></a>
 
-# WorkdayPointsTrend getGamificationScorecardsPointsTrends(startWorkday, endWorkday, opts)
+## getGamificationScorecardsPointsTrends
+
+> WorkdayPointsTrend getGamificationScorecardsPointsTrends(startWorkday, endWorkday, opts)
 
 
 GET /api/v2/gamification/scorecards/points/trends
@@ -1733,7 +2319,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.GamificationApi();
@@ -1762,15 +2348,15 @@ apiInstance.getGamificationScorecardsPointsTrends(startWorkday, endWorkday, opts
  **startWorkday** | **String** | Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **endWorkday** | **String** | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **dayOfWeek** | **String** | Optional filter to specify which day of weeks to be included in the response | [optional] <br />**Values**: Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday |
-{: class="table table-striped"}
 
 ### Return type
 
 **WorkdayPointsTrend**
 
-<a name="getGamificationScorecardsProfileMetricUserValuesTrends"></a>
 
-# MetricValueTrendAverage getGamificationScorecardsProfileMetricUserValuesTrends(profileId, metricId, userId, startWorkday, endWorkday, opts)
+## getGamificationScorecardsProfileMetricUserValuesTrends
+
+> MetricValueTrendAverage getGamificationScorecardsProfileMetricUserValuesTrends(profileId, metricId, userId, startWorkday, endWorkday, opts)
 
 
 GET /api/v2/gamification/scorecards/profiles/{profileId}/metrics/{metricId}/users/{userId}/values/trends
@@ -1789,7 +2375,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.GamificationApi();
@@ -1826,15 +2412,15 @@ apiInstance.getGamificationScorecardsProfileMetricUserValuesTrends(profileId, me
  **endWorkday** | **String** | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **referenceWorkday** | **String** | Reference workday for the trend. Used to determine the associated metric definition. If not set, then the value of endWorkday is used. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
  **timeZone** | **String** | Timezone for the workday. Defaults to UTC | [optional] [default to UTC] |
-{: class="table table-striped"}
 
 ### Return type
 
 **MetricValueTrendAverage**
 
-<a name="getGamificationScorecardsProfileMetricUsersValuesTrends"></a>
 
-# MetricValueTrendAverage getGamificationScorecardsProfileMetricUsersValuesTrends(profileId, metricId, filterType, startWorkday, endWorkday, opts)
+## getGamificationScorecardsProfileMetricUsersValuesTrends
+
+> MetricValueTrendAverage getGamificationScorecardsProfileMetricUsersValuesTrends(profileId, metricId, filterType, startWorkday, endWorkday, opts)
 
 
 GET /api/v2/gamification/scorecards/profiles/{profileId}/metrics/{metricId}/users/values/trends
@@ -1853,7 +2439,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.GamificationApi();
@@ -1892,15 +2478,15 @@ apiInstance.getGamificationScorecardsProfileMetricUsersValuesTrends(profileId, m
  **filterId** | **String** | ID for the filter type. Only required when filterType is Division. | [optional]  |
  **referenceWorkday** | **String** | Reference workday for the trend. Used to determine the associated metric definition. If not set, then the value of endWorkday is used. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
  **timeZone** | **String** | Timezone for the workday. Defaults to UTC | [optional] [default to UTC] |
-{: class="table table-striped"}
 
 ### Return type
 
 **MetricValueTrendAverage**
 
-<a name="getGamificationScorecardsProfileMetricValuesTrends"></a>
 
-# MetricValueTrendAverage getGamificationScorecardsProfileMetricValuesTrends(profileId, metricId, startWorkday, endWorkday, opts)
+## getGamificationScorecardsProfileMetricValuesTrends
+
+> MetricValueTrendAverage getGamificationScorecardsProfileMetricValuesTrends(profileId, metricId, startWorkday, endWorkday, opts)
 
 
 GET /api/v2/gamification/scorecards/profiles/{profileId}/metrics/{metricId}/values/trends
@@ -1919,7 +2505,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.GamificationApi();
@@ -1956,15 +2542,15 @@ apiInstance.getGamificationScorecardsProfileMetricValuesTrends(profileId, metric
  **filterType** | **String** | Filter type for the query request. If not set, returns the values trends of the requesting user | [optional] <br />**Values**: PerformanceProfile, Division |
  **referenceWorkday** | **String** | Reference workday for the trend. Used to determine the associated metric definition. If not set, then the value of endWorkday is used. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
  **timeZone** | **String** | Timezone for the workday. Defaults to UTC | [optional] [default to UTC] |
-{: class="table table-striped"}
 
 ### Return type
 
 **MetricValueTrendAverage**
 
-<a name="getGamificationScorecardsUser"></a>
 
-# WorkdayMetricListing getGamificationScorecardsUser(userId, workday, opts)
+## getGamificationScorecardsUser
+
+> WorkdayMetricListing getGamificationScorecardsUser(userId, workday, opts)
 
 
 GET /api/v2/gamification/scorecards/users/{userId}
@@ -1983,7 +2569,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.GamificationApi();
@@ -2012,15 +2598,15 @@ apiInstance.getGamificationScorecardsUser(userId, workday, opts)
  **userId** | **String** |  |  |
  **workday** | **String** | Target querying workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: objective |
-{: class="table table-striped"}
 
 ### Return type
 
 **WorkdayMetricListing**
 
-<a name="getGamificationScorecardsUserAttendance"></a>
 
-# AttendanceStatusListing getGamificationScorecardsUserAttendance(userId, startWorkday, endWorkday)
+## getGamificationScorecardsUserAttendance
+
+> AttendanceStatusListing getGamificationScorecardsUserAttendance(userId, startWorkday, endWorkday)
 
 
 GET /api/v2/gamification/scorecards/users/{userId}/attendance
@@ -2039,7 +2625,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.GamificationApi();
@@ -2066,15 +2652,15 @@ apiInstance.getGamificationScorecardsUserAttendance(userId, startWorkday, endWor
  **userId** | **String** |  |  |
  **startWorkday** | **String** | Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **endWorkday** | **String** | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AttendanceStatusListing**
 
-<a name="getGamificationScorecardsUserBestpoints"></a>
 
-# UserBestPoints getGamificationScorecardsUserBestpoints(userId)
+## getGamificationScorecardsUserBestpoints
+
+> UserBestPoints getGamificationScorecardsUserBestpoints(userId)
 
 
 GET /api/v2/gamification/scorecards/users/{userId}/bestpoints
@@ -2093,7 +2679,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.GamificationApi();
@@ -2116,15 +2702,15 @@ apiInstance.getGamificationScorecardsUserBestpoints(userId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** |  |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **UserBestPoints**
 
-<a name="getGamificationScorecardsUserPointsAlltime"></a>
 
-# AllTimePoints getGamificationScorecardsUserPointsAlltime(userId, endWorkday)
+## getGamificationScorecardsUserPointsAlltime
+
+> AllTimePoints getGamificationScorecardsUserPointsAlltime(userId, endWorkday)
 
 
 GET /api/v2/gamification/scorecards/users/{userId}/points/alltime
@@ -2143,7 +2729,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.GamificationApi();
@@ -2168,15 +2754,15 @@ apiInstance.getGamificationScorecardsUserPointsAlltime(userId, endWorkday)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** |  |  |
  **endWorkday** | **String** | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AllTimePoints**
 
-<a name="getGamificationScorecardsUserPointsTrends"></a>
 
-# WorkdayPointsTrend getGamificationScorecardsUserPointsTrends(userId, startWorkday, endWorkday, opts)
+## getGamificationScorecardsUserPointsTrends
+
+> WorkdayPointsTrend getGamificationScorecardsUserPointsTrends(userId, startWorkday, endWorkday, opts)
 
 
 GET /api/v2/gamification/scorecards/users/{userId}/points/trends
@@ -2195,7 +2781,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.GamificationApi();
@@ -2226,15 +2812,15 @@ apiInstance.getGamificationScorecardsUserPointsTrends(userId, startWorkday, endW
  **startWorkday** | **String** | Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **endWorkday** | **String** | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **dayOfWeek** | **String** | Optional filter to specify which day of weeks to be included in the response | [optional] <br />**Values**: Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday |
-{: class="table table-striped"}
 
 ### Return type
 
 **WorkdayPointsTrend**
 
-<a name="getGamificationScorecardsUserValuesTrends"></a>
 
-# WorkdayValuesTrend getGamificationScorecardsUserValuesTrends(userId, startWorkday, endWorkday, opts)
+## getGamificationScorecardsUserValuesTrends
+
+> WorkdayValuesTrend getGamificationScorecardsUserValuesTrends(userId, startWorkday, endWorkday, opts)
 
 
 GET /api/v2/gamification/scorecards/users/{userId}/values/trends
@@ -2253,7 +2839,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.GamificationApi();
@@ -2284,15 +2870,15 @@ apiInstance.getGamificationScorecardsUserValuesTrends(userId, startWorkday, endW
  **startWorkday** | **String** | Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **endWorkday** | **String** | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **timeZone** | **String** | Timezone for the workday. Defaults to UTC | [optional] [default to UTC] |
-{: class="table table-striped"}
 
 ### Return type
 
 **WorkdayValuesTrend**
 
-<a name="getGamificationScorecardsUsersPointsAverage"></a>
 
-# SingleWorkdayAveragePoints getGamificationScorecardsUsersPointsAverage(filterType, filterId, workday)
+## getGamificationScorecardsUsersPointsAverage
+
+> SingleWorkdayAveragePoints getGamificationScorecardsUsersPointsAverage(filterType, filterId, workday)
 
 
 GET /api/v2/gamification/scorecards/users/points/average
@@ -2311,7 +2897,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.GamificationApi();
@@ -2338,15 +2924,15 @@ apiInstance.getGamificationScorecardsUsersPointsAverage(filterType, filterId, wo
  **filterType** | **String** | Filter type for the query request. | <br />**Values**: PerformanceProfile, Division |
  **filterId** | **String** | ID for the filter type. |  |
  **workday** | **String** | The target workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **SingleWorkdayAveragePoints**
 
-<a name="getGamificationScorecardsUsersValuesAverage"></a>
 
-# SingleWorkdayAverageValues getGamificationScorecardsUsersValuesAverage(filterType, filterId, workday, opts)
+## getGamificationScorecardsUsersValuesAverage
+
+> SingleWorkdayAverageValues getGamificationScorecardsUsersValuesAverage(filterType, filterId, workday, opts)
 
 
 GET /api/v2/gamification/scorecards/users/values/average
@@ -2365,7 +2951,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.GamificationApi();
@@ -2396,15 +2982,15 @@ apiInstance.getGamificationScorecardsUsersValuesAverage(filterType, filterId, wo
  **filterId** | **String** | ID for the filter type. For example, division Id |  |
  **workday** | **String** | The target workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **timeZone** | **String** | Timezone for the workday. Defaults to UTC | [optional] [default to UTC] |
-{: class="table table-striped"}
 
 ### Return type
 
 **SingleWorkdayAverageValues**
 
-<a name="getGamificationScorecardsUsersValuesTrends"></a>
 
-# WorkdayValuesTrend getGamificationScorecardsUsersValuesTrends(filterType, filterId, startWorkday, endWorkday, opts)
+## getGamificationScorecardsUsersValuesTrends
+
+> WorkdayValuesTrend getGamificationScorecardsUsersValuesTrends(filterType, filterId, startWorkday, endWorkday, opts)
 
 
 GET /api/v2/gamification/scorecards/users/values/trends
@@ -2423,7 +3009,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.GamificationApi();
@@ -2456,15 +3042,15 @@ apiInstance.getGamificationScorecardsUsersValuesTrends(filterType, filterId, sta
  **startWorkday** | **String** | Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **endWorkday** | **String** | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **timeZone** | **String** | Timezone for the workday. Defaults to UTC | [optional] [default to UTC] |
-{: class="table table-striped"}
 
 ### Return type
 
 **WorkdayValuesTrend**
 
-<a name="getGamificationScorecardsValuesAverage"></a>
 
-# SingleWorkdayAverageValues getGamificationScorecardsValuesAverage(workday, opts)
+## getGamificationScorecardsValuesAverage
+
+> SingleWorkdayAverageValues getGamificationScorecardsValuesAverage(workday, opts)
 
 
 GET /api/v2/gamification/scorecards/values/average
@@ -2483,7 +3069,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.GamificationApi();
@@ -2510,15 +3096,15 @@ apiInstance.getGamificationScorecardsValuesAverage(workday, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **workday** | **String** | The target workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **timeZone** | **String** | Timezone for the workday. Defaults to UTC | [optional] [default to UTC] |
-{: class="table table-striped"}
 
 ### Return type
 
 **SingleWorkdayAverageValues**
 
-<a name="getGamificationScorecardsValuesTrends"></a>
 
-# WorkdayValuesTrend getGamificationScorecardsValuesTrends(startWorkday, endWorkday, opts)
+## getGamificationScorecardsValuesTrends
+
+> WorkdayValuesTrend getGamificationScorecardsValuesTrends(startWorkday, endWorkday, opts)
 
 
 GET /api/v2/gamification/scorecards/values/trends
@@ -2537,7 +3123,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.GamificationApi();
@@ -2570,15 +3156,15 @@ apiInstance.getGamificationScorecardsValuesTrends(startWorkday, endWorkday, opts
  **filterType** | **String** | Filter type for the query request. If not set, then the request is for the requesting user. | [optional] <br />**Values**: PerformanceProfile, Division |
  **referenceWorkday** | **String** | Reference workday for the trend. Used to determine the profile of the user as of this date. If not set, then the user's current profile will be used. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
  **timeZone** | **String** | Timezone for the workday. Defaults to UTC | [optional] [default to UTC] |
-{: class="table table-striped"}
 
 ### Return type
 
 **WorkdayValuesTrend**
 
-<a name="getGamificationStatus"></a>
 
-# GamificationStatus getGamificationStatus()
+## getGamificationStatus
+
+> GamificationStatus getGamificationStatus()
 
 
 GET /api/v2/gamification/status
@@ -2599,7 +3185,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.GamificationApi();
@@ -2618,14 +3204,14 @@ apiInstance.getGamificationStatus()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **GamificationStatus**
 
-<a name="getGamificationTemplate"></a>
 
-# ObjectiveTemplate getGamificationTemplate(templateId)
+## getGamificationTemplate
+
+> ObjectiveTemplate getGamificationTemplate(templateId)
 
 
 GET /api/v2/gamification/templates/{templateId}
@@ -2644,7 +3230,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.GamificationApi();
@@ -2667,15 +3253,15 @@ apiInstance.getGamificationTemplate(templateId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **templateId** | **String** | template id |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ObjectiveTemplate**
 
-<a name="getGamificationTemplates"></a>
 
-# GetTemplatesResponse getGamificationTemplates()
+## getGamificationTemplates
+
+> GetTemplatesResponse getGamificationTemplates()
 
 
 GET /api/v2/gamification/templates
@@ -2694,7 +3280,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.GamificationApi();
@@ -2713,14 +3299,14 @@ apiInstance.getGamificationTemplates()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **GetTemplatesResponse**
 
-<a name="patchEmployeeperformanceExternalmetricsDefinition"></a>
 
-# ExternalMetricDefinition patchEmployeeperformanceExternalmetricsDefinition(metricId, body)
+## patchEmployeeperformanceExternalmetricsDefinition
+
+> ExternalMetricDefinition patchEmployeeperformanceExternalmetricsDefinition(metricId, body)
 
 
 PATCH /api/v2/employeeperformance/externalmetrics/definitions/{metricId}
@@ -2739,7 +3325,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.GamificationApi();
@@ -2764,15 +3350,68 @@ apiInstance.patchEmployeeperformanceExternalmetricsDefinition(metricId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **metricId** | **String** | Specifies the metric definition ID |  |
  **body** | **Object** | The External Metric Definition parameters to be updated |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ExternalMetricDefinition**
 
-<a name="postEmployeeperformanceExternalmetricsData"></a>
 
-# ExternalMetricDataWriteResponse postEmployeeperformanceExternalmetricsData(opts)
+## patchGamificationContest
+
+> ContestsResponse patchGamificationContest(contestId, body)
+
+
+PATCH /api/v2/gamification/contests/{contestId}
+
+Finalize a Contest by Id
+
+Requires ANY permissions:
+
+* gamification:contestStatus:edit
+* gamification:contestStatus:editAll
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.GamificationApi();
+
+let contestId = "contestId_example"; // String | The ID of the contest
+let body = {}; // Object | Finalize Contest
+
+apiInstance.patchGamificationContest(contestId, body)
+  .then((data) => {
+    console.log(`patchGamificationContest success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchGamificationContest');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **contestId** | **String** | The ID of the contest |  |
+ **body** | **Object** | Finalize Contest |  |
+
+### Return type
+
+**ContestsResponse**
+
+
+## postEmployeeperformanceExternalmetricsData
+
+> ExternalMetricDataWriteResponse postEmployeeperformanceExternalmetricsData(opts)
 
 
 POST /api/v2/employeeperformance/externalmetrics/data
@@ -2791,7 +3430,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.GamificationApi();
@@ -2816,15 +3455,15 @@ apiInstance.postEmployeeperformanceExternalmetricsData(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | The External Metric Data to be added | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ExternalMetricDataWriteResponse**
 
-<a name="postEmployeeperformanceExternalmetricsDefinitions"></a>
 
-# ExternalMetricDefinition postEmployeeperformanceExternalmetricsDefinitions(opts)
+## postEmployeeperformanceExternalmetricsDefinitions
+
+> ExternalMetricDefinition postEmployeeperformanceExternalmetricsDefinitions(opts)
 
 
 POST /api/v2/employeeperformance/externalmetrics/definitions
@@ -2843,7 +3482,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.GamificationApi();
@@ -2868,15 +3507,115 @@ apiInstance.postEmployeeperformanceExternalmetricsDefinitions(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | The External Metric Definition to be created | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ExternalMetricDefinition**
 
-<a name="postGamificationProfileActivate"></a>
 
-# PerformanceProfile postGamificationProfileActivate(profileId)
+## postGamificationContests
+
+> ContestsResponse postGamificationContests(body)
+
+
+POST /api/v2/gamification/contests
+
+Creates a Contest
+
+Requires ANY permissions:
+
+* gamification:contest:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.GamificationApi();
+
+let body = {}; // Object | Create Contest
+
+apiInstance.postGamificationContests(body)
+  .then((data) => {
+    console.log(`postGamificationContests success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postGamificationContests');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Create Contest |  |
+
+### Return type
+
+**ContestsResponse**
+
+
+## postGamificationContestsUploadsPrizeimages
+
+> UploadUrlResponse postGamificationContestsUploadsPrizeimages(body)
+
+
+POST /api/v2/gamification/contests/uploads/prizeimages
+
+Generates pre-signed URL to upload a prize image for gamification contests
+
+Requires ALL permissions:
+
+* gamification:contestPrizeImage:upload
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.GamificationApi();
+
+let body = {}; // Object | query
+
+apiInstance.postGamificationContestsUploadsPrizeimages(body)
+  .then((data) => {
+    console.log(`postGamificationContestsUploadsPrizeimages success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postGamificationContestsUploadsPrizeimages');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | query |  |
+
+### Return type
+
+**UploadUrlResponse**
+
+
+## postGamificationProfileActivate
+
+> PerformanceProfile postGamificationProfileActivate(profileId)
 
 
 POST /api/v2/gamification/profiles/{profileId}/activate
@@ -2895,7 +3634,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.GamificationApi();
@@ -2918,15 +3657,15 @@ apiInstance.postGamificationProfileActivate(profileId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **profileId** | **String** | performanceProfileId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **PerformanceProfile**
 
-<a name="postGamificationProfileDeactivate"></a>
 
-# PerformanceProfile postGamificationProfileDeactivate(profileId)
+## postGamificationProfileDeactivate
+
+> PerformanceProfile postGamificationProfileDeactivate(profileId)
 
 
 POST /api/v2/gamification/profiles/{profileId}/deactivate
@@ -2945,7 +3684,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.GamificationApi();
@@ -2968,15 +3707,15 @@ apiInstance.postGamificationProfileDeactivate(profileId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **profileId** | **String** | performanceProfileId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **PerformanceProfile**
 
-<a name="postGamificationProfileMembers"></a>
 
-# Assignment postGamificationProfileMembers(profileId, body)
+## postGamificationProfileMembers
+
+> Assignment postGamificationProfileMembers(profileId, body)
 
 
 POST /api/v2/gamification/profiles/{profileId}/members
@@ -2995,7 +3734,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.GamificationApi();
@@ -3020,15 +3759,15 @@ apiInstance.postGamificationProfileMembers(profileId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **profileId** | **String** | Profile Id |  |
  **body** | **Object** | assignUsers |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Assignment**
 
-<a name="postGamificationProfileMembersValidate"></a>
 
-# AssignmentValidation postGamificationProfileMembersValidate(profileId, body)
+## postGamificationProfileMembersValidate
+
+> AssignmentValidation postGamificationProfileMembersValidate(profileId, body)
 
 
 POST /api/v2/gamification/profiles/{profileId}/members/validate
@@ -3047,7 +3786,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.GamificationApi();
@@ -3072,15 +3811,15 @@ apiInstance.postGamificationProfileMembersValidate(profileId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **profileId** | **String** | Profile Id |  |
  **body** | **Object** | memberAssignments |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AssignmentValidation**
 
-<a name="postGamificationProfileMetricLink"></a>
 
-# Metric postGamificationProfileMetricLink(sourceProfileId, sourceMetricId, body)
+## postGamificationProfileMetricLink
+
+> Metric postGamificationProfileMetricLink(sourceProfileId, sourceMetricId, body)
 
 
 POST /api/v2/gamification/profiles/{sourceProfileId}/metrics/{sourceMetricId}/link
@@ -3099,7 +3838,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.GamificationApi();
@@ -3126,15 +3865,15 @@ apiInstance.postGamificationProfileMetricLink(sourceProfileId, sourceMetricId, b
  **sourceProfileId** | **String** | Source Performance Profile Id |  |
  **sourceMetricId** | **String** | Source Metric Id |  |
  **body** | **Object** | linkedMetric |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Metric**
 
-<a name="postGamificationProfileMetrics"></a>
 
-# Metric postGamificationProfileMetrics(profileId, body)
+## postGamificationProfileMetrics
+
+> Metric postGamificationProfileMetrics(profileId, body)
 
 
 POST /api/v2/gamification/profiles/{profileId}/metrics
@@ -3153,7 +3892,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.GamificationApi();
@@ -3178,15 +3917,15 @@ apiInstance.postGamificationProfileMetrics(profileId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **profileId** | **String** | Performance Profile Id |  |
  **body** | **Object** | Metric |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Metric**
 
-<a name="postGamificationProfiles"></a>
 
-# PerformanceProfile postGamificationProfiles(body, opts)
+## postGamificationProfiles
+
+> PerformanceProfile postGamificationProfiles(body, opts)
 
 
 POST /api/v2/gamification/profiles
@@ -3205,7 +3944,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.GamificationApi();
@@ -3232,15 +3971,15 @@ apiInstance.postGamificationProfiles(body, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | performanceProfile |  |
  **copyMetrics** | **Boolean** | Flag to copy metrics. If set to false, there will be no metrics associated with the new profile. If set to true or is absent (the default behavior), all metrics from the default profile will be copied over into the new profile. | [optional] [default to true] |
-{: class="table table-striped"}
 
 ### Return type
 
 **PerformanceProfile**
 
-<a name="postGamificationProfilesUserQuery"></a>
 
-# UserProfilesInDateRange postGamificationProfilesUserQuery(userId, body)
+## postGamificationProfilesUserQuery
+
+> UserProfilesInDateRange postGamificationProfilesUserQuery(userId, body)
 
 
 POST /api/v2/gamification/profiles/users/{userId}/query
@@ -3259,7 +3998,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.GamificationApi();
@@ -3284,15 +4023,15 @@ apiInstance.postGamificationProfilesUserQuery(userId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | The ID of a user. |  |
  **body** | **Object** | The date range of work day. |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **UserProfilesInDateRange**
 
-<a name="postGamificationProfilesUsersMeQuery"></a>
 
-# UserProfilesInDateRange postGamificationProfilesUsersMeQuery(body)
+## postGamificationProfilesUsersMeQuery
+
+> UserProfilesInDateRange postGamificationProfilesUsersMeQuery(body)
 
 
 POST /api/v2/gamification/profiles/users/me/query
@@ -3309,7 +4048,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.GamificationApi();
@@ -3332,15 +4071,68 @@ apiInstance.postGamificationProfilesUsersMeQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | The date range of work day. |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **UserProfilesInDateRange**
 
-<a name="putGamificationProfile"></a>
 
-# PerformanceProfile putGamificationProfile(profileId, opts)
+## putGamificationContest
+
+> ContestsResponse putGamificationContest(contestId, body)
+
+
+PUT /api/v2/gamification/contests/{contestId}
+
+Update a Contest by Id
+
+Requires ANY permissions:
+
+* gamification:contest:edit
+* gamification:contest:editAll
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.GamificationApi();
+
+let contestId = "contestId_example"; // String | The ID of the contest
+let body = {}; // Object | Contest
+
+apiInstance.putGamificationContest(contestId, body)
+  .then((data) => {
+    console.log(`putGamificationContest success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putGamificationContest');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **contestId** | **String** | The ID of the contest |  |
+ **body** | **Object** | Contest |  |
+
+### Return type
+
+**ContestsResponse**
+
+
+## putGamificationProfile
+
+> PerformanceProfile putGamificationProfile(profileId, opts)
 
 
 PUT /api/v2/gamification/profiles/{profileId}
@@ -3359,7 +4151,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.GamificationApi();
@@ -3386,15 +4178,15 @@ apiInstance.putGamificationProfile(profileId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **profileId** | **String** | performanceProfileId |  |
  **body** | **Object** | performanceProfile | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **PerformanceProfile**
 
-<a name="putGamificationProfileMetric"></a>
 
-# Metric putGamificationProfileMetric(profileId, metricId, body)
+## putGamificationProfileMetric
+
+> Metric putGamificationProfileMetric(profileId, metricId, body)
 
 
 PUT /api/v2/gamification/profiles/{profileId}/metrics/{metricId}
@@ -3413,7 +4205,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.GamificationApi();
@@ -3440,15 +4232,15 @@ apiInstance.putGamificationProfileMetric(profileId, metricId, body)
  **profileId** | **String** | Performance Profile Id |  |
  **metricId** | **String** | Metric Id |  |
  **body** | **Object** | Metric |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Metric**
 
-<a name="putGamificationStatus"></a>
 
-# GamificationStatus putGamificationStatus(status)
+## putGamificationStatus
+
+> GamificationStatus putGamificationStatus(status)
 
 
 PUT /api/v2/gamification/status
@@ -3467,7 +4259,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.GamificationApi();
@@ -3490,9 +4282,10 @@ apiInstance.putGamificationStatus(status)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **status** | **Object** | Gamification status |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **GamificationStatus**
 
+
+_purecloud-platform-client-v2@229.1.0_

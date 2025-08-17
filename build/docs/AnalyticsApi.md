@@ -1,109 +1,345 @@
----
-title: AnalyticsApi
----
+# AnalyticsApi
+
 # platformClient.AnalyticsApi
 
 All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-[**deleteAnalyticsConversationsDetailsJob**](AnalyticsApi.html#deleteAnalyticsConversationsDetailsJob) | **DELETE** /api/v2/analytics/conversations/details/jobs/{jobId} | Delete/cancel an async details job
-[**deleteAnalyticsReportingSchedule**](AnalyticsApi.html#deleteAnalyticsReportingSchedule) | **DELETE** /api/v2/analytics/reporting/schedules/{scheduleId} | Delete a scheduled report job.
-[**deleteAnalyticsUsersDetailsJob**](AnalyticsApi.html#deleteAnalyticsUsersDetailsJob) | **DELETE** /api/v2/analytics/users/details/jobs/{jobId} | Delete/cancel an async request
-[**getAnalyticsActionsAggregatesJob**](AnalyticsApi.html#getAnalyticsActionsAggregatesJob) | **GET** /api/v2/analytics/actions/aggregates/jobs/{jobId} | Get status for async query for action aggregates
-[**getAnalyticsActionsAggregatesJobResults**](AnalyticsApi.html#getAnalyticsActionsAggregatesJobResults) | **GET** /api/v2/analytics/actions/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query
-[**getAnalyticsBotflowReportingturns**](AnalyticsApi.html#getAnalyticsBotflowReportingturns) | **GET** /api/v2/analytics/botflows/{botFlowId}/reportingturns | Get Reporting Turns.
-[**getAnalyticsBotsAggregatesJob**](AnalyticsApi.html#getAnalyticsBotsAggregatesJob) | **GET** /api/v2/analytics/bots/aggregates/jobs/{jobId} | Get status for async query for bot aggregates
-[**getAnalyticsBotsAggregatesJobResults**](AnalyticsApi.html#getAnalyticsBotsAggregatesJobResults) | **GET** /api/v2/analytics/bots/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query
-[**getAnalyticsConversationDetails**](AnalyticsApi.html#getAnalyticsConversationDetails) | **GET** /api/v2/analytics/conversations/{conversationId}/details | Get a conversation by id
-[**getAnalyticsConversationsAggregatesJob**](AnalyticsApi.html#getAnalyticsConversationsAggregatesJob) | **GET** /api/v2/analytics/conversations/aggregates/jobs/{jobId} | Get status for async query for conversation aggregates
-[**getAnalyticsConversationsAggregatesJobResults**](AnalyticsApi.html#getAnalyticsConversationsAggregatesJobResults) | **GET** /api/v2/analytics/conversations/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query
-[**getAnalyticsConversationsDetails**](AnalyticsApi.html#getAnalyticsConversationsDetails) | **GET** /api/v2/analytics/conversations/details | Gets multiple conversations by id
-[**getAnalyticsConversationsDetailsJob**](AnalyticsApi.html#getAnalyticsConversationsDetailsJob) | **GET** /api/v2/analytics/conversations/details/jobs/{jobId} | Get status for async query for conversation details
-[**getAnalyticsConversationsDetailsJobResults**](AnalyticsApi.html#getAnalyticsConversationsDetailsJobResults) | **GET** /api/v2/analytics/conversations/details/jobs/{jobId}/results | Fetch a page of results for an async details job
-[**getAnalyticsConversationsDetailsJobsAvailability**](AnalyticsApi.html#getAnalyticsConversationsDetailsJobsAvailability) | **GET** /api/v2/analytics/conversations/details/jobs/availability | Lookup the datalake availability date and time
-[**getAnalyticsDataretentionSettings**](AnalyticsApi.html#getAnalyticsDataretentionSettings) | **GET** /api/v2/analytics/dataretention/settings | Get analytics data retention setting
-[**getAnalyticsEvaluationsAggregatesJob**](AnalyticsApi.html#getAnalyticsEvaluationsAggregatesJob) | **GET** /api/v2/analytics/evaluations/aggregates/jobs/{jobId} | Get status for async query for evaluation aggregates
-[**getAnalyticsEvaluationsAggregatesJobResults**](AnalyticsApi.html#getAnalyticsEvaluationsAggregatesJobResults) | **GET** /api/v2/analytics/evaluations/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query
-[**getAnalyticsFlowsAggregatesJob**](AnalyticsApi.html#getAnalyticsFlowsAggregatesJob) | **GET** /api/v2/analytics/flows/aggregates/jobs/{jobId} | Get status for async query for Flow aggregates
-[**getAnalyticsFlowsAggregatesJobResults**](AnalyticsApi.html#getAnalyticsFlowsAggregatesJobResults) | **GET** /api/v2/analytics/flows/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query
-[**getAnalyticsJourneysAggregatesJob**](AnalyticsApi.html#getAnalyticsJourneysAggregatesJob) | **GET** /api/v2/analytics/journeys/aggregates/jobs/{jobId} | Get status for async query for journey aggregates
-[**getAnalyticsJourneysAggregatesJobResults**](AnalyticsApi.html#getAnalyticsJourneysAggregatesJobResults) | **GET** /api/v2/analytics/journeys/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query
-[**getAnalyticsKnowledgeAggregatesJob**](AnalyticsApi.html#getAnalyticsKnowledgeAggregatesJob) | **GET** /api/v2/analytics/knowledge/aggregates/jobs/{jobId} | Get status for async query for knowledge aggregates
-[**getAnalyticsKnowledgeAggregatesJobResults**](AnalyticsApi.html#getAnalyticsKnowledgeAggregatesJobResults) | **GET** /api/v2/analytics/knowledge/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query
-[**getAnalyticsReportingExports**](AnalyticsApi.html#getAnalyticsReportingExports) | **GET** /api/v2/analytics/reporting/exports | Get all view export requests for a user
-[**getAnalyticsReportingExportsMetadata**](AnalyticsApi.html#getAnalyticsReportingExportsMetadata) | **GET** /api/v2/analytics/reporting/exports/metadata | Get all export metadata
-[**getAnalyticsReportingMetadata**](AnalyticsApi.html#getAnalyticsReportingMetadata) | **GET** /api/v2/analytics/reporting/metadata | Get list of reporting metadata.
-[**getAnalyticsReportingReportIdMetadata**](AnalyticsApi.html#getAnalyticsReportingReportIdMetadata) | **GET** /api/v2/analytics/reporting/{reportId}/metadata | Get a reporting metadata.
-[**getAnalyticsReportingReportformats**](AnalyticsApi.html#getAnalyticsReportingReportformats) | **GET** /api/v2/analytics/reporting/reportformats | Get a list of report formats
-[**getAnalyticsReportingSchedule**](AnalyticsApi.html#getAnalyticsReportingSchedule) | **GET** /api/v2/analytics/reporting/schedules/{scheduleId} | Get a scheduled report job.
-[**getAnalyticsReportingScheduleHistory**](AnalyticsApi.html#getAnalyticsReportingScheduleHistory) | **GET** /api/v2/analytics/reporting/schedules/{scheduleId}/history | Get list of completed scheduled report jobs.
-[**getAnalyticsReportingScheduleHistoryLatest**](AnalyticsApi.html#getAnalyticsReportingScheduleHistoryLatest) | **GET** /api/v2/analytics/reporting/schedules/{scheduleId}/history/latest | Get most recently completed scheduled report job.
-[**getAnalyticsReportingScheduleHistoryRunId**](AnalyticsApi.html#getAnalyticsReportingScheduleHistoryRunId) | **GET** /api/v2/analytics/reporting/schedules/{scheduleId}/history/{runId} | A completed scheduled report job
-[**getAnalyticsReportingSchedules**](AnalyticsApi.html#getAnalyticsReportingSchedules) | **GET** /api/v2/analytics/reporting/schedules | Get a list of scheduled report jobs
-[**getAnalyticsReportingSettings**](AnalyticsApi.html#getAnalyticsReportingSettings) | **GET** /api/v2/analytics/reporting/settings | Get AnalyticsReportingSettings for an organization
-[**getAnalyticsReportingTimeperiods**](AnalyticsApi.html#getAnalyticsReportingTimeperiods) | **GET** /api/v2/analytics/reporting/timeperiods | Get a list of report time periods.
-[**getAnalyticsResolutionsAggregatesJob**](AnalyticsApi.html#getAnalyticsResolutionsAggregatesJob) | **GET** /api/v2/analytics/resolutions/aggregates/jobs/{jobId} | Get status for async query for resolution aggregates
-[**getAnalyticsResolutionsAggregatesJobResults**](AnalyticsApi.html#getAnalyticsResolutionsAggregatesJobResults) | **GET** /api/v2/analytics/resolutions/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query
-[**getAnalyticsSurveysAggregatesJob**](AnalyticsApi.html#getAnalyticsSurveysAggregatesJob) | **GET** /api/v2/analytics/surveys/aggregates/jobs/{jobId} | Get status for async query for survey aggregates
-[**getAnalyticsSurveysAggregatesJobResults**](AnalyticsApi.html#getAnalyticsSurveysAggregatesJobResults) | **GET** /api/v2/analytics/surveys/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query
-[**getAnalyticsTaskmanagementAggregatesJob**](AnalyticsApi.html#getAnalyticsTaskmanagementAggregatesJob) | **GET** /api/v2/analytics/taskmanagement/aggregates/jobs/{jobId} | Get status for async query for task management aggregates
-[**getAnalyticsTaskmanagementAggregatesJobResults**](AnalyticsApi.html#getAnalyticsTaskmanagementAggregatesJobResults) | **GET** /api/v2/analytics/taskmanagement/aggregates/jobs/{jobId}/results | Fetch a page of results for an async task management query
-[**getAnalyticsTranscriptsAggregatesJob**](AnalyticsApi.html#getAnalyticsTranscriptsAggregatesJob) | **GET** /api/v2/analytics/transcripts/aggregates/jobs/{jobId} | Get status for async query for transcript aggregates
-[**getAnalyticsTranscriptsAggregatesJobResults**](AnalyticsApi.html#getAnalyticsTranscriptsAggregatesJobResults) | **GET** /api/v2/analytics/transcripts/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query
-[**getAnalyticsUsersAggregatesJob**](AnalyticsApi.html#getAnalyticsUsersAggregatesJob) | **GET** /api/v2/analytics/users/aggregates/jobs/{jobId} | Get status for async query for user aggregates
-[**getAnalyticsUsersAggregatesJobResults**](AnalyticsApi.html#getAnalyticsUsersAggregatesJobResults) | **GET** /api/v2/analytics/users/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query
-[**getAnalyticsUsersDetailsJob**](AnalyticsApi.html#getAnalyticsUsersDetailsJob) | **GET** /api/v2/analytics/users/details/jobs/{jobId} | Get status for async query for user details
-[**getAnalyticsUsersDetailsJobResults**](AnalyticsApi.html#getAnalyticsUsersDetailsJobResults) | **GET** /api/v2/analytics/users/details/jobs/{jobId}/results | Fetch a page of results for an async query
-[**getAnalyticsUsersDetailsJobsAvailability**](AnalyticsApi.html#getAnalyticsUsersDetailsJobsAvailability) | **GET** /api/v2/analytics/users/details/jobs/availability | Lookup the datalake availability date and time
-[**patchAnalyticsReportingSettings**](AnalyticsApi.html#patchAnalyticsReportingSettings) | **PATCH** /api/v2/analytics/reporting/settings | Patch AnalyticsReportingSettings values for an organization
-[**postAnalyticsActionsAggregatesJobs**](AnalyticsApi.html#postAnalyticsActionsAggregatesJobs) | **POST** /api/v2/analytics/actions/aggregates/jobs | Query for action aggregates asynchronously
-[**postAnalyticsActionsAggregatesQuery**](AnalyticsApi.html#postAnalyticsActionsAggregatesQuery) | **POST** /api/v2/analytics/actions/aggregates/query | Query for action aggregates
-[**postAnalyticsBotsAggregatesJobs**](AnalyticsApi.html#postAnalyticsBotsAggregatesJobs) | **POST** /api/v2/analytics/bots/aggregates/jobs | Query for bot aggregates asynchronously
-[**postAnalyticsBotsAggregatesQuery**](AnalyticsApi.html#postAnalyticsBotsAggregatesQuery) | **POST** /api/v2/analytics/bots/aggregates/query | Query for bot aggregates
-[**postAnalyticsConversationDetailsProperties**](AnalyticsApi.html#postAnalyticsConversationDetailsProperties) | **POST** /api/v2/analytics/conversations/{conversationId}/details/properties | Index conversation properties
-[**postAnalyticsConversationsActivityQuery**](AnalyticsApi.html#postAnalyticsConversationsActivityQuery) | **POST** /api/v2/analytics/conversations/activity/query | Query for conversation activity observations
-[**postAnalyticsConversationsAggregatesJobs**](AnalyticsApi.html#postAnalyticsConversationsAggregatesJobs) | **POST** /api/v2/analytics/conversations/aggregates/jobs | Query for conversation aggregates asynchronously
-[**postAnalyticsConversationsAggregatesQuery**](AnalyticsApi.html#postAnalyticsConversationsAggregatesQuery) | **POST** /api/v2/analytics/conversations/aggregates/query | Query for conversation aggregates
-[**postAnalyticsConversationsDetailsJobs**](AnalyticsApi.html#postAnalyticsConversationsDetailsJobs) | **POST** /api/v2/analytics/conversations/details/jobs | Query for conversation details asynchronously
-[**postAnalyticsConversationsDetailsQuery**](AnalyticsApi.html#postAnalyticsConversationsDetailsQuery) | **POST** /api/v2/analytics/conversations/details/query | Query for conversation details
-[**postAnalyticsConversationsTranscriptsQuery**](AnalyticsApi.html#postAnalyticsConversationsTranscriptsQuery) | **POST** /api/v2/analytics/conversations/transcripts/query | Search resources.
-[**postAnalyticsEvaluationsAggregatesJobs**](AnalyticsApi.html#postAnalyticsEvaluationsAggregatesJobs) | **POST** /api/v2/analytics/evaluations/aggregates/jobs | Query for evaluation aggregates asynchronously
-[**postAnalyticsEvaluationsAggregatesQuery**](AnalyticsApi.html#postAnalyticsEvaluationsAggregatesQuery) | **POST** /api/v2/analytics/evaluations/aggregates/query | Query for evaluation aggregates
-[**postAnalyticsFlowsActivityQuery**](AnalyticsApi.html#postAnalyticsFlowsActivityQuery) | **POST** /api/v2/analytics/flows/activity/query | Query for flow activity observations
-[**postAnalyticsFlowsAggregatesJobs**](AnalyticsApi.html#postAnalyticsFlowsAggregatesJobs) | **POST** /api/v2/analytics/flows/aggregates/jobs | Query for flow aggregates asynchronously
-[**postAnalyticsFlowsAggregatesQuery**](AnalyticsApi.html#postAnalyticsFlowsAggregatesQuery) | **POST** /api/v2/analytics/flows/aggregates/query | Query for flow aggregates
-[**postAnalyticsFlowsObservationsQuery**](AnalyticsApi.html#postAnalyticsFlowsObservationsQuery) | **POST** /api/v2/analytics/flows/observations/query | Query for flow observations
-[**postAnalyticsJourneysAggregatesJobs**](AnalyticsApi.html#postAnalyticsJourneysAggregatesJobs) | **POST** /api/v2/analytics/journeys/aggregates/jobs | Query for journey aggregates asynchronously
-[**postAnalyticsJourneysAggregatesQuery**](AnalyticsApi.html#postAnalyticsJourneysAggregatesQuery) | **POST** /api/v2/analytics/journeys/aggregates/query | Query for journey aggregates
-[**postAnalyticsKnowledgeAggregatesJobs**](AnalyticsApi.html#postAnalyticsKnowledgeAggregatesJobs) | **POST** /api/v2/analytics/knowledge/aggregates/jobs | Query for knowledge aggregates asynchronously
-[**postAnalyticsKnowledgeAggregatesQuery**](AnalyticsApi.html#postAnalyticsKnowledgeAggregatesQuery) | **POST** /api/v2/analytics/knowledge/aggregates/query | Query for knowledge aggregates
-[**postAnalyticsQueuesObservationsQuery**](AnalyticsApi.html#postAnalyticsQueuesObservationsQuery) | **POST** /api/v2/analytics/queues/observations/query | Query for queue observations
-[**postAnalyticsReportingExports**](AnalyticsApi.html#postAnalyticsReportingExports) | **POST** /api/v2/analytics/reporting/exports | Generate a view export request
-[**postAnalyticsReportingScheduleRunreport**](AnalyticsApi.html#postAnalyticsReportingScheduleRunreport) | **POST** /api/v2/analytics/reporting/schedules/{scheduleId}/runreport | Place a scheduled report immediately into the reporting queue
-[**postAnalyticsReportingSchedules**](AnalyticsApi.html#postAnalyticsReportingSchedules) | **POST** /api/v2/analytics/reporting/schedules | Create a scheduled report job
-[**postAnalyticsResolutionsAggregatesJobs**](AnalyticsApi.html#postAnalyticsResolutionsAggregatesJobs) | **POST** /api/v2/analytics/resolutions/aggregates/jobs | Query for resolution aggregates asynchronously
-[**postAnalyticsRoutingActivityQuery**](AnalyticsApi.html#postAnalyticsRoutingActivityQuery) | **POST** /api/v2/analytics/routing/activity/query | Query for user activity observations
-[**postAnalyticsSurveysAggregatesJobs**](AnalyticsApi.html#postAnalyticsSurveysAggregatesJobs) | **POST** /api/v2/analytics/surveys/aggregates/jobs | Query for survey aggregates asynchronously
-[**postAnalyticsSurveysAggregatesQuery**](AnalyticsApi.html#postAnalyticsSurveysAggregatesQuery) | **POST** /api/v2/analytics/surveys/aggregates/query | Query for survey aggregates
-[**postAnalyticsTaskmanagementAggregatesJobs**](AnalyticsApi.html#postAnalyticsTaskmanagementAggregatesJobs) | **POST** /api/v2/analytics/taskmanagement/aggregates/jobs | Query for task management aggregates asynchronously
-[**postAnalyticsTaskmanagementAggregatesQuery**](AnalyticsApi.html#postAnalyticsTaskmanagementAggregatesQuery) | **POST** /api/v2/analytics/taskmanagement/aggregates/query | Query for task management aggregates
-[**postAnalyticsTeamsActivityQuery**](AnalyticsApi.html#postAnalyticsTeamsActivityQuery) | **POST** /api/v2/analytics/teams/activity/query | Query for team activity observations
-[**postAnalyticsTranscriptsAggregatesJobs**](AnalyticsApi.html#postAnalyticsTranscriptsAggregatesJobs) | **POST** /api/v2/analytics/transcripts/aggregates/jobs | Query for transcript aggregates asynchronously
-[**postAnalyticsTranscriptsAggregatesQuery**](AnalyticsApi.html#postAnalyticsTranscriptsAggregatesQuery) | **POST** /api/v2/analytics/transcripts/aggregates/query | Query for transcript aggregates
-[**postAnalyticsUsersActivityQuery**](AnalyticsApi.html#postAnalyticsUsersActivityQuery) | **POST** /api/v2/analytics/users/activity/query | Query for user activity observations
-[**postAnalyticsUsersAggregatesJobs**](AnalyticsApi.html#postAnalyticsUsersAggregatesJobs) | **POST** /api/v2/analytics/users/aggregates/jobs | Query for user aggregates asynchronously
-[**postAnalyticsUsersAggregatesQuery**](AnalyticsApi.html#postAnalyticsUsersAggregatesQuery) | **POST** /api/v2/analytics/users/aggregates/query | Query for user aggregates
-[**postAnalyticsUsersDetailsJobs**](AnalyticsApi.html#postAnalyticsUsersDetailsJobs) | **POST** /api/v2/analytics/users/details/jobs | Query for user details asynchronously
-[**postAnalyticsUsersDetailsQuery**](AnalyticsApi.html#postAnalyticsUsersDetailsQuery) | **POST** /api/v2/analytics/users/details/query | Query for user details
-[**postAnalyticsUsersObservationsQuery**](AnalyticsApi.html#postAnalyticsUsersObservationsQuery) | **POST** /api/v2/analytics/users/observations/query | Query for user observations
-[**putAnalyticsDataretentionSettings**](AnalyticsApi.html#putAnalyticsDataretentionSettings) | **PUT** /api/v2/analytics/dataretention/settings | Update analytics data retention setting
-[**putAnalyticsReportingSchedule**](AnalyticsApi.html#putAnalyticsReportingSchedule) | **PUT** /api/v2/analytics/reporting/schedules/{scheduleId} | Update a scheduled report job.
-{: class="table table-striped"}
+[**deleteAnalyticsActionsAggregatesJob**](AnalyticsApi#deleteAnalyticsActionsAggregatesJob) | **DELETE** /api/v2/analytics/actions/aggregates/jobs/{jobId} | Delete/cancel an async request for action aggregates
+[**deleteAnalyticsAgentcopilotsAggregatesJob**](AnalyticsApi#deleteAnalyticsAgentcopilotsAggregatesJob) | **DELETE** /api/v2/analytics/agentcopilots/aggregates/jobs/{jobId} | Delete/cancel an async request for agent copilot aggregates
+[**deleteAnalyticsBotsAggregatesJob**](AnalyticsApi#deleteAnalyticsBotsAggregatesJob) | **DELETE** /api/v2/analytics/bots/aggregates/jobs/{jobId} | Delete/cancel an async request for bot aggregates
+[**deleteAnalyticsConversationsAggregatesJob**](AnalyticsApi#deleteAnalyticsConversationsAggregatesJob) | **DELETE** /api/v2/analytics/conversations/aggregates/jobs/{jobId} | Delete/cancel an async request for conversation aggregates
+[**deleteAnalyticsConversationsDetailsJob**](AnalyticsApi#deleteAnalyticsConversationsDetailsJob) | **DELETE** /api/v2/analytics/conversations/details/jobs/{jobId} | Delete/cancel an async details job
+[**deleteAnalyticsEvaluationsAggregatesJob**](AnalyticsApi#deleteAnalyticsEvaluationsAggregatesJob) | **DELETE** /api/v2/analytics/evaluations/aggregates/jobs/{jobId} | Delete/cancel an async request for evaluation aggregates
+[**deleteAnalyticsFlowexecutionsAggregatesJob**](AnalyticsApi#deleteAnalyticsFlowexecutionsAggregatesJob) | **DELETE** /api/v2/analytics/flowexecutions/aggregates/jobs/{jobId} | Delete/cancel an async request for flow execution aggregates
+[**deleteAnalyticsFlowsAggregatesJob**](AnalyticsApi#deleteAnalyticsFlowsAggregatesJob) | **DELETE** /api/v2/analytics/flows/aggregates/jobs/{jobId} | Delete/cancel an async request for flow aggregates
+[**deleteAnalyticsJourneysAggregatesJob**](AnalyticsApi#deleteAnalyticsJourneysAggregatesJob) | **DELETE** /api/v2/analytics/journeys/aggregates/jobs/{jobId} | Delete/cancel an async request for journey aggregates
+[**deleteAnalyticsKnowledgeAggregatesJob**](AnalyticsApi#deleteAnalyticsKnowledgeAggregatesJob) | **DELETE** /api/v2/analytics/knowledge/aggregates/jobs/{jobId} | Delete/cancel an async request for knowledge aggregates
+[**deleteAnalyticsResolutionsAggregatesJob**](AnalyticsApi#deleteAnalyticsResolutionsAggregatesJob) | **DELETE** /api/v2/analytics/resolutions/aggregates/jobs/{jobId} | Delete/cancel an async request for resolution aggregates
+[**deleteAnalyticsSummariesAggregatesJob**](AnalyticsApi#deleteAnalyticsSummariesAggregatesJob) | **DELETE** /api/v2/analytics/summaries/aggregates/jobs/{jobId} | Delete/cancel an async request for summary aggregates
+[**deleteAnalyticsSurveysAggregatesJob**](AnalyticsApi#deleteAnalyticsSurveysAggregatesJob) | **DELETE** /api/v2/analytics/surveys/aggregates/jobs/{jobId} | Delete/cancel an async request for survey aggregates
+[**deleteAnalyticsTaskmanagementAggregatesJob**](AnalyticsApi#deleteAnalyticsTaskmanagementAggregatesJob) | **DELETE** /api/v2/analytics/taskmanagement/aggregates/jobs/{jobId} | Delete/cancel an async request for task management aggregates
+[**deleteAnalyticsTranscriptsAggregatesJob**](AnalyticsApi#deleteAnalyticsTranscriptsAggregatesJob) | **DELETE** /api/v2/analytics/transcripts/aggregates/jobs/{jobId} | Delete/cancel an async request for transcript aggregates
+[**deleteAnalyticsUsersAggregatesJob**](AnalyticsApi#deleteAnalyticsUsersAggregatesJob) | **DELETE** /api/v2/analytics/users/aggregates/jobs/{jobId} | Delete/cancel an async request for user aggregates
+[**deleteAnalyticsUsersDetailsJob**](AnalyticsApi#deleteAnalyticsUsersDetailsJob) | **DELETE** /api/v2/analytics/users/details/jobs/{jobId} | Delete/cancel an async request
+[**getAnalyticsActionsAggregatesJob**](AnalyticsApi#getAnalyticsActionsAggregatesJob) | **GET** /api/v2/analytics/actions/aggregates/jobs/{jobId} | Get status for async query for action aggregates
+[**getAnalyticsActionsAggregatesJobResults**](AnalyticsApi#getAnalyticsActionsAggregatesJobResults) | **GET** /api/v2/analytics/actions/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query
+[**getAnalyticsAgentStatus**](AnalyticsApi#getAnalyticsAgentStatus) | **GET** /api/v2/analytics/agents/{userId}/status | Get an agent and their active sessions by user ID
+[**getAnalyticsAgentcopilotsAggregatesJob**](AnalyticsApi#getAnalyticsAgentcopilotsAggregatesJob) | **GET** /api/v2/analytics/agentcopilots/aggregates/jobs/{jobId} | Get status for async query for agent copilot aggregates
+[**getAnalyticsAgentcopilotsAggregatesJobResults**](AnalyticsApi#getAnalyticsAgentcopilotsAggregatesJobResults) | **GET** /api/v2/analytics/agentcopilots/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query
+[**getAnalyticsBotflowDivisionsReportingturns**](AnalyticsApi#getAnalyticsBotflowDivisionsReportingturns) | **GET** /api/v2/analytics/botflows/{botFlowId}/divisions/reportingturns | Get Reporting Turns (division aware).
+[**getAnalyticsBotflowReportingturns**](AnalyticsApi#getAnalyticsBotflowReportingturns) | **GET** /api/v2/analytics/botflows/{botFlowId}/reportingturns | Get Reporting Turns.
+[**getAnalyticsBotflowSessions**](AnalyticsApi#getAnalyticsBotflowSessions) | **GET** /api/v2/analytics/botflows/{botFlowId}/sessions | Get Bot Flow Sessions.
+[**getAnalyticsBotsAggregatesJob**](AnalyticsApi#getAnalyticsBotsAggregatesJob) | **GET** /api/v2/analytics/bots/aggregates/jobs/{jobId} | Get status for async query for bot aggregates
+[**getAnalyticsBotsAggregatesJobResults**](AnalyticsApi#getAnalyticsBotsAggregatesJobResults) | **GET** /api/v2/analytics/bots/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query
+[**getAnalyticsConversationDetails**](AnalyticsApi#getAnalyticsConversationDetails) | **GET** /api/v2/analytics/conversations/{conversationId}/details | Get a conversation by id
+[**getAnalyticsConversationsAggregatesJob**](AnalyticsApi#getAnalyticsConversationsAggregatesJob) | **GET** /api/v2/analytics/conversations/aggregates/jobs/{jobId} | Get status for async query for conversation aggregates
+[**getAnalyticsConversationsAggregatesJobResults**](AnalyticsApi#getAnalyticsConversationsAggregatesJobResults) | **GET** /api/v2/analytics/conversations/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query
+[**getAnalyticsConversationsDetails**](AnalyticsApi#getAnalyticsConversationsDetails) | **GET** /api/v2/analytics/conversations/details | Gets multiple conversations by id
+[**getAnalyticsConversationsDetailsJob**](AnalyticsApi#getAnalyticsConversationsDetailsJob) | **GET** /api/v2/analytics/conversations/details/jobs/{jobId} | Get status for async query for conversation details
+[**getAnalyticsConversationsDetailsJobResults**](AnalyticsApi#getAnalyticsConversationsDetailsJobResults) | **GET** /api/v2/analytics/conversations/details/jobs/{jobId}/results | Fetch a page of results for an async details job
+[**getAnalyticsConversationsDetailsJobsAvailability**](AnalyticsApi#getAnalyticsConversationsDetailsJobsAvailability) | **GET** /api/v2/analytics/conversations/details/jobs/availability | Lookup the datalake availability date and time
+[**getAnalyticsDataretentionSettings**](AnalyticsApi#getAnalyticsDataretentionSettings) | **GET** /api/v2/analytics/dataretention/settings | Get analytics data retention setting
+[**getAnalyticsEvaluationsAggregatesJob**](AnalyticsApi#getAnalyticsEvaluationsAggregatesJob) | **GET** /api/v2/analytics/evaluations/aggregates/jobs/{jobId} | Get status for async query for evaluation aggregates
+[**getAnalyticsEvaluationsAggregatesJobResults**](AnalyticsApi#getAnalyticsEvaluationsAggregatesJobResults) | **GET** /api/v2/analytics/evaluations/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query
+[**getAnalyticsFlowexecutionsAggregatesJob**](AnalyticsApi#getAnalyticsFlowexecutionsAggregatesJob) | **GET** /api/v2/analytics/flowexecutions/aggregates/jobs/{jobId} | Get status for async query for flow execution aggregates
+[**getAnalyticsFlowexecutionsAggregatesJobResults**](AnalyticsApi#getAnalyticsFlowexecutionsAggregatesJobResults) | **GET** /api/v2/analytics/flowexecutions/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query
+[**getAnalyticsFlowsAggregatesJob**](AnalyticsApi#getAnalyticsFlowsAggregatesJob) | **GET** /api/v2/analytics/flows/aggregates/jobs/{jobId} | Get status for async query for Flow aggregates
+[**getAnalyticsFlowsAggregatesJobResults**](AnalyticsApi#getAnalyticsFlowsAggregatesJobResults) | **GET** /api/v2/analytics/flows/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query
+[**getAnalyticsJourneysAggregatesJob**](AnalyticsApi#getAnalyticsJourneysAggregatesJob) | **GET** /api/v2/analytics/journeys/aggregates/jobs/{jobId} | Get status for async query for journey aggregates
+[**getAnalyticsJourneysAggregatesJobResults**](AnalyticsApi#getAnalyticsJourneysAggregatesJobResults) | **GET** /api/v2/analytics/journeys/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query
+[**getAnalyticsKnowledgeAggregatesJob**](AnalyticsApi#getAnalyticsKnowledgeAggregatesJob) | **GET** /api/v2/analytics/knowledge/aggregates/jobs/{jobId} | Get status for async query for knowledge aggregates
+[**getAnalyticsKnowledgeAggregatesJobResults**](AnalyticsApi#getAnalyticsKnowledgeAggregatesJobResults) | **GET** /api/v2/analytics/knowledge/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query
+[**getAnalyticsReportingDashboardsUser**](AnalyticsApi#getAnalyticsReportingDashboardsUser) | **GET** /api/v2/analytics/reporting/dashboards/users/{userId} | Get dashboards summary for a user
+[**getAnalyticsReportingDashboardsUsers**](AnalyticsApi#getAnalyticsReportingDashboardsUsers) | **GET** /api/v2/analytics/reporting/dashboards/users | Get dashboards summary for users in a org
+[**getAnalyticsReportingExports**](AnalyticsApi#getAnalyticsReportingExports) | **GET** /api/v2/analytics/reporting/exports | Get all view export requests for a user
+[**getAnalyticsReportingExportsMetadata**](AnalyticsApi#getAnalyticsReportingExportsMetadata) | **GET** /api/v2/analytics/reporting/exports/metadata | Get all export metadata
+[**getAnalyticsReportingSettings**](AnalyticsApi#getAnalyticsReportingSettings) | **GET** /api/v2/analytics/reporting/settings | Get AnalyticsReportingSettings for an organization
+[**getAnalyticsReportingSettingsDashboardsQuery**](AnalyticsApi#getAnalyticsReportingSettingsDashboardsQuery) | **GET** /api/v2/analytics/reporting/settings/dashboards/query | Get list of dashboard configurations
+[**getAnalyticsReportingSettingsUserDashboards**](AnalyticsApi#getAnalyticsReportingSettingsUserDashboards) | **GET** /api/v2/analytics/reporting/settings/users/{userId}/dashboards | Get list of dashboards for an user
+[**getAnalyticsResolutionsAggregatesJob**](AnalyticsApi#getAnalyticsResolutionsAggregatesJob) | **GET** /api/v2/analytics/resolutions/aggregates/jobs/{jobId} | Get status for async query for resolution aggregates
+[**getAnalyticsResolutionsAggregatesJobResults**](AnalyticsApi#getAnalyticsResolutionsAggregatesJobResults) | **GET** /api/v2/analytics/resolutions/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query
+[**getAnalyticsSummariesAggregatesJob**](AnalyticsApi#getAnalyticsSummariesAggregatesJob) | **GET** /api/v2/analytics/summaries/aggregates/jobs/{jobId} | Get status for async query for summary aggregates
+[**getAnalyticsSummariesAggregatesJobResults**](AnalyticsApi#getAnalyticsSummariesAggregatesJobResults) | **GET** /api/v2/analytics/summaries/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query
+[**getAnalyticsSurveysAggregatesJob**](AnalyticsApi#getAnalyticsSurveysAggregatesJob) | **GET** /api/v2/analytics/surveys/aggregates/jobs/{jobId} | Get status for async query for survey aggregates
+[**getAnalyticsSurveysAggregatesJobResults**](AnalyticsApi#getAnalyticsSurveysAggregatesJobResults) | **GET** /api/v2/analytics/surveys/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query
+[**getAnalyticsTaskmanagementAggregatesJob**](AnalyticsApi#getAnalyticsTaskmanagementAggregatesJob) | **GET** /api/v2/analytics/taskmanagement/aggregates/jobs/{jobId} | Get status for async query for task management aggregates
+[**getAnalyticsTaskmanagementAggregatesJobResults**](AnalyticsApi#getAnalyticsTaskmanagementAggregatesJobResults) | **GET** /api/v2/analytics/taskmanagement/aggregates/jobs/{jobId}/results | Fetch a page of results for an async task management query
+[**getAnalyticsTranscriptsAggregatesJob**](AnalyticsApi#getAnalyticsTranscriptsAggregatesJob) | **GET** /api/v2/analytics/transcripts/aggregates/jobs/{jobId} | Get status for async query for transcript aggregates
+[**getAnalyticsTranscriptsAggregatesJobResults**](AnalyticsApi#getAnalyticsTranscriptsAggregatesJobResults) | **GET** /api/v2/analytics/transcripts/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query
+[**getAnalyticsUsersAggregatesJob**](AnalyticsApi#getAnalyticsUsersAggregatesJob) | **GET** /api/v2/analytics/users/aggregates/jobs/{jobId} | Get status for async query for user aggregates
+[**getAnalyticsUsersAggregatesJobResults**](AnalyticsApi#getAnalyticsUsersAggregatesJobResults) | **GET** /api/v2/analytics/users/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query
+[**getAnalyticsUsersDetailsJob**](AnalyticsApi#getAnalyticsUsersDetailsJob) | **GET** /api/v2/analytics/users/details/jobs/{jobId} | Get status for async query for user details
+[**getAnalyticsUsersDetailsJobResults**](AnalyticsApi#getAnalyticsUsersDetailsJobResults) | **GET** /api/v2/analytics/users/details/jobs/{jobId}/results | Fetch a page of results for an async query
+[**getAnalyticsUsersDetailsJobsAvailability**](AnalyticsApi#getAnalyticsUsersDetailsJobsAvailability) | **GET** /api/v2/analytics/users/details/jobs/availability | Lookup the datalake availability date and time
+[**patchAnalyticsReportingSettings**](AnalyticsApi#patchAnalyticsReportingSettings) | **PATCH** /api/v2/analytics/reporting/settings | Patch AnalyticsReportingSettings values for an organization
+[**postAnalyticsActionsAggregatesJobs**](AnalyticsApi#postAnalyticsActionsAggregatesJobs) | **POST** /api/v2/analytics/actions/aggregates/jobs | Query for action aggregates asynchronously
+[**postAnalyticsActionsAggregatesQuery**](AnalyticsApi#postAnalyticsActionsAggregatesQuery) | **POST** /api/v2/analytics/actions/aggregates/query | Query for action aggregates
+[**postAnalyticsAgentcopilotsAggregatesJobs**](AnalyticsApi#postAnalyticsAgentcopilotsAggregatesJobs) | **POST** /api/v2/analytics/agentcopilots/aggregates/jobs | Query for agent copilot aggregates asynchronously
+[**postAnalyticsAgentcopilotsAggregatesQuery**](AnalyticsApi#postAnalyticsAgentcopilotsAggregatesQuery) | **POST** /api/v2/analytics/agentcopilots/aggregates/query | Query for agent copilot aggregates
+[**postAnalyticsAgentsStatusCounts**](AnalyticsApi#postAnalyticsAgentsStatusCounts) | **POST** /api/v2/analytics/agents/status/counts | Count agents by different groupings
+[**postAnalyticsAgentsStatusQuery**](AnalyticsApi#postAnalyticsAgentsStatusQuery) | **POST** /api/v2/analytics/agents/status/query | Retrieve the top 50 agents matching the query filters
+[**postAnalyticsBotsAggregatesJobs**](AnalyticsApi#postAnalyticsBotsAggregatesJobs) | **POST** /api/v2/analytics/bots/aggregates/jobs | Query for bot aggregates asynchronously
+[**postAnalyticsBotsAggregatesQuery**](AnalyticsApi#postAnalyticsBotsAggregatesQuery) | **POST** /api/v2/analytics/bots/aggregates/query | Query for bot aggregates
+[**postAnalyticsConversationDetailsProperties**](AnalyticsApi#postAnalyticsConversationDetailsProperties) | **POST** /api/v2/analytics/conversations/{conversationId}/details/properties | Index conversation properties
+[**postAnalyticsConversationsActivityQuery**](AnalyticsApi#postAnalyticsConversationsActivityQuery) | **POST** /api/v2/analytics/conversations/activity/query | Query for conversation activity observations
+[**postAnalyticsConversationsAggregatesJobs**](AnalyticsApi#postAnalyticsConversationsAggregatesJobs) | **POST** /api/v2/analytics/conversations/aggregates/jobs | Query for conversation aggregates asynchronously
+[**postAnalyticsConversationsAggregatesQuery**](AnalyticsApi#postAnalyticsConversationsAggregatesQuery) | **POST** /api/v2/analytics/conversations/aggregates/query | Query for conversation aggregates
+[**postAnalyticsConversationsDetailsJobs**](AnalyticsApi#postAnalyticsConversationsDetailsJobs) | **POST** /api/v2/analytics/conversations/details/jobs | Query for conversation details asynchronously
+[**postAnalyticsConversationsDetailsQuery**](AnalyticsApi#postAnalyticsConversationsDetailsQuery) | **POST** /api/v2/analytics/conversations/details/query | Query for conversation details
+[**postAnalyticsEvaluationsAggregatesJobs**](AnalyticsApi#postAnalyticsEvaluationsAggregatesJobs) | **POST** /api/v2/analytics/evaluations/aggregates/jobs | Query for evaluation aggregates asynchronously
+[**postAnalyticsEvaluationsAggregatesQuery**](AnalyticsApi#postAnalyticsEvaluationsAggregatesQuery) | **POST** /api/v2/analytics/evaluations/aggregates/query | Query for evaluation aggregates
+[**postAnalyticsFlowexecutionsAggregatesJobs**](AnalyticsApi#postAnalyticsFlowexecutionsAggregatesJobs) | **POST** /api/v2/analytics/flowexecutions/aggregates/jobs | Query for flow execution aggregates asynchronously
+[**postAnalyticsFlowexecutionsAggregatesQuery**](AnalyticsApi#postAnalyticsFlowexecutionsAggregatesQuery) | **POST** /api/v2/analytics/flowexecutions/aggregates/query | Query for flow execution aggregates
+[**postAnalyticsFlowsActivityQuery**](AnalyticsApi#postAnalyticsFlowsActivityQuery) | **POST** /api/v2/analytics/flows/activity/query | Query for flow activity observations
+[**postAnalyticsFlowsAggregatesJobs**](AnalyticsApi#postAnalyticsFlowsAggregatesJobs) | **POST** /api/v2/analytics/flows/aggregates/jobs | Query for flow aggregates asynchronously
+[**postAnalyticsFlowsAggregatesQuery**](AnalyticsApi#postAnalyticsFlowsAggregatesQuery) | **POST** /api/v2/analytics/flows/aggregates/query | Query for flow aggregates
+[**postAnalyticsFlowsObservationsQuery**](AnalyticsApi#postAnalyticsFlowsObservationsQuery) | **POST** /api/v2/analytics/flows/observations/query | Query for flow observations
+[**postAnalyticsJourneysAggregatesJobs**](AnalyticsApi#postAnalyticsJourneysAggregatesJobs) | **POST** /api/v2/analytics/journeys/aggregates/jobs | Query for journey aggregates asynchronously
+[**postAnalyticsJourneysAggregatesQuery**](AnalyticsApi#postAnalyticsJourneysAggregatesQuery) | **POST** /api/v2/analytics/journeys/aggregates/query | Query for journey aggregates
+[**postAnalyticsKnowledgeAggregatesJobs**](AnalyticsApi#postAnalyticsKnowledgeAggregatesJobs) | **POST** /api/v2/analytics/knowledge/aggregates/jobs | Query for knowledge aggregates asynchronously
+[**postAnalyticsKnowledgeAggregatesQuery**](AnalyticsApi#postAnalyticsKnowledgeAggregatesQuery) | **POST** /api/v2/analytics/knowledge/aggregates/query | Query for knowledge aggregates
+[**postAnalyticsQueuesObservationsQuery**](AnalyticsApi#postAnalyticsQueuesObservationsQuery) | **POST** /api/v2/analytics/queues/observations/query | Query for queue observations
+[**postAnalyticsRatelimitsAggregatesQuery**](AnalyticsApi#postAnalyticsRatelimitsAggregatesQuery) | **POST** /api/v2/analytics/ratelimits/aggregates/query | Query for limits rate limit aggregates. Data populated when limits reach 90% of the maximum. Not a source of truth for limits hit but a best effort estimate.
+[**postAnalyticsReportingDashboardsUsersBulkRemove**](AnalyticsApi#postAnalyticsReportingDashboardsUsersBulkRemove) | **POST** /api/v2/analytics/reporting/dashboards/users/bulk/remove | Bulk soft delete dashboards owned by other user(s)
+[**postAnalyticsReportingExports**](AnalyticsApi#postAnalyticsReportingExports) | **POST** /api/v2/analytics/reporting/exports | Generate a view export request
+[**postAnalyticsReportingSettingsDashboardsBulkRemove**](AnalyticsApi#postAnalyticsReportingSettingsDashboardsBulkRemove) | **POST** /api/v2/analytics/reporting/settings/dashboards/bulk/remove | Bulk soft delete dashboard configurations
+[**postAnalyticsReportingSettingsDashboardsQuery**](AnalyticsApi#postAnalyticsReportingSettingsDashboardsQuery) | **POST** /api/v2/analytics/reporting/settings/dashboards/query | Query dashboard configurations
+[**postAnalyticsResolutionsAggregatesJobs**](AnalyticsApi#postAnalyticsResolutionsAggregatesJobs) | **POST** /api/v2/analytics/resolutions/aggregates/jobs | Query for resolution aggregates asynchronously
+[**postAnalyticsResolutionsAggregatesQuery**](AnalyticsApi#postAnalyticsResolutionsAggregatesQuery) | **POST** /api/v2/analytics/resolutions/aggregates/query | Query for resolution aggregates
+[**postAnalyticsRoutingActivityQuery**](AnalyticsApi#postAnalyticsRoutingActivityQuery) | **POST** /api/v2/analytics/routing/activity/query | Query for user activity observations
+[**postAnalyticsSummariesAggregatesJobs**](AnalyticsApi#postAnalyticsSummariesAggregatesJobs) | **POST** /api/v2/analytics/summaries/aggregates/jobs | Query for summary aggregates asynchronously
+[**postAnalyticsSummariesAggregatesQuery**](AnalyticsApi#postAnalyticsSummariesAggregatesQuery) | **POST** /api/v2/analytics/summaries/aggregates/query | Query for summary aggregates
+[**postAnalyticsSurveysAggregatesJobs**](AnalyticsApi#postAnalyticsSurveysAggregatesJobs) | **POST** /api/v2/analytics/surveys/aggregates/jobs | Query for survey aggregates asynchronously
+[**postAnalyticsSurveysAggregatesQuery**](AnalyticsApi#postAnalyticsSurveysAggregatesQuery) | **POST** /api/v2/analytics/surveys/aggregates/query | Query for survey aggregates
+[**postAnalyticsTaskmanagementAggregatesJobs**](AnalyticsApi#postAnalyticsTaskmanagementAggregatesJobs) | **POST** /api/v2/analytics/taskmanagement/aggregates/jobs | Query for task management aggregates asynchronously
+[**postAnalyticsTaskmanagementAggregatesQuery**](AnalyticsApi#postAnalyticsTaskmanagementAggregatesQuery) | **POST** /api/v2/analytics/taskmanagement/aggregates/query | Query for task management aggregates
+[**postAnalyticsTeamsActivityQuery**](AnalyticsApi#postAnalyticsTeamsActivityQuery) | **POST** /api/v2/analytics/teams/activity/query | Query for team activity observations
+[**postAnalyticsTranscriptsAggregatesJobs**](AnalyticsApi#postAnalyticsTranscriptsAggregatesJobs) | **POST** /api/v2/analytics/transcripts/aggregates/jobs | Query for transcript aggregates asynchronously
+[**postAnalyticsTranscriptsAggregatesQuery**](AnalyticsApi#postAnalyticsTranscriptsAggregatesQuery) | **POST** /api/v2/analytics/transcripts/aggregates/query | Query for transcript aggregates
+[**postAnalyticsUsersActivityQuery**](AnalyticsApi#postAnalyticsUsersActivityQuery) | **POST** /api/v2/analytics/users/activity/query | Query for user activity observations
+[**postAnalyticsUsersAggregatesJobs**](AnalyticsApi#postAnalyticsUsersAggregatesJobs) | **POST** /api/v2/analytics/users/aggregates/jobs | Query for user aggregates asynchronously
+[**postAnalyticsUsersAggregatesQuery**](AnalyticsApi#postAnalyticsUsersAggregatesQuery) | **POST** /api/v2/analytics/users/aggregates/query | Query for user aggregates
+[**postAnalyticsUsersDetailsJobs**](AnalyticsApi#postAnalyticsUsersDetailsJobs) | **POST** /api/v2/analytics/users/details/jobs | Query for user details asynchronously
+[**postAnalyticsUsersDetailsQuery**](AnalyticsApi#postAnalyticsUsersDetailsQuery) | **POST** /api/v2/analytics/users/details/query | Query for user details
+[**postAnalyticsUsersObservationsQuery**](AnalyticsApi#postAnalyticsUsersObservationsQuery) | **POST** /api/v2/analytics/users/observations/query | Query for user observations
+[**putAnalyticsDataretentionSettings**](AnalyticsApi#putAnalyticsDataretentionSettings) | **PUT** /api/v2/analytics/dataretention/settings | Update analytics data retention setting
 
-<a name="deleteAnalyticsConversationsDetailsJob"></a>
 
-# void deleteAnalyticsConversationsDetailsJob(jobId)
+
+## deleteAnalyticsActionsAggregatesJob
+
+> void deleteAnalyticsActionsAggregatesJob(jobId)
+
+
+DELETE /api/v2/analytics/actions/aggregates/jobs/{jobId}
+
+Delete/cancel an async request for action aggregates
+
+deleteAnalyticsActionsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* integrations:action:view
+* bridge:actions:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let jobId = "jobId_example"; // String | jobId
+
+apiInstance.deleteAnalyticsActionsAggregatesJob(jobId)
+  .then(() => {
+    console.log('deleteAnalyticsActionsAggregatesJob returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteAnalyticsActionsAggregatesJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | jobId |  |
+
+### Return type
+
+void (no response body)
+
+
+## deleteAnalyticsAgentcopilotsAggregatesJob
+
+> void deleteAnalyticsAgentcopilotsAggregatesJob(jobId)
+
+
+DELETE /api/v2/analytics/agentcopilots/aggregates/jobs/{jobId}
+
+Delete/cancel an async request for agent copilot aggregates
+
+deleteAnalyticsAgentcopilotsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* analytics:agentCopilotAggregate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let jobId = "jobId_example"; // String | jobId
+
+apiInstance.deleteAnalyticsAgentcopilotsAggregatesJob(jobId)
+  .then(() => {
+    console.log('deleteAnalyticsAgentcopilotsAggregatesJob returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteAnalyticsAgentcopilotsAggregatesJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | jobId |  |
+
+### Return type
+
+void (no response body)
+
+
+## deleteAnalyticsBotsAggregatesJob
+
+> void deleteAnalyticsBotsAggregatesJob(jobId)
+
+
+DELETE /api/v2/analytics/bots/aggregates/jobs/{jobId}
+
+Delete/cancel an async request for bot aggregates
+
+deleteAnalyticsBotsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* analytics:botAggregate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let jobId = "jobId_example"; // String | jobId
+
+apiInstance.deleteAnalyticsBotsAggregatesJob(jobId)
+  .then(() => {
+    console.log('deleteAnalyticsBotsAggregatesJob returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteAnalyticsBotsAggregatesJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | jobId |  |
+
+### Return type
+
+void (no response body)
+
+
+## deleteAnalyticsConversationsAggregatesJob
+
+> void deleteAnalyticsConversationsAggregatesJob(jobId)
+
+
+DELETE /api/v2/analytics/conversations/aggregates/jobs/{jobId}
+
+Delete/cancel an async request for conversation aggregates
+
+deleteAnalyticsConversationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* analytics:conversationAggregate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let jobId = "jobId_example"; // String | jobId
+
+apiInstance.deleteAnalyticsConversationsAggregatesJob(jobId)
+  .then(() => {
+    console.log('deleteAnalyticsConversationsAggregatesJob returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteAnalyticsConversationsAggregatesJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | jobId |  |
+
+### Return type
+
+void (no response body)
+
+
+## deleteAnalyticsConversationsDetailsJob
+
+> void deleteAnalyticsConversationsDetailsJob(jobId)
 
 
 DELETE /api/v2/analytics/conversations/details/jobs/{jobId}
@@ -123,7 +359,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AnalyticsApi();
@@ -146,22 +382,26 @@ apiInstance.deleteAnalyticsConversationsDetailsJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteAnalyticsReportingSchedule"></a>
 
-# void deleteAnalyticsReportingSchedule(scheduleId)
+## deleteAnalyticsEvaluationsAggregatesJob
+
+> void deleteAnalyticsEvaluationsAggregatesJob(jobId)
 
 
-DELETE /api/v2/analytics/reporting/schedules/{scheduleId}
+DELETE /api/v2/analytics/evaluations/aggregates/jobs/{jobId}
 
-Delete a scheduled report job.
+Delete/cancel an async request for evaluation aggregates
 
-Requires NO permissions:
+deleteAnalyticsEvaluationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* analytics:evaluationAggregate:view
 
 ### Example Usage
 
@@ -171,19 +411,19 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AnalyticsApi();
 
-let scheduleId = "scheduleId_example"; // String | Schedule ID
+let jobId = "jobId_example"; // String | jobId
 
-apiInstance.deleteAnalyticsReportingSchedule(scheduleId)
+apiInstance.deleteAnalyticsEvaluationsAggregatesJob(jobId)
   .then(() => {
-    console.log('deleteAnalyticsReportingSchedule returned successfully.');
+    console.log('deleteAnalyticsEvaluationsAggregatesJob returned successfully.');
   })
   .catch((err) => {
-    console.log('There was a failure calling deleteAnalyticsReportingSchedule');
+    console.log('There was a failure calling deleteAnalyticsEvaluationsAggregatesJob');
     console.error(err);
   });
 ```
@@ -193,16 +433,536 @@ apiInstance.deleteAnalyticsReportingSchedule(scheduleId)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **scheduleId** | **String** | Schedule ID |  |
-{: class="table table-striped"}
+ **jobId** | **String** | jobId |  |
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteAnalyticsUsersDetailsJob"></a>
 
-# void deleteAnalyticsUsersDetailsJob(jobId)
+## deleteAnalyticsFlowexecutionsAggregatesJob
+
+> void deleteAnalyticsFlowexecutionsAggregatesJob(jobId)
+
+
+DELETE /api/v2/analytics/flowexecutions/aggregates/jobs/{jobId}
+
+Delete/cancel an async request for flow execution aggregates
+
+deleteAnalyticsFlowexecutionsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* analytics:flowExecutionAggregate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let jobId = "jobId_example"; // String | jobId
+
+apiInstance.deleteAnalyticsFlowexecutionsAggregatesJob(jobId)
+  .then(() => {
+    console.log('deleteAnalyticsFlowexecutionsAggregatesJob returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteAnalyticsFlowexecutionsAggregatesJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | jobId |  |
+
+### Return type
+
+void (no response body)
+
+
+## deleteAnalyticsFlowsAggregatesJob
+
+> void deleteAnalyticsFlowsAggregatesJob(jobId)
+
+
+DELETE /api/v2/analytics/flows/aggregates/jobs/{jobId}
+
+Delete/cancel an async request for flow aggregates
+
+deleteAnalyticsFlowsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* analytics:flowAggregate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let jobId = "jobId_example"; // String | jobId
+
+apiInstance.deleteAnalyticsFlowsAggregatesJob(jobId)
+  .then(() => {
+    console.log('deleteAnalyticsFlowsAggregatesJob returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteAnalyticsFlowsAggregatesJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | jobId |  |
+
+### Return type
+
+void (no response body)
+
+
+## deleteAnalyticsJourneysAggregatesJob
+
+> void deleteAnalyticsJourneysAggregatesJob(jobId)
+
+
+DELETE /api/v2/analytics/journeys/aggregates/jobs/{jobId}
+
+Delete/cancel an async request for journey aggregates
+
+deleteAnalyticsJourneysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* analytics:journeyAggregate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let jobId = "jobId_example"; // String | jobId
+
+apiInstance.deleteAnalyticsJourneysAggregatesJob(jobId)
+  .then(() => {
+    console.log('deleteAnalyticsJourneysAggregatesJob returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteAnalyticsJourneysAggregatesJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | jobId |  |
+
+### Return type
+
+void (no response body)
+
+
+## deleteAnalyticsKnowledgeAggregatesJob
+
+> void deleteAnalyticsKnowledgeAggregatesJob(jobId)
+
+
+DELETE /api/v2/analytics/knowledge/aggregates/jobs/{jobId}
+
+Delete/cancel an async request for knowledge aggregates
+
+deleteAnalyticsKnowledgeAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* analytics:knowledgeAggregate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let jobId = "jobId_example"; // String | jobId
+
+apiInstance.deleteAnalyticsKnowledgeAggregatesJob(jobId)
+  .then(() => {
+    console.log('deleteAnalyticsKnowledgeAggregatesJob returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteAnalyticsKnowledgeAggregatesJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | jobId |  |
+
+### Return type
+
+void (no response body)
+
+
+## deleteAnalyticsResolutionsAggregatesJob
+
+> void deleteAnalyticsResolutionsAggregatesJob(jobId)
+
+
+DELETE /api/v2/analytics/resolutions/aggregates/jobs/{jobId}
+
+Delete/cancel an async request for resolution aggregates
+
+deleteAnalyticsResolutionsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* analytics:resolutionAggregate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let jobId = "jobId_example"; // String | jobId
+
+apiInstance.deleteAnalyticsResolutionsAggregatesJob(jobId)
+  .then(() => {
+    console.log('deleteAnalyticsResolutionsAggregatesJob returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteAnalyticsResolutionsAggregatesJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | jobId |  |
+
+### Return type
+
+void (no response body)
+
+
+## deleteAnalyticsSummariesAggregatesJob
+
+> void deleteAnalyticsSummariesAggregatesJob(jobId)
+
+
+DELETE /api/v2/analytics/summaries/aggregates/jobs/{jobId}
+
+Delete/cancel an async request for summary aggregates
+
+deleteAnalyticsSummariesAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* analytics:summaryAggregate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let jobId = "jobId_example"; // String | jobId
+
+apiInstance.deleteAnalyticsSummariesAggregatesJob(jobId)
+  .then(() => {
+    console.log('deleteAnalyticsSummariesAggregatesJob returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteAnalyticsSummariesAggregatesJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | jobId |  |
+
+### Return type
+
+void (no response body)
+
+
+## deleteAnalyticsSurveysAggregatesJob
+
+> void deleteAnalyticsSurveysAggregatesJob(jobId)
+
+
+DELETE /api/v2/analytics/surveys/aggregates/jobs/{jobId}
+
+Delete/cancel an async request for survey aggregates
+
+deleteAnalyticsSurveysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* analytics:surveyAggregate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let jobId = "jobId_example"; // String | jobId
+
+apiInstance.deleteAnalyticsSurveysAggregatesJob(jobId)
+  .then(() => {
+    console.log('deleteAnalyticsSurveysAggregatesJob returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteAnalyticsSurveysAggregatesJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | jobId |  |
+
+### Return type
+
+void (no response body)
+
+
+## deleteAnalyticsTaskmanagementAggregatesJob
+
+> void deleteAnalyticsTaskmanagementAggregatesJob(jobId)
+
+
+DELETE /api/v2/analytics/taskmanagement/aggregates/jobs/{jobId}
+
+Delete/cancel an async request for task management aggregates
+
+deleteAnalyticsTaskmanagementAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* analytics:taskManagementAggregate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let jobId = "jobId_example"; // String | jobId
+
+apiInstance.deleteAnalyticsTaskmanagementAggregatesJob(jobId)
+  .then(() => {
+    console.log('deleteAnalyticsTaskmanagementAggregatesJob returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteAnalyticsTaskmanagementAggregatesJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | jobId |  |
+
+### Return type
+
+void (no response body)
+
+
+## deleteAnalyticsTranscriptsAggregatesJob
+
+> void deleteAnalyticsTranscriptsAggregatesJob(jobId)
+
+
+DELETE /api/v2/analytics/transcripts/aggregates/jobs/{jobId}
+
+Delete/cancel an async request for transcript aggregates
+
+deleteAnalyticsTranscriptsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* analytics:speechAndTextAnalyticsAggregates:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let jobId = "jobId_example"; // String | jobId
+
+apiInstance.deleteAnalyticsTranscriptsAggregatesJob(jobId)
+  .then(() => {
+    console.log('deleteAnalyticsTranscriptsAggregatesJob returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteAnalyticsTranscriptsAggregatesJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | jobId |  |
+
+### Return type
+
+void (no response body)
+
+
+## deleteAnalyticsUsersAggregatesJob
+
+> void deleteAnalyticsUsersAggregatesJob(jobId)
+
+
+DELETE /api/v2/analytics/users/aggregates/jobs/{jobId}
+
+Delete/cancel an async request for user aggregates
+
+deleteAnalyticsUsersAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* analytics:userAggregate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let jobId = "jobId_example"; // String | jobId
+
+apiInstance.deleteAnalyticsUsersAggregatesJob(jobId)
+  .then(() => {
+    console.log('deleteAnalyticsUsersAggregatesJob returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteAnalyticsUsersAggregatesJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | jobId |  |
+
+### Return type
+
+void (no response body)
+
+
+## deleteAnalyticsUsersDetailsJob
+
+> void deleteAnalyticsUsersDetailsJob(jobId)
 
 
 DELETE /api/v2/analytics/users/details/jobs/{jobId}
@@ -221,7 +981,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AnalyticsApi();
@@ -244,15 +1004,15 @@ apiInstance.deleteAnalyticsUsersDetailsJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="getAnalyticsActionsAggregatesJob"></a>
 
-# AsyncQueryStatus getAnalyticsActionsAggregatesJob(jobId)
+## getAnalyticsActionsAggregatesJob
+
+> AsyncQueryStatus getAnalyticsActionsAggregatesJob(jobId)
 
 
 GET /api/v2/analytics/actions/aggregates/jobs/{jobId}
@@ -274,7 +1034,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AnalyticsApi();
@@ -297,15 +1057,15 @@ apiInstance.getAnalyticsActionsAggregatesJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AsyncQueryStatus**
 
-<a name="getAnalyticsActionsAggregatesJobResults"></a>
 
-# ActionAsyncAggregateQueryResponse getAnalyticsActionsAggregatesJobResults(jobId, opts)
+## getAnalyticsActionsAggregatesJobResults
+
+> ActionAsyncAggregateQueryResponse getAnalyticsActionsAggregatesJobResults(jobId, opts)
 
 
 GET /api/v2/analytics/actions/aggregates/jobs/{jobId}/results
@@ -327,7 +1087,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AnalyticsApi();
@@ -354,22 +1114,251 @@ apiInstance.getAnalyticsActionsAggregatesJobResults(jobId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
  **cursor** | **String** | Cursor token to retrieve next page | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ActionAsyncAggregateQueryResponse**
 
-<a name="getAnalyticsBotflowReportingturns"></a>
 
-# ReportingTurnsResponse getAnalyticsBotflowReportingturns(botFlowId, opts)
+## getAnalyticsAgentStatus
 
+> AnalyticsAgentStateAgentResponse getAnalyticsAgentStatus(userId)
+
+
+GET /api/v2/analytics/agents/{userId}/status
+
+Get an agent and their active sessions by user ID
+
+Requires ANY permissions:
+
+* analytics:agentState:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let userId = "userId_example"; // String | userId
+
+apiInstance.getAnalyticsAgentStatus(userId)
+  .then((data) => {
+    console.log(`getAnalyticsAgentStatus success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getAnalyticsAgentStatus');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String** | userId |  |
+
+### Return type
+
+**AnalyticsAgentStateAgentResponse**
+
+
+## getAnalyticsAgentcopilotsAggregatesJob
+
+> AsyncQueryStatus getAnalyticsAgentcopilotsAggregatesJob(jobId)
+
+
+GET /api/v2/analytics/agentcopilots/aggregates/jobs/{jobId}
+
+Get status for async query for agent copilot aggregates
+
+getAnalyticsAgentcopilotsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* analytics:agentCopilotAggregate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let jobId = "jobId_example"; // String | jobId
+
+apiInstance.getAnalyticsAgentcopilotsAggregatesJob(jobId)
+  .then((data) => {
+    console.log(`getAnalyticsAgentcopilotsAggregatesJob success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getAnalyticsAgentcopilotsAggregatesJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | jobId |  |
+
+### Return type
+
+**AsyncQueryStatus**
+
+
+## getAnalyticsAgentcopilotsAggregatesJobResults
+
+> AgentCopilotAsyncAggregateQueryResponse getAnalyticsAgentcopilotsAggregatesJobResults(jobId, opts)
+
+
+GET /api/v2/analytics/agentcopilots/aggregates/jobs/{jobId}/results
+
+Fetch a page of results for an async aggregates query
+
+getAnalyticsAgentcopilotsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* analytics:agentCopilotAggregate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let jobId = "jobId_example"; // String | jobId
+let opts = { 
+  'cursor': "cursor_example" // String | Cursor token to retrieve next page
+};
+
+apiInstance.getAnalyticsAgentcopilotsAggregatesJobResults(jobId, opts)
+  .then((data) => {
+    console.log(`getAnalyticsAgentcopilotsAggregatesJobResults success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getAnalyticsAgentcopilotsAggregatesJobResults');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | jobId |  |
+ **cursor** | **String** | Cursor token to retrieve next page | [optional]  |
+
+### Return type
+
+**AgentCopilotAsyncAggregateQueryResponse**
+
+
+## getAnalyticsBotflowDivisionsReportingturns
+
+> ReportingTurnsResponse getAnalyticsBotflowDivisionsReportingturns(botFlowId, opts)
+
+
+GET /api/v2/analytics/botflows/{botFlowId}/divisions/reportingturns
+
+Get Reporting Turns (division aware).
+
+Returns the reporting turns for the specified flow, filtered by the clients divisions and grouped by session, in reverse chronological order from the date the session was created, with the reporting turns from the most recent session appearing at the start of the list. It is expected that the client will URL encode the request URI once only. For pagination, clients should keep sending requests using the value of nextUri in the response, until its no longer present, only then have all items have been returned. The nextUri value in the response is already URL encoded (so it doesnt need to be encoded again). Note: resources returned by this endpoint are not persisted indefinitely, as they are deleted after approximately, but not before, 10 days.
+
+Requires ANY permissions:
+
+* analytics:botFlowDivisionAwareReportingTurn:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let botFlowId = "botFlowId_example"; // String | ID of the bot flow.
+let opts = { 
+  'after': "after_example", // String | The cursor that points to the ID of the last item in the list of entities that has been returned.
+  'pageSize': "50", // String | Max number of entities to return. Maximum of 250
+  'interval': 2023-07-17T08:15:44.586Z/2023-07-26T09:22:33.111Z, // String | Date range filter based on the date the individual resources were completed. UTC is the default if no TZ is supplied, however alternate timezones can be used e.g: '2022-11-22T09:11:11.111+08:00/2022-11-30T07:17:44.586-07'. . Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
+  'actionId': "actionId_example", // String | Optional action ID to get the reporting turns associated to a particular flow action
+  'sessionId': "sessionId_example", // String | Optional session ID to get the reporting turns for a particular session. Specifying a session ID alongside an action ID or a language or any ask action results is not allowed.
+  'language': en-us, // String | Optional language code to get the reporting turns for a particular language
+  'askActionResults': "askActionResults_example" // String | Optional case-insensitive comma separated list of ask action results to filter the reporting turns.
+};
+
+apiInstance.getAnalyticsBotflowDivisionsReportingturns(botFlowId, opts)
+  .then((data) => {
+    console.log(`getAnalyticsBotflowDivisionsReportingturns success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getAnalyticsBotflowDivisionsReportingturns');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **botFlowId** | **String** | ID of the bot flow. |  |
+ **after** | **String** | The cursor that points to the ID of the last item in the list of entities that has been returned. | [optional]  |
+ **pageSize** | **String** | Max number of entities to return. Maximum of 250 | [optional] [default to 50] |
+ **interval** | **String** | Date range filter based on the date the individual resources were completed. UTC is the default if no TZ is supplied, however alternate timezones can be used e.g: '2022-11-22T09:11:11.111+08:00/2022-11-30T07:17:44.586-07'. . Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss | [optional]  |
+ **actionId** | **String** | Optional action ID to get the reporting turns associated to a particular flow action | [optional]  |
+ **sessionId** | **String** | Optional session ID to get the reporting turns for a particular session. Specifying a session ID alongside an action ID or a language or any ask action results is not allowed. | [optional]  |
+ **language** | **String** | Optional language code to get the reporting turns for a particular language | [optional]  |
+ **askActionResults** | **String** | Optional case-insensitive comma separated list of ask action results to filter the reporting turns. | [optional] <br />**Values**: AgentRequestedByUser, ConfirmationRequired, DisambiguationRequired, Error, ExpressionError, NoInputCollection, NoInputConfirmation, NoInputDisambiguation, NoMatchCollection, NoMatchConfirmation, NoMatchDisambiguation, SuccessCollection, SkippedCollection, SuccessConfirmationNo, SuccessConfirmationYes, SuccessDisambiguation, SuccessDisambiguationNone |
+
+### Return type
+
+**ReportingTurnsResponse**
+
+
+## getAnalyticsBotflowReportingturns
+
+> ReportingTurnsResponse getAnalyticsBotflowReportingturns(botFlowId, opts)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 GET /api/v2/analytics/botflows/{botFlowId}/reportingturns
 
 Get Reporting Turns.
 
-Returns the reporting turns grouped by session, in reverse chronological order from the date the session was created, with the reporting turns from the most recent session appearing at the start of the list. For pagination, clients should keep sending requests using the value of nextUri in the response, until its no longer present, only then have all items have been returned. Note: resources returned by this endpoint do not persist indefinitely, as they auto delete after a predefined period.
+Deprecated: Please use GET /analytics/botflows/{botFlowId}/divisions/reportingturns instead. Returns the reporting turns grouped by session, in reverse chronological order from the date the session was created, with the reporting turns from the most recent session appearing at the start of the list. It is expected that the client will URL encode the request URI once only. For pagination, clients should keep sending requests using the value of nextUri in the response, until its no longer present, only then have all items have been returned. The nextUri value in the response is already URL encoded (so it doesnt need to be encoded again). Note: resources returned by this endpoint are not persisted indefinitely, as they are deleted after approximately, but not before, 10 days.
 
 Requires ANY permissions:
 
@@ -383,7 +1372,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AnalyticsApi();
@@ -421,16 +1410,80 @@ apiInstance.getAnalyticsBotflowReportingturns(botFlowId, opts)
  **actionId** | **String** | Optional action ID to get the reporting turns associated to a particular flow action | [optional]  |
  **sessionId** | **String** | Optional session ID to get the reporting turns for a particular session. Specifying a session ID alongside an action ID or a language or any ask action results is not allowed. | [optional]  |
  **language** | **String** | Optional language code to get the reporting turns for a particular language | [optional]  |
- **askActionResults** | **String** | Optional case-insensitive comma separated list of ask action results to filter the reporting turns. | [optional] <br />**Values**: AgentRequestedByUser, ConfirmationRequired, DisambiguationRequired, Error, ExpressionError, NoInputCollection, NoInputConfirmation, NoInputDisambiguation, NoMatchCollection, NoMatchConfirmation, NoMatchDisambiguation, SuccessCollection, SuccessConfirmationNo, SuccessConfirmationYes, SuccessDisambiguation, SuccessDisambiguationNone |
-{: class="table table-striped"}
+ **askActionResults** | **String** | Optional case-insensitive comma separated list of ask action results to filter the reporting turns. | [optional] <br />**Values**: AgentRequestedByUser, ConfirmationRequired, DisambiguationRequired, Error, ExpressionError, NoInputCollection, NoInputConfirmation, NoInputDisambiguation, NoMatchCollection, NoMatchConfirmation, NoMatchDisambiguation, SuccessCollection, SkippedCollection, SuccessConfirmationNo, SuccessConfirmationYes, SuccessDisambiguation, SuccessDisambiguationNone |
 
 ### Return type
 
 **ReportingTurnsResponse**
 
-<a name="getAnalyticsBotsAggregatesJob"></a>
 
-# AsyncQueryStatus getAnalyticsBotsAggregatesJob(jobId)
+## getAnalyticsBotflowSessions
+
+> SessionsResponse getAnalyticsBotflowSessions(botFlowId, opts)
+
+
+GET /api/v2/analytics/botflows/{botFlowId}/sessions
+
+Get Bot Flow Sessions.
+
+Returns the bot flow sessions in reverse chronological order from the date they were created. It is expected that the client will URL encode the request URI once only. For pagination, clients should keep sending requests using the value of nextUri in the response, until its no longer present, only then have all items have been returned. The nextUri value in the response is already URL encoded (so it doesnt need to be encoded again). Note: resources returned by this endpoint are not persisted indefinitely, as they are deleted after approximately, but not before, 10 days.
+
+Requires ANY permissions:
+
+* analytics:botFlowSession:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let botFlowId = "botFlowId_example"; // String | ID of the bot flow.
+let opts = { 
+  'after': "after_example", // String | The cursor that points to the ID of the last item in the list of entities that has been returned.
+  'pageSize': "50", // String | Max number of entities to return. Maximum of 250
+  'interval': 2023-07-17T08:15:44.586Z/2023-07-26T09:22:33.111Z, // String | Date range filter based on the date the individual resources were completed. UTC is the default if no TZ is supplied, however alternate timezones can be used e.g: '2022-11-22T09:11:11.111+08:00/2022-11-30T07:17:44.586-07'. . Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
+  'botResultCategories': "botResultCategories_example", // String | Optional case-insensitive comma separated list of Bot Result Categories to filter sessions by.
+  'endLanguage': "endLanguage_example" // String | Optional case-insensitive language code to filter sessions by the language the sessions ended in.
+};
+
+apiInstance.getAnalyticsBotflowSessions(botFlowId, opts)
+  .then((data) => {
+    console.log(`getAnalyticsBotflowSessions success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getAnalyticsBotflowSessions');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **botFlowId** | **String** | ID of the bot flow. |  |
+ **after** | **String** | The cursor that points to the ID of the last item in the list of entities that has been returned. | [optional]  |
+ **pageSize** | **String** | Max number of entities to return. Maximum of 250 | [optional] [default to 50] |
+ **interval** | **String** | Date range filter based on the date the individual resources were completed. UTC is the default if no TZ is supplied, however alternate timezones can be used e.g: '2022-11-22T09:11:11.111+08:00/2022-11-30T07:17:44.586-07'. . Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss | [optional]  |
+ **botResultCategories** | **String** | Optional case-insensitive comma separated list of Bot Result Categories to filter sessions by. | [optional] <br />**Values**: Unknown, UserExit, BotExit, Error, RecognitionFailure, UserDisconnect, BotDisconnect, SessionExpired, Transfer |
+ **endLanguage** | **String** | Optional case-insensitive language code to filter sessions by the language the sessions ended in. | [optional]  |
+
+### Return type
+
+**SessionsResponse**
+
+
+## getAnalyticsBotsAggregatesJob
+
+> AsyncQueryStatus getAnalyticsBotsAggregatesJob(jobId)
 
 
 GET /api/v2/analytics/bots/aggregates/jobs/{jobId}
@@ -451,7 +1504,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AnalyticsApi();
@@ -474,15 +1527,15 @@ apiInstance.getAnalyticsBotsAggregatesJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AsyncQueryStatus**
 
-<a name="getAnalyticsBotsAggregatesJobResults"></a>
 
-# BotAsyncAggregateQueryResponse getAnalyticsBotsAggregatesJobResults(jobId, opts)
+## getAnalyticsBotsAggregatesJobResults
+
+> BotAsyncAggregateQueryResponse getAnalyticsBotsAggregatesJobResults(jobId, opts)
 
 
 GET /api/v2/analytics/bots/aggregates/jobs/{jobId}/results
@@ -503,7 +1556,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AnalyticsApi();
@@ -530,15 +1583,15 @@ apiInstance.getAnalyticsBotsAggregatesJobResults(jobId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
  **cursor** | **String** | Cursor token to retrieve next page | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **BotAsyncAggregateQueryResponse**
 
-<a name="getAnalyticsConversationDetails"></a>
 
-# AnalyticsConversationWithoutAttributes getAnalyticsConversationDetails(conversationId)
+## getAnalyticsConversationDetails
+
+> AnalyticsConversationWithoutAttributes getAnalyticsConversationDetails(conversationId)
 
 
 GET /api/v2/analytics/conversations/{conversationId}/details
@@ -558,7 +1611,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AnalyticsApi();
@@ -581,15 +1634,15 @@ apiInstance.getAnalyticsConversationDetails(conversationId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AnalyticsConversationWithoutAttributes**
 
-<a name="getAnalyticsConversationsAggregatesJob"></a>
 
-# AsyncQueryStatus getAnalyticsConversationsAggregatesJob(jobId)
+## getAnalyticsConversationsAggregatesJob
+
+> AsyncQueryStatus getAnalyticsConversationsAggregatesJob(jobId)
 
 
 GET /api/v2/analytics/conversations/aggregates/jobs/{jobId}
@@ -610,7 +1663,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AnalyticsApi();
@@ -633,15 +1686,15 @@ apiInstance.getAnalyticsConversationsAggregatesJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AsyncQueryStatus**
 
-<a name="getAnalyticsConversationsAggregatesJobResults"></a>
 
-# ConversationAsyncAggregateQueryResponse getAnalyticsConversationsAggregatesJobResults(jobId, opts)
+## getAnalyticsConversationsAggregatesJobResults
+
+> ConversationAsyncAggregateQueryResponse getAnalyticsConversationsAggregatesJobResults(jobId, opts)
 
 
 GET /api/v2/analytics/conversations/aggregates/jobs/{jobId}/results
@@ -662,7 +1715,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AnalyticsApi();
@@ -689,15 +1742,15 @@ apiInstance.getAnalyticsConversationsAggregatesJobResults(jobId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
  **cursor** | **String** | Cursor token to retrieve next page | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ConversationAsyncAggregateQueryResponse**
 
-<a name="getAnalyticsConversationsDetails"></a>
 
-# AnalyticsConversationWithoutAttributesMultiGetResponse getAnalyticsConversationsDetails(opts)
+## getAnalyticsConversationsDetails
+
+> AnalyticsConversationWithoutAttributesMultiGetResponse getAnalyticsConversationsDetails(opts)
 
 
 GET /api/v2/analytics/conversations/details
@@ -717,7 +1770,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AnalyticsApi();
@@ -742,15 +1795,15 @@ apiInstance.getAnalyticsConversationsDetails(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **id** | **[String]** | Comma-separated conversation ids | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AnalyticsConversationWithoutAttributesMultiGetResponse**
 
-<a name="getAnalyticsConversationsDetailsJob"></a>
 
-# AsyncQueryStatus getAnalyticsConversationsDetailsJob(jobId)
+## getAnalyticsConversationsDetailsJob
+
+> AsyncQueryStatus getAnalyticsConversationsDetailsJob(jobId)
 
 
 GET /api/v2/analytics/conversations/details/jobs/{jobId}
@@ -770,7 +1823,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AnalyticsApi();
@@ -793,15 +1846,15 @@ apiInstance.getAnalyticsConversationsDetailsJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AsyncQueryStatus**
 
-<a name="getAnalyticsConversationsDetailsJobResults"></a>
 
-# AnalyticsConversationAsyncQueryResponse getAnalyticsConversationsDetailsJobResults(jobId, opts)
+## getAnalyticsConversationsDetailsJobResults
+
+> AnalyticsConversationAsyncQueryResponse getAnalyticsConversationsDetailsJobResults(jobId, opts)
 
 
 GET /api/v2/analytics/conversations/details/jobs/{jobId}/results
@@ -821,7 +1874,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AnalyticsApi();
@@ -850,15 +1903,15 @@ apiInstance.getAnalyticsConversationsDetailsJobResults(jobId, opts)
  **jobId** | **String** | jobId |  |
  **cursor** | **String** | Indicates where to resume query results (not required for first page) | [optional]  |
  **pageSize** | **Number** | The desired maximum number of results | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AnalyticsConversationAsyncQueryResponse**
 
-<a name="getAnalyticsConversationsDetailsJobsAvailability"></a>
 
-# DataAvailabilityResponse getAnalyticsConversationsDetailsJobsAvailability()
+## getAnalyticsConversationsDetailsJobsAvailability
+
+> DataAvailabilityResponse getAnalyticsConversationsDetailsJobsAvailability()
 
 
 GET /api/v2/analytics/conversations/details/jobs/availability
@@ -877,7 +1930,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AnalyticsApi();
@@ -896,14 +1949,14 @@ apiInstance.getAnalyticsConversationsDetailsJobsAvailability()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **DataAvailabilityResponse**
 
-<a name="getAnalyticsDataretentionSettings"></a>
 
-# AnalyticsDataRetentionResponse getAnalyticsDataretentionSettings()
+## getAnalyticsDataretentionSettings
+
+> AnalyticsDataRetentionResponse getAnalyticsDataretentionSettings()
 
 
 GET /api/v2/analytics/dataretention/settings
@@ -922,7 +1975,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AnalyticsApi();
@@ -941,14 +1994,14 @@ apiInstance.getAnalyticsDataretentionSettings()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **AnalyticsDataRetentionResponse**
 
-<a name="getAnalyticsEvaluationsAggregatesJob"></a>
 
-# AsyncQueryStatus getAnalyticsEvaluationsAggregatesJob(jobId)
+## getAnalyticsEvaluationsAggregatesJob
+
+> AsyncQueryStatus getAnalyticsEvaluationsAggregatesJob(jobId)
 
 
 GET /api/v2/analytics/evaluations/aggregates/jobs/{jobId}
@@ -969,7 +2022,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AnalyticsApi();
@@ -992,15 +2045,15 @@ apiInstance.getAnalyticsEvaluationsAggregatesJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AsyncQueryStatus**
 
-<a name="getAnalyticsEvaluationsAggregatesJobResults"></a>
 
-# EvaluationAsyncAggregateQueryResponse getAnalyticsEvaluationsAggregatesJobResults(jobId, opts)
+## getAnalyticsEvaluationsAggregatesJobResults
+
+> EvaluationAsyncAggregateQueryResponse getAnalyticsEvaluationsAggregatesJobResults(jobId, opts)
 
 
 GET /api/v2/analytics/evaluations/aggregates/jobs/{jobId}/results
@@ -1021,7 +2074,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AnalyticsApi();
@@ -1048,15 +2101,123 @@ apiInstance.getAnalyticsEvaluationsAggregatesJobResults(jobId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
  **cursor** | **String** | Cursor token to retrieve next page | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **EvaluationAsyncAggregateQueryResponse**
 
-<a name="getAnalyticsFlowsAggregatesJob"></a>
 
-# AsyncQueryStatus getAnalyticsFlowsAggregatesJob(jobId)
+## getAnalyticsFlowexecutionsAggregatesJob
+
+> AsyncQueryStatus getAnalyticsFlowexecutionsAggregatesJob(jobId)
+
+
+GET /api/v2/analytics/flowexecutions/aggregates/jobs/{jobId}
+
+Get status for async query for flow execution aggregates
+
+getAnalyticsFlowexecutionsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* analytics:flowExecutionAggregate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let jobId = "jobId_example"; // String | jobId
+
+apiInstance.getAnalyticsFlowexecutionsAggregatesJob(jobId)
+  .then((data) => {
+    console.log(`getAnalyticsFlowexecutionsAggregatesJob success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getAnalyticsFlowexecutionsAggregatesJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | jobId |  |
+
+### Return type
+
+**AsyncQueryStatus**
+
+
+## getAnalyticsFlowexecutionsAggregatesJobResults
+
+> FlowExecutionAsyncAggregateQueryResponse getAnalyticsFlowexecutionsAggregatesJobResults(jobId, opts)
+
+
+GET /api/v2/analytics/flowexecutions/aggregates/jobs/{jobId}/results
+
+Fetch a page of results for an async aggregates query
+
+getAnalyticsFlowexecutionsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* analytics:flowExecutionAggregate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let jobId = "jobId_example"; // String | jobId
+let opts = { 
+  'cursor': "cursor_example" // String | Cursor token to retrieve next page
+};
+
+apiInstance.getAnalyticsFlowexecutionsAggregatesJobResults(jobId, opts)
+  .then((data) => {
+    console.log(`getAnalyticsFlowexecutionsAggregatesJobResults success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getAnalyticsFlowexecutionsAggregatesJobResults');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | jobId |  |
+ **cursor** | **String** | Cursor token to retrieve next page | [optional]  |
+
+### Return type
+
+**FlowExecutionAsyncAggregateQueryResponse**
+
+
+## getAnalyticsFlowsAggregatesJob
+
+> AsyncQueryStatus getAnalyticsFlowsAggregatesJob(jobId)
 
 
 GET /api/v2/analytics/flows/aggregates/jobs/{jobId}
@@ -1077,7 +2238,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AnalyticsApi();
@@ -1100,15 +2261,15 @@ apiInstance.getAnalyticsFlowsAggregatesJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AsyncQueryStatus**
 
-<a name="getAnalyticsFlowsAggregatesJobResults"></a>
 
-# FlowAsyncAggregateQueryResponse getAnalyticsFlowsAggregatesJobResults(jobId, opts)
+## getAnalyticsFlowsAggregatesJobResults
+
+> FlowAsyncAggregateQueryResponse getAnalyticsFlowsAggregatesJobResults(jobId, opts)
 
 
 GET /api/v2/analytics/flows/aggregates/jobs/{jobId}/results
@@ -1129,7 +2290,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AnalyticsApi();
@@ -1156,15 +2317,15 @@ apiInstance.getAnalyticsFlowsAggregatesJobResults(jobId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
  **cursor** | **String** | Cursor token to retrieve next page | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **FlowAsyncAggregateQueryResponse**
 
-<a name="getAnalyticsJourneysAggregatesJob"></a>
 
-# AsyncQueryStatus getAnalyticsJourneysAggregatesJob(jobId)
+## getAnalyticsJourneysAggregatesJob
+
+> AsyncQueryStatus getAnalyticsJourneysAggregatesJob(jobId)
 
 
 GET /api/v2/analytics/journeys/aggregates/jobs/{jobId}
@@ -1185,7 +2346,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AnalyticsApi();
@@ -1208,15 +2369,15 @@ apiInstance.getAnalyticsJourneysAggregatesJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AsyncQueryStatus**
 
-<a name="getAnalyticsJourneysAggregatesJobResults"></a>
 
-# JourneyAsyncAggregateQueryResponse getAnalyticsJourneysAggregatesJobResults(jobId, opts)
+## getAnalyticsJourneysAggregatesJobResults
+
+> JourneyAsyncAggregateQueryResponse getAnalyticsJourneysAggregatesJobResults(jobId, opts)
 
 
 GET /api/v2/analytics/journeys/aggregates/jobs/{jobId}/results
@@ -1237,7 +2398,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AnalyticsApi();
@@ -1264,15 +2425,15 @@ apiInstance.getAnalyticsJourneysAggregatesJobResults(jobId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
  **cursor** | **String** | Cursor token to retrieve next page | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **JourneyAsyncAggregateQueryResponse**
 
-<a name="getAnalyticsKnowledgeAggregatesJob"></a>
 
-# AsyncQueryStatus getAnalyticsKnowledgeAggregatesJob(jobId)
+## getAnalyticsKnowledgeAggregatesJob
+
+> AsyncQueryStatus getAnalyticsKnowledgeAggregatesJob(jobId)
 
 
 GET /api/v2/analytics/knowledge/aggregates/jobs/{jobId}
@@ -1293,7 +2454,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AnalyticsApi();
@@ -1316,15 +2477,15 @@ apiInstance.getAnalyticsKnowledgeAggregatesJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AsyncQueryStatus**
 
-<a name="getAnalyticsKnowledgeAggregatesJobResults"></a>
 
-# KnowledgeAsyncAggregateQueryResponse getAnalyticsKnowledgeAggregatesJobResults(jobId, opts)
+## getAnalyticsKnowledgeAggregatesJobResults
+
+> KnowledgeAsyncAggregateQueryResponse getAnalyticsKnowledgeAggregatesJobResults(jobId, opts)
 
 
 GET /api/v2/analytics/knowledge/aggregates/jobs/{jobId}/results
@@ -1345,7 +2506,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AnalyticsApi();
@@ -1372,15 +2533,127 @@ apiInstance.getAnalyticsKnowledgeAggregatesJobResults(jobId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
  **cursor** | **String** | Cursor token to retrieve next page | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **KnowledgeAsyncAggregateQueryResponse**
 
-<a name="getAnalyticsReportingExports"></a>
 
-# ReportingExportJobListing getAnalyticsReportingExports(opts)
+## getAnalyticsReportingDashboardsUser
+
+> DashboardUser getAnalyticsReportingDashboardsUser(userId)
+
+
+GET /api/v2/analytics/reporting/dashboards/users/{userId}
+
+Get dashboards summary for a user
+
+Requires ALL permissions:
+
+* analytics:dashboardConfigurations:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let userId = "userId_example"; // String | User ID
+
+apiInstance.getAnalyticsReportingDashboardsUser(userId)
+  .then((data) => {
+    console.log(`getAnalyticsReportingDashboardsUser success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getAnalyticsReportingDashboardsUser');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String** | User ID |  |
+
+### Return type
+
+**DashboardUser**
+
+
+## getAnalyticsReportingDashboardsUsers
+
+> DashboardUserListing getAnalyticsReportingDashboardsUsers(opts)
+
+
+GET /api/v2/analytics/reporting/dashboards/users
+
+Get dashboards summary for users in a org
+
+Requires ALL permissions:
+
+* analytics:dashboardConfigurations:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let opts = { 
+  'sortBy': "asc", // String | 
+  'pageNumber': 1, // Number | 
+  'pageSize': 25, // Number | 
+  'id': ["id_example"], // [String] | A list of user IDs to fetch by bulk
+  'state': "state_example", // String | Only list users of this state
+  'deletedOnly': true // Boolean | Only list users with deleted dashboards
+};
+
+apiInstance.getAnalyticsReportingDashboardsUsers(opts)
+  .then((data) => {
+    console.log(`getAnalyticsReportingDashboardsUsers success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getAnalyticsReportingDashboardsUsers');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **sortBy** | **String** |  | [optional] [default to asc] |
+ **pageNumber** | **Number** |  | [optional] [default to 1] |
+ **pageSize** | **Number** |  | [optional] [default to 25] |
+ **id** | **[String]** | A list of user IDs to fetch by bulk | [optional]  |
+ **state** | **String** | Only list users of this state | [optional] <br />**Values**: active, inactive |
+ **deletedOnly** | **Boolean** | Only list users with deleted dashboards | [optional]  |
+
+### Return type
+
+**DashboardUserListing**
+
+
+## getAnalyticsReportingExports
+
+> ReportingExportJobListing getAnalyticsReportingExports(opts)
 
 
 GET /api/v2/analytics/reporting/exports
@@ -1399,7 +2672,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AnalyticsApi();
@@ -1426,15 +2699,15 @@ apiInstance.getAnalyticsReportingExports(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
-{: class="table table-striped"}
 
 ### Return type
 
 **ReportingExportJobListing**
 
-<a name="getAnalyticsReportingExportsMetadata"></a>
 
-# ReportingExportMetadataJobListing getAnalyticsReportingExportsMetadata()
+## getAnalyticsReportingExportsMetadata
+
+> ReportingExportMetadataJobListing getAnalyticsReportingExportsMetadata()
 
 
 GET /api/v2/analytics/reporting/exports/metadata
@@ -1453,7 +2726,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AnalyticsApi();
@@ -1472,427 +2745,14 @@ apiInstance.getAnalyticsReportingExportsMetadata()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **ReportingExportMetadataJobListing**
 
-<a name="getAnalyticsReportingMetadata"></a>
 
-# ReportMetaDataEntityListing getAnalyticsReportingMetadata(opts)
+## getAnalyticsReportingSettings
 
-
-GET /api/v2/analytics/reporting/metadata
-
-Get list of reporting metadata.
-
-Requires ANY permissions:
-
-* reporting:acd:view, reporting:status:view, reporting:interactions:view, reporting:outbound:view, reporting:quality:view, employee
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.AnalyticsApi();
-
-let opts = { 
-  'pageNumber': 1, // Number | Page number
-  'pageSize': 25, // Number | Page size
-  'locale': "locale_example" // String | Locale
-};
-
-apiInstance.getAnalyticsReportingMetadata(opts)
-  .then((data) => {
-    console.log(`getAnalyticsReportingMetadata success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling getAnalyticsReportingMetadata');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **pageNumber** | **Number** | Page number | [optional] [default to 1] |
- **pageSize** | **Number** | Page size | [optional] [default to 25] |
- **locale** | **String** | Locale | [optional]  |
-{: class="table table-striped"}
-
-### Return type
-
-**ReportMetaDataEntityListing**
-
-<a name="getAnalyticsReportingReportIdMetadata"></a>
-
-# ReportMetaData getAnalyticsReportingReportIdMetadata(reportId, opts)
-
-
-GET /api/v2/analytics/reporting/{reportId}/metadata
-
-Get a reporting metadata.
-
-Requires ANY permissions:
-
-* reporting:acd:view, reporting:status:view, reporting:interactions:view, reporting:outbound:view, reporting:quality:view, employee
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.AnalyticsApi();
-
-let reportId = "reportId_example"; // String | Report ID
-let opts = { 
-  'locale': "locale_example" // String | Locale
-};
-
-apiInstance.getAnalyticsReportingReportIdMetadata(reportId, opts)
-  .then((data) => {
-    console.log(`getAnalyticsReportingReportIdMetadata success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling getAnalyticsReportingReportIdMetadata');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **reportId** | **String** | Report ID |  |
- **locale** | **String** | Locale | [optional]  |
-{: class="table table-striped"}
-
-### Return type
-
-**ReportMetaData**
-
-<a name="getAnalyticsReportingReportformats"></a>
-
-# **[&#39;String&#39;]** getAnalyticsReportingReportformats()
-
-
-GET /api/v2/analytics/reporting/reportformats
-
-Get a list of report formats
-
-Get a list of report formats.
-
-Requires NO permissions:
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.AnalyticsApi();
-
-apiInstance.getAnalyticsReportingReportformats()
-  .then((data) => {
-    console.log(`getAnalyticsReportingReportformats success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling getAnalyticsReportingReportformats');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-
-### Return type
-
-**[&#39;String&#39;]**
-
-<a name="getAnalyticsReportingSchedule"></a>
-
-# ReportSchedule getAnalyticsReportingSchedule(scheduleId)
-
-
-GET /api/v2/analytics/reporting/schedules/{scheduleId}
-
-Get a scheduled report job.
-
-Requires NO permissions:
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.AnalyticsApi();
-
-let scheduleId = "scheduleId_example"; // String | Schedule ID
-
-apiInstance.getAnalyticsReportingSchedule(scheduleId)
-  .then((data) => {
-    console.log(`getAnalyticsReportingSchedule success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling getAnalyticsReportingSchedule');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **scheduleId** | **String** | Schedule ID |  |
-{: class="table table-striped"}
-
-### Return type
-
-**ReportSchedule**
-
-<a name="getAnalyticsReportingScheduleHistory"></a>
-
-# ReportRunEntryEntityDomainListing getAnalyticsReportingScheduleHistory(scheduleId, opts)
-
-
-GET /api/v2/analytics/reporting/schedules/{scheduleId}/history
-
-Get list of completed scheduled report jobs.
-
-Requires NO permissions:
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.AnalyticsApi();
-
-let scheduleId = "scheduleId_example"; // String | Schedule ID
-let opts = { 
-  'pageNumber': 1, // Number | 
-  'pageSize': 25 // Number | 
-};
-
-apiInstance.getAnalyticsReportingScheduleHistory(scheduleId, opts)
-  .then((data) => {
-    console.log(`getAnalyticsReportingScheduleHistory success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling getAnalyticsReportingScheduleHistory');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **scheduleId** | **String** | Schedule ID |  |
- **pageNumber** | **Number** |  | [optional] [default to 1] |
- **pageSize** | **Number** |  | [optional] [default to 25] |
-{: class="table table-striped"}
-
-### Return type
-
-**ReportRunEntryEntityDomainListing**
-
-<a name="getAnalyticsReportingScheduleHistoryLatest"></a>
-
-# ReportRunEntry getAnalyticsReportingScheduleHistoryLatest(scheduleId)
-
-
-GET /api/v2/analytics/reporting/schedules/{scheduleId}/history/latest
-
-Get most recently completed scheduled report job.
-
-Requires NO permissions:
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.AnalyticsApi();
-
-let scheduleId = "scheduleId_example"; // String | Schedule ID
-
-apiInstance.getAnalyticsReportingScheduleHistoryLatest(scheduleId)
-  .then((data) => {
-    console.log(`getAnalyticsReportingScheduleHistoryLatest success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling getAnalyticsReportingScheduleHistoryLatest');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **scheduleId** | **String** | Schedule ID |  |
-{: class="table table-striped"}
-
-### Return type
-
-**ReportRunEntry**
-
-<a name="getAnalyticsReportingScheduleHistoryRunId"></a>
-
-# ReportRunEntry getAnalyticsReportingScheduleHistoryRunId(runId, scheduleId)
-
-
-GET /api/v2/analytics/reporting/schedules/{scheduleId}/history/{runId}
-
-A completed scheduled report job
-
-A completed scheduled report job.
-
-Requires NO permissions:
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.AnalyticsApi();
-
-let runId = "runId_example"; // String | Run ID
-let scheduleId = "scheduleId_example"; // String | Schedule ID
-
-apiInstance.getAnalyticsReportingScheduleHistoryRunId(runId, scheduleId)
-  .then((data) => {
-    console.log(`getAnalyticsReportingScheduleHistoryRunId success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling getAnalyticsReportingScheduleHistoryRunId');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **runId** | **String** | Run ID |  |
- **scheduleId** | **String** | Schedule ID |  |
-{: class="table table-striped"}
-
-### Return type
-
-**ReportRunEntry**
-
-<a name="getAnalyticsReportingSchedules"></a>
-
-# ReportScheduleEntityListing getAnalyticsReportingSchedules(opts)
-
-
-GET /api/v2/analytics/reporting/schedules
-
-Get a list of scheduled report jobs
-
-Get a list of scheduled report jobs.
-
-Requires ANY permissions:
-
-* reporting:acd:view, reporting:status:view, reporting:interactions:view, reporting:outbound:view, reporting:quality:view, employee
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.AnalyticsApi();
-
-let opts = { 
-  'pageNumber': 1, // Number | Page number
-  'pageSize': 25 // Number | Page size
-};
-
-apiInstance.getAnalyticsReportingSchedules(opts)
-  .then((data) => {
-    console.log(`getAnalyticsReportingSchedules success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling getAnalyticsReportingSchedules');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **pageNumber** | **Number** | Page number | [optional] [default to 1] |
- **pageSize** | **Number** | Page size | [optional] [default to 25] |
-{: class="table table-striped"}
-
-### Return type
-
-**ReportScheduleEntityListing**
-
-<a name="getAnalyticsReportingSettings"></a>
-
-# AnalyticsReportingSettings getAnalyticsReportingSettings()
+> AnalyticsReportingSettings getAnalyticsReportingSettings()
 
 
 GET /api/v2/analytics/reporting/settings
@@ -1909,7 +2769,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AnalyticsApi();
@@ -1928,21 +2788,23 @@ apiInstance.getAnalyticsReportingSettings()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **AnalyticsReportingSettings**
 
-<a name="getAnalyticsReportingTimeperiods"></a>
 
-# **[&#39;String&#39;]** getAnalyticsReportingTimeperiods()
+## getAnalyticsReportingSettingsDashboardsQuery
+
+> DashboardConfigurationListing getAnalyticsReportingSettingsDashboardsQuery(dashboardType, dashboardAccessFilter, opts)
 
 
-GET /api/v2/analytics/reporting/timeperiods
+GET /api/v2/analytics/reporting/settings/dashboards/query
 
-Get a list of report time periods.
+Get list of dashboard configurations
 
-Requires NO permissions:
+Requires ALL permissions:
+
+* analytics:dashboardConfigurations:view
 
 ### Example Usage
 
@@ -1952,33 +2814,118 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AnalyticsApi();
 
-apiInstance.getAnalyticsReportingTimeperiods()
+let dashboardType = "dashboardType_example"; // String | List dashboard of given type
+let dashboardAccessFilter = "dashboardAccessFilter_example"; // String | Filter dashboard based on the owner of dashboard
+let opts = { 
+  'name': "name_example", // String | name of the dashboard
+  'dashboardState': "Active", // String | List dashboard of given state
+  'sortBy': "desc", // String | 
+  'pageNumber': 1, // Number | 
+  'pageSize': 9 // Number | 
+};
+
+apiInstance.getAnalyticsReportingSettingsDashboardsQuery(dashboardType, dashboardAccessFilter, opts)
   .then((data) => {
-    console.log(`getAnalyticsReportingTimeperiods success! data: ${JSON.stringify(data, null, 2)}`);
+    console.log(`getAnalyticsReportingSettingsDashboardsQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch((err) => {
-    console.log('There was a failure calling getAnalyticsReportingTimeperiods');
+    console.log('There was a failure calling getAnalyticsReportingSettingsDashboardsQuery');
     console.error(err);
   });
 ```
 
 ### Parameters
 
-This endpoint does not need any parameter.
 
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **dashboardType** | **String** | List dashboard of given type | <br />**Values**: All, Public, Private, Shared, Favorites |
+ **dashboardAccessFilter** | **String** | Filter dashboard based on the owner of dashboard | <br />**Values**: OwnedByMe, OwnedByAnyone, NotOwnedByMe |
+ **name** | **String** | name of the dashboard | [optional]  |
+ **dashboardState** | **String** | List dashboard of given state | [optional] [default to Active]<br />**Values**: Active, Deleted |
+ **sortBy** | **String** |  | [optional] [default to desc] |
+ **pageNumber** | **Number** |  | [optional] [default to 1] |
+ **pageSize** | **Number** |  | [optional] [default to 9] |
 
 ### Return type
 
-**[&#39;String&#39;]**
+**DashboardConfigurationListing**
 
-<a name="getAnalyticsResolutionsAggregatesJob"></a>
 
-# AsyncQueryStatus getAnalyticsResolutionsAggregatesJob(jobId)
+## getAnalyticsReportingSettingsUserDashboards
+
+> DashboardConfigurationListing getAnalyticsReportingSettingsUserDashboards(userId, opts)
+
+
+GET /api/v2/analytics/reporting/settings/users/{userId}/dashboards
+
+Get list of dashboards for an user
+
+Requires ALL permissions:
+
+* analytics:dashboardConfigurations:viewPrivate
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let userId = "userId_example"; // String | User ID
+let opts = { 
+  'sortBy': "asc", // String | 
+  'pageNumber': 1, // Number | 
+  'pageSize': 50, // Number | 
+  'publicOnly': true, // Boolean | If true, retrieve only public dashboards
+  'favoriteOnly': true, // Boolean | If true, retrieve only favorite dashboards
+  'deletedOnly': true, // Boolean | If true, retrieve only deleted dashboards that are still recoverable
+  'name': "name_example" // String | retrieve dashboards that match with given name
+};
+
+apiInstance.getAnalyticsReportingSettingsUserDashboards(userId, opts)
+  .then((data) => {
+    console.log(`getAnalyticsReportingSettingsUserDashboards success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getAnalyticsReportingSettingsUserDashboards');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String** | User ID |  |
+ **sortBy** | **String** |  | [optional] [default to asc] |
+ **pageNumber** | **Number** |  | [optional] [default to 1] |
+ **pageSize** | **Number** |  | [optional] [default to 50] |
+ **publicOnly** | **Boolean** | If true, retrieve only public dashboards | [optional]  |
+ **favoriteOnly** | **Boolean** | If true, retrieve only favorite dashboards | [optional]  |
+ **deletedOnly** | **Boolean** | If true, retrieve only deleted dashboards that are still recoverable | [optional]  |
+ **name** | **String** | retrieve dashboards that match with given name | [optional]  |
+
+### Return type
+
+**DashboardConfigurationListing**
+
+
+## getAnalyticsResolutionsAggregatesJob
+
+> AsyncQueryStatus getAnalyticsResolutionsAggregatesJob(jobId)
 
 
 GET /api/v2/analytics/resolutions/aggregates/jobs/{jobId}
@@ -1999,7 +2946,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AnalyticsApi();
@@ -2022,15 +2969,15 @@ apiInstance.getAnalyticsResolutionsAggregatesJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AsyncQueryStatus**
 
-<a name="getAnalyticsResolutionsAggregatesJobResults"></a>
 
-# ResolutionAsyncAggregateQueryResponse getAnalyticsResolutionsAggregatesJobResults(jobId, opts)
+## getAnalyticsResolutionsAggregatesJobResults
+
+> ResolutionAsyncAggregateQueryResponse getAnalyticsResolutionsAggregatesJobResults(jobId, opts)
 
 
 GET /api/v2/analytics/resolutions/aggregates/jobs/{jobId}/results
@@ -2051,7 +2998,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AnalyticsApi();
@@ -2078,15 +3025,123 @@ apiInstance.getAnalyticsResolutionsAggregatesJobResults(jobId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
  **cursor** | **String** | Cursor token to retrieve next page | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ResolutionAsyncAggregateQueryResponse**
 
-<a name="getAnalyticsSurveysAggregatesJob"></a>
 
-# AsyncQueryStatus getAnalyticsSurveysAggregatesJob(jobId)
+## getAnalyticsSummariesAggregatesJob
+
+> AsyncQueryStatus getAnalyticsSummariesAggregatesJob(jobId)
+
+
+GET /api/v2/analytics/summaries/aggregates/jobs/{jobId}
+
+Get status for async query for summary aggregates
+
+getAnalyticsSummariesAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* analytics:summaryAggregate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let jobId = "jobId_example"; // String | jobId
+
+apiInstance.getAnalyticsSummariesAggregatesJob(jobId)
+  .then((data) => {
+    console.log(`getAnalyticsSummariesAggregatesJob success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getAnalyticsSummariesAggregatesJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | jobId |  |
+
+### Return type
+
+**AsyncQueryStatus**
+
+
+## getAnalyticsSummariesAggregatesJobResults
+
+> SummaryAsyncAggregateQueryResponse getAnalyticsSummariesAggregatesJobResults(jobId, opts)
+
+
+GET /api/v2/analytics/summaries/aggregates/jobs/{jobId}/results
+
+Fetch a page of results for an async aggregates query
+
+getAnalyticsSummariesAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* analytics:summaryAggregate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let jobId = "jobId_example"; // String | jobId
+let opts = { 
+  'cursor': "cursor_example" // String | Cursor token to retrieve next page
+};
+
+apiInstance.getAnalyticsSummariesAggregatesJobResults(jobId, opts)
+  .then((data) => {
+    console.log(`getAnalyticsSummariesAggregatesJobResults success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getAnalyticsSummariesAggregatesJobResults');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | jobId |  |
+ **cursor** | **String** | Cursor token to retrieve next page | [optional]  |
+
+### Return type
+
+**SummaryAsyncAggregateQueryResponse**
+
+
+## getAnalyticsSurveysAggregatesJob
+
+> AsyncQueryStatus getAnalyticsSurveysAggregatesJob(jobId)
 
 
 GET /api/v2/analytics/surveys/aggregates/jobs/{jobId}
@@ -2107,7 +3162,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AnalyticsApi();
@@ -2130,15 +3185,15 @@ apiInstance.getAnalyticsSurveysAggregatesJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AsyncQueryStatus**
 
-<a name="getAnalyticsSurveysAggregatesJobResults"></a>
 
-# SurveyAsyncAggregateQueryResponse getAnalyticsSurveysAggregatesJobResults(jobId, opts)
+## getAnalyticsSurveysAggregatesJobResults
+
+> SurveyAsyncAggregateQueryResponse getAnalyticsSurveysAggregatesJobResults(jobId, opts)
 
 
 GET /api/v2/analytics/surveys/aggregates/jobs/{jobId}/results
@@ -2159,7 +3214,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AnalyticsApi();
@@ -2186,15 +3241,15 @@ apiInstance.getAnalyticsSurveysAggregatesJobResults(jobId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
  **cursor** | **String** | Cursor token to retrieve next page | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **SurveyAsyncAggregateQueryResponse**
 
-<a name="getAnalyticsTaskmanagementAggregatesJob"></a>
 
-# AsyncQueryStatus getAnalyticsTaskmanagementAggregatesJob(jobId)
+## getAnalyticsTaskmanagementAggregatesJob
+
+> AsyncQueryStatus getAnalyticsTaskmanagementAggregatesJob(jobId)
 
 
 GET /api/v2/analytics/taskmanagement/aggregates/jobs/{jobId}
@@ -2215,7 +3270,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AnalyticsApi();
@@ -2238,15 +3293,15 @@ apiInstance.getAnalyticsTaskmanagementAggregatesJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AsyncQueryStatus**
 
-<a name="getAnalyticsTaskmanagementAggregatesJobResults"></a>
 
-# TaskManagementAsyncAggregateQueryResponse getAnalyticsTaskmanagementAggregatesJobResults(jobId, opts)
+## getAnalyticsTaskmanagementAggregatesJobResults
+
+> TaskManagementAsyncAggregateQueryResponse getAnalyticsTaskmanagementAggregatesJobResults(jobId, opts)
 
 
 GET /api/v2/analytics/taskmanagement/aggregates/jobs/{jobId}/results
@@ -2267,7 +3322,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AnalyticsApi();
@@ -2294,15 +3349,15 @@ apiInstance.getAnalyticsTaskmanagementAggregatesJobResults(jobId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
  **cursor** | **String** | Cursor token to retrieve next page | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **TaskManagementAsyncAggregateQueryResponse**
 
-<a name="getAnalyticsTranscriptsAggregatesJob"></a>
 
-# AsyncQueryStatus getAnalyticsTranscriptsAggregatesJob(jobId)
+## getAnalyticsTranscriptsAggregatesJob
+
+> AsyncQueryStatus getAnalyticsTranscriptsAggregatesJob(jobId)
 
 
 GET /api/v2/analytics/transcripts/aggregates/jobs/{jobId}
@@ -2323,7 +3378,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AnalyticsApi();
@@ -2346,15 +3401,15 @@ apiInstance.getAnalyticsTranscriptsAggregatesJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AsyncQueryStatus**
 
-<a name="getAnalyticsTranscriptsAggregatesJobResults"></a>
 
-# TranscriptAsyncAggregateQueryResponse getAnalyticsTranscriptsAggregatesJobResults(jobId, opts)
+## getAnalyticsTranscriptsAggregatesJobResults
+
+> TranscriptAsyncAggregateQueryResponse getAnalyticsTranscriptsAggregatesJobResults(jobId, opts)
 
 
 GET /api/v2/analytics/transcripts/aggregates/jobs/{jobId}/results
@@ -2375,7 +3430,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AnalyticsApi();
@@ -2402,15 +3457,15 @@ apiInstance.getAnalyticsTranscriptsAggregatesJobResults(jobId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
  **cursor** | **String** | Cursor token to retrieve next page | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **TranscriptAsyncAggregateQueryResponse**
 
-<a name="getAnalyticsUsersAggregatesJob"></a>
 
-# AsyncQueryStatus getAnalyticsUsersAggregatesJob(jobId)
+## getAnalyticsUsersAggregatesJob
+
+> AsyncQueryStatus getAnalyticsUsersAggregatesJob(jobId)
 
 
 GET /api/v2/analytics/users/aggregates/jobs/{jobId}
@@ -2431,7 +3486,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AnalyticsApi();
@@ -2454,15 +3509,15 @@ apiInstance.getAnalyticsUsersAggregatesJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AsyncQueryStatus**
 
-<a name="getAnalyticsUsersAggregatesJobResults"></a>
 
-# UserAsyncAggregateQueryResponse getAnalyticsUsersAggregatesJobResults(jobId, opts)
+## getAnalyticsUsersAggregatesJobResults
+
+> UserAsyncAggregateQueryResponse getAnalyticsUsersAggregatesJobResults(jobId, opts)
 
 
 GET /api/v2/analytics/users/aggregates/jobs/{jobId}/results
@@ -2483,7 +3538,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AnalyticsApi();
@@ -2510,15 +3565,15 @@ apiInstance.getAnalyticsUsersAggregatesJobResults(jobId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
  **cursor** | **String** | Cursor token to retrieve next page | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **UserAsyncAggregateQueryResponse**
 
-<a name="getAnalyticsUsersDetailsJob"></a>
 
-# AsyncQueryStatus getAnalyticsUsersDetailsJob(jobId)
+## getAnalyticsUsersDetailsJob
+
+> AsyncQueryStatus getAnalyticsUsersDetailsJob(jobId)
 
 
 GET /api/v2/analytics/users/details/jobs/{jobId}
@@ -2537,7 +3592,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AnalyticsApi();
@@ -2560,15 +3615,15 @@ apiInstance.getAnalyticsUsersDetailsJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AsyncQueryStatus**
 
-<a name="getAnalyticsUsersDetailsJobResults"></a>
 
-# AnalyticsUserDetailsAsyncQueryResponse getAnalyticsUsersDetailsJobResults(jobId, opts)
+## getAnalyticsUsersDetailsJobResults
+
+> AnalyticsUserDetailsAsyncQueryResponse getAnalyticsUsersDetailsJobResults(jobId, opts)
 
 
 GET /api/v2/analytics/users/details/jobs/{jobId}/results
@@ -2587,7 +3642,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AnalyticsApi();
@@ -2616,15 +3671,15 @@ apiInstance.getAnalyticsUsersDetailsJobResults(jobId, opts)
  **jobId** | **String** | jobId |  |
  **cursor** | **String** | Indicates where to resume query results (not required for first page) | [optional]  |
  **pageSize** | **Number** | The desired maximum number of results | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AnalyticsUserDetailsAsyncQueryResponse**
 
-<a name="getAnalyticsUsersDetailsJobsAvailability"></a>
 
-# DataAvailabilityResponse getAnalyticsUsersDetailsJobsAvailability()
+## getAnalyticsUsersDetailsJobsAvailability
+
+> DataAvailabilityResponse getAnalyticsUsersDetailsJobsAvailability()
 
 
 GET /api/v2/analytics/users/details/jobs/availability
@@ -2643,7 +3698,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AnalyticsApi();
@@ -2662,14 +3717,14 @@ apiInstance.getAnalyticsUsersDetailsJobsAvailability()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **DataAvailabilityResponse**
 
-<a name="patchAnalyticsReportingSettings"></a>
 
-# AnalyticsReportingSettings patchAnalyticsReportingSettings(body)
+## patchAnalyticsReportingSettings
+
+> AnalyticsReportingSettings patchAnalyticsReportingSettings(body)
 
 
 PATCH /api/v2/analytics/reporting/settings
@@ -2678,10 +3733,7 @@ Patch AnalyticsReportingSettings values for an organization
 
 Requires ANY permissions:
 
-* recording:recordingSegment:view
-* analytics:conversationDetail:view
-* analytics:conversationAggregate:view
-* analytics:dashboardConfigurations:view
+* analytics:reportingSettings:edit
 
 ### Example Usage
 
@@ -2691,7 +3743,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AnalyticsApi();
@@ -2714,15 +3766,15 @@ apiInstance.patchAnalyticsReportingSettings(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | AnalyticsReportingSettingsRequest |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AnalyticsReportingSettings**
 
-<a name="postAnalyticsActionsAggregatesJobs"></a>
 
-# AsyncQueryResponse postAnalyticsActionsAggregatesJobs(body)
+## postAnalyticsActionsAggregatesJobs
+
+> AsyncQueryResponse postAnalyticsActionsAggregatesJobs(body)
 
 
 POST /api/v2/analytics/actions/aggregates/jobs
@@ -2744,7 +3796,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AnalyticsApi();
@@ -2767,15 +3819,15 @@ apiInstance.postAnalyticsActionsAggregatesJobs(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AsyncQueryResponse**
 
-<a name="postAnalyticsActionsAggregatesQuery"></a>
 
-# ActionAggregateQueryResponse postAnalyticsActionsAggregatesQuery(body)
+## postAnalyticsActionsAggregatesQuery
+
+> ActionAggregateQueryResponse postAnalyticsActionsAggregatesQuery(body)
 
 
 POST /api/v2/analytics/actions/aggregates/query
@@ -2795,7 +3847,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AnalyticsApi();
@@ -2818,15 +3870,217 @@ apiInstance.postAnalyticsActionsAggregatesQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ActionAggregateQueryResponse**
 
-<a name="postAnalyticsBotsAggregatesJobs"></a>
 
-# AsyncQueryResponse postAnalyticsBotsAggregatesJobs(body)
+## postAnalyticsAgentcopilotsAggregatesJobs
+
+> AsyncQueryResponse postAnalyticsAgentcopilotsAggregatesJobs(body)
+
+
+POST /api/v2/analytics/agentcopilots/aggregates/jobs
+
+Query for agent copilot aggregates asynchronously
+
+postAnalyticsAgentcopilotsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* analytics:agentCopilotAggregate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let body = {}; // Object | query
+
+apiInstance.postAnalyticsAgentcopilotsAggregatesJobs(body)
+  .then((data) => {
+    console.log(`postAnalyticsAgentcopilotsAggregatesJobs success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postAnalyticsAgentcopilotsAggregatesJobs');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | query |  |
+
+### Return type
+
+**AsyncQueryResponse**
+
+
+## postAnalyticsAgentcopilotsAggregatesQuery
+
+> AgentCopilotAggregateQueryResponse postAnalyticsAgentcopilotsAggregatesQuery(body)
+
+
+POST /api/v2/analytics/agentcopilots/aggregates/query
+
+Query for agent copilot aggregates
+
+Requires ANY permissions:
+
+* analytics:agentCopilotAggregate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let body = {}; // Object | query
+
+apiInstance.postAnalyticsAgentcopilotsAggregatesQuery(body)
+  .then((data) => {
+    console.log(`postAnalyticsAgentcopilotsAggregatesQuery success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postAnalyticsAgentcopilotsAggregatesQuery');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | query |  |
+
+### Return type
+
+**AgentCopilotAggregateQueryResponse**
+
+
+## postAnalyticsAgentsStatusCounts
+
+> AnalyticsAgentStateCountsResponse postAnalyticsAgentsStatusCounts(body)
+
+
+POST /api/v2/analytics/agents/status/counts
+
+Count agents by different groupings
+
+Requires ANY permissions:
+
+* analytics:agentState:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let body = {}; // Object | query
+
+apiInstance.postAnalyticsAgentsStatusCounts(body)
+  .then((data) => {
+    console.log(`postAnalyticsAgentsStatusCounts success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postAnalyticsAgentsStatusCounts');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | query |  |
+
+### Return type
+
+**AnalyticsAgentStateCountsResponse**
+
+
+## postAnalyticsAgentsStatusQuery
+
+> AnalyticsAgentStateQueryResponse postAnalyticsAgentsStatusQuery(body)
+
+
+POST /api/v2/analytics/agents/status/query
+
+Retrieve the top 50 agents matching the query filters
+
+Requires ANY permissions:
+
+* analytics:agentState:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let body = {}; // Object | query
+
+apiInstance.postAnalyticsAgentsStatusQuery(body)
+  .then((data) => {
+    console.log(`postAnalyticsAgentsStatusQuery success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postAnalyticsAgentsStatusQuery');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | query |  |
+
+### Return type
+
+**AnalyticsAgentStateQueryResponse**
+
+
+## postAnalyticsBotsAggregatesJobs
+
+> AsyncQueryResponse postAnalyticsBotsAggregatesJobs(body)
 
 
 POST /api/v2/analytics/bots/aggregates/jobs
@@ -2847,7 +4101,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AnalyticsApi();
@@ -2870,15 +4124,15 @@ apiInstance.postAnalyticsBotsAggregatesJobs(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AsyncQueryResponse**
 
-<a name="postAnalyticsBotsAggregatesQuery"></a>
 
-# BotAggregateQueryResponse postAnalyticsBotsAggregatesQuery(body)
+## postAnalyticsBotsAggregatesQuery
+
+> BotAggregateQueryResponse postAnalyticsBotsAggregatesQuery(body)
 
 
 POST /api/v2/analytics/bots/aggregates/query
@@ -2897,7 +4151,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AnalyticsApi();
@@ -2920,15 +4174,15 @@ apiInstance.postAnalyticsBotsAggregatesQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **BotAggregateQueryResponse**
 
-<a name="postAnalyticsConversationDetailsProperties"></a>
 
-# PropertyIndexRequest postAnalyticsConversationDetailsProperties(conversationId, body)
+## postAnalyticsConversationDetailsProperties
+
+> PropertyIndexRequest postAnalyticsConversationDetailsProperties(conversationId, body)
 
 
 POST /api/v2/analytics/conversations/{conversationId}/details/properties
@@ -2947,7 +4201,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AnalyticsApi();
@@ -2972,22 +4226,20 @@ apiInstance.postAnalyticsConversationDetailsProperties(conversationId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **body** | **Object** | request |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **PropertyIndexRequest**
 
-<a name="postAnalyticsConversationsActivityQuery"></a>
 
-# ConversationActivityResponse postAnalyticsConversationsActivityQuery(body, opts)
+## postAnalyticsConversationsActivityQuery
+
+> ConversationActivityResponse postAnalyticsConversationsActivityQuery(body, opts)
 
 
 POST /api/v2/analytics/conversations/activity/query
 
 Query for conversation activity observations
-
-postAnalyticsConversationsActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -3001,7 +4253,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AnalyticsApi();
@@ -3030,15 +4282,15 @@ apiInstance.postAnalyticsConversationsActivityQuery(body, opts)
  **body** | **Object** | query |  |
  **pageSize** | **Number** | The desired page size | [optional]  |
  **pageNumber** | **Number** | The desired page number | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ConversationActivityResponse**
 
-<a name="postAnalyticsConversationsAggregatesJobs"></a>
 
-# AsyncQueryResponse postAnalyticsConversationsAggregatesJobs(body)
+## postAnalyticsConversationsAggregatesJobs
+
+> AsyncQueryResponse postAnalyticsConversationsAggregatesJobs(body)
 
 
 POST /api/v2/analytics/conversations/aggregates/jobs
@@ -3059,7 +4311,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AnalyticsApi();
@@ -3082,15 +4334,15 @@ apiInstance.postAnalyticsConversationsAggregatesJobs(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AsyncQueryResponse**
 
-<a name="postAnalyticsConversationsAggregatesQuery"></a>
 
-# ConversationAggregateQueryResponse postAnalyticsConversationsAggregatesQuery(body)
+## postAnalyticsConversationsAggregatesQuery
+
+> ConversationAggregateQueryResponse postAnalyticsConversationsAggregatesQuery(body)
 
 
 POST /api/v2/analytics/conversations/aggregates/query
@@ -3109,7 +4361,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AnalyticsApi();
@@ -3132,15 +4384,15 @@ apiInstance.postAnalyticsConversationsAggregatesQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ConversationAggregateQueryResponse**
 
-<a name="postAnalyticsConversationsDetailsJobs"></a>
 
-# AsyncQueryResponse postAnalyticsConversationsDetailsJobs(body)
+## postAnalyticsConversationsDetailsJobs
+
+> AsyncQueryResponse postAnalyticsConversationsDetailsJobs(body)
 
 
 POST /api/v2/analytics/conversations/details/jobs
@@ -3160,7 +4412,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AnalyticsApi();
@@ -3183,15 +4435,15 @@ apiInstance.postAnalyticsConversationsDetailsJobs(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AsyncQueryResponse**
 
-<a name="postAnalyticsConversationsDetailsQuery"></a>
 
-# AnalyticsConversationQueryResponse postAnalyticsConversationsDetailsQuery(body)
+## postAnalyticsConversationsDetailsQuery
+
+> AnalyticsConversationQueryResponse postAnalyticsConversationsDetailsQuery(body)
 
 
 POST /api/v2/analytics/conversations/details/query
@@ -3211,7 +4463,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AnalyticsApi();
@@ -3234,65 +4486,15 @@ apiInstance.postAnalyticsConversationsDetailsQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AnalyticsConversationQueryResponse**
 
-<a name="postAnalyticsConversationsTranscriptsQuery"></a>
 
-# AnalyticsConversationWithoutAttributesMultiGetResponse postAnalyticsConversationsTranscriptsQuery(body)
+## postAnalyticsEvaluationsAggregatesJobs
 
-
-POST /api/v2/analytics/conversations/transcripts/query
-
-Search resources.
-
-Requires ANY permissions:
-
-* analytics:conversationDetail:view
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.AnalyticsApi();
-
-let body = {}; // Object | Search request options
-
-apiInstance.postAnalyticsConversationsTranscriptsQuery(body)
-  .then((data) => {
-    console.log(`postAnalyticsConversationsTranscriptsQuery success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling postAnalyticsConversationsTranscriptsQuery');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **body** | **Object** | Search request options |  |
-{: class="table table-striped"}
-
-### Return type
-
-**AnalyticsConversationWithoutAttributesMultiGetResponse**
-
-<a name="postAnalyticsEvaluationsAggregatesJobs"></a>
-
-# AsyncQueryResponse postAnalyticsEvaluationsAggregatesJobs(body)
+> AsyncQueryResponse postAnalyticsEvaluationsAggregatesJobs(body)
 
 
 POST /api/v2/analytics/evaluations/aggregates/jobs
@@ -3313,7 +4515,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AnalyticsApi();
@@ -3336,15 +4538,15 @@ apiInstance.postAnalyticsEvaluationsAggregatesJobs(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AsyncQueryResponse**
 
-<a name="postAnalyticsEvaluationsAggregatesQuery"></a>
 
-# EvaluationAggregateQueryResponse postAnalyticsEvaluationsAggregatesQuery(body)
+## postAnalyticsEvaluationsAggregatesQuery
+
+> EvaluationAggregateQueryResponse postAnalyticsEvaluationsAggregatesQuery(body)
 
 
 POST /api/v2/analytics/evaluations/aggregates/query
@@ -3363,7 +4565,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AnalyticsApi();
@@ -3386,22 +4588,122 @@ apiInstance.postAnalyticsEvaluationsAggregatesQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **EvaluationAggregateQueryResponse**
 
-<a name="postAnalyticsFlowsActivityQuery"></a>
 
-# FlowActivityResponse postAnalyticsFlowsActivityQuery(body, opts)
+## postAnalyticsFlowexecutionsAggregatesJobs
+
+> AsyncQueryResponse postAnalyticsFlowexecutionsAggregatesJobs(body)
+
+
+POST /api/v2/analytics/flowexecutions/aggregates/jobs
+
+Query for flow execution aggregates asynchronously
+
+postAnalyticsFlowexecutionsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* analytics:flowExecutionAggregate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let body = {}; // Object | query
+
+apiInstance.postAnalyticsFlowexecutionsAggregatesJobs(body)
+  .then((data) => {
+    console.log(`postAnalyticsFlowexecutionsAggregatesJobs success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postAnalyticsFlowexecutionsAggregatesJobs');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | query |  |
+
+### Return type
+
+**AsyncQueryResponse**
+
+
+## postAnalyticsFlowexecutionsAggregatesQuery
+
+> FlowExecutionAggregateQueryResponse postAnalyticsFlowexecutionsAggregatesQuery(body)
+
+
+POST /api/v2/analytics/flowexecutions/aggregates/query
+
+Query for flow execution aggregates
+
+Requires ANY permissions:
+
+* analytics:flowExecutionAggregate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let body = {}; // Object | query
+
+apiInstance.postAnalyticsFlowexecutionsAggregatesQuery(body)
+  .then((data) => {
+    console.log(`postAnalyticsFlowexecutionsAggregatesQuery success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postAnalyticsFlowexecutionsAggregatesQuery');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | query |  |
+
+### Return type
+
+**FlowExecutionAggregateQueryResponse**
+
+
+## postAnalyticsFlowsActivityQuery
+
+> FlowActivityResponse postAnalyticsFlowsActivityQuery(body, opts)
 
 
 POST /api/v2/analytics/flows/activity/query
 
 Query for flow activity observations
-
-postAnalyticsFlowsActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -3415,7 +4717,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AnalyticsApi();
@@ -3444,15 +4746,15 @@ apiInstance.postAnalyticsFlowsActivityQuery(body, opts)
  **body** | **Object** | query |  |
  **pageSize** | **Number** | The desired page size | [optional]  |
  **pageNumber** | **Number** | The desired page number | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **FlowActivityResponse**
 
-<a name="postAnalyticsFlowsAggregatesJobs"></a>
 
-# AsyncQueryResponse postAnalyticsFlowsAggregatesJobs(body)
+## postAnalyticsFlowsAggregatesJobs
+
+> AsyncQueryResponse postAnalyticsFlowsAggregatesJobs(body)
 
 
 POST /api/v2/analytics/flows/aggregates/jobs
@@ -3473,7 +4775,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AnalyticsApi();
@@ -3496,15 +4798,15 @@ apiInstance.postAnalyticsFlowsAggregatesJobs(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AsyncQueryResponse**
 
-<a name="postAnalyticsFlowsAggregatesQuery"></a>
 
-# FlowAggregateQueryResponse postAnalyticsFlowsAggregatesQuery(body)
+## postAnalyticsFlowsAggregatesQuery
+
+> FlowAggregateQueryResponse postAnalyticsFlowsAggregatesQuery(body)
 
 
 POST /api/v2/analytics/flows/aggregates/query
@@ -3523,7 +4825,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AnalyticsApi();
@@ -3546,15 +4848,15 @@ apiInstance.postAnalyticsFlowsAggregatesQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **FlowAggregateQueryResponse**
 
-<a name="postAnalyticsFlowsObservationsQuery"></a>
 
-# FlowObservationQueryResponse postAnalyticsFlowsObservationsQuery(body)
+## postAnalyticsFlowsObservationsQuery
+
+> FlowObservationQueryResponse postAnalyticsFlowsObservationsQuery(body)
 
 
 POST /api/v2/analytics/flows/observations/query
@@ -3573,7 +4875,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AnalyticsApi();
@@ -3596,15 +4898,15 @@ apiInstance.postAnalyticsFlowsObservationsQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **FlowObservationQueryResponse**
 
-<a name="postAnalyticsJourneysAggregatesJobs"></a>
 
-# AsyncQueryResponse postAnalyticsJourneysAggregatesJobs(body)
+## postAnalyticsJourneysAggregatesJobs
+
+> AsyncQueryResponse postAnalyticsJourneysAggregatesJobs(body)
 
 
 POST /api/v2/analytics/journeys/aggregates/jobs
@@ -3625,7 +4927,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AnalyticsApi();
@@ -3648,15 +4950,15 @@ apiInstance.postAnalyticsJourneysAggregatesJobs(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AsyncQueryResponse**
 
-<a name="postAnalyticsJourneysAggregatesQuery"></a>
 
-# JourneyAggregateQueryResponse postAnalyticsJourneysAggregatesQuery(body)
+## postAnalyticsJourneysAggregatesQuery
+
+> JourneyAggregateQueryResponse postAnalyticsJourneysAggregatesQuery(body)
 
 
 POST /api/v2/analytics/journeys/aggregates/query
@@ -3675,7 +4977,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AnalyticsApi();
@@ -3698,15 +5000,15 @@ apiInstance.postAnalyticsJourneysAggregatesQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **JourneyAggregateQueryResponse**
 
-<a name="postAnalyticsKnowledgeAggregatesJobs"></a>
 
-# AsyncQueryResponse postAnalyticsKnowledgeAggregatesJobs(body)
+## postAnalyticsKnowledgeAggregatesJobs
+
+> AsyncQueryResponse postAnalyticsKnowledgeAggregatesJobs(body)
 
 
 POST /api/v2/analytics/knowledge/aggregates/jobs
@@ -3727,7 +5029,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AnalyticsApi();
@@ -3750,22 +5052,20 @@ apiInstance.postAnalyticsKnowledgeAggregatesJobs(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AsyncQueryResponse**
 
-<a name="postAnalyticsKnowledgeAggregatesQuery"></a>
 
-# KnowledgeAggregateQueryResponse postAnalyticsKnowledgeAggregatesQuery(body)
+## postAnalyticsKnowledgeAggregatesQuery
+
+> KnowledgeAggregateQueryResponse postAnalyticsKnowledgeAggregatesQuery(body)
 
 
 POST /api/v2/analytics/knowledge/aggregates/query
 
 Query for knowledge aggregates
-
-postAnalyticsKnowledgeAggregatesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -3779,7 +5079,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AnalyticsApi();
@@ -3802,15 +5102,15 @@ apiInstance.postAnalyticsKnowledgeAggregatesQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **KnowledgeAggregateQueryResponse**
 
-<a name="postAnalyticsQueuesObservationsQuery"></a>
 
-# QueueObservationQueryResponse postAnalyticsQueuesObservationsQuery(body)
+## postAnalyticsQueuesObservationsQuery
+
+> QueueObservationQueryResponse postAnalyticsQueuesObservationsQuery(body)
 
 
 POST /api/v2/analytics/queues/observations/query
@@ -3829,7 +5129,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AnalyticsApi();
@@ -3852,15 +5152,118 @@ apiInstance.postAnalyticsQueuesObservationsQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **QueueObservationQueryResponse**
 
-<a name="postAnalyticsReportingExports"></a>
 
-# ReportingExportJobResponse postAnalyticsReportingExports(body)
+## postAnalyticsRatelimitsAggregatesQuery
+
+> RateLimitAggregateQueryResponse postAnalyticsRatelimitsAggregatesQuery(body)
+
+
+POST /api/v2/analytics/ratelimits/aggregates/query
+
+Query for limits rate limit aggregates. Data populated when limits reach 90% of the maximum. Not a source of truth for limits hit but a best effort estimate.
+
+The max property can be used to determine estimated rate limit value hit. See https://developer.genesys.cloud/organization/organization/limits#available-limits for limits that are trackable (Operational Events Enabled).
+
+Requires ANY permissions:
+
+* analytics:rateLimitAggregate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let body = {}; // Object | query
+
+apiInstance.postAnalyticsRatelimitsAggregatesQuery(body)
+  .then((data) => {
+    console.log(`postAnalyticsRatelimitsAggregatesQuery success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postAnalyticsRatelimitsAggregatesQuery');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | query |  |
+
+### Return type
+
+**RateLimitAggregateQueryResponse**
+
+
+## postAnalyticsReportingDashboardsUsersBulkRemove
+
+> void postAnalyticsReportingDashboardsUsersBulkRemove(body)
+
+
+POST /api/v2/analytics/reporting/dashboards/users/bulk/remove
+
+Bulk soft delete dashboards owned by other user(s)
+
+Requires ANY permissions:
+
+* analytics:dashboardConfigurations:deleteActive
+* analytics:dashboardConfigurations:deleteInactive
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let body = ["body_example"]; // [String] | List of userIds
+
+apiInstance.postAnalyticsReportingDashboardsUsersBulkRemove(body)
+  .then(() => {
+    console.log('postAnalyticsReportingDashboardsUsersBulkRemove returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postAnalyticsReportingDashboardsUsersBulkRemove');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **[String]** | List of userIds |  |
+
+### Return type
+
+void (no response body)
+
+
+## postAnalyticsReportingExports
+
+> ReportingExportJobResponse postAnalyticsReportingExports(body)
 
 
 POST /api/v2/analytics/reporting/exports
@@ -3881,7 +5284,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AnalyticsApi();
@@ -3904,76 +5307,24 @@ apiInstance.postAnalyticsReportingExports(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | ReportingExportJobRequest |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ReportingExportJobResponse**
 
-<a name="postAnalyticsReportingScheduleRunreport"></a>
 
-# RunNowResponse postAnalyticsReportingScheduleRunreport(scheduleId)
+## postAnalyticsReportingSettingsDashboardsBulkRemove
 
-
-POST /api/v2/analytics/reporting/schedules/{scheduleId}/runreport
-
-Place a scheduled report immediately into the reporting queue
-
-Requires ANY permissions:
-
-* reporting:acd:view, reporting:status:view, reporting:interactions:view, reporting:outbound:view, reporting:quality:view, employee
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.AnalyticsApi();
-
-let scheduleId = "scheduleId_example"; // String | Schedule ID
-
-apiInstance.postAnalyticsReportingScheduleRunreport(scheduleId)
-  .then((data) => {
-    console.log(`postAnalyticsReportingScheduleRunreport success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling postAnalyticsReportingScheduleRunreport');
-    console.error(err);
-  });
-```
-
-### Parameters
+> void postAnalyticsReportingSettingsDashboardsBulkRemove(body)
 
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **scheduleId** | **String** | Schedule ID |  |
-{: class="table table-striped"}
+POST /api/v2/analytics/reporting/settings/dashboards/bulk/remove
 
-### Return type
+Bulk soft delete dashboard configurations
 
-**RunNowResponse**
+Requires ALL permissions:
 
-<a name="postAnalyticsReportingSchedules"></a>
-
-# ReportSchedule postAnalyticsReportingSchedules(body)
-
-
-POST /api/v2/analytics/reporting/schedules
-
-Create a scheduled report job
-
-Create a scheduled report job.
-
-Requires ANY permissions:
-
-* reporting:acd:view, reporting:status:view, reporting:interactions:view, reporting:outbound:view, reporting:quality:view, employee
+* analytics:dashboardConfigurations:edit
 
 ### Example Usage
 
@@ -3983,19 +5334,19 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AnalyticsApi();
 
-let body = {}; // Object | ReportSchedule
+let body = {}; // Object | 
 
-apiInstance.postAnalyticsReportingSchedules(body)
-  .then((data) => {
-    console.log(`postAnalyticsReportingSchedules success! data: ${JSON.stringify(data, null, 2)}`);
+apiInstance.postAnalyticsReportingSettingsDashboardsBulkRemove(body)
+  .then(() => {
+    console.log('postAnalyticsReportingSettingsDashboardsBulkRemove returned successfully.');
   })
   .catch((err) => {
-    console.log('There was a failure calling postAnalyticsReportingSchedules');
+    console.log('There was a failure calling postAnalyticsReportingSettingsDashboardsBulkRemove');
     console.error(err);
   });
 ```
@@ -4005,16 +5356,66 @@ apiInstance.postAnalyticsReportingSchedules(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **Object** | ReportSchedule |  |
-{: class="table table-striped"}
+ **body** | **Object** |  |  |
 
 ### Return type
 
-**ReportSchedule**
+void (no response body)
 
-<a name="postAnalyticsResolutionsAggregatesJobs"></a>
 
-# AsyncQueryResponse postAnalyticsResolutionsAggregatesJobs(body)
+## postAnalyticsReportingSettingsDashboardsQuery
+
+> DashboardConfigurationListing postAnalyticsReportingSettingsDashboardsQuery(body)
+
+
+POST /api/v2/analytics/reporting/settings/dashboards/query
+
+Query dashboard configurations
+
+Requires ALL permissions:
+
+* analytics:dashboardConfigurations:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let body = {}; // Object | 
+
+apiInstance.postAnalyticsReportingSettingsDashboardsQuery(body)
+  .then((data) => {
+    console.log(`postAnalyticsReportingSettingsDashboardsQuery success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postAnalyticsReportingSettingsDashboardsQuery');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** |  |  |
+
+### Return type
+
+**DashboardConfigurationListing**
+
+
+## postAnalyticsResolutionsAggregatesJobs
+
+> AsyncQueryResponse postAnalyticsResolutionsAggregatesJobs(body)
 
 
 POST /api/v2/analytics/resolutions/aggregates/jobs
@@ -4035,7 +5436,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AnalyticsApi();
@@ -4058,22 +5459,70 @@ apiInstance.postAnalyticsResolutionsAggregatesJobs(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AsyncQueryResponse**
 
-<a name="postAnalyticsRoutingActivityQuery"></a>
 
-# RoutingActivityResponse postAnalyticsRoutingActivityQuery(body, opts)
+## postAnalyticsResolutionsAggregatesQuery
+
+> ResolutionAggregateQueryResponse postAnalyticsResolutionsAggregatesQuery(body)
+
+
+POST /api/v2/analytics/resolutions/aggregates/query
+
+Query for resolution aggregates
+
+Requires ANY permissions:
+
+* analytics:resolutionAggregate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let body = {}; // Object | query
+
+apiInstance.postAnalyticsResolutionsAggregatesQuery(body)
+  .then((data) => {
+    console.log(`postAnalyticsResolutionsAggregatesQuery success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postAnalyticsResolutionsAggregatesQuery');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | query |  |
+
+### Return type
+
+**ResolutionAggregateQueryResponse**
+
+
+## postAnalyticsRoutingActivityQuery
+
+> RoutingActivityResponse postAnalyticsRoutingActivityQuery(body, opts)
 
 
 POST /api/v2/analytics/routing/activity/query
 
 Query for user activity observations
-
-postAnalyticsRoutingActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -4087,7 +5536,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AnalyticsApi();
@@ -4116,15 +5565,117 @@ apiInstance.postAnalyticsRoutingActivityQuery(body, opts)
  **body** | **Object** | query |  |
  **pageSize** | **Number** | The desired page size | [optional]  |
  **pageNumber** | **Number** | The desired page number | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **RoutingActivityResponse**
 
-<a name="postAnalyticsSurveysAggregatesJobs"></a>
 
-# AsyncQueryResponse postAnalyticsSurveysAggregatesJobs(body)
+## postAnalyticsSummariesAggregatesJobs
+
+> AsyncQueryResponse postAnalyticsSummariesAggregatesJobs(body)
+
+
+POST /api/v2/analytics/summaries/aggregates/jobs
+
+Query for summary aggregates asynchronously
+
+postAnalyticsSummariesAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* analytics:summaryAggregate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let body = {}; // Object | query
+
+apiInstance.postAnalyticsSummariesAggregatesJobs(body)
+  .then((data) => {
+    console.log(`postAnalyticsSummariesAggregatesJobs success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postAnalyticsSummariesAggregatesJobs');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | query |  |
+
+### Return type
+
+**AsyncQueryResponse**
+
+
+## postAnalyticsSummariesAggregatesQuery
+
+> SummaryAggregateQueryResponse postAnalyticsSummariesAggregatesQuery(body)
+
+
+POST /api/v2/analytics/summaries/aggregates/query
+
+Query for summary aggregates
+
+Requires ANY permissions:
+
+* analytics:summaryAggregate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AnalyticsApi();
+
+let body = {}; // Object | query
+
+apiInstance.postAnalyticsSummariesAggregatesQuery(body)
+  .then((data) => {
+    console.log(`postAnalyticsSummariesAggregatesQuery success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postAnalyticsSummariesAggregatesQuery');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | query |  |
+
+### Return type
+
+**SummaryAggregateQueryResponse**
+
+
+## postAnalyticsSurveysAggregatesJobs
+
+> AsyncQueryResponse postAnalyticsSurveysAggregatesJobs(body)
 
 
 POST /api/v2/analytics/surveys/aggregates/jobs
@@ -4145,7 +5696,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AnalyticsApi();
@@ -4168,15 +5719,15 @@ apiInstance.postAnalyticsSurveysAggregatesJobs(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AsyncQueryResponse**
 
-<a name="postAnalyticsSurveysAggregatesQuery"></a>
 
-# SurveyAggregateQueryResponse postAnalyticsSurveysAggregatesQuery(body)
+## postAnalyticsSurveysAggregatesQuery
+
+> SurveyAggregateQueryResponse postAnalyticsSurveysAggregatesQuery(body)
 
 
 POST /api/v2/analytics/surveys/aggregates/query
@@ -4195,7 +5746,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AnalyticsApi();
@@ -4218,15 +5769,15 @@ apiInstance.postAnalyticsSurveysAggregatesQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **SurveyAggregateQueryResponse**
 
-<a name="postAnalyticsTaskmanagementAggregatesJobs"></a>
 
-# AsyncQueryResponse postAnalyticsTaskmanagementAggregatesJobs(body)
+## postAnalyticsTaskmanagementAggregatesJobs
+
+> AsyncQueryResponse postAnalyticsTaskmanagementAggregatesJobs(body)
 
 
 POST /api/v2/analytics/taskmanagement/aggregates/jobs
@@ -4247,7 +5798,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AnalyticsApi();
@@ -4270,22 +5821,20 @@ apiInstance.postAnalyticsTaskmanagementAggregatesJobs(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AsyncQueryResponse**
 
-<a name="postAnalyticsTaskmanagementAggregatesQuery"></a>
 
-# TaskManagementAggregateQueryResponse postAnalyticsTaskmanagementAggregatesQuery(body)
+## postAnalyticsTaskmanagementAggregatesQuery
+
+> TaskManagementAggregateQueryResponse postAnalyticsTaskmanagementAggregatesQuery(body)
 
 
 POST /api/v2/analytics/taskmanagement/aggregates/query
 
 Query for task management aggregates
-
-postAnalyticsTaskmanagementAggregatesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -4299,7 +5848,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AnalyticsApi();
@@ -4322,22 +5871,20 @@ apiInstance.postAnalyticsTaskmanagementAggregatesQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **TaskManagementAggregateQueryResponse**
 
-<a name="postAnalyticsTeamsActivityQuery"></a>
 
-# TeamActivityResponse postAnalyticsTeamsActivityQuery(body, opts)
+## postAnalyticsTeamsActivityQuery
+
+> TeamActivityResponse postAnalyticsTeamsActivityQuery(body, opts)
 
 
 POST /api/v2/analytics/teams/activity/query
 
 Query for team activity observations
-
-postAnalyticsTeamsActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -4351,7 +5898,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AnalyticsApi();
@@ -4380,15 +5927,15 @@ apiInstance.postAnalyticsTeamsActivityQuery(body, opts)
  **body** | **Object** | query |  |
  **pageSize** | **Number** | The desired page size | [optional]  |
  **pageNumber** | **Number** | The desired page number | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **TeamActivityResponse**
 
-<a name="postAnalyticsTranscriptsAggregatesJobs"></a>
 
-# AsyncQueryResponse postAnalyticsTranscriptsAggregatesJobs(body)
+## postAnalyticsTranscriptsAggregatesJobs
+
+> AsyncQueryResponse postAnalyticsTranscriptsAggregatesJobs(body)
 
 
 POST /api/v2/analytics/transcripts/aggregates/jobs
@@ -4409,7 +5956,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AnalyticsApi();
@@ -4432,15 +5979,15 @@ apiInstance.postAnalyticsTranscriptsAggregatesJobs(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AsyncQueryResponse**
 
-<a name="postAnalyticsTranscriptsAggregatesQuery"></a>
 
-# TranscriptAggregateQueryResponse postAnalyticsTranscriptsAggregatesQuery(body)
+## postAnalyticsTranscriptsAggregatesQuery
+
+> TranscriptAggregateQueryResponse postAnalyticsTranscriptsAggregatesQuery(body)
 
 
 POST /api/v2/analytics/transcripts/aggregates/query
@@ -4459,7 +6006,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AnalyticsApi();
@@ -4482,22 +6029,20 @@ apiInstance.postAnalyticsTranscriptsAggregatesQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **TranscriptAggregateQueryResponse**
 
-<a name="postAnalyticsUsersActivityQuery"></a>
 
-# UserActivityResponse postAnalyticsUsersActivityQuery(body, opts)
+## postAnalyticsUsersActivityQuery
+
+> UserActivityResponse postAnalyticsUsersActivityQuery(body, opts)
 
 
 POST /api/v2/analytics/users/activity/query
 
 Query for user activity observations
-
-postAnalyticsUsersActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -4511,7 +6056,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AnalyticsApi();
@@ -4540,15 +6085,15 @@ apiInstance.postAnalyticsUsersActivityQuery(body, opts)
  **body** | **Object** | query |  |
  **pageSize** | **Number** | The desired page size | [optional]  |
  **pageNumber** | **Number** | The desired page number | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **UserActivityResponse**
 
-<a name="postAnalyticsUsersAggregatesJobs"></a>
 
-# AsyncQueryResponse postAnalyticsUsersAggregatesJobs(body)
+## postAnalyticsUsersAggregatesJobs
+
+> AsyncQueryResponse postAnalyticsUsersAggregatesJobs(body)
 
 
 POST /api/v2/analytics/users/aggregates/jobs
@@ -4569,7 +6114,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AnalyticsApi();
@@ -4592,15 +6137,15 @@ apiInstance.postAnalyticsUsersAggregatesJobs(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AsyncQueryResponse**
 
-<a name="postAnalyticsUsersAggregatesQuery"></a>
 
-# UserAggregateQueryResponse postAnalyticsUsersAggregatesQuery(body)
+## postAnalyticsUsersAggregatesQuery
+
+> UserAggregateQueryResponse postAnalyticsUsersAggregatesQuery(body)
 
 
 POST /api/v2/analytics/users/aggregates/query
@@ -4619,7 +6164,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AnalyticsApi();
@@ -4642,15 +6187,15 @@ apiInstance.postAnalyticsUsersAggregatesQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **UserAggregateQueryResponse**
 
-<a name="postAnalyticsUsersDetailsJobs"></a>
 
-# AsyncQueryResponse postAnalyticsUsersDetailsJobs(body)
+## postAnalyticsUsersDetailsJobs
+
+> AsyncQueryResponse postAnalyticsUsersDetailsJobs(body)
 
 
 POST /api/v2/analytics/users/details/jobs
@@ -4669,7 +6214,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AnalyticsApi();
@@ -4692,15 +6237,15 @@ apiInstance.postAnalyticsUsersDetailsJobs(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AsyncQueryResponse**
 
-<a name="postAnalyticsUsersDetailsQuery"></a>
 
-# AnalyticsUserDetailsQueryResponse postAnalyticsUsersDetailsQuery(body)
+## postAnalyticsUsersDetailsQuery
+
+> AnalyticsUserDetailsQueryResponse postAnalyticsUsersDetailsQuery(body)
 
 
 POST /api/v2/analytics/users/details/query
@@ -4719,7 +6264,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AnalyticsApi();
@@ -4742,15 +6287,15 @@ apiInstance.postAnalyticsUsersDetailsQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AnalyticsUserDetailsQueryResponse**
 
-<a name="postAnalyticsUsersObservationsQuery"></a>
 
-# UserObservationQueryResponse postAnalyticsUsersObservationsQuery(body)
+## postAnalyticsUsersObservationsQuery
+
+> UserObservationQueryResponse postAnalyticsUsersObservationsQuery(body)
 
 
 POST /api/v2/analytics/users/observations/query
@@ -4769,7 +6314,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AnalyticsApi();
@@ -4792,15 +6337,15 @@ apiInstance.postAnalyticsUsersObservationsQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **UserObservationQueryResponse**
 
-<a name="putAnalyticsDataretentionSettings"></a>
 
-# AnalyticsDataRetentionResponse putAnalyticsDataretentionSettings(body)
+## putAnalyticsDataretentionSettings
+
+> AnalyticsDataRetentionResponse putAnalyticsDataretentionSettings(body)
 
 
 PUT /api/v2/analytics/dataretention/settings
@@ -4819,7 +6364,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AnalyticsApi();
@@ -4842,61 +6387,10 @@ apiInstance.putAnalyticsDataretentionSettings(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | retentionDays |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AnalyticsDataRetentionResponse**
 
-<a name="putAnalyticsReportingSchedule"></a>
 
-# ReportSchedule putAnalyticsReportingSchedule(scheduleId, body)
-
-
-PUT /api/v2/analytics/reporting/schedules/{scheduleId}
-
-Update a scheduled report job.
-
-Requires ANY permissions:
-
-* reporting:acd:view, reporting:status:view, reporting:interactions:view, reporting:outbound:view, reporting:quality:view, employee
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.AnalyticsApi();
-
-let scheduleId = "scheduleId_example"; // String | Schedule ID
-let body = {}; // Object | ReportSchedule
-
-apiInstance.putAnalyticsReportingSchedule(scheduleId, body)
-  .then((data) => {
-    console.log(`putAnalyticsReportingSchedule success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling putAnalyticsReportingSchedule');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **scheduleId** | **String** | Schedule ID |  |
- **body** | **Object** | ReportSchedule |  |
-{: class="table table-striped"}
-
-### Return type
-
-**ReportSchedule**
-
+_purecloud-platform-client-v2@229.1.0_

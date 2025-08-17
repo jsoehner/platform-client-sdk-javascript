@@ -5,7 +5,7 @@ class FlowsApi {
 	/**
 	 * Flows service.
 	 * @module purecloud-platform-client-v2/api/FlowsApi
-	 * @version 174.0.0
+	 * @version 229.1.0
 	 */
 
 	/**
@@ -21,6 +21,32 @@ class FlowsApi {
 
 
 	/**
+	 * Delete/cancel an async request for flow aggregates
+	 * 
+	 * @param {String} jobId jobId
+	 * deleteAnalyticsFlowsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	deleteAnalyticsFlowsAggregatesJob(jobId) { 
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null || jobId === '') {
+			throw 'Missing the required parameter "jobId" when calling deleteAnalyticsFlowsAggregatesJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/flows/aggregates/jobs/{jobId}', 
+			'DELETE', 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get status for async query for Flow aggregates
 	 * 
 	 * @param {String} jobId jobId
@@ -28,7 +54,7 @@ class FlowsApi {
 	 */
 	getAnalyticsFlowsAggregatesJob(jobId) { 
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getAnalyticsFlowsAggregatesJob';
 		}
 
@@ -58,7 +84,7 @@ class FlowsApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getAnalyticsFlowsAggregatesJobResults';
 		}
 
@@ -83,7 +109,6 @@ class FlowsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize The desired page size
 	 * @param {Number} opts.pageNumber The desired page number
-	 * postAnalyticsFlowsActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAnalyticsFlowsActivityQuery(body, opts) { 
 		opts = opts || {};

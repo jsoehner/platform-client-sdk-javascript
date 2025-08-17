@@ -4,6 +4,7 @@ import json from '@rollup/plugin-json';
 import replace from 'rollup-plugin-re';
 import builtins from 'rollup-plugin-node-builtins';
 import globals from 'rollup-plugin-node-globals';
+import babel, { getBabelOutputPlugin } from '@rollup/plugin-babel';
 
 export default {
 	input: 'src/purecloud-platform-client-v2/index.js',
@@ -11,6 +12,7 @@ export default {
 		file: 'dist/web-cjs/bundle.js',
 		format: 'cjs',
 		name: 'platformClient',
+		plugins: [getBabelOutputPlugin({ presets: ['@babel/preset-env'] })],
 		globals: [
 			'tty',
 			'util',
@@ -31,18 +33,18 @@ export default {
 			'qs'
 		]
 	},
-	plugins: [ 
+	plugins: [
 		builtins(),
-		nodeResolve(),
+		nodeResolve({ browser: true }),
 		replace({
 			// https://github.com/rollup/rollup-plugin-commonjs/issues/166#issuecomment-328853157
 			// do replace before commonjs
 			patterns: [
 				{
 					// regexp match with resolved path
-					match: /formidable(\/|\\)lib/, 
+					match: /formidable(\/|\\)lib/,
 					// string or regexp
-					test: 'if (global.GENTLY) require = GENTLY.hijack(require);', 
+					test: 'if (global.GENTLY) require = GENTLY.hijack(require);',
 					// string or function to replaced with
 					replace: '',
 				},
@@ -93,7 +95,6 @@ export default {
 		'tty',
 		'crypto',
 		'os',
-		'axios',
 		'qs'
 	]
 };

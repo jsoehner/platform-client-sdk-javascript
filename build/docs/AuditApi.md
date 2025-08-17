@@ -1,23 +1,24 @@
----
-title: AuditApi
----
+# AuditApi
+
 # platformClient.AuditApi
 
 All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-[**getAuditsQueryRealtimeServicemapping**](AuditApi.html#getAuditsQueryRealtimeServicemapping) | **GET** /api/v2/audits/query/realtime/servicemapping | Get service mapping information used in realtime audits.
-[**getAuditsQueryServicemapping**](AuditApi.html#getAuditsQueryServicemapping) | **GET** /api/v2/audits/query/servicemapping | Get service mapping information used in audits.
-[**getAuditsQueryTransactionId**](AuditApi.html#getAuditsQueryTransactionId) | **GET** /api/v2/audits/query/{transactionId} | Get status of audit query execution
-[**getAuditsQueryTransactionIdResults**](AuditApi.html#getAuditsQueryTransactionIdResults) | **GET** /api/v2/audits/query/{transactionId}/results | Get results of audit query
-[**postAuditsQuery**](AuditApi.html#postAuditsQuery) | **POST** /api/v2/audits/query | Create audit query execution
-[**postAuditsQueryRealtime**](AuditApi.html#postAuditsQueryRealtime) | **POST** /api/v2/audits/query/realtime | This endpoint will only retrieve 14 days worth of audits for certain services. Please use /query to get a full list and older audits.
-{: class="table table-striped"}
+[**getAuditsQueryRealtimeServicemapping**](AuditApi#getAuditsQueryRealtimeServicemapping) | **GET** /api/v2/audits/query/realtime/servicemapping | Get service mapping information used in realtime audits.
+[**getAuditsQueryServicemapping**](AuditApi#getAuditsQueryServicemapping) | **GET** /api/v2/audits/query/servicemapping | Get service mapping information used in audits.
+[**getAuditsQueryTransactionId**](AuditApi#getAuditsQueryTransactionId) | **GET** /api/v2/audits/query/{transactionId} | Get status of audit query execution
+[**getAuditsQueryTransactionIdResults**](AuditApi#getAuditsQueryTransactionIdResults) | **GET** /api/v2/audits/query/{transactionId}/results | Get results of audit query
+[**postAuditsQuery**](AuditApi#postAuditsQuery) | **POST** /api/v2/audits/query | Create audit query execution
+[**postAuditsQueryRealtime**](AuditApi#postAuditsQueryRealtime) | **POST** /api/v2/audits/query/realtime | This endpoint will only retrieve 14 days worth of audits for certain services. Please use /query to get a full list and older audits.
+[**postAuditsQueryRealtimeRelated**](AuditApi#postAuditsQueryRealtimeRelated) | **POST** /api/v2/audits/query/realtime/related | Often a single action results in multiple audits. The endpoint retrieves all audits created by the same action as the given audit id.
 
-<a name="getAuditsQueryRealtimeServicemapping"></a>
 
-# AuditQueryServiceMapping getAuditsQueryRealtimeServicemapping()
+
+## getAuditsQueryRealtimeServicemapping
+
+> AuditQueryServiceMapping getAuditsQueryRealtimeServicemapping()
 
 
 GET /api/v2/audits/query/realtime/servicemapping
@@ -36,7 +37,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AuditApi();
@@ -55,14 +56,14 @@ apiInstance.getAuditsQueryRealtimeServicemapping()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **AuditQueryServiceMapping**
 
-<a name="getAuditsQueryServicemapping"></a>
 
-# AuditQueryServiceMapping getAuditsQueryServicemapping()
+## getAuditsQueryServicemapping
+
+> AuditQueryServiceMapping getAuditsQueryServicemapping()
 
 
 GET /api/v2/audits/query/servicemapping
@@ -81,7 +82,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AuditApi();
@@ -100,14 +101,14 @@ apiInstance.getAuditsQueryServicemapping()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **AuditQueryServiceMapping**
 
-<a name="getAuditsQueryTransactionId"></a>
 
-# AuditQueryExecutionStatusResponse getAuditsQueryTransactionId(transactionId)
+## getAuditsQueryTransactionId
+
+> AuditQueryExecutionStatusResponse getAuditsQueryTransactionId(transactionId)
 
 
 GET /api/v2/audits/query/{transactionId}
@@ -126,7 +127,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AuditApi();
@@ -149,15 +150,15 @@ apiInstance.getAuditsQueryTransactionId(transactionId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **transactionId** | **String** | Transaction ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AuditQueryExecutionStatusResponse**
 
-<a name="getAuditsQueryTransactionIdResults"></a>
 
-# AuditQueryExecutionResultsResponse getAuditsQueryTransactionIdResults(transactionId, opts)
+## getAuditsQueryTransactionIdResults
+
+> AuditQueryExecutionResultsResponse getAuditsQueryTransactionIdResults(transactionId, opts)
 
 
 GET /api/v2/audits/query/{transactionId}/results
@@ -176,7 +177,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AuditApi();
@@ -185,7 +186,8 @@ let transactionId = "transactionId_example"; // String | Transaction ID
 let opts = { 
   'cursor': "cursor_example", // String | Indicates where to resume query results (not required for first page)
   'pageSize': 25, // Number | Indicates maximum number of results in response. Default page size is 25 results. The maximum page size is 500.
-  'expand': ["expand_example"] // [String] | Which fields, if any, to expand
+  'expand': ["expand_example"], // [String] | Which fields, if any, to expand
+  'allowRedirect': true // Boolean | Result sets with large amounts of data will respond with a download url
 };
 
 apiInstance.getAuditsQueryTransactionIdResults(transactionId, opts)
@@ -207,15 +209,16 @@ apiInstance.getAuditsQueryTransactionIdResults(transactionId, opts)
  **cursor** | **String** | Indicates where to resume query results (not required for first page) | [optional]  |
  **pageSize** | **Number** | Indicates maximum number of results in response. Default page size is 25 results. The maximum page size is 500. | [optional] [default to 25] |
  **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: user |
-{: class="table table-striped"}
+ **allowRedirect** | **Boolean** | Result sets with large amounts of data will respond with a download url | [optional]  |
 
 ### Return type
 
 **AuditQueryExecutionResultsResponse**
 
-<a name="postAuditsQuery"></a>
 
-# AuditQueryExecutionStatusResponse postAuditsQuery(body)
+## postAuditsQuery
+
+> AuditQueryExecutionStatusResponse postAuditsQuery(body)
 
 
 POST /api/v2/audits/query
@@ -236,7 +239,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AuditApi();
@@ -259,15 +262,15 @@ apiInstance.postAuditsQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AuditQueryExecutionStatusResponse**
 
-<a name="postAuditsQueryRealtime"></a>
 
-# AuditRealtimeQueryResultsResponse postAuditsQueryRealtime(body, opts)
+## postAuditsQueryRealtime
+
+> AuditRealtimeQueryResultsResponse postAuditsQueryRealtime(body, opts)
 
 
 POST /api/v2/audits/query/realtime
@@ -288,7 +291,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AuditApi();
@@ -315,9 +318,64 @@ apiInstance.postAuditsQueryRealtime(body, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
  **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: user |
-{: class="table table-striped"}
 
 ### Return type
 
 **AuditRealtimeQueryResultsResponse**
 
+
+## postAuditsQueryRealtimeRelated
+
+> AuditRealtimeRelatedResultsResponse postAuditsQueryRealtimeRelated(body, opts)
+
+
+POST /api/v2/audits/query/realtime/related
+
+Often a single action results in multiple audits. The endpoint retrieves all audits created by the same action as the given audit id.
+
+Requires ALL permissions:
+
+* audits:audit:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AuditApi();
+
+let body = {}; // Object | query
+let opts = { 
+  'expand': ["expand_example"] // [String] | Which fields, if any, to expand
+};
+
+apiInstance.postAuditsQueryRealtimeRelated(body, opts)
+  .then((data) => {
+    console.log(`postAuditsQueryRealtimeRelated success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postAuditsQueryRealtimeRelated');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | query |  |
+ **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: user |
+
+### Return type
+
+**AuditRealtimeRelatedResultsResponse**
+
+
+_purecloud-platform-client-v2@229.1.0_

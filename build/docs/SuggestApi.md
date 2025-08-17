@@ -1,21 +1,21 @@
----
-title: SuggestApi
----
+# SuggestApi
+
 # platformClient.SuggestApi
 
 All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-[**getSearch**](SuggestApi.html#getSearch) | **GET** /api/v2/search | Search using the q64 value returned from a previous search.
-[**getSearchSuggest**](SuggestApi.html#getSearchSuggest) | **GET** /api/v2/search/suggest | Suggest resources using the q64 value returned from a previous suggest query.
-[**postSearch**](SuggestApi.html#postSearch) | **POST** /api/v2/search | Search resources.
-[**postSearchSuggest**](SuggestApi.html#postSearchSuggest) | **POST** /api/v2/search/suggest | Suggest resources.
-{: class="table table-striped"}
+[**getSearch**](SuggestApi#getSearch) | **GET** /api/v2/search | Search using the q64 value returned from a previous search.
+[**getSearchSuggest**](SuggestApi#getSearchSuggest) | **GET** /api/v2/search/suggest | Suggest resources using the q64 value returned from a previous suggest query.
+[**postSearch**](SuggestApi#postSearch) | **POST** /api/v2/search | Search resources.
+[**postSearchSuggest**](SuggestApi#postSearchSuggest) | **POST** /api/v2/search/suggest | Suggest resources.
 
-<a name="getSearch"></a>
 
-# JsonNodeSearchResponse getSearch(q64, opts)
+
+## getSearch
+
+> JsonNodeSearchResponse getSearch(q64, opts)
 
 
 GET /api/v2/search
@@ -34,7 +34,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.SuggestApi();
@@ -61,17 +61,17 @@ apiInstance.getSearch(q64, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **q64** | **String** | q64 |  |
- **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, dateLastLogin, authorization.unusedRoles, team, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation, images, addressVerificationDetails |
+ **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, groups, profileSkills, certifications, locations, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, dateWelcomeSent, callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation, conversations, transcription, images, addressVerificationDetails |
  **profile** | **Boolean** | profile | [optional] [default to true] |
-{: class="table table-striped"}
 
 ### Return type
 
 **JsonNodeSearchResponse**
 
-<a name="getSearchSuggest"></a>
 
-# JsonNodeSearchResponse getSearchSuggest(q64, opts)
+## getSearchSuggest
+
+> JsonNodeSearchResponse getSearchSuggest(q64, opts)
 
 
 GET /api/v2/search/suggest
@@ -90,7 +90,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.SuggestApi();
@@ -117,17 +117,17 @@ apiInstance.getSearchSuggest(q64, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **q64** | **String** | q64 |  |
- **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, dateLastLogin, authorization.unusedRoles, team, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation, images, addressVerificationDetails |
+ **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, groups, profileSkills, certifications, locations, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, dateWelcomeSent, callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation, conversations, transcription, images, addressVerificationDetails |
  **profile** | **Boolean** | profile | [optional] [default to true] |
-{: class="table table-striped"}
 
 ### Return type
 
 **JsonNodeSearchResponse**
 
-<a name="postSearch"></a>
 
-# JsonNodeSearchResponse postSearch(body, opts)
+## postSearch
+
+> JsonNodeSearchResponse postSearch(body, opts)
 
 
 POST /api/v2/search
@@ -146,7 +146,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.SuggestApi();
@@ -173,15 +173,15 @@ apiInstance.postSearch(body, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Search request options |  |
  **profile** | **Boolean** | profile | [optional] [default to true] |
-{: class="table table-striped"}
 
 ### Return type
 
 **JsonNodeSearchResponse**
 
-<a name="postSearchSuggest"></a>
 
-# JsonNodeSearchResponse postSearchSuggest(body, opts)
+## postSearchSuggest
+
+> JsonNodeSearchResponse postSearchSuggest(body, opts)
 
 
 POST /api/v2/search/suggest
@@ -200,7 +200,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.SuggestApi();
@@ -227,9 +227,10 @@ apiInstance.postSearchSuggest(body, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Search request options |  |
  **profile** | **Boolean** | profile | [optional] [default to true] |
-{: class="table table-striped"}
 
 ### Return type
 
 **JsonNodeSearchResponse**
 
+
+_purecloud-platform-client-v2@229.1.0_

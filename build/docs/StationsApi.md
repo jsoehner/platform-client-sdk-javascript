@@ -1,20 +1,20 @@
----
-title: StationsApi
----
+# StationsApi
+
 # platformClient.StationsApi
 
 All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-[**deleteStationAssociateduser**](StationsApi.html#deleteStationAssociateduser) | **DELETE** /api/v2/stations/{stationId}/associateduser | Unassigns the user assigned to this station
-[**getStation**](StationsApi.html#getStation) | **GET** /api/v2/stations/{stationId} | Get station.
-[**getStations**](StationsApi.html#getStations) | **GET** /api/v2/stations | Get the list of available stations.
-{: class="table table-striped"}
+[**deleteStationAssociateduser**](StationsApi#deleteStationAssociateduser) | **DELETE** /api/v2/stations/{stationId}/associateduser | Unassigns the user assigned to this station
+[**getStation**](StationsApi#getStation) | **GET** /api/v2/stations/{stationId} | Get station.
+[**getStations**](StationsApi#getStations) | **GET** /api/v2/stations | Get the list of available stations.
 
-<a name="deleteStationAssociateduser"></a>
 
-# void deleteStationAssociateduser(stationId)
+
+## deleteStationAssociateduser
+
+> void deleteStationAssociateduser(stationId)
 
 
 DELETE /api/v2/stations/{stationId}/associateduser
@@ -31,7 +31,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.StationsApi();
@@ -54,15 +54,15 @@ apiInstance.deleteStationAssociateduser(stationId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **stationId** | **String** | Station ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="getStation"></a>
 
-# Station getStation(stationId)
+## getStation
+
+> Station getStation(stationId)
 
 
 GET /api/v2/stations/{stationId}
@@ -79,7 +79,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.StationsApi();
@@ -102,15 +102,15 @@ apiInstance.getStation(stationId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **stationId** | **String** | Station ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Station**
 
-<a name="getStations"></a>
 
-# StationEntityListing getStations(opts)
+## getStations
+
+> StationEntityListing getStations(opts)
 
 
 GET /api/v2/stations
@@ -127,7 +127,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.StationsApi();
@@ -166,9 +166,10 @@ apiInstance.getStations(opts)
  **webRtcUserId** | **String** | Filter for the webRtc station of the webRtcUserId | [optional]  |
  **id** | **String** | Comma separated list of stationIds | [optional]  |
  **lineAppearanceId** | **String** | lineAppearanceId | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **StationEntityListing**
 
+
+_purecloud-platform-client-v2@229.1.0_

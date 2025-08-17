@@ -1,59 +1,76 @@
----
-title: AuthorizationApi
----
+# AuthorizationApi
+
 # platformClient.AuthorizationApi
 
 All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-[**deleteAuthorizationDivision**](AuthorizationApi.html#deleteAuthorizationDivision) | **DELETE** /api/v2/authorization/divisions/{divisionId} | Delete a division.
-[**deleteAuthorizationRole**](AuthorizationApi.html#deleteAuthorizationRole) | **DELETE** /api/v2/authorization/roles/{roleId} | Delete an organization role.
-[**deleteAuthorizationSubjectDivisionRole**](AuthorizationApi.html#deleteAuthorizationSubjectDivisionRole) | **DELETE** /api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{roleId} | Delete a grant of a role in a division
-[**getAuthorizationDivision**](AuthorizationApi.html#getAuthorizationDivision) | **GET** /api/v2/authorization/divisions/{divisionId} | Returns an authorization division.
-[**getAuthorizationDivisionGrants**](AuthorizationApi.html#getAuthorizationDivisionGrants) | **GET** /api/v2/authorization/divisions/{divisionId}/grants | Gets all grants for a given division.
-[**getAuthorizationDivisions**](AuthorizationApi.html#getAuthorizationDivisions) | **GET** /api/v2/authorization/divisions | Retrieve a list of all divisions defined for the organization
-[**getAuthorizationDivisionsHome**](AuthorizationApi.html#getAuthorizationDivisionsHome) | **GET** /api/v2/authorization/divisions/home | Retrieve the home division for the organization.
-[**getAuthorizationDivisionsLimit**](AuthorizationApi.html#getAuthorizationDivisionsLimit) | **GET** /api/v2/authorization/divisions/limit | Returns the maximum allowed number of divisions.
-[**getAuthorizationDivisionspermittedMe**](AuthorizationApi.html#getAuthorizationDivisionspermittedMe) | **GET** /api/v2/authorization/divisionspermitted/me | Returns which divisions the current user has the given permission in.
-[**getAuthorizationDivisionspermittedPagedMe**](AuthorizationApi.html#getAuthorizationDivisionspermittedPagedMe) | **GET** /api/v2/authorization/divisionspermitted/paged/me | Returns which divisions the current user has the given permission in.
-[**getAuthorizationDivisionspermittedPagedSubjectId**](AuthorizationApi.html#getAuthorizationDivisionspermittedPagedSubjectId) | **GET** /api/v2/authorization/divisionspermitted/paged/{subjectId} | Returns which divisions the specified user has the given permission in.
-[**getAuthorizationPermissions**](AuthorizationApi.html#getAuthorizationPermissions) | **GET** /api/v2/authorization/permissions | Get all permissions.
-[**getAuthorizationProducts**](AuthorizationApi.html#getAuthorizationProducts) | **GET** /api/v2/authorization/products | Get the list of enabled products
-[**getAuthorizationRole**](AuthorizationApi.html#getAuthorizationRole) | **GET** /api/v2/authorization/roles/{roleId} | Get a single organization role.
-[**getAuthorizationRoleComparedefaultRightRoleId**](AuthorizationApi.html#getAuthorizationRoleComparedefaultRightRoleId) | **GET** /api/v2/authorization/roles/{leftRoleId}/comparedefault/{rightRoleId} | Get an org role to default role comparison
-[**getAuthorizationRoleSubjectgrants**](AuthorizationApi.html#getAuthorizationRoleSubjectgrants) | **GET** /api/v2/authorization/roles/{roleId}/subjectgrants | Get the subjects' granted divisions in the specified role.
-[**getAuthorizationRoleUsers**](AuthorizationApi.html#getAuthorizationRoleUsers) | **GET** /api/v2/authorization/roles/{roleId}/users | Get a list of the users in a specified role.
-[**getAuthorizationRoles**](AuthorizationApi.html#getAuthorizationRoles) | **GET** /api/v2/authorization/roles | Retrieve a list of all roles defined for the organization
-[**getAuthorizationSettings**](AuthorizationApi.html#getAuthorizationSettings) | **GET** /api/v2/authorization/settings | Get authorization settings
-[**getAuthorizationSubject**](AuthorizationApi.html#getAuthorizationSubject) | **GET** /api/v2/authorization/subjects/{subjectId} | Returns a listing of roles and permissions for a user.
-[**getAuthorizationSubjectsMe**](AuthorizationApi.html#getAuthorizationSubjectsMe) | **GET** /api/v2/authorization/subjects/me | Returns a listing of roles and permissions for the currently authenticated user.
-[**getAuthorizationSubjectsRolecounts**](AuthorizationApi.html#getAuthorizationSubjectsRolecounts) | **GET** /api/v2/authorization/subjects/rolecounts | Get the count of roles granted to a list of subjects
-[**getUserRoles**](AuthorizationApi.html#getUserRoles) | **GET** /api/v2/users/{subjectId}/roles | Returns a listing of roles and permissions for a user.
-[**patchAuthorizationRole**](AuthorizationApi.html#patchAuthorizationRole) | **PATCH** /api/v2/authorization/roles/{roleId} | Patch Organization Role for needsUpdate Field
-[**patchAuthorizationSettings**](AuthorizationApi.html#patchAuthorizationSettings) | **PATCH** /api/v2/authorization/settings | Change authorization settings
-[**postAuthorizationDivisionObject**](AuthorizationApi.html#postAuthorizationDivisionObject) | **POST** /api/v2/authorization/divisions/{divisionId}/objects/{objectType} | Assign a list of objects to a division
-[**postAuthorizationDivisionRestore**](AuthorizationApi.html#postAuthorizationDivisionRestore) | **POST** /api/v2/authorization/divisions/{divisionId}/restore | Recreate a previously deleted division.
-[**postAuthorizationDivisions**](AuthorizationApi.html#postAuthorizationDivisions) | **POST** /api/v2/authorization/divisions | Create a division.
-[**postAuthorizationRole**](AuthorizationApi.html#postAuthorizationRole) | **POST** /api/v2/authorization/roles/{roleId} | Bulk-grant subjects and divisions with an organization role.
-[**postAuthorizationRoleComparedefaultRightRoleId**](AuthorizationApi.html#postAuthorizationRoleComparedefaultRightRoleId) | **POST** /api/v2/authorization/roles/{leftRoleId}/comparedefault/{rightRoleId} | Get an unsaved org role to default role comparison
-[**postAuthorizationRoles**](AuthorizationApi.html#postAuthorizationRoles) | **POST** /api/v2/authorization/roles | Create an organization role.
-[**postAuthorizationRolesDefault**](AuthorizationApi.html#postAuthorizationRolesDefault) | **POST** /api/v2/authorization/roles/default | Restores all default roles
-[**postAuthorizationSubjectBulkadd**](AuthorizationApi.html#postAuthorizationSubjectBulkadd) | **POST** /api/v2/authorization/subjects/{subjectId}/bulkadd | Bulk-grant roles and divisions to a subject.
-[**postAuthorizationSubjectBulkremove**](AuthorizationApi.html#postAuthorizationSubjectBulkremove) | **POST** /api/v2/authorization/subjects/{subjectId}/bulkremove | Bulk-remove grants from a subject.
-[**postAuthorizationSubjectBulkreplace**](AuthorizationApi.html#postAuthorizationSubjectBulkreplace) | **POST** /api/v2/authorization/subjects/{subjectId}/bulkreplace | Replace subject's roles and divisions with the exact list supplied in the request.
-[**postAuthorizationSubjectDivisionRole**](AuthorizationApi.html#postAuthorizationSubjectDivisionRole) | **POST** /api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{roleId} | Make a grant of a role in a division
-[**putAuthorizationDivision**](AuthorizationApi.html#putAuthorizationDivision) | **PUT** /api/v2/authorization/divisions/{divisionId} | Update a division.
-[**putAuthorizationRole**](AuthorizationApi.html#putAuthorizationRole) | **PUT** /api/v2/authorization/roles/{roleId} | Update an organization role.
-[**putAuthorizationRoleUsersAdd**](AuthorizationApi.html#putAuthorizationRoleUsersAdd) | **PUT** /api/v2/authorization/roles/{roleId}/users/add | Sets the users for the role
-[**putAuthorizationRoleUsersRemove**](AuthorizationApi.html#putAuthorizationRoleUsersRemove) | **PUT** /api/v2/authorization/roles/{roleId}/users/remove | Removes the users from the role
-[**putAuthorizationRolesDefault**](AuthorizationApi.html#putAuthorizationRolesDefault) | **PUT** /api/v2/authorization/roles/default | Restore specified default roles
-[**putUserRoles**](AuthorizationApi.html#putUserRoles) | **PUT** /api/v2/users/{subjectId}/roles | Sets the user's roles
-{: class="table table-striped"}
+[**deleteAuthorizationDivision**](AuthorizationApi#deleteAuthorizationDivision) | **DELETE** /api/v2/authorization/divisions/{divisionId} | Delete a division.
+[**deleteAuthorizationPoliciesTargetSubjectSubjectId**](AuthorizationApi#deleteAuthorizationPoliciesTargetSubjectSubjectId) | **DELETE** /api/v2/authorization/policies/targets/{targetName}/subject/{subjectId} | Delete an access control policy
+[**deleteAuthorizationRole**](AuthorizationApi#deleteAuthorizationRole) | **DELETE** /api/v2/authorization/roles/{roleId} | Delete an organization role.
+[**deleteAuthorizationSubjectDivisionRole**](AuthorizationApi#deleteAuthorizationSubjectDivisionRole) | **DELETE** /api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{roleId} | Delete a grant of a role in a division
+[**getAuthorizationDivision**](AuthorizationApi#getAuthorizationDivision) | **GET** /api/v2/authorization/divisions/{divisionId} | Returns an authorization division.
+[**getAuthorizationDivisionGrants**](AuthorizationApi#getAuthorizationDivisionGrants) | **GET** /api/v2/authorization/divisions/{divisionId}/grants | Gets all grants for a given division.
+[**getAuthorizationDivisions**](AuthorizationApi#getAuthorizationDivisions) | **GET** /api/v2/authorization/divisions | Retrieve a list of all divisions defined for the organization
+[**getAuthorizationDivisionsDeleted**](AuthorizationApi#getAuthorizationDivisionsDeleted) | **GET** /api/v2/authorization/divisions/deleted | Get a list of soft deleted divisions for the org
+[**getAuthorizationDivisionsHome**](AuthorizationApi#getAuthorizationDivisionsHome) | **GET** /api/v2/authorization/divisions/home | Retrieve the home division for the organization.
+[**getAuthorizationDivisionsLimit**](AuthorizationApi#getAuthorizationDivisionsLimit) | **GET** /api/v2/authorization/divisions/limit | Returns the maximum allowed number of divisions.
+[**getAuthorizationDivisionsQuery**](AuthorizationApi#getAuthorizationDivisionsQuery) | **GET** /api/v2/authorization/divisions/query | Retrieve a list of all divisions defined for the organization with cursor
+[**getAuthorizationDivisionspermittedMe**](AuthorizationApi#getAuthorizationDivisionspermittedMe) | **GET** /api/v2/authorization/divisionspermitted/me | Returns which divisions the current user has the given permission in.
+[**getAuthorizationDivisionspermittedPagedMe**](AuthorizationApi#getAuthorizationDivisionspermittedPagedMe) | **GET** /api/v2/authorization/divisionspermitted/paged/me | Returns which divisions the current user has the given permission in.
+[**getAuthorizationDivisionspermittedPagedSubjectId**](AuthorizationApi#getAuthorizationDivisionspermittedPagedSubjectId) | **GET** /api/v2/authorization/divisionspermitted/paged/{subjectId} | Returns which divisions the specified user has the given permission in.
+[**getAuthorizationPermissions**](AuthorizationApi#getAuthorizationPermissions) | **GET** /api/v2/authorization/permissions | Get all permissions.
+[**getAuthorizationPolicies**](AuthorizationApi#getAuthorizationPolicies) | **GET** /api/v2/authorization/policies | Get a page of access policies for an organization
+[**getAuthorizationPoliciesSubjectSubjectId**](AuthorizationApi#getAuthorizationPoliciesSubjectSubjectId) | **GET** /api/v2/authorization/policies/subject/{subjectId} | Get a page of access policies for a given subject
+[**getAuthorizationPoliciesTarget**](AuthorizationApi#getAuthorizationPoliciesTarget) | **GET** /api/v2/authorization/policies/targets/{targetName} | Get a page of access policies for a given policy target
+[**getAuthorizationPoliciesTargetSubjectSubjectId**](AuthorizationApi#getAuthorizationPoliciesTargetSubjectSubjectId) | **GET** /api/v2/authorization/policies/targets/{targetName}/subject/{subjectId} | Get an access control policy for a specified resource target and subject
+[**getAuthorizationPoliciesTargets**](AuthorizationApi#getAuthorizationPoliciesTargets) | **GET** /api/v2/authorization/policies/targets | Get a map of policy targets to valid attributes for those targets
+[**getAuthorizationPolicy**](AuthorizationApi#getAuthorizationPolicy) | **GET** /api/v2/authorization/policies/{policyId} | Get an access control policy with the specified policy ID
+[**getAuthorizationPolicyAttributes**](AuthorizationApi#getAuthorizationPolicyAttributes) | **GET** /api/v2/authorization/policies/{policyId}/attributes | Get the list of attributes used to evaluate an access control policy with the specified policy ID
+[**getAuthorizationProducts**](AuthorizationApi#getAuthorizationProducts) | **GET** /api/v2/authorization/products | Get the list of enabled products
+[**getAuthorizationRole**](AuthorizationApi#getAuthorizationRole) | **GET** /api/v2/authorization/roles/{roleId} | Get a single organization role.
+[**getAuthorizationRoleComparedefaultRightRoleId**](AuthorizationApi#getAuthorizationRoleComparedefaultRightRoleId) | **GET** /api/v2/authorization/roles/{leftRoleId}/comparedefault/{rightRoleId} | Get an org role to default role comparison
+[**getAuthorizationRoleSubjectgrants**](AuthorizationApi#getAuthorizationRoleSubjectgrants) | **GET** /api/v2/authorization/roles/{roleId}/subjectgrants | Get the subjects' granted divisions in the specified role.
+[**getAuthorizationRoleUsers**](AuthorizationApi#getAuthorizationRoleUsers) | **GET** /api/v2/authorization/roles/{roleId}/users | Get a list of the users in a specified role.
+[**getAuthorizationRoles**](AuthorizationApi#getAuthorizationRoles) | **GET** /api/v2/authorization/roles | Retrieve a list of all roles defined for the organization
+[**getAuthorizationRolesSettings**](AuthorizationApi#getAuthorizationRolesSettings) | **GET** /api/v2/authorization/roles/settings | Get authorization role settings
+[**getAuthorizationSettings**](AuthorizationApi#getAuthorizationSettings) | **GET** /api/v2/authorization/settings | Get authorization settings
+[**getAuthorizationSubject**](AuthorizationApi#getAuthorizationSubject) | **GET** /api/v2/authorization/subjects/{subjectId} | Returns a listing of roles and permissions for a user.
+[**getAuthorizationSubjectsMe**](AuthorizationApi#getAuthorizationSubjectsMe) | **GET** /api/v2/authorization/subjects/me | Returns a listing of roles and permissions for the currently authenticated user.
+[**getAuthorizationSubjectsRolecounts**](AuthorizationApi#getAuthorizationSubjectsRolecounts) | **GET** /api/v2/authorization/subjects/rolecounts | Get the count of roles granted to a list of subjects
+[**getUserRoles**](AuthorizationApi#getUserRoles) | **GET** /api/v2/users/{subjectId}/roles | Returns a listing of roles and permissions for a user.
+[**patchAuthorizationRole**](AuthorizationApi#patchAuthorizationRole) | **PATCH** /api/v2/authorization/roles/{roleId} | Patch Organization Role for needsUpdate Field
+[**patchAuthorizationSettings**](AuthorizationApi#patchAuthorizationSettings) | **PATCH** /api/v2/authorization/settings | Change authorization settings
+[**postAuthorizationDivisionObject**](AuthorizationApi#postAuthorizationDivisionObject) | **POST** /api/v2/authorization/divisions/{divisionId}/objects/{objectType} | Assign a list of objects to a division
+[**postAuthorizationDivisionRestore**](AuthorizationApi#postAuthorizationDivisionRestore) | **POST** /api/v2/authorization/divisions/{divisionId}/restore | Recreate a previously deleted division.
+[**postAuthorizationDivisions**](AuthorizationApi#postAuthorizationDivisions) | **POST** /api/v2/authorization/divisions | Create a division.
+[**postAuthorizationPoliciesTarget**](AuthorizationApi#postAuthorizationPoliciesTarget) | **POST** /api/v2/authorization/policies/targets/{targetName} | Add an access control policy for a specified resource target and subject
+[**postAuthorizationPoliciesTargetValidate**](AuthorizationApi#postAuthorizationPoliciesTargetValidate) | **POST** /api/v2/authorization/policies/targets/{targetName}/validate | Validate the conditions and attributes of an access control policy for a specified resource target
+[**postAuthorizationPolicySimulate**](AuthorizationApi#postAuthorizationPolicySimulate) | **POST** /api/v2/authorization/policies/{policyId}/simulate | Simulate a request and evaluate the specified policy ID against the provided values
+[**postAuthorizationRole**](AuthorizationApi#postAuthorizationRole) | **POST** /api/v2/authorization/roles/{roleId} | Bulk-grant subjects and divisions with an organization role.
+[**postAuthorizationRoleComparedefaultRightRoleId**](AuthorizationApi#postAuthorizationRoleComparedefaultRightRoleId) | **POST** /api/v2/authorization/roles/{leftRoleId}/comparedefault/{rightRoleId} | Get an unsaved org role to default role comparison
+[**postAuthorizationRoles**](AuthorizationApi#postAuthorizationRoles) | **POST** /api/v2/authorization/roles | Create an organization role.
+[**postAuthorizationRolesDefault**](AuthorizationApi#postAuthorizationRolesDefault) | **POST** /api/v2/authorization/roles/default | Restores all default roles
+[**postAuthorizationSubjectBulkadd**](AuthorizationApi#postAuthorizationSubjectBulkadd) | **POST** /api/v2/authorization/subjects/{subjectId}/bulkadd | Bulk-grant roles and divisions to a subject.
+[**postAuthorizationSubjectBulkremove**](AuthorizationApi#postAuthorizationSubjectBulkremove) | **POST** /api/v2/authorization/subjects/{subjectId}/bulkremove | Bulk-remove grants from a subject.
+[**postAuthorizationSubjectBulkreplace**](AuthorizationApi#postAuthorizationSubjectBulkreplace) | **POST** /api/v2/authorization/subjects/{subjectId}/bulkreplace | Replace subject's roles and divisions with the exact list supplied in the request.
+[**postAuthorizationSubjectDivisionRole**](AuthorizationApi#postAuthorizationSubjectDivisionRole) | **POST** /api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{roleId} | Make a grant of a role in a division
+[**putAuthorizationDivision**](AuthorizationApi#putAuthorizationDivision) | **PUT** /api/v2/authorization/divisions/{divisionId} | Update a division.
+[**putAuthorizationPoliciesTarget**](AuthorizationApi#putAuthorizationPoliciesTarget) | **PUT** /api/v2/authorization/policies/targets/{targetName} | Add an access control policy for a specified resource target and subject, overwriting any existing policy
+[**putAuthorizationPolicy**](AuthorizationApi#putAuthorizationPolicy) | **PUT** /api/v2/authorization/policies/{policyId} | Update an access control policy with a given ID
+[**putAuthorizationRole**](AuthorizationApi#putAuthorizationRole) | **PUT** /api/v2/authorization/roles/{roleId} | Update an organization role.
+[**putAuthorizationRoleUsersAdd**](AuthorizationApi#putAuthorizationRoleUsersAdd) | **PUT** /api/v2/authorization/roles/{roleId}/users/add | Sets the users for the role
+[**putAuthorizationRoleUsersRemove**](AuthorizationApi#putAuthorizationRoleUsersRemove) | **PUT** /api/v2/authorization/roles/{roleId}/users/remove | Removes the users from the role
+[**putAuthorizationRolesDefault**](AuthorizationApi#putAuthorizationRolesDefault) | **PUT** /api/v2/authorization/roles/default | Restore specified default roles
+[**putAuthorizationRolesSettings**](AuthorizationApi#putAuthorizationRolesSettings) | **PUT** /api/v2/authorization/roles/settings | Change authorization role settings
+[**putUserRoles**](AuthorizationApi#putUserRoles) | **PUT** /api/v2/users/{subjectId}/roles | Sets the user's roles
 
-<a name="deleteAuthorizationDivision"></a>
 
-# void deleteAuthorizationDivision(divisionId, opts)
+
+## deleteAuthorizationDivision
+
+> void deleteAuthorizationDivision(divisionId, opts)
 
 
 DELETE /api/v2/authorization/divisions/{divisionId}
@@ -72,14 +89,14 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AuthorizationApi();
 
 let divisionId = "divisionId_example"; // String | Division ID
 let opts = { 
-  'force': false // Boolean | Force delete this division as well as the grants and objects associated with it
+  'force': false // Boolean | DEPRECATED -  Force delete this division. Warning: This option may cause any remaining objects in this division to be inaccessible.
 };
 
 apiInstance.deleteAuthorizationDivision(divisionId, opts)
@@ -98,16 +115,70 @@ apiInstance.deleteAuthorizationDivision(divisionId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **divisionId** | **String** | Division ID |  |
- **force** | **Boolean** | Force delete this division as well as the grants and objects associated with it | [optional] [default to false] |
-{: class="table table-striped"}
+ **force** | **Boolean** | DEPRECATED -  Force delete this division. Warning: This option may cause any remaining objects in this division to be inaccessible. | [optional] [default to false] |
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteAuthorizationRole"></a>
 
-# void deleteAuthorizationRole(roleId)
+## deleteAuthorizationPoliciesTargetSubjectSubjectId
+
+> void deleteAuthorizationPoliciesTargetSubjectSubjectId(targetName, subjectId)
+
+
+DELETE /api/v2/authorization/policies/targets/{targetName}/subject/{subjectId}
+
+Delete an access control policy
+
+deleteAuthorizationPoliciesTargetSubjectSubjectId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* authorization:policy:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AuthorizationApi();
+
+let targetName = "targetName_example"; // String | The domain:entity:action target to which the policy is applied
+let subjectId = "subjectId_example"; // String | The ID of the subject to which the policy is applied
+
+apiInstance.deleteAuthorizationPoliciesTargetSubjectSubjectId(targetName, subjectId)
+  .then(() => {
+    console.log('deleteAuthorizationPoliciesTargetSubjectSubjectId returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteAuthorizationPoliciesTargetSubjectSubjectId');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **targetName** | **String** | The domain:entity:action target to which the policy is applied |  |
+ **subjectId** | **String** | The ID of the subject to which the policy is applied |  |
+
+### Return type
+
+void (no response body)
+
+
+## deleteAuthorizationRole
+
+> void deleteAuthorizationRole(roleId)
 
 
 DELETE /api/v2/authorization/roles/{roleId}
@@ -126,7 +197,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AuthorizationApi();
@@ -149,15 +220,15 @@ apiInstance.deleteAuthorizationRole(roleId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **roleId** | **String** | Role ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteAuthorizationSubjectDivisionRole"></a>
 
-# void deleteAuthorizationSubjectDivisionRole(subjectId, divisionId, roleId)
+## deleteAuthorizationSubjectDivisionRole
+
+> void deleteAuthorizationSubjectDivisionRole(subjectId, divisionId, roleId)
 
 
 DELETE /api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{roleId}
@@ -176,7 +247,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AuthorizationApi();
@@ -203,15 +274,15 @@ apiInstance.deleteAuthorizationSubjectDivisionRole(subjectId, divisionId, roleId
  **subjectId** | **String** | Subject ID (user or group) |  |
  **divisionId** | **String** | the id of the division of the grant |  |
  **roleId** | **String** | the id of the role of the grant |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="getAuthorizationDivision"></a>
 
-# AuthzDivision getAuthorizationDivision(divisionId, opts)
+## getAuthorizationDivision
+
+> AuthzDivision getAuthorizationDivision(divisionId, opts)
 
 
 GET /api/v2/authorization/divisions/{divisionId}
@@ -228,7 +299,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AuthorizationApi();
@@ -255,15 +326,15 @@ apiInstance.getAuthorizationDivision(divisionId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **divisionId** | **String** | Division ID |  |
  **objectCount** | **Boolean** | Get count of objects in this division, grouped by type | [optional] [default to false]<br />**Values**: true, false |
-{: class="table table-striped"}
 
 ### Return type
 
 **AuthzDivision**
 
-<a name="getAuthorizationDivisionGrants"></a>
 
-# AuthzDivisionGrantEntityListing getAuthorizationDivisionGrants(divisionId, opts)
+## getAuthorizationDivisionGrants
+
+> AuthzDivisionGrantEntityListing getAuthorizationDivisionGrants(divisionId, opts)
 
 
 GET /api/v2/authorization/divisions/{divisionId}/grants
@@ -284,7 +355,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AuthorizationApi();
@@ -313,15 +384,15 @@ apiInstance.getAuthorizationDivisionGrants(divisionId, opts)
  **divisionId** | **String** | Division ID |  |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
-{: class="table table-striped"}
 
 ### Return type
 
 **AuthzDivisionGrantEntityListing**
 
-<a name="getAuthorizationDivisions"></a>
 
-# AuthzDivisionEntityListing getAuthorizationDivisions(opts)
+## getAuthorizationDivisions
+
+> AuthzDivisionEntityListing getAuthorizationDivisions(opts)
 
 
 GET /api/v2/authorization/divisions
@@ -340,7 +411,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AuthorizationApi();
@@ -381,15 +452,69 @@ apiInstance.getAuthorizationDivisions(opts)
  **objectCount** | **Boolean** | Include the count of objects contained in the division | [optional] [default to false] |
  **id** | **[String]** | Optionally request specific divisions by their IDs | [optional]  |
  **name** | **String** | Search term to filter by division name | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AuthzDivisionEntityListing**
 
-<a name="getAuthorizationDivisionsHome"></a>
 
-# AuthzDivision getAuthorizationDivisionsHome()
+## getAuthorizationDivisionsDeleted
+
+> AuthzDivisionEntityListing getAuthorizationDivisionsDeleted(opts)
+
+
+GET /api/v2/authorization/divisions/deleted
+
+Get a list of soft deleted divisions for the org
+
+Requires ANY permissions:
+
+* authorization:divisionDeleted:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AuthorizationApi();
+
+let opts = { 
+  'pageNumber': 1, // Number | Page number
+  'pageSize': 25 // Number | Page size
+};
+
+apiInstance.getAuthorizationDivisionsDeleted(opts)
+  .then((data) => {
+    console.log(`getAuthorizationDivisionsDeleted success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getAuthorizationDivisionsDeleted');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+
+### Return type
+
+**AuthzDivisionEntityListing**
+
+
+## getAuthorizationDivisionsHome
+
+> AuthzDivision getAuthorizationDivisionsHome()
 
 
 GET /api/v2/authorization/divisions/home
@@ -408,7 +533,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AuthorizationApi();
@@ -427,14 +552,14 @@ apiInstance.getAuthorizationDivisionsHome()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **AuthzDivision**
 
-<a name="getAuthorizationDivisionsLimit"></a>
 
-# **&#39;Number&#39;** getAuthorizationDivisionsLimit()
+## getAuthorizationDivisionsLimit
+
+> **&#39;Number&#39;** getAuthorizationDivisionsLimit()
 
 
 GET /api/v2/authorization/divisions/limit
@@ -451,7 +576,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AuthorizationApi();
@@ -470,16 +595,78 @@ apiInstance.getAuthorizationDivisionsLimit()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **&#39;Number&#39;**
 
-<a name="getAuthorizationDivisionspermittedMe"></a>
 
-# [AuthzDivision] getAuthorizationDivisionspermittedMe(permission, opts)
+## getAuthorizationDivisionsQuery
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+> AuthzDivisionCursorListing getAuthorizationDivisionsQuery(opts)
+
+
+GET /api/v2/authorization/divisions/query
+
+Retrieve a list of all divisions defined for the organization with cursor
+
+Use "after" and "before" param to fetch next/previous page}
+
+Requires NO permissions:
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AuthorizationApi();
+
+let opts = { 
+  'before': "before_example", // String | The cursor that points to the start of the set of entities that has been returned.
+  'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
+  'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 200.
+  'id': ["id_example"], // [String] | Optionally request specific divisions by their IDs
+  'name': "name_example" // String | Optionally request specific divisions by division name
+};
+
+apiInstance.getAuthorizationDivisionsQuery(opts)
+  .then((data) => {
+    console.log(`getAuthorizationDivisionsQuery success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getAuthorizationDivisionsQuery');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **before** | **String** | The cursor that points to the start of the set of entities that has been returned. | [optional]  |
+ **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
+ **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
+ **id** | **[String]** | Optionally request specific divisions by their IDs | [optional]  |
+ **name** | **String** | Optionally request specific divisions by division name | [optional]  |
+
+### Return type
+
+**AuthzDivisionCursorListing**
+
+
+## getAuthorizationDivisionspermittedMe
+
+> [AuthzDivision] getAuthorizationDivisionspermittedMe(permission, opts)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 GET /api/v2/authorization/divisionspermitted/me
 
@@ -497,7 +684,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AuthorizationApi();
@@ -524,15 +711,15 @@ apiInstance.getAuthorizationDivisionspermittedMe(permission, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **permission** | **String** | The permission string, including the object to access, e.g. routing:queue:view |  |
  **name** | **String** | Search term to filter by division name | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **[AuthzDivision]**
 
-<a name="getAuthorizationDivisionspermittedPagedMe"></a>
 
-# DivsPermittedEntityListing getAuthorizationDivisionspermittedPagedMe(permission, opts)
+## getAuthorizationDivisionspermittedPagedMe
+
+> DivsPermittedEntityListing getAuthorizationDivisionspermittedPagedMe(permission, opts)
 
 
 GET /api/v2/authorization/divisionspermitted/paged/me
@@ -549,7 +736,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AuthorizationApi();
@@ -578,17 +765,19 @@ apiInstance.getAuthorizationDivisionspermittedPagedMe(permission, opts)
  **permission** | **String** | The permission string, including the object to access, e.g. routing:queue:view |  |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
-{: class="table table-striped"}
 
 ### Return type
 
 **DivsPermittedEntityListing**
 
-<a name="getAuthorizationDivisionspermittedPagedSubjectId"></a>
 
-# DivsPermittedEntityListing getAuthorizationDivisionspermittedPagedSubjectId(subjectId, permission, opts)
+## getAuthorizationDivisionspermittedPagedSubjectId
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+> DivsPermittedEntityListing getAuthorizationDivisionspermittedPagedSubjectId(subjectId, permission, opts)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 GET /api/v2/authorization/divisionspermitted/paged/{subjectId}
 
@@ -606,7 +795,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AuthorizationApi();
@@ -637,15 +826,15 @@ apiInstance.getAuthorizationDivisionspermittedPagedSubjectId(subjectId, permissi
  **permission** | **String** | The permission string, including the object to access, e.g. routing:queue:view |  |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
-{: class="table table-striped"}
 
 ### Return type
 
 **DivsPermittedEntityListing**
 
-<a name="getAuthorizationPermissions"></a>
 
-# PermissionCollectionEntityListing getAuthorizationPermissions(opts)
+## getAuthorizationPermissions
+
+> PermissionCollectionEntityListing getAuthorizationPermissions(opts)
 
 
 GET /api/v2/authorization/permissions
@@ -664,7 +853,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AuthorizationApi();
@@ -695,15 +884,392 @@ apiInstance.getAuthorizationPermissions(opts)
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **queryType** | **String** | Query filter type | [optional] <br />**Values**: domain, permission |
  **query** | **String** | Comma-separated list of permissions or domains to query | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **PermissionCollectionEntityListing**
 
-<a name="getAuthorizationProducts"></a>
 
-# OrganizationProductEntityListing getAuthorizationProducts()
+## getAuthorizationPolicies
+
+> AuthorizationPolicyEntityListing getAuthorizationPolicies(opts)
+
+
+GET /api/v2/authorization/policies
+
+Get a page of access policies for an organization
+
+getAuthorizationPolicies is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* authorization:policy:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AuthorizationApi();
+
+let opts = { 
+  'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
+  'pageSize': 25 // Number | Number of entities to return. Maximum of 200.
+};
+
+apiInstance.getAuthorizationPolicies(opts)
+  .then((data) => {
+    console.log(`getAuthorizationPolicies success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getAuthorizationPolicies');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
+ **pageSize** | **Number** | Number of entities to return. Maximum of 200. | [optional] [default to 25] |
+
+### Return type
+
+**AuthorizationPolicyEntityListing**
+
+
+## getAuthorizationPoliciesSubjectSubjectId
+
+> AuthorizationPolicyEntityListing getAuthorizationPoliciesSubjectSubjectId(subjectId, opts)
+
+
+GET /api/v2/authorization/policies/subject/{subjectId}
+
+Get a page of access policies for a given subject
+
+getAuthorizationPoliciesSubjectSubjectId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* authorization:policy:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AuthorizationApi();
+
+let subjectId = "subjectId_example"; // String | The ID of the subject to which policies are applied
+let opts = { 
+  'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
+  'pageSize': 25 // Number | Number of entities to return. Maximum of 200.
+};
+
+apiInstance.getAuthorizationPoliciesSubjectSubjectId(subjectId, opts)
+  .then((data) => {
+    console.log(`getAuthorizationPoliciesSubjectSubjectId success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getAuthorizationPoliciesSubjectSubjectId');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **subjectId** | **String** | The ID of the subject to which policies are applied |  |
+ **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
+ **pageSize** | **Number** | Number of entities to return. Maximum of 200. | [optional] [default to 25] |
+
+### Return type
+
+**AuthorizationPolicyEntityListing**
+
+
+## getAuthorizationPoliciesTarget
+
+> AuthorizationPolicyEntityListing getAuthorizationPoliciesTarget(targetName, opts)
+
+
+GET /api/v2/authorization/policies/targets/{targetName}
+
+Get a page of access policies for a given policy target
+
+getAuthorizationPoliciesTarget is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* authorization:policy:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AuthorizationApi();
+
+let targetName = "targetName_example"; // String | The domain:entity:action resource target to which policies are applied
+let opts = { 
+  'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
+  'pageSize': 25 // Number | Number of entities to return. Maximum of 200.
+};
+
+apiInstance.getAuthorizationPoliciesTarget(targetName, opts)
+  .then((data) => {
+    console.log(`getAuthorizationPoliciesTarget success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getAuthorizationPoliciesTarget');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **targetName** | **String** | The domain:entity:action resource target to which policies are applied |  |
+ **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
+ **pageSize** | **Number** | Number of entities to return. Maximum of 200. | [optional] [default to 25] |
+
+### Return type
+
+**AuthorizationPolicyEntityListing**
+
+
+## getAuthorizationPoliciesTargetSubjectSubjectId
+
+> AuthorizationPolicy getAuthorizationPoliciesTargetSubjectSubjectId(targetName, subjectId)
+
+
+GET /api/v2/authorization/policies/targets/{targetName}/subject/{subjectId}
+
+Get an access control policy for a specified resource target and subject
+
+getAuthorizationPoliciesTargetSubjectSubjectId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* authorization:policy:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AuthorizationApi();
+
+let targetName = "targetName_example"; // String | The domain:entity:action resource target to which the policy is applied
+let subjectId = "subjectId_example"; // String | The ID of the subject to which the policy is applied
+
+apiInstance.getAuthorizationPoliciesTargetSubjectSubjectId(targetName, subjectId)
+  .then((data) => {
+    console.log(`getAuthorizationPoliciesTargetSubjectSubjectId success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getAuthorizationPoliciesTargetSubjectSubjectId');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **targetName** | **String** | The domain:entity:action resource target to which the policy is applied |  |
+ **subjectId** | **String** | The ID of the subject to which the policy is applied |  |
+
+### Return type
+
+**AuthorizationPolicy**
+
+
+## getAuthorizationPoliciesTargets
+
+> TargetAttributes getAuthorizationPoliciesTargets()
+
+
+GET /api/v2/authorization/policies/targets
+
+Get a map of policy targets to valid attributes for those targets
+
+getAuthorizationPoliciesTargets is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* authorization:policy:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AuthorizationApi();
+
+apiInstance.getAuthorizationPoliciesTargets()
+  .then((data) => {
+    console.log(`getAuthorizationPoliciesTargets success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getAuthorizationPoliciesTargets');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+**TargetAttributes**
+
+
+## getAuthorizationPolicy
+
+> AuthorizationPolicy getAuthorizationPolicy(policyId)
+
+
+GET /api/v2/authorization/policies/{policyId}
+
+Get an access control policy with the specified policy ID
+
+getAuthorizationPolicy is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* authorization:policy:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AuthorizationApi();
+
+let policyId = "policyId_example"; // String | The ID of the policy to retrieve
+
+apiInstance.getAuthorizationPolicy(policyId)
+  .then((data) => {
+    console.log(`getAuthorizationPolicy success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getAuthorizationPolicy');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **policyId** | **String** | The ID of the policy to retrieve |  |
+
+### Return type
+
+**AuthorizationPolicy**
+
+
+## getAuthorizationPolicyAttributes
+
+> PolicyAttributeSet getAuthorizationPolicyAttributes(policyId)
+
+
+GET /api/v2/authorization/policies/{policyId}/attributes
+
+Get the list of attributes used to evaluate an access control policy with the specified policy ID
+
+getAuthorizationPolicyAttributes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* authorization:policy:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AuthorizationApi();
+
+let policyId = "policyId_example"; // String | The ID of the policy to retrieve attributes
+
+apiInstance.getAuthorizationPolicyAttributes(policyId)
+  .then((data) => {
+    console.log(`getAuthorizationPolicyAttributes success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getAuthorizationPolicyAttributes');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **policyId** | **String** | The ID of the policy to retrieve attributes |  |
+
+### Return type
+
+**PolicyAttributeSet**
+
+
+## getAuthorizationProducts
+
+> OrganizationProductEntityListing getAuthorizationProducts()
 
 
 GET /api/v2/authorization/products
@@ -722,7 +1288,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AuthorizationApi();
@@ -741,14 +1307,14 @@ apiInstance.getAuthorizationProducts()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **OrganizationProductEntityListing**
 
-<a name="getAuthorizationRole"></a>
 
-# DomainOrganizationRole getAuthorizationRole(roleId, opts)
+## getAuthorizationRole
+
+> DomainOrganizationRole getAuthorizationRole(roleId, opts)
 
 
 GET /api/v2/authorization/roles/{roleId}
@@ -769,14 +1335,14 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AuthorizationApi();
 
 let roleId = "roleId_example"; // String | Role ID
 let opts = { 
-  'userCount': true, // Boolean | Fetch the count of users who have this role granted in at least one division
+  'userCount': true, // Boolean | Fetch the count of users who have this role granted in at least one division. Setting this value or defaulting to 'true' can lead to slower load times or timeouts for role queries with large member counts.
   'expand': ["expand_example"] // [String] | Which fields, if any, to expand. unusedPermissions returns the permissions not used for the role
 };
 
@@ -796,17 +1362,17 @@ apiInstance.getAuthorizationRole(roleId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **roleId** | **String** | Role ID |  |
- **userCount** | **Boolean** | Fetch the count of users who have this role granted in at least one division | [optional] [default to true]<br />**Values**: true, false |
+ **userCount** | **Boolean** | Fetch the count of users who have this role granted in at least one division. Setting this value or defaulting to 'true' can lead to slower load times or timeouts for role queries with large member counts. | [optional] [default to true]<br />**Values**: true, false |
  **expand** | **[String]** | Which fields, if any, to expand. unusedPermissions returns the permissions not used for the role | [optional] <br />**Values**: unusedPermissions |
-{: class="table table-striped"}
 
 ### Return type
 
 **DomainOrganizationRole**
 
-<a name="getAuthorizationRoleComparedefaultRightRoleId"></a>
 
-# DomainOrgRoleDifference getAuthorizationRoleComparedefaultRightRoleId(leftRoleId, rightRoleId)
+## getAuthorizationRoleComparedefaultRightRoleId
+
+> DomainOrgRoleDifference getAuthorizationRoleComparedefaultRightRoleId(leftRoleId, rightRoleId)
 
 
 GET /api/v2/authorization/roles/{leftRoleId}/comparedefault/{rightRoleId}
@@ -827,7 +1393,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AuthorizationApi();
@@ -852,15 +1418,15 @@ apiInstance.getAuthorizationRoleComparedefaultRightRoleId(leftRoleId, rightRoleI
 | ------------- | ------------- | ------------- | ------------- |
  **leftRoleId** | **String** | Left Role ID |  |
  **rightRoleId** | **String** | Right Role id |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **DomainOrgRoleDifference**
 
-<a name="getAuthorizationRoleSubjectgrants"></a>
 
-# SubjectDivisionGrantsEntityListing getAuthorizationRoleSubjectgrants(roleId, opts)
+## getAuthorizationRoleSubjectgrants
+
+> SubjectDivisionGrantsEntityListing getAuthorizationRoleSubjectgrants(roleId, opts)
 
 
 GET /api/v2/authorization/roles/{roleId}/subjectgrants
@@ -881,7 +1447,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AuthorizationApi();
@@ -918,15 +1484,15 @@ apiInstance.getAuthorizationRoleSubjectgrants(roleId, opts)
  **expand** | **[String]** | variable name requested by expand list | [optional]  |
  **nextPage** | **String** | next page token | [optional]  |
  **previousPage** | **String** | Previous page token | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **SubjectDivisionGrantsEntityListing**
 
-<a name="getAuthorizationRoleUsers"></a>
 
-# UserEntityListing getAuthorizationRoleUsers(roleId, opts)
+## getAuthorizationRoleUsers
+
+> UserReferenceEntityListing getAuthorizationRoleUsers(roleId, opts)
 
 
 GET /api/v2/authorization/roles/{roleId}/users
@@ -945,7 +1511,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AuthorizationApi();
@@ -974,15 +1540,15 @@ apiInstance.getAuthorizationRoleUsers(roleId, opts)
  **roleId** | **String** | Role ID |  |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
-{: class="table table-striped"}
 
 ### Return type
 
-**UserEntityListing**
+**UserReferenceEntityListing**
 
-<a name="getAuthorizationRoles"></a>
 
-# OrganizationRoleEntityListing getAuthorizationRoles(opts)
+## getAuthorizationRoles
+
+> OrganizationRoleEntityListing getAuthorizationRoles(opts)
 
 
 GET /api/v2/authorization/roles
@@ -1001,7 +1567,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AuthorizationApi();
@@ -1046,15 +1612,61 @@ apiInstance.getAuthorizationRoles(opts)
  **defaultRoleId** | **[String]** |  | [optional]  |
  **userCount** | **Boolean** |  | [optional] [default to true] |
  **id** | **[String]** | id | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **OrganizationRoleEntityListing**
 
-<a name="getAuthorizationSettings"></a>
 
-# AuthorizationSettings getAuthorizationSettings()
+## getAuthorizationRolesSettings
+
+> RoleSettings getAuthorizationRolesSettings()
+
+
+GET /api/v2/authorization/roles/settings
+
+Get authorization role settings
+
+Requires ANY permissions:
+
+* directory:organization:admin
+* authorization:settings:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AuthorizationApi();
+
+apiInstance.getAuthorizationRolesSettings()
+  .then((data) => {
+    console.log(`getAuthorizationRolesSettings success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getAuthorizationRolesSettings');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+**RoleSettings**
+
+
+## getAuthorizationSettings
+
+> AuthorizationSettings getAuthorizationSettings()
 
 
 GET /api/v2/authorization/settings
@@ -1074,7 +1686,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AuthorizationApi();
@@ -1093,14 +1705,14 @@ apiInstance.getAuthorizationSettings()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **AuthorizationSettings**
 
-<a name="getAuthorizationSubject"></a>
 
-# AuthzSubject getAuthorizationSubject(subjectId)
+## getAuthorizationSubject
+
+> AuthzSubject getAuthorizationSubject(subjectId, opts)
 
 
 GET /api/v2/authorization/subjects/{subjectId}
@@ -1119,14 +1731,17 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AuthorizationApi();
 
 let subjectId = "subjectId_example"; // String | Subject ID (user or group)
+let opts = { 
+  'includeDuplicates': false // Boolean | Include multiple entries with the same role and division but different subjects
+};
 
-apiInstance.getAuthorizationSubject(subjectId)
+apiInstance.getAuthorizationSubject(subjectId, opts)
   .then((data) => {
     console.log(`getAuthorizationSubject success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1142,15 +1757,16 @@ apiInstance.getAuthorizationSubject(subjectId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **subjectId** | **String** | Subject ID (user or group) |  |
-{: class="table table-striped"}
+ **includeDuplicates** | **Boolean** | Include multiple entries with the same role and division but different subjects | [optional] [default to false]<br />**Values**: true, false |
 
 ### Return type
 
 **AuthzSubject**
 
-<a name="getAuthorizationSubjectsMe"></a>
 
-# AuthzSubject getAuthorizationSubjectsMe()
+## getAuthorizationSubjectsMe
+
+> AuthzSubject getAuthorizationSubjectsMe(opts)
 
 
 GET /api/v2/authorization/subjects/me
@@ -1167,12 +1783,16 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AuthorizationApi();
 
-apiInstance.getAuthorizationSubjectsMe()
+let opts = { 
+  'includeDuplicates': false // Boolean | Include multiple entries with the same role and division but different subjects
+};
+
+apiInstance.getAuthorizationSubjectsMe(opts)
   .then((data) => {
     console.log(`getAuthorizationSubjectsMe success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1184,16 +1804,19 @@ apiInstance.getAuthorizationSubjectsMe()
 
 ### Parameters
 
-This endpoint does not need any parameter.
 
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **includeDuplicates** | **Boolean** | Include multiple entries with the same role and division but different subjects | [optional] [default to false]<br />**Values**: true, false |
 
 ### Return type
 
 **AuthzSubject**
 
-<a name="getAuthorizationSubjectsRolecounts"></a>
 
-# **{&#39;String&#39;: Object}** getAuthorizationSubjectsRolecounts(opts)
+## getAuthorizationSubjectsRolecounts
+
+> **{&#39;String&#39;: Object}** getAuthorizationSubjectsRolecounts(opts)
 
 
 GET /api/v2/authorization/subjects/rolecounts
@@ -1212,7 +1835,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AuthorizationApi();
@@ -1237,15 +1860,15 @@ apiInstance.getAuthorizationSubjectsRolecounts(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **id** | **[String]** | id | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **{&#39;String&#39;: Object}**
 
-<a name="getUserRoles"></a>
 
-# UserAuthorization getUserRoles(subjectId)
+## getUserRoles
+
+> UserAuthorization getUserRoles(subjectId)
 
 
 GET /api/v2/users/{subjectId}/roles
@@ -1264,7 +1887,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AuthorizationApi();
@@ -1287,15 +1910,15 @@ apiInstance.getUserRoles(subjectId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **subjectId** | **String** | User ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **UserAuthorization**
 
-<a name="patchAuthorizationRole"></a>
 
-# DomainOrganizationRole patchAuthorizationRole(roleId, body)
+## patchAuthorizationRole
+
+> DomainOrganizationRole patchAuthorizationRole(roleId, body)
 
 
 PATCH /api/v2/authorization/roles/{roleId}
@@ -1316,7 +1939,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AuthorizationApi();
@@ -1341,15 +1964,15 @@ apiInstance.patchAuthorizationRole(roleId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **roleId** | **String** | Role ID |  |
  **body** | **Object** | Organization role |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **DomainOrganizationRole**
 
-<a name="patchAuthorizationSettings"></a>
 
-# AuthorizationSettings patchAuthorizationSettings(body)
+## patchAuthorizationSettings
+
+> AuthorizationSettings patchAuthorizationSettings(body)
 
 
 PATCH /api/v2/authorization/settings
@@ -1371,7 +1994,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AuthorizationApi();
@@ -1394,15 +2017,15 @@ apiInstance.patchAuthorizationSettings(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Authorization Settings |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AuthorizationSettings**
 
-<a name="postAuthorizationDivisionObject"></a>
 
-# void postAuthorizationDivisionObject(divisionId, objectType, body)
+## postAuthorizationDivisionObject
+
+> void postAuthorizationDivisionObject(divisionId, objectType, body)
 
 
 POST /api/v2/authorization/divisions/{divisionId}/objects/{objectType}
@@ -1421,7 +2044,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AuthorizationApi();
@@ -1448,15 +2071,15 @@ apiInstance.postAuthorizationDivisionObject(divisionId, objectType, body)
  **divisionId** | **String** | Division ID |  |
  **objectType** | **String** | The type of the objects. Must be one of the valid object types | <br />**Values**: QUEUE, CAMPAIGN, CONTACTLIST, DNCLIST, EMAILCAMPAIGN, MESSAGINGCAMPAIGN, MANAGEMENTUNIT, BUSINESSUNIT, FLOW, FLOWMILESTONE, FLOWOUTCOME, USER, CALLROUTE, EMERGENCYGROUPS, ROUTINGSCHEDULES, ROUTINGSCHEDULEGROUPS, DATATABLES, TEAM, WORKBIN, WORKTYPE, EXTENSIONPOOL, SKILLGROUP, SCRIPT |
  **body** | **[String]** | Object Id List |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="postAuthorizationDivisionRestore"></a>
 
-# AuthzDivision postAuthorizationDivisionRestore(divisionId, body)
+## postAuthorizationDivisionRestore
+
+> AuthzDivision postAuthorizationDivisionRestore(divisionId, body)
 
 
 POST /api/v2/authorization/divisions/{divisionId}/restore
@@ -1475,7 +2098,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AuthorizationApi();
@@ -1500,15 +2123,15 @@ apiInstance.postAuthorizationDivisionRestore(divisionId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **divisionId** | **String** | Division ID |  |
  **body** | **Object** | Recreated division data |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AuthzDivision**
 
-<a name="postAuthorizationDivisions"></a>
 
-# AuthzDivision postAuthorizationDivisions(body)
+## postAuthorizationDivisions
+
+> AuthzDivision postAuthorizationDivisions(body)
 
 
 POST /api/v2/authorization/divisions
@@ -1528,7 +2151,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AuthorizationApi();
@@ -1551,15 +2174,177 @@ apiInstance.postAuthorizationDivisions(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Division |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AuthzDivision**
 
-<a name="postAuthorizationRole"></a>
 
-# void postAuthorizationRole(roleId, body, opts)
+## postAuthorizationPoliciesTarget
+
+> AuthorizationPolicy postAuthorizationPoliciesTarget(targetName, body)
+
+
+POST /api/v2/authorization/policies/targets/{targetName}
+
+Add an access control policy for a specified resource target and subject
+
+postAuthorizationPoliciesTarget is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* authorization:policy:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AuthorizationApi();
+
+let targetName = "targetName_example"; // String | The domain:entity:action target to which the policy will be applied
+let body = {}; // Object | Access control policy
+
+apiInstance.postAuthorizationPoliciesTarget(targetName, body)
+  .then((data) => {
+    console.log(`postAuthorizationPoliciesTarget success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postAuthorizationPoliciesTarget');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **targetName** | **String** | The domain:entity:action target to which the policy will be applied |  |
+ **body** | **Object** | Access control policy |  |
+
+### Return type
+
+**AuthorizationPolicy**
+
+
+## postAuthorizationPoliciesTargetValidate
+
+> ValidationErrorListing postAuthorizationPoliciesTargetValidate(targetName, body)
+
+
+POST /api/v2/authorization/policies/targets/{targetName}/validate
+
+Validate the conditions and attributes of an access control policy for a specified resource target
+
+postAuthorizationPoliciesTargetValidate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* authorization:policy:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AuthorizationApi();
+
+let targetName = "targetName_example"; // String | The domain:entity:action target to which the policy will be applied
+let body = {}; // Object | Access control policy
+
+apiInstance.postAuthorizationPoliciesTargetValidate(targetName, body)
+  .then((data) => {
+    console.log(`postAuthorizationPoliciesTargetValidate success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postAuthorizationPoliciesTargetValidate');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **targetName** | **String** | The domain:entity:action target to which the policy will be applied |  |
+ **body** | **Object** | Access control policy |  |
+
+### Return type
+
+**ValidationErrorListing**
+
+
+## postAuthorizationPolicySimulate
+
+> PolicyTestResult postAuthorizationPolicySimulate(policyId, body)
+
+
+POST /api/v2/authorization/policies/{policyId}/simulate
+
+Simulate a request and evaluate the specified policy ID against the provided values
+
+postAuthorizationPolicySimulate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* authorization:policy:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AuthorizationApi();
+
+let policyId = "policyId_example"; // String | The ID of the policy to test the simulated data against
+let body = {}; // Object | A map of attribute names to type and simulated data value
+
+apiInstance.postAuthorizationPolicySimulate(policyId, body)
+  .then((data) => {
+    console.log(`postAuthorizationPolicySimulate success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postAuthorizationPolicySimulate');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **policyId** | **String** | The ID of the policy to test the simulated data against |  |
+ **body** | **Object** | A map of attribute names to type and simulated data value |  |
+
+### Return type
+
+**PolicyTestResult**
+
+
+## postAuthorizationRole
+
+> void postAuthorizationRole(roleId, body, opts)
 
 
 POST /api/v2/authorization/roles/{roleId}
@@ -1578,7 +2363,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AuthorizationApi();
@@ -1607,15 +2392,15 @@ apiInstance.postAuthorizationRole(roleId, body, opts)
  **roleId** | **String** | Role ID |  |
  **body** | **Object** | Subjects and Divisions |  |
  **subjectType** | **String** | what the type of the subjects are (PC_GROUP, PC_USER or PC_OAUTH_CLIENT) | [optional] [default to PC_USER] |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="postAuthorizationRoleComparedefaultRightRoleId"></a>
 
-# DomainOrgRoleDifference postAuthorizationRoleComparedefaultRightRoleId(leftRoleId, rightRoleId, body)
+## postAuthorizationRoleComparedefaultRightRoleId
+
+> DomainOrgRoleDifference postAuthorizationRoleComparedefaultRightRoleId(leftRoleId, rightRoleId, body)
 
 
 POST /api/v2/authorization/roles/{leftRoleId}/comparedefault/{rightRoleId}
@@ -1636,7 +2421,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AuthorizationApi();
@@ -1663,15 +2448,15 @@ apiInstance.postAuthorizationRoleComparedefaultRightRoleId(leftRoleId, rightRole
  **leftRoleId** | **String** | Left Role ID |  |
  **rightRoleId** | **String** | Right Role id |  |
  **body** | **Object** | Organization role |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **DomainOrgRoleDifference**
 
-<a name="postAuthorizationRoles"></a>
 
-# DomainOrganizationRole postAuthorizationRoles(body)
+## postAuthorizationRoles
+
+> DomainOrganizationRole postAuthorizationRoles(body)
 
 
 POST /api/v2/authorization/roles
@@ -1690,7 +2475,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AuthorizationApi();
@@ -1713,15 +2498,15 @@ apiInstance.postAuthorizationRoles(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Organization role |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **DomainOrganizationRole**
 
-<a name="postAuthorizationRolesDefault"></a>
 
-# OrganizationRoleEntityListing postAuthorizationRolesDefault(opts)
+## postAuthorizationRolesDefault
+
+> OrganizationRoleEntityListing postAuthorizationRolesDefault(opts)
 
 
 POST /api/v2/authorization/roles/default
@@ -1742,7 +2527,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AuthorizationApi();
@@ -1767,15 +2552,15 @@ apiInstance.postAuthorizationRolesDefault(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **force** | **Boolean** | Restore default roles | [optional] [default to false] |
-{: class="table table-striped"}
 
 ### Return type
 
 **OrganizationRoleEntityListing**
 
-<a name="postAuthorizationSubjectBulkadd"></a>
 
-# void postAuthorizationSubjectBulkadd(subjectId, body, opts)
+## postAuthorizationSubjectBulkadd
+
+> void postAuthorizationSubjectBulkadd(subjectId, body, opts)
 
 
 POST /api/v2/authorization/subjects/{subjectId}/bulkadd
@@ -1794,7 +2579,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AuthorizationApi();
@@ -1823,15 +2608,15 @@ apiInstance.postAuthorizationSubjectBulkadd(subjectId, body, opts)
  **subjectId** | **String** | Subject ID (user or group) |  |
  **body** | **Object** | Pairs of role and division IDs |  |
  **subjectType** | **String** | what the type of the subject is (PC_GROUP, PC_USER or PC_OAUTH_CLIENT) | [optional] [default to PC_USER] |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="postAuthorizationSubjectBulkremove"></a>
 
-# void postAuthorizationSubjectBulkremove(subjectId, body)
+## postAuthorizationSubjectBulkremove
+
+> void postAuthorizationSubjectBulkremove(subjectId, body)
 
 
 POST /api/v2/authorization/subjects/{subjectId}/bulkremove
@@ -1850,7 +2635,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AuthorizationApi();
@@ -1875,15 +2660,15 @@ apiInstance.postAuthorizationSubjectBulkremove(subjectId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **subjectId** | **String** | Subject ID (user or group) |  |
  **body** | **Object** | Pairs of role and division IDs |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="postAuthorizationSubjectBulkreplace"></a>
 
-# void postAuthorizationSubjectBulkreplace(subjectId, body, opts)
+## postAuthorizationSubjectBulkreplace
+
+> void postAuthorizationSubjectBulkreplace(subjectId, body, opts)
 
 
 POST /api/v2/authorization/subjects/{subjectId}/bulkreplace
@@ -1905,7 +2690,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AuthorizationApi();
@@ -1934,15 +2719,15 @@ apiInstance.postAuthorizationSubjectBulkreplace(subjectId, body, opts)
  **subjectId** | **String** | Subject ID (user or group) |  |
  **body** | **Object** | Pairs of role and division IDs |  |
  **subjectType** | **String** | what the type of the subject is (PC_GROUP, PC_USER or PC_OAUTH_CLIENT) | [optional] [default to PC_USER] |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="postAuthorizationSubjectDivisionRole"></a>
 
-# void postAuthorizationSubjectDivisionRole(subjectId, divisionId, roleId, opts)
+## postAuthorizationSubjectDivisionRole
+
+> void postAuthorizationSubjectDivisionRole(subjectId, divisionId, roleId, opts)
 
 
 POST /api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{roleId}
@@ -1961,7 +2746,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AuthorizationApi();
@@ -1992,15 +2777,15 @@ apiInstance.postAuthorizationSubjectDivisionRole(subjectId, divisionId, roleId, 
  **divisionId** | **String** | the id of the division to which to make the grant |  |
  **roleId** | **String** | the id of the role to grant |  |
  **subjectType** | **String** | what the type of the subject is: PC_GROUP, PC_USER or PC_OAUTH_CLIENT (note: for cross-org authorization, please use the Organization Authorization endpoints) | [optional] [default to PC_USER] |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="putAuthorizationDivision"></a>
 
-# AuthzDivision putAuthorizationDivision(divisionId, body)
+## putAuthorizationDivision
+
+> AuthzDivision putAuthorizationDivision(divisionId, body)
 
 
 PUT /api/v2/authorization/divisions/{divisionId}
@@ -2019,7 +2804,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AuthorizationApi();
@@ -2044,15 +2829,124 @@ apiInstance.putAuthorizationDivision(divisionId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **divisionId** | **String** | Division ID |  |
  **body** | **Object** | Updated division data |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AuthzDivision**
 
-<a name="putAuthorizationRole"></a>
 
-# DomainOrganizationRole putAuthorizationRole(roleId, body)
+## putAuthorizationPoliciesTarget
+
+> AuthorizationPolicy putAuthorizationPoliciesTarget(targetName, body)
+
+
+PUT /api/v2/authorization/policies/targets/{targetName}
+
+Add an access control policy for a specified resource target and subject, overwriting any existing policy
+
+putAuthorizationPoliciesTarget is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* authorization:policy:edit
+* authorization:policy:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AuthorizationApi();
+
+let targetName = "targetName_example"; // String | The domain:entity:action target to which the policy will be applied
+let body = {}; // Object | Access control policy
+
+apiInstance.putAuthorizationPoliciesTarget(targetName, body)
+  .then((data) => {
+    console.log(`putAuthorizationPoliciesTarget success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putAuthorizationPoliciesTarget');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **targetName** | **String** | The domain:entity:action target to which the policy will be applied |  |
+ **body** | **Object** | Access control policy |  |
+
+### Return type
+
+**AuthorizationPolicy**
+
+
+## putAuthorizationPolicy
+
+> AuthorizationPolicy putAuthorizationPolicy(policyId, body)
+
+
+PUT /api/v2/authorization/policies/{policyId}
+
+Update an access control policy with a given ID
+
+putAuthorizationPolicy is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* authorization:policy:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AuthorizationApi();
+
+let policyId = "policyId_example"; // String | The ID of the policy to update
+let body = {}; // Object | Access control policy
+
+apiInstance.putAuthorizationPolicy(policyId, body)
+  .then((data) => {
+    console.log(`putAuthorizationPolicy success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putAuthorizationPolicy');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **policyId** | **String** | The ID of the policy to update |  |
+ **body** | **Object** | Access control policy |  |
+
+### Return type
+
+**AuthorizationPolicy**
+
+
+## putAuthorizationRole
+
+> DomainOrganizationRole putAuthorizationRole(roleId, body)
 
 
 PUT /api/v2/authorization/roles/{roleId}
@@ -2073,7 +2967,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AuthorizationApi();
@@ -2098,15 +2992,15 @@ apiInstance.putAuthorizationRole(roleId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **roleId** | **String** | Role ID |  |
  **body** | **Object** | Organization role |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **DomainOrganizationRole**
 
-<a name="putAuthorizationRoleUsersAdd"></a>
 
-# **[&#39;String&#39;]** putAuthorizationRoleUsersAdd(roleId, body)
+## putAuthorizationRoleUsersAdd
+
+> **[&#39;String&#39;]** putAuthorizationRoleUsersAdd(roleId, body)
 
 
 PUT /api/v2/authorization/roles/{roleId}/users/add
@@ -2125,7 +3019,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AuthorizationApi();
@@ -2150,15 +3044,15 @@ apiInstance.putAuthorizationRoleUsersAdd(roleId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **roleId** | **String** | Role ID |  |
  **body** | **[String]** | List of user IDs |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **[&#39;String&#39;]**
 
-<a name="putAuthorizationRoleUsersRemove"></a>
 
-# **[&#39;String&#39;]** putAuthorizationRoleUsersRemove(roleId, body)
+## putAuthorizationRoleUsersRemove
+
+> **[&#39;String&#39;]** putAuthorizationRoleUsersRemove(roleId, body)
 
 
 PUT /api/v2/authorization/roles/{roleId}/users/remove
@@ -2177,7 +3071,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AuthorizationApi();
@@ -2202,15 +3096,15 @@ apiInstance.putAuthorizationRoleUsersRemove(roleId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **roleId** | **String** | Role ID |  |
  **body** | **[String]** | List of user IDs |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **[&#39;String&#39;]**
 
-<a name="putAuthorizationRolesDefault"></a>
 
-# OrganizationRoleEntityListing putAuthorizationRolesDefault(body)
+## putAuthorizationRolesDefault
+
+> OrganizationRoleEntityListing putAuthorizationRolesDefault(body)
 
 
 PUT /api/v2/authorization/roles/default
@@ -2229,7 +3123,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AuthorizationApi();
@@ -2252,15 +3146,68 @@ apiInstance.putAuthorizationRolesDefault(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Organization roles list |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **OrganizationRoleEntityListing**
 
-<a name="putUserRoles"></a>
 
-# UserAuthorization putUserRoles(subjectId, body)
+## putAuthorizationRolesSettings
+
+> RoleSettings putAuthorizationRolesSettings(body)
+
+
+PUT /api/v2/authorization/roles/settings
+
+Change authorization role settings
+
+Change role settings
+
+Requires ANY permissions:
+
+* directory:organization:admin
+* authorization:settings:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.AuthorizationApi();
+
+let body = {}; // Object | Authorization Role Settings
+
+apiInstance.putAuthorizationRolesSettings(body)
+  .then((data) => {
+    console.log(`putAuthorizationRolesSettings success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putAuthorizationRolesSettings');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Authorization Role Settings |  |
+
+### Return type
+
+**RoleSettings**
+
+
+## putUserRoles
+
+> UserAuthorization putUserRoles(subjectId, body)
 
 
 PUT /api/v2/users/{subjectId}/roles
@@ -2279,7 +3226,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.AuthorizationApi();
@@ -2304,9 +3251,10 @@ apiInstance.putUserRoles(subjectId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **subjectId** | **String** | User ID |  |
  **body** | **[String]** | List of roles |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **UserAuthorization**
 
+
+_purecloud-platform-client-v2@229.1.0_

@@ -1,254 +1,343 @@
----
-title: ConversationsApi
----
+# ConversationsApi
+
 # platformClient.ConversationsApi
 
 All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-[**deleteAnalyticsConversationsDetailsJob**](ConversationsApi.html#deleteAnalyticsConversationsDetailsJob) | **DELETE** /api/v2/analytics/conversations/details/jobs/{jobId} | Delete/cancel an async details job
-[**deleteConversationParticipantCode**](ConversationsApi.html#deleteConversationParticipantCode) | **DELETE** /api/v2/conversations/{conversationId}/participants/{participantId}/codes/{addCommunicationCode} | Delete a code used to add a communication to this participant
-[**deleteConversationParticipantFlaggedreason**](ConversationsApi.html#deleteConversationParticipantFlaggedreason) | **DELETE** /api/v2/conversations/{conversationId}/participants/{participantId}/flaggedreason | Remove flagged reason from conversation participant.
-[**deleteConversationsCallParticipantConsult**](ConversationsApi.html#deleteConversationsCallParticipantConsult) | **DELETE** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult | Cancel the transfer
-[**deleteConversationsEmailMessagesDraftAttachment**](ConversationsApi.html#deleteConversationsEmailMessagesDraftAttachment) | **DELETE** /api/v2/conversations/emails/{conversationId}/messages/draft/attachments/{attachmentId} | Delete attachment from draft
-[**deleteConversationsMessagesCachedmediaCachedMediaItemId**](ConversationsApi.html#deleteConversationsMessagesCachedmediaCachedMediaItemId) | **DELETE** /api/v2/conversations/messages/cachedmedia/{cachedMediaItemId} | Remove a cached media item asychronously
-[**deleteConversationsMessagingIntegrationsFacebookIntegrationId**](ConversationsApi.html#deleteConversationsMessagingIntegrationsFacebookIntegrationId) | **DELETE** /api/v2/conversations/messaging/integrations/facebook/{integrationId} | Delete a Facebook messaging integration
-[**deleteConversationsMessagingIntegrationsInstagramIntegrationId**](ConversationsApi.html#deleteConversationsMessagingIntegrationsInstagramIntegrationId) | **DELETE** /api/v2/conversations/messaging/integrations/instagram/{integrationId} | Delete Instagram messaging integration
-[**deleteConversationsMessagingIntegrationsLineIntegrationId**](ConversationsApi.html#deleteConversationsMessagingIntegrationsLineIntegrationId) | **DELETE** /api/v2/conversations/messaging/integrations/line/{integrationId} | Delete a LINE messenger integration
-[**deleteConversationsMessagingIntegrationsOpenIntegrationId**](ConversationsApi.html#deleteConversationsMessagingIntegrationsOpenIntegrationId) | **DELETE** /api/v2/conversations/messaging/integrations/open/{integrationId} | Delete an Open messaging integration
-[**deleteConversationsMessagingIntegrationsTwitterIntegrationId**](ConversationsApi.html#deleteConversationsMessagingIntegrationsTwitterIntegrationId) | **DELETE** /api/v2/conversations/messaging/integrations/twitter/{integrationId} | Delete a Twitter messaging integration
-[**deleteConversationsMessagingIntegrationsWhatsappIntegrationId**](ConversationsApi.html#deleteConversationsMessagingIntegrationsWhatsappIntegrationId) | **DELETE** /api/v2/conversations/messaging/integrations/whatsapp/{integrationId} | Delete a WhatsApp messaging integration
-[**deleteConversationsMessagingSetting**](ConversationsApi.html#deleteConversationsMessagingSetting) | **DELETE** /api/v2/conversations/messaging/settings/{messageSettingId} | Delete a messaging setting
-[**deleteConversationsMessagingSettingsDefault**](ConversationsApi.html#deleteConversationsMessagingSettingsDefault) | **DELETE** /api/v2/conversations/messaging/settings/default | Delete the organization's default setting, a global default will be applied to integrations without settings
-[**deleteConversationsMessagingSupportedcontentSupportedContentId**](ConversationsApi.html#deleteConversationsMessagingSupportedcontentSupportedContentId) | **DELETE** /api/v2/conversations/messaging/supportedcontent/{supportedContentId} | Delete a supported content profile
-[**getAnalyticsConversationDetails**](ConversationsApi.html#getAnalyticsConversationDetails) | **GET** /api/v2/analytics/conversations/{conversationId}/details | Get a conversation by id
-[**getAnalyticsConversationsAggregatesJob**](ConversationsApi.html#getAnalyticsConversationsAggregatesJob) | **GET** /api/v2/analytics/conversations/aggregates/jobs/{jobId} | Get status for async query for conversation aggregates
-[**getAnalyticsConversationsAggregatesJobResults**](ConversationsApi.html#getAnalyticsConversationsAggregatesJobResults) | **GET** /api/v2/analytics/conversations/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query
-[**getAnalyticsConversationsDetails**](ConversationsApi.html#getAnalyticsConversationsDetails) | **GET** /api/v2/analytics/conversations/details | Gets multiple conversations by id
-[**getAnalyticsConversationsDetailsJob**](ConversationsApi.html#getAnalyticsConversationsDetailsJob) | **GET** /api/v2/analytics/conversations/details/jobs/{jobId} | Get status for async query for conversation details
-[**getAnalyticsConversationsDetailsJobResults**](ConversationsApi.html#getAnalyticsConversationsDetailsJobResults) | **GET** /api/v2/analytics/conversations/details/jobs/{jobId}/results | Fetch a page of results for an async details job
-[**getAnalyticsConversationsDetailsJobsAvailability**](ConversationsApi.html#getAnalyticsConversationsDetailsJobsAvailability) | **GET** /api/v2/analytics/conversations/details/jobs/availability | Lookup the datalake availability date and time
-[**getConversation**](ConversationsApi.html#getConversation) | **GET** /api/v2/conversations/{conversationId} | Get conversation
-[**getConversationParticipantSecureivrsession**](ConversationsApi.html#getConversationParticipantSecureivrsession) | **GET** /api/v2/conversations/{conversationId}/participants/{participantId}/secureivrsessions/{secureSessionId} | Fetch info on a secure session
-[**getConversationParticipantSecureivrsessions**](ConversationsApi.html#getConversationParticipantSecureivrsessions) | **GET** /api/v2/conversations/{conversationId}/participants/{participantId}/secureivrsessions | Get a list of secure sessions for this participant.
-[**getConversationParticipantWrapup**](ConversationsApi.html#getConversationParticipantWrapup) | **GET** /api/v2/conversations/{conversationId}/participants/{participantId}/wrapup | Get the wrap-up for this conversation participant. 
-[**getConversationParticipantWrapupcodes**](ConversationsApi.html#getConversationParticipantWrapupcodes) | **GET** /api/v2/conversations/{conversationId}/participants/{participantId}/wrapupcodes | Get list of wrapup codes for this conversation participant
-[**getConversationSecureattributes**](ConversationsApi.html#getConversationSecureattributes) | **GET** /api/v2/conversations/{conversationId}/secureattributes | Get the secure attributes on a conversation.
-[**getConversations**](ConversationsApi.html#getConversations) | **GET** /api/v2/conversations | Get active conversations for the logged in user
-[**getConversationsCall**](ConversationsApi.html#getConversationsCall) | **GET** /api/v2/conversations/calls/{conversationId} | Get call conversation
-[**getConversationsCallParticipantCommunicationWrapup**](ConversationsApi.html#getConversationsCallParticipantCommunicationWrapup) | **GET** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup | Get the wrap-up for this conversation communication. 
-[**getConversationsCallParticipantWrapup**](ConversationsApi.html#getConversationsCallParticipantWrapup) | **GET** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/wrapup | Get the wrap-up for this conversation participant. 
-[**getConversationsCallParticipantWrapupcodes**](ConversationsApi.html#getConversationsCallParticipantWrapupcodes) | **GET** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/wrapupcodes | Get list of wrapup codes for this conversation participant
-[**getConversationsCallback**](ConversationsApi.html#getConversationsCallback) | **GET** /api/v2/conversations/callbacks/{conversationId} | Get callback conversation
-[**getConversationsCallbackParticipantCommunicationWrapup**](ConversationsApi.html#getConversationsCallbackParticipantCommunicationWrapup) | **GET** /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup | Get the wrap-up for this conversation communication. 
-[**getConversationsCallbackParticipantWrapup**](ConversationsApi.html#getConversationsCallbackParticipantWrapup) | **GET** /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/wrapup | Get the wrap-up for this conversation participant. 
-[**getConversationsCallbackParticipantWrapupcodes**](ConversationsApi.html#getConversationsCallbackParticipantWrapupcodes) | **GET** /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/wrapupcodes | Get list of wrapup codes for this conversation participant
-[**getConversationsCallbacks**](ConversationsApi.html#getConversationsCallbacks) | **GET** /api/v2/conversations/callbacks | Get active callback conversations for the logged in user
-[**getConversationsCalls**](ConversationsApi.html#getConversationsCalls) | **GET** /api/v2/conversations/calls | Get active call conversations for the logged in user
-[**getConversationsCallsHistory**](ConversationsApi.html#getConversationsCallsHistory) | **GET** /api/v2/conversations/calls/history | Get call history
-[**getConversationsCallsMaximumconferenceparties**](ConversationsApi.html#getConversationsCallsMaximumconferenceparties) | **GET** /api/v2/conversations/calls/maximumconferenceparties | Get the maximum number of participants that this user can have on a conference
-[**getConversationsChat**](ConversationsApi.html#getConversationsChat) | **GET** /api/v2/conversations/chats/{conversationId} | Get chat conversation
-[**getConversationsChatMessage**](ConversationsApi.html#getConversationsChatMessage) | **GET** /api/v2/conversations/chats/{conversationId}/messages/{messageId} | Get a web chat conversation message
-[**getConversationsChatMessages**](ConversationsApi.html#getConversationsChatMessages) | **GET** /api/v2/conversations/chats/{conversationId}/messages | Get the messages of a chat conversation.
-[**getConversationsChatParticipantCommunicationWrapup**](ConversationsApi.html#getConversationsChatParticipantCommunicationWrapup) | **GET** /api/v2/conversations/chats/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup | Get the wrap-up for this conversation communication. 
-[**getConversationsChatParticipantWrapup**](ConversationsApi.html#getConversationsChatParticipantWrapup) | **GET** /api/v2/conversations/chats/{conversationId}/participants/{participantId}/wrapup | Get the wrap-up for this conversation participant. 
-[**getConversationsChatParticipantWrapupcodes**](ConversationsApi.html#getConversationsChatParticipantWrapupcodes) | **GET** /api/v2/conversations/chats/{conversationId}/participants/{participantId}/wrapupcodes | Get list of wrapup codes for this conversation participant
-[**getConversationsChats**](ConversationsApi.html#getConversationsChats) | **GET** /api/v2/conversations/chats | Get active chat conversations for the logged in user
-[**getConversationsCobrowsesession**](ConversationsApi.html#getConversationsCobrowsesession) | **GET** /api/v2/conversations/cobrowsesessions/{conversationId} | Get cobrowse conversation
-[**getConversationsCobrowsesessionParticipantCommunicationWrapup**](ConversationsApi.html#getConversationsCobrowsesessionParticipantCommunicationWrapup) | **GET** /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup | Get the wrap-up for this conversation communication. 
-[**getConversationsCobrowsesessionParticipantWrapup**](ConversationsApi.html#getConversationsCobrowsesessionParticipantWrapup) | **GET** /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/wrapup | Get the wrap-up for this conversation participant. 
-[**getConversationsCobrowsesessionParticipantWrapupcodes**](ConversationsApi.html#getConversationsCobrowsesessionParticipantWrapupcodes) | **GET** /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/wrapupcodes | Get list of wrapup codes for this conversation participant
-[**getConversationsCobrowsesessions**](ConversationsApi.html#getConversationsCobrowsesessions) | **GET** /api/v2/conversations/cobrowsesessions | Get active cobrowse conversations for the logged in user
-[**getConversationsEmail**](ConversationsApi.html#getConversationsEmail) | **GET** /api/v2/conversations/emails/{conversationId} | Get email conversation
-[**getConversationsEmailMessage**](ConversationsApi.html#getConversationsEmailMessage) | **GET** /api/v2/conversations/emails/{conversationId}/messages/{messageId} | Get conversation message
-[**getConversationsEmailMessages**](ConversationsApi.html#getConversationsEmailMessages) | **GET** /api/v2/conversations/emails/{conversationId}/messages | Get conversation messages
-[**getConversationsEmailMessagesDraft**](ConversationsApi.html#getConversationsEmailMessagesDraft) | **GET** /api/v2/conversations/emails/{conversationId}/messages/draft | Get conversation draft reply
-[**getConversationsEmailParticipantCommunicationWrapup**](ConversationsApi.html#getConversationsEmailParticipantCommunicationWrapup) | **GET** /api/v2/conversations/emails/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup | Get the wrap-up for this conversation communication. 
-[**getConversationsEmailParticipantWrapup**](ConversationsApi.html#getConversationsEmailParticipantWrapup) | **GET** /api/v2/conversations/emails/{conversationId}/participants/{participantId}/wrapup | Get the wrap-up for this conversation participant. 
-[**getConversationsEmailParticipantWrapupcodes**](ConversationsApi.html#getConversationsEmailParticipantWrapupcodes) | **GET** /api/v2/conversations/emails/{conversationId}/participants/{participantId}/wrapupcodes | Get list of wrapup codes for this conversation participant
-[**getConversationsEmailSettings**](ConversationsApi.html#getConversationsEmailSettings) | **GET** /api/v2/conversations/emails/{conversationId}/settings | Get emails settings for a given conversation
-[**getConversationsEmails**](ConversationsApi.html#getConversationsEmails) | **GET** /api/v2/conversations/emails | Get active email conversations for the logged in user
-[**getConversationsKeyconfiguration**](ConversationsApi.html#getConversationsKeyconfiguration) | **GET** /api/v2/conversations/keyconfigurations/{keyconfigurationsId} | Get the encryption key configurations
-[**getConversationsKeyconfigurations**](ConversationsApi.html#getConversationsKeyconfigurations) | **GET** /api/v2/conversations/keyconfigurations | Get a list of key configurations data
-[**getConversationsMessage**](ConversationsApi.html#getConversationsMessage) | **GET** /api/v2/conversations/messages/{conversationId} | Get message conversation
-[**getConversationsMessageCommunicationMessagesMediaMediaId**](ConversationsApi.html#getConversationsMessageCommunicationMessagesMediaMediaId) | **GET** /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media/{mediaId} | Get media
-[**getConversationsMessageDetails**](ConversationsApi.html#getConversationsMessageDetails) | **GET** /api/v2/conversations/messages/{messageId}/details | Get message
-[**getConversationsMessageMessage**](ConversationsApi.html#getConversationsMessageMessage) | **GET** /api/v2/conversations/messages/{conversationId}/messages/{messageId} | Get conversation message
-[**getConversationsMessageParticipantCommunicationWrapup**](ConversationsApi.html#getConversationsMessageParticipantCommunicationWrapup) | **GET** /api/v2/conversations/messages/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup | Get the wrap-up for this conversation communication. 
-[**getConversationsMessageParticipantWrapup**](ConversationsApi.html#getConversationsMessageParticipantWrapup) | **GET** /api/v2/conversations/messages/{conversationId}/participants/{participantId}/wrapup | Get the wrap-up for this conversation participant. 
-[**getConversationsMessageParticipantWrapupcodes**](ConversationsApi.html#getConversationsMessageParticipantWrapupcodes) | **GET** /api/v2/conversations/messages/{conversationId}/participants/{participantId}/wrapupcodes | Get list of wrapup codes for this conversation participant
-[**getConversationsMessages**](ConversationsApi.html#getConversationsMessages) | **GET** /api/v2/conversations/messages | Get active message conversations for the logged in user
-[**getConversationsMessagesCachedmedia**](ConversationsApi.html#getConversationsMessagesCachedmedia) | **GET** /api/v2/conversations/messages/cachedmedia | Get a list of cached media items
-[**getConversationsMessagesCachedmediaCachedMediaItemId**](ConversationsApi.html#getConversationsMessagesCachedmediaCachedMediaItemId) | **GET** /api/v2/conversations/messages/cachedmedia/{cachedMediaItemId} | Get a cached media item
-[**getConversationsMessagingFacebookApp**](ConversationsApi.html#getConversationsMessagingFacebookApp) | **GET** /api/v2/conversations/messaging/facebook/app | Get Genesys Facebook App Id
-[**getConversationsMessagingIntegrations**](ConversationsApi.html#getConversationsMessagingIntegrations) | **GET** /api/v2/conversations/messaging/integrations | Get a list of Integrations
-[**getConversationsMessagingIntegrationsFacebook**](ConversationsApi.html#getConversationsMessagingIntegrationsFacebook) | **GET** /api/v2/conversations/messaging/integrations/facebook | Get a list of Facebook Integrations
-[**getConversationsMessagingIntegrationsFacebookIntegrationId**](ConversationsApi.html#getConversationsMessagingIntegrationsFacebookIntegrationId) | **GET** /api/v2/conversations/messaging/integrations/facebook/{integrationId} | Get a Facebook messaging integration
-[**getConversationsMessagingIntegrationsInstagram**](ConversationsApi.html#getConversationsMessagingIntegrationsInstagram) | **GET** /api/v2/conversations/messaging/integrations/instagram | Get a list of Instagram Integrations
-[**getConversationsMessagingIntegrationsInstagramIntegrationId**](ConversationsApi.html#getConversationsMessagingIntegrationsInstagramIntegrationId) | **GET** /api/v2/conversations/messaging/integrations/instagram/{integrationId} | Get Instagram messaging integration
-[**getConversationsMessagingIntegrationsLine**](ConversationsApi.html#getConversationsMessagingIntegrationsLine) | **GET** /api/v2/conversations/messaging/integrations/line | Get a list of LINE messenger Integrations
-[**getConversationsMessagingIntegrationsLineIntegrationId**](ConversationsApi.html#getConversationsMessagingIntegrationsLineIntegrationId) | **GET** /api/v2/conversations/messaging/integrations/line/{integrationId} | Get a LINE messenger integration
-[**getConversationsMessagingIntegrationsOpen**](ConversationsApi.html#getConversationsMessagingIntegrationsOpen) | **GET** /api/v2/conversations/messaging/integrations/open | Get a list of Open messaging integrations
-[**getConversationsMessagingIntegrationsOpenIntegrationId**](ConversationsApi.html#getConversationsMessagingIntegrationsOpenIntegrationId) | **GET** /api/v2/conversations/messaging/integrations/open/{integrationId} | Get an Open messaging integration
-[**getConversationsMessagingIntegrationsTwitter**](ConversationsApi.html#getConversationsMessagingIntegrationsTwitter) | **GET** /api/v2/conversations/messaging/integrations/twitter | Get a list of Twitter Integrations
-[**getConversationsMessagingIntegrationsTwitterIntegrationId**](ConversationsApi.html#getConversationsMessagingIntegrationsTwitterIntegrationId) | **GET** /api/v2/conversations/messaging/integrations/twitter/{integrationId} | Get a Twitter messaging integration
-[**getConversationsMessagingIntegrationsWhatsapp**](ConversationsApi.html#getConversationsMessagingIntegrationsWhatsapp) | **GET** /api/v2/conversations/messaging/integrations/whatsapp | Get a list of WhatsApp Integrations
-[**getConversationsMessagingIntegrationsWhatsappIntegrationId**](ConversationsApi.html#getConversationsMessagingIntegrationsWhatsappIntegrationId) | **GET** /api/v2/conversations/messaging/integrations/whatsapp/{integrationId} | Get a WhatsApp messaging integration
-[**getConversationsMessagingSetting**](ConversationsApi.html#getConversationsMessagingSetting) | **GET** /api/v2/conversations/messaging/settings/{messageSettingId} | Get a messaging setting
-[**getConversationsMessagingSettings**](ConversationsApi.html#getConversationsMessagingSettings) | **GET** /api/v2/conversations/messaging/settings | Get a list of messaging settings
-[**getConversationsMessagingSettingsDefault**](ConversationsApi.html#getConversationsMessagingSettingsDefault) | **GET** /api/v2/conversations/messaging/settings/default | Get the organization's default settings that will be used as the default when creating an integration.
-[**getConversationsMessagingSticker**](ConversationsApi.html#getConversationsMessagingSticker) | **GET** /api/v2/conversations/messaging/stickers/{messengerType} | Get a list of Messaging Stickers
-[**getConversationsMessagingSupportedcontent**](ConversationsApi.html#getConversationsMessagingSupportedcontent) | **GET** /api/v2/conversations/messaging/supportedcontent | Get a list of Supported Content profiles
-[**getConversationsMessagingSupportedcontentDefault**](ConversationsApi.html#getConversationsMessagingSupportedcontentDefault) | **GET** /api/v2/conversations/messaging/supportedcontent/default | Get the organization's default supported content profile that will be used as the default when creating an integration.
-[**getConversationsMessagingSupportedcontentSupportedContentId**](ConversationsApi.html#getConversationsMessagingSupportedcontentSupportedContentId) | **GET** /api/v2/conversations/messaging/supportedcontent/{supportedContentId} | Get a supported content profile
-[**getConversationsMessagingThreadingtimeline**](ConversationsApi.html#getConversationsMessagingThreadingtimeline) | **GET** /api/v2/conversations/messaging/threadingtimeline | Get conversation threading window timeline for each messaging type
-[**getConversationsScreenshareParticipantCommunicationWrapup**](ConversationsApi.html#getConversationsScreenshareParticipantCommunicationWrapup) | **GET** /api/v2/conversations/screenshares/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup | Get the wrap-up for this conversation communication. 
-[**getConversationsSettings**](ConversationsApi.html#getConversationsSettings) | **GET** /api/v2/conversations/settings | Get Settings
-[**getConversationsSocialParticipantCommunicationWrapup**](ConversationsApi.html#getConversationsSocialParticipantCommunicationWrapup) | **GET** /api/v2/conversations/socials/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup | Get the wrap-up for this conversation communication. 
-[**getConversationsVideoDetails**](ConversationsApi.html#getConversationsVideoDetails) | **GET** /api/v2/conversations/videos/{conferenceId}/details | Get video conference details (e.g. the current number of active participants).
-[**getConversationsVideoParticipantCommunicationWrapup**](ConversationsApi.html#getConversationsVideoParticipantCommunicationWrapup) | **GET** /api/v2/conversations/videos/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup | Get the wrap-up for this conversation communication. 
-[**getConversationsVideosMeeting**](ConversationsApi.html#getConversationsVideosMeeting) | **GET** /api/v2/conversations/videos/meetings/{meetingId} | Gets a record for a given meetingId
-[**patchConversationParticipant**](ConversationsApi.html#patchConversationParticipant) | **PATCH** /api/v2/conversations/{conversationId}/participants/{participantId} | Update a participant.
-[**patchConversationParticipantAttributes**](ConversationsApi.html#patchConversationParticipantAttributes) | **PATCH** /api/v2/conversations/{conversationId}/participants/{participantId}/attributes | Update the attributes on a conversation participant.
-[**patchConversationSecureattributes**](ConversationsApi.html#patchConversationSecureattributes) | **PATCH** /api/v2/conversations/{conversationId}/secureattributes | Update the secure attributes on a conversation.
-[**patchConversationsAftercallworkConversationIdParticipantCommunication**](ConversationsApi.html#patchConversationsAftercallworkConversationIdParticipantCommunication) | **PATCH** /api/v2/conversations/aftercallwork/{conversationId}/participants/{participantId}/communications/{communicationId} | Update after-call work for this conversation communication.
-[**patchConversationsCall**](ConversationsApi.html#patchConversationsCall) | **PATCH** /api/v2/conversations/calls/{conversationId} | Update a conversation by setting its recording state, merging in other conversations to create a conference, or disconnecting all of the participants
-[**patchConversationsCallParticipant**](ConversationsApi.html#patchConversationsCallParticipant) | **PATCH** /api/v2/conversations/calls/{conversationId}/participants/{participantId} | Update conversation participant
-[**patchConversationsCallParticipantAttributes**](ConversationsApi.html#patchConversationsCallParticipantAttributes) | **PATCH** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/attributes | Update the attributes on a conversation participant.
-[**patchConversationsCallParticipantCommunication**](ConversationsApi.html#patchConversationsCallParticipantCommunication) | **PATCH** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId} | Update conversation participant's communication by disconnecting it.
-[**patchConversationsCallParticipantConsult**](ConversationsApi.html#patchConversationsCallParticipantConsult) | **PATCH** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult | Change who can speak
-[**patchConversationsCallback**](ConversationsApi.html#patchConversationsCallback) | **PATCH** /api/v2/conversations/callbacks/{conversationId} | Update a conversation by disconnecting all of the participants
-[**patchConversationsCallbackParticipant**](ConversationsApi.html#patchConversationsCallbackParticipant) | **PATCH** /api/v2/conversations/callbacks/{conversationId}/participants/{participantId} | Update conversation participant
-[**patchConversationsCallbackParticipantAttributes**](ConversationsApi.html#patchConversationsCallbackParticipantAttributes) | **PATCH** /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/attributes | Update the attributes on a conversation participant.
-[**patchConversationsCallbackParticipantCommunication**](ConversationsApi.html#patchConversationsCallbackParticipantCommunication) | **PATCH** /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/communications/{communicationId} | Update conversation participant's communication by disconnecting it.
-[**patchConversationsCallbacks**](ConversationsApi.html#patchConversationsCallbacks) | **PATCH** /api/v2/conversations/callbacks | Update a scheduled callback
-[**patchConversationsChat**](ConversationsApi.html#patchConversationsChat) | **PATCH** /api/v2/conversations/chats/{conversationId} | Update a conversation by disconnecting all of the participants
-[**patchConversationsChatParticipant**](ConversationsApi.html#patchConversationsChatParticipant) | **PATCH** /api/v2/conversations/chats/{conversationId}/participants/{participantId} | Update conversation participant
-[**patchConversationsChatParticipantAttributes**](ConversationsApi.html#patchConversationsChatParticipantAttributes) | **PATCH** /api/v2/conversations/chats/{conversationId}/participants/{participantId}/attributes | Update the attributes on a conversation participant.
-[**patchConversationsChatParticipantCommunication**](ConversationsApi.html#patchConversationsChatParticipantCommunication) | **PATCH** /api/v2/conversations/chats/{conversationId}/participants/{participantId}/communications/{communicationId} | Update conversation participant's communication by disconnecting it.
-[**patchConversationsCobrowsesession**](ConversationsApi.html#patchConversationsCobrowsesession) | **PATCH** /api/v2/conversations/cobrowsesessions/{conversationId} | Update a conversation by disconnecting all of the participants
-[**patchConversationsCobrowsesessionParticipant**](ConversationsApi.html#patchConversationsCobrowsesessionParticipant) | **PATCH** /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId} | Update conversation participant
-[**patchConversationsCobrowsesessionParticipantAttributes**](ConversationsApi.html#patchConversationsCobrowsesessionParticipantAttributes) | **PATCH** /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/attributes | Update the attributes on a conversation participant.
-[**patchConversationsCobrowsesessionParticipantCommunication**](ConversationsApi.html#patchConversationsCobrowsesessionParticipantCommunication) | **PATCH** /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/communications/{communicationId} | Update conversation participant's communication by disconnecting it.
-[**patchConversationsEmail**](ConversationsApi.html#patchConversationsEmail) | **PATCH** /api/v2/conversations/emails/{conversationId} | Update a conversation by disconnecting all of the participants
-[**patchConversationsEmailMessagesDraft**](ConversationsApi.html#patchConversationsEmailMessagesDraft) | **PATCH** /api/v2/conversations/emails/{conversationId}/messages/draft | Reset conversation draft to its initial state and/or auto-fill draft content
-[**patchConversationsEmailParticipant**](ConversationsApi.html#patchConversationsEmailParticipant) | **PATCH** /api/v2/conversations/emails/{conversationId}/participants/{participantId} | Update conversation participant
-[**patchConversationsEmailParticipantAttributes**](ConversationsApi.html#patchConversationsEmailParticipantAttributes) | **PATCH** /api/v2/conversations/emails/{conversationId}/participants/{participantId}/attributes | Update the attributes on a conversation participant.
-[**patchConversationsEmailParticipantCommunication**](ConversationsApi.html#patchConversationsEmailParticipantCommunication) | **PATCH** /api/v2/conversations/emails/{conversationId}/participants/{participantId}/communications/{communicationId} | Update conversation participant's communication by disconnecting it.
-[**patchConversationsMessage**](ConversationsApi.html#patchConversationsMessage) | **PATCH** /api/v2/conversations/messages/{conversationId} | Update a conversation by disconnecting all of the participants
-[**patchConversationsMessageParticipant**](ConversationsApi.html#patchConversationsMessageParticipant) | **PATCH** /api/v2/conversations/messages/{conversationId}/participants/{participantId} | Update conversation participant
-[**patchConversationsMessageParticipantAttributes**](ConversationsApi.html#patchConversationsMessageParticipantAttributes) | **PATCH** /api/v2/conversations/messages/{conversationId}/participants/{participantId}/attributes | Update the attributes on a conversation participant.
-[**patchConversationsMessageParticipantCommunication**](ConversationsApi.html#patchConversationsMessageParticipantCommunication) | **PATCH** /api/v2/conversations/messages/{conversationId}/participants/{participantId}/communications/{communicationId} | Update conversation participant's communication by disconnecting it.
-[**patchConversationsMessagingIntegrationsFacebookIntegrationId**](ConversationsApi.html#patchConversationsMessagingIntegrationsFacebookIntegrationId) | **PATCH** /api/v2/conversations/messaging/integrations/facebook/{integrationId} | Update Facebook messaging integration
-[**patchConversationsMessagingIntegrationsInstagramIntegrationId**](ConversationsApi.html#patchConversationsMessagingIntegrationsInstagramIntegrationId) | **PATCH** /api/v2/conversations/messaging/integrations/instagram/{integrationId} | Update Instagram messaging integration
-[**patchConversationsMessagingIntegrationsOpenIntegrationId**](ConversationsApi.html#patchConversationsMessagingIntegrationsOpenIntegrationId) | **PATCH** /api/v2/conversations/messaging/integrations/open/{integrationId} | Update an Open messaging integration
-[**patchConversationsMessagingIntegrationsTwitterIntegrationId**](ConversationsApi.html#patchConversationsMessagingIntegrationsTwitterIntegrationId) | **PATCH** /api/v2/conversations/messaging/integrations/twitter/{integrationId} | Update Twitter messaging integration
-[**patchConversationsMessagingIntegrationsWhatsappIntegrationId**](ConversationsApi.html#patchConversationsMessagingIntegrationsWhatsappIntegrationId) | **PATCH** /api/v2/conversations/messaging/integrations/whatsapp/{integrationId} | Update or activate a WhatsApp messaging integration
-[**patchConversationsMessagingSetting**](ConversationsApi.html#patchConversationsMessagingSetting) | **PATCH** /api/v2/conversations/messaging/settings/{messageSettingId} | Update a messaging setting
-[**patchConversationsMessagingSupportedcontentSupportedContentId**](ConversationsApi.html#patchConversationsMessagingSupportedcontentSupportedContentId) | **PATCH** /api/v2/conversations/messaging/supportedcontent/{supportedContentId} | Update a supported content profile
-[**patchConversationsSettings**](ConversationsApi.html#patchConversationsSettings) | **PATCH** /api/v2/conversations/settings | Update Settings
-[**postAnalyticsConversationDetailsProperties**](ConversationsApi.html#postAnalyticsConversationDetailsProperties) | **POST** /api/v2/analytics/conversations/{conversationId}/details/properties | Index conversation properties
-[**postAnalyticsConversationsActivityQuery**](ConversationsApi.html#postAnalyticsConversationsActivityQuery) | **POST** /api/v2/analytics/conversations/activity/query | Query for conversation activity observations
-[**postAnalyticsConversationsAggregatesJobs**](ConversationsApi.html#postAnalyticsConversationsAggregatesJobs) | **POST** /api/v2/analytics/conversations/aggregates/jobs | Query for conversation aggregates asynchronously
-[**postAnalyticsConversationsAggregatesQuery**](ConversationsApi.html#postAnalyticsConversationsAggregatesQuery) | **POST** /api/v2/analytics/conversations/aggregates/query | Query for conversation aggregates
-[**postAnalyticsConversationsDetailsJobs**](ConversationsApi.html#postAnalyticsConversationsDetailsJobs) | **POST** /api/v2/analytics/conversations/details/jobs | Query for conversation details asynchronously
-[**postAnalyticsConversationsDetailsQuery**](ConversationsApi.html#postAnalyticsConversationsDetailsQuery) | **POST** /api/v2/analytics/conversations/details/query | Query for conversation details
-[**postConversationAssign**](ConversationsApi.html#postConversationAssign) | **POST** /api/v2/conversations/{conversationId}/assign | Attempts to manually assign a specified conversation to a specified user.  Ignores bullseye ring, PAR score, skills, and languages.
-[**postConversationBarge**](ConversationsApi.html#postConversationBarge) | **POST** /api/v2/conversations/{conversationId}/barge | Barge a conversation creating a barged in conference of connected participants.
-[**postConversationCobrowse**](ConversationsApi.html#postConversationCobrowse) | **POST** /api/v2/conversations/{conversationId}/cobrowse | Creates a cobrowse session. Requires conversation:cobrowse:add (for web messaging) or conversation:cobrowsevoice:add permission.
-[**postConversationDisconnect**](ConversationsApi.html#postConversationDisconnect) | **POST** /api/v2/conversations/{conversationId}/disconnect | Performs a full conversation teardown. Issues disconnect requests for any connected media. Applies a system wrap-up code to any participants that are pending wrap-up. This is not intended to be the normal way of ending interactions but is available in the event of problems with the application to allow a resynchronization of state across all components. It is recommended that users submit a support case if they are relying on this endpoint systematically as there is likely something that needs investigation.
-[**postConversationParticipantCallbacks**](ConversationsApi.html#postConversationParticipantCallbacks) | **POST** /api/v2/conversations/{conversationId}/participants/{participantId}/callbacks | Create a new callback for the specified participant on the conversation.
-[**postConversationParticipantDigits**](ConversationsApi.html#postConversationParticipantDigits) | **POST** /api/v2/conversations/{conversationId}/participants/{participantId}/digits | Sends DTMF to the participant
-[**postConversationParticipantReplace**](ConversationsApi.html#postConversationParticipantReplace) | **POST** /api/v2/conversations/{conversationId}/participants/{participantId}/replace | Replace this participant with the specified user and/or address
-[**postConversationParticipantReplaceAgent**](ConversationsApi.html#postConversationParticipantReplaceAgent) | **POST** /api/v2/conversations/{conversationId}/participants/{participantId}/replace/agent | Replace this participant with the specified agent
-[**postConversationParticipantReplaceExternal**](ConversationsApi.html#postConversationParticipantReplaceExternal) | **POST** /api/v2/conversations/{conversationId}/participants/{participantId}/replace/external | Replace this participant with the an external contact
-[**postConversationParticipantReplaceQueue**](ConversationsApi.html#postConversationParticipantReplaceQueue) | **POST** /api/v2/conversations/{conversationId}/participants/{participantId}/replace/queue | Replace this participant with the specified queue
-[**postConversationParticipantSecureivrsessions**](ConversationsApi.html#postConversationParticipantSecureivrsessions) | **POST** /api/v2/conversations/{conversationId}/participants/{participantId}/secureivrsessions | Create secure IVR session. Only a participant in the conversation can invoke a secure IVR.
-[**postConversationsCall**](ConversationsApi.html#postConversationsCall) | **POST** /api/v2/conversations/calls/{conversationId} | Place a new call as part of a callback conversation.
-[**postConversationsCallParticipantBarge**](ConversationsApi.html#postConversationsCallParticipantBarge) | **POST** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/barge | Barge a given participant's call creating a barged in conference of connected participants.
-[**postConversationsCallParticipantCoach**](ConversationsApi.html#postConversationsCallParticipantCoach) | **POST** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/coach | Listen in on the conversation from the point of view of a given participant while speaking to just the given participant.
-[**postConversationsCallParticipantCommunicationWrapup**](ConversationsApi.html#postConversationsCallParticipantCommunicationWrapup) | **POST** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup | Apply wrap-up for this conversation communication
-[**postConversationsCallParticipantConsult**](ConversationsApi.html#postConversationsCallParticipantConsult) | **POST** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult | Initiate and update consult transfer
-[**postConversationsCallParticipantConsultAgent**](ConversationsApi.html#postConversationsCallParticipantConsultAgent) | **POST** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult/agent | Initiate a consult transfer to an agent
-[**postConversationsCallParticipantConsultExternal**](ConversationsApi.html#postConversationsCallParticipantConsultExternal) | **POST** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult/external | Initiate a consult transfer to an external contact
-[**postConversationsCallParticipantConsultQueue**](ConversationsApi.html#postConversationsCallParticipantConsultQueue) | **POST** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult/queue | Initiate a consult transfer to a queue
-[**postConversationsCallParticipantMonitor**](ConversationsApi.html#postConversationsCallParticipantMonitor) | **POST** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/monitor | Listen in on the conversation from the point of view of a given participant.
-[**postConversationsCallParticipantReplace**](ConversationsApi.html#postConversationsCallParticipantReplace) | **POST** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/replace | Replace this participant with the specified user and/or address
-[**postConversationsCallParticipants**](ConversationsApi.html#postConversationsCallParticipants) | **POST** /api/v2/conversations/calls/{conversationId}/participants | Add participants to a conversation
-[**postConversationsCallbackParticipantCommunicationWrapup**](ConversationsApi.html#postConversationsCallbackParticipantCommunicationWrapup) | **POST** /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup | Apply wrap-up for this conversation communication
-[**postConversationsCallbackParticipantReplace**](ConversationsApi.html#postConversationsCallbackParticipantReplace) | **POST** /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/replace | Replace this participant with the specified user and/or address
-[**postConversationsCallbacks**](ConversationsApi.html#postConversationsCallbacks) | **POST** /api/v2/conversations/callbacks | Create a Callback
-[**postConversationsCallbacksBulkDisconnect**](ConversationsApi.html#postConversationsCallbacksBulkDisconnect) | **POST** /api/v2/conversations/callbacks/bulk/disconnect | Disconnect multiple scheduled callbacks
-[**postConversationsCallbacksBulkUpdate**](ConversationsApi.html#postConversationsCallbacksBulkUpdate) | **POST** /api/v2/conversations/callbacks/bulk/update | Update multiple scheduled callbacks
-[**postConversationsCalls**](ConversationsApi.html#postConversationsCalls) | **POST** /api/v2/conversations/calls | Create a call conversation
-[**postConversationsChatCommunicationMessages**](ConversationsApi.html#postConversationsChatCommunicationMessages) | **POST** /api/v2/conversations/chats/{conversationId}/communications/{communicationId}/messages | Send a message on behalf of a communication in a chat conversation.
-[**postConversationsChatCommunicationTyping**](ConversationsApi.html#postConversationsChatCommunicationTyping) | **POST** /api/v2/conversations/chats/{conversationId}/communications/{communicationId}/typing | Send a typing-indicator on behalf of a communication in a chat conversation.
-[**postConversationsChatParticipantCommunicationWrapup**](ConversationsApi.html#postConversationsChatParticipantCommunicationWrapup) | **POST** /api/v2/conversations/chats/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup | Apply wrap-up for this conversation communication
-[**postConversationsChatParticipantReplace**](ConversationsApi.html#postConversationsChatParticipantReplace) | **POST** /api/v2/conversations/chats/{conversationId}/participants/{participantId}/replace | Replace this participant with the specified user and/or address
-[**postConversationsChats**](ConversationsApi.html#postConversationsChats) | **POST** /api/v2/conversations/chats | Create a web chat conversation
-[**postConversationsCobrowsesessionParticipantCommunicationWrapup**](ConversationsApi.html#postConversationsCobrowsesessionParticipantCommunicationWrapup) | **POST** /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup | Apply wrap-up for this conversation communication
-[**postConversationsCobrowsesessionParticipantReplace**](ConversationsApi.html#postConversationsCobrowsesessionParticipantReplace) | **POST** /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/replace | Replace this participant with the specified user and/or address
-[**postConversationsEmailInboundmessages**](ConversationsApi.html#postConversationsEmailInboundmessages) | **POST** /api/v2/conversations/emails/{conversationId}/inboundmessages | Send an email to an external conversation. An external conversation is one where the provider is not PureCloud based. This endpoint allows the sender of the external email to reply or send a new message to the existing conversation. The new message will be treated as part of the existing conversation and chained to it.
-[**postConversationsEmailMessages**](ConversationsApi.html#postConversationsEmailMessages) | **POST** /api/v2/conversations/emails/{conversationId}/messages | Send an email reply
-[**postConversationsEmailMessagesDraftAttachmentsCopy**](ConversationsApi.html#postConversationsEmailMessagesDraftAttachmentsCopy) | **POST** /api/v2/conversations/emails/{conversationId}/messages/draft/attachments/copy | Copy attachments from an email message to the current draft.
-[**postConversationsEmailParticipantCommunicationWrapup**](ConversationsApi.html#postConversationsEmailParticipantCommunicationWrapup) | **POST** /api/v2/conversations/emails/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup | Apply wrap-up for this conversation communication
-[**postConversationsEmailParticipantReplace**](ConversationsApi.html#postConversationsEmailParticipantReplace) | **POST** /api/v2/conversations/emails/{conversationId}/participants/{participantId}/replace | Replace this participant with the specified user and/or address
-[**postConversationsEmails**](ConversationsApi.html#postConversationsEmails) | **POST** /api/v2/conversations/emails | Create an email conversation
-[**postConversationsEmailsAgentless**](ConversationsApi.html#postConversationsEmailsAgentless) | **POST** /api/v2/conversations/emails/agentless | Create an email conversation, per API
-[**postConversationsFaxes**](ConversationsApi.html#postConversationsFaxes) | **POST** /api/v2/conversations/faxes | Create Fax Conversation
-[**postConversationsKeyconfigurations**](ConversationsApi.html#postConversationsKeyconfigurations) | **POST** /api/v2/conversations/keyconfigurations | Setup configurations for encryption key creation
-[**postConversationsKeyconfigurationsValidate**](ConversationsApi.html#postConversationsKeyconfigurationsValidate) | **POST** /api/v2/conversations/keyconfigurations/validate | Validate encryption key configurations without saving it
-[**postConversationsMessageCommunicationMessages**](ConversationsApi.html#postConversationsMessageCommunicationMessages) | **POST** /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages | Send message
-[**postConversationsMessageCommunicationMessagesMedia**](ConversationsApi.html#postConversationsMessageCommunicationMessagesMedia) | **POST** /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media | Create media
-[**postConversationsMessageCommunicationTyping**](ConversationsApi.html#postConversationsMessageCommunicationTyping) | **POST** /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/typing | Send message typing event
-[**postConversationsMessageInboundOpenEvent**](ConversationsApi.html#postConversationsMessageInboundOpenEvent) | **POST** /api/v2/conversations/messages/{integrationId}/inbound/open/event | Send an inbound Open Event Message
-[**postConversationsMessageInboundOpenMessage**](ConversationsApi.html#postConversationsMessageInboundOpenMessage) | **POST** /api/v2/conversations/messages/{integrationId}/inbound/open/message | Send inbound Open Message
-[**postConversationsMessageInboundOpenReceipt**](ConversationsApi.html#postConversationsMessageInboundOpenReceipt) | **POST** /api/v2/conversations/messages/{integrationId}/inbound/open/receipt | Send an inbound Open Receipt Message
-[**postConversationsMessageMessagesBulk**](ConversationsApi.html#postConversationsMessageMessagesBulk) | **POST** /api/v2/conversations/messages/{conversationId}/messages/bulk | Get messages in batch
-[**postConversationsMessageParticipantCommunicationWrapup**](ConversationsApi.html#postConversationsMessageParticipantCommunicationWrapup) | **POST** /api/v2/conversations/messages/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup | Apply wrap-up for this conversation communication
-[**postConversationsMessageParticipantMonitor**](ConversationsApi.html#postConversationsMessageParticipantMonitor) | **POST** /api/v2/conversations/messages/{conversationId}/participants/{participantId}/monitor | Listen in on the conversation from the point of view of a given participant.
-[**postConversationsMessageParticipantReplace**](ConversationsApi.html#postConversationsMessageParticipantReplace) | **POST** /api/v2/conversations/messages/{conversationId}/participants/{participantId}/replace | Replace this participant with the specified user and/or address
-[**postConversationsMessages**](ConversationsApi.html#postConversationsMessages) | **POST** /api/v2/conversations/messages | Create an outbound messaging conversation.
-[**postConversationsMessagesAgentless**](ConversationsApi.html#postConversationsMessagesAgentless) | **POST** /api/v2/conversations/messages/agentless | Send an agentless outbound message
-[**postConversationsMessagesInboundOpen**](ConversationsApi.html#postConversationsMessagesInboundOpen) | **POST** /api/v2/conversations/messages/inbound/open | Send an inbound Open Message
-[**postConversationsMessagingIntegrationsFacebook**](ConversationsApi.html#postConversationsMessagingIntegrationsFacebook) | **POST** /api/v2/conversations/messaging/integrations/facebook | Create a Facebook Integration
-[**postConversationsMessagingIntegrationsInstagram**](ConversationsApi.html#postConversationsMessagingIntegrationsInstagram) | **POST** /api/v2/conversations/messaging/integrations/instagram | Create Instagram Integration
-[**postConversationsMessagingIntegrationsLine**](ConversationsApi.html#postConversationsMessagingIntegrationsLine) | **POST** /api/v2/conversations/messaging/integrations/line | Create a LINE messenger Integration
-[**postConversationsMessagingIntegrationsOpen**](ConversationsApi.html#postConversationsMessagingIntegrationsOpen) | **POST** /api/v2/conversations/messaging/integrations/open | Create an Open messaging integration
-[**postConversationsMessagingIntegrationsTwitter**](ConversationsApi.html#postConversationsMessagingIntegrationsTwitter) | **POST** /api/v2/conversations/messaging/integrations/twitter | Create a Twitter Integration
-[**postConversationsMessagingIntegrationsWhatsapp**](ConversationsApi.html#postConversationsMessagingIntegrationsWhatsapp) | **POST** /api/v2/conversations/messaging/integrations/whatsapp | Create a WhatsApp Integration
-[**postConversationsMessagingSettings**](ConversationsApi.html#postConversationsMessagingSettings) | **POST** /api/v2/conversations/messaging/settings | Create a messaging setting
-[**postConversationsMessagingSupportedcontent**](ConversationsApi.html#postConversationsMessagingSupportedcontent) | **POST** /api/v2/conversations/messaging/supportedcontent | Create a Supported Content profile
-[**postConversationsParticipantsAttributesSearch**](ConversationsApi.html#postConversationsParticipantsAttributesSearch) | **POST** /api/v2/conversations/participants/attributes/search | Search conversations
-[**postConversationsScreenshareParticipantCommunicationWrapup**](ConversationsApi.html#postConversationsScreenshareParticipantCommunicationWrapup) | **POST** /api/v2/conversations/screenshares/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup | Apply wrap-up for this conversation communication
-[**postConversationsSocialParticipantCommunicationWrapup**](ConversationsApi.html#postConversationsSocialParticipantCommunicationWrapup) | **POST** /api/v2/conversations/socials/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup | Apply wrap-up for this conversation communication
-[**postConversationsVideoParticipantCommunicationWrapup**](ConversationsApi.html#postConversationsVideoParticipantCommunicationWrapup) | **POST** /api/v2/conversations/videos/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup | Apply wrap-up for this conversation communication
-[**postConversationsVideosMeetings**](ConversationsApi.html#postConversationsVideosMeetings) | **POST** /api/v2/conversations/videos/meetings | Generate a meetingId for a given conferenceId
-[**putConversationParticipantFlaggedreason**](ConversationsApi.html#putConversationParticipantFlaggedreason) | **PUT** /api/v2/conversations/{conversationId}/participants/{participantId}/flaggedreason | Set flagged reason on conversation participant to indicate bad conversation quality.
-[**putConversationSecureattributes**](ConversationsApi.html#putConversationSecureattributes) | **PUT** /api/v2/conversations/{conversationId}/secureattributes | Set the secure attributes on a conversation.
-[**putConversationTags**](ConversationsApi.html#putConversationTags) | **PUT** /api/v2/conversations/{conversationId}/tags | Update the tags on a conversation.
-[**putConversationsCallParticipantCommunicationUuidata**](ConversationsApi.html#putConversationsCallParticipantCommunicationUuidata) | **PUT** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/uuidata | Set uuiData to be sent on future commands.
-[**putConversationsCallRecordingstate**](ConversationsApi.html#putConversationsCallRecordingstate) | **PUT** /api/v2/conversations/calls/{conversationId}/recordingstate | Update a conversation by setting its recording state
-[**putConversationsCallbackRecordingstate**](ConversationsApi.html#putConversationsCallbackRecordingstate) | **PUT** /api/v2/conversations/callbacks/{conversationId}/recordingstate | Update a conversation by setting its recording state
-[**putConversationsChatRecordingstate**](ConversationsApi.html#putConversationsChatRecordingstate) | **PUT** /api/v2/conversations/chats/{conversationId}/recordingstate | Update a conversation by setting its recording state
-[**putConversationsCobrowsesessionRecordingstate**](ConversationsApi.html#putConversationsCobrowsesessionRecordingstate) | **PUT** /api/v2/conversations/cobrowsesessions/{conversationId}/recordingstate | Update a conversation by setting its recording state
-[**putConversationsEmailMessagesDraft**](ConversationsApi.html#putConversationsEmailMessagesDraft) | **PUT** /api/v2/conversations/emails/{conversationId}/messages/draft | Update conversation draft reply
-[**putConversationsEmailRecordingstate**](ConversationsApi.html#putConversationsEmailRecordingstate) | **PUT** /api/v2/conversations/emails/{conversationId}/recordingstate | Update a conversation by setting its recording state
-[**putConversationsKeyconfiguration**](ConversationsApi.html#putConversationsKeyconfiguration) | **PUT** /api/v2/conversations/keyconfigurations/{keyconfigurationsId} | Update the encryption key configurations
-[**putConversationsMessageRecordingstate**](ConversationsApi.html#putConversationsMessageRecordingstate) | **PUT** /api/v2/conversations/messages/{conversationId}/recordingstate | Update a conversation by setting its recording state
-[**putConversationsMessagingIntegrationsLineIntegrationId**](ConversationsApi.html#putConversationsMessagingIntegrationsLineIntegrationId) | **PUT** /api/v2/conversations/messaging/integrations/line/{integrationId} | Update a LINE messenger integration
-[**putConversationsMessagingSettingsDefault**](ConversationsApi.html#putConversationsMessagingSettingsDefault) | **PUT** /api/v2/conversations/messaging/settings/default | Set the organization's default setting that may be applied to to integrations without settings
-[**putConversationsMessagingSupportedcontentDefault**](ConversationsApi.html#putConversationsMessagingSupportedcontentDefault) | **PUT** /api/v2/conversations/messaging/supportedcontent/default | Set the organization's default supported content profile that may be assigned to an integration when it is created.
-[**putConversationsMessagingThreadingtimeline**](ConversationsApi.html#putConversationsMessagingThreadingtimeline) | **PUT** /api/v2/conversations/messaging/threadingtimeline | Update conversation threading window timeline for each messaging type
-[**putConversationsScreenshareRecordingstate**](ConversationsApi.html#putConversationsScreenshareRecordingstate) | **PUT** /api/v2/conversations/screenshares/{conversationId}/recordingstate | Update a conversation by setting its recording state
-[**putConversationsSocialRecordingstate**](ConversationsApi.html#putConversationsSocialRecordingstate) | **PUT** /api/v2/conversations/socials/{conversationId}/recordingstate | Update a conversation by setting its recording state
-[**putConversationsVideoRecordingstate**](ConversationsApi.html#putConversationsVideoRecordingstate) | **PUT** /api/v2/conversations/videos/{conversationId}/recordingstate | Update a conversation by setting its recording state
-{: class="table table-striped"}
+[**deleteAnalyticsConversationsAggregatesJob**](ConversationsApi#deleteAnalyticsConversationsAggregatesJob) | **DELETE** /api/v2/analytics/conversations/aggregates/jobs/{jobId} | Delete/cancel an async request for conversation aggregates
+[**deleteAnalyticsConversationsDetailsJob**](ConversationsApi#deleteAnalyticsConversationsDetailsJob) | **DELETE** /api/v2/analytics/conversations/details/jobs/{jobId} | Delete/cancel an async details job
+[**deleteConversationParticipantCode**](ConversationsApi#deleteConversationParticipantCode) | **DELETE** /api/v2/conversations/{conversationId}/participants/{participantId}/codes/{addCommunicationCode} | Delete a code used to add a communication to this participant
+[**deleteConversationParticipantFlaggedreason**](ConversationsApi#deleteConversationParticipantFlaggedreason) | **DELETE** /api/v2/conversations/{conversationId}/participants/{participantId}/flaggedreason | Remove flagged reason from conversation participant.
+[**deleteConversationsCallParticipantConsult**](ConversationsApi#deleteConversationsCallParticipantConsult) | **DELETE** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult | Cancel the transfer
+[**deleteConversationsEmailMessagesDraftAttachment**](ConversationsApi#deleteConversationsEmailMessagesDraftAttachment) | **DELETE** /api/v2/conversations/emails/{conversationId}/messages/draft/attachments/{attachmentId} | Delete attachment from draft
+[**deleteConversationsMessagesCachedmediaCachedMediaItemId**](ConversationsApi#deleteConversationsMessagesCachedmediaCachedMediaItemId) | **DELETE** /api/v2/conversations/messages/cachedmedia/{cachedMediaItemId} | Remove a cached media item asychronously
+[**deleteConversationsMessagingIntegrationsFacebookIntegrationId**](ConversationsApi#deleteConversationsMessagingIntegrationsFacebookIntegrationId) | **DELETE** /api/v2/conversations/messaging/integrations/facebook/{integrationId} | Delete a Facebook messaging integration
+[**deleteConversationsMessagingIntegrationsInstagramIntegrationId**](ConversationsApi#deleteConversationsMessagingIntegrationsInstagramIntegrationId) | **DELETE** /api/v2/conversations/messaging/integrations/instagram/{integrationId} | Delete Instagram messaging integration
+[**deleteConversationsMessagingIntegrationsOpenIntegrationId**](ConversationsApi#deleteConversationsMessagingIntegrationsOpenIntegrationId) | **DELETE** /api/v2/conversations/messaging/integrations/open/{integrationId} | Delete an Open messaging integration
+[**deleteConversationsMessagingIntegrationsTwitterIntegrationId**](ConversationsApi#deleteConversationsMessagingIntegrationsTwitterIntegrationId) | **DELETE** /api/v2/conversations/messaging/integrations/twitter/{integrationId} | Delete Twitter messaging integration
+[**deleteConversationsMessagingIntegrationsWhatsappIntegrationId**](ConversationsApi#deleteConversationsMessagingIntegrationsWhatsappIntegrationId) | **DELETE** /api/v2/conversations/messaging/integrations/whatsapp/{integrationId} | Delete a WhatsApp messaging integration
+[**deleteConversationsMessagingSetting**](ConversationsApi#deleteConversationsMessagingSetting) | **DELETE** /api/v2/conversations/messaging/settings/{messageSettingId} | Delete a messaging setting
+[**deleteConversationsMessagingSettingsDefault**](ConversationsApi#deleteConversationsMessagingSettingsDefault) | **DELETE** /api/v2/conversations/messaging/settings/default | Delete the organization's default setting, a global default will be applied to integrations without settings
+[**deleteConversationsMessagingSupportedcontentSupportedContentId**](ConversationsApi#deleteConversationsMessagingSupportedcontentSupportedContentId) | **DELETE** /api/v2/conversations/messaging/supportedcontent/{supportedContentId} | Delete a supported content profile
+[**getAnalyticsConversationDetails**](ConversationsApi#getAnalyticsConversationDetails) | **GET** /api/v2/analytics/conversations/{conversationId}/details | Get a conversation by id
+[**getAnalyticsConversationsAggregatesJob**](ConversationsApi#getAnalyticsConversationsAggregatesJob) | **GET** /api/v2/analytics/conversations/aggregates/jobs/{jobId} | Get status for async query for conversation aggregates
+[**getAnalyticsConversationsAggregatesJobResults**](ConversationsApi#getAnalyticsConversationsAggregatesJobResults) | **GET** /api/v2/analytics/conversations/aggregates/jobs/{jobId}/results | Fetch a page of results for an async aggregates query
+[**getAnalyticsConversationsDetails**](ConversationsApi#getAnalyticsConversationsDetails) | **GET** /api/v2/analytics/conversations/details | Gets multiple conversations by id
+[**getAnalyticsConversationsDetailsJob**](ConversationsApi#getAnalyticsConversationsDetailsJob) | **GET** /api/v2/analytics/conversations/details/jobs/{jobId} | Get status for async query for conversation details
+[**getAnalyticsConversationsDetailsJobResults**](ConversationsApi#getAnalyticsConversationsDetailsJobResults) | **GET** /api/v2/analytics/conversations/details/jobs/{jobId}/results | Fetch a page of results for an async details job
+[**getAnalyticsConversationsDetailsJobsAvailability**](ConversationsApi#getAnalyticsConversationsDetailsJobsAvailability) | **GET** /api/v2/analytics/conversations/details/jobs/availability | Lookup the datalake availability date and time
+[**getConversation**](ConversationsApi#getConversation) | **GET** /api/v2/conversations/{conversationId} | Get conversation
+[**getConversationCommunicationInternalmessage**](ConversationsApi#getConversationCommunicationInternalmessage) | **GET** /api/v2/conversations/{conversationId}/communications/{communicationId}/internalmessages/{messageId} | Get message
+[**getConversationCommunicationInternalmessages**](ConversationsApi#getConversationCommunicationInternalmessages) | **GET** /api/v2/conversations/{conversationId}/communications/{communicationId}/internalmessages | Get messages for communication
+[**getConversationParticipantSecureivrsession**](ConversationsApi#getConversationParticipantSecureivrsession) | **GET** /api/v2/conversations/{conversationId}/participants/{participantId}/secureivrsessions/{secureSessionId} | Fetch info on a secure session
+[**getConversationParticipantSecureivrsessions**](ConversationsApi#getConversationParticipantSecureivrsessions) | **GET** /api/v2/conversations/{conversationId}/participants/{participantId}/secureivrsessions | Get a list of secure sessions for this participant.
+[**getConversationParticipantWrapup**](ConversationsApi#getConversationParticipantWrapup) | **GET** /api/v2/conversations/{conversationId}/participants/{participantId}/wrapup | Get the wrap-up for this conversation participant. 
+[**getConversationParticipantWrapupcodes**](ConversationsApi#getConversationParticipantWrapupcodes) | **GET** /api/v2/conversations/{conversationId}/participants/{participantId}/wrapupcodes | Get list of wrapup codes for this conversation participant
+[**getConversationSecureattributes**](ConversationsApi#getConversationSecureattributes) | **GET** /api/v2/conversations/{conversationId}/secureattributes | Get the secure attributes on a conversation.
+[**getConversationSuggestion**](ConversationsApi#getConversationSuggestion) | **GET** /api/v2/conversations/{conversationId}/suggestions/{suggestionId} | Get Suggestion.
+[**getConversationSuggestions**](ConversationsApi#getConversationSuggestions) | **GET** /api/v2/conversations/{conversationId}/suggestions | Get all suggestions for a conversation.
+[**getConversationSummaries**](ConversationsApi#getConversationSummaries) | **GET** /api/v2/conversations/{conversationId}/summaries | Get the summaries of the conversation.
+[**getConversations**](ConversationsApi#getConversations) | **GET** /api/v2/conversations | Get active conversations for the logged in user
+[**getConversationsCall**](ConversationsApi#getConversationsCall) | **GET** /api/v2/conversations/calls/{conversationId} | Get call conversation
+[**getConversationsCallParticipantCommunicationWrapup**](ConversationsApi#getConversationsCallParticipantCommunicationWrapup) | **GET** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup | Get the wrap-up for this conversation communication. 
+[**getConversationsCallParticipantWrapup**](ConversationsApi#getConversationsCallParticipantWrapup) | **GET** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/wrapup | Get the wrap-up for this conversation participant. 
+[**getConversationsCallParticipantWrapupcodes**](ConversationsApi#getConversationsCallParticipantWrapupcodes) | **GET** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/wrapupcodes | Get list of wrapup codes for this conversation participant
+[**getConversationsCallback**](ConversationsApi#getConversationsCallback) | **GET** /api/v2/conversations/callbacks/{conversationId} | Get callback conversation
+[**getConversationsCallbackParticipantCommunicationWrapup**](ConversationsApi#getConversationsCallbackParticipantCommunicationWrapup) | **GET** /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup | Get the wrap-up for this conversation communication. 
+[**getConversationsCallbackParticipantWrapup**](ConversationsApi#getConversationsCallbackParticipantWrapup) | **GET** /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/wrapup | Get the wrap-up for this conversation participant. 
+[**getConversationsCallbackParticipantWrapupcodes**](ConversationsApi#getConversationsCallbackParticipantWrapupcodes) | **GET** /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/wrapupcodes | Get list of wrapup codes for this conversation participant
+[**getConversationsCallbacks**](ConversationsApi#getConversationsCallbacks) | **GET** /api/v2/conversations/callbacks | Get active callback conversations for the logged in user
+[**getConversationsCalls**](ConversationsApi#getConversationsCalls) | **GET** /api/v2/conversations/calls | Get active call conversations for the logged in user
+[**getConversationsCallsHistory**](ConversationsApi#getConversationsCallsHistory) | **GET** /api/v2/conversations/calls/history | Get call history
+[**getConversationsCallsMaximumconferenceparties**](ConversationsApi#getConversationsCallsMaximumconferenceparties) | **GET** /api/v2/conversations/calls/maximumconferenceparties | Get the maximum number of participants that this user can have on a conference
+[**getConversationsChat**](ConversationsApi#getConversationsChat) | **GET** /api/v2/conversations/chats/{conversationId} | Get chat conversation
+[**getConversationsChatMessage**](ConversationsApi#getConversationsChatMessage) | **GET** /api/v2/conversations/chats/{conversationId}/messages/{messageId} | Get a web chat conversation message
+[**getConversationsChatMessages**](ConversationsApi#getConversationsChatMessages) | **GET** /api/v2/conversations/chats/{conversationId}/messages | Get the messages of a chat conversation.
+[**getConversationsChatParticipantCommunicationWrapup**](ConversationsApi#getConversationsChatParticipantCommunicationWrapup) | **GET** /api/v2/conversations/chats/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup | Get the wrap-up for this conversation communication. 
+[**getConversationsChatParticipantWrapup**](ConversationsApi#getConversationsChatParticipantWrapup) | **GET** /api/v2/conversations/chats/{conversationId}/participants/{participantId}/wrapup | Get the wrap-up for this conversation participant. 
+[**getConversationsChatParticipantWrapupcodes**](ConversationsApi#getConversationsChatParticipantWrapupcodes) | **GET** /api/v2/conversations/chats/{conversationId}/participants/{participantId}/wrapupcodes | Get list of wrapup codes for this conversation participant
+[**getConversationsChats**](ConversationsApi#getConversationsChats) | **GET** /api/v2/conversations/chats | Get active chat conversations for the logged in user
+[**getConversationsCobrowsesession**](ConversationsApi#getConversationsCobrowsesession) | **GET** /api/v2/conversations/cobrowsesessions/{conversationId} | Get cobrowse conversation
+[**getConversationsCobrowsesessionParticipantCommunicationWrapup**](ConversationsApi#getConversationsCobrowsesessionParticipantCommunicationWrapup) | **GET** /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup | Get the wrap-up for this conversation communication. 
+[**getConversationsCobrowsesessionParticipantWrapup**](ConversationsApi#getConversationsCobrowsesessionParticipantWrapup) | **GET** /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/wrapup | Get the wrap-up for this conversation participant. 
+[**getConversationsCobrowsesessionParticipantWrapupcodes**](ConversationsApi#getConversationsCobrowsesessionParticipantWrapupcodes) | **GET** /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/wrapupcodes | Get list of wrapup codes for this conversation participant
+[**getConversationsCobrowsesessions**](ConversationsApi#getConversationsCobrowsesessions) | **GET** /api/v2/conversations/cobrowsesessions | Get active cobrowse conversations for the logged in user
+[**getConversationsEmail**](ConversationsApi#getConversationsEmail) | **GET** /api/v2/conversations/emails/{conversationId} | Get email conversation
+[**getConversationsEmailMessage**](ConversationsApi#getConversationsEmailMessage) | **GET** /api/v2/conversations/emails/{conversationId}/messages/{messageId} | Get conversation message
+[**getConversationsEmailMessages**](ConversationsApi#getConversationsEmailMessages) | **GET** /api/v2/conversations/emails/{conversationId}/messages | Get conversation messages
+[**getConversationsEmailMessagesDraft**](ConversationsApi#getConversationsEmailMessagesDraft) | **GET** /api/v2/conversations/emails/{conversationId}/messages/draft | Get conversation draft reply
+[**getConversationsEmailParticipantCommunicationWrapup**](ConversationsApi#getConversationsEmailParticipantCommunicationWrapup) | **GET** /api/v2/conversations/emails/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup | Get the wrap-up for this conversation communication. 
+[**getConversationsEmailParticipantWrapup**](ConversationsApi#getConversationsEmailParticipantWrapup) | **GET** /api/v2/conversations/emails/{conversationId}/participants/{participantId}/wrapup | Get the wrap-up for this conversation participant. 
+[**getConversationsEmailParticipantWrapupcodes**](ConversationsApi#getConversationsEmailParticipantWrapupcodes) | **GET** /api/v2/conversations/emails/{conversationId}/participants/{participantId}/wrapupcodes | Get list of wrapup codes for this conversation participant
+[**getConversationsEmailSettings**](ConversationsApi#getConversationsEmailSettings) | **GET** /api/v2/conversations/emails/{conversationId}/settings | Get emails settings for a given conversation
+[**getConversationsEmails**](ConversationsApi#getConversationsEmails) | **GET** /api/v2/conversations/emails | Get active email conversations for the logged in user
+[**getConversationsInternalmessage**](ConversationsApi#getConversationsInternalmessage) | **GET** /api/v2/conversations/internalmessages/{conversationId} | Get internal message conversation
+[**getConversationsInternalmessages**](ConversationsApi#getConversationsInternalmessages) | **GET** /api/v2/conversations/internalmessages | Get active internal message conversations for the logged in user
+[**getConversationsKeyconfiguration**](ConversationsApi#getConversationsKeyconfiguration) | **GET** /api/v2/conversations/keyconfigurations/{keyconfigurationsId} | Get the encryption key configurations
+[**getConversationsKeyconfigurations**](ConversationsApi#getConversationsKeyconfigurations) | **GET** /api/v2/conversations/keyconfigurations | Get a list of key configurations data
+[**getConversationsMessage**](ConversationsApi#getConversationsMessage) | **GET** /api/v2/conversations/messages/{conversationId} | Get message conversation
+[**getConversationsMessageCommunicationMessagesMediaMediaId**](ConversationsApi#getConversationsMessageCommunicationMessagesMediaMediaId) | **GET** /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media/{mediaId} | Get media
+[**getConversationsMessageDetails**](ConversationsApi#getConversationsMessageDetails) | **GET** /api/v2/conversations/messages/{messageId}/details | Get message
+[**getConversationsMessageMessage**](ConversationsApi#getConversationsMessageMessage) | **GET** /api/v2/conversations/messages/{conversationId}/messages/{messageId} | Get conversation message
+[**getConversationsMessageParticipantCommunicationWrapup**](ConversationsApi#getConversationsMessageParticipantCommunicationWrapup) | **GET** /api/v2/conversations/messages/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup | Get the wrap-up for this conversation communication. 
+[**getConversationsMessageParticipantWrapup**](ConversationsApi#getConversationsMessageParticipantWrapup) | **GET** /api/v2/conversations/messages/{conversationId}/participants/{participantId}/wrapup | Get the wrap-up for this conversation participant. 
+[**getConversationsMessageParticipantWrapupcodes**](ConversationsApi#getConversationsMessageParticipantWrapupcodes) | **GET** /api/v2/conversations/messages/{conversationId}/participants/{participantId}/wrapupcodes | Get list of wrapup codes for this conversation participant
+[**getConversationsMessages**](ConversationsApi#getConversationsMessages) | **GET** /api/v2/conversations/messages | Get active message conversations for the logged in user
+[**getConversationsMessagesCachedmedia**](ConversationsApi#getConversationsMessagesCachedmedia) | **GET** /api/v2/conversations/messages/cachedmedia | Get a list of cached media items
+[**getConversationsMessagesCachedmediaCachedMediaItemId**](ConversationsApi#getConversationsMessagesCachedmediaCachedMediaItemId) | **GET** /api/v2/conversations/messages/cachedmedia/{cachedMediaItemId} | Get a cached media item
+[**getConversationsMessagingFacebookApp**](ConversationsApi#getConversationsMessagingFacebookApp) | **GET** /api/v2/conversations/messaging/facebook/app | Get Genesys Facebook App Id
+[**getConversationsMessagingFacebookPermissions**](ConversationsApi#getConversationsMessagingFacebookPermissions) | **GET** /api/v2/conversations/messaging/facebook/permissions | Get a list of Facebook Permissions
+[**getConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId**](ConversationsApi#getConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId) | **GET** /api/v2/conversations/messaging/identityresolution/integrations/apple/{integrationId} | Get Apple messaging integration identity resolution settings
+[**getConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId**](ConversationsApi#getConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId) | **GET** /api/v2/conversations/messaging/identityresolution/integrations/facebook/{integrationId} | Get Facebook messaging integration identity resolution settings
+[**getConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId**](ConversationsApi#getConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId) | **GET** /api/v2/conversations/messaging/identityresolution/integrations/instagram/{integrationId} | Get an Instagram integration identity resolution settings
+[**getConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId**](ConversationsApi#getConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId) | **GET** /api/v2/conversations/messaging/identityresolution/integrations/open/{integrationId} | Get an open messaging integration Identity Resolution settings
+[**getConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId**](ConversationsApi#getConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId) | **GET** /api/v2/conversations/messaging/identityresolution/integrations/twitter/{integrationId} | Get X (Formally Twitter) messaging integration identity resolution settings
+[**getConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId**](ConversationsApi#getConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId) | **GET** /api/v2/conversations/messaging/identityresolution/integrations/whatsapp/{integrationId} | Get a whatsApp integration Identity Resolution settings
+[**getConversationsMessagingIntegrationTwitterOauthSettings**](ConversationsApi#getConversationsMessagingIntegrationTwitterOauthSettings) | **GET** /api/v2/conversations/messaging/integrations/{integrationId}/twitter/oauth/settings | Get twitter oauth settings to patch an integration
+[**getConversationsMessagingIntegrations**](ConversationsApi#getConversationsMessagingIntegrations) | **GET** /api/v2/conversations/messaging/integrations | Get a list of Integrations
+[**getConversationsMessagingIntegrationsFacebook**](ConversationsApi#getConversationsMessagingIntegrationsFacebook) | **GET** /api/v2/conversations/messaging/integrations/facebook | Get a list of Facebook Integrations
+[**getConversationsMessagingIntegrationsFacebookIntegrationId**](ConversationsApi#getConversationsMessagingIntegrationsFacebookIntegrationId) | **GET** /api/v2/conversations/messaging/integrations/facebook/{integrationId} | Get a Facebook messaging integration
+[**getConversationsMessagingIntegrationsInstagram**](ConversationsApi#getConversationsMessagingIntegrationsInstagram) | **GET** /api/v2/conversations/messaging/integrations/instagram | Get a list of Instagram Integrations
+[**getConversationsMessagingIntegrationsInstagramIntegrationId**](ConversationsApi#getConversationsMessagingIntegrationsInstagramIntegrationId) | **GET** /api/v2/conversations/messaging/integrations/instagram/{integrationId} | Get Instagram messaging integration
+[**getConversationsMessagingIntegrationsOpen**](ConversationsApi#getConversationsMessagingIntegrationsOpen) | **GET** /api/v2/conversations/messaging/integrations/open | Get a list of Open messaging integrations
+[**getConversationsMessagingIntegrationsOpenIntegrationId**](ConversationsApi#getConversationsMessagingIntegrationsOpenIntegrationId) | **GET** /api/v2/conversations/messaging/integrations/open/{integrationId} | Get an Open messaging integration
+[**getConversationsMessagingIntegrationsTwitter**](ConversationsApi#getConversationsMessagingIntegrationsTwitter) | **GET** /api/v2/conversations/messaging/integrations/twitter | Get a list of Twitter Integrations
+[**getConversationsMessagingIntegrationsTwitterIntegrationId**](ConversationsApi#getConversationsMessagingIntegrationsTwitterIntegrationId) | **GET** /api/v2/conversations/messaging/integrations/twitter/{integrationId} | Get Twitter messaging integration
+[**getConversationsMessagingIntegrationsTwitterOauthSettings**](ConversationsApi#getConversationsMessagingIntegrationsTwitterOauthSettings) | **GET** /api/v2/conversations/messaging/integrations/twitter/oauth/settings | Get twitter oauth settings
+[**getConversationsMessagingIntegrationsWhatsapp**](ConversationsApi#getConversationsMessagingIntegrationsWhatsapp) | **GET** /api/v2/conversations/messaging/integrations/whatsapp | Get a list of WhatsApp Integrations
+[**getConversationsMessagingIntegrationsWhatsappIntegrationId**](ConversationsApi#getConversationsMessagingIntegrationsWhatsappIntegrationId) | **GET** /api/v2/conversations/messaging/integrations/whatsapp/{integrationId} | Get a WhatsApp messaging integration
+[**getConversationsMessagingSetting**](ConversationsApi#getConversationsMessagingSetting) | **GET** /api/v2/conversations/messaging/settings/{messageSettingId} | Get a messaging setting
+[**getConversationsMessagingSettings**](ConversationsApi#getConversationsMessagingSettings) | **GET** /api/v2/conversations/messaging/settings | Get a list of messaging settings
+[**getConversationsMessagingSettingsDefault**](ConversationsApi#getConversationsMessagingSettingsDefault) | **GET** /api/v2/conversations/messaging/settings/default | Get the organization's default settings that will be used as the default when creating an integration.
+[**getConversationsMessagingSupportedcontent**](ConversationsApi#getConversationsMessagingSupportedcontent) | **GET** /api/v2/conversations/messaging/supportedcontent | Get a list of Supported Content profiles
+[**getConversationsMessagingSupportedcontentDefault**](ConversationsApi#getConversationsMessagingSupportedcontentDefault) | **GET** /api/v2/conversations/messaging/supportedcontent/default | Get the organization's default supported content profile that will be used as the default when creating an integration.
+[**getConversationsMessagingSupportedcontentSupportedContentId**](ConversationsApi#getConversationsMessagingSupportedcontentSupportedContentId) | **GET** /api/v2/conversations/messaging/supportedcontent/{supportedContentId} | Get a supported content profile
+[**getConversationsMessagingThreadingtimeline**](ConversationsApi#getConversationsMessagingThreadingtimeline) | **GET** /api/v2/conversations/messaging/threadingtimeline | Get conversation threading window timeline for each messaging type
+[**getConversationsScreenshareParticipantCommunicationWrapup**](ConversationsApi#getConversationsScreenshareParticipantCommunicationWrapup) | **GET** /api/v2/conversations/screenshares/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup | Get the wrap-up for this conversation communication. 
+[**getConversationsSettings**](ConversationsApi#getConversationsSettings) | **GET** /api/v2/conversations/settings | Get Settings
+[**getConversationsSocialParticipantCommunicationWrapup**](ConversationsApi#getConversationsSocialParticipantCommunicationWrapup) | **GET** /api/v2/conversations/socials/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup | Get the wrap-up for this conversation communication. 
+[**getConversationsVideoDetails**](ConversationsApi#getConversationsVideoDetails) | **GET** /api/v2/conversations/videos/{conferenceId}/details | Get video conference details (e.g. the current number of active participants).
+[**getConversationsVideoParticipantCommunicationWrapup**](ConversationsApi#getConversationsVideoParticipantCommunicationWrapup) | **GET** /api/v2/conversations/videos/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup | Get the wrap-up for this conversation communication. 
+[**getConversationsVideosMeeting**](ConversationsApi#getConversationsVideosMeeting) | **GET** /api/v2/conversations/videos/meetings/{meetingId} | Gets a record for a given meetingId
+[**patchConversationParticipant**](ConversationsApi#patchConversationParticipant) | **PATCH** /api/v2/conversations/{conversationId}/participants/{participantId} | Update a participant.
+[**patchConversationParticipantAttributes**](ConversationsApi#patchConversationParticipantAttributes) | **PATCH** /api/v2/conversations/{conversationId}/participants/{participantId}/attributes | Update the attributes on a conversation participant.
+[**patchConversationSecureattributes**](ConversationsApi#patchConversationSecureattributes) | **PATCH** /api/v2/conversations/{conversationId}/secureattributes | Update the secure attributes on a conversation.
+[**patchConversationSummaryEngagements**](ConversationsApi#patchConversationSummaryEngagements) | **PATCH** /api/v2/conversations/{conversationId}/summaries/{summaryId}/engagements | Update agent's engagement for the summary.
+[**patchConversationSummaryFeedback**](ConversationsApi#patchConversationSummaryFeedback) | **PATCH** /api/v2/conversations/{conversationId}/summaries/{summaryId}/feedback | Update the feedback for the summary.
+[**patchConversationUtilizationlabel**](ConversationsApi#patchConversationUtilizationlabel) | **PATCH** /api/v2/conversations/{conversationId}/utilizationlabel | Update the utilization label on a conversation. When there is no value provided, the system default label is applied
+[**patchConversationsAftercallworkConversationIdParticipantCommunication**](ConversationsApi#patchConversationsAftercallworkConversationIdParticipantCommunication) | **PATCH** /api/v2/conversations/aftercallwork/{conversationId}/participants/{participantId}/communications/{communicationId} | Update after-call work for this conversation communication.
+[**patchConversationsCall**](ConversationsApi#patchConversationsCall) | **PATCH** /api/v2/conversations/calls/{conversationId} | Update a conversation by setting its recording state, merging in other conversations to create a conference, or disconnecting all of the participants
+[**patchConversationsCallParticipant**](ConversationsApi#patchConversationsCallParticipant) | **PATCH** /api/v2/conversations/calls/{conversationId}/participants/{participantId} | Update conversation participant
+[**patchConversationsCallParticipantAttributes**](ConversationsApi#patchConversationsCallParticipantAttributes) | **PATCH** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/attributes | Update the attributes on a conversation participant.
+[**patchConversationsCallParticipantCommunication**](ConversationsApi#patchConversationsCallParticipantCommunication) | **PATCH** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId} | Update conversation participant's communication by disconnecting it. This endpoint does not update wrapup.
+[**patchConversationsCallParticipantConsult**](ConversationsApi#patchConversationsCallParticipantConsult) | **PATCH** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult | Change who can speak
+[**patchConversationsCallback**](ConversationsApi#patchConversationsCallback) | **PATCH** /api/v2/conversations/callbacks/{conversationId} | Update a conversation by disconnecting all of the participants
+[**patchConversationsCallbackParticipant**](ConversationsApi#patchConversationsCallbackParticipant) | **PATCH** /api/v2/conversations/callbacks/{conversationId}/participants/{participantId} | Update conversation participant
+[**patchConversationsCallbackParticipantAttributes**](ConversationsApi#patchConversationsCallbackParticipantAttributes) | **PATCH** /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/attributes | Update the attributes on a conversation participant.
+[**patchConversationsCallbackParticipantCommunication**](ConversationsApi#patchConversationsCallbackParticipantCommunication) | **PATCH** /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/communications/{communicationId} | Update conversation participant's communication by disconnecting it.
+[**patchConversationsCallbacks**](ConversationsApi#patchConversationsCallbacks) | **PATCH** /api/v2/conversations/callbacks | Update a scheduled callback
+[**patchConversationsChat**](ConversationsApi#patchConversationsChat) | **PATCH** /api/v2/conversations/chats/{conversationId} | Update a conversation by disconnecting all of the participants
+[**patchConversationsChatParticipant**](ConversationsApi#patchConversationsChatParticipant) | **PATCH** /api/v2/conversations/chats/{conversationId}/participants/{participantId} | Update conversation participant
+[**patchConversationsChatParticipantAttributes**](ConversationsApi#patchConversationsChatParticipantAttributes) | **PATCH** /api/v2/conversations/chats/{conversationId}/participants/{participantId}/attributes | Update the attributes on a conversation participant.
+[**patchConversationsChatParticipantCommunication**](ConversationsApi#patchConversationsChatParticipantCommunication) | **PATCH** /api/v2/conversations/chats/{conversationId}/participants/{participantId}/communications/{communicationId} | Update conversation participant's communication by disconnecting it. This endpoint does not update wrapup.
+[**patchConversationsCobrowsesession**](ConversationsApi#patchConversationsCobrowsesession) | **PATCH** /api/v2/conversations/cobrowsesessions/{conversationId} | Update a conversation by disconnecting all of the participants
+[**patchConversationsCobrowsesessionParticipant**](ConversationsApi#patchConversationsCobrowsesessionParticipant) | **PATCH** /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId} | Update conversation participant
+[**patchConversationsCobrowsesessionParticipantAttributes**](ConversationsApi#patchConversationsCobrowsesessionParticipantAttributes) | **PATCH** /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/attributes | Update the attributes on a conversation participant.
+[**patchConversationsCobrowsesessionParticipantCommunication**](ConversationsApi#patchConversationsCobrowsesessionParticipantCommunication) | **PATCH** /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/communications/{communicationId} | Update conversation participant's communication by disconnecting it.
+[**patchConversationsEmail**](ConversationsApi#patchConversationsEmail) | **PATCH** /api/v2/conversations/emails/{conversationId} | Update a conversation by disconnecting all of the participants
+[**patchConversationsEmailMessagesDraft**](ConversationsApi#patchConversationsEmailMessagesDraft) | **PATCH** /api/v2/conversations/emails/{conversationId}/messages/draft | Reset conversation draft to its initial state and/or auto-fill draft content
+[**patchConversationsEmailParticipant**](ConversationsApi#patchConversationsEmailParticipant) | **PATCH** /api/v2/conversations/emails/{conversationId}/participants/{participantId} | Update conversation participant
+[**patchConversationsEmailParticipantAttributes**](ConversationsApi#patchConversationsEmailParticipantAttributes) | **PATCH** /api/v2/conversations/emails/{conversationId}/participants/{participantId}/attributes | Update the attributes on a conversation participant.
+[**patchConversationsEmailParticipantCommunication**](ConversationsApi#patchConversationsEmailParticipantCommunication) | **PATCH** /api/v2/conversations/emails/{conversationId}/participants/{participantId}/communications/{communicationId} | Update conversation participant's communication by disconnecting it. This endpoint does not update wrapup.
+[**patchConversationsEmailParticipantParkingstate**](ConversationsApi#patchConversationsEmailParticipantParkingstate) | **PATCH** /api/v2/conversations/emails/{conversationId}/participants/{participantId}/parkingstate | Update conversation by setting its parking state
+[**patchConversationsMessage**](ConversationsApi#patchConversationsMessage) | **PATCH** /api/v2/conversations/messages/{conversationId} | Update a conversation by disconnecting all of the participants
+[**patchConversationsMessageParticipant**](ConversationsApi#patchConversationsMessageParticipant) | **PATCH** /api/v2/conversations/messages/{conversationId}/participants/{participantId} | Update conversation participant
+[**patchConversationsMessageParticipantAttributes**](ConversationsApi#patchConversationsMessageParticipantAttributes) | **PATCH** /api/v2/conversations/messages/{conversationId}/participants/{participantId}/attributes | Update the attributes on a conversation participant.
+[**patchConversationsMessageParticipantCommunication**](ConversationsApi#patchConversationsMessageParticipantCommunication) | **PATCH** /api/v2/conversations/messages/{conversationId}/participants/{participantId}/communications/{communicationId} | Update conversation participant's communication by disconnecting it. This endpoint does not update wrapup.
+[**patchConversationsMessagingIntegrationsFacebookIntegrationId**](ConversationsApi#patchConversationsMessagingIntegrationsFacebookIntegrationId) | **PATCH** /api/v2/conversations/messaging/integrations/facebook/{integrationId} | Update Facebook messaging integration
+[**patchConversationsMessagingIntegrationsInstagramIntegrationId**](ConversationsApi#patchConversationsMessagingIntegrationsInstagramIntegrationId) | **PATCH** /api/v2/conversations/messaging/integrations/instagram/{integrationId} | Update Instagram messaging integration
+[**patchConversationsMessagingIntegrationsOpenIntegrationId**](ConversationsApi#patchConversationsMessagingIntegrationsOpenIntegrationId) | **PATCH** /api/v2/conversations/messaging/integrations/open/{integrationId} | Update an Open messaging integration
+[**patchConversationsMessagingIntegrationsTwitterIntegrationId**](ConversationsApi#patchConversationsMessagingIntegrationsTwitterIntegrationId) | **PATCH** /api/v2/conversations/messaging/integrations/twitter/{integrationId} | Update a Twitter messaging integration
+[**patchConversationsMessagingIntegrationsWhatsappEmbeddedsignupIntegrationId**](ConversationsApi#patchConversationsMessagingIntegrationsWhatsappEmbeddedsignupIntegrationId) | **PATCH** /api/v2/conversations/messaging/integrations/whatsapp/embeddedsignup/{integrationId} | Activate a WhatsApp messaging integration created using the WhatsApp embedded signup flow
+[**patchConversationsMessagingIntegrationsWhatsappIntegrationId**](ConversationsApi#patchConversationsMessagingIntegrationsWhatsappIntegrationId) | **PATCH** /api/v2/conversations/messaging/integrations/whatsapp/{integrationId} | Update a WhatsApp messaging integration
+[**patchConversationsMessagingSetting**](ConversationsApi#patchConversationsMessagingSetting) | **PATCH** /api/v2/conversations/messaging/settings/{messageSettingId} | Update a messaging setting
+[**patchConversationsMessagingSupportedcontentSupportedContentId**](ConversationsApi#patchConversationsMessagingSupportedcontentSupportedContentId) | **PATCH** /api/v2/conversations/messaging/supportedcontent/{supportedContentId} | Update a supported content profile
+[**patchConversationsSettings**](ConversationsApi#patchConversationsSettings) | **PATCH** /api/v2/conversations/settings | Update Settings
+[**postAnalyticsConversationDetailsProperties**](ConversationsApi#postAnalyticsConversationDetailsProperties) | **POST** /api/v2/analytics/conversations/{conversationId}/details/properties | Index conversation properties
+[**postAnalyticsConversationsActivityQuery**](ConversationsApi#postAnalyticsConversationsActivityQuery) | **POST** /api/v2/analytics/conversations/activity/query | Query for conversation activity observations
+[**postAnalyticsConversationsAggregatesJobs**](ConversationsApi#postAnalyticsConversationsAggregatesJobs) | **POST** /api/v2/analytics/conversations/aggregates/jobs | Query for conversation aggregates asynchronously
+[**postAnalyticsConversationsAggregatesQuery**](ConversationsApi#postAnalyticsConversationsAggregatesQuery) | **POST** /api/v2/analytics/conversations/aggregates/query | Query for conversation aggregates
+[**postAnalyticsConversationsDetailsJobs**](ConversationsApi#postAnalyticsConversationsDetailsJobs) | **POST** /api/v2/analytics/conversations/details/jobs | Query for conversation details asynchronously
+[**postAnalyticsConversationsDetailsQuery**](ConversationsApi#postAnalyticsConversationsDetailsQuery) | **POST** /api/v2/analytics/conversations/details/query | Query for conversation details
+[**postConversationAssign**](ConversationsApi#postConversationAssign) | **POST** /api/v2/conversations/{conversationId}/assign | Attempts to manually assign a specified conversation to a specified user.  Ignores bullseye ring, PAR score, skills, and languages.
+[**postConversationBarge**](ConversationsApi#postConversationBarge) | **POST** /api/v2/conversations/{conversationId}/barge | Barge a conversation creating a barged in conference of connected participants.
+[**postConversationCobrowse**](ConversationsApi#postConversationCobrowse) | **POST** /api/v2/conversations/{conversationId}/cobrowse | Creates a cobrowse session. Requires conversation:cobrowse:add (for web messaging) or conversation:cobrowsevoice:add permission.
+[**postConversationCommunicationInternalmessages**](ConversationsApi#postConversationCommunicationInternalmessages) | **POST** /api/v2/conversations/{conversationId}/communications/{communicationId}/internalmessages | Send internal message
+[**postConversationDisconnect**](ConversationsApi#postConversationDisconnect) | **POST** /api/v2/conversations/{conversationId}/disconnect | Performs a full conversation teardown. Issues disconnect requests for any connected media. Applies a system wrap-up code to any participants that are pending wrap-up. This is not intended to be the normal way of ending interactions but is available in the event of problems with the application to allow a resynchronization of state across all components. It is recommended that users submit a support case if they are relying on this endpoint systematically as there is likely something that needs investigation.
+[**postConversationParticipantCallbacks**](ConversationsApi#postConversationParticipantCallbacks) | **POST** /api/v2/conversations/{conversationId}/participants/{participantId}/callbacks | Create a new callback for the specified participant on the conversation.
+[**postConversationParticipantDigits**](ConversationsApi#postConversationParticipantDigits) | **POST** /api/v2/conversations/{conversationId}/participants/{participantId}/digits | Sends DTMF to the participant
+[**postConversationParticipantInternalmessagesUsersCommunications**](ConversationsApi#postConversationParticipantInternalmessagesUsersCommunications) | **POST** /api/v2/conversations/{conversationId}/participants/{participantId}/internalmessages/users/communications | Setup internal message communication with user
+[**postConversationParticipantReplace**](ConversationsApi#postConversationParticipantReplace) | **POST** /api/v2/conversations/{conversationId}/participants/{participantId}/replace | Replace this participant with the specified user and/or address
+[**postConversationParticipantReplaceAgent**](ConversationsApi#postConversationParticipantReplaceAgent) | **POST** /api/v2/conversations/{conversationId}/participants/{participantId}/replace/agent | Replace this participant with the specified agent
+[**postConversationParticipantReplaceContactExternal**](ConversationsApi#postConversationParticipantReplaceContactExternal) | **POST** /api/v2/conversations/{conversationId}/participants/{participantId}/replace/contact/external | Replace this participant with the an external contact
+[**postConversationParticipantReplaceExternal**](ConversationsApi#postConversationParticipantReplaceExternal) | **POST** /api/v2/conversations/{conversationId}/participants/{participantId}/replace/external | Replace this participant with the an external contact
+[**postConversationParticipantReplaceQueue**](ConversationsApi#postConversationParticipantReplaceQueue) | **POST** /api/v2/conversations/{conversationId}/participants/{participantId}/replace/queue | Replace this participant with the specified queue
+[**postConversationParticipantSecureivrsessions**](ConversationsApi#postConversationParticipantSecureivrsessions) | **POST** /api/v2/conversations/{conversationId}/participants/{participantId}/secureivrsessions | Create secure IVR session. Only a participant in the conversation can invoke a secure IVR.
+[**postConversationParticipantTransfer**](ConversationsApi#postConversationParticipantTransfer) | **POST** /api/v2/conversations/{conversationId}/participants/{participantId}/transfer | Replace this participant by another one using the address of the destination.
+[**postConversationSuggestionEngagement**](ConversationsApi#postConversationSuggestionEngagement) | **POST** /api/v2/conversations/{conversationId}/suggestions/{suggestionId}/engagement | Save an engagement on the suggestion.
+[**postConversationSuggestionsFeedback**](ConversationsApi#postConversationSuggestionsFeedback) | **POST** /api/v2/conversations/{conversationId}/suggestions/feedback | Suggestion feedback.
+[**postConversationSummaryFeedback**](ConversationsApi#postConversationSummaryFeedback) | **POST** /api/v2/conversations/{conversationId}/summaries/{summaryId}/feedback | Submit feedback for the summary.
+[**postConversationsCall**](ConversationsApi#postConversationsCall) | **POST** /api/v2/conversations/calls/{conversationId} | Place a new call as part of a callback conversation.
+[**postConversationsCallParticipantBarge**](ConversationsApi#postConversationsCallParticipantBarge) | **POST** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/barge | Barge a given participant's call creating a barged in conference of connected participants.
+[**postConversationsCallParticipantCoach**](ConversationsApi#postConversationsCallParticipantCoach) | **POST** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/coach | Listen in on the conversation from the point of view of a given participant while speaking to just the given participant.
+[**postConversationsCallParticipantCommunicationWrapup**](ConversationsApi#postConversationsCallParticipantCommunicationWrapup) | **POST** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup | Apply wrap-up for this conversation communication
+[**postConversationsCallParticipantConsult**](ConversationsApi#postConversationsCallParticipantConsult) | **POST** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult | Initiate and update consult transfer
+[**postConversationsCallParticipantConsultAgent**](ConversationsApi#postConversationsCallParticipantConsultAgent) | **POST** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult/agent | Initiate a consult transfer to an agent
+[**postConversationsCallParticipantConsultContactExternal**](ConversationsApi#postConversationsCallParticipantConsultContactExternal) | **POST** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult/contact/external | Initiate a consult transfer to an external contact
+[**postConversationsCallParticipantConsultExternal**](ConversationsApi#postConversationsCallParticipantConsultExternal) | **POST** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult/external | Initiate a consult transfer to an external contact
+[**postConversationsCallParticipantConsultQueue**](ConversationsApi#postConversationsCallParticipantConsultQueue) | **POST** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult/queue | Initiate a consult transfer to a queue
+[**postConversationsCallParticipantMonitor**](ConversationsApi#postConversationsCallParticipantMonitor) | **POST** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/monitor | Listen in on the conversation from the point of view of a given participant.
+[**postConversationsCallParticipantReplace**](ConversationsApi#postConversationsCallParticipantReplace) | **POST** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/replace | Replace this participant with the specified user and/or address
+[**postConversationsCallParticipantVoiceConsult**](ConversationsApi#postConversationsCallParticipantVoiceConsult) | **POST** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/voice/consult | Initiate voice consult transfer
+[**postConversationsCallParticipants**](ConversationsApi#postConversationsCallParticipants) | **POST** /api/v2/conversations/calls/{conversationId}/participants | Add participants to a conversation
+[**postConversationsCallbackParticipantCommunicationWrapup**](ConversationsApi#postConversationsCallbackParticipantCommunicationWrapup) | **POST** /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup | Apply wrap-up for this conversation communication
+[**postConversationsCallbackParticipantReplace**](ConversationsApi#postConversationsCallbackParticipantReplace) | **POST** /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/replace | Replace this participant with the specified user and/or address
+[**postConversationsCallbacks**](ConversationsApi#postConversationsCallbacks) | **POST** /api/v2/conversations/callbacks | Create a Callback
+[**postConversationsCallbacksBulkDisconnect**](ConversationsApi#postConversationsCallbacksBulkDisconnect) | **POST** /api/v2/conversations/callbacks/bulk/disconnect | Disconnect multiple scheduled callbacks
+[**postConversationsCallbacksBulkUpdate**](ConversationsApi#postConversationsCallbacksBulkUpdate) | **POST** /api/v2/conversations/callbacks/bulk/update | Update multiple scheduled callbacks
+[**postConversationsCalls**](ConversationsApi#postConversationsCalls) | **POST** /api/v2/conversations/calls | Create a call conversation
+[**postConversationsChatCommunicationMessages**](ConversationsApi#postConversationsChatCommunicationMessages) | **POST** /api/v2/conversations/chats/{conversationId}/communications/{communicationId}/messages | Send a message on behalf of a communication in a chat conversation.
+[**postConversationsChatCommunicationTyping**](ConversationsApi#postConversationsChatCommunicationTyping) | **POST** /api/v2/conversations/chats/{conversationId}/communications/{communicationId}/typing | Send a typing-indicator on behalf of a communication in a chat conversation.
+[**postConversationsChatParticipantCommunicationWrapup**](ConversationsApi#postConversationsChatParticipantCommunicationWrapup) | **POST** /api/v2/conversations/chats/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup | Apply wrap-up for this conversation communication
+[**postConversationsChatParticipantReplace**](ConversationsApi#postConversationsChatParticipantReplace) | **POST** /api/v2/conversations/chats/{conversationId}/participants/{participantId}/replace | Replace this participant with the specified user and/or address
+[**postConversationsChats**](ConversationsApi#postConversationsChats) | **POST** /api/v2/conversations/chats | Create a web chat conversation
+[**postConversationsCobrowsesessionParticipantCommunicationWrapup**](ConversationsApi#postConversationsCobrowsesessionParticipantCommunicationWrapup) | **POST** /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup | Apply wrap-up for this conversation communication
+[**postConversationsCobrowsesessionParticipantReplace**](ConversationsApi#postConversationsCobrowsesessionParticipantReplace) | **POST** /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/replace | Replace this participant with the specified user and/or address
+[**postConversationsEmailInboundmessages**](ConversationsApi#postConversationsEmailInboundmessages) | **POST** /api/v2/conversations/emails/{conversationId}/inboundmessages | Send an email to an external conversation. An external conversation is one where the provider is not PureCloud based. This endpoint allows the sender of the external email to reply or send a new message to the existing conversation. The new message will be treated as part of the existing conversation and chained to it.
+[**postConversationsEmailMessages**](ConversationsApi#postConversationsEmailMessages) | **POST** /api/v2/conversations/emails/{conversationId}/messages | Send an email reply
+[**postConversationsEmailMessagesDraftAttachmentsCopy**](ConversationsApi#postConversationsEmailMessagesDraftAttachmentsCopy) | **POST** /api/v2/conversations/emails/{conversationId}/messages/draft/attachments/copy | Copy attachments from an email message to the current draft.
+[**postConversationsEmailParticipantCommunicationWrapup**](ConversationsApi#postConversationsEmailParticipantCommunicationWrapup) | **POST** /api/v2/conversations/emails/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup | Apply wrap-up for this conversation communication
+[**postConversationsEmailParticipantReplace**](ConversationsApi#postConversationsEmailParticipantReplace) | **POST** /api/v2/conversations/emails/{conversationId}/participants/{participantId}/replace | Replace this participant with the specified user and/or address
+[**postConversationsEmailReconnect**](ConversationsApi#postConversationsEmailReconnect) | **POST** /api/v2/conversations/emails/{conversationId}/reconnect | Reconnect the user to the most recently disconnected customer on a fully disconnected email conversation
+[**postConversationsEmails**](ConversationsApi#postConversationsEmails) | **POST** /api/v2/conversations/emails | Create an email conversation
+[**postConversationsEmailsAgentless**](ConversationsApi#postConversationsEmailsAgentless) | **POST** /api/v2/conversations/emails/agentless | Create an email conversation, per API
+[**postConversationsFaxes**](ConversationsApi#postConversationsFaxes) | **POST** /api/v2/conversations/faxes | Create Fax Conversation
+[**postConversationsKeyconfigurations**](ConversationsApi#postConversationsKeyconfigurations) | **POST** /api/v2/conversations/keyconfigurations | Setup configurations for encryption key creation
+[**postConversationsKeyconfigurationsValidate**](ConversationsApi#postConversationsKeyconfigurationsValidate) | **POST** /api/v2/conversations/keyconfigurations/validate | Validate encryption key configurations without saving it
+[**postConversationsMessageCommunicationMessages**](ConversationsApi#postConversationsMessageCommunicationMessages) | **POST** /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages | Send message
+[**postConversationsMessageCommunicationMessagesMedia**](ConversationsApi#postConversationsMessageCommunicationMessagesMedia) | **POST** /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media | Create media
+[**postConversationsMessageCommunicationMessagesMediaUploads**](ConversationsApi#postConversationsMessageCommunicationMessagesMediaUploads) | **POST** /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media/uploads | Create a URL to upload a message media file
+[**postConversationsMessageCommunicationSocialmediaMessages**](ConversationsApi#postConversationsMessageCommunicationSocialmediaMessages) | **POST** /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/socialmedia/messages | Send a social media message
+[**postConversationsMessageCommunicationTyping**](ConversationsApi#postConversationsMessageCommunicationTyping) | **POST** /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/typing | Send message typing event
+[**postConversationsMessageInboundOpenEvent**](ConversationsApi#postConversationsMessageInboundOpenEvent) | **POST** /api/v2/conversations/messages/{integrationId}/inbound/open/event | Send an inbound Open Event Message
+[**postConversationsMessageInboundOpenMessage**](ConversationsApi#postConversationsMessageInboundOpenMessage) | **POST** /api/v2/conversations/messages/{integrationId}/inbound/open/message | Send inbound Open Message
+[**postConversationsMessageInboundOpenReceipt**](ConversationsApi#postConversationsMessageInboundOpenReceipt) | **POST** /api/v2/conversations/messages/{integrationId}/inbound/open/receipt | Send an inbound Open Receipt Message
+[**postConversationsMessageInboundOpenStructuredResponse**](ConversationsApi#postConversationsMessageInboundOpenStructuredResponse) | **POST** /api/v2/conversations/messages/{integrationId}/inbound/open/structured/response | Send inbound Open Response
+[**postConversationsMessageMessagesBulk**](ConversationsApi#postConversationsMessageMessagesBulk) | **POST** /api/v2/conversations/messages/{conversationId}/messages/bulk | Get messages in batch
+[**postConversationsMessageParticipantCommunicationWrapup**](ConversationsApi#postConversationsMessageParticipantCommunicationWrapup) | **POST** /api/v2/conversations/messages/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup | Apply wrap-up for this conversation communication
+[**postConversationsMessageParticipantMonitor**](ConversationsApi#postConversationsMessageParticipantMonitor) | **POST** /api/v2/conversations/messages/{conversationId}/participants/{participantId}/monitor | Listen in on the conversation from the point of view of a given participant.
+[**postConversationsMessageParticipantReplace**](ConversationsApi#postConversationsMessageParticipantReplace) | **POST** /api/v2/conversations/messages/{conversationId}/participants/{participantId}/replace | Replace this participant with the specified user and/or address
+[**postConversationsMessages**](ConversationsApi#postConversationsMessages) | **POST** /api/v2/conversations/messages | Create an outbound messaging conversation.
+[**postConversationsMessagesAgentless**](ConversationsApi#postConversationsMessagesAgentless) | **POST** /api/v2/conversations/messages/agentless | Send an agentless outbound message
+[**postConversationsMessagesInboundOpen**](ConversationsApi#postConversationsMessagesInboundOpen) | **POST** /api/v2/conversations/messages/inbound/open | Send an inbound Open Message
+[**postConversationsMessagingIntegrationsFacebook**](ConversationsApi#postConversationsMessagingIntegrationsFacebook) | **POST** /api/v2/conversations/messaging/integrations/facebook | Create a Facebook Integration
+[**postConversationsMessagingIntegrationsInstagram**](ConversationsApi#postConversationsMessagingIntegrationsInstagram) | **POST** /api/v2/conversations/messaging/integrations/instagram | Create Instagram Integration
+[**postConversationsMessagingIntegrationsOpen**](ConversationsApi#postConversationsMessagingIntegrationsOpen) | **POST** /api/v2/conversations/messaging/integrations/open | Create an Open messaging integration
+[**postConversationsMessagingIntegrationsTwitter**](ConversationsApi#postConversationsMessagingIntegrationsTwitter) | **POST** /api/v2/conversations/messaging/integrations/twitter | Create Twitter Integration
+[**postConversationsMessagingIntegrationsWhatsapp**](ConversationsApi#postConversationsMessagingIntegrationsWhatsapp) | **POST** /api/v2/conversations/messaging/integrations/whatsapp | [This API is deprecated. Use POST /api/v2/conversations/messaging/integrations/whatsapp/embeddedsignup instead] Create a WhatsApp Integration
+[**postConversationsMessagingIntegrationsWhatsappEmbeddedsignup**](ConversationsApi#postConversationsMessagingIntegrationsWhatsappEmbeddedsignup) | **POST** /api/v2/conversations/messaging/integrations/whatsapp/embeddedsignup | Create a WhatsApp Integration using the WhatsApp embedded signup flow
+[**postConversationsMessagingSettings**](ConversationsApi#postConversationsMessagingSettings) | **POST** /api/v2/conversations/messaging/settings | Create a messaging setting
+[**postConversationsMessagingSupportedcontent**](ConversationsApi#postConversationsMessagingSupportedcontent) | **POST** /api/v2/conversations/messaging/supportedcontent | Create a Supported Content profile
+[**postConversationsParticipantsAttributesSearch**](ConversationsApi#postConversationsParticipantsAttributesSearch) | **POST** /api/v2/conversations/participants/attributes/search | Search conversations
+[**postConversationsScreenshareParticipantCommunicationWrapup**](ConversationsApi#postConversationsScreenshareParticipantCommunicationWrapup) | **POST** /api/v2/conversations/screenshares/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup | Apply wrap-up for this conversation communication
+[**postConversationsSocialParticipantCommunicationWrapup**](ConversationsApi#postConversationsSocialParticipantCommunicationWrapup) | **POST** /api/v2/conversations/socials/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup | Apply wrap-up for this conversation communication
+[**postConversationsVideoAgentconferenceCommunication**](ConversationsApi#postConversationsVideoAgentconferenceCommunication) | **POST** /api/v2/conversations/videos/{conversationId}/agentconference/communications/{communicationId} | Create an Agent-Type video conference and assign an agent to it
+[**postConversationsVideoParticipantCommunicationWrapup**](ConversationsApi#postConversationsVideoParticipantCommunicationWrapup) | **POST** /api/v2/conversations/videos/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup | Apply wrap-up for this conversation communication
+[**postConversationsVideosMeetings**](ConversationsApi#postConversationsVideosMeetings) | **POST** /api/v2/conversations/videos/meetings | Generate a meetingId for a given conferenceId
+[**putConversationParticipantFlaggedreason**](ConversationsApi#putConversationParticipantFlaggedreason) | **PUT** /api/v2/conversations/{conversationId}/participants/{participantId}/flaggedreason | Set flagged reason on conversation participant to indicate bad conversation quality.
+[**putConversationSecureattributes**](ConversationsApi#putConversationSecureattributes) | **PUT** /api/v2/conversations/{conversationId}/secureattributes | Set the secure attributes on a conversation.
+[**putConversationTags**](ConversationsApi#putConversationTags) | **PUT** /api/v2/conversations/{conversationId}/tags | Update the tags on a conversation.
+[**putConversationsCallParticipantCommunicationUuidata**](ConversationsApi#putConversationsCallParticipantCommunicationUuidata) | **PUT** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/uuidata | Set uuiData to be sent on future commands.
+[**putConversationsCallRecordingstate**](ConversationsApi#putConversationsCallRecordingstate) | **PUT** /api/v2/conversations/calls/{conversationId}/recordingstate | Update a conversation by setting its recording state
+[**putConversationsCallbackRecordingstate**](ConversationsApi#putConversationsCallbackRecordingstate) | **PUT** /api/v2/conversations/callbacks/{conversationId}/recordingstate | Update a conversation by setting its recording state
+[**putConversationsChatRecordingstate**](ConversationsApi#putConversationsChatRecordingstate) | **PUT** /api/v2/conversations/chats/{conversationId}/recordingstate | Update a conversation by setting its recording state
+[**putConversationsCobrowsesessionRecordingstate**](ConversationsApi#putConversationsCobrowsesessionRecordingstate) | **PUT** /api/v2/conversations/cobrowsesessions/{conversationId}/recordingstate | Update a conversation by setting its recording state
+[**putConversationsEmailMessagesDraft**](ConversationsApi#putConversationsEmailMessagesDraft) | **PUT** /api/v2/conversations/emails/{conversationId}/messages/draft | Update conversation draft reply
+[**putConversationsEmailRecordingstate**](ConversationsApi#putConversationsEmailRecordingstate) | **PUT** /api/v2/conversations/emails/{conversationId}/recordingstate | Update a conversation by setting its recording state
+[**putConversationsKeyconfiguration**](ConversationsApi#putConversationsKeyconfiguration) | **PUT** /api/v2/conversations/keyconfigurations/{keyconfigurationsId} | Update the encryption key configurations
+[**putConversationsMessageRecordingstate**](ConversationsApi#putConversationsMessageRecordingstate) | **PUT** /api/v2/conversations/messages/{conversationId}/recordingstate | Update a conversation by setting its recording state
+[**putConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId**](ConversationsApi#putConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId) | **PUT** /api/v2/conversations/messaging/identityresolution/integrations/apple/{integrationId} | Create an identity resolution settings for a Apple messaging integration
+[**putConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId**](ConversationsApi#putConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId) | **PUT** /api/v2/conversations/messaging/identityresolution/integrations/facebook/{integrationId} | Create an identity resolution settings for a Facebook messaging integration
+[**putConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId**](ConversationsApi#putConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId) | **PUT** /api/v2/conversations/messaging/identityresolution/integrations/instagram/{integrationId} | Create identity resolution settings for an Instagram messaging integration
+[**putConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId**](ConversationsApi#putConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId) | **PUT** /api/v2/conversations/messaging/identityresolution/integrations/open/{integrationId} | Update an open messaging integration Identity Resolution settings
+[**putConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId**](ConversationsApi#putConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId) | **PUT** /api/v2/conversations/messaging/identityresolution/integrations/twitter/{integrationId} | Create an identity resolution settings for an X (Formally Twitter) messaging integration
+[**putConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId**](ConversationsApi#putConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId) | **PUT** /api/v2/conversations/messaging/identityresolution/integrations/whatsapp/{integrationId} | Update a whatsApp integration Identity Resolution settings
+[**putConversationsMessagingSettingsDefault**](ConversationsApi#putConversationsMessagingSettingsDefault) | **PUT** /api/v2/conversations/messaging/settings/default | Set the organization's default setting that may be applied to to integrations without settings
+[**putConversationsMessagingSupportedcontentDefault**](ConversationsApi#putConversationsMessagingSupportedcontentDefault) | **PUT** /api/v2/conversations/messaging/supportedcontent/default | Set the organization's default supported content profile that may be assigned to an integration when it is created.
+[**putConversationsMessagingThreadingtimeline**](ConversationsApi#putConversationsMessagingThreadingtimeline) | **PUT** /api/v2/conversations/messaging/threadingtimeline | Update conversation threading window timeline for each messaging type
+[**putConversationsScreenshareRecordingstate**](ConversationsApi#putConversationsScreenshareRecordingstate) | **PUT** /api/v2/conversations/screenshares/{conversationId}/recordingstate | Update a conversation by setting its recording state
+[**putConversationsSocialRecordingstate**](ConversationsApi#putConversationsSocialRecordingstate) | **PUT** /api/v2/conversations/socials/{conversationId}/recordingstate | Update a conversation by setting its recording state
+[**putConversationsVideoRecordingstate**](ConversationsApi#putConversationsVideoRecordingstate) | **PUT** /api/v2/conversations/videos/{conversationId}/recordingstate | Update a conversation by setting its recording state
 
-<a name="deleteAnalyticsConversationsDetailsJob"></a>
 
-# void deleteAnalyticsConversationsDetailsJob(jobId)
+
+## deleteAnalyticsConversationsAggregatesJob
+
+> void deleteAnalyticsConversationsAggregatesJob(jobId)
+
+
+DELETE /api/v2/analytics/conversations/aggregates/jobs/{jobId}
+
+Delete/cancel an async request for conversation aggregates
+
+deleteAnalyticsConversationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* analytics:conversationAggregate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let jobId = "jobId_example"; // String | jobId
+
+apiInstance.deleteAnalyticsConversationsAggregatesJob(jobId)
+  .then(() => {
+    console.log('deleteAnalyticsConversationsAggregatesJob returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteAnalyticsConversationsAggregatesJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | jobId |  |
+
+### Return type
+
+void (no response body)
+
+
+## deleteAnalyticsConversationsDetailsJob
+
+> void deleteAnalyticsConversationsDetailsJob(jobId)
 
 
 DELETE /api/v2/analytics/conversations/details/jobs/{jobId}
@@ -268,7 +357,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -291,15 +380,15 @@ apiInstance.deleteAnalyticsConversationsDetailsJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteConversationParticipantCode"></a>
 
-# void deleteConversationParticipantCode(conversationId, participantId, addCommunicationCode)
+## deleteConversationParticipantCode
+
+> void deleteConversationParticipantCode(conversationId, participantId, addCommunicationCode)
 
 
 DELETE /api/v2/conversations/{conversationId}/participants/{participantId}/codes/{addCommunicationCode}
@@ -316,7 +405,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -343,15 +432,15 @@ apiInstance.deleteConversationParticipantCode(conversationId, participantId, add
  **conversationId** | **String** | conversation ID |  |
  **participantId** | **String** | participant ID |  |
  **addCommunicationCode** | **String** | addCommunicationCode |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteConversationParticipantFlaggedreason"></a>
 
-# void deleteConversationParticipantFlaggedreason(conversationId, participantId)
+## deleteConversationParticipantFlaggedreason
+
+> void deleteConversationParticipantFlaggedreason(conversationId, participantId)
 
 
 DELETE /api/v2/conversations/{conversationId}/participants/{participantId}/flaggedreason
@@ -368,7 +457,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -393,15 +482,15 @@ apiInstance.deleteConversationParticipantFlaggedreason(conversationId, participa
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversation ID |  |
  **participantId** | **String** | participant ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteConversationsCallParticipantConsult"></a>
 
-# void deleteConversationsCallParticipantConsult(conversationId, participantId)
+## deleteConversationsCallParticipantConsult
+
+> void deleteConversationsCallParticipantConsult(conversationId, participantId)
 
 
 DELETE /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult
@@ -418,7 +507,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -443,15 +532,15 @@ apiInstance.deleteConversationsCallParticipantConsult(conversationId, participan
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteConversationsEmailMessagesDraftAttachment"></a>
 
-# void deleteConversationsEmailMessagesDraftAttachment(conversationId, attachmentId)
+## deleteConversationsEmailMessagesDraftAttachment
+
+> void deleteConversationsEmailMessagesDraftAttachment(conversationId, attachmentId)
 
 
 DELETE /api/v2/conversations/emails/{conversationId}/messages/draft/attachments/{attachmentId}
@@ -468,7 +557,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -493,15 +582,15 @@ apiInstance.deleteConversationsEmailMessagesDraftAttachment(conversationId, atta
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **attachmentId** | **String** | attachmentId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteConversationsMessagesCachedmediaCachedMediaItemId"></a>
 
-# void deleteConversationsMessagesCachedmediaCachedMediaItemId(cachedMediaItemId)
+## deleteConversationsMessagesCachedmediaCachedMediaItemId
+
+> void deleteConversationsMessagesCachedmediaCachedMediaItemId(cachedMediaItemId)
 
 
 DELETE /api/v2/conversations/messages/cachedmedia/{cachedMediaItemId}
@@ -520,7 +609,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -543,15 +632,15 @@ apiInstance.deleteConversationsMessagesCachedmediaCachedMediaItemId(cachedMediaI
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **cachedMediaItemId** | **String** | cachedMediaItemId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteConversationsMessagingIntegrationsFacebookIntegrationId"></a>
 
-# void deleteConversationsMessagingIntegrationsFacebookIntegrationId(integrationId)
+## deleteConversationsMessagingIntegrationsFacebookIntegrationId
+
+> void deleteConversationsMessagingIntegrationsFacebookIntegrationId(integrationId)
 
 
 DELETE /api/v2/conversations/messaging/integrations/facebook/{integrationId}
@@ -570,7 +659,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -593,15 +682,15 @@ apiInstance.deleteConversationsMessagingIntegrationsFacebookIntegrationId(integr
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **integrationId** | **String** | Integration ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteConversationsMessagingIntegrationsInstagramIntegrationId"></a>
 
-# void deleteConversationsMessagingIntegrationsInstagramIntegrationId(integrationId)
+## deleteConversationsMessagingIntegrationsInstagramIntegrationId
+
+> void deleteConversationsMessagingIntegrationsInstagramIntegrationId(integrationId)
 
 
 DELETE /api/v2/conversations/messaging/integrations/instagram/{integrationId}
@@ -620,7 +709,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -643,65 +732,15 @@ apiInstance.deleteConversationsMessagingIntegrationsInstagramIntegrationId(integ
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **integrationId** | **String** | Integration ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteConversationsMessagingIntegrationsLineIntegrationId"></a>
 
-# void deleteConversationsMessagingIntegrationsLineIntegrationId(integrationId)
+## deleteConversationsMessagingIntegrationsOpenIntegrationId
 
-
-DELETE /api/v2/conversations/messaging/integrations/line/{integrationId}
-
-Delete a LINE messenger integration
-
-Requires ALL permissions:
-
-* messaging:integration:delete
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.ConversationsApi();
-
-let integrationId = "integrationId_example"; // String | Integration ID
-
-apiInstance.deleteConversationsMessagingIntegrationsLineIntegrationId(integrationId)
-  .then(() => {
-    console.log('deleteConversationsMessagingIntegrationsLineIntegrationId returned successfully.');
-  })
-  .catch((err) => {
-    console.log('There was a failure calling deleteConversationsMessagingIntegrationsLineIntegrationId');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **integrationId** | **String** | Integration ID |  |
-{: class="table table-striped"}
-
-### Return type
-
-void (no response body)
-
-<a name="deleteConversationsMessagingIntegrationsOpenIntegrationId"></a>
-
-# void deleteConversationsMessagingIntegrationsOpenIntegrationId(integrationId)
+> void deleteConversationsMessagingIntegrationsOpenIntegrationId(integrationId)
 
 
 DELETE /api/v2/conversations/messaging/integrations/open/{integrationId}
@@ -722,7 +761,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -745,20 +784,20 @@ apiInstance.deleteConversationsMessagingIntegrationsOpenIntegrationId(integratio
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **integrationId** | **String** | Integration ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteConversationsMessagingIntegrationsTwitterIntegrationId"></a>
 
-# void deleteConversationsMessagingIntegrationsTwitterIntegrationId(integrationId)
+## deleteConversationsMessagingIntegrationsTwitterIntegrationId
+
+> void deleteConversationsMessagingIntegrationsTwitterIntegrationId(integrationId)
 
 
 DELETE /api/v2/conversations/messaging/integrations/twitter/{integrationId}
 
-Delete a Twitter messaging integration
+Delete Twitter messaging integration
 
 Requires ALL permissions:
 
@@ -772,7 +811,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -795,15 +834,15 @@ apiInstance.deleteConversationsMessagingIntegrationsTwitterIntegrationId(integra
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **integrationId** | **String** | Integration ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteConversationsMessagingIntegrationsWhatsappIntegrationId"></a>
 
-# WhatsAppIntegration deleteConversationsMessagingIntegrationsWhatsappIntegrationId(integrationId)
+## deleteConversationsMessagingIntegrationsWhatsappIntegrationId
+
+> WhatsAppIntegration deleteConversationsMessagingIntegrationsWhatsappIntegrationId(integrationId)
 
 
 DELETE /api/v2/conversations/messaging/integrations/whatsapp/{integrationId}
@@ -822,7 +861,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -845,15 +884,15 @@ apiInstance.deleteConversationsMessagingIntegrationsWhatsappIntegrationId(integr
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **integrationId** | **String** | Integration ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **WhatsAppIntegration**
 
-<a name="deleteConversationsMessagingSetting"></a>
 
-# void deleteConversationsMessagingSetting(messageSettingId)
+## deleteConversationsMessagingSetting
+
+> void deleteConversationsMessagingSetting(messageSettingId)
 
 
 DELETE /api/v2/conversations/messaging/settings/{messageSettingId}
@@ -872,7 +911,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -895,15 +934,15 @@ apiInstance.deleteConversationsMessagingSetting(messageSettingId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **messageSettingId** | **String** | Message Setting ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="deleteConversationsMessagingSettingsDefault"></a>
 
-# void deleteConversationsMessagingSettingsDefault()
+## deleteConversationsMessagingSettingsDefault
+
+> void deleteConversationsMessagingSettingsDefault()
 
 
 DELETE /api/v2/conversations/messaging/settings/default
@@ -924,7 +963,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -943,14 +982,14 @@ apiInstance.deleteConversationsMessagingSettingsDefault()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 void (no response body)
 
-<a name="deleteConversationsMessagingSupportedcontentSupportedContentId"></a>
 
-# void deleteConversationsMessagingSupportedcontentSupportedContentId(supportedContentId)
+## deleteConversationsMessagingSupportedcontentSupportedContentId
+
+> void deleteConversationsMessagingSupportedcontentSupportedContentId(supportedContentId)
 
 
 DELETE /api/v2/conversations/messaging/supportedcontent/{supportedContentId}
@@ -969,7 +1008,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -992,15 +1031,15 @@ apiInstance.deleteConversationsMessagingSupportedcontentSupportedContentId(suppo
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **supportedContentId** | **String** | Supported Content ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="getAnalyticsConversationDetails"></a>
 
-# AnalyticsConversationWithoutAttributes getAnalyticsConversationDetails(conversationId)
+## getAnalyticsConversationDetails
+
+> AnalyticsConversationWithoutAttributes getAnalyticsConversationDetails(conversationId)
 
 
 GET /api/v2/analytics/conversations/{conversationId}/details
@@ -1020,7 +1059,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -1043,15 +1082,15 @@ apiInstance.getAnalyticsConversationDetails(conversationId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AnalyticsConversationWithoutAttributes**
 
-<a name="getAnalyticsConversationsAggregatesJob"></a>
 
-# AsyncQueryStatus getAnalyticsConversationsAggregatesJob(jobId)
+## getAnalyticsConversationsAggregatesJob
+
+> AsyncQueryStatus getAnalyticsConversationsAggregatesJob(jobId)
 
 
 GET /api/v2/analytics/conversations/aggregates/jobs/{jobId}
@@ -1072,7 +1111,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -1095,15 +1134,15 @@ apiInstance.getAnalyticsConversationsAggregatesJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AsyncQueryStatus**
 
-<a name="getAnalyticsConversationsAggregatesJobResults"></a>
 
-# ConversationAsyncAggregateQueryResponse getAnalyticsConversationsAggregatesJobResults(jobId, opts)
+## getAnalyticsConversationsAggregatesJobResults
+
+> ConversationAsyncAggregateQueryResponse getAnalyticsConversationsAggregatesJobResults(jobId, opts)
 
 
 GET /api/v2/analytics/conversations/aggregates/jobs/{jobId}/results
@@ -1124,7 +1163,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -1151,15 +1190,15 @@ apiInstance.getAnalyticsConversationsAggregatesJobResults(jobId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
  **cursor** | **String** | Cursor token to retrieve next page | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ConversationAsyncAggregateQueryResponse**
 
-<a name="getAnalyticsConversationsDetails"></a>
 
-# AnalyticsConversationWithoutAttributesMultiGetResponse getAnalyticsConversationsDetails(opts)
+## getAnalyticsConversationsDetails
+
+> AnalyticsConversationWithoutAttributesMultiGetResponse getAnalyticsConversationsDetails(opts)
 
 
 GET /api/v2/analytics/conversations/details
@@ -1179,7 +1218,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -1204,15 +1243,15 @@ apiInstance.getAnalyticsConversationsDetails(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **id** | **[String]** | Comma-separated conversation ids | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AnalyticsConversationWithoutAttributesMultiGetResponse**
 
-<a name="getAnalyticsConversationsDetailsJob"></a>
 
-# AsyncQueryStatus getAnalyticsConversationsDetailsJob(jobId)
+## getAnalyticsConversationsDetailsJob
+
+> AsyncQueryStatus getAnalyticsConversationsDetailsJob(jobId)
 
 
 GET /api/v2/analytics/conversations/details/jobs/{jobId}
@@ -1232,7 +1271,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -1255,15 +1294,15 @@ apiInstance.getAnalyticsConversationsDetailsJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AsyncQueryStatus**
 
-<a name="getAnalyticsConversationsDetailsJobResults"></a>
 
-# AnalyticsConversationAsyncQueryResponse getAnalyticsConversationsDetailsJobResults(jobId, opts)
+## getAnalyticsConversationsDetailsJobResults
+
+> AnalyticsConversationAsyncQueryResponse getAnalyticsConversationsDetailsJobResults(jobId, opts)
 
 
 GET /api/v2/analytics/conversations/details/jobs/{jobId}/results
@@ -1283,7 +1322,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -1312,15 +1351,15 @@ apiInstance.getAnalyticsConversationsDetailsJobResults(jobId, opts)
  **jobId** | **String** | jobId |  |
  **cursor** | **String** | Indicates where to resume query results (not required for first page) | [optional]  |
  **pageSize** | **Number** | The desired maximum number of results | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AnalyticsConversationAsyncQueryResponse**
 
-<a name="getAnalyticsConversationsDetailsJobsAvailability"></a>
 
-# DataAvailabilityResponse getAnalyticsConversationsDetailsJobsAvailability()
+## getAnalyticsConversationsDetailsJobsAvailability
+
+> DataAvailabilityResponse getAnalyticsConversationsDetailsJobsAvailability()
 
 
 GET /api/v2/analytics/conversations/details/jobs/availability
@@ -1339,7 +1378,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -1358,14 +1397,14 @@ apiInstance.getAnalyticsConversationsDetailsJobsAvailability()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **DataAvailabilityResponse**
 
-<a name="getConversation"></a>
 
-# Conversation getConversation(conversationId)
+## getConversation
+
+> Conversation getConversation(conversationId)
 
 
 GET /api/v2/conversations/{conversationId}
@@ -1384,7 +1423,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -1407,15 +1446,131 @@ apiInstance.getConversation(conversationId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversation ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Conversation**
 
-<a name="getConversationParticipantSecureivrsession"></a>
 
-# SecureSession getConversationParticipantSecureivrsession(conversationId, participantId, secureSessionId)
+## getConversationCommunicationInternalmessage
+
+> InternalMessageData getConversationCommunicationInternalmessage(conversationId, communicationId, messageId)
+
+
+GET /api/v2/conversations/{conversationId}/communications/{communicationId}/internalmessages/{messageId}
+
+Get message
+
+getConversationCommunicationInternalmessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* conversation:internalMessaging:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | conversationId
+let communicationId = "communicationId_example"; // String | communicationId
+let messageId = "messageId_example"; // String | messageId
+
+apiInstance.getConversationCommunicationInternalmessage(conversationId, communicationId, messageId)
+  .then((data) => {
+    console.log(`getConversationCommunicationInternalmessage success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationCommunicationInternalmessage');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversationId |  |
+ **communicationId** | **String** | communicationId |  |
+ **messageId** | **String** | messageId |  |
+
+### Return type
+
+**InternalMessageData**
+
+
+## getConversationCommunicationInternalmessages
+
+> InternalMessageDataEntityListing getConversationCommunicationInternalmessages(conversationId, communicationId, opts)
+
+
+GET /api/v2/conversations/{conversationId}/communications/{communicationId}/internalmessages
+
+Get messages for communication
+
+getConversationCommunicationInternalmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* conversation:internalMessaging:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | conversationId
+let communicationId = "communicationId_example"; // String | communicationId
+let opts = { 
+  'pageSize': 25, // Number | Indicates maximum number of results in response. Default page size is 25 results. The maximum page size is 200.
+  'pageNumber': 1 // Number | Page number
+};
+
+apiInstance.getConversationCommunicationInternalmessages(conversationId, communicationId, opts)
+  .then((data) => {
+    console.log(`getConversationCommunicationInternalmessages success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationCommunicationInternalmessages');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversationId |  |
+ **communicationId** | **String** | communicationId |  |
+ **pageSize** | **Number** | Indicates maximum number of results in response. Default page size is 25 results. The maximum page size is 200. | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+
+### Return type
+
+**InternalMessageDataEntityListing**
+
+
+## getConversationParticipantSecureivrsession
+
+> SecureSession getConversationParticipantSecureivrsession(conversationId, participantId, secureSessionId)
 
 
 GET /api/v2/conversations/{conversationId}/participants/{participantId}/secureivrsessions/{secureSessionId}
@@ -1432,7 +1587,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -1459,15 +1614,15 @@ apiInstance.getConversationParticipantSecureivrsession(conversationId, participa
  **conversationId** | **String** | conversation ID |  |
  **participantId** | **String** | participant ID |  |
  **secureSessionId** | **String** | secure IVR session ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **SecureSession**
 
-<a name="getConversationParticipantSecureivrsessions"></a>
 
-# SecureSessionEntityListing getConversationParticipantSecureivrsessions(conversationId, participantId)
+## getConversationParticipantSecureivrsessions
+
+> SecureSessionEntityListing getConversationParticipantSecureivrsessions(conversationId, participantId)
 
 
 GET /api/v2/conversations/{conversationId}/participants/{participantId}/secureivrsessions
@@ -1484,7 +1639,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -1509,15 +1664,15 @@ apiInstance.getConversationParticipantSecureivrsessions(conversationId, particip
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversation ID |  |
  **participantId** | **String** | participant ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **SecureSessionEntityListing**
 
-<a name="getConversationParticipantWrapup"></a>
 
-# AssignedWrapupCode getConversationParticipantWrapup(conversationId, participantId, opts)
+## getConversationParticipantWrapup
+
+> AssignedWrapupCode getConversationParticipantWrapup(conversationId, participantId, opts)
 
 
 GET /api/v2/conversations/{conversationId}/participants/{participantId}/wrapup
@@ -1534,7 +1689,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -1563,15 +1718,15 @@ apiInstance.getConversationParticipantWrapup(conversationId, participantId, opts
  **conversationId** | **String** | conversation ID |  |
  **participantId** | **String** | participant ID |  |
  **provisional** | **Boolean** | Indicates if the wrap-up code is provisional. | [optional] [default to false] |
-{: class="table table-striped"}
 
 ### Return type
 
 **AssignedWrapupCode**
 
-<a name="getConversationParticipantWrapupcodes"></a>
 
-# [WrapupCode] getConversationParticipantWrapupcodes(conversationId, participantId)
+## getConversationParticipantWrapupcodes
+
+> [WrapupCode] getConversationParticipantWrapupcodes(conversationId, participantId)
 
 
 GET /api/v2/conversations/{conversationId}/participants/{participantId}/wrapupcodes
@@ -1588,7 +1743,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -1613,15 +1768,15 @@ apiInstance.getConversationParticipantWrapupcodes(conversationId, participantId)
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversation ID |  |
  **participantId** | **String** | participant ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **[WrapupCode]**
 
-<a name="getConversationSecureattributes"></a>
 
-# ConversationSecureAttributes getConversationSecureattributes(conversationId)
+## getConversationSecureattributes
+
+> ConversationSecureAttributes getConversationSecureattributes(conversationId)
 
 
 GET /api/v2/conversations/{conversationId}/secureattributes
@@ -1640,7 +1795,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -1663,15 +1818,179 @@ apiInstance.getConversationSecureattributes(conversationId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversation ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ConversationSecureAttributes**
 
-<a name="getConversations"></a>
 
-# ConversationEntityListing getConversations(opts)
+## getConversationSuggestion
+
+> Suggestion getConversationSuggestion(conversationId, suggestionId)
+
+
+GET /api/v2/conversations/{conversationId}/suggestions/{suggestionId}
+
+Get Suggestion.
+
+Requires ALL permissions:
+
+* conversation:suggestion:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | Conversation ID
+let suggestionId = "suggestionId_example"; // String | Suggestion ID
+
+apiInstance.getConversationSuggestion(conversationId, suggestionId)
+  .then((data) => {
+    console.log(`getConversationSuggestion success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationSuggestion');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | Conversation ID |  |
+ **suggestionId** | **String** | Suggestion ID |  |
+
+### Return type
+
+**Suggestion**
+
+
+## getConversationSuggestions
+
+> SuggestionListing getConversationSuggestions(conversationId, opts)
+
+
+GET /api/v2/conversations/{conversationId}/suggestions
+
+Get all suggestions for a conversation.
+
+Requires ALL permissions:
+
+* conversation:suggestion:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | Conversation ID
+let opts = { 
+  'before': "before_example", // String | The cursor that points to the start of the set of entities that has been returned.
+  'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
+  'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 200.
+  'type': "type_example", // String | Suggestion type to filter by.
+  'state': "state_example" // String | Suggestion state to filter Copilot suggestions.
+};
+
+apiInstance.getConversationSuggestions(conversationId, opts)
+  .then((data) => {
+    console.log(`getConversationSuggestions success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationSuggestions');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | Conversation ID |  |
+ **before** | **String** | The cursor that points to the start of the set of entities that has been returned. | [optional]  |
+ **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
+ **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
+ **type** | **String** | Suggestion type to filter by. | [optional] <br />**Values**: Faq, Article, KnowledgeArticle, KnowledgeSearch, CannedResponse, Script |
+ **state** | **String** | Suggestion state to filter Copilot suggestions. | [optional] <br />**Values**: Suggested, Accepted, Dismissed, Failed, Rated |
+
+### Return type
+
+**SuggestionListing**
+
+
+## getConversationSummaries
+
+> ConversationSummariesGetResponse getConversationSummaries(conversationId)
+
+
+GET /api/v2/conversations/{conversationId}/summaries
+
+Get the summaries of the conversation.
+
+Requires ALL permissions:
+
+* conversation:summary:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | Conversation ID
+
+apiInstance.getConversationSummaries(conversationId)
+  .then((data) => {
+    console.log(`getConversationSummaries success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationSummaries');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | Conversation ID |  |
+
+### Return type
+
+**ConversationSummariesGetResponse**
+
+
+## getConversations
+
+> ConversationEntityListing getConversations(opts)
 
 
 GET /api/v2/conversations
@@ -1688,7 +2007,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -1713,15 +2032,15 @@ apiInstance.getConversations(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **communicationType** | **String** | Call or Chat communication filtering | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ConversationEntityListing**
 
-<a name="getConversationsCall"></a>
 
-# CallConversation getConversationsCall(conversationId)
+## getConversationsCall
+
+> CallConversation getConversationsCall(conversationId)
 
 
 GET /api/v2/conversations/calls/{conversationId}
@@ -1738,7 +2057,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -1761,15 +2080,15 @@ apiInstance.getConversationsCall(conversationId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **CallConversation**
 
-<a name="getConversationsCallParticipantCommunicationWrapup"></a>
 
-# AssignedWrapupCode getConversationsCallParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts)
+## getConversationsCallParticipantCommunicationWrapup
+
+> AssignedWrapupCode getConversationsCallParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts)
 
 
 GET /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup
@@ -1786,7 +2105,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -1795,7 +2114,7 @@ let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
 let communicationId = "communicationId_example"; // String | communicationId
 let opts = { 
-  'provisional': false // Boolean | Indicates if the wrap-up code is provisional.
+  'provisional': false // Boolean | Indicates whether or not to fetch provisional wrap-up code.
 };
 
 apiInstance.getConversationsCallParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts)
@@ -1816,16 +2135,16 @@ apiInstance.getConversationsCallParticipantCommunicationWrapup(conversationId, p
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
  **communicationId** | **String** | communicationId |  |
- **provisional** | **Boolean** | Indicates if the wrap-up code is provisional. | [optional] [default to false] |
-{: class="table table-striped"}
+ **provisional** | **Boolean** | Indicates whether or not to fetch provisional wrap-up code. | [optional] [default to false] |
 
 ### Return type
 
 **AssignedWrapupCode**
 
-<a name="getConversationsCallParticipantWrapup"></a>
 
-# AssignedWrapupCode getConversationsCallParticipantWrapup(conversationId, participantId, opts)
+## getConversationsCallParticipantWrapup
+
+> AssignedWrapupCode getConversationsCallParticipantWrapup(conversationId, participantId, opts)
 
 
 GET /api/v2/conversations/calls/{conversationId}/participants/{participantId}/wrapup
@@ -1842,7 +2161,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -1850,7 +2169,7 @@ let apiInstance = new platformClient.ConversationsApi();
 let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
 let opts = { 
-  'provisional': false // Boolean | Indicates if the wrap-up code is provisional.
+  'provisional': false // Boolean | Indicates whether or not to fetch provisional wrap-up code.
 };
 
 apiInstance.getConversationsCallParticipantWrapup(conversationId, participantId, opts)
@@ -1870,16 +2189,16 @@ apiInstance.getConversationsCallParticipantWrapup(conversationId, participantId,
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
- **provisional** | **Boolean** | Indicates if the wrap-up code is provisional. | [optional] [default to false] |
-{: class="table table-striped"}
+ **provisional** | **Boolean** | Indicates whether or not to fetch provisional wrap-up code. | [optional] [default to false] |
 
 ### Return type
 
 **AssignedWrapupCode**
 
-<a name="getConversationsCallParticipantWrapupcodes"></a>
 
-# [WrapupCode] getConversationsCallParticipantWrapupcodes(conversationId, participantId)
+## getConversationsCallParticipantWrapupcodes
+
+> [WrapupCode] getConversationsCallParticipantWrapupcodes(conversationId, participantId)
 
 
 GET /api/v2/conversations/calls/{conversationId}/participants/{participantId}/wrapupcodes
@@ -1896,7 +2215,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -1921,15 +2240,15 @@ apiInstance.getConversationsCallParticipantWrapupcodes(conversationId, participa
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **[WrapupCode]**
 
-<a name="getConversationsCallback"></a>
 
-# CallbackConversation getConversationsCallback(conversationId)
+## getConversationsCallback
+
+> CallbackConversation getConversationsCallback(conversationId)
 
 
 GET /api/v2/conversations/callbacks/{conversationId}
@@ -1946,7 +2265,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -1969,15 +2288,15 @@ apiInstance.getConversationsCallback(conversationId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **CallbackConversation**
 
-<a name="getConversationsCallbackParticipantCommunicationWrapup"></a>
 
-# AssignedWrapupCode getConversationsCallbackParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts)
+## getConversationsCallbackParticipantCommunicationWrapup
+
+> AssignedWrapupCode getConversationsCallbackParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts)
 
 
 GET /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup
@@ -1994,7 +2313,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -2003,7 +2322,7 @@ let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
 let communicationId = "communicationId_example"; // String | communicationId
 let opts = { 
-  'provisional': false // Boolean | Indicates if the wrap-up code is provisional.
+  'provisional': false // Boolean | Indicates whether or not to fetch provisional wrap-up code.
 };
 
 apiInstance.getConversationsCallbackParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts)
@@ -2024,16 +2343,16 @@ apiInstance.getConversationsCallbackParticipantCommunicationWrapup(conversationI
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
  **communicationId** | **String** | communicationId |  |
- **provisional** | **Boolean** | Indicates if the wrap-up code is provisional. | [optional] [default to false] |
-{: class="table table-striped"}
+ **provisional** | **Boolean** | Indicates whether or not to fetch provisional wrap-up code. | [optional] [default to false] |
 
 ### Return type
 
 **AssignedWrapupCode**
 
-<a name="getConversationsCallbackParticipantWrapup"></a>
 
-# AssignedWrapupCode getConversationsCallbackParticipantWrapup(conversationId, participantId, opts)
+## getConversationsCallbackParticipantWrapup
+
+> AssignedWrapupCode getConversationsCallbackParticipantWrapup(conversationId, participantId, opts)
 
 
 GET /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/wrapup
@@ -2050,7 +2369,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -2058,7 +2377,7 @@ let apiInstance = new platformClient.ConversationsApi();
 let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
 let opts = { 
-  'provisional': false // Boolean | Indicates if the wrap-up code is provisional.
+  'provisional': false // Boolean | Indicates whether or not to fetch provisional wrap-up code.
 };
 
 apiInstance.getConversationsCallbackParticipantWrapup(conversationId, participantId, opts)
@@ -2078,16 +2397,16 @@ apiInstance.getConversationsCallbackParticipantWrapup(conversationId, participan
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
- **provisional** | **Boolean** | Indicates if the wrap-up code is provisional. | [optional] [default to false] |
-{: class="table table-striped"}
+ **provisional** | **Boolean** | Indicates whether or not to fetch provisional wrap-up code. | [optional] [default to false] |
 
 ### Return type
 
 **AssignedWrapupCode**
 
-<a name="getConversationsCallbackParticipantWrapupcodes"></a>
 
-# [WrapupCode] getConversationsCallbackParticipantWrapupcodes(conversationId, participantId)
+## getConversationsCallbackParticipantWrapupcodes
+
+> [WrapupCode] getConversationsCallbackParticipantWrapupcodes(conversationId, participantId)
 
 
 GET /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/wrapupcodes
@@ -2104,7 +2423,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -2129,15 +2448,15 @@ apiInstance.getConversationsCallbackParticipantWrapupcodes(conversationId, parti
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **[WrapupCode]**
 
-<a name="getConversationsCallbacks"></a>
 
-# CallbackConversationEntityListing getConversationsCallbacks()
+## getConversationsCallbacks
+
+> CallbackConversationEntityListing getConversationsCallbacks()
 
 
 GET /api/v2/conversations/callbacks
@@ -2154,7 +2473,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -2173,14 +2492,14 @@ apiInstance.getConversationsCallbacks()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **CallbackConversationEntityListing**
 
-<a name="getConversationsCalls"></a>
 
-# CallConversationEntityListing getConversationsCalls()
+## getConversationsCalls
+
+> CallConversationEntityListing getConversationsCalls()
 
 
 GET /api/v2/conversations/calls
@@ -2197,7 +2516,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -2216,14 +2535,14 @@ apiInstance.getConversationsCalls()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **CallConversationEntityListing**
 
-<a name="getConversationsCallsHistory"></a>
 
-# CallHistoryConversationEntityListing getConversationsCallsHistory(opts)
+## getConversationsCallsHistory
+
+> CallHistoryConversationEntityListing getConversationsCallsHistory(opts)
 
 
 GET /api/v2/conversations/calls/history
@@ -2240,7 +2559,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -2271,15 +2590,15 @@ apiInstance.getConversationsCallsHistory(opts)
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **interval** | **String** | Interval string; format is ISO-8601. Separate start and end times with forward slash '/' | [optional]  |
  **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: externalorganization, externalcontact, user, queue, group |
-{: class="table table-striped"}
 
 ### Return type
 
 **CallHistoryConversationEntityListing**
 
-<a name="getConversationsCallsMaximumconferenceparties"></a>
 
-# MaxParticipants getConversationsCallsMaximumconferenceparties()
+## getConversationsCallsMaximumconferenceparties
+
+> MaxParticipants getConversationsCallsMaximumconferenceparties()
 
 
 GET /api/v2/conversations/calls/maximumconferenceparties
@@ -2296,7 +2615,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -2315,19 +2634,24 @@ apiInstance.getConversationsCallsMaximumconferenceparties()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **MaxParticipants**
 
-<a name="getConversationsChat"></a>
 
-# ChatConversation getConversationsChat(conversationId)
+## getConversationsChat
 
+> ChatConversation getConversationsChat(conversationId)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 GET /api/v2/conversations/chats/{conversationId}
 
 Get chat conversation
+
+This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
 
 Requires NO permissions:
 
@@ -2339,7 +2663,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -2362,22 +2686,25 @@ apiInstance.getConversationsChat(conversationId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ChatConversation**
 
-<a name="getConversationsChatMessage"></a>
 
-# WebChatMessage getConversationsChatMessage(conversationId, messageId)
+## getConversationsChatMessage
 
+> WebChatMessage getConversationsChatMessage(conversationId, messageId)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 GET /api/v2/conversations/chats/{conversationId}/messages/{messageId}
 
 Get a web chat conversation message
 
-The current user must be involved with the conversation to get its messages.
+This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/. The current user must be involved with the conversation to get its messages.
 
 Requires NO permissions:
 
@@ -2389,7 +2716,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -2414,22 +2741,25 @@ apiInstance.getConversationsChatMessage(conversationId, messageId)
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **messageId** | **String** | messageId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **WebChatMessage**
 
-<a name="getConversationsChatMessages"></a>
 
-# WebChatMessageEntityList getConversationsChatMessages(conversationId, opts)
+## getConversationsChatMessages
 
+> WebChatMessageEntityList getConversationsChatMessages(conversationId, opts)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 GET /api/v2/conversations/chats/{conversationId}/messages
 
 Get the messages of a chat conversation.
 
-The current user must be involved with the conversation to get its messages.
+This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/. The current user must be involved with the conversation to get its messages.
 
 Requires NO permissions:
 
@@ -2441,7 +2771,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -2474,20 +2804,25 @@ apiInstance.getConversationsChatMessages(conversationId, opts)
  **before** | **String** | If specified, get the messages chronologically before the id of this message | [optional]  |
  **sortOrder** | **String** | Sort order | [optional] [default to ascending]<br />**Values**: ascending, descending |
  **maxResults** | **Number** | Limit the returned number of messages, up to a maximum of 100 | [optional] [default to 100] |
-{: class="table table-striped"}
 
 ### Return type
 
 **WebChatMessageEntityList**
 
-<a name="getConversationsChatParticipantCommunicationWrapup"></a>
 
-# AssignedWrapupCode getConversationsChatParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts)
+## getConversationsChatParticipantCommunicationWrapup
 
+> AssignedWrapupCode getConversationsChatParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 GET /api/v2/conversations/chats/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup
 
 Get the wrap-up for this conversation communication. 
+
+This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
 
 Requires NO permissions:
 
@@ -2499,7 +2834,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -2508,7 +2843,7 @@ let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
 let communicationId = "communicationId_example"; // String | communicationId
 let opts = { 
-  'provisional': false // Boolean | Indicates if the wrap-up code is provisional.
+  'provisional': false // Boolean | Indicates whether or not to fetch provisional wrap-up code.
 };
 
 apiInstance.getConversationsChatParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts)
@@ -2529,21 +2864,26 @@ apiInstance.getConversationsChatParticipantCommunicationWrapup(conversationId, p
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
  **communicationId** | **String** | communicationId |  |
- **provisional** | **Boolean** | Indicates if the wrap-up code is provisional. | [optional] [default to false] |
-{: class="table table-striped"}
+ **provisional** | **Boolean** | Indicates whether or not to fetch provisional wrap-up code. | [optional] [default to false] |
 
 ### Return type
 
 **AssignedWrapupCode**
 
-<a name="getConversationsChatParticipantWrapup"></a>
 
-# AssignedWrapupCode getConversationsChatParticipantWrapup(conversationId, participantId, opts)
+## getConversationsChatParticipantWrapup
 
+> AssignedWrapupCode getConversationsChatParticipantWrapup(conversationId, participantId, opts)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 GET /api/v2/conversations/chats/{conversationId}/participants/{participantId}/wrapup
 
 Get the wrap-up for this conversation participant. 
+
+This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
 
 Requires NO permissions:
 
@@ -2555,7 +2895,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -2563,7 +2903,7 @@ let apiInstance = new platformClient.ConversationsApi();
 let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
 let opts = { 
-  'provisional': false // Boolean | Indicates if the wrap-up code is provisional.
+  'provisional': false // Boolean | Indicates whether or not to fetch provisional wrap-up code.
 };
 
 apiInstance.getConversationsChatParticipantWrapup(conversationId, participantId, opts)
@@ -2583,21 +2923,26 @@ apiInstance.getConversationsChatParticipantWrapup(conversationId, participantId,
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
- **provisional** | **Boolean** | Indicates if the wrap-up code is provisional. | [optional] [default to false] |
-{: class="table table-striped"}
+ **provisional** | **Boolean** | Indicates whether or not to fetch provisional wrap-up code. | [optional] [default to false] |
 
 ### Return type
 
 **AssignedWrapupCode**
 
-<a name="getConversationsChatParticipantWrapupcodes"></a>
 
-# [WrapupCode] getConversationsChatParticipantWrapupcodes(conversationId, participantId)
+## getConversationsChatParticipantWrapupcodes
 
+> [WrapupCode] getConversationsChatParticipantWrapupcodes(conversationId, participantId)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 GET /api/v2/conversations/chats/{conversationId}/participants/{participantId}/wrapupcodes
 
 Get list of wrapup codes for this conversation participant
+
+This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
 
 Requires NO permissions:
 
@@ -2609,7 +2954,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -2634,20 +2979,25 @@ apiInstance.getConversationsChatParticipantWrapupcodes(conversationId, participa
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **[WrapupCode]**
 
-<a name="getConversationsChats"></a>
 
-# ChatConversationEntityListing getConversationsChats()
+## getConversationsChats
 
+> ChatConversationEntityListing getConversationsChats()
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 GET /api/v2/conversations/chats
 
 Get active chat conversations for the logged in user
+
+This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
 
 Requires NO permissions:
 
@@ -2659,7 +3009,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -2678,14 +3028,14 @@ apiInstance.getConversationsChats()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **ChatConversationEntityListing**
 
-<a name="getConversationsCobrowsesession"></a>
 
-# CobrowseConversation getConversationsCobrowsesession(conversationId)
+## getConversationsCobrowsesession
+
+> CobrowseConversation getConversationsCobrowsesession(conversationId)
 
 
 GET /api/v2/conversations/cobrowsesessions/{conversationId}
@@ -2702,7 +3052,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -2725,20 +3075,25 @@ apiInstance.getConversationsCobrowsesession(conversationId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **CobrowseConversation**
 
-<a name="getConversationsCobrowsesessionParticipantCommunicationWrapup"></a>
 
-# AssignedWrapupCode getConversationsCobrowsesessionParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts)
+## getConversationsCobrowsesessionParticipantCommunicationWrapup
 
+> AssignedWrapupCode getConversationsCobrowsesessionParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 GET /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup
 
 Get the wrap-up for this conversation communication. 
+
+This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
 
 Requires NO permissions:
 
@@ -2750,7 +3105,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -2759,7 +3114,7 @@ let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
 let communicationId = "communicationId_example"; // String | communicationId
 let opts = { 
-  'provisional': false // Boolean | Indicates if the wrap-up code is provisional.
+  'provisional': false // Boolean | Indicates whether or not to fetch provisional wrap-up code.
 };
 
 apiInstance.getConversationsCobrowsesessionParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts)
@@ -2780,21 +3135,26 @@ apiInstance.getConversationsCobrowsesessionParticipantCommunicationWrapup(conver
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
  **communicationId** | **String** | communicationId |  |
- **provisional** | **Boolean** | Indicates if the wrap-up code is provisional. | [optional] [default to false] |
-{: class="table table-striped"}
+ **provisional** | **Boolean** | Indicates whether or not to fetch provisional wrap-up code. | [optional] [default to false] |
 
 ### Return type
 
 **AssignedWrapupCode**
 
-<a name="getConversationsCobrowsesessionParticipantWrapup"></a>
 
-# AssignedWrapupCode getConversationsCobrowsesessionParticipantWrapup(conversationId, participantId, opts)
+## getConversationsCobrowsesessionParticipantWrapup
 
+> AssignedWrapupCode getConversationsCobrowsesessionParticipantWrapup(conversationId, participantId, opts)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 GET /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/wrapup
 
 Get the wrap-up for this conversation participant. 
+
+This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
 
 Requires NO permissions:
 
@@ -2806,7 +3166,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -2814,7 +3174,7 @@ let apiInstance = new platformClient.ConversationsApi();
 let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
 let opts = { 
-  'provisional': false // Boolean | Indicates if the wrap-up code is provisional.
+  'provisional': false // Boolean | Indicates whether or not to fetch provisional wrap-up code.
 };
 
 apiInstance.getConversationsCobrowsesessionParticipantWrapup(conversationId, participantId, opts)
@@ -2834,21 +3194,26 @@ apiInstance.getConversationsCobrowsesessionParticipantWrapup(conversationId, par
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
- **provisional** | **Boolean** | Indicates if the wrap-up code is provisional. | [optional] [default to false] |
-{: class="table table-striped"}
+ **provisional** | **Boolean** | Indicates whether or not to fetch provisional wrap-up code. | [optional] [default to false] |
 
 ### Return type
 
 **AssignedWrapupCode**
 
-<a name="getConversationsCobrowsesessionParticipantWrapupcodes"></a>
 
-# [WrapupCode] getConversationsCobrowsesessionParticipantWrapupcodes(conversationId, participantId)
+## getConversationsCobrowsesessionParticipantWrapupcodes
 
+> [WrapupCode] getConversationsCobrowsesessionParticipantWrapupcodes(conversationId, participantId)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 GET /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/wrapupcodes
 
 Get list of wrapup codes for this conversation participant
+
+This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
 
 Requires NO permissions:
 
@@ -2860,7 +3225,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -2885,15 +3250,15 @@ apiInstance.getConversationsCobrowsesessionParticipantWrapupcodes(conversationId
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **[WrapupCode]**
 
-<a name="getConversationsCobrowsesessions"></a>
 
-# CobrowseConversationEntityListing getConversationsCobrowsesessions()
+## getConversationsCobrowsesessions
+
+> CobrowseConversationEntityListing getConversationsCobrowsesessions()
 
 
 GET /api/v2/conversations/cobrowsesessions
@@ -2910,7 +3275,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -2929,14 +3294,14 @@ apiInstance.getConversationsCobrowsesessions()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **CobrowseConversationEntityListing**
 
-<a name="getConversationsEmail"></a>
 
-# EmailConversation getConversationsEmail(conversationId)
+## getConversationsEmail
+
+> EmailConversation getConversationsEmail(conversationId)
 
 
 GET /api/v2/conversations/emails/{conversationId}
@@ -2953,7 +3318,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -2976,15 +3341,15 @@ apiInstance.getConversationsEmail(conversationId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **EmailConversation**
 
-<a name="getConversationsEmailMessage"></a>
 
-# EmailMessage getConversationsEmailMessage(conversationId, messageId)
+## getConversationsEmailMessage
+
+> EmailMessage getConversationsEmailMessage(conversationId, messageId)
 
 
 GET /api/v2/conversations/emails/{conversationId}/messages/{messageId}
@@ -3001,7 +3366,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -3026,15 +3391,15 @@ apiInstance.getConversationsEmailMessage(conversationId, messageId)
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **messageId** | **String** | messageId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **EmailMessage**
 
-<a name="getConversationsEmailMessages"></a>
 
-# EmailMessagePreviewListing getConversationsEmailMessages(conversationId)
+## getConversationsEmailMessages
+
+> EmailMessagePreviewListing getConversationsEmailMessages(conversationId)
 
 
 GET /api/v2/conversations/emails/{conversationId}/messages
@@ -3051,7 +3416,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -3074,15 +3439,15 @@ apiInstance.getConversationsEmailMessages(conversationId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **EmailMessagePreviewListing**
 
-<a name="getConversationsEmailMessagesDraft"></a>
 
-# EmailMessage getConversationsEmailMessagesDraft(conversationId)
+## getConversationsEmailMessagesDraft
+
+> EmailMessage getConversationsEmailMessagesDraft(conversationId)
 
 
 GET /api/v2/conversations/emails/{conversationId}/messages/draft
@@ -3099,7 +3464,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -3122,15 +3487,15 @@ apiInstance.getConversationsEmailMessagesDraft(conversationId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **EmailMessage**
 
-<a name="getConversationsEmailParticipantCommunicationWrapup"></a>
 
-# AssignedWrapupCode getConversationsEmailParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts)
+## getConversationsEmailParticipantCommunicationWrapup
+
+> AssignedWrapupCode getConversationsEmailParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts)
 
 
 GET /api/v2/conversations/emails/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup
@@ -3147,7 +3512,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -3156,7 +3521,7 @@ let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
 let communicationId = "communicationId_example"; // String | communicationId
 let opts = { 
-  'provisional': false // Boolean | Indicates if the wrap-up code is provisional.
+  'provisional': false // Boolean | Indicates whether or not to fetch provisional wrap-up code.
 };
 
 apiInstance.getConversationsEmailParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts)
@@ -3177,16 +3542,16 @@ apiInstance.getConversationsEmailParticipantCommunicationWrapup(conversationId, 
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
  **communicationId** | **String** | communicationId |  |
- **provisional** | **Boolean** | Indicates if the wrap-up code is provisional. | [optional] [default to false] |
-{: class="table table-striped"}
+ **provisional** | **Boolean** | Indicates whether or not to fetch provisional wrap-up code. | [optional] [default to false] |
 
 ### Return type
 
 **AssignedWrapupCode**
 
-<a name="getConversationsEmailParticipantWrapup"></a>
 
-# AssignedWrapupCode getConversationsEmailParticipantWrapup(conversationId, participantId, opts)
+## getConversationsEmailParticipantWrapup
+
+> AssignedWrapupCode getConversationsEmailParticipantWrapup(conversationId, participantId, opts)
 
 
 GET /api/v2/conversations/emails/{conversationId}/participants/{participantId}/wrapup
@@ -3203,7 +3568,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -3211,7 +3576,7 @@ let apiInstance = new platformClient.ConversationsApi();
 let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
 let opts = { 
-  'provisional': false // Boolean | Indicates if the wrap-up code is provisional.
+  'provisional': false // Boolean | Indicates whether or not to fetch provisional wrap-up code.
 };
 
 apiInstance.getConversationsEmailParticipantWrapup(conversationId, participantId, opts)
@@ -3231,16 +3596,16 @@ apiInstance.getConversationsEmailParticipantWrapup(conversationId, participantId
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
- **provisional** | **Boolean** | Indicates if the wrap-up code is provisional. | [optional] [default to false] |
-{: class="table table-striped"}
+ **provisional** | **Boolean** | Indicates whether or not to fetch provisional wrap-up code. | [optional] [default to false] |
 
 ### Return type
 
 **AssignedWrapupCode**
 
-<a name="getConversationsEmailParticipantWrapupcodes"></a>
 
-# [WrapupCode] getConversationsEmailParticipantWrapupcodes(conversationId, participantId)
+## getConversationsEmailParticipantWrapupcodes
+
+> [WrapupCode] getConversationsEmailParticipantWrapupcodes(conversationId, participantId)
 
 
 GET /api/v2/conversations/emails/{conversationId}/participants/{participantId}/wrapupcodes
@@ -3257,7 +3622,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -3282,15 +3647,15 @@ apiInstance.getConversationsEmailParticipantWrapupcodes(conversationId, particip
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **[WrapupCode]**
 
-<a name="getConversationsEmailSettings"></a>
 
-# EmailsSettings getConversationsEmailSettings(conversationId)
+## getConversationsEmailSettings
+
+> EmailsSettings getConversationsEmailSettings(conversationId)
 
 
 GET /api/v2/conversations/emails/{conversationId}/settings
@@ -3307,7 +3672,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -3330,15 +3695,15 @@ apiInstance.getConversationsEmailSettings(conversationId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **EmailsSettings**
 
-<a name="getConversationsEmails"></a>
 
-# EmailConversationEntityListing getConversationsEmails()
+## getConversationsEmails
+
+> EmailConversationEntityListing getConversationsEmails()
 
 
 GET /api/v2/conversations/emails
@@ -3355,7 +3720,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -3374,14 +3739,113 @@ apiInstance.getConversationsEmails()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **EmailConversationEntityListing**
 
-<a name="getConversationsKeyconfiguration"></a>
 
-# ConversationEncryptionConfiguration getConversationsKeyconfiguration(keyconfigurationsId)
+## getConversationsInternalmessage
+
+> InternalMessageConversation getConversationsInternalmessage(conversationId)
+
+
+GET /api/v2/conversations/internalmessages/{conversationId}
+
+Get internal message conversation
+
+getConversationsInternalmessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* conversation:internalMessaging:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | conversationId
+
+apiInstance.getConversationsInternalmessage(conversationId)
+  .then((data) => {
+    console.log(`getConversationsInternalmessage success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsInternalmessage');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversationId |  |
+
+### Return type
+
+**InternalMessageConversation**
+
+
+## getConversationsInternalmessages
+
+> InternalMessageConversationEntityListing getConversationsInternalmessages()
+
+
+GET /api/v2/conversations/internalmessages
+
+Get active internal message conversations for the logged in user
+
+getConversationsInternalmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* conversation:internalMessaging:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+apiInstance.getConversationsInternalmessages()
+  .then((data) => {
+    console.log(`getConversationsInternalmessages success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsInternalmessages');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+**InternalMessageConversationEntityListing**
+
+
+## getConversationsKeyconfiguration
+
+> ConversationEncryptionConfiguration getConversationsKeyconfiguration(keyconfigurationsId)
 
 
 GET /api/v2/conversations/keyconfigurations/{keyconfigurationsId}
@@ -3400,7 +3864,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -3423,15 +3887,15 @@ apiInstance.getConversationsKeyconfiguration(keyconfigurationsId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **keyconfigurationsId** | **String** | Key Configurations Id |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ConversationEncryptionConfiguration**
 
-<a name="getConversationsKeyconfigurations"></a>
 
-# ConversationEncryptionConfigurationListing getConversationsKeyconfigurations()
+## getConversationsKeyconfigurations
+
+> ConversationEncryptionConfigurationListing getConversationsKeyconfigurations()
 
 
 GET /api/v2/conversations/keyconfigurations
@@ -3450,7 +3914,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -3469,14 +3933,14 @@ apiInstance.getConversationsKeyconfigurations()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **ConversationEncryptionConfigurationListing**
 
-<a name="getConversationsMessage"></a>
 
-# MessageConversation getConversationsMessage(conversationId)
+## getConversationsMessage
+
+> MessageConversation getConversationsMessage(conversationId)
 
 
 GET /api/v2/conversations/messages/{conversationId}
@@ -3493,7 +3957,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -3516,15 +3980,15 @@ apiInstance.getConversationsMessage(conversationId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **MessageConversation**
 
-<a name="getConversationsMessageCommunicationMessagesMediaMediaId"></a>
 
-# MessageMediaData getConversationsMessageCommunicationMessagesMediaMediaId(conversationId, communicationId, mediaId)
+## getConversationsMessageCommunicationMessagesMediaMediaId
+
+> MessageMediaData getConversationsMessageCommunicationMessagesMediaMediaId(conversationId, communicationId, mediaId)
 
 
 GET /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media/{mediaId}
@@ -3546,7 +4010,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -3573,15 +4037,15 @@ apiInstance.getConversationsMessageCommunicationMessagesMediaMediaId(conversatio
  **conversationId** | **String** | conversationId |  |
  **communicationId** | **String** | communicationId |  |
  **mediaId** | **String** | mediaId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **MessageMediaData**
 
-<a name="getConversationsMessageDetails"></a>
 
-# MessageData getConversationsMessageDetails(messageId, opts)
+## getConversationsMessageDetails
+
+> MessageData getConversationsMessageDetails(messageId, opts)
 
 
 GET /api/v2/conversations/messages/{messageId}/details
@@ -3601,14 +4065,14 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
 
 let messageId = "messageId_example"; // String | messageId
 let opts = { 
-  'useNormalizedMessage': false // Boolean | If true, response removes deprecated fields (textBody, media, stickers)
+  'useNormalizedMessage': false // Boolean | If true, response removes deprecated fields (textBody, media)
 };
 
 apiInstance.getConversationsMessageDetails(messageId, opts)
@@ -3627,16 +4091,16 @@ apiInstance.getConversationsMessageDetails(messageId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **messageId** | **String** | messageId |  |
- **useNormalizedMessage** | **Boolean** | If true, response removes deprecated fields (textBody, media, stickers) | [optional] [default to false] |
-{: class="table table-striped"}
+ **useNormalizedMessage** | **Boolean** | If true, response removes deprecated fields (textBody, media) | [optional] [default to false] |
 
 ### Return type
 
 **MessageData**
 
-<a name="getConversationsMessageMessage"></a>
 
-# MessageData getConversationsMessageMessage(conversationId, messageId, opts)
+## getConversationsMessageMessage
+
+> MessageData getConversationsMessageMessage(conversationId, messageId, opts)
 
 
 GET /api/v2/conversations/messages/{conversationId}/messages/{messageId}
@@ -3656,7 +4120,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -3664,7 +4128,7 @@ let apiInstance = new platformClient.ConversationsApi();
 let conversationId = "conversationId_example"; // String | conversationId
 let messageId = "messageId_example"; // String | messageId
 let opts = { 
-  'useNormalizedMessage': false // Boolean | If true, response removes deprecated fields (textBody, media, stickers)
+  'useNormalizedMessage': false // Boolean | If true, response removes deprecated fields (textBody, media)
 };
 
 apiInstance.getConversationsMessageMessage(conversationId, messageId, opts)
@@ -3684,16 +4148,16 @@ apiInstance.getConversationsMessageMessage(conversationId, messageId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **messageId** | **String** | messageId |  |
- **useNormalizedMessage** | **Boolean** | If true, response removes deprecated fields (textBody, media, stickers) | [optional] [default to false] |
-{: class="table table-striped"}
+ **useNormalizedMessage** | **Boolean** | If true, response removes deprecated fields (textBody, media) | [optional] [default to false] |
 
 ### Return type
 
 **MessageData**
 
-<a name="getConversationsMessageParticipantCommunicationWrapup"></a>
 
-# AssignedWrapupCode getConversationsMessageParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts)
+## getConversationsMessageParticipantCommunicationWrapup
+
+> AssignedWrapupCode getConversationsMessageParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts)
 
 
 GET /api/v2/conversations/messages/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup
@@ -3710,7 +4174,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -3719,7 +4183,7 @@ let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
 let communicationId = "communicationId_example"; // String | communicationId
 let opts = { 
-  'provisional': false // Boolean | Indicates if the wrap-up code is provisional.
+  'provisional': false // Boolean | Indicates whether or not to fetch provisional wrap-up code.
 };
 
 apiInstance.getConversationsMessageParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts)
@@ -3740,16 +4204,16 @@ apiInstance.getConversationsMessageParticipantCommunicationWrapup(conversationId
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
  **communicationId** | **String** | communicationId |  |
- **provisional** | **Boolean** | Indicates if the wrap-up code is provisional. | [optional] [default to false] |
-{: class="table table-striped"}
+ **provisional** | **Boolean** | Indicates whether or not to fetch provisional wrap-up code. | [optional] [default to false] |
 
 ### Return type
 
 **AssignedWrapupCode**
 
-<a name="getConversationsMessageParticipantWrapup"></a>
 
-# AssignedWrapupCode getConversationsMessageParticipantWrapup(conversationId, participantId, opts)
+## getConversationsMessageParticipantWrapup
+
+> AssignedWrapupCode getConversationsMessageParticipantWrapup(conversationId, participantId, opts)
 
 
 GET /api/v2/conversations/messages/{conversationId}/participants/{participantId}/wrapup
@@ -3766,7 +4230,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -3774,7 +4238,7 @@ let apiInstance = new platformClient.ConversationsApi();
 let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
 let opts = { 
-  'provisional': false // Boolean | Indicates if the wrap-up code is provisional.
+  'provisional': false // Boolean | Indicates whether or not to fetch provisional wrap-up code.
 };
 
 apiInstance.getConversationsMessageParticipantWrapup(conversationId, participantId, opts)
@@ -3794,16 +4258,16 @@ apiInstance.getConversationsMessageParticipantWrapup(conversationId, participant
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
- **provisional** | **Boolean** | Indicates if the wrap-up code is provisional. | [optional] [default to false] |
-{: class="table table-striped"}
+ **provisional** | **Boolean** | Indicates whether or not to fetch provisional wrap-up code. | [optional] [default to false] |
 
 ### Return type
 
 **AssignedWrapupCode**
 
-<a name="getConversationsMessageParticipantWrapupcodes"></a>
 
-# [WrapupCode] getConversationsMessageParticipantWrapupcodes(conversationId, participantId)
+## getConversationsMessageParticipantWrapupcodes
+
+> [WrapupCode] getConversationsMessageParticipantWrapupcodes(conversationId, participantId)
 
 
 GET /api/v2/conversations/messages/{conversationId}/participants/{participantId}/wrapupcodes
@@ -3820,7 +4284,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -3845,15 +4309,15 @@ apiInstance.getConversationsMessageParticipantWrapupcodes(conversationId, partic
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **[WrapupCode]**
 
-<a name="getConversationsMessages"></a>
 
-# MessageConversationEntityListing getConversationsMessages()
+## getConversationsMessages
+
+> MessageConversationEntityListing getConversationsMessages()
 
 
 GET /api/v2/conversations/messages
@@ -3870,7 +4334,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -3889,14 +4353,14 @@ apiInstance.getConversationsMessages()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **MessageConversationEntityListing**
 
-<a name="getConversationsMessagesCachedmedia"></a>
 
-# CachedMediaItemEntityListing getConversationsMessagesCachedmedia(opts)
+## getConversationsMessagesCachedmedia
+
+> CachedMediaItemEntityListing getConversationsMessagesCachedmedia(opts)
 
 
 GET /api/v2/conversations/messages/cachedmedia
@@ -3915,7 +4379,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -3944,15 +4408,15 @@ apiInstance.getConversationsMessagesCachedmedia(opts)
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **url** | **String** | URL to search for | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **CachedMediaItemEntityListing**
 
-<a name="getConversationsMessagesCachedmediaCachedMediaItemId"></a>
 
-# CachedMediaItem getConversationsMessagesCachedmediaCachedMediaItemId(cachedMediaItemId)
+## getConversationsMessagesCachedmediaCachedMediaItemId
+
+> CachedMediaItem getConversationsMessagesCachedmediaCachedMediaItemId(cachedMediaItemId)
 
 
 GET /api/v2/conversations/messages/cachedmedia/{cachedMediaItemId}
@@ -3971,7 +4435,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -3994,15 +4458,15 @@ apiInstance.getConversationsMessagesCachedmediaCachedMediaItemId(cachedMediaItem
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **cachedMediaItemId** | **String** | cachedMediaItemId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **CachedMediaItem**
 
-<a name="getConversationsMessagingFacebookApp"></a>
 
-# FacebookAppCredentials getConversationsMessagingFacebookApp()
+## getConversationsMessagingFacebookApp
+
+> FacebookAppCredentials getConversationsMessagingFacebookApp()
 
 
 GET /api/v2/conversations/messaging/facebook/app
@@ -4021,7 +4485,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -4040,14 +4504,419 @@ apiInstance.getConversationsMessagingFacebookApp()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **FacebookAppCredentials**
 
-<a name="getConversationsMessagingIntegrations"></a>
 
-# MessagingIntegrationEntityListing getConversationsMessagingIntegrations(opts)
+## getConversationsMessagingFacebookPermissions
+
+> FacebookPermissionEntityListing getConversationsMessagingFacebookPermissions()
+
+
+GET /api/v2/conversations/messaging/facebook/permissions
+
+Get a list of Facebook Permissions
+
+Requires ANY permissions:
+
+* messaging:integration:add
+* messaging:integration:edit
+* messaging:conversationInstagramIntegration:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+apiInstance.getConversationsMessagingFacebookPermissions()
+  .then((data) => {
+    console.log(`getConversationsMessagingFacebookPermissions success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsMessagingFacebookPermissions');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+**FacebookPermissionEntityListing**
+
+
+## getConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId
+
+> IdentityResolutionConfig getConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId(integrationId)
+
+
+GET /api/v2/conversations/messaging/identityresolution/integrations/apple/{integrationId}
+
+Get Apple messaging integration identity resolution settings
+
+getConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* messaging:integration:view
+* messaging:identityResolutionApple:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let integrationId = "integrationId_example"; // String | Integration ID
+
+apiInstance.getConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId(integrationId)
+  .then((data) => {
+    console.log(`getConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **integrationId** | **String** | Integration ID |  |
+
+### Return type
+
+**IdentityResolutionConfig**
+
+
+## getConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId
+
+> IdentityResolutionConfig getConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId(integrationId)
+
+
+GET /api/v2/conversations/messaging/identityresolution/integrations/facebook/{integrationId}
+
+Get Facebook messaging integration identity resolution settings
+
+Requires ALL permissions:
+
+* messaging:integration:view
+* messaging:identityResolutionFacebook:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let integrationId = "integrationId_example"; // String | Integration ID
+
+apiInstance.getConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId(integrationId)
+  .then((data) => {
+    console.log(`getConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **integrationId** | **String** | Integration ID |  |
+
+### Return type
+
+**IdentityResolutionConfig**
+
+
+## getConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId
+
+> IdentityResolutionConfig getConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId(integrationId)
+
+
+GET /api/v2/conversations/messaging/identityresolution/integrations/instagram/{integrationId}
+
+Get an Instagram integration identity resolution settings
+
+Requires ALL permissions:
+
+* messaging:integration:view
+* messaging:identityResolutionInstagram:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let integrationId = "integrationId_example"; // String | Integration ID
+
+apiInstance.getConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId(integrationId)
+  .then((data) => {
+    console.log(`getConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **integrationId** | **String** | Integration ID |  |
+
+### Return type
+
+**IdentityResolutionConfig**
+
+
+## getConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId
+
+> OpenMessagingIdentityResolutionConfig getConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId(integrationId)
+
+
+GET /api/v2/conversations/messaging/identityresolution/integrations/open/{integrationId}
+
+Get an open messaging integration Identity Resolution settings
+
+Requires ALL permissions:
+
+* messaging:integration:view
+* messaging:identityResolutionOpen:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let integrationId = "integrationId_example"; // String | Integration ID
+
+apiInstance.getConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId(integrationId)
+  .then((data) => {
+    console.log(`getConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **integrationId** | **String** | Integration ID |  |
+
+### Return type
+
+**OpenMessagingIdentityResolutionConfig**
+
+
+## getConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId
+
+> IdentityResolutionConfig getConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId(integrationId)
+
+
+GET /api/v2/conversations/messaging/identityresolution/integrations/twitter/{integrationId}
+
+Get X (Formally Twitter) messaging integration identity resolution settings
+
+Requires ALL permissions:
+
+* messaging:integration:view
+* messaging:identityResolutionX:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let integrationId = "integrationId_example"; // String | Integration Id
+
+apiInstance.getConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId(integrationId)
+  .then((data) => {
+    console.log(`getConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **integrationId** | **String** | Integration Id |  |
+
+### Return type
+
+**IdentityResolutionConfig**
+
+
+## getConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId
+
+> IdentityResolutionConfig getConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId(integrationId)
+
+
+GET /api/v2/conversations/messaging/identityresolution/integrations/whatsapp/{integrationId}
+
+Get a whatsApp integration Identity Resolution settings
+
+Requires ALL permissions:
+
+* messaging:integration:view
+* messaging:identityResolutionWhatsApp:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let integrationId = "integrationId_example"; // String | Integration ID
+
+apiInstance.getConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId(integrationId)
+  .then((data) => {
+    console.log(`getConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **integrationId** | **String** | Integration ID |  |
+
+### Return type
+
+**IdentityResolutionConfig**
+
+
+## getConversationsMessagingIntegrationTwitterOauthSettings
+
+> TwitterOAuthSettings getConversationsMessagingIntegrationTwitterOauthSettings(integrationId)
+
+
+GET /api/v2/conversations/messaging/integrations/{integrationId}/twitter/oauth/settings
+
+Get twitter oauth settings to patch an integration
+
+Requires ALL permissions:
+
+* messaging:XIntegration:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let integrationId = "integrationId_example"; // String | Integration Id of an existing integration that needs to be patched with new oauth settings
+
+apiInstance.getConversationsMessagingIntegrationTwitterOauthSettings(integrationId)
+  .then((data) => {
+    console.log(`getConversationsMessagingIntegrationTwitterOauthSettings success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsMessagingIntegrationTwitterOauthSettings');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **integrationId** | **String** | Integration Id of an existing integration that needs to be patched with new oauth settings |  |
+
+### Return type
+
+**TwitterOAuthSettings**
+
+
+## getConversationsMessagingIntegrations
+
+> MessagingIntegrationEntityListing getConversationsMessagingIntegrations(opts)
 
 
 GET /api/v2/conversations/messaging/integrations
@@ -4066,7 +4935,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -4096,18 +4965,18 @@ apiInstance.getConversationsMessagingIntegrations(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
- **expand** | **[String]** | Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting |
+ **expand** | **[String]** | Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting, identityresolution |
  **supportedContentId** | **String** | Filter integrations returned based on the supported content ID | [optional]  |
  **messagingSettingId** | **String** | Filter integrations returned based on the setting ID | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **MessagingIntegrationEntityListing**
 
-<a name="getConversationsMessagingIntegrationsFacebook"></a>
 
-# FacebookIntegrationEntityListing getConversationsMessagingIntegrationsFacebook(opts)
+## getConversationsMessagingIntegrationsFacebook
+
+> FacebookIntegrationEntityListing getConversationsMessagingIntegrationsFacebook(opts)
 
 
 GET /api/v2/conversations/messaging/integrations/facebook
@@ -4126,7 +4995,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -4156,18 +5025,18 @@ apiInstance.getConversationsMessagingIntegrationsFacebook(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
- **expand** | **String** | Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting |
+ **expand** | **String** | Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting, identityresolution |
  **supportedContentId** | **String** | Filter integrations returned based on the supported content ID | [optional]  |
  **messagingSettingId** | **String** | Filter integrations returned based on the setting ID | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **FacebookIntegrationEntityListing**
 
-<a name="getConversationsMessagingIntegrationsFacebookIntegrationId"></a>
 
-# FacebookIntegration getConversationsMessagingIntegrationsFacebookIntegrationId(integrationId, opts)
+## getConversationsMessagingIntegrationsFacebookIntegrationId
+
+> FacebookIntegration getConversationsMessagingIntegrationsFacebookIntegrationId(integrationId, opts)
 
 
 GET /api/v2/conversations/messaging/integrations/facebook/{integrationId}
@@ -4186,7 +5055,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -4212,16 +5081,16 @@ apiInstance.getConversationsMessagingIntegrationsFacebookIntegrationId(integrati
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **integrationId** | **String** | Integration ID |  |
- **expand** | **String** | Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting |
-{: class="table table-striped"}
+ **expand** | **String** | Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting, identityresolution |
 
 ### Return type
 
 **FacebookIntegration**
 
-<a name="getConversationsMessagingIntegrationsInstagram"></a>
 
-# InstagramIntegrationEntityListing getConversationsMessagingIntegrationsInstagram(opts)
+## getConversationsMessagingIntegrationsInstagram
+
+> InstagramIntegrationEntityListing getConversationsMessagingIntegrationsInstagram(opts)
 
 
 GET /api/v2/conversations/messaging/integrations/instagram
@@ -4240,7 +5109,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -4270,18 +5139,18 @@ apiInstance.getConversationsMessagingIntegrationsInstagram(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
- **expand** | **String** | Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting |
+ **expand** | **String** | Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting, identityresolution |
  **supportedContentId** | **String** | Filter integrations returned based on the supported content ID | [optional]  |
  **messagingSettingId** | **String** | Filter integrations returned based on the setting ID | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **InstagramIntegrationEntityListing**
 
-<a name="getConversationsMessagingIntegrationsInstagramIntegrationId"></a>
 
-# InstagramIntegration getConversationsMessagingIntegrationsInstagramIntegrationId(integrationId, opts)
+## getConversationsMessagingIntegrationsInstagramIntegrationId
+
+> InstagramIntegration getConversationsMessagingIntegrationsInstagramIntegrationId(integrationId, opts)
 
 
 GET /api/v2/conversations/messaging/integrations/instagram/{integrationId}
@@ -4300,7 +5169,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -4326,130 +5195,16 @@ apiInstance.getConversationsMessagingIntegrationsInstagramIntegrationId(integrat
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **integrationId** | **String** | Integration ID |  |
- **expand** | **String** | Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting |
-{: class="table table-striped"}
+ **expand** | **String** | Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting, identityresolution |
 
 ### Return type
 
 **InstagramIntegration**
 
-<a name="getConversationsMessagingIntegrationsLine"></a>
 
-# LineIntegrationEntityListing getConversationsMessagingIntegrationsLine(opts)
+## getConversationsMessagingIntegrationsOpen
 
-
-GET /api/v2/conversations/messaging/integrations/line
-
-Get a list of LINE messenger Integrations
-
-Requires ALL permissions:
-
-* messaging:integration:view
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.ConversationsApi();
-
-let opts = { 
-  'pageSize': 25, // Number | Page size
-  'pageNumber': 1, // Number | Page number
-  'expand': "expand_example", // String | Expand instructions for the return value.
-  'supportedContentId': "supportedContentId_example", // String | Filter integrations returned based on the supported content ID
-  'messagingSettingId': "messagingSettingId_example" // String | Filter integrations returned based on the setting ID
-};
-
-apiInstance.getConversationsMessagingIntegrationsLine(opts)
-  .then((data) => {
-    console.log(`getConversationsMessagingIntegrationsLine success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling getConversationsMessagingIntegrationsLine');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **pageSize** | **Number** | Page size | [optional] [default to 25] |
- **pageNumber** | **Number** | Page number | [optional] [default to 1] |
- **expand** | **String** | Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting |
- **supportedContentId** | **String** | Filter integrations returned based on the supported content ID | [optional]  |
- **messagingSettingId** | **String** | Filter integrations returned based on the setting ID | [optional]  |
-{: class="table table-striped"}
-
-### Return type
-
-**LineIntegrationEntityListing**
-
-<a name="getConversationsMessagingIntegrationsLineIntegrationId"></a>
-
-# LineIntegration getConversationsMessagingIntegrationsLineIntegrationId(integrationId, opts)
-
-
-GET /api/v2/conversations/messaging/integrations/line/{integrationId}
-
-Get a LINE messenger integration
-
-Requires ALL permissions:
-
-* messaging:integration:view
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.ConversationsApi();
-
-let integrationId = "integrationId_example"; // String | Integration ID
-let opts = { 
-  'expand': "expand_example" // String | Expand instructions for the return value.
-};
-
-apiInstance.getConversationsMessagingIntegrationsLineIntegrationId(integrationId, opts)
-  .then((data) => {
-    console.log(`getConversationsMessagingIntegrationsLineIntegrationId success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling getConversationsMessagingIntegrationsLineIntegrationId');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **integrationId** | **String** | Integration ID |  |
- **expand** | **String** | Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting |
-{: class="table table-striped"}
-
-### Return type
-
-**LineIntegration**
-
-<a name="getConversationsMessagingIntegrationsOpen"></a>
-
-# OpenIntegrationEntityListing getConversationsMessagingIntegrationsOpen(opts)
+> OpenIntegrationEntityListing getConversationsMessagingIntegrationsOpen(opts)
 
 
 GET /api/v2/conversations/messaging/integrations/open
@@ -4470,7 +5225,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -4500,18 +5255,18 @@ apiInstance.getConversationsMessagingIntegrationsOpen(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
- **expand** | **String** | Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting |
+ **expand** | **String** | Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting, identityresolution |
  **supportedContentId** | **String** | Filter integrations returned based on the supported content ID | [optional]  |
  **messagingSettingId** | **String** | Filter integrations returned based on the setting ID | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **OpenIntegrationEntityListing**
 
-<a name="getConversationsMessagingIntegrationsOpenIntegrationId"></a>
 
-# OpenIntegration getConversationsMessagingIntegrationsOpenIntegrationId(integrationId, opts)
+## getConversationsMessagingIntegrationsOpenIntegrationId
+
+> OpenIntegration getConversationsMessagingIntegrationsOpenIntegrationId(integrationId, opts)
 
 
 GET /api/v2/conversations/messaging/integrations/open/{integrationId}
@@ -4532,7 +5287,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -4558,16 +5313,16 @@ apiInstance.getConversationsMessagingIntegrationsOpenIntegrationId(integrationId
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **integrationId** | **String** | Integration ID |  |
- **expand** | **String** | Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting |
-{: class="table table-striped"}
+ **expand** | **String** | Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting, identityresolution |
 
 ### Return type
 
 **OpenIntegration**
 
-<a name="getConversationsMessagingIntegrationsTwitter"></a>
 
-# TwitterIntegrationEntityListing getConversationsMessagingIntegrationsTwitter(opts)
+## getConversationsMessagingIntegrationsTwitter
+
+> TwitterIntegrationEntityListing getConversationsMessagingIntegrationsTwitter(opts)
 
 
 GET /api/v2/conversations/messaging/integrations/twitter
@@ -4586,7 +5341,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -4616,23 +5371,23 @@ apiInstance.getConversationsMessagingIntegrationsTwitter(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
- **expand** | **String** | Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting |
+ **expand** | **String** | Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting, identityresolution |
  **supportedContentId** | **String** | Filter integrations returned based on the supported content ID | [optional]  |
  **messagingSettingId** | **String** | Filter integrations returned based on the setting ID | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **TwitterIntegrationEntityListing**
 
-<a name="getConversationsMessagingIntegrationsTwitterIntegrationId"></a>
 
-# TwitterIntegration getConversationsMessagingIntegrationsTwitterIntegrationId(integrationId, opts)
+## getConversationsMessagingIntegrationsTwitterIntegrationId
+
+> TwitterIntegration getConversationsMessagingIntegrationsTwitterIntegrationId(integrationId, opts)
 
 
 GET /api/v2/conversations/messaging/integrations/twitter/{integrationId}
 
-Get a Twitter messaging integration
+Get Twitter messaging integration
 
 Requires ALL permissions:
 
@@ -4646,7 +5401,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -4672,16 +5427,61 @@ apiInstance.getConversationsMessagingIntegrationsTwitterIntegrationId(integratio
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **integrationId** | **String** | Integration ID |  |
- **expand** | **String** | Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting |
-{: class="table table-striped"}
+ **expand** | **String** | Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting, identityresolution |
 
 ### Return type
 
 **TwitterIntegration**
 
-<a name="getConversationsMessagingIntegrationsWhatsapp"></a>
 
-# WhatsAppIntegrationEntityListing getConversationsMessagingIntegrationsWhatsapp(opts)
+## getConversationsMessagingIntegrationsTwitterOauthSettings
+
+> TwitterSignupOAuthSettings getConversationsMessagingIntegrationsTwitterOauthSettings()
+
+
+GET /api/v2/conversations/messaging/integrations/twitter/oauth/settings
+
+Get twitter oauth settings
+
+Requires ALL permissions:
+
+* messaging:XIntegration:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+apiInstance.getConversationsMessagingIntegrationsTwitterOauthSettings()
+  .then((data) => {
+    console.log(`getConversationsMessagingIntegrationsTwitterOauthSettings success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsMessagingIntegrationsTwitterOauthSettings');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+**TwitterSignupOAuthSettings**
+
+
+## getConversationsMessagingIntegrationsWhatsapp
+
+> WhatsAppIntegrationEntityListing getConversationsMessagingIntegrationsWhatsapp(opts)
 
 
 GET /api/v2/conversations/messaging/integrations/whatsapp
@@ -4700,7 +5500,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -4730,18 +5530,18 @@ apiInstance.getConversationsMessagingIntegrationsWhatsapp(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
- **expand** | **String** | Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting |
+ **expand** | **String** | Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting, identityresolution |
  **supportedContentId** | **String** | Filter integrations returned based on the supported content ID | [optional]  |
  **messagingSettingId** | **String** | Filter integrations returned based on the setting ID | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **WhatsAppIntegrationEntityListing**
 
-<a name="getConversationsMessagingIntegrationsWhatsappIntegrationId"></a>
 
-# WhatsAppIntegration getConversationsMessagingIntegrationsWhatsappIntegrationId(integrationId, opts)
+## getConversationsMessagingIntegrationsWhatsappIntegrationId
+
+> WhatsAppIntegration getConversationsMessagingIntegrationsWhatsappIntegrationId(integrationId, opts)
 
 
 GET /api/v2/conversations/messaging/integrations/whatsapp/{integrationId}
@@ -4760,7 +5560,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -4786,16 +5586,16 @@ apiInstance.getConversationsMessagingIntegrationsWhatsappIntegrationId(integrati
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **integrationId** | **String** | Integration ID |  |
- **expand** | **String** | Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting |
-{: class="table table-striped"}
+ **expand** | **String** | Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting, identityresolution |
 
 ### Return type
 
 **WhatsAppIntegration**
 
-<a name="getConversationsMessagingSetting"></a>
 
-# MessagingSetting getConversationsMessagingSetting(messageSettingId)
+## getConversationsMessagingSetting
+
+> MessagingSetting getConversationsMessagingSetting(messageSettingId)
 
 
 GET /api/v2/conversations/messaging/settings/{messageSettingId}
@@ -4814,7 +5614,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -4837,15 +5637,15 @@ apiInstance.getConversationsMessagingSetting(messageSettingId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **messageSettingId** | **String** | Message Setting ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **MessagingSetting**
 
-<a name="getConversationsMessagingSettings"></a>
 
-# MessagingConfigListing getConversationsMessagingSettings(opts)
+## getConversationsMessagingSettings
+
+> MessagingConfigListing getConversationsMessagingSettings(opts)
 
 
 GET /api/v2/conversations/messaging/settings
@@ -4864,7 +5664,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -4891,15 +5691,15 @@ apiInstance.getConversationsMessagingSettings(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
-{: class="table table-striped"}
 
 ### Return type
 
 **MessagingConfigListing**
 
-<a name="getConversationsMessagingSettingsDefault"></a>
 
-# MessagingSetting getConversationsMessagingSettingsDefault()
+## getConversationsMessagingSettingsDefault
+
+> MessagingSetting getConversationsMessagingSettingsDefault()
 
 
 GET /api/v2/conversations/messaging/settings/default
@@ -4920,7 +5720,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -4939,70 +5739,14 @@ apiInstance.getConversationsMessagingSettingsDefault()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **MessagingSetting**
 
-<a name="getConversationsMessagingSticker"></a>
 
-# MessagingStickerEntityListing getConversationsMessagingSticker(messengerType, opts)
+## getConversationsMessagingSupportedcontent
 
-
-GET /api/v2/conversations/messaging/stickers/{messengerType}
-
-Get a list of Messaging Stickers
-
-Requires ALL permissions:
-
-* conversation:message:create
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.ConversationsApi();
-
-let messengerType = "messengerType_example"; // String | Messenger Type
-let opts = { 
-  'pageSize': 25, // Number | Page size
-  'pageNumber': 1 // Number | Page number
-};
-
-apiInstance.getConversationsMessagingSticker(messengerType, opts)
-  .then((data) => {
-    console.log(`getConversationsMessagingSticker success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling getConversationsMessagingSticker');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **messengerType** | **String** | Messenger Type | <br />**Values**: line |
- **pageSize** | **Number** | Page size | [optional] [default to 25] |
- **pageNumber** | **Number** | Page number | [optional] [default to 1] |
-{: class="table table-striped"}
-
-### Return type
-
-**MessagingStickerEntityListing**
-
-<a name="getConversationsMessagingSupportedcontent"></a>
-
-# SupportedContentListing getConversationsMessagingSupportedcontent(opts)
+> SupportedContentListing getConversationsMessagingSupportedcontent(opts)
 
 
 GET /api/v2/conversations/messaging/supportedcontent
@@ -5021,7 +5765,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -5048,15 +5792,15 @@ apiInstance.getConversationsMessagingSupportedcontent(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
-{: class="table table-striped"}
 
 ### Return type
 
 **SupportedContentListing**
 
-<a name="getConversationsMessagingSupportedcontentDefault"></a>
 
-# SupportedContent getConversationsMessagingSupportedcontentDefault()
+## getConversationsMessagingSupportedcontentDefault
+
+> SupportedContent getConversationsMessagingSupportedcontentDefault()
 
 
 GET /api/v2/conversations/messaging/supportedcontent/default
@@ -5077,7 +5821,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -5096,14 +5840,14 @@ apiInstance.getConversationsMessagingSupportedcontentDefault()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **SupportedContent**
 
-<a name="getConversationsMessagingSupportedcontentSupportedContentId"></a>
 
-# SupportedContent getConversationsMessagingSupportedcontentSupportedContentId(supportedContentId)
+## getConversationsMessagingSupportedcontentSupportedContentId
+
+> SupportedContent getConversationsMessagingSupportedcontentSupportedContentId(supportedContentId)
 
 
 GET /api/v2/conversations/messaging/supportedcontent/{supportedContentId}
@@ -5122,7 +5866,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -5145,15 +5889,15 @@ apiInstance.getConversationsMessagingSupportedcontentSupportedContentId(supporte
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **supportedContentId** | **String** | Supported Content ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **SupportedContent**
 
-<a name="getConversationsMessagingThreadingtimeline"></a>
 
-# ConversationThreadingWindow getConversationsMessagingThreadingtimeline()
+## getConversationsMessagingThreadingtimeline
+
+> ConversationThreadingWindow getConversationsMessagingThreadingtimeline()
 
 
 GET /api/v2/conversations/messaging/threadingtimeline
@@ -5174,7 +5918,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -5193,19 +5937,24 @@ apiInstance.getConversationsMessagingThreadingtimeline()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **ConversationThreadingWindow**
 
-<a name="getConversationsScreenshareParticipantCommunicationWrapup"></a>
 
-# AssignedWrapupCode getConversationsScreenshareParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts)
+## getConversationsScreenshareParticipantCommunicationWrapup
 
+> AssignedWrapupCode getConversationsScreenshareParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 GET /api/v2/conversations/screenshares/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup
 
 Get the wrap-up for this conversation communication. 
+
+This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
 
 Requires NO permissions:
 
@@ -5217,7 +5966,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -5226,7 +5975,7 @@ let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
 let communicationId = "communicationId_example"; // String | communicationId
 let opts = { 
-  'provisional': false // Boolean | Indicates if the wrap-up code is provisional.
+  'provisional': false // Boolean | Indicates whether or not to fetch provisional wrap-up code.
 };
 
 apiInstance.getConversationsScreenshareParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts)
@@ -5247,16 +5996,16 @@ apiInstance.getConversationsScreenshareParticipantCommunicationWrapup(conversati
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
  **communicationId** | **String** | communicationId |  |
- **provisional** | **Boolean** | Indicates if the wrap-up code is provisional. | [optional] [default to false] |
-{: class="table table-striped"}
+ **provisional** | **Boolean** | Indicates whether or not to fetch provisional wrap-up code. | [optional] [default to false] |
 
 ### Return type
 
 **AssignedWrapupCode**
 
-<a name="getConversationsSettings"></a>
 
-# Settings getConversationsSettings()
+## getConversationsSettings
+
+> Settings getConversationsSettings()
 
 
 GET /api/v2/conversations/settings
@@ -5275,7 +6024,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -5294,14 +6043,14 @@ apiInstance.getConversationsSettings()
 
 This endpoint does not need any parameter.
 
-
 ### Return type
 
 **Settings**
 
-<a name="getConversationsSocialParticipantCommunicationWrapup"></a>
 
-# AssignedWrapupCode getConversationsSocialParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts)
+## getConversationsSocialParticipantCommunicationWrapup
+
+> AssignedWrapupCode getConversationsSocialParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts)
 
 
 GET /api/v2/conversations/socials/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup
@@ -5318,7 +6067,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -5327,7 +6076,7 @@ let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
 let communicationId = "communicationId_example"; // String | communicationId
 let opts = { 
-  'provisional': false // Boolean | Indicates if the wrap-up code is provisional.
+  'provisional': false // Boolean | Indicates whether or not to fetch provisional wrap-up code.
 };
 
 apiInstance.getConversationsSocialParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts)
@@ -5348,16 +6097,16 @@ apiInstance.getConversationsSocialParticipantCommunicationWrapup(conversationId,
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
  **communicationId** | **String** | communicationId |  |
- **provisional** | **Boolean** | Indicates if the wrap-up code is provisional. | [optional] [default to false] |
-{: class="table table-striped"}
+ **provisional** | **Boolean** | Indicates whether or not to fetch provisional wrap-up code. | [optional] [default to false] |
 
 ### Return type
 
 **AssignedWrapupCode**
 
-<a name="getConversationsVideoDetails"></a>
 
-# VideoConferenceDetails getConversationsVideoDetails(conferenceId)
+## getConversationsVideoDetails
+
+> VideoConferenceDetails getConversationsVideoDetails(conferenceId)
 
 
 GET /api/v2/conversations/videos/{conferenceId}/details
@@ -5378,7 +6127,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -5401,15 +6150,15 @@ apiInstance.getConversationsVideoDetails(conferenceId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **conferenceId** | **String** | conferenceId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **VideoConferenceDetails**
 
-<a name="getConversationsVideoParticipantCommunicationWrapup"></a>
 
-# AssignedWrapupCode getConversationsVideoParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts)
+## getConversationsVideoParticipantCommunicationWrapup
+
+> AssignedWrapupCode getConversationsVideoParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts)
 
 
 GET /api/v2/conversations/videos/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup
@@ -5426,7 +6175,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -5435,7 +6184,7 @@ let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
 let communicationId = "communicationId_example"; // String | communicationId
 let opts = { 
-  'provisional': false // Boolean | Indicates if the wrap-up code is provisional.
+  'provisional': false // Boolean | Indicates whether or not to fetch provisional wrap-up code.
 };
 
 apiInstance.getConversationsVideoParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts)
@@ -5456,16 +6205,16 @@ apiInstance.getConversationsVideoParticipantCommunicationWrapup(conversationId, 
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
  **communicationId** | **String** | communicationId |  |
- **provisional** | **Boolean** | Indicates if the wrap-up code is provisional. | [optional] [default to false] |
-{: class="table table-striped"}
+ **provisional** | **Boolean** | Indicates whether or not to fetch provisional wrap-up code. | [optional] [default to false] |
 
 ### Return type
 
 **AssignedWrapupCode**
 
-<a name="getConversationsVideosMeeting"></a>
 
-# MeetingIdRecord getConversationsVideosMeeting(meetingId)
+## getConversationsVideosMeeting
+
+> MeetingIdRecord getConversationsVideosMeeting(meetingId)
 
 
 GET /api/v2/conversations/videos/meetings/{meetingId}
@@ -5486,7 +6235,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -5509,15 +6258,15 @@ apiInstance.getConversationsVideosMeeting(meetingId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **meetingId** | **String** | meetingId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **MeetingIdRecord**
 
-<a name="patchConversationParticipant"></a>
 
-# void patchConversationParticipant(conversationId, participantId, body)
+## patchConversationParticipant
+
+> void patchConversationParticipant(conversationId, participantId, body)
 
 
 PATCH /api/v2/conversations/{conversationId}/participants/{participantId}
@@ -5529,6 +6278,8 @@ Update conversation participant.
 Requires ANY permissions:
 
 * conversation:participant:wrapup
+* conversation:call:record
+* conversation:communication:disconnect
 
 ### Example Usage
 
@@ -5538,7 +6289,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -5565,15 +6316,15 @@ apiInstance.patchConversationParticipant(conversationId, participantId, body)
  **conversationId** | **String** | conversation ID |  |
  **participantId** | **String** | participant ID |  |
  **body** | **Object** | Update request |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="patchConversationParticipantAttributes"></a>
 
-# void patchConversationParticipantAttributes(conversationId, participantId, body)
+## patchConversationParticipantAttributes
+
+> void patchConversationParticipantAttributes(conversationId, participantId, body)
 
 
 PATCH /api/v2/conversations/{conversationId}/participants/{participantId}/attributes
@@ -5590,7 +6341,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -5617,15 +6368,15 @@ apiInstance.patchConversationParticipantAttributes(conversationId, participantId
  **conversationId** | **String** | conversation ID |  |
  **participantId** | **String** | participant ID |  |
  **body** | **Object** | Participant attributes |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="patchConversationSecureattributes"></a>
 
-# **&#39;String&#39;** patchConversationSecureattributes(conversationId, body)
+## patchConversationSecureattributes
+
+> **&#39;String&#39;** patchConversationSecureattributes(conversationId, body)
 
 
 PATCH /api/v2/conversations/{conversationId}/secureattributes
@@ -5644,7 +6395,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -5669,15 +6420,179 @@ apiInstance.patchConversationSecureattributes(conversationId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversation ID |  |
  **body** | **Object** | Conversation Secure Attributes |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **&#39;String&#39;**
 
-<a name="patchConversationsAftercallworkConversationIdParticipantCommunication"></a>
 
-# AfterCallWorkUpdate patchConversationsAftercallworkConversationIdParticipantCommunication(conversationId, participantId, communicationId, body)
+## patchConversationSummaryEngagements
+
+> void patchConversationSummaryEngagements(conversationId, summaryId, opts)
+
+
+PATCH /api/v2/conversations/{conversationId}/summaries/{summaryId}/engagements
+
+Update agent's engagement for the summary.
+
+Requires ALL permissions:
+
+* conversation:summaryEngagement:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | Conversation ID
+let summaryId = "summaryId_example"; // String | Summary ID
+let opts = { 
+  'body': {} // Object | 
+};
+
+apiInstance.patchConversationSummaryEngagements(conversationId, summaryId, opts)
+  .then(() => {
+    console.log('patchConversationSummaryEngagements returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchConversationSummaryEngagements');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | Conversation ID |  |
+ **summaryId** | **String** | Summary ID |  |
+ **body** | **Object** |  | [optional]  |
+
+### Return type
+
+void (no response body)
+
+
+## patchConversationSummaryFeedback
+
+> void patchConversationSummaryFeedback(conversationId, summaryId, opts)
+
+
+PATCH /api/v2/conversations/{conversationId}/summaries/{summaryId}/feedback
+
+Update the feedback for the summary.
+
+Requires ALL permissions:
+
+* conversation:summaryFeedback:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | Conversation ID
+let summaryId = "summaryId_example"; // String | Summary ID
+let opts = { 
+  'body': {} // Object | 
+};
+
+apiInstance.patchConversationSummaryFeedback(conversationId, summaryId, opts)
+  .then(() => {
+    console.log('patchConversationSummaryFeedback returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchConversationSummaryFeedback');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | Conversation ID |  |
+ **summaryId** | **String** | Summary ID |  |
+ **body** | **Object** |  | [optional]  |
+
+### Return type
+
+void (no response body)
+
+
+## patchConversationUtilizationlabel
+
+> **&#39;String&#39;** patchConversationUtilizationlabel(conversationId, body)
+
+
+PATCH /api/v2/conversations/{conversationId}/utilizationlabel
+
+Update the utilization label on a conversation. When there is no value provided, the system default label is applied
+
+Requires ANY permissions:
+
+* conversation:utilizationLabel:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | conversation ID
+let body = {}; // Object | Conversation Utilization Label
+
+apiInstance.patchConversationUtilizationlabel(conversationId, body)
+  .then((data) => {
+    console.log(`patchConversationUtilizationlabel success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchConversationUtilizationlabel');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversation ID |  |
+ **body** | **Object** | Conversation Utilization Label |  |
+
+### Return type
+
+**&#39;String&#39;**
+
+
+## patchConversationsAftercallworkConversationIdParticipantCommunication
+
+> AfterCallWorkUpdate patchConversationsAftercallworkConversationIdParticipantCommunication(conversationId, participantId, communicationId, body)
 
 
 PATCH /api/v2/conversations/aftercallwork/{conversationId}/participants/{participantId}/communications/{communicationId}
@@ -5696,7 +6611,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -5725,15 +6640,15 @@ apiInstance.patchConversationsAftercallworkConversationIdParticipantCommunicatio
  **participantId** | **String** | participantId |  |
  **communicationId** | **String** | communicationId |  |
  **body** | **Object** | AfterCallWorkUpdate |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AfterCallWorkUpdate**
 
-<a name="patchConversationsCall"></a>
 
-# Conversation patchConversationsCall(conversationId, body)
+## patchConversationsCall
+
+> Conversation patchConversationsCall(conversationId, body)
 
 
 PATCH /api/v2/conversations/calls/{conversationId}
@@ -5752,7 +6667,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -5777,15 +6692,15 @@ apiInstance.patchConversationsCall(conversationId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **body** | **Object** | Conversation |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Conversation**
 
-<a name="patchConversationsCallParticipant"></a>
 
-# void patchConversationsCallParticipant(conversationId, participantId, body)
+## patchConversationsCallParticipant
+
+> void patchConversationsCallParticipant(conversationId, participantId, body)
 
 
 PATCH /api/v2/conversations/calls/{conversationId}/participants/{participantId}
@@ -5795,6 +6710,8 @@ Update conversation participant
 Requires ANY permissions:
 
 * conversation:participant:wrapup
+* conversation:call:record
+* conversation:communication:disconnect
 
 ### Example Usage
 
@@ -5804,7 +6721,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -5831,15 +6748,15 @@ apiInstance.patchConversationsCallParticipant(conversationId, participantId, bod
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
  **body** | **Object** | Participant request |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="patchConversationsCallParticipantAttributes"></a>
 
-# ParticipantAttributes patchConversationsCallParticipantAttributes(conversationId, participantId, body)
+## patchConversationsCallParticipantAttributes
+
+> ParticipantAttributes patchConversationsCallParticipantAttributes(conversationId, participantId, body)
 
 
 PATCH /api/v2/conversations/calls/{conversationId}/participants/{participantId}/attributes
@@ -5856,7 +6773,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -5883,20 +6800,20 @@ apiInstance.patchConversationsCallParticipantAttributes(conversationId, particip
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
  **body** | **Object** | Participant attributes |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ParticipantAttributes**
 
-<a name="patchConversationsCallParticipantCommunication"></a>
 
-# **Object** patchConversationsCallParticipantCommunication(conversationId, participantId, communicationId, body)
+## patchConversationsCallParticipantCommunication
+
+> **Object** patchConversationsCallParticipantCommunication(conversationId, participantId, communicationId, body)
 
 
 PATCH /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}
 
-Update conversation participant's communication by disconnecting it.
+Update conversation participant's communication by disconnecting it. This endpoint does not update wrapup.
 
 Requires NO permissions:
 
@@ -5908,7 +6825,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -5937,15 +6854,15 @@ apiInstance.patchConversationsCallParticipantCommunication(conversationId, parti
  **participantId** | **String** | participantId |  |
  **communicationId** | **String** | communicationId |  |
  **body** | **Object** | Participant |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Object**
 
-<a name="patchConversationsCallParticipantConsult"></a>
 
-# ConsultTransferResponse patchConversationsCallParticipantConsult(conversationId, participantId, body)
+## patchConversationsCallParticipantConsult
+
+> ConsultTransferResponse patchConversationsCallParticipantConsult(conversationId, participantId, body)
 
 
 PATCH /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult
@@ -5962,7 +6879,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -5989,15 +6906,15 @@ apiInstance.patchConversationsCallParticipantConsult(conversationId, participant
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
  **body** | **Object** | new speak to |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ConsultTransferResponse**
 
-<a name="patchConversationsCallback"></a>
 
-# Conversation patchConversationsCallback(conversationId, body)
+## patchConversationsCallback
+
+> Conversation patchConversationsCallback(conversationId, body)
 
 
 PATCH /api/v2/conversations/callbacks/{conversationId}
@@ -6016,7 +6933,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -6041,15 +6958,15 @@ apiInstance.patchConversationsCallback(conversationId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **body** | **Object** | Conversation |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Conversation**
 
-<a name="patchConversationsCallbackParticipant"></a>
 
-# void patchConversationsCallbackParticipant(conversationId, participantId, body)
+## patchConversationsCallbackParticipant
+
+> void patchConversationsCallbackParticipant(conversationId, participantId, body)
 
 
 PATCH /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}
@@ -6059,6 +6976,8 @@ Update conversation participant
 Requires ANY permissions:
 
 * conversation:participant:wrapup
+* conversation:call:record
+* conversation:communication:disconnect
 
 ### Example Usage
 
@@ -6068,7 +6987,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -6095,15 +7014,15 @@ apiInstance.patchConversationsCallbackParticipant(conversationId, participantId,
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
  **body** | **Object** | Participant |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="patchConversationsCallbackParticipantAttributes"></a>
 
-# ParticipantAttributes patchConversationsCallbackParticipantAttributes(conversationId, participantId, body)
+## patchConversationsCallbackParticipantAttributes
+
+> ParticipantAttributes patchConversationsCallbackParticipantAttributes(conversationId, participantId, body)
 
 
 PATCH /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/attributes
@@ -6120,7 +7039,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -6147,15 +7066,15 @@ apiInstance.patchConversationsCallbackParticipantAttributes(conversationId, part
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
  **body** | **Object** | Attributes |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ParticipantAttributes**
 
-<a name="patchConversationsCallbackParticipantCommunication"></a>
 
-# **Object** patchConversationsCallbackParticipantCommunication(conversationId, participantId, communicationId, body)
+## patchConversationsCallbackParticipantCommunication
+
+> **Object** patchConversationsCallbackParticipantCommunication(conversationId, participantId, communicationId, body)
 
 
 PATCH /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/communications/{communicationId}
@@ -6172,7 +7091,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -6201,15 +7120,15 @@ apiInstance.patchConversationsCallbackParticipantCommunication(conversationId, p
  **participantId** | **String** | participantId |  |
  **communicationId** | **String** | communicationId |  |
  **body** | **Object** | Participant |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Object**
 
-<a name="patchConversationsCallbacks"></a>
 
-# PatchCallbackResponse patchConversationsCallbacks(body)
+## patchConversationsCallbacks
+
+> PatchCallbackResponse patchConversationsCallbacks(body)
 
 
 PATCH /api/v2/conversations/callbacks
@@ -6228,7 +7147,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -6251,20 +7170,25 @@ apiInstance.patchConversationsCallbacks(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | PatchCallbackRequest |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **PatchCallbackResponse**
 
-<a name="patchConversationsChat"></a>
 
-# Conversation patchConversationsChat(conversationId, body)
+## patchConversationsChat
 
+> Conversation patchConversationsChat(conversationId, body)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 PATCH /api/v2/conversations/chats/{conversationId}
 
 Update a conversation by disconnecting all of the participants
+
+This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
 
 Requires ANY permissions:
 
@@ -6278,7 +7202,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -6303,24 +7227,31 @@ apiInstance.patchConversationsChat(conversationId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **body** | **Object** | Conversation |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Conversation**
 
-<a name="patchConversationsChatParticipant"></a>
 
-# void patchConversationsChatParticipant(conversationId, participantId, body)
+## patchConversationsChatParticipant
 
+> void patchConversationsChatParticipant(conversationId, participantId, body)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 PATCH /api/v2/conversations/chats/{conversationId}/participants/{participantId}
 
 Update conversation participant
 
+This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
+
 Requires ANY permissions:
 
 * conversation:participant:wrapup
+* conversation:call:record
+* conversation:communication:disconnect
 
 ### Example Usage
 
@@ -6330,7 +7261,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -6357,20 +7288,25 @@ apiInstance.patchConversationsChatParticipant(conversationId, participantId, bod
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
  **body** | **Object** | Update request |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="patchConversationsChatParticipantAttributes"></a>
 
-# ParticipantAttributes patchConversationsChatParticipantAttributes(conversationId, participantId, body)
+## patchConversationsChatParticipantAttributes
 
+> ParticipantAttributes patchConversationsChatParticipantAttributes(conversationId, participantId, body)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 PATCH /api/v2/conversations/chats/{conversationId}/participants/{participantId}/attributes
 
 Update the attributes on a conversation participant.
+
+This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
 
 Requires NO permissions:
 
@@ -6382,7 +7318,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -6409,20 +7345,25 @@ apiInstance.patchConversationsChatParticipantAttributes(conversationId, particip
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
  **body** | **Object** | Participant attributes |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ParticipantAttributes**
 
-<a name="patchConversationsChatParticipantCommunication"></a>
 
-# **Object** patchConversationsChatParticipantCommunication(conversationId, participantId, communicationId, body)
+## patchConversationsChatParticipantCommunication
 
+> **Object** patchConversationsChatParticipantCommunication(conversationId, participantId, communicationId, body)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 PATCH /api/v2/conversations/chats/{conversationId}/participants/{participantId}/communications/{communicationId}
 
-Update conversation participant's communication by disconnecting it.
+Update conversation participant's communication by disconnecting it. This endpoint does not update wrapup.
+
+This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
 
 Requires NO permissions:
 
@@ -6434,7 +7375,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -6463,20 +7404,25 @@ apiInstance.patchConversationsChatParticipantCommunication(conversationId, parti
  **participantId** | **String** | participantId |  |
  **communicationId** | **String** | communicationId |  |
  **body** | **Object** | Participant |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Object**
 
-<a name="patchConversationsCobrowsesession"></a>
 
-# Conversation patchConversationsCobrowsesession(conversationId, body)
+## patchConversationsCobrowsesession
 
+> Conversation patchConversationsCobrowsesession(conversationId, body)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 PATCH /api/v2/conversations/cobrowsesessions/{conversationId}
 
 Update a conversation by disconnecting all of the participants
+
+This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
 
 Requires ANY permissions:
 
@@ -6490,7 +7436,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -6515,24 +7461,31 @@ apiInstance.patchConversationsCobrowsesession(conversationId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **body** | **Object** | Conversation |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Conversation**
 
-<a name="patchConversationsCobrowsesessionParticipant"></a>
 
-# void patchConversationsCobrowsesessionParticipant(conversationId, participantId, opts)
+## patchConversationsCobrowsesessionParticipant
 
+> void patchConversationsCobrowsesessionParticipant(conversationId, participantId, opts)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 PATCH /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}
 
 Update conversation participant
 
+This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
+
 Requires ANY permissions:
 
 * conversation:participant:wrapup
+* conversation:call:record
+* conversation:communication:disconnect
 
 ### Example Usage
 
@@ -6542,7 +7495,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -6571,20 +7524,25 @@ apiInstance.patchConversationsCobrowsesessionParticipant(conversationId, partici
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
  **body** | **Object** |  | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="patchConversationsCobrowsesessionParticipantAttributes"></a>
 
-# ParticipantAttributes patchConversationsCobrowsesessionParticipantAttributes(conversationId, participantId, opts)
+## patchConversationsCobrowsesessionParticipantAttributes
 
+> ParticipantAttributes patchConversationsCobrowsesessionParticipantAttributes(conversationId, participantId, opts)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 PATCH /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/attributes
 
 Update the attributes on a conversation participant.
+
+This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
 
 Requires NO permissions:
 
@@ -6596,7 +7554,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -6625,20 +7583,25 @@ apiInstance.patchConversationsCobrowsesessionParticipantAttributes(conversationI
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
  **body** | **Object** |  | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ParticipantAttributes**
 
-<a name="patchConversationsCobrowsesessionParticipantCommunication"></a>
 
-# **Object** patchConversationsCobrowsesessionParticipantCommunication(conversationId, participantId, communicationId, body)
+## patchConversationsCobrowsesessionParticipantCommunication
 
+> **Object** patchConversationsCobrowsesessionParticipantCommunication(conversationId, participantId, communicationId, body)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 PATCH /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/communications/{communicationId}
 
 Update conversation participant's communication by disconnecting it.
+
+This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
 
 Requires NO permissions:
 
@@ -6650,7 +7613,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -6679,15 +7642,15 @@ apiInstance.patchConversationsCobrowsesessionParticipantCommunication(conversati
  **participantId** | **String** | participantId |  |
  **communicationId** | **String** | communicationId |  |
  **body** | **Object** | Participant |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Object**
 
-<a name="patchConversationsEmail"></a>
 
-# Conversation patchConversationsEmail(conversationId, body)
+## patchConversationsEmail
+
+> Conversation patchConversationsEmail(conversationId, body)
 
 
 PATCH /api/v2/conversations/emails/{conversationId}
@@ -6706,7 +7669,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -6731,15 +7694,15 @@ apiInstance.patchConversationsEmail(conversationId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **body** | **Object** | Conversation |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Conversation**
 
-<a name="patchConversationsEmailMessagesDraft"></a>
 
-# EmailMessage patchConversationsEmailMessagesDraft(conversationId, opts)
+## patchConversationsEmailMessagesDraft
+
+> EmailMessage patchConversationsEmailMessagesDraft(conversationId, opts)
 
 
 PATCH /api/v2/conversations/emails/{conversationId}/messages/draft
@@ -6756,7 +7719,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -6787,15 +7750,15 @@ apiInstance.patchConversationsEmailMessagesDraft(conversationId, opts)
  **autoFill** | **Boolean** | autoFill | [optional]  |
  **discard** | **Boolean** | discard | [optional]  |
  **body** | **Object** | Draft Manipulation Request | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **EmailMessage**
 
-<a name="patchConversationsEmailParticipant"></a>
 
-# void patchConversationsEmailParticipant(conversationId, participantId, body)
+## patchConversationsEmailParticipant
+
+> void patchConversationsEmailParticipant(conversationId, participantId, body)
 
 
 PATCH /api/v2/conversations/emails/{conversationId}/participants/{participantId}
@@ -6805,6 +7768,9 @@ Update conversation participant
 Requires ANY permissions:
 
 * conversation:participant:wrapup
+* conversation:call:record
+* conversation:communication:disconnect
+* conversation:email:park
 
 ### Example Usage
 
@@ -6814,7 +7780,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -6841,15 +7807,15 @@ apiInstance.patchConversationsEmailParticipant(conversationId, participantId, bo
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
  **body** | **Object** | Update request |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="patchConversationsEmailParticipantAttributes"></a>
 
-# ParticipantAttributes patchConversationsEmailParticipantAttributes(conversationId, participantId, body)
+## patchConversationsEmailParticipantAttributes
+
+> ParticipantAttributes patchConversationsEmailParticipantAttributes(conversationId, participantId, body)
 
 
 PATCH /api/v2/conversations/emails/{conversationId}/participants/{participantId}/attributes
@@ -6866,7 +7832,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -6893,20 +7859,20 @@ apiInstance.patchConversationsEmailParticipantAttributes(conversationId, partici
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
  **body** | **Object** | Participant attributes |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ParticipantAttributes**
 
-<a name="patchConversationsEmailParticipantCommunication"></a>
 
-# **Object** patchConversationsEmailParticipantCommunication(conversationId, participantId, communicationId, body)
+## patchConversationsEmailParticipantCommunication
+
+> **Object** patchConversationsEmailParticipantCommunication(conversationId, participantId, communicationId, body)
 
 
 PATCH /api/v2/conversations/emails/{conversationId}/participants/{participantId}/communications/{communicationId}
 
-Update conversation participant's communication by disconnecting it.
+Update conversation participant's communication by disconnecting it. This endpoint does not update wrapup.
 
 Requires NO permissions:
 
@@ -6918,7 +7884,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -6947,15 +7913,69 @@ apiInstance.patchConversationsEmailParticipantCommunication(conversationId, part
  **participantId** | **String** | participantId |  |
  **communicationId** | **String** | communicationId |  |
  **body** | **Object** | Participant |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Object**
 
-<a name="patchConversationsMessage"></a>
 
-# Conversation patchConversationsMessage(conversationId, body)
+## patchConversationsEmailParticipantParkingstate
+
+> void patchConversationsEmailParticipantParkingstate(conversationId, participantId, body)
+
+
+PATCH /api/v2/conversations/emails/{conversationId}/participants/{participantId}/parkingstate
+
+Update conversation by setting its parking state
+
+Requires ANY permissions:
+
+* conversation:email:park
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | conversationId
+let participantId = "participantId_example"; // String | participantId
+let body = {}; // Object | Parking update request
+
+apiInstance.patchConversationsEmailParticipantParkingstate(conversationId, participantId, body)
+  .then(() => {
+    console.log('patchConversationsEmailParticipantParkingstate returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchConversationsEmailParticipantParkingstate');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversationId |  |
+ **participantId** | **String** | participantId |  |
+ **body** | **Object** | Parking update request |  |
+
+### Return type
+
+void (no response body)
+
+
+## patchConversationsMessage
+
+> Conversation patchConversationsMessage(conversationId, body)
 
 
 PATCH /api/v2/conversations/messages/{conversationId}
@@ -6974,7 +7994,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -6999,15 +8019,15 @@ apiInstance.patchConversationsMessage(conversationId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **body** | **Object** | Conversation |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Conversation**
 
-<a name="patchConversationsMessageParticipant"></a>
 
-# void patchConversationsMessageParticipant(conversationId, participantId, opts)
+## patchConversationsMessageParticipant
+
+> void patchConversationsMessageParticipant(conversationId, participantId, opts)
 
 
 PATCH /api/v2/conversations/messages/{conversationId}/participants/{participantId}
@@ -7017,6 +8037,8 @@ Update conversation participant
 Requires ANY permissions:
 
 * conversation:participant:wrapup
+* conversation:call:record
+* conversation:communication:disconnect
 
 ### Example Usage
 
@@ -7026,7 +8048,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -7055,15 +8077,15 @@ apiInstance.patchConversationsMessageParticipant(conversationId, participantId, 
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
  **body** | **Object** |  | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="patchConversationsMessageParticipantAttributes"></a>
 
-# ParticipantAttributes patchConversationsMessageParticipantAttributes(conversationId, participantId, opts)
+## patchConversationsMessageParticipantAttributes
+
+> ParticipantAttributes patchConversationsMessageParticipantAttributes(conversationId, participantId, opts)
 
 
 PATCH /api/v2/conversations/messages/{conversationId}/participants/{participantId}/attributes
@@ -7080,7 +8102,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -7109,20 +8131,20 @@ apiInstance.patchConversationsMessageParticipantAttributes(conversationId, parti
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
  **body** | **Object** |  | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ParticipantAttributes**
 
-<a name="patchConversationsMessageParticipantCommunication"></a>
 
-# **Object** patchConversationsMessageParticipantCommunication(conversationId, participantId, communicationId, body)
+## patchConversationsMessageParticipantCommunication
+
+> **Object** patchConversationsMessageParticipantCommunication(conversationId, participantId, communicationId, body)
 
 
 PATCH /api/v2/conversations/messages/{conversationId}/participants/{participantId}/communications/{communicationId}
 
-Update conversation participant's communication by disconnecting it.
+Update conversation participant's communication by disconnecting it. This endpoint does not update wrapup.
 
 Requires NO permissions:
 
@@ -7134,7 +8156,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -7163,15 +8185,15 @@ apiInstance.patchConversationsMessageParticipantCommunication(conversationId, pa
  **participantId** | **String** | participantId |  |
  **communicationId** | **String** | communicationId |  |
  **body** | **Object** | Participant |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Object**
 
-<a name="patchConversationsMessagingIntegrationsFacebookIntegrationId"></a>
 
-# FacebookIntegration patchConversationsMessagingIntegrationsFacebookIntegrationId(integrationId, body)
+## patchConversationsMessagingIntegrationsFacebookIntegrationId
+
+> FacebookIntegration patchConversationsMessagingIntegrationsFacebookIntegrationId(integrationId, body)
 
 
 PATCH /api/v2/conversations/messaging/integrations/facebook/{integrationId}
@@ -7190,7 +8212,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -7215,15 +8237,15 @@ apiInstance.patchConversationsMessagingIntegrationsFacebookIntegrationId(integra
 | ------------- | ------------- | ------------- | ------------- |
  **integrationId** | **String** | Integration ID |  |
  **body** | **Object** | FacebookIntegrationUpdateRequest |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **FacebookIntegration**
 
-<a name="patchConversationsMessagingIntegrationsInstagramIntegrationId"></a>
 
-# InstagramIntegration patchConversationsMessagingIntegrationsInstagramIntegrationId(integrationId, body)
+## patchConversationsMessagingIntegrationsInstagramIntegrationId
+
+> InstagramIntegration patchConversationsMessagingIntegrationsInstagramIntegrationId(integrationId, body)
 
 
 PATCH /api/v2/conversations/messaging/integrations/instagram/{integrationId}
@@ -7242,7 +8264,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -7267,15 +8289,15 @@ apiInstance.patchConversationsMessagingIntegrationsInstagramIntegrationId(integr
 | ------------- | ------------- | ------------- | ------------- |
  **integrationId** | **String** | Integration ID |  |
  **body** | **Object** | InstagramIntegrationUpdateRequest |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **InstagramIntegration**
 
-<a name="patchConversationsMessagingIntegrationsOpenIntegrationId"></a>
 
-# OpenIntegration patchConversationsMessagingIntegrationsOpenIntegrationId(integrationId, body)
+## patchConversationsMessagingIntegrationsOpenIntegrationId
+
+> OpenIntegration patchConversationsMessagingIntegrationsOpenIntegrationId(integrationId, body)
 
 
 PATCH /api/v2/conversations/messaging/integrations/open/{integrationId}
@@ -7296,7 +8318,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -7321,24 +8343,24 @@ apiInstance.patchConversationsMessagingIntegrationsOpenIntegrationId(integration
 | ------------- | ------------- | ------------- | ------------- |
  **integrationId** | **String** | Integration ID |  |
  **body** | **Object** | OpenIntegrationUpdateRequest |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **OpenIntegration**
 
-<a name="patchConversationsMessagingIntegrationsTwitterIntegrationId"></a>
 
-# TwitterIntegration patchConversationsMessagingIntegrationsTwitterIntegrationId(integrationId, body)
+## patchConversationsMessagingIntegrationsTwitterIntegrationId
+
+> TwitterIntegration patchConversationsMessagingIntegrationsTwitterIntegrationId(integrationId, body)
 
 
 PATCH /api/v2/conversations/messaging/integrations/twitter/{integrationId}
 
-Update Twitter messaging integration
+Update a Twitter messaging integration
 
 Requires ALL permissions:
 
-* messaging:integration:edit
+* messaging:XIntegration:edit
 
 ### Example Usage
 
@@ -7348,13 +8370,13 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
 
 let integrationId = "integrationId_example"; // String | Integration ID
-let body = {}; // Object | TwitterIntegrationRequest
+let body = {}; // Object | TwitterIntegrationUpdateRequest
 
 apiInstance.patchConversationsMessagingIntegrationsTwitterIntegrationId(integrationId, body)
   .then((data) => {
@@ -7372,23 +8394,23 @@ apiInstance.patchConversationsMessagingIntegrationsTwitterIntegrationId(integrat
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **integrationId** | **String** | Integration ID |  |
- **body** | **Object** | TwitterIntegrationRequest |  |
-{: class="table table-striped"}
+ **body** | **Object** | TwitterIntegrationUpdateRequest |  |
 
 ### Return type
 
 **TwitterIntegration**
 
-<a name="patchConversationsMessagingIntegrationsWhatsappIntegrationId"></a>
 
-# WhatsAppIntegration patchConversationsMessagingIntegrationsWhatsappIntegrationId(integrationId, body)
+## patchConversationsMessagingIntegrationsWhatsappEmbeddedsignupIntegrationId
+
+> WhatsAppIntegration patchConversationsMessagingIntegrationsWhatsappEmbeddedsignupIntegrationId(integrationId, body)
 
 
-PATCH /api/v2/conversations/messaging/integrations/whatsapp/{integrationId}
+PATCH /api/v2/conversations/messaging/integrations/whatsapp/embeddedsignup/{integrationId}
 
-Update or activate a WhatsApp messaging integration
+Activate a WhatsApp messaging integration created using the WhatsApp embedded signup flow
 
-The following steps are required in order to fully activate a WhatsApp Integration: Initially, you will need to get an activation code by sending: an action set to Activate, and an authenticationMethod choosing from Sms or Voice. Finally, once you have been informed of an activation code on selected authenticationMethod, you will need to confirm the code by sending: an action set to Confirm, and the confirmationCode you have received from Whatsapp.
+Please specify the phone number to associate with this WhatsApp integration from the list of available phone numbers returned to you in the GET call on the integration with a createStatus of Completed. You can then run a GET on the integration to check if its status has been updated to Active.
 
 Requires ALL permissions:
 
@@ -7402,7 +8424,59 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let integrationId = "integrationId_example"; // String | Integration ID
+let body = {}; // Object | WhatsAppEmbeddedSignupIntegrationActivationRequest
+
+apiInstance.patchConversationsMessagingIntegrationsWhatsappEmbeddedsignupIntegrationId(integrationId, body)
+  .then((data) => {
+    console.log(`patchConversationsMessagingIntegrationsWhatsappEmbeddedsignupIntegrationId success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchConversationsMessagingIntegrationsWhatsappEmbeddedsignupIntegrationId');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **integrationId** | **String** | Integration ID |  |
+ **body** | **Object** | WhatsAppEmbeddedSignupIntegrationActivationRequest |  |
+
+### Return type
+
+**WhatsAppIntegration**
+
+
+## patchConversationsMessagingIntegrationsWhatsappIntegrationId
+
+> WhatsAppIntegration patchConversationsMessagingIntegrationsWhatsappIntegrationId(integrationId, body)
+
+
+PATCH /api/v2/conversations/messaging/integrations/whatsapp/{integrationId}
+
+Update a WhatsApp messaging integration
+
+Requires ALL permissions:
+
+* messaging:integration:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -7427,15 +8501,15 @@ apiInstance.patchConversationsMessagingIntegrationsWhatsappIntegrationId(integra
 | ------------- | ------------- | ------------- | ------------- |
  **integrationId** | **String** | Integration ID |  |
  **body** | **Object** | WhatsAppIntegrationUpdateRequest |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **WhatsAppIntegration**
 
-<a name="patchConversationsMessagingSetting"></a>
 
-# MessagingSetting patchConversationsMessagingSetting(messageSettingId, body)
+## patchConversationsMessagingSetting
+
+> MessagingSetting patchConversationsMessagingSetting(messageSettingId, body)
 
 
 PATCH /api/v2/conversations/messaging/settings/{messageSettingId}
@@ -7454,7 +8528,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -7479,15 +8553,15 @@ apiInstance.patchConversationsMessagingSetting(messageSettingId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **messageSettingId** | **String** | Message Setting ID |  |
  **body** | **Object** | MessagingSetting |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **MessagingSetting**
 
-<a name="patchConversationsMessagingSupportedcontentSupportedContentId"></a>
 
-# SupportedContent patchConversationsMessagingSupportedcontentSupportedContentId(supportedContentId, body)
+## patchConversationsMessagingSupportedcontentSupportedContentId
+
+> SupportedContent patchConversationsMessagingSupportedcontentSupportedContentId(supportedContentId, body)
 
 
 PATCH /api/v2/conversations/messaging/supportedcontent/{supportedContentId}
@@ -7506,7 +8580,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -7531,15 +8605,15 @@ apiInstance.patchConversationsMessagingSupportedcontentSupportedContentId(suppor
 | ------------- | ------------- | ------------- | ------------- |
  **supportedContentId** | **String** | Supported Content ID |  |
  **body** | **Object** | SupportedContent |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **SupportedContent**
 
-<a name="patchConversationsSettings"></a>
 
-# void patchConversationsSettings(body)
+## patchConversationsSettings
+
+> void patchConversationsSettings(body)
 
 
 PATCH /api/v2/conversations/settings
@@ -7558,7 +8632,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -7581,15 +8655,15 @@ apiInstance.patchConversationsSettings(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Settings |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="postAnalyticsConversationDetailsProperties"></a>
 
-# PropertyIndexRequest postAnalyticsConversationDetailsProperties(conversationId, body)
+## postAnalyticsConversationDetailsProperties
+
+> PropertyIndexRequest postAnalyticsConversationDetailsProperties(conversationId, body)
 
 
 POST /api/v2/analytics/conversations/{conversationId}/details/properties
@@ -7608,7 +8682,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -7633,22 +8707,20 @@ apiInstance.postAnalyticsConversationDetailsProperties(conversationId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **body** | **Object** | request |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **PropertyIndexRequest**
 
-<a name="postAnalyticsConversationsActivityQuery"></a>
 
-# ConversationActivityResponse postAnalyticsConversationsActivityQuery(body, opts)
+## postAnalyticsConversationsActivityQuery
+
+> ConversationActivityResponse postAnalyticsConversationsActivityQuery(body, opts)
 
 
 POST /api/v2/analytics/conversations/activity/query
 
 Query for conversation activity observations
-
-postAnalyticsConversationsActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -7662,7 +8734,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -7691,15 +8763,15 @@ apiInstance.postAnalyticsConversationsActivityQuery(body, opts)
  **body** | **Object** | query |  |
  **pageSize** | **Number** | The desired page size | [optional]  |
  **pageNumber** | **Number** | The desired page number | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ConversationActivityResponse**
 
-<a name="postAnalyticsConversationsAggregatesJobs"></a>
 
-# AsyncQueryResponse postAnalyticsConversationsAggregatesJobs(body)
+## postAnalyticsConversationsAggregatesJobs
+
+> AsyncQueryResponse postAnalyticsConversationsAggregatesJobs(body)
 
 
 POST /api/v2/analytics/conversations/aggregates/jobs
@@ -7720,7 +8792,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -7743,15 +8815,15 @@ apiInstance.postAnalyticsConversationsAggregatesJobs(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AsyncQueryResponse**
 
-<a name="postAnalyticsConversationsAggregatesQuery"></a>
 
-# ConversationAggregateQueryResponse postAnalyticsConversationsAggregatesQuery(body)
+## postAnalyticsConversationsAggregatesQuery
+
+> ConversationAggregateQueryResponse postAnalyticsConversationsAggregatesQuery(body)
 
 
 POST /api/v2/analytics/conversations/aggregates/query
@@ -7770,7 +8842,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -7793,15 +8865,15 @@ apiInstance.postAnalyticsConversationsAggregatesQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ConversationAggregateQueryResponse**
 
-<a name="postAnalyticsConversationsDetailsJobs"></a>
 
-# AsyncQueryResponse postAnalyticsConversationsDetailsJobs(body)
+## postAnalyticsConversationsDetailsJobs
+
+> AsyncQueryResponse postAnalyticsConversationsDetailsJobs(body)
 
 
 POST /api/v2/analytics/conversations/details/jobs
@@ -7821,7 +8893,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -7844,15 +8916,15 @@ apiInstance.postAnalyticsConversationsDetailsJobs(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AsyncQueryResponse**
 
-<a name="postAnalyticsConversationsDetailsQuery"></a>
 
-# AnalyticsConversationQueryResponse postAnalyticsConversationsDetailsQuery(body)
+## postAnalyticsConversationsDetailsQuery
+
+> AnalyticsConversationQueryResponse postAnalyticsConversationsDetailsQuery(body)
 
 
 POST /api/v2/analytics/conversations/details/query
@@ -7872,7 +8944,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -7895,15 +8967,15 @@ apiInstance.postAnalyticsConversationsDetailsQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AnalyticsConversationQueryResponse**
 
-<a name="postConversationAssign"></a>
 
-# **&#39;String&#39;** postConversationAssign(conversationId, body)
+## postConversationAssign
+
+> **&#39;String&#39;** postConversationAssign(conversationId, body)
 
 
 POST /api/v2/conversations/{conversationId}/assign
@@ -7931,7 +9003,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -7956,22 +9028,20 @@ apiInstance.postConversationAssign(conversationId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversation ID |  |
  **body** | **Object** | Targeted user |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **&#39;String&#39;**
 
-<a name="postConversationBarge"></a>
 
-# void postConversationBarge(conversationId)
+## postConversationBarge
+
+> void postConversationBarge(conversationId)
 
 
 POST /api/v2/conversations/{conversationId}/barge
 
 Barge a conversation creating a barged in conference of connected participants.
-
-postConversationBarge is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -7985,7 +9055,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -8008,15 +9078,15 @@ apiInstance.postConversationBarge(conversationId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversation ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="postConversationCobrowse"></a>
 
-# CobrowseWebMessagingSession postConversationCobrowse(conversationId)
+## postConversationCobrowse
+
+> CobrowseWebMessagingSession postConversationCobrowse(conversationId)
 
 
 POST /api/v2/conversations/{conversationId}/cobrowse
@@ -8036,7 +9106,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -8059,15 +9129,73 @@ apiInstance.postConversationCobrowse(conversationId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | Conversation ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **CobrowseWebMessagingSession**
 
-<a name="postConversationDisconnect"></a>
 
-# **&#39;String&#39;** postConversationDisconnect(conversationId)
+## postConversationCommunicationInternalmessages
+
+> InternalMessageData postConversationCommunicationInternalmessages(conversationId, communicationId, body)
+
+
+POST /api/v2/conversations/{conversationId}/communications/{communicationId}/internalmessages
+
+Send internal message
+
+Send a new internal message for an existing communication.
+
+postConversationCommunicationInternalmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* conversation:internalMessaging:create
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | conversationId
+let communicationId = "communicationId_example"; // String | communicationId
+let body = {}; // Object | Message
+
+apiInstance.postConversationCommunicationInternalmessages(conversationId, communicationId, body)
+  .then((data) => {
+    console.log(`postConversationCommunicationInternalmessages success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postConversationCommunicationInternalmessages');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversationId |  |
+ **communicationId** | **String** | communicationId |  |
+ **body** | **Object** | Message |  |
+
+### Return type
+
+**InternalMessageData**
+
+
+## postConversationDisconnect
+
+> **&#39;String&#39;** postConversationDisconnect(conversationId)
 
 
 POST /api/v2/conversations/{conversationId}/disconnect
@@ -8086,7 +9214,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -8109,15 +9237,15 @@ apiInstance.postConversationDisconnect(conversationId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversation ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **&#39;String&#39;**
 
-<a name="postConversationParticipantCallbacks"></a>
 
-# void postConversationParticipantCallbacks(conversationId, participantId, opts)
+## postConversationParticipantCallbacks
+
+> void postConversationParticipantCallbacks(conversationId, participantId, opts)
 
 
 POST /api/v2/conversations/{conversationId}/participants/{participantId}/callbacks
@@ -8136,7 +9264,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -8165,15 +9293,15 @@ apiInstance.postConversationParticipantCallbacks(conversationId, participantId, 
  **conversationId** | **String** | conversation ID |  |
  **participantId** | **String** | participant ID |  |
  **body** | **Object** |  | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="postConversationParticipantDigits"></a>
 
-# void postConversationParticipantDigits(conversationId, participantId, opts)
+## postConversationParticipantDigits
+
+> void postConversationParticipantDigits(conversationId, participantId, opts)
 
 
 POST /api/v2/conversations/{conversationId}/participants/{participantId}/digits
@@ -8190,7 +9318,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -8219,15 +9347,73 @@ apiInstance.postConversationParticipantDigits(conversationId, participantId, opt
  **conversationId** | **String** | conversation ID |  |
  **participantId** | **String** | participant ID |  |
  **body** | **Object** | Digits | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="postConversationParticipantReplace"></a>
 
-# void postConversationParticipantReplace(conversationId, participantId, body)
+## postConversationParticipantInternalmessagesUsersCommunications
+
+> MessagingConferResponse postConversationParticipantInternalmessagesUsersCommunications(conversationId, participantId, body)
+
+
+POST /api/v2/conversations/{conversationId}/participants/{participantId}/internalmessages/users/communications
+
+Setup internal message communication with user
+
+The target user of the digital consultation must have the `conversation:internalMessaging:accept` permission.
+
+postConversationParticipantInternalmessagesUsersCommunications is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* conversation:internalMessaging:setupWithUser
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | conversation ID
+let participantId = "participantId_example"; // String | participant ID
+let body = {}; // Object | Confer request
+
+apiInstance.postConversationParticipantInternalmessagesUsersCommunications(conversationId, participantId, body)
+  .then((data) => {
+    console.log(`postConversationParticipantInternalmessagesUsersCommunications success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postConversationParticipantInternalmessagesUsersCommunications');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversation ID |  |
+ **participantId** | **String** | participant ID |  |
+ **body** | **Object** | Confer request |  |
+
+### Return type
+
+**MessagingConferResponse**
+
+
+## postConversationParticipantReplace
+
+> void postConversationParticipantReplace(conversationId, participantId, body)
 
 
 POST /api/v2/conversations/{conversationId}/participants/{participantId}/replace
@@ -8246,7 +9432,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -8273,22 +9459,20 @@ apiInstance.postConversationParticipantReplace(conversationId, participantId, bo
  **conversationId** | **String** | conversation ID |  |
  **participantId** | **String** | participant ID |  |
  **body** | **Object** | Transfer request |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="postConversationParticipantReplaceAgent"></a>
 
-# void postConversationParticipantReplaceAgent(conversationId, participantId, body)
+## postConversationParticipantReplaceAgent
+
+> void postConversationParticipantReplaceAgent(conversationId, participantId, body)
 
 
 POST /api/v2/conversations/{conversationId}/participants/{participantId}/replace/agent
 
 Replace this participant with the specified agent
-
-postConversationParticipantReplaceAgent is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -8303,7 +9487,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -8330,22 +9514,77 @@ apiInstance.postConversationParticipantReplaceAgent(conversationId, participantI
  **conversationId** | **String** | conversation ID |  |
  **participantId** | **String** | participant ID |  |
  **body** | **Object** | Transfer request |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="postConversationParticipantReplaceExternal"></a>
 
-# void postConversationParticipantReplaceExternal(conversationId, participantId, body)
+## postConversationParticipantReplaceContactExternal
+
+> void postConversationParticipantReplaceContactExternal(conversationId, participantId, body)
+
+
+POST /api/v2/conversations/{conversationId}/participants/{participantId}/replace/contact/external
+
+Replace this participant with the an external contact
+
+postConversationParticipantReplaceContactExternal is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* conversation:communication:blindTransfer
+* conversation:communication:blindTransferExternalContact
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | conversation ID
+let participantId = "participantId_example"; // String | participant ID
+let body = {}; // Object | Transfer request
+
+apiInstance.postConversationParticipantReplaceContactExternal(conversationId, participantId, body)
+  .then(() => {
+    console.log('postConversationParticipantReplaceContactExternal returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postConversationParticipantReplaceContactExternal');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversation ID |  |
+ **participantId** | **String** | participant ID |  |
+ **body** | **Object** | Transfer request |  |
+
+### Return type
+
+void (no response body)
+
+
+## postConversationParticipantReplaceExternal
+
+> void postConversationParticipantReplaceExternal(conversationId, participantId, body)
 
 
 POST /api/v2/conversations/{conversationId}/participants/{participantId}/replace/external
 
 Replace this participant with the an external contact
-
-postConversationParticipantReplaceExternal is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -8360,7 +9599,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -8387,22 +9626,20 @@ apiInstance.postConversationParticipantReplaceExternal(conversationId, participa
  **conversationId** | **String** | conversation ID |  |
  **participantId** | **String** | participant ID |  |
  **body** | **Object** | Transfer request |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="postConversationParticipantReplaceQueue"></a>
 
-# void postConversationParticipantReplaceQueue(conversationId, participantId, body)
+## postConversationParticipantReplaceQueue
+
+> void postConversationParticipantReplaceQueue(conversationId, participantId, body)
 
 
 POST /api/v2/conversations/{conversationId}/participants/{participantId}/replace/queue
 
 Replace this participant with the specified queue
-
-postConversationParticipantReplaceQueue is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -8417,7 +9654,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -8444,15 +9681,15 @@ apiInstance.postConversationParticipantReplaceQueue(conversationId, participantI
  **conversationId** | **String** | conversation ID |  |
  **participantId** | **String** | participant ID |  |
  **body** | **Object** | Transfer request |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="postConversationParticipantSecureivrsessions"></a>
 
-# SecureSession postConversationParticipantSecureivrsessions(conversationId, participantId, opts)
+## postConversationParticipantSecureivrsessions
+
+> SecureSession postConversationParticipantSecureivrsessions(conversationId, participantId, opts)
 
 
 POST /api/v2/conversations/{conversationId}/participants/{participantId}/secureivrsessions
@@ -8469,7 +9706,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -8498,15 +9735,238 @@ apiInstance.postConversationParticipantSecureivrsessions(conversationId, partici
  **conversationId** | **String** | conversation ID |  |
  **participantId** | **String** | participant ID |  |
  **body** | **Object** |  | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **SecureSession**
 
-<a name="postConversationsCall"></a>
 
-# Conversation postConversationsCall(conversationId, body)
+## postConversationParticipantTransfer
+
+> void postConversationParticipantTransfer(conversationId, participantId, body)
+
+
+POST /api/v2/conversations/{conversationId}/participants/{participantId}/transfer
+
+Replace this participant by another one using the address of the destination.
+
+postConversationParticipantTransfer is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* conversation:communication:blindTransfer
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | conversation ID
+let participantId = "participantId_example"; // String | participant ID
+let body = {}; // Object | Transfer request
+
+apiInstance.postConversationParticipantTransfer(conversationId, participantId, body)
+  .then(() => {
+    console.log('postConversationParticipantTransfer returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postConversationParticipantTransfer');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversation ID |  |
+ **participantId** | **String** | participant ID |  |
+ **body** | **Object** | Transfer request |  |
+
+### Return type
+
+void (no response body)
+
+
+## postConversationSuggestionEngagement
+
+> SuggestionEngagement postConversationSuggestionEngagement(conversationId, suggestionId, body)
+
+
+POST /api/v2/conversations/{conversationId}/suggestions/{suggestionId}/engagement
+
+Save an engagement on the suggestion.
+
+Requires ALL permissions:
+
+* conversation:suggestionEngagement:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | Conversation ID
+let suggestionId = "suggestionId_example"; // String | Suggestion ID
+let body = {}; // Object | 
+
+apiInstance.postConversationSuggestionEngagement(conversationId, suggestionId, body)
+  .then((data) => {
+    console.log(`postConversationSuggestionEngagement success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postConversationSuggestionEngagement');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | Conversation ID |  |
+ **suggestionId** | **String** | Suggestion ID |  |
+ **body** | **Object** |  |  |
+
+### Return type
+
+**SuggestionEngagement**
+
+
+## postConversationSuggestionsFeedback
+
+> void postConversationSuggestionsFeedback(conversationId, body)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
+
+POST /api/v2/conversations/{conversationId}/suggestions/feedback
+
+Suggestion feedback.
+
+Google Agent Assist offering within Genesys will no longer be supported
+
+Requires ANY permissions:
+
+* conversation:suggestionFeedback:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | Conversation ID
+let body = {}; // Object | SuggestionFeedback
+
+apiInstance.postConversationSuggestionsFeedback(conversationId, body)
+  .then(() => {
+    console.log('postConversationSuggestionsFeedback returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postConversationSuggestionsFeedback');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | Conversation ID |  |
+ **body** | **Object** | SuggestionFeedback |  |
+
+### Return type
+
+void (no response body)
+
+
+## postConversationSummaryFeedback
+
+> void postConversationSummaryFeedback(conversationId, summaryId, opts)
+
+
+POST /api/v2/conversations/{conversationId}/summaries/{summaryId}/feedback
+
+Submit feedback for the summary.
+
+Requires ALL permissions:
+
+* conversation:summaryFeedback:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | Conversation ID
+let summaryId = "summaryId_example"; // String | Summary ID
+let opts = { 
+  'body': {} // Object | 
+};
+
+apiInstance.postConversationSummaryFeedback(conversationId, summaryId, opts)
+  .then(() => {
+    console.log('postConversationSummaryFeedback returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postConversationSummaryFeedback');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | Conversation ID |  |
+ **summaryId** | **String** | Summary ID |  |
+ **body** | **Object** |  | [optional]  |
+
+### Return type
+
+void (no response body)
+
+
+## postConversationsCall
+
+> Conversation postConversationsCall(conversationId, body)
 
 
 POST /api/v2/conversations/calls/{conversationId}
@@ -8523,7 +9983,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -8548,22 +10008,20 @@ apiInstance.postConversationsCall(conversationId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **body** | **Object** | Conversation |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Conversation**
 
-<a name="postConversationsCallParticipantBarge"></a>
 
-# void postConversationsCallParticipantBarge(conversationId, participantId)
+## postConversationsCallParticipantBarge
+
+> void postConversationsCallParticipantBarge(conversationId, participantId)
 
 
 POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/barge
 
 Barge a given participant's call creating a barged in conference of connected participants.
-
-postConversationsCallParticipantBarge is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -8577,7 +10035,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -8602,15 +10060,15 @@ apiInstance.postConversationsCallParticipantBarge(conversationId, participantId)
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="postConversationsCallParticipantCoach"></a>
 
-# void postConversationsCallParticipantCoach(conversationId, participantId)
+## postConversationsCallParticipantCoach
+
+> void postConversationsCallParticipantCoach(conversationId, participantId)
 
 
 POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/coach
@@ -8629,7 +10087,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -8654,15 +10112,15 @@ apiInstance.postConversationsCallParticipantCoach(conversationId, participantId)
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="postConversationsCallParticipantCommunicationWrapup"></a>
 
-# void postConversationsCallParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts)
+## postConversationsCallParticipantCommunicationWrapup
+
+> void postConversationsCallParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts)
 
 
 POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup
@@ -8681,7 +10139,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -8712,15 +10170,15 @@ apiInstance.postConversationsCallParticipantCommunicationWrapup(conversationId, 
  **participantId** | **String** | participantId |  |
  **communicationId** | **String** | communicationId |  |
  **body** | **Object** | Wrap-up | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="postConversationsCallParticipantConsult"></a>
 
-# ConsultTransferResponse postConversationsCallParticipantConsult(conversationId, participantId, body)
+## postConversationsCallParticipantConsult
+
+> ConsultTransferResponse postConversationsCallParticipantConsult(conversationId, participantId, body)
 
 
 POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult
@@ -8739,7 +10197,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -8766,22 +10224,20 @@ apiInstance.postConversationsCallParticipantConsult(conversationId, participantI
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
  **body** | **Object** | Destination address and initial speak to |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ConsultTransferResponse**
 
-<a name="postConversationsCallParticipantConsultAgent"></a>
 
-# ConsultTransferResponse postConversationsCallParticipantConsultAgent(conversationId, participantId, body)
+## postConversationsCallParticipantConsultAgent
+
+> ConsultTransferResponse postConversationsCallParticipantConsultAgent(conversationId, participantId, body)
 
 
 POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult/agent
 
 Initiate a consult transfer to an agent
-
-postConversationsCallParticipantConsultAgent is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -8796,7 +10252,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -8823,22 +10279,77 @@ apiInstance.postConversationsCallParticipantConsultAgent(conversationId, partici
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
  **body** | **Object** | Destination agent and initial speak to |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ConsultTransferResponse**
 
-<a name="postConversationsCallParticipantConsultExternal"></a>
 
-# ConsultTransferResponse postConversationsCallParticipantConsultExternal(conversationId, participantId, body)
+## postConversationsCallParticipantConsultContactExternal
+
+> ConsultTransferResponse postConversationsCallParticipantConsultContactExternal(conversationId, participantId, body)
+
+
+POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult/contact/external
+
+Initiate a consult transfer to an external contact
+
+postConversationsCallParticipantConsultContactExternal is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* conversation:communication:consultTransfer
+* conversation:communication:consultTransferExternalContact
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | conversationId
+let participantId = "participantId_example"; // String | participantId
+let body = {}; // Object | Destination address and initial speak to
+
+apiInstance.postConversationsCallParticipantConsultContactExternal(conversationId, participantId, body)
+  .then((data) => {
+    console.log(`postConversationsCallParticipantConsultContactExternal success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postConversationsCallParticipantConsultContactExternal');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversationId |  |
+ **participantId** | **String** | participantId |  |
+ **body** | **Object** | Destination address and initial speak to |  |
+
+### Return type
+
+**ConsultTransferResponse**
+
+
+## postConversationsCallParticipantConsultExternal
+
+> ConsultTransferResponse postConversationsCallParticipantConsultExternal(conversationId, participantId, body)
 
 
 POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult/external
 
 Initiate a consult transfer to an external contact
-
-postConversationsCallParticipantConsultExternal is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -8853,7 +10364,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -8880,22 +10391,20 @@ apiInstance.postConversationsCallParticipantConsultExternal(conversationId, part
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
  **body** | **Object** | Destination address and initial speak to |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ConsultTransferResponse**
 
-<a name="postConversationsCallParticipantConsultQueue"></a>
 
-# ConsultTransferResponse postConversationsCallParticipantConsultQueue(conversationId, participantId, body)
+## postConversationsCallParticipantConsultQueue
+
+> ConsultTransferResponse postConversationsCallParticipantConsultQueue(conversationId, participantId, body)
 
 
 POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult/queue
 
 Initiate a consult transfer to a queue
-
-postConversationsCallParticipantConsultQueue is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -8910,7 +10419,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -8937,15 +10446,15 @@ apiInstance.postConversationsCallParticipantConsultQueue(conversationId, partici
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
  **body** | **Object** | Destination queue and initial speak to |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ConsultTransferResponse**
 
-<a name="postConversationsCallParticipantMonitor"></a>
 
-# void postConversationsCallParticipantMonitor(conversationId, participantId)
+## postConversationsCallParticipantMonitor
+
+> void postConversationsCallParticipantMonitor(conversationId, participantId)
 
 
 POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/monitor
@@ -8964,7 +10473,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -8989,15 +10498,15 @@ apiInstance.postConversationsCallParticipantMonitor(conversationId, participantI
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="postConversationsCallParticipantReplace"></a>
 
-# void postConversationsCallParticipantReplace(conversationId, participantId, body)
+## postConversationsCallParticipantReplace
+
+> void postConversationsCallParticipantReplace(conversationId, participantId, body)
 
 
 POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/replace
@@ -9016,7 +10525,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -9043,15 +10552,71 @@ apiInstance.postConversationsCallParticipantReplace(conversationId, participantI
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
  **body** | **Object** | Transfer request |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="postConversationsCallParticipants"></a>
 
-# Conversation postConversationsCallParticipants(conversationId, body)
+## postConversationsCallParticipantVoiceConsult
+
+> ConsultTransferResponse postConversationsCallParticipantVoiceConsult(conversationId, participantId, body)
+
+
+POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/voice/consult
+
+Initiate voice consult transfer
+
+postConversationsCallParticipantVoiceConsult is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* conversation:communication:consultTransfer
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | conversationId
+let participantId = "participantId_example"; // String | participantId
+let body = {}; // Object | Destination address and initial speak to
+
+apiInstance.postConversationsCallParticipantVoiceConsult(conversationId, participantId, body)
+  .then((data) => {
+    console.log(`postConversationsCallParticipantVoiceConsult success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postConversationsCallParticipantVoiceConsult');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversationId |  |
+ **participantId** | **String** | participantId |  |
+ **body** | **Object** | Destination address and initial speak to |  |
+
+### Return type
+
+**ConsultTransferResponse**
+
+
+## postConversationsCallParticipants
+
+> Conversation postConversationsCallParticipants(conversationId, body)
 
 
 POST /api/v2/conversations/calls/{conversationId}/participants
@@ -9068,7 +10633,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -9093,15 +10658,15 @@ apiInstance.postConversationsCallParticipants(conversationId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **body** | **Object** | Conversation |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Conversation**
 
-<a name="postConversationsCallbackParticipantCommunicationWrapup"></a>
 
-# void postConversationsCallbackParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts)
+## postConversationsCallbackParticipantCommunicationWrapup
+
+> void postConversationsCallbackParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts)
 
 
 POST /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup
@@ -9120,7 +10685,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -9151,15 +10716,15 @@ apiInstance.postConversationsCallbackParticipantCommunicationWrapup(conversation
  **participantId** | **String** | participantId |  |
  **communicationId** | **String** | communicationId |  |
  **body** | **Object** | Wrap-up | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="postConversationsCallbackParticipantReplace"></a>
 
-# void postConversationsCallbackParticipantReplace(conversationId, participantId, body)
+## postConversationsCallbackParticipantReplace
+
+> void postConversationsCallbackParticipantReplace(conversationId, participantId, body)
 
 
 POST /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/replace
@@ -9178,7 +10743,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -9205,15 +10770,15 @@ apiInstance.postConversationsCallbackParticipantReplace(conversationId, particip
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
  **body** | **Object** | Transfer request |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="postConversationsCallbacks"></a>
 
-# CreateCallbackResponse postConversationsCallbacks(body)
+## postConversationsCallbacks
+
+> CreateCallbackResponse postConversationsCallbacks(body)
 
 
 POST /api/v2/conversations/callbacks
@@ -9232,7 +10797,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -9255,15 +10820,15 @@ apiInstance.postConversationsCallbacks(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Callback |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **CreateCallbackResponse**
 
-<a name="postConversationsCallbacksBulkDisconnect"></a>
 
-# void postConversationsCallbacksBulkDisconnect(body)
+## postConversationsCallbacksBulkDisconnect
+
+> void postConversationsCallbacksBulkDisconnect(body)
 
 
 POST /api/v2/conversations/callbacks/bulk/disconnect
@@ -9282,7 +10847,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -9305,15 +10870,15 @@ apiInstance.postConversationsCallbacksBulkDisconnect(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | BulkCallbackDisconnectRequest |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="postConversationsCallbacksBulkUpdate"></a>
 
-# BulkCallbackPatchResponse postConversationsCallbacksBulkUpdate(body)
+## postConversationsCallbacksBulkUpdate
+
+> BulkCallbackPatchResponse postConversationsCallbacksBulkUpdate(body)
 
 
 POST /api/v2/conversations/callbacks/bulk/update
@@ -9332,7 +10897,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -9355,15 +10920,15 @@ apiInstance.postConversationsCallbacksBulkUpdate(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | BulkCallbackPatchRequest |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **BulkCallbackPatchResponse**
 
-<a name="postConversationsCalls"></a>
 
-# CreateCallResponse postConversationsCalls(body)
+## postConversationsCalls
+
+> CreateCallResponse postConversationsCalls(body)
 
 
 POST /api/v2/conversations/calls
@@ -9382,7 +10947,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -9405,20 +10970,25 @@ apiInstance.postConversationsCalls(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Call request |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **CreateCallResponse**
 
-<a name="postConversationsChatCommunicationMessages"></a>
 
-# WebChatMessage postConversationsChatCommunicationMessages(conversationId, communicationId, body)
+## postConversationsChatCommunicationMessages
 
+> WebChatMessage postConversationsChatCommunicationMessages(conversationId, communicationId, body)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 POST /api/v2/conversations/chats/{conversationId}/communications/{communicationId}/messages
 
 Send a message on behalf of a communication in a chat conversation.
+
+This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
 
 Requires NO permissions:
 
@@ -9430,7 +11000,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -9457,20 +11027,25 @@ apiInstance.postConversationsChatCommunicationMessages(conversationId, communica
  **conversationId** | **String** | conversationId |  |
  **communicationId** | **String** | communicationId |  |
  **body** | **Object** | Message |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **WebChatMessage**
 
-<a name="postConversationsChatCommunicationTyping"></a>
 
-# WebChatTyping postConversationsChatCommunicationTyping(conversationId, communicationId)
+## postConversationsChatCommunicationTyping
 
+> WebChatTyping postConversationsChatCommunicationTyping(conversationId, communicationId)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 POST /api/v2/conversations/chats/{conversationId}/communications/{communicationId}/typing
 
 Send a typing-indicator on behalf of a communication in a chat conversation.
+
+This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
 
 Requires NO permissions:
 
@@ -9482,7 +11057,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -9507,20 +11082,25 @@ apiInstance.postConversationsChatCommunicationTyping(conversationId, communicati
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **communicationId** | **String** | communicationId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **WebChatTyping**
 
-<a name="postConversationsChatParticipantCommunicationWrapup"></a>
 
-# void postConversationsChatParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts)
+## postConversationsChatParticipantCommunicationWrapup
 
+> void postConversationsChatParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 POST /api/v2/conversations/chats/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup
 
 Apply wrap-up for this conversation communication
+
+This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
 
 Requires ANY permissions:
 
@@ -9534,7 +11114,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -9565,20 +11145,25 @@ apiInstance.postConversationsChatParticipantCommunicationWrapup(conversationId, 
  **participantId** | **String** | participantId |  |
  **communicationId** | **String** | communicationId |  |
  **body** | **Object** | Wrap-up | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="postConversationsChatParticipantReplace"></a>
 
-# void postConversationsChatParticipantReplace(conversationId, participantId, body)
+## postConversationsChatParticipantReplace
 
+> void postConversationsChatParticipantReplace(conversationId, participantId, body)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 POST /api/v2/conversations/chats/{conversationId}/participants/{participantId}/replace
 
 Replace this participant with the specified user and/or address
+
+This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
 
 Requires ANY permissions:
 
@@ -9592,7 +11177,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -9619,20 +11204,25 @@ apiInstance.postConversationsChatParticipantReplace(conversationId, participantI
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
  **body** | **Object** | Transfer request |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="postConversationsChats"></a>
 
-# ChatConversation postConversationsChats(body)
+## postConversationsChats
 
+> ChatConversation postConversationsChats(body)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 POST /api/v2/conversations/chats
 
 Create a web chat conversation
+
+This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
 
 Requires ALL permissions:
 
@@ -9646,7 +11236,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -9669,20 +11259,25 @@ apiInstance.postConversationsChats(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Create web chat request |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ChatConversation**
 
-<a name="postConversationsCobrowsesessionParticipantCommunicationWrapup"></a>
 
-# void postConversationsCobrowsesessionParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts)
+## postConversationsCobrowsesessionParticipantCommunicationWrapup
 
+> void postConversationsCobrowsesessionParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 POST /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup
 
 Apply wrap-up for this conversation communication
+
+This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
 
 Requires ANY permissions:
 
@@ -9696,7 +11291,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -9727,20 +11322,25 @@ apiInstance.postConversationsCobrowsesessionParticipantCommunicationWrapup(conve
  **participantId** | **String** | participantId |  |
  **communicationId** | **String** | communicationId |  |
  **body** | **Object** | Wrap-up | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="postConversationsCobrowsesessionParticipantReplace"></a>
 
-# void postConversationsCobrowsesessionParticipantReplace(conversationId, participantId, opts)
+## postConversationsCobrowsesessionParticipantReplace
 
+> void postConversationsCobrowsesessionParticipantReplace(conversationId, participantId, opts)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 POST /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/replace
 
 Replace this participant with the specified user and/or address
+
+This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
 
 Requires ANY permissions:
 
@@ -9754,7 +11354,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -9783,15 +11383,15 @@ apiInstance.postConversationsCobrowsesessionParticipantReplace(conversationId, p
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
  **body** | **Object** |  | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="postConversationsEmailInboundmessages"></a>
 
-# EmailConversation postConversationsEmailInboundmessages(conversationId, body)
+## postConversationsEmailInboundmessages
+
+> EmailConversation postConversationsEmailInboundmessages(conversationId, body)
 
 
 POST /api/v2/conversations/emails/{conversationId}/inboundmessages
@@ -9808,7 +11408,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -9833,22 +11433,24 @@ apiInstance.postConversationsEmailInboundmessages(conversationId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **body** | **Object** | Send external email reply |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **EmailConversation**
 
-<a name="postConversationsEmailMessages"></a>
 
-# EmailMessageReply postConversationsEmailMessages(conversationId, body)
+## postConversationsEmailMessages
+
+> EmailMessageReply postConversationsEmailMessages(conversationId, body)
 
 
 POST /api/v2/conversations/emails/{conversationId}/messages
 
 Send an email reply
 
-Requires NO permissions:
+Requires ANY permissions:
+
+* conversation:email:send
 
 ### Example Usage
 
@@ -9858,7 +11460,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -9883,15 +11485,15 @@ apiInstance.postConversationsEmailMessages(conversationId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **body** | **Object** | Reply |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **EmailMessageReply**
 
-<a name="postConversationsEmailMessagesDraftAttachmentsCopy"></a>
 
-# EmailMessage postConversationsEmailMessagesDraftAttachmentsCopy(conversationId, body)
+## postConversationsEmailMessagesDraftAttachmentsCopy
+
+> EmailMessage postConversationsEmailMessagesDraftAttachmentsCopy(conversationId, body)
 
 
 POST /api/v2/conversations/emails/{conversationId}/messages/draft/attachments/copy
@@ -9908,7 +11510,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -9933,15 +11535,15 @@ apiInstance.postConversationsEmailMessagesDraftAttachmentsCopy(conversationId, b
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **body** | **Object** | Copy Attachment Request |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **EmailMessage**
 
-<a name="postConversationsEmailParticipantCommunicationWrapup"></a>
 
-# void postConversationsEmailParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts)
+## postConversationsEmailParticipantCommunicationWrapup
+
+> void postConversationsEmailParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts)
 
 
 POST /api/v2/conversations/emails/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup
@@ -9960,7 +11562,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -9991,15 +11593,15 @@ apiInstance.postConversationsEmailParticipantCommunicationWrapup(conversationId,
  **participantId** | **String** | participantId |  |
  **communicationId** | **String** | communicationId |  |
  **body** | **Object** | Wrap-up | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="postConversationsEmailParticipantReplace"></a>
 
-# void postConversationsEmailParticipantReplace(conversationId, participantId, body)
+## postConversationsEmailParticipantReplace
+
+> void postConversationsEmailParticipantReplace(conversationId, participantId, body)
 
 
 POST /api/v2/conversations/emails/{conversationId}/participants/{participantId}/replace
@@ -10018,7 +11620,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -10045,15 +11647,65 @@ apiInstance.postConversationsEmailParticipantReplace(conversationId, participant
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
  **body** | **Object** | Transfer request |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="postConversationsEmails"></a>
 
-# EmailConversation postConversationsEmails(body)
+## postConversationsEmailReconnect
+
+> void postConversationsEmailReconnect(conversationId)
+
+
+POST /api/v2/conversations/emails/{conversationId}/reconnect
+
+Reconnect the user to the most recently disconnected customer on a fully disconnected email conversation
+
+Requires ANY permissions:
+
+* conversation:communication:reconnect
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | conversationId
+
+apiInstance.postConversationsEmailReconnect(conversationId)
+  .then(() => {
+    console.log('postConversationsEmailReconnect returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postConversationsEmailReconnect');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversationId |  |
+
+### Return type
+
+void (no response body)
+
+
+## postConversationsEmails
+
+> EmailConversation postConversationsEmails(body)
 
 
 POST /api/v2/conversations/emails
@@ -10074,7 +11726,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -10097,15 +11749,15 @@ apiInstance.postConversationsEmails(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Create email request |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **EmailConversation**
 
-<a name="postConversationsEmailsAgentless"></a>
 
-# AgentlessEmailSendResponseDto postConversationsEmailsAgentless(body)
+## postConversationsEmailsAgentless
+
+> AgentlessEmailSendResponseDto postConversationsEmailsAgentless(body)
 
 
 POST /api/v2/conversations/emails/agentless
@@ -10125,7 +11777,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -10148,15 +11800,15 @@ apiInstance.postConversationsEmailsAgentless(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Create agentless email request |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **AgentlessEmailSendResponseDto**
 
-<a name="postConversationsFaxes"></a>
 
-# FaxSendResponse postConversationsFaxes(body)
+## postConversationsFaxes
+
+> FaxSendResponse postConversationsFaxes(body)
 
 
 POST /api/v2/conversations/faxes
@@ -10173,7 +11825,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -10196,15 +11848,15 @@ apiInstance.postConversationsFaxes(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Fax |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **FaxSendResponse**
 
-<a name="postConversationsKeyconfigurations"></a>
 
-# ConversationEncryptionConfiguration postConversationsKeyconfigurations(body)
+## postConversationsKeyconfigurations
+
+> ConversationEncryptionConfiguration postConversationsKeyconfigurations(body)
 
 
 POST /api/v2/conversations/keyconfigurations
@@ -10223,7 +11875,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -10246,15 +11898,15 @@ apiInstance.postConversationsKeyconfigurations(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Encryption Configuration |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ConversationEncryptionConfiguration**
 
-<a name="postConversationsKeyconfigurationsValidate"></a>
 
-# ConversationEncryptionConfiguration postConversationsKeyconfigurationsValidate(body)
+## postConversationsKeyconfigurationsValidate
+
+> ConversationEncryptionConfiguration postConversationsKeyconfigurationsValidate(body)
 
 
 POST /api/v2/conversations/keyconfigurations/validate
@@ -10273,7 +11925,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -10296,22 +11948,22 @@ apiInstance.postConversationsKeyconfigurationsValidate(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Encryption Configuration |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ConversationEncryptionConfiguration**
 
-<a name="postConversationsMessageCommunicationMessages"></a>
 
-# MessageData postConversationsMessageCommunicationMessages(conversationId, communicationId, body, opts)
+## postConversationsMessageCommunicationMessages
+
+> MessageData postConversationsMessageCommunicationMessages(conversationId, communicationId, body, opts)
 
 
 POST /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages
 
 Send message
 
-Send message on existing conversation/communication. Only one message body field can be accepted, per request. Example: 1 textBody, 1 mediaId, 1 stickerId, or 1 messageTemplate.
+Send message on existing conversation/communication. Only one message body field can be accepted, per request. Example: 1 textBody, 1 mediaId, or 1 messageTemplate.
 
 Requires ANY permissions:
 
@@ -10326,7 +11978,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -10335,7 +11987,7 @@ let conversationId = "conversationId_example"; // String | conversationId
 let communicationId = "communicationId_example"; // String | communicationId
 let body = {}; // Object | Message
 let opts = { 
-  'useNormalizedMessage': false // Boolean | If true, response removes deprecated fields (textBody, media, stickers)
+  'useNormalizedMessage': false // Boolean | If true, response removes deprecated fields (textBody, media)
 };
 
 apiInstance.postConversationsMessageCommunicationMessages(conversationId, communicationId, body, opts)
@@ -10356,17 +12008,20 @@ apiInstance.postConversationsMessageCommunicationMessages(conversationId, commun
  **conversationId** | **String** | conversationId |  |
  **communicationId** | **String** | communicationId |  |
  **body** | **Object** | Message |  |
- **useNormalizedMessage** | **Boolean** | If true, response removes deprecated fields (textBody, media, stickers) | [optional] [default to false] |
-{: class="table table-striped"}
+ **useNormalizedMessage** | **Boolean** | If true, response removes deprecated fields (textBody, media) | [optional] [default to false] |
 
 ### Return type
 
 **MessageData**
 
-<a name="postConversationsMessageCommunicationMessagesMedia"></a>
 
-# MessageMediaData postConversationsMessageCommunicationMessagesMedia(conversationId, communicationId)
+## postConversationsMessageCommunicationMessagesMedia
 
+> MessageMediaData postConversationsMessageCommunicationMessagesMedia(conversationId, communicationId)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 POST /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media
 
@@ -10378,6 +12033,7 @@ Requires ANY permissions:
 
 * conversation:message:create
 * conversation:webmessaging:create
+* conversation:socialmedia:create
 
 ### Example Usage
 
@@ -10387,7 +12043,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -10412,15 +12068,129 @@ apiInstance.postConversationsMessageCommunicationMessagesMedia(conversationId, c
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **communicationId** | **String** | communicationId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **MessageMediaData**
 
-<a name="postConversationsMessageCommunicationTyping"></a>
 
-# void postConversationsMessageCommunicationTyping(conversationId, communicationId, body)
+## postConversationsMessageCommunicationMessagesMediaUploads
+
+> MessageMediaUploadData postConversationsMessageCommunicationMessagesMediaUploads(conversationId, communicationId, body)
+
+
+POST /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media/uploads
+
+Create a URL to upload a message media file
+
+See https://developer.genesys.cloud/api/rest/v2/conversations/messaging-media-upload for example usage.
+
+Requires ANY permissions:
+
+* conversation:message:create
+* conversation:webmessaging:create
+* conversation:socialmedia:create
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | conversationId
+let communicationId = "communicationId_example"; // String | communicationId
+let body = {}; // Object | request
+
+apiInstance.postConversationsMessageCommunicationMessagesMediaUploads(conversationId, communicationId, body)
+  .then((data) => {
+    console.log(`postConversationsMessageCommunicationMessagesMediaUploads success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postConversationsMessageCommunicationMessagesMediaUploads');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversationId |  |
+ **communicationId** | **String** | communicationId |  |
+ **body** | **Object** | request |  |
+
+### Return type
+
+**MessageMediaUploadData**
+
+
+## postConversationsMessageCommunicationSocialmediaMessages
+
+> SocialMediaMessageData postConversationsMessageCommunicationSocialmediaMessages(conversationId, communicationId, body)
+
+
+POST /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/socialmedia/messages
+
+Send a social media message
+
+Send a social media message on existing conversation/communication.
+
+Requires ANY permissions:
+
+* conversation:socialmedia:create
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | conversationId
+let communicationId = "communicationId_example"; // String | communicationId
+let body = {}; // Object | Message
+
+apiInstance.postConversationsMessageCommunicationSocialmediaMessages(conversationId, communicationId, body)
+  .then((data) => {
+    console.log(`postConversationsMessageCommunicationSocialmediaMessages success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postConversationsMessageCommunicationSocialmediaMessages');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversationId |  |
+ **communicationId** | **String** | communicationId |  |
+ **body** | **Object** | Message |  |
+
+### Return type
+
+**SocialMediaMessageData**
+
+
+## postConversationsMessageCommunicationTyping
+
+> void postConversationsMessageCommunicationTyping(conversationId, communicationId, body)
 
 
 POST /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/typing
@@ -10442,7 +12212,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -10469,15 +12239,15 @@ apiInstance.postConversationsMessageCommunicationTyping(conversationId, communic
  **conversationId** | **String** | conversationId |  |
  **communicationId** | **String** | communicationId |  |
  **body** | **Object** | MessageTypingEvent |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="postConversationsMessageInboundOpenEvent"></a>
 
-# OpenEventNormalizedMessage postConversationsMessageInboundOpenEvent(integrationId, body)
+## postConversationsMessageInboundOpenEvent
+
+> OpenEventNormalizedMessage postConversationsMessageInboundOpenEvent(integrationId, body)
 
 
 POST /api/v2/conversations/messages/{integrationId}/inbound/open/event
@@ -10498,7 +12268,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -10523,15 +12293,15 @@ apiInstance.postConversationsMessageInboundOpenEvent(integrationId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **integrationId** | **String** | integrationId |  |
  **body** | **Object** | NormalizedMessage |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **OpenEventNormalizedMessage**
 
-<a name="postConversationsMessageInboundOpenMessage"></a>
 
-# OpenMessageNormalizedMessage postConversationsMessageInboundOpenMessage(integrationId, body)
+## postConversationsMessageInboundOpenMessage
+
+> OpenMessageNormalizedMessage postConversationsMessageInboundOpenMessage(integrationId, body, opts)
 
 
 POST /api/v2/conversations/messages/{integrationId}/inbound/open/message
@@ -10552,15 +12322,18 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
 
 let integrationId = "integrationId_example"; // String | integrationId
 let body = {}; // Object | NormalizedMessage
+let opts = { 
+  'prefetchConversationId': false // Boolean | Indicates whether or not to prefetch conversationId
+};
 
-apiInstance.postConversationsMessageInboundOpenMessage(integrationId, body)
+apiInstance.postConversationsMessageInboundOpenMessage(integrationId, body, opts)
   .then((data) => {
     console.log(`postConversationsMessageInboundOpenMessage success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -10577,15 +12350,16 @@ apiInstance.postConversationsMessageInboundOpenMessage(integrationId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **integrationId** | **String** | integrationId |  |
  **body** | **Object** | NormalizedMessage |  |
-{: class="table table-striped"}
+ **prefetchConversationId** | **Boolean** | Indicates whether or not to prefetch conversationId | [optional] [default to false] |
 
 ### Return type
 
 **OpenMessageNormalizedMessage**
 
-<a name="postConversationsMessageInboundOpenReceipt"></a>
 
-# OpenReceiptNormalizedMessage postConversationsMessageInboundOpenReceipt(integrationId, body)
+## postConversationsMessageInboundOpenReceipt
+
+> OpenReceiptNormalizedMessage postConversationsMessageInboundOpenReceipt(integrationId, body)
 
 
 POST /api/v2/conversations/messages/{integrationId}/inbound/open/receipt
@@ -10606,7 +12380,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -10631,15 +12405,69 @@ apiInstance.postConversationsMessageInboundOpenReceipt(integrationId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **integrationId** | **String** | integrationId |  |
  **body** | **Object** | NormalizedMessage |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **OpenReceiptNormalizedMessage**
 
-<a name="postConversationsMessageMessagesBulk"></a>
 
-# TextMessageListing postConversationsMessageMessagesBulk(conversationId, opts)
+## postConversationsMessageInboundOpenStructuredResponse
+
+> OpenStructuredResponseNormalizedMessage postConversationsMessageInboundOpenStructuredResponse(integrationId, body)
+
+
+POST /api/v2/conversations/messages/{integrationId}/inbound/open/structured/response
+
+Send inbound Open Response
+
+Send an inbound response for a structured message to an Open Messaging integration. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will be a part of an existing conversation. See https://developer.genesys.cloud/api/digital/openmessaging/ for example usage.
+
+Requires ALL permissions:
+
+* conversation:message:receive
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let integrationId = "integrationId_example"; // String | integrationId
+let body = {}; // Object | OpenInboundStructuredResponseMessage
+
+apiInstance.postConversationsMessageInboundOpenStructuredResponse(integrationId, body)
+  .then((data) => {
+    console.log(`postConversationsMessageInboundOpenStructuredResponse success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postConversationsMessageInboundOpenStructuredResponse');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **integrationId** | **String** | integrationId |  |
+ **body** | **Object** | OpenInboundStructuredResponseMessage |  |
+
+### Return type
+
+**OpenStructuredResponseNormalizedMessage**
+
+
+## postConversationsMessageMessagesBulk
+
+> TextMessageListing postConversationsMessageMessagesBulk(conversationId, opts)
 
 
 POST /api/v2/conversations/messages/{conversationId}/messages/bulk
@@ -10661,14 +12489,14 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
 
 let conversationId = "conversationId_example"; // String | 
 let opts = { 
-  'useNormalizedMessage': false, // Boolean | If true, response removes deprecated fields (textBody, media, stickers)
+  'useNormalizedMessage': false, // Boolean | If true, response removes deprecated fields (textBody, media)
   'body': ["body_example"] // [String] | messageIds
 };
 
@@ -10688,17 +12516,17 @@ apiInstance.postConversationsMessageMessagesBulk(conversationId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** |  |  |
- **useNormalizedMessage** | **Boolean** | If true, response removes deprecated fields (textBody, media, stickers) | [optional] [default to false] |
+ **useNormalizedMessage** | **Boolean** | If true, response removes deprecated fields (textBody, media) | [optional] [default to false] |
  **body** | **[String]** | messageIds | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **TextMessageListing**
 
-<a name="postConversationsMessageParticipantCommunicationWrapup"></a>
 
-# void postConversationsMessageParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts)
+## postConversationsMessageParticipantCommunicationWrapup
+
+> void postConversationsMessageParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts)
 
 
 POST /api/v2/conversations/messages/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup
@@ -10717,7 +12545,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -10748,22 +12576,20 @@ apiInstance.postConversationsMessageParticipantCommunicationWrapup(conversationI
  **participantId** | **String** | participantId |  |
  **communicationId** | **String** | communicationId |  |
  **body** | **Object** | Wrap-up | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="postConversationsMessageParticipantMonitor"></a>
 
-# void postConversationsMessageParticipantMonitor(conversationId, participantId)
+## postConversationsMessageParticipantMonitor
+
+> void postConversationsMessageParticipantMonitor(conversationId, participantId)
 
 
 POST /api/v2/conversations/messages/{conversationId}/participants/{participantId}/monitor
 
 Listen in on the conversation from the point of view of a given participant.
-
-postConversationsMessageParticipantMonitor is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -10777,7 +12603,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -10802,15 +12628,15 @@ apiInstance.postConversationsMessageParticipantMonitor(conversationId, participa
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="postConversationsMessageParticipantReplace"></a>
 
-# void postConversationsMessageParticipantReplace(conversationId, participantId, body)
+## postConversationsMessageParticipantReplace
+
+> void postConversationsMessageParticipantReplace(conversationId, participantId, body)
 
 
 POST /api/v2/conversations/messages/{conversationId}/participants/{participantId}/replace
@@ -10829,7 +12655,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -10856,15 +12682,15 @@ apiInstance.postConversationsMessageParticipantReplace(conversationId, participa
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
  **body** | **Object** | Transfer request |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="postConversationsMessages"></a>
 
-# MessageConversation postConversationsMessages(body)
+## postConversationsMessages
+
+> CreateOutboundMessagingConversationResponse postConversationsMessages(body)
 
 
 POST /api/v2/conversations/messages
@@ -10885,7 +12711,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -10908,15 +12734,15 @@ apiInstance.postConversationsMessages(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Create outbound messaging conversation |  |
-{: class="table table-striped"}
 
 ### Return type
 
-**MessageConversation**
+**CreateOutboundMessagingConversationResponse**
 
-<a name="postConversationsMessagesAgentless"></a>
 
-# SendAgentlessOutboundMessageResponse postConversationsMessagesAgentless(body)
+## postConversationsMessagesAgentless
+
+> SendAgentlessOutboundMessageResponse postConversationsMessagesAgentless(body, opts)
 
 
 POST /api/v2/conversations/messages/agentless
@@ -10937,14 +12763,17 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
 
 let body = {}; // Object | Create agentless outbound messaging request
+let opts = { 
+  'useNormalizedMessage': false // Boolean | If true, response removes deprecated fields (textBody, messagingTemplate)
+};
 
-apiInstance.postConversationsMessagesAgentless(body)
+apiInstance.postConversationsMessagesAgentless(body, opts)
   .then((data) => {
     console.log(`postConversationsMessagesAgentless success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -10960,22 +12789,26 @@ apiInstance.postConversationsMessagesAgentless(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Create agentless outbound messaging request |  |
-{: class="table table-striped"}
+ **useNormalizedMessage** | **Boolean** | If true, response removes deprecated fields (textBody, messagingTemplate) | [optional] [default to false] |
 
 ### Return type
 
 **SendAgentlessOutboundMessageResponse**
 
-<a name="postConversationsMessagesInboundOpen"></a>
 
-# OpenNormalizedMessage postConversationsMessagesInboundOpen(body)
+## postConversationsMessagesInboundOpen
 
+> OpenNormalizedMessage postConversationsMessagesInboundOpen(body)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 POST /api/v2/conversations/messages/inbound/open
 
 Send an inbound Open Message
 
-Send an inbound message to an Open Messaging integration. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will either generate a new Conversation, or be a part of an existing conversation. See https://developer.genesys.cloud/api/digital/openmessaging/ for example usage.
+[This API is deprecated. Instead, use 1. POST /api/v2/conversations/messages/{integrationId}/inbound/open/event, if you want to send an inbound Open Event Message 2. POST /api/v2/conversations/messages/{integrationId}/inbound/open/message, if you want to send an inbound Open Message 3. POST /api/v2/conversations/messages/{integrationId}/inbound/open/receipt, to send an inbound Open Receipt Message]  In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will either generate a new Conversation, or be a part of an existing conversation. See https://developer.genesys.cloud/api/digital/openmessaging/ for example usage.
 
 Requires ALL permissions:
 
@@ -10989,7 +12822,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -11012,15 +12845,15 @@ apiInstance.postConversationsMessagesInboundOpen(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | NormalizedMessage |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **OpenNormalizedMessage**
 
-<a name="postConversationsMessagingIntegrationsFacebook"></a>
 
-# FacebookIntegration postConversationsMessagingIntegrationsFacebook(body)
+## postConversationsMessagingIntegrationsFacebook
+
+> FacebookIntegration postConversationsMessagingIntegrationsFacebook(body)
 
 
 POST /api/v2/conversations/messaging/integrations/facebook
@@ -11039,7 +12872,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -11062,15 +12895,15 @@ apiInstance.postConversationsMessagingIntegrationsFacebook(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | FacebookIntegrationRequest |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **FacebookIntegration**
 
-<a name="postConversationsMessagingIntegrationsInstagram"></a>
 
-# InstagramIntegration postConversationsMessagingIntegrationsInstagram(body)
+## postConversationsMessagingIntegrationsInstagram
+
+> InstagramIntegration postConversationsMessagingIntegrationsInstagram(body)
 
 
 POST /api/v2/conversations/messaging/integrations/instagram
@@ -11089,7 +12922,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -11112,65 +12945,15 @@ apiInstance.postConversationsMessagingIntegrationsInstagram(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | InstagramIntegrationRequest |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **InstagramIntegration**
 
-<a name="postConversationsMessagingIntegrationsLine"></a>
 
-# LineIntegration postConversationsMessagingIntegrationsLine(body)
+## postConversationsMessagingIntegrationsOpen
 
-
-POST /api/v2/conversations/messaging/integrations/line
-
-Create a LINE messenger Integration
-
-Requires ALL permissions:
-
-* messaging:integration:add
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.ConversationsApi();
-
-let body = {}; // Object | LineIntegrationRequest
-
-apiInstance.postConversationsMessagingIntegrationsLine(body)
-  .then((data) => {
-    console.log(`postConversationsMessagingIntegrationsLine success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling postConversationsMessagingIntegrationsLine');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **body** | **Object** | LineIntegrationRequest |  |
-{: class="table table-striped"}
-
-### Return type
-
-**LineIntegration**
-
-<a name="postConversationsMessagingIntegrationsOpen"></a>
-
-# OpenIntegration postConversationsMessagingIntegrationsOpen(body)
+> OpenIntegration postConversationsMessagingIntegrationsOpen(body)
 
 
 POST /api/v2/conversations/messaging/integrations/open
@@ -11191,7 +12974,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -11214,24 +12997,24 @@ apiInstance.postConversationsMessagingIntegrationsOpen(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | OpenIntegrationRequest |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **OpenIntegration**
 
-<a name="postConversationsMessagingIntegrationsTwitter"></a>
 
-# TwitterIntegration postConversationsMessagingIntegrationsTwitter(body)
+## postConversationsMessagingIntegrationsTwitter
+
+> TwitterIntegration postConversationsMessagingIntegrationsTwitter(body)
 
 
 POST /api/v2/conversations/messaging/integrations/twitter
 
-Create a Twitter Integration
+Create Twitter Integration
 
 Requires ALL permissions:
 
-* messaging:integration:add
+* messaging:XIntegration:add
 
 ### Example Usage
 
@@ -11241,7 +13024,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -11264,22 +13047,25 @@ apiInstance.postConversationsMessagingIntegrationsTwitter(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | TwitterIntegrationRequest |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **TwitterIntegration**
 
-<a name="postConversationsMessagingIntegrationsWhatsapp"></a>
 
-# WhatsAppIntegration postConversationsMessagingIntegrationsWhatsapp(body)
+## postConversationsMessagingIntegrationsWhatsapp
 
+> WhatsAppIntegration postConversationsMessagingIntegrationsWhatsapp(body)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 POST /api/v2/conversations/messaging/integrations/whatsapp
 
-Create a WhatsApp Integration
+[This API is deprecated. Use POST /api/v2/conversations/messaging/integrations/whatsapp/embeddedsignup instead] Create a WhatsApp Integration
 
-You must be approved by WhatsApp to use this feature. Your approved e164-formatted phone number and valid WhatsApp certificate for your number are required. Your WhatsApp certificate must have valid base64 encoding. Please paste carefully and do not add any leading or trailing spaces. Do not alter any characters. An integration must be activated within 7 days of certificate generation. If you cannot complete the addition and activation of the number within 7 days, please obtain a new certificate before creating the integration. Integrations created with an invalid number or certificate may immediately incur additional integration fees. Please carefully enter your number and certificate as described.
+[This API is deprecated. Use POST /api/v2/conversations/messaging/integrations/whatsapp/embeddedsignup instead] You must be approved by WhatsApp to use this feature. Your approved e164-formatted phone number and valid WhatsApp certificate for your number are required. Your WhatsApp certificate must have valid base64 encoding. Please paste carefully and do not add any leading or trailing spaces. Do not alter any characters. An integration must be activated within 7 days of certificate generation. If you cannot complete the addition and activation of the number within 7 days, please obtain a new certificate before creating the integration. Integrations created with an invalid number or certificate may immediately incur additional integration fees. Please carefully enter your number and certificate as described.
 
 Requires ALL permissions:
 
@@ -11293,7 +13079,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -11316,15 +13102,67 @@ apiInstance.postConversationsMessagingIntegrationsWhatsapp(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | WhatsAppIntegrationRequest |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **WhatsAppIntegration**
 
-<a name="postConversationsMessagingSettings"></a>
 
-# MessagingSetting postConversationsMessagingSettings(body)
+## postConversationsMessagingIntegrationsWhatsappEmbeddedsignup
+
+> WhatsAppIntegration postConversationsMessagingIntegrationsWhatsappEmbeddedsignup(body)
+
+
+POST /api/v2/conversations/messaging/integrations/whatsapp/embeddedsignup
+
+Create a WhatsApp Integration using the WhatsApp embedded signup flow
+
+Use the access token returned from the embedded signup flow to obtain a list of available phone numbers that can be associated with the created integration. The returned WhatsApp integration will initially have a createStatus of Initiated until the list of available phone numbers can be obtained from the provider. Please run a GET on the created integration until it returns a createStatus of Completed, and the list of available phone numbers obtained from the provider. You can then specify one of the available phone numbers in the PATCH call on the integration to activate it.
+
+Requires ALL permissions:
+
+* messaging:whatsappIntegration:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let body = {}; // Object | WhatsAppEmbeddedSignupIntegrationRequest
+
+apiInstance.postConversationsMessagingIntegrationsWhatsappEmbeddedsignup(body)
+  .then((data) => {
+    console.log(`postConversationsMessagingIntegrationsWhatsappEmbeddedsignup success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postConversationsMessagingIntegrationsWhatsappEmbeddedsignup');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | WhatsAppEmbeddedSignupIntegrationRequest |  |
+
+### Return type
+
+**WhatsAppIntegration**
+
+
+## postConversationsMessagingSettings
+
+> MessagingSetting postConversationsMessagingSettings(body)
 
 
 POST /api/v2/conversations/messaging/settings
@@ -11343,7 +13181,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -11366,15 +13204,15 @@ apiInstance.postConversationsMessagingSettings(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | MessagingSetting |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **MessagingSetting**
 
-<a name="postConversationsMessagingSupportedcontent"></a>
 
-# SupportedContent postConversationsMessagingSupportedcontent(body)
+## postConversationsMessagingSupportedcontent
+
+> SupportedContent postConversationsMessagingSupportedcontent(body)
 
 
 POST /api/v2/conversations/messaging/supportedcontent
@@ -11393,7 +13231,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -11416,15 +13254,15 @@ apiInstance.postConversationsMessagingSupportedcontent(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | SupportedContent |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **SupportedContent**
 
-<a name="postConversationsParticipantsAttributesSearch"></a>
 
-# JsonCursorSearchResponse postConversationsParticipantsAttributesSearch(body)
+## postConversationsParticipantsAttributesSearch
+
+> JsonCursorSearchResponse postConversationsParticipantsAttributesSearch(body)
 
 
 POST /api/v2/conversations/participants/attributes/search
@@ -11443,7 +13281,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -11466,20 +13304,25 @@ apiInstance.postConversationsParticipantsAttributesSearch(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Search request options |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **JsonCursorSearchResponse**
 
-<a name="postConversationsScreenshareParticipantCommunicationWrapup"></a>
 
-# void postConversationsScreenshareParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts)
+## postConversationsScreenshareParticipantCommunicationWrapup
 
+> void postConversationsScreenshareParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 POST /api/v2/conversations/screenshares/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup
 
 Apply wrap-up for this conversation communication
+
+This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
 
 Requires ANY permissions:
 
@@ -11493,7 +13336,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -11524,15 +13367,15 @@ apiInstance.postConversationsScreenshareParticipantCommunicationWrapup(conversat
  **participantId** | **String** | participantId |  |
  **communicationId** | **String** | communicationId |  |
  **body** | **Object** | Wrap-up | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="postConversationsSocialParticipantCommunicationWrapup"></a>
 
-# void postConversationsSocialParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts)
+## postConversationsSocialParticipantCommunicationWrapup
+
+> void postConversationsSocialParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts)
 
 
 POST /api/v2/conversations/socials/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup
@@ -11551,7 +13394,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -11582,15 +13425,69 @@ apiInstance.postConversationsSocialParticipantCommunicationWrapup(conversationId
  **participantId** | **String** | participantId |  |
  **communicationId** | **String** | communicationId |  |
  **body** | **Object** | Wrap-up | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="postConversationsVideoParticipantCommunicationWrapup"></a>
 
-# void postConversationsVideoParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts)
+## postConversationsVideoAgentconferenceCommunication
+
+> VideoConferenceDetails postConversationsVideoAgentconferenceCommunication(conversationId, communicationId)
+
+
+POST /api/v2/conversations/videos/{conversationId}/agentconference/communications/{communicationId}
+
+Create an Agent-Type video conference and assign an agent to it
+
+postConversationsVideoAgentconferenceCommunication is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* conversation:video:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | conversationId
+let communicationId = "communicationId_example"; // String | communicationId
+
+apiInstance.postConversationsVideoAgentconferenceCommunication(conversationId, communicationId)
+  .then((data) => {
+    console.log(`postConversationsVideoAgentconferenceCommunication success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postConversationsVideoAgentconferenceCommunication');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversationId |  |
+ **communicationId** | **String** | communicationId |  |
+
+### Return type
+
+**VideoConferenceDetails**
+
+
+## postConversationsVideoParticipantCommunicationWrapup
+
+> void postConversationsVideoParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts)
 
 
 POST /api/v2/conversations/videos/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup
@@ -11609,7 +13506,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -11640,15 +13537,15 @@ apiInstance.postConversationsVideoParticipantCommunicationWrapup(conversationId,
  **participantId** | **String** | participantId |  |
  **communicationId** | **String** | communicationId |  |
  **body** | **Object** | Wrap-up | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="postConversationsVideosMeetings"></a>
 
-# MeetingIdRecord postConversationsVideosMeetings(body)
+## postConversationsVideosMeetings
+
+> MeetingIdRecord postConversationsVideosMeetings(body)
 
 
 POST /api/v2/conversations/videos/meetings
@@ -11669,7 +13566,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -11692,15 +13589,15 @@ apiInstance.postConversationsVideosMeetings(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | MeetingIdRequest |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **MeetingIdRecord**
 
-<a name="putConversationParticipantFlaggedreason"></a>
 
-# void putConversationParticipantFlaggedreason(conversationId, participantId)
+## putConversationParticipantFlaggedreason
+
+> void putConversationParticipantFlaggedreason(conversationId, participantId)
 
 
 PUT /api/v2/conversations/{conversationId}/participants/{participantId}/flaggedreason
@@ -11717,7 +13614,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -11742,15 +13639,15 @@ apiInstance.putConversationParticipantFlaggedreason(conversationId, participantI
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversation ID |  |
  **participantId** | **String** | participant ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (no response body)
 
-<a name="putConversationSecureattributes"></a>
 
-# **&#39;String&#39;** putConversationSecureattributes(conversationId, body)
+## putConversationSecureattributes
+
+> **&#39;String&#39;** putConversationSecureattributes(conversationId, body)
 
 
 PUT /api/v2/conversations/{conversationId}/secureattributes
@@ -11769,7 +13666,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -11794,15 +13691,15 @@ apiInstance.putConversationSecureattributes(conversationId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversation ID |  |
  **body** | **Object** | Conversation Secure Attributes |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **&#39;String&#39;**
 
-<a name="putConversationTags"></a>
 
-# **&#39;String&#39;** putConversationTags(conversationId, body)
+## putConversationTags
+
+> **&#39;String&#39;** putConversationTags(conversationId, body)
 
 
 PUT /api/v2/conversations/{conversationId}/tags
@@ -11821,7 +13718,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -11846,15 +13743,15 @@ apiInstance.putConversationTags(conversationId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversation ID |  |
  **body** | **Object** | Conversation Tags |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **&#39;String&#39;**
 
-<a name="putConversationsCallParticipantCommunicationUuidata"></a>
 
-# **Object** putConversationsCallParticipantCommunicationUuidata(conversationId, participantId, communicationId, body)
+## putConversationsCallParticipantCommunicationUuidata
+
+> **Object** putConversationsCallParticipantCommunicationUuidata(conversationId, participantId, communicationId, body)
 
 
 PUT /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/uuidata
@@ -11871,7 +13768,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -11900,15 +13797,15 @@ apiInstance.putConversationsCallParticipantCommunicationUuidata(conversationId, 
  **participantId** | **String** | participantId |  |
  **communicationId** | **String** | communicationId |  |
  **body** | **Object** | UUIData Request |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **Object**
 
-<a name="putConversationsCallRecordingstate"></a>
 
-# **&#39;String&#39;** putConversationsCallRecordingstate(conversationId, body)
+## putConversationsCallRecordingstate
+
+> **&#39;String&#39;** putConversationsCallRecordingstate(conversationId, body)
 
 
 PUT /api/v2/conversations/calls/{conversationId}/recordingstate
@@ -11927,7 +13824,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -11952,15 +13849,15 @@ apiInstance.putConversationsCallRecordingstate(conversationId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **body** | **Object** | SetRecordingState |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **&#39;String&#39;**
 
-<a name="putConversationsCallbackRecordingstate"></a>
 
-# **&#39;String&#39;** putConversationsCallbackRecordingstate(conversationId, body)
+## putConversationsCallbackRecordingstate
+
+> **&#39;String&#39;** putConversationsCallbackRecordingstate(conversationId, body)
 
 
 PUT /api/v2/conversations/callbacks/{conversationId}/recordingstate
@@ -11979,7 +13876,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -12004,20 +13901,25 @@ apiInstance.putConversationsCallbackRecordingstate(conversationId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **body** | **Object** | SetRecordingState |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **&#39;String&#39;**
 
-<a name="putConversationsChatRecordingstate"></a>
 
-# **&#39;String&#39;** putConversationsChatRecordingstate(conversationId, body)
+## putConversationsChatRecordingstate
 
+> **&#39;String&#39;** putConversationsChatRecordingstate(conversationId, body)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 PUT /api/v2/conversations/chats/{conversationId}/recordingstate
 
 Update a conversation by setting its recording state
+
+This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-removal-of-acd-web-chat-version-2/.
 
 Requires ANY permissions:
 
@@ -12031,7 +13933,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -12056,20 +13958,25 @@ apiInstance.putConversationsChatRecordingstate(conversationId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **body** | **Object** | SetRecordingState |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **&#39;String&#39;**
 
-<a name="putConversationsCobrowsesessionRecordingstate"></a>
 
-# **&#39;String&#39;** putConversationsCobrowsesessionRecordingstate(conversationId, body)
+## putConversationsCobrowsesessionRecordingstate
 
+> **&#39;String&#39;** putConversationsCobrowsesessionRecordingstate(conversationId, body)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 PUT /api/v2/conversations/cobrowsesessions/{conversationId}/recordingstate
 
 Update a conversation by setting its recording state
+
+This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
 
 Requires ANY permissions:
 
@@ -12083,7 +13990,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -12108,15 +14015,15 @@ apiInstance.putConversationsCobrowsesessionRecordingstate(conversationId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **body** | **Object** | SetRecordingState |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **&#39;String&#39;**
 
-<a name="putConversationsEmailMessagesDraft"></a>
 
-# EmailMessage putConversationsEmailMessagesDraft(conversationId, body)
+## putConversationsEmailMessagesDraft
+
+> EmailMessage putConversationsEmailMessagesDraft(conversationId, body)
 
 
 PUT /api/v2/conversations/emails/{conversationId}/messages/draft
@@ -12133,7 +14040,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -12158,15 +14065,15 @@ apiInstance.putConversationsEmailMessagesDraft(conversationId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **body** | **Object** | Draft |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **EmailMessage**
 
-<a name="putConversationsEmailRecordingstate"></a>
 
-# **&#39;String&#39;** putConversationsEmailRecordingstate(conversationId, body)
+## putConversationsEmailRecordingstate
+
+> **&#39;String&#39;** putConversationsEmailRecordingstate(conversationId, body)
 
 
 PUT /api/v2/conversations/emails/{conversationId}/recordingstate
@@ -12185,7 +14092,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -12210,15 +14117,15 @@ apiInstance.putConversationsEmailRecordingstate(conversationId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **body** | **Object** | SetRecordingState |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **&#39;String&#39;**
 
-<a name="putConversationsKeyconfiguration"></a>
 
-# ConversationEncryptionConfiguration putConversationsKeyconfiguration(keyconfigurationsId, body)
+## putConversationsKeyconfiguration
+
+> ConversationEncryptionConfiguration putConversationsKeyconfiguration(keyconfigurationsId, body)
 
 
 PUT /api/v2/conversations/keyconfigurations/{keyconfigurationsId}
@@ -12237,7 +14144,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -12262,15 +14169,15 @@ apiInstance.putConversationsKeyconfiguration(keyconfigurationsId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **keyconfigurationsId** | **String** | Key Configurations Id |  |
  **body** | **Object** | Encryption key configuration metadata |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ConversationEncryptionConfiguration**
 
-<a name="putConversationsMessageRecordingstate"></a>
 
-# **&#39;String&#39;** putConversationsMessageRecordingstate(conversationId, body)
+## putConversationsMessageRecordingstate
+
+> **&#39;String&#39;** putConversationsMessageRecordingstate(conversationId, body)
 
 
 PUT /api/v2/conversations/messages/{conversationId}/recordingstate
@@ -12289,7 +14196,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -12314,24 +14221,27 @@ apiInstance.putConversationsMessageRecordingstate(conversationId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **body** | **Object** | SetRecordingState |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **&#39;String&#39;**
 
-<a name="putConversationsMessagingIntegrationsLineIntegrationId"></a>
 
-# LineIntegration putConversationsMessagingIntegrationsLineIntegrationId(integrationId, body)
+## putConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId
+
+> IdentityResolutionConfig putConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId(integrationId, body)
 
 
-PUT /api/v2/conversations/messaging/integrations/line/{integrationId}
+PUT /api/v2/conversations/messaging/identityresolution/integrations/apple/{integrationId}
 
-Update a LINE messenger integration
+Create an identity resolution settings for a Apple messaging integration
+
+putConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ALL permissions:
 
 * messaging:integration:edit
+* messaging:identityResolutionApple:edit
 
 ### Example Usage
 
@@ -12341,20 +14251,20 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
 
 let integrationId = "integrationId_example"; // String | Integration ID
-let body = {}; // Object | LineIntegrationRequest
+let body = {}; // Object | IdentityResolutionConfig
 
-apiInstance.putConversationsMessagingIntegrationsLineIntegrationId(integrationId, body)
+apiInstance.putConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId(integrationId, body)
   .then((data) => {
-    console.log(`putConversationsMessagingIntegrationsLineIntegrationId success! data: ${JSON.stringify(data, null, 2)}`);
+    console.log(`putConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId success! data: ${JSON.stringify(data, null, 2)}`);
   })
   .catch((err) => {
-    console.log('There was a failure calling putConversationsMessagingIntegrationsLineIntegrationId');
+    console.log('There was a failure calling putConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId');
     console.error(err);
   });
 ```
@@ -12365,16 +14275,281 @@ apiInstance.putConversationsMessagingIntegrationsLineIntegrationId(integrationId
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **integrationId** | **String** | Integration ID |  |
- **body** | **Object** | LineIntegrationRequest |  |
-{: class="table table-striped"}
+ **body** | **Object** | IdentityResolutionConfig |  |
 
 ### Return type
 
-**LineIntegration**
+**IdentityResolutionConfig**
 
-<a name="putConversationsMessagingSettingsDefault"></a>
 
-# MessagingSetting putConversationsMessagingSettingsDefault(body)
+## putConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId
+
+> IdentityResolutionConfig putConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId(integrationId, body)
+
+
+PUT /api/v2/conversations/messaging/identityresolution/integrations/facebook/{integrationId}
+
+Create an identity resolution settings for a Facebook messaging integration
+
+Requires ALL permissions:
+
+* messaging:integration:edit
+* messaging:identityResolutionFacebook:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let integrationId = "integrationId_example"; // String | Integration ID
+let body = {}; // Object | IdentityResolutionConfig
+
+apiInstance.putConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId(integrationId, body)
+  .then((data) => {
+    console.log(`putConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **integrationId** | **String** | Integration ID |  |
+ **body** | **Object** | IdentityResolutionConfig |  |
+
+### Return type
+
+**IdentityResolutionConfig**
+
+
+## putConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId
+
+> IdentityResolutionConfig putConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId(integrationId, body)
+
+
+PUT /api/v2/conversations/messaging/identityresolution/integrations/instagram/{integrationId}
+
+Create identity resolution settings for an Instagram messaging integration
+
+Requires ALL permissions:
+
+* messaging:integration:edit
+* messaging:identityResolutionInstagram:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let integrationId = "integrationId_example"; // String | Integration ID
+let body = {}; // Object | IdentityResolutionConfig
+
+apiInstance.putConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId(integrationId, body)
+  .then((data) => {
+    console.log(`putConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **integrationId** | **String** | Integration ID |  |
+ **body** | **Object** | IdentityResolutionConfig |  |
+
+### Return type
+
+**IdentityResolutionConfig**
+
+
+## putConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId
+
+> OpenMessagingIdentityResolutionConfig putConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId(integrationId, body)
+
+
+PUT /api/v2/conversations/messaging/identityresolution/integrations/open/{integrationId}
+
+Update an open messaging integration Identity Resolution settings
+
+Requires ALL permissions:
+
+* messaging:integration:edit
+* messaging:identityResolutionOpen:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let integrationId = "integrationId_example"; // String | Integration ID
+let body = {}; // Object | 
+
+apiInstance.putConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId(integrationId, body)
+  .then((data) => {
+    console.log(`putConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **integrationId** | **String** | Integration ID |  |
+ **body** | **Object** |  |  |
+
+### Return type
+
+**OpenMessagingIdentityResolutionConfig**
+
+
+## putConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId
+
+> IdentityResolutionConfig putConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId(integrationId, body)
+
+
+PUT /api/v2/conversations/messaging/identityresolution/integrations/twitter/{integrationId}
+
+Create an identity resolution settings for an X (Formally Twitter) messaging integration
+
+Requires ALL permissions:
+
+* messaging:XIntegration:edit
+* messaging:identityResolutionX:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let integrationId = "integrationId_example"; // String | Integration Id
+let body = {}; // Object | IdentityResolutionConfig
+
+apiInstance.putConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId(integrationId, body)
+  .then((data) => {
+    console.log(`putConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **integrationId** | **String** | Integration Id |  |
+ **body** | **Object** | IdentityResolutionConfig |  |
+
+### Return type
+
+**IdentityResolutionConfig**
+
+
+## putConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId
+
+> IdentityResolutionConfig putConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId(integrationId, body)
+
+
+PUT /api/v2/conversations/messaging/identityresolution/integrations/whatsapp/{integrationId}
+
+Update a whatsApp integration Identity Resolution settings
+
+Requires ALL permissions:
+
+* messaging:integration:edit
+* messaging:identityResolutionWhatsApp:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let integrationId = "integrationId_example"; // String | Integration ID
+let body = {}; // Object | 
+
+apiInstance.putConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId(integrationId, body)
+  .then((data) => {
+    console.log(`putConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **integrationId** | **String** | Integration ID |  |
+ **body** | **Object** |  |  |
+
+### Return type
+
+**IdentityResolutionConfig**
+
+
+## putConversationsMessagingSettingsDefault
+
+> MessagingSetting putConversationsMessagingSettingsDefault(body)
 
 
 PUT /api/v2/conversations/messaging/settings/default
@@ -12395,7 +14570,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -12418,15 +14593,15 @@ apiInstance.putConversationsMessagingSettingsDefault(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | MessagingSetting |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **MessagingSetting**
 
-<a name="putConversationsMessagingSupportedcontentDefault"></a>
 
-# SupportedContent putConversationsMessagingSupportedcontentDefault(body)
+## putConversationsMessagingSupportedcontentDefault
+
+> SupportedContent putConversationsMessagingSupportedcontentDefault(body)
 
 
 PUT /api/v2/conversations/messaging/supportedcontent/default
@@ -12447,7 +14622,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -12470,15 +14645,15 @@ apiInstance.putConversationsMessagingSupportedcontentDefault(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | SupportedContent |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **SupportedContent**
 
-<a name="putConversationsMessagingThreadingtimeline"></a>
 
-# ConversationThreadingWindow putConversationsMessagingThreadingtimeline(body)
+## putConversationsMessagingThreadingtimeline
+
+> ConversationThreadingWindow putConversationsMessagingThreadingtimeline(body)
 
 
 PUT /api/v2/conversations/messaging/threadingtimeline
@@ -12499,7 +14674,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -12522,20 +14697,25 @@ apiInstance.putConversationsMessagingThreadingtimeline(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | ConversationThreadingWindowRequest |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **ConversationThreadingWindow**
 
-<a name="putConversationsScreenshareRecordingstate"></a>
 
-# **&#39;String&#39;** putConversationsScreenshareRecordingstate(conversationId, body)
+## putConversationsScreenshareRecordingstate
 
+> **&#39;String&#39;** putConversationsScreenshareRecordingstate(conversationId, body)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 PUT /api/v2/conversations/screenshares/{conversationId}/recordingstate
 
 Update a conversation by setting its recording state
+
+This endpoint is deprecated. Please see the article https://help.genesys.cloud/articles/deprecation-legacy-co-browse-and-screenshare/
 
 Requires ANY permissions:
 
@@ -12549,7 +14729,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -12574,15 +14754,15 @@ apiInstance.putConversationsScreenshareRecordingstate(conversationId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **body** | **Object** | SetRecordingState |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **&#39;String&#39;**
 
-<a name="putConversationsSocialRecordingstate"></a>
 
-# **&#39;String&#39;** putConversationsSocialRecordingstate(conversationId, body)
+## putConversationsSocialRecordingstate
+
+> **&#39;String&#39;** putConversationsSocialRecordingstate(conversationId, body)
 
 
 PUT /api/v2/conversations/socials/{conversationId}/recordingstate
@@ -12601,7 +14781,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -12626,15 +14806,15 @@ apiInstance.putConversationsSocialRecordingstate(conversationId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **body** | **Object** | SetRecordingState |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **&#39;String&#39;**
 
-<a name="putConversationsVideoRecordingstate"></a>
 
-# **&#39;String&#39;** putConversationsVideoRecordingstate(conversationId, body)
+## putConversationsVideoRecordingstate
+
+> **&#39;String&#39;** putConversationsVideoRecordingstate(conversationId, body)
 
 
 PUT /api/v2/conversations/videos/{conversationId}/recordingstate
@@ -12653,7 +14833,7 @@ const platformClient = require('platformClient');
 // Node
 const platformClient = require('purecloud-platform-client-v2');
 
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...)
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
@@ -12678,9 +14858,10 @@ apiInstance.putConversationsVideoRecordingstate(conversationId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **body** | **Object** | SetRecordingState |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **&#39;String&#39;**
 
+
+_purecloud-platform-client-v2@229.1.0_

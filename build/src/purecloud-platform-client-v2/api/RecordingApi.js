@@ -5,7 +5,7 @@ class RecordingApi {
 	/**
 	 * Recording service.
 	 * @module purecloud-platform-client-v2/api/RecordingApi
-	 * @version 174.0.0
+	 * @version 229.1.0
 	 */
 
 	/**
@@ -29,15 +29,15 @@ class RecordingApi {
 	 */
 	deleteConversationRecordingAnnotation(conversationId, recordingId, annotationId) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling deleteConversationRecordingAnnotation';
 		}
 		// verify the required parameter 'recordingId' is set
-		if (recordingId === undefined || recordingId === null) {
+		if (recordingId === undefined || recordingId === null || recordingId === '') {
 			throw 'Missing the required parameter "recordingId" when calling deleteConversationRecordingAnnotation';
 		}
 		// verify the required parameter 'annotationId' is set
-		if (annotationId === undefined || annotationId === null) {
+		if (annotationId === undefined || annotationId === null || annotationId === '') {
 			throw 'Missing the required parameter "annotationId" when calling deleteConversationRecordingAnnotation';
 		}
 
@@ -62,7 +62,7 @@ class RecordingApi {
 	 */
 	deleteOrphanrecording(orphanId) { 
 		// verify the required parameter 'orphanId' is set
-		if (orphanId === undefined || orphanId === null) {
+		if (orphanId === undefined || orphanId === null || orphanId === '') {
 			throw 'Missing the required parameter "orphanId" when calling deleteOrphanrecording';
 		}
 
@@ -112,7 +112,7 @@ class RecordingApi {
 	 */
 	deleteRecordingCrossplatformMediaretentionpolicy(policyId) { 
 		// verify the required parameter 'policyId' is set
-		if (policyId === undefined || policyId === null) {
+		if (policyId === undefined || policyId === null || policyId === '') {
 			throw 'Missing the required parameter "policyId" when calling deleteRecordingCrossplatformMediaretentionpolicy';
 		}
 
@@ -137,7 +137,7 @@ class RecordingApi {
 	 */
 	deleteRecordingJob(jobId) { 
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling deleteRecordingJob';
 		}
 
@@ -187,7 +187,7 @@ class RecordingApi {
 	 */
 	deleteRecordingMediaretentionpolicy(policyId) { 
 		// verify the required parameter 'policyId' is set
-		if (policyId === undefined || policyId === null) {
+		if (policyId === undefined || policyId === null || policyId === '') {
 			throw 'Missing the required parameter "policyId" when calling deleteRecordingMediaretentionpolicy';
 		}
 
@@ -217,18 +217,18 @@ class RecordingApi {
 	 * @param {Object} opts.messageFormatId The desired media format when downloading a message recording. Valid values:ZIP,NONE (default to ZIP)
 	 * @param {Object} opts.download requesting a download format of the recording. Valid values:true,false (default to false)
 	 * @param {String} opts.fileName the name of the downloaded fileName
-	 * @param {String} opts.locale The locale for the requested file when downloading, as an ISO 639-1 code
+	 * @param {String} opts.locale The locale for the requested file when downloading or for redacting sensitive information in requested files, as an ISO 639-1 code
 	 * @param {Array.<String>} opts.mediaFormats All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3
 	 */
 	getConversationRecording(conversationId, recordingId, opts) { 
 		opts = opts || {};
 		
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getConversationRecording';
 		}
 		// verify the required parameter 'recordingId' is set
-		if (recordingId === undefined || recordingId === null) {
+		if (recordingId === undefined || recordingId === null || recordingId === '') {
 			throw 'Missing the required parameter "recordingId" when calling getConversationRecording';
 		}
 
@@ -255,15 +255,15 @@ class RecordingApi {
 	 */
 	getConversationRecordingAnnotation(conversationId, recordingId, annotationId) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getConversationRecordingAnnotation';
 		}
 		// verify the required parameter 'recordingId' is set
-		if (recordingId === undefined || recordingId === null) {
+		if (recordingId === undefined || recordingId === null || recordingId === '') {
 			throw 'Missing the required parameter "recordingId" when calling getConversationRecordingAnnotation';
 		}
 		// verify the required parameter 'annotationId' is set
-		if (annotationId === undefined || annotationId === null) {
+		if (annotationId === undefined || annotationId === null || annotationId === '') {
 			throw 'Missing the required parameter "annotationId" when calling getConversationRecordingAnnotation';
 		}
 
@@ -289,11 +289,11 @@ class RecordingApi {
 	 */
 	getConversationRecordingAnnotations(conversationId, recordingId) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getConversationRecordingAnnotations';
 		}
 		// verify the required parameter 'recordingId' is set
-		if (recordingId === undefined || recordingId === null) {
+		if (recordingId === undefined || recordingId === null || recordingId === '') {
 			throw 'Missing the required parameter "recordingId" when calling getConversationRecordingAnnotations';
 		}
 
@@ -312,13 +312,13 @@ class RecordingApi {
 	}
 
 	/**
-	 * Get recording metadata for a conversation. Does not return playable media. Annotations won't be included in the response if either recording:recording:view or recording:annotation:view permission is missing.
+	 * Get recording metadata for a conversation. Does not return playable media nor system annotations. Bookmark annotations will be excluded if either recording:recording:view or recording:annotation:view permission is missing.
 	 * 
 	 * @param {String} conversationId Conversation ID
 	 */
 	getConversationRecordingmetadata(conversationId) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getConversationRecordingmetadata';
 		}
 
@@ -344,11 +344,11 @@ class RecordingApi {
 	 */
 	getConversationRecordingmetadataRecordingId(conversationId, recordingId) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getConversationRecordingmetadataRecordingId';
 		}
 		// verify the required parameter 'recordingId' is set
-		if (recordingId === undefined || recordingId === null) {
+		if (recordingId === undefined || recordingId === null || recordingId === '') {
 			throw 'Missing the required parameter "recordingId" when calling getConversationRecordingmetadataRecordingId';
 		}
 
@@ -374,12 +374,14 @@ class RecordingApi {
 	 * @param {Number} opts.maxWaitMs The maximum number of milliseconds to wait for the recording to be ready. Must be a positive value. (default to 5000)
 	 * @param {Object} opts.formatId The desired media format. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3,NONE. (default to WEBM)
 	 * @param {Array.<String>} opts.mediaFormats All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3.
+	 * @param {String} opts.locale The locale used for redacting sensitive information in requested files, as an ISO 639-1 code
+	 * @param {Boolean} opts.includePauseAnnotationsForScreenRecordings Include applicable Secure Pause annotations from all audio recordings to all screen recordings (default to false)
 	 */
 	getConversationRecordings(conversationId, opts) { 
 		opts = opts || {};
 		
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getConversationRecordings';
 		}
 
@@ -387,7 +389,7 @@ class RecordingApi {
 			'/api/v2/conversations/{conversationId}/recordings', 
 			'GET', 
 			{ 'conversationId': conversationId },
-			{ 'maxWaitMs': opts['maxWaitMs'],'formatId': opts['formatId'],'mediaFormats': this.apiClient.buildCollectionParam(opts['mediaFormats'], 'multi') },
+			{ 'maxWaitMs': opts['maxWaitMs'],'formatId': opts['formatId'],'mediaFormats': this.apiClient.buildCollectionParam(opts['mediaFormats'], 'multi'),'locale': opts['locale'],'includePauseAnnotationsForScreenRecordings': opts['includePauseAnnotationsForScreenRecordings'] },
 			{  },
 			{  },
 			null, 
@@ -404,7 +406,7 @@ class RecordingApi {
 	 */
 	getOrphanrecording(orphanId) { 
 		// verify the required parameter 'orphanId' is set
-		if (orphanId === undefined || orphanId === null) {
+		if (orphanId === undefined || orphanId === null || orphanId === '') {
 			throw 'Missing the required parameter "orphanId" when calling getOrphanrecording';
 		}
 
@@ -440,7 +442,7 @@ class RecordingApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'orphanId' is set
-		if (orphanId === undefined || orphanId === null) {
+		if (orphanId === undefined || orphanId === null || orphanId === '') {
 			throw 'Missing the required parameter "orphanId" when calling getOrphanrecordingMedia';
 		}
 
@@ -490,13 +492,13 @@ class RecordingApi {
 	}
 
 	/**
-	 * Get the status and results for a batch request job, only the user that submitted the job may retrieve results
+	 * Get the status and results for a batch request job, only the user that submitted the job may retrieve results. Each result may contain either a URL to a recording or an error; additionally, a recording could be associated with multiple results.
 	 * 
 	 * @param {String} jobId jobId
 	 */
 	getRecordingBatchrequest(jobId) { 
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getRecordingBatchrequest';
 		}
 
@@ -555,7 +557,7 @@ class RecordingApi {
 	 */
 	getRecordingCrossplatformMediaretentionpolicy(policyId) { 
 		// verify the required parameter 'policyId' is set
-		if (policyId === undefined || policyId === null) {
+		if (policyId === undefined || policyId === null || policyId === '') {
 			throw 'Missing the required parameter "policyId" when calling getRecordingCrossplatformMediaretentionpolicy';
 		}
 
@@ -580,7 +582,7 @@ class RecordingApi {
 	 */
 	getRecordingJob(jobId) { 
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getRecordingJob';
 		}
 
@@ -605,14 +607,14 @@ class RecordingApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize Page size. Maximum is 100. (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
-	 * @param {Boolean} opts.includeTotal If false, cursor will be used to locate the page instead of pageNumber.
+	 * @param {Boolean} opts.includeTotal If false, cursor will be used to locate the page instead of pageNumber. It is recommended to set it to false for improved performance.
 	 * @param {String} opts.cursor Indicates where to resume query results (not required for first page)
 	 */
 	getRecordingJobFailedrecordings(jobId, opts) { 
 		opts = opts || {};
 		
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getRecordingJobFailedrecordings';
 		}
 
@@ -640,7 +642,7 @@ class RecordingApi {
 	 * @param {Object} opts.state Filter by state
 	 * @param {Boolean} opts.showOnlyMyJobs Show only my jobs
 	 * @param {Object} opts.jobType Job Type (Can be left empty for both)
-	 * @param {Boolean} opts.includeTotal If false, cursor will be used to locate the page instead of pageNumber.
+	 * @param {Boolean} opts.includeTotal If false, cursor will be used to locate the page instead of pageNumber. It is recommended to set it to false for improved performance.
 	 * @param {String} opts.cursor Indicates where to resume query results (not required for first page)
 	 */
 	getRecordingJobs(opts) { 
@@ -668,7 +670,7 @@ class RecordingApi {
 	 */
 	getRecordingKeyconfiguration(keyConfigurationId) { 
 		// verify the required parameter 'keyConfigurationId' is set
-		if (keyConfigurationId === undefined || keyConfigurationId === null) {
+		if (keyConfigurationId === undefined || keyConfigurationId === null || keyConfigurationId === '') {
 			throw 'Missing the required parameter "keyConfigurationId" when calling getRecordingKeyconfiguration';
 		}
 
@@ -747,7 +749,7 @@ class RecordingApi {
 	 */
 	getRecordingMediaretentionpolicy(policyId) { 
 		// verify the required parameter 'policyId' is set
-		if (policyId === undefined || policyId === null) {
+		if (policyId === undefined || policyId === null || policyId === '') {
 			throw 'Missing the required parameter "policyId" when calling getRecordingMediaretentionpolicy';
 		}
 
@@ -841,7 +843,7 @@ class RecordingApi {
 	 */
 	getRecordingUploadsReport(reportId) { 
 		// verify the required parameter 'reportId' is set
-		if (reportId === undefined || reportId === null) {
+		if (reportId === undefined || reportId === null || reportId === '') {
 			throw 'Missing the required parameter "reportId" when calling getRecordingUploadsReport';
 		}
 
@@ -890,21 +892,16 @@ class RecordingApi {
 	}
 
 	/**
-	 * Retrieves a paged listing of screen recording sessions
+	 * Retrieves an object containing the total number of concurrent active screen recordings
 	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageSize Page size (default to 25)
-	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 */
-	getRecordingsScreensessions(opts) { 
-		opts = opts || {};
-		
+	getRecordingsScreensessionsDetails() { 
 
 		return this.apiClient.callApi(
-			'/api/v2/recordings/screensessions', 
+			'/api/v2/recordings/screensessions/details', 
 			'GET', 
 			{  },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
+			{  },
 			{  },
 			{  },
 			null, 
@@ -922,7 +919,7 @@ class RecordingApi {
 	 */
 	patchRecordingCrossplatformMediaretentionpolicy(policyId, body) { 
 		// verify the required parameter 'policyId' is set
-		if (policyId === undefined || policyId === null) {
+		if (policyId === undefined || policyId === null || policyId === '') {
 			throw 'Missing the required parameter "policyId" when calling patchRecordingCrossplatformMediaretentionpolicy';
 		}
 		// verify the required parameter 'body' is set
@@ -952,7 +949,7 @@ class RecordingApi {
 	 */
 	patchRecordingMediaretentionpolicy(policyId, body) { 
 		// verify the required parameter 'policyId' is set
-		if (policyId === undefined || policyId === null) {
+		if (policyId === undefined || policyId === null || policyId === '') {
 			throw 'Missing the required parameter "policyId" when calling patchRecordingMediaretentionpolicy';
 		}
 		// verify the required parameter 'body' is set
@@ -975,35 +972,6 @@ class RecordingApi {
 	}
 
 	/**
-	 * Update a screen recording session
-	 * 
-	 * @param {String} recordingSessionId Screen recording session ID
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.body 
-	 */
-	patchRecordingsScreensession(recordingSessionId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'recordingSessionId' is set
-		if (recordingSessionId === undefined || recordingSessionId === null) {
-			throw 'Missing the required parameter "recordingSessionId" when calling patchRecordingsScreensession';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/recordings/screensessions/{recordingSessionId}', 
-			'PATCH', 
-			{ 'recordingSessionId': recordingSessionId },
-			{  },
-			{  },
-			{  },
-			opts['body'], 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
 	 * Create annotation
 	 * 
 	 * @param {String} conversationId Conversation ID
@@ -1012,11 +980,11 @@ class RecordingApi {
 	 */
 	postConversationRecordingAnnotations(conversationId, recordingId, body) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postConversationRecordingAnnotations';
 		}
 		// verify the required parameter 'recordingId' is set
-		if (recordingId === undefined || recordingId === null) {
+		if (recordingId === undefined || recordingId === null || recordingId === '') {
 			throw 'Missing the required parameter "recordingId" when calling postConversationRecordingAnnotations';
 		}
 		// verify the required parameter 'body' is set
@@ -1346,11 +1314,11 @@ class RecordingApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling putConversationRecording';
 		}
 		// verify the required parameter 'recordingId' is set
-		if (recordingId === undefined || recordingId === null) {
+		if (recordingId === undefined || recordingId === null || recordingId === '') {
 			throw 'Missing the required parameter "recordingId" when calling putConversationRecording';
 		}
 		// verify the required parameter 'body' is set
@@ -1382,15 +1350,15 @@ class RecordingApi {
 	 */
 	putConversationRecordingAnnotation(conversationId, recordingId, annotationId, body) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling putConversationRecordingAnnotation';
 		}
 		// verify the required parameter 'recordingId' is set
-		if (recordingId === undefined || recordingId === null) {
+		if (recordingId === undefined || recordingId === null || recordingId === '') {
 			throw 'Missing the required parameter "recordingId" when calling putConversationRecordingAnnotation';
 		}
 		// verify the required parameter 'annotationId' is set
-		if (annotationId === undefined || annotationId === null) {
+		if (annotationId === undefined || annotationId === null || annotationId === '') {
 			throw 'Missing the required parameter "annotationId" when calling putConversationRecordingAnnotation';
 		}
 		// verify the required parameter 'body' is set
@@ -1423,7 +1391,7 @@ class RecordingApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'orphanId' is set
-		if (orphanId === undefined || orphanId === null) {
+		if (orphanId === undefined || orphanId === null || orphanId === '') {
 			throw 'Missing the required parameter "orphanId" when calling putOrphanrecording';
 		}
 
@@ -1449,7 +1417,7 @@ class RecordingApi {
 	 */
 	putRecordingCrossplatformMediaretentionpolicy(policyId, body) { 
 		// verify the required parameter 'policyId' is set
-		if (policyId === undefined || policyId === null) {
+		if (policyId === undefined || policyId === null || policyId === '') {
 			throw 'Missing the required parameter "policyId" when calling putRecordingCrossplatformMediaretentionpolicy';
 		}
 		// verify the required parameter 'body' is set
@@ -1479,7 +1447,7 @@ class RecordingApi {
 	 */
 	putRecordingJob(jobId, body) { 
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling putRecordingJob';
 		}
 		// verify the required parameter 'body' is set
@@ -1509,7 +1477,7 @@ class RecordingApi {
 	 */
 	putRecordingKeyconfiguration(keyConfigurationId, body) { 
 		// verify the required parameter 'keyConfigurationId' is set
-		if (keyConfigurationId === undefined || keyConfigurationId === null) {
+		if (keyConfigurationId === undefined || keyConfigurationId === null || keyConfigurationId === '') {
 			throw 'Missing the required parameter "keyConfigurationId" when calling putRecordingKeyconfiguration';
 		}
 		// verify the required parameter 'body' is set
@@ -1539,7 +1507,7 @@ class RecordingApi {
 	 */
 	putRecordingMediaretentionpolicy(policyId, body) { 
 		// verify the required parameter 'policyId' is set
-		if (policyId === undefined || policyId === null) {
+		if (policyId === undefined || policyId === null || policyId === '') {
 			throw 'Missing the required parameter "policyId" when calling putRecordingMediaretentionpolicy';
 		}
 		// verify the required parameter 'body' is set

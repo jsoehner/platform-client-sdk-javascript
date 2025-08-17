@@ -5,7 +5,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 174.0.0
+	 * @version 229.1.0
 	 */
 
 	/**
@@ -27,7 +27,7 @@ class RoutingApi {
 	 */
 	deleteRoutingAssessment(assessmentId) { 
 		// verify the required parameter 'assessmentId' is set
-		if (assessmentId === undefined || assessmentId === null) {
+		if (assessmentId === undefined || assessmentId === null || assessmentId === '') {
 			throw 'Missing the required parameter "assessmentId" when calling deleteRoutingAssessment';
 		}
 
@@ -46,13 +46,33 @@ class RoutingApi {
 	}
 
 	/**
+	 * Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default.
+	 * 
+	 */
+	deleteRoutingDirectroutingbackupSettingsMe() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/directroutingbackup/settings/me', 
+			'DELETE', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Delete a domain
 	 * 
 	 * @param {String} domainId domain ID
 	 */
 	deleteRoutingEmailDomain(domainId) { 
 		// verify the required parameter 'domainId' is set
-		if (domainId === undefined || domainId === null) {
+		if (domainId === undefined || domainId === null || domainId === '') {
 			throw 'Missing the required parameter "domainId" when calling deleteRoutingEmailDomain';
 		}
 
@@ -78,11 +98,11 @@ class RoutingApi {
 	 */
 	deleteRoutingEmailDomainRoute(domainName, routeId) { 
 		// verify the required parameter 'domainName' is set
-		if (domainName === undefined || domainName === null) {
+		if (domainName === undefined || domainName === null || domainName === '') {
 			throw 'Missing the required parameter "domainName" when calling deleteRoutingEmailDomainRoute';
 		}
 		// verify the required parameter 'routeId' is set
-		if (routeId === undefined || routeId === null) {
+		if (routeId === undefined || routeId === null || routeId === '') {
 			throw 'Missing the required parameter "routeId" when calling deleteRoutingEmailDomainRoute';
 		}
 
@@ -107,7 +127,7 @@ class RoutingApi {
 	 */
 	deleteRoutingEmailOutboundDomain(domainId) { 
 		// verify the required parameter 'domainId' is set
-		if (domainId === undefined || domainId === null) {
+		if (domainId === undefined || domainId === null || domainId === '') {
 			throw 'Missing the required parameter "domainId" when calling deleteRoutingEmailOutboundDomain';
 		}
 
@@ -132,7 +152,7 @@ class RoutingApi {
 	 */
 	deleteRoutingLanguage(languageId) { 
 		// verify the required parameter 'languageId' is set
-		if (languageId === undefined || languageId === null) {
+		if (languageId === undefined || languageId === null || languageId === '') {
 			throw 'Missing the required parameter "languageId" when calling deleteRoutingLanguage';
 		}
 
@@ -157,7 +177,7 @@ class RoutingApi {
 	 */
 	deleteRoutingPredictor(predictorId) { 
 		// verify the required parameter 'predictorId' is set
-		if (predictorId === undefined || predictorId === null) {
+		if (predictorId === undefined || predictorId === null || predictorId === '') {
 			throw 'Missing the required parameter "predictorId" when calling deleteRoutingPredictor';
 		}
 
@@ -186,7 +206,7 @@ class RoutingApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'queueId' is set
-		if (queueId === undefined || queueId === null) {
+		if (queueId === undefined || queueId === null || queueId === '') {
 			throw 'Missing the required parameter "queueId" when calling deleteRoutingQueue';
 		}
 
@@ -212,11 +232,11 @@ class RoutingApi {
 	 */
 	deleteRoutingQueueMember(queueId, memberId) { 
 		// verify the required parameter 'queueId' is set
-		if (queueId === undefined || queueId === null) {
+		if (queueId === undefined || queueId === null || queueId === '') {
 			throw 'Missing the required parameter "queueId" when calling deleteRoutingQueueMember';
 		}
 		// verify the required parameter 'memberId' is set
-		if (memberId === undefined || memberId === null) {
+		if (memberId === undefined || memberId === null || memberId === '') {
 			throw 'Missing the required parameter "memberId" when calling deleteRoutingQueueMember';
 		}
 
@@ -243,11 +263,11 @@ class RoutingApi {
 	 */
 	deleteRoutingQueueUser(queueId, memberId) { 
 		// verify the required parameter 'queueId' is set
-		if (queueId === undefined || queueId === null) {
+		if (queueId === undefined || queueId === null || queueId === '') {
 			throw 'Missing the required parameter "queueId" when calling deleteRoutingQueueUser';
 		}
 		// verify the required parameter 'memberId' is set
-		if (memberId === undefined || memberId === null) {
+		if (memberId === undefined || memberId === null || memberId === '') {
 			throw 'Missing the required parameter "memberId" when calling deleteRoutingQueueUser';
 		}
 
@@ -273,11 +293,11 @@ class RoutingApi {
 	 */
 	deleteRoutingQueueWrapupcode(queueId, codeId) { 
 		// verify the required parameter 'queueId' is set
-		if (queueId === undefined || queueId === null) {
+		if (queueId === undefined || queueId === null || queueId === '') {
 			throw 'Missing the required parameter "queueId" when calling deleteRoutingQueueWrapupcode';
 		}
 		// verify the required parameter 'codeId' is set
-		if (codeId === undefined || codeId === null) {
+		if (codeId === undefined || codeId === null || codeId === '') {
 			throw 'Missing the required parameter "codeId" when calling deleteRoutingQueueWrapupcode';
 		}
 
@@ -322,7 +342,7 @@ class RoutingApi {
 	 */
 	deleteRoutingSkill(skillId) { 
 		// verify the required parameter 'skillId' is set
-		if (skillId === undefined || skillId === null) {
+		if (skillId === undefined || skillId === null || skillId === '') {
 			throw 'Missing the required parameter "skillId" when calling deleteRoutingSkill';
 		}
 
@@ -347,7 +367,7 @@ class RoutingApi {
 	 */
 	deleteRoutingSkillgroup(skillGroupId) { 
 		// verify the required parameter 'skillGroupId' is set
-		if (skillGroupId === undefined || skillGroupId === null) {
+		if (skillGroupId === undefined || skillGroupId === null || skillGroupId === '') {
 			throw 'Missing the required parameter "skillGroupId" when calling deleteRoutingSkillgroup';
 		}
 
@@ -372,7 +392,7 @@ class RoutingApi {
 	 */
 	deleteRoutingSmsAddress(addressId) { 
 		// verify the required parameter 'addressId' is set
-		if (addressId === undefined || addressId === null) {
+		if (addressId === undefined || addressId === null || addressId === '') {
 			throw 'Missing the required parameter "addressId" when calling deleteRoutingSmsAddress';
 		}
 
@@ -393,18 +413,43 @@ class RoutingApi {
 	/**
 	 * Delete a phone number provisioned for SMS.
 	 * 
-	 * @param {String} addressId Address ID
+	 * @param {String} phoneNumberId phone number
 	 */
-	deleteRoutingSmsPhonenumber(addressId) { 
-		// verify the required parameter 'addressId' is set
-		if (addressId === undefined || addressId === null) {
-			throw 'Missing the required parameter "addressId" when calling deleteRoutingSmsPhonenumber';
+	deleteRoutingSmsPhonenumber(phoneNumberId) { 
+		// verify the required parameter 'phoneNumberId' is set
+		if (phoneNumberId === undefined || phoneNumberId === null || phoneNumberId === '') {
+			throw 'Missing the required parameter "phoneNumberId" when calling deleteRoutingSmsPhonenumber';
 		}
 
 		return this.apiClient.callApi(
-			'/api/v2/routing/sms/phonenumbers/{addressId}', 
+			'/api/v2/routing/sms/phonenumbers/{phoneNumberId}', 
 			'DELETE', 
-			{ 'addressId': addressId },
+			{ 'phoneNumberId': phoneNumberId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default.
+	 * 
+	 * @param {String} userId User ID
+	 */
+	deleteRoutingUserDirectroutingbackupSettings(userId) { 
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null || userId === '') {
+			throw 'Missing the required parameter "userId" when calling deleteRoutingUserDirectroutingbackupSettings';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/users/{userId}/directroutingbackup/settings', 
+			'DELETE', 
+			{ 'userId': userId },
 			{  },
 			{  },
 			{  },
@@ -422,7 +467,7 @@ class RoutingApi {
 	 */
 	deleteRoutingUserUtilization(userId) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling deleteRoutingUserUtilization';
 		}
 
@@ -461,6 +506,35 @@ class RoutingApi {
 	}
 
 	/**
+	 * Delete a utilization label
+	 * 
+	 * @param {String} labelId Utilization Label ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.forceDelete Remove all label usages (if found) without warning (default to false)
+	 */
+	deleteRoutingUtilizationLabel(labelId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'labelId' is set
+		if (labelId === undefined || labelId === null || labelId === '') {
+			throw 'Missing the required parameter "labelId" when calling deleteRoutingUtilizationLabel';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/utilization/labels/{labelId}', 
+			'DELETE', 
+			{ 'labelId': labelId },
+			{ 'forceDelete': opts['forceDelete'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Delete an utilization tag
 	 * 
 	 * @param {String} tagId Utilization Tag ID
@@ -472,7 +546,7 @@ class RoutingApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'tagId' is set
-		if (tagId === undefined || tagId === null) {
+		if (tagId === undefined || tagId === null || tagId === '') {
 			throw 'Missing the required parameter "tagId" when calling deleteRoutingUtilizationTag';
 		}
 
@@ -497,7 +571,7 @@ class RoutingApi {
 	 */
 	deleteRoutingWrapupcode(codeId) { 
 		// verify the required parameter 'codeId' is set
-		if (codeId === undefined || codeId === null) {
+		if (codeId === undefined || codeId === null || codeId === '') {
 			throw 'Missing the required parameter "codeId" when calling deleteRoutingWrapupcode';
 		}
 
@@ -516,18 +590,18 @@ class RoutingApi {
 	}
 
 	/**
-	 * Remove routing language from user
+	 * Remove a routing language from a user
 	 * 
 	 * @param {String} userId User ID
 	 * @param {String} languageId languageId
 	 */
 	deleteUserRoutinglanguage(userId, languageId) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling deleteUserRoutinglanguage';
 		}
 		// verify the required parameter 'languageId' is set
-		if (languageId === undefined || languageId === null) {
+		if (languageId === undefined || languageId === null || languageId === '') {
 			throw 'Missing the required parameter "languageId" when calling deleteUserRoutinglanguage';
 		}
 
@@ -546,18 +620,18 @@ class RoutingApi {
 	}
 
 	/**
-	 * Remove routing skill from user
+	 * Remove a routing skill from a user
 	 * 
 	 * @param {String} userId User ID
 	 * @param {String} skillId skillId
 	 */
 	deleteUserRoutingskill(userId, skillId) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling deleteUserRoutingskill';
 		}
 		// verify the required parameter 'skillId' is set
-		if (skillId === undefined || skillId === null) {
+		if (skillId === undefined || skillId === null || skillId === '') {
 			throw 'Missing the required parameter "skillId" when calling deleteUserRoutingskill';
 		}
 
@@ -582,7 +656,7 @@ class RoutingApi {
 	 */
 	getRoutingAssessment(assessmentId) { 
 		// verify the required parameter 'assessmentId' is set
-		if (assessmentId === undefined || assessmentId === null) {
+		if (assessmentId === undefined || assessmentId === null || assessmentId === '') {
 			throw 'Missing the required parameter "assessmentId" when calling getRoutingAssessment';
 		}
 
@@ -635,7 +709,7 @@ class RoutingApi {
 	 */
 	getRoutingAssessmentsJob(jobId) { 
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getRoutingAssessmentsJob';
 		}
 
@@ -698,13 +772,33 @@ class RoutingApi {
 	}
 
 	/**
+	 * Get the user's Direct Routing Backup settings.
+	 * 
+	 */
+	getRoutingDirectroutingbackupSettingsMe() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/directroutingbackup/settings/me', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get domain
 	 * 
 	 * @param {String} domainId domain ID
 	 */
 	getRoutingEmailDomain(domainId) { 
 		// verify the required parameter 'domainId' is set
-		if (domainId === undefined || domainId === null) {
+		if (domainId === undefined || domainId === null || domainId === '') {
 			throw 'Missing the required parameter "domainId" when calling getRoutingEmailDomain';
 		}
 
@@ -727,19 +821,53 @@ class RoutingApi {
 	 * 
 	 * @param {String} domainName email domain
 	 * @param {String} routeId route ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
 	 */
-	getRoutingEmailDomainRoute(domainName, routeId) { 
+	getRoutingEmailDomainRoute(domainName, routeId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'domainName' is set
-		if (domainName === undefined || domainName === null) {
+		if (domainName === undefined || domainName === null || domainName === '') {
 			throw 'Missing the required parameter "domainName" when calling getRoutingEmailDomainRoute';
 		}
 		// verify the required parameter 'routeId' is set
-		if (routeId === undefined || routeId === null) {
+		if (routeId === undefined || routeId === null || routeId === '') {
 			throw 'Missing the required parameter "routeId" when calling getRoutingEmailDomainRoute';
 		}
 
 		return this.apiClient.callApi(
 			'/api/v2/routing/email/domains/{domainName}/routes/{routeId}', 
+			'GET', 
+			{ 'domainName': domainName,'routeId': routeId },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a route identity resolution setting.
+	 * 
+	 * @param {String} domainName email domain
+	 * @param {String} routeId route ID
+	 */
+	getRoutingEmailDomainRouteIdentityresolution(domainName, routeId) { 
+		// verify the required parameter 'domainName' is set
+		if (domainName === undefined || domainName === null || domainName === '') {
+			throw 'Missing the required parameter "domainName" when calling getRoutingEmailDomainRouteIdentityresolution';
+		}
+		// verify the required parameter 'routeId' is set
+		if (routeId === undefined || routeId === null || routeId === '') {
+			throw 'Missing the required parameter "routeId" when calling getRoutingEmailDomainRouteIdentityresolution';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/email/domains/{domainName}/routes/{routeId}/identityresolution', 
 			'GET', 
 			{ 'domainName': domainName,'routeId': routeId },
 			{  },
@@ -760,12 +888,13 @@ class RoutingApi {
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {String} opts.pattern Filter routes by the route's pattern property
+	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
 	 */
 	getRoutingEmailDomainRoutes(domainName, opts) { 
 		opts = opts || {};
 		
 		// verify the required parameter 'domainName' is set
-		if (domainName === undefined || domainName === null) {
+		if (domainName === undefined || domainName === null || domainName === '') {
 			throw 'Missing the required parameter "domainName" when calling getRoutingEmailDomainRoutes';
 		}
 
@@ -773,7 +902,7 @@ class RoutingApi {
 			'/api/v2/routing/email/domains/{domainName}/routes', 
 			'GET', 
 			{ 'domainName': domainName },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'pattern': opts['pattern'] },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'pattern': opts['pattern'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
 			{  },
 			{  },
 			null, 
@@ -790,7 +919,7 @@ class RoutingApi {
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Boolean} opts.excludeStatus Exclude MX record data (default to false)
-	 * @param {String} opts.filter Optional search filter
+	 * @param {String} opts.filter Optional search filter that, if defined, use the **filter** syntax, eg: **mySearchedPattern**. Note that **** is considered no filter.
 	 */
 	getRoutingEmailDomains(opts) { 
 		opts = opts || {};
@@ -817,7 +946,7 @@ class RoutingApi {
 	 */
 	getRoutingEmailOutboundDomain(domainId) { 
 		// verify the required parameter 'domainId' is set
-		if (domainId === undefined || domainId === null) {
+		if (domainId === undefined || domainId === null || domainId === '') {
 			throw 'Missing the required parameter "domainId" when calling getRoutingEmailOutboundDomain';
 		}
 
@@ -842,7 +971,7 @@ class RoutingApi {
 	 */
 	getRoutingEmailOutboundDomainActivation(domainId) { 
 		// verify the required parameter 'domainId' is set
-		if (domainId === undefined || domainId === null) {
+		if (domainId === undefined || domainId === null || domainId === '') {
 			throw 'Missing the required parameter "domainId" when calling getRoutingEmailOutboundDomainActivation';
 		}
 
@@ -867,7 +996,7 @@ class RoutingApi {
 	 */
 	getRoutingEmailOutboundDomainSearch(domainId) { 
 		// verify the required parameter 'domainId' is set
-		if (domainId === undefined || domainId === null) {
+		if (domainId === undefined || domainId === null || domainId === '') {
 			throw 'Missing the required parameter "domainId" when calling getRoutingEmailOutboundDomainSearch';
 		}
 
@@ -889,7 +1018,9 @@ class RoutingApi {
 	 * Get outbound domains
 	 * 
 	 * @param {Object} opts Optional parameters
-	 * @param {String} opts.filter Optional search filter
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {String} opts.filter Optional search filter that, if defined, use the **filter** syntax, eg: **mySearchedPattern**. Note that **** is considered no filter.
 	 */
 	getRoutingEmailOutboundDomains(opts) { 
 		opts = opts || {};
@@ -899,7 +1030,7 @@ class RoutingApi {
 			'/api/v2/routing/email/outbound/domains', 
 			'GET', 
 			{  },
-			{ 'filter': opts['filter'] },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'filter': opts['filter'] },
 			{  },
 			{  },
 			null, 
@@ -936,7 +1067,7 @@ class RoutingApi {
 	 */
 	getRoutingLanguage(languageId) { 
 		// verify the required parameter 'languageId' is set
-		if (languageId === undefined || languageId === null) {
+		if (languageId === undefined || languageId === null || languageId === '') {
 			throw 'Missing the required parameter "languageId" when calling getRoutingLanguage';
 		}
 
@@ -989,7 +1120,7 @@ class RoutingApi {
 	 */
 	getRoutingMessageRecipient(recipientId) { 
 		// verify the required parameter 'recipientId' is set
-		if (recipientId === undefined || recipientId === null) {
+		if (recipientId === undefined || recipientId === null || recipientId === '') {
 			throw 'Missing the required parameter "recipientId" when calling getRoutingMessageRecipient';
 		}
 
@@ -1041,7 +1172,7 @@ class RoutingApi {
 	 */
 	getRoutingPredictor(predictorId) { 
 		// verify the required parameter 'predictorId' is set
-		if (predictorId === undefined || predictorId === null) {
+		if (predictorId === undefined || predictorId === null || predictorId === '') {
 			throw 'Missing the required parameter "predictorId" when calling getRoutingPredictor';
 		}
 
@@ -1067,11 +1198,11 @@ class RoutingApi {
 	 */
 	getRoutingPredictorModelFeatures(predictorId, modelId) { 
 		// verify the required parameter 'predictorId' is set
-		if (predictorId === undefined || predictorId === null) {
+		if (predictorId === undefined || predictorId === null || predictorId === '') {
 			throw 'Missing the required parameter "predictorId" when calling getRoutingPredictorModelFeatures';
 		}
 		// verify the required parameter 'modelId' is set
-		if (modelId === undefined || modelId === null) {
+		if (modelId === undefined || modelId === null || modelId === '') {
 			throw 'Missing the required parameter "modelId" when calling getRoutingPredictorModelFeatures';
 		}
 
@@ -1096,7 +1227,7 @@ class RoutingApi {
 	 */
 	getRoutingPredictorModels(predictorId) { 
 		// verify the required parameter 'predictorId' is set
-		if (predictorId === undefined || predictorId === null) {
+		if (predictorId === undefined || predictorId === null || predictorId === '') {
 			throw 'Missing the required parameter "predictorId" when calling getRoutingPredictorModels';
 		}
 
@@ -1171,10 +1302,14 @@ class RoutingApi {
 	 * Get details about this queue.
 	 * 
 	 * @param {String} queueId Queue ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
 	 */
-	getRoutingQueue(queueId) { 
+	getRoutingQueue(queueId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'queueId' is set
-		if (queueId === undefined || queueId === null) {
+		if (queueId === undefined || queueId === null || queueId === '') {
 			throw 'Missing the required parameter "queueId" when calling getRoutingQueue';
 		}
 
@@ -1182,7 +1317,36 @@ class RoutingApi {
 			'/api/v2/routing/queues/{queueId}', 
 			'GET', 
 			{ 'queueId': queueId },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
 			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get an assistant associated with a queue.
+	 * 
+	 * @param {String} queueId Queue ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.expand Which fields, if any, to expand.
+	 */
+	getRoutingQueueAssistant(queueId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'queueId' is set
+		if (queueId === undefined || queueId === null || queueId === '') {
+			throw 'Missing the required parameter "queueId" when calling getRoutingQueueAssistant';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/queues/{queueId}/assistant', 
+			'GET', 
+			{ 'queueId': queueId },
+			{ 'expand': opts['expand'] },
 			{  },
 			{  },
 			null, 
@@ -1200,11 +1364,11 @@ class RoutingApi {
 	 */
 	getRoutingQueueComparisonperiod(queueId, comparisonPeriodId) { 
 		// verify the required parameter 'queueId' is set
-		if (queueId === undefined || queueId === null) {
+		if (queueId === undefined || queueId === null || queueId === '') {
 			throw 'Missing the required parameter "queueId" when calling getRoutingQueueComparisonperiod';
 		}
 		// verify the required parameter 'comparisonPeriodId' is set
-		if (comparisonPeriodId === undefined || comparisonPeriodId === null) {
+		if (comparisonPeriodId === undefined || comparisonPeriodId === null || comparisonPeriodId === '') {
 			throw 'Missing the required parameter "comparisonPeriodId" when calling getRoutingQueueComparisonperiod';
 		}
 
@@ -1229,7 +1393,7 @@ class RoutingApi {
 	 */
 	getRoutingQueueComparisonperiods(queueId) { 
 		// verify the required parameter 'queueId' is set
-		if (queueId === undefined || queueId === null) {
+		if (queueId === undefined || queueId === null || queueId === '') {
 			throw 'Missing the required parameter "queueId" when calling getRoutingQueueComparisonperiods';
 		}
 
@@ -1258,7 +1422,7 @@ class RoutingApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'queueId' is set
-		if (queueId === undefined || queueId === null) {
+		if (queueId === undefined || queueId === null || queueId === '') {
 			throw 'Missing the required parameter "queueId" when calling getRoutingQueueEstimatedwaittime';
 		}
 
@@ -1277,18 +1441,47 @@ class RoutingApi {
 	}
 
 	/**
+	 * Get Queue IdentityResolution Settings.
+	 * 
+	 * @param {String} queueId Queue ID
+	 */
+	getRoutingQueueIdentityresolution(queueId) { 
+		// verify the required parameter 'queueId' is set
+		if (queueId === undefined || queueId === null || queueId === '') {
+			throw 'Missing the required parameter "queueId" when calling getRoutingQueueIdentityresolution';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/queues/{queueId}/identityresolution', 
+			'GET', 
+			{ 'queueId': queueId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get Estimated Wait Time
 	 * 
 	 * @param {String} queueId queueId
-	 * @param {String} mediaType mediaType
+	 * @param {Object} mediaType mediaType
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.labelId Unique id that represents the interaction label used with media type for EWT calculation
 	 */
-	getRoutingQueueMediatypeEstimatedwaittime(queueId, mediaType) { 
+	getRoutingQueueMediatypeEstimatedwaittime(queueId, mediaType, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'queueId' is set
-		if (queueId === undefined || queueId === null) {
+		if (queueId === undefined || queueId === null || queueId === '') {
 			throw 'Missing the required parameter "queueId" when calling getRoutingQueueMediatypeEstimatedwaittime';
 		}
 		// verify the required parameter 'mediaType' is set
-		if (mediaType === undefined || mediaType === null) {
+		if (mediaType === undefined || mediaType === null || mediaType === '') {
 			throw 'Missing the required parameter "mediaType" when calling getRoutingQueueMediatypeEstimatedwaittime';
 		}
 
@@ -1296,7 +1489,7 @@ class RoutingApi {
 			'/api/v2/routing/queues/{queueId}/mediatypes/{mediaType}/estimatedwaittime', 
 			'GET', 
 			{ 'queueId': queueId,'mediaType': mediaType },
-			{  },
+			{ 'labelId': opts['labelId'] },
 			{  },
 			{  },
 			null, 
@@ -1328,7 +1521,7 @@ class RoutingApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'queueId' is set
-		if (queueId === undefined || queueId === null) {
+		if (queueId === undefined || queueId === null || queueId === '') {
 			throw 'Missing the required parameter "queueId" when calling getRoutingQueueMembers';
 		}
 
@@ -1368,7 +1561,7 @@ class RoutingApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'queueId' is set
-		if (queueId === undefined || queueId === null) {
+		if (queueId === undefined || queueId === null || queueId === '') {
 			throw 'Missing the required parameter "queueId" when calling getRoutingQueueUsers';
 		}
 
@@ -1393,12 +1586,13 @@ class RoutingApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {String} opts.name Wrapup code's name (trailing asterisks allowed)
 	 */
 	getRoutingQueueWrapupcodes(queueId, opts) { 
 		opts = opts || {};
 		
 		// verify the required parameter 'queueId' is set
-		if (queueId === undefined || queueId === null) {
+		if (queueId === undefined || queueId === null || queueId === '') {
 			throw 'Missing the required parameter "queueId" when calling getRoutingQueueWrapupcodes';
 		}
 
@@ -1406,7 +1600,7 @@ class RoutingApi {
 			'/api/v2/routing/queues/{queueId}/wrapupcodes', 
 			'GET', 
 			{ 'queueId': queueId },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'name': opts['name'] },
 			{  },
 			{  },
 			null, 
@@ -1423,11 +1617,13 @@ class RoutingApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Object} opts.sortOrder Note: results are sorted by name. (default to asc)
-	 * @param {String} opts.name Filter by queue name
-	 * @param {Array.<String>} opts.id Filter by queue ID(s)
-	 * @param {Array.<String>} opts.divisionId Filter by queue division ID(s)
-	 * @param {Array.<String>} opts.peerId Filter by queue peer ID(s)
-	 * @param {Boolean} opts.hasPeer Filter by queues associated with peer
+	 * @param {String} opts.name Include only queues with the given name (leading and trailing asterisks allowed)
+	 * @param {Array.<String>} opts.id Include only queues with the specified ID(s)
+	 * @param {Array.<String>} opts.divisionId Include only queues in the specified division ID(s)
+	 * @param {Array.<String>} opts.peerId Include only queues with the specified peer ID(s)
+	 * @param {String} opts.cannedResponseLibraryId Include only queues explicitly associated with the specified canned response library ID
+	 * @param {Boolean} opts.hasPeer Include only queues with a peer ID
+	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
 	 */
 	getRoutingQueues(opts) { 
 		opts = opts || {};
@@ -1437,7 +1633,7 @@ class RoutingApi {
 			'/api/v2/routing/queues', 
 			'GET', 
 			{  },
-			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortOrder': opts['sortOrder'],'name': opts['name'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi'),'peerId': this.apiClient.buildCollectionParam(opts['peerId'], 'multi'),'hasPeer': opts['hasPeer'] },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'sortOrder': opts['sortOrder'],'name': opts['name'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi'),'peerId': this.apiClient.buildCollectionParam(opts['peerId'], 'multi'),'cannedResponseLibraryId': opts['cannedResponseLibraryId'],'hasPeer': opts['hasPeer'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
 			{  },
 			{  },
 			null, 
@@ -1597,7 +1793,7 @@ class RoutingApi {
 	 */
 	getRoutingSkill(skillId) { 
 		// verify the required parameter 'skillId' is set
-		if (skillId === undefined || skillId === null) {
+		if (skillId === undefined || skillId === null || skillId === '') {
 			throw 'Missing the required parameter "skillId" when calling getRoutingSkill';
 		}
 
@@ -1622,7 +1818,7 @@ class RoutingApi {
 	 */
 	getRoutingSkillgroup(skillGroupId) { 
 		// verify the required parameter 'skillGroupId' is set
-		if (skillGroupId === undefined || skillGroupId === null) {
+		if (skillGroupId === undefined || skillGroupId === null || skillGroupId === '') {
 			throw 'Missing the required parameter "skillGroupId" when calling getRoutingSkillgroup';
 		}
 
@@ -1654,7 +1850,7 @@ class RoutingApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'skillGroupId' is set
-		if (skillGroupId === undefined || skillGroupId === null) {
+		if (skillGroupId === undefined || skillGroupId === null || skillGroupId === '') {
 			throw 'Missing the required parameter "skillGroupId" when calling getRoutingSkillgroupMembers';
 		}
 
@@ -1683,7 +1879,7 @@ class RoutingApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'skillGroupId' is set
-		if (skillGroupId === undefined || skillGroupId === null) {
+		if (skillGroupId === undefined || skillGroupId === null || skillGroupId === '') {
 			throw 'Missing the required parameter "skillGroupId" when calling getRoutingSkillgroupMembersDivisions';
 		}
 
@@ -1762,7 +1958,7 @@ class RoutingApi {
 	 */
 	getRoutingSmsAddress(addressId) { 
 		// verify the required parameter 'addressId' is set
-		if (addressId === undefined || addressId === null) {
+		if (addressId === undefined || addressId === null || addressId === '') {
 			throw 'Missing the required parameter "addressId" when calling getRoutingSmsAddress';
 		}
 
@@ -1844,24 +2040,49 @@ class RoutingApi {
 	}
 
 	/**
-	 * Get a phone number provisioned for SMS.
+	 * Get a SMS identity resolution settings.
 	 * 
 	 * @param {String} addressId Address ID
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.expand Expand response with additional information
 	 */
-	getRoutingSmsPhonenumber(addressId, opts) { 
-		opts = opts || {};
-		
+	getRoutingSmsIdentityresolutionPhonenumber(addressId) { 
 		// verify the required parameter 'addressId' is set
-		if (addressId === undefined || addressId === null) {
-			throw 'Missing the required parameter "addressId" when calling getRoutingSmsPhonenumber';
+		if (addressId === undefined || addressId === null || addressId === '') {
+			throw 'Missing the required parameter "addressId" when calling getRoutingSmsIdentityresolutionPhonenumber';
 		}
 
 		return this.apiClient.callApi(
-			'/api/v2/routing/sms/phonenumbers/{addressId}', 
+			'/api/v2/routing/sms/identityresolution/phonenumbers/{addressId}', 
 			'GET', 
 			{ 'addressId': addressId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a phone number provisioned for SMS.
+	 * 
+	 * @param {String} phoneNumberId phone number
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.expand Expand response with additional information
+	 */
+	getRoutingSmsPhonenumber(phoneNumberId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'phoneNumberId' is set
+		if (phoneNumberId === undefined || phoneNumberId === null || phoneNumberId === '') {
+			throw 'Missing the required parameter "phoneNumberId" when calling getRoutingSmsPhonenumber';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/sms/phonenumbers/{phoneNumberId}', 
+			'GET', 
+			{ 'phoneNumberId': phoneNumberId },
 			{ 'expand': opts['expand'] },
 			{  },
 			{  },
@@ -1886,6 +2107,8 @@ class RoutingApi {
 	 * @param {Object} opts.sortOrder Sort order
 	 * @param {String} opts.language A language tag (which is sometimes referred to as a locale identifier) to use to localize country field and sort operations (default to en-US)
 	 * @param {String} opts.integrationId Filter on the Genesys Cloud integration id to which the phone number belongs to
+	 * @param {String} opts.supportedContentId Filter based on the supported content ID
+	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
 	 */
 	getRoutingSmsPhonenumbers(opts) { 
 		opts = opts || {};
@@ -1895,7 +2118,32 @@ class RoutingApi {
 			'/api/v2/routing/sms/phonenumbers', 
 			'GET', 
 			{  },
-			{ 'phoneNumber': opts['phoneNumber'],'phoneNumberType': this.apiClient.buildCollectionParam(opts['phoneNumberType'], 'multi'),'phoneNumberStatus': this.apiClient.buildCollectionParam(opts['phoneNumberStatus'], 'multi'),'countryCode': this.apiClient.buildCollectionParam(opts['countryCode'], 'multi'),'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'language': opts['language'],'integration.id': opts['integrationId'] },
+			{ 'phoneNumber': opts['phoneNumber'],'phoneNumberType': this.apiClient.buildCollectionParam(opts['phoneNumberType'], 'multi'),'phoneNumberStatus': this.apiClient.buildCollectionParam(opts['phoneNumberStatus'], 'multi'),'countryCode': this.apiClient.buildCollectionParam(opts['countryCode'], 'multi'),'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'language': opts['language'],'integration.id': opts['integrationId'],'supportedContent.id': opts['supportedContentId'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get the user's Direct Routing Backup settings.
+	 * 
+	 * @param {String} userId User ID
+	 */
+	getRoutingUserDirectroutingbackupSettings(userId) { 
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null || userId === '') {
+			throw 'Missing the required parameter "userId" when calling getRoutingUserDirectroutingbackupSettings';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/users/{userId}/directroutingbackup/settings', 
+			'GET', 
+			{ 'userId': userId },
+			{  },
 			{  },
 			{  },
 			null, 
@@ -1912,7 +2160,7 @@ class RoutingApi {
 	 */
 	getRoutingUserUtilization(userId) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getRoutingUserUtilization';
 		}
 
@@ -1951,6 +2199,83 @@ class RoutingApi {
 	}
 
 	/**
+	 * Get details about this utilization label
+	 * 
+	 * @param {String} labelId Utilization Label ID
+	 */
+	getRoutingUtilizationLabel(labelId) { 
+		// verify the required parameter 'labelId' is set
+		if (labelId === undefined || labelId === null || labelId === '') {
+			throw 'Missing the required parameter "labelId" when calling getRoutingUtilizationLabel';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/utilization/labels/{labelId}', 
+			'GET', 
+			{ 'labelId': labelId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get list of agent ids associated with a utilization label
+	 * 
+	 * @param {String} labelId Utilization Label ID
+	 */
+	getRoutingUtilizationLabelAgents(labelId) { 
+		// verify the required parameter 'labelId' is set
+		if (labelId === undefined || labelId === null || labelId === '') {
+			throw 'Missing the required parameter "labelId" when calling getRoutingUtilizationLabelAgents';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/utilization/labels/{labelId}/agents', 
+			'GET', 
+			{ 'labelId': labelId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get list of utilization labels
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Object} opts.sortOrder Sort order by name (default to ascending)
+	 * @param {String} opts.name Utilization label's name (Wildcard is supported, e.g., 'label1*', '*label*'
+	 */
+	getRoutingUtilizationLabels(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/utilization/labels', 
+			'GET', 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortOrder': opts['sortOrder'],'name': opts['name'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get details about this utilization tag
 	 * 
 	 * @param {String} tagId Utilization Tag ID
@@ -1958,7 +2283,7 @@ class RoutingApi {
 	 */
 	getRoutingUtilizationTag(tagId) { 
 		// verify the required parameter 'tagId' is set
-		if (tagId === undefined || tagId === null) {
+		if (tagId === undefined || tagId === null || tagId === '') {
 			throw 'Missing the required parameter "tagId" when calling getRoutingUtilizationTag';
 		}
 
@@ -1984,7 +2309,7 @@ class RoutingApi {
 	 */
 	getRoutingUtilizationTagAgents(tagId) { 
 		// verify the required parameter 'tagId' is set
-		if (tagId === undefined || tagId === null) {
+		if (tagId === undefined || tagId === null || tagId === '') {
 			throw 'Missing the required parameter "tagId" when calling getRoutingUtilizationTagAgents';
 		}
 
@@ -2037,7 +2362,7 @@ class RoutingApi {
 	 */
 	getRoutingWrapupcode(codeId) { 
 		// verify the required parameter 'codeId' is set
-		if (codeId === undefined || codeId === null) {
+		if (codeId === undefined || codeId === null || codeId === '') {
 			throw 'Missing the required parameter "codeId" when calling getRoutingWrapupcode';
 		}
 
@@ -2063,8 +2388,8 @@ class RoutingApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Object} opts.sortBy Sort by (default to name)
 	 * @param {Object} opts.sortOrder Sort order (default to ascending)
-	 * @param {Array.<String>} opts.id Filter by wrapup code ID(s)
 	 * @param {String} opts.name Wrapup code's name ('Sort by' param is ignored unless this field is provided)
+	 * @param {Array.<String>} opts.id Filter by wrapup code ID(s)
 	 * @param {Array.<String>} opts.divisionId Filter by division ID(s)
 	 */
 	getRoutingWrapupcodes(opts) { 
@@ -2075,7 +2400,61 @@ class RoutingApi {
 			'/api/v2/routing/wrapupcodes', 
 			'GET', 
 			{  },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'name': opts['name'],'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'name': opts['name'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi') },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a simplified wrap-up code.
+	 * 
+	 * @param {String} codeId Wrapup Code ID
+	 */
+	getRoutingWrapupcodesDivisionview(codeId) { 
+		// verify the required parameter 'codeId' is set
+		if (codeId === undefined || codeId === null || codeId === '') {
+			throw 'Missing the required parameter "codeId" when calling getRoutingWrapupcodesDivisionview';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/wrapupcodes/divisionviews/{codeId}', 
+			'GET', 
+			{ 'codeId': codeId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Get a paged listing of simplified wrapup code objects, filterable by name, wrapup code ID(s), or division ID(s).
+	 * Specifying both name and ID parameters is not supported.
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {String} opts.name Name (trailing asterisks allowed)
+	 * @param {Array.<String>} opts.id Wrapup code ID(s)
+	 * @param {Array.<String>} opts.divisionId Division ID(s)
+	 * @param {Object} opts.includeState Wrapup code state(s) to include
+	 */
+	getRoutingWrapupcodesDivisionviews(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/wrapupcodes/divisionviews', 
+			'GET', 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'name': opts['name'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi'),'divisionId': this.apiClient.buildCollectionParam(opts['divisionId'], 'multi'),'includeState': opts['includeState'] },
 			{  },
 			{  },
 			null, 
@@ -2099,7 +2478,7 @@ class RoutingApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getUserQueues';
 		}
 
@@ -2118,7 +2497,7 @@ class RoutingApi {
 	}
 
 	/**
-	 * List routing language for user
+	 * List routing languages assigned to a user
 	 * 
 	 * @param {String} userId User ID
 	 * @param {Object} opts Optional parameters
@@ -2130,7 +2509,7 @@ class RoutingApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getUserRoutinglanguages';
 		}
 
@@ -2149,7 +2528,7 @@ class RoutingApi {
 	}
 
 	/**
-	 * List routing skills for user
+	 * List routing skills assigned to a user
 	 * 
 	 * @param {String} userId User ID
 	 * @param {Object} opts Optional parameters
@@ -2161,7 +2540,7 @@ class RoutingApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getUserRoutingskills';
 		}
 
@@ -2192,7 +2571,7 @@ class RoutingApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getUserSkillgroups';
 		}
 
@@ -2218,7 +2597,7 @@ class RoutingApi {
 	 */
 	patchRoutingConversation(conversationId, body) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling patchRoutingConversation';
 		}
 		// verify the required parameter 'body' is set
@@ -2248,7 +2627,7 @@ class RoutingApi {
 	 */
 	patchRoutingEmailDomain(domainId, body) { 
 		// verify the required parameter 'domainId' is set
-		if (domainId === undefined || domainId === null) {
+		if (domainId === undefined || domainId === null || domainId === '') {
 			throw 'Missing the required parameter "domainId" when calling patchRoutingEmailDomain';
 		}
 		// verify the required parameter 'body' is set
@@ -2278,7 +2657,7 @@ class RoutingApi {
 	 */
 	patchRoutingEmailDomainValidate(domainId, body) { 
 		// verify the required parameter 'domainId' is set
-		if (domainId === undefined || domainId === null) {
+		if (domainId === undefined || domainId === null || domainId === '') {
 			throw 'Missing the required parameter "domainId" when calling patchRoutingEmailDomainValidate';
 		}
 		// verify the required parameter 'body' is set
@@ -2311,7 +2690,7 @@ class RoutingApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'predictorId' is set
-		if (predictorId === undefined || predictorId === null) {
+		if (predictorId === undefined || predictorId === null || predictorId === '') {
 			throw 'Missing the required parameter "predictorId" when calling patchRoutingPredictor';
 		}
 
@@ -2338,11 +2717,11 @@ class RoutingApi {
 	 */
 	patchRoutingQueueMember(queueId, memberId, body) { 
 		// verify the required parameter 'queueId' is set
-		if (queueId === undefined || queueId === null) {
+		if (queueId === undefined || queueId === null || queueId === '') {
 			throw 'Missing the required parameter "queueId" when calling patchRoutingQueueMember';
 		}
 		// verify the required parameter 'memberId' is set
-		if (memberId === undefined || memberId === null) {
+		if (memberId === undefined || memberId === null || memberId === '') {
 			throw 'Missing the required parameter "memberId" when calling patchRoutingQueueMember';
 		}
 		// verify the required parameter 'body' is set
@@ -2365,14 +2744,14 @@ class RoutingApi {
 	}
 
 	/**
-	 * Join or unjoin a set of users for a queue
+	 * Join or unjoin a set of up to 100 users for a queue
 	 * 
 	 * @param {String} queueId Queue ID
 	 * @param {Array.<Object>} body Queue Members
 	 */
 	patchRoutingQueueMembers(queueId, body) { 
 		// verify the required parameter 'queueId' is set
-		if (queueId === undefined || queueId === null) {
+		if (queueId === undefined || queueId === null || queueId === '') {
 			throw 'Missing the required parameter "queueId" when calling patchRoutingQueueMembers';
 		}
 		// verify the required parameter 'body' is set
@@ -2404,11 +2783,11 @@ class RoutingApi {
 	 */
 	patchRoutingQueueUser(queueId, memberId, body) { 
 		// verify the required parameter 'queueId' is set
-		if (queueId === undefined || queueId === null) {
+		if (queueId === undefined || queueId === null || queueId === '') {
 			throw 'Missing the required parameter "queueId" when calling patchRoutingQueueUser';
 		}
 		// verify the required parameter 'memberId' is set
-		if (memberId === undefined || memberId === null) {
+		if (memberId === undefined || memberId === null || memberId === '') {
 			throw 'Missing the required parameter "memberId" when calling patchRoutingQueueUser';
 		}
 		// verify the required parameter 'body' is set
@@ -2439,7 +2818,7 @@ class RoutingApi {
 	 */
 	patchRoutingQueueUsers(queueId, body) { 
 		// verify the required parameter 'queueId' is set
-		if (queueId === undefined || queueId === null) {
+		if (queueId === undefined || queueId === null || queueId === '') {
 			throw 'Missing the required parameter "queueId" when calling patchRoutingQueueUsers';
 		}
 		// verify the required parameter 'body' is set
@@ -2487,6 +2866,31 @@ class RoutingApi {
 	}
 
 	/**
+	 * Patch Transcription Settings
+	 * 
+	 * @param {Object} body Organization Settings
+	 */
+	patchRoutingSettingsTranscription(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchRoutingSettingsTranscription';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/settings/transcription', 
+			'PATCH', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Update skill group definition
 	 * 
 	 * @param {String} skillGroupId Skill Group ID
@@ -2494,7 +2898,7 @@ class RoutingApi {
 	 */
 	patchRoutingSkillgroup(skillGroupId, body) { 
 		// verify the required parameter 'skillGroupId' is set
-		if (skillGroupId === undefined || skillGroupId === null) {
+		if (skillGroupId === undefined || skillGroupId === null || skillGroupId === '') {
 			throw 'Missing the required parameter "skillGroupId" when calling patchRoutingSkillgroup';
 		}
 		// verify the required parameter 'body' is set
@@ -2517,6 +2921,36 @@ class RoutingApi {
 	}
 
 	/**
+	 * Update a phone number provisioned for SMS.
+	 * 
+	 * @param {String} phoneNumberId phone number
+	 * @param {Object} body SmsPhoneNumberPatchRequest
+	 */
+	patchRoutingSmsPhonenumber(phoneNumberId, body) { 
+		// verify the required parameter 'phoneNumberId' is set
+		if (phoneNumberId === undefined || phoneNumberId === null || phoneNumberId === '') {
+			throw 'Missing the required parameter "phoneNumberId" when calling patchRoutingSmsPhonenumber';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchRoutingSmsPhonenumber';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/sms/phonenumbers/{phoneNumberId}', 
+			'PATCH', 
+			{ 'phoneNumberId': phoneNumberId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Join or unjoin a queue for a user
 	 * 
 	 * @param {String} queueId Queue ID
@@ -2525,11 +2959,11 @@ class RoutingApi {
 	 */
 	patchUserQueue(queueId, userId, body) { 
 		// verify the required parameter 'queueId' is set
-		if (queueId === undefined || queueId === null) {
+		if (queueId === undefined || queueId === null || queueId === '') {
 			throw 'Missing the required parameter "queueId" when calling patchUserQueue';
 		}
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling patchUserQueue';
 		}
 		// verify the required parameter 'body' is set
@@ -2563,7 +2997,7 @@ class RoutingApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling patchUserQueues';
 		}
 		// verify the required parameter 'body' is set
@@ -2586,7 +3020,7 @@ class RoutingApi {
 	}
 
 	/**
-	 * Update routing language proficiency or state.
+	 * Update an assigned routing language's proficiency
 	 * 
 	 * @param {String} userId User ID
 	 * @param {String} languageId languageId
@@ -2594,11 +3028,11 @@ class RoutingApi {
 	 */
 	patchUserRoutinglanguage(userId, languageId, body) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling patchUserRoutinglanguage';
 		}
 		// verify the required parameter 'languageId' is set
-		if (languageId === undefined || languageId === null) {
+		if (languageId === undefined || languageId === null || languageId === '') {
 			throw 'Missing the required parameter "languageId" when calling patchUserRoutinglanguage';
 		}
 		// verify the required parameter 'body' is set
@@ -2621,14 +3055,14 @@ class RoutingApi {
 	}
 
 	/**
-	 * Add bulk routing language to user. Max limit 50 languages
+	 * Assign multiple routing languages to a user. Max 50 routing languages in request body
 	 * 
 	 * @param {String} userId User ID
 	 * @param {Array.<Object>} body Language
 	 */
 	patchUserRoutinglanguagesBulk(userId, body) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling patchUserRoutinglanguagesBulk';
 		}
 		// verify the required parameter 'body' is set
@@ -2651,14 +3085,14 @@ class RoutingApi {
 	}
 
 	/**
-	 * Bulk add routing skills to user
+	 * Assign multiple routing skills to a user
 	 * 
 	 * @param {String} userId User ID
 	 * @param {Array.<Object>} body Skill
 	 */
 	patchUserRoutingskillsBulk(userId, body) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling patchUserRoutingskillsBulk';
 		}
 		// verify the required parameter 'body' is set
@@ -2712,7 +3146,6 @@ class RoutingApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize The desired page size
 	 * @param {Number} opts.pageNumber The desired page number
-	 * postAnalyticsRoutingActivityQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postAnalyticsRoutingActivityQuery(body, opts) { 
 		opts = opts || {};
@@ -2792,7 +3225,7 @@ class RoutingApi {
 	 */
 	postRoutingEmailDomainRoutes(domainName, body) { 
 		// verify the required parameter 'domainName' is set
-		if (domainName === undefined || domainName === null) {
+		if (domainName === undefined || domainName === null || domainName === '') {
 			throw 'Missing the required parameter "domainName" when calling postRoutingEmailDomainRoutes';
 		}
 		// verify the required parameter 'body' is set
@@ -2825,7 +3258,7 @@ class RoutingApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'domainId' is set
-		if (domainId === undefined || domainId === null) {
+		if (domainId === undefined || domainId === null || domainId === '') {
 			throw 'Missing the required parameter "domainId" when calling postRoutingEmailDomainTestconnection';
 		}
 
@@ -2979,7 +3412,7 @@ class RoutingApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'queueId' is set
-		if (queueId === undefined || queueId === null) {
+		if (queueId === undefined || queueId === null || queueId === '') {
 			throw 'Missing the required parameter "queueId" when calling postRoutingQueueMembers';
 		}
 		// verify the required parameter 'body' is set
@@ -3014,7 +3447,7 @@ class RoutingApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'queueId' is set
-		if (queueId === undefined || queueId === null) {
+		if (queueId === undefined || queueId === null || queueId === '') {
 			throw 'Missing the required parameter "queueId" when calling postRoutingQueueUsers';
 		}
 		// verify the required parameter 'body' is set
@@ -3044,7 +3477,7 @@ class RoutingApi {
 	 */
 	postRoutingQueueWrapupcodes(queueId, body) { 
 		// verify the required parameter 'queueId' is set
-		if (queueId === undefined || queueId === null) {
+		if (queueId === undefined || queueId === null || queueId === '') {
 			throw 'Missing the required parameter "queueId" when calling postRoutingQueueWrapupcodes';
 		}
 		// verify the required parameter 'body' is set
@@ -3102,7 +3535,7 @@ class RoutingApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'skillGroupId' is set
-		if (skillGroupId === undefined || skillGroupId === null) {
+		if (skillGroupId === undefined || skillGroupId === null || skillGroupId === '') {
 			throw 'Missing the required parameter "skillGroupId" when calling postRoutingSkillgroupMembersDivisions';
 		}
 
@@ -3221,10 +3654,35 @@ class RoutingApi {
 	}
 
 	/**
+	 * Provision an alphanumeric number for SMS
+	 * 
+	 * @param {Object} body SmsPhoneNumber
+	 * postRoutingSmsPhonenumbersAlphanumeric is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postRoutingSmsPhonenumbersAlphanumeric(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postRoutingSmsPhonenumbersAlphanumeric';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/sms/phonenumbers/alphanumeric', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Imports a phone number for SMS
 	 * 
 	 * @param {Object} body SmsPhoneNumber
-	 * postRoutingSmsPhonenumbersImport is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	postRoutingSmsPhonenumbersImport(body) { 
 		// verify the required parameter 'body' is set
@@ -3234,6 +3692,31 @@ class RoutingApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/routing/sms/phonenumbers/import', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Create a utilization label
+	 * 
+	 * @param {Object} body UtilizationLabel
+	 */
+	postRoutingUtilizationLabels(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postRoutingUtilizationLabels';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/utilization/labels', 
 			'POST', 
 			{  },
 			{  },
@@ -3298,14 +3781,14 @@ class RoutingApi {
 	}
 
 	/**
-	 * Add routing language to user
+	 * Assign a routing language to a user
 	 * 
 	 * @param {String} userId User ID
 	 * @param {Object} body Language
 	 */
 	postUserRoutinglanguages(userId, body) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling postUserRoutinglanguages';
 		}
 		// verify the required parameter 'body' is set
@@ -3328,14 +3811,14 @@ class RoutingApi {
 	}
 
 	/**
-	 * Add routing skill to user
+	 * Assign a routing skill to a user
 	 * 
 	 * @param {String} userId User ID
 	 * @param {Object} body Skill
 	 */
 	postUserRoutingskills(userId, body) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling postUserRoutingskills';
 		}
 		// verify the required parameter 'body' is set
@@ -3358,6 +3841,31 @@ class RoutingApi {
 	}
 
 	/**
+	 * Update the user's Direct Routing Backup settings.
+	 * 
+	 * @param {Object} body directRoutingBackup
+	 */
+	putRoutingDirectroutingbackupSettingsMe(body) { 
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putRoutingDirectroutingbackupSettingsMe';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/directroutingbackup/settings/me', 
+			'PUT', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Update a route
 	 * 
 	 * @param {String} domainName email domain
@@ -3366,11 +3874,11 @@ class RoutingApi {
 	 */
 	putRoutingEmailDomainRoute(domainName, routeId, body) { 
 		// verify the required parameter 'domainName' is set
-		if (domainName === undefined || domainName === null) {
+		if (domainName === undefined || domainName === null || domainName === '') {
 			throw 'Missing the required parameter "domainName" when calling putRoutingEmailDomainRoute';
 		}
 		// verify the required parameter 'routeId' is set
-		if (routeId === undefined || routeId === null) {
+		if (routeId === undefined || routeId === null || routeId === '') {
 			throw 'Missing the required parameter "routeId" when calling putRoutingEmailDomainRoute';
 		}
 		// verify the required parameter 'body' is set
@@ -3393,13 +3901,48 @@ class RoutingApi {
 	}
 
 	/**
+	 * Update identity resolution settings for a route.
+	 * 
+	 * @param {String} domainName email domain
+	 * @param {String} routeId route ID
+	 * @param {Object} body 
+	 */
+	putRoutingEmailDomainRouteIdentityresolution(domainName, routeId, body) { 
+		// verify the required parameter 'domainName' is set
+		if (domainName === undefined || domainName === null || domainName === '') {
+			throw 'Missing the required parameter "domainName" when calling putRoutingEmailDomainRouteIdentityresolution';
+		}
+		// verify the required parameter 'routeId' is set
+		if (routeId === undefined || routeId === null || routeId === '') {
+			throw 'Missing the required parameter "routeId" when calling putRoutingEmailDomainRouteIdentityresolution';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putRoutingEmailDomainRouteIdentityresolution';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/email/domains/{domainName}/routes/{routeId}/identityresolution', 
+			'PUT', 
+			{ 'domainName': domainName,'routeId': routeId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Request an activation status (cname + dkim) update of an outbound domain
 	 * 
 	 * @param {String} domainId domain ID
 	 */
 	putRoutingEmailOutboundDomainActivation(domainId) { 
 		// verify the required parameter 'domainId' is set
-		if (domainId === undefined || domainId === null) {
+		if (domainId === undefined || domainId === null || domainId === '') {
 			throw 'Missing the required parameter "domainId" when calling putRoutingEmailOutboundDomainActivation';
 		}
 
@@ -3425,7 +3968,7 @@ class RoutingApi {
 	 */
 	putRoutingMessageRecipient(recipientId, body) { 
 		// verify the required parameter 'recipientId' is set
-		if (recipientId === undefined || recipientId === null) {
+		if (recipientId === undefined || recipientId === null || recipientId === '') {
 			throw 'Missing the required parameter "recipientId" when calling putRoutingMessageRecipient';
 		}
 		// verify the required parameter 'body' is set
@@ -3455,7 +3998,7 @@ class RoutingApi {
 	 */
 	putRoutingQueue(queueId, body) { 
 		// verify the required parameter 'queueId' is set
-		if (queueId === undefined || queueId === null) {
+		if (queueId === undefined || queueId === null || queueId === '') {
 			throw 'Missing the required parameter "queueId" when calling putRoutingQueue';
 		}
 		// verify the required parameter 'body' is set
@@ -3465,6 +4008,36 @@ class RoutingApi {
 
 		return this.apiClient.callApi(
 			'/api/v2/routing/queues/{queueId}', 
+			'PUT', 
+			{ 'queueId': queueId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update Queue IdentityResolution Settings.
+	 * 
+	 * @param {String} queueId Queue ID
+	 * @param {Object} body 
+	 */
+	putRoutingQueueIdentityresolution(queueId, body) { 
+		// verify the required parameter 'queueId' is set
+		if (queueId === undefined || queueId === null || queueId === '') {
+			throw 'Missing the required parameter "queueId" when calling putRoutingQueueIdentityresolution';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putRoutingQueueIdentityresolution';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/queues/{queueId}/identityresolution', 
 			'PUT', 
 			{ 'queueId': queueId },
 			{  },
@@ -3528,25 +4101,55 @@ class RoutingApi {
 	}
 
 	/**
-	 * Update a phone number provisioned for SMS.
+	 * Update an SMS identity resolution settings.
 	 * 
 	 * @param {String} addressId Address ID
-	 * @param {Object} body SmsPhoneNumber
+	 * @param {Object} body 
 	 */
-	putRoutingSmsPhonenumber(addressId, body) { 
+	putRoutingSmsIdentityresolutionPhonenumber(addressId, body) { 
 		// verify the required parameter 'addressId' is set
-		if (addressId === undefined || addressId === null) {
-			throw 'Missing the required parameter "addressId" when calling putRoutingSmsPhonenumber';
+		if (addressId === undefined || addressId === null || addressId === '') {
+			throw 'Missing the required parameter "addressId" when calling putRoutingSmsIdentityresolutionPhonenumber';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putRoutingSmsPhonenumber';
+			throw 'Missing the required parameter "body" when calling putRoutingSmsIdentityresolutionPhonenumber';
 		}
 
 		return this.apiClient.callApi(
-			'/api/v2/routing/sms/phonenumbers/{addressId}', 
+			'/api/v2/routing/sms/identityresolution/phonenumbers/{addressId}', 
 			'PUT', 
 			{ 'addressId': addressId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update the user's Direct Routing Backup settings.
+	 * 
+	 * @param {String} userId User ID
+	 * @param {Object} body directRoutingBackup
+	 */
+	putRoutingUserDirectroutingbackupSettings(userId, body) { 
+		// verify the required parameter 'userId' is set
+		if (userId === undefined || userId === null || userId === '') {
+			throw 'Missing the required parameter "userId" when calling putRoutingUserDirectroutingbackupSettings';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putRoutingUserDirectroutingbackupSettings';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/users/{userId}/directroutingbackup/settings', 
+			'PUT', 
+			{ 'userId': userId },
 			{  },
 			{  },
 			{  },
@@ -3565,7 +4168,7 @@ class RoutingApi {
 	 */
 	putRoutingUserUtilization(userId, body) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling putRoutingUserUtilization';
 		}
 		// verify the required parameter 'body' is set
@@ -3613,6 +4216,36 @@ class RoutingApi {
 	}
 
 	/**
+	 * Update a utilization label
+	 * 
+	 * @param {String} labelId Utilization Label ID
+	 * @param {Object} body UtilizationLabel
+	 */
+	putRoutingUtilizationLabel(labelId, body) { 
+		// verify the required parameter 'labelId' is set
+		if (labelId === undefined || labelId === null || labelId === '') {
+			throw 'Missing the required parameter "labelId" when calling putRoutingUtilizationLabel';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putRoutingUtilizationLabel';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/utilization/labels/{labelId}', 
+			'PUT', 
+			{ 'labelId': labelId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Update wrap-up code
 	 * 
 	 * @param {String} codeId Wrapup Code ID
@@ -3620,7 +4253,7 @@ class RoutingApi {
 	 */
 	putRoutingWrapupcode(codeId, body) { 
 		// verify the required parameter 'codeId' is set
-		if (codeId === undefined || codeId === null) {
+		if (codeId === undefined || codeId === null || codeId === '') {
 			throw 'Missing the required parameter "codeId" when calling putRoutingWrapupcode';
 		}
 		// verify the required parameter 'body' is set
@@ -3643,7 +4276,7 @@ class RoutingApi {
 	}
 
 	/**
-	 * Update routing skill proficiency or state.
+	 * Update an assigned routing skill's proficiency
 	 * 
 	 * @param {String} userId User ID
 	 * @param {String} skillId skillId
@@ -3651,11 +4284,11 @@ class RoutingApi {
 	 */
 	putUserRoutingskill(userId, skillId, body) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling putUserRoutingskill';
 		}
 		// verify the required parameter 'skillId' is set
-		if (skillId === undefined || skillId === null) {
+		if (skillId === undefined || skillId === null || skillId === '') {
 			throw 'Missing the required parameter "skillId" when calling putUserRoutingskill';
 		}
 		// verify the required parameter 'body' is set
@@ -3678,14 +4311,14 @@ class RoutingApi {
 	}
 
 	/**
-	 * Replace all routing skills assigned to a user
+	 * Assign multiple routing skills to a user, replacing any current assignments
 	 * 
 	 * @param {String} userId User ID
 	 * @param {Array.<Object>} body Skill
 	 */
 	putUserRoutingskillsBulk(userId, body) { 
 		// verify the required parameter 'userId' is set
-		if (userId === undefined || userId === null) {
+		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling putUserRoutingskillsBulk';
 		}
 		// verify the required parameter 'body' is set

@@ -5,7 +5,7 @@ class QualityApi {
 	/**
 	 * Quality service.
 	 * @module purecloud-platform-client-v2/api/QualityApi
-	 * @version 174.0.0
+	 * @version 229.1.0
 	 */
 
 	/**
@@ -21,6 +21,58 @@ class QualityApi {
 
 
 	/**
+	 * Delete/cancel an async request for evaluation aggregates
+	 * 
+	 * @param {String} jobId jobId
+	 * deleteAnalyticsEvaluationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	deleteAnalyticsEvaluationsAggregatesJob(jobId) { 
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null || jobId === '') {
+			throw 'Missing the required parameter "jobId" when calling deleteAnalyticsEvaluationsAggregatesJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/evaluations/aggregates/jobs/{jobId}', 
+			'DELETE', 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Delete/cancel an async request for survey aggregates
+	 * 
+	 * @param {String} jobId jobId
+	 * deleteAnalyticsSurveysAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	deleteAnalyticsSurveysAggregatesJob(jobId) { 
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null || jobId === '') {
+			throw 'Missing the required parameter "jobId" when calling deleteAnalyticsSurveysAggregatesJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/analytics/surveys/aggregates/jobs/{jobId}', 
+			'DELETE', 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Delete a calibration by id.
 	 * 
 	 * @param {String} calibrationId Calibration ID
@@ -28,7 +80,7 @@ class QualityApi {
 	 */
 	deleteQualityCalibration(calibrationId, calibratorId) { 
 		// verify the required parameter 'calibrationId' is set
-		if (calibrationId === undefined || calibrationId === null) {
+		if (calibrationId === undefined || calibrationId === null || calibrationId === '') {
 			throw 'Missing the required parameter "calibrationId" when calling deleteQualityCalibration';
 		}
 		// verify the required parameter 'calibratorId' is set
@@ -62,11 +114,11 @@ class QualityApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling deleteQualityConversationEvaluation';
 		}
 		// verify the required parameter 'evaluationId' is set
-		if (evaluationId === undefined || evaluationId === null) {
+		if (evaluationId === undefined || evaluationId === null || evaluationId === '') {
 			throw 'Missing the required parameter "evaluationId" when calling deleteQualityConversationEvaluation';
 		}
 
@@ -92,7 +144,7 @@ class QualityApi {
 	 */
 	deleteQualityForm(formId) { 
 		// verify the required parameter 'formId' is set
-		if (formId === undefined || formId === null) {
+		if (formId === undefined || formId === null || formId === '') {
 			throw 'Missing the required parameter "formId" when calling deleteQualityForm';
 		}
 
@@ -117,7 +169,7 @@ class QualityApi {
 	 */
 	deleteQualityFormsEvaluation(formId) { 
 		// verify the required parameter 'formId' is set
-		if (formId === undefined || formId === null) {
+		if (formId === undefined || formId === null || formId === '') {
 			throw 'Missing the required parameter "formId" when calling deleteQualityFormsEvaluation';
 		}
 
@@ -142,7 +194,7 @@ class QualityApi {
 	 */
 	deleteQualityFormsSurvey(formId) { 
 		// verify the required parameter 'formId' is set
-		if (formId === undefined || formId === null) {
+		if (formId === undefined || formId === null || formId === '') {
 			throw 'Missing the required parameter "formId" when calling deleteQualityFormsSurvey';
 		}
 
@@ -168,7 +220,7 @@ class QualityApi {
 	 */
 	getAnalyticsEvaluationsAggregatesJob(jobId) { 
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getAnalyticsEvaluationsAggregatesJob';
 		}
 
@@ -198,7 +250,7 @@ class QualityApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getAnalyticsEvaluationsAggregatesJobResults';
 		}
 
@@ -224,7 +276,7 @@ class QualityApi {
 	 */
 	getAnalyticsSurveysAggregatesJob(jobId) { 
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getAnalyticsSurveysAggregatesJob';
 		}
 
@@ -254,7 +306,7 @@ class QualityApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'jobId' is set
-		if (jobId === undefined || jobId === null) {
+		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getAnalyticsSurveysAggregatesJobResults';
 		}
 
@@ -288,7 +340,9 @@ class QualityApi {
 	 * @param {String} opts.evaluatorUserId user id of the evaluator
 	 * @param {String} opts.name name
 	 * @param {String} opts.group group id
+	 * @param {String} opts.agentTeamId team id of agents requested
 	 * @param {String} opts.formContextId shared id between form versions
+	 * @param {Object} opts.userState 'Legacy' fetches active and inactive users when evaluatorUserId or no user filters are supplied; otherwise fetches active users.  'Any' fetches users of 'active', 'inactive' and 'deleted' states. (default to Legacy)
 	 */
 	getQualityAgentsActivity(opts) { 
 		opts = opts || {};
@@ -298,7 +352,7 @@ class QualityApi {
 			'/api/v2/quality/agents/activity', 
 			'GET', 
 			{  },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'startTime': opts['startTime'],'endTime': opts['endTime'],'agentUserId': this.apiClient.buildCollectionParam(opts['agentUserId'], 'multi'),'evaluatorUserId': opts['evaluatorUserId'],'name': opts['name'],'group': opts['group'],'formContextId': opts['formContextId'] },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'startTime': opts['startTime'],'endTime': opts['endTime'],'agentUserId': this.apiClient.buildCollectionParam(opts['agentUserId'], 'multi'),'evaluatorUserId': opts['evaluatorUserId'],'name': opts['name'],'group': opts['group'],'agentTeamId': opts['agentTeamId'],'formContextId': opts['formContextId'],'userState': opts['userState'] },
 			{  },
 			{  },
 			null, 
@@ -320,7 +374,7 @@ class QualityApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'calibrationId' is set
-		if (calibrationId === undefined || calibrationId === null) {
+		if (calibrationId === undefined || calibrationId === null || calibrationId === '') {
 			throw 'Missing the required parameter "calibrationId" when calling getQualityCalibration';
 		}
 
@@ -340,7 +394,7 @@ class QualityApi {
 
 	/**
 	 * Get the list of calibrations
-	 * 
+	 * NOTE: The count for total and pageCount might not be accurate when querying for a large number of calibrations. nextUri, if present, will indicate that there are more calibrations to fetch.
 	 * @param {String} calibratorId user id of calibrator
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize The total page size requested (default to 25)
@@ -387,11 +441,11 @@ class QualityApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getQualityConversationEvaluation';
 		}
 		// verify the required parameter 'evaluationId' is set
-		if (evaluationId === undefined || evaluationId === null) {
+		if (evaluationId === undefined || evaluationId === null || evaluationId === '') {
 			throw 'Missing the required parameter "evaluationId" when calling getQualityConversationEvaluation';
 		}
 
@@ -416,7 +470,7 @@ class QualityApi {
 	 */
 	getQualityConversationSurveys(conversationId) { 
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling getQualityConversationSurveys';
 		}
 
@@ -441,7 +495,7 @@ class QualityApi {
 	 */
 	getQualityConversationsAuditsQueryTransactionId(transactionId) { 
 		// verify the required parameter 'transactionId' is set
-		if (transactionId === undefined || transactionId === null) {
+		if (transactionId === undefined || transactionId === null || transactionId === '') {
 			throw 'Missing the required parameter "transactionId" when calling getQualityConversationsAuditsQueryTransactionId';
 		}
 
@@ -472,7 +526,7 @@ class QualityApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'transactionId' is set
-		if (transactionId === undefined || transactionId === null) {
+		if (transactionId === undefined || transactionId === null || transactionId === '') {
 			throw 'Missing the required parameter "transactionId" when calling getQualityConversationsAuditsQueryTransactionIdResults';
 		}
 
@@ -492,16 +546,15 @@ class QualityApi {
 
 	/**
 	 * Queries Evaluations and returns a paged list
-	 * Query params must include one of conversationId, evaluatorUserId, agentUserId or assigneeUserId. When querying by agentUserId (and not conversationId or evaluatorUserId), the results are sorted by release date. Evaluations set to Never Release are omitted in this case. When querying by evaluatorUserId or conversationId (including when combined with agentUserId), the results are sorted by assigned date.
+	 * Query params must include one of conversationId, evaluatorUserId, agentUserId or assigneeUserId. When querying by agentUserId (and not conversationId or evaluatorUserId), the results are sorted by release date. Evaluations set to Never Release are omitted in this case. When querying by evaluatorUserId or conversationId (including when combined with agentUserId), the results are sorted by assigned date. NOTE: The count for total and pageCount might not be accurate when querying for a large number of evaluations. nextUri, if present, will indicate that there are more evaluations to fetch. The evaluation entities contained in the response might only contain a subset of all the properties listed below. It is often because a given propertys value has not yet been populated or is not applicable in the current state of the evaluation. It might also be because the missing property in the response was not requested by the user.
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize The total page size requested (default to 25)
 	 * @param {Number} opts.pageNumber The page number requested (default to 1)
-	 * @param {String} opts.sortBy NOTE: Does not work when querying evaluations
 	 * @param {Array.<String>} opts.expand variable name requested by expand list
-	 * @param {String} opts.nextPage NOTE: Does not work when querying evaluations
 	 * @param {String} opts.previousPage Previous page token
 	 * @param {String} opts.conversationId conversationId specified
 	 * @param {String} opts.agentUserId user id of the agent
+	 * @param {String} opts.agentTeamId team id of the agent
 	 * @param {String} opts.evaluatorUserId evaluator user id
 	 * @param {String} opts.assigneeUserId assignee user id
 	 * @param {String} opts.queueId queue id
@@ -511,9 +564,10 @@ class QualityApi {
 	 * @param {Array.<String>} opts.evaluationState 
 	 * @param {Boolean} opts.isReleased the evaluation has been released
 	 * @param {Boolean} opts.agentHasRead agent has the evaluation
-	 * @param {Boolean} opts.expandAnswerTotalScores get the total scores for evaluations
+	 * @param {Boolean} opts.expandAnswerTotalScores get the total scores for evaluations. NOTE: The answers will only be populated if this parameter is set to true in the request.
 	 * @param {Number} opts.maximum the maximum number of results to return
 	 * @param {String} opts.sortOrder NOTE: Does not work when conversationId is supplied.
+	 * @param {Boolean} opts.includeDeletedUsers Allow returning an agent or evaluator user with a 'delete' status. Defaults to false. (default to false)
 	 */
 	getQualityEvaluationsQuery(opts) { 
 		opts = opts || {};
@@ -523,7 +577,7 @@ class QualityApi {
 			'/api/v2/quality/evaluations/query', 
 			'GET', 
 			{  },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'conversationId': opts['conversationId'],'agentUserId': opts['agentUserId'],'evaluatorUserId': opts['evaluatorUserId'],'assigneeUserId': opts['assigneeUserId'],'queueId': opts['queueId'],'startTime': opts['startTime'],'endTime': opts['endTime'],'formContextId': opts['formContextId'],'evaluationState': this.apiClient.buildCollectionParam(opts['evaluationState'], 'multi'),'isReleased': opts['isReleased'],'agentHasRead': opts['agentHasRead'],'expandAnswerTotalScores': opts['expandAnswerTotalScores'],'maximum': opts['maximum'],'sortOrder': opts['sortOrder'] },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'previousPage': opts['previousPage'],'conversationId': opts['conversationId'],'agentUserId': opts['agentUserId'],'agentTeamId': opts['agentTeamId'],'evaluatorUserId': opts['evaluatorUserId'],'assigneeUserId': opts['assigneeUserId'],'queueId': opts['queueId'],'startTime': opts['startTime'],'endTime': opts['endTime'],'formContextId': opts['formContextId'],'evaluationState': this.apiClient.buildCollectionParam(opts['evaluationState'], 'multi'),'isReleased': opts['isReleased'],'agentHasRead': opts['agentHasRead'],'expandAnswerTotalScores': opts['expandAnswerTotalScores'],'maximum': opts['maximum'],'sortOrder': opts['sortOrder'],'includeDeletedUsers': opts['includeDeletedUsers'] },
 			{  },
 			{  },
 			null, 
@@ -548,6 +602,7 @@ class QualityApi {
 	 * @param {String} opts.name Evaluator name
 	 * @param {Array.<String>} opts.permission permission strings
 	 * @param {String} opts.group group id
+	 * @param {String} opts.agentTeamId team id of agents to be considered
 	 */
 	getQualityEvaluatorsActivity(opts) { 
 		opts = opts || {};
@@ -557,7 +612,7 @@ class QualityApi {
 			'/api/v2/quality/evaluators/activity', 
 			'GET', 
 			{  },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'startTime': opts['startTime'],'endTime': opts['endTime'],'name': opts['name'],'permission': this.apiClient.buildCollectionParam(opts['permission'], 'multi'),'group': opts['group'] },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'startTime': opts['startTime'],'endTime': opts['endTime'],'name': opts['name'],'permission': this.apiClient.buildCollectionParam(opts['permission'], 'multi'),'group': opts['group'],'agentTeamId': opts['agentTeamId'] },
 			{  },
 			{  },
 			null, 
@@ -575,7 +630,7 @@ class QualityApi {
 	 */
 	getQualityForm(formId) { 
 		// verify the required parameter 'formId' is set
-		if (formId === undefined || formId === null) {
+		if (formId === undefined || formId === null || formId === '') {
 			throw 'Missing the required parameter "formId" when calling getQualityForm';
 		}
 
@@ -606,7 +661,7 @@ class QualityApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'formId' is set
-		if (formId === undefined || formId === null) {
+		if (formId === undefined || formId === null || formId === '') {
 			throw 'Missing the required parameter "formId" when calling getQualityFormVersions';
 		}
 
@@ -625,7 +680,7 @@ class QualityApi {
 	}
 
 	/**
-	 * Get the list of evaluation forms
+	 * Get the list of evaluation forms. If you set expand=publishHistory, then you will be able to get published versions for each corresponding evaluation form.
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize The total page size requested (default to 25)
@@ -663,7 +718,7 @@ class QualityApi {
 	 */
 	getQualityFormsEvaluation(formId) { 
 		// verify the required parameter 'formId' is set
-		if (formId === undefined || formId === null) {
+		if (formId === undefined || formId === null || formId === '') {
 			throw 'Missing the required parameter "formId" when calling getQualityFormsEvaluation';
 		}
 
@@ -694,7 +749,7 @@ class QualityApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'formId' is set
-		if (formId === undefined || formId === null) {
+		if (formId === undefined || formId === null || formId === '') {
 			throw 'Missing the required parameter "formId" when calling getQualityFormsEvaluationVersions';
 		}
 
@@ -714,7 +769,7 @@ class QualityApi {
 
 	/**
 	 * Get the list of evaluation forms
-	 * 
+	 * By default, "published" field is always returned as false for all evaluation forms. If you set "expand=publishHistory", then you will be able to get published versions for each corresponding evaluation form. In addition, "questionGroups", the detailed information about evaluation form, is not returned. We will enhance this field in a future release.
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize The total page size requested (default to 25)
 	 * @param {Number} opts.pageNumber The page number requested (default to 1)
@@ -775,7 +830,7 @@ class QualityApi {
 	 */
 	getQualityFormsSurvey(formId) { 
 		// verify the required parameter 'formId' is set
-		if (formId === undefined || formId === null) {
+		if (formId === undefined || formId === null || formId === '') {
 			throw 'Missing the required parameter "formId" when calling getQualityFormsSurvey';
 		}
 
@@ -805,7 +860,7 @@ class QualityApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'formId' is set
-		if (formId === undefined || formId === null) {
+		if (formId === undefined || formId === null || formId === '') {
 			throw 'Missing the required parameter "formId" when calling getQualityFormsSurveyVersions';
 		}
 
@@ -824,7 +879,7 @@ class QualityApi {
 	}
 
 	/**
-	 * Get the list of survey forms
+	 * Get the list of survey forms. If you set expand=publishHistory, then you will be able to get published versions for each corresponding survey form.
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize The total page size requested (default to 25)
@@ -916,7 +971,7 @@ class QualityApi {
 	 */
 	getQualityPublishedform(formId) { 
 		// verify the required parameter 'formId' is set
-		if (formId === undefined || formId === null) {
+		if (formId === undefined || formId === null || formId === '') {
 			throw 'Missing the required parameter "formId" when calling getQualityPublishedform';
 		}
 
@@ -969,7 +1024,7 @@ class QualityApi {
 	 */
 	getQualityPublishedformsEvaluation(formId) { 
 		// verify the required parameter 'formId' is set
-		if (formId === undefined || formId === null) {
+		if (formId === undefined || formId === null || formId === '') {
 			throw 'Missing the required parameter "formId" when calling getQualityPublishedformsEvaluation';
 		}
 
@@ -1021,7 +1076,7 @@ class QualityApi {
 	 */
 	getQualityPublishedformsSurvey(formId) { 
 		// verify the required parameter 'formId' is set
-		if (formId === undefined || formId === null) {
+		if (formId === undefined || formId === null || formId === '') {
 			throw 'Missing the required parameter "formId" when calling getQualityPublishedformsSurvey';
 		}
 
@@ -1073,7 +1128,7 @@ class QualityApi {
 	 */
 	getQualitySurvey(surveyId) { 
 		// verify the required parameter 'surveyId' is set
-		if (surveyId === undefined || surveyId === null) {
+		if (surveyId === undefined || surveyId === null || surveyId === '') {
 			throw 'Missing the required parameter "surveyId" when calling getQualitySurvey';
 		}
 
@@ -1124,7 +1179,7 @@ class QualityApi {
 	 */
 	patchQualityFormsSurvey(formId, body) { 
 		// verify the required parameter 'formId' is set
-		if (formId === undefined || formId === null) {
+		if (formId === undefined || formId === null || formId === '') {
 			throw 'Missing the required parameter "formId" when calling patchQualityFormsSurvey';
 		}
 		// verify the required parameter 'body' is set
@@ -1289,7 +1344,7 @@ class QualityApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling postQualityConversationEvaluations';
 		}
 		// verify the required parameter 'body' is set
@@ -1571,7 +1626,7 @@ class QualityApi {
 	 */
 	putQualityCalibration(calibrationId, body) { 
 		// verify the required parameter 'calibrationId' is set
-		if (calibrationId === undefined || calibrationId === null) {
+		if (calibrationId === undefined || calibrationId === null || calibrationId === '') {
 			throw 'Missing the required parameter "calibrationId" when calling putQualityCalibration';
 		}
 		// verify the required parameter 'body' is set
@@ -1595,7 +1650,7 @@ class QualityApi {
 
 	/**
 	 * Update an evaluation
-	 * The quality:evaluation:edit permission allows modification of most fields, while the quality:evaluation:editScore permission allows an evaluator to change just the question scores, and the quality:evaluation:editAgentSignoff permission allows an agent to change the agent comments and sign off on the evaluation.
+	 * The quality:evaluation:edit permission allows modification of most fields, while the quality:evaluation:editScore permission allows an evaluator to change just the question scores, and the quality:evaluation:editAgentSignoff permission allows an agent to change the agent comments and sign off on the evaluation. authorizedActions is not returned for this PUT request, and is only returned for GET requests to this endpoint.
 	 * @param {String} conversationId conversationId
 	 * @param {String} evaluationId evaluationId
 	 * @param {Object} body evaluation
@@ -1606,11 +1661,11 @@ class QualityApi {
 		opts = opts || {};
 		
 		// verify the required parameter 'conversationId' is set
-		if (conversationId === undefined || conversationId === null) {
+		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling putQualityConversationEvaluation';
 		}
 		// verify the required parameter 'evaluationId' is set
-		if (evaluationId === undefined || evaluationId === null) {
+		if (evaluationId === undefined || evaluationId === null || evaluationId === '') {
 			throw 'Missing the required parameter "evaluationId" when calling putQualityConversationEvaluation';
 		}
 		// verify the required parameter 'body' is set
@@ -1641,7 +1696,7 @@ class QualityApi {
 	 */
 	putQualityForm(formId, body) { 
 		// verify the required parameter 'formId' is set
-		if (formId === undefined || formId === null) {
+		if (formId === undefined || formId === null || formId === '') {
 			throw 'Missing the required parameter "formId" when calling putQualityForm';
 		}
 		// verify the required parameter 'body' is set
@@ -1671,7 +1726,7 @@ class QualityApi {
 	 */
 	putQualityFormsEvaluation(formId, body) { 
 		// verify the required parameter 'formId' is set
-		if (formId === undefined || formId === null) {
+		if (formId === undefined || formId === null || formId === '') {
 			throw 'Missing the required parameter "formId" when calling putQualityFormsEvaluation';
 		}
 		// verify the required parameter 'body' is set
@@ -1694,6 +1749,36 @@ class QualityApi {
 	}
 
 	/**
+	 * Update the AI Scoring settings of an evaluation form.
+	 * 
+	 * @param {String} formId Form ID
+	 * @param {Object} body AI Scoring Settings
+	 */
+	putQualityFormsEvaluationAiscoringSettings(formId, body) { 
+		// verify the required parameter 'formId' is set
+		if (formId === undefined || formId === null || formId === '') {
+			throw 'Missing the required parameter "formId" when calling putQualityFormsEvaluationAiscoringSettings';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putQualityFormsEvaluationAiscoringSettings';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/quality/forms/evaluations/{formId}/aiscoring/settings', 
+			'PUT', 
+			{ 'formId': formId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Update a survey form.
 	 * 
 	 * @param {String} formId Form ID
@@ -1701,7 +1786,7 @@ class QualityApi {
 	 */
 	putQualityFormsSurvey(formId, body) { 
 		// verify the required parameter 'formId' is set
-		if (formId === undefined || formId === null) {
+		if (formId === undefined || formId === null || formId === '') {
 			throw 'Missing the required parameter "formId" when calling putQualityFormsSurvey';
 		}
 		// verify the required parameter 'body' is set

@@ -5,7 +5,7 @@ class FaxApi {
 	/**
 	 * Fax service.
 	 * @module purecloud-platform-client-v2/api/FaxApi
-	 * @version 174.0.0
+	 * @version 229.1.0
 	 */
 
 	/**
@@ -27,7 +27,7 @@ class FaxApi {
 	 */
 	deleteFaxDocument(documentId) { 
 		// verify the required parameter 'documentId' is set
-		if (documentId === undefined || documentId === null) {
+		if (documentId === undefined || documentId === null || documentId === '') {
 			throw 'Missing the required parameter "documentId" when calling deleteFaxDocument';
 		}
 
@@ -52,7 +52,7 @@ class FaxApi {
 	 */
 	getFaxDocument(documentId) { 
 		// verify the required parameter 'documentId' is set
-		if (documentId === undefined || documentId === null) {
+		if (documentId === undefined || documentId === null || documentId === '') {
 			throw 'Missing the required parameter "documentId" when calling getFaxDocument';
 		}
 
@@ -77,7 +77,7 @@ class FaxApi {
 	 */
 	getFaxDocumentContent(documentId) { 
 		// verify the required parameter 'documentId' is set
-		if (documentId === undefined || documentId === null) {
+		if (documentId === undefined || documentId === null || documentId === '') {
 			throw 'Missing the required parameter "documentId" when calling getFaxDocumentContent';
 		}
 
@@ -121,6 +121,26 @@ class FaxApi {
 	}
 
 	/**
+	 * Get organization config for given organization
+	 * 
+	 */
+	getFaxSettings() { 
+
+		return this.apiClient.callApi(
+			'/api/v2/fax/settings', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
 	 * Get fax summary
 	 * 
 	 */
@@ -148,7 +168,7 @@ class FaxApi {
 	 */
 	putFaxDocument(documentId, body) { 
 		// verify the required parameter 'documentId' is set
-		if (documentId === undefined || documentId === null) {
+		if (documentId === undefined || documentId === null || documentId === '') {
 			throw 'Missing the required parameter "documentId" when calling putFaxDocument';
 		}
 		// verify the required parameter 'body' is set
@@ -164,6 +184,30 @@ class FaxApi {
 			{  },
 			{  },
 			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json']
+		);
+	}
+
+	/**
+	 * Update/write organization config for given organization
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 */
+	putFaxSettings(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/fax/settings', 
+			'PUT', 
+			{  },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
 			['application/json']

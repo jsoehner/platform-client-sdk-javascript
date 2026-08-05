@@ -22,6 +22,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getGamificationInsightsDetails**](GamificationApi#getGamificationInsightsDetails) | **GET** /api/v2/gamification/insights/details | Get insights details for the current user
 [**getGamificationInsightsGroupsTrends**](GamificationApi#getGamificationInsightsGroupsTrends) | **GET** /api/v2/gamification/insights/groups/trends | Get insights overall trend for the current user
 [**getGamificationInsightsGroupsTrendsAll**](GamificationApi#getGamificationInsightsGroupsTrendsAll) | **GET** /api/v2/gamification/insights/groups/trends/all | Get insights overall trend
+[**getGamificationInsightsManagers**](GamificationApi#getGamificationInsightsManagers) | **GET** /api/v2/gamification/insights/managers | Query managers in a profile during a period of time
 [**getGamificationInsightsMembers**](GamificationApi#getGamificationInsightsMembers) | **GET** /api/v2/gamification/insights/members | Query users in a profile during a period of time
 [**getGamificationInsightsRankings**](GamificationApi#getGamificationInsightsRankings) | **GET** /api/v2/gamification/insights/rankings | Get insights rankings
 [**getGamificationInsightsTrends**](GamificationApi#getGamificationInsightsTrends) | **GET** /api/v2/gamification/insights/trends | Get insights user trend for the current user
@@ -88,7 +89,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ## deleteEmployeeperformanceExternalmetricsDefinition
 
-> void deleteEmployeeperformanceExternalmetricsDefinition(metricId)
+> void deleteEmployeeperformanceExternalmetricsDefinition(metricId, opts)
 
 
 DELETE /api/v2/employeeperformance/externalmetrics/definitions/{metricId}
@@ -113,8 +114,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.GamificationApi();
 
 let metricId = "metricId_example"; // String | Specifies the External Metric Definition ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteEmployeeperformanceExternalmetricsDefinition(metricId)
+apiInstance.deleteEmployeeperformanceExternalmetricsDefinition(metricId, opts)
   .then(() => {
     console.log('deleteEmployeeperformanceExternalmetricsDefinition returned successfully.');
   })
@@ -130,6 +137,7 @@ apiInstance.deleteEmployeeperformanceExternalmetricsDefinition(metricId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **metricId** | **String** | Specifies the External Metric Definition ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -138,7 +146,7 @@ void (no response body)
 
 ## deleteGamificationContest
 
-> void deleteGamificationContest(contestId)
+> void deleteGamificationContest(contestId, opts)
 
 
 DELETE /api/v2/gamification/contests/{contestId}
@@ -164,8 +172,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.GamificationApi();
 
 let contestId = "contestId_example"; // String | The ID of the contest
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteGamificationContest(contestId)
+apiInstance.deleteGamificationContest(contestId, opts)
   .then(() => {
     console.log('deleteGamificationContest returned successfully.');
   })
@@ -181,6 +195,7 @@ apiInstance.deleteGamificationContest(contestId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **contestId** | **String** | The ID of the contest |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -189,7 +204,7 @@ void (no response body)
 
 ## getEmployeeperformanceExternalmetricsDefinition
 
-> ExternalMetricDefinition getEmployeeperformanceExternalmetricsDefinition(metricId)
+> ExternalMetricDefinition getEmployeeperformanceExternalmetricsDefinition(metricId, opts)
 
 
 GET /api/v2/employeeperformance/externalmetrics/definitions/{metricId}
@@ -214,8 +229,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.GamificationApi();
 
 let metricId = "metricId_example"; // String | Specifies the External Metric Definition ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getEmployeeperformanceExternalmetricsDefinition(metricId)
+apiInstance.getEmployeeperformanceExternalmetricsDefinition(metricId, opts)
   .then((data) => {
     console.log(`getEmployeeperformanceExternalmetricsDefinition success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -231,6 +252,7 @@ apiInstance.getEmployeeperformanceExternalmetricsDefinition(metricId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **metricId** | **String** | Specifies the External Metric Definition ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -265,7 +287,11 @@ let apiInstance = new platformClient.GamificationApi();
 
 let opts = { 
   'pageSize': 25, // Number | Page size
-  'pageNumber': 1 // Number | Page number
+  'pageNumber': 1, // Number | Page number
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getEmployeeperformanceExternalmetricsDefinitions(opts)
@@ -285,6 +311,7 @@ apiInstance.getEmployeeperformanceExternalmetricsDefinitions(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -293,7 +320,7 @@ apiInstance.getEmployeeperformanceExternalmetricsDefinitions(opts)
 
 ## getGamificationContest
 
-> ContestsResponse getGamificationContest(contestId)
+> ContestsResponse getGamificationContest(contestId, opts)
 
 
 GET /api/v2/gamification/contests/{contestId}
@@ -318,8 +345,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.GamificationApi();
 
 let contestId = "contestId_example"; // String | The ID of the contest
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getGamificationContest(contestId)
+apiInstance.getGamificationContest(contestId, opts)
   .then((data) => {
     console.log(`getGamificationContest success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -335,6 +368,7 @@ apiInstance.getGamificationContest(contestId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **contestId** | **String** | The ID of the contest |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -372,7 +406,11 @@ let opts = {
   'pageNumber': 1, // Number | 
   'pageSize': 25, // Number | 
   'workday': "workday_example", // String | Target querying workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-  'returnsView': "All" // String | Desired response results
+  'returnsView': "All", // String | Desired response results
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getGamificationContestAgentsScores(contestId, opts)
@@ -395,6 +433,7 @@ apiInstance.getGamificationContestAgentsScores(contestId, opts)
  **pageSize** | **Number** |  | [optional] [default to 25] |
  **workday** | **String** | Target querying workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
  **returnsView** | **String** | Desired response results | [optional] [default to All]<br />**Values**: All, TopAndBottom |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -432,7 +471,11 @@ let opts = {
   'pageNumber': 1, // Number | 
   'pageSize': 25, // Number | 
   'workday': "workday_example", // String | Target querying workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-  'returnsView': "All" // String | Desired response results (Supervisor Only)
+  'returnsView': "All", // String | Desired response results (Supervisor Only)
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getGamificationContestAgentsScoresMe(contestId, opts)
@@ -455,6 +498,7 @@ apiInstance.getGamificationContestAgentsScoresMe(contestId, opts)
  **pageSize** | **Number** |  | [optional] [default to 25] |
  **workday** | **String** | Target querying workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
  **returnsView** | **String** | Desired response results (Supervisor Only) | [optional] [default to All]<br />**Values**: All, TopAndBottom |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -463,7 +507,7 @@ apiInstance.getGamificationContestAgentsScoresMe(contestId, opts)
 
 ## getGamificationContestAgentsScoresTrends
 
-> ContestScoresGroupTrendList getGamificationContestAgentsScoresTrends(contestId)
+> ContestScoresGroupTrendList getGamificationContestAgentsScoresTrends(contestId, opts)
 
 
 GET /api/v2/gamification/contests/{contestId}/agents/scores/trends
@@ -488,8 +532,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.GamificationApi();
 
 let contestId = "contestId_example"; // String | The ID of the contest
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getGamificationContestAgentsScoresTrends(contestId)
+apiInstance.getGamificationContestAgentsScoresTrends(contestId, opts)
   .then((data) => {
     console.log(`getGamificationContestAgentsScoresTrends success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -505,6 +555,7 @@ apiInstance.getGamificationContestAgentsScoresTrends(contestId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **contestId** | **String** | The ID of the contest |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -513,7 +564,7 @@ apiInstance.getGamificationContestAgentsScoresTrends(contestId)
 
 ## getGamificationContestAgentsScoresTrendsMe
 
-> ContestScoresAgentTrendList getGamificationContestAgentsScoresTrendsMe(contestId)
+> ContestScoresAgentTrendList getGamificationContestAgentsScoresTrendsMe(contestId, opts)
 
 
 GET /api/v2/gamification/contests/{contestId}/agents/scores/trends/me
@@ -538,8 +589,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.GamificationApi();
 
 let contestId = "contestId_example"; // String | The ID of the contest
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getGamificationContestAgentsScoresTrendsMe(contestId)
+apiInstance.getGamificationContestAgentsScoresTrendsMe(contestId, opts)
   .then((data) => {
     console.log(`getGamificationContestAgentsScoresTrendsMe success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -555,6 +612,7 @@ apiInstance.getGamificationContestAgentsScoresTrendsMe(contestId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **contestId** | **String** | The ID of the contest |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -563,7 +621,7 @@ apiInstance.getGamificationContestAgentsScoresTrendsMe(contestId)
 
 ## getGamificationContestPrizeimage
 
-> PrizeImages getGamificationContestPrizeimage(contestId, prizeImageId)
+> PrizeImages getGamificationContestPrizeimage(contestId, prizeImageId, opts)
 
 
 GET /api/v2/gamification/contests/{contestId}/prizeimages/{prizeImageId}
@@ -590,8 +648,14 @@ let apiInstance = new platformClient.GamificationApi();
 
 let contestId = "contestId_example"; // String | The ID of the contest
 let prizeImageId = "prizeImageId_example"; // String | The ID of the prize image
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getGamificationContestPrizeimage(contestId, prizeImageId)
+apiInstance.getGamificationContestPrizeimage(contestId, prizeImageId, opts)
   .then((data) => {
     console.log(`getGamificationContestPrizeimage success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -608,6 +672,7 @@ apiInstance.getGamificationContestPrizeimage(contestId, prizeImageId)
 | ------------- | ------------- | ------------- | ------------- |
  **contestId** | **String** | The ID of the contest |  |
  **prizeImageId** | **String** | The ID of the prize image |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -647,7 +712,11 @@ let opts = {
   'dateEnd': "dateEnd_example", // String | End date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
   'status': ["status_example"], // [String] | 
   'sortBy': "dateStart", // String | 
-  'sortOrder': "desc" // String | 
+  'sortOrder': "desc", // String | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getGamificationContests(opts)
@@ -672,6 +741,7 @@ apiInstance.getGamificationContests(opts)
  **status** | **[String]** |  | [optional] <br />**Values**: Upcoming, Ongoing, Pending, RecentlyCompleted, Completed, Cancelled |
  **sortBy** | **String** |  | [optional] [default to dateStart]<br />**Values**: title, dateStart, dateEnd, dateFinalized, status, profile, participantCount |
  **sortOrder** | **String** |  | [optional] [default to desc]<br />**Values**: asc, desc |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -712,7 +782,11 @@ let opts = {
   'status': ["status_example"], // [String] | 
   'sortBy': "dateStart", // String | 
   'sortOrder': "desc", // String | 
-  'view': "participant" // String | 
+  'view': "participant", // String | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getGamificationContestsMe(opts)
@@ -738,6 +812,7 @@ apiInstance.getGamificationContestsMe(opts)
  **sortBy** | **String** |  | [optional] [default to dateStart]<br />**Values**: title, dateStart, dateEnd, dateFinalized, status, profile, participantCount |
  **sortOrder** | **String** |  | [optional] [default to desc]<br />**Values**: asc, desc |
  **view** | **String** |  | [optional] [default to participant]<br />**Values**: participant, creator |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -781,7 +856,12 @@ let opts = {
   'sortKey': "sortKey_example", // String | Sort key
   'sortMetricId': "sortMetricId_example", // String | Sort Metric Id
   'sortOrder': "asc", // String | Sort order
-  'userIds': "userIds_example" // String | A list of up to 100 comma-separated user Ids
+  'userIds': "userIds_example", // String | A list of up to 100 comma-separated user Ids
+  'reportsTo': "reportsTo_example", // String | The reportsTo used by ABAC policies.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getGamificationInsights(filterType, filterId, granularity, comparativePeriodStartWorkday, primaryPeriodStartWorkday, opts)
@@ -810,6 +890,8 @@ apiInstance.getGamificationInsights(filterType, filterId, granularity, comparati
  **sortMetricId** | **String** | Sort Metric Id | [optional]  |
  **sortOrder** | **String** | Sort order | [optional] [default to asc]<br />**Values**: asc, desc |
  **userIds** | **String** | A list of up to 100 comma-separated user Ids | [optional]  |
+ **reportsTo** | **String** | The reportsTo used by ABAC policies. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -818,7 +900,7 @@ apiInstance.getGamificationInsights(filterType, filterId, granularity, comparati
 
 ## getGamificationInsightsDetails
 
-> InsightsDetails getGamificationInsightsDetails(filterType, filterId, granularity, comparativePeriodStartWorkday, primaryPeriodStartWorkday)
+> InsightsDetails getGamificationInsightsDetails(filterType, filterId, granularity, comparativePeriodStartWorkday, primaryPeriodStartWorkday, opts)
 
 
 GET /api/v2/gamification/insights/details
@@ -847,8 +929,14 @@ let filterId = "filterId_example"; // String | ID for the filter type.
 let granularity = "granularity_example"; // String | Granularity
 let comparativePeriodStartWorkday = "comparativePeriodStartWorkday_example"; // String | The start work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let primaryPeriodStartWorkday = "primaryPeriodStartWorkday_example"; // String | The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getGamificationInsightsDetails(filterType, filterId, granularity, comparativePeriodStartWorkday, primaryPeriodStartWorkday)
+apiInstance.getGamificationInsightsDetails(filterType, filterId, granularity, comparativePeriodStartWorkday, primaryPeriodStartWorkday, opts)
   .then((data) => {
     console.log(`getGamificationInsightsDetails success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -868,6 +956,7 @@ apiInstance.getGamificationInsightsDetails(filterType, filterId, granularity, co
  **granularity** | **String** | Granularity | <br />**Values**: Weekly, Monthly |
  **comparativePeriodStartWorkday** | **String** | The start work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **primaryPeriodStartWorkday** | **String** | The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -876,7 +965,7 @@ apiInstance.getGamificationInsightsDetails(filterType, filterId, granularity, co
 
 ## getGamificationInsightsGroupsTrends
 
-> InsightsTrend getGamificationInsightsGroupsTrends(filterType, filterId, granularity, comparativePeriodStartWorkday, comparativePeriodEndWorkday, primaryPeriodStartWorkday, primaryPeriodEndWorkday)
+> InsightsTrend getGamificationInsightsGroupsTrends(filterType, filterId, granularity, comparativePeriodStartWorkday, comparativePeriodEndWorkday, primaryPeriodStartWorkday, primaryPeriodEndWorkday, opts)
 
 
 GET /api/v2/gamification/insights/groups/trends
@@ -907,8 +996,14 @@ let comparativePeriodStartWorkday = "comparativePeriodStartWorkday_example"; // 
 let comparativePeriodEndWorkday = "comparativePeriodEndWorkday_example"; // String | The end work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let primaryPeriodStartWorkday = "primaryPeriodStartWorkday_example"; // String | The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let primaryPeriodEndWorkday = "primaryPeriodEndWorkday_example"; // String | The end work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getGamificationInsightsGroupsTrends(filterType, filterId, granularity, comparativePeriodStartWorkday, comparativePeriodEndWorkday, primaryPeriodStartWorkday, primaryPeriodEndWorkday)
+apiInstance.getGamificationInsightsGroupsTrends(filterType, filterId, granularity, comparativePeriodStartWorkday, comparativePeriodEndWorkday, primaryPeriodStartWorkday, primaryPeriodEndWorkday, opts)
   .then((data) => {
     console.log(`getGamificationInsightsGroupsTrends success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -930,6 +1025,7 @@ apiInstance.getGamificationInsightsGroupsTrends(filterType, filterId, granularit
  **comparativePeriodEndWorkday** | **String** | The end work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **primaryPeriodStartWorkday** | **String** | The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **primaryPeriodEndWorkday** | **String** | The end work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -938,7 +1034,7 @@ apiInstance.getGamificationInsightsGroupsTrends(filterType, filterId, granularit
 
 ## getGamificationInsightsGroupsTrendsAll
 
-> InsightsTrend getGamificationInsightsGroupsTrendsAll(filterType, filterId, granularity, comparativePeriodStartWorkday, comparativePeriodEndWorkday, primaryPeriodStartWorkday, primaryPeriodEndWorkday)
+> InsightsTrend getGamificationInsightsGroupsTrendsAll(filterType, filterId, granularity, comparativePeriodStartWorkday, comparativePeriodEndWorkday, primaryPeriodStartWorkday, primaryPeriodEndWorkday, opts)
 
 
 GET /api/v2/gamification/insights/groups/trends/all
@@ -969,8 +1065,14 @@ let comparativePeriodStartWorkday = "comparativePeriodStartWorkday_example"; // 
 let comparativePeriodEndWorkday = "comparativePeriodEndWorkday_example"; // String | The end work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let primaryPeriodStartWorkday = "primaryPeriodStartWorkday_example"; // String | The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let primaryPeriodEndWorkday = "primaryPeriodEndWorkday_example"; // String | The end work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getGamificationInsightsGroupsTrendsAll(filterType, filterId, granularity, comparativePeriodStartWorkday, comparativePeriodEndWorkday, primaryPeriodStartWorkday, primaryPeriodEndWorkday)
+apiInstance.getGamificationInsightsGroupsTrendsAll(filterType, filterId, granularity, comparativePeriodStartWorkday, comparativePeriodEndWorkday, primaryPeriodStartWorkday, primaryPeriodEndWorkday, opts)
   .then((data) => {
     console.log(`getGamificationInsightsGroupsTrendsAll success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -992,15 +1094,83 @@ apiInstance.getGamificationInsightsGroupsTrendsAll(filterType, filterId, granula
  **comparativePeriodEndWorkday** | **String** | The end work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **primaryPeriodStartWorkday** | **String** | The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **primaryPeriodEndWorkday** | **String** | The end work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **InsightsTrend**
 
 
+## getGamificationInsightsManagers
+
+> InsightsAgents getGamificationInsightsManagers(filterType, filterId, granularity, startWorkday, opts)
+
+
+GET /api/v2/gamification/insights/managers
+
+Query managers in a profile during a period of time
+
+Requires ANY permissions:
+
+* gamification:insights:viewAll
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.GamificationApi();
+
+let filterType = "filterType_example"; // String | Filter type for the query request.
+let filterId = "filterId_example"; // String | ID for the filter type.
+let granularity = "granularity_example"; // String | Granularity
+let startWorkday = "startWorkday_example"; // String | The start work day. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let opts = { 
+  'pageSize': 100, // Number | Page size
+  'pageNumber': 1, // Number | Page number
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getGamificationInsightsManagers(filterType, filterId, granularity, startWorkday, opts)
+  .then((data) => {
+    console.log(`getGamificationInsightsManagers success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getGamificationInsightsManagers');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **filterType** | **String** | Filter type for the query request. | <br />**Values**: PerformanceProfile, Division |
+ **filterId** | **String** | ID for the filter type. |  |
+ **granularity** | **String** | Granularity | <br />**Values**: Weekly, Monthly |
+ **startWorkday** | **String** | The start work day. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+ **pageSize** | **Number** | Page size | [optional] [default to 100] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**InsightsAgents**
+
+
 ## getGamificationInsightsMembers
 
-> InsightsAgents getGamificationInsightsMembers(filterType, filterId, granularity, startWorkday)
+> InsightsAgents getGamificationInsightsMembers(filterType, filterId, granularity, startWorkday, opts)
 
 
 GET /api/v2/gamification/insights/members
@@ -1028,8 +1198,15 @@ let filterType = "filterType_example"; // String | Filter type for the query req
 let filterId = "filterId_example"; // String | ID for the filter type.
 let granularity = "granularity_example"; // String | Granularity
 let startWorkday = "startWorkday_example"; // String | The start work day. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let opts = { 
+  'reportsTo': "reportsTo_example", // String | The reportsTo used by ABAC policies.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getGamificationInsightsMembers(filterType, filterId, granularity, startWorkday)
+apiInstance.getGamificationInsightsMembers(filterType, filterId, granularity, startWorkday, opts)
   .then((data) => {
     console.log(`getGamificationInsightsMembers success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1048,6 +1225,8 @@ apiInstance.getGamificationInsightsMembers(filterType, filterId, granularity, st
  **filterId** | **String** | ID for the filter type. |  |
  **granularity** | **String** | Granularity | <br />**Values**: Weekly, Monthly |
  **startWorkday** | **String** | The start work day. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+ **reportsTo** | **String** | The reportsTo used by ABAC policies. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1089,7 +1268,12 @@ let sortKey = "sortKey_example"; // String | Sort key
 let opts = { 
   'sortMetricId': "sortMetricId_example", // String | Sort Metric Id
   'sectionSize': 3.4, // Number | The number of top and bottom users to return before ties
-  'userIds': "userIds_example" // String | A list of up to 100 comma-separated user Ids
+  'userIds': "userIds_example", // String | A list of up to 100 comma-separated user Ids
+  'reportsTo': "reportsTo_example", // String | The reportsTo used by ABAC policies.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getGamificationInsightsRankings(filterType, filterId, granularity, comparativePeriodStartWorkday, primaryPeriodStartWorkday, sortKey, opts)
@@ -1116,6 +1300,8 @@ apiInstance.getGamificationInsightsRankings(filterType, filterId, granularity, c
  **sortMetricId** | **String** | Sort Metric Id | [optional]  |
  **sectionSize** | **Number** | The number of top and bottom users to return before ties | [optional]  |
  **userIds** | **String** | A list of up to 100 comma-separated user Ids | [optional]  |
+ **reportsTo** | **String** | The reportsTo used by ABAC policies. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1124,7 +1310,7 @@ apiInstance.getGamificationInsightsRankings(filterType, filterId, granularity, c
 
 ## getGamificationInsightsTrends
 
-> UserInsightsTrend getGamificationInsightsTrends(filterType, filterId, granularity, comparativePeriodStartWorkday, comparativePeriodEndWorkday, primaryPeriodStartWorkday, primaryPeriodEndWorkday)
+> UserInsightsTrend getGamificationInsightsTrends(filterType, filterId, granularity, comparativePeriodStartWorkday, comparativePeriodEndWorkday, primaryPeriodStartWorkday, primaryPeriodEndWorkday, opts)
 
 
 GET /api/v2/gamification/insights/trends
@@ -1155,8 +1341,14 @@ let comparativePeriodStartWorkday = "comparativePeriodStartWorkday_example"; // 
 let comparativePeriodEndWorkday = "comparativePeriodEndWorkday_example"; // String | The end work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let primaryPeriodStartWorkday = "primaryPeriodStartWorkday_example"; // String | The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let primaryPeriodEndWorkday = "primaryPeriodEndWorkday_example"; // String | The end work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getGamificationInsightsTrends(filterType, filterId, granularity, comparativePeriodStartWorkday, comparativePeriodEndWorkday, primaryPeriodStartWorkday, primaryPeriodEndWorkday)
+apiInstance.getGamificationInsightsTrends(filterType, filterId, granularity, comparativePeriodStartWorkday, comparativePeriodEndWorkday, primaryPeriodStartWorkday, primaryPeriodEndWorkday, opts)
   .then((data) => {
     console.log(`getGamificationInsightsTrends success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1178,6 +1370,7 @@ apiInstance.getGamificationInsightsTrends(filterType, filterId, granularity, com
  **comparativePeriodEndWorkday** | **String** | The end work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **primaryPeriodStartWorkday** | **String** | The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **primaryPeriodEndWorkday** | **String** | The end work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1186,7 +1379,7 @@ apiInstance.getGamificationInsightsTrends(filterType, filterId, granularity, com
 
 ## getGamificationInsightsUserDetails
 
-> InsightsDetails getGamificationInsightsUserDetails(userId, filterType, filterId, granularity, comparativePeriodStartWorkday, primaryPeriodStartWorkday)
+> InsightsDetails getGamificationInsightsUserDetails(userId, filterType, filterId, granularity, comparativePeriodStartWorkday, primaryPeriodStartWorkday, opts)
 
 
 GET /api/v2/gamification/insights/users/{userId}/details
@@ -1216,8 +1409,14 @@ let filterId = "filterId_example"; // String | ID for the filter type.
 let granularity = "granularity_example"; // String | Granularity
 let comparativePeriodStartWorkday = "comparativePeriodStartWorkday_example"; // String | The start work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let primaryPeriodStartWorkday = "primaryPeriodStartWorkday_example"; // String | The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getGamificationInsightsUserDetails(userId, filterType, filterId, granularity, comparativePeriodStartWorkday, primaryPeriodStartWorkday)
+apiInstance.getGamificationInsightsUserDetails(userId, filterType, filterId, granularity, comparativePeriodStartWorkday, primaryPeriodStartWorkday, opts)
   .then((data) => {
     console.log(`getGamificationInsightsUserDetails success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1238,6 +1437,7 @@ apiInstance.getGamificationInsightsUserDetails(userId, filterType, filterId, gra
  **granularity** | **String** | Granularity | <br />**Values**: Weekly, Monthly |
  **comparativePeriodStartWorkday** | **String** | The start work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **primaryPeriodStartWorkday** | **String** | The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1246,7 +1446,7 @@ apiInstance.getGamificationInsightsUserDetails(userId, filterType, filterId, gra
 
 ## getGamificationInsightsUserTrends
 
-> UserInsightsTrend getGamificationInsightsUserTrends(userId, filterType, filterId, granularity, comparativePeriodStartWorkday, comparativePeriodEndWorkday, primaryPeriodStartWorkday, primaryPeriodEndWorkday)
+> UserInsightsTrend getGamificationInsightsUserTrends(userId, filterType, filterId, granularity, comparativePeriodStartWorkday, comparativePeriodEndWorkday, primaryPeriodStartWorkday, primaryPeriodEndWorkday, opts)
 
 
 GET /api/v2/gamification/insights/users/{userId}/trends
@@ -1278,8 +1478,14 @@ let comparativePeriodStartWorkday = "comparativePeriodStartWorkday_example"; // 
 let comparativePeriodEndWorkday = "comparativePeriodEndWorkday_example"; // String | The end work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let primaryPeriodStartWorkday = "primaryPeriodStartWorkday_example"; // String | The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let primaryPeriodEndWorkday = "primaryPeriodEndWorkday_example"; // String | The end work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getGamificationInsightsUserTrends(userId, filterType, filterId, granularity, comparativePeriodStartWorkday, comparativePeriodEndWorkday, primaryPeriodStartWorkday, primaryPeriodEndWorkday)
+apiInstance.getGamificationInsightsUserTrends(userId, filterType, filterId, granularity, comparativePeriodStartWorkday, comparativePeriodEndWorkday, primaryPeriodStartWorkday, primaryPeriodEndWorkday, opts)
   .then((data) => {
     console.log(`getGamificationInsightsUserTrends success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1302,6 +1508,7 @@ apiInstance.getGamificationInsightsUserTrends(userId, filterType, filterId, gran
  **comparativePeriodEndWorkday** | **String** | The end work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **primaryPeriodStartWorkday** | **String** | The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **primaryPeriodEndWorkday** | **String** | The end work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1337,7 +1544,11 @@ let apiInstance = new platformClient.GamificationApi();
 let startWorkday = "startWorkday_example"; // String | Start workday to retrieve for the leaderboard. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let endWorkday = "endWorkday_example"; // String | End workday to retrieve for the leaderboard. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let opts = { 
-  'metricId': "metricId_example" // String | Metric Id for which the leaderboard is to be generated. The total points is used if nothing is given.
+  'metricId': "metricId_example", // String | Metric Id for which the leaderboard is to be generated. The total points is used if nothing is given.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getGamificationLeaderboard(startWorkday, endWorkday, opts)
@@ -1358,6 +1569,7 @@ apiInstance.getGamificationLeaderboard(startWorkday, endWorkday, opts)
  **startWorkday** | **String** | Start workday to retrieve for the leaderboard. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **endWorkday** | **String** | End workday to retrieve for the leaderboard. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **metricId** | **String** | Metric Id for which the leaderboard is to be generated. The total points is used if nothing is given. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1395,7 +1607,11 @@ let filterId = "filterId_example"; // String | ID for the filter type. For examp
 let startWorkday = "startWorkday_example"; // String | Start workday to retrieve for the leaderboard. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let endWorkday = "endWorkday_example"; // String | End workday to retrieve for the leaderboard. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let opts = { 
-  'metricId': "metricId_example" // String | Metric Id for which the leaderboard is to be generated. The total points is used if nothing is given.
+  'metricId': "metricId_example", // String | Metric Id for which the leaderboard is to be generated. The total points is used if nothing is given.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getGamificationLeaderboardAll(filterType, filterId, startWorkday, endWorkday, opts)
@@ -1418,6 +1634,7 @@ apiInstance.getGamificationLeaderboardAll(filterType, filterId, startWorkday, en
  **startWorkday** | **String** | Start workday to retrieve for the leaderboard. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **endWorkday** | **String** | End workday to retrieve for the leaderboard. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **metricId** | **String** | Metric Id for which the leaderboard is to be generated. The total points is used if nothing is given. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1426,7 +1643,7 @@ apiInstance.getGamificationLeaderboardAll(filterType, filterId, startWorkday, en
 
 ## getGamificationLeaderboardAllBestpoints
 
-> OverallBestPoints getGamificationLeaderboardAllBestpoints(filterType, filterId)
+> OverallBestPoints getGamificationLeaderboardAllBestpoints(filterType, filterId, opts)
 
 
 GET /api/v2/gamification/leaderboard/all/bestpoints
@@ -1452,8 +1669,14 @@ let apiInstance = new platformClient.GamificationApi();
 
 let filterType = "filterType_example"; // String | Filter type for the query request.
 let filterId = "filterId_example"; // String | ID for the filter type. For example, division or performance profile Id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getGamificationLeaderboardAllBestpoints(filterType, filterId)
+apiInstance.getGamificationLeaderboardAllBestpoints(filterType, filterId, opts)
   .then((data) => {
     console.log(`getGamificationLeaderboardAllBestpoints success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1470,6 +1693,7 @@ apiInstance.getGamificationLeaderboardAllBestpoints(filterType, filterId)
 | ------------- | ------------- | ------------- | ------------- |
  **filterType** | **String** | Filter type for the query request. | <br />**Values**: PerformanceProfile, Division |
  **filterId** | **String** | ID for the filter type. For example, division or performance profile Id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1478,7 +1702,7 @@ apiInstance.getGamificationLeaderboardAllBestpoints(filterType, filterId)
 
 ## getGamificationLeaderboardBestpoints
 
-> OverallBestPoints getGamificationLeaderboardBestpoints()
+> OverallBestPoints getGamificationLeaderboardBestpoints(opts)
 
 
 GET /api/v2/gamification/leaderboard/bestpoints
@@ -1501,8 +1725,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.GamificationApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getGamificationLeaderboardBestpoints()
+apiInstance.getGamificationLeaderboardBestpoints(opts)
   .then((data) => {
     console.log(`getGamificationLeaderboardBestpoints success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1514,7 +1744,10 @@ apiInstance.getGamificationLeaderboardBestpoints()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1523,7 +1756,7 @@ This endpoint does not need any parameter.
 
 ## getGamificationMetricdefinition
 
-> MetricDefinition getGamificationMetricdefinition(metricDefinitionId)
+> MetricDefinition getGamificationMetricdefinition(metricDefinitionId, opts)
 
 
 GET /api/v2/gamification/metricdefinitions/{metricDefinitionId}
@@ -1548,8 +1781,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.GamificationApi();
 
 let metricDefinitionId = "metricDefinitionId_example"; // String | metric definition id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getGamificationMetricdefinition(metricDefinitionId)
+apiInstance.getGamificationMetricdefinition(metricDefinitionId, opts)
   .then((data) => {
     console.log(`getGamificationMetricdefinition success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1565,6 +1804,7 @@ apiInstance.getGamificationMetricdefinition(metricDefinitionId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **metricDefinitionId** | **String** | metric definition id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1573,7 +1813,7 @@ apiInstance.getGamificationMetricdefinition(metricDefinitionId)
 
 ## getGamificationMetricdefinitions
 
-> GetMetricDefinitionsResponse getGamificationMetricdefinitions()
+> GetMetricDefinitionsResponse getGamificationMetricdefinitions(opts)
 
 
 GET /api/v2/gamification/metricdefinitions
@@ -1598,8 +1838,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.GamificationApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getGamificationMetricdefinitions()
+apiInstance.getGamificationMetricdefinitions(opts)
   .then((data) => {
     console.log(`getGamificationMetricdefinitions success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1611,7 +1857,10 @@ apiInstance.getGamificationMetricdefinitions()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1620,7 +1869,7 @@ This endpoint does not need any parameter.
 
 ## getGamificationProfile
 
-> PerformanceProfile getGamificationProfile(profileId)
+> PerformanceProfile getGamificationProfile(profileId, opts)
 
 
 GET /api/v2/gamification/profiles/{profileId}
@@ -1647,8 +1896,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.GamificationApi();
 
 let profileId = "profileId_example"; // String | performanceProfileId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getGamificationProfile(profileId)
+apiInstance.getGamificationProfile(profileId, opts)
   .then((data) => {
     console.log(`getGamificationProfile success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1664,6 +1919,7 @@ apiInstance.getGamificationProfile(profileId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **profileId** | **String** | performanceProfileId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1672,7 +1928,7 @@ apiInstance.getGamificationProfile(profileId)
 
 ## getGamificationProfileMembers
 
-> MemberListing getGamificationProfileMembers(profileId)
+> MemberListing getGamificationProfileMembers(profileId, opts)
 
 
 GET /api/v2/gamification/profiles/{profileId}/members
@@ -1697,8 +1953,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.GamificationApi();
 
 let profileId = "profileId_example"; // String | Profile Id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getGamificationProfileMembers(profileId)
+apiInstance.getGamificationProfileMembers(profileId, opts)
   .then((data) => {
     console.log(`getGamificationProfileMembers success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1714,6 +1976,7 @@ apiInstance.getGamificationProfileMembers(profileId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **profileId** | **String** | Profile Id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1751,7 +2014,11 @@ let apiInstance = new platformClient.GamificationApi();
 let profileId = "profileId_example"; // String | Performance Profile Id
 let metricId = "metricId_example"; // String | Metric Id
 let opts = { 
-  'workday': "workday_example" // String | The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+  'workday': "workday_example", // String | The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getGamificationProfileMetric(profileId, metricId, opts)
@@ -1772,6 +2039,7 @@ apiInstance.getGamificationProfileMetric(profileId, metricId, opts)
  **profileId** | **String** | Performance Profile Id |  |
  **metricId** | **String** | Metric Id |  |
  **workday** | **String** | The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1810,7 +2078,11 @@ let profileId = "profileId_example"; // String | Performance Profile Id
 let opts = { 
   'expand': ["expand_example"], // [String] | Which fields, if any, to expand.
   'workday': "workday_example", // String | The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-  'metricIds': "metricIds_example" // String | List of metric ids to filter the response (Optional, comma-separated).
+  'metricIds': "metricIds_example", // String | List of metric ids to filter the response (Optional, comma-separated).
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getGamificationProfileMetrics(profileId, opts)
@@ -1832,6 +2104,7 @@ apiInstance.getGamificationProfileMetrics(profileId, opts)
  **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: objective |
  **workday** | **String** | The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
  **metricIds** | **String** | List of metric ids to filter the response (Optional, comma-separated). | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1868,7 +2141,11 @@ let apiInstance = new platformClient.GamificationApi();
 
 let profileId = "profileId_example"; // String | Performance Profile Id
 let opts = { 
-  'workday': "workday_example" // String | The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+  'workday': "workday_example", // String | The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getGamificationProfileMetricsObjectivedetails(profileId, opts)
@@ -1888,6 +2165,7 @@ apiInstance.getGamificationProfileMetricsObjectivedetails(profileId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **profileId** | **String** | Performance Profile Id |  |
  **workday** | **String** | The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1896,7 +2174,7 @@ apiInstance.getGamificationProfileMetricsObjectivedetails(profileId, opts)
 
 ## getGamificationProfiles
 
-> GetProfilesResponse getGamificationProfiles()
+> GetProfilesResponse getGamificationProfiles(opts)
 
 
 GET /api/v2/gamification/profiles
@@ -1921,8 +2199,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.GamificationApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getGamificationProfiles()
+apiInstance.getGamificationProfiles(opts)
   .then((data) => {
     console.log(`getGamificationProfiles success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1934,7 +2218,10 @@ apiInstance.getGamificationProfiles()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1971,7 +2258,11 @@ let apiInstance = new platformClient.GamificationApi();
 
 let userId = "userId_example"; // String | 
 let opts = { 
-  'workday': "workday_example" // String | Target querying workday. If not provided, then queries the current performance profile. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+  'workday': "workday_example", // String | Target querying workday. If not provided, then queries the current performance profile. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getGamificationProfilesUser(userId, opts)
@@ -1991,6 +2282,7 @@ apiInstance.getGamificationProfilesUser(userId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** |  |  |
  **workday** | **String** | Target querying workday. If not provided, then queries the current performance profile. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2022,7 +2314,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.GamificationApi();
 
 let opts = { 
-  'workday': "workday_example" // String | Target querying workday. If not provided, then queries the current performance profile. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+  'workday': "workday_example", // String | Target querying workday. If not provided, then queries the current performance profile. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getGamificationProfilesUsersMe(opts)
@@ -2041,6 +2337,7 @@ apiInstance.getGamificationProfilesUsersMe(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **workday** | **String** | Target querying workday. If not provided, then queries the current performance profile. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2075,7 +2372,11 @@ let apiInstance = new platformClient.GamificationApi();
 
 let workday = "workday_example"; // String | Target querying workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let opts = { 
-  'expand': ["expand_example"] // [String] | Which fields, if any, to expand.
+  'expand': ["expand_example"], // [String] | Which fields, if any, to expand.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getGamificationScorecards(workday, opts)
@@ -2095,6 +2396,7 @@ apiInstance.getGamificationScorecards(workday, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **workday** | **String** | Target querying workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: objective |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2103,7 +2405,7 @@ apiInstance.getGamificationScorecards(workday, opts)
 
 ## getGamificationScorecardsAttendance
 
-> AttendanceStatusListing getGamificationScorecardsAttendance(startWorkday, endWorkday)
+> AttendanceStatusListing getGamificationScorecardsAttendance(startWorkday, endWorkday, opts)
 
 
 GET /api/v2/gamification/scorecards/attendance
@@ -2129,8 +2431,14 @@ let apiInstance = new platformClient.GamificationApi();
 
 let startWorkday = "startWorkday_example"; // String | Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let endWorkday = "endWorkday_example"; // String | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getGamificationScorecardsAttendance(startWorkday, endWorkday)
+apiInstance.getGamificationScorecardsAttendance(startWorkday, endWorkday, opts)
   .then((data) => {
     console.log(`getGamificationScorecardsAttendance success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2147,6 +2455,7 @@ apiInstance.getGamificationScorecardsAttendance(startWorkday, endWorkday)
 | ------------- | ------------- | ------------- | ------------- |
  **startWorkday** | **String** | Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **endWorkday** | **String** | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2155,7 +2464,7 @@ apiInstance.getGamificationScorecardsAttendance(startWorkday, endWorkday)
 
 ## getGamificationScorecardsBestpoints
 
-> UserBestPoints getGamificationScorecardsBestpoints()
+> UserBestPoints getGamificationScorecardsBestpoints(opts)
 
 
 GET /api/v2/gamification/scorecards/bestpoints
@@ -2178,8 +2487,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.GamificationApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getGamificationScorecardsBestpoints()
+apiInstance.getGamificationScorecardsBestpoints(opts)
   .then((data) => {
     console.log(`getGamificationScorecardsBestpoints success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2191,7 +2506,10 @@ apiInstance.getGamificationScorecardsBestpoints()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2200,7 +2518,7 @@ This endpoint does not need any parameter.
 
 ## getGamificationScorecardsPointsAlltime
 
-> AllTimePoints getGamificationScorecardsPointsAlltime(endWorkday)
+> AllTimePoints getGamificationScorecardsPointsAlltime(endWorkday, opts)
 
 
 GET /api/v2/gamification/scorecards/points/alltime
@@ -2225,8 +2543,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.GamificationApi();
 
 let endWorkday = "endWorkday_example"; // String | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getGamificationScorecardsPointsAlltime(endWorkday)
+apiInstance.getGamificationScorecardsPointsAlltime(endWorkday, opts)
   .then((data) => {
     console.log(`getGamificationScorecardsPointsAlltime success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2242,6 +2566,7 @@ apiInstance.getGamificationScorecardsPointsAlltime(endWorkday)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **endWorkday** | **String** | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2250,7 +2575,7 @@ apiInstance.getGamificationScorecardsPointsAlltime(endWorkday)
 
 ## getGamificationScorecardsPointsAverage
 
-> SingleWorkdayAveragePoints getGamificationScorecardsPointsAverage(workday)
+> SingleWorkdayAveragePoints getGamificationScorecardsPointsAverage(workday, opts)
 
 
 GET /api/v2/gamification/scorecards/points/average
@@ -2275,8 +2600,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.GamificationApi();
 
 let workday = "workday_example"; // String | The target workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getGamificationScorecardsPointsAverage(workday)
+apiInstance.getGamificationScorecardsPointsAverage(workday, opts)
   .then((data) => {
     console.log(`getGamificationScorecardsPointsAverage success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2292,6 +2623,7 @@ apiInstance.getGamificationScorecardsPointsAverage(workday)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **workday** | **String** | The target workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2327,7 +2659,11 @@ let apiInstance = new platformClient.GamificationApi();
 let startWorkday = "startWorkday_example"; // String | Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let endWorkday = "endWorkday_example"; // String | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let opts = { 
-  'dayOfWeek': "dayOfWeek_example" // String | Optional filter to specify which day of weeks to be included in the response
+  'dayOfWeek': "dayOfWeek_example", // String | Optional filter to specify which day of weeks to be included in the response
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getGamificationScorecardsPointsTrends(startWorkday, endWorkday, opts)
@@ -2348,6 +2684,7 @@ apiInstance.getGamificationScorecardsPointsTrends(startWorkday, endWorkday, opts
  **startWorkday** | **String** | Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **endWorkday** | **String** | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **dayOfWeek** | **String** | Optional filter to specify which day of weeks to be included in the response | [optional] <br />**Values**: Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2387,7 +2724,11 @@ let startWorkday = "startWorkday_example"; // String | Start workday of querying
 let endWorkday = "endWorkday_example"; // String | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let opts = { 
   'referenceWorkday': "referenceWorkday_example", // String | Reference workday for the trend. Used to determine the associated metric definition. If not set, then the value of endWorkday is used. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-  'timeZone': "UTC" // String | Timezone for the workday. Defaults to UTC
+  'timeZone': "UTC", // String | Timezone for the workday. Defaults to UTC
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getGamificationScorecardsProfileMetricUserValuesTrends(profileId, metricId, userId, startWorkday, endWorkday, opts)
@@ -2412,6 +2753,7 @@ apiInstance.getGamificationScorecardsProfileMetricUserValuesTrends(profileId, me
  **endWorkday** | **String** | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **referenceWorkday** | **String** | Reference workday for the trend. Used to determine the associated metric definition. If not set, then the value of endWorkday is used. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
  **timeZone** | **String** | Timezone for the workday. Defaults to UTC | [optional] [default to UTC] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2452,7 +2794,11 @@ let endWorkday = "endWorkday_example"; // String | End workday of querying workd
 let opts = { 
   'filterId': "filterId_example", // String | ID for the filter type. Only required when filterType is Division.
   'referenceWorkday': "referenceWorkday_example", // String | Reference workday for the trend. Used to determine the associated metric definition. If not set, then the value of endWorkday is used. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-  'timeZone': "UTC" // String | Timezone for the workday. Defaults to UTC
+  'timeZone': "UTC", // String | Timezone for the workday. Defaults to UTC
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getGamificationScorecardsProfileMetricUsersValuesTrends(profileId, metricId, filterType, startWorkday, endWorkday, opts)
@@ -2478,6 +2824,7 @@ apiInstance.getGamificationScorecardsProfileMetricUsersValuesTrends(profileId, m
  **filterId** | **String** | ID for the filter type. Only required when filterType is Division. | [optional]  |
  **referenceWorkday** | **String** | Reference workday for the trend. Used to determine the associated metric definition. If not set, then the value of endWorkday is used. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
  **timeZone** | **String** | Timezone for the workday. Defaults to UTC | [optional] [default to UTC] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2517,7 +2864,11 @@ let endWorkday = "endWorkday_example"; // String | End workday of querying workd
 let opts = { 
   'filterType': "filterType_example", // String | Filter type for the query request. If not set, returns the values trends of the requesting user
   'referenceWorkday': "referenceWorkday_example", // String | Reference workday for the trend. Used to determine the associated metric definition. If not set, then the value of endWorkday is used. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-  'timeZone': "UTC" // String | Timezone for the workday. Defaults to UTC
+  'timeZone': "UTC", // String | Timezone for the workday. Defaults to UTC
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getGamificationScorecardsProfileMetricValuesTrends(profileId, metricId, startWorkday, endWorkday, opts)
@@ -2542,6 +2893,7 @@ apiInstance.getGamificationScorecardsProfileMetricValuesTrends(profileId, metric
  **filterType** | **String** | Filter type for the query request. If not set, returns the values trends of the requesting user | [optional] <br />**Values**: PerformanceProfile, Division |
  **referenceWorkday** | **String** | Reference workday for the trend. Used to determine the associated metric definition. If not set, then the value of endWorkday is used. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
  **timeZone** | **String** | Timezone for the workday. Defaults to UTC | [optional] [default to UTC] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2577,7 +2929,11 @@ let apiInstance = new platformClient.GamificationApi();
 let userId = "userId_example"; // String | 
 let workday = "workday_example"; // String | Target querying workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let opts = { 
-  'expand': ["expand_example"] // [String] | Which fields, if any, to expand.
+  'expand': ["expand_example"], // [String] | Which fields, if any, to expand.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getGamificationScorecardsUser(userId, workday, opts)
@@ -2598,6 +2954,7 @@ apiInstance.getGamificationScorecardsUser(userId, workday, opts)
  **userId** | **String** |  |  |
  **workday** | **String** | Target querying workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: objective |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2606,7 +2963,7 @@ apiInstance.getGamificationScorecardsUser(userId, workday, opts)
 
 ## getGamificationScorecardsUserAttendance
 
-> AttendanceStatusListing getGamificationScorecardsUserAttendance(userId, startWorkday, endWorkday)
+> AttendanceStatusListing getGamificationScorecardsUserAttendance(userId, startWorkday, endWorkday, opts)
 
 
 GET /api/v2/gamification/scorecards/users/{userId}/attendance
@@ -2633,8 +2990,14 @@ let apiInstance = new platformClient.GamificationApi();
 let userId = "userId_example"; // String | 
 let startWorkday = "startWorkday_example"; // String | Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let endWorkday = "endWorkday_example"; // String | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getGamificationScorecardsUserAttendance(userId, startWorkday, endWorkday)
+apiInstance.getGamificationScorecardsUserAttendance(userId, startWorkday, endWorkday, opts)
   .then((data) => {
     console.log(`getGamificationScorecardsUserAttendance success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2652,6 +3015,7 @@ apiInstance.getGamificationScorecardsUserAttendance(userId, startWorkday, endWor
  **userId** | **String** |  |  |
  **startWorkday** | **String** | Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **endWorkday** | **String** | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2660,7 +3024,7 @@ apiInstance.getGamificationScorecardsUserAttendance(userId, startWorkday, endWor
 
 ## getGamificationScorecardsUserBestpoints
 
-> UserBestPoints getGamificationScorecardsUserBestpoints(userId)
+> UserBestPoints getGamificationScorecardsUserBestpoints(userId, opts)
 
 
 GET /api/v2/gamification/scorecards/users/{userId}/bestpoints
@@ -2685,8 +3049,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.GamificationApi();
 
 let userId = "userId_example"; // String | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getGamificationScorecardsUserBestpoints(userId)
+apiInstance.getGamificationScorecardsUserBestpoints(userId, opts)
   .then((data) => {
     console.log(`getGamificationScorecardsUserBestpoints success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2702,6 +3072,7 @@ apiInstance.getGamificationScorecardsUserBestpoints(userId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2710,7 +3081,7 @@ apiInstance.getGamificationScorecardsUserBestpoints(userId)
 
 ## getGamificationScorecardsUserPointsAlltime
 
-> AllTimePoints getGamificationScorecardsUserPointsAlltime(userId, endWorkday)
+> AllTimePoints getGamificationScorecardsUserPointsAlltime(userId, endWorkday, opts)
 
 
 GET /api/v2/gamification/scorecards/users/{userId}/points/alltime
@@ -2736,8 +3107,14 @@ let apiInstance = new platformClient.GamificationApi();
 
 let userId = "userId_example"; // String | 
 let endWorkday = "endWorkday_example"; // String | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getGamificationScorecardsUserPointsAlltime(userId, endWorkday)
+apiInstance.getGamificationScorecardsUserPointsAlltime(userId, endWorkday, opts)
   .then((data) => {
     console.log(`getGamificationScorecardsUserPointsAlltime success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2754,6 +3131,7 @@ apiInstance.getGamificationScorecardsUserPointsAlltime(userId, endWorkday)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** |  |  |
  **endWorkday** | **String** | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2790,7 +3168,11 @@ let userId = "userId_example"; // String |
 let startWorkday = "startWorkday_example"; // String | Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let endWorkday = "endWorkday_example"; // String | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let opts = { 
-  'dayOfWeek': "dayOfWeek_example" // String | Optional filter to specify which day of weeks to be included in the response
+  'dayOfWeek': "dayOfWeek_example", // String | Optional filter to specify which day of weeks to be included in the response
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getGamificationScorecardsUserPointsTrends(userId, startWorkday, endWorkday, opts)
@@ -2812,6 +3194,7 @@ apiInstance.getGamificationScorecardsUserPointsTrends(userId, startWorkday, endW
  **startWorkday** | **String** | Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **endWorkday** | **String** | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **dayOfWeek** | **String** | Optional filter to specify which day of weeks to be included in the response | [optional] <br />**Values**: Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2848,7 +3231,11 @@ let userId = "userId_example"; // String |
 let startWorkday = "startWorkday_example"; // String | Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let endWorkday = "endWorkday_example"; // String | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let opts = { 
-  'timeZone': "UTC" // String | Timezone for the workday. Defaults to UTC
+  'timeZone': "UTC", // String | Timezone for the workday. Defaults to UTC
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getGamificationScorecardsUserValuesTrends(userId, startWorkday, endWorkday, opts)
@@ -2870,6 +3257,7 @@ apiInstance.getGamificationScorecardsUserValuesTrends(userId, startWorkday, endW
  **startWorkday** | **String** | Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **endWorkday** | **String** | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **timeZone** | **String** | Timezone for the workday. Defaults to UTC | [optional] [default to UTC] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2878,7 +3266,7 @@ apiInstance.getGamificationScorecardsUserValuesTrends(userId, startWorkday, endW
 
 ## getGamificationScorecardsUsersPointsAverage
 
-> SingleWorkdayAveragePoints getGamificationScorecardsUsersPointsAverage(filterType, filterId, workday)
+> SingleWorkdayAveragePoints getGamificationScorecardsUsersPointsAverage(filterType, filterId, workday, opts)
 
 
 GET /api/v2/gamification/scorecards/users/points/average
@@ -2905,8 +3293,14 @@ let apiInstance = new platformClient.GamificationApi();
 let filterType = "filterType_example"; // String | Filter type for the query request.
 let filterId = "filterId_example"; // String | ID for the filter type.
 let workday = "workday_example"; // String | The target workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getGamificationScorecardsUsersPointsAverage(filterType, filterId, workday)
+apiInstance.getGamificationScorecardsUsersPointsAverage(filterType, filterId, workday, opts)
   .then((data) => {
     console.log(`getGamificationScorecardsUsersPointsAverage success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2924,6 +3318,7 @@ apiInstance.getGamificationScorecardsUsersPointsAverage(filterType, filterId, wo
  **filterType** | **String** | Filter type for the query request. | <br />**Values**: PerformanceProfile, Division |
  **filterId** | **String** | ID for the filter type. |  |
  **workday** | **String** | The target workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2960,7 +3355,11 @@ let filterType = "filterType_example"; // String | Filter type for the query req
 let filterId = "filterId_example"; // String | ID for the filter type. For example, division Id
 let workday = "workday_example"; // String | The target workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let opts = { 
-  'timeZone': "UTC" // String | Timezone for the workday. Defaults to UTC
+  'timeZone': "UTC", // String | Timezone for the workday. Defaults to UTC
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getGamificationScorecardsUsersValuesAverage(filterType, filterId, workday, opts)
@@ -2982,6 +3381,7 @@ apiInstance.getGamificationScorecardsUsersValuesAverage(filterType, filterId, wo
  **filterId** | **String** | ID for the filter type. For example, division Id |  |
  **workday** | **String** | The target workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **timeZone** | **String** | Timezone for the workday. Defaults to UTC | [optional] [default to UTC] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3019,7 +3419,11 @@ let filterId = "filterId_example"; // String | ID for the filter type.
 let startWorkday = "startWorkday_example"; // String | Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let endWorkday = "endWorkday_example"; // String | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let opts = { 
-  'timeZone': "UTC" // String | Timezone for the workday. Defaults to UTC
+  'timeZone': "UTC", // String | Timezone for the workday. Defaults to UTC
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getGamificationScorecardsUsersValuesTrends(filterType, filterId, startWorkday, endWorkday, opts)
@@ -3042,6 +3446,7 @@ apiInstance.getGamificationScorecardsUsersValuesTrends(filterType, filterId, sta
  **startWorkday** | **String** | Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **endWorkday** | **String** | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **timeZone** | **String** | Timezone for the workday. Defaults to UTC | [optional] [default to UTC] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3076,7 +3481,11 @@ let apiInstance = new platformClient.GamificationApi();
 
 let workday = "workday_example"; // String | The target workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 let opts = { 
-  'timeZone': "UTC" // String | Timezone for the workday. Defaults to UTC
+  'timeZone': "UTC", // String | Timezone for the workday. Defaults to UTC
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getGamificationScorecardsValuesAverage(workday, opts)
@@ -3096,6 +3505,7 @@ apiInstance.getGamificationScorecardsValuesAverage(workday, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **workday** | **String** | The target workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
  **timeZone** | **String** | Timezone for the workday. Defaults to UTC | [optional] [default to UTC] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3133,7 +3543,11 @@ let endWorkday = "endWorkday_example"; // String | End workday of querying workd
 let opts = { 
   'filterType': "filterType_example", // String | Filter type for the query request. If not set, then the request is for the requesting user.
   'referenceWorkday': "referenceWorkday_example", // String | Reference workday for the trend. Used to determine the profile of the user as of this date. If not set, then the user's current profile will be used. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-  'timeZone': "UTC" // String | Timezone for the workday. Defaults to UTC
+  'timeZone': "UTC", // String | Timezone for the workday. Defaults to UTC
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getGamificationScorecardsValuesTrends(startWorkday, endWorkday, opts)
@@ -3156,6 +3570,7 @@ apiInstance.getGamificationScorecardsValuesTrends(startWorkday, endWorkday, opts
  **filterType** | **String** | Filter type for the query request. If not set, then the request is for the requesting user. | [optional] <br />**Values**: PerformanceProfile, Division |
  **referenceWorkday** | **String** | Reference workday for the trend. Used to determine the profile of the user as of this date. If not set, then the user's current profile will be used. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
  **timeZone** | **String** | Timezone for the workday. Defaults to UTC | [optional] [default to UTC] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3164,7 +3579,7 @@ apiInstance.getGamificationScorecardsValuesTrends(startWorkday, endWorkday, opts
 
 ## getGamificationStatus
 
-> GamificationStatus getGamificationStatus()
+> GamificationStatus getGamificationStatus(opts)
 
 
 GET /api/v2/gamification/status
@@ -3189,8 +3604,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.GamificationApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getGamificationStatus()
+apiInstance.getGamificationStatus(opts)
   .then((data) => {
     console.log(`getGamificationStatus success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3202,7 +3623,10 @@ apiInstance.getGamificationStatus()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3211,7 +3635,7 @@ This endpoint does not need any parameter.
 
 ## getGamificationTemplate
 
-> ObjectiveTemplate getGamificationTemplate(templateId)
+> ObjectiveTemplate getGamificationTemplate(templateId, opts)
 
 
 GET /api/v2/gamification/templates/{templateId}
@@ -3236,8 +3660,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.GamificationApi();
 
 let templateId = "templateId_example"; // String | template id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getGamificationTemplate(templateId)
+apiInstance.getGamificationTemplate(templateId, opts)
   .then((data) => {
     console.log(`getGamificationTemplate success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3253,6 +3683,7 @@ apiInstance.getGamificationTemplate(templateId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **templateId** | **String** | template id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3261,7 +3692,7 @@ apiInstance.getGamificationTemplate(templateId)
 
 ## getGamificationTemplates
 
-> GetTemplatesResponse getGamificationTemplates()
+> GetTemplatesResponse getGamificationTemplates(opts)
 
 
 GET /api/v2/gamification/templates
@@ -3284,8 +3715,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.GamificationApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getGamificationTemplates()
+apiInstance.getGamificationTemplates(opts)
   .then((data) => {
     console.log(`getGamificationTemplates success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3297,7 +3734,10 @@ apiInstance.getGamificationTemplates()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3306,7 +3746,7 @@ This endpoint does not need any parameter.
 
 ## patchEmployeeperformanceExternalmetricsDefinition
 
-> ExternalMetricDefinition patchEmployeeperformanceExternalmetricsDefinition(metricId, body)
+> ExternalMetricDefinition patchEmployeeperformanceExternalmetricsDefinition(metricId, body, opts)
 
 
 PATCH /api/v2/employeeperformance/externalmetrics/definitions/{metricId}
@@ -3332,8 +3772,14 @@ let apiInstance = new platformClient.GamificationApi();
 
 let metricId = "metricId_example"; // String | Specifies the metric definition ID
 let body = {}; // Object | The External Metric Definition parameters to be updated
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchEmployeeperformanceExternalmetricsDefinition(metricId, body)
+apiInstance.patchEmployeeperformanceExternalmetricsDefinition(metricId, body, opts)
   .then((data) => {
     console.log(`patchEmployeeperformanceExternalmetricsDefinition success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3350,6 +3796,7 @@ apiInstance.patchEmployeeperformanceExternalmetricsDefinition(metricId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **metricId** | **String** | Specifies the metric definition ID |  |
  **body** | **Object** | The External Metric Definition parameters to be updated |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3358,7 +3805,7 @@ apiInstance.patchEmployeeperformanceExternalmetricsDefinition(metricId, body)
 
 ## patchGamificationContest
 
-> ContestsResponse patchGamificationContest(contestId, body)
+> ContestsResponse patchGamificationContest(contestId, body, opts)
 
 
 PATCH /api/v2/gamification/contests/{contestId}
@@ -3385,8 +3832,14 @@ let apiInstance = new platformClient.GamificationApi();
 
 let contestId = "contestId_example"; // String | The ID of the contest
 let body = {}; // Object | Finalize Contest
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchGamificationContest(contestId, body)
+apiInstance.patchGamificationContest(contestId, body, opts)
   .then((data) => {
     console.log(`patchGamificationContest success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3403,6 +3856,7 @@ apiInstance.patchGamificationContest(contestId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **contestId** | **String** | The ID of the contest |  |
  **body** | **Object** | Finalize Contest |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3436,7 +3890,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.GamificationApi();
 
 let opts = { 
-  'body': {} // Object | The External Metric Data to be added
+  'body': {}, // Object | The External Metric Data to be added
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postEmployeeperformanceExternalmetricsData(opts)
@@ -3455,6 +3913,7 @@ apiInstance.postEmployeeperformanceExternalmetricsData(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | The External Metric Data to be added | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3488,7 +3947,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.GamificationApi();
 
 let opts = { 
-  'body': {} // Object | The External Metric Definition to be created
+  'body': {}, // Object | The External Metric Definition to be created
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postEmployeeperformanceExternalmetricsDefinitions(opts)
@@ -3507,6 +3970,7 @@ apiInstance.postEmployeeperformanceExternalmetricsDefinitions(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | The External Metric Definition to be created | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3515,7 +3979,7 @@ apiInstance.postEmployeeperformanceExternalmetricsDefinitions(opts)
 
 ## postGamificationContests
 
-> ContestsResponse postGamificationContests(body)
+> ContestsResponse postGamificationContests(body, opts)
 
 
 POST /api/v2/gamification/contests
@@ -3540,8 +4004,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.GamificationApi();
 
 let body = {}; // Object | Create Contest
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postGamificationContests(body)
+apiInstance.postGamificationContests(body, opts)
   .then((data) => {
     console.log(`postGamificationContests success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3557,6 +4027,7 @@ apiInstance.postGamificationContests(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Create Contest |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3565,7 +4036,7 @@ apiInstance.postGamificationContests(body)
 
 ## postGamificationContestsUploadsPrizeimages
 
-> UploadUrlResponse postGamificationContestsUploadsPrizeimages(body)
+> UploadUrlResponse postGamificationContestsUploadsPrizeimages(body, opts)
 
 
 POST /api/v2/gamification/contests/uploads/prizeimages
@@ -3590,8 +4061,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.GamificationApi();
 
 let body = {}; // Object | query
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postGamificationContestsUploadsPrizeimages(body)
+apiInstance.postGamificationContestsUploadsPrizeimages(body, opts)
   .then((data) => {
     console.log(`postGamificationContestsUploadsPrizeimages success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3607,6 +4084,7 @@ apiInstance.postGamificationContestsUploadsPrizeimages(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3615,7 +4093,7 @@ apiInstance.postGamificationContestsUploadsPrizeimages(body)
 
 ## postGamificationProfileActivate
 
-> PerformanceProfile postGamificationProfileActivate(profileId)
+> PerformanceProfile postGamificationProfileActivate(profileId, opts)
 
 
 POST /api/v2/gamification/profiles/{profileId}/activate
@@ -3640,8 +4118,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.GamificationApi();
 
 let profileId = "profileId_example"; // String | performanceProfileId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postGamificationProfileActivate(profileId)
+apiInstance.postGamificationProfileActivate(profileId, opts)
   .then((data) => {
     console.log(`postGamificationProfileActivate success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3657,6 +4141,7 @@ apiInstance.postGamificationProfileActivate(profileId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **profileId** | **String** | performanceProfileId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3665,7 +4150,7 @@ apiInstance.postGamificationProfileActivate(profileId)
 
 ## postGamificationProfileDeactivate
 
-> PerformanceProfile postGamificationProfileDeactivate(profileId)
+> PerformanceProfile postGamificationProfileDeactivate(profileId, opts)
 
 
 POST /api/v2/gamification/profiles/{profileId}/deactivate
@@ -3690,8 +4175,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.GamificationApi();
 
 let profileId = "profileId_example"; // String | performanceProfileId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postGamificationProfileDeactivate(profileId)
+apiInstance.postGamificationProfileDeactivate(profileId, opts)
   .then((data) => {
     console.log(`postGamificationProfileDeactivate success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3707,6 +4198,7 @@ apiInstance.postGamificationProfileDeactivate(profileId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **profileId** | **String** | performanceProfileId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3715,7 +4207,7 @@ apiInstance.postGamificationProfileDeactivate(profileId)
 
 ## postGamificationProfileMembers
 
-> Assignment postGamificationProfileMembers(profileId, body)
+> Assignment postGamificationProfileMembers(profileId, body, opts)
 
 
 POST /api/v2/gamification/profiles/{profileId}/members
@@ -3741,8 +4233,14 @@ let apiInstance = new platformClient.GamificationApi();
 
 let profileId = "profileId_example"; // String | Profile Id
 let body = {}; // Object | assignUsers
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postGamificationProfileMembers(profileId, body)
+apiInstance.postGamificationProfileMembers(profileId, body, opts)
   .then((data) => {
     console.log(`postGamificationProfileMembers success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3759,6 +4257,7 @@ apiInstance.postGamificationProfileMembers(profileId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **profileId** | **String** | Profile Id |  |
  **body** | **Object** | assignUsers |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3767,7 +4266,7 @@ apiInstance.postGamificationProfileMembers(profileId, body)
 
 ## postGamificationProfileMembersValidate
 
-> AssignmentValidation postGamificationProfileMembersValidate(profileId, body)
+> AssignmentValidation postGamificationProfileMembersValidate(profileId, body, opts)
 
 
 POST /api/v2/gamification/profiles/{profileId}/members/validate
@@ -3793,8 +4292,14 @@ let apiInstance = new platformClient.GamificationApi();
 
 let profileId = "profileId_example"; // String | Profile Id
 let body = {}; // Object | memberAssignments
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postGamificationProfileMembersValidate(profileId, body)
+apiInstance.postGamificationProfileMembersValidate(profileId, body, opts)
   .then((data) => {
     console.log(`postGamificationProfileMembersValidate success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3811,6 +4316,7 @@ apiInstance.postGamificationProfileMembersValidate(profileId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **profileId** | **String** | Profile Id |  |
  **body** | **Object** | memberAssignments |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3819,7 +4325,7 @@ apiInstance.postGamificationProfileMembersValidate(profileId, body)
 
 ## postGamificationProfileMetricLink
 
-> Metric postGamificationProfileMetricLink(sourceProfileId, sourceMetricId, body)
+> Metric postGamificationProfileMetricLink(sourceProfileId, sourceMetricId, body, opts)
 
 
 POST /api/v2/gamification/profiles/{sourceProfileId}/metrics/{sourceMetricId}/link
@@ -3846,8 +4352,14 @@ let apiInstance = new platformClient.GamificationApi();
 let sourceProfileId = "sourceProfileId_example"; // String | Source Performance Profile Id
 let sourceMetricId = "sourceMetricId_example"; // String | Source Metric Id
 let body = {}; // Object | linkedMetric
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postGamificationProfileMetricLink(sourceProfileId, sourceMetricId, body)
+apiInstance.postGamificationProfileMetricLink(sourceProfileId, sourceMetricId, body, opts)
   .then((data) => {
     console.log(`postGamificationProfileMetricLink success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3865,6 +4377,7 @@ apiInstance.postGamificationProfileMetricLink(sourceProfileId, sourceMetricId, b
  **sourceProfileId** | **String** | Source Performance Profile Id |  |
  **sourceMetricId** | **String** | Source Metric Id |  |
  **body** | **Object** | linkedMetric |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3873,7 +4386,7 @@ apiInstance.postGamificationProfileMetricLink(sourceProfileId, sourceMetricId, b
 
 ## postGamificationProfileMetrics
 
-> Metric postGamificationProfileMetrics(profileId, body)
+> Metric postGamificationProfileMetrics(profileId, body, opts)
 
 
 POST /api/v2/gamification/profiles/{profileId}/metrics
@@ -3899,8 +4412,14 @@ let apiInstance = new platformClient.GamificationApi();
 
 let profileId = "profileId_example"; // String | Performance Profile Id
 let body = {}; // Object | Metric
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postGamificationProfileMetrics(profileId, body)
+apiInstance.postGamificationProfileMetrics(profileId, body, opts)
   .then((data) => {
     console.log(`postGamificationProfileMetrics success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3917,6 +4436,7 @@ apiInstance.postGamificationProfileMetrics(profileId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **profileId** | **String** | Performance Profile Id |  |
  **body** | **Object** | Metric |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3951,7 +4471,11 @@ let apiInstance = new platformClient.GamificationApi();
 
 let body = {}; // Object | performanceProfile
 let opts = { 
-  'copyMetrics': true // Boolean | Flag to copy metrics. If set to false, there will be no metrics associated with the new profile. If set to true or is absent (the default behavior), all metrics from the default profile will be copied over into the new profile.
+  'copyMetrics': true, // Boolean | Flag to copy metrics. If set to false, there will be no metrics associated with the new profile. If set to true or is absent (the default behavior), all metrics from the default profile will be copied over into the new profile.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postGamificationProfiles(body, opts)
@@ -3971,6 +4495,7 @@ apiInstance.postGamificationProfiles(body, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | performanceProfile |  |
  **copyMetrics** | **Boolean** | Flag to copy metrics. If set to false, there will be no metrics associated with the new profile. If set to true or is absent (the default behavior), all metrics from the default profile will be copied over into the new profile. | [optional] [default to true] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3979,7 +4504,7 @@ apiInstance.postGamificationProfiles(body, opts)
 
 ## postGamificationProfilesUserQuery
 
-> UserProfilesInDateRange postGamificationProfilesUserQuery(userId, body)
+> UserProfilesInDateRange postGamificationProfilesUserQuery(userId, body, opts)
 
 
 POST /api/v2/gamification/profiles/users/{userId}/query
@@ -4005,8 +4530,14 @@ let apiInstance = new platformClient.GamificationApi();
 
 let userId = "userId_example"; // String | The ID of a user.
 let body = {}; // Object | The date range of work day.
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postGamificationProfilesUserQuery(userId, body)
+apiInstance.postGamificationProfilesUserQuery(userId, body, opts)
   .then((data) => {
     console.log(`postGamificationProfilesUserQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4023,6 +4554,7 @@ apiInstance.postGamificationProfilesUserQuery(userId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **userId** | **String** | The ID of a user. |  |
  **body** | **Object** | The date range of work day. |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4031,7 +4563,7 @@ apiInstance.postGamificationProfilesUserQuery(userId, body)
 
 ## postGamificationProfilesUsersMeQuery
 
-> UserProfilesInDateRange postGamificationProfilesUsersMeQuery(body)
+> UserProfilesInDateRange postGamificationProfilesUsersMeQuery(body, opts)
 
 
 POST /api/v2/gamification/profiles/users/me/query
@@ -4054,8 +4586,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.GamificationApi();
 
 let body = {}; // Object | The date range of work day.
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postGamificationProfilesUsersMeQuery(body)
+apiInstance.postGamificationProfilesUsersMeQuery(body, opts)
   .then((data) => {
     console.log(`postGamificationProfilesUsersMeQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4071,6 +4609,7 @@ apiInstance.postGamificationProfilesUsersMeQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | The date range of work day. |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4079,7 +4618,7 @@ apiInstance.postGamificationProfilesUsersMeQuery(body)
 
 ## putGamificationContest
 
-> ContestsResponse putGamificationContest(contestId, body)
+> ContestsResponse putGamificationContest(contestId, body, opts)
 
 
 PUT /api/v2/gamification/contests/{contestId}
@@ -4106,8 +4645,14 @@ let apiInstance = new platformClient.GamificationApi();
 
 let contestId = "contestId_example"; // String | The ID of the contest
 let body = {}; // Object | Contest
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putGamificationContest(contestId, body)
+apiInstance.putGamificationContest(contestId, body, opts)
   .then((data) => {
     console.log(`putGamificationContest success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4124,6 +4669,7 @@ apiInstance.putGamificationContest(contestId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **contestId** | **String** | The ID of the contest |  |
  **body** | **Object** | Contest |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4158,7 +4704,11 @@ let apiInstance = new platformClient.GamificationApi();
 
 let profileId = "profileId_example"; // String | performanceProfileId
 let opts = { 
-  'body': {} // Object | performanceProfile
+  'body': {}, // Object | performanceProfile
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.putGamificationProfile(profileId, opts)
@@ -4178,6 +4728,7 @@ apiInstance.putGamificationProfile(profileId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **profileId** | **String** | performanceProfileId |  |
  **body** | **Object** | performanceProfile | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4186,7 +4737,7 @@ apiInstance.putGamificationProfile(profileId, opts)
 
 ## putGamificationProfileMetric
 
-> Metric putGamificationProfileMetric(profileId, metricId, body)
+> Metric putGamificationProfileMetric(profileId, metricId, body, opts)
 
 
 PUT /api/v2/gamification/profiles/{profileId}/metrics/{metricId}
@@ -4213,8 +4764,14 @@ let apiInstance = new platformClient.GamificationApi();
 let profileId = "profileId_example"; // String | Performance Profile Id
 let metricId = "metricId_example"; // String | Metric Id
 let body = {}; // Object | Metric
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putGamificationProfileMetric(profileId, metricId, body)
+apiInstance.putGamificationProfileMetric(profileId, metricId, body, opts)
   .then((data) => {
     console.log(`putGamificationProfileMetric success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4232,6 +4789,7 @@ apiInstance.putGamificationProfileMetric(profileId, metricId, body)
  **profileId** | **String** | Performance Profile Id |  |
  **metricId** | **String** | Metric Id |  |
  **body** | **Object** | Metric |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4240,7 +4798,7 @@ apiInstance.putGamificationProfileMetric(profileId, metricId, body)
 
 ## putGamificationStatus
 
-> GamificationStatus putGamificationStatus(status)
+> GamificationStatus putGamificationStatus(status, opts)
 
 
 PUT /api/v2/gamification/status
@@ -4265,8 +4823,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.GamificationApi();
 
 let status = {}; // Object | Gamification status
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putGamificationStatus(status)
+apiInstance.putGamificationStatus(status, opts)
   .then((data) => {
     console.log(`putGamificationStatus success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4282,10 +4846,11 @@ apiInstance.putGamificationStatus(status)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **status** | **Object** | Gamification status |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **GamificationStatus**
 
 
-_purecloud-platform-client-v2@229.1.0_
+_purecloud-platform-client-v2@258.0.0_

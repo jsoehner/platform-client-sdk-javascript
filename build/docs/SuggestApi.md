@@ -42,7 +42,11 @@ let apiInstance = new platformClient.SuggestApi();
 let q64 = "q64_example"; // String | q64
 let opts = { 
   'expand': ["expand_example"], // [String] | Which fields, if any, to expand
-  'profile': true // Boolean | profile
+  'profile': true, // Boolean | profile
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getSearch(q64, opts)
@@ -61,8 +65,9 @@ apiInstance.getSearch(q64, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **q64** | **String** | q64 |  |
- **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, groups, profileSkills, certifications, locations, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, dateWelcomeSent, callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation, conversations, transcription, images, addressVerificationDetails |
+ **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, groups, customAttributes, profileSkills, certifications, locations, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, dateWelcomeSent, callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation, conversations, transcription, images, addressVerificationDetails |
  **profile** | **Boolean** | profile | [optional] [default to true] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -98,7 +103,11 @@ let apiInstance = new platformClient.SuggestApi();
 let q64 = "q64_example"; // String | q64
 let opts = { 
   'expand': ["expand_example"], // [String] | Which fields, if any, to expand
-  'profile': true // Boolean | profile
+  'profile': true, // Boolean | profile
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getSearchSuggest(q64, opts)
@@ -117,8 +126,9 @@ apiInstance.getSearchSuggest(q64, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **q64** | **String** | q64 |  |
- **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, groups, profileSkills, certifications, locations, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, dateWelcomeSent, callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation, conversations, transcription, images, addressVerificationDetails |
+ **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, groups, customAttributes, profileSkills, certifications, locations, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, dateWelcomeSent, callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation, conversations, transcription, images, addressVerificationDetails |
  **profile** | **Boolean** | profile | [optional] [default to true] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -137,6 +147,7 @@ Search resources.
 Requires ANY permissions:
 
 * directory:user:view
+* routing:skill:view
 
 ### Example Usage
 
@@ -153,7 +164,11 @@ let apiInstance = new platformClient.SuggestApi();
 
 let body = {}; // Object | Search request options
 let opts = { 
-  'profile': true // Boolean | profile
+  'profile': true, // Boolean | profile
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postSearch(body, opts)
@@ -173,6 +188,7 @@ apiInstance.postSearch(body, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Search request options |  |
  **profile** | **Boolean** | profile | [optional] [default to true] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -207,7 +223,11 @@ let apiInstance = new platformClient.SuggestApi();
 
 let body = {}; // Object | Search request options
 let opts = { 
-  'profile': true // Boolean | profile
+  'profile': true, // Boolean | profile
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postSearchSuggest(body, opts)
@@ -227,10 +247,11 @@ apiInstance.postSearchSuggest(body, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Search request options |  |
  **profile** | **Boolean** | profile | [optional] [default to true] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **JsonNodeSearchResponse**
 
 
-_purecloud-platform-client-v2@229.1.0_
+_purecloud-platform-client-v2@258.0.0_

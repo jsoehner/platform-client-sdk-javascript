@@ -29,13 +29,25 @@ export default {
 			'https',
 			'url',
 			'zlib',
-			'axios',
-			'qs'
+			'axios'
 		]
 	},
 	plugins: [
 		builtins(),
 		nodeResolve({ browser: true }),
+		babel({
+			babelHelpers: 'bundled',
+			// extensions: ['.js'],
+			include: [
+				'src/**',
+				'node_modules/axios/**'
+			],
+			// presets: [
+			// 	['@babel/preset-env', { modules: false }]
+			// ]
+			// or add:
+			plugins: ['@babel/plugin-transform-nullish-coalescing-operator']
+		}),
 		replace({
 			// https://github.com/rollup/rollup-plugin-commonjs/issues/166#issuecomment-328853157
 			// do replace before commonjs
@@ -94,7 +106,6 @@ export default {
 		'querystring',
 		'tty',
 		'crypto',
-		'os',
-		'qs'
+		'os'
 	]
 };

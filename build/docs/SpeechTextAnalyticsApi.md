@@ -32,6 +32,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getSpeechandtextanalyticsProgramsMappings**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsProgramsMappings) | **GET** /api/v2/speechandtextanalytics/programs/mappings | Get the list of Speech and Text Analytics programs mappings to queues and flows
 [**getSpeechandtextanalyticsProgramsPublishjob**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsProgramsPublishjob) | **GET** /api/v2/speechandtextanalytics/programs/publishjobs/{jobId} | Get a Speech and Text Analytics publish programs job by id
 [**getSpeechandtextanalyticsProgramsSettingsInsights**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsProgramsSettingsInsights) | **GET** /api/v2/speechandtextanalytics/programs/settings/insights | Get the list of program AI Insights settings for the organization
+[**getSpeechandtextanalyticsProgramsTopiclinksJob**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsProgramsTopiclinksJob) | **GET** /api/v2/speechandtextanalytics/programs/topiclinks/jobs/{jobId} | Get a Speech and Text Analytics program-topic links job by id
 [**getSpeechandtextanalyticsProgramsTranscriptionenginesDialects**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsProgramsTranscriptionenginesDialects) | **GET** /api/v2/speechandtextanalytics/programs/transcriptionengines/dialects | Get supported dialects for each transcription engine
 [**getSpeechandtextanalyticsProgramsUnpublished**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsProgramsUnpublished) | **GET** /api/v2/speechandtextanalytics/programs/unpublished | Get the list of Speech and Text Analytics unpublished programs
 [**getSpeechandtextanalyticsReprocessingJob**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsReprocessingJob) | **GET** /api/v2/speechandtextanalytics/reprocessing/jobs/{jobId} | Get a Speech and Text Analytics reprocess job by id
@@ -74,7 +75,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ## deleteSpeechandtextanalyticsCategory
 
-> void deleteSpeechandtextanalyticsCategory(categoryId)
+> void deleteSpeechandtextanalyticsCategory(categoryId, opts)
 
 
 DELETE /api/v2/speechandtextanalytics/categories/{categoryId}
@@ -99,8 +100,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.SpeechTextAnalyticsApi();
 
 let categoryId = "categoryId_example"; // String | The id of the category
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteSpeechandtextanalyticsCategory(categoryId)
+apiInstance.deleteSpeechandtextanalyticsCategory(categoryId, opts)
   .then(() => {
     console.log('deleteSpeechandtextanalyticsCategory returned successfully.');
   })
@@ -116,6 +123,7 @@ apiInstance.deleteSpeechandtextanalyticsCategory(categoryId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **categoryId** | **String** | The id of the category |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -124,7 +132,7 @@ void (no response body)
 
 ## deleteSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId
 
-> void deleteSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId(dictionaryFeedbackId)
+> void deleteSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId(dictionaryFeedbackId, opts)
 
 
 DELETE /api/v2/speechandtextanalytics/dictionaryfeedback/{dictionaryFeedbackId}
@@ -149,8 +157,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.SpeechTextAnalyticsApi();
 
 let dictionaryFeedbackId = "dictionaryFeedbackId_example"; // String | The Id of the Dictionary Feedback
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId(dictionaryFeedbackId)
+apiInstance.deleteSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId(dictionaryFeedbackId, opts)
   .then(() => {
     console.log('deleteSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId returned successfully.');
   })
@@ -166,6 +180,7 @@ apiInstance.deleteSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId(d
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **dictionaryFeedbackId** | **String** | The Id of the Dictionary Feedback |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -200,7 +215,11 @@ let apiInstance = new platformClient.SpeechTextAnalyticsApi();
 
 let programId = "programId_example"; // String | The id of the program
 let opts = { 
-  'forceDelete': false // Boolean | Indicates whether the program is forced to be deleted or not. Required when the program to delete is the default program.
+  'forceDelete': false, // Boolean | Indicates whether the program is forced to be deleted or not. Required when the program to delete is the default program.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.deleteSpeechandtextanalyticsProgram(programId, opts)
@@ -220,6 +239,7 @@ apiInstance.deleteSpeechandtextanalyticsProgram(programId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **programId** | **String** | The id of the program |  |
  **forceDelete** | **Boolean** | Indicates whether the program is forced to be deleted or not. Required when the program to delete is the default program. | [optional] [default to false]<br />**Values**: true, false |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -228,7 +248,7 @@ apiInstance.deleteSpeechandtextanalyticsProgram(programId, opts)
 
 ## deleteSpeechandtextanalyticsReprocessingJob
 
-> void deleteSpeechandtextanalyticsReprocessingJob(jobId)
+> void deleteSpeechandtextanalyticsReprocessingJob(jobId, opts)
 
 
 DELETE /api/v2/speechandtextanalytics/reprocessing/jobs/{jobId}
@@ -255,8 +275,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.SpeechTextAnalyticsApi();
 
 let jobId = "jobId_example"; // String | The Id of the Reprocessing job
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteSpeechandtextanalyticsReprocessingJob(jobId)
+apiInstance.deleteSpeechandtextanalyticsReprocessingJob(jobId, opts)
   .then(() => {
     console.log('deleteSpeechandtextanalyticsReprocessingJob returned successfully.');
   })
@@ -272,6 +298,7 @@ apiInstance.deleteSpeechandtextanalyticsReprocessingJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | The Id of the Reprocessing job |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -280,7 +307,7 @@ void (no response body)
 
 ## deleteSpeechandtextanalyticsSentimentfeedback
 
-> void deleteSpeechandtextanalyticsSentimentfeedback()
+> void deleteSpeechandtextanalyticsSentimentfeedback(opts)
 
 
 DELETE /api/v2/speechandtextanalytics/sentimentfeedback
@@ -303,8 +330,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.SpeechTextAnalyticsApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteSpeechandtextanalyticsSentimentfeedback()
+apiInstance.deleteSpeechandtextanalyticsSentimentfeedback(opts)
   .then(() => {
     console.log('deleteSpeechandtextanalyticsSentimentfeedback returned successfully.');
   })
@@ -316,7 +349,10 @@ apiInstance.deleteSpeechandtextanalyticsSentimentfeedback()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -325,7 +361,7 @@ void (no response body)
 
 ## deleteSpeechandtextanalyticsSentimentfeedbackSentimentFeedbackId
 
-> void deleteSpeechandtextanalyticsSentimentfeedbackSentimentFeedbackId(sentimentFeedbackId)
+> void deleteSpeechandtextanalyticsSentimentfeedbackSentimentFeedbackId(sentimentFeedbackId, opts)
 
 
 DELETE /api/v2/speechandtextanalytics/sentimentfeedback/{sentimentFeedbackId}
@@ -350,8 +386,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.SpeechTextAnalyticsApi();
 
 let sentimentFeedbackId = "sentimentFeedbackId_example"; // String | The Id of the SentimentFeedback
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteSpeechandtextanalyticsSentimentfeedbackSentimentFeedbackId(sentimentFeedbackId)
+apiInstance.deleteSpeechandtextanalyticsSentimentfeedbackSentimentFeedbackId(sentimentFeedbackId, opts)
   .then(() => {
     console.log('deleteSpeechandtextanalyticsSentimentfeedbackSentimentFeedbackId returned successfully.');
   })
@@ -367,6 +409,7 @@ apiInstance.deleteSpeechandtextanalyticsSentimentfeedbackSentimentFeedbackId(sen
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **sentimentFeedbackId** | **String** | The Id of the SentimentFeedback |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -375,7 +418,7 @@ void (no response body)
 
 ## deleteSpeechandtextanalyticsTopic
 
-> void deleteSpeechandtextanalyticsTopic(topicId)
+> void deleteSpeechandtextanalyticsTopic(topicId, opts)
 
 
 DELETE /api/v2/speechandtextanalytics/topics/{topicId}
@@ -400,8 +443,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.SpeechTextAnalyticsApi();
 
 let topicId = "topicId_example"; // String | The id of the topic
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteSpeechandtextanalyticsTopic(topicId)
+apiInstance.deleteSpeechandtextanalyticsTopic(topicId, opts)
   .then(() => {
     console.log('deleteSpeechandtextanalyticsTopic returned successfully.');
   })
@@ -417,6 +466,7 @@ apiInstance.deleteSpeechandtextanalyticsTopic(topicId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **topicId** | **String** | The id of the topic |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -455,7 +505,11 @@ let opts = {
   'name': "name_example", // String | The category name filter applied to the listing
   'sortOrder': "asc", // String | The sort order for the listing
   'sortBy': "name", // String | The field to sort by for the listing
-  'ids': ["ids_example"] // [String] | Comma separated Category IDs to filter by. Cannot be used with other filters. Maximum of 25 IDs allowed.
+  'ids': ["ids_example"], // [String] | Comma separated Category IDs to filter by. Cannot be used with other filters. Maximum of 25 IDs allowed.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getSpeechandtextanalyticsCategories(opts)
@@ -479,6 +533,7 @@ apiInstance.getSpeechandtextanalyticsCategories(opts)
  **sortOrder** | **String** | The sort order for the listing | [optional] [default to asc]<br />**Values**: asc, desc |
  **sortBy** | **String** | The field to sort by for the listing | [optional] [default to name]<br />**Values**: name, description |
  **ids** | **[String]** | Comma separated Category IDs to filter by. Cannot be used with other filters. Maximum of 25 IDs allowed. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -487,7 +542,7 @@ apiInstance.getSpeechandtextanalyticsCategories(opts)
 
 ## getSpeechandtextanalyticsCategory
 
-> StaCategory getSpeechandtextanalyticsCategory(categoryId)
+> StaCategory getSpeechandtextanalyticsCategory(categoryId, opts)
 
 
 GET /api/v2/speechandtextanalytics/categories/{categoryId}
@@ -512,8 +567,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.SpeechTextAnalyticsApi();
 
 let categoryId = "categoryId_example"; // String | The id of the category
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getSpeechandtextanalyticsCategory(categoryId)
+apiInstance.getSpeechandtextanalyticsCategory(categoryId, opts)
   .then((data) => {
     console.log(`getSpeechandtextanalyticsCategory success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -529,6 +590,7 @@ apiInstance.getSpeechandtextanalyticsCategory(categoryId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **categoryId** | **String** | The id of the category |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -537,7 +599,7 @@ apiInstance.getSpeechandtextanalyticsCategory(categoryId)
 
 ## getSpeechandtextanalyticsConversation
 
-> ConversationMetrics getSpeechandtextanalyticsConversation(conversationId)
+> ConversationMetrics getSpeechandtextanalyticsConversation(conversationId, opts)
 
 
 GET /api/v2/speechandtextanalytics/conversations/{conversationId}
@@ -563,8 +625,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.SpeechTextAnalyticsApi();
 
 let conversationId = "conversationId_example"; // String | Conversation Id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getSpeechandtextanalyticsConversation(conversationId)
+apiInstance.getSpeechandtextanalyticsConversation(conversationId, opts)
   .then((data) => {
     console.log(`getSpeechandtextanalyticsConversation success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -580,6 +648,7 @@ apiInstance.getSpeechandtextanalyticsConversation(conversationId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | Conversation Id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -615,7 +684,11 @@ let apiInstance = new platformClient.SpeechTextAnalyticsApi();
 let conversationId = "conversationId_example"; // String | The id of the conversation
 let opts = { 
   'pageSize': 25, // Number | The page size for the listing. The max that will be returned is 50.
-  'pageNumber': 1 // Number | The page number for the listing
+  'pageNumber': 1, // Number | The page number for the listing
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getSpeechandtextanalyticsConversationCategories(conversationId, opts)
@@ -636,6 +709,7 @@ apiInstance.getSpeechandtextanalyticsConversationCategories(conversationId, opts
  **conversationId** | **String** | The id of the conversation |  |
  **pageSize** | **Number** | The page size for the listing. The max that will be returned is 50. | [optional] [default to 25] |
  **pageNumber** | **Number** | The page number for the listing | [optional] [default to 1] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -644,7 +718,7 @@ apiInstance.getSpeechandtextanalyticsConversationCategories(conversationId, opts
 
 ## getSpeechandtextanalyticsConversationCommunicationTranscripturl
 
-> TranscriptUrl getSpeechandtextanalyticsConversationCommunicationTranscripturl(conversationId, communicationId)
+> TranscriptUrl getSpeechandtextanalyticsConversationCommunicationTranscripturl(conversationId, communicationId, opts)
 
 
 GET /api/v2/speechandtextanalytics/conversations/{conversationId}/communications/{communicationId}/transcripturl
@@ -671,8 +745,14 @@ let apiInstance = new platformClient.SpeechTextAnalyticsApi();
 
 let conversationId = "conversationId_example"; // String | Conversation ID
 let communicationId = "communicationId_example"; // String | Communication ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getSpeechandtextanalyticsConversationCommunicationTranscripturl(conversationId, communicationId)
+apiInstance.getSpeechandtextanalyticsConversationCommunicationTranscripturl(conversationId, communicationId, opts)
   .then((data) => {
     console.log(`getSpeechandtextanalyticsConversationCommunicationTranscripturl success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -689,6 +769,7 @@ apiInstance.getSpeechandtextanalyticsConversationCommunicationTranscripturl(conv
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | Conversation ID |  |
  **communicationId** | **String** | Communication ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -697,7 +778,7 @@ apiInstance.getSpeechandtextanalyticsConversationCommunicationTranscripturl(conv
 
 ## getSpeechandtextanalyticsConversationCommunicationTranscripturls
 
-> TranscriptUrls getSpeechandtextanalyticsConversationCommunicationTranscripturls(conversationId, communicationId)
+> TranscriptUrls getSpeechandtextanalyticsConversationCommunicationTranscripturls(conversationId, communicationId, opts)
 
 
 GET /api/v2/speechandtextanalytics/conversations/{conversationId}/communications/{communicationId}/transcripturls
@@ -724,8 +805,14 @@ let apiInstance = new platformClient.SpeechTextAnalyticsApi();
 
 let conversationId = "conversationId_example"; // String | Conversation ID
 let communicationId = "communicationId_example"; // String | Communication ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getSpeechandtextanalyticsConversationCommunicationTranscripturls(conversationId, communicationId)
+apiInstance.getSpeechandtextanalyticsConversationCommunicationTranscripturls(conversationId, communicationId, opts)
   .then((data) => {
     console.log(`getSpeechandtextanalyticsConversationCommunicationTranscripturls success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -742,6 +829,7 @@ apiInstance.getSpeechandtextanalyticsConversationCommunicationTranscripturls(con
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | Conversation ID |  |
  **communicationId** | **String** | Communication ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -750,7 +838,7 @@ apiInstance.getSpeechandtextanalyticsConversationCommunicationTranscripturls(con
 
 ## getSpeechandtextanalyticsConversationSentiments
 
-> SentimentData getSpeechandtextanalyticsConversationSentiments(conversationId)
+> SentimentData getSpeechandtextanalyticsConversationSentiments(conversationId, opts)
 
 
 GET /api/v2/speechandtextanalytics/conversations/{conversationId}/sentiments
@@ -760,9 +848,6 @@ Get sentiment data
 Requires ALL permissions:
 
 * speechAndTextAnalytics:sentimentData:view
-* speechAndTextAnalytics:data:view
-* recording:recording:view
-* recording:recording:viewSensitiveData
 
 ### Example Usage
 
@@ -778,8 +863,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.SpeechTextAnalyticsApi();
 
 let conversationId = "conversationId_example"; // String | The conversation ID of the sentiment data
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getSpeechandtextanalyticsConversationSentiments(conversationId)
+apiInstance.getSpeechandtextanalyticsConversationSentiments(conversationId, opts)
   .then((data) => {
     console.log(`getSpeechandtextanalyticsConversationSentiments success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -795,6 +886,7 @@ apiInstance.getSpeechandtextanalyticsConversationSentiments(conversationId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | The conversation ID of the sentiment data |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -803,7 +895,7 @@ apiInstance.getSpeechandtextanalyticsConversationSentiments(conversationId)
 
 ## getSpeechandtextanalyticsConversationSummaries
 
-> SpeechTextAnalyticsConversationSummaryListing getSpeechandtextanalyticsConversationSummaries(conversationId)
+> SpeechTextAnalyticsConversationSummaryListing getSpeechandtextanalyticsConversationSummaries(conversationId, opts)
 
 
 GET /api/v2/speechandtextanalytics/conversations/{conversationId}/summaries
@@ -813,8 +905,6 @@ Get conversation summaries by conversation id.
 Requires ALL permissions:
 
 * speechAndTextAnalytics:aiSummary:view
-* recording:recording:view
-* recording:recording:viewSensitiveData
 
 ### Example Usage
 
@@ -830,8 +920,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.SpeechTextAnalyticsApi();
 
 let conversationId = "conversationId_example"; // String | The conversation ID of the summaries
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getSpeechandtextanalyticsConversationSummaries(conversationId)
+apiInstance.getSpeechandtextanalyticsConversationSummaries(conversationId, opts)
   .then((data) => {
     console.log(`getSpeechandtextanalyticsConversationSummaries success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -847,6 +943,7 @@ apiInstance.getSpeechandtextanalyticsConversationSummaries(conversationId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | The conversation ID of the summaries |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -881,8 +978,13 @@ let apiInstance = new platformClient.SpeechTextAnalyticsApi();
 
 let opts = { 
   'dialect': en-US, // String | The key for filter the listing by dialect, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard
+  'transcriptionEngine': "transcriptionEngine_example", // String | Filter by transcription engine, If not provided, all transcription engines will be considered
   'nextPage': "nextPage_example", // String | The key for listing the next page
-  'pageSize': 500 // Number | The page size for the listing
+  'pageSize': 500, // Number | The page size for the listing. Default is 500 per page. Note: organizations may store up to 1000 dictionary terms per dialect; use nextPage to paginate beyond the first page when listing a full dialect vocabulary.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getSpeechandtextanalyticsDictionaryfeedback(opts)
@@ -901,8 +1003,10 @@ apiInstance.getSpeechandtextanalyticsDictionaryfeedback(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **dialect** | **String** | The key for filter the listing by dialect, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard | [optional]  |
+ **transcriptionEngine** | **String** | Filter by transcription engine, If not provided, all transcription engines will be considered | [optional] <br />**Values**: Genesys, GenesysExtended |
  **nextPage** | **String** | The key for listing the next page | [optional]  |
- **pageSize** | **Number** | The page size for the listing | [optional] [default to 500] |
+ **pageSize** | **Number** | The page size for the listing. Default is 500 per page. Note: organizations may store up to 1000 dictionary terms per dialect; use nextPage to paginate beyond the first page when listing a full dialect vocabulary. | [optional] [default to 500] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -911,7 +1015,7 @@ apiInstance.getSpeechandtextanalyticsDictionaryfeedback(opts)
 
 ## getSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId
 
-> DictionaryFeedback getSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId(dictionaryFeedbackId)
+> DictionaryFeedback getSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId(dictionaryFeedbackId, opts)
 
 
 GET /api/v2/speechandtextanalytics/dictionaryfeedback/{dictionaryFeedbackId}
@@ -936,8 +1040,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.SpeechTextAnalyticsApi();
 
 let dictionaryFeedbackId = "dictionaryFeedbackId_example"; // String | The Id of the Dictionary Feedback
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId(dictionaryFeedbackId)
+apiInstance.getSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId(dictionaryFeedbackId, opts)
   .then((data) => {
     console.log(`getSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -953,6 +1063,7 @@ apiInstance.getSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId(dict
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **dictionaryFeedbackId** | **String** | The Id of the Dictionary Feedback |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -961,7 +1072,7 @@ apiInstance.getSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId(dict
 
 ## getSpeechandtextanalyticsProgram
 
-> Program getSpeechandtextanalyticsProgram(programId)
+> Program getSpeechandtextanalyticsProgram(programId, opts)
 
 
 GET /api/v2/speechandtextanalytics/programs/{programId}
@@ -986,8 +1097,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.SpeechTextAnalyticsApi();
 
 let programId = "programId_example"; // String | The id of the program
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getSpeechandtextanalyticsProgram(programId)
+apiInstance.getSpeechandtextanalyticsProgram(programId, opts)
   .then((data) => {
     console.log(`getSpeechandtextanalyticsProgram success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1003,6 +1120,7 @@ apiInstance.getSpeechandtextanalyticsProgram(programId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **programId** | **String** | The id of the program |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1011,7 +1129,7 @@ apiInstance.getSpeechandtextanalyticsProgram(programId)
 
 ## getSpeechandtextanalyticsProgramMappings
 
-> ProgramMappings getSpeechandtextanalyticsProgramMappings(programId)
+> TopicsDefinitionsProgramMappings getSpeechandtextanalyticsProgramMappings(programId, opts)
 
 
 GET /api/v2/speechandtextanalytics/programs/{programId}/mappings
@@ -1036,8 +1154,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.SpeechTextAnalyticsApi();
 
 let programId = "programId_example"; // String | The id of the program
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getSpeechandtextanalyticsProgramMappings(programId)
+apiInstance.getSpeechandtextanalyticsProgramMappings(programId, opts)
   .then((data) => {
     console.log(`getSpeechandtextanalyticsProgramMappings success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1053,15 +1177,16 @@ apiInstance.getSpeechandtextanalyticsProgramMappings(programId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **programId** | **String** | The id of the program |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
-**ProgramMappings**
+**TopicsDefinitionsProgramMappings**
 
 
 ## getSpeechandtextanalyticsProgramSettingsInsights
 
-> ProgramInsightsSettings getSpeechandtextanalyticsProgramSettingsInsights(programId)
+> ProgramInsightsSettings getSpeechandtextanalyticsProgramSettingsInsights(programId, opts)
 
 
 GET /api/v2/speechandtextanalytics/programs/{programId}/settings/insights
@@ -1087,8 +1212,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.SpeechTextAnalyticsApi();
 
 let programId = "programId_example"; // String | The id of the program
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getSpeechandtextanalyticsProgramSettingsInsights(programId)
+apiInstance.getSpeechandtextanalyticsProgramSettingsInsights(programId, opts)
   .then((data) => {
     console.log(`getSpeechandtextanalyticsProgramSettingsInsights success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1104,6 +1235,7 @@ apiInstance.getSpeechandtextanalyticsProgramSettingsInsights(programId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **programId** | **String** | The id of the program |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1112,7 +1244,7 @@ apiInstance.getSpeechandtextanalyticsProgramSettingsInsights(programId)
 
 ## getSpeechandtextanalyticsProgramTranscriptionengines
 
-> ProgramTranscriptionEngines getSpeechandtextanalyticsProgramTranscriptionengines(programId)
+> ProgramTranscriptionEngines getSpeechandtextanalyticsProgramTranscriptionengines(programId, opts)
 
 
 GET /api/v2/speechandtextanalytics/programs/{programId}/transcriptionengines
@@ -1137,8 +1269,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.SpeechTextAnalyticsApi();
 
 let programId = "programId_example"; // String | The id of the program
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getSpeechandtextanalyticsProgramTranscriptionengines(programId)
+apiInstance.getSpeechandtextanalyticsProgramTranscriptionengines(programId, opts)
   .then((data) => {
     console.log(`getSpeechandtextanalyticsProgramTranscriptionengines success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1154,6 +1292,7 @@ apiInstance.getSpeechandtextanalyticsProgramTranscriptionengines(programId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **programId** | **String** | The id of the program |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1189,7 +1328,15 @@ let apiInstance = new platformClient.SpeechTextAnalyticsApi();
 let opts = { 
   'nextPage': "nextPage_example", // String | The key for listing the next page
   'pageSize': 20, // Number | The page size for the listing
-  'state': "state_example" // String | Program state. Defaults to Latest
+  'state': "state_example", // String | Program state. Defaults to Latest
+  'name': "name_example", // String | Case insensitive partial name to filter by
+  'ids': ["ids_example"], // [String] | Comma separated Program IDs to filter by. Cannot be used with pagination params. Maximum of 50 IDs allowed.
+  'sortBy': "sortBy_example", // String | Sort results by. Defaults to name
+  'sortOrder': "sortOrder_example", // String | Sort order. Defaults to asc
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getSpeechandtextanalyticsPrograms(opts)
@@ -1210,6 +1357,11 @@ apiInstance.getSpeechandtextanalyticsPrograms(opts)
  **nextPage** | **String** | The key for listing the next page | [optional]  |
  **pageSize** | **Number** | The page size for the listing | [optional] [default to 20] |
  **state** | **String** | Program state. Defaults to Latest | [optional] <br />**Values**: Latest, Published |
+ **name** | **String** | Case insensitive partial name to filter by | [optional]  |
+ **ids** | **[String]** | Comma separated Program IDs to filter by. Cannot be used with pagination params. Maximum of 50 IDs allowed. | [optional]  |
+ **sortBy** | **String** | Sort results by. Defaults to name | [optional] <br />**Values**: name |
+ **sortOrder** | **String** | Sort order. Defaults to asc | [optional] <br />**Values**: asc, desc |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1218,7 +1370,7 @@ apiInstance.getSpeechandtextanalyticsPrograms(opts)
 
 ## getSpeechandtextanalyticsProgramsGeneralJob
 
-> GeneralProgramJob getSpeechandtextanalyticsProgramsGeneralJob(jobId)
+> GeneralProgramJob getSpeechandtextanalyticsProgramsGeneralJob(jobId, opts)
 
 
 GET /api/v2/speechandtextanalytics/programs/general/jobs/{jobId}
@@ -1246,8 +1398,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.SpeechTextAnalyticsApi();
 
 let jobId = "jobId_example"; // String | The id of the publish programs job
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getSpeechandtextanalyticsProgramsGeneralJob(jobId)
+apiInstance.getSpeechandtextanalyticsProgramsGeneralJob(jobId, opts)
   .then((data) => {
     console.log(`getSpeechandtextanalyticsProgramsGeneralJob success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1263,6 +1421,7 @@ apiInstance.getSpeechandtextanalyticsProgramsGeneralJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | The id of the publish programs job |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1271,7 +1430,7 @@ apiInstance.getSpeechandtextanalyticsProgramsGeneralJob(jobId)
 
 ## getSpeechandtextanalyticsProgramsMappings
 
-> ProgramsMappingsEntityListing getSpeechandtextanalyticsProgramsMappings(opts)
+> TopicsDefinitionsProgramsMappingsEntityListing getSpeechandtextanalyticsProgramsMappings(opts)
 
 
 GET /api/v2/speechandtextanalytics/programs/mappings
@@ -1297,7 +1456,11 @@ let apiInstance = new platformClient.SpeechTextAnalyticsApi();
 
 let opts = { 
   'nextPage': "nextPage_example", // String | The key for listing the next page
-  'pageSize': 20 // Number | The page size for the listing
+  'pageSize': 20, // Number | The page size for the listing
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getSpeechandtextanalyticsProgramsMappings(opts)
@@ -1317,15 +1480,16 @@ apiInstance.getSpeechandtextanalyticsProgramsMappings(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **nextPage** | **String** | The key for listing the next page | [optional]  |
  **pageSize** | **Number** | The page size for the listing | [optional] [default to 20] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
-**ProgramsMappingsEntityListing**
+**TopicsDefinitionsProgramsMappingsEntityListing**
 
 
 ## getSpeechandtextanalyticsProgramsPublishjob
 
-> ProgramJob getSpeechandtextanalyticsProgramsPublishjob(jobId)
+> ProgramJob getSpeechandtextanalyticsProgramsPublishjob(jobId, opts)
 
 
 GET /api/v2/speechandtextanalytics/programs/publishjobs/{jobId}
@@ -1350,8 +1514,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.SpeechTextAnalyticsApi();
 
 let jobId = "jobId_example"; // String | The id of the publish programs job
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getSpeechandtextanalyticsProgramsPublishjob(jobId)
+apiInstance.getSpeechandtextanalyticsProgramsPublishjob(jobId, opts)
   .then((data) => {
     console.log(`getSpeechandtextanalyticsProgramsPublishjob success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1367,6 +1537,7 @@ apiInstance.getSpeechandtextanalyticsProgramsPublishjob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | The id of the publish programs job |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1403,7 +1574,11 @@ let apiInstance = new platformClient.SpeechTextAnalyticsApi();
 let opts = { 
   'pageSize': 100, // Number | The page size for the listing. The max that will be returned is 100.
   'pageNumber': 1, // Number | The page number for the listing
-  'programIds': ["programIds_example"] // [String] | Comma separated Program IDs to filter by. Maximum of 50 IDs allowed.
+  'programIds': ["programIds_example"], // [String] | Comma separated Program IDs to filter by. Maximum of 50 IDs allowed.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getSpeechandtextanalyticsProgramsSettingsInsights(opts)
@@ -1424,15 +1599,73 @@ apiInstance.getSpeechandtextanalyticsProgramsSettingsInsights(opts)
  **pageSize** | **Number** | The page size for the listing. The max that will be returned is 100. | [optional] [default to 100] |
  **pageNumber** | **Number** | The page number for the listing | [optional] [default to 1] |
  **programIds** | **[String]** | Comma separated Program IDs to filter by. Maximum of 50 IDs allowed. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **ProgramInsightsSettingsEntityListing**
 
 
+## getSpeechandtextanalyticsProgramsTopiclinksJob
+
+> ProgramTopicLinksJob getSpeechandtextanalyticsProgramsTopiclinksJob(jobId, opts)
+
+
+GET /api/v2/speechandtextanalytics/programs/topiclinks/jobs/{jobId}
+
+Get a Speech and Text Analytics program-topic links job by id
+
+Requires ALL permissions:
+
+* speechAndTextAnalytics:program:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.SpeechTextAnalyticsApi();
+
+let jobId = "jobId_example"; // String | The id of the program-topic links job
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getSpeechandtextanalyticsProgramsTopiclinksJob(jobId, opts)
+  .then((data) => {
+    console.log(`getSpeechandtextanalyticsProgramsTopiclinksJob success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getSpeechandtextanalyticsProgramsTopiclinksJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | The id of the program-topic links job |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**ProgramTopicLinksJob**
+
+
 ## getSpeechandtextanalyticsProgramsTranscriptionenginesDialects
 
-> SupportedDialectsEntityListing getSpeechandtextanalyticsProgramsTranscriptionenginesDialects()
+> SupportedDialectsEntityListing getSpeechandtextanalyticsProgramsTranscriptionenginesDialects(opts)
 
 
 GET /api/v2/speechandtextanalytics/programs/transcriptionengines/dialects
@@ -1453,8 +1686,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.SpeechTextAnalyticsApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getSpeechandtextanalyticsProgramsTranscriptionenginesDialects()
+apiInstance.getSpeechandtextanalyticsProgramsTranscriptionenginesDialects(opts)
   .then((data) => {
     console.log(`getSpeechandtextanalyticsProgramsTranscriptionenginesDialects success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1466,7 +1705,10 @@ apiInstance.getSpeechandtextanalyticsProgramsTranscriptionenginesDialects()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1501,7 +1743,11 @@ let apiInstance = new platformClient.SpeechTextAnalyticsApi();
 
 let opts = { 
   'nextPage': "nextPage_example", // String | The key for listing the next page
-  'pageSize': 20 // Number | The page size for the listing
+  'pageSize': 20, // Number | The page size for the listing
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getSpeechandtextanalyticsProgramsUnpublished(opts)
@@ -1521,6 +1767,7 @@ apiInstance.getSpeechandtextanalyticsProgramsUnpublished(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **nextPage** | **String** | The key for listing the next page | [optional]  |
  **pageSize** | **Number** | The page size for the listing | [optional] [default to 20] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1529,7 +1776,7 @@ apiInstance.getSpeechandtextanalyticsProgramsUnpublished(opts)
 
 ## getSpeechandtextanalyticsReprocessingJob
 
-> ReprocessJobResponse getSpeechandtextanalyticsReprocessingJob(jobId)
+> ReprocessJobResponse getSpeechandtextanalyticsReprocessingJob(jobId, opts)
 
 
 GET /api/v2/speechandtextanalytics/reprocessing/jobs/{jobId}
@@ -1556,8 +1803,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.SpeechTextAnalyticsApi();
 
 let jobId = "jobId_example"; // String | The Id of the Reprocessing job
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getSpeechandtextanalyticsReprocessingJob(jobId)
+apiInstance.getSpeechandtextanalyticsReprocessingJob(jobId, opts)
   .then((data) => {
     console.log(`getSpeechandtextanalyticsReprocessingJob success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1573,6 +1826,7 @@ apiInstance.getSpeechandtextanalyticsReprocessingJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | The Id of the Reprocessing job |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1581,7 +1835,7 @@ apiInstance.getSpeechandtextanalyticsReprocessingJob(jobId)
 
 ## getSpeechandtextanalyticsReprocessingJobInteractions
 
-> ReprocessInteractionsByJobIdResponse getSpeechandtextanalyticsReprocessingJobInteractions(jobId)
+> ReprocessInteractionsByJobIdResponse getSpeechandtextanalyticsReprocessingJobInteractions(jobId, opts)
 
 
 GET /api/v2/speechandtextanalytics/reprocessing/jobs/{jobId}/interactions
@@ -1608,8 +1862,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.SpeechTextAnalyticsApi();
 
 let jobId = "jobId_example"; // String | The Id of the Reprocessing job
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getSpeechandtextanalyticsReprocessingJobInteractions(jobId)
+apiInstance.getSpeechandtextanalyticsReprocessingJobInteractions(jobId, opts)
   .then((data) => {
     console.log(`getSpeechandtextanalyticsReprocessingJobInteractions success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1625,6 +1885,7 @@ apiInstance.getSpeechandtextanalyticsReprocessingJobInteractions(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | The Id of the Reprocessing job |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1663,7 +1924,11 @@ let opts = {
   'pageSize': 3.4, // Number | The page size for the listing. The max that will be returned is 100. Default is 25.
   'pageNumber': 3.4, // Number | The page number for the listing. Defaults to 1.
   'sortOrder': "sortOrder_example", // String | Results are sorted by dateCreated. Please choose the sort order. The default is descending (desc).
-  'name': "name_example" // String | Case insensitive partial name to filter by.
+  'name': "name_example", // String | Case insensitive partial name to filter by.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getSpeechandtextanalyticsReprocessingJobs(opts)
@@ -1685,6 +1950,7 @@ apiInstance.getSpeechandtextanalyticsReprocessingJobs(opts)
  **pageNumber** | **Number** | The page number for the listing. Defaults to 1. | [optional]  |
  **sortOrder** | **String** | Results are sorted by dateCreated. Please choose the sort order. The default is descending (desc). | [optional] <br />**Values**: asc, desc |
  **name** | **String** | Case insensitive partial name to filter by. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1693,7 +1959,7 @@ apiInstance.getSpeechandtextanalyticsReprocessingJobs(opts)
 
 ## getSpeechandtextanalyticsSentimentDialects
 
-> EntityListing getSpeechandtextanalyticsSentimentDialects()
+> EntityListing getSpeechandtextanalyticsSentimentDialects(opts)
 
 
 GET /api/v2/speechandtextanalytics/sentiment/dialects
@@ -1714,8 +1980,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.SpeechTextAnalyticsApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getSpeechandtextanalyticsSentimentDialects()
+apiInstance.getSpeechandtextanalyticsSentimentDialects(opts)
   .then((data) => {
     console.log(`getSpeechandtextanalyticsSentimentDialects success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1727,7 +1999,10 @@ apiInstance.getSpeechandtextanalyticsSentimentDialects()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1761,7 +2036,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.SpeechTextAnalyticsApi();
 
 let opts = { 
-  'dialect': en-US // String | The key for filter the listing by dialect, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard
+  'dialect': en-US, // String | The key for filter the listing by dialect, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getSpeechandtextanalyticsSentimentfeedback(opts)
@@ -1780,6 +2059,7 @@ apiInstance.getSpeechandtextanalyticsSentimentfeedback(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **dialect** | **String** | The key for filter the listing by dialect, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1788,7 +2068,7 @@ apiInstance.getSpeechandtextanalyticsSentimentfeedback(opts)
 
 ## getSpeechandtextanalyticsSettings
 
-> SpeechTextAnalyticsSettingsResponse getSpeechandtextanalyticsSettings()
+> SpeechTextAnalyticsSettingsResponse getSpeechandtextanalyticsSettings(opts)
 
 
 GET /api/v2/speechandtextanalytics/settings
@@ -1811,8 +2091,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.SpeechTextAnalyticsApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getSpeechandtextanalyticsSettings()
+apiInstance.getSpeechandtextanalyticsSettings(opts)
   .then((data) => {
     console.log(`getSpeechandtextanalyticsSettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1824,7 +2110,10 @@ apiInstance.getSpeechandtextanalyticsSettings()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1833,7 +2122,7 @@ This endpoint does not need any parameter.
 
 ## getSpeechandtextanalyticsTopic
 
-> Topic getSpeechandtextanalyticsTopic(topicId)
+> Topic getSpeechandtextanalyticsTopic(topicId, opts)
 
 
 GET /api/v2/speechandtextanalytics/topics/{topicId}
@@ -1858,8 +2147,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.SpeechTextAnalyticsApi();
 
 let topicId = "topicId_example"; // String | The id of the topic
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getSpeechandtextanalyticsTopic(topicId)
+apiInstance.getSpeechandtextanalyticsTopic(topicId, opts)
   .then((data) => {
     console.log(`getSpeechandtextanalyticsTopic success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1875,6 +2170,7 @@ apiInstance.getSpeechandtextanalyticsTopic(topicId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **topicId** | **String** | The id of the topic |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1910,12 +2206,17 @@ let apiInstance = new platformClient.SpeechTextAnalyticsApi();
 let opts = { 
   'nextPage': "nextPage_example", // String | The key for listing the next page
   'pageSize': 20, // Number | The page size for the listing. The max that will be returned is 500.
+  'pageNumber': 3.4, // Number | The page number for the listing
   'state': "state_example", // String | Topic state. Defaults to latest
   'name': "name_example", // String | Case insensitive partial name to filter by
   'ids': ["ids_example"], // [String] | Comma separated Topic IDs to filter by. Cannot be used with other filters. Maximum of 50 IDs allowed.
   'dialects': ["dialects_example"], // [String] | Comma separated dialect strings to filter by. Maximum of 15 dialects allowed.
   'sortBy': "sortBy_example", // String | Sort results by. Defaults to name
-  'sortOrder': "sortOrder_example" // String | Sort order. Defaults to asc
+  'sortOrder': "sortOrder_example", // String | Sort order. Defaults to asc
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getSpeechandtextanalyticsTopics(opts)
@@ -1935,12 +2236,14 @@ apiInstance.getSpeechandtextanalyticsTopics(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **nextPage** | **String** | The key for listing the next page | [optional]  |
  **pageSize** | **Number** | The page size for the listing. The max that will be returned is 500. | [optional] [default to 20] |
+ **pageNumber** | **Number** | The page number for the listing | [optional]  |
  **state** | **String** | Topic state. Defaults to latest | [optional] <br />**Values**: latest, published |
  **name** | **String** | Case insensitive partial name to filter by | [optional]  |
  **ids** | **[String]** | Comma separated Topic IDs to filter by. Cannot be used with other filters. Maximum of 50 IDs allowed. | [optional]  |
  **dialects** | **[String]** | Comma separated dialect strings to filter by. Maximum of 15 dialects allowed. | [optional] <br />**Values**: en-US, es-US, en-AU, en-GB, en-ZA, es-ES, en-IN, fr-FR, fr-CA, it-IT, de-DE, pt-BR, pl-PL, pt-PT, nl-NL, ko-KR |
- **sortBy** | **String** | Sort results by. Defaults to name | [optional] <br />**Values**: name |
+ **sortBy** | **String** | Sort results by. Defaults to name | [optional] <br />**Values**: name, matchingType |
  **sortOrder** | **String** | Sort order. Defaults to asc | [optional] <br />**Values**: asc, desc |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1949,7 +2252,7 @@ apiInstance.getSpeechandtextanalyticsTopics(opts)
 
 ## getSpeechandtextanalyticsTopicsDialects
 
-> EntityListing getSpeechandtextanalyticsTopicsDialects()
+> EntityListing getSpeechandtextanalyticsTopicsDialects(opts)
 
 
 GET /api/v2/speechandtextanalytics/topics/dialects
@@ -1970,8 +2273,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.SpeechTextAnalyticsApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getSpeechandtextanalyticsTopicsDialects()
+apiInstance.getSpeechandtextanalyticsTopicsDialects(opts)
   .then((data) => {
     console.log(`getSpeechandtextanalyticsTopicsDialects success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1983,7 +2292,10 @@ apiInstance.getSpeechandtextanalyticsTopicsDialects()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2017,7 +2329,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.SpeechTextAnalyticsApi();
 
 let opts = { 
-  'dialect': "dialect_example" // String | The dialect of the general topics, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard
+  'dialect': "dialect_example", // String | The dialect of the general topics, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getSpeechandtextanalyticsTopicsGeneral(opts)
@@ -2035,7 +2351,8 @@ apiInstance.getSpeechandtextanalyticsTopicsGeneral(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **dialect** | **String** | The dialect of the general topics, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard | [optional] <br />**Values**: ar-001, ar-AE, ar-BH, ar-EG, ar-IL, ar-SA, ar-TN, da-DK, de-CH, de-DE, en-AU, en-GB, en-HK, en-IE, en-IN, en-NZ, en-SG, en-US, en-ZA, es-ES, es-US, fi-FI, fr-CA, fr-FR, he-IL, hi-IN, it-IT, ja-JP, ko-KR, nb-NO, nl-NL, pl-PL, pt-BR, pt-PT, sv-SE |
+ **dialect** | **String** | The dialect of the general topics, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard | [optional] <br />**Values**: ar-001, ar-AE, ar-BH, ar-EG, ar-IL, ar-SA, ar-TN, da-DK, de-CH, de-DE, en-AU, en-GB, en-HK, en-IE, en-IN, en-NZ, en-SG, en-US, en-ZA, es-ES, es-US, fi-FI, fr-CA, fr-FR, he-IL, hi-IN, it-IT, ja-JP, ko-KR, nb-NO, nl-NL, pl-PL, pt-BR, pt-PT, sv-SE, tr-TR, zh-CN, zh-HK, zh-TW, zu-ZA |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2069,7 +2386,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.SpeechTextAnalyticsApi();
 
 let opts = { 
-  'dialect': "dialect_example" // String | The dialect of the general topics, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard
+  'dialect': "dialect_example", // String | The dialect of the general topics, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getSpeechandtextanalyticsTopicsGeneralStatus(opts)
@@ -2087,7 +2408,8 @@ apiInstance.getSpeechandtextanalyticsTopicsGeneralStatus(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **dialect** | **String** | The dialect of the general topics, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard | [optional] <br />**Values**: ar-001, ar-AE, ar-BH, ar-EG, ar-IL, ar-SA, ar-TN, da-DK, de-CH, de-DE, en-AU, en-GB, en-HK, en-IE, en-IN, en-NZ, en-SG, en-US, en-ZA, es-ES, es-US, fi-FI, fr-CA, fr-FR, he-IL, hi-IN, it-IT, ja-JP, ko-KR, nb-NO, nl-NL, pl-PL, pt-BR, pt-PT, sv-SE |
+ **dialect** | **String** | The dialect of the general topics, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard | [optional] <br />**Values**: ar-001, ar-AE, ar-BH, ar-EG, ar-IL, ar-SA, ar-TN, da-DK, de-CH, de-DE, en-AU, en-GB, en-HK, en-IE, en-IN, en-NZ, en-SG, en-US, en-ZA, es-ES, es-US, fi-FI, fr-CA, fr-FR, he-IL, hi-IN, it-IT, ja-JP, ko-KR, nb-NO, nl-NL, pl-PL, pt-BR, pt-PT, sv-SE, tr-TR, zh-CN, zh-HK, zh-TW, zu-ZA |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2096,7 +2418,7 @@ apiInstance.getSpeechandtextanalyticsTopicsGeneralStatus(opts)
 
 ## getSpeechandtextanalyticsTopicsPublishjob
 
-> TopicJob getSpeechandtextanalyticsTopicsPublishjob(jobId)
+> TopicJob getSpeechandtextanalyticsTopicsPublishjob(jobId, opts)
 
 
 GET /api/v2/speechandtextanalytics/topics/publishjobs/{jobId}
@@ -2121,8 +2443,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.SpeechTextAnalyticsApi();
 
 let jobId = "jobId_example"; // String | The id of the publish topics job
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getSpeechandtextanalyticsTopicsPublishjob(jobId)
+apiInstance.getSpeechandtextanalyticsTopicsPublishjob(jobId, opts)
   .then((data) => {
     console.log(`getSpeechandtextanalyticsTopicsPublishjob success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2138,6 +2466,7 @@ apiInstance.getSpeechandtextanalyticsTopicsPublishjob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | The id of the publish topics job |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2146,7 +2475,7 @@ apiInstance.getSpeechandtextanalyticsTopicsPublishjob(jobId)
 
 ## getSpeechandtextanalyticsTopicsTestphraseJob
 
-> TestTopicPhraseJob getSpeechandtextanalyticsTopicsTestphraseJob(jobId)
+> TestTopicPhraseJob getSpeechandtextanalyticsTopicsTestphraseJob(jobId, opts)
 
 
 GET /api/v2/speechandtextanalytics/topics/testphrase/jobs/{jobId}
@@ -2171,8 +2500,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.SpeechTextAnalyticsApi();
 
 let jobId = "jobId_example"; // String | the id of the test topic phrase job
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getSpeechandtextanalyticsTopicsTestphraseJob(jobId)
+apiInstance.getSpeechandtextanalyticsTopicsTestphraseJob(jobId, opts)
   .then((data) => {
     console.log(`getSpeechandtextanalyticsTopicsTestphraseJob success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2188,6 +2523,7 @@ apiInstance.getSpeechandtextanalyticsTopicsTestphraseJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | the id of the test topic phrase job |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2224,7 +2560,11 @@ let languageId = "languageId_example"; // String | Target translation language
 let conversationId = "conversationId_example"; // String | Conversation id
 let opts = { 
   'communicationId': "communicationId_example", // String | Communication id associated with the conversation. Please provide a valid communicationId when requesting non-email interactions.
-  'recordingId': "recordingId_example" // String | Recording id associated with the communication. Please provide a valid recordingId when requesting voice interactions.
+  'recordingId': "recordingId_example", // String | Recording id associated with the communication. Please provide a valid recordingId when requesting voice interactions.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getSpeechandtextanalyticsTranslationsLanguageConversation(languageId, conversationId, opts)
@@ -2246,6 +2586,7 @@ apiInstance.getSpeechandtextanalyticsTranslationsLanguageConversation(languageId
  **conversationId** | **String** | Conversation id |  |
  **communicationId** | **String** | Communication id associated with the conversation. Please provide a valid communicationId when requesting non-email interactions. | [optional]  |
  **recordingId** | **String** | Recording id associated with the communication. Please provide a valid recordingId when requesting voice interactions. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2254,7 +2595,7 @@ apiInstance.getSpeechandtextanalyticsTranslationsLanguageConversation(languageId
 
 ## getSpeechandtextanalyticsTranslationsLanguages
 
-> TranslateSupportedLanguageList getSpeechandtextanalyticsTranslationsLanguages()
+> TranslateSupportedLanguageList getSpeechandtextanalyticsTranslationsLanguages(opts)
 
 
 GET /api/v2/speechandtextanalytics/translations/languages
@@ -2277,8 +2618,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.SpeechTextAnalyticsApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getSpeechandtextanalyticsTranslationsLanguages()
+apiInstance.getSpeechandtextanalyticsTranslationsLanguages(opts)
   .then((data) => {
     console.log(`getSpeechandtextanalyticsTranslationsLanguages success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2290,7 +2637,10 @@ apiInstance.getSpeechandtextanalyticsTranslationsLanguages()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2299,7 +2649,7 @@ This endpoint does not need any parameter.
 
 ## patchSpeechandtextanalyticsSettings
 
-> SpeechTextAnalyticsSettingsResponse patchSpeechandtextanalyticsSettings(body)
+> SpeechTextAnalyticsSettingsResponse patchSpeechandtextanalyticsSettings(body, opts)
 
 
 PATCH /api/v2/speechandtextanalytics/settings
@@ -2324,8 +2674,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.SpeechTextAnalyticsApi();
 
 let body = {}; // Object | Speech And Text Analytics Settings
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchSpeechandtextanalyticsSettings(body)
+apiInstance.patchSpeechandtextanalyticsSettings(body, opts)
   .then((data) => {
     console.log(`patchSpeechandtextanalyticsSettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2341,6 +2697,7 @@ apiInstance.patchSpeechandtextanalyticsSettings(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Speech And Text Analytics Settings |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2349,7 +2706,7 @@ apiInstance.patchSpeechandtextanalyticsSettings(body)
 
 ## postSpeechandtextanalyticsCategories
 
-> StaCategory postSpeechandtextanalyticsCategories(body)
+> StaCategory postSpeechandtextanalyticsCategories(body, opts)
 
 
 POST /api/v2/speechandtextanalytics/categories
@@ -2374,8 +2731,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.SpeechTextAnalyticsApi();
 
 let body = {}; // Object | The category to create
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postSpeechandtextanalyticsCategories(body)
+apiInstance.postSpeechandtextanalyticsCategories(body, opts)
   .then((data) => {
     console.log(`postSpeechandtextanalyticsCategories success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2391,6 +2754,7 @@ apiInstance.postSpeechandtextanalyticsCategories(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | The category to create |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2399,7 +2763,7 @@ apiInstance.postSpeechandtextanalyticsCategories(body)
 
 ## postSpeechandtextanalyticsDictionaryfeedback
 
-> DictionaryFeedback postSpeechandtextanalyticsDictionaryfeedback(body)
+> DictionaryFeedback postSpeechandtextanalyticsDictionaryfeedback(body, opts)
 
 
 POST /api/v2/speechandtextanalytics/dictionaryfeedback
@@ -2424,8 +2788,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.SpeechTextAnalyticsApi();
 
 let body = {}; // Object | The DictionaryFeedback to create
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postSpeechandtextanalyticsDictionaryfeedback(body)
+apiInstance.postSpeechandtextanalyticsDictionaryfeedback(body, opts)
   .then((data) => {
     console.log(`postSpeechandtextanalyticsDictionaryfeedback success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2441,6 +2811,7 @@ apiInstance.postSpeechandtextanalyticsDictionaryfeedback(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | The DictionaryFeedback to create |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2449,7 +2820,7 @@ apiInstance.postSpeechandtextanalyticsDictionaryfeedback(body)
 
 ## postSpeechandtextanalyticsPrograms
 
-> Program postSpeechandtextanalyticsPrograms(body)
+> Program postSpeechandtextanalyticsPrograms(body, opts)
 
 
 POST /api/v2/speechandtextanalytics/programs
@@ -2474,8 +2845,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.SpeechTextAnalyticsApi();
 
 let body = {}; // Object | The program to create
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postSpeechandtextanalyticsPrograms(body)
+apiInstance.postSpeechandtextanalyticsPrograms(body, opts)
   .then((data) => {
     console.log(`postSpeechandtextanalyticsPrograms success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2491,6 +2868,7 @@ apiInstance.postSpeechandtextanalyticsPrograms(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | The program to create |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2499,7 +2877,7 @@ apiInstance.postSpeechandtextanalyticsPrograms(body)
 
 ## postSpeechandtextanalyticsProgramsGeneralJobs
 
-> GeneralProgramJob postSpeechandtextanalyticsProgramsGeneralJobs(body)
+> GeneralProgramJob postSpeechandtextanalyticsProgramsGeneralJobs(body, opts)
 
 
 POST /api/v2/speechandtextanalytics/programs/general/jobs
@@ -2527,8 +2905,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.SpeechTextAnalyticsApi();
 
 let body = {}; // Object | The general programs job to create
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postSpeechandtextanalyticsProgramsGeneralJobs(body)
+apiInstance.postSpeechandtextanalyticsProgramsGeneralJobs(body, opts)
   .then((data) => {
     console.log(`postSpeechandtextanalyticsProgramsGeneralJobs success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2544,6 +2928,7 @@ apiInstance.postSpeechandtextanalyticsProgramsGeneralJobs(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | The general programs job to create |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2552,7 +2937,7 @@ apiInstance.postSpeechandtextanalyticsProgramsGeneralJobs(body)
 
 ## postSpeechandtextanalyticsProgramsPublishjobs
 
-> ProgramJob postSpeechandtextanalyticsProgramsPublishjobs(body)
+> ProgramJob postSpeechandtextanalyticsProgramsPublishjobs(body, opts)
 
 
 POST /api/v2/speechandtextanalytics/programs/publishjobs
@@ -2577,8 +2962,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.SpeechTextAnalyticsApi();
 
 let body = {}; // Object | The publish programs job to create
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postSpeechandtextanalyticsProgramsPublishjobs(body)
+apiInstance.postSpeechandtextanalyticsProgramsPublishjobs(body, opts)
   .then((data) => {
     console.log(`postSpeechandtextanalyticsProgramsPublishjobs success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2594,6 +2985,7 @@ apiInstance.postSpeechandtextanalyticsProgramsPublishjobs(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | The publish programs job to create |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2602,7 +2994,7 @@ apiInstance.postSpeechandtextanalyticsProgramsPublishjobs(body)
 
 ## postSpeechandtextanalyticsReprocessingJobs
 
-> ReprocessJobResponse postSpeechandtextanalyticsReprocessingJobs(body)
+> ReprocessJobResponse postSpeechandtextanalyticsReprocessingJobs(body, opts)
 
 
 POST /api/v2/speechandtextanalytics/reprocessing/jobs
@@ -2629,8 +3021,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.SpeechTextAnalyticsApi();
 
 let body = {}; // Object | The ReprocessJob to create
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postSpeechandtextanalyticsReprocessingJobs(body)
+apiInstance.postSpeechandtextanalyticsReprocessingJobs(body, opts)
   .then((data) => {
     console.log(`postSpeechandtextanalyticsReprocessingJobs success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2646,6 +3044,7 @@ apiInstance.postSpeechandtextanalyticsReprocessingJobs(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | The ReprocessJob to create |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2654,7 +3053,7 @@ apiInstance.postSpeechandtextanalyticsReprocessingJobs(body)
 
 ## postSpeechandtextanalyticsSentimentfeedback
 
-> SentimentFeedback postSpeechandtextanalyticsSentimentfeedback(body)
+> SentimentFeedback postSpeechandtextanalyticsSentimentfeedback(body, opts)
 
 
 POST /api/v2/speechandtextanalytics/sentimentfeedback
@@ -2679,8 +3078,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.SpeechTextAnalyticsApi();
 
 let body = {}; // Object | The SentimentFeedback to create
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postSpeechandtextanalyticsSentimentfeedback(body)
+apiInstance.postSpeechandtextanalyticsSentimentfeedback(body, opts)
   .then((data) => {
     console.log(`postSpeechandtextanalyticsSentimentfeedback success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2696,6 +3101,7 @@ apiInstance.postSpeechandtextanalyticsSentimentfeedback(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | The SentimentFeedback to create |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2704,7 +3110,7 @@ apiInstance.postSpeechandtextanalyticsSentimentfeedback(body)
 
 ## postSpeechandtextanalyticsTopics
 
-> Topic postSpeechandtextanalyticsTopics(body)
+> Topic postSpeechandtextanalyticsTopics(body, opts)
 
 
 POST /api/v2/speechandtextanalytics/topics
@@ -2729,8 +3135,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.SpeechTextAnalyticsApi();
 
 let body = {}; // Object | The topic to create
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postSpeechandtextanalyticsTopics(body)
+apiInstance.postSpeechandtextanalyticsTopics(body, opts)
   .then((data) => {
     console.log(`postSpeechandtextanalyticsTopics success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2746,6 +3158,7 @@ apiInstance.postSpeechandtextanalyticsTopics(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | The topic to create |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2754,7 +3167,7 @@ apiInstance.postSpeechandtextanalyticsTopics(body)
 
 ## postSpeechandtextanalyticsTopicsPublishjobs
 
-> TopicJob postSpeechandtextanalyticsTopicsPublishjobs(body)
+> TopicJob postSpeechandtextanalyticsTopicsPublishjobs(body, opts)
 
 
 POST /api/v2/speechandtextanalytics/topics/publishjobs
@@ -2779,8 +3192,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.SpeechTextAnalyticsApi();
 
 let body = {}; // Object | The publish topics job to create
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postSpeechandtextanalyticsTopicsPublishjobs(body)
+apiInstance.postSpeechandtextanalyticsTopicsPublishjobs(body, opts)
   .then((data) => {
     console.log(`postSpeechandtextanalyticsTopicsPublishjobs success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2796,6 +3215,7 @@ apiInstance.postSpeechandtextanalyticsTopicsPublishjobs(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | The publish topics job to create |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2804,7 +3224,7 @@ apiInstance.postSpeechandtextanalyticsTopicsPublishjobs(body)
 
 ## postSpeechandtextanalyticsTopicsTestphraseJobs
 
-> TestTopicPhraseJobs postSpeechandtextanalyticsTopicsTestphraseJobs(body)
+> TestTopicPhraseJobs postSpeechandtextanalyticsTopicsTestphraseJobs(body, opts)
 
 
 POST /api/v2/speechandtextanalytics/topics/testphrase/jobs
@@ -2829,8 +3249,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.SpeechTextAnalyticsApi();
 
 let body = {}; // Object | The publish test topic phrase job to create
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postSpeechandtextanalyticsTopicsTestphraseJobs(body)
+apiInstance.postSpeechandtextanalyticsTopicsTestphraseJobs(body, opts)
   .then((data) => {
     console.log(`postSpeechandtextanalyticsTopicsTestphraseJobs success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2846,6 +3272,7 @@ apiInstance.postSpeechandtextanalyticsTopicsTestphraseJobs(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | The publish test topic phrase job to create |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2854,7 +3281,7 @@ apiInstance.postSpeechandtextanalyticsTopicsTestphraseJobs(body)
 
 ## postSpeechandtextanalyticsTranscriptsSearch
 
-> JsonSearchResponse postSpeechandtextanalyticsTranscriptsSearch(body)
+> JsonSearchResponse postSpeechandtextanalyticsTranscriptsSearch(body, opts)
 
 
 POST /api/v2/speechandtextanalytics/transcripts/search
@@ -2881,8 +3308,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.SpeechTextAnalyticsApi();
 
 let body = {}; // Object | Search request options
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postSpeechandtextanalyticsTranscriptsSearch(body)
+apiInstance.postSpeechandtextanalyticsTranscriptsSearch(body, opts)
   .then((data) => {
     console.log(`postSpeechandtextanalyticsTranscriptsSearch success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2898,6 +3331,7 @@ apiInstance.postSpeechandtextanalyticsTranscriptsSearch(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Search request options |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2906,7 +3340,7 @@ apiInstance.postSpeechandtextanalyticsTranscriptsSearch(body)
 
 ## putSpeechandtextanalyticsCategory
 
-> StaCategory putSpeechandtextanalyticsCategory(categoryId, body)
+> StaCategory putSpeechandtextanalyticsCategory(categoryId, body, opts)
 
 
 PUT /api/v2/speechandtextanalytics/categories/{categoryId}
@@ -2932,8 +3366,14 @@ let apiInstance = new platformClient.SpeechTextAnalyticsApi();
 
 let categoryId = "categoryId_example"; // String | The id of the category
 let body = {}; // Object | The updated category
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putSpeechandtextanalyticsCategory(categoryId, body)
+apiInstance.putSpeechandtextanalyticsCategory(categoryId, body, opts)
   .then((data) => {
     console.log(`putSpeechandtextanalyticsCategory success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2950,6 +3390,7 @@ apiInstance.putSpeechandtextanalyticsCategory(categoryId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **categoryId** | **String** | The id of the category |  |
  **body** | **Object** | The updated category |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2984,7 +3425,11 @@ let apiInstance = new platformClient.SpeechTextAnalyticsApi();
 
 let dictionaryFeedbackId = "dictionaryFeedbackId_example"; // String | The Id of the Dictionary Feedback
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.putSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId(dictionaryFeedbackId, opts)
@@ -3004,6 +3449,7 @@ apiInstance.putSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId(dict
 | ------------- | ------------- | ------------- | ------------- |
  **dictionaryFeedbackId** | **String** | The Id of the Dictionary Feedback |  |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3012,7 +3458,7 @@ apiInstance.putSpeechandtextanalyticsDictionaryfeedbackDictionaryFeedbackId(dict
 
 ## putSpeechandtextanalyticsProgram
 
-> Program putSpeechandtextanalyticsProgram(programId, body)
+> Program putSpeechandtextanalyticsProgram(programId, body, opts)
 
 
 PUT /api/v2/speechandtextanalytics/programs/{programId}
@@ -3038,8 +3484,14 @@ let apiInstance = new platformClient.SpeechTextAnalyticsApi();
 
 let programId = "programId_example"; // String | The id of the program
 let body = {}; // Object | The program to update
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putSpeechandtextanalyticsProgram(programId, body)
+apiInstance.putSpeechandtextanalyticsProgram(programId, body, opts)
   .then((data) => {
     console.log(`putSpeechandtextanalyticsProgram success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3056,6 +3508,7 @@ apiInstance.putSpeechandtextanalyticsProgram(programId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **programId** | **String** | The id of the program |  |
  **body** | **Object** | The program to update |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3064,7 +3517,7 @@ apiInstance.putSpeechandtextanalyticsProgram(programId, body)
 
 ## putSpeechandtextanalyticsProgramMappings
 
-> ProgramMappings putSpeechandtextanalyticsProgramMappings(programId, body)
+> TopicsDefinitionsProgramMappings putSpeechandtextanalyticsProgramMappings(programId, body, opts)
 
 
 PUT /api/v2/speechandtextanalytics/programs/{programId}/mappings
@@ -3090,8 +3543,14 @@ let apiInstance = new platformClient.SpeechTextAnalyticsApi();
 
 let programId = "programId_example"; // String | The id of the program
 let body = {}; // Object | The program to set mappings for
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putSpeechandtextanalyticsProgramMappings(programId, body)
+apiInstance.putSpeechandtextanalyticsProgramMappings(programId, body, opts)
   .then((data) => {
     console.log(`putSpeechandtextanalyticsProgramMappings success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3108,15 +3567,16 @@ apiInstance.putSpeechandtextanalyticsProgramMappings(programId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **programId** | **String** | The id of the program |  |
  **body** | **Object** | The program to set mappings for |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
-**ProgramMappings**
+**TopicsDefinitionsProgramMappings**
 
 
 ## putSpeechandtextanalyticsProgramSettingsInsights
 
-> ProgramInsightsSettings putSpeechandtextanalyticsProgramSettingsInsights(programId, body)
+> ProgramInsightsSettings putSpeechandtextanalyticsProgramSettingsInsights(programId, body, opts)
 
 
 PUT /api/v2/speechandtextanalytics/programs/{programId}/settings/insights
@@ -3143,8 +3603,14 @@ let apiInstance = new platformClient.SpeechTextAnalyticsApi();
 
 let programId = "programId_example"; // String | The id of the program
 let body = {}; // Object | Program AI Insights setting
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putSpeechandtextanalyticsProgramSettingsInsights(programId, body)
+apiInstance.putSpeechandtextanalyticsProgramSettingsInsights(programId, body, opts)
   .then((data) => {
     console.log(`putSpeechandtextanalyticsProgramSettingsInsights success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3161,6 +3627,7 @@ apiInstance.putSpeechandtextanalyticsProgramSettingsInsights(programId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **programId** | **String** | The id of the program |  |
  **body** | **Object** | Program AI Insights setting |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3169,7 +3636,7 @@ apiInstance.putSpeechandtextanalyticsProgramSettingsInsights(programId, body)
 
 ## putSpeechandtextanalyticsProgramTranscriptionengines
 
-> ProgramTranscriptionEngines putSpeechandtextanalyticsProgramTranscriptionengines(programId, body)
+> ProgramTranscriptionEngines putSpeechandtextanalyticsProgramTranscriptionengines(programId, body, opts)
 
 
 PUT /api/v2/speechandtextanalytics/programs/{programId}/transcriptionengines
@@ -3195,8 +3662,14 @@ let apiInstance = new platformClient.SpeechTextAnalyticsApi();
 
 let programId = "programId_example"; // String | The id of the program
 let body = {}; // Object | Program transcription engine setting
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putSpeechandtextanalyticsProgramTranscriptionengines(programId, body)
+apiInstance.putSpeechandtextanalyticsProgramTranscriptionengines(programId, body, opts)
   .then((data) => {
     console.log(`putSpeechandtextanalyticsProgramTranscriptionengines success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3213,6 +3686,7 @@ apiInstance.putSpeechandtextanalyticsProgramTranscriptionengines(programId, body
 | ------------- | ------------- | ------------- | ------------- |
  **programId** | **String** | The id of the program |  |
  **body** | **Object** | Program transcription engine setting |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3221,7 +3695,7 @@ apiInstance.putSpeechandtextanalyticsProgramTranscriptionengines(programId, body
 
 ## putSpeechandtextanalyticsSettings
 
-> SpeechTextAnalyticsSettingsResponse putSpeechandtextanalyticsSettings(body)
+> SpeechTextAnalyticsSettingsResponse putSpeechandtextanalyticsSettings(body, opts)
 
 
 PUT /api/v2/speechandtextanalytics/settings
@@ -3246,8 +3720,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.SpeechTextAnalyticsApi();
 
 let body = {}; // Object | Speech And Text Analytics Settings
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putSpeechandtextanalyticsSettings(body)
+apiInstance.putSpeechandtextanalyticsSettings(body, opts)
   .then((data) => {
     console.log(`putSpeechandtextanalyticsSettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3263,6 +3743,7 @@ apiInstance.putSpeechandtextanalyticsSettings(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Speech And Text Analytics Settings |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3271,7 +3752,7 @@ apiInstance.putSpeechandtextanalyticsSettings(body)
 
 ## putSpeechandtextanalyticsTopic
 
-> Topic putSpeechandtextanalyticsTopic(topicId, body)
+> Topic putSpeechandtextanalyticsTopic(topicId, body, opts)
 
 
 PUT /api/v2/speechandtextanalytics/topics/{topicId}
@@ -3297,8 +3778,14 @@ let apiInstance = new platformClient.SpeechTextAnalyticsApi();
 
 let topicId = "topicId_example"; // String | The id of the topic
 let body = {}; // Object | The topic to update
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putSpeechandtextanalyticsTopic(topicId, body)
+apiInstance.putSpeechandtextanalyticsTopic(topicId, body, opts)
   .then((data) => {
     console.log(`putSpeechandtextanalyticsTopic success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3315,10 +3802,11 @@ apiInstance.putSpeechandtextanalyticsTopic(topicId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **topicId** | **String** | The id of the topic |  |
  **body** | **Object** | The topic to update |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **Topic**
 
 
-_purecloud-platform-client-v2@229.1.0_
+_purecloud-platform-client-v2@258.0.0_

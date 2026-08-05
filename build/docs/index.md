@@ -6,7 +6,7 @@ A JavaScript library to interface with the Genesys Cloud Platform API. View the 
 [![npm](https://img.shields.io/npm/v/purecloud-platform-client-v2.svg)](https://www.npmjs.com/package/purecloud-platform-client-v2)
 [![Release Notes Badge](https://developer-content.genesys.cloud/images/sdk-release-notes.png)](https://github.com/MyPureCloud/platform-client-sdk-javascript/blob/master/releaseNotes.md)
 
-Documentation version purecloud-platform-client-v2@229.1.0
+Documentation version purecloud-platform-client-v2@258.0.0
 
 ## Preview APIs
 
@@ -29,7 +29,7 @@ For direct use in a browser script:
 
 ```html
 <!-- Include the CJS SDK -->
-<script src="https://sdk-cdn.mypurecloud.com/javascript/229.1.0/purecloud-platform-client-v2.min.js"></script>
+<script src="https://sdk-cdn.mypurecloud.com/javascript/258.0.0/purecloud-platform-client-v2.min.js"></script>
 
 <script type="text/javascript">
   // Obtain a reference to the platformClient object
@@ -46,7 +46,7 @@ For direct use in a browser script:
 
 <script type="text/javascript">
   // Obtain a reference to the platformClient object
-  requirejs(['https://sdk-cdn.mypurecloud.com/javascript/amd/229.1.0/purecloud-platform-client-v2.min.js'], (platformClient) => {
+  requirejs(['https://sdk-cdn.mypurecloud.com/javascript/amd/258.0.0/purecloud-platform-client-v2.min.js'], (platformClient) => {
     console.log(platformClient);
   });
 </script>
@@ -189,6 +189,11 @@ The _loginPKCEGrant_ only works when used in a browser. This is because a node.j
 Optional parameters may be specified in the optional third parameter for `loginPKCEGrant`. This parameter accepts an object with key/value pairs. Supported properties:
 
 * `state` - An arbitrary string used to associate a login request with a login response. This value will be provided in the `state` property on the object when the promise is resolved. The state in the resolved promise will be identical to what was passed into `loginPKCEGrant`, except when the state is retrieved from the auth query upon completing a login; in that case, the state from the auth query will override the passed in state.
+* `org` - The organization name that would normally used when specifying an organization name when logging in. This is only used when a provider is also specified.
+* `provider` - Authentication provider to log in with e.g. okta, adfs, salesforce, onelogin. This is only used when an org is also specified.
+* `target` - The organization ID of the target organization, when intending to log in to a specific target organization using Authorized Organizations.
+* `login_hint` - The `login_hint` allows an application to pass the email address and/or the org name values to the authorization server (email:orgName, email, orgName).
+* `prompt` - Use the `prompt=login` parameter to require that the user be prompted to enter credentials at the Gensys Cloud login screen and ignore any remembered sessions (auth cookies).
 
 The _loginPKCEGrant_ supports an optional fourth parameter for `loginPKCEGrant`. This parameter accepts a string, used to provide a code verifier as input. When no code verifier is provider (Method 1), the SDK automatically generates a PKCE Code Verifier and saves it in _window sessionStorage_. If a code verifier is provided (Method 2), it is up to the custom application to store the code verifier value and pass it in _loginPKCEGrant_.
 
@@ -196,7 +201,7 @@ The _loginPKCEGrant_ supports an optional fourth parameter for `loginPKCEGrant`.
 const client = platformClient.ApiClient.instance;
 
 // Method1: Let loginPKCEGrant generate the code verifier
-client.loginPKCEGrant(clientId, redirectUri, { state: state })
+client.loginPKCEGrant(clientId, redirectUri, { state: state, login_hint: "jane@example.com:acme-org" } })
   .then((data) => {
     console.log(data);
     // Do authenticated things
@@ -233,10 +238,15 @@ The Implicit grant only works when used in a browser. This is because a node.js 
 Optional parameters may be specified in the optional third parameter for `loginImplicitGrant`. This parameter accepts an object with key/value pairs. Supported properties:
 
 * `state` - An arbitrary string used to associate a login request with a login response. This value will be provided in the `state` property on the object when the promise is resolved. The state in the resolved promise will be identical to what was passed into `loginImplicitGrant`, except when the state is retrieved from the auth hash upon completing a login; in that case, the state from the auth hash will override the passed in state.
+* `org` - The organization name that would normally used when specifying an organization name when logging in. This is only used when a provider is also specified.
+* `provider` - Authentication provider to log in with e.g. okta, adfs, salesforce, onelogin. This is only used when an org is also specified.
+* `target` - The organization ID of the target organization, when intending to log in to a specific target organization using Authorized Organizations.
+* `login_hint` - The `login_hint` allows an application to pass the email address and/or the org name values to the authorization server (email:orgName, email, orgName).
+* `prompt` - Use the `prompt=login` parameter to require that the user be prompted to enter credentials at the Gensys Cloud login screen and ignore any remembered sessions (auth cookies).
 
 ```javascript
 const client = platformClient.ApiClient.instance;
-client.loginImplicitGrant(clientId, redirectUri, { state: state })
+client.loginImplicitGrant(clientId, redirectUri, { state: state, login_hint: "jane@example.com:acme-org" })
   .then((data) => {
     console.log(data);
     // Do authenticated things
@@ -428,6 +438,27 @@ const client = platformClient.ApiClient.instance;
 client.setEnvironment(platformClient.PureCloudRegionHosts.eu_west_1);
 ```
 
+## Filtering of Query Parameters
+
+The SDK is implemented so that when one of its API method is invoked, it filters out null or undefined method parameters (mapped to an API Endpoint's query parameter).
+- In its legacy state, the SDK will also filter parameters of boolean type and equal to false, and parameters of type integer/number and equal to 0.
+- In its modern state, the SDK will keep and send such parameters.
+
+A new ApiClient property (accessed using getUseLegacyParameterFilter and setUseLegacyParameterFilter) is introduced to control the method used to filter out such parameters.
+
+When UseLegacyParameterFilter is true, the SDK will use the legacy filter method.  
+When UseLegacyParameterFilter is false, the SDK will use the modern and accurate filter method.
+
+*The UseLegacyParameterFilter default value is now equal to false.* If you want to preserve the legacy filter method, you will need to change the UseLegacyParameterFilter value so that the SDK uses the legacy filter method.
+
+```javascript
+const client = platformClient.ApiClient.instance;
+// By default, the SDK uses the modern and accurate parameter filtering (UseLegacyParameterFilter is set to false by default)
+// client.setUseLegacyParameterFilter(false);
+// To continue using the legacy parameter filtering, set UseLegacyParameterFilter to true
+client.setUseLegacyParameterFilter(true);
+```
+
 ### Setting an intermediate Gateway
 
 The Genesys Cloud Login and API URL path can be overridden if necessary (i.e. if the Genesys Cloud requests must be sent through to an intermediate API gateway or equivalent).
@@ -511,6 +542,37 @@ client.loginImplicitGrant(clientId, redirectUri)
   });
 ```
 
+### Setting Custom Headers per Request
+
+The SDK now allows setting custom headers per API Request.  
+Each API method includes an optional parameter structure (**opts**), which supports an optional parameter named **customHeaders**. The **customHeaders** is a string map, that you can use to set custom headers on the corresponding API request.
+
+```javascript
+// Create API instance
+const usersApi = new platformClient.UsersApi();
+
+// Authenticate
+client.loginClientCredentialsGrant(clientId, clientSecret)
+  .then(() => { 
+    // Make request to GET /api/v2/users/{userId}
+    let opts = {
+      'customHeaders': {  // Object.<string, string> | Request Custom Headers
+        'X-Service-Name': 'customer-service',
+        'X-Request-ID': 'req-12345'
+      }
+    }
+    let userId = 'xxxxxxxx-xxxx-xxxx-xxxxxxxxxxxx';
+    return usersApi.getUser(userId, opts);
+  })
+  .then((permissions) => {
+    // Handle successful result
+    console.log(permissions);
+  })
+  .catch((err) => {
+    // Handle failure response
+    console.log(err);
+  });
+```
 
 ### Extended Responses
 

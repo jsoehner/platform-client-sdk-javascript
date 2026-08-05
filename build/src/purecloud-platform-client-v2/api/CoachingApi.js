@@ -5,7 +5,7 @@ class CoachingApi {
 	/**
 	 * Coaching service.
 	 * @module purecloud-platform-client-v2/api/CoachingApi
-	 * @version 229.1.0
+	 * @version 258.0.0
 	 */
 
 	/**
@@ -24,8 +24,12 @@ class CoachingApi {
 	 * Delete an existing appointment
 	 * Permission not required if you are the creator of the appointment
 	 * @param {String} appointmentId The ID of the coaching appointment.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteCoachingAppointment(appointmentId) { 
+	deleteCoachingAppointment(appointmentId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'appointmentId' is set
 		if (appointmentId === undefined || appointmentId === null || appointmentId === '') {
 			throw 'Missing the required parameter "appointmentId" when calling deleteCoachingAppointment';
@@ -41,7 +45,8 @@ class CoachingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -50,8 +55,12 @@ class CoachingApi {
 	 * You must have the appropriate permission for the type of annotation you are updating. Permission not required if you are the creator or facilitator of the appointment
 	 * @param {String} appointmentId The ID of the coaching appointment.
 	 * @param {String} annotationId The ID of the annotation.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteCoachingAppointmentAnnotation(appointmentId, annotationId) { 
+	deleteCoachingAppointmentAnnotation(appointmentId, annotationId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'appointmentId' is set
 		if (appointmentId === undefined || appointmentId === null || appointmentId === '') {
 			throw 'Missing the required parameter "appointmentId" when calling deleteCoachingAppointmentAnnotation';
@@ -71,7 +80,8 @@ class CoachingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -79,8 +89,12 @@ class CoachingApi {
 	 * Retrieve an appointment
 	 * Permission not required if you are the attendee, creator or facilitator of the appointment
 	 * @param {String} appointmentId The ID of the coaching appointment.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getCoachingAppointment(appointmentId) { 
+	getCoachingAppointment(appointmentId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'appointmentId' is set
 		if (appointmentId === undefined || appointmentId === null || appointmentId === '') {
 			throw 'Missing the required parameter "appointmentId" when calling getCoachingAppointment';
@@ -96,7 +110,8 @@ class CoachingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -105,8 +120,12 @@ class CoachingApi {
 	 * You must have the appropriate permission for the type of annotation you are creating. Permission not required if you are related to the appointment (only the creator or facilitator can view private annotations).
 	 * @param {String} appointmentId The ID of the coaching appointment.
 	 * @param {String} annotationId The ID of the annotation.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getCoachingAppointmentAnnotation(appointmentId, annotationId) { 
+	getCoachingAppointmentAnnotation(appointmentId, annotationId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'appointmentId' is set
 		if (appointmentId === undefined || appointmentId === null || appointmentId === '') {
 			throw 'Missing the required parameter "appointmentId" when calling getCoachingAppointmentAnnotation';
@@ -126,7 +145,8 @@ class CoachingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -137,6 +157,7 @@ class CoachingApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getCoachingAppointmentAnnotations(appointmentId, opts) { 
 		opts = opts || {};
@@ -156,7 +177,8 @@ class CoachingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -167,6 +189,7 @@ class CoachingApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getCoachingAppointmentStatuses(appointmentId, opts) { 
 		opts = opts || {};
@@ -186,7 +209,8 @@ class CoachingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -205,6 +229,7 @@ class CoachingApi {
 	 * @param {String} opts.completionInterval Appointment completion start and end to filter by. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
 	 * @param {Object} opts.overdue Overdue status to filter by
 	 * @param {Object} opts.intervalCondition Filter condition for interval
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getCoachingAppointments(userIds, opts) { 
 		opts = opts || {};
@@ -224,7 +249,8 @@ class CoachingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -242,6 +268,7 @@ class CoachingApi {
 	 * @param {String} opts.completionInterval Appointment completion start and end to filter by. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
 	 * @param {Object} opts.overdue Overdue status to filter by
 	 * @param {Object} opts.intervalCondition Filter condition for interval
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getCoachingAppointmentsMe(opts) { 
 		opts = opts || {};
@@ -257,7 +284,8 @@ class CoachingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -267,6 +295,7 @@ class CoachingApi {
 	 * @param {String} notificationId The ID of the notification.
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand Indicates a field in the response which should be expanded.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getCoachingNotification(notificationId, opts) { 
 		opts = opts || {};
@@ -286,7 +315,8 @@ class CoachingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -297,6 +327,7 @@ class CoachingApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Array.<String>} opts.expand Indicates a field in the response which should be expanded.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getCoachingNotifications(opts) { 
 		opts = opts || {};
@@ -312,7 +343,38 @@ class CoachingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Retrieve the status of the job for the slots where a coaching appointment can be scheduled.
+	 * 
+	 * @param {String} jobId The ID of job
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getCoachingScheduleslotsJob(jobId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null || jobId === '') {
+			throw 'Missing the required parameter "jobId" when calling getCoachingScheduleslotsJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/coaching/scheduleslots/jobs/{jobId}', 
+			'GET', 
+			{ 'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -321,8 +383,12 @@ class CoachingApi {
 	 * Permission not required if you are the creator or facilitator of the appointment
 	 * @param {String} appointmentId The ID of the coaching appointment.
 	 * @param {Object} body The new version of the appointment
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchCoachingAppointment(appointmentId, body) { 
+	patchCoachingAppointment(appointmentId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'appointmentId' is set
 		if (appointmentId === undefined || appointmentId === null || appointmentId === '') {
 			throw 'Missing the required parameter "appointmentId" when calling patchCoachingAppointment';
@@ -342,7 +408,8 @@ class CoachingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -352,8 +419,12 @@ class CoachingApi {
 	 * @param {String} appointmentId The ID of the coaching appointment.
 	 * @param {String} annotationId The ID of the annotation.
 	 * @param {Object} body The new version of the annotation
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchCoachingAppointmentAnnotation(appointmentId, annotationId, body) { 
+	patchCoachingAppointmentAnnotation(appointmentId, annotationId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'appointmentId' is set
 		if (appointmentId === undefined || appointmentId === null || appointmentId === '') {
 			throw 'Missing the required parameter "appointmentId" when calling patchCoachingAppointmentAnnotation';
@@ -377,7 +448,8 @@ class CoachingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -386,8 +458,12 @@ class CoachingApi {
 	 * Permission not required if you are an attendee, creator or facilitator of the appointment
 	 * @param {String} appointmentId The ID of the coaching appointment.
 	 * @param {Object} body Updated status of the coaching appointment
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchCoachingAppointmentStatus(appointmentId, body) { 
+	patchCoachingAppointmentStatus(appointmentId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'appointmentId' is set
 		if (appointmentId === undefined || appointmentId === null || appointmentId === '') {
 			throw 'Missing the required parameter "appointmentId" when calling patchCoachingAppointmentStatus';
@@ -407,7 +483,8 @@ class CoachingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -416,8 +493,12 @@ class CoachingApi {
 	 * Can only update your own notifications.
 	 * @param {String} notificationId The ID of the notification.
 	 * @param {Object} body Change the read state of a notification
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchCoachingNotification(notificationId, body) { 
+	patchCoachingNotification(notificationId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'notificationId' is set
 		if (notificationId === undefined || notificationId === null || notificationId === '') {
 			throw 'Missing the required parameter "notificationId" when calling patchCoachingNotification';
@@ -437,7 +518,8 @@ class CoachingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -446,8 +528,12 @@ class CoachingApi {
 	 * You must have the appropriate permission for the type of annotation you are creating. Permission not required if you are related to the appointment (only the creator or facilitator can create private annotations).
 	 * @param {String} appointmentId The ID of the coaching appointment.
 	 * @param {Object} body The annotation to add
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postCoachingAppointmentAnnotations(appointmentId, body) { 
+	postCoachingAppointmentAnnotations(appointmentId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'appointmentId' is set
 		if (appointmentId === undefined || appointmentId === null || appointmentId === '') {
 			throw 'Missing the required parameter "appointmentId" when calling postCoachingAppointmentAnnotations';
@@ -467,7 +553,8 @@ class CoachingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -476,8 +563,12 @@ class CoachingApi {
 	 * Permission not required if you are the creator or facilitator of the appointment
 	 * @param {String} appointmentId The ID of the coaching appointment.
 	 * @param {Object} body body
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postCoachingAppointmentConversations(appointmentId, body) { 
+	postCoachingAppointmentConversations(appointmentId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'appointmentId' is set
 		if (appointmentId === undefined || appointmentId === null || appointmentId === '') {
 			throw 'Missing the required parameter "appointmentId" when calling postCoachingAppointmentConversations';
@@ -497,7 +588,8 @@ class CoachingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -505,8 +597,12 @@ class CoachingApi {
 	 * Create a new appointment
 	 * 
 	 * @param {Object} body The appointment to add
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postCoachingAppointments(body) { 
+	postCoachingAppointments(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postCoachingAppointments';
@@ -522,7 +618,8 @@ class CoachingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -530,8 +627,12 @@ class CoachingApi {
 	 * Retrieve aggregated appointment data
 	 * 
 	 * @param {Object} body Aggregate Request
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postCoachingAppointmentsAggregatesQuery(body) { 
+	postCoachingAppointmentsAggregatesQuery(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postCoachingAppointmentsAggregatesQuery';
@@ -547,7 +648,38 @@ class CoachingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Start job to retrieve the slots where a coaching appointment can be scheduled.
+	 * 
+	 * @param {Object} body The slots search request
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postCoachingScheduleslotsJobs(body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postCoachingScheduleslotsJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/coaching/scheduleslots/jobs', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -555,8 +687,12 @@ class CoachingApi {
 	 * Get list of possible slots where a coaching appointment can be scheduled.
 	 * 
 	 * @param {Object} body The slot search request
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postCoachingScheduleslotsQuery(body) { 
+	postCoachingScheduleslotsQuery(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postCoachingScheduleslotsQuery';
@@ -572,7 +708,8 @@ class CoachingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 

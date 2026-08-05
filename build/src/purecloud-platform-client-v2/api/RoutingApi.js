@@ -5,7 +5,7 @@ class RoutingApi {
 	/**
 	 * Routing service.
 	 * @module purecloud-platform-client-v2/api/RoutingApi
-	 * @version 229.1.0
+	 * @version 258.0.0
 	 */
 
 	/**
@@ -24,8 +24,12 @@ class RoutingApi {
 	 * Delete single benefit assessment.
 	 * 
 	 * @param {String} assessmentId Benefit Assessment ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteRoutingAssessment(assessmentId) { 
+	deleteRoutingAssessment(assessmentId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'assessmentId' is set
 		if (assessmentId === undefined || assessmentId === null || assessmentId === '') {
 			throw 'Missing the required parameter "assessmentId" when calling deleteRoutingAssessment';
@@ -41,15 +45,20 @@ class RoutingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default.
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteRoutingDirectroutingbackupSettingsMe() { 
+	deleteRoutingDirectroutingbackupSettingsMe(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/routing/directroutingbackup/settings/me', 
@@ -61,7 +70,8 @@ class RoutingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -69,8 +79,12 @@ class RoutingApi {
 	 * Delete a domain
 	 * 
 	 * @param {String} domainId domain ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteRoutingEmailDomain(domainId) { 
+	deleteRoutingEmailDomain(domainId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'domainId' is set
 		if (domainId === undefined || domainId === null || domainId === '') {
 			throw 'Missing the required parameter "domainId" when calling deleteRoutingEmailDomain';
@@ -86,7 +100,8 @@ class RoutingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -95,8 +110,12 @@ class RoutingApi {
 	 * 
 	 * @param {String} domainName email domain
 	 * @param {String} routeId route ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteRoutingEmailDomainRoute(domainName, routeId) { 
+	deleteRoutingEmailDomainRoute(domainName, routeId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'domainName' is set
 		if (domainName === undefined || domainName === null || domainName === '') {
 			throw 'Missing the required parameter "domainName" when calling deleteRoutingEmailDomainRoute';
@@ -116,7 +135,8 @@ class RoutingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -124,8 +144,12 @@ class RoutingApi {
 	 * Delete an outbound domain
 	 * 
 	 * @param {String} domainId domain ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteRoutingEmailOutboundDomain(domainId) { 
+	deleteRoutingEmailOutboundDomain(domainId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'domainId' is set
 		if (domainId === undefined || domainId === null || domainId === '') {
 			throw 'Missing the required parameter "domainId" when calling deleteRoutingEmailOutboundDomain';
@@ -141,7 +165,38 @@ class RoutingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Delete an email setting. Removes the email setting and its associated settings
+	 * 
+	 * @param {String} emailSettingId Email Setting ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	deleteRoutingEmailSettingEmailSettingId(emailSettingId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'emailSettingId' is set
+		if (emailSettingId === undefined || emailSettingId === null || emailSettingId === '') {
+			throw 'Missing the required parameter "emailSettingId" when calling deleteRoutingEmailSettingEmailSettingId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/email/setting/{emailSettingId}', 
+			'DELETE', 
+			{ 'emailSettingId': emailSettingId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -149,8 +204,12 @@ class RoutingApi {
 	 * Delete a routing language
 	 * 
 	 * @param {String} languageId Language ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteRoutingLanguage(languageId) { 
+	deleteRoutingLanguage(languageId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'languageId' is set
 		if (languageId === undefined || languageId === null || languageId === '') {
 			throw 'Missing the required parameter "languageId" when calling deleteRoutingLanguage';
@@ -166,7 +225,8 @@ class RoutingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -174,8 +234,12 @@ class RoutingApi {
 	 * Delete single predictor.
 	 * 
 	 * @param {String} predictorId Predictor ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteRoutingPredictor(predictorId) { 
+	deleteRoutingPredictor(predictorId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'predictorId' is set
 		if (predictorId === undefined || predictorId === null || predictorId === '') {
 			throw 'Missing the required parameter "predictorId" when calling deleteRoutingPredictor';
@@ -191,7 +255,39 @@ class RoutingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Delete a custom Key Performance Indicator.
+	 * 
+	 * @param {String} kpiId Key Performance Indicator ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * deleteRoutingPredictorsKeyperformanceindicator is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	deleteRoutingPredictorsKeyperformanceindicator(kpiId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'kpiId' is set
+		if (kpiId === undefined || kpiId === null || kpiId === '') {
+			throw 'Missing the required parameter "kpiId" when calling deleteRoutingPredictorsKeyperformanceindicator';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/predictors/keyperformanceindicators/{kpiId}', 
+			'DELETE', 
+			{ 'kpiId': kpiId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -201,6 +297,7 @@ class RoutingApi {
 	 * @param {String} queueId Queue ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.forceDelete forceDelete
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	deleteRoutingQueue(queueId, opts) { 
 		opts = opts || {};
@@ -220,7 +317,8 @@ class RoutingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -229,8 +327,12 @@ class RoutingApi {
 	 * 
 	 * @param {String} queueId Queue ID
 	 * @param {String} memberId Member ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteRoutingQueueMember(queueId, memberId) { 
+	deleteRoutingQueueMember(queueId, memberId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'queueId' is set
 		if (queueId === undefined || queueId === null || queueId === '') {
 			throw 'Missing the required parameter "queueId" when calling deleteRoutingQueueMember';
@@ -250,7 +352,8 @@ class RoutingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -259,9 +362,13 @@ class RoutingApi {
 	 * 
 	 * @param {String} queueId Queue ID
 	 * @param {String} memberId Member ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
-	deleteRoutingQueueUser(queueId, memberId) { 
+	deleteRoutingQueueUser(queueId, memberId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'queueId' is set
 		if (queueId === undefined || queueId === null || queueId === '') {
 			throw 'Missing the required parameter "queueId" when calling deleteRoutingQueueUser';
@@ -281,7 +388,8 @@ class RoutingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -290,8 +398,12 @@ class RoutingApi {
 	 * 
 	 * @param {String} queueId Queue ID
 	 * @param {String} codeId Code ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteRoutingQueueWrapupcode(queueId, codeId) { 
+	deleteRoutingQueueWrapupcode(queueId, codeId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'queueId' is set
 		if (queueId === undefined || queueId === null || queueId === '') {
 			throw 'Missing the required parameter "queueId" when calling deleteRoutingQueueWrapupcode';
@@ -311,15 +423,20 @@ class RoutingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Delete an organization's routing settings
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteRoutingSettings() { 
+	deleteRoutingSettings(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/routing/settings', 
@@ -331,7 +448,8 @@ class RoutingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -339,8 +457,12 @@ class RoutingApi {
 	 * Delete Routing Skill
 	 * 
 	 * @param {String} skillId Skill ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteRoutingSkill(skillId) { 
+	deleteRoutingSkill(skillId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'skillId' is set
 		if (skillId === undefined || skillId === null || skillId === '') {
 			throw 'Missing the required parameter "skillId" when calling deleteRoutingSkill';
@@ -356,7 +478,64 @@ class RoutingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Archive a skill expression to remove it from the set of active expressions
+	 * 
+	 * @param {String} expressionId Expression ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	deleteRoutingSkillexpression(expressionId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'expressionId' is set
+		if (expressionId === undefined || expressionId === null || expressionId === '') {
+			throw 'Missing the required parameter "expressionId" when calling deleteRoutingSkillexpression';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/skillexpressions/{expressionId}', 
+			'DELETE', 
+			{ 'expressionId': expressionId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Archive a set of skill expressions to remove them from the set of active expressions
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.id Expression ID(s) to filter. Repeat for multiple or use comma-separated list.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	deleteRoutingSkillexpressions(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/skillexpressions', 
+			'DELETE', 
+			{  },
+			{ 'id': this.apiClient.buildCollectionParam(opts['id'], 'multi') },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -364,8 +543,12 @@ class RoutingApi {
 	 * Remove skill group definition
 	 * 
 	 * @param {String} skillGroupId Skill Group ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteRoutingSkillgroup(skillGroupId) { 
+	deleteRoutingSkillgroup(skillGroupId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'skillGroupId' is set
 		if (skillGroupId === undefined || skillGroupId === null || skillGroupId === '') {
 			throw 'Missing the required parameter "skillGroupId" when calling deleteRoutingSkillgroup';
@@ -381,7 +564,8 @@ class RoutingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -389,8 +573,12 @@ class RoutingApi {
 	 * Delete an Address by Id for SMS
 	 * 
 	 * @param {String} addressId Address ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteRoutingSmsAddress(addressId) { 
+	deleteRoutingSmsAddress(addressId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'addressId' is set
 		if (addressId === undefined || addressId === null || addressId === '') {
 			throw 'Missing the required parameter "addressId" when calling deleteRoutingSmsAddress';
@@ -406,7 +594,8 @@ class RoutingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -414,8 +603,12 @@ class RoutingApi {
 	 * Delete a phone number provisioned for SMS.
 	 * 
 	 * @param {String} phoneNumberId phone number
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteRoutingSmsPhonenumber(phoneNumberId) { 
+	deleteRoutingSmsPhonenumber(phoneNumberId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'phoneNumberId' is set
 		if (phoneNumberId === undefined || phoneNumberId === null || phoneNumberId === '') {
 			throw 'Missing the required parameter "phoneNumberId" when calling deleteRoutingSmsPhonenumber';
@@ -431,7 +624,8 @@ class RoutingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -439,8 +633,12 @@ class RoutingApi {
 	 * Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default.
 	 * 
 	 * @param {String} userId User ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteRoutingUserDirectroutingbackupSettings(userId) { 
+	deleteRoutingUserDirectroutingbackupSettings(userId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling deleteRoutingUserDirectroutingbackupSettings';
@@ -456,7 +654,8 @@ class RoutingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -464,8 +663,12 @@ class RoutingApi {
 	 * Delete the user's max utilization settings and revert to the organization-wide default.
 	 * 
 	 * @param {String} userId User ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteRoutingUserUtilization(userId) { 
+	deleteRoutingUserUtilization(userId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling deleteRoutingUserUtilization';
@@ -481,15 +684,20 @@ class RoutingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Delete the organization-wide max utilization settings and revert to the system default.
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteRoutingUtilization() { 
+	deleteRoutingUtilization(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/routing/utilization', 
@@ -501,7 +709,8 @@ class RoutingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -511,6 +720,7 @@ class RoutingApi {
 	 * @param {String} labelId Utilization Label ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.forceDelete Remove all label usages (if found) without warning (default to false)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	deleteRoutingUtilizationLabel(labelId, opts) { 
 		opts = opts || {};
@@ -530,37 +740,8 @@ class RoutingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Delete an utilization tag
-	 * 
-	 * @param {String} tagId Utilization Tag ID
-	 * @param {Object} opts Optional parameters
-	 * @param {Boolean} opts.forceDelete Remove all tag usages (if found) without warning (default to false)
-	 * deleteRoutingUtilizationTag is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-	 */
-	deleteRoutingUtilizationTag(tagId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'tagId' is set
-		if (tagId === undefined || tagId === null || tagId === '') {
-			throw 'Missing the required parameter "tagId" when calling deleteRoutingUtilizationTag';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/routing/utilization/tags/{tagId}', 
-			'DELETE', 
-			{ 'tagId': tagId },
-			{ 'forceDelete': opts['forceDelete'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			opts['customHeaders']
 		);
 	}
 
@@ -568,8 +749,12 @@ class RoutingApi {
 	 * Delete wrap-up code
 	 * 
 	 * @param {String} codeId Wrapup Code ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteRoutingWrapupcode(codeId) { 
+	deleteRoutingWrapupcode(codeId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'codeId' is set
 		if (codeId === undefined || codeId === null || codeId === '') {
 			throw 'Missing the required parameter "codeId" when calling deleteRoutingWrapupcode';
@@ -585,7 +770,8 @@ class RoutingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -594,8 +780,12 @@ class RoutingApi {
 	 * 
 	 * @param {String} userId User ID
 	 * @param {String} languageId languageId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteUserRoutinglanguage(userId, languageId) { 
+	deleteUserRoutinglanguage(userId, languageId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling deleteUserRoutinglanguage';
@@ -615,7 +805,8 @@ class RoutingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -624,8 +815,12 @@ class RoutingApi {
 	 * 
 	 * @param {String} userId User ID
 	 * @param {String} skillId skillId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteUserRoutingskill(userId, skillId) { 
+	deleteUserRoutingskill(userId, skillId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling deleteUserRoutingskill';
@@ -645,7 +840,8 @@ class RoutingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -653,8 +849,12 @@ class RoutingApi {
 	 * Retrieve a single benefit assessment.
 	 * 
 	 * @param {String} assessmentId Benefit Assessment ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getRoutingAssessment(assessmentId) { 
+	getRoutingAssessment(assessmentId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'assessmentId' is set
 		if (assessmentId === undefined || assessmentId === null || assessmentId === '') {
 			throw 'Missing the required parameter "assessmentId" when calling getRoutingAssessment';
@@ -670,7 +870,8 @@ class RoutingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -683,6 +884,7 @@ class RoutingApi {
 	 * @param {String} opts.limit Number of entities to return. Maximum of 200. Deprecated in favour of pageSize
 	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
 	 * @param {Array.<String>} opts.queueId Queue ID(s) to filter assessments by.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getRoutingAssessments(opts) { 
 		opts = opts || {};
@@ -698,7 +900,8 @@ class RoutingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -706,8 +909,12 @@ class RoutingApi {
 	 * Retrieve a single benefit assessments job.
 	 * 
 	 * @param {String} jobId Benefit Assessment Job ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getRoutingAssessmentsJob(jobId) { 
+	getRoutingAssessmentsJob(jobId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'jobId' is set
 		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getRoutingAssessmentsJob';
@@ -723,7 +930,8 @@ class RoutingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -732,6 +940,7 @@ class RoutingApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.divisionId Division ID(s) to filter assessment jobs by.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getRoutingAssessmentsJobs(opts) { 
 		opts = opts || {};
@@ -747,15 +956,20 @@ class RoutingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get available media types
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getRoutingAvailablemediatypes() { 
+	getRoutingAvailablemediatypes(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/routing/availablemediatypes', 
@@ -767,15 +981,20 @@ class RoutingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get the user's Direct Routing Backup settings.
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getRoutingDirectroutingbackupSettingsMe() { 
+	getRoutingDirectroutingbackupSettingsMe(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/routing/directroutingbackup/settings/me', 
@@ -787,7 +1006,8 @@ class RoutingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -795,8 +1015,13 @@ class RoutingApi {
 	 * Get domain
 	 * 
 	 * @param {String} domainId domain ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.expand Expand options. Valid values: settings
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getRoutingEmailDomain(domainId) { 
+	getRoutingEmailDomain(domainId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'domainId' is set
 		if (domainId === undefined || domainId === null || domainId === '') {
 			throw 'Missing the required parameter "domainId" when calling getRoutingEmailDomain';
@@ -806,13 +1031,74 @@ class RoutingApi {
 			'/api/v2/routing/email/domains/{domainId}', 
 			'GET', 
 			{ 'domainId': domainId },
+			{ 'expand': opts['expand'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get domain dkim settings
+	 * 
+	 * @param {String} domainId domain ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getRoutingEmailDomainDkim(domainId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'domainId' is set
+		if (domainId === undefined || domainId === null || domainId === '') {
+			throw 'Missing the required parameter "domainId" when calling getRoutingEmailDomainDkim';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/email/domains/{domainId}/dkim', 
+			'GET', 
+			{ 'domainId': domainId },
 			{  },
 			{  },
 			{  },
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get domain mail from settings
+	 * 
+	 * @param {String} domainId domain ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getRoutingEmailDomainMailfrom(domainId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'domainId' is set
+		if (domainId === undefined || domainId === null || domainId === '') {
+			throw 'Missing the required parameter "domainId" when calling getRoutingEmailDomainMailfrom';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/email/domains/{domainId}/mailfrom', 
+			'GET', 
+			{ 'domainId': domainId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -823,6 +1109,7 @@ class RoutingApi {
 	 * @param {String} routeId route ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getRoutingEmailDomainRoute(domainName, routeId, opts) { 
 		opts = opts || {};
@@ -846,7 +1133,8 @@ class RoutingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -855,8 +1143,12 @@ class RoutingApi {
 	 * 
 	 * @param {String} domainName email domain
 	 * @param {String} routeId route ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getRoutingEmailDomainRouteIdentityresolution(domainName, routeId) { 
+	getRoutingEmailDomainRouteIdentityresolution(domainName, routeId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'domainName' is set
 		if (domainName === undefined || domainName === null || domainName === '') {
 			throw 'Missing the required parameter "domainName" when calling getRoutingEmailDomainRouteIdentityresolution';
@@ -876,7 +1168,8 @@ class RoutingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -889,6 +1182,7 @@ class RoutingApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {String} opts.pattern Filter routes by the route's pattern property
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getRoutingEmailDomainRoutes(domainName, opts) { 
 		opts = opts || {};
@@ -908,7 +1202,38 @@ class RoutingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get domain verification settings
+	 * 
+	 * @param {String} domainId domain ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getRoutingEmailDomainVerification(domainId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'domainId' is set
+		if (domainId === undefined || domainId === null || domainId === '') {
+			throw 'Missing the required parameter "domainId" when calling getRoutingEmailDomainVerification';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/email/domains/{domainId}/verification', 
+			'GET', 
+			{ 'domainId': domainId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -920,6 +1245,8 @@ class RoutingApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Boolean} opts.excludeStatus Exclude MX record data (default to false)
 	 * @param {String} opts.filter Optional search filter that, if defined, use the **filter** syntax, eg: **mySearchedPattern**. Note that **** is considered no filter.
+	 * @param {Object} opts.expand Expand options. Valid values: settings
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getRoutingEmailDomains(opts) { 
 		opts = opts || {};
@@ -929,13 +1256,14 @@ class RoutingApi {
 			'/api/v2/routing/email/domains', 
 			'GET', 
 			{  },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'excludeStatus': opts['excludeStatus'],'filter': opts['filter'] },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'excludeStatus': opts['excludeStatus'],'filter': opts['filter'],'expand': opts['expand'] },
 			{  },
 			{  },
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -943,8 +1271,13 @@ class RoutingApi {
 	 * Get domain
 	 * 
 	 * @param {String} domainId domain ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.expand Expand options. Valid values: settings
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getRoutingEmailOutboundDomain(domainId) { 
+	getRoutingEmailOutboundDomain(domainId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'domainId' is set
 		if (domainId === undefined || domainId === null || domainId === '') {
 			throw 'Missing the required parameter "domainId" when calling getRoutingEmailOutboundDomain';
@@ -954,13 +1287,14 @@ class RoutingApi {
 			'/api/v2/routing/email/outbound/domains/{domainId}', 
 			'GET', 
 			{ 'domainId': domainId },
-			{  },
+			{ 'expand': opts['expand'] },
 			{  },
 			{  },
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -968,8 +1302,12 @@ class RoutingApi {
 	 * Get activation status (cname + dkim) of an outbound domain
 	 * 
 	 * @param {String} domainId domain ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getRoutingEmailOutboundDomainActivation(domainId) { 
+	getRoutingEmailOutboundDomainActivation(domainId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'domainId' is set
 		if (domainId === undefined || domainId === null || domainId === '') {
 			throw 'Missing the required parameter "domainId" when calling getRoutingEmailOutboundDomainActivation';
@@ -985,32 +1323,8 @@ class RoutingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Search a domain across organizations
-	 * 
-	 * @param {String} domainId domain ID
-	 */
-	getRoutingEmailOutboundDomainSearch(domainId) { 
-		// verify the required parameter 'domainId' is set
-		if (domainId === undefined || domainId === null || domainId === '') {
-			throw 'Missing the required parameter "domainId" when calling getRoutingEmailOutboundDomainSearch';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/routing/email/outbound/domains/{domainId}/search', 
-			'GET', 
-			{ 'domainId': domainId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			opts['customHeaders']
 		);
 	}
 
@@ -1021,6 +1335,8 @@ class RoutingApi {
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {String} opts.filter Optional search filter that, if defined, use the **filter** syntax, eg: **mySearchedPattern**. Note that **** is considered no filter.
+	 * @param {Object} opts.expand Expand options. Valid values: settings
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getRoutingEmailOutboundDomains(opts) { 
 		opts = opts || {};
@@ -1030,21 +1346,83 @@ class RoutingApi {
 			'/api/v2/routing/email/outbound/domains', 
 			'GET', 
 			{  },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'filter': opts['filter'] },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'filter': opts['filter'],'expand': opts['expand'] },
 			{  },
 			{  },
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get a paged list of email routing settings.
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getRoutingEmailSetting(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/email/setting', 
+			'GET', 
+			{  },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get email setting. Returns the specified email setting that defines settings for email
+	 * 
+	 * @param {String} emailSettingId Email Setting ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getRoutingEmailSettingEmailSettingId(emailSettingId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'emailSettingId' is set
+		if (emailSettingId === undefined || emailSettingId === null || emailSettingId === '') {
+			throw 'Missing the required parameter "emailSettingId" when calling getRoutingEmailSettingEmailSettingId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/email/setting/{emailSettingId}', 
+			'GET', 
+			{ 'emailSettingId': emailSettingId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get email setup
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getRoutingEmailSetup() { 
+	getRoutingEmailSetup(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/routing/email/setup', 
@@ -1056,7 +1434,8 @@ class RoutingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1064,8 +1443,12 @@ class RoutingApi {
 	 * Get a routing language
 	 * 
 	 * @param {String} languageId Language ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getRoutingLanguage(languageId) { 
+	getRoutingLanguage(languageId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'languageId' is set
 		if (languageId === undefined || languageId === null || languageId === '') {
 			throw 'Missing the required parameter "languageId" when calling getRoutingLanguage';
@@ -1081,7 +1464,8 @@ class RoutingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1094,6 +1478,7 @@ class RoutingApi {
 	 * @param {Object} opts.sortOrder Ascending or descending sort order (default to ASC)
 	 * @param {String} opts.name Name
 	 * @param {Array.<String>} opts.id id
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getRoutingLanguages(opts) { 
 		opts = opts || {};
@@ -1109,7 +1494,8 @@ class RoutingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1117,8 +1503,12 @@ class RoutingApi {
 	 * Get a recipient
 	 * 
 	 * @param {String} recipientId Recipient ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getRoutingMessageRecipient(recipientId) { 
+	getRoutingMessageRecipient(recipientId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'recipientId' is set
 		if (recipientId === undefined || recipientId === null || recipientId === '') {
 			throw 'Missing the required parameter "recipientId" when calling getRoutingMessageRecipient';
@@ -1134,7 +1524,8 @@ class RoutingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1146,6 +1537,7 @@ class RoutingApi {
 	 * @param {String} opts.name Recipient Name
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getRoutingMessageRecipients(opts) { 
 		opts = opts || {};
@@ -1161,7 +1553,8 @@ class RoutingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1169,8 +1562,12 @@ class RoutingApi {
 	 * Retrieve a single predictor.
 	 * 
 	 * @param {String} predictorId Predictor ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getRoutingPredictor(predictorId) { 
+	getRoutingPredictor(predictorId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'predictorId' is set
 		if (predictorId === undefined || predictorId === null || predictorId === '') {
 			throw 'Missing the required parameter "predictorId" when calling getRoutingPredictor';
@@ -1186,7 +1583,8 @@ class RoutingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1195,8 +1593,12 @@ class RoutingApi {
 	 * 
 	 * @param {String} predictorId Predictor ID
 	 * @param {String} modelId Model ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getRoutingPredictorModelFeatures(predictorId, modelId) { 
+	getRoutingPredictorModelFeatures(predictorId, modelId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'predictorId' is set
 		if (predictorId === undefined || predictorId === null || predictorId === '') {
 			throw 'Missing the required parameter "predictorId" when calling getRoutingPredictorModelFeatures';
@@ -1216,7 +1618,8 @@ class RoutingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1224,8 +1627,12 @@ class RoutingApi {
 	 * Retrieve Predictor Models and Top Features.
 	 * 
 	 * @param {String} predictorId Predictor ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getRoutingPredictorModels(predictorId) { 
+	getRoutingPredictorModels(predictorId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'predictorId' is set
 		if (predictorId === undefined || predictorId === null || predictorId === '') {
 			throw 'Missing the required parameter "predictorId" when calling getRoutingPredictorModels';
@@ -1241,7 +1648,8 @@ class RoutingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1254,6 +1662,9 @@ class RoutingApi {
 	 * @param {String} opts.limit Number of entities to return. Maximum of 200. Deprecated in favour of pageSize
 	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
 	 * @param {Array.<String>} opts.queueId Comma-separated list of queue Ids to filter by.
+	 * @param {String} opts.kpiId Standard or custom KPI id used to filter predictors.
+	 * @param {Object} opts.state The state used to filter predictors.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getRoutingPredictors(opts) { 
 		opts = opts || {};
@@ -1263,13 +1674,46 @@ class RoutingApi {
 			'/api/v2/routing/predictors', 
 			'GET', 
 			{  },
-			{ 'before': opts['before'],'after': opts['after'],'limit': opts['limit'],'pageSize': opts['pageSize'],'queueId': this.apiClient.buildCollectionParam(opts['queueId'], 'multi') },
+			{ 'before': opts['before'],'after': opts['after'],'limit': opts['limit'],'pageSize': opts['pageSize'],'queueId': this.apiClient.buildCollectionParam(opts['queueId'], 'multi'),'kpiId': opts['kpiId'],'state': opts['state'] },
 			{  },
 			{  },
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Retrieve a single Key Performance Indicator.
+	 * 
+	 * @param {String} kpiId Key Performance Indicator ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Array.<String>} opts.expand Parameter to request additional data to return in KPI payload
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * getRoutingPredictorsKeyperformanceindicator is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getRoutingPredictorsKeyperformanceindicator(kpiId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'kpiId' is set
+		if (kpiId === undefined || kpiId === null || kpiId === '') {
+			throw 'Missing the required parameter "kpiId" when calling getRoutingPredictorsKeyperformanceindicator';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/predictors/keyperformanceindicators/{kpiId}', 
+			'GET', 
+			{ 'kpiId': kpiId },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi') },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1279,6 +1723,7 @@ class RoutingApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.kpiGroup The Group of Key Performance Indicators to return
 	 * @param {Array.<String>} opts.expand Parameter to request additional data to return in KPI payload
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getRoutingPredictorsKeyperformanceindicators(opts) { 
 		opts = opts || {};
@@ -1294,7 +1739,34 @@ class RoutingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get a list of Key Performance Indicators Types available.
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * getRoutingPredictorsKeyperformanceindicatortypes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	getRoutingPredictorsKeyperformanceindicatortypes(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/predictors/keyperformanceindicatortypes', 
+			'GET', 
+			{  },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1304,6 +1776,7 @@ class RoutingApi {
 	 * @param {String} queueId Queue ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getRoutingQueue(queueId, opts) { 
 		opts = opts || {};
@@ -1323,7 +1796,8 @@ class RoutingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1332,7 +1806,10 @@ class RoutingApi {
 	 * 
 	 * @param {String} queueId Queue ID
 	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.expand Which fields, if any, to expand.
+	 * @param {Array.<String>} opts.expand Which fields, if any, to expand.
+	 * @param {String} opts.languageVariation Language variation
+	 * @param {Boolean} opts.fallbackToPrimaryAssistant Fall back to primary assistant if specified variation is not found
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getRoutingQueueAssistant(queueId, opts) { 
 		opts = opts || {};
@@ -1346,13 +1823,14 @@ class RoutingApi {
 			'/api/v2/routing/queues/{queueId}/assistant', 
 			'GET', 
 			{ 'queueId': queueId },
-			{ 'expand': opts['expand'] },
+			{ 'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'languageVariation': opts['languageVariation'],'fallbackToPrimaryAssistant': opts['fallbackToPrimaryAssistant'] },
 			{  },
 			{  },
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1361,8 +1839,12 @@ class RoutingApi {
 	 * 
 	 * @param {String} queueId Queue id
 	 * @param {String} comparisonPeriodId ComparisonPeriod id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getRoutingQueueComparisonperiod(queueId, comparisonPeriodId) { 
+	getRoutingQueueComparisonperiod(queueId, comparisonPeriodId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'queueId' is set
 		if (queueId === undefined || queueId === null || queueId === '') {
 			throw 'Missing the required parameter "queueId" when calling getRoutingQueueComparisonperiod';
@@ -1382,7 +1864,8 @@ class RoutingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1390,8 +1873,12 @@ class RoutingApi {
 	 * Get list of comparison periods
 	 * 
 	 * @param {String} queueId Queue id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getRoutingQueueComparisonperiods(queueId) { 
+	getRoutingQueueComparisonperiods(queueId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'queueId' is set
 		if (queueId === undefined || queueId === null || queueId === '') {
 			throw 'Missing the required parameter "queueId" when calling getRoutingQueueComparisonperiods';
@@ -1407,7 +1894,8 @@ class RoutingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1417,6 +1905,7 @@ class RoutingApi {
 	 * @param {String} queueId queueId
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.conversationId conversationId
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getRoutingQueueEstimatedwaittime(queueId, opts) { 
 		opts = opts || {};
@@ -1436,7 +1925,8 @@ class RoutingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1444,8 +1934,12 @@ class RoutingApi {
 	 * Get Queue IdentityResolution Settings.
 	 * 
 	 * @param {String} queueId Queue ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getRoutingQueueIdentityresolution(queueId) { 
+	getRoutingQueueIdentityresolution(queueId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'queueId' is set
 		if (queueId === undefined || queueId === null || queueId === '') {
 			throw 'Missing the required parameter "queueId" when calling getRoutingQueueIdentityresolution';
@@ -1461,7 +1955,8 @@ class RoutingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1472,6 +1967,7 @@ class RoutingApi {
 	 * @param {Object} mediaType mediaType
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.labelId Unique id that represents the interaction label used with media type for EWT calculation
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getRoutingQueueMediatypeEstimatedwaittime(queueId, mediaType, opts) { 
 		opts = opts || {};
@@ -1495,7 +1991,8 @@ class RoutingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1516,6 +2013,7 @@ class RoutingApi {
 	 * @param {Array.<String>} opts.presence Filter by presence
 	 * @param {Object} opts.memberBy Filter by member type
 	 * @param {Object} opts.joined Filter by joined status
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getRoutingQueueMembers(queueId, opts) { 
 		opts = opts || {};
@@ -1535,7 +2033,8 @@ class RoutingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1555,6 +2054,7 @@ class RoutingApi {
 	 * @param {Array.<String>} opts.languages Filter by language
 	 * @param {Array.<String>} opts.routingStatus Filter by routing status
 	 * @param {Array.<String>} opts.presence Filter by presence
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
 	getRoutingQueueUsers(queueId, opts) { 
@@ -1575,7 +2075,8 @@ class RoutingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1587,6 +2088,7 @@ class RoutingApi {
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {String} opts.name Wrapup code's name (trailing asterisks allowed)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getRoutingQueueWrapupcodes(queueId, opts) { 
 		opts = opts || {};
@@ -1606,7 +2108,8 @@ class RoutingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1624,6 +2127,7 @@ class RoutingApi {
 	 * @param {String} opts.cannedResponseLibraryId Include only queues explicitly associated with the specified canned response library ID
 	 * @param {Boolean} opts.hasPeer Include only queues with a peer ID
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getRoutingQueues(opts) { 
 		opts = opts || {};
@@ -1639,7 +2143,8 @@ class RoutingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1653,7 +2158,8 @@ class RoutingApi {
 	 * @param {Object} opts.sortOrder Sort order (default to asc)
 	 * @param {String} opts.name Name
 	 * @param {Array.<String>} opts.id Queue ID(s)
-	 * @param {Array.<String>} opts.divisionId Division ID(s)
+	 * @param {Array.<String>} opts.divisionId Division ID(s). Including '*' will query for all divisions
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getRoutingQueuesDivisionviews(opts) { 
 		opts = opts || {};
@@ -1669,7 +2175,8 @@ class RoutingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1680,6 +2187,7 @@ class RoutingApi {
 	 * @param {Number} opts.pageSize Page size [max value is 500] (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Object} opts.sortOrder Sort order (default to asc)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getRoutingQueuesDivisionviewsAll(opts) { 
 		opts = opts || {};
@@ -1695,7 +2203,8 @@ class RoutingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1707,6 +2216,7 @@ class RoutingApi {
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Object} opts.joined Filter by joined status.
 	 * @param {Object} opts.sortOrder Note: results are sorted by name. (default to asc)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getRoutingQueuesMe(opts) { 
 		opts = opts || {};
@@ -1722,15 +2232,20 @@ class RoutingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get an organization's routing settings
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getRoutingSettings() { 
+	getRoutingSettings(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/routing/settings', 
@@ -1742,15 +2257,20 @@ class RoutingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get Contact Center Settings
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getRoutingSettingsContactcenter() { 
+	getRoutingSettingsContactcenter(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/routing/settings/contactcenter', 
@@ -1762,15 +2282,20 @@ class RoutingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get Transcription Settings
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getRoutingSettingsTranscription() { 
+	getRoutingSettingsTranscription(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/routing/settings/transcription', 
@@ -1782,7 +2307,8 @@ class RoutingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1790,8 +2316,12 @@ class RoutingApi {
 	 * Get Routing Skill
 	 * 
 	 * @param {String} skillId Skill ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getRoutingSkill(skillId) { 
+	getRoutingSkill(skillId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'skillId' is set
 		if (skillId === undefined || skillId === null || skillId === '') {
 			throw 'Missing the required parameter "skillId" when calling getRoutingSkill';
@@ -1807,7 +2337,100 @@ class RoutingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get a skill expression by ID
+	 * 
+	 * @param {String} expressionId Expression ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.includeArchived Include archived (default to false)
+	 * @param {Object} opts.format Response format: raw expression or normalized (default to Raw)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getRoutingSkillexpression(expressionId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'expressionId' is set
+		if (expressionId === undefined || expressionId === null || expressionId === '') {
+			throw 'Missing the required parameter "expressionId" when calling getRoutingSkillexpression';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/skillexpressions/{expressionId}', 
+			'GET', 
+			{ 'expressionId': expressionId },
+			{ 'includeArchived': opts['includeArchived'],'format': opts['format'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get skill expressions
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.format Response format: raw expression or normalized (default to Raw)
+	 * @param {Boolean} opts.includeArchived Include archived (default to false)
+	 * @param {Array.<String>} opts.id Expression ID(s) to filter. Repeat for multiple or use comma-separated list.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getRoutingSkillexpressions(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/skillexpressions', 
+			'GET', 
+			{  },
+			{ 'format': opts['format'],'includeArchived': opts['includeArchived'],'id': this.apiClient.buildCollectionParam(opts['id'], 'multi') },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get skill expressions associated with a queue
+	 * 
+	 * @param {String} queueId Queue ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.format Response format: raw expression or normalized (default to Raw)
+	 * @param {Boolean} opts.includeArchived Include archived (default to false)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getRoutingSkillexpressionsQueueQueueId(queueId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'queueId' is set
+		if (queueId === undefined || queueId === null || queueId === '') {
+			throw 'Missing the required parameter "queueId" when calling getRoutingSkillexpressionsQueueQueueId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/skillexpressions/queue/{queueId}', 
+			'GET', 
+			{ 'queueId': queueId },
+			{ 'format': opts['format'],'includeArchived': opts['includeArchived'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1815,8 +2438,12 @@ class RoutingApi {
 	 * Get skill group
 	 * 
 	 * @param {String} skillGroupId Skill Group ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getRoutingSkillgroup(skillGroupId) { 
+	getRoutingSkillgroup(skillGroupId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'skillGroupId' is set
 		if (skillGroupId === undefined || skillGroupId === null || skillGroupId === '') {
 			throw 'Missing the required parameter "skillGroupId" when calling getRoutingSkillgroup';
@@ -1832,7 +2459,8 @@ class RoutingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1845,6 +2473,7 @@ class RoutingApi {
 	 * @param {String} opts.after The cursor that points to the next item
 	 * @param {String} opts.before The cursor that points to the previous item
 	 * @param {Object} opts.expand Expand the name on each user
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getRoutingSkillgroupMembers(skillGroupId, opts) { 
 		opts = opts || {};
@@ -1864,7 +2493,8 @@ class RoutingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1874,6 +2504,7 @@ class RoutingApi {
 	 * @param {String} skillGroupId Skill Group ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.expand Expand the name on each user
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getRoutingSkillgroupMembersDivisions(skillGroupId, opts) { 
 		opts = opts || {};
@@ -1893,7 +2524,8 @@ class RoutingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1905,6 +2537,7 @@ class RoutingApi {
 	 * @param {String} opts.name Return only skill group names whose names start with this value (case-insensitive matching)
 	 * @param {String} opts.after The cursor that points to the next item
 	 * @param {String} opts.before The cursor that points to the previous item
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getRoutingSkillgroups(opts) { 
 		opts = opts || {};
@@ -1920,18 +2553,20 @@ class RoutingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
-	 * Get the list of routing skills.
+	 * Get the list of routing skills. View permission enforcement only applies to skills assigned to a division.
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {String} opts.name Filter for results that start with this value
 	 * @param {Array.<String>} opts.id id
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getRoutingSkills(opts) { 
 		opts = opts || {};
@@ -1947,7 +2582,8 @@ class RoutingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1955,8 +2591,12 @@ class RoutingApi {
 	 * Get an Address by Id for SMS
 	 * 
 	 * @param {String} addressId Address ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getRoutingSmsAddress(addressId) { 
+	getRoutingSmsAddress(addressId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'addressId' is set
 		if (addressId === undefined || addressId === null || addressId === '') {
 			throw 'Missing the required parameter "addressId" when calling getRoutingSmsAddress';
@@ -1972,7 +2612,8 @@ class RoutingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1982,6 +2623,7 @@ class RoutingApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getRoutingSmsAddresses(opts) { 
 		opts = opts || {};
@@ -1997,7 +2639,8 @@ class RoutingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2012,6 +2655,7 @@ class RoutingApi {
 	 * @param {String} opts.areaCode Area code that can be used to restrict the numbers returned
 	 * @param {String} opts.pattern A pattern to match phone numbers. Valid characters are '*' and [0-9a-zA-Z]. The '*' character will match any single digit.
 	 * @param {Object} opts.addressRequirement This indicates whether the phone number requires to have an Address registered.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getRoutingSmsAvailablephonenumbers(countryCode, phoneNumberType, opts) { 
 		opts = opts || {};
@@ -2035,7 +2679,8 @@ class RoutingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2043,8 +2688,12 @@ class RoutingApi {
 	 * Get a SMS identity resolution settings.
 	 * 
 	 * @param {String} addressId Address ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getRoutingSmsIdentityresolutionPhonenumber(addressId) { 
+	getRoutingSmsIdentityresolutionPhonenumber(addressId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'addressId' is set
 		if (addressId === undefined || addressId === null || addressId === '') {
 			throw 'Missing the required parameter "addressId" when calling getRoutingSmsIdentityresolutionPhonenumber';
@@ -2060,16 +2709,18 @@ class RoutingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get a phone number provisioned for SMS.
-	 * 
+	 * When no supported content profile is explicitly set on an MMS-capable phone number, the system uses the "SMS Default" profile. This default profile allows all media types (\*\/\*) for inbound messages and specific image types (image/gif, image/jpeg, image/png) for outbound messages. The "SMS Default" profile does not have an ID and cannot be modified. To customize media filtering, create and assign a custom supported content profile using the PATCH endpoint.
 	 * @param {String} phoneNumberId phone number
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.expand Expand response with additional information
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getRoutingSmsPhonenumber(phoneNumberId, opts) { 
 		opts = opts || {};
@@ -2089,13 +2740,14 @@ class RoutingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get a list of provisioned phone numbers.
-	 * 
+	 * When no supported content profile is explicitly set, the system uses the "SMS Default" profile. This default profile allows all media types (\*\/\*) for inbound messages and specific image types (image/gif, image/jpeg, image/png) for outbound messages. The "SMS Default" profile does not have an ID and cannot be modified. To customize media filtering, create and assign a custom supported content profile.
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.phoneNumber Filter on phone number address. Allowable characters are the digits '0-9' and the wild card character '\\*'. If just digits are present, a contains search is done on the address pattern. For example, '317' could be matched anywhere in the address. An '\\*' will match multiple digits. For example, to match a specific area code within the US a pattern like '1317*' could be used.
 	 * @param {Array.<String>} opts.phoneNumberType Filter on phone number type
@@ -2109,6 +2761,7 @@ class RoutingApi {
 	 * @param {String} opts.integrationId Filter on the Genesys Cloud integration id to which the phone number belongs to
 	 * @param {String} opts.supportedContentId Filter based on the supported content ID
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getRoutingSmsPhonenumbers(opts) { 
 		opts = opts || {};
@@ -2124,7 +2777,8 @@ class RoutingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2132,8 +2786,12 @@ class RoutingApi {
 	 * Get the user's Direct Routing Backup settings.
 	 * 
 	 * @param {String} userId User ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getRoutingUserDirectroutingbackupSettings(userId) { 
+	getRoutingUserDirectroutingbackupSettings(userId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getRoutingUserDirectroutingbackupSettings';
@@ -2149,7 +2807,8 @@ class RoutingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2157,8 +2816,12 @@ class RoutingApi {
 	 * Get the user's max utilization settings.  If not configured, the organization-wide default is returned.
 	 * 
 	 * @param {String} userId User ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getRoutingUserUtilization(userId) { 
+	getRoutingUserUtilization(userId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling getRoutingUserUtilization';
@@ -2174,15 +2837,20 @@ class RoutingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get the organization-wide max utilization settings.
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getRoutingUtilization() { 
+	getRoutingUtilization(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/routing/utilization', 
@@ -2194,7 +2862,8 @@ class RoutingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2202,8 +2871,12 @@ class RoutingApi {
 	 * Get details about this utilization label
 	 * 
 	 * @param {String} labelId Utilization Label ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getRoutingUtilizationLabel(labelId) { 
+	getRoutingUtilizationLabel(labelId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'labelId' is set
 		if (labelId === undefined || labelId === null || labelId === '') {
 			throw 'Missing the required parameter "labelId" when calling getRoutingUtilizationLabel';
@@ -2219,7 +2892,8 @@ class RoutingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2227,8 +2901,12 @@ class RoutingApi {
 	 * Get list of agent ids associated with a utilization label
 	 * 
 	 * @param {String} labelId Utilization Label ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getRoutingUtilizationLabelAgents(labelId) { 
+	getRoutingUtilizationLabelAgents(labelId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'labelId' is set
 		if (labelId === undefined || labelId === null || labelId === '') {
 			throw 'Missing the required parameter "labelId" when calling getRoutingUtilizationLabelAgents';
@@ -2244,7 +2922,8 @@ class RoutingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2256,6 +2935,7 @@ class RoutingApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Object} opts.sortOrder Sort order by name (default to ascending)
 	 * @param {String} opts.name Utilization label's name (Wildcard is supported, e.g., 'label1*', '*label*'
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getRoutingUtilizationLabels(opts) { 
 		opts = opts || {};
@@ -2271,87 +2951,8 @@ class RoutingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get details about this utilization tag
-	 * 
-	 * @param {String} tagId Utilization Tag ID
-	 * getRoutingUtilizationTag is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-	 */
-	getRoutingUtilizationTag(tagId) { 
-		// verify the required parameter 'tagId' is set
-		if (tagId === undefined || tagId === null || tagId === '') {
-			throw 'Missing the required parameter "tagId" when calling getRoutingUtilizationTag';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/routing/utilization/tags/{tagId}', 
-			'GET', 
-			{ 'tagId': tagId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get list of agent ids associated with a utilization tag
-	 * 
-	 * @param {String} tagId Utilization Tag ID
-	 * getRoutingUtilizationTagAgents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-	 */
-	getRoutingUtilizationTagAgents(tagId) { 
-		// verify the required parameter 'tagId' is set
-		if (tagId === undefined || tagId === null || tagId === '') {
-			throw 'Missing the required parameter "tagId" when calling getRoutingUtilizationTagAgents';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/routing/utilization/tags/{tagId}/agents', 
-			'GET', 
-			{ 'tagId': tagId },
-			{  },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Get list of utilization tags
-	 * 
-	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageSize Page size (default to 25)
-	 * @param {Number} opts.pageNumber Page number (default to 1)
-	 * @param {Object} opts.sortOrder Sort order by name (default to ascending)
-	 * @param {String} opts.name Utilization tag's name (Wildcard is supported, e.g., 'tag1*')
-	 * getRoutingUtilizationTags is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-	 */
-	getRoutingUtilizationTags(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/routing/utilization/tags', 
-			'GET', 
-			{  },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortOrder': opts['sortOrder'],'name': opts['name'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
-			['application/json'],
-			['application/json']
+			opts['customHeaders']
 		);
 	}
 
@@ -2359,8 +2960,12 @@ class RoutingApi {
 	 * Get details about this wrap-up code.
 	 * 
 	 * @param {String} codeId Wrapup Code ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getRoutingWrapupcode(codeId) { 
+	getRoutingWrapupcode(codeId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'codeId' is set
 		if (codeId === undefined || codeId === null || codeId === '') {
 			throw 'Missing the required parameter "codeId" when calling getRoutingWrapupcode';
@@ -2376,7 +2981,8 @@ class RoutingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2391,6 +2997,7 @@ class RoutingApi {
 	 * @param {String} opts.name Wrapup code's name ('Sort by' param is ignored unless this field is provided)
 	 * @param {Array.<String>} opts.id Filter by wrapup code ID(s)
 	 * @param {Array.<String>} opts.divisionId Filter by division ID(s)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getRoutingWrapupcodes(opts) { 
 		opts = opts || {};
@@ -2406,7 +3013,8 @@ class RoutingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2414,8 +3022,12 @@ class RoutingApi {
 	 * Get a simplified wrap-up code.
 	 * 
 	 * @param {String} codeId Wrapup Code ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getRoutingWrapupcodesDivisionview(codeId) { 
+	getRoutingWrapupcodesDivisionview(codeId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'codeId' is set
 		if (codeId === undefined || codeId === null || codeId === '') {
 			throw 'Missing the required parameter "codeId" when calling getRoutingWrapupcodesDivisionview';
@@ -2431,7 +3043,8 @@ class RoutingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2445,6 +3058,7 @@ class RoutingApi {
 	 * @param {Array.<String>} opts.id Wrapup code ID(s)
 	 * @param {Array.<String>} opts.divisionId Division ID(s)
 	 * @param {Object} opts.includeState Wrapup code state(s) to include
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getRoutingWrapupcodesDivisionviews(opts) { 
 		opts = opts || {};
@@ -2460,7 +3074,8 @@ class RoutingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2473,6 +3088,7 @@ class RoutingApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Boolean} opts.joined Is joined to the queue (default to true)
 	 * @param {Array.<String>} opts.divisionId Division ID(s)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getUserQueues(userId, opts) { 
 		opts = opts || {};
@@ -2492,7 +3108,8 @@ class RoutingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2504,6 +3121,7 @@ class RoutingApi {
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Object} opts.sortOrder Ascending or descending sort order (default to ASC)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getUserRoutinglanguages(userId, opts) { 
 		opts = opts || {};
@@ -2523,7 +3141,8 @@ class RoutingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2535,6 +3154,7 @@ class RoutingApi {
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Object} opts.sortOrder Ascending or descending sort order (default to ASC)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getUserRoutingskills(userId, opts) { 
 		opts = opts || {};
@@ -2554,7 +3174,8 @@ class RoutingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2566,6 +3187,7 @@ class RoutingApi {
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {String} opts.after The cursor that points to the next page
 	 * @param {String} opts.before The cursor that points to the previous page
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getUserSkillgroups(userId, opts) { 
 		opts = opts || {};
@@ -2585,17 +3207,22 @@ class RoutingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Update attributes of an in-queue conversation
-	 * Returns an object indicating the updated values of all settable attributes. Supported attributes: skillIds, languageId, and priority.
+	 * Returns an object indicating the updated values of all settable attributes. Supported attributes: skillIds, skillExpression, languageId, and priority.
 	 * @param {String} conversationId Conversation ID
 	 * @param {Object} body Conversation Attributes
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchRoutingConversation(conversationId, body) { 
+	patchRoutingConversation(conversationId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null || conversationId === '') {
 			throw 'Missing the required parameter "conversationId" when calling patchRoutingConversation';
@@ -2615,7 +3242,8 @@ class RoutingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2624,8 +3252,12 @@ class RoutingApi {
 	 * 
 	 * @param {String} domainId domain ID
 	 * @param {Object} body Domain settings
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchRoutingEmailDomain(domainId, body) { 
+	patchRoutingEmailDomain(domainId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'domainId' is set
 		if (domainId === undefined || domainId === null || domainId === '') {
 			throw 'Missing the required parameter "domainId" when calling patchRoutingEmailDomain';
@@ -2645,7 +3277,8 @@ class RoutingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2654,8 +3287,12 @@ class RoutingApi {
 	 * 
 	 * @param {String} domainId domain ID
 	 * @param {Object} body Domain settings
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchRoutingEmailDomainValidate(domainId, body) { 
+	patchRoutingEmailDomainValidate(domainId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'domainId' is set
 		if (domainId === undefined || domainId === null || domainId === '') {
 			throw 'Missing the required parameter "domainId" when calling patchRoutingEmailDomainValidate';
@@ -2675,7 +3312,78 @@ class RoutingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Update configurable settings for an email domain, such as changing the sending method (e.g., to or from SMTP).
+	 * 
+	 * @param {String} domainId domain ID
+	 * @param {Object} body Domain settings
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	patchRoutingEmailOutboundDomain(domainId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'domainId' is set
+		if (domainId === undefined || domainId === null || domainId === '') {
+			throw 'Missing the required parameter "domainId" when calling patchRoutingEmailOutboundDomain';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchRoutingEmailOutboundDomain';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/email/outbound/domains/{domainId}', 
+			'PATCH', 
+			{ 'domainId': domainId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Update an email setting. Modifies the settings for email setting
+	 * 
+	 * @param {String} emailSettingId Email Setting ID
+	 * @param {Object} body EmailSetting
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	patchRoutingEmailSettingEmailSettingId(emailSettingId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'emailSettingId' is set
+		if (emailSettingId === undefined || emailSettingId === null || emailSettingId === '') {
+			throw 'Missing the required parameter "emailSettingId" when calling patchRoutingEmailSettingEmailSettingId';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchRoutingEmailSettingEmailSettingId';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/email/setting/{emailSettingId}', 
+			'PATCH', 
+			{ 'emailSettingId': emailSettingId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2685,6 +3393,7 @@ class RoutingApi {
 	 * @param {String} predictorId Predictor ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	patchRoutingPredictor(predictorId, opts) { 
 		opts = opts || {};
@@ -2704,7 +3413,40 @@ class RoutingApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Update a custom Key Performance Indicator.
+	 * 
+	 * @param {String} kpiId Key Performance Indicator ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * patchRoutingPredictorsKeyperformanceindicator is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	patchRoutingPredictorsKeyperformanceindicator(kpiId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'kpiId' is set
+		if (kpiId === undefined || kpiId === null || kpiId === '') {
+			throw 'Missing the required parameter "kpiId" when calling patchRoutingPredictorsKeyperformanceindicator';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/predictors/keyperformanceindicators/{kpiId}', 
+			'PATCH', 
+			{ 'kpiId': kpiId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2714,8 +3456,12 @@ class RoutingApi {
 	 * @param {String} queueId Queue ID
 	 * @param {String} memberId Member ID
 	 * @param {Object} body Queue Member
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchRoutingQueueMember(queueId, memberId, body) { 
+	patchRoutingQueueMember(queueId, memberId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'queueId' is set
 		if (queueId === undefined || queueId === null || queueId === '') {
 			throw 'Missing the required parameter "queueId" when calling patchRoutingQueueMember';
@@ -2739,17 +3485,22 @@ class RoutingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Join or unjoin a set of up to 100 users for a queue
-	 * 
+	 * Users can only be joined to queues where they have membership. Non-member user-queue pairs in the request will be disregarded. Note: This operation is processed asynchronously and the response data may not reflect the final state. Changes may take time to propagate. Query the GET endpoint after a delay to retrieve the current membership status.
 	 * @param {String} queueId Queue ID
 	 * @param {Array.<Object>} body Queue Members
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchRoutingQueueMembers(queueId, body) { 
+	patchRoutingQueueMembers(queueId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'queueId' is set
 		if (queueId === undefined || queueId === null || queueId === '') {
 			throw 'Missing the required parameter "queueId" when calling patchRoutingQueueMembers';
@@ -2769,7 +3520,8 @@ class RoutingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2779,9 +3531,13 @@ class RoutingApi {
 	 * @param {String} queueId Queue ID
 	 * @param {String} memberId Member ID
 	 * @param {Object} body Queue Member
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
-	patchRoutingQueueUser(queueId, memberId, body) { 
+	patchRoutingQueueUser(queueId, memberId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'queueId' is set
 		if (queueId === undefined || queueId === null || queueId === '') {
 			throw 'Missing the required parameter "queueId" when calling patchRoutingQueueUser';
@@ -2805,7 +3561,8 @@ class RoutingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2814,9 +3571,13 @@ class RoutingApi {
 	 * 
 	 * @param {String} queueId Queue ID
 	 * @param {Array.<Object>} body Queue Members
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
-	patchRoutingQueueUsers(queueId, body) { 
+	patchRoutingQueueUsers(queueId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'queueId' is set
 		if (queueId === undefined || queueId === null || queueId === '') {
 			throw 'Missing the required parameter "queueId" when calling patchRoutingQueueUsers';
@@ -2836,7 +3597,8 @@ class RoutingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2844,8 +3606,12 @@ class RoutingApi {
 	 * Update Contact Center Settings
 	 * 
 	 * @param {Object} body Contact Center Settings
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchRoutingSettingsContactcenter(body) { 
+	patchRoutingSettingsContactcenter(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling patchRoutingSettingsContactcenter';
@@ -2861,7 +3627,8 @@ class RoutingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2869,8 +3636,12 @@ class RoutingApi {
 	 * Patch Transcription Settings
 	 * 
 	 * @param {Object} body Organization Settings
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchRoutingSettingsTranscription(body) { 
+	patchRoutingSettingsTranscription(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling patchRoutingSettingsTranscription';
@@ -2886,7 +3657,43 @@ class RoutingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Update Routing Skill Division
+	 * 
+	 * @param {String} skillId Skill ID
+	 * @param {Object} body updateSkillDivisionRequest
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	patchRoutingSkill(skillId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'skillId' is set
+		if (skillId === undefined || skillId === null || skillId === '') {
+			throw 'Missing the required parameter "skillId" when calling patchRoutingSkill';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchRoutingSkill';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/skills/{skillId}', 
+			'PATCH', 
+			{ 'skillId': skillId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2895,8 +3702,12 @@ class RoutingApi {
 	 * 
 	 * @param {String} skillGroupId Skill Group ID
 	 * @param {Object} body Update skill groups
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchRoutingSkillgroup(skillGroupId, body) { 
+	patchRoutingSkillgroup(skillGroupId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'skillGroupId' is set
 		if (skillGroupId === undefined || skillGroupId === null || skillGroupId === '') {
 			throw 'Missing the required parameter "skillGroupId" when calling patchRoutingSkillgroup';
@@ -2916,17 +3727,22 @@ class RoutingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Update a phone number provisioned for SMS.
-	 * 
+	 * Use this endpoint to assign a custom supported content profile to an MMS-capable phone number. If no supported content profile is set, the phone number uses the "SMS Default" profile, which allows all media types (\*\/\*) for inbound messages and specific image types (image/gif, image/jpeg, image/png) for outbound messages. To customize media filtering, provide a supported content profile ID in the request body.
 	 * @param {String} phoneNumberId phone number
 	 * @param {Object} body SmsPhoneNumberPatchRequest
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchRoutingSmsPhonenumber(phoneNumberId, body) { 
+	patchRoutingSmsPhonenumber(phoneNumberId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'phoneNumberId' is set
 		if (phoneNumberId === undefined || phoneNumberId === null || phoneNumberId === '') {
 			throw 'Missing the required parameter "phoneNumberId" when calling patchRoutingSmsPhonenumber';
@@ -2946,7 +3762,8 @@ class RoutingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2956,8 +3773,12 @@ class RoutingApi {
 	 * @param {String} queueId Queue ID
 	 * @param {String} userId User ID
 	 * @param {Object} body Queue Member
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchUserQueue(queueId, userId, body) { 
+	patchUserQueue(queueId, userId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'queueId' is set
 		if (queueId === undefined || queueId === null || queueId === '') {
 			throw 'Missing the required parameter "queueId" when calling patchUserQueue';
@@ -2981,17 +3802,19 @@ class RoutingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Join or unjoin a set of queues for a user
-	 * 
+	 * Users can only be joined to queues where they have membership. Non-member user-queue pairs in the request will be disregarded. Note: This operation is processed asynchronously and the response data may not reflect the final state. Changes may take time to propagate. Query the GET endpoint after a delay to retrieve the current membership status.
 	 * @param {String} userId User ID
 	 * @param {Array.<Object>} body User Queues
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.divisionId Division ID(s)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	patchUserQueues(userId, body, opts) { 
 		opts = opts || {};
@@ -3015,7 +3838,8 @@ class RoutingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3025,8 +3849,12 @@ class RoutingApi {
 	 * @param {String} userId User ID
 	 * @param {String} languageId languageId
 	 * @param {Object} body Language
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchUserRoutinglanguage(userId, languageId, body) { 
+	patchUserRoutinglanguage(userId, languageId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling patchUserRoutinglanguage';
@@ -3050,7 +3878,8 @@ class RoutingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3059,8 +3888,12 @@ class RoutingApi {
 	 * 
 	 * @param {String} userId User ID
 	 * @param {Array.<Object>} body Language
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchUserRoutinglanguagesBulk(userId, body) { 
+	patchUserRoutinglanguagesBulk(userId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling patchUserRoutinglanguagesBulk';
@@ -3080,7 +3913,8 @@ class RoutingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3089,8 +3923,12 @@ class RoutingApi {
 	 * 
 	 * @param {String} userId User ID
 	 * @param {Array.<Object>} body Skill
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchUserRoutingskillsBulk(userId, body) { 
+	patchUserRoutingskillsBulk(userId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling patchUserRoutingskillsBulk';
@@ -3110,7 +3948,8 @@ class RoutingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3118,8 +3957,12 @@ class RoutingApi {
 	 * Query for queue observations
 	 * 
 	 * @param {Object} body query
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postAnalyticsQueuesObservationsQuery(body) { 
+	postAnalyticsQueuesObservationsQuery(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postAnalyticsQueuesObservationsQuery';
@@ -3135,7 +3978,8 @@ class RoutingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3146,6 +3990,7 @@ class RoutingApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize The desired page size
 	 * @param {Number} opts.pageNumber The desired page number
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postAnalyticsRoutingActivityQuery(body, opts) { 
 		opts = opts || {};
@@ -3165,7 +4010,8 @@ class RoutingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3174,6 +4020,7 @@ class RoutingApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postRoutingAssessments(opts) { 
 		opts = opts || {};
@@ -3189,7 +4036,8 @@ class RoutingApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3198,6 +4046,7 @@ class RoutingApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postRoutingAssessmentsJobs(opts) { 
 		opts = opts || {};
@@ -3213,7 +4062,73 @@ class RoutingApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Restart domain dkim
+	 * 
+	 * @param {String} domainId domain ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postRoutingEmailDomainDkim(domainId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'domainId' is set
+		if (domainId === undefined || domainId === null || domainId === '') {
+			throw 'Missing the required parameter "domainId" when calling postRoutingEmailDomainDkim';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/email/domains/{domainId}/dkim', 
+			'POST', 
+			{ 'domainId': domainId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Set domain mail from settings
+	 * 
+	 * @param {String} domainId domain ID
+	 * @param {Object} body Mail From Settings
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postRoutingEmailDomainMailfrom(domainId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'domainId' is set
+		if (domainId === undefined || domainId === null || domainId === '') {
+			throw 'Missing the required parameter "domainId" when calling postRoutingEmailDomainMailfrom';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postRoutingEmailDomainMailfrom';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/email/domains/{domainId}/mailfrom', 
+			'POST', 
+			{ 'domainId': domainId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3222,8 +4137,12 @@ class RoutingApi {
 	 * 
 	 * @param {String} domainName email domain
 	 * @param {Object} body Route
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postRoutingEmailDomainRoutes(domainName, body) { 
+	postRoutingEmailDomainRoutes(domainName, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'domainName' is set
 		if (domainName === undefined || domainName === null || domainName === '') {
 			throw 'Missing the required parameter "domainName" when calling postRoutingEmailDomainRoutes';
@@ -3243,16 +4162,18 @@ class RoutingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
-	 * Tests the custom SMTP server integration connection set on this domain
-	 * The request body is optional. If omitted, this endpoint will just test the connection of the Custom SMTP Server. If the body is specified, there will be an attempt to send an email message to the server.
+	 * Tests the custom SMTP server integration connection set on this ACD domain
+	 * The request body is optional. If omitted, this endpoint will just test the connection of the Custom SMTP Server used by the ACD domain. If the body is specified, there will be an attempt to send an email message to the server.
 	 * @param {String} domainId domain ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body TestMessage
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postRoutingEmailDomainTestconnection(domainId, opts) { 
 		opts = opts || {};
@@ -3272,7 +4193,38 @@ class RoutingApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Restart domain verification
+	 * 
+	 * @param {String} domainId domain ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postRoutingEmailDomainVerification(domainId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'domainId' is set
+		if (domainId === undefined || domainId === null || domainId === '') {
+			throw 'Missing the required parameter "domainId" when calling postRoutingEmailDomainVerification';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/email/domains/{domainId}/verification', 
+			'POST', 
+			{ 'domainId': domainId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3280,8 +4232,12 @@ class RoutingApi {
 	 * Create a domain
 	 * 
 	 * @param {Object} body Domain
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postRoutingEmailDomains(body) { 
+	postRoutingEmailDomains(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postRoutingEmailDomains';
@@ -3297,7 +4253,39 @@ class RoutingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Tests the custom SMTP server integration connection set on this outbound domain
+	 * The request body is optional. If omitted, this endpoint will just test the connection of the Custom SMTP Server for the outbound domain. If the body is specified, there will be an attempt to send an email message to the server.
+	 * @param {String} domainId domain ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object} opts.body TestMessage
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postRoutingEmailOutboundDomainTestconnection(domainId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'domainId' is set
+		if (domainId === undefined || domainId === null || domainId === '') {
+			throw 'Missing the required parameter "domainId" when calling postRoutingEmailOutboundDomainTestconnection';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/email/outbound/domains/{domainId}/testconnection', 
+			'POST', 
+			{ 'domainId': domainId },
+			{  },
+			{  },
+			{  },
+			opts['body'], 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3305,8 +4293,12 @@ class RoutingApi {
 	 * Create a domain
 	 * 
 	 * @param {Object} body Domain
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postRoutingEmailOutboundDomains(body) { 
+	postRoutingEmailOutboundDomains(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postRoutingEmailOutboundDomains';
@@ -3322,7 +4314,8 @@ class RoutingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3330,8 +4323,12 @@ class RoutingApi {
 	 * Create a simulated domain
 	 * 
 	 * @param {Object} body Domain
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postRoutingEmailOutboundDomainsSimulated(body) { 
+	postRoutingEmailOutboundDomainsSimulated(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postRoutingEmailOutboundDomainsSimulated';
@@ -3347,7 +4344,38 @@ class RoutingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Create a new email setting. Used to define various settings, that can then be associated with email domains
+	 * 
+	 * @param {Object} body EmailSetting
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postRoutingEmailSetting(body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postRoutingEmailSetting';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/email/setting', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3355,8 +4383,12 @@ class RoutingApi {
 	 * Create Language
 	 * 
 	 * @param {Object} body Language
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postRoutingLanguages(body) { 
+	postRoutingLanguages(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postRoutingLanguages';
@@ -3372,7 +4404,8 @@ class RoutingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3381,6 +4414,7 @@ class RoutingApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postRoutingPredictors(opts) { 
 		opts = opts || {};
@@ -3396,7 +4430,39 @@ class RoutingApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Create a custom Key Performance Indicator.
+	 * 
+	 * @param {Object} body request
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 * postRoutingPredictorsKeyperformanceindicators is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 */
+	postRoutingPredictorsKeyperformanceindicators(body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postRoutingPredictorsKeyperformanceindicators';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/predictors/keyperformanceindicators', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3407,6 +4473,7 @@ class RoutingApi {
 	 * @param {Array.<Object>} body Queue Members
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts._delete True to delete queue members (default to false)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postRoutingQueueMembers(queueId, body, opts) { 
 		opts = opts || {};
@@ -3430,7 +4497,8 @@ class RoutingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3441,6 +4509,7 @@ class RoutingApi {
 	 * @param {Array.<Object>} body Queue Members
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts._delete True to delete queue members (default to false)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
 	postRoutingQueueUsers(queueId, body, opts) { 
@@ -3465,7 +4534,8 @@ class RoutingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3474,8 +4544,12 @@ class RoutingApi {
 	 * 
 	 * @param {String} queueId Queue ID
 	 * @param {Array.<Object>} body List of wrapup codes
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postRoutingQueueWrapupcodes(queueId, body) { 
+	postRoutingQueueWrapupcodes(queueId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'queueId' is set
 		if (queueId === undefined || queueId === null || queueId === '') {
 			throw 'Missing the required parameter "queueId" when calling postRoutingQueueWrapupcodes';
@@ -3495,7 +4569,8 @@ class RoutingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3503,8 +4578,12 @@ class RoutingApi {
 	 * Create a queue
 	 * 
 	 * @param {Object} body Queue
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postRoutingQueues(body) { 
+	postRoutingQueues(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postRoutingQueues';
@@ -3520,7 +4599,38 @@ class RoutingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Validate and normalize a skill expression
+	 * 
+	 * @param {Object} body Skill expression data to validate
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postRoutingSkillexpressionsValidate(body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postRoutingSkillexpressionsValidate';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/routing/skillexpressions/validate', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3530,6 +4640,7 @@ class RoutingApi {
 	 * @param {String} skillGroupId Skill Group ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postRoutingSkillgroupMembersDivisions(skillGroupId, opts) { 
 		opts = opts || {};
@@ -3549,7 +4660,8 @@ class RoutingApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3557,8 +4669,12 @@ class RoutingApi {
 	 * Create a skill group
 	 * 
 	 * @param {Object} body Create skill group
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postRoutingSkillgroups(body) { 
+	postRoutingSkillgroups(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postRoutingSkillgroups';
@@ -3574,7 +4690,8 @@ class RoutingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3582,8 +4699,12 @@ class RoutingApi {
 	 * Create Skill
 	 * 
 	 * @param {Object} body Skill
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postRoutingSkills(body) { 
+	postRoutingSkills(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postRoutingSkills';
@@ -3599,7 +4720,8 @@ class RoutingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3607,8 +4729,12 @@ class RoutingApi {
 	 * Provision an Address for SMS
 	 * 
 	 * @param {Object} body SmsAddress
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postRoutingSmsAddresses(body) { 
+	postRoutingSmsAddresses(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postRoutingSmsAddresses';
@@ -3624,16 +4750,21 @@ class RoutingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Provision a phone number for SMS
-	 * 
+	 * When provisioning an MMS-capable phone number, if no supported content profile is specified in the request, the system automatically assigns the "SMS Default" profile. This default profile allows all media types (\*\/\*) for inbound messages and specific image types (image/gif, image/jpeg, image/png) for outbound messages. To use custom media filtering, specify a supported content profile ID in the request body.
 	 * @param {Object} body SmsPhoneNumber
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postRoutingSmsPhonenumbers(body) { 
+	postRoutingSmsPhonenumbers(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postRoutingSmsPhonenumbers';
@@ -3649,7 +4780,8 @@ class RoutingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3657,9 +4789,13 @@ class RoutingApi {
 	 * Provision an alphanumeric number for SMS
 	 * 
 	 * @param {Object} body SmsPhoneNumber
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * postRoutingSmsPhonenumbersAlphanumeric is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	postRoutingSmsPhonenumbersAlphanumeric(body) { 
+	postRoutingSmsPhonenumbersAlphanumeric(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postRoutingSmsPhonenumbersAlphanumeric';
@@ -3675,7 +4811,8 @@ class RoutingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3683,8 +4820,12 @@ class RoutingApi {
 	 * Imports a phone number for SMS
 	 * 
 	 * @param {Object} body SmsPhoneNumber
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postRoutingSmsPhonenumbersImport(body) { 
+	postRoutingSmsPhonenumbersImport(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postRoutingSmsPhonenumbersImport';
@@ -3700,7 +4841,8 @@ class RoutingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3708,8 +4850,12 @@ class RoutingApi {
 	 * Create a utilization label
 	 * 
 	 * @param {Object} body UtilizationLabel
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postRoutingUtilizationLabels(body) { 
+	postRoutingUtilizationLabels(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postRoutingUtilizationLabels';
@@ -3725,33 +4871,8 @@ class RoutingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Create an utilization tag
-	 * 
-	 * @param {Object} body UtilizationTag
-	 * postRoutingUtilizationTags is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-	 */
-	postRoutingUtilizationTags(body) { 
-		// verify the required parameter 'body' is set
-		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postRoutingUtilizationTags';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/routing/utilization/tags', 
-			'POST', 
-			{  },
-			{  },
-			{  },
-			{  },
-			body, 
-			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			opts['customHeaders']
 		);
 	}
 
@@ -3759,8 +4880,12 @@ class RoutingApi {
 	 * Create a wrap-up code
 	 * 
 	 * @param {Object} body WrapupCode
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postRoutingWrapupcodes(body) { 
+	postRoutingWrapupcodes(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postRoutingWrapupcodes';
@@ -3776,7 +4901,8 @@ class RoutingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3785,8 +4911,12 @@ class RoutingApi {
 	 * 
 	 * @param {String} userId User ID
 	 * @param {Object} body Language
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postUserRoutinglanguages(userId, body) { 
+	postUserRoutinglanguages(userId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling postUserRoutinglanguages';
@@ -3806,7 +4936,8 @@ class RoutingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3815,8 +4946,12 @@ class RoutingApi {
 	 * 
 	 * @param {String} userId User ID
 	 * @param {Object} body Skill
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postUserRoutingskills(userId, body) { 
+	postUserRoutingskills(userId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling postUserRoutingskills';
@@ -3836,7 +4971,8 @@ class RoutingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3844,8 +4980,12 @@ class RoutingApi {
 	 * Update the user's Direct Routing Backup settings.
 	 * 
 	 * @param {Object} body directRoutingBackup
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putRoutingDirectroutingbackupSettingsMe(body) { 
+	putRoutingDirectroutingbackupSettingsMe(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling putRoutingDirectroutingbackupSettingsMe';
@@ -3861,7 +5001,8 @@ class RoutingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3871,8 +5012,12 @@ class RoutingApi {
 	 * @param {String} domainName email domain
 	 * @param {String} routeId route ID
 	 * @param {Object} body Route
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putRoutingEmailDomainRoute(domainName, routeId, body) { 
+	putRoutingEmailDomainRoute(domainName, routeId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'domainName' is set
 		if (domainName === undefined || domainName === null || domainName === '') {
 			throw 'Missing the required parameter "domainName" when calling putRoutingEmailDomainRoute';
@@ -3896,7 +5041,8 @@ class RoutingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3906,8 +5052,12 @@ class RoutingApi {
 	 * @param {String} domainName email domain
 	 * @param {String} routeId route ID
 	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putRoutingEmailDomainRouteIdentityresolution(domainName, routeId, body) { 
+	putRoutingEmailDomainRouteIdentityresolution(domainName, routeId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'domainName' is set
 		if (domainName === undefined || domainName === null || domainName === '') {
 			throw 'Missing the required parameter "domainName" when calling putRoutingEmailDomainRouteIdentityresolution';
@@ -3931,7 +5081,8 @@ class RoutingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3939,8 +5090,12 @@ class RoutingApi {
 	 * Request an activation status (cname + dkim) update of an outbound domain
 	 * 
 	 * @param {String} domainId domain ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putRoutingEmailOutboundDomainActivation(domainId) { 
+	putRoutingEmailOutboundDomainActivation(domainId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'domainId' is set
 		if (domainId === undefined || domainId === null || domainId === '') {
 			throw 'Missing the required parameter "domainId" when calling putRoutingEmailOutboundDomainActivation';
@@ -3956,7 +5111,8 @@ class RoutingApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3965,8 +5121,12 @@ class RoutingApi {
 	 * 
 	 * @param {String} recipientId Recipient ID
 	 * @param {Object} body Recipient
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putRoutingMessageRecipient(recipientId, body) { 
+	putRoutingMessageRecipient(recipientId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'recipientId' is set
 		if (recipientId === undefined || recipientId === null || recipientId === '') {
 			throw 'Missing the required parameter "recipientId" when calling putRoutingMessageRecipient';
@@ -3986,7 +5146,8 @@ class RoutingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -3995,8 +5156,12 @@ class RoutingApi {
 	 * 
 	 * @param {String} queueId Queue ID
 	 * @param {Object} body Queue
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putRoutingQueue(queueId, body) { 
+	putRoutingQueue(queueId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'queueId' is set
 		if (queueId === undefined || queueId === null || queueId === '') {
 			throw 'Missing the required parameter "queueId" when calling putRoutingQueue';
@@ -4016,7 +5181,8 @@ class RoutingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4025,8 +5191,12 @@ class RoutingApi {
 	 * 
 	 * @param {String} queueId Queue ID
 	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putRoutingQueueIdentityresolution(queueId, body) { 
+	putRoutingQueueIdentityresolution(queueId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'queueId' is set
 		if (queueId === undefined || queueId === null || queueId === '') {
 			throw 'Missing the required parameter "queueId" when calling putRoutingQueueIdentityresolution';
@@ -4046,7 +5216,8 @@ class RoutingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4054,8 +5225,12 @@ class RoutingApi {
 	 * Update an organization's routing settings
 	 * 
 	 * @param {Object} body Organization Settings
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putRoutingSettings(body) { 
+	putRoutingSettings(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling putRoutingSettings';
@@ -4071,7 +5246,8 @@ class RoutingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4079,8 +5255,12 @@ class RoutingApi {
 	 * Update Transcription Settings
 	 * 
 	 * @param {Object} body Organization Settings
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putRoutingSettingsTranscription(body) { 
+	putRoutingSettingsTranscription(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling putRoutingSettingsTranscription';
@@ -4096,7 +5276,8 @@ class RoutingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4105,8 +5286,12 @@ class RoutingApi {
 	 * 
 	 * @param {String} addressId Address ID
 	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putRoutingSmsIdentityresolutionPhonenumber(addressId, body) { 
+	putRoutingSmsIdentityresolutionPhonenumber(addressId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'addressId' is set
 		if (addressId === undefined || addressId === null || addressId === '') {
 			throw 'Missing the required parameter "addressId" when calling putRoutingSmsIdentityresolutionPhonenumber';
@@ -4126,7 +5311,8 @@ class RoutingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4135,8 +5321,12 @@ class RoutingApi {
 	 * 
 	 * @param {String} userId User ID
 	 * @param {Object} body directRoutingBackup
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putRoutingUserDirectroutingbackupSettings(userId, body) { 
+	putRoutingUserDirectroutingbackupSettings(userId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling putRoutingUserDirectroutingbackupSettings';
@@ -4156,17 +5346,22 @@ class RoutingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
-	 * Update the user's max utilization settings.  Include only those media types requiring custom configuration.
+	 * Update the user's max utilization settings.  Include only those media types requiring custom configuration. Any omitted media types will be set to the organization's default values.
 	 * 
 	 * @param {String} userId User ID
 	 * @param {Object} body utilization
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putRoutingUserUtilization(userId, body) { 
+	putRoutingUserUtilization(userId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling putRoutingUserUtilization';
@@ -4186,16 +5381,21 @@ class RoutingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
-	 * Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration.
+	 * Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration. Any omitted media types will be set to the system default values.
 	 * 
 	 * @param {Object} body utilization
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putRoutingUtilization(body) { 
+	putRoutingUtilization(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling putRoutingUtilization';
@@ -4211,7 +5411,8 @@ class RoutingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4220,8 +5421,12 @@ class RoutingApi {
 	 * 
 	 * @param {String} labelId Utilization Label ID
 	 * @param {Object} body UtilizationLabel
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putRoutingUtilizationLabel(labelId, body) { 
+	putRoutingUtilizationLabel(labelId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'labelId' is set
 		if (labelId === undefined || labelId === null || labelId === '') {
 			throw 'Missing the required parameter "labelId" when calling putRoutingUtilizationLabel';
@@ -4241,7 +5446,8 @@ class RoutingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4250,8 +5456,12 @@ class RoutingApi {
 	 * 
 	 * @param {String} codeId Wrapup Code ID
 	 * @param {Object} body WrapupCode
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putRoutingWrapupcode(codeId, body) { 
+	putRoutingWrapupcode(codeId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'codeId' is set
 		if (codeId === undefined || codeId === null || codeId === '') {
 			throw 'Missing the required parameter "codeId" when calling putRoutingWrapupcode';
@@ -4271,7 +5481,8 @@ class RoutingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4281,8 +5492,12 @@ class RoutingApi {
 	 * @param {String} userId User ID
 	 * @param {String} skillId skillId
 	 * @param {Object} body Skill
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putUserRoutingskill(userId, skillId, body) { 
+	putUserRoutingskill(userId, skillId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling putUserRoutingskill';
@@ -4306,7 +5521,8 @@ class RoutingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -4315,8 +5531,12 @@ class RoutingApi {
 	 * 
 	 * @param {String} userId User ID
 	 * @param {Array.<Object>} body Skill
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putUserRoutingskillsBulk(userId, body) { 
+	putUserRoutingskillsBulk(userId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null || userId === '') {
 			throw 'Missing the required parameter "userId" when calling putUserRoutingskillsBulk';
@@ -4336,7 +5556,8 @@ class RoutingApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 

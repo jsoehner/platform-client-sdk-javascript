@@ -22,7 +22,7 @@
     },
     {
       "topic": "v2.analytics.queues.{id}.activity",
-      "class": "V2QueueObservationObservationNotification"
+      "class": "V2QueueObservationObservationCountNotification"
     },
     {
       "topic": "v2.analytics.queues.{id}.observations",
@@ -69,6 +69,10 @@
       "class": "WfmBuIntradayDataUpdateTopicBuIntradayNotification"
     },
     {
+      "topic": "v2.coaching.scheduleslots.jobs.{id}",
+      "class": "WemCoachingScheduleSlotJobCompleteTopicCoachingScheduleSlotJobComplete"
+    },
+    {
       "topic": "v2.contentmanagement.documents.{id}",
       "class": "ContentManagementSingleDocumentTopicDocumentDataV2"
     },
@@ -77,8 +81,40 @@
       "class": "ContentManagementWorkspaceDocumentsTopicDocumentDataV2"
     },
     {
+      "topic": "v2.conversations.{id}.agentchecklist",
+      "class": "ConversationChecklistTopicAgentChecklistRuntimeEventBody"
+    },
+    {
+      "topic": "v2.conversations.{id}.suggestions.intent",
+      "class": "ConversationIntentSuggestionsTopicIntentSuggestionEvent"
+    },
+    {
+      "topic": "v2.conversations.{id}.suggestions.knowledge.article",
+      "class": "ConversationKnowledgeArticleSuggestionsTopicKnowledgeArticleSuggestionEvent"
+    },
+    {
+      "topic": "v2.conversations.{id}.suggestions.knowledge.search",
+      "class": "ConversationKnowledgeSearchSuggestionsTopicKnowledgeSearchSuggestionEvent"
+    },
+    {
+      "topic": "v2.conversations.{id}.suggestions.response",
+      "class": "ConversationResponseSuggestionsTopicCannedResponseSuggestionEvent"
+    },
+    {
+      "topic": "v2.conversations.{id}.suggestions.script",
+      "class": "ConversationScriptSuggestionsTopicScriptSuggestionEvent"
+    },
+    {
+      "topic": "v2.conversations.{id}.suggestions.thirdpartyaction",
+      "class": "ConversationThirdPartyActionSuggestionsTopicThirdPartyActionSuggestionEvent"
+    },
+    {
       "topic": "v2.conversations.{id}.transcription",
       "class": "TranscriptionTopicTranscriptionMessage"
+    },
+    {
+      "topic": "v2.detail.events.agent.{id}.state",
+      "class": "AgentStateEventTopicAgentStateEventNotification"
     },
     {
       "topic": "v2.detail.events.collaboratechat.adhoc.{id}.messages",
@@ -229,6 +265,10 @@
       "class": "JourneyWebEventsNotificationWebEventsNotification"
     },
     {
+      "topic": "v2.journey.views.jobs.{id}.notification",
+      "class": "JourneyViewJobNotificationTopicJourneyViewJobNotificationEventV2"
+    },
+    {
       "topic": "v2.managementunits.{id}.workforcemanagement.intraday",
       "class": "WfmIntradayDataUpdateTopicIntradayDataUpdate"
     },
@@ -255,6 +295,10 @@
     {
       "topic": "v2.outbound.campaigns.{id}.progress",
       "class": "DialerCampaignProgressEventCampaignProgress"
+    },
+    {
+      "topic": "v2.outbound.campaigns.{id}.skillstats",
+      "class": "DialerCampaignSkillCombinationStatsEventCampaignSkillCombinationStats"
     },
     {
       "topic": "v2.outbound.campaigns.{id}.stats",
@@ -317,6 +361,14 @@
       "class": "OutboundMessagingMessagingCampaignProgressEventCampaignProgress"
     },
     {
+      "topic": "v2.outbound.preview.campaigns.contact.postContact",
+      "class": "OutboundPreviewCampaignPostContactOutboundPreviewCampaignPostContactEvent"
+    },
+    {
+      "topic": "v2.outbound.preview.campaigns.contact.preContact",
+      "class": "OutboundPreviewCampaignPreContactOutboundPreviewCampaignPreContactEvent"
+    },
+    {
       "topic": "v2.outbound.responsesets.{id}",
       "class": "DialerResponsesetConfigChangeResponseSet"
     },
@@ -329,8 +381,20 @@
       "class": "DialerCampaignScheduleConfigChangeCampaignSchedule"
     },
     {
+      "topic": "v2.outbound.schedules.emailcampaigns.{id}",
+      "class": "EmailCampaignScheduleConfigChangeEmailCampaignSchedule"
+    },
+    {
+      "topic": "v2.outbound.schedules.messagingcampaigns.{id}",
+      "class": "MessagingCampaignScheduleConfigChangeMessagingCampaignSchedule"
+    },
+    {
       "topic": "v2.outbound.schedules.sequences.{id}",
       "class": "DialerSequenceScheduleConfigChangeSequenceSchedule"
+    },
+    {
+      "topic": "v2.outbound.schedules.whatsappcampaigns.{id}",
+      "class": "WhatsappCampaignScheduleConfigChangeWhatsAppCampaignSchedule"
     },
     {
       "topic": "v2.outbound.sequences.{id}",
@@ -339,6 +403,14 @@
     {
       "topic": "v2.outbound.settings",
       "class": "DialerOutboundSettingsConfigChangeOutboundSettings"
+    },
+    {
+      "topic": "v2.outbound.voice.campaigns.contact.postContact",
+      "class": "OutboundVoiceCampaignPostContactOutboundVoiceCampaignPostContactEvent"
+    },
+    {
+      "topic": "v2.outbound.voice.campaigns.contact.preContact",
+      "class": "OutboundVoiceCampaignPreContactOutboundVoiceCampaignPreContactEvent"
     },
     {
       "topic": "v2.outbound.whatsapp.campaigns.contact.postContact",
@@ -421,6 +493,10 @@
       "class": "V2StaTopicsDetectedTopicTopicsDetectedMessage"
     },
     {
+      "topic": "v2.speechandtextanalytics.conversations.{id}.categories",
+      "class": "V2StaConversationCategoriesStaConversationCategoriesMessage"
+    },
+    {
       "topic": "v2.speechandtextanalytics.programs.general.jobs.{id}",
       "class": "CreateGeneralProgramTopicsDefinitionsJob"
     },
@@ -437,8 +513,16 @@
       "class": "V2ReprocessJobStateChangedTopicJobStateChanged"
     },
     {
+      "topic": "v2.speechandtextanalytics.topics.generatedphrases.jobs.{id}",
+      "class": "GenAiPhrasesTopicsDefinitionsJob"
+    },
+    {
       "topic": "v2.speechandtextanalytics.topics.publishjobs.{id}",
       "class": "PublishTopicTopicsDefinitionsJob"
+    },
+    {
+      "topic": "v2.speechandtextanalytics.topics.testphrase.jobs.{id}",
+      "class": "TestTopicPhraseTopicsDefinitionsJob"
     },
     {
       "topic": "v2.subscription.updated",
@@ -507,22 +591,6 @@
     {
       "topic": "v2.users.{id}.alerting.alerts",
       "class": "V2MobiusAlertsTopicAlert"
-    },
-    {
-      "topic": "v2.users.{id}.alerting.heartbeat.alerts",
-      "class": "KlaxonHeartBeatAlertsTopicHeartBeatAlert"
-    },
-    {
-      "topic": "v2.users.{id}.alerting.heartbeat.rules",
-      "class": "KlaxonHeartBeatRulesTopicHeartBeatRule"
-    },
-    {
-      "topic": "v2.users.{id}.alerting.interactionstats.alerts",
-      "class": "KlaxonInteractionStatsAlertsTopicInteractionStatAlert"
-    },
-    {
-      "topic": "v2.users.{id}.alerting.interactionstats.rules",
-      "class": "KlaxonInteractionStatsRulesTopicInteractionStatRule"
     },
     {
       "topic": "v2.users.{id}.alerting.rules",
@@ -625,6 +693,10 @@
       "class": "V2IntegrationPresenceEventPresenceActivityEvent"
     },
     {
+      "topic": "v2.users.{id}.integrations.calendar.teams",
+      "class": "GcuccTeamsCalendarEventsGCUCCTeamsCalendarEventV2"
+    },
+    {
       "topic": "v2.users.{id}.outbound.contactlists.{id}.export",
       "class": "ContactlistDownloadReadyExportUri"
     },
@@ -685,12 +757,24 @@
       "class": "WfmAdherenceExplanationJobCompleteTopicAdherenceExplanationJobNotification"
     },
     {
+      "topic": "v2.users.{id}.workforcemanagement.adherence.historical.agent",
+      "class": "WfmHistoricalAdherenceAgentCalculationsCompleteTopicWfmHistoricalAdherenceAgentCalculationsCompleteNotification"
+    },
+    {
       "topic": "v2.users.{id}.workforcemanagement.adherence.historical.bulk",
       "class": "WfmHistoricalAdherenceBulkCalculationsCompleteTopicWfmHistoricalAdherenceBulkCalculationsCompleteNotification"
     },
     {
+      "topic": "v2.users.{id}.workforcemanagement.agentschedules.managementunit.search.complete",
+      "class": "WfmAgentMuScheduleSearchCompleteTopicAgentMuScheduleSearchCompleteNotification"
+    },
+    {
       "topic": "v2.users.{id}.workforcemanagement.alternative.shift.jobs",
       "class": "WfmAlternativeShiftJobCompleteEventV3AlternativeShiftJobCompleteNotification"
+    },
+    {
+      "topic": "v2.users.{id}.workforcemanagement.decisionmetrics.jobs",
+      "class": "DecisionMetricsAdminNotificationTopicDecisionMetricsJobNotification"
     },
     {
       "topic": "v2.users.{id}.workforcemanagement.historicaladherencequery",
@@ -711,6 +795,10 @@
     {
       "topic": "v2.users.{id}.workforcemanagement.schedules",
       "class": "WfmAgentScheduleUpdateTopicAgentScheduleUpdateNotification"
+    },
+    {
+      "topic": "v2.users.{id}.workforcemanagement.shift.trading.jobs",
+      "class": "WfmShiftTradingJobCompleteEventShiftTradingJobCompleteNotification"
     },
     {
       "topic": "v2.users.{id}.workforcemanagement.shrinkage.jobs",
@@ -753,16 +841,20 @@
       "class": "WfmMoveAgentsCompleteTopicWfmMoveAgentsComplete"
     },
     {
+      "topic": "v2.workforcemanagement.agents.opportunities",
+      "class": "V2WfmAgentOpportunityTopicAgentOpportunityNotification"
+    },
+    {
       "topic": "v2.workforcemanagement.agents.{id}.adherence.explanations",
       "class": "WfmAgentAdherenceExplanationChangedAgentTopicAdherenceExplanationChangedNotification"
     },
     {
       "topic": "v2.workforcemanagement.businessunits.{id}.activityplans.jobs",
-      "class": "WfmActivityPlanJobCompleteTopicActivityPlanOccurrenceDeletionJobCompleteNotification"
+      "class": "WfmActivityPlanJobCompleteTopicActivityPlanJobCompleteNotification"
     },
     {
       "topic": "v2.workforcemanagement.businessunits.{id}.activityplans.runs.jobs",
-      "class": "WfmActivityPlanRunJobCompleteTopicActivityPlanRunJobCompleteNotification"
+      "class": "WfmActivityPlanRunJobCompleteTopicActivityPlanJobCompleteNotification"
     },
     {
       "topic": "v2.workforcemanagement.businessunits.{id}.adherence.explanations",
@@ -775,6 +867,26 @@
     {
       "topic": "v2.workforcemanagement.businessunits.{id}.forecasts.staffingrequirement",
       "class": "WfmBuShortTermForecastStaffingRequirementsGenerateCompleteTopicBuForecastShortTermStaffingRequirementsNotification"
+    },
+    {
+      "topic": "v2.workforcemanagement.businessunits.{id}.main.forecast.export.forecast",
+      "class": "V2WfmMainForecastExportForecastEventMainForecastExportNotification"
+    },
+    {
+      "topic": "v2.workforcemanagement.businessunits.{id}.main.forecast.export.historical",
+      "class": "V2WfmMainForecastExportHistoricalEventMainForecastExportNotification"
+    },
+    {
+      "topic": "v2.workforcemanagement.businessunits.{id}.main.forecast.export.snapshot",
+      "class": "V2WfmMainForecastExportSnapshotEventMainForecastExportNotification"
+    },
+    {
+      "topic": "v2.workforcemanagement.businessunits.{id}.opportunities",
+      "class": "V2WfmOpportunityTopicOpportunityNotification"
+    },
+    {
+      "topic": "v2.workforcemanagement.businessunits.{id}.schedulebids.{id}",
+      "class": "ScheduleBiddingAdminNotificationTopicScheduleBiddingNotification"
     },
     {
       "topic": "v2.workforcemanagement.businessunits.{id}.schedules",
@@ -827,6 +939,10 @@
     {
       "topic": "v2.workforcemanagement.managementunits.{id}.agents.sync",
       "class": "WfmUpdateAgentDetailsTopicWfmUpdateAgentDetailsComplete"
+    },
+    {
+      "topic": "v2.workforcemanagement.managementunits.{id}.agentschedules.changed",
+      "class": "WfmAgentManagementUnitScheduleChangedTopicAgentMuScheduleChangedNotification"
     },
     {
       "topic": "v2.workforcemanagement.managementunits.{id}.schedules",

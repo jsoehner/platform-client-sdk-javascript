@@ -15,12 +15,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getTelephonyProvidersEdgesSitesSearch**](SearchApi#getTelephonyProvidersEdgesSitesSearch) | **GET** /api/v2/telephony/providers/edges/sites/search | Search sites using the q64 value returned from a previous search
 [**getUsersSearch**](SearchApi#getUsersSearch) | **GET** /api/v2/users/search | Search users using the q64 value returned from a previous search
 [**getVoicemailSearch**](SearchApi#getVoicemailSearch) | **GET** /api/v2/voicemail/search | Search voicemails using the q64 value returned from a previous search
+[**postConversationsCustomattributesSearch**](SearchApi#postConversationsCustomattributesSearch) | **POST** /api/v2/conversations/customattributes/search | Search resources.
 [**postConversationsParticipantsAttributesSearch**](SearchApi#postConversationsParticipantsAttributesSearch) | **POST** /api/v2/conversations/participants/attributes/search | Search conversations
 [**postDocumentationAllSearch**](SearchApi#postDocumentationAllSearch) | **POST** /api/v2/documentation/all/search | Search all documents
 [**postDocumentationGknSearch**](SearchApi#postDocumentationGknSearch) | **POST** /api/v2/documentation/gkn/search | Search gkn documentation
 [**postDocumentationSearch**](SearchApi#postDocumentationSearch) | **POST** /api/v2/documentation/search | Search documentation
 [**postGroupsSearch**](SearchApi#postGroupsSearch) | **POST** /api/v2/groups/search | Search groups
-[**postKnowledgeKnowledgebaseSearch**](SearchApi#postKnowledgeKnowledgebaseSearch) | **POST** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/search | Search Documents
 [**postLocationsSearch**](SearchApi#postLocationsSearch) | **POST** /api/v2/locations/search | Search locations
 [**postSearch**](SearchApi#postSearch) | **POST** /api/v2/search | Search resources.
 [**postSearchSuggest**](SearchApi#postSearchSuggest) | **POST** /api/v2/search/suggest | Suggest resources.
@@ -37,7 +37,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ## getDocumentationGknSearch
 
-> GKNDocumentationSearchResponse getDocumentationGknSearch(q64)
+> GKNDocumentationSearchResponse getDocumentationGknSearch(q64, opts)
 
 
 GET /api/v2/documentation/gkn/search
@@ -57,8 +57,14 @@ const platformClient = require('purecloud-platform-client-v2');
 let apiInstance = new platformClient.SearchApi();
 
 let q64 = "q64_example"; // String | q64
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getDocumentationGknSearch(q64)
+apiInstance.getDocumentationGknSearch(q64, opts)
   .then((data) => {
     console.log(`getDocumentationGknSearch success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -74,6 +80,7 @@ apiInstance.getDocumentationGknSearch(q64)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **q64** | **String** | q64 |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -82,7 +89,7 @@ apiInstance.getDocumentationGknSearch(q64)
 
 ## getDocumentationSearch
 
-> DocumentationSearchResponse getDocumentationSearch(q64)
+> DocumentationSearchResponse getDocumentationSearch(q64, opts)
 
 
 GET /api/v2/documentation/search
@@ -102,8 +109,14 @@ const platformClient = require('purecloud-platform-client-v2');
 let apiInstance = new platformClient.SearchApi();
 
 let q64 = "q64_example"; // String | q64
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getDocumentationSearch(q64)
+apiInstance.getDocumentationSearch(q64, opts)
   .then((data) => {
     console.log(`getDocumentationSearch success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -119,6 +132,7 @@ apiInstance.getDocumentationSearch(q64)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **q64** | **String** | q64 |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -151,7 +165,11 @@ let apiInstance = new platformClient.SearchApi();
 
 let q64 = "q64_example"; // String | q64
 let opts = { 
-  'expand': ["expand_example"] // [String] | expand
+  'expand': ["expand_example"], // [String] | expand
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getGroupsSearch(q64, opts)
@@ -171,6 +189,7 @@ apiInstance.getGroupsSearch(q64, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **q64** | **String** | q64 |  |
  **expand** | **[String]** | expand | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -203,7 +222,11 @@ let apiInstance = new platformClient.SearchApi();
 
 let q64 = "q64_example"; // String | q64
 let opts = { 
-  'expand': ["expand_example"] // [String] | Provides more details about a specified resource
+  'expand': ["expand_example"], // [String] | Provides more details about a specified resource
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getLocationsSearch(q64, opts)
@@ -223,6 +246,7 @@ apiInstance.getLocationsSearch(q64, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **q64** | **String** | q64 |  |
  **expand** | **[String]** | Provides more details about a specified resource | [optional] <br />**Values**: images, addressVerificationDetails |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -258,7 +282,11 @@ let apiInstance = new platformClient.SearchApi();
 let q64 = "q64_example"; // String | q64
 let opts = { 
   'expand': ["expand_example"], // [String] | Which fields, if any, to expand
-  'profile': true // Boolean | profile
+  'profile': true, // Boolean | profile
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getSearch(q64, opts)
@@ -277,8 +305,9 @@ apiInstance.getSearch(q64, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **q64** | **String** | q64 |  |
- **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, groups, profileSkills, certifications, locations, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, dateWelcomeSent, callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation, conversations, transcription, images, addressVerificationDetails |
+ **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, groups, customAttributes, profileSkills, certifications, locations, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, dateWelcomeSent, callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation, conversations, transcription, images, addressVerificationDetails |
  **profile** | **Boolean** | profile | [optional] [default to true] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -314,7 +343,11 @@ let apiInstance = new platformClient.SearchApi();
 let q64 = "q64_example"; // String | q64
 let opts = { 
   'expand': ["expand_example"], // [String] | Which fields, if any, to expand
-  'profile': true // Boolean | profile
+  'profile': true, // Boolean | profile
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getSearchSuggest(q64, opts)
@@ -333,8 +366,9 @@ apiInstance.getSearchSuggest(q64, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **q64** | **String** | q64 |  |
- **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, groups, profileSkills, certifications, locations, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, dateWelcomeSent, callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation, conversations, transcription, images, addressVerificationDetails |
+ **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, externalContactsSettings, groups, customAttributes, profileSkills, certifications, locations, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, dateWelcomeSent, callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation, conversations, transcription, images, addressVerificationDetails |
  **profile** | **Boolean** | profile | [optional] [default to true] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -370,7 +404,11 @@ let apiInstance = new platformClient.SearchApi();
 
 let q64 = "q64_example"; // String | q64
 let opts = { 
-  'expand': ["expand_example"] // [String] | expand
+  'expand': ["expand_example"], // [String] | expand
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getTelephonyProvidersEdgesSitesSearch(q64, opts)
@@ -390,6 +428,7 @@ apiInstance.getTelephonyProvidersEdgesSitesSearch(q64, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **q64** | **String** | q64 |  |
  **expand** | **[String]** | expand | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -425,7 +464,11 @@ let apiInstance = new platformClient.SearchApi();
 let q64 = "q64_example"; // String | q64
 let opts = { 
   'expand': ["expand_example"], // [String] | expand
-  'integrationPresenceSource': "integrationPresenceSource_example" // String | integrationPresenceSource
+  'integrationPresenceSource': "integrationPresenceSource_example", // String | integrationPresenceSource
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getUsersSearch(q64, opts)
@@ -446,6 +489,7 @@ apiInstance.getUsersSearch(q64, opts)
  **q64** | **String** | q64 |  |
  **expand** | **[String]** | expand | [optional]  |
  **integrationPresenceSource** | **String** | integrationPresenceSource | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone, EightByEight |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -478,7 +522,11 @@ let apiInstance = new platformClient.SearchApi();
 
 let q64 = "q64_example"; // String | q64
 let opts = { 
-  'expand': ["expand_example"] // [String] | expand
+  'expand': ["expand_example"], // [String] | expand
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getVoicemailSearch(q64, opts)
@@ -498,15 +546,73 @@ apiInstance.getVoicemailSearch(q64, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **q64** | **String** | q64 |  |
  **expand** | **[String]** | expand | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **VoicemailsSearchResponse**
 
 
+## postConversationsCustomattributesSearch
+
+> JsonSearchResponse postConversationsCustomattributesSearch(body, opts)
+
+
+POST /api/v2/conversations/customattributes/search
+
+Search resources.
+
+Requires ANY permissions:
+
+* conversation:customAttributes:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.SearchApi();
+
+let body = {}; // Object | Search request options
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.postConversationsCustomattributesSearch(body, opts)
+  .then((data) => {
+    console.log(`postConversationsCustomattributesSearch success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postConversationsCustomattributesSearch');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Search request options |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**JsonSearchResponse**
+
+
 ## postConversationsParticipantsAttributesSearch
 
-> JsonCursorSearchResponse postConversationsParticipantsAttributesSearch(body)
+> JsonCursorSearchResponse postConversationsParticipantsAttributesSearch(body, opts)
 
 
 POST /api/v2/conversations/participants/attributes/search
@@ -531,8 +637,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.SearchApi();
 
 let body = {}; // Object | Search request options
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postConversationsParticipantsAttributesSearch(body)
+apiInstance.postConversationsParticipantsAttributesSearch(body, opts)
   .then((data) => {
     console.log(`postConversationsParticipantsAttributesSearch success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -548,6 +660,7 @@ apiInstance.postConversationsParticipantsAttributesSearch(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Search request options |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -556,7 +669,7 @@ apiInstance.postConversationsParticipantsAttributesSearch(body)
 
 ## postDocumentationAllSearch
 
-> JsonNodeSearchResponse postDocumentationAllSearch(body)
+> JsonNodeSearchResponse postDocumentationAllSearch(body, opts)
 
 
 POST /api/v2/documentation/all/search
@@ -578,8 +691,14 @@ const platformClient = require('purecloud-platform-client-v2');
 let apiInstance = new platformClient.SearchApi();
 
 let body = {}; // Object | Search request options
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postDocumentationAllSearch(body)
+apiInstance.postDocumentationAllSearch(body, opts)
   .then((data) => {
     console.log(`postDocumentationAllSearch success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -595,6 +714,7 @@ apiInstance.postDocumentationAllSearch(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Search request options |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -603,7 +723,7 @@ apiInstance.postDocumentationAllSearch(body)
 
 ## postDocumentationGknSearch
 
-> GKNDocumentationSearchResponse postDocumentationGknSearch(body)
+> GKNDocumentationSearchResponse postDocumentationGknSearch(body, opts)
 
 
 POST /api/v2/documentation/gkn/search
@@ -623,8 +743,14 @@ const platformClient = require('purecloud-platform-client-v2');
 let apiInstance = new platformClient.SearchApi();
 
 let body = {}; // Object | Search request options
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postDocumentationGknSearch(body)
+apiInstance.postDocumentationGknSearch(body, opts)
   .then((data) => {
     console.log(`postDocumentationGknSearch success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -640,6 +766,7 @@ apiInstance.postDocumentationGknSearch(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Search request options |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -648,7 +775,7 @@ apiInstance.postDocumentationGknSearch(body)
 
 ## postDocumentationSearch
 
-> DocumentationSearchResponse postDocumentationSearch(body)
+> DocumentationSearchResponse postDocumentationSearch(body, opts)
 
 
 POST /api/v2/documentation/search
@@ -668,8 +795,14 @@ const platformClient = require('purecloud-platform-client-v2');
 let apiInstance = new platformClient.SearchApi();
 
 let body = {}; // Object | Search request options
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postDocumentationSearch(body)
+apiInstance.postDocumentationSearch(body, opts)
   .then((data) => {
     console.log(`postDocumentationSearch success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -685,6 +818,7 @@ apiInstance.postDocumentationSearch(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Search request options |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -693,7 +827,7 @@ apiInstance.postDocumentationSearch(body)
 
 ## postGroupsSearch
 
-> GroupsSearchResponse postGroupsSearch(body)
+> GroupsSearchResponse postGroupsSearch(body, opts)
 
 
 POST /api/v2/groups/search
@@ -716,8 +850,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.SearchApi();
 
 let body = {}; // Object | Search request options
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postGroupsSearch(body)
+apiInstance.postGroupsSearch(body, opts)
   .then((data) => {
     console.log(`postGroupsSearch success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -733,72 +873,16 @@ apiInstance.postGroupsSearch(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Search request options |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **GroupsSearchResponse**
 
 
-## postKnowledgeKnowledgebaseSearch
-
-> KnowledgeSearchResponse postKnowledgeKnowledgebaseSearch(knowledgeBaseId, opts)
-
-:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
-This resource has been deprecated
-:::
-
-POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/search
-
-Search Documents
-
-Requires ALL permissions:
-
-* knowledge:knowledgebase:search
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.SearchApi();
-
-let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
-let opts = { 
-  'body': {} // Object | 
-};
-
-apiInstance.postKnowledgeKnowledgebaseSearch(knowledgeBaseId, opts)
-  .then((data) => {
-    console.log(`postKnowledgeKnowledgebaseSearch success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling postKnowledgeKnowledgebaseSearch');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **knowledgeBaseId** | **String** | Knowledge base ID |  |
- **body** | **Object** |  | [optional]  |
-
-### Return type
-
-**KnowledgeSearchResponse**
-
-
 ## postLocationsSearch
 
-> LocationsSearchResponse postLocationsSearch(body)
+> LocationsSearchResponse postLocationsSearch(body, opts)
 
 
 POST /api/v2/locations/search
@@ -821,8 +905,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.SearchApi();
 
 let body = {}; // Object | Search request options
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postLocationsSearch(body)
+apiInstance.postLocationsSearch(body, opts)
   .then((data) => {
     console.log(`postLocationsSearch success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -838,6 +928,7 @@ apiInstance.postLocationsSearch(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Search request options |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -856,6 +947,7 @@ Search resources.
 Requires ANY permissions:
 
 * directory:user:view
+* routing:skill:view
 
 ### Example Usage
 
@@ -872,7 +964,11 @@ let apiInstance = new platformClient.SearchApi();
 
 let body = {}; // Object | Search request options
 let opts = { 
-  'profile': true // Boolean | profile
+  'profile': true, // Boolean | profile
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postSearch(body, opts)
@@ -892,6 +988,7 @@ apiInstance.postSearch(body, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Search request options |  |
  **profile** | **Boolean** | profile | [optional] [default to true] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -926,7 +1023,11 @@ let apiInstance = new platformClient.SearchApi();
 
 let body = {}; // Object | Search request options
 let opts = { 
-  'profile': true // Boolean | profile
+  'profile': true, // Boolean | profile
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postSearchSuggest(body, opts)
@@ -946,6 +1047,7 @@ apiInstance.postSearchSuggest(body, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Search request options |  |
  **profile** | **Boolean** | profile | [optional] [default to true] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -954,7 +1056,7 @@ apiInstance.postSearchSuggest(body, opts)
 
 ## postSpeechandtextanalyticsTranscriptsSearch
 
-> JsonSearchResponse postSpeechandtextanalyticsTranscriptsSearch(body)
+> JsonSearchResponse postSpeechandtextanalyticsTranscriptsSearch(body, opts)
 
 
 POST /api/v2/speechandtextanalytics/transcripts/search
@@ -981,8 +1083,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.SearchApi();
 
 let body = {}; // Object | Search request options
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postSpeechandtextanalyticsTranscriptsSearch(body)
+apiInstance.postSpeechandtextanalyticsTranscriptsSearch(body, opts)
   .then((data) => {
     console.log(`postSpeechandtextanalyticsTranscriptsSearch success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -998,6 +1106,7 @@ apiInstance.postSpeechandtextanalyticsTranscriptsSearch(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Search request options |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1006,7 +1115,7 @@ apiInstance.postSpeechandtextanalyticsTranscriptsSearch(body)
 
 ## postTeamsSearch
 
-> TeamsSearchResponse postTeamsSearch(body)
+> TeamsSearchResponse postTeamsSearch(body, opts)
 
 
 POST /api/v2/teams/search
@@ -1031,8 +1140,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.SearchApi();
 
 let body = {}; // Object | Search request options
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postTeamsSearch(body)
+apiInstance.postTeamsSearch(body, opts)
   .then((data) => {
     console.log(`postTeamsSearch success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1048,6 +1163,7 @@ apiInstance.postTeamsSearch(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Search request options |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1056,7 +1172,7 @@ apiInstance.postTeamsSearch(body)
 
 ## postTelephonyProvidersEdgesSitesSearch
 
-> SitesSearchResponse postTelephonyProvidersEdgesSitesSearch(body)
+> SitesSearchResponse postTelephonyProvidersEdgesSitesSearch(body, opts)
 
 
 POST /api/v2/telephony/providers/edges/sites/search
@@ -1082,8 +1198,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.SearchApi();
 
 let body = {}; // Object | Search request options
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postTelephonyProvidersEdgesSitesSearch(body)
+apiInstance.postTelephonyProvidersEdgesSitesSearch(body, opts)
   .then((data) => {
     console.log(`postTelephonyProvidersEdgesSitesSearch success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1099,6 +1221,7 @@ apiInstance.postTelephonyProvidersEdgesSitesSearch(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Search request options |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1107,7 +1230,7 @@ apiInstance.postTelephonyProvidersEdgesSitesSearch(body)
 
 ## postUsersSearch
 
-> UsersSearchResponse postUsersSearch(body)
+> UsersSearchResponse postUsersSearch(body, opts)
 
 
 POST /api/v2/users/search
@@ -1132,8 +1255,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.SearchApi();
 
 let body = {}; // Object | Search request options
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postUsersSearch(body)
+apiInstance.postUsersSearch(body, opts)
   .then((data) => {
     console.log(`postUsersSearch success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1149,6 +1278,7 @@ apiInstance.postUsersSearch(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Search request options |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1157,7 +1287,7 @@ apiInstance.postUsersSearch(body)
 
 ## postUsersSearchConversationTarget
 
-> UsersSearchResponse postUsersSearchConversationTarget(body)
+> UsersSearchResponse postUsersSearchConversationTarget(body, opts)
 
 
 POST /api/v2/users/search/conversation/target
@@ -1184,8 +1314,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.SearchApi();
 
 let body = {}; // Object | Search request options
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postUsersSearchConversationTarget(body)
+apiInstance.postUsersSearchConversationTarget(body, opts)
   .then((data) => {
     console.log(`postUsersSearchConversationTarget success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1201,6 +1337,7 @@ apiInstance.postUsersSearchConversationTarget(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Search request options |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1209,7 +1346,7 @@ apiInstance.postUsersSearchConversationTarget(body)
 
 ## postUsersSearchQueuemembersManage
 
-> UsersSearchResponse postUsersSearchQueuemembersManage(body)
+> UsersSearchResponse postUsersSearchQueuemembersManage(body, opts)
 
 
 POST /api/v2/users/search/queuemembers/manage
@@ -1237,8 +1374,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.SearchApi();
 
 let body = {}; // Object | Search request options
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postUsersSearchQueuemembersManage(body)
+apiInstance.postUsersSearchQueuemembersManage(body, opts)
   .then((data) => {
     console.log(`postUsersSearchQueuemembersManage success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1254,6 +1397,7 @@ apiInstance.postUsersSearchQueuemembersManage(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Search request options |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1262,7 +1406,7 @@ apiInstance.postUsersSearchQueuemembersManage(body)
 
 ## postUsersSearchTeamsAssign
 
-> UsersSearchResponse postUsersSearchTeamsAssign(body)
+> UsersSearchResponse postUsersSearchTeamsAssign(body, opts)
 
 
 POST /api/v2/users/search/teams/assign
@@ -1287,8 +1431,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.SearchApi();
 
 let body = {}; // Object | Search request options
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postUsersSearchTeamsAssign(body)
+apiInstance.postUsersSearchTeamsAssign(body, opts)
   .then((data) => {
     console.log(`postUsersSearchTeamsAssign success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1304,6 +1454,7 @@ apiInstance.postUsersSearchTeamsAssign(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Search request options |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1312,7 +1463,7 @@ apiInstance.postUsersSearchTeamsAssign(body)
 
 ## postVoicemailSearch
 
-> VoicemailsSearchResponse postVoicemailSearch(body)
+> VoicemailsSearchResponse postVoicemailSearch(body, opts)
 
 
 POST /api/v2/voicemail/search
@@ -1335,8 +1486,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.SearchApi();
 
 let body = {}; // Object | Search request options
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postVoicemailSearch(body)
+apiInstance.postVoicemailSearch(body, opts)
   .then((data) => {
     console.log(`postVoicemailSearch success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1352,10 +1509,11 @@ apiInstance.postVoicemailSearch(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Search request options |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **VoicemailsSearchResponse**
 
 
-_purecloud-platform-client-v2@229.1.0_
+_purecloud-platform-client-v2@258.0.0_

@@ -5,7 +5,7 @@ class AIStudioApi {
 	/**
 	 * AIStudio service.
 	 * @module purecloud-platform-client-v2/api/AIStudioApi
-	 * @version 229.1.0
+	 * @version 258.0.0
 	 */
 
 	/**
@@ -21,12 +21,75 @@ class AIStudioApi {
 
 
 	/**
+	 * Start the deletion of a virtualAgent.
+	 * 
+	 * @param {String} virtualAgentId Virtual Agent ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	deleteAgenticVirtualagentJobs(virtualAgentId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'virtualAgentId' is set
+		if (virtualAgentId === undefined || virtualAgentId === null || virtualAgentId === '') {
+			throw 'Missing the required parameter "virtualAgentId" when calling deleteAgenticVirtualagentJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/agentic/virtualagents/{virtualAgentId}/jobs', 
+			'DELETE', 
+			{ 'virtualAgentId': virtualAgentId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Delete a summary setting.
+	 * 
+	 * @param {String} summarySettingId Summary setting id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	deleteConversationsSummariesSetting(summarySettingId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'summarySettingId' is set
+		if (summarySettingId === undefined || summarySettingId === null || summarySettingId === '') {
+			throw 'Missing the required parameter "summarySettingId" when calling deleteConversationsSummariesSetting';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/summaries/settings/{summarySettingId}', 
+			'DELETE', 
+			{ 'summarySettingId': summarySettingId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
 	 * Start the deletion of a guide.
 	 * 
 	 * @param {String} guideId Guide ID
-	 * deleteGuideJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteGuideJobs(guideId) { 
+	deleteGuideJobs(guideId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'guideId' is set
 		if (guideId === undefined || guideId === null || guideId === '') {
 			throw 'Missing the required parameter "guideId" when calling deleteGuideJobs';
@@ -42,7 +105,166 @@ class AIStudioApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get virtual agent.
+	 * 
+	 * @param {String} virtualAgentId Virtual Agent ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getAgenticVirtualagent(virtualAgentId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'virtualAgentId' is set
+		if (virtualAgentId === undefined || virtualAgentId === null || virtualAgentId === '') {
+			throw 'Missing the required parameter "virtualAgentId" when calling getAgenticVirtualagent';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/agentic/virtualagents/{virtualAgentId}', 
+			'GET', 
+			{ 'virtualAgentId': virtualAgentId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get a virtualAgent job.
+	 * 
+	 * @param {String} virtualAgentId Virtual Agent ID
+	 * @param {String} jobId jobId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getAgenticVirtualagentJob(virtualAgentId, jobId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'virtualAgentId' is set
+		if (virtualAgentId === undefined || virtualAgentId === null || virtualAgentId === '') {
+			throw 'Missing the required parameter "virtualAgentId" when calling getAgenticVirtualagentJob';
+		}
+		// verify the required parameter 'jobId' is set
+		if (jobId === undefined || jobId === null || jobId === '') {
+			throw 'Missing the required parameter "jobId" when calling getAgenticVirtualagentJob';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/agentic/virtualagents/{virtualAgentId}/jobs/{jobId}', 
+			'GET', 
+			{ 'virtualAgentId': virtualAgentId,'jobId': jobId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get all virtual agents.
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {String} opts.name Filter by matching name - case insensitive.
+	 * @param {String} opts.nameContains Filter by name contains - case insensitive.
+	 * @param {Object} opts.status Filter by status.
+	 * @param {Object} opts.sortBy Sort by. Default value dateModified. (default to dateModified)
+	 * @param {Object} opts.sortOrder Sort Order. Default value desc. (default to desc)
+	 * @param {Number} opts.pageNumber Page number. (default to 1)
+	 * @param {Number} opts.pageSize Page size. The maximum page size is 100. (default to 25)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getAgenticVirtualagents(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/agentic/virtualagents', 
+			'GET', 
+			{  },
+			{ 'name': opts['name'],'nameContains': opts['nameContains'],'status': opts['status'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Receive a summary setting.
+	 * 
+	 * @param {String} summarySettingId Summary setting id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getConversationsSummariesSetting(summarySettingId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'summarySettingId' is set
+		if (summarySettingId === undefined || summarySettingId === null || summarySettingId === '') {
+			throw 'Missing the required parameter "summarySettingId" when calling getConversationsSummariesSetting';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/summaries/settings/{summarySettingId}', 
+			'GET', 
+			{ 'summarySettingId': summarySettingId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get all summary settings.
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber Page number. (default to 1)
+	 * @param {Number} opts.pageSize Page size. The maximum page size is 100. (default to 25)
+	 * @param {String} opts.name Filter by partially matching name - case insensitive.
+	 * @param {Object} opts.sortOrder Sort Order. Default value desc. (default to desc)
+	 * @param {String} opts.language Filter by matching language - case insensitive.
+	 * @param {Object} opts.sortBy Sort by. Default value dateModified. (default to dateModified)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getConversationsSummariesSettings(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/summaries/settings', 
+			'GET', 
+			{  },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'name': opts['name'],'sortOrder': opts['sortOrder'],'language': opts['language'],'sortBy': opts['sortBy'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -50,9 +272,12 @@ class AIStudioApi {
 	 * Get guide.
 	 * 
 	 * @param {String} guideId Guide ID
-	 * getGuide is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getGuide(guideId) { 
+	getGuide(guideId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'guideId' is set
 		if (guideId === undefined || guideId === null || guideId === '') {
 			throw 'Missing the required parameter "guideId" when calling getGuide';
@@ -68,7 +293,8 @@ class AIStudioApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -77,9 +303,12 @@ class AIStudioApi {
 	 * 
 	 * @param {String} guideId Guide ID
 	 * @param {String} jobId jobId
-	 * getGuideJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getGuideJob(guideId, jobId) { 
+	getGuideJob(guideId, jobId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'guideId' is set
 		if (guideId === undefined || guideId === null || guideId === '') {
 			throw 'Missing the required parameter "guideId" when calling getGuideJob';
@@ -99,7 +328,8 @@ class AIStudioApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -108,9 +338,12 @@ class AIStudioApi {
 	 * 
 	 * @param {String} guideId Guide ID
 	 * @param {String} versionId Version ID
-	 * getGuideVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getGuideVersion(guideId, versionId) { 
+	getGuideVersion(guideId, versionId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'guideId' is set
 		if (guideId === undefined || guideId === null || guideId === '') {
 			throw 'Missing the required parameter "guideId" when calling getGuideVersion';
@@ -130,7 +363,8 @@ class AIStudioApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -140,9 +374,12 @@ class AIStudioApi {
 	 * @param {String} guideId Guide ID
 	 * @param {String} versionId Version ID
 	 * @param {String} jobId jobId
-	 * getGuideVersionJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getGuideVersionJob(guideId, versionId, jobId) { 
+	getGuideVersionJob(guideId, versionId, jobId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'guideId' is set
 		if (guideId === undefined || guideId === null || guideId === '') {
 			throw 'Missing the required parameter "guideId" when calling getGuideVersionJob';
@@ -166,7 +403,8 @@ class AIStudioApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -181,7 +419,7 @@ class AIStudioApi {
 	 * @param {Object} opts.sortOrder Sort Order. Default value desc. (default to desc)
 	 * @param {Number} opts.pageNumber Page number. (default to 1)
 	 * @param {Number} opts.pageSize Page size. The maximum page size is 100. (default to 25)
-	 * getGuides is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getGuides(opts) { 
 		opts = opts || {};
@@ -197,7 +435,8 @@ class AIStudioApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -205,9 +444,12 @@ class AIStudioApi {
 	 * Get the status of the guide content generation job.
 	 * 
 	 * @param {String} jobId jobId
-	 * getGuidesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getGuidesJob(jobId) { 
+	getGuidesJob(jobId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'jobId' is set
 		if (jobId === undefined || jobId === null || jobId === '') {
 			throw 'Missing the required parameter "jobId" when calling getGuidesJob';
@@ -223,7 +465,43 @@ class AIStudioApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Update a virtual agent.
+	 * 
+	 * @param {String} virtualAgentId Virtual Agent ID
+	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	patchAgenticVirtualagent(virtualAgentId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'virtualAgentId' is set
+		if (virtualAgentId === undefined || virtualAgentId === null || virtualAgentId === '') {
+			throw 'Missing the required parameter "virtualAgentId" when calling patchAgenticVirtualagent';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling patchAgenticVirtualagent';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/agentic/virtualagents/{virtualAgentId}', 
+			'PATCH', 
+			{ 'virtualAgentId': virtualAgentId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -232,9 +510,12 @@ class AIStudioApi {
 	 * 
 	 * @param {String} guideId Guide ID
 	 * @param {Object} body 
-	 * patchGuide is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchGuide(guideId, body) { 
+	patchGuide(guideId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'guideId' is set
 		if (guideId === undefined || guideId === null || guideId === '') {
 			throw 'Missing the required parameter "guideId" when calling patchGuide';
@@ -254,7 +535,8 @@ class AIStudioApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -264,9 +546,12 @@ class AIStudioApi {
 	 * @param {String} guideId Guide ID
 	 * @param {String} versionId Version ID
 	 * @param {Object} body 
-	 * patchGuideVersion is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchGuideVersion(guideId, versionId, body) { 
+	patchGuideVersion(guideId, versionId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'guideId' is set
 		if (guideId === undefined || guideId === null || guideId === '') {
 			throw 'Missing the required parameter "guideId" when calling patchGuideVersion';
@@ -290,7 +575,178 @@ class AIStudioApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Start the publishing of a virtual agent version.
+	 * 
+	 * @param {String} virtualAgentId Virtual Agent ID
+	 * @param {String} versionId Version ID
+	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postAgenticVirtualagentVersionJobs(virtualAgentId, versionId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'virtualAgentId' is set
+		if (virtualAgentId === undefined || virtualAgentId === null || virtualAgentId === '') {
+			throw 'Missing the required parameter "virtualAgentId" when calling postAgenticVirtualagentVersionJobs';
+		}
+		// verify the required parameter 'versionId' is set
+		if (versionId === undefined || versionId === null || versionId === '') {
+			throw 'Missing the required parameter "versionId" when calling postAgenticVirtualagentVersionJobs';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postAgenticVirtualagentVersionJobs';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/agentic/virtualagents/{virtualAgentId}/versions/{versionId}/jobs', 
+			'POST', 
+			{ 'virtualAgentId': virtualAgentId,'versionId': versionId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Create a virtual agent.
+	 * 
+	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postAgenticVirtualagents(body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postAgenticVirtualagents';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/agentic/virtualagents', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Trigger summary preview event generation.
+	 * 
+	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postConversationsSummariesPreview(body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postConversationsSummariesPreview';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/summaries/preview', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Create a summary setting.
+	 * 
+	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postConversationsSummariesSettings(body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postConversationsSummariesSettings';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/summaries/settings', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Add a turn to a guide session.
+	 * Creates a new turn in the specified guide session with the provided request data. If the session ID doesnt exist, a new session will be created automatically.
+	 * @param {String} guideId Guide ID
+	 * @param {String} guideSessionId Guide Session ID
+	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postGuideSessionTurns(guideId, guideSessionId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'guideId' is set
+		if (guideId === undefined || guideId === null || guideId === '') {
+			throw 'Missing the required parameter "guideId" when calling postGuideSessionTurns';
+		}
+		// verify the required parameter 'guideSessionId' is set
+		if (guideSessionId === undefined || guideSessionId === null || guideSessionId === '') {
+			throw 'Missing the required parameter "guideSessionId" when calling postGuideSessionTurns';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postGuideSessionTurns';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/guides/{guideId}/sessions/{guideSessionId}/turns', 
+			'POST', 
+			{ 'guideId': guideId,'guideSessionId': guideSessionId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -300,9 +756,12 @@ class AIStudioApi {
 	 * @param {String} guideId Guide ID
 	 * @param {String} versionId Version ID
 	 * @param {Object} body 
-	 * postGuideVersionJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postGuideVersionJobs(guideId, versionId, body) { 
+	postGuideVersionJobs(guideId, versionId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'guideId' is set
 		if (guideId === undefined || guideId === null || guideId === '') {
 			throw 'Missing the required parameter "guideId" when calling postGuideVersionJobs';
@@ -326,7 +785,8 @@ class AIStudioApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -336,7 +796,7 @@ class AIStudioApi {
 	 * @param {String} guideId Guide ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body 
-	 * postGuideVersions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postGuideVersions(guideId, opts) { 
 		opts = opts || {};
@@ -356,7 +816,8 @@ class AIStudioApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -364,9 +825,12 @@ class AIStudioApi {
 	 * Create a guide.
 	 * 
 	 * @param {Object} body 
-	 * postGuides is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postGuides(body) { 
+	postGuides(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postGuides';
@@ -382,7 +846,8 @@ class AIStudioApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -390,9 +855,12 @@ class AIStudioApi {
 	 * Start a guide content generation job.
 	 * 
 	 * @param {Object} body 
-	 * postGuidesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postGuidesJobs(body) { 
+	postGuidesJobs(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postGuidesJobs';
@@ -408,7 +876,73 @@ class AIStudioApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Generate presigned URL for uploading a file content to generate guide
+	 * 
+	 * @param {Object} body query
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postGuidesUploads(body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postGuidesUploads';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/guides/uploads', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Update a summary setting.
+	 * 
+	 * @param {String} summarySettingId Summary setting id
+	 * @param {Object} body 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	putConversationsSummariesSetting(summarySettingId, body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'summarySettingId' is set
+		if (summarySettingId === undefined || summarySettingId === null || summarySettingId === '') {
+			throw 'Missing the required parameter "summarySettingId" when calling putConversationsSummariesSetting';
+		}
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling putConversationsSummariesSetting';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/conversations/summaries/settings/{summarySettingId}', 
+			'PUT', 
+			{ 'summarySettingId': summarySettingId },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 

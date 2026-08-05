@@ -5,7 +5,7 @@ class IntegrationsApi {
 	/**
 	 * Integrations service.
 	 * @module purecloud-platform-client-v2/api/IntegrationsApi
-	 * @version 229.1.0
+	 * @version 258.0.0
 	 */
 
 	/**
@@ -24,8 +24,12 @@ class IntegrationsApi {
 	 * Delete integration.
 	 * 
 	 * @param {String} integrationId Integration Id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteIntegration(integrationId) { 
+	deleteIntegration(integrationId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'integrationId' is set
 		if (integrationId === undefined || integrationId === null || integrationId === '') {
 			throw 'Missing the required parameter "integrationId" when calling deleteIntegration';
@@ -41,7 +45,8 @@ class IntegrationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -49,8 +54,12 @@ class IntegrationsApi {
 	 * Delete an Action
 	 * 
 	 * @param {String} actionId actionId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteIntegrationsAction(actionId) { 
+	deleteIntegrationsAction(actionId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'actionId' is set
 		if (actionId === undefined || actionId === null || actionId === '') {
 			throw 'Missing the required parameter "actionId" when calling deleteIntegrationsAction';
@@ -66,7 +75,8 @@ class IntegrationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -74,8 +84,12 @@ class IntegrationsApi {
 	 * Delete a Draft
 	 * 
 	 * @param {String} actionId actionId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteIntegrationsActionDraft(actionId) { 
+	deleteIntegrationsActionDraft(actionId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'actionId' is set
 		if (actionId === undefined || actionId === null || actionId === '') {
 			throw 'Missing the required parameter "actionId" when calling deleteIntegrationsActionDraft';
@@ -91,7 +105,8 @@ class IntegrationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -99,8 +114,12 @@ class IntegrationsApi {
 	 * Delete a set of credentials
 	 * 
 	 * @param {String} credentialId Credential ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteIntegrationsCredential(credentialId) { 
+	deleteIntegrationsCredential(credentialId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'credentialId' is set
 		if (credentialId === undefined || credentialId === null || credentialId === '') {
 			throw 'Missing the required parameter "credentialId" when calling deleteIntegrationsCredential';
@@ -116,7 +135,8 @@ class IntegrationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -131,6 +151,7 @@ class IntegrationsApi {
 	 * @param {Array.<String>} opts.expand variable name requested by expand list
 	 * @param {String} opts.nextPage next page token
 	 * @param {String} opts.previousPage Previous page token
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getIntegration(integrationId, opts) { 
 		opts = opts || {};
@@ -150,7 +171,8 @@ class IntegrationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -158,8 +180,12 @@ class IntegrationsApi {
 	 * Get integration configuration.
 	 * 
 	 * @param {String} integrationId Integration Id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getIntegrationConfigCurrent(integrationId) { 
+	getIntegrationConfigCurrent(integrationId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'integrationId' is set
 		if (integrationId === undefined || integrationId === null || integrationId === '') {
 			throw 'Missing the required parameter "integrationId" when calling getIntegrationConfigCurrent';
@@ -175,7 +201,8 @@ class IntegrationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -189,6 +216,11 @@ class IntegrationsApi {
 	 * @param {Array.<String>} opts.expand variable name requested by expand list
 	 * @param {String} opts.nextPage next page token
 	 * @param {String} opts.previousPage Previous page token
+	 * @param {Array.<String>} opts.ids Comma-separated list of integration IDs to filter by (max 100)
+	 * @param {String} opts.integrationType Filter integrations by integration type ID
+	 * @param {Object} opts.reportedState Filter integrations by reported state (case-insensitive)
+	 * @param {String} opts.credentialId Filter integrations by credential ID
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getIntegrations(opts) { 
 		opts = opts || {};
@@ -198,13 +230,14 @@ class IntegrationsApi {
 			'/api/v2/integrations', 
 			'GET', 
 			{  },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'] },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'ids': this.apiClient.buildCollectionParam(opts['ids'], 'multi'),'integrationType': opts['integrationType'],'reportedState': opts['reportedState'],'credentialId': opts['credentialId'] },
 			{  },
 			{  },
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -216,6 +249,7 @@ class IntegrationsApi {
 	 * @param {Object} opts.expand Indicates a field in the response which should be expanded.
 	 * @param {Object} opts.flatten Indicates the response should be reformatted, based on Architect's flattening format. (default to false)
 	 * @param {Object} opts.includeConfig Return config in response. (default to false)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getIntegrationsAction(actionId, opts) { 
 		opts = opts || {};
@@ -235,7 +269,8 @@ class IntegrationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -247,6 +282,7 @@ class IntegrationsApi {
 	 * @param {Object} opts.expand Indicates a field in the response which should be expanded.
 	 * @param {Object} opts.flatten Indicates the response should be reformatted, based on Architect's flattening format. (default to false)
 	 * @param {Object} opts.includeConfig Return config in response. (default to false)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getIntegrationsActionDraft(actionId, opts) { 
 		opts = opts || {};
@@ -266,7 +302,8 @@ class IntegrationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -274,8 +311,12 @@ class IntegrationsApi {
 	 * Get draft function settings for Action
 	 * 
 	 * @param {String} actionId actionId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getIntegrationsActionDraftFunction(actionId) { 
+	getIntegrationsActionDraftFunction(actionId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'actionId' is set
 		if (actionId === undefined || actionId === null || actionId === '') {
 			throw 'Missing the required parameter "actionId" when calling getIntegrationsActionDraftFunction';
@@ -291,7 +332,8 @@ class IntegrationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -302,6 +344,7 @@ class IntegrationsApi {
 	 * @param {String} fileName Name of schema file to be retrieved for this draft.
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.flatten Indicates the response should be reformatted, based on Architect's flattening format. (default to false)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getIntegrationsActionDraftSchema(actionId, fileName, opts) { 
 		opts = opts || {};
@@ -325,7 +368,8 @@ class IntegrationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -334,8 +378,12 @@ class IntegrationsApi {
 	 * 
 	 * @param {String} actionId actionId
 	 * @param {String} fileName Name of template file to be retrieved for this action draft.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getIntegrationsActionDraftTemplate(actionId, fileName) { 
+	getIntegrationsActionDraftTemplate(actionId, fileName, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'actionId' is set
 		if (actionId === undefined || actionId === null || actionId === '') {
 			throw 'Missing the required parameter "actionId" when calling getIntegrationsActionDraftTemplate';
@@ -355,7 +403,8 @@ class IntegrationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['text/plain']
+			['text/plain'],
+			opts['customHeaders']
 		);
 	}
 
@@ -363,8 +412,12 @@ class IntegrationsApi {
 	 * Validate current Draft configuration.
 	 * 
 	 * @param {String} actionId actionId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getIntegrationsActionDraftValidation(actionId) { 
+	getIntegrationsActionDraftValidation(actionId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'actionId' is set
 		if (actionId === undefined || actionId === null || actionId === '') {
 			throw 'Missing the required parameter "actionId" when calling getIntegrationsActionDraftValidation';
@@ -380,7 +433,8 @@ class IntegrationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -388,8 +442,12 @@ class IntegrationsApi {
 	 * Get published function settings for Action
 	 * 
 	 * @param {String} actionId actionId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getIntegrationsActionFunction(actionId) { 
+	getIntegrationsActionFunction(actionId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'actionId' is set
 		if (actionId === undefined || actionId === null || actionId === '') {
 			throw 'Missing the required parameter "actionId" when calling getIntegrationsActionFunction';
@@ -405,7 +463,8 @@ class IntegrationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -416,6 +475,7 @@ class IntegrationsApi {
 	 * @param {String} fileName Name of schema file to be retrieved for this action.
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.flatten Indicates the response should be reformatted, based on Architect's flattening format. (default to false)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getIntegrationsActionSchema(actionId, fileName, opts) { 
 		opts = opts || {};
@@ -439,7 +499,8 @@ class IntegrationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -448,8 +509,12 @@ class IntegrationsApi {
 	 * 
 	 * @param {String} actionId actionId
 	 * @param {String} fileName Name of template file to be retrieved for this action.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getIntegrationsActionTemplate(actionId, fileName) { 
+	getIntegrationsActionTemplate(actionId, fileName, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'actionId' is set
 		if (actionId === undefined || actionId === null || actionId === '') {
 			throw 'Missing the required parameter "actionId" when calling getIntegrationsActionTemplate';
@@ -469,7 +534,8 @@ class IntegrationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['text/plain']
+			['text/plain'],
+			opts['customHeaders']
 		);
 	}
 
@@ -488,6 +554,8 @@ class IntegrationsApi {
 	 * @param {String} opts.ids Filter by action Id. Can be a comma separated list to request multiple actions.  Limit of 50 Ids.
 	 * @param {Object} opts.secure Filter based on 'secure' configuration option. True will only return actions marked as secure. False will return only non-secure actions. Do not use filter if you want all Actions.
 	 * @param {Object} opts.includeAuthActions Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions. (default to false)
+	 * @param {Object} opts.includeConfig Return config in response. (default to false)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getIntegrationsActions(opts) { 
 		opts = opts || {};
@@ -497,13 +565,14 @@ class IntegrationsApi {
 			'/api/v2/integrations/actions', 
 			'GET', 
 			{  },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'category': opts['category'],'name': opts['name'],'ids': opts['ids'],'secure': opts['secure'],'includeAuthActions': opts['includeAuthActions'] },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'category': opts['category'],'name': opts['name'],'ids': opts['ids'],'secure': opts['secure'],'includeAuthActions': opts['includeAuthActions'],'includeConfig': opts['includeConfig'] },
 			{  },
 			{  },
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -518,6 +587,7 @@ class IntegrationsApi {
 	 * @param {String} opts.sortBy Root level field name to sort on.  Only 'name' is supported on this endpoint.
 	 * @param {Object} opts.sortOrder Direction to sort 'sortBy' field. (default to asc)
 	 * @param {Object} opts.secure Filter to only include secure actions. True will only include actions marked secured. False will include only unsecure actions. Do not use filter if you want all Actions.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getIntegrationsActionsCategories(opts) { 
 		opts = opts || {};
@@ -533,7 +603,8 @@ class IntegrationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -543,6 +614,7 @@ class IntegrationsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.status Indicates the validity of the certificate in question.
 	 * @param {Object} opts.type Indicates the type of the certificate.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getIntegrationsActionsCertificates(opts) { 
 		opts = opts || {};
@@ -558,15 +630,20 @@ class IntegrationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Retrieves basic info about trusted root CA certificates
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getIntegrationsActionsCertificatesTruststore() { 
+	getIntegrationsActionsCertificatesTruststore(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/integrations/actions/certificates/truststore', 
@@ -578,7 +655,8 @@ class IntegrationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -597,6 +675,8 @@ class IntegrationsApi {
 	 * @param {String} opts.ids Filter by action Id. Can be a comma separated list to request multiple actions.  Limit of 50 Ids.
 	 * @param {Object} opts.secure Filter based on 'secure' configuration option. True will only return actions marked as secure. False will return only non-secure actions. Do not use filter if you want all Actions.
 	 * @param {Object} opts.includeAuthActions Whether or not to include authentication actions in the response. These actions are not directly executable. Some integrations create them and will run them as needed to refresh authentication information for other actions. (default to false)
+	 * @param {Object} opts.includeConfig Return config in response. (default to false)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getIntegrationsActionsDrafts(opts) { 
 		opts = opts || {};
@@ -606,21 +686,26 @@ class IntegrationsApi {
 			'/api/v2/integrations/actions/drafts', 
 			'GET', 
 			{  },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'category': opts['category'],'name': opts['name'],'ids': opts['ids'],'secure': opts['secure'],'includeAuthActions': opts['includeAuthActions'] },
+			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'nextPage': opts['nextPage'],'previousPage': opts['previousPage'],'sortBy': opts['sortBy'],'sortOrder': opts['sortOrder'],'category': opts['category'],'name': opts['name'],'ids': opts['ids'],'secure': opts['secure'],'includeAuthActions': opts['includeAuthActions'],'includeConfig': opts['includeConfig'] },
 			{  },
 			{  },
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get action function settings for Action
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getIntegrationsActionsFunctionsRuntimes() { 
+	getIntegrationsActionsFunctionsRuntimes(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/integrations/actions/functions/runtimes', 
@@ -632,7 +717,8 @@ class IntegrationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -643,6 +729,7 @@ class IntegrationsApi {
 	 * @param {String} botId The bot ID for this bot
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.version Specific Version
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * getIntegrationsBotconnectorBot is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getIntegrationsBotconnectorBot(integrationId, botId, opts) { 
@@ -667,7 +754,8 @@ class IntegrationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -678,6 +766,7 @@ class IntegrationsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * getIntegrationsBotconnectorBots is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getIntegrationsBotconnectorBots(integrationId, opts) { 
@@ -698,7 +787,8 @@ class IntegrationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -709,6 +799,7 @@ class IntegrationsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * getIntegrationsBotconnectorBotsSummaries is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
 	getIntegrationsBotconnectorBotsSummaries(integrationId, opts) { 
@@ -729,7 +820,8 @@ class IntegrationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -740,6 +832,7 @@ class IntegrationsApi {
 	 * @param {String} botId The botID for this bot
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.version Specific Version
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getIntegrationsBotconnectorIntegrationIdBot(integrationId, botId, opts) { 
 		opts = opts || {};
@@ -763,7 +856,8 @@ class IntegrationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -775,6 +869,7 @@ class IntegrationsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getIntegrationsBotconnectorIntegrationIdBotVersions(integrationId, botId, opts) { 
 		opts = opts || {};
@@ -798,7 +893,8 @@ class IntegrationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -806,8 +902,12 @@ class IntegrationsApi {
 	 * Get a list of botConnector bots for this integration
 	 * 
 	 * @param {String} integrationId The integration ID for this group of bots
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getIntegrationsBotconnectorIntegrationIdBots(integrationId) { 
+	getIntegrationsBotconnectorIntegrationIdBots(integrationId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'integrationId' is set
 		if (integrationId === undefined || integrationId === null || integrationId === '') {
 			throw 'Missing the required parameter "integrationId" when calling getIntegrationsBotconnectorIntegrationIdBots';
@@ -823,7 +923,8 @@ class IntegrationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -834,6 +935,7 @@ class IntegrationsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getIntegrationsBotconnectorIntegrationIdBotsSummaries(integrationId, opts) { 
 		opts = opts || {};
@@ -853,7 +955,8 @@ class IntegrationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -867,6 +970,7 @@ class IntegrationsApi {
 	 * @param {Array.<String>} opts.expand variable name requested by expand list
 	 * @param {String} opts.nextPage next page token
 	 * @param {String} opts.previousPage Previous page token
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getIntegrationsClientapps(opts) { 
 		opts = opts || {};
@@ -882,37 +986,8 @@ class IntegrationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * UC integration client application configuration.
-	 * Deprecated: Please use GET /integrations/unifiedcommunications/clientapps instead. This endpoint returns basic UI configuration data for all Unified Communications integrations client applications enabled for the current organization.
-	 * @param {Object} opts Optional parameters
-	 * @param {Number} opts.pageSize The total page size requested (default to 25)
-	 * @param {Number} opts.pageNumber The page number requested (default to 1)
-	 * @param {String} opts.sortBy variable name requested to sort by
-	 * @param {Array.<String>} opts.expand variable name requested by expand list
-	 * @param {String} opts.nextPage next page token
-	 * @param {String} opts.previousPage Previous page token
-	 * @deprecated
-	 */
-	getIntegrationsClientappsUnifiedcommunications(opts) { 
-		opts = opts || {};
-		
-
-		return this.apiClient.callApi(
-			'/api/v2/integrations/clientapps/unifiedcommunications', 
-			'GET', 
-			{  },
-			{ 'pageSize': opts['pageSize'],'pageNumber': opts['pageNumber'],'sortBy': opts['sortBy'],'expand': this.apiClient.buildCollectionParam(opts['expand'], 'multi'),'nextPage': opts['nextPage'],'previousPage': opts['previousPage'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			opts['customHeaders']
 		);
 	}
 
@@ -920,8 +995,12 @@ class IntegrationsApi {
 	 * Get a single credential with sensitive fields redacted
 	 * 
 	 * @param {String} credentialId Credential ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getIntegrationsCredential(credentialId) { 
+	getIntegrationsCredential(credentialId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'credentialId' is set
 		if (credentialId === undefined || credentialId === null || credentialId === '') {
 			throw 'Missing the required parameter "credentialId" when calling getIntegrationsCredential';
@@ -937,7 +1016,8 @@ class IntegrationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -947,6 +1027,7 @@ class IntegrationsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
 	getIntegrationsCredentials(opts) { 
@@ -963,7 +1044,8 @@ class IntegrationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -974,6 +1056,7 @@ class IntegrationsApi {
 	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getIntegrationsCredentialsListing(opts) { 
 		opts = opts || {};
@@ -989,15 +1072,20 @@ class IntegrationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * List all credential types
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getIntegrationsCredentialsTypes() { 
+	getIntegrationsCredentialsTypes(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/integrations/credentials/types', 
@@ -1009,7 +1097,8 @@ class IntegrationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1019,6 +1108,7 @@ class IntegrationsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getIntegrationsSpeechAudioconnector(opts) { 
 		opts = opts || {};
@@ -1034,7 +1124,8 @@ class IntegrationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1042,8 +1133,12 @@ class IntegrationsApi {
 	 * Get an Audio Connector integration
 	 * 
 	 * @param {String} integrationId The integration ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getIntegrationsSpeechAudioconnectorIntegrationId(integrationId) { 
+	getIntegrationsSpeechAudioconnectorIntegrationId(integrationId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'integrationId' is set
 		if (integrationId === undefined || integrationId === null || integrationId === '') {
 			throw 'Missing the required parameter "integrationId" when calling getIntegrationsSpeechAudioconnectorIntegrationId';
@@ -1059,7 +1154,8 @@ class IntegrationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1067,8 +1163,12 @@ class IntegrationsApi {
 	 * Get details about a Dialogflow agent
 	 * 
 	 * @param {String} agentId The agent ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getIntegrationsSpeechDialogflowAgent(agentId) { 
+	getIntegrationsSpeechDialogflowAgent(agentId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'agentId' is set
 		if (agentId === undefined || agentId === null || agentId === '') {
 			throw 'Missing the required parameter "agentId" when calling getIntegrationsSpeechDialogflowAgent';
@@ -1084,7 +1184,8 @@ class IntegrationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1095,6 +1196,7 @@ class IntegrationsApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {String} opts.name Filter on agent name
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getIntegrationsSpeechDialogflowAgents(opts) { 
 		opts = opts || {};
@@ -1110,7 +1212,8 @@ class IntegrationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1118,8 +1221,12 @@ class IntegrationsApi {
 	 * Get details about a Dialogflow CX agent
 	 * 
 	 * @param {String} agentId The agent ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getIntegrationsSpeechDialogflowcxAgent(agentId) { 
+	getIntegrationsSpeechDialogflowcxAgent(agentId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'agentId' is set
 		if (agentId === undefined || agentId === null || agentId === '') {
 			throw 'Missing the required parameter "agentId" when calling getIntegrationsSpeechDialogflowcxAgent';
@@ -1135,7 +1242,8 @@ class IntegrationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1146,6 +1254,7 @@ class IntegrationsApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {String} opts.name Filter on agent name
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getIntegrationsSpeechDialogflowcxAgents(opts) { 
 		opts = opts || {};
@@ -1161,7 +1270,8 @@ class IntegrationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1169,8 +1279,12 @@ class IntegrationsApi {
 	 * Get details about a Lex bot alias
 	 * 
 	 * @param {String} aliasId The alias ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getIntegrationsSpeechLexBotAlias(aliasId) { 
+	getIntegrationsSpeechLexBotAlias(aliasId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'aliasId' is set
 		if (aliasId === undefined || aliasId === null || aliasId === '') {
 			throw 'Missing the required parameter "aliasId" when calling getIntegrationsSpeechLexBotAlias';
@@ -1186,7 +1300,8 @@ class IntegrationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1199,6 +1314,7 @@ class IntegrationsApi {
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Object} opts.status Filter on alias status
 	 * @param {String} opts.name Filter on alias name
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getIntegrationsSpeechLexBotBotIdAliases(botId, opts) { 
 		opts = opts || {};
@@ -1218,7 +1334,8 @@ class IntegrationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1229,6 +1346,7 @@ class IntegrationsApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {String} opts.name Filter on bot name
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getIntegrationsSpeechLexBots(opts) { 
 		opts = opts || {};
@@ -1244,7 +1362,8 @@ class IntegrationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1252,8 +1371,12 @@ class IntegrationsApi {
 	 * Get details about a Lex V2 bot alias
 	 * 
 	 * @param {String} aliasId The Alias ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getIntegrationsSpeechLexv2BotAlias(aliasId) { 
+	getIntegrationsSpeechLexv2BotAlias(aliasId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'aliasId' is set
 		if (aliasId === undefined || aliasId === null || aliasId === '') {
 			throw 'Missing the required parameter "aliasId" when calling getIntegrationsSpeechLexv2BotAlias';
@@ -1269,7 +1392,8 @@ class IntegrationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1282,6 +1406,7 @@ class IntegrationsApi {
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Object} opts.status Filter on alias status
 	 * @param {String} opts.name Filter on alias name
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getIntegrationsSpeechLexv2BotBotIdAliases(botId, opts) { 
 		opts = opts || {};
@@ -1301,7 +1426,8 @@ class IntegrationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1312,6 +1438,7 @@ class IntegrationsApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {String} opts.name Filter on bot name
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getIntegrationsSpeechLexv2Bots(opts) { 
 		opts = opts || {};
@@ -1327,7 +1454,8 @@ class IntegrationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1339,6 +1467,7 @@ class IntegrationsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand expand
 	 * @param {Object} opts.targetChannel targetChannel
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getIntegrationsSpeechNuanceNuanceIntegrationIdBot(nuanceIntegrationId, botId, opts) { 
 		opts = opts || {};
@@ -1362,7 +1491,8 @@ class IntegrationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1372,8 +1502,12 @@ class IntegrationsApi {
 	 * @param {String} nuanceIntegrationId The integration ID for this group of bots
 	 * @param {String} botId The Nuance bot ID
 	 * @param {String} jobId The asynchronous job ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getIntegrationsSpeechNuanceNuanceIntegrationIdBotJob(nuanceIntegrationId, botId, jobId) { 
+	getIntegrationsSpeechNuanceNuanceIntegrationIdBotJob(nuanceIntegrationId, botId, jobId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'nuanceIntegrationId' is set
 		if (nuanceIntegrationId === undefined || nuanceIntegrationId === null || nuanceIntegrationId === '') {
 			throw 'Missing the required parameter "nuanceIntegrationId" when calling getIntegrationsSpeechNuanceNuanceIntegrationIdBotJob';
@@ -1397,7 +1531,8 @@ class IntegrationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1407,8 +1542,12 @@ class IntegrationsApi {
 	 * @param {String} nuanceIntegrationId The integration ID for this group of bots
 	 * @param {String} botId The Nuance bot ID
 	 * @param {String} jobId The asynchronous job ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResults(nuanceIntegrationId, botId, jobId) { 
+	getIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResults(nuanceIntegrationId, botId, jobId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'nuanceIntegrationId' is set
 		if (nuanceIntegrationId === undefined || nuanceIntegrationId === null || nuanceIntegrationId === '') {
 			throw 'Missing the required parameter "nuanceIntegrationId" when calling getIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResults';
@@ -1432,7 +1571,8 @@ class IntegrationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1444,6 +1584,7 @@ class IntegrationsApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Boolean} opts.onlyRegisteredBots Limit bots to the ones configured for Genesys Cloud usage (default to true)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getIntegrationsSpeechNuanceNuanceIntegrationIdBots(nuanceIntegrationId, opts) { 
 		opts = opts || {};
@@ -1463,7 +1604,8 @@ class IntegrationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1472,8 +1614,12 @@ class IntegrationsApi {
 	 * 
 	 * @param {String} nuanceIntegrationId The integration ID for this group of bots
 	 * @param {String} jobId The asynchronous job ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJob(nuanceIntegrationId, jobId) { 
+	getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJob(nuanceIntegrationId, jobId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'nuanceIntegrationId' is set
 		if (nuanceIntegrationId === undefined || nuanceIntegrationId === null || nuanceIntegrationId === '') {
 			throw 'Missing the required parameter "nuanceIntegrationId" when calling getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJob';
@@ -1493,7 +1639,8 @@ class IntegrationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1502,8 +1649,12 @@ class IntegrationsApi {
 	 * 
 	 * @param {String} nuanceIntegrationId The integration ID for this group of bots
 	 * @param {String} jobId The asynchronous job ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResults(nuanceIntegrationId, jobId) { 
+	getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResults(nuanceIntegrationId, jobId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'nuanceIntegrationId' is set
 		if (nuanceIntegrationId === undefined || nuanceIntegrationId === null || nuanceIntegrationId === '') {
 			throw 'Missing the required parameter "nuanceIntegrationId" when calling getIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResults';
@@ -1523,7 +1674,8 @@ class IntegrationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1531,8 +1683,12 @@ class IntegrationsApi {
 	 * Get details about a STT engine
 	 * 
 	 * @param {String} engineId The engine ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getIntegrationsSpeechSttEngine(engineId) { 
+	getIntegrationsSpeechSttEngine(engineId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'engineId' is set
 		if (engineId === undefined || engineId === null || engineId === '') {
 			throw 'Missing the required parameter "engineId" when calling getIntegrationsSpeechSttEngine';
@@ -1548,7 +1704,8 @@ class IntegrationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1559,6 +1716,7 @@ class IntegrationsApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {String} opts.name Filter on engine name
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getIntegrationsSpeechSttEngines(opts) { 
 		opts = opts || {};
@@ -1574,7 +1732,8 @@ class IntegrationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1584,6 +1743,7 @@ class IntegrationsApi {
 	 * @param {String} engineId The engine ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.includeVoices Include voices for the engine (default to false)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getIntegrationsSpeechTtsEngine(engineId, opts) { 
 		opts = opts || {};
@@ -1603,7 +1763,8 @@ class IntegrationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1612,8 +1773,12 @@ class IntegrationsApi {
 	 * 
 	 * @param {String} engineId The engine ID
 	 * @param {String} voiceId The voice ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getIntegrationsSpeechTtsEngineVoice(engineId, voiceId) { 
+	getIntegrationsSpeechTtsEngineVoice(engineId, voiceId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'engineId' is set
 		if (engineId === undefined || engineId === null || engineId === '') {
 			throw 'Missing the required parameter "engineId" when calling getIntegrationsSpeechTtsEngineVoice';
@@ -1633,7 +1798,8 @@ class IntegrationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1644,6 +1810,7 @@ class IntegrationsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getIntegrationsSpeechTtsEngineVoices(engineId, opts) { 
 		opts = opts || {};
@@ -1663,7 +1830,8 @@ class IntegrationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1676,6 +1844,7 @@ class IntegrationsApi {
 	 * @param {Boolean} opts.includeVoices Include voices for the engine (default to false)
 	 * @param {String} opts.name Filter on engine name
 	 * @param {String} opts.language Filter on supported language. If includeVoices=true then the voices are also filtered.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getIntegrationsSpeechTtsEngines(opts) { 
 		opts = opts || {};
@@ -1691,15 +1860,20 @@ class IntegrationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get TTS settings for an org
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getIntegrationsSpeechTtsSettings() { 
+	getIntegrationsSpeechTtsSettings(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/integrations/speech/tts/settings', 
@@ -1711,7 +1885,8 @@ class IntegrationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1719,8 +1894,12 @@ class IntegrationsApi {
 	 * Get integration type.
 	 * 
 	 * @param {String} typeId Integration Type Id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getIntegrationsType(typeId) { 
+	getIntegrationsType(typeId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'typeId' is set
 		if (typeId === undefined || typeId === null || typeId === '') {
 			throw 'Missing the required parameter "typeId" when calling getIntegrationsType';
@@ -1736,7 +1915,8 @@ class IntegrationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1745,8 +1925,12 @@ class IntegrationsApi {
 	 * 
 	 * @param {String} typeId Integration Type Id
 	 * @param {Object} configType Config schema type
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getIntegrationsTypeConfigschema(typeId, configType) { 
+	getIntegrationsTypeConfigschema(typeId, configType, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'typeId' is set
 		if (typeId === undefined || typeId === null || typeId === '') {
 			throw 'Missing the required parameter "typeId" when calling getIntegrationsTypeConfigschema';
@@ -1766,7 +1950,8 @@ class IntegrationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1780,6 +1965,7 @@ class IntegrationsApi {
 	 * @param {Array.<String>} opts.expand variable name requested by expand list
 	 * @param {String} opts.nextPage next page token
 	 * @param {String} opts.previousPage Previous page token
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getIntegrationsTypes(opts) { 
 		opts = opts || {};
@@ -1795,7 +1981,8 @@ class IntegrationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1803,8 +1990,12 @@ class IntegrationsApi {
 	 * UC integration client application configuration.
 	 * This endpoint returns basic UI configuration data for the specified Unified Communications integration client application.
 	 * @param {String} ucIntegrationId 3rd Party Service Type
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getIntegrationsUnifiedcommunicationsClientapp(ucIntegrationId) { 
+	getIntegrationsUnifiedcommunicationsClientapp(ucIntegrationId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'ucIntegrationId' is set
 		if (ucIntegrationId === undefined || ucIntegrationId === null || ucIntegrationId === '') {
 			throw 'Missing the required parameter "ucIntegrationId" when calling getIntegrationsUnifiedcommunicationsClientapp';
@@ -1820,7 +2011,8 @@ class IntegrationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1834,6 +2026,7 @@ class IntegrationsApi {
 	 * @param {Array.<String>} opts.expand variable name requested by expand list
 	 * @param {String} opts.nextPage next page token
 	 * @param {String} opts.previousPage Previous page token
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getIntegrationsUnifiedcommunicationsClientapps(opts) { 
 		opts = opts || {};
@@ -1849,7 +2042,8 @@ class IntegrationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1864,6 +2058,7 @@ class IntegrationsApi {
 	 * @param {String} opts.nextPage next page token
 	 * @param {String} opts.previousPage Previous page token
 	 * @param {String} opts.appHost The type of UserApp to filter by
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getIntegrationsUserapps(opts) { 
 		opts = opts || {};
@@ -1879,7 +2074,8 @@ class IntegrationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1895,6 +2091,7 @@ class IntegrationsApi {
 	 * @param {String} opts.nextPage next page token
 	 * @param {String} opts.previousPage Previous page token
 	 * @param {Object} opts.body Integration Update
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	patchIntegration(integrationId, opts) { 
 		opts = opts || {};
@@ -1914,7 +2111,8 @@ class IntegrationsApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1923,8 +2121,12 @@ class IntegrationsApi {
 	 * 
 	 * @param {String} actionId actionId
 	 * @param {Object} body Input used to patch the Action.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchIntegrationsAction(actionId, body) { 
+	patchIntegrationsAction(actionId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'actionId' is set
 		if (actionId === undefined || actionId === null || actionId === '') {
 			throw 'Missing the required parameter "actionId" when calling patchIntegrationsAction';
@@ -1944,7 +2146,8 @@ class IntegrationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1953,8 +2156,12 @@ class IntegrationsApi {
 	 * 
 	 * @param {String} actionId actionId
 	 * @param {Object} body Input used to patch the Action Draft.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchIntegrationsActionDraft(actionId, body) { 
+	patchIntegrationsActionDraft(actionId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'actionId' is set
 		if (actionId === undefined || actionId === null || actionId === '') {
 			throw 'Missing the required parameter "actionId" when calling patchIntegrationsActionDraft';
@@ -1974,7 +2181,8 @@ class IntegrationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1983,6 +2191,7 @@ class IntegrationsApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body Integration
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postIntegrations(opts) { 
 		opts = opts || {};
@@ -1998,7 +2207,8 @@ class IntegrationsApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2006,8 +2216,12 @@ class IntegrationsApi {
 	 * Create a new Draft from existing Action
 	 * 
 	 * @param {String} actionId actionId
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postIntegrationsActionDraft(actionId) { 
+	postIntegrationsActionDraft(actionId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'actionId' is set
 		if (actionId === undefined || actionId === null || actionId === '') {
 			throw 'Missing the required parameter "actionId" when calling postIntegrationsActionDraft';
@@ -2023,7 +2237,8 @@ class IntegrationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2032,8 +2247,12 @@ class IntegrationsApi {
 	 * 
 	 * @param {String} actionId actionId
 	 * @param {Object} body Input used to request URL upload.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postIntegrationsActionDraftFunctionUpload(actionId, body) { 
+	postIntegrationsActionDraftFunctionUpload(actionId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'actionId' is set
 		if (actionId === undefined || actionId === null || actionId === '') {
 			throw 'Missing the required parameter "actionId" when calling postIntegrationsActionDraftFunctionUpload';
@@ -2053,7 +2272,8 @@ class IntegrationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2062,8 +2282,12 @@ class IntegrationsApi {
 	 * 
 	 * @param {String} actionId actionId
 	 * @param {Object} body Input used to patch the Action.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postIntegrationsActionDraftPublish(actionId, body) { 
+	postIntegrationsActionDraftPublish(actionId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'actionId' is set
 		if (actionId === undefined || actionId === null || actionId === '') {
 			throw 'Missing the required parameter "actionId" when calling postIntegrationsActionDraftPublish';
@@ -2083,7 +2307,8 @@ class IntegrationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2094,6 +2319,7 @@ class IntegrationsApi {
 	 * @param {Object.<String, {String: Object}>} body Map of parameters used for variable substitution.
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.flatten Indicates the response should be reformatted, based on Architect's flattening format. (default to false)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postIntegrationsActionDraftTest(actionId, body, opts) { 
 		opts = opts || {};
@@ -2117,7 +2343,8 @@ class IntegrationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2128,6 +2355,7 @@ class IntegrationsApi {
 	 * @param {Object.<String, {String: Object}>} body Map of parameters used for variable substitution.
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.flatten Indicates the response should be reformatted, based on Architect's flattening format. (default to false)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postIntegrationsActionExecute(actionId, body, opts) { 
 		opts = opts || {};
@@ -2151,7 +2379,8 @@ class IntegrationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2162,6 +2391,7 @@ class IntegrationsApi {
 	 * @param {Object.<String, {String: Object}>} body Map of parameters used for variable substitution.
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.flatten Indicates the response should be reformatted, based on Architect's flattening format. (default to false)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postIntegrationsActionTest(actionId, body, opts) { 
 		opts = opts || {};
@@ -2185,7 +2415,8 @@ class IntegrationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2193,8 +2424,12 @@ class IntegrationsApi {
 	 * Create a new Action. Not supported for 'Function Integration' actions. Function integrations must be created as drafts to allow managing of uploading required ZIP function package before they may be used as a published action.
 	 * 
 	 * @param {Object} body Input used to create Action.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postIntegrationsActions(body) { 
+	postIntegrationsActions(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postIntegrationsActions';
@@ -2210,7 +2445,8 @@ class IntegrationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2218,8 +2454,12 @@ class IntegrationsApi {
 	 * Create a new Draft
 	 * 
 	 * @param {Object} body Input used to create Action Draft.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postIntegrationsActionsDrafts(body) { 
+	postIntegrationsActionsDrafts(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postIntegrationsActionsDrafts';
@@ -2235,7 +2475,8 @@ class IntegrationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2243,9 +2484,13 @@ class IntegrationsApi {
 	 * Send an incoming message to the bot.
 	 * 
 	 * @param {Object} body Incoming Message Request
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * postIntegrationsBotconnectorsIncomingMessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	postIntegrationsBotconnectorsIncomingMessages(body) { 
+	postIntegrationsBotconnectorsIncomingMessages(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postIntegrationsBotconnectorsIncomingMessages';
@@ -2261,7 +2506,8 @@ class IntegrationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2269,9 +2515,13 @@ class IntegrationsApi {
 	 * Send an outgoing message to the end user.
 	 * 
 	 * @param {Object} body Outgoing Message Request
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * postIntegrationsBotconnectorsOutgoingMessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 	 */
-	postIntegrationsBotconnectorsOutgoingMessages(body) { 
+	postIntegrationsBotconnectorsOutgoingMessages(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postIntegrationsBotconnectorsOutgoingMessages';
@@ -2287,7 +2537,8 @@ class IntegrationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2296,6 +2547,7 @@ class IntegrationsApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body Credential
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postIntegrationsCredentials(opts) { 
 		opts = opts || {};
@@ -2311,7 +2563,8 @@ class IntegrationsApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2323,6 +2576,7 @@ class IntegrationsApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand expand
 	 * @param {String} opts.body targetChannel
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postIntegrationsSpeechNuanceNuanceIntegrationIdBotJobs(nuanceIntegrationId, botId, opts) { 
 		opts = opts || {};
@@ -2346,7 +2600,8 @@ class IntegrationsApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2358,6 +2613,7 @@ class IntegrationsApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Boolean} opts.onlyRegisteredBots Limit bots to the ones configured for Genesys Cloud usage (default to true)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobs(nuanceIntegrationId, opts) { 
 		opts = opts || {};
@@ -2377,7 +2633,8 @@ class IntegrationsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2386,8 +2643,12 @@ class IntegrationsApi {
 	 * 
 	 * @param {String} nuanceIntegrationId The integration ID for this group of bots
 	 * @param {Object} settings 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidate(nuanceIntegrationId, settings) { 
+	postIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidate(nuanceIntegrationId, settings, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'nuanceIntegrationId' is set
 		if (nuanceIntegrationId === undefined || nuanceIntegrationId === null || nuanceIntegrationId === '') {
 			throw 'Missing the required parameter "nuanceIntegrationId" when calling postIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidate';
@@ -2407,7 +2668,8 @@ class IntegrationsApi {
 			settings, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2416,8 +2678,12 @@ class IntegrationsApi {
 	 * 
 	 * @param {String} tokenId The token of the webhook to be invoked
 	 * @param {Object.<String, {String: Object}>} body Webhook Invocation Payload
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postIntegrationsWebhookEvents(tokenId, body) { 
+	postIntegrationsWebhookEvents(tokenId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'tokenId' is set
 		if (tokenId === undefined || tokenId === null || tokenId === '') {
 			throw 'Missing the required parameter "tokenId" when calling postIntegrationsWebhookEvents';
@@ -2437,7 +2703,8 @@ class IntegrationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2447,6 +2714,7 @@ class IntegrationsApi {
 	 * @param {String} integrationId Integration Id
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body Integration Configuration
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	putIntegrationConfigCurrent(integrationId, opts) { 
 		opts = opts || {};
@@ -2466,7 +2734,8 @@ class IntegrationsApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2475,8 +2744,12 @@ class IntegrationsApi {
 	 * 
 	 * @param {String} actionId actionId
 	 * @param {Object} body Input used to update function settings.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putIntegrationsActionDraftFunction(actionId, body) { 
+	putIntegrationsActionDraftFunction(actionId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'actionId' is set
 		if (actionId === undefined || actionId === null || actionId === '') {
 			throw 'Missing the required parameter "actionId" when calling putIntegrationsActionDraftFunction';
@@ -2496,7 +2769,8 @@ class IntegrationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2505,8 +2779,12 @@ class IntegrationsApi {
 	 * 
 	 * @param {String} integrationId The integration ID for this group of bots
 	 * @param {Object} botList 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putIntegrationsBotconnectorIntegrationIdBots(integrationId, botList) { 
+	putIntegrationsBotconnectorIntegrationIdBots(integrationId, botList, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'integrationId' is set
 		if (integrationId === undefined || integrationId === null || integrationId === '') {
 			throw 'Missing the required parameter "integrationId" when calling putIntegrationsBotconnectorIntegrationIdBots';
@@ -2526,7 +2804,8 @@ class IntegrationsApi {
 			botList, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2536,6 +2815,7 @@ class IntegrationsApi {
 	 * @param {String} credentialId Credential ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.body Credential
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	putIntegrationsCredential(credentialId, opts) { 
 		opts = opts || {};
@@ -2555,7 +2835,8 @@ class IntegrationsApi {
 			opts['body'], 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2564,8 +2845,12 @@ class IntegrationsApi {
 	 * 
 	 * @param {String} nuanceIntegrationId The integration ID for this group of bots
 	 * @param {Object} settings 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettings(nuanceIntegrationId, settings) { 
+	putIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettings(nuanceIntegrationId, settings, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'nuanceIntegrationId' is set
 		if (nuanceIntegrationId === undefined || nuanceIntegrationId === null || nuanceIntegrationId === '') {
 			throw 'Missing the required parameter "nuanceIntegrationId" when calling putIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettings';
@@ -2585,7 +2870,8 @@ class IntegrationsApi {
 			settings, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2593,8 +2879,12 @@ class IntegrationsApi {
 	 * Update TTS settings for an org
 	 * 
 	 * @param {Object} body Updated TtsSettings
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putIntegrationsSpeechTtsSettings(body) { 
+	putIntegrationsSpeechTtsSettings(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling putIntegrationsSpeechTtsSettings';
@@ -2610,7 +2900,8 @@ class IntegrationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -2619,8 +2910,12 @@ class IntegrationsApi {
 	 * This endpoint accepts bulk presence updates from a 3rd-party presence integration and maps the 3rd-party user to a Genesys Cloud user via the matching email address. The 3rd-party presence value will be mapped to a Genesys Cloud organization presence definition value.
 	 * @param {String} ucIntegrationId UC Integration ID
 	 * @param {Array.<Object>} body List of User presences
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putIntegrationsUnifiedcommunicationThirdpartypresences(ucIntegrationId, body) { 
+	putIntegrationsUnifiedcommunicationThirdpartypresences(ucIntegrationId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'ucIntegrationId' is set
 		if (ucIntegrationId === undefined || ucIntegrationId === null || ucIntegrationId === '') {
 			throw 'Missing the required parameter "ucIntegrationId" when calling putIntegrationsUnifiedcommunicationThirdpartypresences';
@@ -2640,7 +2935,8 @@ class IntegrationsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 

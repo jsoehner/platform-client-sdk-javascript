@@ -5,7 +5,7 @@ class UserRecordingsApi {
 	/**
 	 * UserRecordings service.
 	 * @module purecloud-platform-client-v2/api/UserRecordingsApi
-	 * @version 229.1.0
+	 * @version 258.0.0
 	 */
 
 	/**
@@ -24,8 +24,12 @@ class UserRecordingsApi {
 	 * Delete a user recording.
 	 * 
 	 * @param {String} recordingId User Recording ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteUserrecording(recordingId) { 
+	deleteUserrecording(recordingId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'recordingId' is set
 		if (recordingId === undefined || recordingId === null || recordingId === '') {
 			throw 'Missing the required parameter "recordingId" when calling deleteUserrecording';
@@ -41,7 +45,8 @@ class UserRecordingsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -51,6 +56,7 @@ class UserRecordingsApi {
 	 * @param {String} recordingId User Recording ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getUserrecording(recordingId, opts) { 
 		opts = opts || {};
@@ -70,38 +76,8 @@ class UserRecordingsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
-		);
-	}
-
-	/**
-	 * Download a user recording.
-	 * API should migrate to use GET api/v2/userrecordings/{recordingId}/transcoding
-	 * @param {String} recordingId User Recording ID
-	 * @param {Object} opts Optional parameters
-	 * @param {Object} opts.formatId The desired media format. (default to WEBM)
-	 * @param {Boolean} opts.async When set to true, api will return 202 response until the recording is ready for download
-	 * @deprecated
-	 */
-	getUserrecordingMedia(recordingId, opts) { 
-		opts = opts || {};
-		
-		// verify the required parameter 'recordingId' is set
-		if (recordingId === undefined || recordingId === null || recordingId === '') {
-			throw 'Missing the required parameter "recordingId" when calling getUserrecordingMedia';
-		}
-
-		return this.apiClient.callApi(
-			'/api/v2/userrecordings/{recordingId}/media', 
-			'GET', 
-			{ 'recordingId': recordingId },
-			{ 'formatId': opts['formatId'],'async': opts['async'] },
-			{  },
-			{  },
-			null, 
-			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			opts['customHeaders']
 		);
 	}
 
@@ -111,6 +87,7 @@ class UserRecordingsApi {
 	 * @param {String} recordingId User Recording ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.formatId The desired media format. (default to WEBM)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getUserrecordingTranscoding(recordingId, opts) { 
 		opts = opts || {};
@@ -130,7 +107,8 @@ class UserRecordingsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -141,6 +119,7 @@ class UserRecordingsApi {
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getUserrecordings(opts) { 
 		opts = opts || {};
@@ -156,15 +135,20 @@ class UserRecordingsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get user recording summary
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getUserrecordingsSummary() { 
+	getUserrecordingsSummary(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/userrecordings/summary', 
@@ -176,7 +160,8 @@ class UserRecordingsApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -187,6 +172,7 @@ class UserRecordingsApi {
 	 * @param {Object} body UserRecording
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	putUserrecording(recordingId, body, opts) { 
 		opts = opts || {};
@@ -210,7 +196,8 @@ class UserRecordingsApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 

@@ -5,7 +5,7 @@ class ResponseManagementApi {
 	/**
 	 * ResponseManagement service.
 	 * @module purecloud-platform-client-v2/api/ResponseManagementApi
-	 * @version 229.1.0
+	 * @version 258.0.0
 	 */
 
 	/**
@@ -24,8 +24,12 @@ class ResponseManagementApi {
 	 * Delete an existing response library.
 	 * This will remove any responses associated with the library.
 	 * @param {String} libraryId Library ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteResponsemanagementLibrary(libraryId) { 
+	deleteResponsemanagementLibrary(libraryId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'libraryId' is set
 		if (libraryId === undefined || libraryId === null || libraryId === '') {
 			throw 'Missing the required parameter "libraryId" when calling deleteResponsemanagementLibrary';
@@ -41,7 +45,8 @@ class ResponseManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -49,8 +54,12 @@ class ResponseManagementApi {
 	 * Delete an existing response.
 	 * This will remove the response from any libraries associated with it.
 	 * @param {String} responseId Response ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteResponsemanagementResponse(responseId) { 
+	deleteResponsemanagementResponse(responseId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'responseId' is set
 		if (responseId === undefined || responseId === null || responseId === '') {
 			throw 'Missing the required parameter "responseId" when calling deleteResponsemanagementResponse';
@@ -66,7 +75,8 @@ class ResponseManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -74,8 +84,12 @@ class ResponseManagementApi {
 	 * Delete response asset
 	 * 
 	 * @param {String} responseAssetId Asset Id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteResponsemanagementResponseasset(responseAssetId) { 
+	deleteResponsemanagementResponseasset(responseAssetId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'responseAssetId' is set
 		if (responseAssetId === undefined || responseAssetId === null || responseAssetId === '') {
 			throw 'Missing the required parameter "responseAssetId" when calling deleteResponsemanagementResponseasset';
@@ -91,7 +105,8 @@ class ResponseManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -103,6 +118,7 @@ class ResponseManagementApi {
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Object} opts.messagingTemplateFilter Returns a list of libraries that contain responses with at least one messaging template defined for a specific message channel
 	 * @param {String} opts.libraryPrefix Returns a list of libraries that contain the prefix provided
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getResponsemanagementLibraries(opts) { 
 		opts = opts || {};
@@ -118,7 +134,8 @@ class ResponseManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -126,8 +143,71 @@ class ResponseManagementApi {
 	 * Get details about an existing response library.
 	 * 
 	 * @param {String} libraryId Library ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getResponsemanagementLibrary(libraryId) { 
+	getResponsemanagementLibrariesDivisionview(libraryId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'libraryId' is set
+		if (libraryId === undefined || libraryId === null || libraryId === '') {
+			throw 'Missing the required parameter "libraryId" when calling getResponsemanagementLibrariesDivisionview';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/responsemanagement/libraries/divisionviews/{libraryId}', 
+			'GET', 
+			{ 'libraryId': libraryId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Gets a list of existing response libraries.
+	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Object} opts.messagingTemplateFilter Returns a list of libraries that contain responses with at least one messaging template defined for a specific message channel
+	 * @param {String} opts.libraryPrefix Returns a list of libraries that contain the prefix provided
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getResponsemanagementLibrariesDivisionviews(opts) { 
+		opts = opts || {};
+		
+
+		return this.apiClient.callApi(
+			'/api/v2/responsemanagement/libraries/divisionviews', 
+			'GET', 
+			{  },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'],'messagingTemplateFilter': opts['messagingTemplateFilter'],'libraryPrefix': opts['libraryPrefix'] },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get details about an existing response library.
+	 * 
+	 * @param {String} libraryId Library ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getResponsemanagementLibrary(libraryId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'libraryId' is set
 		if (libraryId === undefined || libraryId === null || libraryId === '') {
 			throw 'Missing the required parameter "libraryId" when calling getResponsemanagementLibrary';
@@ -143,7 +223,8 @@ class ResponseManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -153,6 +234,7 @@ class ResponseManagementApi {
 	 * @param {String} responseId Response ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.expand Expand instructions for the return value.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getResponsemanagementResponse(responseId, opts) { 
 		opts = opts || {};
@@ -172,7 +254,8 @@ class ResponseManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -180,8 +263,12 @@ class ResponseManagementApi {
 	 * Get response asset information
 	 * 
 	 * @param {String} responseAssetId Asset Id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getResponsemanagementResponseasset(responseAssetId) { 
+	getResponsemanagementResponseasset(responseAssetId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'responseAssetId' is set
 		if (responseAssetId === undefined || responseAssetId === null || responseAssetId === '') {
 			throw 'Missing the required parameter "responseAssetId" when calling getResponsemanagementResponseasset';
@@ -197,7 +284,8 @@ class ResponseManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -205,8 +293,12 @@ class ResponseManagementApi {
 	 * Get response asset upload status
 	 * 
 	 * @param {String} statusId Status Id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getResponsemanagementResponseassetsStatusStatusId(statusId) { 
+	getResponsemanagementResponseassetsStatusStatusId(statusId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'statusId' is set
 		if (statusId === undefined || statusId === null || statusId === '') {
 			throw 'Missing the required parameter "statusId" when calling getResponsemanagementResponseassetsStatusStatusId';
@@ -222,7 +314,8 @@ class ResponseManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -234,6 +327,7 @@ class ResponseManagementApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Object} opts.expand Expand instructions for the return value.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getResponsemanagementResponses(libraryId, opts) { 
 		opts = opts || {};
@@ -253,7 +347,38 @@ class ResponseManagementApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get details about an existing response.
+	 * 
+	 * @param {String} responseId Response ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	getResponsemanagementResponsesDivisionview(responseId, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'responseId' is set
+		if (responseId === undefined || responseId === null || responseId === '') {
+			throw 'Missing the required parameter "responseId" when calling getResponsemanagementResponsesDivisionview';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/responsemanagement/responses/divisionviews/{responseId}', 
+			'GET', 
+			{ 'responseId': responseId },
+			{  },
+			{  },
+			{  },
+			null, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -261,8 +386,12 @@ class ResponseManagementApi {
 	 * Create a response library.
 	 * 
 	 * @param {Object} body Library
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postResponsemanagementLibraries(body) { 
+	postResponsemanagementLibraries(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postResponsemanagementLibraries';
@@ -278,7 +407,8 @@ class ResponseManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -286,8 +416,12 @@ class ResponseManagementApi {
 	 * Get response libraries.
 	 * 
 	 * @param {Object} body LibraryIDs (max allowed 50)
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postResponsemanagementLibrariesBulk(body) { 
+	postResponsemanagementLibrariesBulk(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postResponsemanagementLibrariesBulk';
@@ -303,7 +437,70 @@ class ResponseManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Query libraries using criteria. Users can set DivisionId parameter as '*' to fetch libraries that aren't associated with any divisions.
+	 * 
+	 * @param {Object} body Query criteria
+	 * @param {Object} opts Optional parameters
+	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postResponsemanagementLibrariesQuery(body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postResponsemanagementLibrariesQuery';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/responsemanagement/libraries/query', 
+			'POST', 
+			{  },
+			{ 'pageNumber': opts['pageNumber'],'pageSize': opts['pageSize'] },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Get response assets.
+	 * 
+	 * @param {Object} body Asset IDs (max allowed 50)
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postResponsemanagementResponseassetsBulk(body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postResponsemanagementResponseassetsBulk';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/responsemanagement/responseassets/bulk', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -313,6 +510,7 @@ class ResponseManagementApi {
 	 * @param {Object} body request
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postResponsemanagementResponseassetsSearch(body, opts) { 
 		opts = opts || {};
@@ -332,7 +530,8 @@ class ResponseManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -340,8 +539,12 @@ class ResponseManagementApi {
 	 * Creates pre-signed url for uploading response asset
 	 * 
 	 * @param {Object} body request
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postResponsemanagementResponseassetsUploads(body) { 
+	postResponsemanagementResponseassetsUploads(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postResponsemanagementResponseassetsUploads';
@@ -357,7 +560,8 @@ class ResponseManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -367,6 +571,7 @@ class ResponseManagementApi {
 	 * @param {Object} body Response
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.expand Expand instructions for the return value.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postResponsemanagementResponses(body, opts) { 
 		opts = opts || {};
@@ -386,7 +591,8 @@ class ResponseManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -394,8 +600,42 @@ class ResponseManagementApi {
 	 * Query responses
 	 * 
 	 * @param {Object} body Response
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postResponsemanagementResponsesQuery(body) { 
+	postResponsemanagementResponsesDivisionviewsQuery(body, opts) { 
+		opts = opts || {};
+		
+		// verify the required parameter 'body' is set
+		if (body === undefined || body === null) {
+			throw 'Missing the required parameter "body" when calling postResponsemanagementResponsesDivisionviewsQuery';
+		}
+
+		return this.apiClient.callApi(
+			'/api/v2/responsemanagement/responses/divisionviews/query', 
+			'POST', 
+			{  },
+			{  },
+			{  },
+			{  },
+			body, 
+			['PureCloud OAuth'], 
+			['application/json'],
+			['application/json'],
+			opts['customHeaders']
+		);
+	}
+
+	/**
+	 * Query responses
+	 * 
+	 * @param {Object} body Response
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
+	 */
+	postResponsemanagementResponsesQuery(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postResponsemanagementResponsesQuery';
@@ -411,7 +651,8 @@ class ResponseManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -420,8 +661,12 @@ class ResponseManagementApi {
 	 * Fields that can be updated: name. The most recent version is required for updates.
 	 * @param {String} libraryId Library ID
 	 * @param {Object} body Library
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putResponsemanagementLibrary(libraryId, body) { 
+	putResponsemanagementLibrary(libraryId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'libraryId' is set
 		if (libraryId === undefined || libraryId === null || libraryId === '') {
 			throw 'Missing the required parameter "libraryId" when calling putResponsemanagementLibrary';
@@ -441,7 +686,8 @@ class ResponseManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -452,6 +698,7 @@ class ResponseManagementApi {
 	 * @param {Object} body Response
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.expand Expand instructions for the return value.
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	putResponsemanagementResponse(responseId, body, opts) { 
 		opts = opts || {};
@@ -475,7 +722,8 @@ class ResponseManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -484,8 +732,12 @@ class ResponseManagementApi {
 	 * 
 	 * @param {String} responseAssetId Asset Id
 	 * @param {Object} body request
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putResponsemanagementResponseasset(responseAssetId, body) { 
+	putResponsemanagementResponseasset(responseAssetId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'responseAssetId' is set
 		if (responseAssetId === undefined || responseAssetId === null || responseAssetId === '') {
 			throw 'Missing the required parameter "responseAssetId" when calling putResponsemanagementResponseasset';
@@ -505,7 +757,8 @@ class ResponseManagementApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 

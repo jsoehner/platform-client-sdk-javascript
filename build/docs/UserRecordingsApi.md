@@ -8,7 +8,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 | ------------- | ------------- | ------------- |
 [**deleteUserrecording**](UserRecordingsApi#deleteUserrecording) | **DELETE** /api/v2/userrecordings/{recordingId} | Delete a user recording.
 [**getUserrecording**](UserRecordingsApi#getUserrecording) | **GET** /api/v2/userrecordings/{recordingId} | Get a user recording.
-[**getUserrecordingMedia**](UserRecordingsApi#getUserrecordingMedia) | **GET** /api/v2/userrecordings/{recordingId}/media | Download a user recording.
 [**getUserrecordingTranscoding**](UserRecordingsApi#getUserrecordingTranscoding) | **GET** /api/v2/userrecordings/{recordingId}/transcoding | Download a user recording.
 [**getUserrecordings**](UserRecordingsApi#getUserrecordings) | **GET** /api/v2/userrecordings | Get a list of user recordings.
 [**getUserrecordingsSummary**](UserRecordingsApi#getUserrecordingsSummary) | **GET** /api/v2/userrecordings/summary | Get user recording summary
@@ -18,7 +17,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ## deleteUserrecording
 
-> void deleteUserrecording(recordingId)
+> void deleteUserrecording(recordingId, opts)
 
 
 DELETE /api/v2/userrecordings/{recordingId}
@@ -41,8 +40,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.UserRecordingsApi();
 
 let recordingId = "recordingId_example"; // String | User Recording ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteUserrecording(recordingId)
+apiInstance.deleteUserrecording(recordingId, opts)
   .then(() => {
     console.log('deleteUserrecording returned successfully.');
   })
@@ -58,6 +63,7 @@ apiInstance.deleteUserrecording(recordingId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **recordingId** | **String** | User Recording ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -90,7 +96,11 @@ let apiInstance = new platformClient.UserRecordingsApi();
 
 let recordingId = "recordingId_example"; // String | User Recording ID
 let opts = { 
-  'expand': ["expand_example"] // [String] | Which fields, if any, to expand.
+  'expand': ["expand_example"], // [String] | Which fields, if any, to expand.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getUserrecording(recordingId, opts)
@@ -110,69 +120,11 @@ apiInstance.getUserrecording(recordingId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **recordingId** | **String** | User Recording ID |  |
  **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: conversation |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **UserRecording**
-
-
-## getUserrecordingMedia
-
-> DownloadResponse getUserrecordingMedia(recordingId, opts)
-
-:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
-This resource has been deprecated
-:::
-
-GET /api/v2/userrecordings/{recordingId}/media
-
-Download a user recording.
-
-API should migrate to use GET api/v2/userrecordings/{recordingId}/transcoding
-
-Requires NO permissions:
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.UserRecordingsApi();
-
-let recordingId = "recordingId_example"; // String | User Recording ID
-let opts = { 
-  'formatId': "WEBM", // String | The desired media format.
-  'async': true // Boolean | When set to true, api will return 202 response until the recording is ready for download
-};
-
-apiInstance.getUserrecordingMedia(recordingId, opts)
-  .then((data) => {
-    console.log(`getUserrecordingMedia success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling getUserrecordingMedia');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **recordingId** | **String** | User Recording ID |  |
- **formatId** | **String** | The desired media format. | [optional] [default to WEBM]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE |
- **async** | **Boolean** | When set to true, api will return 202 response until the recording is ready for download | [optional]  |
-
-### Return type
-
-**DownloadResponse**
 
 
 ## getUserrecordingTranscoding
@@ -203,7 +155,11 @@ let apiInstance = new platformClient.UserRecordingsApi();
 
 let recordingId = "recordingId_example"; // String | User Recording ID
 let opts = { 
-  'formatId': "WEBM" // String | The desired media format.
+  'formatId': "WEBM", // String | The desired media format.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getUserrecordingTranscoding(recordingId, opts)
@@ -223,6 +179,7 @@ apiInstance.getUserrecordingTranscoding(recordingId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **recordingId** | **String** | User Recording ID |  |
  **formatId** | **String** | The desired media format. | [optional] [default to WEBM]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -256,7 +213,11 @@ let apiInstance = new platformClient.UserRecordingsApi();
 let opts = { 
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
-  'expand': ["expand_example"] // [String] | Which fields, if any, to expand.
+  'expand': ["expand_example"], // [String] | Which fields, if any, to expand.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getUserrecordings(opts)
@@ -277,6 +238,7 @@ apiInstance.getUserrecordings(opts)
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: conversation |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -285,7 +247,7 @@ apiInstance.getUserrecordings(opts)
 
 ## getUserrecordingsSummary
 
-> FaxSummary getUserrecordingsSummary()
+> FaxSummary getUserrecordingsSummary(opts)
 
 
 GET /api/v2/userrecordings/summary
@@ -306,8 +268,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.UserRecordingsApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getUserrecordingsSummary()
+apiInstance.getUserrecordingsSummary(opts)
   .then((data) => {
     console.log(`getUserrecordingsSummary success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -319,7 +287,10 @@ apiInstance.getUserrecordingsSummary()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -353,7 +324,11 @@ let apiInstance = new platformClient.UserRecordingsApi();
 let recordingId = "recordingId_example"; // String | User Recording ID
 let body = {}; // Object | UserRecording
 let opts = { 
-  'expand': ["expand_example"] // [String] | Which fields, if any, to expand.
+  'expand': ["expand_example"], // [String] | Which fields, if any, to expand.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.putUserrecording(recordingId, body, opts)
@@ -374,10 +349,11 @@ apiInstance.putUserrecording(recordingId, body, opts)
  **recordingId** | **String** | User Recording ID |  |
  **body** | **Object** | UserRecording |  |
  **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: conversation |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **UserRecording**
 
 
-_purecloud-platform-client-v2@229.1.0_
+_purecloud-platform-client-v2@258.0.0_

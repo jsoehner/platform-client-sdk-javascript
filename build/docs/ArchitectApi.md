@@ -92,12 +92,14 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getFlowsInstancesSettingsLoglevelsCharacteristics**](ArchitectApi#getFlowsInstancesSettingsLoglevelsCharacteristics) | **GET** /api/v2/flows/instances/settings/loglevels/characteristics | Gets the available flow log level characteristics for this organization.
 [**getFlowsInstancesSettingsLoglevelsDefault**](ArchitectApi#getFlowsInstancesSettingsLoglevelsDefault) | **GET** /api/v2/flows/instances/settings/loglevels/default | Returns the flow default log level.
 [**getFlowsJob**](ArchitectApi#getFlowsJob) | **GET** /api/v2/flows/jobs/{jobId} | Fetch Architect Job Status
+[**getFlowsLookup**](ArchitectApi#getFlowsLookup) | **GET** /api/v2/flows/lookup | Look up flows by ID
 [**getFlowsMilestone**](ArchitectApi#getFlowsMilestone) | **GET** /api/v2/flows/milestones/{milestoneId} | Get a flow milestone
 [**getFlowsMilestones**](ArchitectApi#getFlowsMilestones) | **GET** /api/v2/flows/milestones | Get a pageable list of flow milestones, filtered by query parameters
 [**getFlowsMilestonesDivisionviews**](ArchitectApi#getFlowsMilestonesDivisionviews) | **GET** /api/v2/flows/milestones/divisionviews | Get a pageable list of basic flow milestone information objects filterable by query parameters.
 [**getFlowsOutcome**](ArchitectApi#getFlowsOutcome) | **GET** /api/v2/flows/outcomes/{flowOutcomeId} | Get a flow outcome
 [**getFlowsOutcomes**](ArchitectApi#getFlowsOutcomes) | **GET** /api/v2/flows/outcomes | Get a pageable list of flow outcomes, filtered by query parameters
 [**getFlowsOutcomesDivisionviews**](ArchitectApi#getFlowsOutcomesDivisionviews) | **GET** /api/v2/flows/outcomes/divisionviews | Get a pageable list of basic flow outcome information objects filterable by query parameters.
+[**getFlowsValidateJob**](ArchitectApi#getFlowsValidateJob) | **GET** /api/v2/flows/validate/jobs/{jobId} | Fetch Architect Validate Job Status
 [**patchArchitectGrammar**](ArchitectApi#patchArchitectGrammar) | **PATCH** /api/v2/architect/grammars/{grammarId} | Updates a grammar
 [**patchArchitectGrammarLanguage**](ArchitectApi#patchArchitectGrammarLanguage) | **PATCH** /api/v2/architect/grammars/{grammarId}/languages/{languageCode} | Updates a grammar language
 [**patchFlowsInstancesSettingsExecutiondata**](ArchitectApi#patchFlowsInstancesSettingsExecutiondata) | **PATCH** /api/v2/flows/instances/settings/executiondata | Edit the execution history enabled setting.
@@ -128,7 +130,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postFlowsActionsRevert**](ArchitectApi#postFlowsActionsRevert) | **POST** /api/v2/flows/actions/revert | Revert flow
 [**postFlowsActionsUnlock**](ArchitectApi#postFlowsActionsUnlock) | **POST** /api/v2/flows/actions/unlock | Unlock flow
 [**postFlowsDatatableExportJobs**](ArchitectApi#postFlowsDatatableExportJobs) | **POST** /api/v2/flows/datatables/{datatableId}/export/jobs | Begin an export process for exporting all rows from a datatable
-[**postFlowsDatatableImportJobs**](ArchitectApi#postFlowsDatatableImportJobs) | **POST** /api/v2/flows/datatables/{datatableId}/import/jobs | Begin an import process for importing rows into a datatable
+[**postFlowsDatatableImportCsvJobs**](ArchitectApi#postFlowsDatatableImportCsvJobs) | **POST** /api/v2/flows/datatables/{datatableId}/import/csv/jobs | Begin an import process for importing rows from a CSV file into a datatable. CSV file is uploaded by performing a PUT request against the URL in the returned 'uploadURI' field. Headers for the PUT request must contain all headers contained in the returned 'uploadHeaders' field.
+[**postFlowsDatatableImportJobs**](ArchitectApi#postFlowsDatatableImportJobs) | **POST** /api/v2/flows/datatables/{datatableId}/import/jobs | Begin an import process for importing rows into a datatable. Apps should migrate to use POST /api/v2/flows/datatables/{datatableId}/import/csv/jobs instead
 [**postFlowsDatatableRows**](ArchitectApi#postFlowsDatatableRows) | **POST** /api/v2/flows/datatables/{datatableId}/rows | Create a new row entry for the datatable.
 [**postFlowsDatatables**](ArchitectApi#postFlowsDatatables) | **POST** /api/v2/flows/datatables | Create a new datatable with the specified json-schema definition
 [**postFlowsExecutions**](ArchitectApi#postFlowsExecutions) | **POST** /api/v2/flows/executions | Launch an instance of a flow definition, for flow types that support it such as the 'workflow' type.
@@ -138,6 +141,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postFlowsJobs**](ArchitectApi#postFlowsJobs) | **POST** /api/v2/flows/jobs | Register Architect Job. Returns a URL where a file, such as an Architect flow YAML file, can be PUT which will then initiate the job.
 [**postFlowsMilestones**](ArchitectApi#postFlowsMilestones) | **POST** /api/v2/flows/milestones | Create a flow milestone
 [**postFlowsOutcomes**](ArchitectApi#postFlowsOutcomes) | **POST** /api/v2/flows/outcomes | Create a flow outcome
+[**postFlowsValidateJobs**](ArchitectApi#postFlowsValidateJobs) | **POST** /api/v2/flows/validate/jobs | Register Architect Validate Job
 [**putArchitectEmergencygroup**](ArchitectApi#putArchitectEmergencygroup) | **PUT** /api/v2/architect/emergencygroups/{emergencyGroupId} | Updates a emergency group by ID
 [**putArchitectIvr**](ArchitectApi#putArchitectIvr) | **PUT** /api/v2/architect/ivrs/{ivrId} | Update an IVR Config.
 [**putArchitectIvrIdentityresolution**](ArchitectApi#putArchitectIvrIdentityresolution) | **PUT** /api/v2/architect/ivrs/{ivrId}/identityresolution | Update an IVR IdentityResolutionConfig.
@@ -158,7 +162,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ## deleteArchitectEmergencygroup
 
-> void deleteArchitectEmergencygroup(emergencyGroupId)
+> void deleteArchitectEmergencygroup(emergencyGroupId, opts)
 
 
 DELETE /api/v2/architect/emergencygroups/{emergencyGroupId}
@@ -183,8 +187,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ArchitectApi();
 
 let emergencyGroupId = "emergencyGroupId_example"; // String | Emergency group ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteArchitectEmergencygroup(emergencyGroupId)
+apiInstance.deleteArchitectEmergencygroup(emergencyGroupId, opts)
   .then(() => {
     console.log('deleteArchitectEmergencygroup returned successfully.');
   })
@@ -200,6 +210,7 @@ apiInstance.deleteArchitectEmergencygroup(emergencyGroupId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **emergencyGroupId** | **String** | Emergency group ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -208,7 +219,7 @@ void (no response body)
 
 ## deleteArchitectGrammar
 
-> **Object** deleteArchitectGrammar(grammarId)
+> **Object** deleteArchitectGrammar(grammarId, opts)
 
 
 DELETE /api/v2/architect/grammars/{grammarId}
@@ -233,8 +244,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ArchitectApi();
 
 let grammarId = "grammarId_example"; // String | grammar ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteArchitectGrammar(grammarId)
+apiInstance.deleteArchitectGrammar(grammarId, opts)
   .then((data) => {
     console.log(`deleteArchitectGrammar success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -250,6 +267,7 @@ apiInstance.deleteArchitectGrammar(grammarId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **grammarId** | **String** | grammar ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -258,7 +276,7 @@ apiInstance.deleteArchitectGrammar(grammarId)
 
 ## deleteArchitectGrammarLanguage
 
-> void deleteArchitectGrammarLanguage(grammarId, languageCode)
+> void deleteArchitectGrammarLanguage(grammarId, languageCode, opts)
 
 
 DELETE /api/v2/architect/grammars/{grammarId}/languages/{languageCode}
@@ -284,8 +302,14 @@ let apiInstance = new platformClient.ArchitectApi();
 
 let grammarId = "grammarId_example"; // String | Grammar ID
 let languageCode = "languageCode_example"; // String | Language
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteArchitectGrammarLanguage(grammarId, languageCode)
+apiInstance.deleteArchitectGrammarLanguage(grammarId, languageCode, opts)
   .then(() => {
     console.log('deleteArchitectGrammarLanguage returned successfully.');
   })
@@ -302,6 +326,7 @@ apiInstance.deleteArchitectGrammarLanguage(grammarId, languageCode)
 | ------------- | ------------- | ------------- | ------------- |
  **grammarId** | **String** | Grammar ID |  |
  **languageCode** | **String** | Language |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -310,7 +335,7 @@ void (no response body)
 
 ## deleteArchitectGrammarLanguageFilesDtmf
 
-> void deleteArchitectGrammarLanguageFilesDtmf(grammarId, languageCode)
+> void deleteArchitectGrammarLanguageFilesDtmf(grammarId, languageCode, opts)
 
 
 DELETE /api/v2/architect/grammars/{grammarId}/languages/{languageCode}/files/dtmf
@@ -336,8 +361,14 @@ let apiInstance = new platformClient.ArchitectApi();
 
 let grammarId = "grammarId_example"; // String | Grammar ID
 let languageCode = "languageCode_example"; // String | Language
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteArchitectGrammarLanguageFilesDtmf(grammarId, languageCode)
+apiInstance.deleteArchitectGrammarLanguageFilesDtmf(grammarId, languageCode, opts)
   .then(() => {
     console.log('deleteArchitectGrammarLanguageFilesDtmf returned successfully.');
   })
@@ -354,6 +385,7 @@ apiInstance.deleteArchitectGrammarLanguageFilesDtmf(grammarId, languageCode)
 | ------------- | ------------- | ------------- | ------------- |
  **grammarId** | **String** | Grammar ID |  |
  **languageCode** | **String** | Language |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -362,7 +394,7 @@ void (no response body)
 
 ## deleteArchitectGrammarLanguageFilesVoice
 
-> void deleteArchitectGrammarLanguageFilesVoice(grammarId, languageCode)
+> void deleteArchitectGrammarLanguageFilesVoice(grammarId, languageCode, opts)
 
 
 DELETE /api/v2/architect/grammars/{grammarId}/languages/{languageCode}/files/voice
@@ -388,8 +420,14 @@ let apiInstance = new platformClient.ArchitectApi();
 
 let grammarId = "grammarId_example"; // String | Grammar ID
 let languageCode = "languageCode_example"; // String | Language
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteArchitectGrammarLanguageFilesVoice(grammarId, languageCode)
+apiInstance.deleteArchitectGrammarLanguageFilesVoice(grammarId, languageCode, opts)
   .then(() => {
     console.log('deleteArchitectGrammarLanguageFilesVoice returned successfully.');
   })
@@ -406,6 +444,7 @@ apiInstance.deleteArchitectGrammarLanguageFilesVoice(grammarId, languageCode)
 | ------------- | ------------- | ------------- | ------------- |
  **grammarId** | **String** | Grammar ID |  |
  **languageCode** | **String** | Language |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -414,7 +453,7 @@ void (no response body)
 
 ## deleteArchitectIvr
 
-> void deleteArchitectIvr(ivrId)
+> void deleteArchitectIvr(ivrId, opts)
 
 
 DELETE /api/v2/architect/ivrs/{ivrId}
@@ -439,8 +478,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ArchitectApi();
 
 let ivrId = "ivrId_example"; // String | IVR id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteArchitectIvr(ivrId)
+apiInstance.deleteArchitectIvr(ivrId, opts)
   .then(() => {
     console.log('deleteArchitectIvr returned successfully.');
   })
@@ -456,6 +501,7 @@ apiInstance.deleteArchitectIvr(ivrId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **ivrId** | **String** | IVR id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -490,7 +536,11 @@ let apiInstance = new platformClient.ArchitectApi();
 
 let promptId = "promptId_example"; // String | Prompt ID
 let opts = { 
-  'allResources': true // Boolean | Whether or not to delete all the prompt resources
+  'allResources': true, // Boolean | Whether or not to delete all the prompt resources
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.deleteArchitectPrompt(promptId, opts)
@@ -510,6 +560,7 @@ apiInstance.deleteArchitectPrompt(promptId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **promptId** | **String** | Prompt ID |  |
  **allResources** | **Boolean** | Whether or not to delete all the prompt resources | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -518,7 +569,7 @@ void (no response body)
 
 ## deleteArchitectPromptResource
 
-> void deleteArchitectPromptResource(promptId, languageCode)
+> void deleteArchitectPromptResource(promptId, languageCode, opts)
 
 
 DELETE /api/v2/architect/prompts/{promptId}/resources/{languageCode}
@@ -544,8 +595,14 @@ let apiInstance = new platformClient.ArchitectApi();
 
 let promptId = "promptId_example"; // String | Prompt ID
 let languageCode = "languageCode_example"; // String | Language
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteArchitectPromptResource(promptId, languageCode)
+apiInstance.deleteArchitectPromptResource(promptId, languageCode, opts)
   .then(() => {
     console.log('deleteArchitectPromptResource returned successfully.');
   })
@@ -562,6 +619,7 @@ apiInstance.deleteArchitectPromptResource(promptId, languageCode)
 | ------------- | ------------- | ------------- | ------------- |
  **promptId** | **String** | Prompt ID |  |
  **languageCode** | **String** | Language |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -570,7 +628,7 @@ void (no response body)
 
 ## deleteArchitectPromptResourceAudio
 
-> void deleteArchitectPromptResourceAudio(promptId, languageCode)
+> void deleteArchitectPromptResourceAudio(promptId, languageCode, opts)
 
 
 DELETE /api/v2/architect/prompts/{promptId}/resources/{languageCode}/audio
@@ -596,8 +654,14 @@ let apiInstance = new platformClient.ArchitectApi();
 
 let promptId = "promptId_example"; // String | Prompt ID
 let languageCode = "languageCode_example"; // String | Language
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteArchitectPromptResourceAudio(promptId, languageCode)
+apiInstance.deleteArchitectPromptResourceAudio(promptId, languageCode, opts)
   .then(() => {
     console.log('deleteArchitectPromptResourceAudio returned successfully.');
   })
@@ -614,6 +678,7 @@ apiInstance.deleteArchitectPromptResourceAudio(promptId, languageCode)
 | ------------- | ------------- | ------------- | ------------- |
  **promptId** | **String** | Prompt ID |  |
  **languageCode** | **String** | Language |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -622,7 +687,7 @@ void (no response body)
 
 ## deleteArchitectPrompts
 
-> Operation deleteArchitectPrompts(id)
+> Operation deleteArchitectPrompts(id, opts)
 
 
 DELETE /api/v2/architect/prompts
@@ -649,8 +714,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ArchitectApi();
 
 let id = ["id_example"]; // [String] | List of Prompt IDs
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteArchitectPrompts(id)
+apiInstance.deleteArchitectPrompts(id, opts)
   .then((data) => {
     console.log(`deleteArchitectPrompts success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -666,6 +737,7 @@ apiInstance.deleteArchitectPrompts(id)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **id** | **[String]** | List of Prompt IDs |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -674,7 +746,7 @@ apiInstance.deleteArchitectPrompts(id)
 
 ## deleteArchitectSchedule
 
-> void deleteArchitectSchedule(scheduleId)
+> void deleteArchitectSchedule(scheduleId, opts)
 
 
 DELETE /api/v2/architect/schedules/{scheduleId}
@@ -699,8 +771,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ArchitectApi();
 
 let scheduleId = "scheduleId_example"; // String | Schedule ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteArchitectSchedule(scheduleId)
+apiInstance.deleteArchitectSchedule(scheduleId, opts)
   .then(() => {
     console.log('deleteArchitectSchedule returned successfully.');
   })
@@ -716,6 +794,7 @@ apiInstance.deleteArchitectSchedule(scheduleId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **scheduleId** | **String** | Schedule ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -724,7 +803,7 @@ void (no response body)
 
 ## deleteArchitectSchedulegroup
 
-> void deleteArchitectSchedulegroup(scheduleGroupId)
+> void deleteArchitectSchedulegroup(scheduleGroupId, opts)
 
 
 DELETE /api/v2/architect/schedulegroups/{scheduleGroupId}
@@ -749,8 +828,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ArchitectApi();
 
 let scheduleGroupId = "scheduleGroupId_example"; // String | Schedule group ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteArchitectSchedulegroup(scheduleGroupId)
+apiInstance.deleteArchitectSchedulegroup(scheduleGroupId, opts)
   .then(() => {
     console.log('deleteArchitectSchedulegroup returned successfully.');
   })
@@ -766,6 +851,7 @@ apiInstance.deleteArchitectSchedulegroup(scheduleGroupId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **scheduleGroupId** | **String** | Schedule group ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -774,7 +860,7 @@ void (no response body)
 
 ## deleteArchitectSystempromptResource
 
-> void deleteArchitectSystempromptResource(promptId, languageCode)
+> void deleteArchitectSystempromptResource(promptId, languageCode, opts)
 
 
 DELETE /api/v2/architect/systemprompts/{promptId}/resources/{languageCode}
@@ -800,8 +886,14 @@ let apiInstance = new platformClient.ArchitectApi();
 
 let promptId = "promptId_example"; // String | Prompt ID
 let languageCode = "languageCode_example"; // String | Language
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteArchitectSystempromptResource(promptId, languageCode)
+apiInstance.deleteArchitectSystempromptResource(promptId, languageCode, opts)
   .then(() => {
     console.log('deleteArchitectSystempromptResource returned successfully.');
   })
@@ -818,6 +910,7 @@ apiInstance.deleteArchitectSystempromptResource(promptId, languageCode)
 | ------------- | ------------- | ------------- | ------------- |
  **promptId** | **String** | Prompt ID |  |
  **languageCode** | **String** | Language |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -826,7 +919,7 @@ void (no response body)
 
 ## deleteFlow
 
-> void deleteFlow(flowId)
+> void deleteFlow(flowId, opts)
 
 
 DELETE /api/v2/flows/{flowId}
@@ -851,8 +944,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ArchitectApi();
 
 let flowId = "flowId_example"; // String | Flow ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteFlow(flowId)
+apiInstance.deleteFlow(flowId, opts)
   .then(() => {
     console.log('deleteFlow returned successfully.');
   })
@@ -868,6 +967,7 @@ apiInstance.deleteFlow(flowId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **flowId** | **String** | Flow ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -876,7 +976,7 @@ void (no response body)
 
 ## deleteFlowInstancesSettingsLoglevels
 
-> void deleteFlowInstancesSettingsLoglevels(flowId)
+> void deleteFlowInstancesSettingsLoglevels(flowId, opts)
 
 
 DELETE /api/v2/flows/{flowId}/instances/settings/loglevels
@@ -903,8 +1003,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ArchitectApi();
 
 let flowId = "flowId_example"; // String | The flow id to delete the loglevel for
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteFlowInstancesSettingsLoglevels(flowId)
+apiInstance.deleteFlowInstancesSettingsLoglevels(flowId, opts)
   .then(() => {
     console.log('deleteFlowInstancesSettingsLoglevels returned successfully.');
   })
@@ -920,6 +1026,7 @@ apiInstance.deleteFlowInstancesSettingsLoglevels(flowId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **flowId** | **String** | The flow id to delete the loglevel for |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -928,7 +1035,7 @@ void (no response body)
 
 ## deleteFlows
 
-> Operation deleteFlows(id)
+> Operation deleteFlows(id, opts)
 
 
 DELETE /api/v2/flows
@@ -955,8 +1062,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ArchitectApi();
 
 let id = ["id_example"]; // [String] | List of Flow IDs
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteFlows(id)
+apiInstance.deleteFlows(id, opts)
   .then((data) => {
     console.log(`deleteFlows success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -972,6 +1085,7 @@ apiInstance.deleteFlows(id)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **id** | **[String]** | List of Flow IDs |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1008,7 +1122,11 @@ let apiInstance = new platformClient.ArchitectApi();
 
 let datatableId = "datatableId_example"; // String | id of datatable
 let opts = { 
-  'force': false // Boolean | force delete, even if in use
+  'force': false, // Boolean | force delete, even if in use
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.deleteFlowsDatatable(datatableId, opts)
@@ -1028,6 +1146,7 @@ apiInstance.deleteFlowsDatatable(datatableId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **datatableId** | **String** | id of datatable |  |
  **force** | **Boolean** | force delete, even if in use | [optional] [default to false] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1036,7 +1155,7 @@ void (no response body)
 
 ## deleteFlowsDatatableRow
 
-> void deleteFlowsDatatableRow(datatableId, rowId)
+> void deleteFlowsDatatableRow(datatableId, rowId, opts)
 
 
 DELETE /api/v2/flows/datatables/{datatableId}/rows/{rowId}
@@ -1065,8 +1184,14 @@ let apiInstance = new platformClient.ArchitectApi();
 
 let datatableId = "datatableId_example"; // String | id of datatable
 let rowId = "rowId_example"; // String | the key for the row
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteFlowsDatatableRow(datatableId, rowId)
+apiInstance.deleteFlowsDatatableRow(datatableId, rowId, opts)
   .then(() => {
     console.log('deleteFlowsDatatableRow returned successfully.');
   })
@@ -1083,6 +1208,7 @@ apiInstance.deleteFlowsDatatableRow(datatableId, rowId)
 | ------------- | ------------- | ------------- | ------------- |
  **datatableId** | **String** | id of datatable |  |
  **rowId** | **String** | the key for the row |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1091,7 +1217,7 @@ void (no response body)
 
 ## deleteFlowsInstancesSettingsLoglevelsDefault
 
-> void deleteFlowsInstancesSettingsLoglevelsDefault()
+> void deleteFlowsInstancesSettingsLoglevelsDefault(opts)
 
 
 DELETE /api/v2/flows/instances/settings/loglevels/default
@@ -1116,8 +1242,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ArchitectApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteFlowsInstancesSettingsLoglevelsDefault()
+apiInstance.deleteFlowsInstancesSettingsLoglevelsDefault(opts)
   .then(() => {
     console.log('deleteFlowsInstancesSettingsLoglevelsDefault returned successfully.');
   })
@@ -1129,7 +1261,10 @@ apiInstance.deleteFlowsInstancesSettingsLoglevelsDefault()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1138,7 +1273,7 @@ void (no response body)
 
 ## deleteFlowsMilestone
 
-> **Object** deleteFlowsMilestone(milestoneId)
+> **Object** deleteFlowsMilestone(milestoneId, opts)
 
 
 DELETE /api/v2/flows/milestones/{milestoneId}
@@ -1163,8 +1298,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ArchitectApi();
 
 let milestoneId = "milestoneId_example"; // String | flow milestone ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteFlowsMilestone(milestoneId)
+apiInstance.deleteFlowsMilestone(milestoneId, opts)
   .then((data) => {
     console.log(`deleteFlowsMilestone success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1180,6 +1321,7 @@ apiInstance.deleteFlowsMilestone(milestoneId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **milestoneId** | **String** | flow milestone ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1220,7 +1362,11 @@ let opts = {
   'consumedResources': true, // Boolean | Include resources each result item consumes
   'consumingResources': true, // Boolean | Include resources that consume each result item
   'consumedResourceType': ["consumedResourceType_example"], // [String] | Types of consumed resources to return, if consumed resources are requested
-  'consumingResourceType': ["consumingResourceType_example"] // [String] | Types of consuming resources to return, if consuming resources are requested
+  'consumingResourceType': ["consumingResourceType_example"], // [String] | Types of consuming resources to return, if consuming resources are requested
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getArchitectDependencytracking(name, opts)
@@ -1241,11 +1387,12 @@ apiInstance.getArchitectDependencytracking(name, opts)
  **name** | **String** | Object name to search for |  |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
- **objectType** | **[String]** | Object type(s) to search for | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, AUDIOCONNECTORBOT, BOTCONNECTORBOT, BOTCONNECTORINTEGRATION, BOTFLOW, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, CONVERSATIONCUSTOMATTRIBUTESCHEMA, DATAACTION, DATATABLE, DECISIONTABLE, DIALOGENGINEBOT, DIALOGENGINEBOTVERSION, DIALOGFLOWAGENT, DIALOGFLOWCXAGENT, DIGITALBOTCONNECTOR, DIGITALBOTCONNECTORINTEGRATION, DIGITALBOTFLOW, DIVISION, EMAILROUTE, EMERGENCYGROUP, FLOWACTION, FLOWDATATYPE, FLOWMILESTONE, FLOWOUTCOME, GRAMMAR, GROUP, GUIDE, GUIDEVERSION, IMAGE, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, INQUEUEEMAILFLOW, INQUEUESHORTMESSAGEFLOW, IVRCONFIGURATION, KNOWLEDGEBASE, KNOWLEDGEBASEDOCUMENT, LANGUAGE, LEXBOT, LEXBOTALIAS, LEXV2BOT, LEXV2BOTALIAS, NLUDOMAIN, NUANCEMIXBOT, NUANCEMIXINTEGRATION, OAUTHCLIENT, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SMSPHONENUMBER, STTENGINE, SURVEYFORM, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, UTILIZATIONLABEL, VOICEFLOW, VOICEMAILFLOW, VOICESURVEYFLOW, WIDGET, WORKFLOW, WORKITEMFLOW, WORKTYPE |
+ **objectType** | **[String]** | Object type(s) to search for | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, AGENTICVIRTUALAGENT, AGENTICVIRTUALAGENTVERSION, AUDIOCONNECTORBOT, BOTCONNECTORBOT, BOTCONNECTORINTEGRATION, BOTFLOW, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, CONVERSATIONCUSTOMATTRIBUTESCHEMA, CONVERSATIONSUMMARYSETTING, CUSTOMERSEGMENT, DATAACTION, DATATABLE, DECISIONTABLE, DIALOGENGINEBOT, DIALOGENGINEBOTVERSION, DIALOGFLOWAGENT, DIALOGFLOWCXAGENT, DIGITALAUDIO, DIGITALBOTCONNECTOR, DIGITALBOTCONNECTORINTEGRATION, DIGITALBOTFLOW, DIVISION, EMAILROUTE, EMAILSENDFLOW, EMERGENCYGROUP, FILE, FLOWACTION, FLOWDATATYPE, FLOWMILESTONE, FLOWOUTCOME, GRAMMAR, GROUP, GUIDE, GUIDEVERSION, IMAGE, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, INQUEUEEMAILFLOW, INQUEUESHORTMESSAGEFLOW, IVRCONFIGURATION, KNOWLEDGEBASE, KNOWLEDGEBASEDOCUMENT, KNOWLEDGESETTING, LANGUAGE, LEXBOT, LEXBOTALIAS, LEXV2BOT, LEXV2BOTALIAS, NLUDOMAIN, NUANCEMIXBOT, NUANCEMIXINTEGRATION, OAUTHCLIENT, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, RESPONSEASSET, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SMSPHONENUMBER, STTENGINE, SURVEYFORM, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, UTILIZATIONLABEL, VIDEO, VOICEFLOW, VOICEMAILFLOW, VOICESURVEYFLOW, WIDGET, WORKFLOW, WORKITEMFLOW, WORKTYPE |
  **consumedResources** | **Boolean** | Include resources each result item consumes | [optional]  |
  **consumingResources** | **Boolean** | Include resources that consume each result item | [optional]  |
- **consumedResourceType** | **[String]** | Types of consumed resources to return, if consumed resources are requested | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, AUDIOCONNECTORBOT, BOTCONNECTORBOT, BOTCONNECTORINTEGRATION, BOTFLOW, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, CONVERSATIONCUSTOMATTRIBUTESCHEMA, DATAACTION, DATATABLE, DECISIONTABLE, DIALOGENGINEBOT, DIALOGENGINEBOTVERSION, DIALOGFLOWAGENT, DIALOGFLOWCXAGENT, DIGITALBOTCONNECTOR, DIGITALBOTCONNECTORINTEGRATION, DIGITALBOTFLOW, DIVISION, EMAILROUTE, EMERGENCYGROUP, FLOWACTION, FLOWDATATYPE, FLOWMILESTONE, FLOWOUTCOME, GRAMMAR, GROUP, GUIDE, GUIDEVERSION, IMAGE, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, INQUEUEEMAILFLOW, INQUEUESHORTMESSAGEFLOW, IVRCONFIGURATION, KNOWLEDGEBASE, KNOWLEDGEBASEDOCUMENT, LANGUAGE, LEXBOT, LEXBOTALIAS, LEXV2BOT, LEXV2BOTALIAS, NLUDOMAIN, NUANCEMIXBOT, NUANCEMIXINTEGRATION, OAUTHCLIENT, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SMSPHONENUMBER, STTENGINE, SURVEYFORM, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, UTILIZATIONLABEL, VOICEFLOW, VOICEMAILFLOW, VOICESURVEYFLOW, WIDGET, WORKFLOW, WORKITEMFLOW, WORKTYPE |
- **consumingResourceType** | **[String]** | Types of consuming resources to return, if consuming resources are requested | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, AUDIOCONNECTORBOT, BOTCONNECTORBOT, BOTCONNECTORINTEGRATION, BOTFLOW, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, CONVERSATIONCUSTOMATTRIBUTESCHEMA, DATAACTION, DATATABLE, DECISIONTABLE, DIALOGENGINEBOT, DIALOGENGINEBOTVERSION, DIALOGFLOWAGENT, DIALOGFLOWCXAGENT, DIGITALBOTCONNECTOR, DIGITALBOTCONNECTORINTEGRATION, DIGITALBOTFLOW, DIVISION, EMAILROUTE, EMERGENCYGROUP, FLOWACTION, FLOWDATATYPE, FLOWMILESTONE, FLOWOUTCOME, GRAMMAR, GROUP, GUIDE, GUIDEVERSION, IMAGE, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, INQUEUEEMAILFLOW, INQUEUESHORTMESSAGEFLOW, IVRCONFIGURATION, KNOWLEDGEBASE, KNOWLEDGEBASEDOCUMENT, LANGUAGE, LEXBOT, LEXBOTALIAS, LEXV2BOT, LEXV2BOTALIAS, NLUDOMAIN, NUANCEMIXBOT, NUANCEMIXINTEGRATION, OAUTHCLIENT, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SMSPHONENUMBER, STTENGINE, SURVEYFORM, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, UTILIZATIONLABEL, VOICEFLOW, VOICEMAILFLOW, VOICESURVEYFLOW, WIDGET, WORKFLOW, WORKITEMFLOW, WORKTYPE |
+ **consumedResourceType** | **[String]** | Types of consumed resources to return, if consumed resources are requested | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, AGENTICVIRTUALAGENT, AGENTICVIRTUALAGENTVERSION, AUDIOCONNECTORBOT, BOTCONNECTORBOT, BOTCONNECTORINTEGRATION, BOTFLOW, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, CONVERSATIONCUSTOMATTRIBUTESCHEMA, CONVERSATIONSUMMARYSETTING, CUSTOMERSEGMENT, DATAACTION, DATATABLE, DECISIONTABLE, DIALOGENGINEBOT, DIALOGENGINEBOTVERSION, DIALOGFLOWAGENT, DIALOGFLOWCXAGENT, DIGITALAUDIO, DIGITALBOTCONNECTOR, DIGITALBOTCONNECTORINTEGRATION, DIGITALBOTFLOW, DIVISION, EMAILROUTE, EMAILSENDFLOW, EMERGENCYGROUP, FILE, FLOWACTION, FLOWDATATYPE, FLOWMILESTONE, FLOWOUTCOME, GRAMMAR, GROUP, GUIDE, GUIDEVERSION, IMAGE, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, INQUEUEEMAILFLOW, INQUEUESHORTMESSAGEFLOW, IVRCONFIGURATION, KNOWLEDGEBASE, KNOWLEDGEBASEDOCUMENT, KNOWLEDGESETTING, LANGUAGE, LEXBOT, LEXBOTALIAS, LEXV2BOT, LEXV2BOTALIAS, NLUDOMAIN, NUANCEMIXBOT, NUANCEMIXINTEGRATION, OAUTHCLIENT, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, RESPONSEASSET, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SMSPHONENUMBER, STTENGINE, SURVEYFORM, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, UTILIZATIONLABEL, VIDEO, VOICEFLOW, VOICEMAILFLOW, VOICESURVEYFLOW, WIDGET, WORKFLOW, WORKITEMFLOW, WORKTYPE |
+ **consumingResourceType** | **[String]** | Types of consuming resources to return, if consuming resources are requested | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, AGENTICVIRTUALAGENT, AGENTICVIRTUALAGENTVERSION, AUDIOCONNECTORBOT, BOTCONNECTORBOT, BOTCONNECTORINTEGRATION, BOTFLOW, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, CONVERSATIONCUSTOMATTRIBUTESCHEMA, CONVERSATIONSUMMARYSETTING, CUSTOMERSEGMENT, DATAACTION, DATATABLE, DECISIONTABLE, DIALOGENGINEBOT, DIALOGENGINEBOTVERSION, DIALOGFLOWAGENT, DIALOGFLOWCXAGENT, DIGITALAUDIO, DIGITALBOTCONNECTOR, DIGITALBOTCONNECTORINTEGRATION, DIGITALBOTFLOW, DIVISION, EMAILROUTE, EMAILSENDFLOW, EMERGENCYGROUP, FILE, FLOWACTION, FLOWDATATYPE, FLOWMILESTONE, FLOWOUTCOME, GRAMMAR, GROUP, GUIDE, GUIDEVERSION, IMAGE, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, INQUEUEEMAILFLOW, INQUEUESHORTMESSAGEFLOW, IVRCONFIGURATION, KNOWLEDGEBASE, KNOWLEDGEBASEDOCUMENT, KNOWLEDGESETTING, LANGUAGE, LEXBOT, LEXBOTALIAS, LEXV2BOT, LEXV2BOTALIAS, NLUDOMAIN, NUANCEMIXBOT, NUANCEMIXINTEGRATION, OAUTHCLIENT, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, RESPONSEASSET, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SMSPHONENUMBER, STTENGINE, SURVEYFORM, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, UTILIZATIONLABEL, VIDEO, VOICEFLOW, VOICEMAILFLOW, VOICESURVEYFLOW, WIDGET, WORKFLOW, WORKITEMFLOW, WORKTYPE |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1254,7 +1401,7 @@ apiInstance.getArchitectDependencytracking(name, opts)
 
 ## getArchitectDependencytrackingBuild
 
-> DependencyStatus getArchitectDependencytrackingBuild()
+> DependencyStatus getArchitectDependencytrackingBuild(opts)
 
 
 GET /api/v2/architect/dependencytracking/build
@@ -1277,8 +1424,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ArchitectApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getArchitectDependencytrackingBuild()
+apiInstance.getArchitectDependencytrackingBuild(opts)
   .then((data) => {
     console.log(`getArchitectDependencytrackingBuild success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1290,7 +1443,10 @@ apiInstance.getArchitectDependencytrackingBuild()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1327,9 +1483,13 @@ let id = "id_example"; // String | Consuming object ID
 let version = "version_example"; // String | Consuming object version
 let objectType = "objectType_example"; // String | Consuming object type.  Only versioned types are allowed here.
 let opts = { 
-  'resourceType': ["resourceType_example"], // [String] | Types of consumed resources to show
+  'resourceType': ["resourceType_example"], // [String] | Types of consumed resources to show.
   'pageNumber': 1, // Number | Page number
-  'pageSize': 25 // Number | Page size
+  'pageSize': 25, // Number | Page size
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getArchitectDependencytrackingConsumedresources(id, version, objectType, opts)
@@ -1349,10 +1509,11 @@ apiInstance.getArchitectDependencytrackingConsumedresources(id, version, objectT
 | ------------- | ------------- | ------------- | ------------- |
  **id** | **String** | Consuming object ID |  |
  **version** | **String** | Consuming object version |  |
- **objectType** | **String** | Consuming object type.  Only versioned types are allowed here. | <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, AUDIOCONNECTORBOT, BOTCONNECTORBOT, BOTCONNECTORINTEGRATION, BOTFLOW, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, CONVERSATIONCUSTOMATTRIBUTESCHEMA, DATAACTION, DATATABLE, DECISIONTABLE, DIALOGENGINEBOT, DIALOGENGINEBOTVERSION, DIALOGFLOWAGENT, DIALOGFLOWCXAGENT, DIGITALBOTCONNECTOR, DIGITALBOTCONNECTORINTEGRATION, DIGITALBOTFLOW, DIVISION, EMAILROUTE, EMERGENCYGROUP, FLOWACTION, FLOWDATATYPE, FLOWMILESTONE, FLOWOUTCOME, GRAMMAR, GROUP, GUIDE, GUIDEVERSION, IMAGE, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, INQUEUEEMAILFLOW, INQUEUESHORTMESSAGEFLOW, IVRCONFIGURATION, KNOWLEDGEBASE, KNOWLEDGEBASEDOCUMENT, LANGUAGE, LEXBOT, LEXBOTALIAS, LEXV2BOT, LEXV2BOTALIAS, NLUDOMAIN, NUANCEMIXBOT, NUANCEMIXINTEGRATION, OAUTHCLIENT, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SMSPHONENUMBER, STTENGINE, SURVEYFORM, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, UTILIZATIONLABEL, VOICEFLOW, VOICEMAILFLOW, VOICESURVEYFLOW, WIDGET, WORKFLOW, WORKITEMFLOW, WORKTYPE |
- **resourceType** | **[String]** | Types of consumed resources to show | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, AUDIOCONNECTORBOT, BOTCONNECTORBOT, BOTCONNECTORINTEGRATION, BOTFLOW, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, CONVERSATIONCUSTOMATTRIBUTESCHEMA, DATAACTION, DATATABLE, DECISIONTABLE, DIALOGENGINEBOT, DIALOGENGINEBOTVERSION, DIALOGFLOWAGENT, DIALOGFLOWCXAGENT, DIGITALBOTCONNECTOR, DIGITALBOTCONNECTORINTEGRATION, DIGITALBOTFLOW, DIVISION, EMAILROUTE, EMERGENCYGROUP, FLOWACTION, FLOWDATATYPE, FLOWMILESTONE, FLOWOUTCOME, GRAMMAR, GROUP, GUIDE, GUIDEVERSION, IMAGE, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, INQUEUEEMAILFLOW, INQUEUESHORTMESSAGEFLOW, IVRCONFIGURATION, KNOWLEDGEBASE, KNOWLEDGEBASEDOCUMENT, LANGUAGE, LEXBOT, LEXBOTALIAS, LEXV2BOT, LEXV2BOTALIAS, NLUDOMAIN, NUANCEMIXBOT, NUANCEMIXINTEGRATION, OAUTHCLIENT, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SMSPHONENUMBER, STTENGINE, SURVEYFORM, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, UTILIZATIONLABEL, VOICEFLOW, VOICEMAILFLOW, VOICESURVEYFLOW, WIDGET, WORKFLOW, WORKITEMFLOW, WORKTYPE |
+ **objectType** | **String** | Consuming object type.  Only versioned types are allowed here. | <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, AGENTICVIRTUALAGENT, AGENTICVIRTUALAGENTVERSION, AUDIOCONNECTORBOT, BOTCONNECTORBOT, BOTCONNECTORINTEGRATION, BOTFLOW, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, CONVERSATIONCUSTOMATTRIBUTESCHEMA, CONVERSATIONSUMMARYSETTING, CUSTOMERSEGMENT, DATAACTION, DATATABLE, DECISIONTABLE, DIALOGENGINEBOT, DIALOGENGINEBOTVERSION, DIALOGFLOWAGENT, DIALOGFLOWCXAGENT, DIGITALAUDIO, DIGITALBOTCONNECTOR, DIGITALBOTCONNECTORINTEGRATION, DIGITALBOTFLOW, DIVISION, EMAILROUTE, EMAILSENDFLOW, EMERGENCYGROUP, FILE, FLOWACTION, FLOWDATATYPE, FLOWMILESTONE, FLOWOUTCOME, GRAMMAR, GROUP, GUIDE, GUIDEVERSION, IMAGE, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, INQUEUEEMAILFLOW, INQUEUESHORTMESSAGEFLOW, IVRCONFIGURATION, KNOWLEDGEBASE, KNOWLEDGEBASEDOCUMENT, KNOWLEDGESETTING, LANGUAGE, LEXBOT, LEXBOTALIAS, LEXV2BOT, LEXV2BOTALIAS, NLUDOMAIN, NUANCEMIXBOT, NUANCEMIXINTEGRATION, OAUTHCLIENT, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, RESPONSEASSET, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SMSPHONENUMBER, STTENGINE, SURVEYFORM, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, UTILIZATIONLABEL, VIDEO, VOICEFLOW, VOICEMAILFLOW, VOICESURVEYFLOW, WIDGET, WORKFLOW, WORKITEMFLOW, WORKTYPE |
+ **resourceType** | **[String]** | Types of consumed resources to show. | [optional]  |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1392,7 +1553,11 @@ let opts = {
   'version': "version_example", // String | Object version
   'pageNumber': 1, // Number | Page number
   'pageSize': 25, // Number | Page size
-  'flowFilter': "flowFilter_example" // String | Show only checkedIn or published flows
+  'flowFilter': "flowFilter_example", // String | Show only checkedIn or published flows
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getArchitectDependencytrackingConsumingresources(id, objectType, opts)
@@ -1411,12 +1576,13 @@ apiInstance.getArchitectDependencytrackingConsumingresources(id, objectType, opt
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **id** | **String** | Consumed object ID |  |
- **objectType** | **String** | Consumed object type | <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, AUDIOCONNECTORBOT, BOTCONNECTORBOT, BOTCONNECTORINTEGRATION, BOTFLOW, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, CONVERSATIONCUSTOMATTRIBUTESCHEMA, DATAACTION, DATATABLE, DECISIONTABLE, DIALOGENGINEBOT, DIALOGENGINEBOTVERSION, DIALOGFLOWAGENT, DIALOGFLOWCXAGENT, DIGITALBOTCONNECTOR, DIGITALBOTCONNECTORINTEGRATION, DIGITALBOTFLOW, DIVISION, EMAILROUTE, EMERGENCYGROUP, FLOWACTION, FLOWDATATYPE, FLOWMILESTONE, FLOWOUTCOME, GRAMMAR, GROUP, GUIDE, GUIDEVERSION, IMAGE, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, INQUEUEEMAILFLOW, INQUEUESHORTMESSAGEFLOW, IVRCONFIGURATION, KNOWLEDGEBASE, KNOWLEDGEBASEDOCUMENT, LANGUAGE, LEXBOT, LEXBOTALIAS, LEXV2BOT, LEXV2BOTALIAS, NLUDOMAIN, NUANCEMIXBOT, NUANCEMIXINTEGRATION, OAUTHCLIENT, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SMSPHONENUMBER, STTENGINE, SURVEYFORM, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, UTILIZATIONLABEL, VOICEFLOW, VOICEMAILFLOW, VOICESURVEYFLOW, WIDGET, WORKFLOW, WORKITEMFLOW, WORKTYPE |
- **resourceType** | **[String]** | Types of consuming resources to show.  Only versioned types are allowed here. | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, AUDIOCONNECTORBOT, BOTCONNECTORBOT, BOTCONNECTORINTEGRATION, BOTFLOW, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, CONVERSATIONCUSTOMATTRIBUTESCHEMA, DATAACTION, DATATABLE, DECISIONTABLE, DIALOGENGINEBOT, DIALOGENGINEBOTVERSION, DIALOGFLOWAGENT, DIALOGFLOWCXAGENT, DIGITALBOTCONNECTOR, DIGITALBOTCONNECTORINTEGRATION, DIGITALBOTFLOW, DIVISION, EMAILROUTE, EMERGENCYGROUP, FLOWACTION, FLOWDATATYPE, FLOWMILESTONE, FLOWOUTCOME, GRAMMAR, GROUP, GUIDE, GUIDEVERSION, IMAGE, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, INQUEUEEMAILFLOW, INQUEUESHORTMESSAGEFLOW, IVRCONFIGURATION, KNOWLEDGEBASE, KNOWLEDGEBASEDOCUMENT, LANGUAGE, LEXBOT, LEXBOTALIAS, LEXV2BOT, LEXV2BOTALIAS, NLUDOMAIN, NUANCEMIXBOT, NUANCEMIXINTEGRATION, OAUTHCLIENT, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SMSPHONENUMBER, STTENGINE, SURVEYFORM, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, UTILIZATIONLABEL, VOICEFLOW, VOICEMAILFLOW, VOICESURVEYFLOW, WIDGET, WORKFLOW, WORKITEMFLOW, WORKTYPE |
+ **objectType** | **String** | Consumed object type | <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, AGENTICVIRTUALAGENT, AGENTICVIRTUALAGENTVERSION, AUDIOCONNECTORBOT, BOTCONNECTORBOT, BOTCONNECTORINTEGRATION, BOTFLOW, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, CONVERSATIONCUSTOMATTRIBUTESCHEMA, CONVERSATIONSUMMARYSETTING, CUSTOMERSEGMENT, DATAACTION, DATATABLE, DECISIONTABLE, DIALOGENGINEBOT, DIALOGENGINEBOTVERSION, DIALOGFLOWAGENT, DIALOGFLOWCXAGENT, DIGITALAUDIO, DIGITALBOTCONNECTOR, DIGITALBOTCONNECTORINTEGRATION, DIGITALBOTFLOW, DIVISION, EMAILROUTE, EMAILSENDFLOW, EMERGENCYGROUP, FILE, FLOWACTION, FLOWDATATYPE, FLOWMILESTONE, FLOWOUTCOME, GRAMMAR, GROUP, GUIDE, GUIDEVERSION, IMAGE, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, INQUEUEEMAILFLOW, INQUEUESHORTMESSAGEFLOW, IVRCONFIGURATION, KNOWLEDGEBASE, KNOWLEDGEBASEDOCUMENT, KNOWLEDGESETTING, LANGUAGE, LEXBOT, LEXBOTALIAS, LEXV2BOT, LEXV2BOTALIAS, NLUDOMAIN, NUANCEMIXBOT, NUANCEMIXINTEGRATION, OAUTHCLIENT, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, RESPONSEASSET, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SMSPHONENUMBER, STTENGINE, SURVEYFORM, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, UTILIZATIONLABEL, VIDEO, VOICEFLOW, VOICEMAILFLOW, VOICESURVEYFLOW, WIDGET, WORKFLOW, WORKITEMFLOW, WORKTYPE |
+ **resourceType** | **[String]** | Types of consuming resources to show.  Only versioned types are allowed here. | [optional]  |
  **version** | **String** | Object version | [optional]  |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **flowFilter** | **String** | Show only checkedIn or published flows | [optional] <br />**Values**: checkedIn, published |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1456,7 +1622,11 @@ let opts = {
   'consumedResources': false, // Boolean | Return consumed resources?
   'consumedResourceType': ["consumedResourceType_example"], // [String] | Resource type(s) to return
   'pageNumber': 1, // Number | Page number
-  'pageSize': 25 // Number | Page size
+  'pageSize': 25, // Number | Page size
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getArchitectDependencytrackingDeletedresourceconsumers(opts)
@@ -1475,12 +1645,13 @@ apiInstance.getArchitectDependencytrackingDeletedresourceconsumers(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **name** | **String** | Name to search for | [optional]  |
- **objectType** | **[String]** | Object type(s) to search for | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, AUDIOCONNECTORBOT, BOTCONNECTORBOT, BOTCONNECTORINTEGRATION, BOTFLOW, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, CONVERSATIONCUSTOMATTRIBUTESCHEMA, DATAACTION, DATATABLE, DECISIONTABLE, DIALOGENGINEBOT, DIALOGENGINEBOTVERSION, DIALOGFLOWAGENT, DIALOGFLOWCXAGENT, DIGITALBOTCONNECTOR, DIGITALBOTCONNECTORINTEGRATION, DIGITALBOTFLOW, DIVISION, EMAILROUTE, EMERGENCYGROUP, FLOWACTION, FLOWDATATYPE, FLOWMILESTONE, FLOWOUTCOME, GRAMMAR, GROUP, GUIDE, GUIDEVERSION, IMAGE, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, INQUEUEEMAILFLOW, INQUEUESHORTMESSAGEFLOW, IVRCONFIGURATION, KNOWLEDGEBASE, KNOWLEDGEBASEDOCUMENT, LANGUAGE, LEXBOT, LEXBOTALIAS, LEXV2BOT, LEXV2BOTALIAS, NLUDOMAIN, NUANCEMIXBOT, NUANCEMIXINTEGRATION, OAUTHCLIENT, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SMSPHONENUMBER, STTENGINE, SURVEYFORM, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, UTILIZATIONLABEL, VOICEFLOW, VOICEMAILFLOW, VOICESURVEYFLOW, WIDGET, WORKFLOW, WORKITEMFLOW, WORKTYPE |
+ **objectType** | **[String]** | Object type(s) to search for | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, AGENTICVIRTUALAGENT, AGENTICVIRTUALAGENTVERSION, AUDIOCONNECTORBOT, BOTCONNECTORBOT, BOTCONNECTORINTEGRATION, BOTFLOW, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, CONVERSATIONCUSTOMATTRIBUTESCHEMA, CONVERSATIONSUMMARYSETTING, CUSTOMERSEGMENT, DATAACTION, DATATABLE, DECISIONTABLE, DIALOGENGINEBOT, DIALOGENGINEBOTVERSION, DIALOGFLOWAGENT, DIALOGFLOWCXAGENT, DIGITALAUDIO, DIGITALBOTCONNECTOR, DIGITALBOTCONNECTORINTEGRATION, DIGITALBOTFLOW, DIVISION, EMAILROUTE, EMAILSENDFLOW, EMERGENCYGROUP, FILE, FLOWACTION, FLOWDATATYPE, FLOWMILESTONE, FLOWOUTCOME, GRAMMAR, GROUP, GUIDE, GUIDEVERSION, IMAGE, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, INQUEUEEMAILFLOW, INQUEUESHORTMESSAGEFLOW, IVRCONFIGURATION, KNOWLEDGEBASE, KNOWLEDGEBASEDOCUMENT, KNOWLEDGESETTING, LANGUAGE, LEXBOT, LEXBOTALIAS, LEXV2BOT, LEXV2BOTALIAS, NLUDOMAIN, NUANCEMIXBOT, NUANCEMIXINTEGRATION, OAUTHCLIENT, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, RESPONSEASSET, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SMSPHONENUMBER, STTENGINE, SURVEYFORM, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, UTILIZATIONLABEL, VIDEO, VOICEFLOW, VOICEMAILFLOW, VOICESURVEYFLOW, WIDGET, WORKFLOW, WORKITEMFLOW, WORKTYPE |
  **flowFilter** | **String** | Show only checkedIn or published flows | [optional] <br />**Values**: checkedIn, published |
  **consumedResources** | **Boolean** | Return consumed resources? | [optional] [default to false] |
- **consumedResourceType** | **[String]** | Resource type(s) to return | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, AUDIOCONNECTORBOT, BOTCONNECTORBOT, BOTCONNECTORINTEGRATION, BOTFLOW, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, CONVERSATIONCUSTOMATTRIBUTESCHEMA, DATAACTION, DATATABLE, DECISIONTABLE, DIALOGENGINEBOT, DIALOGENGINEBOTVERSION, DIALOGFLOWAGENT, DIALOGFLOWCXAGENT, DIGITALBOTCONNECTOR, DIGITALBOTCONNECTORINTEGRATION, DIGITALBOTFLOW, DIVISION, EMAILROUTE, EMERGENCYGROUP, FLOWACTION, FLOWDATATYPE, FLOWMILESTONE, FLOWOUTCOME, GRAMMAR, GROUP, GUIDE, GUIDEVERSION, IMAGE, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, INQUEUEEMAILFLOW, INQUEUESHORTMESSAGEFLOW, IVRCONFIGURATION, KNOWLEDGEBASE, KNOWLEDGEBASEDOCUMENT, LANGUAGE, LEXBOT, LEXBOTALIAS, LEXV2BOT, LEXV2BOTALIAS, NLUDOMAIN, NUANCEMIXBOT, NUANCEMIXINTEGRATION, OAUTHCLIENT, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SMSPHONENUMBER, STTENGINE, SURVEYFORM, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, UTILIZATIONLABEL, VOICEFLOW, VOICEMAILFLOW, VOICESURVEYFLOW, WIDGET, WORKFLOW, WORKITEMFLOW, WORKTYPE |
+ **consumedResourceType** | **[String]** | Resource type(s) to return | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, AGENTICVIRTUALAGENT, AGENTICVIRTUALAGENTVERSION, AUDIOCONNECTORBOT, BOTCONNECTORBOT, BOTCONNECTORINTEGRATION, BOTFLOW, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, CONVERSATIONCUSTOMATTRIBUTESCHEMA, CONVERSATIONSUMMARYSETTING, CUSTOMERSEGMENT, DATAACTION, DATATABLE, DECISIONTABLE, DIALOGENGINEBOT, DIALOGENGINEBOTVERSION, DIALOGFLOWAGENT, DIALOGFLOWCXAGENT, DIGITALAUDIO, DIGITALBOTCONNECTOR, DIGITALBOTCONNECTORINTEGRATION, DIGITALBOTFLOW, DIVISION, EMAILROUTE, EMAILSENDFLOW, EMERGENCYGROUP, FILE, FLOWACTION, FLOWDATATYPE, FLOWMILESTONE, FLOWOUTCOME, GRAMMAR, GROUP, GUIDE, GUIDEVERSION, IMAGE, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, INQUEUEEMAILFLOW, INQUEUESHORTMESSAGEFLOW, IVRCONFIGURATION, KNOWLEDGEBASE, KNOWLEDGEBASEDOCUMENT, KNOWLEDGESETTING, LANGUAGE, LEXBOT, LEXBOTALIAS, LEXV2BOT, LEXV2BOTALIAS, NLUDOMAIN, NUANCEMIXBOT, NUANCEMIXINTEGRATION, OAUTHCLIENT, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, RESPONSEASSET, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SMSPHONENUMBER, STTENGINE, SURVEYFORM, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, UTILIZATIONLABEL, VIDEO, VOICEFLOW, VOICEMAILFLOW, VOICESURVEYFLOW, WIDGET, WORKFLOW, WORKITEMFLOW, WORKTYPE |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1521,7 +1692,11 @@ let opts = {
   'consumingResources': true, // Boolean | Include resources that consume this item
   'consumedResourceType': ["consumedResourceType_example"], // [String] | Types of consumed resources to return, if consumed resources are requested
   'consumingResourceType': ["consumingResourceType_example"], // [String] | Types of consuming resources to return, if consuming resources are requested
-  'consumedResourceRequest': true // Boolean | Indicate that this is going to look up a consumed resource object
+  'consumedResourceRequest': true, // Boolean | Indicate that this is going to look up a consumed resource object
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getArchitectDependencytrackingObject(id, opts)
@@ -1541,12 +1716,13 @@ apiInstance.getArchitectDependencytrackingObject(id, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **id** | **String** | Object ID |  |
  **version** | **String** | Object version | [optional]  |
- **objectType** | **String** | Object type | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, AUDIOCONNECTORBOT, BOTCONNECTORBOT, BOTCONNECTORINTEGRATION, BOTFLOW, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, CONVERSATIONCUSTOMATTRIBUTESCHEMA, DATAACTION, DATATABLE, DECISIONTABLE, DIALOGENGINEBOT, DIALOGENGINEBOTVERSION, DIALOGFLOWAGENT, DIALOGFLOWCXAGENT, DIGITALBOTCONNECTOR, DIGITALBOTCONNECTORINTEGRATION, DIGITALBOTFLOW, DIVISION, EMAILROUTE, EMERGENCYGROUP, FLOWACTION, FLOWDATATYPE, FLOWMILESTONE, FLOWOUTCOME, GRAMMAR, GROUP, GUIDE, GUIDEVERSION, IMAGE, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, INQUEUEEMAILFLOW, INQUEUESHORTMESSAGEFLOW, IVRCONFIGURATION, KNOWLEDGEBASE, KNOWLEDGEBASEDOCUMENT, LANGUAGE, LEXBOT, LEXBOTALIAS, LEXV2BOT, LEXV2BOTALIAS, NLUDOMAIN, NUANCEMIXBOT, NUANCEMIXINTEGRATION, OAUTHCLIENT, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SMSPHONENUMBER, STTENGINE, SURVEYFORM, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, UTILIZATIONLABEL, VOICEFLOW, VOICEMAILFLOW, VOICESURVEYFLOW, WIDGET, WORKFLOW, WORKITEMFLOW, WORKTYPE |
+ **objectType** | **String** | Object type | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, AGENTICVIRTUALAGENT, AGENTICVIRTUALAGENTVERSION, AUDIOCONNECTORBOT, BOTCONNECTORBOT, BOTCONNECTORINTEGRATION, BOTFLOW, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, CONVERSATIONCUSTOMATTRIBUTESCHEMA, CONVERSATIONSUMMARYSETTING, CUSTOMERSEGMENT, DATAACTION, DATATABLE, DECISIONTABLE, DIALOGENGINEBOT, DIALOGENGINEBOTVERSION, DIALOGFLOWAGENT, DIALOGFLOWCXAGENT, DIGITALAUDIO, DIGITALBOTCONNECTOR, DIGITALBOTCONNECTORINTEGRATION, DIGITALBOTFLOW, DIVISION, EMAILROUTE, EMAILSENDFLOW, EMERGENCYGROUP, FILE, FLOWACTION, FLOWDATATYPE, FLOWMILESTONE, FLOWOUTCOME, GRAMMAR, GROUP, GUIDE, GUIDEVERSION, IMAGE, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, INQUEUEEMAILFLOW, INQUEUESHORTMESSAGEFLOW, IVRCONFIGURATION, KNOWLEDGEBASE, KNOWLEDGEBASEDOCUMENT, KNOWLEDGESETTING, LANGUAGE, LEXBOT, LEXBOTALIAS, LEXV2BOT, LEXV2BOTALIAS, NLUDOMAIN, NUANCEMIXBOT, NUANCEMIXINTEGRATION, OAUTHCLIENT, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, RESPONSEASSET, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SMSPHONENUMBER, STTENGINE, SURVEYFORM, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, UTILIZATIONLABEL, VIDEO, VOICEFLOW, VOICEMAILFLOW, VOICESURVEYFLOW, WIDGET, WORKFLOW, WORKITEMFLOW, WORKTYPE |
  **consumedResources** | **Boolean** | Include resources this item consumes | [optional]  |
  **consumingResources** | **Boolean** | Include resources that consume this item | [optional]  |
- **consumedResourceType** | **[String]** | Types of consumed resources to return, if consumed resources are requested | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, AUDIOCONNECTORBOT, BOTCONNECTORBOT, BOTCONNECTORINTEGRATION, BOTFLOW, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, CONVERSATIONCUSTOMATTRIBUTESCHEMA, DATAACTION, DATATABLE, DECISIONTABLE, DIALOGENGINEBOT, DIALOGENGINEBOTVERSION, DIALOGFLOWAGENT, DIALOGFLOWCXAGENT, DIGITALBOTCONNECTOR, DIGITALBOTCONNECTORINTEGRATION, DIGITALBOTFLOW, DIVISION, EMAILROUTE, EMERGENCYGROUP, FLOWACTION, FLOWDATATYPE, FLOWMILESTONE, FLOWOUTCOME, GRAMMAR, GROUP, GUIDE, GUIDEVERSION, IMAGE, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, INQUEUEEMAILFLOW, INQUEUESHORTMESSAGEFLOW, IVRCONFIGURATION, KNOWLEDGEBASE, KNOWLEDGEBASEDOCUMENT, LANGUAGE, LEXBOT, LEXBOTALIAS, LEXV2BOT, LEXV2BOTALIAS, NLUDOMAIN, NUANCEMIXBOT, NUANCEMIXINTEGRATION, OAUTHCLIENT, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SMSPHONENUMBER, STTENGINE, SURVEYFORM, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, UTILIZATIONLABEL, VOICEFLOW, VOICEMAILFLOW, VOICESURVEYFLOW, WIDGET, WORKFLOW, WORKITEMFLOW, WORKTYPE |
- **consumingResourceType** | **[String]** | Types of consuming resources to return, if consuming resources are requested | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, AUDIOCONNECTORBOT, BOTCONNECTORBOT, BOTCONNECTORINTEGRATION, BOTFLOW, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, CONVERSATIONCUSTOMATTRIBUTESCHEMA, DATAACTION, DATATABLE, DECISIONTABLE, DIALOGENGINEBOT, DIALOGENGINEBOTVERSION, DIALOGFLOWAGENT, DIALOGFLOWCXAGENT, DIGITALBOTCONNECTOR, DIGITALBOTCONNECTORINTEGRATION, DIGITALBOTFLOW, DIVISION, EMAILROUTE, EMERGENCYGROUP, FLOWACTION, FLOWDATATYPE, FLOWMILESTONE, FLOWOUTCOME, GRAMMAR, GROUP, GUIDE, GUIDEVERSION, IMAGE, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, INQUEUEEMAILFLOW, INQUEUESHORTMESSAGEFLOW, IVRCONFIGURATION, KNOWLEDGEBASE, KNOWLEDGEBASEDOCUMENT, LANGUAGE, LEXBOT, LEXBOTALIAS, LEXV2BOT, LEXV2BOTALIAS, NLUDOMAIN, NUANCEMIXBOT, NUANCEMIXINTEGRATION, OAUTHCLIENT, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SMSPHONENUMBER, STTENGINE, SURVEYFORM, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, UTILIZATIONLABEL, VOICEFLOW, VOICEMAILFLOW, VOICESURVEYFLOW, WIDGET, WORKFLOW, WORKITEMFLOW, WORKTYPE |
+ **consumedResourceType** | **[String]** | Types of consumed resources to return, if consumed resources are requested | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, AGENTICVIRTUALAGENT, AGENTICVIRTUALAGENTVERSION, AUDIOCONNECTORBOT, BOTCONNECTORBOT, BOTCONNECTORINTEGRATION, BOTFLOW, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, CONVERSATIONCUSTOMATTRIBUTESCHEMA, CONVERSATIONSUMMARYSETTING, CUSTOMERSEGMENT, DATAACTION, DATATABLE, DECISIONTABLE, DIALOGENGINEBOT, DIALOGENGINEBOTVERSION, DIALOGFLOWAGENT, DIALOGFLOWCXAGENT, DIGITALAUDIO, DIGITALBOTCONNECTOR, DIGITALBOTCONNECTORINTEGRATION, DIGITALBOTFLOW, DIVISION, EMAILROUTE, EMAILSENDFLOW, EMERGENCYGROUP, FILE, FLOWACTION, FLOWDATATYPE, FLOWMILESTONE, FLOWOUTCOME, GRAMMAR, GROUP, GUIDE, GUIDEVERSION, IMAGE, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, INQUEUEEMAILFLOW, INQUEUESHORTMESSAGEFLOW, IVRCONFIGURATION, KNOWLEDGEBASE, KNOWLEDGEBASEDOCUMENT, KNOWLEDGESETTING, LANGUAGE, LEXBOT, LEXBOTALIAS, LEXV2BOT, LEXV2BOTALIAS, NLUDOMAIN, NUANCEMIXBOT, NUANCEMIXINTEGRATION, OAUTHCLIENT, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, RESPONSEASSET, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SMSPHONENUMBER, STTENGINE, SURVEYFORM, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, UTILIZATIONLABEL, VIDEO, VOICEFLOW, VOICEMAILFLOW, VOICESURVEYFLOW, WIDGET, WORKFLOW, WORKITEMFLOW, WORKTYPE |
+ **consumingResourceType** | **[String]** | Types of consuming resources to return, if consuming resources are requested | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, AGENTICVIRTUALAGENT, AGENTICVIRTUALAGENTVERSION, AUDIOCONNECTORBOT, BOTCONNECTORBOT, BOTCONNECTORINTEGRATION, BOTFLOW, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, CONVERSATIONCUSTOMATTRIBUTESCHEMA, CONVERSATIONSUMMARYSETTING, CUSTOMERSEGMENT, DATAACTION, DATATABLE, DECISIONTABLE, DIALOGENGINEBOT, DIALOGENGINEBOTVERSION, DIALOGFLOWAGENT, DIALOGFLOWCXAGENT, DIGITALAUDIO, DIGITALBOTCONNECTOR, DIGITALBOTCONNECTORINTEGRATION, DIGITALBOTFLOW, DIVISION, EMAILROUTE, EMAILSENDFLOW, EMERGENCYGROUP, FILE, FLOWACTION, FLOWDATATYPE, FLOWMILESTONE, FLOWOUTCOME, GRAMMAR, GROUP, GUIDE, GUIDEVERSION, IMAGE, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, INQUEUEEMAILFLOW, INQUEUESHORTMESSAGEFLOW, IVRCONFIGURATION, KNOWLEDGEBASE, KNOWLEDGEBASEDOCUMENT, KNOWLEDGESETTING, LANGUAGE, LEXBOT, LEXBOTALIAS, LEXV2BOT, LEXV2BOTALIAS, NLUDOMAIN, NUANCEMIXBOT, NUANCEMIXINTEGRATION, OAUTHCLIENT, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, RESPONSEASSET, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SMSPHONENUMBER, STTENGINE, SURVEYFORM, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, UTILIZATIONLABEL, VIDEO, VOICEFLOW, VOICEMAILFLOW, VOICESURVEYFLOW, WIDGET, WORKFLOW, WORKITEMFLOW, WORKTYPE |
  **consumedResourceRequest** | **Boolean** | Indicate that this is going to look up a consumed resource object | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1555,7 +1731,7 @@ apiInstance.getArchitectDependencytrackingObject(id, opts)
 
 ## getArchitectDependencytrackingType
 
-> DependencyType getArchitectDependencytrackingType(typeId)
+> DependencyType getArchitectDependencytrackingType(typeId, opts)
 
 
 GET /api/v2/architect/dependencytracking/types/{typeId}
@@ -1580,8 +1756,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ArchitectApi();
 
 let typeId = "typeId_example"; // String | Type ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getArchitectDependencytrackingType(typeId)
+apiInstance.getArchitectDependencytrackingType(typeId, opts)
   .then((data) => {
     console.log(`getArchitectDependencytrackingType success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1597,6 +1779,7 @@ apiInstance.getArchitectDependencytrackingType(typeId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **typeId** | **String** | Type ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1631,7 +1814,11 @@ let apiInstance = new platformClient.ArchitectApi();
 
 let opts = { 
   'pageNumber': 1, // Number | Page number
-  'pageSize': 25 // Number | Page size
+  'pageSize': 25, // Number | Page size
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getArchitectDependencytrackingTypes(opts)
@@ -1651,6 +1838,7 @@ apiInstance.getArchitectDependencytrackingTypes(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1689,7 +1877,11 @@ let opts = {
   'consumedResources': false, // Boolean | Return consumed resources?
   'consumedResourceType': ["consumedResourceType_example"], // [String] | Resource type(s) to return
   'pageNumber': 1, // Number | Page number
-  'pageSize': 25 // Number | Page size
+  'pageSize': 25, // Number | Page size
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getArchitectDependencytrackingUpdatedresourceconsumers(opts)
@@ -1708,11 +1900,12 @@ apiInstance.getArchitectDependencytrackingUpdatedresourceconsumers(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **name** | **String** | Name to search for | [optional]  |
- **objectType** | **[String]** | Object type(s) to search for | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, AUDIOCONNECTORBOT, BOTCONNECTORBOT, BOTCONNECTORINTEGRATION, BOTFLOW, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, CONVERSATIONCUSTOMATTRIBUTESCHEMA, DATAACTION, DATATABLE, DECISIONTABLE, DIALOGENGINEBOT, DIALOGENGINEBOTVERSION, DIALOGFLOWAGENT, DIALOGFLOWCXAGENT, DIGITALBOTCONNECTOR, DIGITALBOTCONNECTORINTEGRATION, DIGITALBOTFLOW, DIVISION, EMAILROUTE, EMERGENCYGROUP, FLOWACTION, FLOWDATATYPE, FLOWMILESTONE, FLOWOUTCOME, GRAMMAR, GROUP, GUIDE, GUIDEVERSION, IMAGE, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, INQUEUEEMAILFLOW, INQUEUESHORTMESSAGEFLOW, IVRCONFIGURATION, KNOWLEDGEBASE, KNOWLEDGEBASEDOCUMENT, LANGUAGE, LEXBOT, LEXBOTALIAS, LEXV2BOT, LEXV2BOTALIAS, NLUDOMAIN, NUANCEMIXBOT, NUANCEMIXINTEGRATION, OAUTHCLIENT, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SMSPHONENUMBER, STTENGINE, SURVEYFORM, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, UTILIZATIONLABEL, VOICEFLOW, VOICEMAILFLOW, VOICESURVEYFLOW, WIDGET, WORKFLOW, WORKITEMFLOW, WORKTYPE |
+ **objectType** | **[String]** | Object type(s) to search for | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, AGENTICVIRTUALAGENT, AGENTICVIRTUALAGENTVERSION, AUDIOCONNECTORBOT, BOTCONNECTORBOT, BOTCONNECTORINTEGRATION, BOTFLOW, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, CONVERSATIONCUSTOMATTRIBUTESCHEMA, CONVERSATIONSUMMARYSETTING, CUSTOMERSEGMENT, DATAACTION, DATATABLE, DECISIONTABLE, DIALOGENGINEBOT, DIALOGENGINEBOTVERSION, DIALOGFLOWAGENT, DIALOGFLOWCXAGENT, DIGITALAUDIO, DIGITALBOTCONNECTOR, DIGITALBOTCONNECTORINTEGRATION, DIGITALBOTFLOW, DIVISION, EMAILROUTE, EMAILSENDFLOW, EMERGENCYGROUP, FILE, FLOWACTION, FLOWDATATYPE, FLOWMILESTONE, FLOWOUTCOME, GRAMMAR, GROUP, GUIDE, GUIDEVERSION, IMAGE, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, INQUEUEEMAILFLOW, INQUEUESHORTMESSAGEFLOW, IVRCONFIGURATION, KNOWLEDGEBASE, KNOWLEDGEBASEDOCUMENT, KNOWLEDGESETTING, LANGUAGE, LEXBOT, LEXBOTALIAS, LEXV2BOT, LEXV2BOTALIAS, NLUDOMAIN, NUANCEMIXBOT, NUANCEMIXINTEGRATION, OAUTHCLIENT, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, RESPONSEASSET, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SMSPHONENUMBER, STTENGINE, SURVEYFORM, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, UTILIZATIONLABEL, VIDEO, VOICEFLOW, VOICEMAILFLOW, VOICESURVEYFLOW, WIDGET, WORKFLOW, WORKITEMFLOW, WORKTYPE |
  **consumedResources** | **Boolean** | Return consumed resources? | [optional] [default to false] |
- **consumedResourceType** | **[String]** | Resource type(s) to return | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, AUDIOCONNECTORBOT, BOTCONNECTORBOT, BOTCONNECTORINTEGRATION, BOTFLOW, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, CONVERSATIONCUSTOMATTRIBUTESCHEMA, DATAACTION, DATATABLE, DECISIONTABLE, DIALOGENGINEBOT, DIALOGENGINEBOTVERSION, DIALOGFLOWAGENT, DIALOGFLOWCXAGENT, DIGITALBOTCONNECTOR, DIGITALBOTCONNECTORINTEGRATION, DIGITALBOTFLOW, DIVISION, EMAILROUTE, EMERGENCYGROUP, FLOWACTION, FLOWDATATYPE, FLOWMILESTONE, FLOWOUTCOME, GRAMMAR, GROUP, GUIDE, GUIDEVERSION, IMAGE, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, INQUEUEEMAILFLOW, INQUEUESHORTMESSAGEFLOW, IVRCONFIGURATION, KNOWLEDGEBASE, KNOWLEDGEBASEDOCUMENT, LANGUAGE, LEXBOT, LEXBOTALIAS, LEXV2BOT, LEXV2BOTALIAS, NLUDOMAIN, NUANCEMIXBOT, NUANCEMIXINTEGRATION, OAUTHCLIENT, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SMSPHONENUMBER, STTENGINE, SURVEYFORM, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, UTILIZATIONLABEL, VOICEFLOW, VOICEMAILFLOW, VOICESURVEYFLOW, WIDGET, WORKFLOW, WORKITEMFLOW, WORKTYPE |
+ **consumedResourceType** | **[String]** | Resource type(s) to return | [optional] <br />**Values**: ACDLANGUAGE, ACDSKILL, ACDWRAPUPCODE, AGENTICVIRTUALAGENT, AGENTICVIRTUALAGENTVERSION, AUDIOCONNECTORBOT, BOTCONNECTORBOT, BOTCONNECTORINTEGRATION, BOTFLOW, BRIDGEACTION, COMMONMODULEFLOW, COMPOSERSCRIPT, CONTACTLIST, CONVERSATIONCUSTOMATTRIBUTESCHEMA, CONVERSATIONSUMMARYSETTING, CUSTOMERSEGMENT, DATAACTION, DATATABLE, DECISIONTABLE, DIALOGENGINEBOT, DIALOGENGINEBOTVERSION, DIALOGFLOWAGENT, DIALOGFLOWCXAGENT, DIGITALAUDIO, DIGITALBOTCONNECTOR, DIGITALBOTCONNECTORINTEGRATION, DIGITALBOTFLOW, DIVISION, EMAILROUTE, EMAILSENDFLOW, EMERGENCYGROUP, FILE, FLOWACTION, FLOWDATATYPE, FLOWMILESTONE, FLOWOUTCOME, GRAMMAR, GROUP, GUIDE, GUIDEVERSION, IMAGE, INBOUNDCALLFLOW, INBOUNDCHATFLOW, INBOUNDEMAILFLOW, INBOUNDSHORTMESSAGEFLOW, INQUEUECALLFLOW, INQUEUEEMAILFLOW, INQUEUESHORTMESSAGEFLOW, IVRCONFIGURATION, KNOWLEDGEBASE, KNOWLEDGEBASEDOCUMENT, KNOWLEDGESETTING, LANGUAGE, LEXBOT, LEXBOTALIAS, LEXV2BOT, LEXV2BOTALIAS, NLUDOMAIN, NUANCEMIXBOT, NUANCEMIXINTEGRATION, OAUTHCLIENT, OUTBOUNDCALLFLOW, QUEUE, RECORDINGPOLICY, RESPONSE, RESPONSEASSET, SCHEDULE, SCHEDULEGROUP, SECUREACTION, SECURECALLFLOW, SMSPHONENUMBER, STTENGINE, SURVEYFORM, SURVEYINVITEFLOW, SYSTEMPROMPT, TTSENGINE, TTSVOICE, USER, USERPROMPT, UTILIZATIONLABEL, VIDEO, VOICEFLOW, VOICEMAILFLOW, VOICESURVEYFLOW, WIDGET, WORKFLOW, WORKITEMFLOW, WORKTYPE |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1721,7 +1914,7 @@ apiInstance.getArchitectDependencytrackingUpdatedresourceconsumers(opts)
 
 ## getArchitectEmergencygroup
 
-> EmergencyGroup getArchitectEmergencygroup(emergencyGroupId)
+> EmergencyGroup getArchitectEmergencygroup(emergencyGroupId, opts)
 
 
 GET /api/v2/architect/emergencygroups/{emergencyGroupId}
@@ -1746,8 +1939,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ArchitectApi();
 
 let emergencyGroupId = "emergencyGroupId_example"; // String | Emergency group ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getArchitectEmergencygroup(emergencyGroupId)
+apiInstance.getArchitectEmergencygroup(emergencyGroupId, opts)
   .then((data) => {
     console.log(`getArchitectEmergencygroup success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1763,6 +1962,7 @@ apiInstance.getArchitectEmergencygroup(emergencyGroupId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **emergencyGroupId** | **String** | Emergency group ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1800,7 +2000,11 @@ let opts = {
   'pageSize': 25, // Number | Page size
   'sortBy': "name", // String | Sort by
   'sortOrder': "ASC", // String | Sort order
-  'name': "name_example" // String | Name of the Emergency Group to filter by.
+  'name': "name_example", // String | Name of the Emergency Group to filter by.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getArchitectEmergencygroups(opts)
@@ -1823,6 +2027,7 @@ apiInstance.getArchitectEmergencygroups(opts)
  **sortBy** | **String** | Sort by | [optional] [default to name] |
  **sortOrder** | **String** | Sort order | [optional] [default to ASC] |
  **name** | **String** | Name of the Emergency Group to filter by. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1864,7 +2069,11 @@ let opts = {
   'sortOrder': "ASC", // String | Sort order
   'id': ["id_example"], // [String] | ID of the Emergency Groups to filter by.
   'name': "name_example", // String | Name of the Emergency Group to filter by.
-  'divisionId': ["divisionId_example"] // [String] | List of divisionIds on which to filter.
+  'divisionId': ["divisionId_example"], // [String] | List of divisionIds on which to filter.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getArchitectEmergencygroupsDivisionviews(opts)
@@ -1889,6 +2098,7 @@ apiInstance.getArchitectEmergencygroupsDivisionviews(opts)
  **id** | **[String]** | ID of the Emergency Groups to filter by. | [optional]  |
  **name** | **String** | Name of the Emergency Group to filter by. | [optional]  |
  **divisionId** | **[String]** | List of divisionIds on which to filter. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1925,7 +2135,11 @@ let apiInstance = new platformClient.ArchitectApi();
 
 let grammarId = "grammarId_example"; // String | grammar ID
 let opts = { 
-  'includeFileUrls': true // Boolean | Include grammar language file URLs
+  'includeFileUrls': true, // Boolean | Include grammar language file URLs
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getArchitectGrammar(grammarId, opts)
@@ -1945,6 +2159,7 @@ apiInstance.getArchitectGrammar(grammarId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **grammarId** | **String** | grammar ID |  |
  **includeFileUrls** | **Boolean** | Include grammar language file URLs | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1953,7 +2168,7 @@ apiInstance.getArchitectGrammar(grammarId, opts)
 
 ## getArchitectGrammarLanguage
 
-> GrammarLanguage getArchitectGrammarLanguage(grammarId, languageCode)
+> GrammarLanguage getArchitectGrammarLanguage(grammarId, languageCode, opts)
 
 
 GET /api/v2/architect/grammars/{grammarId}/languages/{languageCode}
@@ -1979,8 +2194,14 @@ let apiInstance = new platformClient.ArchitectApi();
 
 let grammarId = "grammarId_example"; // String | Grammar ID
 let languageCode = "languageCode_example"; // String | Language
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getArchitectGrammarLanguage(grammarId, languageCode)
+apiInstance.getArchitectGrammarLanguage(grammarId, languageCode, opts)
   .then((data) => {
     console.log(`getArchitectGrammarLanguage success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1997,6 +2218,7 @@ apiInstance.getArchitectGrammarLanguage(grammarId, languageCode)
 | ------------- | ------------- | ------------- | ------------- |
  **grammarId** | **String** | Grammar ID |  |
  **languageCode** | **String** | Language |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2040,7 +2262,11 @@ let opts = {
   'name': "name_example", // String | Name
   'description': "description_example", // String | Description
   'nameOrDescription': "nameOrDescription_example", // String | Name or description
-  'includeFileUrls': true // Boolean | Include grammar language file URLs
+  'includeFileUrls': true, // Boolean | Include grammar language file URLs
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getArchitectGrammars(opts)
@@ -2067,6 +2293,7 @@ apiInstance.getArchitectGrammars(opts)
  **description** | **String** | Description | [optional]  |
  **nameOrDescription** | **String** | Name or description | [optional]  |
  **includeFileUrls** | **Boolean** | Include grammar language file URLs | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2075,7 +2302,7 @@ apiInstance.getArchitectGrammars(opts)
 
 ## getArchitectIvr
 
-> IVR getArchitectIvr(ivrId)
+> IVR getArchitectIvr(ivrId, opts)
 
 
 GET /api/v2/architect/ivrs/{ivrId}
@@ -2100,8 +2327,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ArchitectApi();
 
 let ivrId = "ivrId_example"; // String | IVR id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getArchitectIvr(ivrId)
+apiInstance.getArchitectIvr(ivrId, opts)
   .then((data) => {
     console.log(`getArchitectIvr success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2117,6 +2350,7 @@ apiInstance.getArchitectIvr(ivrId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **ivrId** | **String** | IVR id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2125,7 +2359,7 @@ apiInstance.getArchitectIvr(ivrId)
 
 ## getArchitectIvrIdentityresolution
 
-> IdentityResolutionConfig getArchitectIvrIdentityresolution(ivrId)
+> IVRIdentityResolutionConfig getArchitectIvrIdentityresolution(ivrId, opts)
 
 
 GET /api/v2/architect/ivrs/{ivrId}/identityresolution
@@ -2135,7 +2369,7 @@ Get an IVR IdentityResolutionConfig.
 Requires ALL permissions:
 
 * routing:callRoute:view
-* routing:identityResolution:view
+* routing:identityResolutionIvr:view
 
 ### Example Usage
 
@@ -2151,8 +2385,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ArchitectApi();
 
 let ivrId = "ivrId_example"; // String | IVR id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getArchitectIvrIdentityresolution(ivrId)
+apiInstance.getArchitectIvrIdentityresolution(ivrId, opts)
   .then((data) => {
     console.log(`getArchitectIvrIdentityresolution success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2168,10 +2408,11 @@ apiInstance.getArchitectIvrIdentityresolution(ivrId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **ivrId** | **String** | IVR id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
-**IdentityResolutionConfig**
+**IVRIdentityResolutionConfig**
 
 
 ## getArchitectIvrs
@@ -2208,7 +2449,11 @@ let opts = {
   'name': "name_example", // String | Name of the IVR to filter by.
   'dnis': "dnis_example", // String | The phone number of the IVR to filter by.
   'scheduleGroup': "scheduleGroup_example", // String | The Schedule Group of the IVR to filter by.
-  'expand': ["expand_example"] // [String] | Which fields, if any, to expand
+  'expand': ["expand_example"], // [String] | Which fields, if any, to expand
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getArchitectIvrs(opts)
@@ -2234,6 +2479,7 @@ apiInstance.getArchitectIvrs(opts)
  **dnis** | **String** | The phone number of the IVR to filter by. | [optional]  |
  **scheduleGroup** | **String** | The Schedule Group of the IVR to filter by. | [optional]  |
  **expand** | **[String]** | Which fields, if any, to expand | [optional] <br />**Values**: identityresolution |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2273,7 +2519,11 @@ let opts = {
   'sortOrder': "ASC", // String | Sort order
   'id': ["id_example"], // [String] | ID of the IVR to filter by.
   'name': "name_example", // String | Name of the IVR to filter by.
-  'divisionId': ["divisionId_example"] // [String] | List of divisionIds on which to filter.
+  'divisionId': ["divisionId_example"], // [String] | List of divisionIds on which to filter.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getArchitectIvrsDivisionviews(opts)
@@ -2298,6 +2548,7 @@ apiInstance.getArchitectIvrsDivisionviews(opts)
  **id** | **[String]** | ID of the IVR to filter by. | [optional]  |
  **name** | **String** | Name of the IVR to filter by. | [optional]  |
  **divisionId** | **[String]** | List of divisionIds on which to filter. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2334,7 +2585,11 @@ let promptId = "promptId_example"; // String | Prompt ID
 let opts = { 
   'includeMediaUris': true, // Boolean | Include the media URIs for each resource
   'includeResources': true, // Boolean | Include the resources for each system prompt
-  'language': ["language_example"] // [String] | Filter the resources down to the provided languages
+  'language': ["language_example"], // [String] | Filter the resources down to the provided languages
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getArchitectPrompt(promptId, opts)
@@ -2356,6 +2611,7 @@ apiInstance.getArchitectPrompt(promptId, opts)
  **includeMediaUris** | **Boolean** | Include the media URIs for each resource | [optional] [default to true] |
  **includeResources** | **Boolean** | Include the resources for each system prompt | [optional] [default to true] |
  **language** | **[String]** | Filter the resources down to the provided languages | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2395,7 +2651,11 @@ let opts = {
   'pageSize': 25, // Number | Page size
   'sortOrder': "desc", // String | Sort order
   'sortBy': "timestamp", // String | Sort by
-  'action': ["action_example"] // [String] | Flow actions to include (omit to include all)
+  'action': ["action_example"], // [String] | Flow actions to include (omit to include all)
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getArchitectPromptHistoryHistoryId(promptId, historyId, opts)
@@ -2420,6 +2680,7 @@ apiInstance.getArchitectPromptHistoryHistoryId(promptId, historyId, opts)
  **sortOrder** | **String** | Sort order | [optional] [default to desc] |
  **sortBy** | **String** | Sort by | [optional] [default to timestamp]<br />**Values**: action, timestamp, user |
  **action** | **[String]** | Flow actions to include (omit to include all) | [optional] <br />**Values**: checkin, checkout, create, deactivate, debug, delete, publish, revert, save |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2428,7 +2689,7 @@ apiInstance.getArchitectPromptHistoryHistoryId(promptId, historyId, opts)
 
 ## getArchitectPromptResource
 
-> PromptAsset getArchitectPromptResource(promptId, languageCode)
+> PromptAsset getArchitectPromptResource(promptId, languageCode, opts)
 
 
 GET /api/v2/architect/prompts/{promptId}/resources/{languageCode}
@@ -2454,8 +2715,14 @@ let apiInstance = new platformClient.ArchitectApi();
 
 let promptId = "promptId_example"; // String | Prompt ID
 let languageCode = "languageCode_example"; // String | Language
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getArchitectPromptResource(promptId, languageCode)
+apiInstance.getArchitectPromptResource(promptId, languageCode, opts)
   .then((data) => {
     console.log(`getArchitectPromptResource success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2472,6 +2739,7 @@ apiInstance.getArchitectPromptResource(promptId, languageCode)
 | ------------- | ------------- | ------------- | ------------- |
  **promptId** | **String** | Prompt ID |  |
  **languageCode** | **String** | Language |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2509,7 +2777,11 @@ let apiInstance = new platformClient.ArchitectApi();
 let promptId = "promptId_example"; // String | Prompt ID
 let opts = { 
   'pageNumber': 1, // Number | Page number
-  'pageSize': 25 // Number | Page size
+  'pageSize': 25, // Number | Page size
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getArchitectPromptResources(promptId, opts)
@@ -2530,6 +2802,7 @@ apiInstance.getArchitectPromptResources(promptId, opts)
  **promptId** | **String** | Prompt ID |  |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2574,7 +2847,11 @@ let opts = {
   'sortOrder': "asc", // String | Sort order
   'includeMediaUris': true, // Boolean | Include the media URIs for each resource
   'includeResources': true, // Boolean | Include the resources for each system prompt
-  'language': ["language_example"] // [String] | Filter the resources down to the provided languages
+  'language': ["language_example"], // [String] | Filter the resources down to the provided languages
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getArchitectPrompts(opts)
@@ -2602,6 +2879,7 @@ apiInstance.getArchitectPrompts(opts)
  **includeMediaUris** | **Boolean** | Include the media URIs for each resource | [optional] [default to true] |
  **includeResources** | **Boolean** | Include the resources for each system prompt | [optional] [default to true] |
  **language** | **[String]** | Filter the resources down to the provided languages | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2610,7 +2888,7 @@ apiInstance.getArchitectPrompts(opts)
 
 ## getArchitectSchedule
 
-> Schedule getArchitectSchedule(scheduleId)
+> Schedule getArchitectSchedule(scheduleId, opts)
 
 
 GET /api/v2/architect/schedules/{scheduleId}
@@ -2635,8 +2913,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ArchitectApi();
 
 let scheduleId = "scheduleId_example"; // String | Schedule ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getArchitectSchedule(scheduleId)
+apiInstance.getArchitectSchedule(scheduleId, opts)
   .then((data) => {
     console.log(`getArchitectSchedule success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2652,6 +2936,7 @@ apiInstance.getArchitectSchedule(scheduleId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **scheduleId** | **String** | Schedule ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2660,7 +2945,7 @@ apiInstance.getArchitectSchedule(scheduleId)
 
 ## getArchitectSchedulegroup
 
-> ScheduleGroup getArchitectSchedulegroup(scheduleGroupId)
+> ScheduleGroup getArchitectSchedulegroup(scheduleGroupId, opts)
 
 
 GET /api/v2/architect/schedulegroups/{scheduleGroupId}
@@ -2685,8 +2970,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ArchitectApi();
 
 let scheduleGroupId = "scheduleGroupId_example"; // String | Schedule group ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getArchitectSchedulegroup(scheduleGroupId)
+apiInstance.getArchitectSchedulegroup(scheduleGroupId, opts)
   .then((data) => {
     console.log(`getArchitectSchedulegroup success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2702,6 +2993,7 @@ apiInstance.getArchitectSchedulegroup(scheduleGroupId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **scheduleGroupId** | **String** | Schedule group ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2741,7 +3033,11 @@ let opts = {
   'sortOrder': "ASC", // String | Sort order
   'name': "name_example", // String | Name of the Schedule Group to filter by.
   'scheduleIds': "scheduleIds_example", // String | A comma-delimited list of Schedule IDs to filter by.
-  'divisionId': ["divisionId_example"] // [String] | List of divisionIds on which to filter.
+  'divisionId': ["divisionId_example"], // [String] | List of divisionIds on which to filter.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getArchitectSchedulegroups(opts)
@@ -2766,6 +3062,7 @@ apiInstance.getArchitectSchedulegroups(opts)
  **name** | **String** | Name of the Schedule Group to filter by. | [optional]  |
  **scheduleIds** | **String** | A comma-delimited list of Schedule IDs to filter by. | [optional]  |
  **divisionId** | **[String]** | List of divisionIds on which to filter. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2805,7 +3102,11 @@ let opts = {
   'sortOrder': "ASC", // String | Sort order
   'id': ["id_example"], // [String] | ID of the schedule group to filter by.
   'name': "name_example", // String | Name of the schedule group to filter by.
-  'divisionId': ["divisionId_example"] // [String] | List of divisionIds on which to filter.
+  'divisionId': ["divisionId_example"], // [String] | List of divisionIds on which to filter.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getArchitectSchedulegroupsDivisionviews(opts)
@@ -2830,6 +3131,7 @@ apiInstance.getArchitectSchedulegroupsDivisionviews(opts)
  **id** | **[String]** | ID of the schedule group to filter by. | [optional]  |
  **name** | **String** | Name of the schedule group to filter by. | [optional]  |
  **divisionId** | **[String]** | List of divisionIds on which to filter. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2868,7 +3170,11 @@ let opts = {
   'sortBy': "name", // String | Sort by
   'sortOrder': "asc", // String | Sort order
   'name': "name_example", // String | Name of the Schedule to filter by.
-  'divisionId': ["divisionId_example"] // [String] | List of divisionIds on which to filter.
+  'divisionId': ["divisionId_example"], // [String] | List of divisionIds on which to filter.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getArchitectSchedules(opts)
@@ -2892,6 +3198,7 @@ apiInstance.getArchitectSchedules(opts)
  **sortOrder** | **String** | Sort order | [optional] [default to asc] |
  **name** | **String** | Name of the Schedule to filter by. | [optional]  |
  **divisionId** | **[String]** | List of divisionIds on which to filter. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2931,7 +3238,11 @@ let opts = {
   'sortOrder': "ASC", // String | Sort order
   'id': ["id_example"], // [String] | ID of the schedule group to filter by.
   'name': "name_example", // String | Name of the schedule group to filter by.
-  'divisionId': ["divisionId_example"] // [String] | List of divisionIds on which to filter.
+  'divisionId': ["divisionId_example"], // [String] | List of divisionIds on which to filter.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getArchitectSchedulesDivisionviews(opts)
@@ -2956,6 +3267,7 @@ apiInstance.getArchitectSchedulesDivisionviews(opts)
  **id** | **[String]** | ID of the schedule group to filter by. | [optional]  |
  **name** | **String** | Name of the schedule group to filter by. | [optional]  |
  **divisionId** | **[String]** | List of divisionIds on which to filter. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2992,7 +3304,11 @@ let promptId = "promptId_example"; // String | promptId
 let opts = { 
   'includeMediaUris': true, // Boolean | Include the media URIs for each resource
   'includeResources': true, // Boolean | Include the resources for each system prompt
-  'language': ["language_example"] // [String] | Filter the resources down to the provided languages
+  'language': ["language_example"], // [String] | Filter the resources down to the provided languages
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getArchitectSystemprompt(promptId, opts)
@@ -3014,6 +3330,7 @@ apiInstance.getArchitectSystemprompt(promptId, opts)
  **includeMediaUris** | **Boolean** | Include the media URIs for each resource | [optional] [default to true] |
  **includeResources** | **Boolean** | Include the resources for each system prompt | [optional] [default to true] |
  **language** | **[String]** | Filter the resources down to the provided languages | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3053,7 +3370,11 @@ let opts = {
   'pageSize': 25, // Number | Page size
   'sortOrder': "desc", // String | Sort order
   'sortBy': "timestamp", // String | Sort by
-  'action': ["action_example"] // [String] | Flow actions to include (omit to include all)
+  'action': ["action_example"], // [String] | Flow actions to include (omit to include all)
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getArchitectSystempromptHistoryHistoryId(promptId, historyId, opts)
@@ -3078,6 +3399,7 @@ apiInstance.getArchitectSystempromptHistoryHistoryId(promptId, historyId, opts)
  **sortOrder** | **String** | Sort order | [optional] [default to desc] |
  **sortBy** | **String** | Sort by | [optional] [default to timestamp]<br />**Values**: action, timestamp, user |
  **action** | **[String]** | Flow actions to include (omit to include all) | [optional] <br />**Values**: checkin, checkout, create, deactivate, debug, delete, publish, revert, save |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3086,7 +3408,7 @@ apiInstance.getArchitectSystempromptHistoryHistoryId(promptId, historyId, opts)
 
 ## getArchitectSystempromptResource
 
-> SystemPromptAsset getArchitectSystempromptResource(promptId, languageCode)
+> SystemPromptAsset getArchitectSystempromptResource(promptId, languageCode, opts)
 
 
 GET /api/v2/architect/systemprompts/{promptId}/resources/{languageCode}
@@ -3112,8 +3434,14 @@ let apiInstance = new platformClient.ArchitectApi();
 
 let promptId = "promptId_example"; // String | Prompt ID
 let languageCode = "languageCode_example"; // String | Language
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getArchitectSystempromptResource(promptId, languageCode)
+apiInstance.getArchitectSystempromptResource(promptId, languageCode, opts)
   .then((data) => {
     console.log(`getArchitectSystempromptResource success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3130,6 +3458,7 @@ apiInstance.getArchitectSystempromptResource(promptId, languageCode)
 | ------------- | ------------- | ------------- | ------------- |
  **promptId** | **String** | Prompt ID |  |
  **languageCode** | **String** | Language |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3167,7 +3496,11 @@ let opts = {
   'pageNumber': 1, // Number | Page number
   'pageSize': 25, // Number | Page size
   'sortBy': "id", // String | Sort by
-  'sortOrder': "asc" // String | Sort order
+  'sortOrder': "asc", // String | Sort order
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getArchitectSystempromptResources(promptId, opts)
@@ -3190,6 +3523,7 @@ apiInstance.getArchitectSystempromptResources(promptId, opts)
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **sortBy** | **String** | Sort by | [optional] [default to id] |
  **sortOrder** | **String** | Sort order | [optional] [default to asc] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3232,7 +3566,11 @@ let opts = {
   'nameOrDescription': "nameOrDescription_example", // String | Name or description
   'includeMediaUris': true, // Boolean | Include the media URIs for each resource
   'includeResources': true, // Boolean | Include the resources for each system prompt
-  'language': ["language_example"] // [String] | Filter the resources down to the provided languages
+  'language': ["language_example"], // [String] | Filter the resources down to the provided languages
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getArchitectSystemprompts(opts)
@@ -3260,6 +3598,7 @@ apiInstance.getArchitectSystemprompts(opts)
  **includeMediaUris** | **Boolean** | Include the media URIs for each resource | [optional] [default to true] |
  **includeResources** | **Boolean** | Include the resources for each system prompt | [optional] [default to true] |
  **language** | **[String]** | Filter the resources down to the provided languages | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3294,7 +3633,11 @@ let apiInstance = new platformClient.ArchitectApi();
 
 let flowId = "flowId_example"; // String | Flow ID
 let opts = { 
-  'deleted': false // Boolean | Deleted flows
+  'deleted': false, // Boolean | Deleted flows
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getFlow(flowId, opts)
@@ -3314,6 +3657,7 @@ apiInstance.getFlow(flowId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **flowId** | **String** | Flow ID |  |
  **deleted** | **Boolean** | Deleted flows | [optional] [default to false] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3353,7 +3697,11 @@ let opts = {
   'pageSize': 25, // Number | Page size
   'sortOrder': "desc", // String | Sort order
   'sortBy': "timestamp", // String | Sort by
-  'action': ["action_example"] // [String] | Flow actions to include (omit to include all)
+  'action': ["action_example"], // [String] | Flow actions to include (omit to include all)
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getFlowHistoryHistoryId(flowId, historyId, opts)
@@ -3378,6 +3726,7 @@ apiInstance.getFlowHistoryHistoryId(flowId, historyId, opts)
  **sortOrder** | **String** | Sort order | [optional] [default to desc] |
  **sortBy** | **String** | Sort by | [optional] [default to timestamp]<br />**Values**: action, timestamp, user |
  **action** | **[String]** | Flow actions to include (omit to include all) | [optional] <br />**Values**: checkin, checkout, create, deactivate, debug, delete, publish, revert, save |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3414,7 +3763,11 @@ let apiInstance = new platformClient.ArchitectApi();
 
 let flowId = "flowId_example"; // String | The flow id to get the loglevel for
 let opts = { 
-  'expand': ["expand_example"] // [String] | Expand instructions for the result
+  'expand': ["expand_example"], // [String] | Expand instructions for the result
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getFlowInstancesSettingsLoglevels(flowId, opts)
@@ -3434,6 +3787,7 @@ apiInstance.getFlowInstancesSettingsLoglevels(flowId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **flowId** | **String** | The flow id to get the loglevel for |  |
  **expand** | **[String]** | Expand instructions for the result | [optional] <br />**Values**: name, type, logLevelCharacteristics.characteristics |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3468,7 +3822,11 @@ let apiInstance = new platformClient.ArchitectApi();
 
 let flowId = "flowId_example"; // String | Flow ID
 let opts = { 
-  'deleted': false // Boolean | Deleted flows
+  'deleted': false, // Boolean | Deleted flows
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getFlowLatestconfiguration(flowId, opts)
@@ -3488,6 +3846,7 @@ apiInstance.getFlowLatestconfiguration(flowId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **flowId** | **String** | Flow ID |  |
  **deleted** | **Boolean** | Deleted flows | [optional] [default to false] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3523,7 +3882,11 @@ let apiInstance = new platformClient.ArchitectApi();
 let flowId = "flowId_example"; // String | Flow ID
 let versionId = "versionId_example"; // String | Version ID
 let opts = { 
-  'deleted': "deleted_example" // String | Deleted flows
+  'deleted': "deleted_example", // String | Deleted flows
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getFlowVersion(flowId, versionId, opts)
@@ -3544,6 +3907,7 @@ apiInstance.getFlowVersion(flowId, versionId, opts)
  **flowId** | **String** | Flow ID |  |
  **versionId** | **String** | Version ID |  |
  **deleted** | **String** | Deleted flows | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3579,7 +3943,11 @@ let apiInstance = new platformClient.ArchitectApi();
 let flowId = "flowId_example"; // String | Flow ID
 let versionId = "versionId_example"; // String | Version ID
 let opts = { 
-  'deleted': "deleted_example" // String | Deleted flows
+  'deleted': "deleted_example", // String | Deleted flows
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getFlowVersionConfiguration(flowId, versionId, opts)
@@ -3600,6 +3968,7 @@ apiInstance.getFlowVersionConfiguration(flowId, versionId, opts)
  **flowId** | **String** | Flow ID |  |
  **versionId** | **String** | Version ID |  |
  **deleted** | **String** | Deleted flows | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3635,7 +4004,11 @@ let apiInstance = new platformClient.ArchitectApi();
 let flowId = "flowId_example"; // String | Flow ID.
 let versionId = "versionId_example"; // String | Version ID.
 let opts = { 
-  'language': "language_example" // String | Language to filter for
+  'language': "language_example", // String | Language to filter for
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getFlowVersionHealth(flowId, versionId, opts)
@@ -3656,6 +4029,7 @@ apiInstance.getFlowVersionHealth(flowId, versionId, opts)
  **flowId** | **String** | Flow ID. |  |
  **versionId** | **String** | Version ID. |  |
  **language** | **String** | Language to filter for | [optional] <br />**Values**: en-us, en-gb, en-au, en-za, en-nz, en-ie, fr-ca, fr-fr, es-us, es-es, es-mx, de-de, it-it, pt-br, pt-pt, nl-nl |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3664,7 +4038,7 @@ apiInstance.getFlowVersionHealth(flowId, versionId, opts)
 
 ## getFlowVersionIntentHealth
 
-> FlowHealthIntent getFlowVersionIntentHealth(flowId, versionId, intentId, language)
+> FlowHealthIntent getFlowVersionIntentHealth(flowId, versionId, intentId, language, opts)
 
 
 GET /api/v2/flows/{flowId}/versions/{versionId}/intents/{intentId}/health
@@ -3692,8 +4066,14 @@ let flowId = "flowId_example"; // String | Flow ID.
 let versionId = "versionId_example"; // String | Version ID.
 let intentId = "intentId_example"; // String | Intent ID.
 let language = "language_example"; // String | Language to filter for
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getFlowVersionIntentHealth(flowId, versionId, intentId, language)
+apiInstance.getFlowVersionIntentHealth(flowId, versionId, intentId, language, opts)
   .then((data) => {
     console.log(`getFlowVersionIntentHealth success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3712,6 +4092,7 @@ apiInstance.getFlowVersionIntentHealth(flowId, versionId, intentId, language)
  **versionId** | **String** | Version ID. |  |
  **intentId** | **String** | Intent ID. |  |
  **language** | **String** | Language to filter for | <br />**Values**: en-us, en-gb, en-au, en-za, en-nz, en-ie, fr-ca, fr-fr, es-us, es-es, es-mx, de-de, it-it, pt-br, pt-pt, nl-nl |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3720,7 +4101,7 @@ apiInstance.getFlowVersionIntentHealth(flowId, versionId, intentId, language)
 
 ## getFlowVersionIntentUtteranceHealth
 
-> FlowHealthUtterance getFlowVersionIntentUtteranceHealth(flowId, versionId, intentId, utteranceId, language)
+> FlowHealthUtterance getFlowVersionIntentUtteranceHealth(flowId, versionId, intentId, utteranceId, language, opts)
 
 
 GET /api/v2/flows/{flowId}/versions/{versionId}/intents/{intentId}/utterances/{utteranceId}/health
@@ -3749,8 +4130,14 @@ let versionId = "versionId_example"; // String | Version ID.
 let intentId = "intentId_example"; // String | Intent ID.
 let utteranceId = "utteranceId_example"; // String | Utterance ID.
 let language = "language_example"; // String | Language to filter for
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getFlowVersionIntentUtteranceHealth(flowId, versionId, intentId, utteranceId, language)
+apiInstance.getFlowVersionIntentUtteranceHealth(flowId, versionId, intentId, utteranceId, language, opts)
   .then((data) => {
     console.log(`getFlowVersionIntentUtteranceHealth success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3770,6 +4157,7 @@ apiInstance.getFlowVersionIntentUtteranceHealth(flowId, versionId, intentId, utt
  **intentId** | **String** | Intent ID. |  |
  **utteranceId** | **String** | Utterance ID. |  |
  **language** | **String** | Language to filter for | <br />**Values**: en-us, en-gb, en-au, en-za, en-nz, en-ie, fr-ca, fr-fr, es-us, es-es, es-mx, de-de, it-it, pt-br, pt-pt, nl-nl |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3806,7 +4194,11 @@ let flowId = "flowId_example"; // String | Flow ID
 let opts = { 
   'pageNumber': 1, // Number | Page number
   'pageSize': 25, // Number | Page size
-  'deleted': true // Boolean | Include Deleted flows
+  'deleted': true, // Boolean | Include Deleted flows
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getFlowVersions(flowId, opts)
@@ -3828,6 +4220,7 @@ apiInstance.getFlowVersions(flowId, opts)
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **deleted** | **Boolean** | Include Deleted flows | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3868,7 +4261,7 @@ let opts = {
   'pageSize': 25, // Number | Page size
   'sortBy': "id", // String | Sort by
   'sortOrder': "asc", // String | Sort order
-  'id': ["id_example"], // [String] | ID
+  'id': ["id_example"], // [String] | ID. Deprecated, use GET /api/v2/flows/lookup with the ids parameter instead
   'name': "name_example", // String | Name
   'description': "description_example", // String | Description
   'nameOrDescription': "nameOrDescription_example", // String | Name or description
@@ -3882,7 +4275,11 @@ let opts = {
   'virtualAgentEnabled': true, // Boolean | Include/exclude virtual agent flows
   'publishedAfter': 2015-01-01T12:00:00-0600, 2015-01-01T18:00:00Z, 2015-01-01T12:00:00.000-0600, 2015-01-01T18:00:00.000Z, 2015-01-01, // String | Published after
   'publishedBefore': 2015-01-01T12:00:00-0600, 2015-01-01T18:00:00Z, 2015-01-01T12:00:00.000-0600, 2015-01-01T18:00:00.000Z, 2015-01-01, // String | Published before
-  'divisionId': ["divisionId_example"] // [String] | division ID(s)
+  'divisionId': ["divisionId_example"], // [String] | division ID(s)
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getFlows(opts)
@@ -3900,12 +4297,12 @@ apiInstance.getFlows(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **type** | **[String]** | Type | [optional] <br />**Values**: bot, commonmodule, digitalbot, inboundcall, inboundchat, inboundemail, inboundshortmessage, outboundcall, inqueuecall, inqueueemail, inqueueshortmessage, speech, securecall, surveyinvite, voice, voicemail, voicesurvey, workflow, workitem |
+ **type** | **[String]** | Type | [optional] <br />**Values**: bot, commonmodule, digitalbot, emailsend, inboundcall, inboundchat, inboundemail, inboundshortmessage, outboundcall, inqueuecall, inqueueemail, inqueueshortmessage, speech, securecall, surveyinvite, voice, voicemail, voicesurvey, workflow, workitem |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **sortBy** | **String** | Sort by | [optional] [default to id] |
  **sortOrder** | **String** | Sort order | [optional] [default to asc] |
- **id** | **[String]** | ID | [optional]  |
+ **id** | **[String]** | ID. Deprecated, use GET /api/v2/flows/lookup with the ids parameter instead | [optional]  |
  **name** | **String** | Name | [optional]  |
  **description** | **String** | Description | [optional]  |
  **nameOrDescription** | **String** | Name or description | [optional]  |
@@ -3920,6 +4317,7 @@ apiInstance.getFlows(opts)
  **publishedAfter** | **String** | Published after | [optional]  |
  **publishedBefore** | **String** | Published before | [optional]  |
  **divisionId** | **[String]** | division ID(s) | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3956,7 +4354,11 @@ let apiInstance = new platformClient.ArchitectApi();
 
 let datatableId = "datatableId_example"; // String | id of datatable
 let opts = { 
-  'expand': "expand_example" // String | Expand instructions for the result
+  'expand': "expand_example", // String | Expand instructions for the result
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getFlowsDatatable(datatableId, opts)
@@ -3976,6 +4378,7 @@ apiInstance.getFlowsDatatable(datatableId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **datatableId** | **String** | id of datatable |  |
  **expand** | **String** | Expand instructions for the result | [optional] <br />**Values**: schema |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3984,7 +4387,7 @@ apiInstance.getFlowsDatatable(datatableId, opts)
 
 ## getFlowsDatatableExportJob
 
-> DataTableExportJob getFlowsDatatableExportJob(datatableId, exportJobId)
+> DataTableExportJob getFlowsDatatableExportJob(datatableId, exportJobId, opts)
 
 
 GET /api/v2/flows/datatables/{datatableId}/export/jobs/{exportJobId}
@@ -4013,8 +4416,14 @@ let apiInstance = new platformClient.ArchitectApi();
 
 let datatableId = "datatableId_example"; // String | id of datatable
 let exportJobId = "exportJobId_example"; // String | id of export job
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getFlowsDatatableExportJob(datatableId, exportJobId)
+apiInstance.getFlowsDatatableExportJob(datatableId, exportJobId, opts)
   .then((data) => {
     console.log(`getFlowsDatatableExportJob success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4031,6 +4440,7 @@ apiInstance.getFlowsDatatableExportJob(datatableId, exportJobId)
 | ------------- | ------------- | ------------- | ------------- |
  **datatableId** | **String** | id of datatable |  |
  **exportJobId** | **String** | id of export job |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4039,7 +4449,7 @@ apiInstance.getFlowsDatatableExportJob(datatableId, exportJobId)
 
 ## getFlowsDatatableImportJob
 
-> DataTableImportJob getFlowsDatatableImportJob(datatableId, importJobId)
+> DataTableImportJob getFlowsDatatableImportJob(datatableId, importJobId, opts)
 
 
 GET /api/v2/flows/datatables/{datatableId}/import/jobs/{importJobId}
@@ -4068,8 +4478,14 @@ let apiInstance = new platformClient.ArchitectApi();
 
 let datatableId = "datatableId_example"; // String | id of datatable
 let importJobId = "importJobId_example"; // String | id of import job
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getFlowsDatatableImportJob(datatableId, importJobId)
+apiInstance.getFlowsDatatableImportJob(datatableId, importJobId, opts)
   .then((data) => {
     console.log(`getFlowsDatatableImportJob success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4086,6 +4502,7 @@ apiInstance.getFlowsDatatableImportJob(datatableId, importJobId)
 | ------------- | ------------- | ------------- | ------------- |
  **datatableId** | **String** | id of datatable |  |
  **importJobId** | **String** | id of import job |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4124,7 +4541,11 @@ let apiInstance = new platformClient.ArchitectApi();
 let datatableId = "datatableId_example"; // String | id of datatable
 let opts = { 
   'pageNumber': 1, // Number | Page number
-  'pageSize': 25 // Number | Page size
+  'pageSize': 25, // Number | Page size
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getFlowsDatatableImportJobs(datatableId, opts)
@@ -4145,6 +4566,7 @@ apiInstance.getFlowsDatatableImportJobs(datatableId, opts)
  **datatableId** | **String** | id of datatable |  |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4183,7 +4605,11 @@ let apiInstance = new platformClient.ArchitectApi();
 let datatableId = "datatableId_example"; // String | id of datatable
 let rowId = "rowId_example"; // String | The key for the row
 let opts = { 
-  'showbrief': true // Boolean | if true returns just the key field for the row
+  'showbrief': true, // Boolean | if true returns just the key field for the row
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getFlowsDatatableRow(datatableId, rowId, opts)
@@ -4204,6 +4630,7 @@ apiInstance.getFlowsDatatableRow(datatableId, rowId, opts)
  **datatableId** | **String** | id of datatable |  |
  **rowId** | **String** | The key for the row |  |
  **showbrief** | **Boolean** | if true returns just the key field for the row | [optional] [default to true] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4244,7 +4671,11 @@ let opts = {
   'pageNumber': 1, // Number | Page number
   'pageSize': 25, // Number | Page size
   'showbrief': true, // Boolean | If true returns just the key value of the row
-  'sortOrder': "ascending" // String | Sort order
+  'sortOrder': "ascending", // String | Sort order
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getFlowsDatatableRows(datatableId, opts)
@@ -4267,6 +4698,7 @@ apiInstance.getFlowsDatatableRows(datatableId, opts)
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **showbrief** | **Boolean** | If true returns just the key value of the row | [optional] [default to true] |
  **sortOrder** | **String** | Sort order | [optional] [default to ascending]<br />**Values**: ascending, descending |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4308,7 +4740,11 @@ let opts = {
   'sortBy': "id", // String | Sort by
   'sortOrder': "ascending", // String | Sort order
   'divisionId': ["divisionId_example"], // [String] | division ID(s)
-  'name': exactMatch, beginsWith*, *endsWith, *contains* // String | Filter by Name. The wildcard character * is supported within the filter. Matches are case-insensitive.
+  'name': exactMatch, beginsWith*, *endsWith, *contains*, // String | Filter by Name. The wildcard character * is supported within the filter. Matches are case-insensitive.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getFlowsDatatables(opts)
@@ -4333,6 +4769,7 @@ apiInstance.getFlowsDatatables(opts)
  **sortOrder** | **String** | Sort order | [optional] [default to ascending] |
  **divisionId** | **[String]** | division ID(s) | [optional]  |
  **name** | **String** | Filter by Name. The wildcard character * is supported within the filter. Matches are case-insensitive. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4369,7 +4806,11 @@ let apiInstance = new platformClient.ArchitectApi();
 
 let datatableId = "datatableId_example"; // String | id of datatable
 let opts = { 
-  'expand': "expand_example" // String | Expand instructions for the result
+  'expand': "expand_example", // String | Expand instructions for the result
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getFlowsDatatablesDivisionview(datatableId, opts)
@@ -4389,6 +4830,7 @@ apiInstance.getFlowsDatatablesDivisionview(datatableId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **datatableId** | **String** | id of datatable |  |
  **expand** | **String** | Expand instructions for the result | [optional] <br />**Values**: schema |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4430,7 +4872,11 @@ let opts = {
   'sortBy': "id", // String | Sort by
   'sortOrder': "ascending", // String | Sort order
   'divisionId': ["divisionId_example"], // [String] | division ID(s)
-  'name': exactMatch, beginsWith*, *endsWith, *contains* // String | Filter by Name. The wildcard character * is supported within the filter. Matches are case-insensitive.
+  'name': exactMatch, beginsWith*, *endsWith, *contains*, // String | Filter by Name. The wildcard character * is supported within the filter. Matches are case-insensitive.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getFlowsDatatablesDivisionviews(opts)
@@ -4455,6 +4901,7 @@ apiInstance.getFlowsDatatablesDivisionviews(opts)
  **sortOrder** | **String** | Sort order | [optional] [default to ascending] |
  **divisionId** | **[String]** | division ID(s) | [optional]  |
  **name** | **String** | Filter by Name. The wildcard character * is supported within the filter. Matches are case-insensitive. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4501,7 +4948,11 @@ let opts = {
   'publishedAfter': 2015-01-01T12:00:00-0600, 2015-01-01T18:00:00Z, 2015-01-01T12:00:00.000-0600, 2015-01-01T18:00:00.000Z, 2015-01-01, // String | Published after
   'publishedBefore': 2015-01-01T12:00:00-0600, 2015-01-01T18:00:00Z, 2015-01-01T12:00:00.000-0600, 2015-01-01T18:00:00.000Z, 2015-01-01, // String | Published before
   'divisionId': ["divisionId_example"], // [String] | division ID(s)
-  'includeSchemas': false // Boolean | Include variable schemas
+  'includeSchemas': false, // Boolean | Include variable schemas
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getFlowsDivisionviews(opts)
@@ -4519,7 +4970,7 @@ apiInstance.getFlowsDivisionviews(opts)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **type** | **[String]** | Type | [optional] <br />**Values**: bot, commonmodule, digitalbot, inboundcall, inboundchat, inboundemail, inboundshortmessage, outboundcall, inqueuecall, inqueueemail, inqueueshortmessage, speech, securecall, surveyinvite, voice, voicemail, voicesurvey, workflow, workitem |
+ **type** | **[String]** | Type | [optional] <br />**Values**: bot, commonmodule, digitalbot, emailsend, inboundcall, inboundchat, inboundemail, inboundshortmessage, outboundcall, inqueuecall, inqueueemail, inqueueshortmessage, speech, securecall, surveyinvite, voice, voicemail, voicesurvey, workflow, workitem |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **sortBy** | **String** | Sort by | [optional] [default to id] |
@@ -4531,6 +4982,7 @@ apiInstance.getFlowsDivisionviews(opts)
  **publishedBefore** | **String** | Published before | [optional]  |
  **divisionId** | **[String]** | division ID(s) | [optional]  |
  **includeSchemas** | **Boolean** | Include variable schemas | [optional] [default to false] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4539,7 +4991,7 @@ apiInstance.getFlowsDivisionviews(opts)
 
 ## getFlowsExecution
 
-> FlowRuntimeExecution getFlowsExecution(flowExecutionId)
+> FlowRuntimeExecution getFlowsExecution(flowExecutionId, opts)
 
 
 GET /api/v2/flows/executions/{flowExecutionId}
@@ -4564,8 +5016,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ArchitectApi();
 
 let flowExecutionId = "flowExecutionId_example"; // String | flow execution ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getFlowsExecution(flowExecutionId)
+apiInstance.getFlowsExecution(flowExecutionId, opts)
   .then((data) => {
     console.log(`getFlowsExecution success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4581,6 +5039,7 @@ apiInstance.getFlowsExecution(flowExecutionId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **flowExecutionId** | **String** | flow execution ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4615,7 +5074,11 @@ let apiInstance = new platformClient.ArchitectApi();
 
 let jobId = "jobId_example"; // String | Job ID
 let opts = { 
-  'expand': ["expand_example"] // [String] | Which fields, if any, to expand.
+  'expand': ["expand_example"], // [String] | Which fields, if any, to expand.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getFlowsExportJob(jobId, opts)
@@ -4635,6 +5098,7 @@ apiInstance.getFlowsExportJob(jobId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | Job ID |  |
  **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: messages |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4671,7 +5135,11 @@ let apiInstance = new platformClient.ArchitectApi();
 
 let instanceId = "instanceId_example"; // String | Instance ID
 let opts = { 
-  'expand': "expand_example" // String | Expand various details.
+  'expand': "expand_example", // String | Expand various details.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getFlowsInstance(instanceId, opts)
@@ -4691,6 +5159,7 @@ apiInstance.getFlowsInstance(instanceId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **instanceId** | **String** | Instance ID |  |
  **expand** | **String** | Expand various details. | [optional] <br />**Values**: bots, dataActions |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4699,7 +5168,7 @@ apiInstance.getFlowsInstance(instanceId, opts)
 
 ## getFlowsInstancesJob
 
-> GetFlowExecutionDataJobResult getFlowsInstancesJob(jobId)
+> GetFlowExecutionDataJobResult getFlowsInstancesJob(jobId, opts)
 
 
 GET /api/v2/flows/instances/jobs/{jobId}
@@ -4724,8 +5193,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ArchitectApi();
 
 let jobId = "jobId_example"; // String | The asynchronous job ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getFlowsInstancesJob(jobId)
+apiInstance.getFlowsInstancesJob(jobId, opts)
   .then((data) => {
     console.log(`getFlowsInstancesJob success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4741,6 +5216,7 @@ apiInstance.getFlowsInstancesJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | The asynchronous job ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4776,7 +5252,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ArchitectApi();
 
 let opts = { 
-  'expand': "expand_example" // String | Expand various query types.
+  'expand': "expand_example", // String | Expand various query types.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getFlowsInstancesQuerycapabilities(opts)
@@ -4795,6 +5275,7 @@ apiInstance.getFlowsInstancesQuerycapabilities(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **expand** | **String** | Expand various query types. | [optional] <br />**Values**: flow, action |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4803,7 +5284,7 @@ apiInstance.getFlowsInstancesQuerycapabilities(opts)
 
 ## getFlowsInstancesSettingsExecutiondata
 
-> ExecutionDataFlowSettingsResponse getFlowsInstancesSettingsExecutiondata()
+> ExecutionDataFlowSettingsResponse getFlowsInstancesSettingsExecutiondata(opts)
 
 
 GET /api/v2/flows/instances/settings/executiondata
@@ -4828,8 +5309,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ArchitectApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getFlowsInstancesSettingsExecutiondata()
+apiInstance.getFlowsInstancesSettingsExecutiondata(opts)
   .then((data) => {
     console.log(`getFlowsInstancesSettingsExecutiondata success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4841,7 +5328,10 @@ apiInstance.getFlowsInstancesSettingsExecutiondata()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4880,7 +5370,11 @@ let apiInstance = new platformClient.ArchitectApi();
 let opts = { 
   'expand': ["expand_example"], // [String] | Expand instructions for the result
   'pageNumber': 1, // Number | Page number
-  'pageSize': 25 // Number | Number of entities to return. Maximum of 200.
+  'pageSize': 25, // Number | Number of entities to return. Maximum of 200.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getFlowsInstancesSettingsLoglevels(opts)
@@ -4901,6 +5395,7 @@ apiInstance.getFlowsInstancesSettingsLoglevels(opts)
  **expand** | **[String]** | Expand instructions for the result | [optional] <br />**Values**: name, type, logLevelCharacteristics.characteristics |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Number of entities to return. Maximum of 200. | [optional] [default to 25] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4909,7 +5404,7 @@ apiInstance.getFlowsInstancesSettingsLoglevels(opts)
 
 ## getFlowsInstancesSettingsLoglevelsCharacteristics
 
-> FlowLogLevelCharacteristicsDefinitions getFlowsInstancesSettingsLoglevelsCharacteristics()
+> FlowLogLevelCharacteristicsDefinitions getFlowsInstancesSettingsLoglevelsCharacteristics(opts)
 
 
 GET /api/v2/flows/instances/settings/loglevels/characteristics
@@ -4935,8 +5430,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ArchitectApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getFlowsInstancesSettingsLoglevelsCharacteristics()
+apiInstance.getFlowsInstancesSettingsLoglevelsCharacteristics(opts)
   .then((data) => {
     console.log(`getFlowsInstancesSettingsLoglevelsCharacteristics success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4948,7 +5449,10 @@ apiInstance.getFlowsInstancesSettingsLoglevelsCharacteristics()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4984,7 +5488,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ArchitectApi();
 
 let opts = { 
-  'expand': ["expand_example"] // [String] | Expand instructions for the result
+  'expand': ["expand_example"], // [String] | Expand instructions for the result
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getFlowsInstancesSettingsLoglevelsDefault(opts)
@@ -5003,6 +5511,7 @@ apiInstance.getFlowsInstancesSettingsLoglevelsDefault(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **expand** | **[String]** | Expand instructions for the result | [optional] <br />**Values**: logLevelCharacteristics.characteristics |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5037,7 +5546,11 @@ let apiInstance = new platformClient.ArchitectApi();
 
 let jobId = "jobId_example"; // String | Job ID
 let opts = { 
-  'expand': ["expand_example"] // [String] | Which fields, if any, to expand.
+  'expand': ["expand_example"], // [String] | Which fields, if any, to expand.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getFlowsJob(jobId, opts)
@@ -5057,15 +5570,83 @@ apiInstance.getFlowsJob(jobId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | Job ID |  |
  **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: messages |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **ArchitectJobStateResponse**
 
 
+## getFlowsLookup
+
+> FlowEntityListing getFlowsLookup(id, opts)
+
+
+GET /api/v2/flows/lookup
+
+Look up flows by ID
+
+Returns only flows matching the specified ID(s). Returns an empty listing if no flows match the given IDs.
+
+Requires ANY permissions:
+
+* architect:flow:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ArchitectApi();
+
+let id = ["id_example"]; // [String] | Flow ID(s)
+let opts = { 
+  'pageNumber': 1, // Number | Page number
+  'pageSize': 25, // Number | Page size
+  'sortBy': "id", // String | Sort by
+  'sortOrder': "asc", // String | Sort order
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getFlowsLookup(id, opts)
+  .then((data) => {
+    console.log(`getFlowsLookup success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getFlowsLookup');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **id** | **[String]** | Flow ID(s) |  |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **sortBy** | **String** | Sort by | [optional] [default to id] |
+ **sortOrder** | **String** | Sort order | [optional] [default to asc] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**FlowEntityListing**
+
+
 ## getFlowsMilestone
 
-> FlowMilestone getFlowsMilestone(milestoneId)
+> FlowMilestone getFlowsMilestone(milestoneId, opts)
 
 
 GET /api/v2/flows/milestones/{milestoneId}
@@ -5092,8 +5673,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ArchitectApi();
 
 let milestoneId = "milestoneId_example"; // String | flow milestone ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getFlowsMilestone(milestoneId)
+apiInstance.getFlowsMilestone(milestoneId, opts)
   .then((data) => {
     console.log(`getFlowsMilestone success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5109,6 +5696,7 @@ apiInstance.getFlowsMilestone(milestoneId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **milestoneId** | **String** | flow milestone ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5152,7 +5740,11 @@ let opts = {
   'name': "name_example", // String | Name
   'description': "description_example", // String | Description
   'nameOrDescription': "nameOrDescription_example", // String | Name or description
-  'divisionId': ["divisionId_example"] // [String] | division ID(s)
+  'divisionId': ["divisionId_example"], // [String] | division ID(s)
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getFlowsMilestones(opts)
@@ -5179,6 +5771,7 @@ apiInstance.getFlowsMilestones(opts)
  **description** | **String** | Description | [optional]  |
  **nameOrDescription** | **String** | Name or description | [optional]  |
  **divisionId** | **[String]** | division ID(s) | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5220,7 +5813,11 @@ let opts = {
   'sortOrder': "asc", // String | Sort order
   'id': ["id_example"], // [String] | ID
   'name': "name_example", // String | Name
-  'divisionId': ["divisionId_example"] // [String] | division ID(s)
+  'divisionId': ["divisionId_example"], // [String] | division ID(s)
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getFlowsMilestonesDivisionviews(opts)
@@ -5245,6 +5842,7 @@ apiInstance.getFlowsMilestonesDivisionviews(opts)
  **id** | **[String]** | ID | [optional]  |
  **name** | **String** | Name | [optional]  |
  **divisionId** | **[String]** | division ID(s) | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5253,7 +5851,7 @@ apiInstance.getFlowsMilestonesDivisionviews(opts)
 
 ## getFlowsOutcome
 
-> FlowOutcome getFlowsOutcome(flowOutcomeId)
+> FlowOutcome getFlowsOutcome(flowOutcomeId, opts)
 
 
 GET /api/v2/flows/outcomes/{flowOutcomeId}
@@ -5280,8 +5878,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ArchitectApi();
 
 let flowOutcomeId = "flowOutcomeId_example"; // String | flow outcome ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getFlowsOutcome(flowOutcomeId)
+apiInstance.getFlowsOutcome(flowOutcomeId, opts)
   .then((data) => {
     console.log(`getFlowsOutcome success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5297,6 +5901,7 @@ apiInstance.getFlowsOutcome(flowOutcomeId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **flowOutcomeId** | **String** | flow outcome ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5340,7 +5945,11 @@ let opts = {
   'name': "name_example", // String | Name
   'description': "description_example", // String | Description
   'nameOrDescription': "nameOrDescription_example", // String | Name or description
-  'divisionId': ["divisionId_example"] // [String] | division ID(s)
+  'divisionId': ["divisionId_example"], // [String] | division ID(s)
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getFlowsOutcomes(opts)
@@ -5367,6 +5976,7 @@ apiInstance.getFlowsOutcomes(opts)
  **description** | **String** | Description | [optional]  |
  **nameOrDescription** | **String** | Name or description | [optional]  |
  **divisionId** | **[String]** | division ID(s) | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5408,7 +6018,11 @@ let opts = {
   'sortOrder': "asc", // String | Sort order
   'id': ["id_example"], // [String] | ID
   'name': "name_example", // String | Name
-  'divisionId': ["divisionId_example"] // [String] | division ID(s)
+  'divisionId': ["divisionId_example"], // [String] | division ID(s)
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getFlowsOutcomesDivisionviews(opts)
@@ -5433,10 +6047,72 @@ apiInstance.getFlowsOutcomesDivisionviews(opts)
  **id** | **[String]** | ID | [optional]  |
  **name** | **String** | Name | [optional]  |
  **divisionId** | **[String]** | division ID(s) | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **FlowOutcomeDivisionViewEntityListing**
+
+
+## getFlowsValidateJob
+
+> ArchitectValidateJobStateResponse getFlowsValidateJob(jobId, opts)
+
+
+GET /api/v2/flows/validate/jobs/{jobId}
+
+Fetch Architect Validate Job Status
+
+getFlowsValidateJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* architect:jobValidate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ArchitectApi();
+
+let jobId = "jobId_example"; // String | Job ID
+let opts = { 
+  'expand': ["expand_example"], // [String] | Which fields, if any, to expand.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getFlowsValidateJob(jobId, opts)
+  .then((data) => {
+    console.log(`getFlowsValidateJob success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getFlowsValidateJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | Job ID |  |
+ **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: messages |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**ArchitectValidateJobStateResponse**
 
 
 ## patchArchitectGrammar
@@ -5467,7 +6143,11 @@ let apiInstance = new platformClient.ArchitectApi();
 
 let grammarId = "grammarId_example"; // String | grammar ID
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.patchArchitectGrammar(grammarId, opts)
@@ -5487,6 +6167,7 @@ apiInstance.patchArchitectGrammar(grammarId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **grammarId** | **String** | grammar ID |  |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5522,7 +6203,11 @@ let apiInstance = new platformClient.ArchitectApi();
 let grammarId = "grammarId_example"; // String | Grammar ID
 let languageCode = "languageCode_example"; // String | Language
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.patchArchitectGrammarLanguage(grammarId, languageCode, opts)
@@ -5543,6 +6228,7 @@ apiInstance.patchArchitectGrammarLanguage(grammarId, languageCode, opts)
  **grammarId** | **String** | Grammar ID |  |
  **languageCode** | **String** | Language |  |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5551,7 +6237,7 @@ apiInstance.patchArchitectGrammarLanguage(grammarId, languageCode, opts)
 
 ## patchFlowsInstancesSettingsExecutiondata
 
-> ExecutionDataFlowSettingsResponse patchFlowsInstancesSettingsExecutiondata(body)
+> ExecutionDataFlowSettingsResponse patchFlowsInstancesSettingsExecutiondata(body, opts)
 
 
 PATCH /api/v2/flows/instances/settings/executiondata
@@ -5578,8 +6264,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ArchitectApi();
 
 let body = {}; // Object | New Execution Data Setting
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchFlowsInstancesSettingsExecutiondata(body)
+apiInstance.patchFlowsInstancesSettingsExecutiondata(body, opts)
   .then((data) => {
     console.log(`patchFlowsInstancesSettingsExecutiondata success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5595,6 +6287,7 @@ apiInstance.patchFlowsInstancesSettingsExecutiondata(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | New Execution Data Setting |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5603,7 +6296,7 @@ apiInstance.patchFlowsInstancesSettingsExecutiondata(body)
 
 ## postArchitectDependencytrackingBuild
 
-> void postArchitectDependencytrackingBuild()
+> void postArchitectDependencytrackingBuild(opts)
 
 
 POST /api/v2/architect/dependencytracking/build
@@ -5628,8 +6321,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ArchitectApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postArchitectDependencytrackingBuild()
+apiInstance.postArchitectDependencytrackingBuild(opts)
   .then(() => {
     console.log('postArchitectDependencytrackingBuild returned successfully.');
   })
@@ -5641,7 +6340,10 @@ apiInstance.postArchitectDependencytrackingBuild()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5650,7 +6352,7 @@ void (no response body)
 
 ## postArchitectEmergencygroups
 
-> EmergencyGroup postArchitectEmergencygroups(body)
+> EmergencyGroup postArchitectEmergencygroups(body, opts)
 
 
 POST /api/v2/architect/emergencygroups
@@ -5675,8 +6377,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ArchitectApi();
 
 let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postArchitectEmergencygroups(body)
+apiInstance.postArchitectEmergencygroups(body, opts)
   .then((data) => {
     console.log(`postArchitectEmergencygroups success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5692,6 +6400,7 @@ apiInstance.postArchitectEmergencygroups(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5700,7 +6409,7 @@ apiInstance.postArchitectEmergencygroups(body)
 
 ## postArchitectGrammarLanguageFilesDtmf
 
-> UploadUrlResponse postArchitectGrammarLanguageFilesDtmf(grammarId, languageCode, body)
+> UploadUrlResponse postArchitectGrammarLanguageFilesDtmf(grammarId, languageCode, body, opts)
 
 
 POST /api/v2/architect/grammars/{grammarId}/languages/{languageCode}/files/dtmf
@@ -5727,8 +6436,14 @@ let apiInstance = new platformClient.ArchitectApi();
 let grammarId = "grammarId_example"; // String | Grammar ID
 let languageCode = "languageCode_example"; // String | Language
 let body = {}; // Object | query
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postArchitectGrammarLanguageFilesDtmf(grammarId, languageCode, body)
+apiInstance.postArchitectGrammarLanguageFilesDtmf(grammarId, languageCode, body, opts)
   .then((data) => {
     console.log(`postArchitectGrammarLanguageFilesDtmf success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5746,6 +6461,7 @@ apiInstance.postArchitectGrammarLanguageFilesDtmf(grammarId, languageCode, body)
  **grammarId** | **String** | Grammar ID |  |
  **languageCode** | **String** | Language |  |
  **body** | **Object** | query |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5754,7 +6470,7 @@ apiInstance.postArchitectGrammarLanguageFilesDtmf(grammarId, languageCode, body)
 
 ## postArchitectGrammarLanguageFilesVoice
 
-> UploadUrlResponse postArchitectGrammarLanguageFilesVoice(grammarId, languageCode, body)
+> UploadUrlResponse postArchitectGrammarLanguageFilesVoice(grammarId, languageCode, body, opts)
 
 
 POST /api/v2/architect/grammars/{grammarId}/languages/{languageCode}/files/voice
@@ -5781,8 +6497,14 @@ let apiInstance = new platformClient.ArchitectApi();
 let grammarId = "grammarId_example"; // String | Grammar ID
 let languageCode = "languageCode_example"; // String | Language
 let body = {}; // Object | query
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postArchitectGrammarLanguageFilesVoice(grammarId, languageCode, body)
+apiInstance.postArchitectGrammarLanguageFilesVoice(grammarId, languageCode, body, opts)
   .then((data) => {
     console.log(`postArchitectGrammarLanguageFilesVoice success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5800,6 +6522,7 @@ apiInstance.postArchitectGrammarLanguageFilesVoice(grammarId, languageCode, body
  **grammarId** | **String** | Grammar ID |  |
  **languageCode** | **String** | Language |  |
  **body** | **Object** | query |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5808,7 +6531,7 @@ apiInstance.postArchitectGrammarLanguageFilesVoice(grammarId, languageCode, body
 
 ## postArchitectGrammarLanguages
 
-> GrammarLanguage postArchitectGrammarLanguages(grammarId, body)
+> GrammarLanguage postArchitectGrammarLanguages(grammarId, body, opts)
 
 
 POST /api/v2/architect/grammars/{grammarId}/languages
@@ -5834,8 +6557,14 @@ let apiInstance = new platformClient.ArchitectApi();
 
 let grammarId = "grammarId_example"; // String | Grammar ID
 let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postArchitectGrammarLanguages(grammarId, body)
+apiInstance.postArchitectGrammarLanguages(grammarId, body, opts)
   .then((data) => {
     console.log(`postArchitectGrammarLanguages success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5852,6 +6581,7 @@ apiInstance.postArchitectGrammarLanguages(grammarId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **grammarId** | **String** | Grammar ID |  |
  **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5860,7 +6590,7 @@ apiInstance.postArchitectGrammarLanguages(grammarId, body)
 
 ## postArchitectGrammars
 
-> Grammar postArchitectGrammars(body)
+> Grammar postArchitectGrammars(body, opts)
 
 
 POST /api/v2/architect/grammars
@@ -5885,8 +6615,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ArchitectApi();
 
 let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postArchitectGrammars(body)
+apiInstance.postArchitectGrammars(body, opts)
   .then((data) => {
     console.log(`postArchitectGrammars success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5902,6 +6638,7 @@ apiInstance.postArchitectGrammars(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5910,7 +6647,7 @@ apiInstance.postArchitectGrammars(body)
 
 ## postArchitectIvrs
 
-> IVR postArchitectIvrs(body)
+> IVR postArchitectIvrs(body, opts)
 
 
 POST /api/v2/architect/ivrs
@@ -5935,8 +6672,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ArchitectApi();
 
 let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postArchitectIvrs(body)
+apiInstance.postArchitectIvrs(body, opts)
   .then((data) => {
     console.log(`postArchitectIvrs success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5952,6 +6695,7 @@ apiInstance.postArchitectIvrs(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5960,7 +6704,7 @@ apiInstance.postArchitectIvrs(body)
 
 ## postArchitectPromptHistory
 
-> Operation postArchitectPromptHistory(promptId)
+> Operation postArchitectPromptHistory(promptId, opts)
 
 
 POST /api/v2/architect/prompts/{promptId}/history
@@ -5987,8 +6731,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ArchitectApi();
 
 let promptId = "promptId_example"; // String | Prompt ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postArchitectPromptHistory(promptId)
+apiInstance.postArchitectPromptHistory(promptId, opts)
   .then((data) => {
     console.log(`postArchitectPromptHistory success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6004,6 +6754,7 @@ apiInstance.postArchitectPromptHistory(promptId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **promptId** | **String** | Prompt ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6012,7 +6763,7 @@ apiInstance.postArchitectPromptHistory(promptId)
 
 ## postArchitectPromptResourceUploads
 
-> PromptAssetUpload postArchitectPromptResourceUploads(promptId, languageCode)
+> PromptAssetUpload postArchitectPromptResourceUploads(promptId, languageCode, opts)
 
 
 POST /api/v2/architect/prompts/{promptId}/resources/{languageCode}/uploads
@@ -6040,8 +6791,14 @@ let apiInstance = new platformClient.ArchitectApi();
 
 let promptId = "promptId_example"; // String | Prompt ID
 let languageCode = "languageCode_example"; // String | Language
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postArchitectPromptResourceUploads(promptId, languageCode)
+apiInstance.postArchitectPromptResourceUploads(promptId, languageCode, opts)
   .then((data) => {
     console.log(`postArchitectPromptResourceUploads success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6058,6 +6815,7 @@ apiInstance.postArchitectPromptResourceUploads(promptId, languageCode)
 | ------------- | ------------- | ------------- | ------------- |
  **promptId** | **String** | Prompt ID |  |
  **languageCode** | **String** | Language |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6066,7 +6824,7 @@ apiInstance.postArchitectPromptResourceUploads(promptId, languageCode)
 
 ## postArchitectPromptResources
 
-> PromptAsset postArchitectPromptResources(promptId, body)
+> PromptAsset postArchitectPromptResources(promptId, body, opts)
 
 
 POST /api/v2/architect/prompts/{promptId}/resources
@@ -6092,8 +6850,14 @@ let apiInstance = new platformClient.ArchitectApi();
 
 let promptId = "promptId_example"; // String | Prompt ID
 let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postArchitectPromptResources(promptId, body)
+apiInstance.postArchitectPromptResources(promptId, body, opts)
   .then((data) => {
     console.log(`postArchitectPromptResources success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6110,6 +6874,7 @@ apiInstance.postArchitectPromptResources(promptId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **promptId** | **String** | Prompt ID |  |
  **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6118,7 +6883,7 @@ apiInstance.postArchitectPromptResources(promptId, body)
 
 ## postArchitectPrompts
 
-> Prompt postArchitectPrompts(body)
+> Prompt postArchitectPrompts(body, opts)
 
 
 POST /api/v2/architect/prompts
@@ -6143,8 +6908,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ArchitectApi();
 
 let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postArchitectPrompts(body)
+apiInstance.postArchitectPrompts(body, opts)
   .then((data) => {
     console.log(`postArchitectPrompts success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6160,6 +6931,7 @@ apiInstance.postArchitectPrompts(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6168,7 +6940,7 @@ apiInstance.postArchitectPrompts(body)
 
 ## postArchitectSchedulegroups
 
-> ScheduleGroup postArchitectSchedulegroups(body)
+> ScheduleGroup postArchitectSchedulegroups(body, opts)
 
 
 POST /api/v2/architect/schedulegroups
@@ -6193,8 +6965,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ArchitectApi();
 
 let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postArchitectSchedulegroups(body)
+apiInstance.postArchitectSchedulegroups(body, opts)
   .then((data) => {
     console.log(`postArchitectSchedulegroups success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6210,6 +6988,7 @@ apiInstance.postArchitectSchedulegroups(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6218,7 +6997,7 @@ apiInstance.postArchitectSchedulegroups(body)
 
 ## postArchitectSchedules
 
-> Schedule postArchitectSchedules(body)
+> Schedule postArchitectSchedules(body, opts)
 
 
 POST /api/v2/architect/schedules
@@ -6243,8 +7022,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ArchitectApi();
 
 let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postArchitectSchedules(body)
+apiInstance.postArchitectSchedules(body, opts)
   .then((data) => {
     console.log(`postArchitectSchedules success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6260,6 +7045,7 @@ apiInstance.postArchitectSchedules(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6268,7 +7054,7 @@ apiInstance.postArchitectSchedules(body)
 
 ## postArchitectSystempromptHistory
 
-> Operation postArchitectSystempromptHistory(promptId)
+> Operation postArchitectSystempromptHistory(promptId, opts)
 
 
 POST /api/v2/architect/systemprompts/{promptId}/history
@@ -6295,8 +7081,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ArchitectApi();
 
 let promptId = "promptId_example"; // String | promptId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postArchitectSystempromptHistory(promptId)
+apiInstance.postArchitectSystempromptHistory(promptId, opts)
   .then((data) => {
     console.log(`postArchitectSystempromptHistory success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6312,6 +7104,7 @@ apiInstance.postArchitectSystempromptHistory(promptId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **promptId** | **String** | promptId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6320,7 +7113,7 @@ apiInstance.postArchitectSystempromptHistory(promptId)
 
 ## postArchitectSystempromptResourceUploads
 
-> PromptAssetUpload postArchitectSystempromptResourceUploads(promptId, languageCode)
+> PromptAssetUpload postArchitectSystempromptResourceUploads(promptId, languageCode, opts)
 
 
 POST /api/v2/architect/systemprompts/{promptId}/resources/{languageCode}/uploads
@@ -6348,8 +7141,14 @@ let apiInstance = new platformClient.ArchitectApi();
 
 let promptId = "promptId_example"; // String | Prompt ID
 let languageCode = "languageCode_example"; // String | Language
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postArchitectSystempromptResourceUploads(promptId, languageCode)
+apiInstance.postArchitectSystempromptResourceUploads(promptId, languageCode, opts)
   .then((data) => {
     console.log(`postArchitectSystempromptResourceUploads success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6366,6 +7165,7 @@ apiInstance.postArchitectSystempromptResourceUploads(promptId, languageCode)
 | ------------- | ------------- | ------------- | ------------- |
  **promptId** | **String** | Prompt ID |  |
  **languageCode** | **String** | Language |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6374,7 +7174,7 @@ apiInstance.postArchitectSystempromptResourceUploads(promptId, languageCode)
 
 ## postArchitectSystempromptResources
 
-> SystemPromptAsset postArchitectSystempromptResources(promptId, body)
+> SystemPromptAsset postArchitectSystempromptResources(promptId, body, opts)
 
 
 POST /api/v2/architect/systemprompts/{promptId}/resources
@@ -6400,8 +7200,14 @@ let apiInstance = new platformClient.ArchitectApi();
 
 let promptId = "promptId_example"; // String | Prompt ID
 let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postArchitectSystempromptResources(promptId, body)
+apiInstance.postArchitectSystempromptResources(promptId, body, opts)
   .then((data) => {
     console.log(`postArchitectSystempromptResources success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6418,6 +7224,7 @@ apiInstance.postArchitectSystempromptResources(promptId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **promptId** | **String** | Prompt ID |  |
  **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6426,7 +7233,7 @@ apiInstance.postArchitectSystempromptResources(promptId, body)
 
 ## postFlowHistory
 
-> Operation postFlowHistory(flowId)
+> Operation postFlowHistory(flowId, opts)
 
 
 POST /api/v2/flows/{flowId}/history
@@ -6453,8 +7260,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ArchitectApi();
 
 let flowId = "flowId_example"; // String | Flow ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postFlowHistory(flowId)
+apiInstance.postFlowHistory(flowId, opts)
   .then((data) => {
     console.log(`postFlowHistory success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6470,6 +7283,7 @@ apiInstance.postFlowHistory(flowId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **flowId** | **String** | Flow ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6507,7 +7321,11 @@ let apiInstance = new platformClient.ArchitectApi();
 let flowId = "flowId_example"; // String | The flow id to set the loglevel for
 let body = {}; // Object | New LogLevel settings
 let opts = { 
-  'expand': ["expand_example"] // [String] | Expand instructions for the result
+  'expand': ["expand_example"], // [String] | Expand instructions for the result
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postFlowInstancesSettingsLoglevels(flowId, body, opts)
@@ -6528,6 +7346,7 @@ apiInstance.postFlowInstancesSettingsLoglevels(flowId, body, opts)
  **flowId** | **String** | The flow id to set the loglevel for |  |
  **body** | **Object** | New LogLevel settings |  |
  **expand** | **[String]** | Expand instructions for the result | [optional] <br />**Values**: name, type, logLevelCharacteristics.characteristics |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6536,7 +7355,7 @@ apiInstance.postFlowInstancesSettingsLoglevels(flowId, body, opts)
 
 ## postFlowVersions
 
-> FlowVersion postFlowVersions(flowId, body)
+> FlowVersion postFlowVersions(flowId, body, opts)
 
 
 POST /api/v2/flows/{flowId}/versions
@@ -6562,8 +7381,14 @@ let apiInstance = new platformClient.ArchitectApi();
 
 let flowId = "flowId_example"; // String | Flow ID
 let body = null; // {String: Object} | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postFlowVersions(flowId, body)
+apiInstance.postFlowVersions(flowId, body, opts)
   .then((data) => {
     console.log(`postFlowVersions success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6580,6 +7405,7 @@ apiInstance.postFlowVersions(flowId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **flowId** | **String** | Flow ID |  |
  **body** | **{String: Object}** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6614,7 +7440,11 @@ let apiInstance = new platformClient.ArchitectApi();
 
 let body = {}; // Object | 
 let opts = { 
-  'language': "language_example" // String | Language
+  'language': "language_example", // String | Language
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postFlows(body, opts)
@@ -6634,6 +7464,7 @@ apiInstance.postFlows(body, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** |  |  |
  **language** | **String** | Language | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6642,7 +7473,7 @@ apiInstance.postFlows(body, opts)
 
 ## postFlowsActionsCheckin
 
-> Operation postFlowsActionsCheckin(flow)
+> Operation postFlowsActionsCheckin(flow, opts)
 
 
 POST /api/v2/flows/actions/checkin
@@ -6670,8 +7501,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ArchitectApi();
 
 let flow = "flow_example"; // String | Flow ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postFlowsActionsCheckin(flow)
+apiInstance.postFlowsActionsCheckin(flow, opts)
   .then((data) => {
     console.log(`postFlowsActionsCheckin success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6687,6 +7524,7 @@ apiInstance.postFlowsActionsCheckin(flow)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **flow** | **String** | Flow ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6695,7 +7533,7 @@ apiInstance.postFlowsActionsCheckin(flow)
 
 ## postFlowsActionsCheckout
 
-> Flow postFlowsActionsCheckout(flow)
+> Flow postFlowsActionsCheckout(flow, opts)
 
 
 POST /api/v2/flows/actions/checkout
@@ -6720,8 +7558,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ArchitectApi();
 
 let flow = "flow_example"; // String | Flow ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postFlowsActionsCheckout(flow)
+apiInstance.postFlowsActionsCheckout(flow, opts)
   .then((data) => {
     console.log(`postFlowsActionsCheckout success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6737,6 +7581,7 @@ apiInstance.postFlowsActionsCheckout(flow)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **flow** | **String** | Flow ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6745,7 +7590,7 @@ apiInstance.postFlowsActionsCheckout(flow)
 
 ## postFlowsActionsDeactivate
 
-> Flow postFlowsActionsDeactivate(flow)
+> Flow postFlowsActionsDeactivate(flow, opts)
 
 
 POST /api/v2/flows/actions/deactivate
@@ -6770,8 +7615,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ArchitectApi();
 
 let flow = "flow_example"; // String | Flow ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postFlowsActionsDeactivate(flow)
+apiInstance.postFlowsActionsDeactivate(flow, opts)
   .then((data) => {
     console.log(`postFlowsActionsDeactivate success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6787,6 +7638,7 @@ apiInstance.postFlowsActionsDeactivate(flow)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **flow** | **String** | Flow ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6824,7 +7676,11 @@ let apiInstance = new platformClient.ArchitectApi();
 
 let flow = "flow_example"; // String | Flow ID
 let opts = { 
-  'version': "version_example" // String | version
+  'version': "version_example", // String | version
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postFlowsActionsPublish(flow, opts)
@@ -6844,6 +7700,7 @@ apiInstance.postFlowsActionsPublish(flow, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **flow** | **String** | Flow ID |  |
  **version** | **String** | version | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6852,7 +7709,7 @@ apiInstance.postFlowsActionsPublish(flow, opts)
 
 ## postFlowsActionsRevert
 
-> Flow postFlowsActionsRevert(flow)
+> Flow postFlowsActionsRevert(flow, opts)
 
 
 POST /api/v2/flows/actions/revert
@@ -6877,8 +7734,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ArchitectApi();
 
 let flow = "flow_example"; // String | Flow ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postFlowsActionsRevert(flow)
+apiInstance.postFlowsActionsRevert(flow, opts)
   .then((data) => {
     console.log(`postFlowsActionsRevert success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6894,6 +7757,7 @@ apiInstance.postFlowsActionsRevert(flow)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **flow** | **String** | Flow ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6902,7 +7766,7 @@ apiInstance.postFlowsActionsRevert(flow)
 
 ## postFlowsActionsUnlock
 
-> Flow postFlowsActionsUnlock(flow)
+> Flow postFlowsActionsUnlock(flow, opts)
 
 
 POST /api/v2/flows/actions/unlock
@@ -6929,8 +7793,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ArchitectApi();
 
 let flow = "flow_example"; // String | Flow ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postFlowsActionsUnlock(flow)
+apiInstance.postFlowsActionsUnlock(flow, opts)
   .then((data) => {
     console.log(`postFlowsActionsUnlock success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6946,6 +7816,7 @@ apiInstance.postFlowsActionsUnlock(flow)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **flow** | **String** | Flow ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6954,7 +7825,7 @@ apiInstance.postFlowsActionsUnlock(flow)
 
 ## postFlowsDatatableExportJobs
 
-> DataTableExportJob postFlowsDatatableExportJobs(datatableId)
+> DataTableExportJob postFlowsDatatableExportJobs(datatableId, opts)
 
 
 POST /api/v2/flows/datatables/{datatableId}/export/jobs
@@ -6982,8 +7853,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ArchitectApi();
 
 let datatableId = "datatableId_example"; // String | id of datatable
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postFlowsDatatableExportJobs(datatableId)
+apiInstance.postFlowsDatatableExportJobs(datatableId, opts)
   .then((data) => {
     console.log(`postFlowsDatatableExportJobs success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6999,20 +7876,86 @@ apiInstance.postFlowsDatatableExportJobs(datatableId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **datatableId** | **String** | id of datatable |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **DataTableExportJob**
 
 
+## postFlowsDatatableImportCsvJobs
+
+> DataTableImportJob postFlowsDatatableImportCsvJobs(datatableId, body, opts)
+
+
+POST /api/v2/flows/datatables/{datatableId}/import/csv/jobs
+
+Begin an import process for importing rows from a CSV file into a datatable. CSV file is uploaded by performing a PUT request against the URL in the returned 'uploadURI' field. Headers for the PUT request must contain all headers contained in the returned 'uploadHeaders' field.
+
+Create an import job for importing rows from a CSV file. The caller can then poll for status of the import using the token returned in the response
+
+Requires ANY permissions:
+
+* architect:datatable:edit
+* architect:datatableRow:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ArchitectApi();
+
+let datatableId = "datatableId_example"; // String | id of datatable
+let body = {}; // Object | import job information
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.postFlowsDatatableImportCsvJobs(datatableId, body, opts)
+  .then((data) => {
+    console.log(`postFlowsDatatableImportCsvJobs success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postFlowsDatatableImportCsvJobs');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **datatableId** | **String** | id of datatable |  |
+ **body** | **Object** | import job information |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**DataTableImportJob**
+
+
 ## postFlowsDatatableImportJobs
 
-> DataTableImportJob postFlowsDatatableImportJobs(datatableId, body)
+> DataTableImportJob postFlowsDatatableImportJobs(datatableId, body, opts)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 POST /api/v2/flows/datatables/{datatableId}/import/jobs
 
-Begin an import process for importing rows into a datatable
+Begin an import process for importing rows into a datatable. Apps should migrate to use POST /api/v2/flows/datatables/{datatableId}/import/csv/jobs instead
 
 Create an import job for importing rows. The caller can then poll for status of the import using the token returned in the response
 
@@ -7036,8 +7979,14 @@ let apiInstance = new platformClient.ArchitectApi();
 
 let datatableId = "datatableId_example"; // String | id of datatable
 let body = {}; // Object | import job information
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postFlowsDatatableImportJobs(datatableId, body)
+apiInstance.postFlowsDatatableImportJobs(datatableId, body, opts)
   .then((data) => {
     console.log(`postFlowsDatatableImportJobs success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -7054,6 +8003,7 @@ apiInstance.postFlowsDatatableImportJobs(datatableId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **datatableId** | **String** | id of datatable |  |
  **body** | **Object** | import job information |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -7062,7 +8012,7 @@ apiInstance.postFlowsDatatableImportJobs(datatableId, body)
 
 ## postFlowsDatatableRows
 
-> **{&#39;String&#39;: Object}** postFlowsDatatableRows(datatableId, dataTableRow)
+> **{&#39;String&#39;: Object}** postFlowsDatatableRows(datatableId, dataTableRow, opts)
 
 
 POST /api/v2/flows/datatables/{datatableId}/rows
@@ -7091,8 +8041,14 @@ let apiInstance = new platformClient.ArchitectApi();
 
 let datatableId = "datatableId_example"; // String | id of datatable
 let dataTableRow = null; // {String: Object} | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postFlowsDatatableRows(datatableId, dataTableRow)
+apiInstance.postFlowsDatatableRows(datatableId, dataTableRow, opts)
   .then((data) => {
     console.log(`postFlowsDatatableRows success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -7109,6 +8065,7 @@ apiInstance.postFlowsDatatableRows(datatableId, dataTableRow)
 | ------------- | ------------- | ------------- | ------------- |
  **datatableId** | **String** | id of datatable |  |
  **dataTableRow** | **{String: Object}** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -7117,7 +8074,7 @@ apiInstance.postFlowsDatatableRows(datatableId, dataTableRow)
 
 ## postFlowsDatatables
 
-> DataTable postFlowsDatatables(body)
+> DataTable postFlowsDatatables(body, opts)
 
 
 POST /api/v2/flows/datatables
@@ -7144,8 +8101,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ArchitectApi();
 
 let body = {}; // Object | datatable json-schema
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postFlowsDatatables(body)
+apiInstance.postFlowsDatatables(body, opts)
   .then((data) => {
     console.log(`postFlowsDatatables success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -7161,6 +8124,7 @@ apiInstance.postFlowsDatatables(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | datatable json-schema |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -7169,7 +8133,7 @@ apiInstance.postFlowsDatatables(body)
 
 ## postFlowsExecutions
 
-> FlowExecutionLaunchResponse postFlowsExecutions(flowLaunchRequest)
+> FlowExecutionLaunchResponse postFlowsExecutions(flowLaunchRequest, opts)
 
 
 POST /api/v2/flows/executions
@@ -7196,8 +8160,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ArchitectApi();
 
 let flowLaunchRequest = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postFlowsExecutions(flowLaunchRequest)
+apiInstance.postFlowsExecutions(flowLaunchRequest, opts)
   .then((data) => {
     console.log(`postFlowsExecutions success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -7213,6 +8183,7 @@ apiInstance.postFlowsExecutions(flowLaunchRequest)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **flowLaunchRequest** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -7221,7 +8192,7 @@ apiInstance.postFlowsExecutions(flowLaunchRequest)
 
 ## postFlowsExportJobs
 
-> RegisterArchitectExportJobResponse postFlowsExportJobs(body)
+> RegisterArchitectExportJobResponse postFlowsExportJobs(body, opts)
 
 
 POST /api/v2/flows/export/jobs
@@ -7246,8 +8217,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ArchitectApi();
 
 let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postFlowsExportJobs(body)
+apiInstance.postFlowsExportJobs(body, opts)
   .then((data) => {
     console.log(`postFlowsExportJobs success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -7263,6 +8240,7 @@ apiInstance.postFlowsExportJobs(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -7299,7 +8277,11 @@ let apiInstance = new platformClient.ArchitectApi();
 
 let body = {}; // Object | Requested Flow Ids
 let opts = { 
-  'expand': "expand_example" // String | Expand various query types.
+  'expand': "expand_example", // String | Expand various query types.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postFlowsInstancesJobs(body, opts)
@@ -7319,6 +8301,7 @@ apiInstance.postFlowsInstancesJobs(body, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Requested Flow Ids |  |
  **expand** | **String** | Expand various query types. | [optional] <br />**Values**: bots, dataActions |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -7356,7 +8339,11 @@ let apiInstance = new platformClient.ArchitectApi();
 let body = {}; // Object | query
 let opts = { 
   'indexOnly': true, // Boolean | indexes only
-  'pageSize': 50 // Number | number of results to return
+  'pageSize': 50, // Number | number of results to return
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postFlowsInstancesQuery(body, opts)
@@ -7377,6 +8364,7 @@ apiInstance.postFlowsInstancesQuery(body, opts)
  **body** | **Object** | query |  |
  **indexOnly** | **Boolean** | indexes only | [optional]  |
  **pageSize** | **Number** | number of results to return | [optional] [default to 50] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -7385,7 +8373,7 @@ apiInstance.postFlowsInstancesQuery(body, opts)
 
 ## postFlowsJobs
 
-> RegisterArchitectJobResponse postFlowsJobs()
+> RegisterArchitectJobResponse postFlowsJobs(opts)
 
 
 POST /api/v2/flows/jobs
@@ -7409,7 +8397,15 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ArchitectApi();
 
-apiInstance.postFlowsJobs()
+let opts = { 
+  'body': null, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.postFlowsJobs(opts)
   .then((data) => {
     console.log(`postFlowsJobs success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -7421,7 +8417,11 @@ apiInstance.postFlowsJobs()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -7455,7 +8455,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ArchitectApi();
 
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postFlowsMilestones(opts)
@@ -7474,6 +8478,7 @@ apiInstance.postFlowsMilestones(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -7509,7 +8514,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ArchitectApi();
 
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postFlowsOutcomes(opts)
@@ -7528,15 +8537,75 @@ apiInstance.postFlowsOutcomes(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **FlowOutcome**
 
 
+## postFlowsValidateJobs
+
+> RegisterArchitectValidateJobResponse postFlowsValidateJobs(body, opts)
+
+
+POST /api/v2/flows/validate/jobs
+
+Register Architect Validate Job
+
+postFlowsValidateJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* architect:jobValidate:create
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ArchitectApi();
+
+let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.postFlowsValidateJobs(body, opts)
+  .then((data) => {
+    console.log(`postFlowsValidateJobs success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postFlowsValidateJobs');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**RegisterArchitectValidateJobResponse**
+
+
 ## putArchitectEmergencygroup
 
-> EmergencyGroup putArchitectEmergencygroup(emergencyGroupId, body)
+> EmergencyGroup putArchitectEmergencygroup(emergencyGroupId, body, opts)
 
 
 PUT /api/v2/architect/emergencygroups/{emergencyGroupId}
@@ -7562,8 +8631,14 @@ let apiInstance = new platformClient.ArchitectApi();
 
 let emergencyGroupId = "emergencyGroupId_example"; // String | Emergency group ID
 let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putArchitectEmergencygroup(emergencyGroupId, body)
+apiInstance.putArchitectEmergencygroup(emergencyGroupId, body, opts)
   .then((data) => {
     console.log(`putArchitectEmergencygroup success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -7580,6 +8655,7 @@ apiInstance.putArchitectEmergencygroup(emergencyGroupId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **emergencyGroupId** | **String** | Emergency group ID |  |
  **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -7588,7 +8664,7 @@ apiInstance.putArchitectEmergencygroup(emergencyGroupId, body)
 
 ## putArchitectIvr
 
-> IVR putArchitectIvr(ivrId, body)
+> IVR putArchitectIvr(ivrId, body, opts)
 
 
 PUT /api/v2/architect/ivrs/{ivrId}
@@ -7614,8 +8690,14 @@ let apiInstance = new platformClient.ArchitectApi();
 
 let ivrId = "ivrId_example"; // String | IVR id
 let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putArchitectIvr(ivrId, body)
+apiInstance.putArchitectIvr(ivrId, body, opts)
   .then((data) => {
     console.log(`putArchitectIvr success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -7632,6 +8714,7 @@ apiInstance.putArchitectIvr(ivrId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **ivrId** | **String** | IVR id |  |
  **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -7640,7 +8723,7 @@ apiInstance.putArchitectIvr(ivrId, body)
 
 ## putArchitectIvrIdentityresolution
 
-> IdentityResolutionConfig putArchitectIvrIdentityresolution(ivrId, body)
+> IVRIdentityResolutionConfig putArchitectIvrIdentityresolution(ivrId, body, opts)
 
 
 PUT /api/v2/architect/ivrs/{ivrId}/identityresolution
@@ -7650,7 +8733,7 @@ Update an IVR IdentityResolutionConfig.
 Requires ALL permissions:
 
 * routing:callRoute:edit
-* routing:identityResolution:edit
+* routing:identityResolutionIvr:edit
 
 ### Example Usage
 
@@ -7667,8 +8750,14 @@ let apiInstance = new platformClient.ArchitectApi();
 
 let ivrId = "ivrId_example"; // String | IVR id
 let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putArchitectIvrIdentityresolution(ivrId, body)
+apiInstance.putArchitectIvrIdentityresolution(ivrId, body, opts)
   .then((data) => {
     console.log(`putArchitectIvrIdentityresolution success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -7685,15 +8774,16 @@ apiInstance.putArchitectIvrIdentityresolution(ivrId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **ivrId** | **String** | IVR id |  |
  **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
-**IdentityResolutionConfig**
+**IVRIdentityResolutionConfig**
 
 
 ## putArchitectPrompt
 
-> Prompt putArchitectPrompt(promptId, body)
+> Prompt putArchitectPrompt(promptId, body, opts)
 
 
 PUT /api/v2/architect/prompts/{promptId}
@@ -7719,8 +8809,14 @@ let apiInstance = new platformClient.ArchitectApi();
 
 let promptId = "promptId_example"; // String | Prompt ID
 let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putArchitectPrompt(promptId, body)
+apiInstance.putArchitectPrompt(promptId, body, opts)
   .then((data) => {
     console.log(`putArchitectPrompt success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -7737,6 +8833,7 @@ apiInstance.putArchitectPrompt(promptId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **promptId** | **String** | Prompt ID |  |
  **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -7745,7 +8842,7 @@ apiInstance.putArchitectPrompt(promptId, body)
 
 ## putArchitectPromptResource
 
-> PromptAsset putArchitectPromptResource(promptId, languageCode, body)
+> PromptAsset putArchitectPromptResource(promptId, languageCode, body, opts)
 
 
 PUT /api/v2/architect/prompts/{promptId}/resources/{languageCode}
@@ -7772,8 +8869,14 @@ let apiInstance = new platformClient.ArchitectApi();
 let promptId = "promptId_example"; // String | Prompt ID
 let languageCode = "languageCode_example"; // String | Language
 let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putArchitectPromptResource(promptId, languageCode, body)
+apiInstance.putArchitectPromptResource(promptId, languageCode, body, opts)
   .then((data) => {
     console.log(`putArchitectPromptResource success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -7791,6 +8894,7 @@ apiInstance.putArchitectPromptResource(promptId, languageCode, body)
  **promptId** | **String** | Prompt ID |  |
  **languageCode** | **String** | Language |  |
  **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -7799,7 +8903,7 @@ apiInstance.putArchitectPromptResource(promptId, languageCode, body)
 
 ## putArchitectSchedule
 
-> Schedule putArchitectSchedule(scheduleId, body)
+> Schedule putArchitectSchedule(scheduleId, body, opts)
 
 
 PUT /api/v2/architect/schedules/{scheduleId}
@@ -7825,8 +8929,14 @@ let apiInstance = new platformClient.ArchitectApi();
 
 let scheduleId = "scheduleId_example"; // String | Schedule ID
 let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putArchitectSchedule(scheduleId, body)
+apiInstance.putArchitectSchedule(scheduleId, body, opts)
   .then((data) => {
     console.log(`putArchitectSchedule success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -7843,6 +8953,7 @@ apiInstance.putArchitectSchedule(scheduleId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **scheduleId** | **String** | Schedule ID |  |
  **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -7851,7 +8962,7 @@ apiInstance.putArchitectSchedule(scheduleId, body)
 
 ## putArchitectSchedulegroup
 
-> ScheduleGroup putArchitectSchedulegroup(scheduleGroupId, body)
+> ScheduleGroup putArchitectSchedulegroup(scheduleGroupId, body, opts)
 
 
 PUT /api/v2/architect/schedulegroups/{scheduleGroupId}
@@ -7877,8 +8988,14 @@ let apiInstance = new platformClient.ArchitectApi();
 
 let scheduleGroupId = "scheduleGroupId_example"; // String | Schedule group ID
 let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putArchitectSchedulegroup(scheduleGroupId, body)
+apiInstance.putArchitectSchedulegroup(scheduleGroupId, body, opts)
   .then((data) => {
     console.log(`putArchitectSchedulegroup success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -7895,6 +9012,7 @@ apiInstance.putArchitectSchedulegroup(scheduleGroupId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **scheduleGroupId** | **String** | Schedule group ID |  |
  **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -7903,7 +9021,7 @@ apiInstance.putArchitectSchedulegroup(scheduleGroupId, body)
 
 ## putArchitectSystempromptResource
 
-> SystemPromptAsset putArchitectSystempromptResource(promptId, languageCode, body)
+> SystemPromptAsset putArchitectSystempromptResource(promptId, languageCode, body, opts)
 
 
 PUT /api/v2/architect/systemprompts/{promptId}/resources/{languageCode}
@@ -7930,8 +9048,14 @@ let apiInstance = new platformClient.ArchitectApi();
 let promptId = "promptId_example"; // String | Prompt ID
 let languageCode = "languageCode_example"; // String | Language
 let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putArchitectSystempromptResource(promptId, languageCode, body)
+apiInstance.putArchitectSystempromptResource(promptId, languageCode, body, opts)
   .then((data) => {
     console.log(`putArchitectSystempromptResource success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -7949,6 +9073,7 @@ apiInstance.putArchitectSystempromptResource(promptId, languageCode, body)
  **promptId** | **String** | Prompt ID |  |
  **languageCode** | **String** | Language |  |
  **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -7957,7 +9082,7 @@ apiInstance.putArchitectSystempromptResource(promptId, languageCode, body)
 
 ## putFlow
 
-> Flow putFlow(flowId, body)
+> Flow putFlow(flowId, body, opts)
 
 
 PUT /api/v2/flows/{flowId}
@@ -7983,8 +9108,14 @@ let apiInstance = new platformClient.ArchitectApi();
 
 let flowId = "flowId_example"; // String | Flow ID
 let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putFlow(flowId, body)
+apiInstance.putFlow(flowId, body, opts)
   .then((data) => {
     console.log(`putFlow success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -8001,6 +9132,7 @@ apiInstance.putFlow(flowId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **flowId** | **String** | Flow ID |  |
  **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -8038,7 +9170,11 @@ let apiInstance = new platformClient.ArchitectApi();
 let flowId = "flowId_example"; // String | The flow id to edit the loglevel for
 let body = {}; // Object | New LogLevel settings
 let opts = { 
-  'expand': ["expand_example"] // [String] | Expand instructions for the result
+  'expand': ["expand_example"], // [String] | Expand instructions for the result
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.putFlowInstancesSettingsLoglevels(flowId, body, opts)
@@ -8059,6 +9195,7 @@ apiInstance.putFlowInstancesSettingsLoglevels(flowId, body, opts)
  **flowId** | **String** | The flow id to edit the loglevel for |  |
  **body** | **Object** | New LogLevel settings |  |
  **expand** | **[String]** | Expand instructions for the result | [optional] <br />**Values**: name, type, logLevelCharacteristics.characteristics |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -8096,7 +9233,11 @@ let apiInstance = new platformClient.ArchitectApi();
 let datatableId = "datatableId_example"; // String | id of datatable
 let body = {}; // Object | datatable json-schema
 let opts = { 
-  'expand': "expand_example" // String | Expand instructions for the result
+  'expand': "expand_example", // String | Expand instructions for the result
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.putFlowsDatatable(datatableId, body, opts)
@@ -8117,6 +9258,7 @@ apiInstance.putFlowsDatatable(datatableId, body, opts)
  **datatableId** | **String** | id of datatable |  |
  **body** | **Object** | datatable json-schema |  |
  **expand** | **String** | Expand instructions for the result | [optional] <br />**Values**: schema |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -8155,7 +9297,11 @@ let apiInstance = new platformClient.ArchitectApi();
 let datatableId = "datatableId_example"; // String | id of datatable
 let rowId = "rowId_example"; // String | the key for the row
 let opts = { 
-  'body': null // {String: Object} | datatable row
+  'body': null, // {String: Object} | datatable row
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.putFlowsDatatableRow(datatableId, rowId, opts)
@@ -8176,6 +9322,7 @@ apiInstance.putFlowsDatatableRow(datatableId, rowId, opts)
  **datatableId** | **String** | id of datatable |  |
  **rowId** | **String** | the key for the row |  |
  **body** | **{String: Object}** | datatable row | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -8212,7 +9359,11 @@ let apiInstance = new platformClient.ArchitectApi();
 
 let body = {}; // Object | New LogLevel settings
 let opts = { 
-  'expand': ["expand_example"] // [String] | Expand instructions for the result
+  'expand': ["expand_example"], // [String] | Expand instructions for the result
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.putFlowsInstancesSettingsLoglevelsDefault(body, opts)
@@ -8232,6 +9383,7 @@ apiInstance.putFlowsInstancesSettingsLoglevelsDefault(body, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | New LogLevel settings |  |
  **expand** | **[String]** | Expand instructions for the result | [optional] <br />**Values**: logLevelCharacteristics.characteristics |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -8266,7 +9418,11 @@ let apiInstance = new platformClient.ArchitectApi();
 
 let milestoneId = "milestoneId_example"; // String | flow milestone ID
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.putFlowsMilestone(milestoneId, opts)
@@ -8286,6 +9442,7 @@ apiInstance.putFlowsMilestone(milestoneId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **milestoneId** | **String** | flow milestone ID |  |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -8322,7 +9479,11 @@ let apiInstance = new platformClient.ArchitectApi();
 
 let flowOutcomeId = "flowOutcomeId_example"; // String | flow outcome ID
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.putFlowsOutcome(flowOutcomeId, opts)
@@ -8342,10 +9503,11 @@ apiInstance.putFlowsOutcome(flowOutcomeId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **flowOutcomeId** | **String** | flow outcome ID |  |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **Operation**
 
 
-_purecloud-platform-client-v2@229.1.0_
+_purecloud-platform-client-v2@258.0.0_

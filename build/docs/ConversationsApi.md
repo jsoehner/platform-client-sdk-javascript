@@ -8,13 +8,18 @@ All URIs are relative to *https://api.mypurecloud.com*
 | ------------- | ------------- | ------------- |
 [**deleteAnalyticsConversationsAggregatesJob**](ConversationsApi#deleteAnalyticsConversationsAggregatesJob) | **DELETE** /api/v2/analytics/conversations/aggregates/jobs/{jobId} | Delete/cancel an async request for conversation aggregates
 [**deleteAnalyticsConversationsDetailsJob**](ConversationsApi#deleteAnalyticsConversationsDetailsJob) | **DELETE** /api/v2/analytics/conversations/details/jobs/{jobId} | Delete/cancel an async details job
+[**deleteConversation**](ConversationsApi#deleteConversation) | **DELETE** /api/v2/conversations/{conversationId} | Update a conversation by disconnecting all of the participants
+[**deleteConversationCustomattribute**](ConversationsApi#deleteConversationCustomattribute) | **DELETE** /api/v2/conversations/{conversationId}/customattributes/{attributesId} | Delete a custom attributes record.
 [**deleteConversationParticipantCode**](ConversationsApi#deleteConversationParticipantCode) | **DELETE** /api/v2/conversations/{conversationId}/participants/{participantId}/codes/{addCommunicationCode} | Delete a code used to add a communication to this participant
 [**deleteConversationParticipantFlaggedreason**](ConversationsApi#deleteConversationParticipantFlaggedreason) | **DELETE** /api/v2/conversations/{conversationId}/participants/{participantId}/flaggedreason | Remove flagged reason from conversation participant.
+[**deleteConversationsCallParticipantCommunicationPostflowaction**](ConversationsApi#deleteConversationsCallParticipantCommunicationPostflowaction) | **DELETE** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/postflowaction | Remove mandatory post call actions.
 [**deleteConversationsCallParticipantConsult**](ConversationsApi#deleteConversationsCallParticipantConsult) | **DELETE** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult | Cancel the transfer
 [**deleteConversationsEmailMessagesDraftAttachment**](ConversationsApi#deleteConversationsEmailMessagesDraftAttachment) | **DELETE** /api/v2/conversations/emails/{conversationId}/messages/draft/attachments/{attachmentId} | Delete attachment from draft
 [**deleteConversationsMessagesCachedmediaCachedMediaItemId**](ConversationsApi#deleteConversationsMessagesCachedmediaCachedMediaItemId) | **DELETE** /api/v2/conversations/messages/cachedmedia/{cachedMediaItemId} | Remove a cached media item asychronously
+[**deleteConversationsMessagingIntegrationsAppleIntegrationId**](ConversationsApi#deleteConversationsMessagingIntegrationsAppleIntegrationId) | **DELETE** /api/v2/conversations/messaging/integrations/apple/{integrationId} | Delete an Apple messaging integration
 [**deleteConversationsMessagingIntegrationsFacebookIntegrationId**](ConversationsApi#deleteConversationsMessagingIntegrationsFacebookIntegrationId) | **DELETE** /api/v2/conversations/messaging/integrations/facebook/{integrationId} | Delete a Facebook messaging integration
 [**deleteConversationsMessagingIntegrationsInstagramIntegrationId**](ConversationsApi#deleteConversationsMessagingIntegrationsInstagramIntegrationId) | **DELETE** /api/v2/conversations/messaging/integrations/instagram/{integrationId} | Delete Instagram messaging integration
+[**deleteConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId**](ConversationsApi#deleteConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId) | **DELETE** /api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile/{integrationId} | Delete an Open messaging integration with the Google Business Profile extension
 [**deleteConversationsMessagingIntegrationsOpenIntegrationId**](ConversationsApi#deleteConversationsMessagingIntegrationsOpenIntegrationId) | **DELETE** /api/v2/conversations/messaging/integrations/open/{integrationId} | Delete an Open messaging integration
 [**deleteConversationsMessagingIntegrationsTwitterIntegrationId**](ConversationsApi#deleteConversationsMessagingIntegrationsTwitterIntegrationId) | **DELETE** /api/v2/conversations/messaging/integrations/twitter/{integrationId} | Delete Twitter messaging integration
 [**deleteConversationsMessagingIntegrationsWhatsappIntegrationId**](ConversationsApi#deleteConversationsMessagingIntegrationsWhatsappIntegrationId) | **DELETE** /api/v2/conversations/messaging/integrations/whatsapp/{integrationId} | Delete a WhatsApp messaging integration
@@ -29,8 +34,15 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getAnalyticsConversationsDetailsJobResults**](ConversationsApi#getAnalyticsConversationsDetailsJobResults) | **GET** /api/v2/analytics/conversations/details/jobs/{jobId}/results | Fetch a page of results for an async details job
 [**getAnalyticsConversationsDetailsJobsAvailability**](ConversationsApi#getAnalyticsConversationsDetailsJobsAvailability) | **GET** /api/v2/analytics/conversations/details/jobs/availability | Lookup the datalake availability date and time
 [**getConversation**](ConversationsApi#getConversation) | **GET** /api/v2/conversations/{conversationId} | Get conversation
+[**getConversationAccessattributes**](ConversationsApi#getConversationAccessattributes) | **GET** /api/v2/conversations/{conversationId}/accessattributes | Get the access attributes on a conversation.
+[**getConversationAssistantCopilotcontext**](ConversationsApi#getConversationAssistantCopilotcontext) | **GET** /api/v2/conversations/{conversationId}/assistant/copilotcontext | Get copilot context values for a conversation.
+[**getConversationCommunicationAgentchecklist**](ConversationsApi#getConversationCommunicationAgentchecklist) | **GET** /api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/{agentChecklistId} | Get checklist info for a single checklist.
+[**getConversationCommunicationAgentchecklistJob**](ConversationsApi#getConversationCommunicationAgentchecklistJob) | **GET** /api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/{agentChecklistId}/jobs/{jobId} | Get inference job status
+[**getConversationCommunicationAgentchecklists**](ConversationsApi#getConversationCommunicationAgentchecklists) | **GET** /api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists | Get information of all checklists associated with a conversation.
 [**getConversationCommunicationInternalmessage**](ConversationsApi#getConversationCommunicationInternalmessage) | **GET** /api/v2/conversations/{conversationId}/communications/{communicationId}/internalmessages/{messageId} | Get message
 [**getConversationCommunicationInternalmessages**](ConversationsApi#getConversationCommunicationInternalmessages) | **GET** /api/v2/conversations/{conversationId}/communications/{communicationId}/internalmessages | Get messages for communication
+[**getConversationCustomattribute**](ConversationsApi#getConversationCustomattribute) | **GET** /api/v2/conversations/{conversationId}/customattributes/{attributesId} | Get custom attributes by id
+[**getConversationCustomattributes**](ConversationsApi#getConversationCustomattributes) | **GET** /api/v2/conversations/{conversationId}/customattributes | Get a list of custom attributes for a conversation.
 [**getConversationParticipantSecureivrsession**](ConversationsApi#getConversationParticipantSecureivrsession) | **GET** /api/v2/conversations/{conversationId}/participants/{participantId}/secureivrsessions/{secureSessionId} | Fetch info on a secure session
 [**getConversationParticipantSecureivrsessions**](ConversationsApi#getConversationParticipantSecureivrsessions) | **GET** /api/v2/conversations/{conversationId}/participants/{participantId}/secureivrsessions | Get a list of secure sessions for this participant.
 [**getConversationParticipantWrapup**](ConversationsApi#getConversationParticipantWrapup) | **GET** /api/v2/conversations/{conversationId}/participants/{participantId}/wrapup | Get the wrap-up for this conversation participant. 
@@ -48,8 +60,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getConversationsCallbackParticipantCommunicationWrapup**](ConversationsApi#getConversationsCallbackParticipantCommunicationWrapup) | **GET** /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup | Get the wrap-up for this conversation communication. 
 [**getConversationsCallbackParticipantWrapup**](ConversationsApi#getConversationsCallbackParticipantWrapup) | **GET** /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/wrapup | Get the wrap-up for this conversation participant. 
 [**getConversationsCallbackParticipantWrapupcodes**](ConversationsApi#getConversationsCallbackParticipantWrapupcodes) | **GET** /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/wrapupcodes | Get list of wrapup codes for this conversation participant
-[**getConversationsCallbacks**](ConversationsApi#getConversationsCallbacks) | **GET** /api/v2/conversations/callbacks | Get active callback conversations for the logged in user
-[**getConversationsCalls**](ConversationsApi#getConversationsCalls) | **GET** /api/v2/conversations/calls | Get active call conversations for the logged in user
+[**getConversationsCallbacks**](ConversationsApi#getConversationsCallbacks) | **GET** /api/v2/conversations/callbacks | Get the logged-in user's active conversations and their Callback participants state.
+[**getConversationsCalls**](ConversationsApi#getConversationsCalls) | **GET** /api/v2/conversations/calls | Get the logged-in user's active conversations and their Call participants state.
 [**getConversationsCallsHistory**](ConversationsApi#getConversationsCallsHistory) | **GET** /api/v2/conversations/calls/history | Get call history
 [**getConversationsCallsMaximumconferenceparties**](ConversationsApi#getConversationsCallsMaximumconferenceparties) | **GET** /api/v2/conversations/calls/maximumconferenceparties | Get the maximum number of participants that this user can have on a conference
 [**getConversationsChat**](ConversationsApi#getConversationsChat) | **GET** /api/v2/conversations/chats/{conversationId} | Get chat conversation
@@ -64,6 +76,13 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getConversationsCobrowsesessionParticipantWrapup**](ConversationsApi#getConversationsCobrowsesessionParticipantWrapup) | **GET** /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/wrapup | Get the wrap-up for this conversation participant. 
 [**getConversationsCobrowsesessionParticipantWrapupcodes**](ConversationsApi#getConversationsCobrowsesessionParticipantWrapupcodes) | **GET** /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/wrapupcodes | Get list of wrapup codes for this conversation participant
 [**getConversationsCobrowsesessions**](ConversationsApi#getConversationsCobrowsesessions) | **GET** /api/v2/conversations/cobrowsesessions | Get active cobrowse conversations for the logged in user
+[**getConversationsCustomattributesSchema**](ConversationsApi#getConversationsCustomattributesSchema) | **GET** /api/v2/conversations/customattributes/schemas/{schemaId} | Get a schema
+[**getConversationsCustomattributesSchemaVersion**](ConversationsApi#getConversationsCustomattributesSchemaVersion) | **GET** /api/v2/conversations/customattributes/schemas/{schemaId}/versions/{versionId} | Get a specific version of a schema
+[**getConversationsCustomattributesSchemaVersions**](ConversationsApi#getConversationsCustomattributesSchemaVersions) | **GET** /api/v2/conversations/customattributes/schemas/{schemaId}/versions | Get all versions of a CCA schema
+[**getConversationsCustomattributesSchemas**](ConversationsApi#getConversationsCustomattributesSchemas) | **GET** /api/v2/conversations/customattributes/schemas | Get a list of schemas.
+[**getConversationsCustomattributesSchemasCoretype**](ConversationsApi#getConversationsCustomattributesSchemasCoretype) | **GET** /api/v2/conversations/customattributes/schemas/coretypes/{coreTypeName} | Get the core types from which all schemas are built.
+[**getConversationsCustomattributesSchemasCoretypes**](ConversationsApi#getConversationsCustomattributesSchemasCoretypes) | **GET** /api/v2/conversations/customattributes/schemas/coretypes | Get the list of core types enabled for a specific namespace.
+[**getConversationsCustomattributesSchemasLimits**](ConversationsApi#getConversationsCustomattributesSchemasLimits) | **GET** /api/v2/conversations/customattributes/schemas/limits | Get quantitative limits on schemas
 [**getConversationsEmail**](ConversationsApi#getConversationsEmail) | **GET** /api/v2/conversations/emails/{conversationId} | Get email conversation
 [**getConversationsEmailMessage**](ConversationsApi#getConversationsEmailMessage) | **GET** /api/v2/conversations/emails/{conversationId}/messages/{messageId} | Get conversation message
 [**getConversationsEmailMessages**](ConversationsApi#getConversationsEmailMessages) | **GET** /api/v2/conversations/emails/{conversationId}/messages | Get conversation messages
@@ -72,19 +91,20 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getConversationsEmailParticipantWrapup**](ConversationsApi#getConversationsEmailParticipantWrapup) | **GET** /api/v2/conversations/emails/{conversationId}/participants/{participantId}/wrapup | Get the wrap-up for this conversation participant. 
 [**getConversationsEmailParticipantWrapupcodes**](ConversationsApi#getConversationsEmailParticipantWrapupcodes) | **GET** /api/v2/conversations/emails/{conversationId}/participants/{participantId}/wrapupcodes | Get list of wrapup codes for this conversation participant
 [**getConversationsEmailSettings**](ConversationsApi#getConversationsEmailSettings) | **GET** /api/v2/conversations/emails/{conversationId}/settings | Get emails settings for a given conversation
-[**getConversationsEmails**](ConversationsApi#getConversationsEmails) | **GET** /api/v2/conversations/emails | Get active email conversations for the logged in user
+[**getConversationsEmails**](ConversationsApi#getConversationsEmails) | **GET** /api/v2/conversations/emails | Get the logged-in user's active conversations and their Email participants state.
 [**getConversationsInternalmessage**](ConversationsApi#getConversationsInternalmessage) | **GET** /api/v2/conversations/internalmessages/{conversationId} | Get internal message conversation
-[**getConversationsInternalmessages**](ConversationsApi#getConversationsInternalmessages) | **GET** /api/v2/conversations/internalmessages | Get active internal message conversations for the logged in user
+[**getConversationsInternalmessages**](ConversationsApi#getConversationsInternalmessages) | **GET** /api/v2/conversations/internalmessages | Get the logged-in user's active conversations and their InternalMessage participants state.
 [**getConversationsKeyconfiguration**](ConversationsApi#getConversationsKeyconfiguration) | **GET** /api/v2/conversations/keyconfigurations/{keyconfigurationsId} | Get the encryption key configurations
 [**getConversationsKeyconfigurations**](ConversationsApi#getConversationsKeyconfigurations) | **GET** /api/v2/conversations/keyconfigurations | Get a list of key configurations data
 [**getConversationsMessage**](ConversationsApi#getConversationsMessage) | **GET** /api/v2/conversations/messages/{conversationId} | Get message conversation
+[**getConversationsMessageCommunicationMessagesMedia**](ConversationsApi#getConversationsMessageCommunicationMessagesMedia) | **GET** /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media | Get message media list by status
 [**getConversationsMessageCommunicationMessagesMediaMediaId**](ConversationsApi#getConversationsMessageCommunicationMessagesMediaMediaId) | **GET** /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media/{mediaId} | Get media
 [**getConversationsMessageDetails**](ConversationsApi#getConversationsMessageDetails) | **GET** /api/v2/conversations/messages/{messageId}/details | Get message
 [**getConversationsMessageMessage**](ConversationsApi#getConversationsMessageMessage) | **GET** /api/v2/conversations/messages/{conversationId}/messages/{messageId} | Get conversation message
 [**getConversationsMessageParticipantCommunicationWrapup**](ConversationsApi#getConversationsMessageParticipantCommunicationWrapup) | **GET** /api/v2/conversations/messages/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup | Get the wrap-up for this conversation communication. 
 [**getConversationsMessageParticipantWrapup**](ConversationsApi#getConversationsMessageParticipantWrapup) | **GET** /api/v2/conversations/messages/{conversationId}/participants/{participantId}/wrapup | Get the wrap-up for this conversation participant. 
 [**getConversationsMessageParticipantWrapupcodes**](ConversationsApi#getConversationsMessageParticipantWrapupcodes) | **GET** /api/v2/conversations/messages/{conversationId}/participants/{participantId}/wrapupcodes | Get list of wrapup codes for this conversation participant
-[**getConversationsMessages**](ConversationsApi#getConversationsMessages) | **GET** /api/v2/conversations/messages | Get active message conversations for the logged in user
+[**getConversationsMessages**](ConversationsApi#getConversationsMessages) | **GET** /api/v2/conversations/messages | Get the logged-in user's active conversations and their Message participants state.
 [**getConversationsMessagesCachedmedia**](ConversationsApi#getConversationsMessagesCachedmedia) | **GET** /api/v2/conversations/messages/cachedmedia | Get a list of cached media items
 [**getConversationsMessagesCachedmediaCachedMediaItemId**](ConversationsApi#getConversationsMessagesCachedmediaCachedMediaItemId) | **GET** /api/v2/conversations/messages/cachedmedia/{cachedMediaItemId} | Get a cached media item
 [**getConversationsMessagingFacebookApp**](ConversationsApi#getConversationsMessagingFacebookApp) | **GET** /api/v2/conversations/messaging/facebook/app | Get Genesys Facebook App Id
@@ -97,17 +117,24 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId**](ConversationsApi#getConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId) | **GET** /api/v2/conversations/messaging/identityresolution/integrations/whatsapp/{integrationId} | Get a whatsApp integration Identity Resolution settings
 [**getConversationsMessagingIntegrationTwitterOauthSettings**](ConversationsApi#getConversationsMessagingIntegrationTwitterOauthSettings) | **GET** /api/v2/conversations/messaging/integrations/{integrationId}/twitter/oauth/settings | Get twitter oauth settings to patch an integration
 [**getConversationsMessagingIntegrations**](ConversationsApi#getConversationsMessagingIntegrations) | **GET** /api/v2/conversations/messaging/integrations | Get a list of Integrations
+[**getConversationsMessagingIntegrationsApple**](ConversationsApi#getConversationsMessagingIntegrationsApple) | **GET** /api/v2/conversations/messaging/integrations/apple | Get a list of Apple Integrations
+[**getConversationsMessagingIntegrationsAppleIntegrationId**](ConversationsApi#getConversationsMessagingIntegrationsAppleIntegrationId) | **GET** /api/v2/conversations/messaging/integrations/apple/{integrationId} | Get an Apple messaging integration
 [**getConversationsMessagingIntegrationsFacebook**](ConversationsApi#getConversationsMessagingIntegrationsFacebook) | **GET** /api/v2/conversations/messaging/integrations/facebook | Get a list of Facebook Integrations
 [**getConversationsMessagingIntegrationsFacebookIntegrationId**](ConversationsApi#getConversationsMessagingIntegrationsFacebookIntegrationId) | **GET** /api/v2/conversations/messaging/integrations/facebook/{integrationId} | Get a Facebook messaging integration
 [**getConversationsMessagingIntegrationsInstagram**](ConversationsApi#getConversationsMessagingIntegrationsInstagram) | **GET** /api/v2/conversations/messaging/integrations/instagram | Get a list of Instagram Integrations
 [**getConversationsMessagingIntegrationsInstagramIntegrationId**](ConversationsApi#getConversationsMessagingIntegrationsInstagramIntegrationId) | **GET** /api/v2/conversations/messaging/integrations/instagram/{integrationId} | Get Instagram messaging integration
 [**getConversationsMessagingIntegrationsOpen**](ConversationsApi#getConversationsMessagingIntegrationsOpen) | **GET** /api/v2/conversations/messaging/integrations/open | Get a list of Open messaging integrations
+[**getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId**](ConversationsApi#getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId) | **GET** /api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile/{integrationId} | Get an Open messaging integration with the Google Business Profile extension
+[**getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileOauthSettings**](ConversationsApi#getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileOauthSettings) | **GET** /api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile/oauth/settings | Get Google Business Profile OAuth 2 settings
+[**getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileToken**](ConversationsApi#getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileToken) | **GET** /api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile/tokens/{tokenId} | Get a Google Auth Token
+[**getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokenAccounts**](ConversationsApi#getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokenAccounts) | **GET** /api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile/tokens/{tokenId}/accounts | Get Google Business Profile accounts
 [**getConversationsMessagingIntegrationsOpenIntegrationId**](ConversationsApi#getConversationsMessagingIntegrationsOpenIntegrationId) | **GET** /api/v2/conversations/messaging/integrations/open/{integrationId} | Get an Open messaging integration
 [**getConversationsMessagingIntegrationsTwitter**](ConversationsApi#getConversationsMessagingIntegrationsTwitter) | **GET** /api/v2/conversations/messaging/integrations/twitter | Get a list of Twitter Integrations
 [**getConversationsMessagingIntegrationsTwitterIntegrationId**](ConversationsApi#getConversationsMessagingIntegrationsTwitterIntegrationId) | **GET** /api/v2/conversations/messaging/integrations/twitter/{integrationId} | Get Twitter messaging integration
 [**getConversationsMessagingIntegrationsTwitterOauthSettings**](ConversationsApi#getConversationsMessagingIntegrationsTwitterOauthSettings) | **GET** /api/v2/conversations/messaging/integrations/twitter/oauth/settings | Get twitter oauth settings
 [**getConversationsMessagingIntegrationsWhatsapp**](ConversationsApi#getConversationsMessagingIntegrationsWhatsapp) | **GET** /api/v2/conversations/messaging/integrations/whatsapp | Get a list of WhatsApp Integrations
 [**getConversationsMessagingIntegrationsWhatsappIntegrationId**](ConversationsApi#getConversationsMessagingIntegrationsWhatsappIntegrationId) | **GET** /api/v2/conversations/messaging/integrations/whatsapp/{integrationId} | Get a WhatsApp messaging integration
+[**getConversationsMessagingOauthAppleCallback**](ConversationsApi#getConversationsMessagingOauthAppleCallback) | **GET** /api/v2/conversations/messaging/oauth/apple/callback | Call Authentication provider callback to validate state and code
 [**getConversationsMessagingSetting**](ConversationsApi#getConversationsMessagingSetting) | **GET** /api/v2/conversations/messaging/settings/{messageSettingId} | Get a messaging setting
 [**getConversationsMessagingSettings**](ConversationsApi#getConversationsMessagingSettings) | **GET** /api/v2/conversations/messaging/settings | Get a list of messaging settings
 [**getConversationsMessagingSettingsDefault**](ConversationsApi#getConversationsMessagingSettingsDefault) | **GET** /api/v2/conversations/messaging/settings/default | Get the organization's default settings that will be used as the default when creating an integration.
@@ -121,18 +148,25 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getConversationsVideoDetails**](ConversationsApi#getConversationsVideoDetails) | **GET** /api/v2/conversations/videos/{conferenceId}/details | Get video conference details (e.g. the current number of active participants).
 [**getConversationsVideoParticipantCommunicationWrapup**](ConversationsApi#getConversationsVideoParticipantCommunicationWrapup) | **GET** /api/v2/conversations/videos/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup | Get the wrap-up for this conversation communication. 
 [**getConversationsVideosMeeting**](ConversationsApi#getConversationsVideosMeeting) | **GET** /api/v2/conversations/videos/meetings/{meetingId} | Gets a record for a given meetingId
+[**patchConversationCustomattributes**](ConversationsApi#patchConversationCustomattributes) | **PATCH** /api/v2/conversations/{conversationId}/customattributes | Update a single custom attributes record by amending the data with only the provided fields.
+[**patchConversationCustomattributesBulk**](ConversationsApi#patchConversationCustomattributesBulk) | **PATCH** /api/v2/conversations/{conversationId}/customattributes/bulk | Update a list of custom attributes record by amending the data with only the provided fields.
 [**patchConversationParticipant**](ConversationsApi#patchConversationParticipant) | **PATCH** /api/v2/conversations/{conversationId}/participants/{participantId} | Update a participant.
 [**patchConversationParticipantAttributes**](ConversationsApi#patchConversationParticipantAttributes) | **PATCH** /api/v2/conversations/{conversationId}/participants/{participantId}/attributes | Update the attributes on a conversation participant.
+[**patchConversationRecordingstate**](ConversationsApi#patchConversationRecordingstate) | **PATCH** /api/v2/conversations/{conversationId}/recordingstate | Update a conversation by setting its recording state
 [**patchConversationSecureattributes**](ConversationsApi#patchConversationSecureattributes) | **PATCH** /api/v2/conversations/{conversationId}/secureattributes | Update the secure attributes on a conversation.
+[**patchConversationSuggestion**](ConversationsApi#patchConversationSuggestion) | **PATCH** /api/v2/conversations/{conversationId}/suggestions/{suggestionId} | Update a suggestion.
 [**patchConversationSummaryEngagements**](ConversationsApi#patchConversationSummaryEngagements) | **PATCH** /api/v2/conversations/{conversationId}/summaries/{summaryId}/engagements | Update agent's engagement for the summary.
 [**patchConversationSummaryFeedback**](ConversationsApi#patchConversationSummaryFeedback) | **PATCH** /api/v2/conversations/{conversationId}/summaries/{summaryId}/feedback | Update the feedback for the summary.
 [**patchConversationUtilizationlabel**](ConversationsApi#patchConversationUtilizationlabel) | **PATCH** /api/v2/conversations/{conversationId}/utilizationlabel | Update the utilization label on a conversation. When there is no value provided, the system default label is applied
 [**patchConversationsAftercallworkConversationIdParticipantCommunication**](ConversationsApi#patchConversationsAftercallworkConversationIdParticipantCommunication) | **PATCH** /api/v2/conversations/aftercallwork/{conversationId}/participants/{participantId}/communications/{communicationId} | Update after-call work for this conversation communication.
 [**patchConversationsCall**](ConversationsApi#patchConversationsCall) | **PATCH** /api/v2/conversations/calls/{conversationId} | Update a conversation by setting its recording state, merging in other conversations to create a conference, or disconnecting all of the participants
+[**patchConversationsCallConference**](ConversationsApi#patchConversationsCallConference) | **PATCH** /api/v2/conversations/calls/{conversationId}/conference | Update a conversation by merging in other conversations to create a conference
 [**patchConversationsCallParticipant**](ConversationsApi#patchConversationsCallParticipant) | **PATCH** /api/v2/conversations/calls/{conversationId}/participants/{participantId} | Update conversation participant
 [**patchConversationsCallParticipantAttributes**](ConversationsApi#patchConversationsCallParticipantAttributes) | **PATCH** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/attributes | Update the attributes on a conversation participant.
 [**patchConversationsCallParticipantCommunication**](ConversationsApi#patchConversationsCallParticipantCommunication) | **PATCH** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId} | Update conversation participant's communication by disconnecting it. This endpoint does not update wrapup.
+[**patchConversationsCallParticipantCommunicationPostflowaction**](ConversationsApi#patchConversationsCallParticipantCommunicationPostflowaction) | **PATCH** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/postflowaction | Set mandatory post call actions.  If both values are null or blank error will occur.
 [**patchConversationsCallParticipantConsult**](ConversationsApi#patchConversationsCallParticipantConsult) | **PATCH** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult | Change who can speak
+[**patchConversationsCallParticipantUserUserId**](ConversationsApi#patchConversationsCallParticipantUserUserId) | **PATCH** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/user/{userId} | Update conversation participant on behalf of a user
 [**patchConversationsCallback**](ConversationsApi#patchConversationsCallback) | **PATCH** /api/v2/conversations/callbacks/{conversationId} | Update a conversation by disconnecting all of the participants
 [**patchConversationsCallbackParticipant**](ConversationsApi#patchConversationsCallbackParticipant) | **PATCH** /api/v2/conversations/callbacks/{conversationId}/participants/{participantId} | Update conversation participant
 [**patchConversationsCallbackParticipantAttributes**](ConversationsApi#patchConversationsCallbackParticipantAttributes) | **PATCH** /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/attributes | Update the attributes on a conversation participant.
@@ -156,8 +190,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**patchConversationsMessageParticipant**](ConversationsApi#patchConversationsMessageParticipant) | **PATCH** /api/v2/conversations/messages/{conversationId}/participants/{participantId} | Update conversation participant
 [**patchConversationsMessageParticipantAttributes**](ConversationsApi#patchConversationsMessageParticipantAttributes) | **PATCH** /api/v2/conversations/messages/{conversationId}/participants/{participantId}/attributes | Update the attributes on a conversation participant.
 [**patchConversationsMessageParticipantCommunication**](ConversationsApi#patchConversationsMessageParticipantCommunication) | **PATCH** /api/v2/conversations/messages/{conversationId}/participants/{participantId}/communications/{communicationId} | Update conversation participant's communication by disconnecting it. This endpoint does not update wrapup.
+[**patchConversationsMessageParticipantParkingstate**](ConversationsApi#patchConversationsMessageParticipantParkingstate) | **PATCH** /api/v2/conversations/messages/{conversationId}/participants/{participantId}/parkingstate | Update conversation by setting its parking state
+[**patchConversationsMessagingIntegrationsAppleIntegrationId**](ConversationsApi#patchConversationsMessagingIntegrationsAppleIntegrationId) | **PATCH** /api/v2/conversations/messaging/integrations/apple/{integrationId} | Update an Apple messaging integration
 [**patchConversationsMessagingIntegrationsFacebookIntegrationId**](ConversationsApi#patchConversationsMessagingIntegrationsFacebookIntegrationId) | **PATCH** /api/v2/conversations/messaging/integrations/facebook/{integrationId} | Update Facebook messaging integration
 [**patchConversationsMessagingIntegrationsInstagramIntegrationId**](ConversationsApi#patchConversationsMessagingIntegrationsInstagramIntegrationId) | **PATCH** /api/v2/conversations/messaging/integrations/instagram/{integrationId} | Update Instagram messaging integration
+[**patchConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId**](ConversationsApi#patchConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId) | **PATCH** /api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile/{integrationId} | Update an Open messaging integration with the Google Business Profile extension
 [**patchConversationsMessagingIntegrationsOpenIntegrationId**](ConversationsApi#patchConversationsMessagingIntegrationsOpenIntegrationId) | **PATCH** /api/v2/conversations/messaging/integrations/open/{integrationId} | Update an Open messaging integration
 [**patchConversationsMessagingIntegrationsTwitterIntegrationId**](ConversationsApi#patchConversationsMessagingIntegrationsTwitterIntegrationId) | **PATCH** /api/v2/conversations/messaging/integrations/twitter/{integrationId} | Update a Twitter messaging integration
 [**patchConversationsMessagingIntegrationsWhatsappEmbeddedsignupIntegrationId**](ConversationsApi#patchConversationsMessagingIntegrationsWhatsappEmbeddedsignupIntegrationId) | **PATCH** /api/v2/conversations/messaging/integrations/whatsapp/embeddedsignup/{integrationId} | Activate a WhatsApp messaging integration created using the WhatsApp embedded signup flow
@@ -174,15 +211,19 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postConversationAssign**](ConversationsApi#postConversationAssign) | **POST** /api/v2/conversations/{conversationId}/assign | Attempts to manually assign a specified conversation to a specified user.  Ignores bullseye ring, PAR score, skills, and languages.
 [**postConversationBarge**](ConversationsApi#postConversationBarge) | **POST** /api/v2/conversations/{conversationId}/barge | Barge a conversation creating a barged in conference of connected participants.
 [**postConversationCobrowse**](ConversationsApi#postConversationCobrowse) | **POST** /api/v2/conversations/{conversationId}/cobrowse | Creates a cobrowse session. Requires conversation:cobrowse:add (for web messaging) or conversation:cobrowsevoice:add permission.
+[**postConversationCommunicationAgentchecklist**](ConversationsApi#postConversationCommunicationAgentchecklist) | **POST** /api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/{agentChecklistId} | Agent Checklist activation API
+[**postConversationCommunicationAgentchecklistAgentaction**](ConversationsApi#postConversationCommunicationAgentchecklistAgentaction) | **POST** /api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/{agentChecklistId}/agentaction | API invoked to capture an agent action.
+[**postConversationCommunicationAgentchecklistJobs**](ConversationsApi#postConversationCommunicationAgentchecklistJobs) | **POST** /api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/{agentChecklistId}/jobs | Create inference job
+[**postConversationCommunicationAgentchecklistsFinalize**](ConversationsApi#postConversationCommunicationAgentchecklistsFinalize) | **POST** /api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/finalize | API invoked to finalize agent checklist evaluation.
 [**postConversationCommunicationInternalmessages**](ConversationsApi#postConversationCommunicationInternalmessages) | **POST** /api/v2/conversations/{conversationId}/communications/{communicationId}/internalmessages | Send internal message
 [**postConversationDisconnect**](ConversationsApi#postConversationDisconnect) | **POST** /api/v2/conversations/{conversationId}/disconnect | Performs a full conversation teardown. Issues disconnect requests for any connected media. Applies a system wrap-up code to any participants that are pending wrap-up. This is not intended to be the normal way of ending interactions but is available in the event of problems with the application to allow a resynchronization of state across all components. It is recommended that users submit a support case if they are relying on this endpoint systematically as there is likely something that needs investigation.
 [**postConversationParticipantCallbacks**](ConversationsApi#postConversationParticipantCallbacks) | **POST** /api/v2/conversations/{conversationId}/participants/{participantId}/callbacks | Create a new callback for the specified participant on the conversation.
 [**postConversationParticipantDigits**](ConversationsApi#postConversationParticipantDigits) | **POST** /api/v2/conversations/{conversationId}/participants/{participantId}/digits | Sends DTMF to the participant
 [**postConversationParticipantInternalmessagesUsersCommunications**](ConversationsApi#postConversationParticipantInternalmessagesUsersCommunications) | **POST** /api/v2/conversations/{conversationId}/participants/{participantId}/internalmessages/users/communications | Setup internal message communication with user
-[**postConversationParticipantReplace**](ConversationsApi#postConversationParticipantReplace) | **POST** /api/v2/conversations/{conversationId}/participants/{participantId}/replace | Replace this participant with the specified user and/or address
+[**postConversationParticipantReplace**](ConversationsApi#postConversationParticipantReplace) | **POST** /api/v2/conversations/{conversationId}/participants/{participantId}/replace | Replace this participant (Deprecated)
 [**postConversationParticipantReplaceAgent**](ConversationsApi#postConversationParticipantReplaceAgent) | **POST** /api/v2/conversations/{conversationId}/participants/{participantId}/replace/agent | Replace this participant with the specified agent
 [**postConversationParticipantReplaceContactExternal**](ConversationsApi#postConversationParticipantReplaceContactExternal) | **POST** /api/v2/conversations/{conversationId}/participants/{participantId}/replace/contact/external | Replace this participant with the an external contact
-[**postConversationParticipantReplaceExternal**](ConversationsApi#postConversationParticipantReplaceExternal) | **POST** /api/v2/conversations/{conversationId}/participants/{participantId}/replace/external | Replace this participant with the an external contact
+[**postConversationParticipantReplaceExternal**](ConversationsApi#postConversationParticipantReplaceExternal) | **POST** /api/v2/conversations/{conversationId}/participants/{participantId}/replace/external | Replace this participant with the an external contact (Deprecated)
 [**postConversationParticipantReplaceQueue**](ConversationsApi#postConversationParticipantReplaceQueue) | **POST** /api/v2/conversations/{conversationId}/participants/{participantId}/replace/queue | Replace this participant with the specified queue
 [**postConversationParticipantSecureivrsessions**](ConversationsApi#postConversationParticipantSecureivrsessions) | **POST** /api/v2/conversations/{conversationId}/participants/{participantId}/secureivrsessions | Create secure IVR session. Only a participant in the conversation can invoke a secure IVR.
 [**postConversationParticipantTransfer**](ConversationsApi#postConversationParticipantTransfer) | **POST** /api/v2/conversations/{conversationId}/participants/{participantId}/transfer | Replace this participant by another one using the address of the destination.
@@ -192,22 +233,26 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postConversationsCall**](ConversationsApi#postConversationsCall) | **POST** /api/v2/conversations/calls/{conversationId} | Place a new call as part of a callback conversation.
 [**postConversationsCallParticipantBarge**](ConversationsApi#postConversationsCallParticipantBarge) | **POST** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/barge | Barge a given participant's call creating a barged in conference of connected participants.
 [**postConversationsCallParticipantCoach**](ConversationsApi#postConversationsCallParticipantCoach) | **POST** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/coach | Listen in on the conversation from the point of view of a given participant while speaking to just the given participant.
+[**postConversationsCallParticipantCommunicationSummaries**](ConversationsApi#postConversationsCallParticipantCommunicationSummaries) | **POST** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/summaries | Request an on-demand summary for a call communication.
 [**postConversationsCallParticipantCommunicationWrapup**](ConversationsApi#postConversationsCallParticipantCommunicationWrapup) | **POST** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup | Apply wrap-up for this conversation communication
-[**postConversationsCallParticipantConsult**](ConversationsApi#postConversationsCallParticipantConsult) | **POST** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult | Initiate and update consult transfer
+[**postConversationsCallParticipantConsult**](ConversationsApi#postConversationsCallParticipantConsult) | **POST** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult | Initiate and update consult transfer (Deprecated)
 [**postConversationsCallParticipantConsultAgent**](ConversationsApi#postConversationsCallParticipantConsultAgent) | **POST** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult/agent | Initiate a consult transfer to an agent
 [**postConversationsCallParticipantConsultContactExternal**](ConversationsApi#postConversationsCallParticipantConsultContactExternal) | **POST** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult/contact/external | Initiate a consult transfer to an external contact
-[**postConversationsCallParticipantConsultExternal**](ConversationsApi#postConversationsCallParticipantConsultExternal) | **POST** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult/external | Initiate a consult transfer to an external contact
+[**postConversationsCallParticipantConsultExternal**](ConversationsApi#postConversationsCallParticipantConsultExternal) | **POST** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult/external | Initiate a consult transfer to an external contact (Deprecated)
 [**postConversationsCallParticipantConsultQueue**](ConversationsApi#postConversationsCallParticipantConsultQueue) | **POST** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult/queue | Initiate a consult transfer to a queue
 [**postConversationsCallParticipantMonitor**](ConversationsApi#postConversationsCallParticipantMonitor) | **POST** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/monitor | Listen in on the conversation from the point of view of a given participant.
 [**postConversationsCallParticipantReplace**](ConversationsApi#postConversationsCallParticipantReplace) | **POST** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/replace | Replace this participant with the specified user and/or address
+[**postConversationsCallParticipantSnippetRecord**](ConversationsApi#postConversationsCallParticipantSnippetRecord) | **POST** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/snippet/record | Start/stop the snippet recording for a participant
 [**postConversationsCallParticipantVoiceConsult**](ConversationsApi#postConversationsCallParticipantVoiceConsult) | **POST** /api/v2/conversations/calls/{conversationId}/participants/{participantId}/voice/consult | Initiate voice consult transfer
 [**postConversationsCallParticipants**](ConversationsApi#postConversationsCallParticipants) | **POST** /api/v2/conversations/calls/{conversationId}/participants | Add participants to a conversation
+[**postConversationsCallParticipantsUserUserId**](ConversationsApi#postConversationsCallParticipantsUserUserId) | **POST** /api/v2/conversations/calls/{conversationId}/participants/user/{userId} | Add participants to a conversation on behalf of a user
 [**postConversationsCallbackParticipantCommunicationWrapup**](ConversationsApi#postConversationsCallbackParticipantCommunicationWrapup) | **POST** /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup | Apply wrap-up for this conversation communication
 [**postConversationsCallbackParticipantReplace**](ConversationsApi#postConversationsCallbackParticipantReplace) | **POST** /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/replace | Replace this participant with the specified user and/or address
 [**postConversationsCallbacks**](ConversationsApi#postConversationsCallbacks) | **POST** /api/v2/conversations/callbacks | Create a Callback
 [**postConversationsCallbacksBulkDisconnect**](ConversationsApi#postConversationsCallbacksBulkDisconnect) | **POST** /api/v2/conversations/callbacks/bulk/disconnect | Disconnect multiple scheduled callbacks
 [**postConversationsCallbacksBulkUpdate**](ConversationsApi#postConversationsCallbacksBulkUpdate) | **POST** /api/v2/conversations/callbacks/bulk/update | Update multiple scheduled callbacks
 [**postConversationsCalls**](ConversationsApi#postConversationsCalls) | **POST** /api/v2/conversations/calls | Create a call conversation
+[**postConversationsCallsUserUserId**](ConversationsApi#postConversationsCallsUserUserId) | **POST** /api/v2/conversations/calls/user/{userId} | Create a call conversation on behalf of a user
 [**postConversationsChatCommunicationMessages**](ConversationsApi#postConversationsChatCommunicationMessages) | **POST** /api/v2/conversations/chats/{conversationId}/communications/{communicationId}/messages | Send a message on behalf of a communication in a chat conversation.
 [**postConversationsChatCommunicationTyping**](ConversationsApi#postConversationsChatCommunicationTyping) | **POST** /api/v2/conversations/chats/{conversationId}/communications/{communicationId}/typing | Send a typing-indicator on behalf of a communication in a chat conversation.
 [**postConversationsChatParticipantCommunicationWrapup**](ConversationsApi#postConversationsChatParticipantCommunicationWrapup) | **POST** /api/v2/conversations/chats/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup | Apply wrap-up for this conversation communication
@@ -215,9 +260,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postConversationsChats**](ConversationsApi#postConversationsChats) | **POST** /api/v2/conversations/chats | Create a web chat conversation
 [**postConversationsCobrowsesessionParticipantCommunicationWrapup**](ConversationsApi#postConversationsCobrowsesessionParticipantCommunicationWrapup) | **POST** /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup | Apply wrap-up for this conversation communication
 [**postConversationsCobrowsesessionParticipantReplace**](ConversationsApi#postConversationsCobrowsesessionParticipantReplace) | **POST** /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/replace | Replace this participant with the specified user and/or address
+[**postConversationsCustomattributesSchemas**](ConversationsApi#postConversationsCustomattributesSchemas) | **POST** /api/v2/conversations/customattributes/schemas | Create a schema
+[**postConversationsCustomattributesSearch**](ConversationsApi#postConversationsCustomattributesSearch) | **POST** /api/v2/conversations/customattributes/search | Search resources.
 [**postConversationsEmailInboundmessages**](ConversationsApi#postConversationsEmailInboundmessages) | **POST** /api/v2/conversations/emails/{conversationId}/inboundmessages | Send an email to an external conversation. An external conversation is one where the provider is not PureCloud based. This endpoint allows the sender of the external email to reply or send a new message to the existing conversation. The new message will be treated as part of the existing conversation and chained to it.
 [**postConversationsEmailMessages**](ConversationsApi#postConversationsEmailMessages) | **POST** /api/v2/conversations/emails/{conversationId}/messages | Send an email reply
 [**postConversationsEmailMessagesDraftAttachmentsCopy**](ConversationsApi#postConversationsEmailMessagesDraftAttachmentsCopy) | **POST** /api/v2/conversations/emails/{conversationId}/messages/draft/attachments/copy | Copy attachments from an email message to the current draft.
+[**postConversationsEmailMessagesDraftAttachmentsUploads**](ConversationsApi#postConversationsEmailMessagesDraftAttachmentsUploads) | **POST** /api/v2/conversations/emails/{conversationId}/messages/draft/attachments/uploads | Create a URL to upload a message attachment file
 [**postConversationsEmailParticipantCommunicationWrapup**](ConversationsApi#postConversationsEmailParticipantCommunicationWrapup) | **POST** /api/v2/conversations/emails/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup | Apply wrap-up for this conversation communication
 [**postConversationsEmailParticipantReplace**](ConversationsApi#postConversationsEmailParticipantReplace) | **POST** /api/v2/conversations/emails/{conversationId}/participants/{participantId}/replace | Replace this participant with the specified user and/or address
 [**postConversationsEmailReconnect**](ConversationsApi#postConversationsEmailReconnect) | **POST** /api/v2/conversations/emails/{conversationId}/reconnect | Reconnect the user to the most recently disconnected customer on a fully disconnected email conversation
@@ -236,15 +284,19 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postConversationsMessageInboundOpenReceipt**](ConversationsApi#postConversationsMessageInboundOpenReceipt) | **POST** /api/v2/conversations/messages/{integrationId}/inbound/open/receipt | Send an inbound Open Receipt Message
 [**postConversationsMessageInboundOpenStructuredResponse**](ConversationsApi#postConversationsMessageInboundOpenStructuredResponse) | **POST** /api/v2/conversations/messages/{integrationId}/inbound/open/structured/response | Send inbound Open Response
 [**postConversationsMessageMessagesBulk**](ConversationsApi#postConversationsMessageMessagesBulk) | **POST** /api/v2/conversations/messages/{conversationId}/messages/bulk | Get messages in batch
+[**postConversationsMessageParticipantCommunicationSummaries**](ConversationsApi#postConversationsMessageParticipantCommunicationSummaries) | **POST** /api/v2/conversations/messages/{conversationId}/participants/{participantId}/communications/{communicationId}/summaries | Request an on-demand summary for a message communication.
 [**postConversationsMessageParticipantCommunicationWrapup**](ConversationsApi#postConversationsMessageParticipantCommunicationWrapup) | **POST** /api/v2/conversations/messages/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup | Apply wrap-up for this conversation communication
 [**postConversationsMessageParticipantMonitor**](ConversationsApi#postConversationsMessageParticipantMonitor) | **POST** /api/v2/conversations/messages/{conversationId}/participants/{participantId}/monitor | Listen in on the conversation from the point of view of a given participant.
 [**postConversationsMessageParticipantReplace**](ConversationsApi#postConversationsMessageParticipantReplace) | **POST** /api/v2/conversations/messages/{conversationId}/participants/{participantId}/replace | Replace this participant with the specified user and/or address
 [**postConversationsMessages**](ConversationsApi#postConversationsMessages) | **POST** /api/v2/conversations/messages | Create an outbound messaging conversation.
 [**postConversationsMessagesAgentless**](ConversationsApi#postConversationsMessagesAgentless) | **POST** /api/v2/conversations/messages/agentless | Send an agentless outbound message
 [**postConversationsMessagesInboundOpen**](ConversationsApi#postConversationsMessagesInboundOpen) | **POST** /api/v2/conversations/messages/inbound/open | Send an inbound Open Message
+[**postConversationsMessagingIntegrationsApple**](ConversationsApi#postConversationsMessagingIntegrationsApple) | **POST** /api/v2/conversations/messaging/integrations/apple | Create Apple Integration
 [**postConversationsMessagingIntegrationsFacebook**](ConversationsApi#postConversationsMessagingIntegrationsFacebook) | **POST** /api/v2/conversations/messaging/integrations/facebook | Create a Facebook Integration
 [**postConversationsMessagingIntegrationsInstagram**](ConversationsApi#postConversationsMessagingIntegrationsInstagram) | **POST** /api/v2/conversations/messaging/integrations/instagram | Create Instagram Integration
 [**postConversationsMessagingIntegrationsOpen**](ConversationsApi#postConversationsMessagingIntegrationsOpen) | **POST** /api/v2/conversations/messaging/integrations/open | Create an Open messaging integration
+[**postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofile**](ConversationsApi#postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofile) | **POST** /api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile | Create an Open messaging integration with the Google Business Profile extension
+[**postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokens**](ConversationsApi#postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokens) | **POST** /api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile/tokens | Create a Google Auth Token by exchanging the one-time auth code retrieved from Google
 [**postConversationsMessagingIntegrationsTwitter**](ConversationsApi#postConversationsMessagingIntegrationsTwitter) | **POST** /api/v2/conversations/messaging/integrations/twitter | Create Twitter Integration
 [**postConversationsMessagingIntegrationsWhatsapp**](ConversationsApi#postConversationsMessagingIntegrationsWhatsapp) | **POST** /api/v2/conversations/messaging/integrations/whatsapp | [This API is deprecated. Use POST /api/v2/conversations/messaging/integrations/whatsapp/embeddedsignup instead] Create a WhatsApp Integration
 [**postConversationsMessagingIntegrationsWhatsappEmbeddedsignup**](ConversationsApi#postConversationsMessagingIntegrationsWhatsappEmbeddedsignup) | **POST** /api/v2/conversations/messaging/integrations/whatsapp/embeddedsignup | Create a WhatsApp Integration using the WhatsApp embedded signup flow
@@ -256,6 +308,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postConversationsVideoAgentconferenceCommunication**](ConversationsApi#postConversationsVideoAgentconferenceCommunication) | **POST** /api/v2/conversations/videos/{conversationId}/agentconference/communications/{communicationId} | Create an Agent-Type video conference and assign an agent to it
 [**postConversationsVideoParticipantCommunicationWrapup**](ConversationsApi#postConversationsVideoParticipantCommunicationWrapup) | **POST** /api/v2/conversations/videos/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup | Apply wrap-up for this conversation communication
 [**postConversationsVideosMeetings**](ConversationsApi#postConversationsVideosMeetings) | **POST** /api/v2/conversations/videos/meetings | Generate a meetingId for a given conferenceId
+[**putConversationAccessattributes**](ConversationsApi#putConversationAccessattributes) | **PUT** /api/v2/conversations/{conversationId}/accessattributes | Set the access attributes on a conversation.
+[**putConversationCustomattributes**](ConversationsApi#putConversationCustomattributes) | **PUT** /api/v2/conversations/{conversationId}/customattributes | Create or update a single custom attributes record. Updating replaces all data with the provided fields.
+[**putConversationCustomattributesBulk**](ConversationsApi#putConversationCustomattributesBulk) | **PUT** /api/v2/conversations/{conversationId}/customattributes/bulk | Create or update a list of custom attributes records. Updating replaces all data with the provided fields.
 [**putConversationParticipantFlaggedreason**](ConversationsApi#putConversationParticipantFlaggedreason) | **PUT** /api/v2/conversations/{conversationId}/participants/{participantId}/flaggedreason | Set flagged reason on conversation participant to indicate bad conversation quality.
 [**putConversationSecureattributes**](ConversationsApi#putConversationSecureattributes) | **PUT** /api/v2/conversations/{conversationId}/secureattributes | Set the secure attributes on a conversation.
 [**putConversationTags**](ConversationsApi#putConversationTags) | **PUT** /api/v2/conversations/{conversationId}/tags | Update the tags on a conversation.
@@ -264,6 +319,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**putConversationsCallbackRecordingstate**](ConversationsApi#putConversationsCallbackRecordingstate) | **PUT** /api/v2/conversations/callbacks/{conversationId}/recordingstate | Update a conversation by setting its recording state
 [**putConversationsChatRecordingstate**](ConversationsApi#putConversationsChatRecordingstate) | **PUT** /api/v2/conversations/chats/{conversationId}/recordingstate | Update a conversation by setting its recording state
 [**putConversationsCobrowsesessionRecordingstate**](ConversationsApi#putConversationsCobrowsesessionRecordingstate) | **PUT** /api/v2/conversations/cobrowsesessions/{conversationId}/recordingstate | Update a conversation by setting its recording state
+[**putConversationsCustomattributesSchema**](ConversationsApi#putConversationsCustomattributesSchema) | **PUT** /api/v2/conversations/customattributes/schemas/{schemaId} | Update a schema
 [**putConversationsEmailMessagesDraft**](ConversationsApi#putConversationsEmailMessagesDraft) | **PUT** /api/v2/conversations/emails/{conversationId}/messages/draft | Update conversation draft reply
 [**putConversationsEmailRecordingstate**](ConversationsApi#putConversationsEmailRecordingstate) | **PUT** /api/v2/conversations/emails/{conversationId}/recordingstate | Update a conversation by setting its recording state
 [**putConversationsKeyconfiguration**](ConversationsApi#putConversationsKeyconfiguration) | **PUT** /api/v2/conversations/keyconfigurations/{keyconfigurationsId} | Update the encryption key configurations
@@ -285,14 +341,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ## deleteAnalyticsConversationsAggregatesJob
 
-> void deleteAnalyticsConversationsAggregatesJob(jobId)
+> void deleteAnalyticsConversationsAggregatesJob(jobId, opts)
 
 
 DELETE /api/v2/analytics/conversations/aggregates/jobs/{jobId}
 
 Delete/cancel an async request for conversation aggregates
-
-deleteAnalyticsConversationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -312,8 +366,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ConversationsApi();
 
 let jobId = "jobId_example"; // String | jobId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteAnalyticsConversationsAggregatesJob(jobId)
+apiInstance.deleteAnalyticsConversationsAggregatesJob(jobId, opts)
   .then(() => {
     console.log('deleteAnalyticsConversationsAggregatesJob returned successfully.');
   })
@@ -329,6 +389,7 @@ apiInstance.deleteAnalyticsConversationsAggregatesJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -337,7 +398,7 @@ void (no response body)
 
 ## deleteAnalyticsConversationsDetailsJob
 
-> void deleteAnalyticsConversationsDetailsJob(jobId)
+> void deleteAnalyticsConversationsDetailsJob(jobId, opts)
 
 
 DELETE /api/v2/analytics/conversations/details/jobs/{jobId}
@@ -363,8 +424,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ConversationsApi();
 
 let jobId = "jobId_example"; // String | jobId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteAnalyticsConversationsDetailsJob(jobId)
+apiInstance.deleteAnalyticsConversationsDetailsJob(jobId, opts)
   .then(() => {
     console.log('deleteAnalyticsConversationsDetailsJob returned successfully.');
   })
@@ -380,6 +447,123 @@ apiInstance.deleteAnalyticsConversationsDetailsJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+void (no response body)
+
+
+## deleteConversation
+
+> void deleteConversation(conversationId, opts)
+
+
+DELETE /api/v2/conversations/{conversationId}
+
+Update a conversation by disconnecting all of the participants
+
+Requires ANY permissions:
+
+* conversation:communication:disconnect
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | conversation ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.deleteConversation(conversationId, opts)
+  .then(() => {
+    console.log('deleteConversation returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteConversation');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversation ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+void (no response body)
+
+
+## deleteConversationCustomattribute
+
+> void deleteConversationCustomattribute(conversationId, attributesId, opts)
+
+
+DELETE /api/v2/conversations/{conversationId}/customattributes/{attributesId}
+
+Delete a custom attributes record.
+
+Requires ANY permissions:
+
+* conversation:customAttributes:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | conversation ID
+let attributesId = "attributesId_example"; // String | attributesId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.deleteConversationCustomattribute(conversationId, attributesId, opts)
+  .then(() => {
+    console.log('deleteConversationCustomattribute returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteConversationCustomattribute');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversation ID |  |
+ **attributesId** | **String** | attributesId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -388,7 +572,7 @@ void (no response body)
 
 ## deleteConversationParticipantCode
 
-> void deleteConversationParticipantCode(conversationId, participantId, addCommunicationCode)
+> void deleteConversationParticipantCode(conversationId, participantId, addCommunicationCode, opts)
 
 
 DELETE /api/v2/conversations/{conversationId}/participants/{participantId}/codes/{addCommunicationCode}
@@ -413,8 +597,14 @@ let apiInstance = new platformClient.ConversationsApi();
 let conversationId = "conversationId_example"; // String | conversation ID
 let participantId = "participantId_example"; // String | participant ID
 let addCommunicationCode = "addCommunicationCode_example"; // String | addCommunicationCode
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteConversationParticipantCode(conversationId, participantId, addCommunicationCode)
+apiInstance.deleteConversationParticipantCode(conversationId, participantId, addCommunicationCode, opts)
   .then(() => {
     console.log('deleteConversationParticipantCode returned successfully.');
   })
@@ -432,6 +622,7 @@ apiInstance.deleteConversationParticipantCode(conversationId, participantId, add
  **conversationId** | **String** | conversation ID |  |
  **participantId** | **String** | participant ID |  |
  **addCommunicationCode** | **String** | addCommunicationCode |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -440,7 +631,7 @@ void (no response body)
 
 ## deleteConversationParticipantFlaggedreason
 
-> void deleteConversationParticipantFlaggedreason(conversationId, participantId)
+> void deleteConversationParticipantFlaggedreason(conversationId, participantId, opts)
 
 
 DELETE /api/v2/conversations/{conversationId}/participants/{participantId}/flaggedreason
@@ -464,8 +655,14 @@ let apiInstance = new platformClient.ConversationsApi();
 
 let conversationId = "conversationId_example"; // String | conversation ID
 let participantId = "participantId_example"; // String | participant ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteConversationParticipantFlaggedreason(conversationId, participantId)
+apiInstance.deleteConversationParticipantFlaggedreason(conversationId, participantId, opts)
   .then(() => {
     console.log('deleteConversationParticipantFlaggedreason returned successfully.');
   })
@@ -482,6 +679,68 @@ apiInstance.deleteConversationParticipantFlaggedreason(conversationId, participa
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversation ID |  |
  **participantId** | **String** | participant ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+void (no response body)
+
+
+## deleteConversationsCallParticipantCommunicationPostflowaction
+
+> void deleteConversationsCallParticipantCommunicationPostflowaction(conversationId, participantId, communicationId, opts)
+
+
+DELETE /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/postflowaction
+
+Remove mandatory post call actions.
+
+Requires ANY permissions:
+
+* conversation:call:deleteMandatoryPostFlowAction
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | conversationId
+let participantId = "participantId_example"; // String | participantId
+let communicationId = "communicationId_example"; // String | communicationId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.deleteConversationsCallParticipantCommunicationPostflowaction(conversationId, participantId, communicationId, opts)
+  .then(() => {
+    console.log('deleteConversationsCallParticipantCommunicationPostflowaction returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteConversationsCallParticipantCommunicationPostflowaction');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversationId |  |
+ **participantId** | **String** | participantId |  |
+ **communicationId** | **String** | communicationId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -490,7 +749,7 @@ void (no response body)
 
 ## deleteConversationsCallParticipantConsult
 
-> void deleteConversationsCallParticipantConsult(conversationId, participantId)
+> void deleteConversationsCallParticipantConsult(conversationId, participantId, opts)
 
 
 DELETE /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult
@@ -514,8 +773,14 @@ let apiInstance = new platformClient.ConversationsApi();
 
 let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteConversationsCallParticipantConsult(conversationId, participantId)
+apiInstance.deleteConversationsCallParticipantConsult(conversationId, participantId, opts)
   .then(() => {
     console.log('deleteConversationsCallParticipantConsult returned successfully.');
   })
@@ -532,6 +797,7 @@ apiInstance.deleteConversationsCallParticipantConsult(conversationId, participan
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -540,7 +806,7 @@ void (no response body)
 
 ## deleteConversationsEmailMessagesDraftAttachment
 
-> void deleteConversationsEmailMessagesDraftAttachment(conversationId, attachmentId)
+> void deleteConversationsEmailMessagesDraftAttachment(conversationId, attachmentId, opts)
 
 
 DELETE /api/v2/conversations/emails/{conversationId}/messages/draft/attachments/{attachmentId}
@@ -564,8 +830,14 @@ let apiInstance = new platformClient.ConversationsApi();
 
 let conversationId = "conversationId_example"; // String | conversationId
 let attachmentId = "attachmentId_example"; // String | attachmentId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteConversationsEmailMessagesDraftAttachment(conversationId, attachmentId)
+apiInstance.deleteConversationsEmailMessagesDraftAttachment(conversationId, attachmentId, opts)
   .then(() => {
     console.log('deleteConversationsEmailMessagesDraftAttachment returned successfully.');
   })
@@ -582,6 +854,7 @@ apiInstance.deleteConversationsEmailMessagesDraftAttachment(conversationId, atta
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **attachmentId** | **String** | attachmentId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -590,7 +863,7 @@ void (no response body)
 
 ## deleteConversationsMessagesCachedmediaCachedMediaItemId
 
-> void deleteConversationsMessagesCachedmediaCachedMediaItemId(cachedMediaItemId)
+> void deleteConversationsMessagesCachedmediaCachedMediaItemId(cachedMediaItemId, opts)
 
 
 DELETE /api/v2/conversations/messages/cachedmedia/{cachedMediaItemId}
@@ -615,8 +888,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ConversationsApi();
 
 let cachedMediaItemId = "cachedMediaItemId_example"; // String | cachedMediaItemId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteConversationsMessagesCachedmediaCachedMediaItemId(cachedMediaItemId)
+apiInstance.deleteConversationsMessagesCachedmediaCachedMediaItemId(cachedMediaItemId, opts)
   .then(() => {
     console.log('deleteConversationsMessagesCachedmediaCachedMediaItemId returned successfully.');
   })
@@ -632,6 +911,64 @@ apiInstance.deleteConversationsMessagesCachedmediaCachedMediaItemId(cachedMediaI
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **cachedMediaItemId** | **String** | cachedMediaItemId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+void (no response body)
+
+
+## deleteConversationsMessagingIntegrationsAppleIntegrationId
+
+> void deleteConversationsMessagingIntegrationsAppleIntegrationId(integrationId, opts)
+
+
+DELETE /api/v2/conversations/messaging/integrations/apple/{integrationId}
+
+Delete an Apple messaging integration
+
+Requires ALL permissions:
+
+* messaging:integration:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let integrationId = "integrationId_example"; // String | Integration ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.deleteConversationsMessagingIntegrationsAppleIntegrationId(integrationId, opts)
+  .then(() => {
+    console.log('deleteConversationsMessagingIntegrationsAppleIntegrationId returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteConversationsMessagingIntegrationsAppleIntegrationId');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **integrationId** | **String** | Integration ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -640,7 +977,7 @@ void (no response body)
 
 ## deleteConversationsMessagingIntegrationsFacebookIntegrationId
 
-> void deleteConversationsMessagingIntegrationsFacebookIntegrationId(integrationId)
+> void deleteConversationsMessagingIntegrationsFacebookIntegrationId(integrationId, opts)
 
 
 DELETE /api/v2/conversations/messaging/integrations/facebook/{integrationId}
@@ -665,8 +1002,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ConversationsApi();
 
 let integrationId = "integrationId_example"; // String | Integration ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteConversationsMessagingIntegrationsFacebookIntegrationId(integrationId)
+apiInstance.deleteConversationsMessagingIntegrationsFacebookIntegrationId(integrationId, opts)
   .then(() => {
     console.log('deleteConversationsMessagingIntegrationsFacebookIntegrationId returned successfully.');
   })
@@ -682,6 +1025,7 @@ apiInstance.deleteConversationsMessagingIntegrationsFacebookIntegrationId(integr
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **integrationId** | **String** | Integration ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -690,7 +1034,7 @@ void (no response body)
 
 ## deleteConversationsMessagingIntegrationsInstagramIntegrationId
 
-> void deleteConversationsMessagingIntegrationsInstagramIntegrationId(integrationId)
+> void deleteConversationsMessagingIntegrationsInstagramIntegrationId(integrationId, opts)
 
 
 DELETE /api/v2/conversations/messaging/integrations/instagram/{integrationId}
@@ -715,8 +1059,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ConversationsApi();
 
 let integrationId = "integrationId_example"; // String | Integration ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteConversationsMessagingIntegrationsInstagramIntegrationId(integrationId)
+apiInstance.deleteConversationsMessagingIntegrationsInstagramIntegrationId(integrationId, opts)
   .then(() => {
     console.log('deleteConversationsMessagingIntegrationsInstagramIntegrationId returned successfully.');
   })
@@ -732,6 +1082,68 @@ apiInstance.deleteConversationsMessagingIntegrationsInstagramIntegrationId(integ
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **integrationId** | **String** | Integration ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+void (no response body)
+
+
+## deleteConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId
+
+> void deleteConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId(integrationId, opts)
+
+
+DELETE /api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile/{integrationId}
+
+Delete an Open messaging integration with the Google Business Profile extension
+
+See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+
+deleteConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* messaging:integration:delete
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let integrationId = "integrationId_example"; // String | Integration ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.deleteConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId(integrationId, opts)
+  .then(() => {
+    console.log('deleteConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling deleteConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **integrationId** | **String** | Integration ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -740,7 +1152,7 @@ void (no response body)
 
 ## deleteConversationsMessagingIntegrationsOpenIntegrationId
 
-> void deleteConversationsMessagingIntegrationsOpenIntegrationId(integrationId)
+> void deleteConversationsMessagingIntegrationsOpenIntegrationId(integrationId, opts)
 
 
 DELETE /api/v2/conversations/messaging/integrations/open/{integrationId}
@@ -767,8 +1179,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ConversationsApi();
 
 let integrationId = "integrationId_example"; // String | Integration ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteConversationsMessagingIntegrationsOpenIntegrationId(integrationId)
+apiInstance.deleteConversationsMessagingIntegrationsOpenIntegrationId(integrationId, opts)
   .then(() => {
     console.log('deleteConversationsMessagingIntegrationsOpenIntegrationId returned successfully.');
   })
@@ -784,6 +1202,7 @@ apiInstance.deleteConversationsMessagingIntegrationsOpenIntegrationId(integratio
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **integrationId** | **String** | Integration ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -792,7 +1211,7 @@ void (no response body)
 
 ## deleteConversationsMessagingIntegrationsTwitterIntegrationId
 
-> void deleteConversationsMessagingIntegrationsTwitterIntegrationId(integrationId)
+> void deleteConversationsMessagingIntegrationsTwitterIntegrationId(integrationId, opts)
 
 
 DELETE /api/v2/conversations/messaging/integrations/twitter/{integrationId}
@@ -817,8 +1236,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ConversationsApi();
 
 let integrationId = "integrationId_example"; // String | Integration ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteConversationsMessagingIntegrationsTwitterIntegrationId(integrationId)
+apiInstance.deleteConversationsMessagingIntegrationsTwitterIntegrationId(integrationId, opts)
   .then(() => {
     console.log('deleteConversationsMessagingIntegrationsTwitterIntegrationId returned successfully.');
   })
@@ -834,6 +1259,7 @@ apiInstance.deleteConversationsMessagingIntegrationsTwitterIntegrationId(integra
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **integrationId** | **String** | Integration ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -842,7 +1268,7 @@ void (no response body)
 
 ## deleteConversationsMessagingIntegrationsWhatsappIntegrationId
 
-> WhatsAppIntegration deleteConversationsMessagingIntegrationsWhatsappIntegrationId(integrationId)
+> WhatsAppIntegration deleteConversationsMessagingIntegrationsWhatsappIntegrationId(integrationId, opts)
 
 
 DELETE /api/v2/conversations/messaging/integrations/whatsapp/{integrationId}
@@ -867,8 +1293,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ConversationsApi();
 
 let integrationId = "integrationId_example"; // String | Integration ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteConversationsMessagingIntegrationsWhatsappIntegrationId(integrationId)
+apiInstance.deleteConversationsMessagingIntegrationsWhatsappIntegrationId(integrationId, opts)
   .then((data) => {
     console.log(`deleteConversationsMessagingIntegrationsWhatsappIntegrationId success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -884,6 +1316,7 @@ apiInstance.deleteConversationsMessagingIntegrationsWhatsappIntegrationId(integr
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **integrationId** | **String** | Integration ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -892,7 +1325,7 @@ apiInstance.deleteConversationsMessagingIntegrationsWhatsappIntegrationId(integr
 
 ## deleteConversationsMessagingSetting
 
-> void deleteConversationsMessagingSetting(messageSettingId)
+> void deleteConversationsMessagingSetting(messageSettingId, opts)
 
 
 DELETE /api/v2/conversations/messaging/settings/{messageSettingId}
@@ -917,8 +1350,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ConversationsApi();
 
 let messageSettingId = "messageSettingId_example"; // String | Message Setting ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteConversationsMessagingSetting(messageSettingId)
+apiInstance.deleteConversationsMessagingSetting(messageSettingId, opts)
   .then(() => {
     console.log('deleteConversationsMessagingSetting returned successfully.');
   })
@@ -934,6 +1373,7 @@ apiInstance.deleteConversationsMessagingSetting(messageSettingId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **messageSettingId** | **String** | Message Setting ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -942,7 +1382,7 @@ void (no response body)
 
 ## deleteConversationsMessagingSettingsDefault
 
-> void deleteConversationsMessagingSettingsDefault()
+> void deleteConversationsMessagingSettingsDefault(opts)
 
 
 DELETE /api/v2/conversations/messaging/settings/default
@@ -967,8 +1407,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteConversationsMessagingSettingsDefault()
+apiInstance.deleteConversationsMessagingSettingsDefault(opts)
   .then(() => {
     console.log('deleteConversationsMessagingSettingsDefault returned successfully.');
   })
@@ -980,7 +1426,10 @@ apiInstance.deleteConversationsMessagingSettingsDefault()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -989,7 +1438,7 @@ void (no response body)
 
 ## deleteConversationsMessagingSupportedcontentSupportedContentId
 
-> void deleteConversationsMessagingSupportedcontentSupportedContentId(supportedContentId)
+> void deleteConversationsMessagingSupportedcontentSupportedContentId(supportedContentId, opts)
 
 
 DELETE /api/v2/conversations/messaging/supportedcontent/{supportedContentId}
@@ -1014,8 +1463,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ConversationsApi();
 
 let supportedContentId = "supportedContentId_example"; // String | Supported Content ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteConversationsMessagingSupportedcontentSupportedContentId(supportedContentId)
+apiInstance.deleteConversationsMessagingSupportedcontentSupportedContentId(supportedContentId, opts)
   .then(() => {
     console.log('deleteConversationsMessagingSupportedcontentSupportedContentId returned successfully.');
   })
@@ -1031,6 +1486,7 @@ apiInstance.deleteConversationsMessagingSupportedcontentSupportedContentId(suppo
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **supportedContentId** | **String** | Supported Content ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1039,7 +1495,7 @@ void (no response body)
 
 ## getAnalyticsConversationDetails
 
-> AnalyticsConversationWithoutAttributes getAnalyticsConversationDetails(conversationId)
+> AnalyticsConversationWithoutAttributes getAnalyticsConversationDetails(conversationId, opts)
 
 
 GET /api/v2/analytics/conversations/{conversationId}/details
@@ -1065,8 +1521,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ConversationsApi();
 
 let conversationId = "conversationId_example"; // String | conversationId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getAnalyticsConversationDetails(conversationId)
+apiInstance.getAnalyticsConversationDetails(conversationId, opts)
   .then((data) => {
     console.log(`getAnalyticsConversationDetails success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1082,6 +1544,7 @@ apiInstance.getAnalyticsConversationDetails(conversationId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1090,66 +1553,12 @@ apiInstance.getAnalyticsConversationDetails(conversationId)
 
 ## getAnalyticsConversationsAggregatesJob
 
-> AsyncQueryStatus getAnalyticsConversationsAggregatesJob(jobId)
+> AsyncQueryStatus getAnalyticsConversationsAggregatesJob(jobId, opts)
 
 
 GET /api/v2/analytics/conversations/aggregates/jobs/{jobId}
 
 Get status for async query for conversation aggregates
-
-getAnalyticsConversationsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
-Requires ANY permissions:
-
-* analytics:conversationAggregate:view
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.ConversationsApi();
-
-let jobId = "jobId_example"; // String | jobId
-
-apiInstance.getAnalyticsConversationsAggregatesJob(jobId)
-  .then((data) => {
-    console.log(`getAnalyticsConversationsAggregatesJob success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling getAnalyticsConversationsAggregatesJob');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **jobId** | **String** | jobId |  |
-
-### Return type
-
-**AsyncQueryStatus**
-
-
-## getAnalyticsConversationsAggregatesJobResults
-
-> ConversationAsyncAggregateQueryResponse getAnalyticsConversationsAggregatesJobResults(jobId, opts)
-
-
-GET /api/v2/analytics/conversations/aggregates/jobs/{jobId}/results
-
-Fetch a page of results for an async aggregates query
-
-getAnalyticsConversationsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -1170,7 +1579,68 @@ let apiInstance = new platformClient.ConversationsApi();
 
 let jobId = "jobId_example"; // String | jobId
 let opts = { 
-  'cursor': "cursor_example" // String | Cursor token to retrieve next page
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getAnalyticsConversationsAggregatesJob(jobId, opts)
+  .then((data) => {
+    console.log(`getAnalyticsConversationsAggregatesJob success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getAnalyticsConversationsAggregatesJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **jobId** | **String** | jobId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**AsyncQueryStatus**
+
+
+## getAnalyticsConversationsAggregatesJobResults
+
+> ConversationAsyncAggregateQueryResponse getAnalyticsConversationsAggregatesJobResults(jobId, opts)
+
+
+GET /api/v2/analytics/conversations/aggregates/jobs/{jobId}/results
+
+Fetch a page of results for an async aggregates query
+
+Requires ANY permissions:
+
+* analytics:conversationAggregate:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let jobId = "jobId_example"; // String | jobId
+let opts = { 
+  'cursor': "cursor_example", // String | Cursor token to retrieve next page
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getAnalyticsConversationsAggregatesJobResults(jobId, opts)
@@ -1190,6 +1660,7 @@ apiInstance.getAnalyticsConversationsAggregatesJobResults(jobId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
  **cursor** | **String** | Cursor token to retrieve next page | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1224,7 +1695,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ConversationsApi();
 
 let opts = { 
-  'id': ["id_example"] // [String] | Comma-separated conversation ids
+  'id': ["id_example"], // [String] | Comma-separated conversation ids
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getAnalyticsConversationsDetails(opts)
@@ -1243,6 +1718,7 @@ apiInstance.getAnalyticsConversationsDetails(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **id** | **[String]** | Comma-separated conversation ids | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1251,7 +1727,7 @@ apiInstance.getAnalyticsConversationsDetails(opts)
 
 ## getAnalyticsConversationsDetailsJob
 
-> AsyncQueryStatus getAnalyticsConversationsDetailsJob(jobId)
+> AsyncQueryStatus getAnalyticsConversationsDetailsJob(jobId, opts)
 
 
 GET /api/v2/analytics/conversations/details/jobs/{jobId}
@@ -1277,8 +1753,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ConversationsApi();
 
 let jobId = "jobId_example"; // String | jobId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getAnalyticsConversationsDetailsJob(jobId)
+apiInstance.getAnalyticsConversationsDetailsJob(jobId, opts)
   .then((data) => {
     console.log(`getAnalyticsConversationsDetailsJob success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1294,6 +1776,7 @@ apiInstance.getAnalyticsConversationsDetailsJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1330,7 +1813,11 @@ let apiInstance = new platformClient.ConversationsApi();
 let jobId = "jobId_example"; // String | jobId
 let opts = { 
   'cursor': "cursor_example", // String | Indicates where to resume query results (not required for first page)
-  'pageSize': 3.4 // Number | The desired maximum number of results
+  'pageSize': 3.4, // Number | The desired maximum number of results
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getAnalyticsConversationsDetailsJobResults(jobId, opts)
@@ -1351,6 +1838,7 @@ apiInstance.getAnalyticsConversationsDetailsJobResults(jobId, opts)
  **jobId** | **String** | jobId |  |
  **cursor** | **String** | Indicates where to resume query results (not required for first page) | [optional]  |
  **pageSize** | **Number** | The desired maximum number of results | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1359,7 +1847,7 @@ apiInstance.getAnalyticsConversationsDetailsJobResults(jobId, opts)
 
 ## getAnalyticsConversationsDetailsJobsAvailability
 
-> DataAvailabilityResponse getAnalyticsConversationsDetailsJobsAvailability()
+> DataAvailabilityResponse getAnalyticsConversationsDetailsJobsAvailability(opts)
 
 
 GET /api/v2/analytics/conversations/details/jobs/availability
@@ -1382,8 +1870,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getAnalyticsConversationsDetailsJobsAvailability()
+apiInstance.getAnalyticsConversationsDetailsJobsAvailability(opts)
   .then((data) => {
     console.log(`getAnalyticsConversationsDetailsJobsAvailability success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1395,7 +1889,10 @@ apiInstance.getAnalyticsConversationsDetailsJobsAvailability()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1404,7 +1901,7 @@ This endpoint does not need any parameter.
 
 ## getConversation
 
-> Conversation getConversation(conversationId)
+> Conversation getConversation(conversationId, opts)
 
 
 GET /api/v2/conversations/{conversationId}
@@ -1429,8 +1926,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ConversationsApi();
 
 let conversationId = "conversationId_example"; // String | conversation ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getConversation(conversationId)
+apiInstance.getConversation(conversationId, opts)
   .then((data) => {
     console.log(`getConversation success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1446,22 +1949,322 @@ apiInstance.getConversation(conversationId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversation ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **Conversation**
 
 
+## getConversationAccessattributes
+
+> ConversationAccessAttributesResponse getConversationAccessattributes(conversationId, opts)
+
+
+GET /api/v2/conversations/{conversationId}/accessattributes
+
+Get the access attributes on a conversation.
+
+getConversationAccessattributes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* conversation:accessAttributes:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | conversation ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getConversationAccessattributes(conversationId, opts)
+  .then((data) => {
+    console.log(`getConversationAccessattributes success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationAccessattributes');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversation ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**ConversationAccessAttributesResponse**
+
+
+## getConversationAssistantCopilotcontext
+
+> CopilotContextValues getConversationAssistantCopilotcontext(conversationId, opts)
+
+
+GET /api/v2/conversations/{conversationId}/assistant/copilotcontext
+
+Get copilot context values for a conversation.
+
+getConversationAssistantCopilotcontext is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* conversation:assistantCopilotContext:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | Conversation ID.
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getConversationAssistantCopilotcontext(conversationId, opts)
+  .then((data) => {
+    console.log(`getConversationAssistantCopilotcontext success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationAssistantCopilotcontext');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | Conversation ID. |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**CopilotContextValues**
+
+
+## getConversationCommunicationAgentchecklist
+
+> AgentChecklistResponse getConversationCommunicationAgentchecklist(conversationId, communicationId, agentChecklistId, opts)
+
+
+GET /api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/{agentChecklistId}
+
+Get checklist info for a single checklist.
+
+Requires ALL permissions:
+
+* conversation:agentchecklist:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | Conversation ID
+let communicationId = "communicationId_example"; // String | Communication ID
+let agentChecklistId = "agentChecklistId_example"; // String | Agent Checklist ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getConversationCommunicationAgentchecklist(conversationId, communicationId, agentChecklistId, opts)
+  .then((data) => {
+    console.log(`getConversationCommunicationAgentchecklist success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationCommunicationAgentchecklist');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | Conversation ID |  |
+ **communicationId** | **String** | Communication ID |  |
+ **agentChecklistId** | **String** | Agent Checklist ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**AgentChecklistResponse**
+
+
+## getConversationCommunicationAgentchecklistJob
+
+> ChecklistInferenceJobResponse getConversationCommunicationAgentchecklistJob(conversationId, communicationId, agentChecklistId, jobId, opts)
+
+
+GET /api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/{agentChecklistId}/jobs/{jobId}
+
+Get inference job status
+
+Requires ALL permissions:
+
+* conversation:agentchecklist:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | Conversation ID
+let communicationId = "communicationId_example"; // String | Communication ID
+let agentChecklistId = "agentChecklistId_example"; // String | Agent Checklist ID
+let jobId = "jobId_example"; // String | Inference Job ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getConversationCommunicationAgentchecklistJob(conversationId, communicationId, agentChecklistId, jobId, opts)
+  .then((data) => {
+    console.log(`getConversationCommunicationAgentchecklistJob success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationCommunicationAgentchecklistJob');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | Conversation ID |  |
+ **communicationId** | **String** | Communication ID |  |
+ **agentChecklistId** | **String** | Agent Checklist ID |  |
+ **jobId** | **String** | Inference Job ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**ChecklistInferenceJobResponse**
+
+
+## getConversationCommunicationAgentchecklists
+
+> AgentChecklistResponseList getConversationCommunicationAgentchecklists(conversationId, communicationId, opts)
+
+
+GET /api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists
+
+Get information of all checklists associated with a conversation.
+
+Requires ALL permissions:
+
+* conversation:agentchecklist:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | Conversation ID
+let communicationId = "communicationId_example"; // String | Communication ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getConversationCommunicationAgentchecklists(conversationId, communicationId, opts)
+  .then((data) => {
+    console.log(`getConversationCommunicationAgentchecklists success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationCommunicationAgentchecklists');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | Conversation ID |  |
+ **communicationId** | **String** | Communication ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**AgentChecklistResponseList**
+
+
 ## getConversationCommunicationInternalmessage
 
-> InternalMessageData getConversationCommunicationInternalmessage(conversationId, communicationId, messageId)
+> InternalMessageData getConversationCommunicationInternalmessage(conversationId, communicationId, messageId, opts)
 
 
 GET /api/v2/conversations/{conversationId}/communications/{communicationId}/internalmessages/{messageId}
 
 Get message
-
-getConversationCommunicationInternalmessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -1483,8 +2286,14 @@ let apiInstance = new platformClient.ConversationsApi();
 let conversationId = "conversationId_example"; // String | conversationId
 let communicationId = "communicationId_example"; // String | communicationId
 let messageId = "messageId_example"; // String | messageId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getConversationCommunicationInternalmessage(conversationId, communicationId, messageId)
+apiInstance.getConversationCommunicationInternalmessage(conversationId, communicationId, messageId, opts)
   .then((data) => {
     console.log(`getConversationCommunicationInternalmessage success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1502,6 +2311,7 @@ apiInstance.getConversationCommunicationInternalmessage(conversationId, communic
  **conversationId** | **String** | conversationId |  |
  **communicationId** | **String** | communicationId |  |
  **messageId** | **String** | messageId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1516,8 +2326,6 @@ apiInstance.getConversationCommunicationInternalmessage(conversationId, communic
 GET /api/v2/conversations/{conversationId}/communications/{communicationId}/internalmessages
 
 Get messages for communication
-
-getConversationCommunicationInternalmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -1540,7 +2348,11 @@ let conversationId = "conversationId_example"; // String | conversationId
 let communicationId = "communicationId_example"; // String | communicationId
 let opts = { 
   'pageSize': 25, // Number | Indicates maximum number of results in response. Default page size is 25 results. The maximum page size is 200.
-  'pageNumber': 1 // Number | Page number
+  'pageNumber': 1, // Number | Page number
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getConversationCommunicationInternalmessages(conversationId, communicationId, opts)
@@ -1562,15 +2374,132 @@ apiInstance.getConversationCommunicationInternalmessages(conversationId, communi
  **communicationId** | **String** | communicationId |  |
  **pageSize** | **Number** | Indicates maximum number of results in response. Default page size is 25 results. The maximum page size is 200. | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **InternalMessageDataEntityListing**
 
 
+## getConversationCustomattribute
+
+> CustomAttributes getConversationCustomattribute(conversationId, attributesId, opts)
+
+
+GET /api/v2/conversations/{conversationId}/customattributes/{attributesId}
+
+Get custom attributes by id
+
+Requires ANY permissions:
+
+* conversation:customAttributes:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | conversation ID
+let attributesId = "attributesId_example"; // String | attributesId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getConversationCustomattribute(conversationId, attributesId, opts)
+  .then((data) => {
+    console.log(`getConversationCustomattribute success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationCustomattribute');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversation ID |  |
+ **attributesId** | **String** | attributesId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**CustomAttributes**
+
+
+## getConversationCustomattributes
+
+> CustomAttributesListing getConversationCustomattributes(conversationId, opts)
+
+
+GET /api/v2/conversations/{conversationId}/customattributes
+
+Get a list of custom attributes for a conversation.
+
+Requires ANY permissions:
+
+* conversation:customAttributes:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | conversation ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getConversationCustomattributes(conversationId, opts)
+  .then((data) => {
+    console.log(`getConversationCustomattributes success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationCustomattributes');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversation ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**CustomAttributesListing**
+
+
 ## getConversationParticipantSecureivrsession
 
-> SecureSession getConversationParticipantSecureivrsession(conversationId, participantId, secureSessionId)
+> SecureSession getConversationParticipantSecureivrsession(conversationId, participantId, secureSessionId, opts)
 
 
 GET /api/v2/conversations/{conversationId}/participants/{participantId}/secureivrsessions/{secureSessionId}
@@ -1595,8 +2524,14 @@ let apiInstance = new platformClient.ConversationsApi();
 let conversationId = "conversationId_example"; // String | conversation ID
 let participantId = "participantId_example"; // String | participant ID
 let secureSessionId = "secureSessionId_example"; // String | secure IVR session ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getConversationParticipantSecureivrsession(conversationId, participantId, secureSessionId)
+apiInstance.getConversationParticipantSecureivrsession(conversationId, participantId, secureSessionId, opts)
   .then((data) => {
     console.log(`getConversationParticipantSecureivrsession success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1614,6 +2549,7 @@ apiInstance.getConversationParticipantSecureivrsession(conversationId, participa
  **conversationId** | **String** | conversation ID |  |
  **participantId** | **String** | participant ID |  |
  **secureSessionId** | **String** | secure IVR session ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1622,7 +2558,7 @@ apiInstance.getConversationParticipantSecureivrsession(conversationId, participa
 
 ## getConversationParticipantSecureivrsessions
 
-> SecureSessionEntityListing getConversationParticipantSecureivrsessions(conversationId, participantId)
+> SecureSessionEntityListing getConversationParticipantSecureivrsessions(conversationId, participantId, opts)
 
 
 GET /api/v2/conversations/{conversationId}/participants/{participantId}/secureivrsessions
@@ -1646,8 +2582,14 @@ let apiInstance = new platformClient.ConversationsApi();
 
 let conversationId = "conversationId_example"; // String | conversation ID
 let participantId = "participantId_example"; // String | participant ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getConversationParticipantSecureivrsessions(conversationId, participantId)
+apiInstance.getConversationParticipantSecureivrsessions(conversationId, participantId, opts)
   .then((data) => {
     console.log(`getConversationParticipantSecureivrsessions success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1664,6 +2606,7 @@ apiInstance.getConversationParticipantSecureivrsessions(conversationId, particip
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversation ID |  |
  **participantId** | **String** | participant ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1697,7 +2640,11 @@ let apiInstance = new platformClient.ConversationsApi();
 let conversationId = "conversationId_example"; // String | conversation ID
 let participantId = "participantId_example"; // String | participant ID
 let opts = { 
-  'provisional': false // Boolean | Indicates if the wrap-up code is provisional.
+  'provisional': false, // Boolean | Indicates if the wrap-up code is provisional.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getConversationParticipantWrapup(conversationId, participantId, opts)
@@ -1718,6 +2665,7 @@ apiInstance.getConversationParticipantWrapup(conversationId, participantId, opts
  **conversationId** | **String** | conversation ID |  |
  **participantId** | **String** | participant ID |  |
  **provisional** | **Boolean** | Indicates if the wrap-up code is provisional. | [optional] [default to false] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1726,7 +2674,7 @@ apiInstance.getConversationParticipantWrapup(conversationId, participantId, opts
 
 ## getConversationParticipantWrapupcodes
 
-> [WrapupCode] getConversationParticipantWrapupcodes(conversationId, participantId)
+> [WrapupCode] getConversationParticipantWrapupcodes(conversationId, participantId, opts)
 
 
 GET /api/v2/conversations/{conversationId}/participants/{participantId}/wrapupcodes
@@ -1750,8 +2698,14 @@ let apiInstance = new platformClient.ConversationsApi();
 
 let conversationId = "conversationId_example"; // String | conversation ID
 let participantId = "participantId_example"; // String | participant ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getConversationParticipantWrapupcodes(conversationId, participantId)
+apiInstance.getConversationParticipantWrapupcodes(conversationId, participantId, opts)
   .then((data) => {
     console.log(`getConversationParticipantWrapupcodes success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1768,6 +2722,7 @@ apiInstance.getConversationParticipantWrapupcodes(conversationId, participantId)
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversation ID |  |
  **participantId** | **String** | participant ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1776,7 +2731,7 @@ apiInstance.getConversationParticipantWrapupcodes(conversationId, participantId)
 
 ## getConversationSecureattributes
 
-> ConversationSecureAttributes getConversationSecureattributes(conversationId)
+> ConversationSecureAttributes getConversationSecureattributes(conversationId, opts)
 
 
 GET /api/v2/conversations/{conversationId}/secureattributes
@@ -1801,8 +2756,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ConversationsApi();
 
 let conversationId = "conversationId_example"; // String | conversation ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getConversationSecureattributes(conversationId)
+apiInstance.getConversationSecureattributes(conversationId, opts)
   .then((data) => {
     console.log(`getConversationSecureattributes success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1818,6 +2779,7 @@ apiInstance.getConversationSecureattributes(conversationId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversation ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1826,7 +2788,7 @@ apiInstance.getConversationSecureattributes(conversationId)
 
 ## getConversationSuggestion
 
-> Suggestion getConversationSuggestion(conversationId, suggestionId)
+> Suggestion getConversationSuggestion(conversationId, suggestionId, opts)
 
 
 GET /api/v2/conversations/{conversationId}/suggestions/{suggestionId}
@@ -1852,8 +2814,14 @@ let apiInstance = new platformClient.ConversationsApi();
 
 let conversationId = "conversationId_example"; // String | Conversation ID
 let suggestionId = "suggestionId_example"; // String | Suggestion ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getConversationSuggestion(conversationId, suggestionId)
+apiInstance.getConversationSuggestion(conversationId, suggestionId, opts)
   .then((data) => {
     console.log(`getConversationSuggestion success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1870,6 +2838,7 @@ apiInstance.getConversationSuggestion(conversationId, suggestionId)
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | Conversation ID |  |
  **suggestionId** | **String** | Suggestion ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1908,7 +2877,11 @@ let opts = {
   'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
   'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 200.
   'type': "type_example", // String | Suggestion type to filter by.
-  'state': "state_example" // String | Suggestion state to filter Copilot suggestions.
+  'state': "state_example", // String | Suggestion state to filter Copilot suggestions.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getConversationSuggestions(conversationId, opts)
@@ -1930,8 +2903,9 @@ apiInstance.getConversationSuggestions(conversationId, opts)
  **before** | **String** | The cursor that points to the start of the set of entities that has been returned. | [optional]  |
  **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
  **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
- **type** | **String** | Suggestion type to filter by. | [optional] <br />**Values**: Faq, Article, KnowledgeArticle, KnowledgeSearch, CannedResponse, Script |
+ **type** | **String** | Suggestion type to filter by. | [optional] <br />**Values**: Faq, Article, KnowledgeArticle, KnowledgeSearch, CannedResponse, Script, SuggestedKnowledgeAnswer, ThirdPartySuggestion |
  **state** | **String** | Suggestion state to filter Copilot suggestions. | [optional] <br />**Values**: Suggested, Accepted, Dismissed, Failed, Rated |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1940,7 +2914,7 @@ apiInstance.getConversationSuggestions(conversationId, opts)
 
 ## getConversationSummaries
 
-> ConversationSummariesGetResponse getConversationSummaries(conversationId)
+> ConversationSummariesGetResponse getConversationSummaries(conversationId, opts)
 
 
 GET /api/v2/conversations/{conversationId}/summaries
@@ -1965,8 +2939,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ConversationsApi();
 
 let conversationId = "conversationId_example"; // String | Conversation ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getConversationSummaries(conversationId)
+apiInstance.getConversationSummaries(conversationId, opts)
   .then((data) => {
     console.log(`getConversationSummaries success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1982,6 +2962,7 @@ apiInstance.getConversationSummaries(conversationId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | Conversation ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2013,7 +2994,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ConversationsApi();
 
 let opts = { 
-  'communicationType': "communicationType_example" // String | Call or Chat communication filtering
+  'communicationType': "communicationType_example", // String | Call or Chat communication filtering
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getConversations(opts)
@@ -2032,6 +3017,7 @@ apiInstance.getConversations(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **communicationType** | **String** | Call or Chat communication filtering | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2040,7 +3026,7 @@ apiInstance.getConversations(opts)
 
 ## getConversationsCall
 
-> CallConversation getConversationsCall(conversationId)
+> CallConversation getConversationsCall(conversationId, opts)
 
 
 GET /api/v2/conversations/calls/{conversationId}
@@ -2063,8 +3049,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ConversationsApi();
 
 let conversationId = "conversationId_example"; // String | conversationId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getConversationsCall(conversationId)
+apiInstance.getConversationsCall(conversationId, opts)
   .then((data) => {
     console.log(`getConversationsCall success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2080,6 +3072,7 @@ apiInstance.getConversationsCall(conversationId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2114,7 +3107,11 @@ let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
 let communicationId = "communicationId_example"; // String | communicationId
 let opts = { 
-  'provisional': false // Boolean | Indicates whether or not to fetch provisional wrap-up code.
+  'provisional': false, // Boolean | Indicates whether or not to fetch provisional wrap-up code.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getConversationsCallParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts)
@@ -2136,6 +3133,7 @@ apiInstance.getConversationsCallParticipantCommunicationWrapup(conversationId, p
  **participantId** | **String** | participantId |  |
  **communicationId** | **String** | communicationId |  |
  **provisional** | **Boolean** | Indicates whether or not to fetch provisional wrap-up code. | [optional] [default to false] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2169,7 +3167,11 @@ let apiInstance = new platformClient.ConversationsApi();
 let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
 let opts = { 
-  'provisional': false // Boolean | Indicates whether or not to fetch provisional wrap-up code.
+  'provisional': false, // Boolean | Indicates whether or not to fetch provisional wrap-up code.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getConversationsCallParticipantWrapup(conversationId, participantId, opts)
@@ -2190,6 +3192,7 @@ apiInstance.getConversationsCallParticipantWrapup(conversationId, participantId,
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
  **provisional** | **Boolean** | Indicates whether or not to fetch provisional wrap-up code. | [optional] [default to false] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2198,7 +3201,7 @@ apiInstance.getConversationsCallParticipantWrapup(conversationId, participantId,
 
 ## getConversationsCallParticipantWrapupcodes
 
-> [WrapupCode] getConversationsCallParticipantWrapupcodes(conversationId, participantId)
+> [WrapupCode] getConversationsCallParticipantWrapupcodes(conversationId, participantId, opts)
 
 
 GET /api/v2/conversations/calls/{conversationId}/participants/{participantId}/wrapupcodes
@@ -2222,8 +3225,14 @@ let apiInstance = new platformClient.ConversationsApi();
 
 let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getConversationsCallParticipantWrapupcodes(conversationId, participantId)
+apiInstance.getConversationsCallParticipantWrapupcodes(conversationId, participantId, opts)
   .then((data) => {
     console.log(`getConversationsCallParticipantWrapupcodes success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2240,6 +3249,7 @@ apiInstance.getConversationsCallParticipantWrapupcodes(conversationId, participa
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2248,7 +3258,7 @@ apiInstance.getConversationsCallParticipantWrapupcodes(conversationId, participa
 
 ## getConversationsCallback
 
-> CallbackConversation getConversationsCallback(conversationId)
+> CallbackConversation getConversationsCallback(conversationId, opts)
 
 
 GET /api/v2/conversations/callbacks/{conversationId}
@@ -2271,8 +3281,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ConversationsApi();
 
 let conversationId = "conversationId_example"; // String | conversationId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getConversationsCallback(conversationId)
+apiInstance.getConversationsCallback(conversationId, opts)
   .then((data) => {
     console.log(`getConversationsCallback success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2288,6 +3304,7 @@ apiInstance.getConversationsCallback(conversationId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2322,7 +3339,11 @@ let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
 let communicationId = "communicationId_example"; // String | communicationId
 let opts = { 
-  'provisional': false // Boolean | Indicates whether or not to fetch provisional wrap-up code.
+  'provisional': false, // Boolean | Indicates whether or not to fetch provisional wrap-up code.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getConversationsCallbackParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts)
@@ -2344,6 +3365,7 @@ apiInstance.getConversationsCallbackParticipantCommunicationWrapup(conversationI
  **participantId** | **String** | participantId |  |
  **communicationId** | **String** | communicationId |  |
  **provisional** | **Boolean** | Indicates whether or not to fetch provisional wrap-up code. | [optional] [default to false] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2377,7 +3399,11 @@ let apiInstance = new platformClient.ConversationsApi();
 let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
 let opts = { 
-  'provisional': false // Boolean | Indicates whether or not to fetch provisional wrap-up code.
+  'provisional': false, // Boolean | Indicates whether or not to fetch provisional wrap-up code.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getConversationsCallbackParticipantWrapup(conversationId, participantId, opts)
@@ -2398,6 +3424,7 @@ apiInstance.getConversationsCallbackParticipantWrapup(conversationId, participan
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
  **provisional** | **Boolean** | Indicates whether or not to fetch provisional wrap-up code. | [optional] [default to false] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2406,7 +3433,7 @@ apiInstance.getConversationsCallbackParticipantWrapup(conversationId, participan
 
 ## getConversationsCallbackParticipantWrapupcodes
 
-> [WrapupCode] getConversationsCallbackParticipantWrapupcodes(conversationId, participantId)
+> [WrapupCode] getConversationsCallbackParticipantWrapupcodes(conversationId, participantId, opts)
 
 
 GET /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/wrapupcodes
@@ -2430,8 +3457,14 @@ let apiInstance = new platformClient.ConversationsApi();
 
 let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getConversationsCallbackParticipantWrapupcodes(conversationId, participantId)
+apiInstance.getConversationsCallbackParticipantWrapupcodes(conversationId, participantId, opts)
   .then((data) => {
     console.log(`getConversationsCallbackParticipantWrapupcodes success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2448,6 +3481,7 @@ apiInstance.getConversationsCallbackParticipantWrapupcodes(conversationId, parti
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2456,12 +3490,14 @@ apiInstance.getConversationsCallbackParticipantWrapupcodes(conversationId, parti
 
 ## getConversationsCallbacks
 
-> CallbackConversationEntityListing getConversationsCallbacks()
+> CallbackConversationEntityListing getConversationsCallbacks(opts)
 
 
 GET /api/v2/conversations/callbacks
 
-Get active callback conversations for the logged in user
+Get the logged-in user's active conversations and their Callback participants state.
+
+This endpoint answers three questions:- Is the user involved in any active conversation? - Does that active conversation include Callbacks?  - Is the user directly participating in a Callback within that conversation?
 
 Requires NO permissions:
 
@@ -2477,8 +3513,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getConversationsCallbacks()
+apiInstance.getConversationsCallbacks(opts)
   .then((data) => {
     console.log(`getConversationsCallbacks success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2490,7 +3532,10 @@ apiInstance.getConversationsCallbacks()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2499,12 +3544,14 @@ This endpoint does not need any parameter.
 
 ## getConversationsCalls
 
-> CallConversationEntityListing getConversationsCalls()
+> CallConversationEntityListing getConversationsCalls(opts)
 
 
 GET /api/v2/conversations/calls
 
-Get active call conversations for the logged in user
+Get the logged-in user's active conversations and their Call participants state.
+
+This endpoint answers three questions:- Is the user involved in any active conversation? - Does that active conversation include Calls?  - Is the user directly participating in a Call within that conversation?
 
 Requires NO permissions:
 
@@ -2520,8 +3567,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getConversationsCalls()
+apiInstance.getConversationsCalls(opts)
   .then((data) => {
     console.log(`getConversationsCalls success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2533,7 +3586,10 @@ apiInstance.getConversationsCalls()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2568,7 +3624,11 @@ let opts = {
   'pageSize': 25, // Number | Page size, maximum 50
   'pageNumber': 1, // Number | Page number
   'interval': "interval_example", // String | Interval string; format is ISO-8601. Separate start and end times with forward slash '/'
-  'expand': ["expand_example"] // [String] | Which fields, if any, to expand.
+  'expand': ["expand_example"], // [String] | Which fields, if any, to expand.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getConversationsCallsHistory(opts)
@@ -2590,6 +3650,7 @@ apiInstance.getConversationsCallsHistory(opts)
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **interval** | **String** | Interval string; format is ISO-8601. Separate start and end times with forward slash '/' | [optional]  |
  **expand** | **[String]** | Which fields, if any, to expand. | [optional] <br />**Values**: externalorganization, externalcontact, user, queue, group |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2598,7 +3659,7 @@ apiInstance.getConversationsCallsHistory(opts)
 
 ## getConversationsCallsMaximumconferenceparties
 
-> MaxParticipants getConversationsCallsMaximumconferenceparties()
+> MaxParticipants getConversationsCallsMaximumconferenceparties(opts)
 
 
 GET /api/v2/conversations/calls/maximumconferenceparties
@@ -2619,8 +3680,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getConversationsCallsMaximumconferenceparties()
+apiInstance.getConversationsCallsMaximumconferenceparties(opts)
   .then((data) => {
     console.log(`getConversationsCallsMaximumconferenceparties success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2632,7 +3699,10 @@ apiInstance.getConversationsCallsMaximumconferenceparties()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2641,7 +3711,7 @@ This endpoint does not need any parameter.
 
 ## getConversationsChat
 
-> ChatConversation getConversationsChat(conversationId)
+> ChatConversation getConversationsChat(conversationId, opts)
 
 :::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
 This resource has been deprecated
@@ -2669,8 +3739,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ConversationsApi();
 
 let conversationId = "conversationId_example"; // String | conversationId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getConversationsChat(conversationId)
+apiInstance.getConversationsChat(conversationId, opts)
   .then((data) => {
     console.log(`getConversationsChat success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2686,6 +3762,7 @@ apiInstance.getConversationsChat(conversationId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2694,7 +3771,7 @@ apiInstance.getConversationsChat(conversationId)
 
 ## getConversationsChatMessage
 
-> WebChatMessage getConversationsChatMessage(conversationId, messageId)
+> WebChatMessage getConversationsChatMessage(conversationId, messageId, opts)
 
 :::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
 This resource has been deprecated
@@ -2723,8 +3800,14 @@ let apiInstance = new platformClient.ConversationsApi();
 
 let conversationId = "conversationId_example"; // String | conversationId
 let messageId = "messageId_example"; // String | messageId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getConversationsChatMessage(conversationId, messageId)
+apiInstance.getConversationsChatMessage(conversationId, messageId, opts)
   .then((data) => {
     console.log(`getConversationsChatMessage success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2741,6 +3824,7 @@ apiInstance.getConversationsChatMessage(conversationId, messageId)
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **messageId** | **String** | messageId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2781,7 +3865,11 @@ let opts = {
   'after': "after_example", // String | If specified, get the messages chronologically after the id of this message
   'before': "before_example", // String | If specified, get the messages chronologically before the id of this message
   'sortOrder': "ascending", // String | Sort order
-  'maxResults': 100 // Number | Limit the returned number of messages, up to a maximum of 100
+  'maxResults': 100, // Number | Limit the returned number of messages, up to a maximum of 100
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getConversationsChatMessages(conversationId, opts)
@@ -2804,6 +3892,7 @@ apiInstance.getConversationsChatMessages(conversationId, opts)
  **before** | **String** | If specified, get the messages chronologically before the id of this message | [optional]  |
  **sortOrder** | **String** | Sort order | [optional] [default to ascending]<br />**Values**: ascending, descending |
  **maxResults** | **Number** | Limit the returned number of messages, up to a maximum of 100 | [optional] [default to 100] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2843,7 +3932,11 @@ let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
 let communicationId = "communicationId_example"; // String | communicationId
 let opts = { 
-  'provisional': false // Boolean | Indicates whether or not to fetch provisional wrap-up code.
+  'provisional': false, // Boolean | Indicates whether or not to fetch provisional wrap-up code.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getConversationsChatParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts)
@@ -2865,6 +3958,7 @@ apiInstance.getConversationsChatParticipantCommunicationWrapup(conversationId, p
  **participantId** | **String** | participantId |  |
  **communicationId** | **String** | communicationId |  |
  **provisional** | **Boolean** | Indicates whether or not to fetch provisional wrap-up code. | [optional] [default to false] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2903,7 +3997,11 @@ let apiInstance = new platformClient.ConversationsApi();
 let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
 let opts = { 
-  'provisional': false // Boolean | Indicates whether or not to fetch provisional wrap-up code.
+  'provisional': false, // Boolean | Indicates whether or not to fetch provisional wrap-up code.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getConversationsChatParticipantWrapup(conversationId, participantId, opts)
@@ -2924,6 +4022,7 @@ apiInstance.getConversationsChatParticipantWrapup(conversationId, participantId,
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
  **provisional** | **Boolean** | Indicates whether or not to fetch provisional wrap-up code. | [optional] [default to false] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2932,7 +4031,7 @@ apiInstance.getConversationsChatParticipantWrapup(conversationId, participantId,
 
 ## getConversationsChatParticipantWrapupcodes
 
-> [WrapupCode] getConversationsChatParticipantWrapupcodes(conversationId, participantId)
+> [WrapupCode] getConversationsChatParticipantWrapupcodes(conversationId, participantId, opts)
 
 :::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
 This resource has been deprecated
@@ -2961,8 +4060,14 @@ let apiInstance = new platformClient.ConversationsApi();
 
 let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getConversationsChatParticipantWrapupcodes(conversationId, participantId)
+apiInstance.getConversationsChatParticipantWrapupcodes(conversationId, participantId, opts)
   .then((data) => {
     console.log(`getConversationsChatParticipantWrapupcodes success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2979,6 +4084,7 @@ apiInstance.getConversationsChatParticipantWrapupcodes(conversationId, participa
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2987,7 +4093,7 @@ apiInstance.getConversationsChatParticipantWrapupcodes(conversationId, participa
 
 ## getConversationsChats
 
-> ChatConversationEntityListing getConversationsChats()
+> ChatConversationEntityListing getConversationsChats(opts)
 
 :::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
 This resource has been deprecated
@@ -3013,8 +4119,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getConversationsChats()
+apiInstance.getConversationsChats(opts)
   .then((data) => {
     console.log(`getConversationsChats success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3026,7 +4138,10 @@ apiInstance.getConversationsChats()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3035,7 +4150,7 @@ This endpoint does not need any parameter.
 
 ## getConversationsCobrowsesession
 
-> CobrowseConversation getConversationsCobrowsesession(conversationId)
+> CobrowseConversation getConversationsCobrowsesession(conversationId, opts)
 
 
 GET /api/v2/conversations/cobrowsesessions/{conversationId}
@@ -3058,8 +4173,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ConversationsApi();
 
 let conversationId = "conversationId_example"; // String | conversationId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getConversationsCobrowsesession(conversationId)
+apiInstance.getConversationsCobrowsesession(conversationId, opts)
   .then((data) => {
     console.log(`getConversationsCobrowsesession success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3075,6 +4196,7 @@ apiInstance.getConversationsCobrowsesession(conversationId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3114,7 +4236,11 @@ let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
 let communicationId = "communicationId_example"; // String | communicationId
 let opts = { 
-  'provisional': false // Boolean | Indicates whether or not to fetch provisional wrap-up code.
+  'provisional': false, // Boolean | Indicates whether or not to fetch provisional wrap-up code.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getConversationsCobrowsesessionParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts)
@@ -3136,6 +4262,7 @@ apiInstance.getConversationsCobrowsesessionParticipantCommunicationWrapup(conver
  **participantId** | **String** | participantId |  |
  **communicationId** | **String** | communicationId |  |
  **provisional** | **Boolean** | Indicates whether or not to fetch provisional wrap-up code. | [optional] [default to false] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3174,7 +4301,11 @@ let apiInstance = new platformClient.ConversationsApi();
 let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
 let opts = { 
-  'provisional': false // Boolean | Indicates whether or not to fetch provisional wrap-up code.
+  'provisional': false, // Boolean | Indicates whether or not to fetch provisional wrap-up code.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getConversationsCobrowsesessionParticipantWrapup(conversationId, participantId, opts)
@@ -3195,6 +4326,7 @@ apiInstance.getConversationsCobrowsesessionParticipantWrapup(conversationId, par
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
  **provisional** | **Boolean** | Indicates whether or not to fetch provisional wrap-up code. | [optional] [default to false] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3203,7 +4335,7 @@ apiInstance.getConversationsCobrowsesessionParticipantWrapup(conversationId, par
 
 ## getConversationsCobrowsesessionParticipantWrapupcodes
 
-> [WrapupCode] getConversationsCobrowsesessionParticipantWrapupcodes(conversationId, participantId)
+> [WrapupCode] getConversationsCobrowsesessionParticipantWrapupcodes(conversationId, participantId, opts)
 
 :::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
 This resource has been deprecated
@@ -3232,8 +4364,14 @@ let apiInstance = new platformClient.ConversationsApi();
 
 let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getConversationsCobrowsesessionParticipantWrapupcodes(conversationId, participantId)
+apiInstance.getConversationsCobrowsesessionParticipantWrapupcodes(conversationId, participantId, opts)
   .then((data) => {
     console.log(`getConversationsCobrowsesessionParticipantWrapupcodes success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3250,6 +4388,7 @@ apiInstance.getConversationsCobrowsesessionParticipantWrapupcodes(conversationId
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3258,7 +4397,7 @@ apiInstance.getConversationsCobrowsesessionParticipantWrapupcodes(conversationId
 
 ## getConversationsCobrowsesessions
 
-> CobrowseConversationEntityListing getConversationsCobrowsesessions()
+> CobrowseConversationEntityListing getConversationsCobrowsesessions(opts)
 
 
 GET /api/v2/conversations/cobrowsesessions
@@ -3279,8 +4418,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getConversationsCobrowsesessions()
+apiInstance.getConversationsCobrowsesessions(opts)
   .then((data) => {
     console.log(`getConversationsCobrowsesessions success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3292,16 +4437,411 @@ apiInstance.getConversationsCobrowsesessions()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **CobrowseConversationEntityListing**
 
 
+## getConversationsCustomattributesSchema
+
+> ConversationDataSchema getConversationsCustomattributesSchema(schemaId, opts)
+
+
+GET /api/v2/conversations/customattributes/schemas/{schemaId}
+
+Get a schema
+
+Requires ANY permissions:
+
+* conversation:customAttributes:schemaView
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let schemaId = "schemaId_example"; // String | Schema ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getConversationsCustomattributesSchema(schemaId, opts)
+  .then((data) => {
+    console.log(`getConversationsCustomattributesSchema success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsCustomattributesSchema');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **schemaId** | **String** | Schema ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**ConversationDataSchema**
+
+
+## getConversationsCustomattributesSchemaVersion
+
+> ConversationDataSchema getConversationsCustomattributesSchemaVersion(schemaId, versionId, opts)
+
+
+GET /api/v2/conversations/customattributes/schemas/{schemaId}/versions/{versionId}
+
+Get a specific version of a schema
+
+Requires ANY permissions:
+
+* conversation:customAttributes:schemaView
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let schemaId = "schemaId_example"; // String | Schema ID
+let versionId = "versionId_example"; // String | Schema version
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getConversationsCustomattributesSchemaVersion(schemaId, versionId, opts)
+  .then((data) => {
+    console.log(`getConversationsCustomattributesSchemaVersion success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsCustomattributesSchemaVersion');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **schemaId** | **String** | Schema ID |  |
+ **versionId** | **String** | Schema version |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**ConversationDataSchema**
+
+
+## getConversationsCustomattributesSchemaVersions
+
+> ConversationDataSchemaListing getConversationsCustomattributesSchemaVersions(schemaId, opts)
+
+
+GET /api/v2/conversations/customattributes/schemas/{schemaId}/versions
+
+Get all versions of a CCA schema
+
+Requires ANY permissions:
+
+* conversation:customAttributes:schemaView
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let schemaId = "schemaId_example"; // String | Schema ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getConversationsCustomattributesSchemaVersions(schemaId, opts)
+  .then((data) => {
+    console.log(`getConversationsCustomattributesSchemaVersions success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsCustomattributesSchemaVersions');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **schemaId** | **String** | Schema ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**ConversationDataSchemaListing**
+
+
+## getConversationsCustomattributesSchemas
+
+> ConversationDataSchemaListing getConversationsCustomattributesSchemas(opts)
+
+
+GET /api/v2/conversations/customattributes/schemas
+
+Get a list of schemas.
+
+Requires ANY permissions:
+
+* conversation:customAttributes:schemaView
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getConversationsCustomattributesSchemas(opts)
+  .then((data) => {
+    console.log(`getConversationsCustomattributesSchemas success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsCustomattributesSchemas');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**ConversationDataSchemaListing**
+
+
+## getConversationsCustomattributesSchemasCoretype
+
+> Coretype getConversationsCustomattributesSchemasCoretype(coreTypeName, opts)
+
+
+GET /api/v2/conversations/customattributes/schemas/coretypes/{coreTypeName}
+
+Get the core types from which all schemas are built.
+
+Requires ANY permissions:
+
+* conversation:customAttributes:schemaView
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let coreTypeName = "coreTypeName_example"; // String | Name of the core type
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getConversationsCustomattributesSchemasCoretype(coreTypeName, opts)
+  .then((data) => {
+    console.log(`getConversationsCustomattributesSchemasCoretype success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsCustomattributesSchemasCoretype');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **coreTypeName** | **String** | Name of the core type |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**Coretype**
+
+
+## getConversationsCustomattributesSchemasCoretypes
+
+> CoretypeListing getConversationsCustomattributesSchemasCoretypes(opts)
+
+
+GET /api/v2/conversations/customattributes/schemas/coretypes
+
+Get the list of core types enabled for a specific namespace.
+
+Requires ANY permissions:
+
+* conversation:customAttributes:schemaView
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getConversationsCustomattributesSchemasCoretypes(opts)
+  .then((data) => {
+    console.log(`getConversationsCustomattributesSchemasCoretypes success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsCustomattributesSchemasCoretypes');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**CoretypeListing**
+
+
+## getConversationsCustomattributesSchemasLimits
+
+> SchemaQuantityLimits getConversationsCustomattributesSchemasLimits(opts)
+
+
+GET /api/v2/conversations/customattributes/schemas/limits
+
+Get quantitative limits on schemas
+
+Requires ANY permissions:
+
+* conversation:customAttributes:schemaView
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getConversationsCustomattributesSchemasLimits(opts)
+  .then((data) => {
+    console.log(`getConversationsCustomattributesSchemasLimits success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsCustomattributesSchemasLimits');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**SchemaQuantityLimits**
+
+
 ## getConversationsEmail
 
-> EmailConversation getConversationsEmail(conversationId)
+> EmailConversation getConversationsEmail(conversationId, opts)
 
 
 GET /api/v2/conversations/emails/{conversationId}
@@ -3324,8 +4864,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ConversationsApi();
 
 let conversationId = "conversationId_example"; // String | conversationId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getConversationsEmail(conversationId)
+apiInstance.getConversationsEmail(conversationId, opts)
   .then((data) => {
     console.log(`getConversationsEmail success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3341,6 +4887,7 @@ apiInstance.getConversationsEmail(conversationId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3349,7 +4896,7 @@ apiInstance.getConversationsEmail(conversationId)
 
 ## getConversationsEmailMessage
 
-> EmailMessage getConversationsEmailMessage(conversationId, messageId)
+> EmailMessage getConversationsEmailMessage(conversationId, messageId, opts)
 
 
 GET /api/v2/conversations/emails/{conversationId}/messages/{messageId}
@@ -3373,8 +4920,14 @@ let apiInstance = new platformClient.ConversationsApi();
 
 let conversationId = "conversationId_example"; // String | conversationId
 let messageId = "messageId_example"; // String | messageId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getConversationsEmailMessage(conversationId, messageId)
+apiInstance.getConversationsEmailMessage(conversationId, messageId, opts)
   .then((data) => {
     console.log(`getConversationsEmailMessage success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3391,6 +4944,7 @@ apiInstance.getConversationsEmailMessage(conversationId, messageId)
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **messageId** | **String** | messageId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3399,7 +4953,7 @@ apiInstance.getConversationsEmailMessage(conversationId, messageId)
 
 ## getConversationsEmailMessages
 
-> EmailMessagePreviewListing getConversationsEmailMessages(conversationId)
+> EmailMessagePreviewListing getConversationsEmailMessages(conversationId, opts)
 
 
 GET /api/v2/conversations/emails/{conversationId}/messages
@@ -3422,8 +4976,15 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ConversationsApi();
 
 let conversationId = "conversationId_example"; // String | conversationId
+let opts = { 
+  'includeAgentlessStitchedMessages': false, // Boolean | Whether to include Agentless 'api' type of messages, on stitched conversations. If you provide a conversationId in the agentless email request (/api/v2/conversations/emails/agentless) that matches an existing conversation, then that's a stitched agentless message.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getConversationsEmailMessages(conversationId)
+apiInstance.getConversationsEmailMessages(conversationId, opts)
   .then((data) => {
     console.log(`getConversationsEmailMessages success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3439,6 +5000,8 @@ apiInstance.getConversationsEmailMessages(conversationId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
+ **includeAgentlessStitchedMessages** | **Boolean** | Whether to include Agentless 'api' type of messages, on stitched conversations. If you provide a conversationId in the agentless email request (/api/v2/conversations/emails/agentless) that matches an existing conversation, then that's a stitched agentless message. | [optional] [default to false] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3447,7 +5010,7 @@ apiInstance.getConversationsEmailMessages(conversationId)
 
 ## getConversationsEmailMessagesDraft
 
-> EmailMessage getConversationsEmailMessagesDraft(conversationId)
+> EmailMessage getConversationsEmailMessagesDraft(conversationId, opts)
 
 
 GET /api/v2/conversations/emails/{conversationId}/messages/draft
@@ -3470,8 +5033,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ConversationsApi();
 
 let conversationId = "conversationId_example"; // String | conversationId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getConversationsEmailMessagesDraft(conversationId)
+apiInstance.getConversationsEmailMessagesDraft(conversationId, opts)
   .then((data) => {
     console.log(`getConversationsEmailMessagesDraft success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3487,6 +5056,7 @@ apiInstance.getConversationsEmailMessagesDraft(conversationId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3521,7 +5091,11 @@ let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
 let communicationId = "communicationId_example"; // String | communicationId
 let opts = { 
-  'provisional': false // Boolean | Indicates whether or not to fetch provisional wrap-up code.
+  'provisional': false, // Boolean | Indicates whether or not to fetch provisional wrap-up code.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getConversationsEmailParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts)
@@ -3543,6 +5117,7 @@ apiInstance.getConversationsEmailParticipantCommunicationWrapup(conversationId, 
  **participantId** | **String** | participantId |  |
  **communicationId** | **String** | communicationId |  |
  **provisional** | **Boolean** | Indicates whether or not to fetch provisional wrap-up code. | [optional] [default to false] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3576,7 +5151,11 @@ let apiInstance = new platformClient.ConversationsApi();
 let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
 let opts = { 
-  'provisional': false // Boolean | Indicates whether or not to fetch provisional wrap-up code.
+  'provisional': false, // Boolean | Indicates whether or not to fetch provisional wrap-up code.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getConversationsEmailParticipantWrapup(conversationId, participantId, opts)
@@ -3597,6 +5176,7 @@ apiInstance.getConversationsEmailParticipantWrapup(conversationId, participantId
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
  **provisional** | **Boolean** | Indicates whether or not to fetch provisional wrap-up code. | [optional] [default to false] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3605,7 +5185,7 @@ apiInstance.getConversationsEmailParticipantWrapup(conversationId, participantId
 
 ## getConversationsEmailParticipantWrapupcodes
 
-> [WrapupCode] getConversationsEmailParticipantWrapupcodes(conversationId, participantId)
+> [WrapupCode] getConversationsEmailParticipantWrapupcodes(conversationId, participantId, opts)
 
 
 GET /api/v2/conversations/emails/{conversationId}/participants/{participantId}/wrapupcodes
@@ -3629,8 +5209,14 @@ let apiInstance = new platformClient.ConversationsApi();
 
 let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getConversationsEmailParticipantWrapupcodes(conversationId, participantId)
+apiInstance.getConversationsEmailParticipantWrapupcodes(conversationId, participantId, opts)
   .then((data) => {
     console.log(`getConversationsEmailParticipantWrapupcodes success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3647,6 +5233,7 @@ apiInstance.getConversationsEmailParticipantWrapupcodes(conversationId, particip
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3655,7 +5242,7 @@ apiInstance.getConversationsEmailParticipantWrapupcodes(conversationId, particip
 
 ## getConversationsEmailSettings
 
-> EmailsSettings getConversationsEmailSettings(conversationId)
+> EmailsSettings getConversationsEmailSettings(conversationId, opts)
 
 
 GET /api/v2/conversations/emails/{conversationId}/settings
@@ -3678,8 +5265,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ConversationsApi();
 
 let conversationId = "conversationId_example"; // String | conversationId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getConversationsEmailSettings(conversationId)
+apiInstance.getConversationsEmailSettings(conversationId, opts)
   .then((data) => {
     console.log(`getConversationsEmailSettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3695,6 +5288,7 @@ apiInstance.getConversationsEmailSettings(conversationId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3703,12 +5297,14 @@ apiInstance.getConversationsEmailSettings(conversationId)
 
 ## getConversationsEmails
 
-> EmailConversationEntityListing getConversationsEmails()
+> EmailConversationEntityListing getConversationsEmails(opts)
 
 
 GET /api/v2/conversations/emails
 
-Get active email conversations for the logged in user
+Get the logged-in user's active conversations and their Email participants state.
+
+This endpoint answers three questions:- Is the user involved in any active conversation? - Does that active conversation include Emails?  - Is the user directly participating in an Email within that conversation?
 
 Requires NO permissions:
 
@@ -3724,8 +5320,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getConversationsEmails()
+apiInstance.getConversationsEmails(opts)
   .then((data) => {
     console.log(`getConversationsEmails success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3737,7 +5339,10 @@ apiInstance.getConversationsEmails()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3746,14 +5351,12 @@ This endpoint does not need any parameter.
 
 ## getConversationsInternalmessage
 
-> InternalMessageConversation getConversationsInternalmessage(conversationId)
+> InternalMessageConversation getConversationsInternalmessage(conversationId, opts)
 
 
 GET /api/v2/conversations/internalmessages/{conversationId}
 
 Get internal message conversation
-
-getConversationsInternalmessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -3773,8 +5376,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ConversationsApi();
 
 let conversationId = "conversationId_example"; // String | conversationId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getConversationsInternalmessage(conversationId)
+apiInstance.getConversationsInternalmessage(conversationId, opts)
   .then((data) => {
     console.log(`getConversationsInternalmessage success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3790,6 +5399,7 @@ apiInstance.getConversationsInternalmessage(conversationId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3798,14 +5408,14 @@ apiInstance.getConversationsInternalmessage(conversationId)
 
 ## getConversationsInternalmessages
 
-> InternalMessageConversationEntityListing getConversationsInternalmessages()
+> InternalMessageConversationEntityListing getConversationsInternalmessages(opts)
 
 
 GET /api/v2/conversations/internalmessages
 
-Get active internal message conversations for the logged in user
+Get the logged-in user's active conversations and their InternalMessage participants state.
 
-getConversationsInternalmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+This endpoint answers three questions:- Is the user involved in any active conversation? - Does that active conversation include InternalMessages?  - Is the user directly participating in an InternalMessage within that conversation?
 
 Requires ANY permissions:
 
@@ -3823,8 +5433,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getConversationsInternalmessages()
+apiInstance.getConversationsInternalmessages(opts)
   .then((data) => {
     console.log(`getConversationsInternalmessages success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3836,7 +5452,10 @@ apiInstance.getConversationsInternalmessages()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3845,7 +5464,7 @@ This endpoint does not need any parameter.
 
 ## getConversationsKeyconfiguration
 
-> ConversationEncryptionConfiguration getConversationsKeyconfiguration(keyconfigurationsId)
+> ConversationEncryptionConfiguration getConversationsKeyconfiguration(keyconfigurationsId, opts)
 
 
 GET /api/v2/conversations/keyconfigurations/{keyconfigurationsId}
@@ -3870,8 +5489,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ConversationsApi();
 
 let keyconfigurationsId = "keyconfigurationsId_example"; // String | Key Configurations Id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getConversationsKeyconfiguration(keyconfigurationsId)
+apiInstance.getConversationsKeyconfiguration(keyconfigurationsId, opts)
   .then((data) => {
     console.log(`getConversationsKeyconfiguration success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3887,6 +5512,7 @@ apiInstance.getConversationsKeyconfiguration(keyconfigurationsId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **keyconfigurationsId** | **String** | Key Configurations Id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3895,7 +5521,7 @@ apiInstance.getConversationsKeyconfiguration(keyconfigurationsId)
 
 ## getConversationsKeyconfigurations
 
-> ConversationEncryptionConfigurationListing getConversationsKeyconfigurations()
+> ConversationEncryptionConfigurationListing getConversationsKeyconfigurations(opts)
 
 
 GET /api/v2/conversations/keyconfigurations
@@ -3918,8 +5544,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getConversationsKeyconfigurations()
+apiInstance.getConversationsKeyconfigurations(opts)
   .then((data) => {
     console.log(`getConversationsKeyconfigurations success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3931,7 +5563,10 @@ apiInstance.getConversationsKeyconfigurations()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3940,7 +5575,7 @@ This endpoint does not need any parameter.
 
 ## getConversationsMessage
 
-> MessageConversation getConversationsMessage(conversationId)
+> MessageConversation getConversationsMessage(conversationId, opts)
 
 
 GET /api/v2/conversations/messages/{conversationId}
@@ -3963,8 +5598,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ConversationsApi();
 
 let conversationId = "conversationId_example"; // String | conversationId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getConversationsMessage(conversationId)
+apiInstance.getConversationsMessage(conversationId, opts)
   .then((data) => {
     console.log(`getConversationsMessage success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3980,22 +5621,88 @@ apiInstance.getConversationsMessage(conversationId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **MessageConversation**
 
 
+## getConversationsMessageCommunicationMessagesMedia
+
+> MessageMediaListing getConversationsMessageCommunicationMessagesMedia(conversationId, communicationId, opts)
+
+
+GET /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media
+
+Get message media list by status
+
+Requires ANY permissions:
+
+* conversation:messageMedia:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | conversationId
+let communicationId = "communicationId_example"; // String | communicationId
+let opts = { 
+  'status': "status_example", // String | The status on which to filter the response.
+  'pageNumber': 1, // Number | Page number
+  'pageSize': 25, // Number | Page size
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getConversationsMessageCommunicationMessagesMedia(conversationId, communicationId, opts)
+  .then((data) => {
+    console.log(`getConversationsMessageCommunicationMessagesMedia success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsMessageCommunicationMessagesMedia');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversationId |  |
+ **communicationId** | **String** | communicationId |  |
+ **status** | **String** | The status on which to filter the response. | [optional] <br />**Values**: uploading, valid, invalid |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**MessageMediaListing**
+
+
 ## getConversationsMessageCommunicationMessagesMediaMediaId
 
-> MessageMediaData getConversationsMessageCommunicationMessagesMediaMediaId(conversationId, communicationId, mediaId)
+> MessageMediaData getConversationsMessageCommunicationMessagesMediaMediaId(conversationId, communicationId, mediaId, opts)
 
 
 GET /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media/{mediaId}
 
 Get media
 
-See https://developer.genesys.cloud/api/rest/v2/conversations/messaging-media-upload for example usage.
+See https://developer.genesys.cloud/commdigital/digital/messagemediaupload/ for example usage.
 
 Requires ANY permissions:
 
@@ -4018,8 +5725,14 @@ let apiInstance = new platformClient.ConversationsApi();
 let conversationId = "conversationId_example"; // String | conversationId
 let communicationId = "communicationId_example"; // String | communicationId
 let mediaId = "mediaId_example"; // String | mediaId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getConversationsMessageCommunicationMessagesMediaMediaId(conversationId, communicationId, mediaId)
+apiInstance.getConversationsMessageCommunicationMessagesMediaMediaId(conversationId, communicationId, mediaId, opts)
   .then((data) => {
     console.log(`getConversationsMessageCommunicationMessagesMediaMediaId success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4037,6 +5750,7 @@ apiInstance.getConversationsMessageCommunicationMessagesMediaMediaId(conversatio
  **conversationId** | **String** | conversationId |  |
  **communicationId** | **String** | communicationId |  |
  **mediaId** | **String** | mediaId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4072,7 +5786,11 @@ let apiInstance = new platformClient.ConversationsApi();
 
 let messageId = "messageId_example"; // String | messageId
 let opts = { 
-  'useNormalizedMessage': false // Boolean | If true, response removes deprecated fields (textBody, media)
+  'useNormalizedMessage': false, // Boolean | If true, response removes deprecated fields (textBody, media)
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getConversationsMessageDetails(messageId, opts)
@@ -4092,6 +5810,7 @@ apiInstance.getConversationsMessageDetails(messageId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **messageId** | **String** | messageId |  |
  **useNormalizedMessage** | **Boolean** | If true, response removes deprecated fields (textBody, media) | [optional] [default to false] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4128,7 +5847,11 @@ let apiInstance = new platformClient.ConversationsApi();
 let conversationId = "conversationId_example"; // String | conversationId
 let messageId = "messageId_example"; // String | messageId
 let opts = { 
-  'useNormalizedMessage': false // Boolean | If true, response removes deprecated fields (textBody, media)
+  'useNormalizedMessage': false, // Boolean | If true, response removes deprecated fields (textBody, media)
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getConversationsMessageMessage(conversationId, messageId, opts)
@@ -4149,6 +5872,7 @@ apiInstance.getConversationsMessageMessage(conversationId, messageId, opts)
  **conversationId** | **String** | conversationId |  |
  **messageId** | **String** | messageId |  |
  **useNormalizedMessage** | **Boolean** | If true, response removes deprecated fields (textBody, media) | [optional] [default to false] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4183,7 +5907,11 @@ let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
 let communicationId = "communicationId_example"; // String | communicationId
 let opts = { 
-  'provisional': false // Boolean | Indicates whether or not to fetch provisional wrap-up code.
+  'provisional': false, // Boolean | Indicates whether or not to fetch provisional wrap-up code.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getConversationsMessageParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts)
@@ -4205,6 +5933,7 @@ apiInstance.getConversationsMessageParticipantCommunicationWrapup(conversationId
  **participantId** | **String** | participantId |  |
  **communicationId** | **String** | communicationId |  |
  **provisional** | **Boolean** | Indicates whether or not to fetch provisional wrap-up code. | [optional] [default to false] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4238,7 +5967,11 @@ let apiInstance = new platformClient.ConversationsApi();
 let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
 let opts = { 
-  'provisional': false // Boolean | Indicates whether or not to fetch provisional wrap-up code.
+  'provisional': false, // Boolean | Indicates whether or not to fetch provisional wrap-up code.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getConversationsMessageParticipantWrapup(conversationId, participantId, opts)
@@ -4259,6 +5992,7 @@ apiInstance.getConversationsMessageParticipantWrapup(conversationId, participant
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
  **provisional** | **Boolean** | Indicates whether or not to fetch provisional wrap-up code. | [optional] [default to false] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4267,7 +6001,7 @@ apiInstance.getConversationsMessageParticipantWrapup(conversationId, participant
 
 ## getConversationsMessageParticipantWrapupcodes
 
-> [WrapupCode] getConversationsMessageParticipantWrapupcodes(conversationId, participantId)
+> [WrapupCode] getConversationsMessageParticipantWrapupcodes(conversationId, participantId, opts)
 
 
 GET /api/v2/conversations/messages/{conversationId}/participants/{participantId}/wrapupcodes
@@ -4291,8 +6025,14 @@ let apiInstance = new platformClient.ConversationsApi();
 
 let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getConversationsMessageParticipantWrapupcodes(conversationId, participantId)
+apiInstance.getConversationsMessageParticipantWrapupcodes(conversationId, participantId, opts)
   .then((data) => {
     console.log(`getConversationsMessageParticipantWrapupcodes success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4309,6 +6049,7 @@ apiInstance.getConversationsMessageParticipantWrapupcodes(conversationId, partic
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4317,12 +6058,14 @@ apiInstance.getConversationsMessageParticipantWrapupcodes(conversationId, partic
 
 ## getConversationsMessages
 
-> MessageConversationEntityListing getConversationsMessages()
+> MessageConversationEntityListing getConversationsMessages(opts)
 
 
 GET /api/v2/conversations/messages
 
-Get active message conversations for the logged in user
+Get the logged-in user's active conversations and their Message participants state.
+
+This endpoint answers three questions:- Is the user involved in any active conversation? - Does that active conversation include Messages?  - Is the user directly participating in a Message within that conversation?
 
 Requires NO permissions:
 
@@ -4338,8 +6081,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getConversationsMessages()
+apiInstance.getConversationsMessages(opts)
   .then((data) => {
     console.log(`getConversationsMessages success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4351,7 +6100,10 @@ apiInstance.getConversationsMessages()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4387,7 +6139,11 @@ let apiInstance = new platformClient.ConversationsApi();
 let opts = { 
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
-  'url': "url_example" // String | URL to search for
+  'url': "url_example", // String | URL to search for
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getConversationsMessagesCachedmedia(opts)
@@ -4408,6 +6164,7 @@ apiInstance.getConversationsMessagesCachedmedia(opts)
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **url** | **String** | URL to search for | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4416,7 +6173,7 @@ apiInstance.getConversationsMessagesCachedmedia(opts)
 
 ## getConversationsMessagesCachedmediaCachedMediaItemId
 
-> CachedMediaItem getConversationsMessagesCachedmediaCachedMediaItemId(cachedMediaItemId)
+> CachedMediaItem getConversationsMessagesCachedmediaCachedMediaItemId(cachedMediaItemId, opts)
 
 
 GET /api/v2/conversations/messages/cachedmedia/{cachedMediaItemId}
@@ -4441,8 +6198,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ConversationsApi();
 
 let cachedMediaItemId = "cachedMediaItemId_example"; // String | cachedMediaItemId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getConversationsMessagesCachedmediaCachedMediaItemId(cachedMediaItemId)
+apiInstance.getConversationsMessagesCachedmediaCachedMediaItemId(cachedMediaItemId, opts)
   .then((data) => {
     console.log(`getConversationsMessagesCachedmediaCachedMediaItemId success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4458,6 +6221,7 @@ apiInstance.getConversationsMessagesCachedmediaCachedMediaItemId(cachedMediaItem
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **cachedMediaItemId** | **String** | cachedMediaItemId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4466,7 +6230,7 @@ apiInstance.getConversationsMessagesCachedmediaCachedMediaItemId(cachedMediaItem
 
 ## getConversationsMessagingFacebookApp
 
-> FacebookAppCredentials getConversationsMessagingFacebookApp()
+> FacebookAppCredentials getConversationsMessagingFacebookApp(opts)
 
 
 GET /api/v2/conversations/messaging/facebook/app
@@ -4489,8 +6253,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getConversationsMessagingFacebookApp()
+apiInstance.getConversationsMessagingFacebookApp(opts)
   .then((data) => {
     console.log(`getConversationsMessagingFacebookApp success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4502,7 +6272,10 @@ apiInstance.getConversationsMessagingFacebookApp()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4511,7 +6284,7 @@ This endpoint does not need any parameter.
 
 ## getConversationsMessagingFacebookPermissions
 
-> FacebookPermissionEntityListing getConversationsMessagingFacebookPermissions()
+> FacebookPermissionEntityListing getConversationsMessagingFacebookPermissions(opts)
 
 
 GET /api/v2/conversations/messaging/facebook/permissions
@@ -4536,8 +6309,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getConversationsMessagingFacebookPermissions()
+apiInstance.getConversationsMessagingFacebookPermissions(opts)
   .then((data) => {
     console.log(`getConversationsMessagingFacebookPermissions success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4549,7 +6328,10 @@ apiInstance.getConversationsMessagingFacebookPermissions()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4558,14 +6340,12 @@ This endpoint does not need any parameter.
 
 ## getConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId
 
-> IdentityResolutionConfig getConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId(integrationId)
+> AppleIdentityResolutionConfig getConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId(integrationId, opts)
 
 
 GET /api/v2/conversations/messaging/identityresolution/integrations/apple/{integrationId}
 
 Get Apple messaging integration identity resolution settings
-
-getConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ALL permissions:
 
@@ -4586,8 +6366,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ConversationsApi();
 
 let integrationId = "integrationId_example"; // String | Integration ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId(integrationId)
+apiInstance.getConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId(integrationId, opts)
   .then((data) => {
     console.log(`getConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4603,15 +6389,16 @@ apiInstance.getConversationsMessagingIdentityresolutionIntegrationsAppleIntegrat
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **integrationId** | **String** | Integration ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
-**IdentityResolutionConfig**
+**AppleIdentityResolutionConfig**
 
 
 ## getConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId
 
-> IdentityResolutionConfig getConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId(integrationId)
+> FacebookIdentityResolutionConfig getConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId(integrationId, opts)
 
 
 GET /api/v2/conversations/messaging/identityresolution/integrations/facebook/{integrationId}
@@ -4637,8 +6424,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ConversationsApi();
 
 let integrationId = "integrationId_example"; // String | Integration ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId(integrationId)
+apiInstance.getConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId(integrationId, opts)
   .then((data) => {
     console.log(`getConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4654,15 +6447,16 @@ apiInstance.getConversationsMessagingIdentityresolutionIntegrationsFacebookInteg
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **integrationId** | **String** | Integration ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
-**IdentityResolutionConfig**
+**FacebookIdentityResolutionConfig**
 
 
 ## getConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId
 
-> IdentityResolutionConfig getConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId(integrationId)
+> InstagramIdentityResolutionConfig getConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId(integrationId, opts)
 
 
 GET /api/v2/conversations/messaging/identityresolution/integrations/instagram/{integrationId}
@@ -4688,8 +6482,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ConversationsApi();
 
 let integrationId = "integrationId_example"; // String | Integration ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId(integrationId)
+apiInstance.getConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId(integrationId, opts)
   .then((data) => {
     console.log(`getConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4705,15 +6505,16 @@ apiInstance.getConversationsMessagingIdentityresolutionIntegrationsInstagramInte
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **integrationId** | **String** | Integration ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
-**IdentityResolutionConfig**
+**InstagramIdentityResolutionConfig**
 
 
 ## getConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId
 
-> OpenMessagingIdentityResolutionConfig getConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId(integrationId)
+> OpenMessagingIdentityResolutionConfig getConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId(integrationId, opts)
 
 
 GET /api/v2/conversations/messaging/identityresolution/integrations/open/{integrationId}
@@ -4739,8 +6540,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ConversationsApi();
 
 let integrationId = "integrationId_example"; // String | Integration ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId(integrationId)
+apiInstance.getConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId(integrationId, opts)
   .then((data) => {
     console.log(`getConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4756,6 +6563,7 @@ apiInstance.getConversationsMessagingIdentityresolutionIntegrationsOpenIntegrati
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **integrationId** | **String** | Integration ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4764,7 +6572,7 @@ apiInstance.getConversationsMessagingIdentityresolutionIntegrationsOpenIntegrati
 
 ## getConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId
 
-> IdentityResolutionConfig getConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId(integrationId)
+> TwitterIdentityResolutionConfig getConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId(integrationId, opts)
 
 
 GET /api/v2/conversations/messaging/identityresolution/integrations/twitter/{integrationId}
@@ -4790,8 +6598,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ConversationsApi();
 
 let integrationId = "integrationId_example"; // String | Integration Id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId(integrationId)
+apiInstance.getConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId(integrationId, opts)
   .then((data) => {
     console.log(`getConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4807,15 +6621,16 @@ apiInstance.getConversationsMessagingIdentityresolutionIntegrationsTwitterIntegr
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **integrationId** | **String** | Integration Id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
-**IdentityResolutionConfig**
+**TwitterIdentityResolutionConfig**
 
 
 ## getConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId
 
-> IdentityResolutionConfig getConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId(integrationId)
+> WhatsAppIdentityResolutionConfig getConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId(integrationId, opts)
 
 
 GET /api/v2/conversations/messaging/identityresolution/integrations/whatsapp/{integrationId}
@@ -4841,8 +6656,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ConversationsApi();
 
 let integrationId = "integrationId_example"; // String | Integration ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId(integrationId)
+apiInstance.getConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId(integrationId, opts)
   .then((data) => {
     console.log(`getConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4858,15 +6679,16 @@ apiInstance.getConversationsMessagingIdentityresolutionIntegrationsWhatsappInteg
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **integrationId** | **String** | Integration ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
-**IdentityResolutionConfig**
+**WhatsAppIdentityResolutionConfig**
 
 
 ## getConversationsMessagingIntegrationTwitterOauthSettings
 
-> TwitterOAuthSettings getConversationsMessagingIntegrationTwitterOauthSettings(integrationId)
+> TwitterOAuthSettings getConversationsMessagingIntegrationTwitterOauthSettings(integrationId, opts)
 
 
 GET /api/v2/conversations/messaging/integrations/{integrationId}/twitter/oauth/settings
@@ -4891,8 +6713,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ConversationsApi();
 
 let integrationId = "integrationId_example"; // String | Integration Id of an existing integration that needs to be patched with new oauth settings
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getConversationsMessagingIntegrationTwitterOauthSettings(integrationId)
+apiInstance.getConversationsMessagingIntegrationTwitterOauthSettings(integrationId, opts)
   .then((data) => {
     console.log(`getConversationsMessagingIntegrationTwitterOauthSettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4908,6 +6736,7 @@ apiInstance.getConversationsMessagingIntegrationTwitterOauthSettings(integration
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **integrationId** | **String** | Integration Id of an existing integration that needs to be patched with new oauth settings |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4945,7 +6774,11 @@ let opts = {
   'pageNumber': 1, // Number | Page number
   'expand': ["expand_example"], // [String] | Expand instructions for the return value.
   'supportedContentId': "supportedContentId_example", // String | Filter integrations returned based on the supported content ID
-  'messagingSettingId': "messagingSettingId_example" // String | Filter integrations returned based on the setting ID
+  'messagingSettingId': "messagingSettingId_example", // String | Filter integrations returned based on the setting ID
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getConversationsMessagingIntegrations(opts)
@@ -4968,10 +6801,135 @@ apiInstance.getConversationsMessagingIntegrations(opts)
  **expand** | **[String]** | Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting, identityresolution |
  **supportedContentId** | **String** | Filter integrations returned based on the supported content ID | [optional]  |
  **messagingSettingId** | **String** | Filter integrations returned based on the setting ID | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **MessagingIntegrationEntityListing**
+
+
+## getConversationsMessagingIntegrationsApple
+
+> AppleIntegrationEntityListing getConversationsMessagingIntegrationsApple(opts)
+
+
+GET /api/v2/conversations/messaging/integrations/apple
+
+Get a list of Apple Integrations
+
+Requires ALL permissions:
+
+* messaging:integration:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let opts = { 
+  'pageSize': 25, // Number | Page size
+  'pageNumber': 1, // Number | Page number
+  'expand': "expand_example", // String | Expand instructions for the return value.
+  'supportedContentId': "supportedContentId_example", // String | Filter integrations returned based on the supported content ID
+  'messagingSettingId': "messagingSettingId_example", // String | Filter integrations returned based on the setting ID
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getConversationsMessagingIntegrationsApple(opts)
+  .then((data) => {
+    console.log(`getConversationsMessagingIntegrationsApple success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsMessagingIntegrationsApple');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **expand** | **String** | Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting, identityresolution |
+ **supportedContentId** | **String** | Filter integrations returned based on the supported content ID | [optional]  |
+ **messagingSettingId** | **String** | Filter integrations returned based on the setting ID | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**AppleIntegrationEntityListing**
+
+
+## getConversationsMessagingIntegrationsAppleIntegrationId
+
+> AppleIntegration getConversationsMessagingIntegrationsAppleIntegrationId(integrationId, opts)
+
+
+GET /api/v2/conversations/messaging/integrations/apple/{integrationId}
+
+Get an Apple messaging integration
+
+Requires ALL permissions:
+
+* messaging:integration:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let integrationId = "integrationId_example"; // String | Integration ID
+let opts = { 
+  'expand': "expand_example", // String | Expand instructions for the return value.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getConversationsMessagingIntegrationsAppleIntegrationId(integrationId, opts)
+  .then((data) => {
+    console.log(`getConversationsMessagingIntegrationsAppleIntegrationId success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsMessagingIntegrationsAppleIntegrationId');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **integrationId** | **String** | Integration ID |  |
+ **expand** | **String** | Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting, identityresolution |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**AppleIntegration**
 
 
 ## getConversationsMessagingIntegrationsFacebook
@@ -5005,7 +6963,11 @@ let opts = {
   'pageNumber': 1, // Number | Page number
   'expand': "expand_example", // String | Expand instructions for the return value.
   'supportedContentId': "supportedContentId_example", // String | Filter integrations returned based on the supported content ID
-  'messagingSettingId': "messagingSettingId_example" // String | Filter integrations returned based on the setting ID
+  'messagingSettingId': "messagingSettingId_example", // String | Filter integrations returned based on the setting ID
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getConversationsMessagingIntegrationsFacebook(opts)
@@ -5028,6 +6990,7 @@ apiInstance.getConversationsMessagingIntegrationsFacebook(opts)
  **expand** | **String** | Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting, identityresolution |
  **supportedContentId** | **String** | Filter integrations returned based on the supported content ID | [optional]  |
  **messagingSettingId** | **String** | Filter integrations returned based on the setting ID | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5062,7 +7025,11 @@ let apiInstance = new platformClient.ConversationsApi();
 
 let integrationId = "integrationId_example"; // String | Integration ID
 let opts = { 
-  'expand': "expand_example" // String | Expand instructions for the return value.
+  'expand': "expand_example", // String | Expand instructions for the return value.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getConversationsMessagingIntegrationsFacebookIntegrationId(integrationId, opts)
@@ -5082,6 +7049,7 @@ apiInstance.getConversationsMessagingIntegrationsFacebookIntegrationId(integrati
 | ------------- | ------------- | ------------- | ------------- |
  **integrationId** | **String** | Integration ID |  |
  **expand** | **String** | Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting, identityresolution |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5119,7 +7087,11 @@ let opts = {
   'pageNumber': 1, // Number | Page number
   'expand': "expand_example", // String | Expand instructions for the return value.
   'supportedContentId': "supportedContentId_example", // String | Filter integrations returned based on the supported content ID
-  'messagingSettingId': "messagingSettingId_example" // String | Filter integrations returned based on the setting ID
+  'messagingSettingId': "messagingSettingId_example", // String | Filter integrations returned based on the setting ID
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getConversationsMessagingIntegrationsInstagram(opts)
@@ -5142,6 +7114,7 @@ apiInstance.getConversationsMessagingIntegrationsInstagram(opts)
  **expand** | **String** | Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting, identityresolution |
  **supportedContentId** | **String** | Filter integrations returned based on the supported content ID | [optional]  |
  **messagingSettingId** | **String** | Filter integrations returned based on the setting ID | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5176,7 +7149,11 @@ let apiInstance = new platformClient.ConversationsApi();
 
 let integrationId = "integrationId_example"; // String | Integration ID
 let opts = { 
-  'expand': "expand_example" // String | Expand instructions for the return value.
+  'expand': "expand_example", // String | Expand instructions for the return value.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getConversationsMessagingIntegrationsInstagramIntegrationId(integrationId, opts)
@@ -5196,6 +7173,7 @@ apiInstance.getConversationsMessagingIntegrationsInstagramIntegrationId(integrat
 | ------------- | ------------- | ------------- | ------------- |
  **integrationId** | **String** | Integration ID |  |
  **expand** | **String** | Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting, identityresolution |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5235,7 +7213,11 @@ let opts = {
   'pageNumber': 1, // Number | Page number
   'expand': "expand_example", // String | Expand instructions for the return value.
   'supportedContentId': "supportedContentId_example", // String | Filter integrations returned based on the supported content ID
-  'messagingSettingId': "messagingSettingId_example" // String | Filter integrations returned based on the setting ID
+  'messagingSettingId': "messagingSettingId_example", // String | Filter integrations returned based on the setting ID
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getConversationsMessagingIntegrationsOpen(opts)
@@ -5258,10 +7240,254 @@ apiInstance.getConversationsMessagingIntegrationsOpen(opts)
  **expand** | **String** | Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting, identityresolution |
  **supportedContentId** | **String** | Filter integrations returned based on the supported content ID | [optional]  |
  **messagingSettingId** | **String** | Filter integrations returned based on the setting ID | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **OpenIntegrationEntityListing**
+
+
+## getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId
+
+> GoogleBusinessProfileOpenIntegration getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId(integrationId, opts)
+
+
+GET /api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile/{integrationId}
+
+Get an Open messaging integration with the Google Business Profile extension
+
+See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+
+getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* messaging:integration:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let integrationId = "integrationId_example"; // String | Integration ID
+let opts = { 
+  'expand': "expand_example", // String | Expand instructions for the return value.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId(integrationId, opts)
+  .then((data) => {
+    console.log(`getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **integrationId** | **String** | Integration ID |  |
+ **expand** | **String** | Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting, identityresolution |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**GoogleBusinessProfileOpenIntegration**
+
+
+## getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileOauthSettings
+
+> GoogleOAuthSettingsResponse getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileOauthSettings(opts)
+
+
+GET /api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile/oauth/settings
+
+Get Google Business Profile OAuth 2 settings
+
+See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+
+getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileOauthSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* messaging:googleBusinessProfileOAuthSettings:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileOauthSettings(opts)
+  .then((data) => {
+    console.log(`getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileOauthSettings success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileOauthSettings');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**GoogleOAuthSettingsResponse**
+
+
+## getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileToken
+
+> GoogleAuthToken getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileToken(tokenId, opts)
+
+
+GET /api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile/tokens/{tokenId}
+
+Get a Google Auth Token
+
+See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+
+getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileToken is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* messaging:googleBusinessProfileToken:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let tokenId = "tokenId_example"; // String | Token ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileToken(tokenId, opts)
+  .then((data) => {
+    console.log(`getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileToken success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileToken');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **tokenId** | **String** | Token ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**GoogleAuthToken**
+
+
+## getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokenAccounts
+
+> GoogleBusinessProfileAccountListing getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokenAccounts(tokenId, opts)
+
+
+GET /api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile/tokens/{tokenId}/accounts
+
+Get Google Business Profile accounts
+
+See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+
+getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokenAccounts is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* messaging:googleBusinessProfileAccount:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let tokenId = "tokenId_example"; // String | Token ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokenAccounts(tokenId, opts)
+  .then((data) => {
+    console.log(`getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokenAccounts success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokenAccounts');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **tokenId** | **String** | Token ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**GoogleBusinessProfileAccountListing**
 
 
 ## getConversationsMessagingIntegrationsOpenIntegrationId
@@ -5294,7 +7520,11 @@ let apiInstance = new platformClient.ConversationsApi();
 
 let integrationId = "integrationId_example"; // String | Integration ID
 let opts = { 
-  'expand': "expand_example" // String | Expand instructions for the return value.
+  'expand': "expand_example", // String | Expand instructions for the return value.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getConversationsMessagingIntegrationsOpenIntegrationId(integrationId, opts)
@@ -5314,6 +7544,7 @@ apiInstance.getConversationsMessagingIntegrationsOpenIntegrationId(integrationId
 | ------------- | ------------- | ------------- | ------------- |
  **integrationId** | **String** | Integration ID |  |
  **expand** | **String** | Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting, identityresolution |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5351,7 +7582,11 @@ let opts = {
   'pageNumber': 1, // Number | Page number
   'expand': "expand_example", // String | Expand instructions for the return value.
   'supportedContentId': "supportedContentId_example", // String | Filter integrations returned based on the supported content ID
-  'messagingSettingId': "messagingSettingId_example" // String | Filter integrations returned based on the setting ID
+  'messagingSettingId': "messagingSettingId_example", // String | Filter integrations returned based on the setting ID
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getConversationsMessagingIntegrationsTwitter(opts)
@@ -5374,6 +7609,7 @@ apiInstance.getConversationsMessagingIntegrationsTwitter(opts)
  **expand** | **String** | Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting, identityresolution |
  **supportedContentId** | **String** | Filter integrations returned based on the supported content ID | [optional]  |
  **messagingSettingId** | **String** | Filter integrations returned based on the setting ID | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5408,7 +7644,11 @@ let apiInstance = new platformClient.ConversationsApi();
 
 let integrationId = "integrationId_example"; // String | Integration ID
 let opts = { 
-  'expand': "expand_example" // String | Expand instructions for the return value.
+  'expand': "expand_example", // String | Expand instructions for the return value.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getConversationsMessagingIntegrationsTwitterIntegrationId(integrationId, opts)
@@ -5428,6 +7668,7 @@ apiInstance.getConversationsMessagingIntegrationsTwitterIntegrationId(integratio
 | ------------- | ------------- | ------------- | ------------- |
  **integrationId** | **String** | Integration ID |  |
  **expand** | **String** | Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting, identityresolution |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5436,7 +7677,7 @@ apiInstance.getConversationsMessagingIntegrationsTwitterIntegrationId(integratio
 
 ## getConversationsMessagingIntegrationsTwitterOauthSettings
 
-> TwitterSignupOAuthSettings getConversationsMessagingIntegrationsTwitterOauthSettings()
+> TwitterSignupOAuthSettings getConversationsMessagingIntegrationsTwitterOauthSettings(opts)
 
 
 GET /api/v2/conversations/messaging/integrations/twitter/oauth/settings
@@ -5459,8 +7700,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getConversationsMessagingIntegrationsTwitterOauthSettings()
+apiInstance.getConversationsMessagingIntegrationsTwitterOauthSettings(opts)
   .then((data) => {
     console.log(`getConversationsMessagingIntegrationsTwitterOauthSettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5472,7 +7719,10 @@ apiInstance.getConversationsMessagingIntegrationsTwitterOauthSettings()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5510,7 +7760,11 @@ let opts = {
   'pageNumber': 1, // Number | Page number
   'expand': "expand_example", // String | Expand instructions for the return value.
   'supportedContentId': "supportedContentId_example", // String | Filter integrations returned based on the supported content ID
-  'messagingSettingId': "messagingSettingId_example" // String | Filter integrations returned based on the setting ID
+  'messagingSettingId': "messagingSettingId_example", // String | Filter integrations returned based on the setting ID
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getConversationsMessagingIntegrationsWhatsapp(opts)
@@ -5533,6 +7787,7 @@ apiInstance.getConversationsMessagingIntegrationsWhatsapp(opts)
  **expand** | **String** | Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting, identityresolution |
  **supportedContentId** | **String** | Filter integrations returned based on the supported content ID | [optional]  |
  **messagingSettingId** | **String** | Filter integrations returned based on the setting ID | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5567,7 +7822,11 @@ let apiInstance = new platformClient.ConversationsApi();
 
 let integrationId = "integrationId_example"; // String | Integration ID
 let opts = { 
-  'expand': "expand_example" // String | Expand instructions for the return value.
+  'expand': "expand_example", // String | Expand instructions for the return value.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getConversationsMessagingIntegrationsWhatsappIntegrationId(integrationId, opts)
@@ -5587,15 +7846,72 @@ apiInstance.getConversationsMessagingIntegrationsWhatsappIntegrationId(integrati
 | ------------- | ------------- | ------------- | ------------- |
  **integrationId** | **String** | Integration ID |  |
  **expand** | **String** | Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting, identityresolution |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **WhatsAppIntegration**
 
 
+## getConversationsMessagingOauthAppleCallback
+
+> OAuthAppleAuthorizationResponse getConversationsMessagingOauthAppleCallback(code, state, opts)
+
+
+GET /api/v2/conversations/messaging/oauth/apple/callback
+
+Call Authentication provider callback to validate state and code
+
+Requires NO permissions:
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let code = "code_example"; // String | The authorization code to be sent to the authentication server during the token request.
+let state = "state_example"; // String | The state/nonce value generated by Genesys Auth-Client Service.
+let opts = { 
+  'error': "error_example", // String | Error parameter from OAuth provider
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getConversationsMessagingOauthAppleCallback(code, state, opts)
+  .then((data) => {
+    console.log(`getConversationsMessagingOauthAppleCallback success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getConversationsMessagingOauthAppleCallback');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **code** | **String** | The authorization code to be sent to the authentication server during the token request. |  |
+ **state** | **String** | The state/nonce value generated by Genesys Auth-Client Service. |  |
+ **error** | **String** | Error parameter from OAuth provider | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**OAuthAppleAuthorizationResponse**
+
+
 ## getConversationsMessagingSetting
 
-> MessagingSetting getConversationsMessagingSetting(messageSettingId)
+> MessagingSetting getConversationsMessagingSetting(messageSettingId, opts)
 
 
 GET /api/v2/conversations/messaging/settings/{messageSettingId}
@@ -5620,8 +7936,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ConversationsApi();
 
 let messageSettingId = "messageSettingId_example"; // String | Message Setting ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getConversationsMessagingSetting(messageSettingId)
+apiInstance.getConversationsMessagingSetting(messageSettingId, opts)
   .then((data) => {
     console.log(`getConversationsMessagingSetting success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5637,6 +7959,7 @@ apiInstance.getConversationsMessagingSetting(messageSettingId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **messageSettingId** | **String** | Message Setting ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5671,7 +7994,11 @@ let apiInstance = new platformClient.ConversationsApi();
 
 let opts = { 
   'pageSize': 25, // Number | Page size
-  'pageNumber': 1 // Number | Page number
+  'pageNumber': 1, // Number | Page number
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getConversationsMessagingSettings(opts)
@@ -5691,6 +8018,7 @@ apiInstance.getConversationsMessagingSettings(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5699,7 +8027,7 @@ apiInstance.getConversationsMessagingSettings(opts)
 
 ## getConversationsMessagingSettingsDefault
 
-> MessagingSetting getConversationsMessagingSettingsDefault()
+> MessagingSetting getConversationsMessagingSettingsDefault(opts)
 
 
 GET /api/v2/conversations/messaging/settings/default
@@ -5724,8 +8052,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getConversationsMessagingSettingsDefault()
+apiInstance.getConversationsMessagingSettingsDefault(opts)
   .then((data) => {
     console.log(`getConversationsMessagingSettingsDefault success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5737,7 +8071,10 @@ apiInstance.getConversationsMessagingSettingsDefault()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5772,7 +8109,11 @@ let apiInstance = new platformClient.ConversationsApi();
 
 let opts = { 
   'pageSize': 25, // Number | Page size
-  'pageNumber': 1 // Number | Page number
+  'pageNumber': 1, // Number | Page number
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getConversationsMessagingSupportedcontent(opts)
@@ -5792,6 +8133,7 @@ apiInstance.getConversationsMessagingSupportedcontent(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5800,7 +8142,7 @@ apiInstance.getConversationsMessagingSupportedcontent(opts)
 
 ## getConversationsMessagingSupportedcontentDefault
 
-> SupportedContent getConversationsMessagingSupportedcontentDefault()
+> SupportedContent getConversationsMessagingSupportedcontentDefault(opts)
 
 
 GET /api/v2/conversations/messaging/supportedcontent/default
@@ -5825,8 +8167,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getConversationsMessagingSupportedcontentDefault()
+apiInstance.getConversationsMessagingSupportedcontentDefault(opts)
   .then((data) => {
     console.log(`getConversationsMessagingSupportedcontentDefault success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5838,7 +8186,10 @@ apiInstance.getConversationsMessagingSupportedcontentDefault()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5847,7 +8198,7 @@ This endpoint does not need any parameter.
 
 ## getConversationsMessagingSupportedcontentSupportedContentId
 
-> SupportedContent getConversationsMessagingSupportedcontentSupportedContentId(supportedContentId)
+> SupportedContent getConversationsMessagingSupportedcontentSupportedContentId(supportedContentId, opts)
 
 
 GET /api/v2/conversations/messaging/supportedcontent/{supportedContentId}
@@ -5872,8 +8223,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ConversationsApi();
 
 let supportedContentId = "supportedContentId_example"; // String | Supported Content ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getConversationsMessagingSupportedcontentSupportedContentId(supportedContentId)
+apiInstance.getConversationsMessagingSupportedcontentSupportedContentId(supportedContentId, opts)
   .then((data) => {
     console.log(`getConversationsMessagingSupportedcontentSupportedContentId success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5889,6 +8246,7 @@ apiInstance.getConversationsMessagingSupportedcontentSupportedContentId(supporte
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **supportedContentId** | **String** | Supported Content ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5897,7 +8255,7 @@ apiInstance.getConversationsMessagingSupportedcontentSupportedContentId(supporte
 
 ## getConversationsMessagingThreadingtimeline
 
-> ConversationThreadingWindow getConversationsMessagingThreadingtimeline()
+> ConversationThreadingWindow getConversationsMessagingThreadingtimeline(opts)
 
 
 GET /api/v2/conversations/messaging/threadingtimeline
@@ -5922,8 +8280,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getConversationsMessagingThreadingtimeline()
+apiInstance.getConversationsMessagingThreadingtimeline(opts)
   .then((data) => {
     console.log(`getConversationsMessagingThreadingtimeline success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5935,7 +8299,10 @@ apiInstance.getConversationsMessagingThreadingtimeline()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5975,7 +8342,11 @@ let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
 let communicationId = "communicationId_example"; // String | communicationId
 let opts = { 
-  'provisional': false // Boolean | Indicates whether or not to fetch provisional wrap-up code.
+  'provisional': false, // Boolean | Indicates whether or not to fetch provisional wrap-up code.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getConversationsScreenshareParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts)
@@ -5997,6 +8368,7 @@ apiInstance.getConversationsScreenshareParticipantCommunicationWrapup(conversati
  **participantId** | **String** | participantId |  |
  **communicationId** | **String** | communicationId |  |
  **provisional** | **Boolean** | Indicates whether or not to fetch provisional wrap-up code. | [optional] [default to false] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6005,7 +8377,7 @@ apiInstance.getConversationsScreenshareParticipantCommunicationWrapup(conversati
 
 ## getConversationsSettings
 
-> Settings getConversationsSettings()
+> Settings getConversationsSettings(opts)
 
 
 GET /api/v2/conversations/settings
@@ -6028,8 +8400,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getConversationsSettings()
+apiInstance.getConversationsSettings(opts)
   .then((data) => {
     console.log(`getConversationsSettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6041,7 +8419,10 @@ apiInstance.getConversationsSettings()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6076,7 +8457,11 @@ let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
 let communicationId = "communicationId_example"; // String | communicationId
 let opts = { 
-  'provisional': false // Boolean | Indicates whether or not to fetch provisional wrap-up code.
+  'provisional': false, // Boolean | Indicates whether or not to fetch provisional wrap-up code.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getConversationsSocialParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts)
@@ -6098,6 +8483,7 @@ apiInstance.getConversationsSocialParticipantCommunicationWrapup(conversationId,
  **participantId** | **String** | participantId |  |
  **communicationId** | **String** | communicationId |  |
  **provisional** | **Boolean** | Indicates whether or not to fetch provisional wrap-up code. | [optional] [default to false] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6106,7 +8492,7 @@ apiInstance.getConversationsSocialParticipantCommunicationWrapup(conversationId,
 
 ## getConversationsVideoDetails
 
-> VideoConferenceDetails getConversationsVideoDetails(conferenceId)
+> VideoConferenceDetails getConversationsVideoDetails(conferenceId, opts)
 
 
 GET /api/v2/conversations/videos/{conferenceId}/details
@@ -6133,8 +8519,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ConversationsApi();
 
 let conferenceId = "conferenceId_example"; // String | conferenceId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getConversationsVideoDetails(conferenceId)
+apiInstance.getConversationsVideoDetails(conferenceId, opts)
   .then((data) => {
     console.log(`getConversationsVideoDetails success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6150,6 +8542,7 @@ apiInstance.getConversationsVideoDetails(conferenceId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **conferenceId** | **String** | conferenceId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6184,7 +8577,11 @@ let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
 let communicationId = "communicationId_example"; // String | communicationId
 let opts = { 
-  'provisional': false // Boolean | Indicates whether or not to fetch provisional wrap-up code.
+  'provisional': false, // Boolean | Indicates whether or not to fetch provisional wrap-up code.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getConversationsVideoParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts)
@@ -6206,6 +8603,7 @@ apiInstance.getConversationsVideoParticipantCommunicationWrapup(conversationId, 
  **participantId** | **String** | participantId |  |
  **communicationId** | **String** | communicationId |  |
  **provisional** | **Boolean** | Indicates whether or not to fetch provisional wrap-up code. | [optional] [default to false] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6214,14 +8612,12 @@ apiInstance.getConversationsVideoParticipantCommunicationWrapup(conversationId, 
 
 ## getConversationsVideosMeeting
 
-> MeetingIdRecord getConversationsVideosMeeting(meetingId)
+> MeetingIdRecord getConversationsVideosMeeting(meetingId, opts)
 
 
 GET /api/v2/conversations/videos/meetings/{meetingId}
 
 Gets a record for a given meetingId
-
-getConversationsVideosMeeting is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -6241,8 +8637,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ConversationsApi();
 
 let meetingId = "meetingId_example"; // String | meetingId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getConversationsVideosMeeting(meetingId)
+apiInstance.getConversationsVideosMeeting(meetingId, opts)
   .then((data) => {
     console.log(`getConversationsVideosMeeting success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6258,15 +8660,134 @@ apiInstance.getConversationsVideosMeeting(meetingId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **meetingId** | **String** | meetingId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **MeetingIdRecord**
 
 
+## patchConversationCustomattributes
+
+> void patchConversationCustomattributes(conversationId, opts)
+
+
+PATCH /api/v2/conversations/{conversationId}/customattributes
+
+Update a single custom attributes record by amending the data with only the provided fields.
+
+Requires ANY permissions:
+
+* conversation:customAttributes:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | conversation ID
+let opts = { 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.patchConversationCustomattributes(conversationId, opts)
+  .then(() => {
+    console.log('patchConversationCustomattributes returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchConversationCustomattributes');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversation ID |  |
+ **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+void (no response body)
+
+
+## patchConversationCustomattributesBulk
+
+> CustomAttributesBulkUpdateResponseMap patchConversationCustomattributesBulk(conversationId, opts)
+
+
+PATCH /api/v2/conversations/{conversationId}/customattributes/bulk
+
+Update a list of custom attributes record by amending the data with only the provided fields.
+
+Requires ANY permissions:
+
+* conversation:customAttributes:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | conversation ID
+let opts = { 
+  'body': [{}], // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.patchConversationCustomattributesBulk(conversationId, opts)
+  .then((data) => {
+    console.log(`patchConversationCustomattributesBulk success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchConversationCustomattributesBulk');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversation ID |  |
+ **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**CustomAttributesBulkUpdateResponseMap**
+
+
 ## patchConversationParticipant
 
-> void patchConversationParticipant(conversationId, participantId, body)
+> void patchConversationParticipant(conversationId, participantId, body, opts)
 
 
 PATCH /api/v2/conversations/{conversationId}/participants/{participantId}
@@ -6297,8 +8818,14 @@ let apiInstance = new platformClient.ConversationsApi();
 let conversationId = "conversationId_example"; // String | conversation ID
 let participantId = "participantId_example"; // String | participant ID
 let body = {}; // Object | Update request
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchConversationParticipant(conversationId, participantId, body)
+apiInstance.patchConversationParticipant(conversationId, participantId, body, opts)
   .then(() => {
     console.log('patchConversationParticipant returned successfully.');
   })
@@ -6316,6 +8843,7 @@ apiInstance.patchConversationParticipant(conversationId, participantId, body)
  **conversationId** | **String** | conversation ID |  |
  **participantId** | **String** | participant ID |  |
  **body** | **Object** | Update request |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6324,7 +8852,7 @@ void (no response body)
 
 ## patchConversationParticipantAttributes
 
-> void patchConversationParticipantAttributes(conversationId, participantId, body)
+> void patchConversationParticipantAttributes(conversationId, participantId, body, opts)
 
 
 PATCH /api/v2/conversations/{conversationId}/participants/{participantId}/attributes
@@ -6349,8 +8877,14 @@ let apiInstance = new platformClient.ConversationsApi();
 let conversationId = "conversationId_example"; // String | conversation ID
 let participantId = "participantId_example"; // String | participant ID
 let body = {}; // Object | Participant attributes
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchConversationParticipantAttributes(conversationId, participantId, body)
+apiInstance.patchConversationParticipantAttributes(conversationId, participantId, body, opts)
   .then(() => {
     console.log('patchConversationParticipantAttributes returned successfully.');
   })
@@ -6368,6 +8902,66 @@ apiInstance.patchConversationParticipantAttributes(conversationId, participantId
  **conversationId** | **String** | conversation ID |  |
  **participantId** | **String** | participant ID |  |
  **body** | **Object** | Participant attributes |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+void (no response body)
+
+
+## patchConversationRecordingstate
+
+> void patchConversationRecordingstate(conversationId, body, opts)
+
+
+PATCH /api/v2/conversations/{conversationId}/recordingstate
+
+Update a conversation by setting its recording state
+
+Requires ANY permissions:
+
+* conversation:recording:pauseOthers
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | conversation ID
+let body = {}; // Object | SetRecordingState
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.patchConversationRecordingstate(conversationId, body, opts)
+  .then(() => {
+    console.log('patchConversationRecordingstate returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchConversationRecordingstate');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversation ID |  |
+ **body** | **Object** | SetRecordingState |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6376,7 +8970,7 @@ void (no response body)
 
 ## patchConversationSecureattributes
 
-> **&#39;String&#39;** patchConversationSecureattributes(conversationId, body)
+> **&#39;String&#39;** patchConversationSecureattributes(conversationId, body, opts)
 
 
 PATCH /api/v2/conversations/{conversationId}/secureattributes
@@ -6402,8 +8996,14 @@ let apiInstance = new platformClient.ConversationsApi();
 
 let conversationId = "conversationId_example"; // String | conversation ID
 let body = {}; // Object | Conversation Secure Attributes
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchConversationSecureattributes(conversationId, body)
+apiInstance.patchConversationSecureattributes(conversationId, body, opts)
   .then((data) => {
     console.log(`patchConversationSecureattributes success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6420,10 +9020,72 @@ apiInstance.patchConversationSecureattributes(conversationId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversation ID |  |
  **body** | **Object** | Conversation Secure Attributes |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **&#39;String&#39;**
+
+
+## patchConversationSuggestion
+
+> Suggestion patchConversationSuggestion(conversationId, suggestionId, body, opts)
+
+
+PATCH /api/v2/conversations/{conversationId}/suggestions/{suggestionId}
+
+Update a suggestion.
+
+Requires ALL permissions:
+
+* conversation:suggestion:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | Conversation ID
+let suggestionId = "suggestionId_example"; // String | Suggestion ID
+let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.patchConversationSuggestion(conversationId, suggestionId, body, opts)
+  .then((data) => {
+    console.log(`patchConversationSuggestion success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchConversationSuggestion');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | Conversation ID |  |
+ **suggestionId** | **String** | Suggestion ID |  |
+ **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**Suggestion**
 
 
 ## patchConversationSummaryEngagements
@@ -6455,7 +9117,11 @@ let apiInstance = new platformClient.ConversationsApi();
 let conversationId = "conversationId_example"; // String | Conversation ID
 let summaryId = "summaryId_example"; // String | Summary ID
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.patchConversationSummaryEngagements(conversationId, summaryId, opts)
@@ -6476,6 +9142,7 @@ apiInstance.patchConversationSummaryEngagements(conversationId, summaryId, opts)
  **conversationId** | **String** | Conversation ID |  |
  **summaryId** | **String** | Summary ID |  |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6511,7 +9178,11 @@ let apiInstance = new platformClient.ConversationsApi();
 let conversationId = "conversationId_example"; // String | Conversation ID
 let summaryId = "summaryId_example"; // String | Summary ID
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.patchConversationSummaryFeedback(conversationId, summaryId, opts)
@@ -6532,6 +9203,7 @@ apiInstance.patchConversationSummaryFeedback(conversationId, summaryId, opts)
  **conversationId** | **String** | Conversation ID |  |
  **summaryId** | **String** | Summary ID |  |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6540,7 +9212,7 @@ void (no response body)
 
 ## patchConversationUtilizationlabel
 
-> **&#39;String&#39;** patchConversationUtilizationlabel(conversationId, body)
+> **&#39;String&#39;** patchConversationUtilizationlabel(conversationId, body, opts)
 
 
 PATCH /api/v2/conversations/{conversationId}/utilizationlabel
@@ -6566,8 +9238,14 @@ let apiInstance = new platformClient.ConversationsApi();
 
 let conversationId = "conversationId_example"; // String | conversation ID
 let body = {}; // Object | Conversation Utilization Label
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchConversationUtilizationlabel(conversationId, body)
+apiInstance.patchConversationUtilizationlabel(conversationId, body, opts)
   .then((data) => {
     console.log(`patchConversationUtilizationlabel success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6584,6 +9262,7 @@ apiInstance.patchConversationUtilizationlabel(conversationId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversation ID |  |
  **body** | **Object** | Conversation Utilization Label |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6592,7 +9271,7 @@ apiInstance.patchConversationUtilizationlabel(conversationId, body)
 
 ## patchConversationsAftercallworkConversationIdParticipantCommunication
 
-> AfterCallWorkUpdate patchConversationsAftercallworkConversationIdParticipantCommunication(conversationId, participantId, communicationId, body)
+> AfterCallWorkUpdate patchConversationsAftercallworkConversationIdParticipantCommunication(conversationId, participantId, communicationId, body, opts)
 
 
 PATCH /api/v2/conversations/aftercallwork/{conversationId}/participants/{participantId}/communications/{communicationId}
@@ -6620,8 +9299,14 @@ let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
 let communicationId = "communicationId_example"; // String | communicationId
 let body = {}; // Object | AfterCallWorkUpdate
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchConversationsAftercallworkConversationIdParticipantCommunication(conversationId, participantId, communicationId, body)
+apiInstance.patchConversationsAftercallworkConversationIdParticipantCommunication(conversationId, participantId, communicationId, body, opts)
   .then((data) => {
     console.log(`patchConversationsAftercallworkConversationIdParticipantCommunication success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6640,6 +9325,7 @@ apiInstance.patchConversationsAftercallworkConversationIdParticipantCommunicatio
  **participantId** | **String** | participantId |  |
  **communicationId** | **String** | communicationId |  |
  **body** | **Object** | AfterCallWorkUpdate |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6648,7 +9334,7 @@ apiInstance.patchConversationsAftercallworkConversationIdParticipantCommunicatio
 
 ## patchConversationsCall
 
-> Conversation patchConversationsCall(conversationId, body)
+> Conversation patchConversationsCall(conversationId, body, opts)
 
 
 PATCH /api/v2/conversations/calls/{conversationId}
@@ -6674,8 +9360,14 @@ let apiInstance = new platformClient.ConversationsApi();
 
 let conversationId = "conversationId_example"; // String | conversationId
 let body = {}; // Object | Conversation
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchConversationsCall(conversationId, body)
+apiInstance.patchConversationsCall(conversationId, body, opts)
   .then((data) => {
     console.log(`patchConversationsCall success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6692,15 +9384,75 @@ apiInstance.patchConversationsCall(conversationId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **body** | **Object** | Conversation |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **Conversation**
 
 
+## patchConversationsCallConference
+
+> void patchConversationsCallConference(conversationId, body, opts)
+
+
+PATCH /api/v2/conversations/calls/{conversationId}/conference
+
+Update a conversation by merging in other conversations to create a conference
+
+Requires ANY permissions:
+
+* conversation:conference:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | conversationId
+let body = {}; // Object | UpdateConferenceRequest
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.patchConversationsCallConference(conversationId, body, opts)
+  .then(() => {
+    console.log('patchConversationsCallConference returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchConversationsCallConference');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversationId |  |
+ **body** | **Object** | UpdateConferenceRequest |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+void (no response body)
+
+
 ## patchConversationsCallParticipant
 
-> void patchConversationsCallParticipant(conversationId, participantId, body)
+> void patchConversationsCallParticipant(conversationId, participantId, body, opts)
 
 
 PATCH /api/v2/conversations/calls/{conversationId}/participants/{participantId}
@@ -6729,8 +9481,14 @@ let apiInstance = new platformClient.ConversationsApi();
 let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
 let body = {}; // Object | Participant request
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchConversationsCallParticipant(conversationId, participantId, body)
+apiInstance.patchConversationsCallParticipant(conversationId, participantId, body, opts)
   .then(() => {
     console.log('patchConversationsCallParticipant returned successfully.');
   })
@@ -6748,6 +9506,7 @@ apiInstance.patchConversationsCallParticipant(conversationId, participantId, bod
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
  **body** | **Object** | Participant request |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6756,7 +9515,7 @@ void (no response body)
 
 ## patchConversationsCallParticipantAttributes
 
-> ParticipantAttributes patchConversationsCallParticipantAttributes(conversationId, participantId, body)
+> ParticipantAttributes patchConversationsCallParticipantAttributes(conversationId, participantId, body, opts)
 
 
 PATCH /api/v2/conversations/calls/{conversationId}/participants/{participantId}/attributes
@@ -6781,8 +9540,14 @@ let apiInstance = new platformClient.ConversationsApi();
 let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
 let body = {}; // Object | Participant attributes
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchConversationsCallParticipantAttributes(conversationId, participantId, body)
+apiInstance.patchConversationsCallParticipantAttributes(conversationId, participantId, body, opts)
   .then((data) => {
     console.log(`patchConversationsCallParticipantAttributes success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6800,6 +9565,7 @@ apiInstance.patchConversationsCallParticipantAttributes(conversationId, particip
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
  **body** | **Object** | Participant attributes |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6808,7 +9574,7 @@ apiInstance.patchConversationsCallParticipantAttributes(conversationId, particip
 
 ## patchConversationsCallParticipantCommunication
 
-> **Object** patchConversationsCallParticipantCommunication(conversationId, participantId, communicationId, body)
+> **Object** patchConversationsCallParticipantCommunication(conversationId, participantId, communicationId, body, opts)
 
 
 PATCH /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}
@@ -6834,8 +9600,14 @@ let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
 let communicationId = "communicationId_example"; // String | communicationId
 let body = {}; // Object | Participant
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchConversationsCallParticipantCommunication(conversationId, participantId, communicationId, body)
+apiInstance.patchConversationsCallParticipantCommunication(conversationId, participantId, communicationId, body, opts)
   .then((data) => {
     console.log(`patchConversationsCallParticipantCommunication success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6854,15 +9626,79 @@ apiInstance.patchConversationsCallParticipantCommunication(conversationId, parti
  **participantId** | **String** | participantId |  |
  **communicationId** | **String** | communicationId |  |
  **body** | **Object** | Participant |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **Object**
 
 
+## patchConversationsCallParticipantCommunicationPostflowaction
+
+> void patchConversationsCallParticipantCommunicationPostflowaction(conversationId, participantId, communicationId, opts)
+
+
+PATCH /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/postflowaction
+
+Set mandatory post call actions.  If both values are null or blank error will occur.
+
+Requires ANY permissions:
+
+* conversation:call:setMandatoryPostFlowAction
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | conversationId
+let participantId = "participantId_example"; // String | participantId
+let communicationId = "communicationId_example"; // String | communicationId
+let opts = { 
+  'body': {}, // Object | Action
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.patchConversationsCallParticipantCommunicationPostflowaction(conversationId, participantId, communicationId, opts)
+  .then(() => {
+    console.log('patchConversationsCallParticipantCommunicationPostflowaction returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchConversationsCallParticipantCommunicationPostflowaction');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversationId |  |
+ **participantId** | **String** | participantId |  |
+ **communicationId** | **String** | communicationId |  |
+ **body** | **Object** | Action | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+void (no response body)
+
+
 ## patchConversationsCallParticipantConsult
 
-> ConsultTransferResponse patchConversationsCallParticipantConsult(conversationId, participantId, body)
+> ConsultTransferResponse patchConversationsCallParticipantConsult(conversationId, participantId, body, opts)
 
 
 PATCH /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult
@@ -6887,8 +9723,14 @@ let apiInstance = new platformClient.ConversationsApi();
 let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
 let body = {}; // Object | new speak to
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchConversationsCallParticipantConsult(conversationId, participantId, body)
+apiInstance.patchConversationsCallParticipantConsult(conversationId, participantId, body, opts)
   .then((data) => {
     console.log(`patchConversationsCallParticipantConsult success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6906,15 +9748,82 @@ apiInstance.patchConversationsCallParticipantConsult(conversationId, participant
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
  **body** | **Object** | new speak to |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **ConsultTransferResponse**
 
 
+## patchConversationsCallParticipantUserUserId
+
+> void patchConversationsCallParticipantUserUserId(conversationId, participantId, userId, body, opts)
+
+
+PATCH /api/v2/conversations/calls/{conversationId}/participants/{participantId}/user/{userId}
+
+Update conversation participant on behalf of a user
+
+Requires ANY permissions:
+
+* conversation:participant:wrapup
+* conversation:call:record
+* conversation:communication:disconnect
+* conversation:agentlessCall:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | conversationId
+let participantId = "participantId_example"; // String | participantId
+let userId = "userId_example"; // String | userId
+let body = {}; // Object | Participant request
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.patchConversationsCallParticipantUserUserId(conversationId, participantId, userId, body, opts)
+  .then(() => {
+    console.log('patchConversationsCallParticipantUserUserId returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchConversationsCallParticipantUserUserId');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversationId |  |
+ **participantId** | **String** | participantId |  |
+ **userId** | **String** | userId |  |
+ **body** | **Object** | Participant request |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+void (no response body)
+
+
 ## patchConversationsCallback
 
-> Conversation patchConversationsCallback(conversationId, body)
+> Conversation patchConversationsCallback(conversationId, body, opts)
 
 
 PATCH /api/v2/conversations/callbacks/{conversationId}
@@ -6940,8 +9849,14 @@ let apiInstance = new platformClient.ConversationsApi();
 
 let conversationId = "conversationId_example"; // String | conversationId
 let body = {}; // Object | Conversation
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchConversationsCallback(conversationId, body)
+apiInstance.patchConversationsCallback(conversationId, body, opts)
   .then((data) => {
     console.log(`patchConversationsCallback success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6958,6 +9873,7 @@ apiInstance.patchConversationsCallback(conversationId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **body** | **Object** | Conversation |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6966,7 +9882,7 @@ apiInstance.patchConversationsCallback(conversationId, body)
 
 ## patchConversationsCallbackParticipant
 
-> void patchConversationsCallbackParticipant(conversationId, participantId, body)
+> void patchConversationsCallbackParticipant(conversationId, participantId, body, opts)
 
 
 PATCH /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}
@@ -6995,8 +9911,14 @@ let apiInstance = new platformClient.ConversationsApi();
 let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
 let body = {}; // Object | Participant
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchConversationsCallbackParticipant(conversationId, participantId, body)
+apiInstance.patchConversationsCallbackParticipant(conversationId, participantId, body, opts)
   .then(() => {
     console.log('patchConversationsCallbackParticipant returned successfully.');
   })
@@ -7014,6 +9936,7 @@ apiInstance.patchConversationsCallbackParticipant(conversationId, participantId,
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
  **body** | **Object** | Participant |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -7022,7 +9945,7 @@ void (no response body)
 
 ## patchConversationsCallbackParticipantAttributes
 
-> ParticipantAttributes patchConversationsCallbackParticipantAttributes(conversationId, participantId, body)
+> ParticipantAttributes patchConversationsCallbackParticipantAttributes(conversationId, participantId, body, opts)
 
 
 PATCH /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/attributes
@@ -7047,8 +9970,14 @@ let apiInstance = new platformClient.ConversationsApi();
 let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
 let body = {}; // Object | Attributes
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchConversationsCallbackParticipantAttributes(conversationId, participantId, body)
+apiInstance.patchConversationsCallbackParticipantAttributes(conversationId, participantId, body, opts)
   .then((data) => {
     console.log(`patchConversationsCallbackParticipantAttributes success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -7066,6 +9995,7 @@ apiInstance.patchConversationsCallbackParticipantAttributes(conversationId, part
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
  **body** | **Object** | Attributes |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -7074,7 +10004,7 @@ apiInstance.patchConversationsCallbackParticipantAttributes(conversationId, part
 
 ## patchConversationsCallbackParticipantCommunication
 
-> **Object** patchConversationsCallbackParticipantCommunication(conversationId, participantId, communicationId, body)
+> **Object** patchConversationsCallbackParticipantCommunication(conversationId, participantId, communicationId, body, opts)
 
 
 PATCH /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/communications/{communicationId}
@@ -7100,8 +10030,14 @@ let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
 let communicationId = "communicationId_example"; // String | communicationId
 let body = {}; // Object | Participant
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchConversationsCallbackParticipantCommunication(conversationId, participantId, communicationId, body)
+apiInstance.patchConversationsCallbackParticipantCommunication(conversationId, participantId, communicationId, body, opts)
   .then((data) => {
     console.log(`patchConversationsCallbackParticipantCommunication success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -7120,6 +10056,7 @@ apiInstance.patchConversationsCallbackParticipantCommunication(conversationId, p
  **participantId** | **String** | participantId |  |
  **communicationId** | **String** | communicationId |  |
  **body** | **Object** | Participant |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -7128,7 +10065,7 @@ apiInstance.patchConversationsCallbackParticipantCommunication(conversationId, p
 
 ## patchConversationsCallbacks
 
-> PatchCallbackResponse patchConversationsCallbacks(body)
+> PatchCallbackResponse patchConversationsCallbacks(body, opts)
 
 
 PATCH /api/v2/conversations/callbacks
@@ -7153,8 +10090,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ConversationsApi();
 
 let body = {}; // Object | PatchCallbackRequest
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchConversationsCallbacks(body)
+apiInstance.patchConversationsCallbacks(body, opts)
   .then((data) => {
     console.log(`patchConversationsCallbacks success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -7170,6 +10113,7 @@ apiInstance.patchConversationsCallbacks(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | PatchCallbackRequest |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -7178,7 +10122,7 @@ apiInstance.patchConversationsCallbacks(body)
 
 ## patchConversationsChat
 
-> Conversation patchConversationsChat(conversationId, body)
+> Conversation patchConversationsChat(conversationId, body, opts)
 
 :::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
 This resource has been deprecated
@@ -7209,8 +10153,14 @@ let apiInstance = new platformClient.ConversationsApi();
 
 let conversationId = "conversationId_example"; // String | conversationId
 let body = {}; // Object | Conversation
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchConversationsChat(conversationId, body)
+apiInstance.patchConversationsChat(conversationId, body, opts)
   .then((data) => {
     console.log(`patchConversationsChat success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -7227,6 +10177,7 @@ apiInstance.patchConversationsChat(conversationId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **body** | **Object** | Conversation |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -7235,7 +10186,7 @@ apiInstance.patchConversationsChat(conversationId, body)
 
 ## patchConversationsChatParticipant
 
-> void patchConversationsChatParticipant(conversationId, participantId, body)
+> void patchConversationsChatParticipant(conversationId, participantId, body, opts)
 
 :::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
 This resource has been deprecated
@@ -7269,8 +10220,14 @@ let apiInstance = new platformClient.ConversationsApi();
 let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
 let body = {}; // Object | Update request
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchConversationsChatParticipant(conversationId, participantId, body)
+apiInstance.patchConversationsChatParticipant(conversationId, participantId, body, opts)
   .then(() => {
     console.log('patchConversationsChatParticipant returned successfully.');
   })
@@ -7288,6 +10245,7 @@ apiInstance.patchConversationsChatParticipant(conversationId, participantId, bod
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
  **body** | **Object** | Update request |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -7296,7 +10254,7 @@ void (no response body)
 
 ## patchConversationsChatParticipantAttributes
 
-> ParticipantAttributes patchConversationsChatParticipantAttributes(conversationId, participantId, body)
+> ParticipantAttributes patchConversationsChatParticipantAttributes(conversationId, participantId, body, opts)
 
 :::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
 This resource has been deprecated
@@ -7326,8 +10284,14 @@ let apiInstance = new platformClient.ConversationsApi();
 let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
 let body = {}; // Object | Participant attributes
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchConversationsChatParticipantAttributes(conversationId, participantId, body)
+apiInstance.patchConversationsChatParticipantAttributes(conversationId, participantId, body, opts)
   .then((data) => {
     console.log(`patchConversationsChatParticipantAttributes success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -7345,6 +10309,7 @@ apiInstance.patchConversationsChatParticipantAttributes(conversationId, particip
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
  **body** | **Object** | Participant attributes |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -7353,7 +10318,7 @@ apiInstance.patchConversationsChatParticipantAttributes(conversationId, particip
 
 ## patchConversationsChatParticipantCommunication
 
-> **Object** patchConversationsChatParticipantCommunication(conversationId, participantId, communicationId, body)
+> **Object** patchConversationsChatParticipantCommunication(conversationId, participantId, communicationId, body, opts)
 
 :::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
 This resource has been deprecated
@@ -7384,8 +10349,14 @@ let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
 let communicationId = "communicationId_example"; // String | communicationId
 let body = {}; // Object | Participant
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchConversationsChatParticipantCommunication(conversationId, participantId, communicationId, body)
+apiInstance.patchConversationsChatParticipantCommunication(conversationId, participantId, communicationId, body, opts)
   .then((data) => {
     console.log(`patchConversationsChatParticipantCommunication success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -7404,6 +10375,7 @@ apiInstance.patchConversationsChatParticipantCommunication(conversationId, parti
  **participantId** | **String** | participantId |  |
  **communicationId** | **String** | communicationId |  |
  **body** | **Object** | Participant |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -7412,7 +10384,7 @@ apiInstance.patchConversationsChatParticipantCommunication(conversationId, parti
 
 ## patchConversationsCobrowsesession
 
-> Conversation patchConversationsCobrowsesession(conversationId, body)
+> Conversation patchConversationsCobrowsesession(conversationId, body, opts)
 
 :::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
 This resource has been deprecated
@@ -7443,8 +10415,14 @@ let apiInstance = new platformClient.ConversationsApi();
 
 let conversationId = "conversationId_example"; // String | conversationId
 let body = {}; // Object | Conversation
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchConversationsCobrowsesession(conversationId, body)
+apiInstance.patchConversationsCobrowsesession(conversationId, body, opts)
   .then((data) => {
     console.log(`patchConversationsCobrowsesession success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -7461,6 +10439,7 @@ apiInstance.patchConversationsCobrowsesession(conversationId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **body** | **Object** | Conversation |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -7503,7 +10482,11 @@ let apiInstance = new platformClient.ConversationsApi();
 let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.patchConversationsCobrowsesessionParticipant(conversationId, participantId, opts)
@@ -7524,6 +10507,7 @@ apiInstance.patchConversationsCobrowsesessionParticipant(conversationId, partici
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -7562,7 +10546,11 @@ let apiInstance = new platformClient.ConversationsApi();
 let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.patchConversationsCobrowsesessionParticipantAttributes(conversationId, participantId, opts)
@@ -7583,6 +10571,7 @@ apiInstance.patchConversationsCobrowsesessionParticipantAttributes(conversationI
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -7591,7 +10580,7 @@ apiInstance.patchConversationsCobrowsesessionParticipantAttributes(conversationI
 
 ## patchConversationsCobrowsesessionParticipantCommunication
 
-> **Object** patchConversationsCobrowsesessionParticipantCommunication(conversationId, participantId, communicationId, body)
+> **Object** patchConversationsCobrowsesessionParticipantCommunication(conversationId, participantId, communicationId, body, opts)
 
 :::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
 This resource has been deprecated
@@ -7622,8 +10611,14 @@ let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
 let communicationId = "communicationId_example"; // String | communicationId
 let body = {}; // Object | Participant
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchConversationsCobrowsesessionParticipantCommunication(conversationId, participantId, communicationId, body)
+apiInstance.patchConversationsCobrowsesessionParticipantCommunication(conversationId, participantId, communicationId, body, opts)
   .then((data) => {
     console.log(`patchConversationsCobrowsesessionParticipantCommunication success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -7642,6 +10637,7 @@ apiInstance.patchConversationsCobrowsesessionParticipantCommunication(conversati
  **participantId** | **String** | participantId |  |
  **communicationId** | **String** | communicationId |  |
  **body** | **Object** | Participant |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -7650,7 +10646,7 @@ apiInstance.patchConversationsCobrowsesessionParticipantCommunication(conversati
 
 ## patchConversationsEmail
 
-> Conversation patchConversationsEmail(conversationId, body)
+> Conversation patchConversationsEmail(conversationId, body, opts)
 
 
 PATCH /api/v2/conversations/emails/{conversationId}
@@ -7676,8 +10672,14 @@ let apiInstance = new platformClient.ConversationsApi();
 
 let conversationId = "conversationId_example"; // String | conversationId
 let body = {}; // Object | Conversation
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchConversationsEmail(conversationId, body)
+apiInstance.patchConversationsEmail(conversationId, body, opts)
   .then((data) => {
     console.log(`patchConversationsEmail success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -7694,6 +10696,7 @@ apiInstance.patchConversationsEmail(conversationId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **body** | **Object** | Conversation |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -7728,7 +10731,11 @@ let conversationId = "conversationId_example"; // String | conversationId
 let opts = { 
   'autoFill': true, // Boolean | autoFill
   'discard': true, // Boolean | discard
-  'body': {} // Object | Draft Manipulation Request
+  'body': {}, // Object | Draft Manipulation Request
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.patchConversationsEmailMessagesDraft(conversationId, opts)
@@ -7750,6 +10757,7 @@ apiInstance.patchConversationsEmailMessagesDraft(conversationId, opts)
  **autoFill** | **Boolean** | autoFill | [optional]  |
  **discard** | **Boolean** | discard | [optional]  |
  **body** | **Object** | Draft Manipulation Request | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -7758,7 +10766,7 @@ apiInstance.patchConversationsEmailMessagesDraft(conversationId, opts)
 
 ## patchConversationsEmailParticipant
 
-> void patchConversationsEmailParticipant(conversationId, participantId, body)
+> void patchConversationsEmailParticipant(conversationId, participantId, body, opts)
 
 
 PATCH /api/v2/conversations/emails/{conversationId}/participants/{participantId}
@@ -7788,8 +10796,14 @@ let apiInstance = new platformClient.ConversationsApi();
 let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
 let body = {}; // Object | Update request
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchConversationsEmailParticipant(conversationId, participantId, body)
+apiInstance.patchConversationsEmailParticipant(conversationId, participantId, body, opts)
   .then(() => {
     console.log('patchConversationsEmailParticipant returned successfully.');
   })
@@ -7807,6 +10821,7 @@ apiInstance.patchConversationsEmailParticipant(conversationId, participantId, bo
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
  **body** | **Object** | Update request |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -7815,7 +10830,7 @@ void (no response body)
 
 ## patchConversationsEmailParticipantAttributes
 
-> ParticipantAttributes patchConversationsEmailParticipantAttributes(conversationId, participantId, body)
+> ParticipantAttributes patchConversationsEmailParticipantAttributes(conversationId, participantId, body, opts)
 
 
 PATCH /api/v2/conversations/emails/{conversationId}/participants/{participantId}/attributes
@@ -7840,8 +10855,14 @@ let apiInstance = new platformClient.ConversationsApi();
 let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
 let body = {}; // Object | Participant attributes
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchConversationsEmailParticipantAttributes(conversationId, participantId, body)
+apiInstance.patchConversationsEmailParticipantAttributes(conversationId, participantId, body, opts)
   .then((data) => {
     console.log(`patchConversationsEmailParticipantAttributes success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -7859,6 +10880,7 @@ apiInstance.patchConversationsEmailParticipantAttributes(conversationId, partici
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
  **body** | **Object** | Participant attributes |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -7867,7 +10889,7 @@ apiInstance.patchConversationsEmailParticipantAttributes(conversationId, partici
 
 ## patchConversationsEmailParticipantCommunication
 
-> **Object** patchConversationsEmailParticipantCommunication(conversationId, participantId, communicationId, body)
+> **Object** patchConversationsEmailParticipantCommunication(conversationId, participantId, communicationId, body, opts)
 
 
 PATCH /api/v2/conversations/emails/{conversationId}/participants/{participantId}/communications/{communicationId}
@@ -7893,8 +10915,14 @@ let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
 let communicationId = "communicationId_example"; // String | communicationId
 let body = {}; // Object | Participant
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchConversationsEmailParticipantCommunication(conversationId, participantId, communicationId, body)
+apiInstance.patchConversationsEmailParticipantCommunication(conversationId, participantId, communicationId, body, opts)
   .then((data) => {
     console.log(`patchConversationsEmailParticipantCommunication success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -7913,6 +10941,7 @@ apiInstance.patchConversationsEmailParticipantCommunication(conversationId, part
  **participantId** | **String** | participantId |  |
  **communicationId** | **String** | communicationId |  |
  **body** | **Object** | Participant |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -7921,7 +10950,7 @@ apiInstance.patchConversationsEmailParticipantCommunication(conversationId, part
 
 ## patchConversationsEmailParticipantParkingstate
 
-> void patchConversationsEmailParticipantParkingstate(conversationId, participantId, body)
+> void patchConversationsEmailParticipantParkingstate(conversationId, participantId, body, opts)
 
 
 PATCH /api/v2/conversations/emails/{conversationId}/participants/{participantId}/parkingstate
@@ -7948,8 +10977,14 @@ let apiInstance = new platformClient.ConversationsApi();
 let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
 let body = {}; // Object | Parking update request
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchConversationsEmailParticipantParkingstate(conversationId, participantId, body)
+apiInstance.patchConversationsEmailParticipantParkingstate(conversationId, participantId, body, opts)
   .then(() => {
     console.log('patchConversationsEmailParticipantParkingstate returned successfully.');
   })
@@ -7967,6 +11002,7 @@ apiInstance.patchConversationsEmailParticipantParkingstate(conversationId, parti
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
  **body** | **Object** | Parking update request |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -7975,7 +11011,7 @@ void (no response body)
 
 ## patchConversationsMessage
 
-> Conversation patchConversationsMessage(conversationId, body)
+> Conversation patchConversationsMessage(conversationId, body, opts)
 
 
 PATCH /api/v2/conversations/messages/{conversationId}
@@ -7985,6 +11021,7 @@ Update a conversation by disconnecting all of the participants
 Requires ANY permissions:
 
 * conversation:communication:disconnect
+* conversation:message:park
 
 ### Example Usage
 
@@ -8001,8 +11038,14 @@ let apiInstance = new platformClient.ConversationsApi();
 
 let conversationId = "conversationId_example"; // String | conversationId
 let body = {}; // Object | Conversation
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchConversationsMessage(conversationId, body)
+apiInstance.patchConversationsMessage(conversationId, body, opts)
   .then((data) => {
     console.log(`patchConversationsMessage success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -8019,6 +11062,7 @@ apiInstance.patchConversationsMessage(conversationId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **body** | **Object** | Conversation |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -8056,7 +11100,11 @@ let apiInstance = new platformClient.ConversationsApi();
 let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.patchConversationsMessageParticipant(conversationId, participantId, opts)
@@ -8077,6 +11125,7 @@ apiInstance.patchConversationsMessageParticipant(conversationId, participantId, 
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -8110,7 +11159,11 @@ let apiInstance = new platformClient.ConversationsApi();
 let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.patchConversationsMessageParticipantAttributes(conversationId, participantId, opts)
@@ -8131,6 +11184,7 @@ apiInstance.patchConversationsMessageParticipantAttributes(conversationId, parti
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -8139,7 +11193,7 @@ apiInstance.patchConversationsMessageParticipantAttributes(conversationId, parti
 
 ## patchConversationsMessageParticipantCommunication
 
-> **Object** patchConversationsMessageParticipantCommunication(conversationId, participantId, communicationId, body)
+> **Object** patchConversationsMessageParticipantCommunication(conversationId, participantId, communicationId, body, opts)
 
 
 PATCH /api/v2/conversations/messages/{conversationId}/participants/{participantId}/communications/{communicationId}
@@ -8165,8 +11219,14 @@ let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
 let communicationId = "communicationId_example"; // String | communicationId
 let body = {}; // Object | Participant
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchConversationsMessageParticipantCommunication(conversationId, participantId, communicationId, body)
+apiInstance.patchConversationsMessageParticipantCommunication(conversationId, participantId, communicationId, body, opts)
   .then((data) => {
     console.log(`patchConversationsMessageParticipantCommunication success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -8185,15 +11245,136 @@ apiInstance.patchConversationsMessageParticipantCommunication(conversationId, pa
  **participantId** | **String** | participantId |  |
  **communicationId** | **String** | communicationId |  |
  **body** | **Object** | Participant |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **Object**
 
 
+## patchConversationsMessageParticipantParkingstate
+
+> void patchConversationsMessageParticipantParkingstate(conversationId, participantId, body, opts)
+
+
+PATCH /api/v2/conversations/messages/{conversationId}/participants/{participantId}/parkingstate
+
+Update conversation by setting its parking state
+
+Requires ANY permissions:
+
+* conversation:message:park
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | conversationId
+let participantId = "participantId_example"; // String | participantId
+let body = {}; // Object | Parking update request
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.patchConversationsMessageParticipantParkingstate(conversationId, participantId, body, opts)
+  .then(() => {
+    console.log('patchConversationsMessageParticipantParkingstate returned successfully.');
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchConversationsMessageParticipantParkingstate');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversationId |  |
+ **participantId** | **String** | participantId |  |
+ **body** | **Object** | Parking update request |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+void (no response body)
+
+
+## patchConversationsMessagingIntegrationsAppleIntegrationId
+
+> AppleIntegration patchConversationsMessagingIntegrationsAppleIntegrationId(integrationId, body, opts)
+
+
+PATCH /api/v2/conversations/messaging/integrations/apple/{integrationId}
+
+Update an Apple messaging integration
+
+Requires ALL permissions:
+
+* messaging:appleIntegration:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let integrationId = "integrationId_example"; // String | Integration ID
+let body = {}; // Object | AppleIntegrationUpdateRequest
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.patchConversationsMessagingIntegrationsAppleIntegrationId(integrationId, body, opts)
+  .then((data) => {
+    console.log(`patchConversationsMessagingIntegrationsAppleIntegrationId success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchConversationsMessagingIntegrationsAppleIntegrationId');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **integrationId** | **String** | Integration ID |  |
+ **body** | **Object** | AppleIntegrationUpdateRequest |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**AppleIntegration**
+
+
 ## patchConversationsMessagingIntegrationsFacebookIntegrationId
 
-> FacebookIntegration patchConversationsMessagingIntegrationsFacebookIntegrationId(integrationId, body)
+> FacebookIntegration patchConversationsMessagingIntegrationsFacebookIntegrationId(integrationId, body, opts)
 
 
 PATCH /api/v2/conversations/messaging/integrations/facebook/{integrationId}
@@ -8219,8 +11400,14 @@ let apiInstance = new platformClient.ConversationsApi();
 
 let integrationId = "integrationId_example"; // String | Integration ID
 let body = {}; // Object | FacebookIntegrationUpdateRequest
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchConversationsMessagingIntegrationsFacebookIntegrationId(integrationId, body)
+apiInstance.patchConversationsMessagingIntegrationsFacebookIntegrationId(integrationId, body, opts)
   .then((data) => {
     console.log(`patchConversationsMessagingIntegrationsFacebookIntegrationId success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -8237,6 +11424,7 @@ apiInstance.patchConversationsMessagingIntegrationsFacebookIntegrationId(integra
 | ------------- | ------------- | ------------- | ------------- |
  **integrationId** | **String** | Integration ID |  |
  **body** | **Object** | FacebookIntegrationUpdateRequest |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -8245,7 +11433,7 @@ apiInstance.patchConversationsMessagingIntegrationsFacebookIntegrationId(integra
 
 ## patchConversationsMessagingIntegrationsInstagramIntegrationId
 
-> InstagramIntegration patchConversationsMessagingIntegrationsInstagramIntegrationId(integrationId, body)
+> InstagramIntegration patchConversationsMessagingIntegrationsInstagramIntegrationId(integrationId, body, opts)
 
 
 PATCH /api/v2/conversations/messaging/integrations/instagram/{integrationId}
@@ -8271,8 +11459,14 @@ let apiInstance = new platformClient.ConversationsApi();
 
 let integrationId = "integrationId_example"; // String | Integration ID
 let body = {}; // Object | InstagramIntegrationUpdateRequest
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchConversationsMessagingIntegrationsInstagramIntegrationId(integrationId, body)
+apiInstance.patchConversationsMessagingIntegrationsInstagramIntegrationId(integrationId, body, opts)
   .then((data) => {
     console.log(`patchConversationsMessagingIntegrationsInstagramIntegrationId success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -8289,15 +11483,79 @@ apiInstance.patchConversationsMessagingIntegrationsInstagramIntegrationId(integr
 | ------------- | ------------- | ------------- | ------------- |
  **integrationId** | **String** | Integration ID |  |
  **body** | **Object** | InstagramIntegrationUpdateRequest |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **InstagramIntegration**
 
 
+## patchConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId
+
+> GoogleBusinessProfileOpenIntegration patchConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId(integrationId, body, opts)
+
+
+PATCH /api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile/{integrationId}
+
+Update an Open messaging integration with the Google Business Profile extension
+
+See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+
+patchConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* messaging:googleBusinessProfileIntegration:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let integrationId = "integrationId_example"; // String | Integration ID
+let body = {}; // Object | GoogleBusinessProfileOpenIntegrationUpdateRequest
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.patchConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId(integrationId, body, opts)
+  .then((data) => {
+    console.log(`patchConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileIntegrationId');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **integrationId** | **String** | Integration ID |  |
+ **body** | **Object** | GoogleBusinessProfileOpenIntegrationUpdateRequest |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**GoogleBusinessProfileOpenIntegration**
+
+
 ## patchConversationsMessagingIntegrationsOpenIntegrationId
 
-> OpenIntegration patchConversationsMessagingIntegrationsOpenIntegrationId(integrationId, body)
+> OpenIntegration patchConversationsMessagingIntegrationsOpenIntegrationId(integrationId, body, opts)
 
 
 PATCH /api/v2/conversations/messaging/integrations/open/{integrationId}
@@ -8325,8 +11583,14 @@ let apiInstance = new platformClient.ConversationsApi();
 
 let integrationId = "integrationId_example"; // String | Integration ID
 let body = {}; // Object | OpenIntegrationUpdateRequest
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchConversationsMessagingIntegrationsOpenIntegrationId(integrationId, body)
+apiInstance.patchConversationsMessagingIntegrationsOpenIntegrationId(integrationId, body, opts)
   .then((data) => {
     console.log(`patchConversationsMessagingIntegrationsOpenIntegrationId success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -8343,6 +11607,7 @@ apiInstance.patchConversationsMessagingIntegrationsOpenIntegrationId(integration
 | ------------- | ------------- | ------------- | ------------- |
  **integrationId** | **String** | Integration ID |  |
  **body** | **Object** | OpenIntegrationUpdateRequest |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -8351,7 +11616,7 @@ apiInstance.patchConversationsMessagingIntegrationsOpenIntegrationId(integration
 
 ## patchConversationsMessagingIntegrationsTwitterIntegrationId
 
-> TwitterIntegration patchConversationsMessagingIntegrationsTwitterIntegrationId(integrationId, body)
+> TwitterIntegration patchConversationsMessagingIntegrationsTwitterIntegrationId(integrationId, body, opts)
 
 
 PATCH /api/v2/conversations/messaging/integrations/twitter/{integrationId}
@@ -8377,8 +11642,14 @@ let apiInstance = new platformClient.ConversationsApi();
 
 let integrationId = "integrationId_example"; // String | Integration ID
 let body = {}; // Object | TwitterIntegrationUpdateRequest
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchConversationsMessagingIntegrationsTwitterIntegrationId(integrationId, body)
+apiInstance.patchConversationsMessagingIntegrationsTwitterIntegrationId(integrationId, body, opts)
   .then((data) => {
     console.log(`patchConversationsMessagingIntegrationsTwitterIntegrationId success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -8395,6 +11666,7 @@ apiInstance.patchConversationsMessagingIntegrationsTwitterIntegrationId(integrat
 | ------------- | ------------- | ------------- | ------------- |
  **integrationId** | **String** | Integration ID |  |
  **body** | **Object** | TwitterIntegrationUpdateRequest |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -8403,7 +11675,7 @@ apiInstance.patchConversationsMessagingIntegrationsTwitterIntegrationId(integrat
 
 ## patchConversationsMessagingIntegrationsWhatsappEmbeddedsignupIntegrationId
 
-> WhatsAppIntegration patchConversationsMessagingIntegrationsWhatsappEmbeddedsignupIntegrationId(integrationId, body)
+> WhatsAppIntegration patchConversationsMessagingIntegrationsWhatsappEmbeddedsignupIntegrationId(integrationId, body, opts)
 
 
 PATCH /api/v2/conversations/messaging/integrations/whatsapp/embeddedsignup/{integrationId}
@@ -8431,8 +11703,14 @@ let apiInstance = new platformClient.ConversationsApi();
 
 let integrationId = "integrationId_example"; // String | Integration ID
 let body = {}; // Object | WhatsAppEmbeddedSignupIntegrationActivationRequest
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchConversationsMessagingIntegrationsWhatsappEmbeddedsignupIntegrationId(integrationId, body)
+apiInstance.patchConversationsMessagingIntegrationsWhatsappEmbeddedsignupIntegrationId(integrationId, body, opts)
   .then((data) => {
     console.log(`patchConversationsMessagingIntegrationsWhatsappEmbeddedsignupIntegrationId success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -8449,6 +11727,7 @@ apiInstance.patchConversationsMessagingIntegrationsWhatsappEmbeddedsignupIntegra
 | ------------- | ------------- | ------------- | ------------- |
  **integrationId** | **String** | Integration ID |  |
  **body** | **Object** | WhatsAppEmbeddedSignupIntegrationActivationRequest |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -8457,7 +11736,7 @@ apiInstance.patchConversationsMessagingIntegrationsWhatsappEmbeddedsignupIntegra
 
 ## patchConversationsMessagingIntegrationsWhatsappIntegrationId
 
-> WhatsAppIntegration patchConversationsMessagingIntegrationsWhatsappIntegrationId(integrationId, body)
+> WhatsAppIntegration patchConversationsMessagingIntegrationsWhatsappIntegrationId(integrationId, body, opts)
 
 
 PATCH /api/v2/conversations/messaging/integrations/whatsapp/{integrationId}
@@ -8483,8 +11762,14 @@ let apiInstance = new platformClient.ConversationsApi();
 
 let integrationId = "integrationId_example"; // String | Integration ID
 let body = {}; // Object | WhatsAppIntegrationUpdateRequest
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchConversationsMessagingIntegrationsWhatsappIntegrationId(integrationId, body)
+apiInstance.patchConversationsMessagingIntegrationsWhatsappIntegrationId(integrationId, body, opts)
   .then((data) => {
     console.log(`patchConversationsMessagingIntegrationsWhatsappIntegrationId success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -8501,6 +11786,7 @@ apiInstance.patchConversationsMessagingIntegrationsWhatsappIntegrationId(integra
 | ------------- | ------------- | ------------- | ------------- |
  **integrationId** | **String** | Integration ID |  |
  **body** | **Object** | WhatsAppIntegrationUpdateRequest |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -8509,7 +11795,7 @@ apiInstance.patchConversationsMessagingIntegrationsWhatsappIntegrationId(integra
 
 ## patchConversationsMessagingSetting
 
-> MessagingSetting patchConversationsMessagingSetting(messageSettingId, body)
+> MessagingSetting patchConversationsMessagingSetting(messageSettingId, body, opts)
 
 
 PATCH /api/v2/conversations/messaging/settings/{messageSettingId}
@@ -8535,8 +11821,14 @@ let apiInstance = new platformClient.ConversationsApi();
 
 let messageSettingId = "messageSettingId_example"; // String | Message Setting ID
 let body = {}; // Object | MessagingSetting
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchConversationsMessagingSetting(messageSettingId, body)
+apiInstance.patchConversationsMessagingSetting(messageSettingId, body, opts)
   .then((data) => {
     console.log(`patchConversationsMessagingSetting success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -8553,6 +11845,7 @@ apiInstance.patchConversationsMessagingSetting(messageSettingId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **messageSettingId** | **String** | Message Setting ID |  |
  **body** | **Object** | MessagingSetting |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -8561,7 +11854,7 @@ apiInstance.patchConversationsMessagingSetting(messageSettingId, body)
 
 ## patchConversationsMessagingSupportedcontentSupportedContentId
 
-> SupportedContent patchConversationsMessagingSupportedcontentSupportedContentId(supportedContentId, body)
+> SupportedContent patchConversationsMessagingSupportedcontentSupportedContentId(supportedContentId, body, opts)
 
 
 PATCH /api/v2/conversations/messaging/supportedcontent/{supportedContentId}
@@ -8587,8 +11880,14 @@ let apiInstance = new platformClient.ConversationsApi();
 
 let supportedContentId = "supportedContentId_example"; // String | Supported Content ID
 let body = {}; // Object | SupportedContent
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchConversationsMessagingSupportedcontentSupportedContentId(supportedContentId, body)
+apiInstance.patchConversationsMessagingSupportedcontentSupportedContentId(supportedContentId, body, opts)
   .then((data) => {
     console.log(`patchConversationsMessagingSupportedcontentSupportedContentId success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -8605,6 +11904,7 @@ apiInstance.patchConversationsMessagingSupportedcontentSupportedContentId(suppor
 | ------------- | ------------- | ------------- | ------------- |
  **supportedContentId** | **String** | Supported Content ID |  |
  **body** | **Object** | SupportedContent |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -8613,7 +11913,7 @@ apiInstance.patchConversationsMessagingSupportedcontentSupportedContentId(suppor
 
 ## patchConversationsSettings
 
-> void patchConversationsSettings(body)
+> void patchConversationsSettings(body, opts)
 
 
 PATCH /api/v2/conversations/settings
@@ -8638,8 +11938,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ConversationsApi();
 
 let body = {}; // Object | Settings
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchConversationsSettings(body)
+apiInstance.patchConversationsSettings(body, opts)
   .then(() => {
     console.log('patchConversationsSettings returned successfully.');
   })
@@ -8655,6 +11961,7 @@ apiInstance.patchConversationsSettings(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Settings |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -8663,7 +11970,7 @@ void (no response body)
 
 ## postAnalyticsConversationDetailsProperties
 
-> PropertyIndexRequest postAnalyticsConversationDetailsProperties(conversationId, body)
+> PropertyIndexRequest postAnalyticsConversationDetailsProperties(conversationId, body, opts)
 
 
 POST /api/v2/analytics/conversations/{conversationId}/details/properties
@@ -8689,8 +11996,14 @@ let apiInstance = new platformClient.ConversationsApi();
 
 let conversationId = "conversationId_example"; // String | conversationId
 let body = {}; // Object | request
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postAnalyticsConversationDetailsProperties(conversationId, body)
+apiInstance.postAnalyticsConversationDetailsProperties(conversationId, body, opts)
   .then((data) => {
     console.log(`postAnalyticsConversationDetailsProperties success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -8707,6 +12020,7 @@ apiInstance.postAnalyticsConversationDetailsProperties(conversationId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **body** | **Object** | request |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -8742,7 +12056,11 @@ let apiInstance = new platformClient.ConversationsApi();
 let body = {}; // Object | query
 let opts = { 
   'pageSize': 3.4, // Number | The desired page size
-  'pageNumber': 3.4 // Number | The desired page number
+  'pageNumber': 3.4, // Number | The desired page number
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postAnalyticsConversationsActivityQuery(body, opts)
@@ -8763,6 +12081,7 @@ apiInstance.postAnalyticsConversationsActivityQuery(body, opts)
  **body** | **Object** | query |  |
  **pageSize** | **Number** | The desired page size | [optional]  |
  **pageNumber** | **Number** | The desired page number | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -8771,14 +12090,12 @@ apiInstance.postAnalyticsConversationsActivityQuery(body, opts)
 
 ## postAnalyticsConversationsAggregatesJobs
 
-> AsyncQueryResponse postAnalyticsConversationsAggregatesJobs(body)
+> AsyncQueryResponse postAnalyticsConversationsAggregatesJobs(body, opts)
 
 
 POST /api/v2/analytics/conversations/aggregates/jobs
 
 Query for conversation aggregates asynchronously
-
-postAnalyticsConversationsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -8798,8 +12115,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ConversationsApi();
 
 let body = {}; // Object | query
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postAnalyticsConversationsAggregatesJobs(body)
+apiInstance.postAnalyticsConversationsAggregatesJobs(body, opts)
   .then((data) => {
     console.log(`postAnalyticsConversationsAggregatesJobs success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -8815,6 +12138,7 @@ apiInstance.postAnalyticsConversationsAggregatesJobs(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -8823,7 +12147,7 @@ apiInstance.postAnalyticsConversationsAggregatesJobs(body)
 
 ## postAnalyticsConversationsAggregatesQuery
 
-> ConversationAggregateQueryResponse postAnalyticsConversationsAggregatesQuery(body)
+> ConversationAggregateQueryResponse postAnalyticsConversationsAggregatesQuery(body, opts)
 
 
 POST /api/v2/analytics/conversations/aggregates/query
@@ -8848,8 +12172,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ConversationsApi();
 
 let body = {}; // Object | query
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postAnalyticsConversationsAggregatesQuery(body)
+apiInstance.postAnalyticsConversationsAggregatesQuery(body, opts)
   .then((data) => {
     console.log(`postAnalyticsConversationsAggregatesQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -8865,6 +12195,7 @@ apiInstance.postAnalyticsConversationsAggregatesQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -8873,7 +12204,7 @@ apiInstance.postAnalyticsConversationsAggregatesQuery(body)
 
 ## postAnalyticsConversationsDetailsJobs
 
-> AsyncQueryResponse postAnalyticsConversationsDetailsJobs(body)
+> AsyncQueryResponse postAnalyticsConversationsDetailsJobs(body, opts)
 
 
 POST /api/v2/analytics/conversations/details/jobs
@@ -8899,8 +12230,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ConversationsApi();
 
 let body = {}; // Object | query
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postAnalyticsConversationsDetailsJobs(body)
+apiInstance.postAnalyticsConversationsDetailsJobs(body, opts)
   .then((data) => {
     console.log(`postAnalyticsConversationsDetailsJobs success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -8916,6 +12253,7 @@ apiInstance.postAnalyticsConversationsDetailsJobs(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -8924,7 +12262,7 @@ apiInstance.postAnalyticsConversationsDetailsJobs(body)
 
 ## postAnalyticsConversationsDetailsQuery
 
-> AnalyticsConversationQueryResponse postAnalyticsConversationsDetailsQuery(body)
+> AnalyticsConversationQueryResponse postAnalyticsConversationsDetailsQuery(body, opts)
 
 
 POST /api/v2/analytics/conversations/details/query
@@ -8950,8 +12288,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ConversationsApi();
 
 let body = {}; // Object | query
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postAnalyticsConversationsDetailsQuery(body)
+apiInstance.postAnalyticsConversationsDetailsQuery(body, opts)
   .then((data) => {
     console.log(`postAnalyticsConversationsDetailsQuery success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -8967,6 +12311,7 @@ apiInstance.postAnalyticsConversationsDetailsQuery(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -8975,7 +12320,7 @@ apiInstance.postAnalyticsConversationsDetailsQuery(body)
 
 ## postConversationAssign
 
-> **&#39;String&#39;** postConversationAssign(conversationId, body)
+> **&#39;String&#39;** postConversationAssign(conversationId, body, opts)
 
 
 POST /api/v2/conversations/{conversationId}/assign
@@ -9010,8 +12355,14 @@ let apiInstance = new platformClient.ConversationsApi();
 
 let conversationId = "conversationId_example"; // String | conversation ID
 let body = {}; // Object | Targeted user
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postConversationAssign(conversationId, body)
+apiInstance.postConversationAssign(conversationId, body, opts)
   .then((data) => {
     console.log(`postConversationAssign success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -9028,6 +12379,7 @@ apiInstance.postConversationAssign(conversationId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversation ID |  |
  **body** | **Object** | Targeted user |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -9036,7 +12388,7 @@ apiInstance.postConversationAssign(conversationId, body)
 
 ## postConversationBarge
 
-> void postConversationBarge(conversationId)
+> void postConversationBarge(conversationId, opts)
 
 
 POST /api/v2/conversations/{conversationId}/barge
@@ -9061,8 +12413,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ConversationsApi();
 
 let conversationId = "conversationId_example"; // String | conversation ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postConversationBarge(conversationId)
+apiInstance.postConversationBarge(conversationId, opts)
   .then(() => {
     console.log('postConversationBarge returned successfully.');
   })
@@ -9078,6 +12436,7 @@ apiInstance.postConversationBarge(conversationId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversation ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -9086,7 +12445,7 @@ void (no response body)
 
 ## postConversationCobrowse
 
-> CobrowseWebMessagingSession postConversationCobrowse(conversationId)
+> CobrowseWebMessagingSession postConversationCobrowse(conversationId, opts)
 
 
 POST /api/v2/conversations/{conversationId}/cobrowse
@@ -9112,8 +12471,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ConversationsApi();
 
 let conversationId = "conversationId_example"; // String | Conversation ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postConversationCobrowse(conversationId)
+apiInstance.postConversationCobrowse(conversationId, opts)
   .then((data) => {
     console.log(`postConversationCobrowse success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -9129,15 +12494,266 @@ apiInstance.postConversationCobrowse(conversationId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | Conversation ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **CobrowseWebMessagingSession**
 
 
+## postConversationCommunicationAgentchecklist
+
+> AgentChecklistResponse postConversationCommunicationAgentchecklist(conversationId, communicationId, agentChecklistId, body, opts)
+
+
+POST /api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/{agentChecklistId}
+
+Agent Checklist activation API
+
+Requires ALL permissions:
+
+* conversation:agentchecklist:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | Conversation ID
+let communicationId = "communicationId_example"; // String | Communication ID
+let agentChecklistId = "agentChecklistId_example"; // String | Agent Checklist ID
+let body = {}; // Object | Agent checklist activation payload
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.postConversationCommunicationAgentchecklist(conversationId, communicationId, agentChecklistId, body, opts)
+  .then((data) => {
+    console.log(`postConversationCommunicationAgentchecklist success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postConversationCommunicationAgentchecklist');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | Conversation ID |  |
+ **communicationId** | **String** | Communication ID |  |
+ **agentChecklistId** | **String** | Agent Checklist ID |  |
+ **body** | **Object** | Agent checklist activation payload |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**AgentChecklistResponse**
+
+
+## postConversationCommunicationAgentchecklistAgentaction
+
+> AgentChecklistResponse postConversationCommunicationAgentchecklistAgentaction(conversationId, communicationId, agentChecklistId, body, opts)
+
+
+POST /api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/{agentChecklistId}/agentaction
+
+API invoked to capture an agent action.
+
+Requires ALL permissions:
+
+* conversation:agentchecklist:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | Conversation ID
+let communicationId = "communicationId_example"; // String | Communication ID
+let agentChecklistId = "agentChecklistId_example"; // String | Agent Checklist ID
+let body = {}; // Object | Agent action payload
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.postConversationCommunicationAgentchecklistAgentaction(conversationId, communicationId, agentChecklistId, body, opts)
+  .then((data) => {
+    console.log(`postConversationCommunicationAgentchecklistAgentaction success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postConversationCommunicationAgentchecklistAgentaction');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | Conversation ID |  |
+ **communicationId** | **String** | Communication ID |  |
+ **agentChecklistId** | **String** | Agent Checklist ID |  |
+ **body** | **Object** | Agent action payload |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**AgentChecklistResponse**
+
+
+## postConversationCommunicationAgentchecklistJobs
+
+> ChecklistInferenceJobCreationResponse postConversationCommunicationAgentchecklistJobs(conversationId, communicationId, agentChecklistId, body, opts)
+
+
+POST /api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/{agentChecklistId}/jobs
+
+Create inference job
+
+Requires ALL permissions:
+
+* conversation:agentchecklist:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | Conversation ID
+let communicationId = "communicationId_example"; // String | Communication ID
+let agentChecklistId = "agentChecklistId_example"; // String | Agent Checklist ID
+let body = {}; // Object | Agent checklist inference job payload
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.postConversationCommunicationAgentchecklistJobs(conversationId, communicationId, agentChecklistId, body, opts)
+  .then((data) => {
+    console.log(`postConversationCommunicationAgentchecklistJobs success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postConversationCommunicationAgentchecklistJobs');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | Conversation ID |  |
+ **communicationId** | **String** | Communication ID |  |
+ **agentChecklistId** | **String** | Agent Checklist ID |  |
+ **body** | **Object** | Agent checklist inference job payload |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**ChecklistInferenceJobCreationResponse**
+
+
+## postConversationCommunicationAgentchecklistsFinalize
+
+> AgentChecklistResponseList postConversationCommunicationAgentchecklistsFinalize(conversationId, communicationId, body, opts)
+
+
+POST /api/v2/conversations/{conversationId}/communications/{communicationId}/agentchecklists/finalize
+
+API invoked to finalize agent checklist evaluation.
+
+Requires ALL permissions:
+
+* conversation:agentchecklist:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | Conversation ID
+let communicationId = "communicationId_example"; // String | Communication ID
+let body = {}; // Object | Agent checklist finalize payload
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.postConversationCommunicationAgentchecklistsFinalize(conversationId, communicationId, body, opts)
+  .then((data) => {
+    console.log(`postConversationCommunicationAgentchecklistsFinalize success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postConversationCommunicationAgentchecklistsFinalize');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | Conversation ID |  |
+ **communicationId** | **String** | Communication ID |  |
+ **body** | **Object** | Agent checklist finalize payload |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**AgentChecklistResponseList**
+
+
 ## postConversationCommunicationInternalmessages
 
-> InternalMessageData postConversationCommunicationInternalmessages(conversationId, communicationId, body)
+> InternalMessageData postConversationCommunicationInternalmessages(conversationId, communicationId, body, opts)
 
 
 POST /api/v2/conversations/{conversationId}/communications/{communicationId}/internalmessages
@@ -9145,8 +12761,6 @@ POST /api/v2/conversations/{conversationId}/communications/{communicationId}/int
 Send internal message
 
 Send a new internal message for an existing communication.
-
-postConversationCommunicationInternalmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -9168,8 +12782,14 @@ let apiInstance = new platformClient.ConversationsApi();
 let conversationId = "conversationId_example"; // String | conversationId
 let communicationId = "communicationId_example"; // String | communicationId
 let body = {}; // Object | Message
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postConversationCommunicationInternalmessages(conversationId, communicationId, body)
+apiInstance.postConversationCommunicationInternalmessages(conversationId, communicationId, body, opts)
   .then((data) => {
     console.log(`postConversationCommunicationInternalmessages success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -9187,6 +12807,7 @@ apiInstance.postConversationCommunicationInternalmessages(conversationId, commun
  **conversationId** | **String** | conversationId |  |
  **communicationId** | **String** | communicationId |  |
  **body** | **Object** | Message |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -9195,7 +12816,7 @@ apiInstance.postConversationCommunicationInternalmessages(conversationId, commun
 
 ## postConversationDisconnect
 
-> **&#39;String&#39;** postConversationDisconnect(conversationId)
+> **&#39;String&#39;** postConversationDisconnect(conversationId, opts)
 
 
 POST /api/v2/conversations/{conversationId}/disconnect
@@ -9220,8 +12841,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ConversationsApi();
 
 let conversationId = "conversationId_example"; // String | conversation ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postConversationDisconnect(conversationId)
+apiInstance.postConversationDisconnect(conversationId, opts)
   .then((data) => {
     console.log(`postConversationDisconnect success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -9237,6 +12864,7 @@ apiInstance.postConversationDisconnect(conversationId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversation ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -9272,7 +12900,11 @@ let apiInstance = new platformClient.ConversationsApi();
 let conversationId = "conversationId_example"; // String | conversation ID
 let participantId = "participantId_example"; // String | participant ID
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postConversationParticipantCallbacks(conversationId, participantId, opts)
@@ -9293,6 +12925,7 @@ apiInstance.postConversationParticipantCallbacks(conversationId, participantId, 
  **conversationId** | **String** | conversation ID |  |
  **participantId** | **String** | participant ID |  |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -9326,7 +12959,11 @@ let apiInstance = new platformClient.ConversationsApi();
 let conversationId = "conversationId_example"; // String | conversation ID
 let participantId = "participantId_example"; // String | participant ID
 let opts = { 
-  'body': {} // Object | Digits
+  'body': {}, // Object | Digits
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postConversationParticipantDigits(conversationId, participantId, opts)
@@ -9347,6 +12984,7 @@ apiInstance.postConversationParticipantDigits(conversationId, participantId, opt
  **conversationId** | **String** | conversation ID |  |
  **participantId** | **String** | participant ID |  |
  **body** | **Object** | Digits | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -9355,7 +12993,7 @@ void (no response body)
 
 ## postConversationParticipantInternalmessagesUsersCommunications
 
-> MessagingConferResponse postConversationParticipantInternalmessagesUsersCommunications(conversationId, participantId, body)
+> MessagingConferResponse postConversationParticipantInternalmessagesUsersCommunications(conversationId, participantId, body, opts)
 
 
 POST /api/v2/conversations/{conversationId}/participants/{participantId}/internalmessages/users/communications
@@ -9363,8 +13001,6 @@ POST /api/v2/conversations/{conversationId}/participants/{participantId}/interna
 Setup internal message communication with user
 
 The target user of the digital consultation must have the `conversation:internalMessaging:accept` permission.
-
-postConversationParticipantInternalmessagesUsersCommunications is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -9386,8 +13022,14 @@ let apiInstance = new platformClient.ConversationsApi();
 let conversationId = "conversationId_example"; // String | conversation ID
 let participantId = "participantId_example"; // String | participant ID
 let body = {}; // Object | Confer request
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postConversationParticipantInternalmessagesUsersCommunications(conversationId, participantId, body)
+apiInstance.postConversationParticipantInternalmessagesUsersCommunications(conversationId, participantId, body, opts)
   .then((data) => {
     console.log(`postConversationParticipantInternalmessagesUsersCommunications success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -9405,6 +13047,7 @@ apiInstance.postConversationParticipantInternalmessagesUsersCommunications(conve
  **conversationId** | **String** | conversation ID |  |
  **participantId** | **String** | participant ID |  |
  **body** | **Object** | Confer request |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -9413,12 +13056,17 @@ apiInstance.postConversationParticipantInternalmessagesUsersCommunications(conve
 
 ## postConversationParticipantReplace
 
-> void postConversationParticipantReplace(conversationId, participantId, body)
+> void postConversationParticipantReplace(conversationId, participantId, body, opts)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 POST /api/v2/conversations/{conversationId}/participants/{participantId}/replace
 
-Replace this participant with the specified user and/or address
+Replace this participant (Deprecated)
+
+This endpoint is deprecated. Use one of the following endpoints instead: /transfer, /replace/agent, /replace/queue, or /replace/contact/external.
 
 Requires ANY permissions:
 
@@ -9440,8 +13088,14 @@ let apiInstance = new platformClient.ConversationsApi();
 let conversationId = "conversationId_example"; // String | conversation ID
 let participantId = "participantId_example"; // String | participant ID
 let body = {}; // Object | Transfer request
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postConversationParticipantReplace(conversationId, participantId, body)
+apiInstance.postConversationParticipantReplace(conversationId, participantId, body, opts)
   .then(() => {
     console.log('postConversationParticipantReplace returned successfully.');
   })
@@ -9459,6 +13113,7 @@ apiInstance.postConversationParticipantReplace(conversationId, participantId, bo
  **conversationId** | **String** | conversation ID |  |
  **participantId** | **String** | participant ID |  |
  **body** | **Object** | Transfer request |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -9467,7 +13122,7 @@ void (no response body)
 
 ## postConversationParticipantReplaceAgent
 
-> void postConversationParticipantReplaceAgent(conversationId, participantId, body)
+> void postConversationParticipantReplaceAgent(conversationId, participantId, body, opts)
 
 
 POST /api/v2/conversations/{conversationId}/participants/{participantId}/replace/agent
@@ -9495,8 +13150,14 @@ let apiInstance = new platformClient.ConversationsApi();
 let conversationId = "conversationId_example"; // String | conversation ID
 let participantId = "participantId_example"; // String | participant ID
 let body = {}; // Object | Transfer request
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postConversationParticipantReplaceAgent(conversationId, participantId, body)
+apiInstance.postConversationParticipantReplaceAgent(conversationId, participantId, body, opts)
   .then(() => {
     console.log('postConversationParticipantReplaceAgent returned successfully.');
   })
@@ -9514,6 +13175,7 @@ apiInstance.postConversationParticipantReplaceAgent(conversationId, participantI
  **conversationId** | **String** | conversation ID |  |
  **participantId** | **String** | participant ID |  |
  **body** | **Object** | Transfer request |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -9522,14 +13184,12 @@ void (no response body)
 
 ## postConversationParticipantReplaceContactExternal
 
-> void postConversationParticipantReplaceContactExternal(conversationId, participantId, body)
+> void postConversationParticipantReplaceContactExternal(conversationId, participantId, body, opts)
 
 
 POST /api/v2/conversations/{conversationId}/participants/{participantId}/replace/contact/external
 
 Replace this participant with the an external contact
-
-postConversationParticipantReplaceContactExternal is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -9552,8 +13212,14 @@ let apiInstance = new platformClient.ConversationsApi();
 let conversationId = "conversationId_example"; // String | conversation ID
 let participantId = "participantId_example"; // String | participant ID
 let body = {}; // Object | Transfer request
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postConversationParticipantReplaceContactExternal(conversationId, participantId, body)
+apiInstance.postConversationParticipantReplaceContactExternal(conversationId, participantId, body, opts)
   .then(() => {
     console.log('postConversationParticipantReplaceContactExternal returned successfully.');
   })
@@ -9571,6 +13237,7 @@ apiInstance.postConversationParticipantReplaceContactExternal(conversationId, pa
  **conversationId** | **String** | conversation ID |  |
  **participantId** | **String** | participant ID |  |
  **body** | **Object** | Transfer request |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -9579,12 +13246,17 @@ void (no response body)
 
 ## postConversationParticipantReplaceExternal
 
-> void postConversationParticipantReplaceExternal(conversationId, participantId, body)
+> void postConversationParticipantReplaceExternal(conversationId, participantId, body, opts)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 POST /api/v2/conversations/{conversationId}/participants/{participantId}/replace/external
 
-Replace this participant with the an external contact
+Replace this participant with the an external contact (Deprecated)
+
+This endpoint is deprecated. Use /replace/contact/external endpoint instead.
 
 Requires ANY permissions:
 
@@ -9607,8 +13279,14 @@ let apiInstance = new platformClient.ConversationsApi();
 let conversationId = "conversationId_example"; // String | conversation ID
 let participantId = "participantId_example"; // String | participant ID
 let body = {}; // Object | Transfer request
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postConversationParticipantReplaceExternal(conversationId, participantId, body)
+apiInstance.postConversationParticipantReplaceExternal(conversationId, participantId, body, opts)
   .then(() => {
     console.log('postConversationParticipantReplaceExternal returned successfully.');
   })
@@ -9626,6 +13304,7 @@ apiInstance.postConversationParticipantReplaceExternal(conversationId, participa
  **conversationId** | **String** | conversation ID |  |
  **participantId** | **String** | participant ID |  |
  **body** | **Object** | Transfer request |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -9634,7 +13313,7 @@ void (no response body)
 
 ## postConversationParticipantReplaceQueue
 
-> void postConversationParticipantReplaceQueue(conversationId, participantId, body)
+> void postConversationParticipantReplaceQueue(conversationId, participantId, body, opts)
 
 
 POST /api/v2/conversations/{conversationId}/participants/{participantId}/replace/queue
@@ -9662,8 +13341,14 @@ let apiInstance = new platformClient.ConversationsApi();
 let conversationId = "conversationId_example"; // String | conversation ID
 let participantId = "participantId_example"; // String | participant ID
 let body = {}; // Object | Transfer request
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postConversationParticipantReplaceQueue(conversationId, participantId, body)
+apiInstance.postConversationParticipantReplaceQueue(conversationId, participantId, body, opts)
   .then(() => {
     console.log('postConversationParticipantReplaceQueue returned successfully.');
   })
@@ -9681,6 +13366,7 @@ apiInstance.postConversationParticipantReplaceQueue(conversationId, participantI
  **conversationId** | **String** | conversation ID |  |
  **participantId** | **String** | participant ID |  |
  **body** | **Object** | Transfer request |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -9714,7 +13400,11 @@ let apiInstance = new platformClient.ConversationsApi();
 let conversationId = "conversationId_example"; // String | conversation ID
 let participantId = "participantId_example"; // String | participant ID
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postConversationParticipantSecureivrsessions(conversationId, participantId, opts)
@@ -9735,6 +13425,7 @@ apiInstance.postConversationParticipantSecureivrsessions(conversationId, partici
  **conversationId** | **String** | conversation ID |  |
  **participantId** | **String** | participant ID |  |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -9743,14 +13434,12 @@ apiInstance.postConversationParticipantSecureivrsessions(conversationId, partici
 
 ## postConversationParticipantTransfer
 
-> void postConversationParticipantTransfer(conversationId, participantId, body)
+> void postConversationParticipantTransfer(conversationId, participantId, body, opts)
 
 
 POST /api/v2/conversations/{conversationId}/participants/{participantId}/transfer
 
 Replace this participant by another one using the address of the destination.
-
-postConversationParticipantTransfer is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -9772,8 +13461,14 @@ let apiInstance = new platformClient.ConversationsApi();
 let conversationId = "conversationId_example"; // String | conversation ID
 let participantId = "participantId_example"; // String | participant ID
 let body = {}; // Object | Transfer request
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postConversationParticipantTransfer(conversationId, participantId, body)
+apiInstance.postConversationParticipantTransfer(conversationId, participantId, body, opts)
   .then(() => {
     console.log('postConversationParticipantTransfer returned successfully.');
   })
@@ -9791,6 +13486,7 @@ apiInstance.postConversationParticipantTransfer(conversationId, participantId, b
  **conversationId** | **String** | conversation ID |  |
  **participantId** | **String** | participant ID |  |
  **body** | **Object** | Transfer request |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -9799,7 +13495,7 @@ void (no response body)
 
 ## postConversationSuggestionEngagement
 
-> SuggestionEngagement postConversationSuggestionEngagement(conversationId, suggestionId, body)
+> SuggestionEngagement postConversationSuggestionEngagement(conversationId, suggestionId, body, opts)
 
 
 POST /api/v2/conversations/{conversationId}/suggestions/{suggestionId}/engagement
@@ -9826,8 +13522,14 @@ let apiInstance = new platformClient.ConversationsApi();
 let conversationId = "conversationId_example"; // String | Conversation ID
 let suggestionId = "suggestionId_example"; // String | Suggestion ID
 let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postConversationSuggestionEngagement(conversationId, suggestionId, body)
+apiInstance.postConversationSuggestionEngagement(conversationId, suggestionId, body, opts)
   .then((data) => {
     console.log(`postConversationSuggestionEngagement success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -9845,6 +13547,7 @@ apiInstance.postConversationSuggestionEngagement(conversationId, suggestionId, b
  **conversationId** | **String** | Conversation ID |  |
  **suggestionId** | **String** | Suggestion ID |  |
  **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -9853,7 +13556,7 @@ apiInstance.postConversationSuggestionEngagement(conversationId, suggestionId, b
 
 ## postConversationSuggestionsFeedback
 
-> void postConversationSuggestionsFeedback(conversationId, body)
+> void postConversationSuggestionsFeedback(conversationId, body, opts)
 
 :::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
 This resource has been deprecated
@@ -9884,8 +13587,14 @@ let apiInstance = new platformClient.ConversationsApi();
 
 let conversationId = "conversationId_example"; // String | Conversation ID
 let body = {}; // Object | SuggestionFeedback
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postConversationSuggestionsFeedback(conversationId, body)
+apiInstance.postConversationSuggestionsFeedback(conversationId, body, opts)
   .then(() => {
     console.log('postConversationSuggestionsFeedback returned successfully.');
   })
@@ -9902,6 +13611,7 @@ apiInstance.postConversationSuggestionsFeedback(conversationId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | Conversation ID |  |
  **body** | **Object** | SuggestionFeedback |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -9937,7 +13647,11 @@ let apiInstance = new platformClient.ConversationsApi();
 let conversationId = "conversationId_example"; // String | Conversation ID
 let summaryId = "summaryId_example"; // String | Summary ID
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postConversationSummaryFeedback(conversationId, summaryId, opts)
@@ -9958,6 +13672,7 @@ apiInstance.postConversationSummaryFeedback(conversationId, summaryId, opts)
  **conversationId** | **String** | Conversation ID |  |
  **summaryId** | **String** | Summary ID |  |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -9966,7 +13681,7 @@ void (no response body)
 
 ## postConversationsCall
 
-> Conversation postConversationsCall(conversationId, body)
+> Conversation postConversationsCall(conversationId, body, opts)
 
 
 POST /api/v2/conversations/calls/{conversationId}
@@ -9990,8 +13705,14 @@ let apiInstance = new platformClient.ConversationsApi();
 
 let conversationId = "conversationId_example"; // String | conversationId
 let body = {}; // Object | Conversation
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postConversationsCall(conversationId, body)
+apiInstance.postConversationsCall(conversationId, body, opts)
   .then((data) => {
     console.log(`postConversationsCall success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -10008,6 +13729,7 @@ apiInstance.postConversationsCall(conversationId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **body** | **Object** | Conversation |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -10016,7 +13738,7 @@ apiInstance.postConversationsCall(conversationId, body)
 
 ## postConversationsCallParticipantBarge
 
-> void postConversationsCallParticipantBarge(conversationId, participantId)
+> void postConversationsCallParticipantBarge(conversationId, participantId, opts)
 
 
 POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/barge
@@ -10042,8 +13764,14 @@ let apiInstance = new platformClient.ConversationsApi();
 
 let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postConversationsCallParticipantBarge(conversationId, participantId)
+apiInstance.postConversationsCallParticipantBarge(conversationId, participantId, opts)
   .then(() => {
     console.log('postConversationsCallParticipantBarge returned successfully.');
   })
@@ -10060,6 +13788,7 @@ apiInstance.postConversationsCallParticipantBarge(conversationId, participantId)
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -10068,7 +13797,7 @@ void (no response body)
 
 ## postConversationsCallParticipantCoach
 
-> void postConversationsCallParticipantCoach(conversationId, participantId)
+> void postConversationsCallParticipantCoach(conversationId, participantId, opts)
 
 
 POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/coach
@@ -10094,8 +13823,14 @@ let apiInstance = new platformClient.ConversationsApi();
 
 let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postConversationsCallParticipantCoach(conversationId, participantId)
+apiInstance.postConversationsCallParticipantCoach(conversationId, participantId, opts)
   .then(() => {
     console.log('postConversationsCallParticipantCoach returned successfully.');
   })
@@ -10112,10 +13847,74 @@ apiInstance.postConversationsCallParticipantCoach(conversationId, participantId)
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 void (no response body)
+
+
+## postConversationsCallParticipantCommunicationSummaries
+
+> OnDemandSummaryAcceptedResponse postConversationsCallParticipantCommunicationSummaries(conversationId, participantId, communicationId, opts)
+
+
+POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/summaries
+
+Request an on-demand summary for a call communication.
+
+Requires ALL permissions:
+
+* conversation:summary:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | Conversation ID
+let participantId = "participantId_example"; // String | Participant ID
+let communicationId = "communicationId_example"; // String | Communication ID
+let opts = { 
+  'body': {}, // Object | On-demand summary request
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.postConversationsCallParticipantCommunicationSummaries(conversationId, participantId, communicationId, opts)
+  .then((data) => {
+    console.log(`postConversationsCallParticipantCommunicationSummaries success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postConversationsCallParticipantCommunicationSummaries');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | Conversation ID |  |
+ **participantId** | **String** | Participant ID |  |
+ **communicationId** | **String** | Communication ID |  |
+ **body** | **Object** | On-demand summary request | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**OnDemandSummaryAcceptedResponse**
 
 
 ## postConversationsCallParticipantCommunicationWrapup
@@ -10148,7 +13947,11 @@ let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
 let communicationId = "communicationId_example"; // String | communicationId
 let opts = { 
-  'body': {} // Object | Wrap-up
+  'body': {}, // Object | Wrap-up
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postConversationsCallParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts)
@@ -10170,6 +13973,7 @@ apiInstance.postConversationsCallParticipantCommunicationWrapup(conversationId, 
  **participantId** | **String** | participantId |  |
  **communicationId** | **String** | communicationId |  |
  **body** | **Object** | Wrap-up | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -10178,12 +13982,17 @@ void (no response body)
 
 ## postConversationsCallParticipantConsult
 
-> ConsultTransferResponse postConversationsCallParticipantConsult(conversationId, participantId, body)
+> ConsultTransferResponse postConversationsCallParticipantConsult(conversationId, participantId, body, opts)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult
 
-Initiate and update consult transfer
+Initiate and update consult transfer (Deprecated)
+
+This endpoint is deprecated. Use one of the following endpoints instead: /voice/consult, /consult/agent, /consult/queue, or /consult/contact/external.
 
 Requires ANY permissions:
 
@@ -10205,8 +14014,14 @@ let apiInstance = new platformClient.ConversationsApi();
 let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
 let body = {}; // Object | Destination address and initial speak to
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postConversationsCallParticipantConsult(conversationId, participantId, body)
+apiInstance.postConversationsCallParticipantConsult(conversationId, participantId, body, opts)
   .then((data) => {
     console.log(`postConversationsCallParticipantConsult success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -10224,6 +14039,7 @@ apiInstance.postConversationsCallParticipantConsult(conversationId, participantI
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
  **body** | **Object** | Destination address and initial speak to |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -10232,7 +14048,7 @@ apiInstance.postConversationsCallParticipantConsult(conversationId, participantI
 
 ## postConversationsCallParticipantConsultAgent
 
-> ConsultTransferResponse postConversationsCallParticipantConsultAgent(conversationId, participantId, body)
+> ConsultTransferResponse postConversationsCallParticipantConsultAgent(conversationId, participantId, body, opts)
 
 
 POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult/agent
@@ -10260,8 +14076,14 @@ let apiInstance = new platformClient.ConversationsApi();
 let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
 let body = {}; // Object | Destination agent and initial speak to
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postConversationsCallParticipantConsultAgent(conversationId, participantId, body)
+apiInstance.postConversationsCallParticipantConsultAgent(conversationId, participantId, body, opts)
   .then((data) => {
     console.log(`postConversationsCallParticipantConsultAgent success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -10279,6 +14101,7 @@ apiInstance.postConversationsCallParticipantConsultAgent(conversationId, partici
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
  **body** | **Object** | Destination agent and initial speak to |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -10287,14 +14110,12 @@ apiInstance.postConversationsCallParticipantConsultAgent(conversationId, partici
 
 ## postConversationsCallParticipantConsultContactExternal
 
-> ConsultTransferResponse postConversationsCallParticipantConsultContactExternal(conversationId, participantId, body)
+> ConsultTransferResponse postConversationsCallParticipantConsultContactExternal(conversationId, participantId, body, opts)
 
 
 POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult/contact/external
 
 Initiate a consult transfer to an external contact
-
-postConversationsCallParticipantConsultContactExternal is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -10317,8 +14138,14 @@ let apiInstance = new platformClient.ConversationsApi();
 let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
 let body = {}; // Object | Destination address and initial speak to
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postConversationsCallParticipantConsultContactExternal(conversationId, participantId, body)
+apiInstance.postConversationsCallParticipantConsultContactExternal(conversationId, participantId, body, opts)
   .then((data) => {
     console.log(`postConversationsCallParticipantConsultContactExternal success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -10336,6 +14163,7 @@ apiInstance.postConversationsCallParticipantConsultContactExternal(conversationI
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
  **body** | **Object** | Destination address and initial speak to |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -10344,12 +14172,17 @@ apiInstance.postConversationsCallParticipantConsultContactExternal(conversationI
 
 ## postConversationsCallParticipantConsultExternal
 
-> ConsultTransferResponse postConversationsCallParticipantConsultExternal(conversationId, participantId, body)
+> ConsultTransferResponse postConversationsCallParticipantConsultExternal(conversationId, participantId, body, opts)
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult/external
 
-Initiate a consult transfer to an external contact
+Initiate a consult transfer to an external contact (Deprecated)
+
+This endpoint is deprecated. Use /consult/contact/external endpoints instead.
 
 Requires ANY permissions:
 
@@ -10372,8 +14205,14 @@ let apiInstance = new platformClient.ConversationsApi();
 let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
 let body = {}; // Object | Destination address and initial speak to
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postConversationsCallParticipantConsultExternal(conversationId, participantId, body)
+apiInstance.postConversationsCallParticipantConsultExternal(conversationId, participantId, body, opts)
   .then((data) => {
     console.log(`postConversationsCallParticipantConsultExternal success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -10391,6 +14230,7 @@ apiInstance.postConversationsCallParticipantConsultExternal(conversationId, part
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
  **body** | **Object** | Destination address and initial speak to |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -10399,7 +14239,7 @@ apiInstance.postConversationsCallParticipantConsultExternal(conversationId, part
 
 ## postConversationsCallParticipantConsultQueue
 
-> ConsultTransferResponse postConversationsCallParticipantConsultQueue(conversationId, participantId, body)
+> ConsultTransferResponse postConversationsCallParticipantConsultQueue(conversationId, participantId, body, opts)
 
 
 POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult/queue
@@ -10427,8 +14267,14 @@ let apiInstance = new platformClient.ConversationsApi();
 let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
 let body = {}; // Object | Destination queue and initial speak to
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postConversationsCallParticipantConsultQueue(conversationId, participantId, body)
+apiInstance.postConversationsCallParticipantConsultQueue(conversationId, participantId, body, opts)
   .then((data) => {
     console.log(`postConversationsCallParticipantConsultQueue success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -10446,6 +14292,7 @@ apiInstance.postConversationsCallParticipantConsultQueue(conversationId, partici
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
  **body** | **Object** | Destination queue and initial speak to |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -10454,7 +14301,7 @@ apiInstance.postConversationsCallParticipantConsultQueue(conversationId, partici
 
 ## postConversationsCallParticipantMonitor
 
-> void postConversationsCallParticipantMonitor(conversationId, participantId)
+> void postConversationsCallParticipantMonitor(conversationId, participantId, opts)
 
 
 POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/monitor
@@ -10480,8 +14327,14 @@ let apiInstance = new platformClient.ConversationsApi();
 
 let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postConversationsCallParticipantMonitor(conversationId, participantId)
+apiInstance.postConversationsCallParticipantMonitor(conversationId, participantId, opts)
   .then(() => {
     console.log('postConversationsCallParticipantMonitor returned successfully.');
   })
@@ -10498,6 +14351,7 @@ apiInstance.postConversationsCallParticipantMonitor(conversationId, participantI
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -10506,7 +14360,7 @@ void (no response body)
 
 ## postConversationsCallParticipantReplace
 
-> void postConversationsCallParticipantReplace(conversationId, participantId, body)
+> void postConversationsCallParticipantReplace(conversationId, participantId, body, opts)
 
 
 POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/replace
@@ -10533,8 +14387,14 @@ let apiInstance = new platformClient.ConversationsApi();
 let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
 let body = {}; // Object | Transfer request
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postConversationsCallParticipantReplace(conversationId, participantId, body)
+apiInstance.postConversationsCallParticipantReplace(conversationId, participantId, body, opts)
   .then(() => {
     console.log('postConversationsCallParticipantReplace returned successfully.');
   })
@@ -10552,22 +14412,82 @@ apiInstance.postConversationsCallParticipantReplace(conversationId, participantI
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
  **body** | **Object** | Transfer request |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 void (no response body)
 
 
+## postConversationsCallParticipantSnippetRecord
+
+> **&#39;String&#39;** postConversationsCallParticipantSnippetRecord(conversationId, participantId, body, opts)
+
+
+POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/snippet/record
+
+Start/stop the snippet recording for a participant
+
+Requires ANY permissions:
+
+* conversation:recording:snippetRecord
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | conversationId
+let participantId = "participantId_example"; // String | participantId
+let body = {}; // Object | snippetRecordingRequest
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.postConversationsCallParticipantSnippetRecord(conversationId, participantId, body, opts)
+  .then((data) => {
+    console.log(`postConversationsCallParticipantSnippetRecord success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postConversationsCallParticipantSnippetRecord');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversationId |  |
+ **participantId** | **String** | participantId |  |
+ **body** | **Object** | snippetRecordingRequest |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**&#39;String&#39;**
+
+
 ## postConversationsCallParticipantVoiceConsult
 
-> ConsultTransferResponse postConversationsCallParticipantVoiceConsult(conversationId, participantId, body)
+> ConsultTransferResponse postConversationsCallParticipantVoiceConsult(conversationId, participantId, body, opts)
 
 
 POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/voice/consult
 
 Initiate voice consult transfer
-
-postConversationsCallParticipantVoiceConsult is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -10589,8 +14509,14 @@ let apiInstance = new platformClient.ConversationsApi();
 let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
 let body = {}; // Object | Destination address and initial speak to
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postConversationsCallParticipantVoiceConsult(conversationId, participantId, body)
+apiInstance.postConversationsCallParticipantVoiceConsult(conversationId, participantId, body, opts)
   .then((data) => {
     console.log(`postConversationsCallParticipantVoiceConsult success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -10608,6 +14534,7 @@ apiInstance.postConversationsCallParticipantVoiceConsult(conversationId, partici
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
  **body** | **Object** | Destination address and initial speak to |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -10616,7 +14543,7 @@ apiInstance.postConversationsCallParticipantVoiceConsult(conversationId, partici
 
 ## postConversationsCallParticipants
 
-> Conversation postConversationsCallParticipants(conversationId, body)
+> Conversation postConversationsCallParticipants(conversationId, body, opts)
 
 
 POST /api/v2/conversations/calls/{conversationId}/participants
@@ -10640,8 +14567,14 @@ let apiInstance = new platformClient.ConversationsApi();
 
 let conversationId = "conversationId_example"; // String | conversationId
 let body = {}; // Object | Conversation
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postConversationsCallParticipants(conversationId, body)
+apiInstance.postConversationsCallParticipants(conversationId, body, opts)
   .then((data) => {
     console.log(`postConversationsCallParticipants success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -10658,6 +14591,68 @@ apiInstance.postConversationsCallParticipants(conversationId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **body** | **Object** | Conversation |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**Conversation**
+
+
+## postConversationsCallParticipantsUserUserId
+
+> Conversation postConversationsCallParticipantsUserUserId(conversationId, userId, body, opts)
+
+
+POST /api/v2/conversations/calls/{conversationId}/participants/user/{userId}
+
+Add participants to a conversation on behalf of a user
+
+Requires ANY permissions:
+
+* conversation:agentlessCall:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | conversationId
+let userId = "userId_example"; // String | userId
+let body = {}; // Object | Conversation
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.postConversationsCallParticipantsUserUserId(conversationId, userId, body, opts)
+  .then((data) => {
+    console.log(`postConversationsCallParticipantsUserUserId success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postConversationsCallParticipantsUserUserId');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversationId |  |
+ **userId** | **String** | userId |  |
+ **body** | **Object** | Conversation |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -10694,7 +14689,11 @@ let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
 let communicationId = "communicationId_example"; // String | communicationId
 let opts = { 
-  'body': {} // Object | Wrap-up
+  'body': {}, // Object | Wrap-up
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postConversationsCallbackParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts)
@@ -10716,6 +14715,7 @@ apiInstance.postConversationsCallbackParticipantCommunicationWrapup(conversation
  **participantId** | **String** | participantId |  |
  **communicationId** | **String** | communicationId |  |
  **body** | **Object** | Wrap-up | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -10724,7 +14724,7 @@ void (no response body)
 
 ## postConversationsCallbackParticipantReplace
 
-> void postConversationsCallbackParticipantReplace(conversationId, participantId, body)
+> void postConversationsCallbackParticipantReplace(conversationId, participantId, body, opts)
 
 
 POST /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/replace
@@ -10751,8 +14751,14 @@ let apiInstance = new platformClient.ConversationsApi();
 let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
 let body = {}; // Object | Transfer request
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postConversationsCallbackParticipantReplace(conversationId, participantId, body)
+apiInstance.postConversationsCallbackParticipantReplace(conversationId, participantId, body, opts)
   .then(() => {
     console.log('postConversationsCallbackParticipantReplace returned successfully.');
   })
@@ -10770,6 +14776,7 @@ apiInstance.postConversationsCallbackParticipantReplace(conversationId, particip
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
  **body** | **Object** | Transfer request |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -10778,7 +14785,7 @@ void (no response body)
 
 ## postConversationsCallbacks
 
-> CreateCallbackResponse postConversationsCallbacks(body)
+> CreateCallbackResponse postConversationsCallbacks(body, opts)
 
 
 POST /api/v2/conversations/callbacks
@@ -10803,8 +14810,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ConversationsApi();
 
 let body = {}; // Object | Callback
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postConversationsCallbacks(body)
+apiInstance.postConversationsCallbacks(body, opts)
   .then((data) => {
     console.log(`postConversationsCallbacks success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -10820,6 +14833,7 @@ apiInstance.postConversationsCallbacks(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Callback |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -10828,7 +14842,7 @@ apiInstance.postConversationsCallbacks(body)
 
 ## postConversationsCallbacksBulkDisconnect
 
-> void postConversationsCallbacksBulkDisconnect(body)
+> void postConversationsCallbacksBulkDisconnect(body, opts)
 
 
 POST /api/v2/conversations/callbacks/bulk/disconnect
@@ -10853,8 +14867,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ConversationsApi();
 
 let body = {}; // Object | BulkCallbackDisconnectRequest
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postConversationsCallbacksBulkDisconnect(body)
+apiInstance.postConversationsCallbacksBulkDisconnect(body, opts)
   .then(() => {
     console.log('postConversationsCallbacksBulkDisconnect returned successfully.');
   })
@@ -10870,6 +14890,7 @@ apiInstance.postConversationsCallbacksBulkDisconnect(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | BulkCallbackDisconnectRequest |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -10878,7 +14899,7 @@ void (no response body)
 
 ## postConversationsCallbacksBulkUpdate
 
-> BulkCallbackPatchResponse postConversationsCallbacksBulkUpdate(body)
+> BulkCallbackPatchResponse postConversationsCallbacksBulkUpdate(body, opts)
 
 
 POST /api/v2/conversations/callbacks/bulk/update
@@ -10903,8 +14924,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ConversationsApi();
 
 let body = {}; // Object | BulkCallbackPatchRequest
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postConversationsCallbacksBulkUpdate(body)
+apiInstance.postConversationsCallbacksBulkUpdate(body, opts)
   .then((data) => {
     console.log(`postConversationsCallbacksBulkUpdate success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -10920,6 +14947,7 @@ apiInstance.postConversationsCallbacksBulkUpdate(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | BulkCallbackPatchRequest |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -10928,7 +14956,7 @@ apiInstance.postConversationsCallbacksBulkUpdate(body)
 
 ## postConversationsCalls
 
-> CreateCallResponse postConversationsCalls(body)
+> CreateCallResponse postConversationsCalls(body, opts)
 
 
 POST /api/v2/conversations/calls
@@ -10953,8 +14981,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ConversationsApi();
 
 let body = {}; // Object | Call request
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postConversationsCalls(body)
+apiInstance.postConversationsCalls(body, opts)
   .then((data) => {
     console.log(`postConversationsCalls success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -10970,6 +15004,67 @@ apiInstance.postConversationsCalls(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Call request |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**CreateCallResponse**
+
+
+## postConversationsCallsUserUserId
+
+> CreateCallResponse postConversationsCallsUserUserId(userId, body, opts)
+
+
+POST /api/v2/conversations/calls/user/{userId}
+
+Create a call conversation on behalf of a user
+
+Requires ANY permissions:
+
+* conversation:agentlessCall:add
+* conversation:call:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let userId = "userId_example"; // String | userId
+let body = {}; // Object | Call request
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.postConversationsCallsUserUserId(userId, body, opts)
+  .then((data) => {
+    console.log(`postConversationsCallsUserUserId success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postConversationsCallsUserUserId');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **userId** | **String** | userId |  |
+ **body** | **Object** | Call request |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -10978,7 +15073,7 @@ apiInstance.postConversationsCalls(body)
 
 ## postConversationsChatCommunicationMessages
 
-> WebChatMessage postConversationsChatCommunicationMessages(conversationId, communicationId, body)
+> WebChatMessage postConversationsChatCommunicationMessages(conversationId, communicationId, body, opts)
 
 :::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
 This resource has been deprecated
@@ -11008,8 +15103,14 @@ let apiInstance = new platformClient.ConversationsApi();
 let conversationId = "conversationId_example"; // String | conversationId
 let communicationId = "communicationId_example"; // String | communicationId
 let body = {}; // Object | Message
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postConversationsChatCommunicationMessages(conversationId, communicationId, body)
+apiInstance.postConversationsChatCommunicationMessages(conversationId, communicationId, body, opts)
   .then((data) => {
     console.log(`postConversationsChatCommunicationMessages success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -11027,6 +15128,7 @@ apiInstance.postConversationsChatCommunicationMessages(conversationId, communica
  **conversationId** | **String** | conversationId |  |
  **communicationId** | **String** | communicationId |  |
  **body** | **Object** | Message |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -11035,7 +15137,7 @@ apiInstance.postConversationsChatCommunicationMessages(conversationId, communica
 
 ## postConversationsChatCommunicationTyping
 
-> WebChatTyping postConversationsChatCommunicationTyping(conversationId, communicationId)
+> WebChatTyping postConversationsChatCommunicationTyping(conversationId, communicationId, opts)
 
 :::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
 This resource has been deprecated
@@ -11064,8 +15166,14 @@ let apiInstance = new platformClient.ConversationsApi();
 
 let conversationId = "conversationId_example"; // String | conversationId
 let communicationId = "communicationId_example"; // String | communicationId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postConversationsChatCommunicationTyping(conversationId, communicationId)
+apiInstance.postConversationsChatCommunicationTyping(conversationId, communicationId, opts)
   .then((data) => {
     console.log(`postConversationsChatCommunicationTyping success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -11082,6 +15190,7 @@ apiInstance.postConversationsChatCommunicationTyping(conversationId, communicati
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **communicationId** | **String** | communicationId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -11123,7 +15232,11 @@ let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
 let communicationId = "communicationId_example"; // String | communicationId
 let opts = { 
-  'body': {} // Object | Wrap-up
+  'body': {}, // Object | Wrap-up
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postConversationsChatParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts)
@@ -11145,6 +15258,7 @@ apiInstance.postConversationsChatParticipantCommunicationWrapup(conversationId, 
  **participantId** | **String** | participantId |  |
  **communicationId** | **String** | communicationId |  |
  **body** | **Object** | Wrap-up | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -11153,7 +15267,7 @@ void (no response body)
 
 ## postConversationsChatParticipantReplace
 
-> void postConversationsChatParticipantReplace(conversationId, participantId, body)
+> void postConversationsChatParticipantReplace(conversationId, participantId, body, opts)
 
 :::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
 This resource has been deprecated
@@ -11185,8 +15299,14 @@ let apiInstance = new platformClient.ConversationsApi();
 let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
 let body = {}; // Object | Transfer request
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postConversationsChatParticipantReplace(conversationId, participantId, body)
+apiInstance.postConversationsChatParticipantReplace(conversationId, participantId, body, opts)
   .then(() => {
     console.log('postConversationsChatParticipantReplace returned successfully.');
   })
@@ -11204,6 +15324,7 @@ apiInstance.postConversationsChatParticipantReplace(conversationId, participantI
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
  **body** | **Object** | Transfer request |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -11212,7 +15333,7 @@ void (no response body)
 
 ## postConversationsChats
 
-> ChatConversation postConversationsChats(body)
+> ChatConversation postConversationsChats(body, opts)
 
 :::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
 This resource has been deprecated
@@ -11242,8 +15363,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ConversationsApi();
 
 let body = {}; // Object | Create web chat request
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postConversationsChats(body)
+apiInstance.postConversationsChats(body, opts)
   .then((data) => {
     console.log(`postConversationsChats success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -11259,6 +15386,7 @@ apiInstance.postConversationsChats(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Create web chat request |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -11300,7 +15428,11 @@ let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
 let communicationId = "communicationId_example"; // String | communicationId
 let opts = { 
-  'body': {} // Object | Wrap-up
+  'body': {}, // Object | Wrap-up
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postConversationsCobrowsesessionParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts)
@@ -11322,6 +15454,7 @@ apiInstance.postConversationsCobrowsesessionParticipantCommunicationWrapup(conve
  **participantId** | **String** | participantId |  |
  **communicationId** | **String** | communicationId |  |
  **body** | **Object** | Wrap-up | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -11362,7 +15495,11 @@ let apiInstance = new platformClient.ConversationsApi();
 let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postConversationsCobrowsesessionParticipantReplace(conversationId, participantId, opts)
@@ -11383,15 +15520,130 @@ apiInstance.postConversationsCobrowsesessionParticipantReplace(conversationId, p
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 void (no response body)
 
 
+## postConversationsCustomattributesSchemas
+
+> ConversationDataSchema postConversationsCustomattributesSchemas(body, opts)
+
+
+POST /api/v2/conversations/customattributes/schemas
+
+Create a schema
+
+Requires ANY permissions:
+
+* conversation:customAttributes:schemaAdd
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let body = {}; // Object | Schema create request body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.postConversationsCustomattributesSchemas(body, opts)
+  .then((data) => {
+    console.log(`postConversationsCustomattributesSchemas success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postConversationsCustomattributesSchemas');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Schema create request body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**ConversationDataSchema**
+
+
+## postConversationsCustomattributesSearch
+
+> JsonSearchResponse postConversationsCustomattributesSearch(body, opts)
+
+
+POST /api/v2/conversations/customattributes/search
+
+Search resources.
+
+Requires ANY permissions:
+
+* conversation:customAttributes:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let body = {}; // Object | Search request options
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.postConversationsCustomattributesSearch(body, opts)
+  .then((data) => {
+    console.log(`postConversationsCustomattributesSearch success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postConversationsCustomattributesSearch');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Search request options |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**JsonSearchResponse**
+
+
 ## postConversationsEmailInboundmessages
 
-> EmailConversation postConversationsEmailInboundmessages(conversationId, body)
+> EmailConversation postConversationsEmailInboundmessages(conversationId, body, opts)
 
 
 POST /api/v2/conversations/emails/{conversationId}/inboundmessages
@@ -11415,8 +15667,14 @@ let apiInstance = new platformClient.ConversationsApi();
 
 let conversationId = "conversationId_example"; // String | conversationId
 let body = {}; // Object | Send external email reply
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postConversationsEmailInboundmessages(conversationId, body)
+apiInstance.postConversationsEmailInboundmessages(conversationId, body, opts)
   .then((data) => {
     console.log(`postConversationsEmailInboundmessages success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -11433,6 +15691,7 @@ apiInstance.postConversationsEmailInboundmessages(conversationId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **body** | **Object** | Send external email reply |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -11441,7 +15700,7 @@ apiInstance.postConversationsEmailInboundmessages(conversationId, body)
 
 ## postConversationsEmailMessages
 
-> EmailMessageReply postConversationsEmailMessages(conversationId, body)
+> EmailMessageReply postConversationsEmailMessages(conversationId, body, opts)
 
 
 POST /api/v2/conversations/emails/{conversationId}/messages
@@ -11467,8 +15726,14 @@ let apiInstance = new platformClient.ConversationsApi();
 
 let conversationId = "conversationId_example"; // String | conversationId
 let body = {}; // Object | Reply
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postConversationsEmailMessages(conversationId, body)
+apiInstance.postConversationsEmailMessages(conversationId, body, opts)
   .then((data) => {
     console.log(`postConversationsEmailMessages success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -11485,6 +15750,7 @@ apiInstance.postConversationsEmailMessages(conversationId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **body** | **Object** | Reply |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -11493,7 +15759,7 @@ apiInstance.postConversationsEmailMessages(conversationId, body)
 
 ## postConversationsEmailMessagesDraftAttachmentsCopy
 
-> EmailMessage postConversationsEmailMessagesDraftAttachmentsCopy(conversationId, body)
+> EmailMessage postConversationsEmailMessagesDraftAttachmentsCopy(conversationId, body, opts)
 
 
 POST /api/v2/conversations/emails/{conversationId}/messages/draft/attachments/copy
@@ -11517,8 +15783,14 @@ let apiInstance = new platformClient.ConversationsApi();
 
 let conversationId = "conversationId_example"; // String | conversationId
 let body = {}; // Object | Copy Attachment Request
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postConversationsEmailMessagesDraftAttachmentsCopy(conversationId, body)
+apiInstance.postConversationsEmailMessagesDraftAttachmentsCopy(conversationId, body, opts)
   .then((data) => {
     console.log(`postConversationsEmailMessagesDraftAttachmentsCopy success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -11535,10 +15807,72 @@ apiInstance.postConversationsEmailMessagesDraftAttachmentsCopy(conversationId, b
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **body** | **Object** | Copy Attachment Request |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **EmailMessage**
+
+
+## postConversationsEmailMessagesDraftAttachmentsUploads
+
+> UploadAttachmentResponse postConversationsEmailMessagesDraftAttachmentsUploads(conversationId, body, opts)
+
+
+POST /api/v2/conversations/emails/{conversationId}/messages/draft/attachments/uploads
+
+Create a URL to upload a message attachment file
+
+See https://developer.genesys.cloud/analyticsdatamanagement/uploads/upload-email-attachment-files for example usage.
+
+Requires ANY permissions:
+
+* conversation:emailAttachment:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | conversationId
+let body = {}; // Object | Create attachment pre-signed URL request
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.postConversationsEmailMessagesDraftAttachmentsUploads(conversationId, body, opts)
+  .then((data) => {
+    console.log(`postConversationsEmailMessagesDraftAttachmentsUploads success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postConversationsEmailMessagesDraftAttachmentsUploads');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversationId |  |
+ **body** | **Object** | Create attachment pre-signed URL request |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**UploadAttachmentResponse**
 
 
 ## postConversationsEmailParticipantCommunicationWrapup
@@ -11571,7 +15905,11 @@ let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
 let communicationId = "communicationId_example"; // String | communicationId
 let opts = { 
-  'body': {} // Object | Wrap-up
+  'body': {}, // Object | Wrap-up
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postConversationsEmailParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts)
@@ -11593,6 +15931,7 @@ apiInstance.postConversationsEmailParticipantCommunicationWrapup(conversationId,
  **participantId** | **String** | participantId |  |
  **communicationId** | **String** | communicationId |  |
  **body** | **Object** | Wrap-up | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -11601,7 +15940,7 @@ void (no response body)
 
 ## postConversationsEmailParticipantReplace
 
-> void postConversationsEmailParticipantReplace(conversationId, participantId, body)
+> void postConversationsEmailParticipantReplace(conversationId, participantId, body, opts)
 
 
 POST /api/v2/conversations/emails/{conversationId}/participants/{participantId}/replace
@@ -11628,8 +15967,14 @@ let apiInstance = new platformClient.ConversationsApi();
 let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
 let body = {}; // Object | Transfer request
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postConversationsEmailParticipantReplace(conversationId, participantId, body)
+apiInstance.postConversationsEmailParticipantReplace(conversationId, participantId, body, opts)
   .then(() => {
     console.log('postConversationsEmailParticipantReplace returned successfully.');
   })
@@ -11647,6 +15992,7 @@ apiInstance.postConversationsEmailParticipantReplace(conversationId, participant
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
  **body** | **Object** | Transfer request |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -11655,12 +16001,14 @@ void (no response body)
 
 ## postConversationsEmailReconnect
 
-> void postConversationsEmailReconnect(conversationId)
+> void postConversationsEmailReconnect(conversationId, opts)
 
 
 POST /api/v2/conversations/emails/{conversationId}/reconnect
 
 Reconnect the user to the most recently disconnected customer on a fully disconnected email conversation
+
+This request is not valid when using the Client Credentials OAuth grant.
 
 Requires ANY permissions:
 
@@ -11680,8 +16028,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ConversationsApi();
 
 let conversationId = "conversationId_example"; // String | conversationId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postConversationsEmailReconnect(conversationId)
+apiInstance.postConversationsEmailReconnect(conversationId, opts)
   .then(() => {
     console.log('postConversationsEmailReconnect returned successfully.');
   })
@@ -11697,6 +16051,7 @@ apiInstance.postConversationsEmailReconnect(conversationId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -11705,7 +16060,7 @@ void (no response body)
 
 ## postConversationsEmails
 
-> EmailConversation postConversationsEmails(body)
+> EmailConversation postConversationsEmails(body, opts)
 
 
 POST /api/v2/conversations/emails
@@ -11732,8 +16087,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ConversationsApi();
 
 let body = {}; // Object | Create email request
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postConversationsEmails(body)
+apiInstance.postConversationsEmails(body, opts)
   .then((data) => {
     console.log(`postConversationsEmails success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -11749,6 +16110,7 @@ apiInstance.postConversationsEmails(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Create email request |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -11757,7 +16119,7 @@ apiInstance.postConversationsEmails(body)
 
 ## postConversationsEmailsAgentless
 
-> AgentlessEmailSendResponseDto postConversationsEmailsAgentless(body)
+> AgentlessEmailSendResponseDto postConversationsEmailsAgentless(body, opts)
 
 
 POST /api/v2/conversations/emails/agentless
@@ -11783,8 +16145,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ConversationsApi();
 
 let body = {}; // Object | Create agentless email request
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postConversationsEmailsAgentless(body)
+apiInstance.postConversationsEmailsAgentless(body, opts)
   .then((data) => {
     console.log(`postConversationsEmailsAgentless success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -11800,6 +16168,7 @@ apiInstance.postConversationsEmailsAgentless(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Create agentless email request |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -11808,7 +16177,7 @@ apiInstance.postConversationsEmailsAgentless(body)
 
 ## postConversationsFaxes
 
-> FaxSendResponse postConversationsFaxes(body)
+> FaxSendResponse postConversationsFaxes(body, opts)
 
 
 POST /api/v2/conversations/faxes
@@ -11831,8 +16200,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ConversationsApi();
 
 let body = {}; // Object | Fax
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postConversationsFaxes(body)
+apiInstance.postConversationsFaxes(body, opts)
   .then((data) => {
     console.log(`postConversationsFaxes success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -11848,6 +16223,7 @@ apiInstance.postConversationsFaxes(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Fax |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -11856,7 +16232,7 @@ apiInstance.postConversationsFaxes(body)
 
 ## postConversationsKeyconfigurations
 
-> ConversationEncryptionConfiguration postConversationsKeyconfigurations(body)
+> ConversationEncryptionConfiguration postConversationsKeyconfigurations(body, opts)
 
 
 POST /api/v2/conversations/keyconfigurations
@@ -11881,8 +16257,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ConversationsApi();
 
 let body = {}; // Object | Encryption Configuration
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postConversationsKeyconfigurations(body)
+apiInstance.postConversationsKeyconfigurations(body, opts)
   .then((data) => {
     console.log(`postConversationsKeyconfigurations success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -11898,6 +16280,7 @@ apiInstance.postConversationsKeyconfigurations(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Encryption Configuration |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -11906,7 +16289,7 @@ apiInstance.postConversationsKeyconfigurations(body)
 
 ## postConversationsKeyconfigurationsValidate
 
-> ConversationEncryptionConfiguration postConversationsKeyconfigurationsValidate(body)
+> ConversationEncryptionConfiguration postConversationsKeyconfigurationsValidate(body, opts)
 
 
 POST /api/v2/conversations/keyconfigurations/validate
@@ -11931,8 +16314,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ConversationsApi();
 
 let body = {}; // Object | Encryption Configuration
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postConversationsKeyconfigurationsValidate(body)
+apiInstance.postConversationsKeyconfigurationsValidate(body, opts)
   .then((data) => {
     console.log(`postConversationsKeyconfigurationsValidate success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -11948,6 +16337,7 @@ apiInstance.postConversationsKeyconfigurationsValidate(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Encryption Configuration |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -11987,7 +16377,11 @@ let conversationId = "conversationId_example"; // String | conversationId
 let communicationId = "communicationId_example"; // String | communicationId
 let body = {}; // Object | Message
 let opts = { 
-  'useNormalizedMessage': false // Boolean | If true, response removes deprecated fields (textBody, media)
+  'useNormalizedMessage': false, // Boolean | If true, response removes deprecated fields (textBody, media)
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postConversationsMessageCommunicationMessages(conversationId, communicationId, body, opts)
@@ -12009,6 +16403,7 @@ apiInstance.postConversationsMessageCommunicationMessages(conversationId, commun
  **communicationId** | **String** | communicationId |  |
  **body** | **Object** | Message |  |
  **useNormalizedMessage** | **Boolean** | If true, response removes deprecated fields (textBody, media) | [optional] [default to false] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -12017,7 +16412,7 @@ apiInstance.postConversationsMessageCommunicationMessages(conversationId, commun
 
 ## postConversationsMessageCommunicationMessagesMedia
 
-> MessageMediaData postConversationsMessageCommunicationMessagesMedia(conversationId, communicationId)
+> MessageMediaData postConversationsMessageCommunicationMessagesMedia(conversationId, communicationId, opts)
 
 :::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
 This resource has been deprecated
@@ -12050,8 +16445,14 @@ let apiInstance = new platformClient.ConversationsApi();
 
 let conversationId = "conversationId_example"; // String | conversationId
 let communicationId = "communicationId_example"; // String | communicationId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postConversationsMessageCommunicationMessagesMedia(conversationId, communicationId)
+apiInstance.postConversationsMessageCommunicationMessagesMedia(conversationId, communicationId, opts)
   .then((data) => {
     console.log(`postConversationsMessageCommunicationMessagesMedia success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -12068,6 +16469,7 @@ apiInstance.postConversationsMessageCommunicationMessagesMedia(conversationId, c
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **communicationId** | **String** | communicationId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -12076,14 +16478,14 @@ apiInstance.postConversationsMessageCommunicationMessagesMedia(conversationId, c
 
 ## postConversationsMessageCommunicationMessagesMediaUploads
 
-> MessageMediaUploadData postConversationsMessageCommunicationMessagesMediaUploads(conversationId, communicationId, body)
+> MessageMediaUploadData postConversationsMessageCommunicationMessagesMediaUploads(conversationId, communicationId, body, opts)
 
 
 POST /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media/uploads
 
 Create a URL to upload a message media file
 
-See https://developer.genesys.cloud/api/rest/v2/conversations/messaging-media-upload for example usage.
+See https://developer.genesys.cloud/commdigital/digital/messagemediaupload/ for example usage.
 
 Requires ANY permissions:
 
@@ -12107,8 +16509,14 @@ let apiInstance = new platformClient.ConversationsApi();
 let conversationId = "conversationId_example"; // String | conversationId
 let communicationId = "communicationId_example"; // String | communicationId
 let body = {}; // Object | request
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postConversationsMessageCommunicationMessagesMediaUploads(conversationId, communicationId, body)
+apiInstance.postConversationsMessageCommunicationMessagesMediaUploads(conversationId, communicationId, body, opts)
   .then((data) => {
     console.log(`postConversationsMessageCommunicationMessagesMediaUploads success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -12126,6 +16534,7 @@ apiInstance.postConversationsMessageCommunicationMessagesMediaUploads(conversati
  **conversationId** | **String** | conversationId |  |
  **communicationId** | **String** | communicationId |  |
  **body** | **Object** | request |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -12134,7 +16543,7 @@ apiInstance.postConversationsMessageCommunicationMessagesMediaUploads(conversati
 
 ## postConversationsMessageCommunicationSocialmediaMessages
 
-> SocialMediaMessageData postConversationsMessageCommunicationSocialmediaMessages(conversationId, communicationId, body)
+> SocialMediaMessageData postConversationsMessageCommunicationSocialmediaMessages(conversationId, communicationId, body, opts)
 
 
 POST /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/socialmedia/messages
@@ -12163,8 +16572,14 @@ let apiInstance = new platformClient.ConversationsApi();
 let conversationId = "conversationId_example"; // String | conversationId
 let communicationId = "communicationId_example"; // String | communicationId
 let body = {}; // Object | Message
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postConversationsMessageCommunicationSocialmediaMessages(conversationId, communicationId, body)
+apiInstance.postConversationsMessageCommunicationSocialmediaMessages(conversationId, communicationId, body, opts)
   .then((data) => {
     console.log(`postConversationsMessageCommunicationSocialmediaMessages success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -12182,6 +16597,7 @@ apiInstance.postConversationsMessageCommunicationSocialmediaMessages(conversatio
  **conversationId** | **String** | conversationId |  |
  **communicationId** | **String** | communicationId |  |
  **body** | **Object** | Message |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -12190,7 +16606,7 @@ apiInstance.postConversationsMessageCommunicationSocialmediaMessages(conversatio
 
 ## postConversationsMessageCommunicationTyping
 
-> void postConversationsMessageCommunicationTyping(conversationId, communicationId, body)
+> void postConversationsMessageCommunicationTyping(conversationId, communicationId, body, opts)
 
 
 POST /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/typing
@@ -12220,8 +16636,14 @@ let apiInstance = new platformClient.ConversationsApi();
 let conversationId = "conversationId_example"; // String | conversationId
 let communicationId = "communicationId_example"; // String | communicationId
 let body = {}; // Object | MessageTypingEvent
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postConversationsMessageCommunicationTyping(conversationId, communicationId, body)
+apiInstance.postConversationsMessageCommunicationTyping(conversationId, communicationId, body, opts)
   .then(() => {
     console.log('postConversationsMessageCommunicationTyping returned successfully.');
   })
@@ -12239,6 +16661,7 @@ apiInstance.postConversationsMessageCommunicationTyping(conversationId, communic
  **conversationId** | **String** | conversationId |  |
  **communicationId** | **String** | communicationId |  |
  **body** | **Object** | MessageTypingEvent |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -12247,7 +16670,7 @@ void (no response body)
 
 ## postConversationsMessageInboundOpenEvent
 
-> OpenEventNormalizedMessage postConversationsMessageInboundOpenEvent(integrationId, body)
+> OpenEventNormalizedMessage postConversationsMessageInboundOpenEvent(integrationId, body, opts)
 
 
 POST /api/v2/conversations/messages/{integrationId}/inbound/open/event
@@ -12275,8 +16698,14 @@ let apiInstance = new platformClient.ConversationsApi();
 
 let integrationId = "integrationId_example"; // String | integrationId
 let body = {}; // Object | NormalizedMessage
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postConversationsMessageInboundOpenEvent(integrationId, body)
+apiInstance.postConversationsMessageInboundOpenEvent(integrationId, body, opts)
   .then((data) => {
     console.log(`postConversationsMessageInboundOpenEvent success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -12293,6 +16722,7 @@ apiInstance.postConversationsMessageInboundOpenEvent(integrationId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **integrationId** | **String** | integrationId |  |
  **body** | **Object** | NormalizedMessage |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -12330,7 +16760,11 @@ let apiInstance = new platformClient.ConversationsApi();
 let integrationId = "integrationId_example"; // String | integrationId
 let body = {}; // Object | NormalizedMessage
 let opts = { 
-  'prefetchConversationId': false // Boolean | Indicates whether or not to prefetch conversationId
+  'prefetchConversationId': false, // Boolean | Indicates whether or not to prefetch conversationId
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postConversationsMessageInboundOpenMessage(integrationId, body, opts)
@@ -12351,6 +16785,7 @@ apiInstance.postConversationsMessageInboundOpenMessage(integrationId, body, opts
  **integrationId** | **String** | integrationId |  |
  **body** | **Object** | NormalizedMessage |  |
  **prefetchConversationId** | **Boolean** | Indicates whether or not to prefetch conversationId | [optional] [default to false] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -12359,7 +16794,7 @@ apiInstance.postConversationsMessageInboundOpenMessage(integrationId, body, opts
 
 ## postConversationsMessageInboundOpenReceipt
 
-> OpenReceiptNormalizedMessage postConversationsMessageInboundOpenReceipt(integrationId, body)
+> OpenReceiptNormalizedMessage postConversationsMessageInboundOpenReceipt(integrationId, body, opts)
 
 
 POST /api/v2/conversations/messages/{integrationId}/inbound/open/receipt
@@ -12387,8 +16822,14 @@ let apiInstance = new platformClient.ConversationsApi();
 
 let integrationId = "integrationId_example"; // String | integrationId
 let body = {}; // Object | NormalizedMessage
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postConversationsMessageInboundOpenReceipt(integrationId, body)
+apiInstance.postConversationsMessageInboundOpenReceipt(integrationId, body, opts)
   .then((data) => {
     console.log(`postConversationsMessageInboundOpenReceipt success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -12405,6 +16846,7 @@ apiInstance.postConversationsMessageInboundOpenReceipt(integrationId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **integrationId** | **String** | integrationId |  |
  **body** | **Object** | NormalizedMessage |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -12413,7 +16855,7 @@ apiInstance.postConversationsMessageInboundOpenReceipt(integrationId, body)
 
 ## postConversationsMessageInboundOpenStructuredResponse
 
-> OpenStructuredResponseNormalizedMessage postConversationsMessageInboundOpenStructuredResponse(integrationId, body)
+> OpenStructuredResponseNormalizedMessage postConversationsMessageInboundOpenStructuredResponse(integrationId, body, opts)
 
 
 POST /api/v2/conversations/messages/{integrationId}/inbound/open/structured/response
@@ -12441,8 +16883,14 @@ let apiInstance = new platformClient.ConversationsApi();
 
 let integrationId = "integrationId_example"; // String | integrationId
 let body = {}; // Object | OpenInboundStructuredResponseMessage
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postConversationsMessageInboundOpenStructuredResponse(integrationId, body)
+apiInstance.postConversationsMessageInboundOpenStructuredResponse(integrationId, body, opts)
   .then((data) => {
     console.log(`postConversationsMessageInboundOpenStructuredResponse success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -12459,6 +16907,7 @@ apiInstance.postConversationsMessageInboundOpenStructuredResponse(integrationId,
 | ------------- | ------------- | ------------- | ------------- |
  **integrationId** | **String** | integrationId |  |
  **body** | **Object** | OpenInboundStructuredResponseMessage |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -12474,7 +16923,7 @@ POST /api/v2/conversations/messages/{conversationId}/messages/bulk
 
 Get messages in batch
 
-The path parameter [conversationId] should contain the conversationId of the conversation being filtered. The body should contain the messageId(s) of messages being requested. For example: ["a3069a33b-bbb1-4703-9d68-061d9e9db96e", "55bc6be3-078c-4a49-a4e6-1e05776ed7e8"]
+The path parameter [conversationId] should contain the conversationId of the conversation being filtered. The body should contain the messageId(s) of messages being requested. For example: ["a3069a33b-bbb1-4703-9d68-061d9e9db96e", "55bc6be3-078c-4a49-a4e6-1e05776ed7e8"]. The max messages you can request in the body is 1,000. Best practice is to limit to only the messages you need in each request, rather than request large batches by default.
 
 Requires ANY permissions:
 
@@ -12497,7 +16946,11 @@ let apiInstance = new platformClient.ConversationsApi();
 let conversationId = "conversationId_example"; // String | 
 let opts = { 
   'useNormalizedMessage': false, // Boolean | If true, response removes deprecated fields (textBody, media)
-  'body': ["body_example"] // [String] | messageIds
+  'body': ["body_example"], // [String] | messageIds
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postConversationsMessageMessagesBulk(conversationId, opts)
@@ -12518,10 +16971,74 @@ apiInstance.postConversationsMessageMessagesBulk(conversationId, opts)
  **conversationId** | **String** |  |  |
  **useNormalizedMessage** | **Boolean** | If true, response removes deprecated fields (textBody, media) | [optional] [default to false] |
  **body** | **[String]** | messageIds | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **TextMessageListing**
+
+
+## postConversationsMessageParticipantCommunicationSummaries
+
+> OnDemandSummaryAcceptedResponse postConversationsMessageParticipantCommunicationSummaries(conversationId, participantId, communicationId, opts)
+
+
+POST /api/v2/conversations/messages/{conversationId}/participants/{participantId}/communications/{communicationId}/summaries
+
+Request an on-demand summary for a message communication.
+
+Requires ALL permissions:
+
+* conversation:summary:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | Conversation ID
+let participantId = "participantId_example"; // String | Participant ID
+let communicationId = "communicationId_example"; // String | Communication ID
+let opts = { 
+  'body': {}, // Object | On-demand summary request
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.postConversationsMessageParticipantCommunicationSummaries(conversationId, participantId, communicationId, opts)
+  .then((data) => {
+    console.log(`postConversationsMessageParticipantCommunicationSummaries success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postConversationsMessageParticipantCommunicationSummaries');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | Conversation ID |  |
+ **participantId** | **String** | Participant ID |  |
+ **communicationId** | **String** | Communication ID |  |
+ **body** | **Object** | On-demand summary request | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**OnDemandSummaryAcceptedResponse**
 
 
 ## postConversationsMessageParticipantCommunicationWrapup
@@ -12554,7 +17071,11 @@ let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
 let communicationId = "communicationId_example"; // String | communicationId
 let opts = { 
-  'body': {} // Object | Wrap-up
+  'body': {}, // Object | Wrap-up
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postConversationsMessageParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts)
@@ -12576,6 +17097,7 @@ apiInstance.postConversationsMessageParticipantCommunicationWrapup(conversationI
  **participantId** | **String** | participantId |  |
  **communicationId** | **String** | communicationId |  |
  **body** | **Object** | Wrap-up | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -12584,7 +17106,7 @@ void (no response body)
 
 ## postConversationsMessageParticipantMonitor
 
-> void postConversationsMessageParticipantMonitor(conversationId, participantId)
+> void postConversationsMessageParticipantMonitor(conversationId, participantId, opts)
 
 
 POST /api/v2/conversations/messages/{conversationId}/participants/{participantId}/monitor
@@ -12610,8 +17132,14 @@ let apiInstance = new platformClient.ConversationsApi();
 
 let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postConversationsMessageParticipantMonitor(conversationId, participantId)
+apiInstance.postConversationsMessageParticipantMonitor(conversationId, participantId, opts)
   .then(() => {
     console.log('postConversationsMessageParticipantMonitor returned successfully.');
   })
@@ -12628,6 +17156,7 @@ apiInstance.postConversationsMessageParticipantMonitor(conversationId, participa
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -12636,7 +17165,7 @@ void (no response body)
 
 ## postConversationsMessageParticipantReplace
 
-> void postConversationsMessageParticipantReplace(conversationId, participantId, body)
+> void postConversationsMessageParticipantReplace(conversationId, participantId, body, opts)
 
 
 POST /api/v2/conversations/messages/{conversationId}/participants/{participantId}/replace
@@ -12663,8 +17192,14 @@ let apiInstance = new platformClient.ConversationsApi();
 let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
 let body = {}; // Object | Transfer request
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postConversationsMessageParticipantReplace(conversationId, participantId, body)
+apiInstance.postConversationsMessageParticipantReplace(conversationId, participantId, body, opts)
   .then(() => {
     console.log('postConversationsMessageParticipantReplace returned successfully.');
   })
@@ -12682,6 +17217,7 @@ apiInstance.postConversationsMessageParticipantReplace(conversationId, participa
  **conversationId** | **String** | conversationId |  |
  **participantId** | **String** | participantId |  |
  **body** | **Object** | Transfer request |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -12690,7 +17226,7 @@ void (no response body)
 
 ## postConversationsMessages
 
-> CreateOutboundMessagingConversationResponse postConversationsMessages(body)
+> CreateOutboundMessagingConversationResponse postConversationsMessages(body, opts)
 
 
 POST /api/v2/conversations/messages
@@ -12717,8 +17253,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ConversationsApi();
 
 let body = {}; // Object | Create outbound messaging conversation
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postConversationsMessages(body)
+apiInstance.postConversationsMessages(body, opts)
   .then((data) => {
     console.log(`postConversationsMessages success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -12734,6 +17276,7 @@ apiInstance.postConversationsMessages(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Create outbound messaging conversation |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -12749,7 +17292,7 @@ POST /api/v2/conversations/messages/agentless
 
 Send an agentless outbound message
 
-Send an agentless (api participant) outbound message using a client credential grant. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. If there is already a connected conversation between the fromAddress and toAddress specified, the useExistingActiveConversation param can be used to barge in to the ongoing conversation.
+Send an agentless (api participant) outbound message using a client credential grant. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. If there is already a connected conversation between the fromAddress and recipient specified, the useExistingActiveConversation param can be used to barge in to the ongoing conversation.
 
 Requires ALL permissions:
 
@@ -12770,7 +17313,11 @@ let apiInstance = new platformClient.ConversationsApi();
 
 let body = {}; // Object | Create agentless outbound messaging request
 let opts = { 
-  'useNormalizedMessage': false // Boolean | If true, response removes deprecated fields (textBody, messagingTemplate)
+  'useNormalizedMessage': false, // Boolean | If true, response removes deprecated fields (textBody, messagingTemplate)
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postConversationsMessagesAgentless(body, opts)
@@ -12790,6 +17337,7 @@ apiInstance.postConversationsMessagesAgentless(body, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Create agentless outbound messaging request |  |
  **useNormalizedMessage** | **Boolean** | If true, response removes deprecated fields (textBody, messagingTemplate) | [optional] [default to false] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -12798,7 +17346,7 @@ apiInstance.postConversationsMessagesAgentless(body, opts)
 
 ## postConversationsMessagesInboundOpen
 
-> OpenNormalizedMessage postConversationsMessagesInboundOpen(body)
+> OpenNormalizedMessage postConversationsMessagesInboundOpen(body, opts)
 
 :::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
 This resource has been deprecated
@@ -12828,8 +17376,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ConversationsApi();
 
 let body = {}; // Object | NormalizedMessage
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postConversationsMessagesInboundOpen(body)
+apiInstance.postConversationsMessagesInboundOpen(body, opts)
   .then((data) => {
     console.log(`postConversationsMessagesInboundOpen success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -12845,15 +17399,73 @@ apiInstance.postConversationsMessagesInboundOpen(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | NormalizedMessage |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **OpenNormalizedMessage**
 
 
+## postConversationsMessagingIntegrationsApple
+
+> AppleIntegration postConversationsMessagingIntegrationsApple(body, opts)
+
+
+POST /api/v2/conversations/messaging/integrations/apple
+
+Create Apple Integration
+
+Requires ALL permissions:
+
+* messaging:appleIntegration:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let body = {}; // Object | AppleIntegrationRequest
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.postConversationsMessagingIntegrationsApple(body, opts)
+  .then((data) => {
+    console.log(`postConversationsMessagingIntegrationsApple success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postConversationsMessagingIntegrationsApple');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | AppleIntegrationRequest |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**AppleIntegration**
+
+
 ## postConversationsMessagingIntegrationsFacebook
 
-> FacebookIntegration postConversationsMessagingIntegrationsFacebook(body)
+> FacebookIntegration postConversationsMessagingIntegrationsFacebook(body, opts)
 
 
 POST /api/v2/conversations/messaging/integrations/facebook
@@ -12878,8 +17490,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ConversationsApi();
 
 let body = {}; // Object | FacebookIntegrationRequest
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postConversationsMessagingIntegrationsFacebook(body)
+apiInstance.postConversationsMessagingIntegrationsFacebook(body, opts)
   .then((data) => {
     console.log(`postConversationsMessagingIntegrationsFacebook success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -12895,6 +17513,7 @@ apiInstance.postConversationsMessagingIntegrationsFacebook(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | FacebookIntegrationRequest |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -12903,7 +17522,7 @@ apiInstance.postConversationsMessagingIntegrationsFacebook(body)
 
 ## postConversationsMessagingIntegrationsInstagram
 
-> InstagramIntegration postConversationsMessagingIntegrationsInstagram(body)
+> InstagramIntegration postConversationsMessagingIntegrationsInstagram(body, opts)
 
 
 POST /api/v2/conversations/messaging/integrations/instagram
@@ -12928,8 +17547,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ConversationsApi();
 
 let body = {}; // Object | InstagramIntegrationRequest
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postConversationsMessagingIntegrationsInstagram(body)
+apiInstance.postConversationsMessagingIntegrationsInstagram(body, opts)
   .then((data) => {
     console.log(`postConversationsMessagingIntegrationsInstagram success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -12945,6 +17570,7 @@ apiInstance.postConversationsMessagingIntegrationsInstagram(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | InstagramIntegrationRequest |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -12953,7 +17579,7 @@ apiInstance.postConversationsMessagingIntegrationsInstagram(body)
 
 ## postConversationsMessagingIntegrationsOpen
 
-> OpenIntegration postConversationsMessagingIntegrationsOpen(body)
+> OpenIntegration postConversationsMessagingIntegrationsOpen(body, opts)
 
 
 POST /api/v2/conversations/messaging/integrations/open
@@ -12980,8 +17606,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ConversationsApi();
 
 let body = {}; // Object | OpenIntegrationRequest
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postConversationsMessagingIntegrationsOpen(body)
+apiInstance.postConversationsMessagingIntegrationsOpen(body, opts)
   .then((data) => {
     console.log(`postConversationsMessagingIntegrationsOpen success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -12997,15 +17629,138 @@ apiInstance.postConversationsMessagingIntegrationsOpen(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | OpenIntegrationRequest |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **OpenIntegration**
 
 
+## postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofile
+
+> GoogleBusinessProfileOpenIntegration postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofile(body, opts)
+
+
+POST /api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile
+
+Create an Open messaging integration with the Google Business Profile extension
+
+See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+
+postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofile is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ALL permissions:
+
+* messaging:googleBusinessProfileIntegration:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let body = {}; // Object | GoogleBusinessProfileOpenIntegrationRequest
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofile(body, opts)
+  .then((data) => {
+    console.log(`postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofile success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofile');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | GoogleBusinessProfileOpenIntegrationRequest |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**GoogleBusinessProfileOpenIntegration**
+
+
+## postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokens
+
+> GoogleAuthToken postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokens(body, opts)
+
+
+POST /api/v2/conversations/messaging/integrations/open/extensions/googlebusinessprofile/tokens
+
+Create a Google Auth Token by exchanging the one-time auth code retrieved from Google
+
+See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
+
+postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokens is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* messaging:googleBusinessProfileToken:add
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let body = {}; // Object | GoogleAuthTokenRequest
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokens(body, opts)
+  .then((data) => {
+    console.log(`postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokens success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postConversationsMessagingIntegrationsOpenExtensionsGooglebusinessprofileTokens');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | GoogleAuthTokenRequest |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**GoogleAuthToken**
+
+
 ## postConversationsMessagingIntegrationsTwitter
 
-> TwitterIntegration postConversationsMessagingIntegrationsTwitter(body)
+> TwitterIntegration postConversationsMessagingIntegrationsTwitter(body, opts)
 
 
 POST /api/v2/conversations/messaging/integrations/twitter
@@ -13030,8 +17785,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ConversationsApi();
 
 let body = {}; // Object | TwitterIntegrationRequest
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postConversationsMessagingIntegrationsTwitter(body)
+apiInstance.postConversationsMessagingIntegrationsTwitter(body, opts)
   .then((data) => {
     console.log(`postConversationsMessagingIntegrationsTwitter success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -13047,6 +17808,7 @@ apiInstance.postConversationsMessagingIntegrationsTwitter(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | TwitterIntegrationRequest |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -13055,7 +17817,7 @@ apiInstance.postConversationsMessagingIntegrationsTwitter(body)
 
 ## postConversationsMessagingIntegrationsWhatsapp
 
-> WhatsAppIntegration postConversationsMessagingIntegrationsWhatsapp(body)
+> WhatsAppIntegration postConversationsMessagingIntegrationsWhatsapp(body, opts)
 
 :::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
 This resource has been deprecated
@@ -13085,8 +17847,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ConversationsApi();
 
 let body = {}; // Object | WhatsAppIntegrationRequest
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postConversationsMessagingIntegrationsWhatsapp(body)
+apiInstance.postConversationsMessagingIntegrationsWhatsapp(body, opts)
   .then((data) => {
     console.log(`postConversationsMessagingIntegrationsWhatsapp success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -13102,6 +17870,7 @@ apiInstance.postConversationsMessagingIntegrationsWhatsapp(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | WhatsAppIntegrationRequest |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -13110,7 +17879,7 @@ apiInstance.postConversationsMessagingIntegrationsWhatsapp(body)
 
 ## postConversationsMessagingIntegrationsWhatsappEmbeddedsignup
 
-> WhatsAppIntegration postConversationsMessagingIntegrationsWhatsappEmbeddedsignup(body)
+> WhatsAppIntegration postConversationsMessagingIntegrationsWhatsappEmbeddedsignup(body, opts)
 
 
 POST /api/v2/conversations/messaging/integrations/whatsapp/embeddedsignup
@@ -13137,8 +17906,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ConversationsApi();
 
 let body = {}; // Object | WhatsAppEmbeddedSignupIntegrationRequest
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postConversationsMessagingIntegrationsWhatsappEmbeddedsignup(body)
+apiInstance.postConversationsMessagingIntegrationsWhatsappEmbeddedsignup(body, opts)
   .then((data) => {
     console.log(`postConversationsMessagingIntegrationsWhatsappEmbeddedsignup success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -13154,6 +17929,7 @@ apiInstance.postConversationsMessagingIntegrationsWhatsappEmbeddedsignup(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | WhatsAppEmbeddedSignupIntegrationRequest |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -13162,7 +17938,7 @@ apiInstance.postConversationsMessagingIntegrationsWhatsappEmbeddedsignup(body)
 
 ## postConversationsMessagingSettings
 
-> MessagingSetting postConversationsMessagingSettings(body)
+> MessagingSetting postConversationsMessagingSettings(body, opts)
 
 
 POST /api/v2/conversations/messaging/settings
@@ -13187,8 +17963,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ConversationsApi();
 
 let body = {}; // Object | MessagingSetting
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postConversationsMessagingSettings(body)
+apiInstance.postConversationsMessagingSettings(body, opts)
   .then((data) => {
     console.log(`postConversationsMessagingSettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -13204,6 +17986,7 @@ apiInstance.postConversationsMessagingSettings(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | MessagingSetting |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -13212,7 +17995,7 @@ apiInstance.postConversationsMessagingSettings(body)
 
 ## postConversationsMessagingSupportedcontent
 
-> SupportedContent postConversationsMessagingSupportedcontent(body)
+> SupportedContent postConversationsMessagingSupportedcontent(body, opts)
 
 
 POST /api/v2/conversations/messaging/supportedcontent
@@ -13237,8 +18020,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ConversationsApi();
 
 let body = {}; // Object | SupportedContent
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postConversationsMessagingSupportedcontent(body)
+apiInstance.postConversationsMessagingSupportedcontent(body, opts)
   .then((data) => {
     console.log(`postConversationsMessagingSupportedcontent success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -13254,6 +18043,7 @@ apiInstance.postConversationsMessagingSupportedcontent(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | SupportedContent |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -13262,7 +18052,7 @@ apiInstance.postConversationsMessagingSupportedcontent(body)
 
 ## postConversationsParticipantsAttributesSearch
 
-> JsonCursorSearchResponse postConversationsParticipantsAttributesSearch(body)
+> JsonCursorSearchResponse postConversationsParticipantsAttributesSearch(body, opts)
 
 
 POST /api/v2/conversations/participants/attributes/search
@@ -13287,8 +18077,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ConversationsApi();
 
 let body = {}; // Object | Search request options
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postConversationsParticipantsAttributesSearch(body)
+apiInstance.postConversationsParticipantsAttributesSearch(body, opts)
   .then((data) => {
     console.log(`postConversationsParticipantsAttributesSearch success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -13304,6 +18100,7 @@ apiInstance.postConversationsParticipantsAttributesSearch(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Search request options |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -13345,7 +18142,11 @@ let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
 let communicationId = "communicationId_example"; // String | communicationId
 let opts = { 
-  'body': {} // Object | Wrap-up
+  'body': {}, // Object | Wrap-up
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postConversationsScreenshareParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts)
@@ -13367,6 +18168,7 @@ apiInstance.postConversationsScreenshareParticipantCommunicationWrapup(conversat
  **participantId** | **String** | participantId |  |
  **communicationId** | **String** | communicationId |  |
  **body** | **Object** | Wrap-up | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -13403,7 +18205,11 @@ let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
 let communicationId = "communicationId_example"; // String | communicationId
 let opts = { 
-  'body': {} // Object | Wrap-up
+  'body': {}, // Object | Wrap-up
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postConversationsSocialParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts)
@@ -13425,6 +18231,7 @@ apiInstance.postConversationsSocialParticipantCommunicationWrapup(conversationId
  **participantId** | **String** | participantId |  |
  **communicationId** | **String** | communicationId |  |
  **body** | **Object** | Wrap-up | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -13433,7 +18240,7 @@ void (no response body)
 
 ## postConversationsVideoAgentconferenceCommunication
 
-> VideoConferenceDetails postConversationsVideoAgentconferenceCommunication(conversationId, communicationId)
+> CreateJoinVideoResponse postConversationsVideoAgentconferenceCommunication(conversationId, communicationId, opts)
 
 
 POST /api/v2/conversations/videos/{conversationId}/agentconference/communications/{communicationId}
@@ -13461,8 +18268,14 @@ let apiInstance = new platformClient.ConversationsApi();
 
 let conversationId = "conversationId_example"; // String | conversationId
 let communicationId = "communicationId_example"; // String | communicationId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postConversationsVideoAgentconferenceCommunication(conversationId, communicationId)
+apiInstance.postConversationsVideoAgentconferenceCommunication(conversationId, communicationId, opts)
   .then((data) => {
     console.log(`postConversationsVideoAgentconferenceCommunication success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -13479,10 +18292,11 @@ apiInstance.postConversationsVideoAgentconferenceCommunication(conversationId, c
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **communicationId** | **String** | communicationId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
-**VideoConferenceDetails**
+**CreateJoinVideoResponse**
 
 
 ## postConversationsVideoParticipantCommunicationWrapup
@@ -13515,7 +18329,11 @@ let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
 let communicationId = "communicationId_example"; // String | communicationId
 let opts = { 
-  'body': {} // Object | Wrap-up
+  'body': {}, // Object | Wrap-up
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postConversationsVideoParticipantCommunicationWrapup(conversationId, participantId, communicationId, opts)
@@ -13537,6 +18355,7 @@ apiInstance.postConversationsVideoParticipantCommunicationWrapup(conversationId,
  **participantId** | **String** | participantId |  |
  **communicationId** | **String** | communicationId |  |
  **body** | **Object** | Wrap-up | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -13545,14 +18364,12 @@ void (no response body)
 
 ## postConversationsVideosMeetings
 
-> MeetingIdRecord postConversationsVideosMeetings(body)
+> MeetingIdRecord postConversationsVideosMeetings(body, opts)
 
 
 POST /api/v2/conversations/videos/meetings
 
 Generate a meetingId for a given conferenceId
-
-postConversationsVideosMeetings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ANY permissions:
 
@@ -13572,8 +18389,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ConversationsApi();
 
 let body = {}; // Object | MeetingIdRequest
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postConversationsVideosMeetings(body)
+apiInstance.postConversationsVideosMeetings(body, opts)
   .then((data) => {
     console.log(`postConversationsVideosMeetings success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -13589,15 +18412,195 @@ apiInstance.postConversationsVideosMeetings(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | MeetingIdRequest |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **MeetingIdRecord**
 
 
+## putConversationAccessattributes
+
+> **&#39;String&#39;** putConversationAccessattributes(conversationId, body, opts)
+
+
+PUT /api/v2/conversations/{conversationId}/accessattributes
+
+Set the access attributes on a conversation.
+
+putConversationAccessattributes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* conversation:accessAttributes:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | conversation ID
+let body = {}; // Object | Conversation Access Attributes
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.putConversationAccessattributes(conversationId, body, opts)
+  .then((data) => {
+    console.log(`putConversationAccessattributes success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putConversationAccessattributes');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversation ID |  |
+ **body** | **Object** | Conversation Access Attributes |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**&#39;String&#39;**
+
+
+## putConversationCustomattributes
+
+> CustomAttributesIdResponse putConversationCustomattributes(conversationId, opts)
+
+
+PUT /api/v2/conversations/{conversationId}/customattributes
+
+Create or update a single custom attributes record. Updating replaces all data with the provided fields.
+
+Requires ANY permissions:
+
+* conversation:customAttributes:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | conversation ID
+let opts = { 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.putConversationCustomattributes(conversationId, opts)
+  .then((data) => {
+    console.log(`putConversationCustomattributes success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putConversationCustomattributes');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversation ID |  |
+ **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**CustomAttributesIdResponse**
+
+
+## putConversationCustomattributesBulk
+
+> CustomAttributesBulkUpdateResponseMap putConversationCustomattributesBulk(conversationId, opts)
+
+
+PUT /api/v2/conversations/{conversationId}/customattributes/bulk
+
+Create or update a list of custom attributes records. Updating replaces all data with the provided fields.
+
+Requires ANY permissions:
+
+* conversation:customAttributes:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let conversationId = "conversationId_example"; // String | conversation ID
+let opts = { 
+  'body': [{}], // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.putConversationCustomattributesBulk(conversationId, opts)
+  .then((data) => {
+    console.log(`putConversationCustomattributesBulk success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putConversationCustomattributesBulk');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **conversationId** | **String** | conversation ID |  |
+ **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**CustomAttributesBulkUpdateResponseMap**
+
+
 ## putConversationParticipantFlaggedreason
 
-> void putConversationParticipantFlaggedreason(conversationId, participantId)
+> void putConversationParticipantFlaggedreason(conversationId, participantId, opts)
 
 
 PUT /api/v2/conversations/{conversationId}/participants/{participantId}/flaggedreason
@@ -13621,8 +18624,14 @@ let apiInstance = new platformClient.ConversationsApi();
 
 let conversationId = "conversationId_example"; // String | conversation ID
 let participantId = "participantId_example"; // String | participant ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putConversationParticipantFlaggedreason(conversationId, participantId)
+apiInstance.putConversationParticipantFlaggedreason(conversationId, participantId, opts)
   .then(() => {
     console.log('putConversationParticipantFlaggedreason returned successfully.');
   })
@@ -13639,6 +18648,7 @@ apiInstance.putConversationParticipantFlaggedreason(conversationId, participantI
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversation ID |  |
  **participantId** | **String** | participant ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -13647,7 +18657,7 @@ void (no response body)
 
 ## putConversationSecureattributes
 
-> **&#39;String&#39;** putConversationSecureattributes(conversationId, body)
+> **&#39;String&#39;** putConversationSecureattributes(conversationId, body, opts)
 
 
 PUT /api/v2/conversations/{conversationId}/secureattributes
@@ -13673,8 +18683,14 @@ let apiInstance = new platformClient.ConversationsApi();
 
 let conversationId = "conversationId_example"; // String | conversation ID
 let body = {}; // Object | Conversation Secure Attributes
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putConversationSecureattributes(conversationId, body)
+apiInstance.putConversationSecureattributes(conversationId, body, opts)
   .then((data) => {
     console.log(`putConversationSecureattributes success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -13691,6 +18707,7 @@ apiInstance.putConversationSecureattributes(conversationId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversation ID |  |
  **body** | **Object** | Conversation Secure Attributes |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -13699,7 +18716,7 @@ apiInstance.putConversationSecureattributes(conversationId, body)
 
 ## putConversationTags
 
-> **&#39;String&#39;** putConversationTags(conversationId, body)
+> **&#39;String&#39;** putConversationTags(conversationId, body, opts)
 
 
 PUT /api/v2/conversations/{conversationId}/tags
@@ -13725,8 +18742,14 @@ let apiInstance = new platformClient.ConversationsApi();
 
 let conversationId = "conversationId_example"; // String | conversation ID
 let body = {}; // Object | Conversation Tags
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putConversationTags(conversationId, body)
+apiInstance.putConversationTags(conversationId, body, opts)
   .then((data) => {
     console.log(`putConversationTags success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -13743,6 +18766,7 @@ apiInstance.putConversationTags(conversationId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversation ID |  |
  **body** | **Object** | Conversation Tags |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -13751,7 +18775,7 @@ apiInstance.putConversationTags(conversationId, body)
 
 ## putConversationsCallParticipantCommunicationUuidata
 
-> **Object** putConversationsCallParticipantCommunicationUuidata(conversationId, participantId, communicationId, body)
+> **Object** putConversationsCallParticipantCommunicationUuidata(conversationId, participantId, communicationId, body, opts)
 
 
 PUT /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/uuidata
@@ -13777,8 +18801,14 @@ let conversationId = "conversationId_example"; // String | conversationId
 let participantId = "participantId_example"; // String | participantId
 let communicationId = "communicationId_example"; // String | communicationId
 let body = {}; // Object | UUIData Request
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putConversationsCallParticipantCommunicationUuidata(conversationId, participantId, communicationId, body)
+apiInstance.putConversationsCallParticipantCommunicationUuidata(conversationId, participantId, communicationId, body, opts)
   .then((data) => {
     console.log(`putConversationsCallParticipantCommunicationUuidata success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -13797,6 +18827,7 @@ apiInstance.putConversationsCallParticipantCommunicationUuidata(conversationId, 
  **participantId** | **String** | participantId |  |
  **communicationId** | **String** | communicationId |  |
  **body** | **Object** | UUIData Request |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -13805,7 +18836,7 @@ apiInstance.putConversationsCallParticipantCommunicationUuidata(conversationId, 
 
 ## putConversationsCallRecordingstate
 
-> **&#39;String&#39;** putConversationsCallRecordingstate(conversationId, body)
+> **&#39;String&#39;** putConversationsCallRecordingstate(conversationId, body, opts)
 
 
 PUT /api/v2/conversations/calls/{conversationId}/recordingstate
@@ -13831,8 +18862,14 @@ let apiInstance = new platformClient.ConversationsApi();
 
 let conversationId = "conversationId_example"; // String | conversationId
 let body = {}; // Object | SetRecordingState
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putConversationsCallRecordingstate(conversationId, body)
+apiInstance.putConversationsCallRecordingstate(conversationId, body, opts)
   .then((data) => {
     console.log(`putConversationsCallRecordingstate success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -13849,6 +18886,7 @@ apiInstance.putConversationsCallRecordingstate(conversationId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **body** | **Object** | SetRecordingState |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -13857,7 +18895,7 @@ apiInstance.putConversationsCallRecordingstate(conversationId, body)
 
 ## putConversationsCallbackRecordingstate
 
-> **&#39;String&#39;** putConversationsCallbackRecordingstate(conversationId, body)
+> **&#39;String&#39;** putConversationsCallbackRecordingstate(conversationId, body, opts)
 
 
 PUT /api/v2/conversations/callbacks/{conversationId}/recordingstate
@@ -13883,8 +18921,14 @@ let apiInstance = new platformClient.ConversationsApi();
 
 let conversationId = "conversationId_example"; // String | conversationId
 let body = {}; // Object | SetRecordingState
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putConversationsCallbackRecordingstate(conversationId, body)
+apiInstance.putConversationsCallbackRecordingstate(conversationId, body, opts)
   .then((data) => {
     console.log(`putConversationsCallbackRecordingstate success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -13901,6 +18945,7 @@ apiInstance.putConversationsCallbackRecordingstate(conversationId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **body** | **Object** | SetRecordingState |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -13909,7 +18954,7 @@ apiInstance.putConversationsCallbackRecordingstate(conversationId, body)
 
 ## putConversationsChatRecordingstate
 
-> **&#39;String&#39;** putConversationsChatRecordingstate(conversationId, body)
+> **&#39;String&#39;** putConversationsChatRecordingstate(conversationId, body, opts)
 
 :::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
 This resource has been deprecated
@@ -13940,8 +18985,14 @@ let apiInstance = new platformClient.ConversationsApi();
 
 let conversationId = "conversationId_example"; // String | conversationId
 let body = {}; // Object | SetRecordingState
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putConversationsChatRecordingstate(conversationId, body)
+apiInstance.putConversationsChatRecordingstate(conversationId, body, opts)
   .then((data) => {
     console.log(`putConversationsChatRecordingstate success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -13958,6 +19009,7 @@ apiInstance.putConversationsChatRecordingstate(conversationId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **body** | **Object** | SetRecordingState |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -13966,7 +19018,7 @@ apiInstance.putConversationsChatRecordingstate(conversationId, body)
 
 ## putConversationsCobrowsesessionRecordingstate
 
-> **&#39;String&#39;** putConversationsCobrowsesessionRecordingstate(conversationId, body)
+> **&#39;String&#39;** putConversationsCobrowsesessionRecordingstate(conversationId, body, opts)
 
 :::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
 This resource has been deprecated
@@ -13997,8 +19049,14 @@ let apiInstance = new platformClient.ConversationsApi();
 
 let conversationId = "conversationId_example"; // String | conversationId
 let body = {}; // Object | SetRecordingState
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putConversationsCobrowsesessionRecordingstate(conversationId, body)
+apiInstance.putConversationsCobrowsesessionRecordingstate(conversationId, body, opts)
   .then((data) => {
     console.log(`putConversationsCobrowsesessionRecordingstate success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -14015,15 +19073,75 @@ apiInstance.putConversationsCobrowsesessionRecordingstate(conversationId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **body** | **Object** | SetRecordingState |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **&#39;String&#39;**
 
 
+## putConversationsCustomattributesSchema
+
+> ConversationDataSchema putConversationsCustomattributesSchema(schemaId, body, opts)
+
+
+PUT /api/v2/conversations/customattributes/schemas/{schemaId}
+
+Update a schema
+
+Requires ANY permissions:
+
+* conversation:customAttributes:schemaEdit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ConversationsApi();
+
+let schemaId = "schemaId_example"; // String | Schema ID
+let body = {}; // Object | Schema update request body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.putConversationsCustomattributesSchema(schemaId, body, opts)
+  .then((data) => {
+    console.log(`putConversationsCustomattributesSchema success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling putConversationsCustomattributesSchema');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **schemaId** | **String** | Schema ID |  |
+ **body** | **Object** | Schema update request body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**ConversationDataSchema**
+
+
 ## putConversationsEmailMessagesDraft
 
-> EmailMessage putConversationsEmailMessagesDraft(conversationId, body)
+> EmailMessage putConversationsEmailMessagesDraft(conversationId, body, opts)
 
 
 PUT /api/v2/conversations/emails/{conversationId}/messages/draft
@@ -14047,8 +19165,14 @@ let apiInstance = new platformClient.ConversationsApi();
 
 let conversationId = "conversationId_example"; // String | conversationId
 let body = {}; // Object | Draft
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putConversationsEmailMessagesDraft(conversationId, body)
+apiInstance.putConversationsEmailMessagesDraft(conversationId, body, opts)
   .then((data) => {
     console.log(`putConversationsEmailMessagesDraft success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -14065,6 +19189,7 @@ apiInstance.putConversationsEmailMessagesDraft(conversationId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **body** | **Object** | Draft |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -14073,7 +19198,7 @@ apiInstance.putConversationsEmailMessagesDraft(conversationId, body)
 
 ## putConversationsEmailRecordingstate
 
-> **&#39;String&#39;** putConversationsEmailRecordingstate(conversationId, body)
+> **&#39;String&#39;** putConversationsEmailRecordingstate(conversationId, body, opts)
 
 
 PUT /api/v2/conversations/emails/{conversationId}/recordingstate
@@ -14099,8 +19224,14 @@ let apiInstance = new platformClient.ConversationsApi();
 
 let conversationId = "conversationId_example"; // String | conversationId
 let body = {}; // Object | SetRecordingState
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putConversationsEmailRecordingstate(conversationId, body)
+apiInstance.putConversationsEmailRecordingstate(conversationId, body, opts)
   .then((data) => {
     console.log(`putConversationsEmailRecordingstate success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -14117,6 +19248,7 @@ apiInstance.putConversationsEmailRecordingstate(conversationId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **body** | **Object** | SetRecordingState |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -14125,7 +19257,7 @@ apiInstance.putConversationsEmailRecordingstate(conversationId, body)
 
 ## putConversationsKeyconfiguration
 
-> ConversationEncryptionConfiguration putConversationsKeyconfiguration(keyconfigurationsId, body)
+> ConversationEncryptionConfiguration putConversationsKeyconfiguration(keyconfigurationsId, body, opts)
 
 
 PUT /api/v2/conversations/keyconfigurations/{keyconfigurationsId}
@@ -14151,8 +19283,14 @@ let apiInstance = new platformClient.ConversationsApi();
 
 let keyconfigurationsId = "keyconfigurationsId_example"; // String | Key Configurations Id
 let body = {}; // Object | Encryption key configuration metadata
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putConversationsKeyconfiguration(keyconfigurationsId, body)
+apiInstance.putConversationsKeyconfiguration(keyconfigurationsId, body, opts)
   .then((data) => {
     console.log(`putConversationsKeyconfiguration success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -14169,6 +19307,7 @@ apiInstance.putConversationsKeyconfiguration(keyconfigurationsId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **keyconfigurationsId** | **String** | Key Configurations Id |  |
  **body** | **Object** | Encryption key configuration metadata |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -14177,7 +19316,7 @@ apiInstance.putConversationsKeyconfiguration(keyconfigurationsId, body)
 
 ## putConversationsMessageRecordingstate
 
-> **&#39;String&#39;** putConversationsMessageRecordingstate(conversationId, body)
+> **&#39;String&#39;** putConversationsMessageRecordingstate(conversationId, body, opts)
 
 
 PUT /api/v2/conversations/messages/{conversationId}/recordingstate
@@ -14203,8 +19342,14 @@ let apiInstance = new platformClient.ConversationsApi();
 
 let conversationId = "conversationId_example"; // String | conversationId
 let body = {}; // Object | SetRecordingState
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putConversationsMessageRecordingstate(conversationId, body)
+apiInstance.putConversationsMessageRecordingstate(conversationId, body, opts)
   .then((data) => {
     console.log(`putConversationsMessageRecordingstate success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -14221,6 +19366,7 @@ apiInstance.putConversationsMessageRecordingstate(conversationId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **body** | **Object** | SetRecordingState |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -14229,14 +19375,12 @@ apiInstance.putConversationsMessageRecordingstate(conversationId, body)
 
 ## putConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId
 
-> IdentityResolutionConfig putConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId(integrationId, body)
+> AppleIdentityResolutionConfig putConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId(integrationId, body, opts)
 
 
 PUT /api/v2/conversations/messaging/identityresolution/integrations/apple/{integrationId}
 
 Create an identity resolution settings for a Apple messaging integration
-
-putConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Requires ALL permissions:
 
@@ -14258,8 +19402,14 @@ let apiInstance = new platformClient.ConversationsApi();
 
 let integrationId = "integrationId_example"; // String | Integration ID
 let body = {}; // Object | IdentityResolutionConfig
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId(integrationId, body)
+apiInstance.putConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId(integrationId, body, opts)
   .then((data) => {
     console.log(`putConversationsMessagingIdentityresolutionIntegrationsAppleIntegrationId success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -14276,15 +19426,16 @@ apiInstance.putConversationsMessagingIdentityresolutionIntegrationsAppleIntegrat
 | ------------- | ------------- | ------------- | ------------- |
  **integrationId** | **String** | Integration ID |  |
  **body** | **Object** | IdentityResolutionConfig |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
-**IdentityResolutionConfig**
+**AppleIdentityResolutionConfig**
 
 
 ## putConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId
 
-> IdentityResolutionConfig putConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId(integrationId, body)
+> FacebookIdentityResolutionConfig putConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId(integrationId, body, opts)
 
 
 PUT /api/v2/conversations/messaging/identityresolution/integrations/facebook/{integrationId}
@@ -14311,8 +19462,14 @@ let apiInstance = new platformClient.ConversationsApi();
 
 let integrationId = "integrationId_example"; // String | Integration ID
 let body = {}; // Object | IdentityResolutionConfig
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId(integrationId, body)
+apiInstance.putConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId(integrationId, body, opts)
   .then((data) => {
     console.log(`putConversationsMessagingIdentityresolutionIntegrationsFacebookIntegrationId success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -14329,15 +19486,16 @@ apiInstance.putConversationsMessagingIdentityresolutionIntegrationsFacebookInteg
 | ------------- | ------------- | ------------- | ------------- |
  **integrationId** | **String** | Integration ID |  |
  **body** | **Object** | IdentityResolutionConfig |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
-**IdentityResolutionConfig**
+**FacebookIdentityResolutionConfig**
 
 
 ## putConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId
 
-> IdentityResolutionConfig putConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId(integrationId, body)
+> InstagramIdentityResolutionConfig putConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId(integrationId, body, opts)
 
 
 PUT /api/v2/conversations/messaging/identityresolution/integrations/instagram/{integrationId}
@@ -14364,8 +19522,14 @@ let apiInstance = new platformClient.ConversationsApi();
 
 let integrationId = "integrationId_example"; // String | Integration ID
 let body = {}; // Object | IdentityResolutionConfig
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId(integrationId, body)
+apiInstance.putConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId(integrationId, body, opts)
   .then((data) => {
     console.log(`putConversationsMessagingIdentityresolutionIntegrationsInstagramIntegrationId success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -14382,15 +19546,16 @@ apiInstance.putConversationsMessagingIdentityresolutionIntegrationsInstagramInte
 | ------------- | ------------- | ------------- | ------------- |
  **integrationId** | **String** | Integration ID |  |
  **body** | **Object** | IdentityResolutionConfig |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
-**IdentityResolutionConfig**
+**InstagramIdentityResolutionConfig**
 
 
 ## putConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId
 
-> OpenMessagingIdentityResolutionConfig putConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId(integrationId, body)
+> OpenMessagingIdentityResolutionConfig putConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId(integrationId, body, opts)
 
 
 PUT /api/v2/conversations/messaging/identityresolution/integrations/open/{integrationId}
@@ -14417,8 +19582,14 @@ let apiInstance = new platformClient.ConversationsApi();
 
 let integrationId = "integrationId_example"; // String | Integration ID
 let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId(integrationId, body)
+apiInstance.putConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId(integrationId, body, opts)
   .then((data) => {
     console.log(`putConversationsMessagingIdentityresolutionIntegrationsOpenIntegrationId success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -14435,6 +19606,7 @@ apiInstance.putConversationsMessagingIdentityresolutionIntegrationsOpenIntegrati
 | ------------- | ------------- | ------------- | ------------- |
  **integrationId** | **String** | Integration ID |  |
  **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -14443,7 +19615,7 @@ apiInstance.putConversationsMessagingIdentityresolutionIntegrationsOpenIntegrati
 
 ## putConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId
 
-> IdentityResolutionConfig putConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId(integrationId, body)
+> TwitterIdentityResolutionConfig putConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId(integrationId, body, opts)
 
 
 PUT /api/v2/conversations/messaging/identityresolution/integrations/twitter/{integrationId}
@@ -14470,8 +19642,14 @@ let apiInstance = new platformClient.ConversationsApi();
 
 let integrationId = "integrationId_example"; // String | Integration Id
 let body = {}; // Object | IdentityResolutionConfig
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId(integrationId, body)
+apiInstance.putConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId(integrationId, body, opts)
   .then((data) => {
     console.log(`putConversationsMessagingIdentityresolutionIntegrationsTwitterIntegrationId success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -14488,15 +19666,16 @@ apiInstance.putConversationsMessagingIdentityresolutionIntegrationsTwitterIntegr
 | ------------- | ------------- | ------------- | ------------- |
  **integrationId** | **String** | Integration Id |  |
  **body** | **Object** | IdentityResolutionConfig |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
-**IdentityResolutionConfig**
+**TwitterIdentityResolutionConfig**
 
 
 ## putConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId
 
-> IdentityResolutionConfig putConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId(integrationId, body)
+> WhatsAppIdentityResolutionConfig putConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId(integrationId, body, opts)
 
 
 PUT /api/v2/conversations/messaging/identityresolution/integrations/whatsapp/{integrationId}
@@ -14523,8 +19702,14 @@ let apiInstance = new platformClient.ConversationsApi();
 
 let integrationId = "integrationId_example"; // String | Integration ID
 let body = {}; // Object | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId(integrationId, body)
+apiInstance.putConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId(integrationId, body, opts)
   .then((data) => {
     console.log(`putConversationsMessagingIdentityresolutionIntegrationsWhatsappIntegrationId success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -14541,15 +19726,16 @@ apiInstance.putConversationsMessagingIdentityresolutionIntegrationsWhatsappInteg
 | ------------- | ------------- | ------------- | ------------- |
  **integrationId** | **String** | Integration ID |  |
  **body** | **Object** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
-**IdentityResolutionConfig**
+**WhatsAppIdentityResolutionConfig**
 
 
 ## putConversationsMessagingSettingsDefault
 
-> MessagingSetting putConversationsMessagingSettingsDefault(body)
+> MessagingSetting putConversationsMessagingSettingsDefault(body, opts)
 
 
 PUT /api/v2/conversations/messaging/settings/default
@@ -14576,8 +19762,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ConversationsApi();
 
 let body = {}; // Object | MessagingSetting
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putConversationsMessagingSettingsDefault(body)
+apiInstance.putConversationsMessagingSettingsDefault(body, opts)
   .then((data) => {
     console.log(`putConversationsMessagingSettingsDefault success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -14593,6 +19785,7 @@ apiInstance.putConversationsMessagingSettingsDefault(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | MessagingSetting |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -14601,7 +19794,7 @@ apiInstance.putConversationsMessagingSettingsDefault(body)
 
 ## putConversationsMessagingSupportedcontentDefault
 
-> SupportedContent putConversationsMessagingSupportedcontentDefault(body)
+> SupportedContent putConversationsMessagingSupportedcontentDefault(body, opts)
 
 
 PUT /api/v2/conversations/messaging/supportedcontent/default
@@ -14627,9 +19820,15 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ConversationsApi();
 
-let body = {}; // Object | SupportedContent
+let body = {}; // Object | Reference to supported content profile
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putConversationsMessagingSupportedcontentDefault(body)
+apiInstance.putConversationsMessagingSupportedcontentDefault(body, opts)
   .then((data) => {
     console.log(`putConversationsMessagingSupportedcontentDefault success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -14644,7 +19843,8 @@ apiInstance.putConversationsMessagingSupportedcontentDefault(body)
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
- **body** | **Object** | SupportedContent |  |
+ **body** | **Object** | Reference to supported content profile |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -14653,7 +19853,7 @@ apiInstance.putConversationsMessagingSupportedcontentDefault(body)
 
 ## putConversationsMessagingThreadingtimeline
 
-> ConversationThreadingWindow putConversationsMessagingThreadingtimeline(body)
+> ConversationThreadingWindow putConversationsMessagingThreadingtimeline(body, opts)
 
 
 PUT /api/v2/conversations/messaging/threadingtimeline
@@ -14680,8 +19880,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ConversationsApi();
 
 let body = {}; // Object | ConversationThreadingWindowRequest
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putConversationsMessagingThreadingtimeline(body)
+apiInstance.putConversationsMessagingThreadingtimeline(body, opts)
   .then((data) => {
     console.log(`putConversationsMessagingThreadingtimeline success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -14697,6 +19903,7 @@ apiInstance.putConversationsMessagingThreadingtimeline(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | ConversationThreadingWindowRequest |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -14705,7 +19912,7 @@ apiInstance.putConversationsMessagingThreadingtimeline(body)
 
 ## putConversationsScreenshareRecordingstate
 
-> **&#39;String&#39;** putConversationsScreenshareRecordingstate(conversationId, body)
+> **&#39;String&#39;** putConversationsScreenshareRecordingstate(conversationId, body, opts)
 
 :::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
 This resource has been deprecated
@@ -14736,8 +19943,14 @@ let apiInstance = new platformClient.ConversationsApi();
 
 let conversationId = "conversationId_example"; // String | conversationId
 let body = {}; // Object | SetRecordingState
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putConversationsScreenshareRecordingstate(conversationId, body)
+apiInstance.putConversationsScreenshareRecordingstate(conversationId, body, opts)
   .then((data) => {
     console.log(`putConversationsScreenshareRecordingstate success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -14754,6 +19967,7 @@ apiInstance.putConversationsScreenshareRecordingstate(conversationId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **body** | **Object** | SetRecordingState |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -14762,7 +19976,7 @@ apiInstance.putConversationsScreenshareRecordingstate(conversationId, body)
 
 ## putConversationsSocialRecordingstate
 
-> **&#39;String&#39;** putConversationsSocialRecordingstate(conversationId, body)
+> **&#39;String&#39;** putConversationsSocialRecordingstate(conversationId, body, opts)
 
 
 PUT /api/v2/conversations/socials/{conversationId}/recordingstate
@@ -14788,8 +20002,14 @@ let apiInstance = new platformClient.ConversationsApi();
 
 let conversationId = "conversationId_example"; // String | conversationId
 let body = {}; // Object | SetRecordingState
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putConversationsSocialRecordingstate(conversationId, body)
+apiInstance.putConversationsSocialRecordingstate(conversationId, body, opts)
   .then((data) => {
     console.log(`putConversationsSocialRecordingstate success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -14806,6 +20026,7 @@ apiInstance.putConversationsSocialRecordingstate(conversationId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **body** | **Object** | SetRecordingState |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -14814,7 +20035,7 @@ apiInstance.putConversationsSocialRecordingstate(conversationId, body)
 
 ## putConversationsVideoRecordingstate
 
-> **&#39;String&#39;** putConversationsVideoRecordingstate(conversationId, body)
+> **&#39;String&#39;** putConversationsVideoRecordingstate(conversationId, body, opts)
 
 
 PUT /api/v2/conversations/videos/{conversationId}/recordingstate
@@ -14840,8 +20061,14 @@ let apiInstance = new platformClient.ConversationsApi();
 
 let conversationId = "conversationId_example"; // String | conversationId
 let body = {}; // Object | SetRecordingState
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putConversationsVideoRecordingstate(conversationId, body)
+apiInstance.putConversationsVideoRecordingstate(conversationId, body, opts)
   .then((data) => {
     console.log(`putConversationsVideoRecordingstate success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -14858,10 +20085,11 @@ apiInstance.putConversationsVideoRecordingstate(conversationId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | conversationId |  |
  **body** | **Object** | SetRecordingState |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **&#39;String&#39;**
 
 
-_purecloud-platform-client-v2@229.1.0_
+_purecloud-platform-client-v2@258.0.0_

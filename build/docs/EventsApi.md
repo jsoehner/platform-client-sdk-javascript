@@ -7,6 +7,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
 [**postEventsConversations**](EventsApi#postEventsConversations) | **POST** /api/v2/events/conversations | Publish Conversation Batch Events
+[**postEventsRoutingCustomkpiattributions**](EventsApi#postEventsRoutingCustomkpiattributions) | **POST** /api/v2/events/routing/customkpiattributions | Publish Predictive Routing Custom Kpi Attribution Batch Events
 [**postEventsUsersPresence**](EventsApi#postEventsUsersPresence) | **POST** /api/v2/events/users/presence | Publish User Presence Status Batch Events
 [**postEventsUsersRoutingstatus**](EventsApi#postEventsUsersRoutingstatus) | **POST** /api/v2/events/users/routingstatus | Publish Agent Routing Status Batch Events
 
@@ -14,7 +15,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ## postEventsConversations
 
-> BatchEventResponse postEventsConversations(body)
+> BatchEventResponse postEventsConversations(body, opts)
 
 
 POST /api/v2/events/conversations
@@ -39,8 +40,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.EventsApi();
 
 let body = {}; // Object | batchRequest
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postEventsConversations(body)
+apiInstance.postEventsConversations(body, opts)
   .then((data) => {
     console.log(`postEventsConversations success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -56,6 +63,66 @@ apiInstance.postEventsConversations(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | batchRequest |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**BatchEventResponse**
+
+
+## postEventsRoutingCustomkpiattributions
+
+> BatchEventResponse postEventsRoutingCustomkpiattributions(body, opts)
+
+
+POST /api/v2/events/routing/customkpiattributions
+
+Publish Predictive Routing Custom Kpi Attribution Batch Events
+
+postEventsRoutingCustomkpiattributions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Requires ANY permissions:
+
+* routing:customKpiAttribution:inject
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.EventsApi();
+
+let body = {}; // Object | batchRequest
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.postEventsRoutingCustomkpiattributions(body, opts)
+  .then((data) => {
+    console.log(`postEventsRoutingCustomkpiattributions success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postEventsRoutingCustomkpiattributions');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | batchRequest |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -64,7 +131,7 @@ apiInstance.postEventsConversations(body)
 
 ## postEventsUsersPresence
 
-> BatchEventResponse postEventsUsersPresence(body)
+> BatchEventResponse postEventsUsersPresence(body, opts)
 
 
 POST /api/v2/events/users/presence
@@ -89,8 +156,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.EventsApi();
 
 let body = {}; // Object | batchRequest
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postEventsUsersPresence(body)
+apiInstance.postEventsUsersPresence(body, opts)
   .then((data) => {
     console.log(`postEventsUsersPresence success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -106,6 +179,7 @@ apiInstance.postEventsUsersPresence(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | batchRequest |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -114,7 +188,7 @@ apiInstance.postEventsUsersPresence(body)
 
 ## postEventsUsersRoutingstatus
 
-> BatchEventResponse postEventsUsersRoutingstatus(body)
+> BatchEventResponse postEventsUsersRoutingstatus(body, opts)
 
 
 POST /api/v2/events/users/routingstatus
@@ -139,8 +213,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.EventsApi();
 
 let body = {}; // Object | batchRequest
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postEventsUsersRoutingstatus(body)
+apiInstance.postEventsUsersRoutingstatus(body, opts)
   .then((data) => {
     console.log(`postEventsUsersRoutingstatus success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -156,10 +236,11 @@ apiInstance.postEventsUsersRoutingstatus(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | batchRequest |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **BatchEventResponse**
 
 
-_purecloud-platform-client-v2@229.1.0_
+_purecloud-platform-client-v2@258.0.0_

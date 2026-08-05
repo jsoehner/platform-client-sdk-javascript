@@ -14,14 +14,16 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ## deleteStationAssociateduser
 
-> void deleteStationAssociateduser(stationId)
+> void deleteStationAssociateduser(stationId, opts)
 
 
 DELETE /api/v2/stations/{stationId}/associateduser
 
 Unassigns the user assigned to this station
 
-Requires NO permissions:
+Requires ANY permissions:
+
+* telephony:station:disassociate
 
 ### Example Usage
 
@@ -37,8 +39,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.StationsApi();
 
 let stationId = "stationId_example"; // String | Station ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteStationAssociateduser(stationId)
+apiInstance.deleteStationAssociateduser(stationId, opts)
   .then(() => {
     console.log('deleteStationAssociateduser returned successfully.');
   })
@@ -54,6 +62,7 @@ apiInstance.deleteStationAssociateduser(stationId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **stationId** | **String** | Station ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -62,7 +71,7 @@ void (no response body)
 
 ## getStation
 
-> Station getStation(stationId)
+> Station getStation(stationId, opts)
 
 
 GET /api/v2/stations/{stationId}
@@ -85,8 +94,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.StationsApi();
 
 let stationId = "stationId_example"; // String | Station ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getStation(stationId)
+apiInstance.getStation(stationId, opts)
   .then((data) => {
     console.log(`getStation success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -102,6 +117,7 @@ apiInstance.getStation(stationId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **stationId** | **String** | Station ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -140,7 +156,11 @@ let opts = {
   'userSelectable': "userSelectable_example", // String | True for stations that the user can select otherwise false
   'webRtcUserId': "webRtcUserId_example", // String | Filter for the webRtc station of the webRtcUserId
   'id': "id_example", // String | Comma separated list of stationIds
-  'lineAppearanceId': "lineAppearanceId_example" // String | lineAppearanceId
+  'lineAppearanceId': "lineAppearanceId_example", // String | lineAppearanceId
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getStations(opts)
@@ -166,10 +186,11 @@ apiInstance.getStations(opts)
  **webRtcUserId** | **String** | Filter for the webRtc station of the webRtcUserId | [optional]  |
  **id** | **String** | Comma separated list of stationIds | [optional]  |
  **lineAppearanceId** | **String** | lineAppearanceId | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **StationEntityListing**
 
 
-_purecloud-platform-client-v2@229.1.0_
+_purecloud-platform-client-v2@258.0.0_

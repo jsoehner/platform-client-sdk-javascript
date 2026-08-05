@@ -17,7 +17,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getConversationRecordingAnnotation**](RecordingApi#getConversationRecordingAnnotation) | **GET** /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations/{annotationId} | Get annotation
 [**getConversationRecordingAnnotations**](RecordingApi#getConversationRecordingAnnotations) | **GET** /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations | Get annotations for recording
 [**getConversationRecordingmetadata**](RecordingApi#getConversationRecordingmetadata) | **GET** /api/v2/conversations/{conversationId}/recordingmetadata | Get recording metadata for a conversation. Does not return playable media nor system annotations. Bookmark annotations will be excluded if either recording:recording:view or recording:annotation:view permission is missing.
-[**getConversationRecordingmetadataRecordingId**](RecordingApi#getConversationRecordingmetadataRecordingId) | **GET** /api/v2/conversations/{conversationId}/recordingmetadata/{recordingId} | Get metadata for a specific recording. Does not return playable media.
+[**getConversationRecordingmetadataRecordingId**](RecordingApi#getConversationRecordingmetadataRecordingId) | **GET** /api/v2/conversations/{conversationId}/recordingmetadata/{recordingId} | Get metadata for a specific recording. Does not return playable media. Bookmark annotations will be excluded if either recording:recording:view or recording:annotation:view permission is missing.
 [**getConversationRecordings**](RecordingApi#getConversationRecordings) | **GET** /api/v2/conversations/{conversationId}/recordings | Get all of a Conversation's Recordings.
 [**getOrphanrecording**](RecordingApi#getOrphanrecording) | **GET** /api/v2/orphanrecordings/{orphanId} | Gets a single orphan recording
 [**getOrphanrecordingMedia**](RecordingApi#getOrphanrecordingMedia) | **GET** /api/v2/orphanrecordings/{orphanId}/media | Gets the media of a single orphan recording
@@ -41,7 +41,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**patchRecordingCrossplatformMediaretentionpolicy**](RecordingApi#patchRecordingCrossplatformMediaretentionpolicy) | **PATCH** /api/v2/recording/crossplatform/mediaretentionpolicies/{policyId} | Patch a media retention policy
 [**patchRecordingMediaretentionpolicy**](RecordingApi#patchRecordingMediaretentionpolicy) | **PATCH** /api/v2/recording/mediaretentionpolicies/{policyId} | Patch a media retention policy
 [**postConversationRecordingAnnotations**](RecordingApi#postConversationRecordingAnnotations) | **POST** /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations | Create annotation
-[**postRecordingBatchrequests**](RecordingApi#postRecordingBatchrequests) | **POST** /api/v2/recording/batchrequests | Submit a batch download request for recordings. Recordings in response will be in their original format/codec - configured in the Trunk configuration.
+[**postRecordingBatchrequests**](RecordingApi#postRecordingBatchrequests) | **POST** /api/v2/recording/batchrequests | Submit a batch download request for recordings. Recordings in response will be in their original format/codec - configured in the Trunk configuration. If the recording:recording:viewSensitiveData permission is missing and the organization has sensitive data redaction enabled, recordings with sensitive data will be excluded from the batch download.
 [**postRecordingCrossplatformMediaretentionpolicies**](RecordingApi#postRecordingCrossplatformMediaretentionpolicies) | **POST** /api/v2/recording/crossplatform/mediaretentionpolicies | Create media retention policy
 [**postRecordingJobs**](RecordingApi#postRecordingJobs) | **POST** /api/v2/recording/jobs | Create a recording bulk job.
 [**postRecordingKeyconfigurations**](RecordingApi#postRecordingKeyconfigurations) | **POST** /api/v2/recording/keyconfigurations | Setup configurations for encryption key creation
@@ -68,7 +68,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ## deleteConversationRecordingAnnotation
 
-> void deleteConversationRecordingAnnotation(conversationId, recordingId, annotationId)
+> void deleteConversationRecordingAnnotation(conversationId, recordingId, annotationId, opts)
 
 
 DELETE /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations/{annotationId}
@@ -78,6 +78,10 @@ Delete annotation
 Requires ANY permissions:
 
 * recording:annotation:delete
+* recording:recording:view
+* recording:recordingSegment:view
+* recording:snippetRecording:view
+* recording:screenRecording:view
 
 ### Example Usage
 
@@ -95,8 +99,14 @@ let apiInstance = new platformClient.RecordingApi();
 let conversationId = "conversationId_example"; // String | Conversation ID
 let recordingId = "recordingId_example"; // String | Recording ID
 let annotationId = "annotationId_example"; // String | Annotation ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteConversationRecordingAnnotation(conversationId, recordingId, annotationId)
+apiInstance.deleteConversationRecordingAnnotation(conversationId, recordingId, annotationId, opts)
   .then(() => {
     console.log('deleteConversationRecordingAnnotation returned successfully.');
   })
@@ -114,6 +124,7 @@ apiInstance.deleteConversationRecordingAnnotation(conversationId, recordingId, a
  **conversationId** | **String** | Conversation ID |  |
  **recordingId** | **String** | Recording ID |  |
  **annotationId** | **String** | Annotation ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -122,7 +133,7 @@ void (no response body)
 
 ## deleteOrphanrecording
 
-> OrphanRecording deleteOrphanrecording(orphanId)
+> OrphanRecording deleteOrphanrecording(orphanId, opts)
 
 
 DELETE /api/v2/orphanrecordings/{orphanId}
@@ -147,8 +158,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RecordingApi();
 
 let orphanId = "orphanId_example"; // String | Orphan ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteOrphanrecording(orphanId)
+apiInstance.deleteOrphanrecording(orphanId, opts)
   .then((data) => {
     console.log(`deleteOrphanrecording success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -164,6 +181,7 @@ apiInstance.deleteOrphanrecording(orphanId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **orphanId** | **String** | Orphan ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -172,7 +190,7 @@ apiInstance.deleteOrphanrecording(orphanId)
 
 ## deleteRecordingCrossplatformMediaretentionpolicies
 
-> void deleteRecordingCrossplatformMediaretentionpolicies(ids)
+> void deleteRecordingCrossplatformMediaretentionpolicies(ids, opts)
 
 
 DELETE /api/v2/recording/crossplatform/mediaretentionpolicies
@@ -199,8 +217,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RecordingApi();
 
 let ids = "ids_example"; // String | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteRecordingCrossplatformMediaretentionpolicies(ids)
+apiInstance.deleteRecordingCrossplatformMediaretentionpolicies(ids, opts)
   .then(() => {
     console.log('deleteRecordingCrossplatformMediaretentionpolicies returned successfully.');
   })
@@ -216,6 +240,7 @@ apiInstance.deleteRecordingCrossplatformMediaretentionpolicies(ids)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **ids** | **String** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -224,7 +249,7 @@ void (no response body)
 
 ## deleteRecordingCrossplatformMediaretentionpolicy
 
-> void deleteRecordingCrossplatformMediaretentionpolicy(policyId)
+> void deleteRecordingCrossplatformMediaretentionpolicy(policyId, opts)
 
 
 DELETE /api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}
@@ -249,8 +274,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RecordingApi();
 
 let policyId = "policyId_example"; // String | Policy ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteRecordingCrossplatformMediaretentionpolicy(policyId)
+apiInstance.deleteRecordingCrossplatformMediaretentionpolicy(policyId, opts)
   .then(() => {
     console.log('deleteRecordingCrossplatformMediaretentionpolicy returned successfully.');
   })
@@ -266,6 +297,7 @@ apiInstance.deleteRecordingCrossplatformMediaretentionpolicy(policyId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **policyId** | **String** | Policy ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -274,7 +306,7 @@ void (no response body)
 
 ## deleteRecordingJob
 
-> void deleteRecordingJob(jobId)
+> void deleteRecordingJob(jobId, opts)
 
 
 DELETE /api/v2/recording/jobs/{jobId}
@@ -299,8 +331,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RecordingApi();
 
 let jobId = "jobId_example"; // String | jobId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteRecordingJob(jobId)
+apiInstance.deleteRecordingJob(jobId, opts)
   .then(() => {
     console.log('deleteRecordingJob returned successfully.');
   })
@@ -316,6 +354,7 @@ apiInstance.deleteRecordingJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -324,7 +363,7 @@ void (no response body)
 
 ## deleteRecordingMediaretentionpolicies
 
-> void deleteRecordingMediaretentionpolicies(ids)
+> void deleteRecordingMediaretentionpolicies(ids, opts)
 
 
 DELETE /api/v2/recording/mediaretentionpolicies
@@ -351,8 +390,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RecordingApi();
 
 let ids = "ids_example"; // String | 
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteRecordingMediaretentionpolicies(ids)
+apiInstance.deleteRecordingMediaretentionpolicies(ids, opts)
   .then(() => {
     console.log('deleteRecordingMediaretentionpolicies returned successfully.');
   })
@@ -368,6 +413,7 @@ apiInstance.deleteRecordingMediaretentionpolicies(ids)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **ids** | **String** |  |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -376,7 +422,7 @@ void (no response body)
 
 ## deleteRecordingMediaretentionpolicy
 
-> void deleteRecordingMediaretentionpolicy(policyId)
+> void deleteRecordingMediaretentionpolicy(policyId, opts)
 
 
 DELETE /api/v2/recording/mediaretentionpolicies/{policyId}
@@ -401,8 +447,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RecordingApi();
 
 let policyId = "policyId_example"; // String | Policy ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteRecordingMediaretentionpolicy(policyId)
+apiInstance.deleteRecordingMediaretentionpolicy(policyId, opts)
   .then(() => {
     console.log('deleteRecordingMediaretentionpolicy returned successfully.');
   })
@@ -418,6 +470,7 @@ apiInstance.deleteRecordingMediaretentionpolicy(policyId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **policyId** | **String** | Policy ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -433,10 +486,14 @@ GET /api/v2/conversations/{conversationId}/recordings/{recordingId}
 
 Gets a specific recording.
 
+Bookmark annotations will be excluded if recording:annotation:view permission is missing. If the recording:recording:viewSensitiveData permission is missing and the organization has sensitive data redaction enabled, recordings with sensitive data will be redacted.
+
 Requires ANY permissions:
 
 * recording:recording:view
 * recording:recordingSegment:view
+* recording:snippetRecording:view
+* recording:screenRecording:view
 
 ### Example Usage
 
@@ -461,7 +518,11 @@ let opts = {
   'download': false, // Boolean | requesting a download format of the recording. Valid values:true,false
   'fileName': "fileName_example", // String | the name of the downloaded fileName
   'locale': "locale_example", // String | The locale for the requested file when downloading or for redacting sensitive information in requested files, as an ISO 639-1 code
-  'mediaFormats': ["mediaFormats_example"] // [String] | All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3
+  'mediaFormats': ["mediaFormats_example"], // [String] | All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getConversationRecording(conversationId, recordingId, opts)
@@ -489,6 +550,7 @@ apiInstance.getConversationRecording(conversationId, recordingId, opts)
  **fileName** | **String** | the name of the downloaded fileName | [optional]  |
  **locale** | **String** | The locale for the requested file when downloading or for redacting sensitive information in requested files, as an ISO 639-1 code | [optional]  |
  **mediaFormats** | **[String]** | All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3 | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -497,7 +559,7 @@ apiInstance.getConversationRecording(conversationId, recordingId, opts)
 
 ## getConversationRecordingAnnotation
 
-> Annotation getConversationRecordingAnnotation(conversationId, recordingId, annotationId)
+> Annotation getConversationRecordingAnnotation(conversationId, recordingId, annotationId, opts)
 
 
 GET /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations/{annotationId}
@@ -507,6 +569,10 @@ Get annotation
 Requires ANY permissions:
 
 * recording:annotation:view
+* recording:recording:view
+* recording:recordingSegment:view
+* recording:snippetRecording:view
+* recording:screenRecording:view
 
 ### Example Usage
 
@@ -524,8 +590,14 @@ let apiInstance = new platformClient.RecordingApi();
 let conversationId = "conversationId_example"; // String | Conversation ID
 let recordingId = "recordingId_example"; // String | Recording ID
 let annotationId = "annotationId_example"; // String | Annotation ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getConversationRecordingAnnotation(conversationId, recordingId, annotationId)
+apiInstance.getConversationRecordingAnnotation(conversationId, recordingId, annotationId, opts)
   .then((data) => {
     console.log(`getConversationRecordingAnnotation success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -543,6 +615,7 @@ apiInstance.getConversationRecordingAnnotation(conversationId, recordingId, anno
  **conversationId** | **String** | Conversation ID |  |
  **recordingId** | **String** | Recording ID |  |
  **annotationId** | **String** | Annotation ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -551,7 +624,7 @@ apiInstance.getConversationRecordingAnnotation(conversationId, recordingId, anno
 
 ## getConversationRecordingAnnotations
 
-> [Annotation] getConversationRecordingAnnotations(conversationId, recordingId)
+> [Annotation] getConversationRecordingAnnotations(conversationId, recordingId, opts)
 
 
 GET /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations
@@ -561,6 +634,10 @@ Get annotations for recording
 Requires ANY permissions:
 
 * recording:annotation:view
+* recording:recording:view
+* recording:recordingSegment:view
+* recording:snippetRecording:view
+* recording:screenRecording:view
 
 ### Example Usage
 
@@ -577,8 +654,14 @@ let apiInstance = new platformClient.RecordingApi();
 
 let conversationId = "conversationId_example"; // String | Conversation ID
 let recordingId = "recordingId_example"; // String | Recording ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getConversationRecordingAnnotations(conversationId, recordingId)
+apiInstance.getConversationRecordingAnnotations(conversationId, recordingId, opts)
   .then((data) => {
     console.log(`getConversationRecordingAnnotations success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -595,6 +678,7 @@ apiInstance.getConversationRecordingAnnotations(conversationId, recordingId)
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | Conversation ID |  |
  **recordingId** | **String** | Recording ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -603,7 +687,7 @@ apiInstance.getConversationRecordingAnnotations(conversationId, recordingId)
 
 ## getConversationRecordingmetadata
 
-> [RecordingMetadata] getConversationRecordingmetadata(conversationId)
+> [RecordingMetadata] getConversationRecordingmetadata(conversationId, opts)
 
 
 GET /api/v2/conversations/{conversationId}/recordingmetadata
@@ -614,6 +698,8 @@ Requires ANY permissions:
 
 * recording:recording:view
 * recording:recordingSegment:view
+* recording:snippetRecording:view
+* recording:screenRecording:view
 
 ### Example Usage
 
@@ -629,8 +715,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RecordingApi();
 
 let conversationId = "conversationId_example"; // String | Conversation ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getConversationRecordingmetadata(conversationId)
+apiInstance.getConversationRecordingmetadata(conversationId, opts)
   .then((data) => {
     console.log(`getConversationRecordingmetadata success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -646,6 +738,7 @@ apiInstance.getConversationRecordingmetadata(conversationId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | Conversation ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -654,17 +747,19 @@ apiInstance.getConversationRecordingmetadata(conversationId)
 
 ## getConversationRecordingmetadataRecordingId
 
-> RecordingMetadata getConversationRecordingmetadataRecordingId(conversationId, recordingId)
+> RecordingMetadata getConversationRecordingmetadataRecordingId(conversationId, recordingId, opts)
 
 
 GET /api/v2/conversations/{conversationId}/recordingmetadata/{recordingId}
 
-Get metadata for a specific recording. Does not return playable media.
+Get metadata for a specific recording. Does not return playable media. Bookmark annotations will be excluded if either recording:recording:view or recording:annotation:view permission is missing.
 
 Requires ANY permissions:
 
 * recording:recording:view
 * recording:recordingSegment:view
+* recording:snippetRecording:view
+* recording:screenRecording:view
 
 ### Example Usage
 
@@ -681,8 +776,14 @@ let apiInstance = new platformClient.RecordingApi();
 
 let conversationId = "conversationId_example"; // String | Conversation ID
 let recordingId = "recordingId_example"; // String | Recording ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getConversationRecordingmetadataRecordingId(conversationId, recordingId)
+apiInstance.getConversationRecordingmetadataRecordingId(conversationId, recordingId, opts)
   .then((data) => {
     console.log(`getConversationRecordingmetadataRecordingId success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -699,6 +800,7 @@ apiInstance.getConversationRecordingmetadataRecordingId(conversationId, recordin
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | Conversation ID |  |
  **recordingId** | **String** | Recording ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -714,10 +816,14 @@ GET /api/v2/conversations/{conversationId}/recordings
 
 Get all of a Conversation's Recordings.
 
+Bookmark annotations will be excluded if recording:annotation:view permission is missing. If the recording:recording:viewSensitiveData permission is missing and the organization has sensitive data redaction enabled, recordings with sensitive data will be redacted.
+
 Requires ANY permissions:
 
 * recording:recording:view
 * recording:recordingSegment:view
+* recording:snippetRecording:view
+* recording:screenRecording:view
 
 ### Example Usage
 
@@ -738,7 +844,11 @@ let opts = {
   'formatId': "WEBM", // String | The desired media format. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3,NONE.
   'mediaFormats': ["mediaFormats_example"], // [String] | All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3.
   'locale': "locale_example", // String | The locale used for redacting sensitive information in requested files, as an ISO 639-1 code
-  'includePauseAnnotationsForScreenRecordings': false // Boolean | Include applicable Secure Pause annotations from all audio recordings to all screen recordings
+  'includePauseAnnotationsForScreenRecordings': false, // Boolean | Include applicable Secure Pause annotations from all audio recordings to all screen recordings
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getConversationRecordings(conversationId, opts)
@@ -762,6 +872,7 @@ apiInstance.getConversationRecordings(conversationId, opts)
  **mediaFormats** | **[String]** | All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3. | [optional]  |
  **locale** | **String** | The locale used for redacting sensitive information in requested files, as an ISO 639-1 code | [optional]  |
  **includePauseAnnotationsForScreenRecordings** | **Boolean** | Include applicable Secure Pause annotations from all audio recordings to all screen recordings | [optional] [default to false] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -770,7 +881,7 @@ apiInstance.getConversationRecordings(conversationId, opts)
 
 ## getOrphanrecording
 
-> OrphanRecording getOrphanrecording(orphanId)
+> OrphanRecording getOrphanrecording(orphanId, opts)
 
 
 GET /api/v2/orphanrecordings/{orphanId}
@@ -795,8 +906,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RecordingApi();
 
 let orphanId = "orphanId_example"; // String | Orphan ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getOrphanrecording(orphanId)
+apiInstance.getOrphanrecording(orphanId, opts)
   .then((data) => {
     console.log(`getOrphanrecording success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -812,6 +929,7 @@ apiInstance.getOrphanrecording(orphanId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **orphanId** | **String** | Orphan ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -855,7 +973,11 @@ let opts = {
   'download': false, // Boolean | requesting a download format of the recording
   'fileName': "fileName_example", // String | the name of the downloaded fileName
   'locale': "locale_example", // String | The locale for the requested file when downloading, as an ISO 639-1 code
-  'mediaFormats': ["mediaFormats_example"] // [String] | All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3
+  'mediaFormats': ["mediaFormats_example"], // [String] | All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getOrphanrecordingMedia(orphanId, opts)
@@ -882,6 +1004,7 @@ apiInstance.getOrphanrecordingMedia(orphanId, opts)
  **fileName** | **String** | the name of the downloaded fileName | [optional]  |
  **locale** | **String** | The locale for the requested file when downloading, as an ISO 639-1 code | [optional]  |
  **mediaFormats** | **[String]** | All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3 | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -922,7 +1045,11 @@ let opts = {
   'nextPage': "nextPage_example", // String | next page token
   'previousPage': "previousPage_example", // String | Previous page token
   'hasConversation': false, // Boolean | Filter resulting orphans by whether the conversation is known. False returns all orphans for the organization.
-  'media': "media_example" // String | Filter resulting orphans based on their media type
+  'media': "media_example", // String | Filter resulting orphans based on their media type
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getOrphanrecordings(opts)
@@ -948,6 +1075,7 @@ apiInstance.getOrphanrecordings(opts)
  **previousPage** | **String** | Previous page token | [optional]  |
  **hasConversation** | **Boolean** | Filter resulting orphans by whether the conversation is known. False returns all orphans for the organization. | [optional] [default to false] |
  **media** | **String** | Filter resulting orphans based on their media type | [optional] <br />**Values**: Call, Screen |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -956,7 +1084,7 @@ apiInstance.getOrphanrecordings(opts)
 
 ## getRecordingBatchrequest
 
-> BatchDownloadJobStatusResult getRecordingBatchrequest(jobId)
+> BatchDownloadJobStatusResult getRecordingBatchrequest(jobId, opts)
 
 
 GET /api/v2/recording/batchrequests/{jobId}
@@ -979,8 +1107,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RecordingApi();
 
 let jobId = "jobId_example"; // String | jobId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getRecordingBatchrequest(jobId)
+apiInstance.getRecordingBatchrequest(jobId, opts)
   .then((data) => {
     console.log(`getRecordingBatchrequest success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -996,6 +1130,7 @@ apiInstance.getRecordingBatchrequest(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1041,7 +1176,11 @@ let opts = {
   'enabled': true, // Boolean | checks to see if policy is enabled - use enabled = true or enabled = false
   'summary': false, // Boolean | provides a less verbose response of policy lists.
   'hasErrors': true, // Boolean | provides a way to fetch all policies with errors or policies that do not have errors
-  'deleteDaysThreshold': 3.4 // Number | provides a way to fetch all policies with any actions having deleteDays exceeding the provided value
+  'deleteDaysThreshold': 3.4, // Number | provides a way to fetch all policies with any actions having deleteDays exceeding the provided value
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getRecordingCrossplatformMediaretentionpolicies(opts)
@@ -1070,6 +1209,7 @@ apiInstance.getRecordingCrossplatformMediaretentionpolicies(opts)
  **summary** | **Boolean** | provides a less verbose response of policy lists. | [optional] [default to false] |
  **hasErrors** | **Boolean** | provides a way to fetch all policies with errors or policies that do not have errors | [optional]  |
  **deleteDaysThreshold** | **Number** | provides a way to fetch all policies with any actions having deleteDays exceeding the provided value | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1078,7 +1218,7 @@ apiInstance.getRecordingCrossplatformMediaretentionpolicies(opts)
 
 ## getRecordingCrossplatformMediaretentionpolicy
 
-> CrossPlatformPolicy getRecordingCrossplatformMediaretentionpolicy(policyId)
+> CrossPlatformPolicy getRecordingCrossplatformMediaretentionpolicy(policyId, opts)
 
 
 GET /api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}
@@ -1103,8 +1243,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RecordingApi();
 
 let policyId = "policyId_example"; // String | Policy ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getRecordingCrossplatformMediaretentionpolicy(policyId)
+apiInstance.getRecordingCrossplatformMediaretentionpolicy(policyId, opts)
   .then((data) => {
     console.log(`getRecordingCrossplatformMediaretentionpolicy success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1120,6 +1266,7 @@ apiInstance.getRecordingCrossplatformMediaretentionpolicy(policyId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **policyId** | **String** | Policy ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1128,7 +1275,7 @@ apiInstance.getRecordingCrossplatformMediaretentionpolicy(policyId)
 
 ## getRecordingJob
 
-> RecordingJob getRecordingJob(jobId)
+> RecordingJob getRecordingJob(jobId, opts)
 
 
 GET /api/v2/recording/jobs/{jobId}
@@ -1153,8 +1300,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RecordingApi();
 
 let jobId = "jobId_example"; // String | jobId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getRecordingJob(jobId)
+apiInstance.getRecordingJob(jobId, opts)
   .then((data) => {
     console.log(`getRecordingJob success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1170,6 +1323,7 @@ apiInstance.getRecordingJob(jobId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1207,7 +1361,11 @@ let opts = {
   'pageSize': 25, // Number | Page size. Maximum is 100.
   'pageNumber': 1, // Number | Page number
   'includeTotal': true, // Boolean | If false, cursor will be used to locate the page instead of pageNumber. It is recommended to set it to false for improved performance.
-  'cursor': "cursor_example" // String | Indicates where to resume query results (not required for first page)
+  'cursor': "cursor_example", // String | Indicates where to resume query results (not required for first page)
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getRecordingJobFailedrecordings(jobId, opts)
@@ -1230,6 +1388,7 @@ apiInstance.getRecordingJobFailedrecordings(jobId, opts)
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **includeTotal** | **Boolean** | If false, cursor will be used to locate the page instead of pageNumber. It is recommended to set it to false for improved performance. | [optional]  |
  **cursor** | **String** | Indicates where to resume query results (not required for first page) | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1270,7 +1429,11 @@ let opts = {
   'showOnlyMyJobs': true, // Boolean | Show only my jobs
   'jobType': "jobType_example", // String | Job Type (Can be left empty for both)
   'includeTotal': true, // Boolean | If false, cursor will be used to locate the page instead of pageNumber. It is recommended to set it to false for improved performance.
-  'cursor': "cursor_example" // String | Indicates where to resume query results (not required for first page)
+  'cursor': "cursor_example", // String | Indicates where to resume query results (not required for first page)
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getRecordingJobs(opts)
@@ -1296,6 +1459,7 @@ apiInstance.getRecordingJobs(opts)
  **jobType** | **String** | Job Type (Can be left empty for both) | [optional] <br />**Values**: ARCHIVE, DELETE, EXPORT |
  **includeTotal** | **Boolean** | If false, cursor will be used to locate the page instead of pageNumber. It is recommended to set it to false for improved performance. | [optional]  |
  **cursor** | **String** | Indicates where to resume query results (not required for first page) | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1304,7 +1468,7 @@ apiInstance.getRecordingJobs(opts)
 
 ## getRecordingKeyconfiguration
 
-> RecordingEncryptionConfiguration getRecordingKeyconfiguration(keyConfigurationId)
+> RecordingEncryptionConfiguration getRecordingKeyconfiguration(keyConfigurationId, opts)
 
 
 GET /api/v2/recording/keyconfigurations/{keyConfigurationId}
@@ -1329,8 +1493,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RecordingApi();
 
 let keyConfigurationId = "keyConfigurationId_example"; // String | Key Configurations Id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getRecordingKeyconfiguration(keyConfigurationId)
+apiInstance.getRecordingKeyconfiguration(keyConfigurationId, opts)
   .then((data) => {
     console.log(`getRecordingKeyconfiguration success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1346,6 +1516,7 @@ apiInstance.getRecordingKeyconfiguration(keyConfigurationId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **keyConfigurationId** | **String** | Key Configurations Id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1354,7 +1525,7 @@ apiInstance.getRecordingKeyconfiguration(keyConfigurationId)
 
 ## getRecordingKeyconfigurations
 
-> RecordingEncryptionConfigurationListing getRecordingKeyconfigurations()
+> RecordingEncryptionConfigurationListing getRecordingKeyconfigurations(opts)
 
 
 GET /api/v2/recording/keyconfigurations
@@ -1377,8 +1548,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.RecordingApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getRecordingKeyconfigurations()
+apiInstance.getRecordingKeyconfigurations(opts)
   .then((data) => {
     console.log(`getRecordingKeyconfigurations success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1390,7 +1567,10 @@ apiInstance.getRecordingKeyconfigurations()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1436,7 +1616,11 @@ let opts = {
   'enabled': true, // Boolean | checks to see if policy is enabled - use enabled = true or enabled = false
   'summary': false, // Boolean | provides a less verbose response of policy lists.
   'hasErrors': true, // Boolean | provides a way to fetch all policies with errors or policies that do not have errors
-  'deleteDaysThreshold': 3.4 // Number | provides a way to fetch all policies with any actions having deleteDays exceeding the provided value
+  'deleteDaysThreshold': 3.4, // Number | provides a way to fetch all policies with any actions having deleteDays exceeding the provided value
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getRecordingMediaretentionpolicies(opts)
@@ -1465,6 +1649,7 @@ apiInstance.getRecordingMediaretentionpolicies(opts)
  **summary** | **Boolean** | provides a less verbose response of policy lists. | [optional] [default to false] |
  **hasErrors** | **Boolean** | provides a way to fetch all policies with errors or policies that do not have errors | [optional]  |
  **deleteDaysThreshold** | **Number** | provides a way to fetch all policies with any actions having deleteDays exceeding the provided value | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1473,7 +1658,7 @@ apiInstance.getRecordingMediaretentionpolicies(opts)
 
 ## getRecordingMediaretentionpolicy
 
-> Policy getRecordingMediaretentionpolicy(policyId)
+> Policy getRecordingMediaretentionpolicy(policyId, opts)
 
 
 GET /api/v2/recording/mediaretentionpolicies/{policyId}
@@ -1498,8 +1683,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RecordingApi();
 
 let policyId = "policyId_example"; // String | Policy ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getRecordingMediaretentionpolicy(policyId)
+apiInstance.getRecordingMediaretentionpolicy(policyId, opts)
   .then((data) => {
     console.log(`getRecordingMediaretentionpolicy success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1515,6 +1706,7 @@ apiInstance.getRecordingMediaretentionpolicy(policyId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **policyId** | **String** | Policy ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1549,7 +1741,11 @@ let apiInstance = new platformClient.RecordingApi();
 
 let opts = { 
   'pageSize': 25, // Number | Page size
-  'pageNumber': 1 // Number | Page number
+  'pageNumber': 1, // Number | Page number
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getRecordingRecordingkeys(opts)
@@ -1569,6 +1765,7 @@ apiInstance.getRecordingRecordingkeys(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1577,7 +1774,7 @@ apiInstance.getRecordingRecordingkeys(opts)
 
 ## getRecordingRecordingkeysRotationschedule
 
-> KeyRotationSchedule getRecordingRecordingkeysRotationschedule()
+> KeyRotationSchedule getRecordingRecordingkeysRotationschedule(opts)
 
 
 GET /api/v2/recording/recordingkeys/rotationschedule
@@ -1600,8 +1797,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.RecordingApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getRecordingRecordingkeysRotationschedule()
+apiInstance.getRecordingRecordingkeysRotationschedule(opts)
   .then((data) => {
     console.log(`getRecordingRecordingkeysRotationschedule success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1613,7 +1816,10 @@ apiInstance.getRecordingRecordingkeysRotationschedule()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1645,7 +1851,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RecordingApi();
 
 let opts = { 
-  'createDefault': false // Boolean | If no settings are found, a new one is created with default values
+  'createDefault': false, // Boolean | If no settings are found, a new one is created with default values
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getRecordingSettings(opts)
@@ -1664,6 +1874,7 @@ apiInstance.getRecordingSettings(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **createDefault** | **Boolean** | If no settings are found, a new one is created with default values | [optional] [default to false] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1672,7 +1883,7 @@ apiInstance.getRecordingSettings(opts)
 
 ## getRecordingUploadsReport
 
-> RecordingUploadReport getRecordingUploadsReport(reportId)
+> RecordingUploadReport getRecordingUploadsReport(reportId, opts)
 
 
 GET /api/v2/recording/uploads/reports/{reportId}
@@ -1697,8 +1908,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RecordingApi();
 
 let reportId = "reportId_example"; // String | reportId
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getRecordingUploadsReport(reportId)
+apiInstance.getRecordingUploadsReport(reportId, opts)
   .then((data) => {
     console.log(`getRecordingUploadsReport success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1714,6 +1931,7 @@ apiInstance.getRecordingUploadsReport(reportId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **reportId** | **String** | reportId |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1749,7 +1967,11 @@ let apiInstance = new platformClient.RecordingApi();
 let retentionThresholdDays = 3.4; // Number | Fetch retention data for recordings retained for more days than the provided value.
 let opts = { 
   'cursor': "cursor_example", // String | Indicates where to resume query results (not required for first page)
-  'pageSize': 25 // Number | Page size. Maximum is 500.
+  'pageSize': 25, // Number | Page size. Maximum is 500.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getRecordingsRetentionQuery(retentionThresholdDays, opts)
@@ -1770,6 +1992,7 @@ apiInstance.getRecordingsRetentionQuery(retentionThresholdDays, opts)
  **retentionThresholdDays** | **Number** | Fetch retention data for recordings retained for more days than the provided value. |  |
  **cursor** | **String** | Indicates where to resume query results (not required for first page) | [optional]  |
  **pageSize** | **Number** | Page size. Maximum is 500. | [optional] [default to 25] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1778,7 +2001,7 @@ apiInstance.getRecordingsRetentionQuery(retentionThresholdDays, opts)
 
 ## getRecordingsScreensessionsDetails
 
-> ScreenRecordingActiveSessions getRecordingsScreensessionsDetails()
+> ScreenRecordingActiveSessions getRecordingsScreensessionsDetails(opts)
 
 
 GET /api/v2/recordings/screensessions/details
@@ -1801,8 +2024,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.RecordingApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getRecordingsScreensessionsDetails()
+apiInstance.getRecordingsScreensessionsDetails(opts)
   .then((data) => {
     console.log(`getRecordingsScreensessionsDetails success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1814,7 +2043,10 @@ apiInstance.getRecordingsScreensessionsDetails()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1823,7 +2055,7 @@ This endpoint does not need any parameter.
 
 ## patchRecordingCrossplatformMediaretentionpolicy
 
-> CrossPlatformPolicy patchRecordingCrossplatformMediaretentionpolicy(policyId, body)
+> CrossPlatformPolicy patchRecordingCrossplatformMediaretentionpolicy(policyId, body, opts)
 
 
 PATCH /api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}
@@ -1849,8 +2081,14 @@ let apiInstance = new platformClient.RecordingApi();
 
 let policyId = "policyId_example"; // String | Policy ID
 let body = {}; // Object | Policy
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchRecordingCrossplatformMediaretentionpolicy(policyId, body)
+apiInstance.patchRecordingCrossplatformMediaretentionpolicy(policyId, body, opts)
   .then((data) => {
     console.log(`patchRecordingCrossplatformMediaretentionpolicy success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1867,6 +2105,7 @@ apiInstance.patchRecordingCrossplatformMediaretentionpolicy(policyId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **policyId** | **String** | Policy ID |  |
  **body** | **Object** | Policy |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1875,7 +2114,7 @@ apiInstance.patchRecordingCrossplatformMediaretentionpolicy(policyId, body)
 
 ## patchRecordingMediaretentionpolicy
 
-> Policy patchRecordingMediaretentionpolicy(policyId, body)
+> Policy patchRecordingMediaretentionpolicy(policyId, body, opts)
 
 
 PATCH /api/v2/recording/mediaretentionpolicies/{policyId}
@@ -1901,8 +2140,14 @@ let apiInstance = new platformClient.RecordingApi();
 
 let policyId = "policyId_example"; // String | Policy ID
 let body = {}; // Object | Policy
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchRecordingMediaretentionpolicy(policyId, body)
+apiInstance.patchRecordingMediaretentionpolicy(policyId, body, opts)
   .then((data) => {
     console.log(`patchRecordingMediaretentionpolicy success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1919,6 +2164,7 @@ apiInstance.patchRecordingMediaretentionpolicy(policyId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **policyId** | **String** | Policy ID |  |
  **body** | **Object** | Policy |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1927,16 +2173,23 @@ apiInstance.patchRecordingMediaretentionpolicy(policyId, body)
 
 ## postConversationRecordingAnnotations
 
-> Annotation postConversationRecordingAnnotations(conversationId, recordingId, body)
+> Annotation postConversationRecordingAnnotations(conversationId, recordingId, body, opts)
 
 
 POST /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations
 
 Create annotation
 
+If the annotation does not exist on the recording, it is created. If it already exists, it is updated. The recording:annotation:add permission is required for creates, and recording:annotation:edit is required for updates.
+
 Requires ANY permissions:
 
 * recording:annotation:add
+* recording:annotation:edit
+* recording:recording:view
+* recording:recordingSegment:view
+* recording:snippetRecording:view
+* recording:screenRecording:view
 
 ### Example Usage
 
@@ -1954,8 +2207,14 @@ let apiInstance = new platformClient.RecordingApi();
 let conversationId = "conversationId_example"; // String | Conversation ID
 let recordingId = "recordingId_example"; // String | Recording ID
 let body = {}; // Object | annotation
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postConversationRecordingAnnotations(conversationId, recordingId, body)
+apiInstance.postConversationRecordingAnnotations(conversationId, recordingId, body, opts)
   .then((data) => {
     console.log(`postConversationRecordingAnnotations success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1973,6 +2232,7 @@ apiInstance.postConversationRecordingAnnotations(conversationId, recordingId, bo
  **conversationId** | **String** | Conversation ID |  |
  **recordingId** | **String** | Recording ID |  |
  **body** | **Object** | annotation |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1981,17 +2241,19 @@ apiInstance.postConversationRecordingAnnotations(conversationId, recordingId, bo
 
 ## postRecordingBatchrequests
 
-> BatchDownloadJobSubmissionResult postRecordingBatchrequests(body)
+> BatchDownloadJobSubmissionResult postRecordingBatchrequests(body, opts)
 
 
 POST /api/v2/recording/batchrequests
 
-Submit a batch download request for recordings. Recordings in response will be in their original format/codec - configured in the Trunk configuration.
+Submit a batch download request for recordings. Recordings in response will be in their original format/codec - configured in the Trunk configuration. If the recording:recording:viewSensitiveData permission is missing and the organization has sensitive data redaction enabled, recordings with sensitive data will be excluded from the batch download.
 
 Requires ANY permissions:
 
 * recording:recording:view
 * recording:recordingSegment:view
+* recording:snippetRecording:view
+* recording:screenRecording:view
 
 ### Example Usage
 
@@ -2007,8 +2269,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RecordingApi();
 
 let body = {}; // Object | Job submission criteria
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postRecordingBatchrequests(body)
+apiInstance.postRecordingBatchrequests(body, opts)
   .then((data) => {
     console.log(`postRecordingBatchrequests success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2024,6 +2292,7 @@ apiInstance.postRecordingBatchrequests(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Job submission criteria |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2032,7 +2301,7 @@ apiInstance.postRecordingBatchrequests(body)
 
 ## postRecordingCrossplatformMediaretentionpolicies
 
-> CrossPlatformPolicy postRecordingCrossplatformMediaretentionpolicies(body)
+> CrossPlatformPolicy postRecordingCrossplatformMediaretentionpolicies(body, opts)
 
 
 POST /api/v2/recording/crossplatform/mediaretentionpolicies
@@ -2059,8 +2328,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RecordingApi();
 
 let body = {}; // Object | Policy
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postRecordingCrossplatformMediaretentionpolicies(body)
+apiInstance.postRecordingCrossplatformMediaretentionpolicies(body, opts)
   .then((data) => {
     console.log(`postRecordingCrossplatformMediaretentionpolicies success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2076,6 +2351,7 @@ apiInstance.postRecordingCrossplatformMediaretentionpolicies(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Policy |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2084,14 +2360,14 @@ apiInstance.postRecordingCrossplatformMediaretentionpolicies(body)
 
 ## postRecordingJobs
 
-> RecordingJob postRecordingJobs(body)
+> RecordingJob postRecordingJobs(body, opts)
 
 
 POST /api/v2/recording/jobs
 
 Create a recording bulk job.
 
-Each organization can run up to a maximum of two concurrent jobs that are either in pending or processing state. Furthermore, the recording:recording:viewSensitiveData permission is required to access recordings with PCI DSS and/or PII data when redaction is enabled for their organization. If the requester does not have that permission and includeRecordingsWithSensitiveData is set to true, then their request will be rejected.
+Each organization can run up to a maximum of two concurrent jobs that are either in pending or processing state. Furthermore, the recording:recording:viewSensitiveData permission is required to access recordings with PCI DSS and/or PII data when redaction is enabled for their organization. If the requester does not have that permission and includeRecordingsWithSensitiveData is set to true, then their request will be rejected. It is recommended to query over smaller time periods so your request does not time out.
 
 Requires ALL permissions:
 
@@ -2111,8 +2387,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RecordingApi();
 
 let body = {}; // Object | query
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postRecordingJobs(body)
+apiInstance.postRecordingJobs(body, opts)
   .then((data) => {
     console.log(`postRecordingJobs success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2128,6 +2410,7 @@ apiInstance.postRecordingJobs(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2136,7 +2419,7 @@ apiInstance.postRecordingJobs(body)
 
 ## postRecordingKeyconfigurations
 
-> RecordingEncryptionConfiguration postRecordingKeyconfigurations(body)
+> RecordingEncryptionConfiguration postRecordingKeyconfigurations(body, opts)
 
 
 POST /api/v2/recording/keyconfigurations
@@ -2161,8 +2444,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RecordingApi();
 
 let body = {}; // Object | Encryption Configuration
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postRecordingKeyconfigurations(body)
+apiInstance.postRecordingKeyconfigurations(body, opts)
   .then((data) => {
     console.log(`postRecordingKeyconfigurations success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2178,6 +2467,7 @@ apiInstance.postRecordingKeyconfigurations(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Encryption Configuration |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2186,7 +2476,7 @@ apiInstance.postRecordingKeyconfigurations(body)
 
 ## postRecordingKeyconfigurationsValidate
 
-> RecordingEncryptionConfiguration postRecordingKeyconfigurationsValidate(body)
+> RecordingEncryptionConfiguration postRecordingKeyconfigurationsValidate(body, opts)
 
 
 POST /api/v2/recording/keyconfigurations/validate
@@ -2211,8 +2501,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RecordingApi();
 
 let body = {}; // Object | Encryption Configuration
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postRecordingKeyconfigurationsValidate(body)
+apiInstance.postRecordingKeyconfigurationsValidate(body, opts)
   .then((data) => {
     console.log(`postRecordingKeyconfigurationsValidate success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2228,6 +2524,7 @@ apiInstance.postRecordingKeyconfigurationsValidate(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Encryption Configuration |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2236,7 +2533,7 @@ apiInstance.postRecordingKeyconfigurationsValidate(body)
 
 ## postRecordingLocalkeys
 
-> EncryptionKey postRecordingLocalkeys(body)
+> EncryptionKey postRecordingLocalkeys(body, opts)
 
 
 POST /api/v2/recording/localkeys
@@ -2261,8 +2558,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RecordingApi();
 
 let body = {}; // Object | Local Encryption body
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postRecordingLocalkeys(body)
+apiInstance.postRecordingLocalkeys(body, opts)
   .then((data) => {
     console.log(`postRecordingLocalkeys success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2278,6 +2581,7 @@ apiInstance.postRecordingLocalkeys(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Local Encryption body |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2286,7 +2590,7 @@ apiInstance.postRecordingLocalkeys(body)
 
 ## postRecordingMediaretentionpolicies
 
-> Policy postRecordingMediaretentionpolicies(body)
+> Policy postRecordingMediaretentionpolicies(body, opts)
 
 
 POST /api/v2/recording/mediaretentionpolicies
@@ -2313,8 +2617,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RecordingApi();
 
 let body = {}; // Object | Policy
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postRecordingMediaretentionpolicies(body)
+apiInstance.postRecordingMediaretentionpolicies(body, opts)
   .then((data) => {
     console.log(`postRecordingMediaretentionpolicies success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2330,6 +2640,7 @@ apiInstance.postRecordingMediaretentionpolicies(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Policy |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2338,7 +2649,7 @@ apiInstance.postRecordingMediaretentionpolicies(body)
 
 ## postRecordingRecordingkeys
 
-> EncryptionKey postRecordingRecordingkeys()
+> EncryptionKey postRecordingRecordingkeys(opts)
 
 
 POST /api/v2/recording/recordingkeys
@@ -2361,8 +2672,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.RecordingApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postRecordingRecordingkeys()
+apiInstance.postRecordingRecordingkeys(opts)
   .then((data) => {
     console.log(`postRecordingRecordingkeys success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2374,7 +2691,10 @@ apiInstance.postRecordingRecordingkeys()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2383,7 +2703,7 @@ This endpoint does not need any parameter.
 
 ## postRecordingUploadsReports
 
-> RecordingUploadReport postRecordingUploadsReports(body)
+> RecordingUploadReport postRecordingUploadsReports(body, opts)
 
 
 POST /api/v2/recording/uploads/reports
@@ -2408,8 +2728,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RecordingApi();
 
 let body = {}; // Object | Report parameters
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postRecordingUploadsReports(body)
+apiInstance.postRecordingUploadsReports(body, opts)
   .then((data) => {
     console.log(`postRecordingUploadsReports success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2425,6 +2751,7 @@ apiInstance.postRecordingUploadsReports(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Report parameters |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2433,7 +2760,7 @@ apiInstance.postRecordingUploadsReports(body)
 
 ## postRecordingsDeletionprotection
 
-> [AddressableEntityRef] postRecordingsDeletionprotection(body)
+> [AddressableEntityRef] postRecordingsDeletionprotection(body, opts)
 
 
 POST /api/v2/recordings/deletionprotection
@@ -2456,8 +2783,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RecordingApi();
 
 let body = {}; // Object | conversationIds
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postRecordingsDeletionprotection(body)
+apiInstance.postRecordingsDeletionprotection(body, opts)
   .then((data) => {
     console.log(`postRecordingsDeletionprotection success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2473,6 +2806,7 @@ apiInstance.postRecordingsDeletionprotection(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | conversationIds |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2481,7 +2815,7 @@ apiInstance.postRecordingsDeletionprotection(body)
 
 ## postRecordingsScreensessionsAcknowledge
 
-> void postRecordingsScreensessionsAcknowledge(body)
+> void postRecordingsScreensessionsAcknowledge(body, opts)
 
 
 POST /api/v2/recordings/screensessions/acknowledge
@@ -2504,8 +2838,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RecordingApi();
 
 let body = {}; // Object | AcknowledgeScreenRecordingRequest
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postRecordingsScreensessionsAcknowledge(body)
+apiInstance.postRecordingsScreensessionsAcknowledge(body, opts)
   .then(() => {
     console.log('postRecordingsScreensessionsAcknowledge returned successfully.');
   })
@@ -2521,6 +2861,7 @@ apiInstance.postRecordingsScreensessionsAcknowledge(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | AcknowledgeScreenRecordingRequest |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2529,7 +2870,7 @@ void (no response body)
 
 ## postRecordingsScreensessionsMetadata
 
-> void postRecordingsScreensessionsMetadata(body)
+> void postRecordingsScreensessionsMetadata(body, opts)
 
 
 POST /api/v2/recordings/screensessions/metadata
@@ -2552,8 +2893,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RecordingApi();
 
 let body = {}; // Object | ScreenRecordingMetaDataRequest
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postRecordingsScreensessionsMetadata(body)
+apiInstance.postRecordingsScreensessionsMetadata(body, opts)
   .then(() => {
     console.log('postRecordingsScreensessionsMetadata returned successfully.');
   })
@@ -2569,6 +2916,7 @@ apiInstance.postRecordingsScreensessionsMetadata(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | ScreenRecordingMetaDataRequest |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2584,13 +2932,19 @@ PUT /api/v2/conversations/{conversationId}/recordings/{recordingId}
 
 Updates the retention records on a recording.
 
-Currently supports updating and removing both archive and delete dates for eligible recordings. A request to change the archival date of an archived recording will result in a restoration of the recording until the new date set. The recording:recording:view permission is required for the recording, as well as either the recording:recording:editRetention or recording:screenRecording:editRetention permissions depending on the type of recording.
+Currently supports updating and removing both archive and delete dates for eligible recordings. A request to change the archival date of an archived recording will result in a restoration of the recording until the new date set. Required permissions depend on the operation: view (recording, screenRecording, or snippetRecording) is always required; editRetention is required when updating retention dates except for restoration; restore is required when restoring an archived recording.
 
 Requires ANY permissions:
 
 * recording:recording:view
 * recording:recording:editRetention
+* recording:recording:restore
+* recording:screenRecording:view
 * recording:screenRecording:editRetention
+* recording:screenRecording:restore
+* recording:snippetRecording:view
+* recording:snippetRecording:editRetention
+* recording:snippetRecording:restore
 
 ### Example Usage
 
@@ -2609,7 +2963,11 @@ let conversationId = "conversationId_example"; // String | Conversation ID
 let recordingId = "recordingId_example"; // String | Recording ID
 let body = {}; // Object | recording
 let opts = { 
-  'clearExport': true // Boolean | Whether to clear the pending export for the recording
+  'clearExport': true, // Boolean | Whether to clear the pending export for the recording
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.putConversationRecording(conversationId, recordingId, body, opts)
@@ -2631,6 +2989,7 @@ apiInstance.putConversationRecording(conversationId, recordingId, body, opts)
  **recordingId** | **String** | Recording ID |  |
  **body** | **Object** | recording |  |
  **clearExport** | **Boolean** | Whether to clear the pending export for the recording | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2639,18 +2998,23 @@ apiInstance.putConversationRecording(conversationId, recordingId, body, opts)
 
 ## putConversationRecordingAnnotation
 
-> Annotation putConversationRecordingAnnotation(conversationId, recordingId, annotationId, body)
+> Annotation putConversationRecordingAnnotation(conversationId, recordingId, annotationId, body, opts)
 
 
 PUT /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations/{annotationId}
 
 Update annotation
 
+If the annotation does not exist on the recording, it is created. If it already exists, it is updated. The recording:annotation:add permission is required for creates, and recording:annotation:edit is required for updates.
+
 Requires ANY permissions:
 
 * recording:annotation:edit
+* recording:annotation:add
 * recording:recording:view
 * recording:recordingSegment:view
+* recording:snippetRecording:view
+* recording:screenRecording:view
 
 ### Example Usage
 
@@ -2669,8 +3033,14 @@ let conversationId = "conversationId_example"; // String | Conversation ID
 let recordingId = "recordingId_example"; // String | Recording ID
 let annotationId = "annotationId_example"; // String | Annotation ID
 let body = {}; // Object | annotation
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putConversationRecordingAnnotation(conversationId, recordingId, annotationId, body)
+apiInstance.putConversationRecordingAnnotation(conversationId, recordingId, annotationId, body, opts)
   .then((data) => {
     console.log(`putConversationRecordingAnnotation success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2689,6 +3059,7 @@ apiInstance.putConversationRecordingAnnotation(conversationId, recordingId, anno
  **recordingId** | **String** | Recording ID |  |
  **annotationId** | **String** | Annotation ID |  |
  **body** | **Object** | annotation |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2725,7 +3096,11 @@ let apiInstance = new platformClient.RecordingApi();
 
 let orphanId = "orphanId_example"; // String | Orphan ID
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.putOrphanrecording(orphanId, opts)
@@ -2745,6 +3120,7 @@ apiInstance.putOrphanrecording(orphanId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **orphanId** | **String** | Orphan ID |  |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2753,7 +3129,7 @@ apiInstance.putOrphanrecording(orphanId, opts)
 
 ## putRecordingCrossplatformMediaretentionpolicy
 
-> CrossPlatformPolicy putRecordingCrossplatformMediaretentionpolicy(policyId, body)
+> CrossPlatformPolicy putRecordingCrossplatformMediaretentionpolicy(policyId, body, opts)
 
 
 PUT /api/v2/recording/crossplatform/mediaretentionpolicies/{policyId}
@@ -2781,8 +3157,14 @@ let apiInstance = new platformClient.RecordingApi();
 
 let policyId = "policyId_example"; // String | Policy ID
 let body = {}; // Object | Policy
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putRecordingCrossplatformMediaretentionpolicy(policyId, body)
+apiInstance.putRecordingCrossplatformMediaretentionpolicy(policyId, body, opts)
   .then((data) => {
     console.log(`putRecordingCrossplatformMediaretentionpolicy success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2799,6 +3181,7 @@ apiInstance.putRecordingCrossplatformMediaretentionpolicy(policyId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **policyId** | **String** | Policy ID |  |
  **body** | **Object** | Policy |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2807,20 +3190,21 @@ apiInstance.putRecordingCrossplatformMediaretentionpolicy(policyId, body)
 
 ## putRecordingJob
 
-> RecordingJob putRecordingJob(jobId, body)
+> RecordingJob putRecordingJob(jobId, body, opts)
 
 
 PUT /api/v2/recording/jobs/{jobId}
 
 Execute the recording bulk job.
 
-A job must be executed by the same user whom originally created the job.  In addition, the user must have permission to update the recordings retention.
+Each organization can run up to a maximum of two concurrent jobs that are either in pending or processing state. A job must be executed by the same user whom originally created the job.  In addition, the user must have permission to update the recordings retention.
 
 Requires ALL permissions:
 
 * recording:job:edit
 * recording:recording:editRetention
 * recording:screenRecording:editRetention
+* recording:snippetRecording:editRetention
 
 ### Example Usage
 
@@ -2837,8 +3221,14 @@ let apiInstance = new platformClient.RecordingApi();
 
 let jobId = "jobId_example"; // String | jobId
 let body = {}; // Object | query
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putRecordingJob(jobId, body)
+apiInstance.putRecordingJob(jobId, body, opts)
   .then((data) => {
     console.log(`putRecordingJob success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2855,6 +3245,7 @@ apiInstance.putRecordingJob(jobId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | jobId |  |
  **body** | **Object** | query |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2863,7 +3254,7 @@ apiInstance.putRecordingJob(jobId, body)
 
 ## putRecordingKeyconfiguration
 
-> RecordingEncryptionConfiguration putRecordingKeyconfiguration(keyConfigurationId, body)
+> RecordingEncryptionConfiguration putRecordingKeyconfiguration(keyConfigurationId, body, opts)
 
 
 PUT /api/v2/recording/keyconfigurations/{keyConfigurationId}
@@ -2889,8 +3280,14 @@ let apiInstance = new platformClient.RecordingApi();
 
 let keyConfigurationId = "keyConfigurationId_example"; // String | Key Configurations Id
 let body = {}; // Object | Encryption key configuration metadata
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putRecordingKeyconfiguration(keyConfigurationId, body)
+apiInstance.putRecordingKeyconfiguration(keyConfigurationId, body, opts)
   .then((data) => {
     console.log(`putRecordingKeyconfiguration success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2907,6 +3304,7 @@ apiInstance.putRecordingKeyconfiguration(keyConfigurationId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **keyConfigurationId** | **String** | Key Configurations Id |  |
  **body** | **Object** | Encryption key configuration metadata |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2915,14 +3313,14 @@ apiInstance.putRecordingKeyconfiguration(keyConfigurationId, body)
 
 ## putRecordingMediaretentionpolicy
 
-> Policy putRecordingMediaretentionpolicy(policyId, body)
+> Policy putRecordingMediaretentionpolicy(policyId, body, opts)
 
 
 PUT /api/v2/recording/mediaretentionpolicies/{policyId}
 
 Update a media retention policy
 
-Policy does not work retroactively
+Policy does not work retroactively. In the conditions.forUsers section, each user object can include the id field containing the users unique identifier. Example: [{"id":"<userId>"}].
 
 Requires ANY permissions:
 
@@ -2943,8 +3341,14 @@ let apiInstance = new platformClient.RecordingApi();
 
 let policyId = "policyId_example"; // String | Policy ID
 let body = {}; // Object | Policy
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putRecordingMediaretentionpolicy(policyId, body)
+apiInstance.putRecordingMediaretentionpolicy(policyId, body, opts)
   .then((data) => {
     console.log(`putRecordingMediaretentionpolicy success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2961,6 +3365,7 @@ apiInstance.putRecordingMediaretentionpolicy(policyId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **policyId** | **String** | Policy ID |  |
  **body** | **Object** | Policy |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2969,7 +3374,7 @@ apiInstance.putRecordingMediaretentionpolicy(policyId, body)
 
 ## putRecordingRecordingkeysRotationschedule
 
-> KeyRotationSchedule putRecordingRecordingkeysRotationschedule(body)
+> KeyRotationSchedule putRecordingRecordingkeysRotationschedule(body, opts)
 
 
 PUT /api/v2/recording/recordingkeys/rotationschedule
@@ -2994,8 +3399,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RecordingApi();
 
 let body = {}; // Object | KeyRotationSchedule
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putRecordingRecordingkeysRotationschedule(body)
+apiInstance.putRecordingRecordingkeysRotationschedule(body, opts)
   .then((data) => {
     console.log(`putRecordingRecordingkeysRotationschedule success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3011,6 +3422,7 @@ apiInstance.putRecordingRecordingkeysRotationschedule(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | KeyRotationSchedule |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3019,7 +3431,7 @@ apiInstance.putRecordingRecordingkeysRotationschedule(body)
 
 ## putRecordingSettings
 
-> RecordingSettings putRecordingSettings(body)
+> RecordingSettings putRecordingSettings(body, opts)
 
 
 PUT /api/v2/recording/settings
@@ -3031,6 +3443,8 @@ Requires ANY permissions:
 * recording:settings:editScreenRecordings
 * recording:settings:editRegionalStorage
 * recording:settings:editUrlExpiration
+* recording:settings:editConferenceRecording
+* recording:settings:editHierarchyAccessControl
 
 ### Example Usage
 
@@ -3046,8 +3460,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.RecordingApi();
 
 let body = {}; // Object | Recording settings
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putRecordingSettings(body)
+apiInstance.putRecordingSettings(body, opts)
   .then((data) => {
     console.log(`putRecordingSettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3063,6 +3483,7 @@ apiInstance.putRecordingSettings(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Recording settings |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3098,7 +3519,11 @@ let apiInstance = new platformClient.RecordingApi();
 
 let opts = { 
   'protect': true, // Boolean | Check for apply, uncheck for revoke (each action requires the respective permission)
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.putRecordingsDeletionprotection(opts)
@@ -3118,10 +3543,11 @@ apiInstance.putRecordingsDeletionprotection(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **protect** | **Boolean** | Check for apply, uncheck for revoke (each action requires the respective permission) | [optional] [default to true] |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 void (no response body)
 
 
-_purecloud-platform-client-v2@229.1.0_
+_purecloud-platform-client-v2@258.0.0_

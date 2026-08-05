@@ -2,11 +2,10 @@ import Configuration from './configuration.js';
 import DefaultHttpClient from './DefaultHttpClient.js';
 import AbstractHttpClient from './AbstractHttpClient.js';
 import HttpRequestOptions from './HttpRequestOptions.js';
-import { default as qs } from 'qs';
 
 /**
  * @module purecloud-platform-client-v2/ApiClient
- * @version 229.1.0
+ * @version 258.0.0
  */
 class ApiClient {
 	/**
@@ -71,6 +70,8 @@ class ApiClient {
 			 */
 			MULTI: 'multi'
 		};
+
+		this.useLegacyParameterFilter = false;
 
 		/**
 		 * @description Value is `true` if local storage exists. Otherwise, false.
@@ -200,12 +201,91 @@ class ApiClient {
 	}
 
 	/**
+	 * @description Clears the auth token from local storage, if enabled.
+	 */
+	_clearSettings() {
+		try {
+			if (this.authData && this.authData.accessToken) this.authData.accessToken = null;
+			if (this.authentications['PureCloud OAuth'] && this.authentications['PureCloud OAuth'].accessToken) this.authentications['PureCloud OAuth'].accessToken = null;
+
+			if (this.authData && this.authData.state) this.authData.state = null;
+
+			if (this.authData && this.authData.error) this.authData.error = null;
+			if (this.authData && this.authData.error_description) this.authData.error_description = null;
+
+			if (this.authData && this.authData.tokenExpiryTime) this.authData.tokenExpiryTime = 0;
+			if (this.authData && this.authData.tokenExpiryTimeString) this.authData.tokenExpiryTimeString = null;
+
+			// Don't save settings if we aren't supposed to be persisting them
+			if (this.persistSettings !== true) return;
+
+			// Ensure we can access local storage
+			if (!this.hasLocalStorage) {
+				return;
+			}
+
+			// Remove state from data so it's not persisted
+			let tempData = JSON.parse(JSON.stringify(this.authData));
+			delete tempData.state;
+
+			// Save updated auth data
+			localStorage.setItem(`${this.settingsPrefix}_auth_data`, JSON.stringify(tempData));
+		} catch (e) {
+			console.error(e);
+		}
+	}
+
+	/**
 	 * @description Sets the environment used by the session
 	 * @param {string} environment - (Optional, default "mypurecloud.com") Environment the session use, e.g. mypurecloud.ie, mypurecloud.com.au, etc.
 	 */
 	setEnvironment(environment) {
 		this.config.setEnvironment(environment);
 	}
+
+	/**
+     * @description Sets the optional http headers used by the client
+     * @param {object} newHeaders - default headers to be used
+     */
+	setDefaultHeaders(newHeaders) {
+        if (!newHeaders || !(typeof newHeaders === 'object')) {
+            throw new Error("default headers must be a map");
+        }
+        this.defaultHeaders = newHeaders;
+    }
+
+	/**
+     * @description Gets the default http headers used by the client
+     */
+	getDefaultHeaders() {
+		return this.defaultHeaders;
+    }
+
+	/**
+     * @description Sets the optional Genesys-App http header used by the client
+     * @param {string} headerValue - value for the Genesys-App header
+     */
+	setGenesysAppHeader(headerValue) {
+		if (!headerValue || !(typeof headerValue === 'string')) throw new Error("headerValue must be a non empty string");
+        if (!this.defaultHeaders) {
+			this.defaultHeaders = {
+				"Genesys-App": headerValue
+			};
+		} else {
+			this.defaultHeaders["Genesys-App"] = headerValue;
+		}
+    }
+
+	/**
+     * @description Gets the Genesys-App http header used by the client
+     */
+	getGenesysAppHeader() {
+		if (this.defaultHeaders && this.defaultHeaders["Genesys-App"]) {
+			return this.defaultHeaders["Genesys-App"];
+		} else {
+			return null;
+		}
+    }
 
     /**
      * @description Sets the dynamic HttpClient used by the client
@@ -335,6 +415,9 @@ class ApiClient {
 	 * @param {string} opts.state - (optional) An arbitrary string to be passed back with the login response. Used for client apps to associate login responses with a request.
 	 * @param {string} opts.org - (optional) The organization name that would normally used when specifying an organization name when logging in. This is only used when a provider is also specified.
 	 * @param {string} opts.provider - (optional) Authentication provider to log in with e.g. okta, adfs, salesforce, onelogin. This is only used when an org is also specified.
+	 * @param {string} opts.target - (optional) The organization ID of the target organization, when intending to log in to a specific target organization using Authorized Organizations.
+	 * @param {string} opts.login_hint - (optional) The login_hint allows an application to pass the email address and/or the org name values to the authorization server (email:orgName, email, orgName).
+	 * @param {string} opts.prompt - (optional) Use the prompt=login parameter to require that the user be prompted to enter credentials at the Gensys Cloud login screen and ignore any remembered sessions (auth cookies).
 	 */
 	loginImplicitGrant(clientId, redirectUri, opts) {
 		// Check for auth token in hash
@@ -376,6 +459,9 @@ class ApiClient {
 					if (opts.state) query.state = encodeURIComponent(opts.state);
 					if (opts.org) query.org = encodeURIComponent(opts.org);
 					if (opts.provider) query.provider = encodeURIComponent(opts.provider);
+					if (opts.target) query.target = encodeURIComponent(opts.target);
+					if (opts.login_hint) query.login_hint = encodeURIComponent(opts.login_hint);
+					if (opts.prompt && opts.prompt == 'login') query.prompt = encodeURIComponent(opts.prompt);
 
 					var url = this._buildAuthUrl('oauth/authorize', query);
 					window.location.replace(url);
@@ -553,11 +639,11 @@ class ApiClient {
             var headers = {
                 'Content-Type': 'application/x-www-form-urlencoded'
             };
-            var data = qs.stringify({ grant_type: 'authorization_code',
+            var data = new URLSearchParams({ grant_type: 'authorization_code',
                 code: authCode,
                 code_verifier: codeVerifier,
                 client_id: clientId,
-                redirect_uri: redirectUri });
+                redirect_uri: redirectUri }).toString();
 
 			var requestOptions = new HttpRequestOptions(`${loginBasePath}/oauth/token`, `POST`, headers, null, data, this.timeout);
             const httpClient = this.getHttpClient();
@@ -597,9 +683,12 @@ class ApiClient {
 				// Get access token from response
 				var access_token = response.data.access_token;
 
-				this.setAccessToken(access_token);
-				this.authData.tokenExpiryTime = new Date().getTime() + response.data['expires_in'] * 1000;
-				this.authData.tokenExpiryTimeString = new Date(this.authData.tokenExpiryTime).toUTCString();
+				let optsSettings = { accessToken: access_token };
+				if (response.data['expires_in'] !== null && response.data['expires_in'] !== undefined) {
+					optsSettings.tokenExpiryTime = new Date().getTime() + response.data['expires_in'] * 1000;
+					optsSettings.tokenExpiryTimeString = new Date(optsSettings.tokenExpiryTime).toUTCString();
+				}
+				this._saveSettings(optsSettings);
 
 				// Return auth data
 				resolve(this.authData);
@@ -681,7 +770,7 @@ class ApiClient {
 			const utf8 = new TextEncoder().encode(code);
 			return new Promise((resolve, reject) => {
 				window.crypto.subtle.digest("SHA-256", utf8).then((hashBuffer) => {
-					const hashBase64 = Buffer.from(hashBuffer).toString('base64');
+					const hashBase64 = btoa(String.fromCharCode(...new Uint8Array(hashBuffer)));
 					let hashBase64Url = hashBase64.replaceAll("+", "-").replaceAll("/", "_");
 					hashBase64Url = hashBase64Url.split("=")[0];
 					resolve(hashBase64Url);
@@ -702,6 +791,9 @@ class ApiClient {
     * @param {string} opts.state - (optional) An arbitrary string to be passed back with the login response. Used for client apps to associate login responses with a request.
     * @param {string} opts.org - (optional) The organization name that would normally used when specifying an organization name when logging in. This is only used when a provider is also specified.
     * @param {string} opts.provider - (optional) Authentication provider to log in with e.g. okta, adfs, salesforce, onelogin. This is only used when an org is also specified.
+	* @param {string} opts.target - (optional) The organization ID of the target organization, when intending to log in to a specific target organization using Authorized Organizations.
+	* @param {string} opts.login_hint - (optional) The login_hint allows an application to pass the email address and/or the org name values to the authorization server (email:orgName, email, orgName).
+	* @param {string} opts.prompt - (optional) Use the prompt=login parameter to require that the user be prompted to enter credentials at the Gensys Cloud login screen and ignore any remembered sessions (auth cookies).
     * @param {string} codeVerifier - (optional) code verifier used to generate the code challenge
     */
     loginPKCEGrant(clientId, redirectUri, opts, codeVerifier) {
@@ -722,9 +814,9 @@ class ApiClient {
         return new Promise((resolve, reject) => {
             // Abort if org and provider are not set together
             if (opts.org && !opts.provider) {
-                reject(new Error('opts.provider must be set if opts.org is set'));
+                return reject(new Error('opts.provider must be set if opts.org is set'));
             } else if (opts.provider && !opts.org) {
-            	reject(new Error('opts.org must be set if opts.provider is set'));
+            	return reject(new Error('opts.org must be set if opts.provider is set'));
             }
 
             // Abort on auth error
@@ -806,6 +898,9 @@ class ApiClient {
                       if (opts.state) tokenQuery.state = encodeURIComponent(opts.state);
                       if (opts.org) tokenQuery.org = encodeURIComponent(opts.org);
                       if (opts.provider) tokenQuery.provider = encodeURIComponent(opts.provider);
+					  if (opts.target) tokenQuery.target = encodeURIComponent(opts.target);
+					  if (opts.login_hint) tokenQuery.login_hint = encodeURIComponent(opts.login_hint);
+					  if (opts.prompt && opts.prompt == 'login') tokenQuery.prompt = encodeURIComponent(opts.prompt);
 
                       var url = this._buildAuthUrl('oauth/authorize', tokenQuery);
                       window.location.replace(url);
@@ -1003,7 +1098,8 @@ class ApiClient {
 			'Authorization': 'Basic ' + encodedData,
 			'Content-Type': 'application/x-www-form-urlencoded'
 		};
-		var requestOptions = new HttpRequestOptions(`${loginBasePath}/oauth/token`, `POST`, headers, null, qs.stringify(data), this.timeout);
+		var queryData = new URLSearchParams(data).toString();
+		var requestOptions = new HttpRequestOptions(`${loginBasePath}/oauth/token`, `POST`, headers, null, queryData, this.timeout);
 		const httpClient = this.getHttpClient();
 		return httpClient.request(requestOptions);
 	}
@@ -1144,6 +1240,13 @@ class ApiClient {
 	}
 
 	/**
+	 * @description Clears the access token to be used with requests
+	 */
+	clearAccessToken() {
+		this._clearSettings();
+	}
+
+	/**
 	 * @description Sets the storage key to use when persisting the access token
 	 * @param {string} storageKey - The storage key name
 	 */
@@ -1191,11 +1294,34 @@ class ApiClient {
 	}
 
 	/**
+	 * @description If set to `true`, the ApiClient will continue to use its legacy approach for filtering method parameters (mapped to an API Endpoint's query parameter). This is option is meant to facilitate transition from legacy to current and accurate parameters filtering.
+	 * @param {boolean} useLegacyParameterFilter - `false` to use modern/accurate approach (default value), `true` to use legacy approach (i.e. parameters of boolean type and equal to false are ignored/filtered, parameters of type integer/number and equal to 0 are ignored/filtered)
+	 */
+	setUseLegacyParameterFilter(useLegacyParameterFilter) {
+		this.useLegacyParameterFilter = useLegacyParameterFilter;
+	}
+
+	getUseLegacyParameterFilter() {
+		return this.useLegacyParameterFilter;
+	}
+
+	/**
 	 * Returns a string representation for an actual parameter.
 	 * @param param The actual parameter.
 	 * @returns {String} The string representation of <code>param</code>.
 	 */
 	paramToString(param) {
+		if (this.useLegacyParameterFilter !== true) {
+			if (param !== null && param !== undefined) {
+				if (typeof param === "boolean") {
+					return param.toString().toLowerCase();
+				} else if (param instanceof Boolean) {
+					return param.toString().toLowerCase();
+				} else if (typeof param === "number") {
+					return param.toString();
+				}
+			}
+		}
 		if (!param) {
 			return '';
 		}
@@ -1359,16 +1485,16 @@ class ApiClient {
 
 		switch (collectionFormat) {
 			case 'csv':
-				return param.map(this.paramToString).join(',');
+				return param.map((x) => this.paramToString(x)).join(',');
 			case 'ssv':
-				return param.map(this.paramToString).join(' ');
+				return param.map((x) => this.paramToString(x)).join(' ');
 			case 'tsv':
-				return param.map(this.paramToString).join('\t');
+				return param.map((x) => this.paramToString(x)).join('\t');
 			case 'pipes':
-				return param.map(this.paramToString).join('|');
+				return param.map((x) => this.paramToString(x)).join('|');
 			case 'multi':
 				// return the array directly as axios will handle it as expected
-				return param.map(this.paramToString);
+				return param.map((x) => this.paramToString(x));
 			default:
 				throw new Error(`Unknown collection format: ${collectionFormat}`);
 		}
@@ -1403,12 +1529,17 @@ class ApiClient {
 							request.headers =  this.addHeaders(request.headers, data);
 						} else {
 							request.setParams(this.serialize(data));
+							request.headers =  this.addHeaders(request.headers, {});
 						}
+					} else {
+						request.headers =  this.addHeaders(request.headers, {});
 					}
 					break;
 				case 'oauth2':
 					if (auth.accessToken) {
 						request.headers =  this.addHeaders(request.headers, {'Authorization': `Bearer ${auth.accessToken}`});
+					} else {
+						request.headers =  this.addHeaders(request.headers, {});
 					}
 					break;
 				default:
@@ -1443,9 +1574,10 @@ class ApiClient {
 	 * @param {Array.<String>} contentTypes An array of request MIME types.
 	 * @param {Array.<String>} accepts An array of acceptable response MIME types.types or the
 	 * constructor for a complex type.
+	 * @param {Object.<string, string>} customHeaders Optional per-request headers to include with the API call.
 	 * @returns {Promise} A Promise object.
 	 */
-	callApi(path, httpMethod, pathParams, queryParams, headerParams, formParams, bodyParam, authNames, contentTypes, accepts) {
+	callApi(path, httpMethod, pathParams, queryParams, headerParams, formParams, bodyParam, authNames, contentTypes, accepts, customHeaders) {
 		return new Promise((resolve, reject) => {
 			sendRequest(this);
 			function sendRequest(that) {
@@ -1459,6 +1591,29 @@ class ApiClient {
 				const defaultHeaders = that.defaultHeaders;
 				const normalizedHeaderParams = that.normalizeParams(headerParams);
 				request.headers = that.addHeaders(request.headers, defaultHeaders, normalizedHeaderParams);
+
+				if (customHeaders) {
+					if (typeof customHeaders !== 'object') {
+						throw new Error('Per-request headers must be a valid object');
+					}
+					for (const [name, value] of Object.entries(customHeaders)) {
+						if (typeof name !== 'string' || typeof value !== 'string') {
+							throw new Error(`Invalid header: "${name}" must have string name and value`);
+						}
+						// Basic header name validation (RFC 7230)
+						if (!/^[!#$%&'*+\-.0-9A-Z^_`a-z|~]+$/.test(name)) {
+							throw new Error(`Invalid header name: "${name}" - must be a valid HTTP token`);
+						}
+						// Basic header value validation
+						for (let i = 0; i < value.length; i++) {
+							const charCode = value.charCodeAt(i);
+							if (!((charCode >= 0x21 && charCode <= 0x7E) || charCode === 0x20 || charCode === 0x09 || (charCode >= 0x80 && charCode <= 0xFF))) {
+								throw new Error(`Invalid header value for "${name}": contains invalid characters`);
+							}
+						}
+						request.headers[name] = value;
+					}
+				}
 
 				var contentType = that.jsonPreferredMime(contentTypes);
 				if (contentType) {

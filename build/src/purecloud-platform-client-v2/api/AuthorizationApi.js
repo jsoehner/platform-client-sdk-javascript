@@ -5,7 +5,7 @@ class AuthorizationApi {
 	/**
 	 * Authorization service.
 	 * @module purecloud-platform-client-v2/api/AuthorizationApi
-	 * @version 229.1.0
+	 * @version 258.0.0
 	 */
 
 	/**
@@ -26,6 +26,7 @@ class AuthorizationApi {
 	 * @param {String} divisionId Division ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.force DEPRECATED -  Force delete this division. Warning: This option may cause any remaining objects in this division to be inaccessible. (default to false)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	deleteAuthorizationDivision(divisionId, opts) { 
 		opts = opts || {};
@@ -45,7 +46,8 @@ class AuthorizationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -54,9 +56,12 @@ class AuthorizationApi {
 	 * 
 	 * @param {String} targetName The domain:entity:action target to which the policy is applied
 	 * @param {String} subjectId The ID of the subject to which the policy is applied
-	 * deleteAuthorizationPoliciesTargetSubjectSubjectId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteAuthorizationPoliciesTargetSubjectSubjectId(targetName, subjectId) { 
+	deleteAuthorizationPoliciesTargetSubjectSubjectId(targetName, subjectId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'targetName' is set
 		if (targetName === undefined || targetName === null || targetName === '') {
 			throw 'Missing the required parameter "targetName" when calling deleteAuthorizationPoliciesTargetSubjectSubjectId';
@@ -76,7 +81,8 @@ class AuthorizationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -84,8 +90,12 @@ class AuthorizationApi {
 	 * Delete an organization role.
 	 * 
 	 * @param {String} roleId Role ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteAuthorizationRole(roleId) { 
+	deleteAuthorizationRole(roleId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'roleId' is set
 		if (roleId === undefined || roleId === null || roleId === '') {
 			throw 'Missing the required parameter "roleId" when calling deleteAuthorizationRole';
@@ -101,7 +111,8 @@ class AuthorizationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -111,8 +122,12 @@ class AuthorizationApi {
 	 * @param {String} subjectId Subject ID (user or group)
 	 * @param {String} divisionId the id of the division of the grant
 	 * @param {String} roleId the id of the role of the grant
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	deleteAuthorizationSubjectDivisionRole(subjectId, divisionId, roleId) { 
+	deleteAuthorizationSubjectDivisionRole(subjectId, divisionId, roleId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'subjectId' is set
 		if (subjectId === undefined || subjectId === null || subjectId === '') {
 			throw 'Missing the required parameter "subjectId" when calling deleteAuthorizationSubjectDivisionRole';
@@ -136,7 +151,8 @@ class AuthorizationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -146,6 +162,7 @@ class AuthorizationApi {
 	 * @param {String} divisionId Division ID
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.objectCount Get count of objects in this division, grouped by type (default to false)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getAuthorizationDivision(divisionId, opts) { 
 		opts = opts || {};
@@ -165,7 +182,8 @@ class AuthorizationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -176,6 +194,7 @@ class AuthorizationApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getAuthorizationDivisionGrants(divisionId, opts) { 
 		opts = opts || {};
@@ -195,7 +214,8 @@ class AuthorizationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -212,6 +232,7 @@ class AuthorizationApi {
 	 * @param {Boolean} opts.objectCount Include the count of objects contained in the division (default to false)
 	 * @param {Array.<String>} opts.id Optionally request specific divisions by their IDs
 	 * @param {String} opts.name Search term to filter by division name
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getAuthorizationDivisions(opts) { 
 		opts = opts || {};
@@ -227,7 +248,8 @@ class AuthorizationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -237,6 +259,7 @@ class AuthorizationApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getAuthorizationDivisionsDeleted(opts) { 
 		opts = opts || {};
@@ -252,15 +275,20 @@ class AuthorizationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Retrieve the home division for the organization.
 	 * Will not include object counts.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getAuthorizationDivisionsHome() { 
+	getAuthorizationDivisionsHome(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/authorization/divisions/home', 
@@ -272,15 +300,20 @@ class AuthorizationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Returns the maximum allowed number of divisions.
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getAuthorizationDivisionsLimit() { 
+	getAuthorizationDivisionsLimit(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/authorization/divisions/limit', 
@@ -292,7 +325,8 @@ class AuthorizationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -302,9 +336,10 @@ class AuthorizationApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.before The cursor that points to the start of the set of entities that has been returned.
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
-	 * @param {String} opts.pageSize Number of entities to return. Maximum of 200.
+	 * @param {String} opts.pageSize Page size (max 200, default 25) (default to 25)
 	 * @param {Array.<String>} opts.id Optionally request specific divisions by their IDs
 	 * @param {String} opts.name Optionally request specific divisions by division name
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getAuthorizationDivisionsQuery(opts) { 
 		opts = opts || {};
@@ -320,7 +355,8 @@ class AuthorizationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -330,6 +366,7 @@ class AuthorizationApi {
 	 * @param {String} permission The permission string, including the object to access, e.g. routing:queue:view
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.name Search term to filter by division name
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
 	getAuthorizationDivisionspermittedMe(permission, opts) { 
@@ -350,7 +387,8 @@ class AuthorizationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -361,6 +399,7 @@ class AuthorizationApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getAuthorizationDivisionspermittedPagedMe(permission, opts) { 
 		opts = opts || {};
@@ -380,7 +419,8 @@ class AuthorizationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -392,6 +432,7 @@ class AuthorizationApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Number} opts.pageSize Page size (default to 25)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 * @deprecated
 	 */
 	getAuthorizationDivisionspermittedPagedSubjectId(subjectId, permission, opts) { 
@@ -416,7 +457,8 @@ class AuthorizationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -428,6 +470,7 @@ class AuthorizationApi {
 	 * @param {Number} opts.pageNumber Page number (default to 1)
 	 * @param {Object} opts.queryType Query filter type
 	 * @param {String} opts.query Comma-separated list of permissions or domains to query
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getAuthorizationPermissions(opts) { 
 		opts = opts || {};
@@ -443,7 +486,8 @@ class AuthorizationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -453,7 +497,7 @@ class AuthorizationApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {Number} opts.pageSize Number of entities to return. Maximum of 200. (default to 25)
-	 * getAuthorizationPolicies is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getAuthorizationPolicies(opts) { 
 		opts = opts || {};
@@ -469,7 +513,8 @@ class AuthorizationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -480,7 +525,7 @@ class AuthorizationApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {Number} opts.pageSize Number of entities to return. Maximum of 200. (default to 25)
-	 * getAuthorizationPoliciesSubjectSubjectId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getAuthorizationPoliciesSubjectSubjectId(subjectId, opts) { 
 		opts = opts || {};
@@ -500,7 +545,8 @@ class AuthorizationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -511,7 +557,7 @@ class AuthorizationApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.after The cursor that points to the end of the set of entities that has been returned.
 	 * @param {Number} opts.pageSize Number of entities to return. Maximum of 200. (default to 25)
-	 * getAuthorizationPoliciesTarget is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getAuthorizationPoliciesTarget(targetName, opts) { 
 		opts = opts || {};
@@ -531,7 +577,8 @@ class AuthorizationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -540,9 +587,12 @@ class AuthorizationApi {
 	 * 
 	 * @param {String} targetName The domain:entity:action resource target to which the policy is applied
 	 * @param {String} subjectId The ID of the subject to which the policy is applied
-	 * getAuthorizationPoliciesTargetSubjectSubjectId is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getAuthorizationPoliciesTargetSubjectSubjectId(targetName, subjectId) { 
+	getAuthorizationPoliciesTargetSubjectSubjectId(targetName, subjectId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'targetName' is set
 		if (targetName === undefined || targetName === null || targetName === '') {
 			throw 'Missing the required parameter "targetName" when calling getAuthorizationPoliciesTargetSubjectSubjectId';
@@ -562,16 +612,20 @@ class AuthorizationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get a map of policy targets to valid attributes for those targets
 	 * 
-	 * getAuthorizationPoliciesTargets is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getAuthorizationPoliciesTargets() { 
+	getAuthorizationPoliciesTargets(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/authorization/policies/targets', 
@@ -583,7 +637,8 @@ class AuthorizationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -591,9 +646,12 @@ class AuthorizationApi {
 	 * Get an access control policy with the specified policy ID
 	 * 
 	 * @param {String} policyId The ID of the policy to retrieve
-	 * getAuthorizationPolicy is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getAuthorizationPolicy(policyId) { 
+	getAuthorizationPolicy(policyId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'policyId' is set
 		if (policyId === undefined || policyId === null || policyId === '') {
 			throw 'Missing the required parameter "policyId" when calling getAuthorizationPolicy';
@@ -609,7 +667,8 @@ class AuthorizationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -617,9 +676,12 @@ class AuthorizationApi {
 	 * Get the list of attributes used to evaluate an access control policy with the specified policy ID
 	 * 
 	 * @param {String} policyId The ID of the policy to retrieve attributes
-	 * getAuthorizationPolicyAttributes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getAuthorizationPolicyAttributes(policyId) { 
+	getAuthorizationPolicyAttributes(policyId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'policyId' is set
 		if (policyId === undefined || policyId === null || policyId === '') {
 			throw 'Missing the required parameter "policyId" when calling getAuthorizationPolicyAttributes';
@@ -635,15 +697,20 @@ class AuthorizationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get the list of enabled products
 	 * Gets the list of enabled products. Some example product names are: collaborateFree, collaboratePro, communicate, and engage.
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getAuthorizationProducts() { 
+	getAuthorizationProducts(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/authorization/products', 
@@ -655,7 +722,8 @@ class AuthorizationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -666,6 +734,7 @@ class AuthorizationApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.userCount Fetch the count of users who have this role granted in at least one division. Setting this value or defaulting to 'true' can lead to slower load times or timeouts for role queries with large member counts. (default to true)
 	 * @param {Array.<String>} opts.expand Which fields, if any, to expand. unusedPermissions returns the permissions not used for the role
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getAuthorizationRole(roleId, opts) { 
 		opts = opts || {};
@@ -685,7 +754,8 @@ class AuthorizationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -694,8 +764,12 @@ class AuthorizationApi {
 	 * Compares any organization role to a default role id and show differences
 	 * @param {String} leftRoleId Left Role ID
 	 * @param {String} rightRoleId Right Role id
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getAuthorizationRoleComparedefaultRightRoleId(leftRoleId, rightRoleId) { 
+	getAuthorizationRoleComparedefaultRightRoleId(leftRoleId, rightRoleId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'leftRoleId' is set
 		if (leftRoleId === undefined || leftRoleId === null || leftRoleId === '') {
 			throw 'Missing the required parameter "leftRoleId" when calling getAuthorizationRoleComparedefaultRightRoleId';
@@ -715,7 +789,8 @@ class AuthorizationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -730,6 +805,7 @@ class AuthorizationApi {
 	 * @param {Array.<String>} opts.expand variable name requested by expand list
 	 * @param {String} opts.nextPage next page token
 	 * @param {String} opts.previousPage Previous page token
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getAuthorizationRoleSubjectgrants(roleId, opts) { 
 		opts = opts || {};
@@ -749,7 +825,8 @@ class AuthorizationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -760,6 +837,7 @@ class AuthorizationApi {
 	 * @param {Object} opts Optional parameters
 	 * @param {Number} opts.pageSize Page size (default to 25)
 	 * @param {Number} opts.pageNumber Page number (default to 1)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getAuthorizationRoleUsers(roleId, opts) { 
 		opts = opts || {};
@@ -779,7 +857,8 @@ class AuthorizationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -798,6 +877,7 @@ class AuthorizationApi {
 	 * @param {Array.<String>} opts.defaultRoleId 
 	 * @param {Boolean} opts.userCount  (default to true)
 	 * @param {Array.<String>} opts.id id
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getAuthorizationRoles(opts) { 
 		opts = opts || {};
@@ -813,15 +893,20 @@ class AuthorizationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get authorization role settings
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getAuthorizationRolesSettings() { 
+	getAuthorizationRolesSettings(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/authorization/roles/settings', 
@@ -833,15 +918,20 @@ class AuthorizationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
 	/**
 	 * Get authorization settings
 	 * 
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getAuthorizationSettings() { 
+	getAuthorizationSettings(opts) { 
+		opts = opts || {};
+		
 
 		return this.apiClient.callApi(
 			'/api/v2/authorization/settings', 
@@ -853,7 +943,8 @@ class AuthorizationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -863,6 +954,7 @@ class AuthorizationApi {
 	 * @param {String} subjectId Subject ID (user or group)
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.includeDuplicates Include multiple entries with the same role and division but different subjects (default to false)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getAuthorizationSubject(subjectId, opts) { 
 		opts = opts || {};
@@ -882,7 +974,8 @@ class AuthorizationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -891,6 +984,7 @@ class AuthorizationApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Object} opts.includeDuplicates Include multiple entries with the same role and division but different subjects (default to false)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getAuthorizationSubjectsMe(opts) { 
 		opts = opts || {};
@@ -906,7 +1000,8 @@ class AuthorizationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -915,6 +1010,7 @@ class AuthorizationApi {
 	 * 
 	 * @param {Object} opts Optional parameters
 	 * @param {Array.<String>} opts.id id
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	getAuthorizationSubjectsRolecounts(opts) { 
 		opts = opts || {};
@@ -930,7 +1026,8 @@ class AuthorizationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -938,8 +1035,12 @@ class AuthorizationApi {
 	 * Returns a listing of roles and permissions for a user.
 	 * 
 	 * @param {String} subjectId User ID
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	getUserRoles(subjectId) { 
+	getUserRoles(subjectId, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'subjectId' is set
 		if (subjectId === undefined || subjectId === null || subjectId === '') {
 			throw 'Missing the required parameter "subjectId" when calling getUserRoles';
@@ -955,7 +1056,8 @@ class AuthorizationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -964,8 +1066,12 @@ class AuthorizationApi {
 	 * Patch Organization Role for needsUpdate Field
 	 * @param {String} roleId Role ID
 	 * @param {Object} body Organization role
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchAuthorizationRole(roleId, body) { 
+	patchAuthorizationRole(roleId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'roleId' is set
 		if (roleId === undefined || roleId === null || roleId === '') {
 			throw 'Missing the required parameter "roleId" when calling patchAuthorizationRole';
@@ -985,7 +1091,8 @@ class AuthorizationApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -993,8 +1100,12 @@ class AuthorizationApi {
 	 * Change authorization settings
 	 * Change authorization settings
 	 * @param {Object} body Authorization Settings
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	patchAuthorizationSettings(body) { 
+	patchAuthorizationSettings(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling patchAuthorizationSettings';
@@ -1010,7 +1121,8 @@ class AuthorizationApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1020,8 +1132,12 @@ class AuthorizationApi {
 	 * @param {String} divisionId Division ID
 	 * @param {Object} objectType The type of the objects. Must be one of the valid object types
 	 * @param {Array.<String>} body Object Id List
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postAuthorizationDivisionObject(divisionId, objectType, body) { 
+	postAuthorizationDivisionObject(divisionId, objectType, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'divisionId' is set
 		if (divisionId === undefined || divisionId === null || divisionId === '') {
 			throw 'Missing the required parameter "divisionId" when calling postAuthorizationDivisionObject';
@@ -1045,7 +1161,8 @@ class AuthorizationApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1054,8 +1171,12 @@ class AuthorizationApi {
 	 * 
 	 * @param {String} divisionId Division ID
 	 * @param {Object} body Recreated division data
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postAuthorizationDivisionRestore(divisionId, body) { 
+	postAuthorizationDivisionRestore(divisionId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'divisionId' is set
 		if (divisionId === undefined || divisionId === null || divisionId === '') {
 			throw 'Missing the required parameter "divisionId" when calling postAuthorizationDivisionRestore';
@@ -1075,7 +1196,8 @@ class AuthorizationApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1083,8 +1205,12 @@ class AuthorizationApi {
 	 * Create a division.
 	 * 
 	 * @param {Object} body Division
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postAuthorizationDivisions(body) { 
+	postAuthorizationDivisions(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postAuthorizationDivisions';
@@ -1100,7 +1226,8 @@ class AuthorizationApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1109,9 +1236,13 @@ class AuthorizationApi {
 	 * 
 	 * @param {String} targetName The domain:entity:action target to which the policy will be applied
 	 * @param {Object} body Access control policy
-	 * postAuthorizationPoliciesTarget is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.skipLockoutCheck Skip lockout check; if true, policy will not be evaluated against current context for lockout risk (default to false)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postAuthorizationPoliciesTarget(targetName, body) { 
+	postAuthorizationPoliciesTarget(targetName, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'targetName' is set
 		if (targetName === undefined || targetName === null || targetName === '') {
 			throw 'Missing the required parameter "targetName" when calling postAuthorizationPoliciesTarget';
@@ -1125,13 +1256,14 @@ class AuthorizationApi {
 			'/api/v2/authorization/policies/targets/{targetName}', 
 			'POST', 
 			{ 'targetName': targetName },
-			{  },
+			{ 'skipLockoutCheck': opts['skipLockoutCheck'] },
 			{  },
 			{  },
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1140,9 +1272,12 @@ class AuthorizationApi {
 	 * 
 	 * @param {String} targetName The domain:entity:action target to which the policy will be applied
 	 * @param {Object} body Access control policy
-	 * postAuthorizationPoliciesTargetValidate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postAuthorizationPoliciesTargetValidate(targetName, body) { 
+	postAuthorizationPoliciesTargetValidate(targetName, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'targetName' is set
 		if (targetName === undefined || targetName === null || targetName === '') {
 			throw 'Missing the required parameter "targetName" when calling postAuthorizationPoliciesTargetValidate';
@@ -1162,7 +1297,8 @@ class AuthorizationApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1171,9 +1307,12 @@ class AuthorizationApi {
 	 * 
 	 * @param {String} policyId The ID of the policy to test the simulated data against
 	 * @param {Object} body A map of attribute names to type and simulated data value
-	 * postAuthorizationPolicySimulate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postAuthorizationPolicySimulate(policyId, body) { 
+	postAuthorizationPolicySimulate(policyId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'policyId' is set
 		if (policyId === undefined || policyId === null || policyId === '') {
 			throw 'Missing the required parameter "policyId" when calling postAuthorizationPolicySimulate';
@@ -1193,7 +1332,8 @@ class AuthorizationApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1204,6 +1344,7 @@ class AuthorizationApi {
 	 * @param {Object} body Subjects and Divisions
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.subjectType what the type of the subjects are (PC_GROUP, PC_USER or PC_OAUTH_CLIENT) (default to PC_USER)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postAuthorizationRole(roleId, body, opts) { 
 		opts = opts || {};
@@ -1227,7 +1368,8 @@ class AuthorizationApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1237,8 +1379,12 @@ class AuthorizationApi {
 	 * @param {String} leftRoleId Left Role ID
 	 * @param {String} rightRoleId Right Role id
 	 * @param {Object} body Organization role
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postAuthorizationRoleComparedefaultRightRoleId(leftRoleId, rightRoleId, body) { 
+	postAuthorizationRoleComparedefaultRightRoleId(leftRoleId, rightRoleId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'leftRoleId' is set
 		if (leftRoleId === undefined || leftRoleId === null || leftRoleId === '') {
 			throw 'Missing the required parameter "leftRoleId" when calling postAuthorizationRoleComparedefaultRightRoleId';
@@ -1262,7 +1408,8 @@ class AuthorizationApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1270,8 +1417,12 @@ class AuthorizationApi {
 	 * Create an organization role.
 	 * 
 	 * @param {Object} body Organization role
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postAuthorizationRoles(body) { 
+	postAuthorizationRoles(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling postAuthorizationRoles';
@@ -1287,7 +1438,8 @@ class AuthorizationApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1296,6 +1448,7 @@ class AuthorizationApi {
 	 * This endpoint serves several purposes. 1. It provides the org with default roles. This is important for default roles that will be added after go-live (they can retroactively add the new default-role). Note: When not using a query param of force=true, it only adds the default roles not configured for the org; it does not overwrite roles. 2. Using the query param force=true, you can restore all default roles. Note: This does not have an effect on custom roles.
 	 * @param {Object} opts Optional parameters
 	 * @param {Boolean} opts.force Restore default roles (default to false)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postAuthorizationRolesDefault(opts) { 
 		opts = opts || {};
@@ -1311,7 +1464,8 @@ class AuthorizationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1322,6 +1476,7 @@ class AuthorizationApi {
 	 * @param {Object} body Pairs of role and division IDs
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.subjectType what the type of the subject is (PC_GROUP, PC_USER or PC_OAUTH_CLIENT) (default to PC_USER)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postAuthorizationSubjectBulkadd(subjectId, body, opts) { 
 		opts = opts || {};
@@ -1345,7 +1500,8 @@ class AuthorizationApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1354,8 +1510,12 @@ class AuthorizationApi {
 	 * 
 	 * @param {String} subjectId Subject ID (user or group)
 	 * @param {Object} body Pairs of role and division IDs
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	postAuthorizationSubjectBulkremove(subjectId, body) { 
+	postAuthorizationSubjectBulkremove(subjectId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'subjectId' is set
 		if (subjectId === undefined || subjectId === null || subjectId === '') {
 			throw 'Missing the required parameter "subjectId" when calling postAuthorizationSubjectBulkremove';
@@ -1375,7 +1535,8 @@ class AuthorizationApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1386,6 +1547,7 @@ class AuthorizationApi {
 	 * @param {Object} body Pairs of role and division IDs
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.subjectType what the type of the subject is (PC_GROUP, PC_USER or PC_OAUTH_CLIENT) (default to PC_USER)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postAuthorizationSubjectBulkreplace(subjectId, body, opts) { 
 		opts = opts || {};
@@ -1409,7 +1571,8 @@ class AuthorizationApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1421,6 +1584,7 @@ class AuthorizationApi {
 	 * @param {String} roleId the id of the role to grant
 	 * @param {Object} opts Optional parameters
 	 * @param {String} opts.subjectType what the type of the subject is: PC_GROUP, PC_USER or PC_OAUTH_CLIENT (note: for cross-org authorization, please use the Organization Authorization endpoints) (default to PC_USER)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
 	postAuthorizationSubjectDivisionRole(subjectId, divisionId, roleId, opts) { 
 		opts = opts || {};
@@ -1448,7 +1612,8 @@ class AuthorizationApi {
 			null, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1457,8 +1622,12 @@ class AuthorizationApi {
 	 * 
 	 * @param {String} divisionId Division ID
 	 * @param {Object} body Updated division data
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putAuthorizationDivision(divisionId, body) { 
+	putAuthorizationDivision(divisionId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'divisionId' is set
 		if (divisionId === undefined || divisionId === null || divisionId === '') {
 			throw 'Missing the required parameter "divisionId" when calling putAuthorizationDivision';
@@ -1478,7 +1647,8 @@ class AuthorizationApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1487,9 +1657,13 @@ class AuthorizationApi {
 	 * 
 	 * @param {String} targetName The domain:entity:action target to which the policy will be applied
 	 * @param {Object} body Access control policy
-	 * putAuthorizationPoliciesTarget is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.skipLockoutCheck Skip lockout check; if true, policy will not be evaluated against current context for lockout risk (default to false)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putAuthorizationPoliciesTarget(targetName, body) { 
+	putAuthorizationPoliciesTarget(targetName, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'targetName' is set
 		if (targetName === undefined || targetName === null || targetName === '') {
 			throw 'Missing the required parameter "targetName" when calling putAuthorizationPoliciesTarget';
@@ -1503,13 +1677,14 @@ class AuthorizationApi {
 			'/api/v2/authorization/policies/targets/{targetName}', 
 			'PUT', 
 			{ 'targetName': targetName },
-			{  },
+			{ 'skipLockoutCheck': opts['skipLockoutCheck'] },
 			{  },
 			{  },
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1518,9 +1693,13 @@ class AuthorizationApi {
 	 * 
 	 * @param {String} policyId The ID of the policy to update
 	 * @param {Object} body Access control policy
-	 * putAuthorizationPolicy is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	 * @param {Object} opts Optional parameters
+	 * @param {Boolean} opts.skipLockoutCheck Skip lockout check; if true, policy will not be evaluated against current context for lockout risk (default to false)
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putAuthorizationPolicy(policyId, body) { 
+	putAuthorizationPolicy(policyId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'policyId' is set
 		if (policyId === undefined || policyId === null || policyId === '') {
 			throw 'Missing the required parameter "policyId" when calling putAuthorizationPolicy';
@@ -1534,13 +1713,14 @@ class AuthorizationApi {
 			'/api/v2/authorization/policies/{policyId}', 
 			'PUT', 
 			{ 'policyId': policyId },
-			{  },
+			{ 'skipLockoutCheck': opts['skipLockoutCheck'] },
 			{  },
 			{  },
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1549,8 +1729,12 @@ class AuthorizationApi {
 	 * Update
 	 * @param {String} roleId Role ID
 	 * @param {Object} body Organization role
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putAuthorizationRole(roleId, body) { 
+	putAuthorizationRole(roleId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'roleId' is set
 		if (roleId === undefined || roleId === null || roleId === '') {
 			throw 'Missing the required parameter "roleId" when calling putAuthorizationRole';
@@ -1570,7 +1754,8 @@ class AuthorizationApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1579,8 +1764,12 @@ class AuthorizationApi {
 	 * 
 	 * @param {String} roleId Role ID
 	 * @param {Array.<String>} body List of user IDs
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putAuthorizationRoleUsersAdd(roleId, body) { 
+	putAuthorizationRoleUsersAdd(roleId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'roleId' is set
 		if (roleId === undefined || roleId === null || roleId === '') {
 			throw 'Missing the required parameter "roleId" when calling putAuthorizationRoleUsersAdd';
@@ -1600,7 +1789,8 @@ class AuthorizationApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1609,8 +1799,12 @@ class AuthorizationApi {
 	 * 
 	 * @param {String} roleId Role ID
 	 * @param {Array.<String>} body List of user IDs
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putAuthorizationRoleUsersRemove(roleId, body) { 
+	putAuthorizationRoleUsersRemove(roleId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'roleId' is set
 		if (roleId === undefined || roleId === null || roleId === '') {
 			throw 'Missing the required parameter "roleId" when calling putAuthorizationRoleUsersRemove';
@@ -1630,7 +1824,8 @@ class AuthorizationApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1638,8 +1833,12 @@ class AuthorizationApi {
 	 * Restore specified default roles
 	 * 
 	 * @param {Array.<Object>} body Organization roles list
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putAuthorizationRolesDefault(body) { 
+	putAuthorizationRolesDefault(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling putAuthorizationRolesDefault';
@@ -1655,7 +1854,8 @@ class AuthorizationApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1663,8 +1863,12 @@ class AuthorizationApi {
 	 * Change authorization role settings
 	 * Change role settings
 	 * @param {Object} body Authorization Role Settings
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putAuthorizationRolesSettings(body) { 
+	putAuthorizationRolesSettings(body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
 			throw 'Missing the required parameter "body" when calling putAuthorizationRolesSettings';
@@ -1680,7 +1884,8 @@ class AuthorizationApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 
@@ -1689,8 +1894,12 @@ class AuthorizationApi {
 	 * 
 	 * @param {String} subjectId User ID
 	 * @param {Array.<String>} body List of roles
+	 * @param {Object} opts Optional parameters
+	 * @param {Object.<string, string>} opts.customHeaders Per-request HTTP headers
 	 */
-	putUserRoles(subjectId, body) { 
+	putUserRoles(subjectId, body, opts) { 
+		opts = opts || {};
+		
 		// verify the required parameter 'subjectId' is set
 		if (subjectId === undefined || subjectId === null || subjectId === '') {
 			throw 'Missing the required parameter "subjectId" when calling putUserRoles';
@@ -1710,7 +1919,8 @@ class AuthorizationApi {
 			body, 
 			['PureCloud OAuth'], 
 			['application/json'],
-			['application/json']
+			['application/json'],
+			opts['customHeaders']
 		);
 	}
 

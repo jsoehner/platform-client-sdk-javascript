@@ -25,7 +25,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getExternalcontactsContactUnresolved**](ExternalContactsApi#getExternalcontactsContactUnresolved) | **GET** /api/v2/externalcontacts/contacts/{contactId}/unresolved | Fetch an unresolved external contact
 [**getExternalcontactsContacts**](ExternalContactsApi#getExternalcontactsContacts) | **GET** /api/v2/externalcontacts/contacts | Search for external contacts
 [**getExternalcontactsContactsExport**](ExternalContactsApi#getExternalcontactsContactsExport) | **GET** /api/v2/externalcontacts/contacts/exports/{exportId} | Get export for exportId
-[**getExternalcontactsContactsExports**](ExternalContactsApi#getExternalcontactsContactsExports) | **GET** /api/v2/externalcontacts/contacts/exports | List exports for organization
+[**getExternalcontactsContactsExports**](ExternalContactsApi#getExternalcontactsContactsExports) | **GET** /api/v2/externalcontacts/contacts/exports | List contact exports for organization
 [**getExternalcontactsContactsSchema**](ExternalContactsApi#getExternalcontactsContactsSchema) | **GET** /api/v2/externalcontacts/contacts/schemas/{schemaId} | Get a schema
 [**getExternalcontactsContactsSchemaVersion**](ExternalContactsApi#getExternalcontactsContactsSchemaVersion) | **GET** /api/v2/externalcontacts/contacts/schemas/{schemaId}/versions/{versionId} | Get a specific version of a schema
 [**getExternalcontactsContactsSchemaVersions**](ExternalContactsApi#getExternalcontactsContactsSchemaVersions) | **GET** /api/v2/externalcontacts/contacts/schemas/{schemaId}/versions | Get all versions of an external contact's schema
@@ -43,6 +43,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getExternalcontactsImportJobs**](ExternalContactsApi#getExternalcontactsImportJobs) | **GET** /api/v2/externalcontacts/import/jobs | List jobs for organization
 [**getExternalcontactsImportSetting**](ExternalContactsApi#getExternalcontactsImportSetting) | **GET** /api/v2/externalcontacts/import/settings/{settingsId} | Get setting based on id
 [**getExternalcontactsImportSettings**](ExternalContactsApi#getExternalcontactsImportSettings) | **GET** /api/v2/externalcontacts/import/settings | List settings for organization
+[**getExternalcontactsNotesExport**](ExternalContactsApi#getExternalcontactsNotesExport) | **GET** /api/v2/externalcontacts/notes/exports/{exportId} | Get notes export for exportId
+[**getExternalcontactsNotesExports**](ExternalContactsApi#getExternalcontactsNotesExports) | **GET** /api/v2/externalcontacts/notes/exports | List note exports for organization
 [**getExternalcontactsOrganization**](ExternalContactsApi#getExternalcontactsOrganization) | **GET** /api/v2/externalcontacts/organizations/{externalOrganizationId} | Fetch an external organization
 [**getExternalcontactsOrganizationContacts**](ExternalContactsApi#getExternalcontactsOrganizationContacts) | **GET** /api/v2/externalcontacts/organizations/{externalOrganizationId}/contacts | Search for external contacts in an external organization
 [**getExternalcontactsOrganizationIdentifiers**](ExternalContactsApi#getExternalcontactsOrganizationIdentifiers) | **GET** /api/v2/externalcontacts/organizations/{externalOrganizationId}/identifiers | List the identifiers for an external organization
@@ -50,6 +52,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getExternalcontactsOrganizationNotes**](ExternalContactsApi#getExternalcontactsOrganizationNotes) | **GET** /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes | List notes for an external organization
 [**getExternalcontactsOrganizationRelationships**](ExternalContactsApi#getExternalcontactsOrganizationRelationships) | **GET** /api/v2/externalcontacts/organizations/{externalOrganizationId}/relationships | Fetch a relationship for an external organization
 [**getExternalcontactsOrganizations**](ExternalContactsApi#getExternalcontactsOrganizations) | **GET** /api/v2/externalcontacts/organizations | Search for external organizations
+[**getExternalcontactsOrganizationsExport**](ExternalContactsApi#getExternalcontactsOrganizationsExport) | **GET** /api/v2/externalcontacts/organizations/exports/{exportId} | Get organizations export for exportId
+[**getExternalcontactsOrganizationsExports**](ExternalContactsApi#getExternalcontactsOrganizationsExports) | **GET** /api/v2/externalcontacts/organizations/exports | List organization exports for organization
 [**getExternalcontactsOrganizationsSchema**](ExternalContactsApi#getExternalcontactsOrganizationsSchema) | **GET** /api/v2/externalcontacts/organizations/schemas/{schemaId} | Get a schema
 [**getExternalcontactsOrganizationsSchemaVersion**](ExternalContactsApi#getExternalcontactsOrganizationsSchemaVersion) | **GET** /api/v2/externalcontacts/organizations/schemas/{schemaId}/versions/{versionId} | Get a specific version of a schema
 [**getExternalcontactsOrganizationsSchemaVersions**](ExternalContactsApi#getExternalcontactsOrganizationsSchemaVersions) | **GET** /api/v2/externalcontacts/organizations/schemas/{schemaId}/versions | Get all versions of an external organization's schema
@@ -58,6 +62,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getExternalcontactsOrganizationsSchemasCoretypes**](ExternalContactsApi#getExternalcontactsOrganizationsSchemasCoretypes) | **GET** /api/v2/externalcontacts/organizations/schemas/coretypes | Get the core types from which all schemas are built.
 [**getExternalcontactsOrganizationsSchemasLimits**](ExternalContactsApi#getExternalcontactsOrganizationsSchemasLimits) | **GET** /api/v2/externalcontacts/organizations/schemas/limits | Get quantitative limits on schemas
 [**getExternalcontactsRelationship**](ExternalContactsApi#getExternalcontactsRelationship) | **GET** /api/v2/externalcontacts/relationships/{relationshipId} | Fetch a relationship
+[**getExternalcontactsRelationshipsExport**](ExternalContactsApi#getExternalcontactsRelationshipsExport) | **GET** /api/v2/externalcontacts/relationships/exports/{exportId} | Get relationships export for exportId
+[**getExternalcontactsRelationshipsExports**](ExternalContactsApi#getExternalcontactsRelationshipsExports) | **GET** /api/v2/externalcontacts/relationships/exports | List relationship exports for organization
 [**getExternalcontactsReversewhitepageslookup**](ExternalContactsApi#getExternalcontactsReversewhitepageslookup) | **GET** /api/v2/externalcontacts/reversewhitepageslookup | Look up contacts based on an attribute. Maximum of 25 values returned.
 [**getExternalcontactsScanContacts**](ExternalContactsApi#getExternalcontactsScanContacts) | **GET** /api/v2/externalcontacts/scan/contacts | Scan for external contacts using paging
 [**getExternalcontactsScanContactsDivisionviewsAll**](ExternalContactsApi#getExternalcontactsScanContactsDivisionviewsAll) | **GET** /api/v2/externalcontacts/scan/contacts/divisionviews/all | Scan for external contacts using paging
@@ -67,8 +73,13 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getExternalcontactsScanOrganizationsDivisionviewsAll**](ExternalContactsApi#getExternalcontactsScanOrganizationsDivisionviewsAll) | **GET** /api/v2/externalcontacts/scan/organizations/divisionviews/all | Scan for external organizations using paging
 [**getExternalcontactsScanRelationships**](ExternalContactsApi#getExternalcontactsScanRelationships) | **GET** /api/v2/externalcontacts/scan/relationships | Scan for relationships
 [**getExternalcontactsScanRelationshipsDivisionviewsAll**](ExternalContactsApi#getExternalcontactsScanRelationshipsDivisionviewsAll) | **GET** /api/v2/externalcontacts/scan/relationships/divisionviews/all | Scan for relationships
+[**patchExternalcontactsContact**](ExternalContactsApi#patchExternalcontactsContact) | **PATCH** /api/v2/externalcontacts/contacts/{contactId} | Update specific fields of an external contact
 [**patchExternalcontactsContactIdentifiers**](ExternalContactsApi#patchExternalcontactsContactIdentifiers) | **PATCH** /api/v2/externalcontacts/contacts/{contactId}/identifiers | Claim or release identifiers for a contact
+[**patchExternalcontactsContactNote**](ExternalContactsApi#patchExternalcontactsContactNote) | **PATCH** /api/v2/externalcontacts/contacts/{contactId}/notes/{noteId} | Update a Contact Note
+[**patchExternalcontactsOrganization**](ExternalContactsApi#patchExternalcontactsOrganization) | **PATCH** /api/v2/externalcontacts/organizations/{externalOrganizationId} | Update specific fields of an external organization
 [**patchExternalcontactsOrganizationIdentifiers**](ExternalContactsApi#patchExternalcontactsOrganizationIdentifiers) | **PATCH** /api/v2/externalcontacts/organizations/{externalOrganizationId}/identifiers | Claim or release identifiers for an external organization
+[**patchExternalcontactsOrganizationNote**](ExternalContactsApi#patchExternalcontactsOrganizationNote) | **PATCH** /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes/{noteId} | Update an External Organization Note
+[**patchExternalcontactsRelationship**](ExternalContactsApi#patchExternalcontactsRelationship) | **PATCH** /api/v2/externalcontacts/relationships/{relationshipId} | Update specific fields of a relationship
 [**postExternalcontactsBulkContacts**](ExternalContactsApi#postExternalcontactsBulkContacts) | **POST** /api/v2/externalcontacts/bulk/contacts | Bulk fetch contacts
 [**postExternalcontactsBulkContactsAdd**](ExternalContactsApi#postExternalcontactsBulkContactsAdd) | **POST** /api/v2/externalcontacts/bulk/contacts/add | Bulk add contacts
 [**postExternalcontactsBulkContactsDivisionviews**](ExternalContactsApi#postExternalcontactsBulkContactsDivisionviews) | **POST** /api/v2/externalcontacts/bulk/contacts/divisionviews | Bulk fetch contacts across divisions
@@ -108,11 +119,14 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postExternalcontactsImportJobs**](ExternalContactsApi#postExternalcontactsImportJobs) | **POST** /api/v2/externalcontacts/import/jobs | Create a new job
 [**postExternalcontactsImportSettings**](ExternalContactsApi#postExternalcontactsImportSettings) | **POST** /api/v2/externalcontacts/import/settings | Create a new settings
 [**postExternalcontactsMergeContacts**](ExternalContactsApi#postExternalcontactsMergeContacts) | **POST** /api/v2/externalcontacts/merge/contacts | Merge two contacts into a new contact record
+[**postExternalcontactsNotesExports**](ExternalContactsApi#postExternalcontactsNotesExports) | **POST** /api/v2/externalcontacts/notes/exports | Create notes export
 [**postExternalcontactsOrganizationNotes**](ExternalContactsApi#postExternalcontactsOrganizationNotes) | **POST** /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes | Create a note for an external organization
 [**postExternalcontactsOrganizations**](ExternalContactsApi#postExternalcontactsOrganizations) | **POST** /api/v2/externalcontacts/organizations | Create an external organization
 [**postExternalcontactsOrganizationsEnrich**](ExternalContactsApi#postExternalcontactsOrganizationsEnrich) | **POST** /api/v2/externalcontacts/organizations/enrich | Modify or create an External Org, with powerful behaviors for finding and combining data with pre-existing External Orgs.
+[**postExternalcontactsOrganizationsExports**](ExternalContactsApi#postExternalcontactsOrganizationsExports) | **POST** /api/v2/externalcontacts/organizations/exports | Create organizations export
 [**postExternalcontactsOrganizationsSchemas**](ExternalContactsApi#postExternalcontactsOrganizationsSchemas) | **POST** /api/v2/externalcontacts/organizations/schemas | Create a schema
 [**postExternalcontactsRelationships**](ExternalContactsApi#postExternalcontactsRelationships) | **POST** /api/v2/externalcontacts/relationships | Create a relationship
+[**postExternalcontactsRelationshipsExports**](ExternalContactsApi#postExternalcontactsRelationshipsExports) | **POST** /api/v2/externalcontacts/relationships/exports | Create relationships export
 [**putExternalcontactsContact**](ExternalContactsApi#putExternalcontactsContact) | **PUT** /api/v2/externalcontacts/contacts/{contactId} | Update an external contact
 [**putExternalcontactsContactNote**](ExternalContactsApi#putExternalcontactsContactNote) | **PUT** /api/v2/externalcontacts/contacts/{contactId}/notes/{noteId} | Update a note for an external contact
 [**putExternalcontactsContactsSchema**](ExternalContactsApi#putExternalcontactsContactsSchema) | **PUT** /api/v2/externalcontacts/contacts/schemas/{schemaId} | Update a schema
@@ -131,7 +145,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ## deleteExternalcontactsContact
 
-> **Object** deleteExternalcontactsContact(contactId)
+> **Object** deleteExternalcontactsContact(contactId, opts)
 
 
 DELETE /api/v2/externalcontacts/contacts/{contactId}
@@ -157,8 +171,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ExternalContactsApi();
 
 let contactId = "contactId_example"; // String | ExternalContact ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteExternalcontactsContact(contactId)
+apiInstance.deleteExternalcontactsContact(contactId, opts)
   .then((data) => {
     console.log(`deleteExternalcontactsContact success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -174,6 +194,7 @@ apiInstance.deleteExternalcontactsContact(contactId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **contactId** | **String** | ExternalContact ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -182,7 +203,7 @@ apiInstance.deleteExternalcontactsContact(contactId)
 
 ## deleteExternalcontactsContactNote
 
-> **Object** deleteExternalcontactsContactNote(contactId, noteId)
+> **Object** deleteExternalcontactsContactNote(contactId, noteId, opts)
 
 
 DELETE /api/v2/externalcontacts/contacts/{contactId}/notes/{noteId}
@@ -209,8 +230,14 @@ let apiInstance = new platformClient.ExternalContactsApi();
 
 let contactId = "contactId_example"; // String | ExternalContact Id
 let noteId = "noteId_example"; // String | Note Id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteExternalcontactsContactNote(contactId, noteId)
+apiInstance.deleteExternalcontactsContactNote(contactId, noteId, opts)
   .then((data) => {
     console.log(`deleteExternalcontactsContactNote success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -227,6 +254,7 @@ apiInstance.deleteExternalcontactsContactNote(contactId, noteId)
 | ------------- | ------------- | ------------- | ------------- |
  **contactId** | **String** | ExternalContact Id |  |
  **noteId** | **String** | Note Id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -235,7 +263,7 @@ apiInstance.deleteExternalcontactsContactNote(contactId, noteId)
 
 ## deleteExternalcontactsContactsSchema
 
-> void deleteExternalcontactsContactsSchema(schemaId)
+> void deleteExternalcontactsContactsSchema(schemaId, opts)
 
 
 DELETE /api/v2/externalcontacts/contacts/schemas/{schemaId}
@@ -260,8 +288,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ExternalContactsApi();
 
 let schemaId = "schemaId_example"; // String | Schema ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteExternalcontactsContactsSchema(schemaId)
+apiInstance.deleteExternalcontactsContactsSchema(schemaId, opts)
   .then(() => {
     console.log('deleteExternalcontactsContactsSchema returned successfully.');
   })
@@ -277,6 +311,7 @@ apiInstance.deleteExternalcontactsContactsSchema(schemaId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **schemaId** | **String** | Schema ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -285,7 +320,7 @@ void (no response body)
 
 ## deleteExternalcontactsExternalsource
 
-> **Object** deleteExternalcontactsExternalsource(externalSourceId)
+> **Object** deleteExternalcontactsExternalsource(externalSourceId, opts)
 
 
 DELETE /api/v2/externalcontacts/externalsources/{externalSourceId}
@@ -310,8 +345,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ExternalContactsApi();
 
 let externalSourceId = "externalSourceId_example"; // String | External Source ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteExternalcontactsExternalsource(externalSourceId)
+apiInstance.deleteExternalcontactsExternalsource(externalSourceId, opts)
   .then((data) => {
     console.log(`deleteExternalcontactsExternalsource success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -327,6 +368,7 @@ apiInstance.deleteExternalcontactsExternalsource(externalSourceId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **externalSourceId** | **String** | External Source ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -335,7 +377,7 @@ apiInstance.deleteExternalcontactsExternalsource(externalSourceId)
 
 ## deleteExternalcontactsImportCsvSetting
 
-> void deleteExternalcontactsImportCsvSetting(settingsId)
+> void deleteExternalcontactsImportCsvSetting(settingsId, opts)
 
 
 DELETE /api/v2/externalcontacts/import/csv/settings/{settingsId}
@@ -360,8 +402,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ExternalContactsApi();
 
 let settingsId = "settingsId_example"; // String | Settings id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteExternalcontactsImportCsvSetting(settingsId)
+apiInstance.deleteExternalcontactsImportCsvSetting(settingsId, opts)
   .then(() => {
     console.log('deleteExternalcontactsImportCsvSetting returned successfully.');
   })
@@ -377,6 +425,7 @@ apiInstance.deleteExternalcontactsImportCsvSetting(settingsId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **settingsId** | **String** | Settings id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -385,7 +434,7 @@ void (no response body)
 
 ## deleteExternalcontactsImportSetting
 
-> void deleteExternalcontactsImportSetting(settingsId)
+> void deleteExternalcontactsImportSetting(settingsId, opts)
 
 
 DELETE /api/v2/externalcontacts/import/settings/{settingsId}
@@ -410,8 +459,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ExternalContactsApi();
 
 let settingsId = "settingsId_example"; // String | Settings id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteExternalcontactsImportSetting(settingsId)
+apiInstance.deleteExternalcontactsImportSetting(settingsId, opts)
   .then(() => {
     console.log('deleteExternalcontactsImportSetting returned successfully.');
   })
@@ -427,6 +482,7 @@ apiInstance.deleteExternalcontactsImportSetting(settingsId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **settingsId** | **String** | Settings id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -435,7 +491,7 @@ void (no response body)
 
 ## deleteExternalcontactsOrganization
 
-> **Object** deleteExternalcontactsOrganization(externalOrganizationId)
+> **Object** deleteExternalcontactsOrganization(externalOrganizationId, opts)
 
 
 DELETE /api/v2/externalcontacts/organizations/{externalOrganizationId}
@@ -461,8 +517,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ExternalContactsApi();
 
 let externalOrganizationId = "externalOrganizationId_example"; // String | External Organization ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteExternalcontactsOrganization(externalOrganizationId)
+apiInstance.deleteExternalcontactsOrganization(externalOrganizationId, opts)
   .then((data) => {
     console.log(`deleteExternalcontactsOrganization success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -478,6 +540,7 @@ apiInstance.deleteExternalcontactsOrganization(externalOrganizationId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **externalOrganizationId** | **String** | External Organization ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -486,7 +549,7 @@ apiInstance.deleteExternalcontactsOrganization(externalOrganizationId)
 
 ## deleteExternalcontactsOrganizationNote
 
-> **Object** deleteExternalcontactsOrganizationNote(externalOrganizationId, noteId)
+> **Object** deleteExternalcontactsOrganizationNote(externalOrganizationId, noteId, opts)
 
 
 DELETE /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes/{noteId}
@@ -513,8 +576,14 @@ let apiInstance = new platformClient.ExternalContactsApi();
 
 let externalOrganizationId = "externalOrganizationId_example"; // String | External Organization Id
 let noteId = "noteId_example"; // String | Note Id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteExternalcontactsOrganizationNote(externalOrganizationId, noteId)
+apiInstance.deleteExternalcontactsOrganizationNote(externalOrganizationId, noteId, opts)
   .then((data) => {
     console.log(`deleteExternalcontactsOrganizationNote success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -531,6 +600,7 @@ apiInstance.deleteExternalcontactsOrganizationNote(externalOrganizationId, noteI
 | ------------- | ------------- | ------------- | ------------- |
  **externalOrganizationId** | **String** | External Organization Id |  |
  **noteId** | **String** | Note Id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -539,7 +609,7 @@ apiInstance.deleteExternalcontactsOrganizationNote(externalOrganizationId, noteI
 
 ## deleteExternalcontactsOrganizationTrustor
 
-> void deleteExternalcontactsOrganizationTrustor(externalOrganizationId)
+> void deleteExternalcontactsOrganizationTrustor(externalOrganizationId, opts)
 
 
 DELETE /api/v2/externalcontacts/organizations/{externalOrganizationId}/trustor
@@ -564,8 +634,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ExternalContactsApi();
 
 let externalOrganizationId = "externalOrganizationId_example"; // String | External Organization ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteExternalcontactsOrganizationTrustor(externalOrganizationId)
+apiInstance.deleteExternalcontactsOrganizationTrustor(externalOrganizationId, opts)
   .then(() => {
     console.log('deleteExternalcontactsOrganizationTrustor returned successfully.');
   })
@@ -581,6 +657,7 @@ apiInstance.deleteExternalcontactsOrganizationTrustor(externalOrganizationId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **externalOrganizationId** | **String** | External Organization ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -589,7 +666,7 @@ void (no response body)
 
 ## deleteExternalcontactsRelationship
 
-> **Object** deleteExternalcontactsRelationship(relationshipId)
+> **Object** deleteExternalcontactsRelationship(relationshipId, opts)
 
 
 DELETE /api/v2/externalcontacts/relationships/{relationshipId}
@@ -615,8 +692,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ExternalContactsApi();
 
 let relationshipId = "relationshipId_example"; // String | Relationship Id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteExternalcontactsRelationship(relationshipId)
+apiInstance.deleteExternalcontactsRelationship(relationshipId, opts)
   .then((data) => {
     console.log(`deleteExternalcontactsRelationship success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -632,6 +715,7 @@ apiInstance.deleteExternalcontactsRelationship(relationshipId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **relationshipId** | **String** | Relationship Id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -667,7 +751,11 @@ let apiInstance = new platformClient.ExternalContactsApi();
 
 let contactId = "contactId_example"; // String | ExternalContact ID
 let opts = { 
-  'expand': ["expand_example"] // [String] | which fields, if any, to expand
+  'expand': ["expand_example"], // [String] | which fields, if any, to expand
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getExternalcontactsContact(contactId, opts)
@@ -687,6 +775,7 @@ apiInstance.getExternalcontactsContact(contactId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **contactId** | **String** | ExternalContact ID |  |
  **expand** | **[String]** | which fields, if any, to expand | [optional] <br />**Values**: externalOrganization, externalDataSources, identifiers, externalSources, division |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -695,7 +784,7 @@ apiInstance.getExternalcontactsContact(contactId, opts)
 
 ## getExternalcontactsContactIdentifiers
 
-> ContactIdentifierListing getExternalcontactsContactIdentifiers(contactId)
+> ContactIdentifierListing getExternalcontactsContactIdentifiers(contactId, opts)
 
 
 GET /api/v2/externalcontacts/contacts/{contactId}/identifiers
@@ -720,8 +809,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ExternalContactsApi();
 
 let contactId = "contactId_example"; // String | ExternalContact ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getExternalcontactsContactIdentifiers(contactId)
+apiInstance.getExternalcontactsContactIdentifiers(contactId, opts)
   .then((data) => {
     console.log(`getExternalcontactsContactIdentifiers success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -737,6 +832,7 @@ apiInstance.getExternalcontactsContactIdentifiers(contactId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **contactId** | **String** | ExternalContact ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -772,7 +868,11 @@ let apiInstance = new platformClient.ExternalContactsApi();
 let contactId = "contactId_example"; // String | ExternalContact ID
 let opts = { 
   'includeMerged': true, // Boolean | Indicates whether to return segment assignments from all external contacts in the merge-set of the given one.
-  'limit': 3.4 // Number | Number of entities to return. Default of 25, maximum of 500.
+  'limit': 3.4, // Number | Number of entities to return. Default of 25, maximum of 500.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getExternalcontactsContactJourneySegments(contactId, opts)
@@ -793,6 +893,7 @@ apiInstance.getExternalcontactsContactJourneySegments(contactId, opts)
  **contactId** | **String** | ExternalContact ID |  |
  **includeMerged** | **Boolean** | Indicates whether to return segment assignments from all external contacts in the merge-set of the given one. | [optional]  |
  **limit** | **Number** | Number of entities to return. Default of 25, maximum of 500. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -829,7 +930,11 @@ let contactId = "contactId_example"; // String | ExternalContact ID
 let opts = { 
   'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 200.
   'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
-  'includeMerged': true // Boolean | Indicates whether to return sessions from all external contacts in the merge-set of the given one.
+  'includeMerged': true, // Boolean | Indicates whether to return sessions from all external contacts in the merge-set of the given one.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getExternalcontactsContactJourneySessions(contactId, opts)
@@ -851,6 +956,7 @@ apiInstance.getExternalcontactsContactJourneySessions(contactId, opts)
  **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
  **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
  **includeMerged** | **Boolean** | Indicates whether to return sessions from all external contacts in the merge-set of the given one. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -887,7 +993,11 @@ let apiInstance = new platformClient.ExternalContactsApi();
 let contactId = "contactId_example"; // String | ExternalContact Id
 let noteId = "noteId_example"; // String | Note Id
 let opts = { 
-  'expand': ["expand_example"] // [String] | which fields, if any, to expand
+  'expand': ["expand_example"], // [String] | which fields, if any, to expand
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getExternalcontactsContactNote(contactId, noteId, opts)
@@ -908,6 +1018,7 @@ apiInstance.getExternalcontactsContactNote(contactId, noteId, opts)
  **contactId** | **String** | ExternalContact Id |  |
  **noteId** | **String** | Note Id |  |
  **expand** | **[String]** | which fields, if any, to expand | [optional] <br />**Values**: author, externalDataSources, division |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -943,10 +1054,14 @@ let apiInstance = new platformClient.ExternalContactsApi();
 
 let contactId = "contactId_example"; // String | ExternalContact Id
 let opts = { 
-  'pageSize': 20, // Number | Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
+  'pageSize': 20, // Number | Page size (limited to fetching first 1,000 records; pageSize <= 100; pageNumber * pageSize must be <= 1,000)
   'pageNumber': 1, // Number | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
   'sortOrder': "sortOrder_example", // String | The Note field to sort by. Any of: [createDate]. Direction: [asc, desc].  e.g. createDate:asc, createDate:desc
-  'expand': ["expand_example"] // [String] | which fields, if any, to expand
+  'expand': ["expand_example"], // [String] | which fields, if any, to expand. mergeset will include notes attached to ancestor contacts which have been merged into this one.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getExternalcontactsContactNotes(contactId, opts)
@@ -965,10 +1080,11 @@ apiInstance.getExternalcontactsContactNotes(contactId, opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **contactId** | **String** | ExternalContact Id |  |
- **pageSize** | **Number** | Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) | [optional] [default to 20] |
+ **pageSize** | **Number** | Page size (limited to fetching first 1,000 records; pageSize <= 100; pageNumber * pageSize must be <= 1,000) | [optional] [default to 20] |
  **pageNumber** | **Number** | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) | [optional] [default to 1] |
  **sortOrder** | **String** | The Note field to sort by. Any of: [createDate]. Direction: [asc, desc].  e.g. createDate:asc, createDate:desc | [optional]  |
- **expand** | **[String]** | which fields, if any, to expand | [optional] <br />**Values**: author, externalDataSources, division |
+ **expand** | **[String]** | which fields, if any, to expand. mergeset will include notes attached to ancestor contacts which have been merged into this one. | [optional] <br />**Values**: author, externalDataSources, division, mergeset |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1003,7 +1119,11 @@ let apiInstance = new platformClient.ExternalContactsApi();
 
 let contactId = "contactId_example"; // String | ExternalContact ID
 let opts = { 
-  'expand': ["expand_example"] // [String] | which fields, if any, to expand
+  'expand': ["expand_example"], // [String] | which fields, if any, to expand
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getExternalcontactsContactUnresolved(contactId, opts)
@@ -1023,6 +1143,7 @@ apiInstance.getExternalcontactsContactUnresolved(contactId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **contactId** | **String** | ExternalContact ID |  |
  **expand** | **[String]** | which fields, if any, to expand | [optional] <br />**Values**: externalOrganization, externalDataSources, identifiers, division |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1062,7 +1183,11 @@ let opts = {
   'q': "q_example", // String | User supplied search keywords (no special syntax is currently supported)
   'sortOrder': "sortOrder_example", // String | The External Contact field to sort by. Any of: [firstName, lastName, middleName, title]. Direction: [asc, desc]. e.g. firstName:asc, title:desc
   'expand': ["expand_example"], // [String] | which fields, if any, to expand
-  'divisionIds': ["divisionIds_example"] // [String] | which divisions to search, up to 50
+  'divisionIds': ["divisionIds_example"], // [String] | which divisions to search, up to 50
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getExternalcontactsContacts(opts)
@@ -1086,6 +1211,7 @@ apiInstance.getExternalcontactsContacts(opts)
  **sortOrder** | **String** | The External Contact field to sort by. Any of: [firstName, lastName, middleName, title]. Direction: [asc, desc]. e.g. firstName:asc, title:desc | [optional]  |
  **expand** | **[String]** | which fields, if any, to expand | [optional] <br />**Values**: externalOrganization, externalDataSources, identifiers, externalSources, division |
  **divisionIds** | **[String]** | which divisions to search, up to 50 | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1094,7 +1220,7 @@ apiInstance.getExternalcontactsContacts(opts)
 
 ## getExternalcontactsContactsExport
 
-> ContactsExport getExternalcontactsContactsExport(exportId)
+> ContactsExport getExternalcontactsContactsExport(exportId, opts)
 
 
 GET /api/v2/externalcontacts/contacts/exports/{exportId}
@@ -1120,8 +1246,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ExternalContactsApi();
 
 let exportId = "exportId_example"; // String | Export id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getExternalcontactsContactsExport(exportId)
+apiInstance.getExternalcontactsContactsExport(exportId, opts)
   .then((data) => {
     console.log(`getExternalcontactsContactsExport success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1137,6 +1269,7 @@ apiInstance.getExternalcontactsContactsExport(exportId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **exportId** | **String** | Export id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1145,12 +1278,12 @@ apiInstance.getExternalcontactsContactsExport(exportId)
 
 ## getExternalcontactsContactsExports
 
-> ExportListing getExternalcontactsContactsExports(opts)
+> ContactsExportListing getExternalcontactsContactsExports(opts)
 
 
 GET /api/v2/externalcontacts/contacts/exports
 
-List exports for organization
+List contact exports for organization
 
 Requires ALL permissions:
 
@@ -1173,7 +1306,11 @@ let apiInstance = new platformClient.ExternalContactsApi();
 let opts = { 
   'divisionIds': ["divisionIds_example"], // [String] | Division IDs of entities
   'after': "after_example", // String | The cursor that points to the end of the set of entities
-  'pageSize': 3.4 // Number | Number of entities to return
+  'pageSize': 3.4, // Number | Number of entities to return
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getExternalcontactsContactsExports(opts)
@@ -1194,15 +1331,16 @@ apiInstance.getExternalcontactsContactsExports(opts)
  **divisionIds** | **[String]** | Division IDs of entities | [optional]  |
  **after** | **String** | The cursor that points to the end of the set of entities | [optional]  |
  **pageSize** | **Number** | Number of entities to return | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
-**ExportListing**
+**ContactsExportListing**
 
 
 ## getExternalcontactsContactsSchema
 
-> DataSchema getExternalcontactsContactsSchema(schemaId)
+> DataSchema getExternalcontactsContactsSchema(schemaId, opts)
 
 
 GET /api/v2/externalcontacts/contacts/schemas/{schemaId}
@@ -1227,8 +1365,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ExternalContactsApi();
 
 let schemaId = "schemaId_example"; // String | Schema ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getExternalcontactsContactsSchema(schemaId)
+apiInstance.getExternalcontactsContactsSchema(schemaId, opts)
   .then((data) => {
     console.log(`getExternalcontactsContactsSchema success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1244,6 +1388,7 @@ apiInstance.getExternalcontactsContactsSchema(schemaId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **schemaId** | **String** | Schema ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1252,7 +1397,7 @@ apiInstance.getExternalcontactsContactsSchema(schemaId)
 
 ## getExternalcontactsContactsSchemaVersion
 
-> DataSchema getExternalcontactsContactsSchemaVersion(schemaId, versionId)
+> DataSchema getExternalcontactsContactsSchemaVersion(schemaId, versionId, opts)
 
 
 GET /api/v2/externalcontacts/contacts/schemas/{schemaId}/versions/{versionId}
@@ -1278,8 +1423,14 @@ let apiInstance = new platformClient.ExternalContactsApi();
 
 let schemaId = "schemaId_example"; // String | Schema ID
 let versionId = "versionId_example"; // String | Schema version
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getExternalcontactsContactsSchemaVersion(schemaId, versionId)
+apiInstance.getExternalcontactsContactsSchemaVersion(schemaId, versionId, opts)
   .then((data) => {
     console.log(`getExternalcontactsContactsSchemaVersion success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1296,6 +1447,7 @@ apiInstance.getExternalcontactsContactsSchemaVersion(schemaId, versionId)
 | ------------- | ------------- | ------------- | ------------- |
  **schemaId** | **String** | Schema ID |  |
  **versionId** | **String** | Schema version |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1304,7 +1456,7 @@ apiInstance.getExternalcontactsContactsSchemaVersion(schemaId, versionId)
 
 ## getExternalcontactsContactsSchemaVersions
 
-> DataSchemaListing getExternalcontactsContactsSchemaVersions(schemaId)
+> DataSchemaListing getExternalcontactsContactsSchemaVersions(schemaId, opts)
 
 
 GET /api/v2/externalcontacts/contacts/schemas/{schemaId}/versions
@@ -1329,8 +1481,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ExternalContactsApi();
 
 let schemaId = "schemaId_example"; // String | Schema ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getExternalcontactsContactsSchemaVersions(schemaId)
+apiInstance.getExternalcontactsContactsSchemaVersions(schemaId, opts)
   .then((data) => {
     console.log(`getExternalcontactsContactsSchemaVersions success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1346,6 +1504,7 @@ apiInstance.getExternalcontactsContactsSchemaVersions(schemaId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **schemaId** | **String** | Schema ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1354,7 +1513,7 @@ apiInstance.getExternalcontactsContactsSchemaVersions(schemaId)
 
 ## getExternalcontactsContactsSchemas
 
-> DataSchemaListing getExternalcontactsContactsSchemas()
+> DataSchemaListing getExternalcontactsContactsSchemas(opts)
 
 
 GET /api/v2/externalcontacts/contacts/schemas
@@ -1377,8 +1536,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ExternalContactsApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getExternalcontactsContactsSchemas()
+apiInstance.getExternalcontactsContactsSchemas(opts)
   .then((data) => {
     console.log(`getExternalcontactsContactsSchemas success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1390,7 +1555,10 @@ apiInstance.getExternalcontactsContactsSchemas()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1399,7 +1567,7 @@ This endpoint does not need any parameter.
 
 ## getExternalcontactsContactsSchemasCoretype
 
-> Coretype getExternalcontactsContactsSchemasCoretype(coreTypeName)
+> Coretype getExternalcontactsContactsSchemasCoretype(coreTypeName, opts)
 
 
 GET /api/v2/externalcontacts/contacts/schemas/coretypes/{coreTypeName}
@@ -1424,8 +1592,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ExternalContactsApi();
 
 let coreTypeName = "coreTypeName_example"; // String | Name of the core type
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getExternalcontactsContactsSchemasCoretype(coreTypeName)
+apiInstance.getExternalcontactsContactsSchemasCoretype(coreTypeName, opts)
   .then((data) => {
     console.log(`getExternalcontactsContactsSchemasCoretype success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1441,6 +1615,7 @@ apiInstance.getExternalcontactsContactsSchemasCoretype(coreTypeName)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **coreTypeName** | **String** | Name of the core type |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1449,7 +1624,7 @@ apiInstance.getExternalcontactsContactsSchemasCoretype(coreTypeName)
 
 ## getExternalcontactsContactsSchemasCoretypes
 
-> CoretypeListing getExternalcontactsContactsSchemasCoretypes()
+> CoretypeListing getExternalcontactsContactsSchemasCoretypes(opts)
 
 
 GET /api/v2/externalcontacts/contacts/schemas/coretypes
@@ -1472,8 +1647,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ExternalContactsApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getExternalcontactsContactsSchemasCoretypes()
+apiInstance.getExternalcontactsContactsSchemasCoretypes(opts)
   .then((data) => {
     console.log(`getExternalcontactsContactsSchemasCoretypes success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1485,7 +1666,10 @@ apiInstance.getExternalcontactsContactsSchemasCoretypes()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1494,7 +1678,7 @@ This endpoint does not need any parameter.
 
 ## getExternalcontactsContactsSchemasLimits
 
-> SchemaQuantityLimits getExternalcontactsContactsSchemasLimits()
+> SchemaQuantityLimits getExternalcontactsContactsSchemasLimits(opts)
 
 
 GET /api/v2/externalcontacts/contacts/schemas/limits
@@ -1517,8 +1701,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ExternalContactsApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getExternalcontactsContactsSchemasLimits()
+apiInstance.getExternalcontactsContactsSchemasLimits(opts)
   .then((data) => {
     console.log(`getExternalcontactsContactsSchemasLimits success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1530,7 +1720,10 @@ apiInstance.getExternalcontactsContactsSchemasLimits()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1539,7 +1732,7 @@ This endpoint does not need any parameter.
 
 ## getExternalcontactsExternalsource
 
-> ExternalSource getExternalcontactsExternalsource(externalSourceId)
+> ExternalSource getExternalcontactsExternalsource(externalSourceId, opts)
 
 
 GET /api/v2/externalcontacts/externalsources/{externalSourceId}
@@ -1566,8 +1759,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ExternalContactsApi();
 
 let externalSourceId = "externalSourceId_example"; // String | External Source ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getExternalcontactsExternalsource(externalSourceId)
+apiInstance.getExternalcontactsExternalsource(externalSourceId, opts)
   .then((data) => {
     console.log(`getExternalcontactsExternalsource success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1583,6 +1782,7 @@ apiInstance.getExternalcontactsExternalsource(externalSourceId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **externalSourceId** | **String** | External Source ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1621,7 +1821,11 @@ let opts = {
   'cursor': "cursor_example", // String | Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL
   'limit': 3.4, // Number | The number of ExternalSources per page; must be between 10 and 200, default is 100
   'name': "name_example", // String | Filter by external source name. Filtering is prefix filtering and not an exact match
-  'active': true // Boolean | Filter by active status of external source
+  'active': true, // Boolean | Filter by active status of external source
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getExternalcontactsExternalsources(opts)
@@ -1643,6 +1847,7 @@ apiInstance.getExternalcontactsExternalsources(opts)
  **limit** | **Number** | The number of ExternalSources per page; must be between 10 and 200, default is 100 | [optional]  |
  **name** | **String** | Filter by external source name. Filtering is prefix filtering and not an exact match | [optional]  |
  **active** | **Boolean** | Filter by active status of external source | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1651,7 +1856,7 @@ apiInstance.getExternalcontactsExternalsources(opts)
 
 ## getExternalcontactsImportCsvSetting
 
-> CsvSettings getExternalcontactsImportCsvSetting(settingsId)
+> CsvSettings getExternalcontactsImportCsvSetting(settingsId, opts)
 
 
 GET /api/v2/externalcontacts/import/csv/settings/{settingsId}
@@ -1676,8 +1881,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ExternalContactsApi();
 
 let settingsId = "settingsId_example"; // String | Settings id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getExternalcontactsImportCsvSetting(settingsId)
+apiInstance.getExternalcontactsImportCsvSetting(settingsId, opts)
   .then((data) => {
     console.log(`getExternalcontactsImportCsvSetting success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1693,6 +1904,7 @@ apiInstance.getExternalcontactsImportCsvSetting(settingsId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **settingsId** | **String** | Settings id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1728,7 +1940,11 @@ let apiInstance = new platformClient.ExternalContactsApi();
 let opts = { 
   'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
   'pageSize': "pageSize_example", // String | Number of entities to return. Maximum of 200.
-  'externalSettingsId': "externalSettingsId_example" // String | External Settings Id to filter the list.
+  'externalSettingsId': "externalSettingsId_example", // String | External Settings Id to filter the list.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getExternalcontactsImportCsvSettings(opts)
@@ -1749,6 +1965,7 @@ apiInstance.getExternalcontactsImportCsvSettings(opts)
  **after** | **String** | The cursor that points to the end of the set of entities that has been returned. | [optional]  |
  **pageSize** | **String** | Number of entities to return. Maximum of 200. | [optional]  |
  **externalSettingsId** | **String** | External Settings Id to filter the list. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1757,7 +1974,7 @@ apiInstance.getExternalcontactsImportCsvSettings(opts)
 
 ## getExternalcontactsImportCsvUploadDetails
 
-> CsvUploadDetailsResponse getExternalcontactsImportCsvUploadDetails(uploadId)
+> CsvUploadDetailsResponse getExternalcontactsImportCsvUploadDetails(uploadId, opts)
 
 
 GET /api/v2/externalcontacts/import/csv/uploads/{uploadId}/details
@@ -1782,8 +1999,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ExternalContactsApi();
 
 let uploadId = "uploadId_example"; // String | Upload id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getExternalcontactsImportCsvUploadDetails(uploadId)
+apiInstance.getExternalcontactsImportCsvUploadDetails(uploadId, opts)
   .then((data) => {
     console.log(`getExternalcontactsImportCsvUploadDetails success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1799,6 +2022,7 @@ apiInstance.getExternalcontactsImportCsvUploadDetails(uploadId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **uploadId** | **String** | Upload id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1807,7 +2031,7 @@ apiInstance.getExternalcontactsImportCsvUploadDetails(uploadId)
 
 ## getExternalcontactsImportCsvUploadPreview
 
-> CsvUploadPreviewResponse getExternalcontactsImportCsvUploadPreview(uploadId)
+> CsvUploadPreviewResponse getExternalcontactsImportCsvUploadPreview(uploadId, opts)
 
 
 GET /api/v2/externalcontacts/import/csv/uploads/{uploadId}/preview
@@ -1832,8 +2056,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ExternalContactsApi();
 
 let uploadId = "uploadId_example"; // String | Upload id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getExternalcontactsImportCsvUploadPreview(uploadId)
+apiInstance.getExternalcontactsImportCsvUploadPreview(uploadId, opts)
   .then((data) => {
     console.log(`getExternalcontactsImportCsvUploadPreview success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1849,6 +2079,7 @@ apiInstance.getExternalcontactsImportCsvUploadPreview(uploadId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **uploadId** | **String** | Upload id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1883,7 +2114,11 @@ let apiInstance = new platformClient.ExternalContactsApi();
 
 let jobId = "jobId_example"; // String | Job id
 let opts = { 
-  'expand': ["expand_example"] // [String] | which fields, if any, to expand
+  'expand': ["expand_example"], // [String] | which fields, if any, to expand
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getExternalcontactsImportJob(jobId, opts)
@@ -1903,6 +2138,7 @@ apiInstance.getExternalcontactsImportJob(jobId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | Job id |  |
  **expand** | **[String]** | which fields, if any, to expand | [optional] <br />**Values**: division |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1940,7 +2176,11 @@ let opts = {
   'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
   'pageSize': "25", // String | Number of entities to return. Maximum of 100.
   'sortOrder': "Ascending", // String | Direction of sorting.
-  'jobStatus': "jobStatus_example" // String | Search term to filter by jobStatus
+  'jobStatus': "jobStatus_example", // String | Search term to filter by jobStatus
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getExternalcontactsImportJobs(opts)
@@ -1963,6 +2203,7 @@ apiInstance.getExternalcontactsImportJobs(opts)
  **pageSize** | **String** | Number of entities to return. Maximum of 100. | [optional] [default to 25] |
  **sortOrder** | **String** | Direction of sorting. | [optional] [default to Ascending]<br />**Values**: Ascending, Descending |
  **jobStatus** | **String** | Search term to filter by jobStatus | [optional] <br />**Values**: Created, Running, Completed, Failed, Cancelled |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1971,7 +2212,7 @@ apiInstance.getExternalcontactsImportJobs(opts)
 
 ## getExternalcontactsImportSetting
 
-> ContactImportSettings getExternalcontactsImportSetting(settingsId)
+> ContactImportSettings getExternalcontactsImportSetting(settingsId, opts)
 
 
 GET /api/v2/externalcontacts/import/settings/{settingsId}
@@ -1996,8 +2237,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ExternalContactsApi();
 
 let settingsId = "settingsId_example"; // String | Settings id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getExternalcontactsImportSetting(settingsId)
+apiInstance.getExternalcontactsImportSetting(settingsId, opts)
   .then((data) => {
     console.log(`getExternalcontactsImportSetting success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2013,6 +2260,7 @@ apiInstance.getExternalcontactsImportSetting(settingsId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **settingsId** | **String** | Settings id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2049,7 +2297,11 @@ let opts = {
   'after': "after_example", // String | The cursor that points to the end of the set of entities that has been returned.
   'pageSize': "25", // String | Number of entities to return. Maximum of 100.
   'sortOrder': "Ascending", // String | Direction of sorting.
-  'name': "name_example" // String | Search term to filter by settings name
+  'name': "name_example", // String | Search term to filter by settings name
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getExternalcontactsImportSettings(opts)
@@ -2071,10 +2323,133 @@ apiInstance.getExternalcontactsImportSettings(opts)
  **pageSize** | **String** | Number of entities to return. Maximum of 100. | [optional] [default to 25] |
  **sortOrder** | **String** | Direction of sorting. | [optional] [default to Ascending]<br />**Values**: Ascending, Descending |
  **name** | **String** | Search term to filter by settings name | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **ContactImportSettingsEntityListing**
+
+
+## getExternalcontactsNotesExport
+
+> NotesExport getExternalcontactsNotesExport(exportId, opts)
+
+
+GET /api/v2/externalcontacts/notes/exports/{exportId}
+
+Get notes export for exportId
+
+Requires ALL permissions:
+
+* externalContacts:export:view
+* externalContacts:contact:view
+* externalContacts:externalOrganization:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let exportId = "exportId_example"; // String | Export id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getExternalcontactsNotesExport(exportId, opts)
+  .then((data) => {
+    console.log(`getExternalcontactsNotesExport success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getExternalcontactsNotesExport');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **exportId** | **String** | Export id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**NotesExport**
+
+
+## getExternalcontactsNotesExports
+
+> NotesExportListing getExternalcontactsNotesExports(opts)
+
+
+GET /api/v2/externalcontacts/notes/exports
+
+List note exports for organization
+
+Requires ALL permissions:
+
+* externalContacts:export:view
+* externalContacts:contact:view
+* externalContacts:externalOrganization:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let opts = { 
+  'divisionIds': ["divisionIds_example"], // [String] | Division IDs of entities
+  'after': "after_example", // String | The cursor that points to the end of the set of entities
+  'pageSize': 3.4, // Number | Number of entities to return
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getExternalcontactsNotesExports(opts)
+  .then((data) => {
+    console.log(`getExternalcontactsNotesExports success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getExternalcontactsNotesExports');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **divisionIds** | **[String]** | Division IDs of entities | [optional]  |
+ **after** | **String** | The cursor that points to the end of the set of entities | [optional]  |
+ **pageSize** | **Number** | Number of entities to return | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**NotesExportListing**
 
 
 ## getExternalcontactsOrganization
@@ -2107,7 +2482,11 @@ let apiInstance = new platformClient.ExternalContactsApi();
 let externalOrganizationId = "externalOrganizationId_example"; // String | External Organization ID
 let opts = { 
   'expand': ["expand_example"], // [String] | which fields, if any, to expand
-  'includeTrustors': true // Boolean | (true or false) whether or not to include trustor information embedded in the externalOrganization
+  'includeTrustors': true, // Boolean | (true or false) whether or not to include trustor information embedded in the externalOrganization
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getExternalcontactsOrganization(externalOrganizationId, opts)
@@ -2128,6 +2507,7 @@ apiInstance.getExternalcontactsOrganization(externalOrganizationId, opts)
  **externalOrganizationId** | **String** | External Organization ID |  |
  **expand** | **[String]** | which fields, if any, to expand | [optional] <br />**Values**: externalDataSources, division, identifiers, externalSources |
  **includeTrustors** | **Boolean** | (true or false) whether or not to include trustor information embedded in the externalOrganization | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2167,7 +2547,11 @@ let opts = {
   'pageNumber': 1, // Number | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
   'q': "q_example", // String | User supplied search keywords (no special syntax is currently supported)
   'sortOrder': "sortOrder_example", // String | The External Contact field to sort by. Any of: [firstName, lastName, middleName, title]. Direction: [asc, desc]. e.g. firstName:asc, title:desc
-  'expand': ["expand_example"] // [String] | which fields, if any, to expand
+  'expand': ["expand_example"], // [String] | which fields, if any, to expand
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getExternalcontactsOrganizationContacts(externalOrganizationId, opts)
@@ -2191,6 +2575,7 @@ apiInstance.getExternalcontactsOrganizationContacts(externalOrganizationId, opts
  **q** | **String** | User supplied search keywords (no special syntax is currently supported) | [optional]  |
  **sortOrder** | **String** | The External Contact field to sort by. Any of: [firstName, lastName, middleName, title]. Direction: [asc, desc]. e.g. firstName:asc, title:desc | [optional]  |
  **expand** | **[String]** | which fields, if any, to expand | [optional] <br />**Values**: externalOrganization, externalDataSources, identifiers, externalSources, division |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2199,7 +2584,7 @@ apiInstance.getExternalcontactsOrganizationContacts(externalOrganizationId, opts
 
 ## getExternalcontactsOrganizationIdentifiers
 
-> ExternalOrganizationIdentifierListing getExternalcontactsOrganizationIdentifiers(externalOrganizationId)
+> ExternalOrganizationIdentifierListing getExternalcontactsOrganizationIdentifiers(externalOrganizationId, opts)
 
 
 GET /api/v2/externalcontacts/organizations/{externalOrganizationId}/identifiers
@@ -2224,8 +2609,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ExternalContactsApi();
 
 let externalOrganizationId = "externalOrganizationId_example"; // String | External Organization ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getExternalcontactsOrganizationIdentifiers(externalOrganizationId)
+apiInstance.getExternalcontactsOrganizationIdentifiers(externalOrganizationId, opts)
   .then((data) => {
     console.log(`getExternalcontactsOrganizationIdentifiers success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2241,6 +2632,7 @@ apiInstance.getExternalcontactsOrganizationIdentifiers(externalOrganizationId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **externalOrganizationId** | **String** | External Organization ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2277,7 +2669,11 @@ let apiInstance = new platformClient.ExternalContactsApi();
 let externalOrganizationId = "externalOrganizationId_example"; // String | External Organization Id
 let noteId = "noteId_example"; // String | Note Id
 let opts = { 
-  'expand': ["expand_example"] // [String] | which fields, if any, to expand
+  'expand': ["expand_example"], // [String] | which fields, if any, to expand
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getExternalcontactsOrganizationNote(externalOrganizationId, noteId, opts)
@@ -2298,6 +2694,7 @@ apiInstance.getExternalcontactsOrganizationNote(externalOrganizationId, noteId, 
  **externalOrganizationId** | **String** | External Organization Id |  |
  **noteId** | **String** | Note Id |  |
  **expand** | **[String]** | which fields, if any, to expand | [optional] <br />**Values**: author, externalDataSources, division |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2336,7 +2733,11 @@ let opts = {
   'pageSize': 20, // Number | Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
   'pageNumber': 1, // Number | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
   'sortOrder': "sortOrder_example", // String | The Note field to sort by. Any of: [createDate]. Direction: [asc, desc]. e.g. createDate:asc, createDate:desc
-  'expand': ["expand_example"] // [String] | which fields, if any, to expand
+  'expand': ["expand_example"], // [String] | which fields, if any, to expand
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getExternalcontactsOrganizationNotes(externalOrganizationId, opts)
@@ -2359,6 +2760,7 @@ apiInstance.getExternalcontactsOrganizationNotes(externalOrganizationId, opts)
  **pageNumber** | **Number** | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) | [optional] [default to 1] |
  **sortOrder** | **String** | The Note field to sort by. Any of: [createDate]. Direction: [asc, desc]. e.g. createDate:asc, createDate:desc | [optional]  |
  **expand** | **[String]** | which fields, if any, to expand | [optional] <br />**Values**: author, externalDataSources, division |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2397,7 +2799,11 @@ let opts = {
   'pageSize': 20, // Number | Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
   'pageNumber': 1, // Number | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
   'expand': ["expand_example"], // [String] | which fields, if any, to expand
-  'sortOrder': "sortOrder_example" // String | The Relationship field to sort by. Any of: [createDate, relationship]. Direction: [asc, desc]. e.g. createDate:asc, relationship:desc
+  'sortOrder': "sortOrder_example", // String | The Relationship field to sort by. Any of: [createDate, relationship]. Direction: [asc, desc]. e.g. createDate:asc, relationship:desc
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getExternalcontactsOrganizationRelationships(externalOrganizationId, opts)
@@ -2420,6 +2826,7 @@ apiInstance.getExternalcontactsOrganizationRelationships(externalOrganizationId,
  **pageNumber** | **Number** | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) | [optional] [default to 1] |
  **expand** | **[String]** | which fields, if any, to expand | [optional] <br />**Values**: externalDataSources, division |
  **sortOrder** | **String** | The Relationship field to sort by. Any of: [createDate, relationship]. Direction: [asc, desc]. e.g. createDate:asc, relationship:desc | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2461,7 +2868,11 @@ let opts = {
   'sortOrder': "sortOrder_example", // String | The Organization field to sort by. Any of: [companyType, industry, name]. Direction: [asc, desc]. e.g. companyType:asc, industry:desc
   'expand': ["expand_example"], // [String] | which fields, if any, to expand
   'includeTrustors': true, // Boolean | (true or false) whether or not to include trustor information embedded in the externalOrganization
-  'divisionIds': ["divisionIds_example"] // [String] | which divisions to search, up to 50
+  'divisionIds': ["divisionIds_example"], // [String] | which divisions to search, up to 50
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getExternalcontactsOrganizations(opts)
@@ -2487,15 +2898,136 @@ apiInstance.getExternalcontactsOrganizations(opts)
  **expand** | **[String]** | which fields, if any, to expand | [optional] <br />**Values**: externalDataSources, division, identifiers, externalSources |
  **includeTrustors** | **Boolean** | (true or false) whether or not to include trustor information embedded in the externalOrganization | [optional]  |
  **divisionIds** | **[String]** | which divisions to search, up to 50 | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **ExternalOrganizationListing**
 
 
+## getExternalcontactsOrganizationsExport
+
+> OrganizationsExport getExternalcontactsOrganizationsExport(exportId, opts)
+
+
+GET /api/v2/externalcontacts/organizations/exports/{exportId}
+
+Get organizations export for exportId
+
+Requires ALL permissions:
+
+* externalContacts:export:view
+* externalContacts:externalOrganization:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let exportId = "exportId_example"; // String | Export id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getExternalcontactsOrganizationsExport(exportId, opts)
+  .then((data) => {
+    console.log(`getExternalcontactsOrganizationsExport success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getExternalcontactsOrganizationsExport');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **exportId** | **String** | Export id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**OrganizationsExport**
+
+
+## getExternalcontactsOrganizationsExports
+
+> OrganizationsExportListing getExternalcontactsOrganizationsExports(opts)
+
+
+GET /api/v2/externalcontacts/organizations/exports
+
+List organization exports for organization
+
+Requires ALL permissions:
+
+* externalContacts:export:view
+* externalContacts:externalOrganization:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let opts = { 
+  'divisionIds': ["divisionIds_example"], // [String] | Division IDs of entities
+  'after': "after_example", // String | The cursor that points to the end of the set of entities
+  'pageSize': 3.4, // Number | Number of entities to return
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getExternalcontactsOrganizationsExports(opts)
+  .then((data) => {
+    console.log(`getExternalcontactsOrganizationsExports success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getExternalcontactsOrganizationsExports');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **divisionIds** | **[String]** | Division IDs of entities | [optional]  |
+ **after** | **String** | The cursor that points to the end of the set of entities | [optional]  |
+ **pageSize** | **Number** | Number of entities to return | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**OrganizationsExportListing**
+
+
 ## getExternalcontactsOrganizationsSchema
 
-> DataSchema getExternalcontactsOrganizationsSchema(schemaId)
+> DataSchema getExternalcontactsOrganizationsSchema(schemaId, opts)
 
 
 GET /api/v2/externalcontacts/organizations/schemas/{schemaId}
@@ -2520,8 +3052,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ExternalContactsApi();
 
 let schemaId = "schemaId_example"; // String | Schema ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getExternalcontactsOrganizationsSchema(schemaId)
+apiInstance.getExternalcontactsOrganizationsSchema(schemaId, opts)
   .then((data) => {
     console.log(`getExternalcontactsOrganizationsSchema success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2537,6 +3075,7 @@ apiInstance.getExternalcontactsOrganizationsSchema(schemaId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **schemaId** | **String** | Schema ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2545,7 +3084,7 @@ apiInstance.getExternalcontactsOrganizationsSchema(schemaId)
 
 ## getExternalcontactsOrganizationsSchemaVersion
 
-> DataSchema getExternalcontactsOrganizationsSchemaVersion(schemaId, versionId)
+> DataSchema getExternalcontactsOrganizationsSchemaVersion(schemaId, versionId, opts)
 
 
 GET /api/v2/externalcontacts/organizations/schemas/{schemaId}/versions/{versionId}
@@ -2571,8 +3110,14 @@ let apiInstance = new platformClient.ExternalContactsApi();
 
 let schemaId = "schemaId_example"; // String | Schema ID
 let versionId = "versionId_example"; // String | Schema version
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getExternalcontactsOrganizationsSchemaVersion(schemaId, versionId)
+apiInstance.getExternalcontactsOrganizationsSchemaVersion(schemaId, versionId, opts)
   .then((data) => {
     console.log(`getExternalcontactsOrganizationsSchemaVersion success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2589,6 +3134,7 @@ apiInstance.getExternalcontactsOrganizationsSchemaVersion(schemaId, versionId)
 | ------------- | ------------- | ------------- | ------------- |
  **schemaId** | **String** | Schema ID |  |
  **versionId** | **String** | Schema version |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2597,7 +3143,7 @@ apiInstance.getExternalcontactsOrganizationsSchemaVersion(schemaId, versionId)
 
 ## getExternalcontactsOrganizationsSchemaVersions
 
-> DataSchemaListing getExternalcontactsOrganizationsSchemaVersions(schemaId)
+> DataSchemaListing getExternalcontactsOrganizationsSchemaVersions(schemaId, opts)
 
 
 GET /api/v2/externalcontacts/organizations/schemas/{schemaId}/versions
@@ -2622,8 +3168,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ExternalContactsApi();
 
 let schemaId = "schemaId_example"; // String | Schema ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getExternalcontactsOrganizationsSchemaVersions(schemaId)
+apiInstance.getExternalcontactsOrganizationsSchemaVersions(schemaId, opts)
   .then((data) => {
     console.log(`getExternalcontactsOrganizationsSchemaVersions success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2639,6 +3191,7 @@ apiInstance.getExternalcontactsOrganizationsSchemaVersions(schemaId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **schemaId** | **String** | Schema ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2647,7 +3200,7 @@ apiInstance.getExternalcontactsOrganizationsSchemaVersions(schemaId)
 
 ## getExternalcontactsOrganizationsSchemas
 
-> DataSchemaListing getExternalcontactsOrganizationsSchemas()
+> DataSchemaListing getExternalcontactsOrganizationsSchemas(opts)
 
 
 GET /api/v2/externalcontacts/organizations/schemas
@@ -2670,8 +3223,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ExternalContactsApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getExternalcontactsOrganizationsSchemas()
+apiInstance.getExternalcontactsOrganizationsSchemas(opts)
   .then((data) => {
     console.log(`getExternalcontactsOrganizationsSchemas success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2683,7 +3242,10 @@ apiInstance.getExternalcontactsOrganizationsSchemas()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2692,7 +3254,7 @@ This endpoint does not need any parameter.
 
 ## getExternalcontactsOrganizationsSchemasCoretype
 
-> Coretype getExternalcontactsOrganizationsSchemasCoretype(coreTypeName)
+> Coretype getExternalcontactsOrganizationsSchemasCoretype(coreTypeName, opts)
 
 
 GET /api/v2/externalcontacts/organizations/schemas/coretypes/{coreTypeName}
@@ -2717,8 +3279,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ExternalContactsApi();
 
 let coreTypeName = "coreTypeName_example"; // String | Name of the core type
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getExternalcontactsOrganizationsSchemasCoretype(coreTypeName)
+apiInstance.getExternalcontactsOrganizationsSchemasCoretype(coreTypeName, opts)
   .then((data) => {
     console.log(`getExternalcontactsOrganizationsSchemasCoretype success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2734,6 +3302,7 @@ apiInstance.getExternalcontactsOrganizationsSchemasCoretype(coreTypeName)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **coreTypeName** | **String** | Name of the core type |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2742,7 +3311,7 @@ apiInstance.getExternalcontactsOrganizationsSchemasCoretype(coreTypeName)
 
 ## getExternalcontactsOrganizationsSchemasCoretypes
 
-> CoretypeListing getExternalcontactsOrganizationsSchemasCoretypes()
+> CoretypeListing getExternalcontactsOrganizationsSchemasCoretypes(opts)
 
 
 GET /api/v2/externalcontacts/organizations/schemas/coretypes
@@ -2765,8 +3334,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ExternalContactsApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getExternalcontactsOrganizationsSchemasCoretypes()
+apiInstance.getExternalcontactsOrganizationsSchemasCoretypes(opts)
   .then((data) => {
     console.log(`getExternalcontactsOrganizationsSchemasCoretypes success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2778,7 +3353,10 @@ apiInstance.getExternalcontactsOrganizationsSchemasCoretypes()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2787,7 +3365,7 @@ This endpoint does not need any parameter.
 
 ## getExternalcontactsOrganizationsSchemasLimits
 
-> SchemaQuantityLimits getExternalcontactsOrganizationsSchemasLimits()
+> SchemaQuantityLimits getExternalcontactsOrganizationsSchemasLimits(opts)
 
 
 GET /api/v2/externalcontacts/organizations/schemas/limits
@@ -2810,8 +3388,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.ExternalContactsApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getExternalcontactsOrganizationsSchemasLimits()
+apiInstance.getExternalcontactsOrganizationsSchemasLimits(opts)
   .then((data) => {
     console.log(`getExternalcontactsOrganizationsSchemasLimits success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2823,7 +3407,10 @@ apiInstance.getExternalcontactsOrganizationsSchemasLimits()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2859,7 +3446,11 @@ let apiInstance = new platformClient.ExternalContactsApi();
 
 let relationshipId = "relationshipId_example"; // String | Relationship Id
 let opts = { 
-  'expand': ["expand_example"] // [String] | which fields, if any, to expand
+  'expand': ["expand_example"], // [String] | which fields, if any, to expand
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getExternalcontactsRelationship(relationshipId, opts)
@@ -2879,10 +3470,131 @@ apiInstance.getExternalcontactsRelationship(relationshipId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **relationshipId** | **String** | Relationship Id |  |
  **expand** | **[String]** | which fields, if any, to expand | [optional] <br />**Values**: externalDataSources, division |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **Relationship**
+
+
+## getExternalcontactsRelationshipsExport
+
+> RelationshipsExport getExternalcontactsRelationshipsExport(exportId, opts)
+
+
+GET /api/v2/externalcontacts/relationships/exports/{exportId}
+
+Get relationships export for exportId
+
+Requires ALL permissions:
+
+* externalContacts:export:view
+* externalContacts:externalOrganization:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let exportId = "exportId_example"; // String | Export id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getExternalcontactsRelationshipsExport(exportId, opts)
+  .then((data) => {
+    console.log(`getExternalcontactsRelationshipsExport success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getExternalcontactsRelationshipsExport');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **exportId** | **String** | Export id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**RelationshipsExport**
+
+
+## getExternalcontactsRelationshipsExports
+
+> RelationshipsExportListing getExternalcontactsRelationshipsExports(opts)
+
+
+GET /api/v2/externalcontacts/relationships/exports
+
+List relationship exports for organization
+
+Requires ALL permissions:
+
+* externalContacts:export:view
+* externalContacts:externalOrganization:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let opts = { 
+  'divisionIds': ["divisionIds_example"], // [String] | Division IDs of entities
+  'after': "after_example", // String | The cursor that points to the end of the set of entities
+  'pageSize': 3.4, // Number | Number of entities to return
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getExternalcontactsRelationshipsExports(opts)
+  .then((data) => {
+    console.log(`getExternalcontactsRelationshipsExports success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getExternalcontactsRelationshipsExports');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **divisionIds** | **[String]** | Division IDs of entities | [optional]  |
+ **after** | **String** | The cursor that points to the end of the set of entities | [optional]  |
+ **pageSize** | **Number** | Number of entities to return | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**RelationshipsExportListing**
 
 
 ## getExternalcontactsReversewhitepageslookup
@@ -2914,7 +3626,11 @@ let apiInstance = new platformClient.ExternalContactsApi();
 let lookupVal = "lookupVal_example"; // String | User supplied value to lookup contacts (supports email addresses, e164 phone numbers, Twitter screen names)
 let opts = { 
   'expand': ["expand_example"], // [String] | which field, if any, to expand
-  'divisionId': "*" // String | Specifies which division to lookup contacts in, for the given lookup value
+  'divisionId': "*", // String | Specifies which division to lookup contacts in, for the given lookup value
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getExternalcontactsReversewhitepageslookup(lookupVal, opts)
@@ -2935,6 +3651,7 @@ apiInstance.getExternalcontactsReversewhitepageslookup(lookupVal, opts)
  **lookupVal** | **String** | User supplied value to lookup contacts (supports email addresses, e164 phone numbers, Twitter screen names) |  |
  **expand** | **[String]** | which field, if any, to expand | [optional] <br />**Values**: contacts.externalOrganization, externalDataSources, division |
  **divisionId** | **String** | Specifies which division to lookup contacts in, for the given lookup value | [optional] [default to *] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2971,7 +3688,11 @@ let apiInstance = new platformClient.ExternalContactsApi();
 let opts = { 
   'limit': 3.4, // Number | The number of contacts per page; must be between 10 and 200, default is 100
   'cursor': "cursor_example", // String | Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL
-  'divisionId': "*" // String | The division to scan over
+  'divisionId': "*", // String | The division to scan over
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getExternalcontactsScanContacts(opts)
@@ -2992,6 +3713,7 @@ apiInstance.getExternalcontactsScanContacts(opts)
  **limit** | **Number** | The number of contacts per page; must be between 10 and 200, default is 100 | [optional]  |
  **cursor** | **String** | Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL | [optional]  |
  **divisionId** | **String** | The division to scan over | [optional] [default to *] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3026,7 +3748,11 @@ let apiInstance = new platformClient.ExternalContactsApi();
 
 let opts = { 
   'limit': 3.4, // Number | The number of contacts per page; must be between 10 and 200, default is 100
-  'cursor': "cursor_example" // String | Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL
+  'cursor': "cursor_example", // String | Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getExternalcontactsScanContactsDivisionviewsAll(opts)
@@ -3046,6 +3772,7 @@ apiInstance.getExternalcontactsScanContactsDivisionviewsAll(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **limit** | **Number** | The number of contacts per page; must be between 10 and 200, default is 100 | [optional]  |
  **cursor** | **String** | Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3082,7 +3809,11 @@ let apiInstance = new platformClient.ExternalContactsApi();
 let opts = { 
   'limit': 3.4, // Number | The number of notes per page; must be between 10 and 200, default is 100
   'cursor': "cursor_example", // String | Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL
-  'divisionId': "*" // String | The division to scan over
+  'divisionId': "*", // String | The division to scan over
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getExternalcontactsScanNotes(opts)
@@ -3103,6 +3834,7 @@ apiInstance.getExternalcontactsScanNotes(opts)
  **limit** | **Number** | The number of notes per page; must be between 10 and 200, default is 100 | [optional]  |
  **cursor** | **String** | Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL | [optional]  |
  **divisionId** | **String** | The division to scan over | [optional] [default to *] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3137,7 +3869,11 @@ let apiInstance = new platformClient.ExternalContactsApi();
 
 let opts = { 
   'limit': 3.4, // Number | The number of notes per page; must be between 10 and 200, default is 100
-  'cursor': "cursor_example" // String | Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL
+  'cursor': "cursor_example", // String | Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getExternalcontactsScanNotesDivisionviewsAll(opts)
@@ -3157,6 +3893,7 @@ apiInstance.getExternalcontactsScanNotesDivisionviewsAll(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **limit** | **Number** | The number of notes per page; must be between 10 and 200, default is 100 | [optional]  |
  **cursor** | **String** | Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3193,7 +3930,11 @@ let apiInstance = new platformClient.ExternalContactsApi();
 let opts = { 
   'limit': 3.4, // Number | The number of organizations per page; must be between 10 and 200, default is 100
   'cursor': "cursor_example", // String | Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL
-  'divisionId': "*" // String | The division to scan over
+  'divisionId': "*", // String | The division to scan over
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getExternalcontactsScanOrganizations(opts)
@@ -3214,6 +3955,7 @@ apiInstance.getExternalcontactsScanOrganizations(opts)
  **limit** | **Number** | The number of organizations per page; must be between 10 and 200, default is 100 | [optional]  |
  **cursor** | **String** | Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL | [optional]  |
  **divisionId** | **String** | The division to scan over | [optional] [default to *] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3248,7 +3990,11 @@ let apiInstance = new platformClient.ExternalContactsApi();
 
 let opts = { 
   'limit': 3.4, // Number | The number of organizations per page; must be between 10 and 200, default is 100
-  'cursor': "cursor_example" // String | Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL
+  'cursor': "cursor_example", // String | Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getExternalcontactsScanOrganizationsDivisionviewsAll(opts)
@@ -3268,6 +4014,7 @@ apiInstance.getExternalcontactsScanOrganizationsDivisionviewsAll(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **limit** | **Number** | The number of organizations per page; must be between 10 and 200, default is 100 | [optional]  |
  **cursor** | **String** | Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3304,7 +4051,11 @@ let apiInstance = new platformClient.ExternalContactsApi();
 let opts = { 
   'limit': 3.4, // Number | The number of relationships per page; must be between 10 and 200, default is 100
   'cursor': "cursor_example", // String | Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL
-  'divisionId': "*" // String | The division to scan over
+  'divisionId': "*", // String | The division to scan over
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getExternalcontactsScanRelationships(opts)
@@ -3325,6 +4076,7 @@ apiInstance.getExternalcontactsScanRelationships(opts)
  **limit** | **Number** | The number of relationships per page; must be between 10 and 200, default is 100 | [optional]  |
  **cursor** | **String** | Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL | [optional]  |
  **divisionId** | **String** | The division to scan over | [optional] [default to *] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3359,7 +4111,11 @@ let apiInstance = new platformClient.ExternalContactsApi();
 
 let opts = { 
   'limit': 3.4, // Number | The number of relationships per page; must be between 10 and 200, default is 100
-  'cursor': "cursor_example" // String | Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL
+  'cursor': "cursor_example", // String | Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getExternalcontactsScanRelationshipsDivisionviewsAll(opts)
@@ -3379,15 +4135,75 @@ apiInstance.getExternalcontactsScanRelationshipsDivisionviewsAll(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **limit** | **Number** | The number of relationships per page; must be between 10 and 200, default is 100 | [optional]  |
  **cursor** | **String** | Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **CursorRelationshipListing**
 
 
+## patchExternalcontactsContact
+
+> ExternalContact patchExternalcontactsContact(contactId, body, opts)
+
+
+PATCH /api/v2/externalcontacts/contacts/{contactId}
+
+Update specific fields of an external contact
+
+Requires ANY permissions:
+
+* externalContacts:contact:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let contactId = "contactId_example"; // String | ExternalContact ID
+let body = {}; // Object | Contact fields to update
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.patchExternalcontactsContact(contactId, body, opts)
+  .then((data) => {
+    console.log(`patchExternalcontactsContact success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchExternalcontactsContact');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **contactId** | **String** | ExternalContact ID |  |
+ **body** | **Object** | Contact fields to update |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**ExternalContact**
+
+
 ## patchExternalcontactsContactIdentifiers
 
-> ContactIdentifier patchExternalcontactsContactIdentifiers(contactId, body)
+> ContactIdentifier patchExternalcontactsContactIdentifiers(contactId, body, opts)
 
 
 PATCH /api/v2/externalcontacts/contacts/{contactId}/identifiers
@@ -3413,8 +4229,14 @@ let apiInstance = new platformClient.ExternalContactsApi();
 
 let contactId = "contactId_example"; // String | ExternalContact ID
 let body = {}; // Object | ClaimRequest
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchExternalcontactsContactIdentifiers(contactId, body)
+apiInstance.patchExternalcontactsContactIdentifiers(contactId, body, opts)
   .then((data) => {
     console.log(`patchExternalcontactsContactIdentifiers success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3431,15 +4253,136 @@ apiInstance.patchExternalcontactsContactIdentifiers(contactId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **contactId** | **String** | ExternalContact ID |  |
  **body** | **Object** | ClaimRequest |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **ContactIdentifier**
 
 
+## patchExternalcontactsContactNote
+
+> Note patchExternalcontactsContactNote(contactId, noteId, body, opts)
+
+
+PATCH /api/v2/externalcontacts/contacts/{contactId}/notes/{noteId}
+
+Update a Contact Note
+
+Requires ANY permissions:
+
+* externalContacts:contact:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let contactId = "contactId_example"; // String | ExternalContact Id
+let noteId = "noteId_example"; // String | Note Id
+let body = {}; // Object | Note field to update
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.patchExternalcontactsContactNote(contactId, noteId, body, opts)
+  .then((data) => {
+    console.log(`patchExternalcontactsContactNote success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchExternalcontactsContactNote');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **contactId** | **String** | ExternalContact Id |  |
+ **noteId** | **String** | Note Id |  |
+ **body** | **Object** | Note field to update |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**Note**
+
+
+## patchExternalcontactsOrganization
+
+> ExternalOrganization patchExternalcontactsOrganization(externalOrganizationId, body, opts)
+
+
+PATCH /api/v2/externalcontacts/organizations/{externalOrganizationId}
+
+Update specific fields of an external organization
+
+Requires ANY permissions:
+
+* externalContacts:externalOrganization:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let externalOrganizationId = "externalOrganizationId_example"; // String | External Organization ID
+let body = {}; // Object | External Organization fields to update
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.patchExternalcontactsOrganization(externalOrganizationId, body, opts)
+  .then((data) => {
+    console.log(`patchExternalcontactsOrganization success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchExternalcontactsOrganization');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **externalOrganizationId** | **String** | External Organization ID |  |
+ **body** | **Object** | External Organization fields to update |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**ExternalOrganization**
+
+
 ## patchExternalcontactsOrganizationIdentifiers
 
-> ExternalOrganizationIdentifier patchExternalcontactsOrganizationIdentifiers(externalOrganizationId, body)
+> ExternalOrganizationIdentifier patchExternalcontactsOrganizationIdentifiers(externalOrganizationId, body, opts)
 
 
 PATCH /api/v2/externalcontacts/organizations/{externalOrganizationId}/identifiers
@@ -3465,8 +4408,14 @@ let apiInstance = new platformClient.ExternalContactsApi();
 
 let externalOrganizationId = "externalOrganizationId_example"; // String | External Organization ID
 let body = {}; // Object | ClaimRequest
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchExternalcontactsOrganizationIdentifiers(externalOrganizationId, body)
+apiInstance.patchExternalcontactsOrganizationIdentifiers(externalOrganizationId, body, opts)
   .then((data) => {
     console.log(`patchExternalcontactsOrganizationIdentifiers success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3483,15 +4432,136 @@ apiInstance.patchExternalcontactsOrganizationIdentifiers(externalOrganizationId,
 | ------------- | ------------- | ------------- | ------------- |
  **externalOrganizationId** | **String** | External Organization ID |  |
  **body** | **Object** | ClaimRequest |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **ExternalOrganizationIdentifier**
 
 
+## patchExternalcontactsOrganizationNote
+
+> Note patchExternalcontactsOrganizationNote(externalOrganizationId, noteId, body, opts)
+
+
+PATCH /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes/{noteId}
+
+Update an External Organization Note
+
+Requires ANY permissions:
+
+* externalContacts:externalOrganization:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let externalOrganizationId = "externalOrganizationId_example"; // String | External Organization Id
+let noteId = "noteId_example"; // String | Note Id
+let body = {}; // Object | Note field to update
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.patchExternalcontactsOrganizationNote(externalOrganizationId, noteId, body, opts)
+  .then((data) => {
+    console.log(`patchExternalcontactsOrganizationNote success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchExternalcontactsOrganizationNote');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **externalOrganizationId** | **String** | External Organization Id |  |
+ **noteId** | **String** | Note Id |  |
+ **body** | **Object** | Note field to update |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**Note**
+
+
+## patchExternalcontactsRelationship
+
+> Relationship patchExternalcontactsRelationship(relationshipId, body, opts)
+
+
+PATCH /api/v2/externalcontacts/relationships/{relationshipId}
+
+Update specific fields of a relationship
+
+Requires ANY permissions:
+
+* externalContacts:externalOrganization:edit
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let relationshipId = "relationshipId_example"; // String | Relationship Id
+let body = {}; // Object | Relationship fields to update
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.patchExternalcontactsRelationship(relationshipId, body, opts)
+  .then((data) => {
+    console.log(`patchExternalcontactsRelationship success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling patchExternalcontactsRelationship');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **relationshipId** | **String** | Relationship Id |  |
+ **body** | **Object** | Relationship fields to update |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**Relationship**
+
+
 ## postExternalcontactsBulkContacts
 
-> BulkFetchContactsResponse postExternalcontactsBulkContacts(body)
+> BulkFetchContactsResponse postExternalcontactsBulkContacts(body, opts)
 
 
 POST /api/v2/externalcontacts/bulk/contacts
@@ -3516,8 +4586,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ExternalContactsApi();
 
 let body = {}; // Object | Contact ids
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postExternalcontactsBulkContacts(body)
+apiInstance.postExternalcontactsBulkContacts(body, opts)
   .then((data) => {
     console.log(`postExternalcontactsBulkContacts success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3533,6 +4609,7 @@ apiInstance.postExternalcontactsBulkContacts(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Contact ids |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3541,7 +4618,7 @@ apiInstance.postExternalcontactsBulkContacts(body)
 
 ## postExternalcontactsBulkContactsAdd
 
-> BulkContactsResponse postExternalcontactsBulkContactsAdd(body)
+> BulkContactsResponse postExternalcontactsBulkContactsAdd(body, opts)
 
 
 POST /api/v2/externalcontacts/bulk/contacts/add
@@ -3566,8 +4643,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ExternalContactsApi();
 
 let body = {}; // Object | Contacts
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postExternalcontactsBulkContactsAdd(body)
+apiInstance.postExternalcontactsBulkContactsAdd(body, opts)
   .then((data) => {
     console.log(`postExternalcontactsBulkContactsAdd success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3583,6 +4666,7 @@ apiInstance.postExternalcontactsBulkContactsAdd(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Contacts |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3591,7 +4675,7 @@ apiInstance.postExternalcontactsBulkContactsAdd(body)
 
 ## postExternalcontactsBulkContactsDivisionviews
 
-> BulkFetchContactsResponse postExternalcontactsBulkContactsDivisionviews(body)
+> BulkFetchContactsResponse postExternalcontactsBulkContactsDivisionviews(body, opts)
 
 
 POST /api/v2/externalcontacts/bulk/contacts/divisionviews
@@ -3616,8 +4700,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ExternalContactsApi();
 
 let body = {}; // Object | Contact ids
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postExternalcontactsBulkContactsDivisionviews(body)
+apiInstance.postExternalcontactsBulkContactsDivisionviews(body, opts)
   .then((data) => {
     console.log(`postExternalcontactsBulkContactsDivisionviews success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3633,6 +4723,7 @@ apiInstance.postExternalcontactsBulkContactsDivisionviews(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Contact ids |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3669,7 +4760,11 @@ let apiInstance = new platformClient.ExternalContactsApi();
 
 let body = {}; // Object | Contact Enrich Requests
 let opts = { 
-  'dryRun': true // Boolean | If true, the request will not make any modifications, but will show you what the end result *would* be.
+  'dryRun': true, // Boolean | If true, the request will not make any modifications, but will show you what the end result *would* be.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postExternalcontactsBulkContactsEnrich(body, opts)
@@ -3689,6 +4784,7 @@ apiInstance.postExternalcontactsBulkContactsEnrich(body, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Contact Enrich Requests |  |
  **dryRun** | **Boolean** | If true, the request will not make any modifications, but will show you what the end result *would* be. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3697,7 +4793,7 @@ apiInstance.postExternalcontactsBulkContactsEnrich(body, opts)
 
 ## postExternalcontactsBulkContactsRemove
 
-> BulkDeleteResponse postExternalcontactsBulkContactsRemove(body)
+> BulkDeleteResponse postExternalcontactsBulkContactsRemove(body, opts)
 
 
 POST /api/v2/externalcontacts/bulk/contacts/remove
@@ -3722,8 +4818,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ExternalContactsApi();
 
 let body = {}; // Object | Contact ids
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postExternalcontactsBulkContactsRemove(body)
+apiInstance.postExternalcontactsBulkContactsRemove(body, opts)
   .then((data) => {
     console.log(`postExternalcontactsBulkContactsRemove success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3739,6 +4841,7 @@ apiInstance.postExternalcontactsBulkContactsRemove(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Contact ids |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3747,7 +4850,7 @@ apiInstance.postExternalcontactsBulkContactsRemove(body)
 
 ## postExternalcontactsBulkContactsUnresolved
 
-> BulkFetchContactsResponse postExternalcontactsBulkContactsUnresolved(body)
+> BulkFetchContactsResponse postExternalcontactsBulkContactsUnresolved(body, opts)
 
 
 POST /api/v2/externalcontacts/bulk/contacts/unresolved
@@ -3772,8 +4875,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ExternalContactsApi();
 
 let body = {}; // Object | Contact ids
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postExternalcontactsBulkContactsUnresolved(body)
+apiInstance.postExternalcontactsBulkContactsUnresolved(body, opts)
   .then((data) => {
     console.log(`postExternalcontactsBulkContactsUnresolved success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3789,6 +4898,7 @@ apiInstance.postExternalcontactsBulkContactsUnresolved(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Contact ids |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3797,7 +4907,7 @@ apiInstance.postExternalcontactsBulkContactsUnresolved(body)
 
 ## postExternalcontactsBulkContactsUpdate
 
-> BulkContactsResponse postExternalcontactsBulkContactsUpdate(body)
+> BulkContactsResponse postExternalcontactsBulkContactsUpdate(body, opts)
 
 
 POST /api/v2/externalcontacts/bulk/contacts/update
@@ -3822,8 +4932,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ExternalContactsApi();
 
 let body = {}; // Object | Contacts
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postExternalcontactsBulkContactsUpdate(body)
+apiInstance.postExternalcontactsBulkContactsUpdate(body, opts)
   .then((data) => {
     console.log(`postExternalcontactsBulkContactsUpdate success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3839,6 +4955,7 @@ apiInstance.postExternalcontactsBulkContactsUpdate(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Contacts |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3847,7 +4964,7 @@ apiInstance.postExternalcontactsBulkContactsUpdate(body)
 
 ## postExternalcontactsBulkNotes
 
-> BulkFetchNotesResponse postExternalcontactsBulkNotes(body)
+> BulkFetchNotesResponse postExternalcontactsBulkNotes(body, opts)
 
 
 POST /api/v2/externalcontacts/bulk/notes
@@ -3873,8 +4990,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ExternalContactsApi();
 
 let body = {}; // Object | Note ids
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postExternalcontactsBulkNotes(body)
+apiInstance.postExternalcontactsBulkNotes(body, opts)
   .then((data) => {
     console.log(`postExternalcontactsBulkNotes success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3890,6 +5013,7 @@ apiInstance.postExternalcontactsBulkNotes(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Note ids |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3898,7 +5022,7 @@ apiInstance.postExternalcontactsBulkNotes(body)
 
 ## postExternalcontactsBulkNotesAdd
 
-> BulkNotesResponse postExternalcontactsBulkNotesAdd(body)
+> BulkNotesResponse postExternalcontactsBulkNotesAdd(body, opts)
 
 
 POST /api/v2/externalcontacts/bulk/notes/add
@@ -3924,8 +5048,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ExternalContactsApi();
 
 let body = {}; // Object | Notes
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postExternalcontactsBulkNotesAdd(body)
+apiInstance.postExternalcontactsBulkNotesAdd(body, opts)
   .then((data) => {
     console.log(`postExternalcontactsBulkNotesAdd success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3941,6 +5071,7 @@ apiInstance.postExternalcontactsBulkNotesAdd(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Notes |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3949,7 +5080,7 @@ apiInstance.postExternalcontactsBulkNotesAdd(body)
 
 ## postExternalcontactsBulkNotesRemove
 
-> BulkDeleteResponse postExternalcontactsBulkNotesRemove(body)
+> BulkDeleteResponse postExternalcontactsBulkNotesRemove(body, opts)
 
 
 POST /api/v2/externalcontacts/bulk/notes/remove
@@ -3975,8 +5106,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ExternalContactsApi();
 
 let body = {}; // Object | Note ids
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postExternalcontactsBulkNotesRemove(body)
+apiInstance.postExternalcontactsBulkNotesRemove(body, opts)
   .then((data) => {
     console.log(`postExternalcontactsBulkNotesRemove success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3992,6 +5129,7 @@ apiInstance.postExternalcontactsBulkNotesRemove(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Note ids |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4000,7 +5138,7 @@ apiInstance.postExternalcontactsBulkNotesRemove(body)
 
 ## postExternalcontactsBulkNotesUpdate
 
-> BulkNotesResponse postExternalcontactsBulkNotesUpdate(body)
+> BulkNotesResponse postExternalcontactsBulkNotesUpdate(body, opts)
 
 
 POST /api/v2/externalcontacts/bulk/notes/update
@@ -4026,8 +5164,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ExternalContactsApi();
 
 let body = {}; // Object | Notes
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postExternalcontactsBulkNotesUpdate(body)
+apiInstance.postExternalcontactsBulkNotesUpdate(body, opts)
   .then((data) => {
     console.log(`postExternalcontactsBulkNotesUpdate success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4043,6 +5187,7 @@ apiInstance.postExternalcontactsBulkNotesUpdate(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Notes |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4051,7 +5196,7 @@ apiInstance.postExternalcontactsBulkNotesUpdate(body)
 
 ## postExternalcontactsBulkOrganizations
 
-> BulkFetchOrganizationsResponse postExternalcontactsBulkOrganizations(body)
+> BulkFetchOrganizationsResponse postExternalcontactsBulkOrganizations(body, opts)
 
 
 POST /api/v2/externalcontacts/bulk/organizations
@@ -4076,8 +5221,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ExternalContactsApi();
 
 let body = {}; // Object | Organizations ids
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postExternalcontactsBulkOrganizations(body)
+apiInstance.postExternalcontactsBulkOrganizations(body, opts)
   .then((data) => {
     console.log(`postExternalcontactsBulkOrganizations success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4093,6 +5244,7 @@ apiInstance.postExternalcontactsBulkOrganizations(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Organizations ids |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4101,7 +5253,7 @@ apiInstance.postExternalcontactsBulkOrganizations(body)
 
 ## postExternalcontactsBulkOrganizationsAdd
 
-> BulkOrganizationsResponse postExternalcontactsBulkOrganizationsAdd(body)
+> BulkOrganizationsResponse postExternalcontactsBulkOrganizationsAdd(body, opts)
 
 
 POST /api/v2/externalcontacts/bulk/organizations/add
@@ -4126,8 +5278,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ExternalContactsApi();
 
 let body = {}; // Object | Organizations
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postExternalcontactsBulkOrganizationsAdd(body)
+apiInstance.postExternalcontactsBulkOrganizationsAdd(body, opts)
   .then((data) => {
     console.log(`postExternalcontactsBulkOrganizationsAdd success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4143,6 +5301,7 @@ apiInstance.postExternalcontactsBulkOrganizationsAdd(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Organizations |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4151,7 +5310,7 @@ apiInstance.postExternalcontactsBulkOrganizationsAdd(body)
 
 ## postExternalcontactsBulkOrganizationsDivisionviews
 
-> BulkFetchOrganizationsResponse postExternalcontactsBulkOrganizationsDivisionviews(body)
+> BulkFetchOrganizationsResponse postExternalcontactsBulkOrganizationsDivisionviews(body, opts)
 
 
 POST /api/v2/externalcontacts/bulk/organizations/divisionviews
@@ -4176,8 +5335,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ExternalContactsApi();
 
 let body = {}; // Object | Organizations ids
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postExternalcontactsBulkOrganizationsDivisionviews(body)
+apiInstance.postExternalcontactsBulkOrganizationsDivisionviews(body, opts)
   .then((data) => {
     console.log(`postExternalcontactsBulkOrganizationsDivisionviews success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4193,6 +5358,7 @@ apiInstance.postExternalcontactsBulkOrganizationsDivisionviews(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Organizations ids |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4229,7 +5395,11 @@ let apiInstance = new platformClient.ExternalContactsApi();
 
 let body = {}; // Object | External Organization Enrich Requests
 let opts = { 
-  'dryRun': true // Boolean | If true, the request will not make any modifications, but will show you what the end result *would* be.
+  'dryRun': true, // Boolean | If true, the request will not make any modifications, but will show you what the end result *would* be.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postExternalcontactsBulkOrganizationsEnrich(body, opts)
@@ -4249,6 +5419,7 @@ apiInstance.postExternalcontactsBulkOrganizationsEnrich(body, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | External Organization Enrich Requests |  |
  **dryRun** | **Boolean** | If true, the request will not make any modifications, but will show you what the end result *would* be. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4257,7 +5428,7 @@ apiInstance.postExternalcontactsBulkOrganizationsEnrich(body, opts)
 
 ## postExternalcontactsBulkOrganizationsRemove
 
-> BulkDeleteResponse postExternalcontactsBulkOrganizationsRemove(body)
+> BulkDeleteResponse postExternalcontactsBulkOrganizationsRemove(body, opts)
 
 
 POST /api/v2/externalcontacts/bulk/organizations/remove
@@ -4282,8 +5453,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ExternalContactsApi();
 
 let body = {}; // Object | Organization ids
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postExternalcontactsBulkOrganizationsRemove(body)
+apiInstance.postExternalcontactsBulkOrganizationsRemove(body, opts)
   .then((data) => {
     console.log(`postExternalcontactsBulkOrganizationsRemove success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4299,6 +5476,7 @@ apiInstance.postExternalcontactsBulkOrganizationsRemove(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Organization ids |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4307,7 +5485,7 @@ apiInstance.postExternalcontactsBulkOrganizationsRemove(body)
 
 ## postExternalcontactsBulkOrganizationsUpdate
 
-> BulkOrganizationsResponse postExternalcontactsBulkOrganizationsUpdate(body)
+> BulkOrganizationsResponse postExternalcontactsBulkOrganizationsUpdate(body, opts)
 
 
 POST /api/v2/externalcontacts/bulk/organizations/update
@@ -4332,8 +5510,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ExternalContactsApi();
 
 let body = {}; // Object | Organizations
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postExternalcontactsBulkOrganizationsUpdate(body)
+apiInstance.postExternalcontactsBulkOrganizationsUpdate(body, opts)
   .then((data) => {
     console.log(`postExternalcontactsBulkOrganizationsUpdate success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4349,6 +5533,7 @@ apiInstance.postExternalcontactsBulkOrganizationsUpdate(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Organizations |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4357,7 +5542,7 @@ apiInstance.postExternalcontactsBulkOrganizationsUpdate(body)
 
 ## postExternalcontactsBulkRelationships
 
-> BulkFetchRelationshipsResponse postExternalcontactsBulkRelationships(body)
+> BulkFetchRelationshipsResponse postExternalcontactsBulkRelationships(body, opts)
 
 
 POST /api/v2/externalcontacts/bulk/relationships
@@ -4383,8 +5568,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ExternalContactsApi();
 
 let body = {}; // Object | Relationships ids
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postExternalcontactsBulkRelationships(body)
+apiInstance.postExternalcontactsBulkRelationships(body, opts)
   .then((data) => {
     console.log(`postExternalcontactsBulkRelationships success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4400,6 +5591,7 @@ apiInstance.postExternalcontactsBulkRelationships(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Relationships ids |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4408,7 +5600,7 @@ apiInstance.postExternalcontactsBulkRelationships(body)
 
 ## postExternalcontactsBulkRelationshipsAdd
 
-> BulkRelationshipsResponse postExternalcontactsBulkRelationshipsAdd(body)
+> BulkRelationshipsResponse postExternalcontactsBulkRelationshipsAdd(body, opts)
 
 
 POST /api/v2/externalcontacts/bulk/relationships/add
@@ -4434,8 +5626,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ExternalContactsApi();
 
 let body = {}; // Object | Relationships
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postExternalcontactsBulkRelationshipsAdd(body)
+apiInstance.postExternalcontactsBulkRelationshipsAdd(body, opts)
   .then((data) => {
     console.log(`postExternalcontactsBulkRelationshipsAdd success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4451,6 +5649,7 @@ apiInstance.postExternalcontactsBulkRelationshipsAdd(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Relationships |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4459,7 +5658,7 @@ apiInstance.postExternalcontactsBulkRelationshipsAdd(body)
 
 ## postExternalcontactsBulkRelationshipsRemove
 
-> BulkDeleteResponse postExternalcontactsBulkRelationshipsRemove(body)
+> BulkDeleteResponse postExternalcontactsBulkRelationshipsRemove(body, opts)
 
 
 POST /api/v2/externalcontacts/bulk/relationships/remove
@@ -4485,8 +5684,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ExternalContactsApi();
 
 let body = {}; // Object | Relationships ids
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postExternalcontactsBulkRelationshipsRemove(body)
+apiInstance.postExternalcontactsBulkRelationshipsRemove(body, opts)
   .then((data) => {
     console.log(`postExternalcontactsBulkRelationshipsRemove success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4502,6 +5707,7 @@ apiInstance.postExternalcontactsBulkRelationshipsRemove(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Relationships ids |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4510,7 +5716,7 @@ apiInstance.postExternalcontactsBulkRelationshipsRemove(body)
 
 ## postExternalcontactsBulkRelationshipsUpdate
 
-> BulkRelationshipsResponse postExternalcontactsBulkRelationshipsUpdate(body)
+> BulkRelationshipsResponse postExternalcontactsBulkRelationshipsUpdate(body, opts)
 
 
 POST /api/v2/externalcontacts/bulk/relationships/update
@@ -4536,8 +5742,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ExternalContactsApi();
 
 let body = {}; // Object | Relationships
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postExternalcontactsBulkRelationshipsUpdate(body)
+apiInstance.postExternalcontactsBulkRelationshipsUpdate(body, opts)
   .then((data) => {
     console.log(`postExternalcontactsBulkRelationshipsUpdate success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4553,6 +5765,7 @@ apiInstance.postExternalcontactsBulkRelationshipsUpdate(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Relationships |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4588,7 +5801,11 @@ let apiInstance = new platformClient.ExternalContactsApi();
 
 let contactId = "contactId_example"; // String | ExternalContact ID
 let opts = { 
-  'body': {} // Object | 
+  'body': {}, // Object | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postExternalcontactsContactJourneySegments(contactId, opts)
@@ -4608,6 +5825,7 @@ apiInstance.postExternalcontactsContactJourneySegments(contactId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **contactId** | **String** | ExternalContact ID |  |
  **body** | **Object** |  | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4616,7 +5834,7 @@ apiInstance.postExternalcontactsContactJourneySegments(contactId, opts)
 
 ## postExternalcontactsContactNotes
 
-> Note postExternalcontactsContactNotes(contactId, body)
+> Note postExternalcontactsContactNotes(contactId, body, opts)
 
 
 POST /api/v2/externalcontacts/contacts/{contactId}/notes
@@ -4643,8 +5861,14 @@ let apiInstance = new platformClient.ExternalContactsApi();
 
 let contactId = "contactId_example"; // String | ExternalContact Id
 let body = {}; // Object | ExternalContact
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postExternalcontactsContactNotes(contactId, body)
+apiInstance.postExternalcontactsContactNotes(contactId, body, opts)
   .then((data) => {
     console.log(`postExternalcontactsContactNotes success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4661,6 +5885,7 @@ apiInstance.postExternalcontactsContactNotes(contactId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **contactId** | **String** | ExternalContact Id |  |
  **body** | **Object** | ExternalContact |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4669,7 +5894,7 @@ apiInstance.postExternalcontactsContactNotes(contactId, body)
 
 ## postExternalcontactsContactPromotion
 
-> ExternalContact postExternalcontactsContactPromotion(contactId)
+> ExternalContact postExternalcontactsContactPromotion(contactId, opts)
 
 
 POST /api/v2/externalcontacts/contacts/{contactId}/promotion
@@ -4694,8 +5919,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ExternalContactsApi();
 
 let contactId = "contactId_example"; // String | ExternalContact ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postExternalcontactsContactPromotion(contactId)
+apiInstance.postExternalcontactsContactPromotion(contactId, opts)
   .then((data) => {
     console.log(`postExternalcontactsContactPromotion success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4711,6 +5942,7 @@ apiInstance.postExternalcontactsContactPromotion(contactId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **contactId** | **String** | ExternalContact ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4719,7 +5951,7 @@ apiInstance.postExternalcontactsContactPromotion(contactId)
 
 ## postExternalcontactsContacts
 
-> ExternalContact postExternalcontactsContacts(body)
+> ExternalContact postExternalcontactsContacts(body, opts)
 
 
 POST /api/v2/externalcontacts/contacts
@@ -4745,8 +5977,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ExternalContactsApi();
 
 let body = {}; // Object | ExternalContact
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postExternalcontactsContacts(body)
+apiInstance.postExternalcontactsContacts(body, opts)
   .then((data) => {
     console.log(`postExternalcontactsContacts success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4762,6 +6000,7 @@ apiInstance.postExternalcontactsContacts(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | ExternalContact |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4798,7 +6037,11 @@ let apiInstance = new platformClient.ExternalContactsApi();
 
 let body = {}; // Object | ContactEnrichRequest
 let opts = { 
-  'dryRun': true // Boolean | If true, the request will not make any modifications, but will show you what the end result *would* be.
+  'dryRun': true, // Boolean | If true, the request will not make any modifications, but will show you what the end result *would* be.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postExternalcontactsContactsEnrich(body, opts)
@@ -4818,6 +6061,7 @@ apiInstance.postExternalcontactsContactsEnrich(body, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | ContactEnrichRequest |  |
  **dryRun** | **Boolean** | If true, the request will not make any modifications, but will show you what the end result *would* be. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4826,7 +6070,7 @@ apiInstance.postExternalcontactsContactsEnrich(body, opts)
 
 ## postExternalcontactsContactsExports
 
-> ContactsExport postExternalcontactsContactsExports(body)
+> ContactsExport postExternalcontactsContactsExports(body, opts)
 
 
 POST /api/v2/externalcontacts/contacts/exports
@@ -4852,8 +6096,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ExternalContactsApi();
 
 let body = {}; // Object | Export
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postExternalcontactsContactsExports(body)
+apiInstance.postExternalcontactsContactsExports(body, opts)
   .then((data) => {
     console.log(`postExternalcontactsContactsExports success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4869,6 +6119,7 @@ apiInstance.postExternalcontactsContactsExports(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Export |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4877,7 +6128,7 @@ apiInstance.postExternalcontactsContactsExports(body)
 
 ## postExternalcontactsContactsMerge
 
-> ExternalContact postExternalcontactsContactsMerge(body)
+> ExternalContact postExternalcontactsContactsMerge(body, opts)
 
 
 POST /api/v2/externalcontacts/contacts/merge
@@ -4904,8 +6155,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ExternalContactsApi();
 
 let body = {}; // Object | MergeRequest
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postExternalcontactsContactsMerge(body)
+apiInstance.postExternalcontactsContactsMerge(body, opts)
   .then((data) => {
     console.log(`postExternalcontactsContactsMerge success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4921,6 +6178,7 @@ apiInstance.postExternalcontactsContactsMerge(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | MergeRequest |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4929,7 +6187,7 @@ apiInstance.postExternalcontactsContactsMerge(body)
 
 ## postExternalcontactsContactsSchemas
 
-> DataSchema postExternalcontactsContactsSchemas(body)
+> DataSchema postExternalcontactsContactsSchemas(body, opts)
 
 
 POST /api/v2/externalcontacts/contacts/schemas
@@ -4954,8 +6212,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ExternalContactsApi();
 
 let body = {}; // Object | Schema
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postExternalcontactsContactsSchemas(body)
+apiInstance.postExternalcontactsContactsSchemas(body, opts)
   .then((data) => {
     console.log(`postExternalcontactsContactsSchemas success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4971,6 +6235,7 @@ apiInstance.postExternalcontactsContactsSchemas(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Schema |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4979,7 +6244,7 @@ apiInstance.postExternalcontactsContactsSchemas(body)
 
 ## postExternalcontactsExternalsources
 
-> ExternalSource postExternalcontactsExternalsources(body)
+> ExternalSource postExternalcontactsExternalsources(body, opts)
 
 
 POST /api/v2/externalcontacts/externalsources
@@ -5004,8 +6269,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ExternalContactsApi();
 
 let body = {}; // Object | External Source
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postExternalcontactsExternalsources(body)
+apiInstance.postExternalcontactsExternalsources(body, opts)
   .then((data) => {
     console.log(`postExternalcontactsExternalsources success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5021,6 +6292,7 @@ apiInstance.postExternalcontactsExternalsources(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | External Source |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5061,7 +6333,11 @@ let apiInstance = new platformClient.ExternalContactsApi();
 
 let identifier = {}; // Object | 
 let opts = { 
-  'expand': ["expand_example"] // [String] | which field, if any, to expand
+  'expand': ["expand_example"], // [String] | which field, if any, to expand
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postExternalcontactsIdentifierlookup(identifier, opts)
@@ -5081,6 +6357,7 @@ apiInstance.postExternalcontactsIdentifierlookup(identifier, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **identifier** | **Object** |  |  |
  **expand** | **[String]** | which field, if any, to expand | [optional] <br />**Values**: externalOrganization, identifiers, externalSources, division |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5117,7 +6394,11 @@ let apiInstance = new platformClient.ExternalContactsApi();
 
 let identifier = {}; // Object | 
 let opts = { 
-  'expand': ["expand_example"] // [String] | which field, if any, to expand
+  'expand': ["expand_example"], // [String] | which field, if any, to expand
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postExternalcontactsIdentifierlookupContacts(identifier, opts)
@@ -5137,6 +6418,7 @@ apiInstance.postExternalcontactsIdentifierlookupContacts(identifier, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **identifier** | **Object** |  |  |
  **expand** | **[String]** | which field, if any, to expand | [optional] <br />**Values**: externalOrganization, identifiers, externalSources, division |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5173,7 +6455,11 @@ let apiInstance = new platformClient.ExternalContactsApi();
 
 let identifier = {}; // Object | 
 let opts = { 
-  'expand': ["expand_example"] // [String] | which field, if any, to expand
+  'expand': ["expand_example"], // [String] | which field, if any, to expand
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postExternalcontactsIdentifierlookupOrganizations(identifier, opts)
@@ -5193,6 +6479,7 @@ apiInstance.postExternalcontactsIdentifierlookupOrganizations(identifier, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **identifier** | **Object** |  |  |
  **expand** | **[String]** | which field, if any, to expand | [optional] <br />**Values**: identifiers, externalSources, division |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5201,7 +6488,7 @@ apiInstance.postExternalcontactsIdentifierlookupOrganizations(identifier, opts)
 
 ## postExternalcontactsImportCsvJobs
 
-> CsvJobResponse postExternalcontactsImportCsvJobs(body)
+> CsvJobResponse postExternalcontactsImportCsvJobs(body, opts)
 
 
 POST /api/v2/externalcontacts/import/csv/jobs
@@ -5226,8 +6513,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ExternalContactsApi();
 
 let body = {}; // Object | ImportRequest
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postExternalcontactsImportCsvJobs(body)
+apiInstance.postExternalcontactsImportCsvJobs(body, opts)
   .then((data) => {
     console.log(`postExternalcontactsImportCsvJobs success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5243,6 +6536,7 @@ apiInstance.postExternalcontactsImportCsvJobs(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | ImportRequest |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5251,7 +6545,7 @@ apiInstance.postExternalcontactsImportCsvJobs(body)
 
 ## postExternalcontactsImportCsvSettings
 
-> CsvSettings postExternalcontactsImportCsvSettings(body)
+> CsvSettings postExternalcontactsImportCsvSettings(body, opts)
 
 
 POST /api/v2/externalcontacts/import/csv/settings
@@ -5276,8 +6570,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ExternalContactsApi();
 
 let body = {}; // Object | Settings
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postExternalcontactsImportCsvSettings(body)
+apiInstance.postExternalcontactsImportCsvSettings(body, opts)
   .then((data) => {
     console.log(`postExternalcontactsImportCsvSettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5293,6 +6593,7 @@ apiInstance.postExternalcontactsImportCsvSettings(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Settings |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5301,7 +6602,7 @@ apiInstance.postExternalcontactsImportCsvSettings(body)
 
 ## postExternalcontactsImportCsvUploads
 
-> CsvUploadResponse postExternalcontactsImportCsvUploads(body)
+> CsvUploadResponse postExternalcontactsImportCsvUploads(body, opts)
 
 
 POST /api/v2/externalcontacts/import/csv/uploads
@@ -5326,8 +6627,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ExternalContactsApi();
 
 let body = {}; // Object | UploadRequest
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postExternalcontactsImportCsvUploads(body)
+apiInstance.postExternalcontactsImportCsvUploads(body, opts)
   .then((data) => {
     console.log(`postExternalcontactsImportCsvUploads success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5343,6 +6650,7 @@ apiInstance.postExternalcontactsImportCsvUploads(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | UploadRequest |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5351,7 +6659,7 @@ apiInstance.postExternalcontactsImportCsvUploads(body)
 
 ## postExternalcontactsImportJobs
 
-> ContactImportJobResponse postExternalcontactsImportJobs(body)
+> ContactImportJobResponse postExternalcontactsImportJobs(body, opts)
 
 
 POST /api/v2/externalcontacts/import/jobs
@@ -5376,8 +6684,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ExternalContactsApi();
 
 let body = {}; // Object | Job
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postExternalcontactsImportJobs(body)
+apiInstance.postExternalcontactsImportJobs(body, opts)
   .then((data) => {
     console.log(`postExternalcontactsImportJobs success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5393,6 +6707,7 @@ apiInstance.postExternalcontactsImportJobs(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Job |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5401,7 +6716,7 @@ apiInstance.postExternalcontactsImportJobs(body)
 
 ## postExternalcontactsImportSettings
 
-> ContactImportSettings postExternalcontactsImportSettings(body)
+> ContactImportSettings postExternalcontactsImportSettings(body, opts)
 
 
 POST /api/v2/externalcontacts/import/settings
@@ -5426,8 +6741,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ExternalContactsApi();
 
 let body = {}; // Object | Setting
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postExternalcontactsImportSettings(body)
+apiInstance.postExternalcontactsImportSettings(body, opts)
   .then((data) => {
     console.log(`postExternalcontactsImportSettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5443,6 +6764,7 @@ apiInstance.postExternalcontactsImportSettings(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Setting |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5451,7 +6773,7 @@ apiInstance.postExternalcontactsImportSettings(body)
 
 ## postExternalcontactsMergeContacts
 
-> ExternalContact postExternalcontactsMergeContacts(body)
+> ExternalContact postExternalcontactsMergeContacts(body, opts)
 
 :::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
 This resource has been deprecated
@@ -5481,8 +6803,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ExternalContactsApi();
 
 let body = {}; // Object | MergeRequest
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postExternalcontactsMergeContacts(body)
+apiInstance.postExternalcontactsMergeContacts(body, opts)
   .then((data) => {
     console.log(`postExternalcontactsMergeContacts success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5498,15 +6826,75 @@ apiInstance.postExternalcontactsMergeContacts(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | MergeRequest |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **ExternalContact**
 
 
+## postExternalcontactsNotesExports
+
+> NotesExport postExternalcontactsNotesExports(body, opts)
+
+
+POST /api/v2/externalcontacts/notes/exports
+
+Create notes export
+
+Requires ALL permissions:
+
+* externalContacts:export:add
+* externalContacts:contact:view
+* externalContacts:externalOrganization:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let body = {}; // Object | Export
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.postExternalcontactsNotesExports(body, opts)
+  .then((data) => {
+    console.log(`postExternalcontactsNotesExports success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postExternalcontactsNotesExports');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Export |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**NotesExport**
+
+
 ## postExternalcontactsOrganizationNotes
 
-> Note postExternalcontactsOrganizationNotes(externalOrganizationId, body)
+> Note postExternalcontactsOrganizationNotes(externalOrganizationId, body, opts)
 
 
 POST /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes
@@ -5533,8 +6921,14 @@ let apiInstance = new platformClient.ExternalContactsApi();
 
 let externalOrganizationId = "externalOrganizationId_example"; // String | External Organization Id
 let body = {}; // Object | ExternalContact
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postExternalcontactsOrganizationNotes(externalOrganizationId, body)
+apiInstance.postExternalcontactsOrganizationNotes(externalOrganizationId, body, opts)
   .then((data) => {
     console.log(`postExternalcontactsOrganizationNotes success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5551,6 +6945,7 @@ apiInstance.postExternalcontactsOrganizationNotes(externalOrganizationId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **externalOrganizationId** | **String** | External Organization Id |  |
  **body** | **Object** | ExternalContact |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5559,7 +6954,7 @@ apiInstance.postExternalcontactsOrganizationNotes(externalOrganizationId, body)
 
 ## postExternalcontactsOrganizations
 
-> ExternalOrganization postExternalcontactsOrganizations(body)
+> ExternalOrganization postExternalcontactsOrganizations(body, opts)
 
 
 POST /api/v2/externalcontacts/organizations
@@ -5585,8 +6980,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ExternalContactsApi();
 
 let body = {}; // Object | ExternalOrganization
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postExternalcontactsOrganizations(body)
+apiInstance.postExternalcontactsOrganizations(body, opts)
   .then((data) => {
     console.log(`postExternalcontactsOrganizations success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5602,6 +7003,7 @@ apiInstance.postExternalcontactsOrganizations(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | ExternalOrganization |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5638,7 +7040,11 @@ let apiInstance = new platformClient.ExternalContactsApi();
 
 let body = {}; // Object | ExternalOrgEnrichRequest
 let opts = { 
-  'dryRun': true // Boolean | If true, the request will not make any modifications, but will show you what the end result *would* be.
+  'dryRun': true, // Boolean | If true, the request will not make any modifications, but will show you what the end result *would* be.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postExternalcontactsOrganizationsEnrich(body, opts)
@@ -5658,15 +7064,74 @@ apiInstance.postExternalcontactsOrganizationsEnrich(body, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | ExternalOrgEnrichRequest |  |
  **dryRun** | **Boolean** | If true, the request will not make any modifications, but will show you what the end result *would* be. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **ExternalOrganization**
 
 
+## postExternalcontactsOrganizationsExports
+
+> OrganizationsExport postExternalcontactsOrganizationsExports(body, opts)
+
+
+POST /api/v2/externalcontacts/organizations/exports
+
+Create organizations export
+
+Requires ALL permissions:
+
+* externalContacts:export:add
+* externalContacts:externalOrganization:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let body = {}; // Object | Export
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.postExternalcontactsOrganizationsExports(body, opts)
+  .then((data) => {
+    console.log(`postExternalcontactsOrganizationsExports success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postExternalcontactsOrganizationsExports');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Export |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**OrganizationsExport**
+
+
 ## postExternalcontactsOrganizationsSchemas
 
-> DataSchema postExternalcontactsOrganizationsSchemas(body)
+> DataSchema postExternalcontactsOrganizationsSchemas(body, opts)
 
 
 POST /api/v2/externalcontacts/organizations/schemas
@@ -5691,8 +7156,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ExternalContactsApi();
 
 let body = {}; // Object | Schema
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postExternalcontactsOrganizationsSchemas(body)
+apiInstance.postExternalcontactsOrganizationsSchemas(body, opts)
   .then((data) => {
     console.log(`postExternalcontactsOrganizationsSchemas success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5708,6 +7179,7 @@ apiInstance.postExternalcontactsOrganizationsSchemas(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Schema |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5716,7 +7188,7 @@ apiInstance.postExternalcontactsOrganizationsSchemas(body)
 
 ## postExternalcontactsRelationships
 
-> Relationship postExternalcontactsRelationships(body)
+> Relationship postExternalcontactsRelationships(body, opts)
 
 
 POST /api/v2/externalcontacts/relationships
@@ -5742,8 +7214,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.ExternalContactsApi();
 
 let body = {}; // Object | Relationship
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postExternalcontactsRelationships(body)
+apiInstance.postExternalcontactsRelationships(body, opts)
   .then((data) => {
     console.log(`postExternalcontactsRelationships success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5759,15 +7237,74 @@ apiInstance.postExternalcontactsRelationships(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Relationship |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **Relationship**
 
 
+## postExternalcontactsRelationshipsExports
+
+> RelationshipsExport postExternalcontactsRelationshipsExports(body, opts)
+
+
+POST /api/v2/externalcontacts/relationships/exports
+
+Create relationships export
+
+Requires ALL permissions:
+
+* externalContacts:export:add
+* externalContacts:externalOrganization:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.ExternalContactsApi();
+
+let body = {}; // Object | Export
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.postExternalcontactsRelationshipsExports(body, opts)
+  .then((data) => {
+    console.log(`postExternalcontactsRelationshipsExports success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postExternalcontactsRelationshipsExports');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | Export |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**RelationshipsExport**
+
+
 ## putExternalcontactsContact
 
-> ExternalContact putExternalcontactsContact(contactId, body)
+> ExternalContact putExternalcontactsContact(contactId, body, opts)
 
 
 PUT /api/v2/externalcontacts/contacts/{contactId}
@@ -5794,8 +7331,14 @@ let apiInstance = new platformClient.ExternalContactsApi();
 
 let contactId = "contactId_example"; // String | ExternalContact ID
 let body = {}; // Object | ExternalContact
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putExternalcontactsContact(contactId, body)
+apiInstance.putExternalcontactsContact(contactId, body, opts)
   .then((data) => {
     console.log(`putExternalcontactsContact success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5812,6 +7355,7 @@ apiInstance.putExternalcontactsContact(contactId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **contactId** | **String** | ExternalContact ID |  |
  **body** | **Object** | ExternalContact |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5820,7 +7364,7 @@ apiInstance.putExternalcontactsContact(contactId, body)
 
 ## putExternalcontactsContactNote
 
-> Note putExternalcontactsContactNote(contactId, noteId, body)
+> Note putExternalcontactsContactNote(contactId, noteId, body, opts)
 
 
 PUT /api/v2/externalcontacts/contacts/{contactId}/notes/{noteId}
@@ -5848,8 +7392,14 @@ let apiInstance = new platformClient.ExternalContactsApi();
 let contactId = "contactId_example"; // String | ExternalContact Id
 let noteId = "noteId_example"; // String | Note Id
 let body = {}; // Object | Note
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putExternalcontactsContactNote(contactId, noteId, body)
+apiInstance.putExternalcontactsContactNote(contactId, noteId, body, opts)
   .then((data) => {
     console.log(`putExternalcontactsContactNote success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5867,6 +7417,7 @@ apiInstance.putExternalcontactsContactNote(contactId, noteId, body)
  **contactId** | **String** | ExternalContact Id |  |
  **noteId** | **String** | Note Id |  |
  **body** | **Object** | Note |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5875,7 +7426,7 @@ apiInstance.putExternalcontactsContactNote(contactId, noteId, body)
 
 ## putExternalcontactsContactsSchema
 
-> DataSchema putExternalcontactsContactsSchema(schemaId, body)
+> DataSchema putExternalcontactsContactsSchema(schemaId, body, opts)
 
 
 PUT /api/v2/externalcontacts/contacts/schemas/{schemaId}
@@ -5901,8 +7452,14 @@ let apiInstance = new platformClient.ExternalContactsApi();
 
 let schemaId = "schemaId_example"; // String | Schema ID
 let body = {}; // Object | Data Schema
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putExternalcontactsContactsSchema(schemaId, body)
+apiInstance.putExternalcontactsContactsSchema(schemaId, body, opts)
   .then((data) => {
     console.log(`putExternalcontactsContactsSchema success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5919,6 +7476,7 @@ apiInstance.putExternalcontactsContactsSchema(schemaId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **schemaId** | **String** | Schema ID |  |
  **body** | **Object** | Data Schema |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5927,7 +7485,7 @@ apiInstance.putExternalcontactsContactsSchema(schemaId, body)
 
 ## putExternalcontactsConversation
 
-> void putExternalcontactsConversation(conversationId, body)
+> void putExternalcontactsConversation(conversationId, body, opts)
 
 
 PUT /api/v2/externalcontacts/conversations/{conversationId}
@@ -5956,8 +7514,14 @@ let apiInstance = new platformClient.ExternalContactsApi();
 
 let conversationId = "conversationId_example"; // String | Conversation ID
 let body = {}; // Object | ConversationAssociation
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putExternalcontactsConversation(conversationId, body)
+apiInstance.putExternalcontactsConversation(conversationId, body, opts)
   .then(() => {
     console.log('putExternalcontactsConversation returned successfully.');
   })
@@ -5974,6 +7538,7 @@ apiInstance.putExternalcontactsConversation(conversationId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | Conversation ID |  |
  **body** | **Object** | ConversationAssociation |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5982,7 +7547,7 @@ void (no response body)
 
 ## putExternalcontactsExternalsource
 
-> ExternalSource putExternalcontactsExternalsource(externalSourceId, body)
+> ExternalSource putExternalcontactsExternalsource(externalSourceId, body, opts)
 
 
 PUT /api/v2/externalcontacts/externalsources/{externalSourceId}
@@ -6008,8 +7573,14 @@ let apiInstance = new platformClient.ExternalContactsApi();
 
 let externalSourceId = "externalSourceId_example"; // String | External Source ID
 let body = {}; // Object | External Source
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putExternalcontactsExternalsource(externalSourceId, body)
+apiInstance.putExternalcontactsExternalsource(externalSourceId, body, opts)
   .then((data) => {
     console.log(`putExternalcontactsExternalsource success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6026,6 +7597,7 @@ apiInstance.putExternalcontactsExternalsource(externalSourceId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **externalSourceId** | **String** | External Source ID |  |
  **body** | **Object** | External Source |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6034,7 +7606,7 @@ apiInstance.putExternalcontactsExternalsource(externalSourceId, body)
 
 ## putExternalcontactsImportCsvSetting
 
-> CsvSettings putExternalcontactsImportCsvSetting(settingsId, body)
+> CsvSettings putExternalcontactsImportCsvSetting(settingsId, body, opts)
 
 
 PUT /api/v2/externalcontacts/import/csv/settings/{settingsId}
@@ -6060,8 +7632,14 @@ let apiInstance = new platformClient.ExternalContactsApi();
 
 let settingsId = "settingsId_example"; // String | Settings id
 let body = {}; // Object | Settings
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putExternalcontactsImportCsvSetting(settingsId, body)
+apiInstance.putExternalcontactsImportCsvSetting(settingsId, body, opts)
   .then((data) => {
     console.log(`putExternalcontactsImportCsvSetting success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6078,6 +7656,7 @@ apiInstance.putExternalcontactsImportCsvSetting(settingsId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **settingsId** | **String** | Settings id |  |
  **body** | **Object** | Settings |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6086,7 +7665,7 @@ apiInstance.putExternalcontactsImportCsvSetting(settingsId, body)
 
 ## putExternalcontactsImportJob
 
-> ContactImportJobStatusUpdateResponse putExternalcontactsImportJob(jobId, body)
+> ContactImportJobStatusUpdateResponse putExternalcontactsImportJob(jobId, body, opts)
 
 
 PUT /api/v2/externalcontacts/import/jobs/{jobId}
@@ -6112,8 +7691,14 @@ let apiInstance = new platformClient.ExternalContactsApi();
 
 let jobId = "jobId_example"; // String | Job id
 let body = {}; // Object | Status of the Job's workflow
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putExternalcontactsImportJob(jobId, body)
+apiInstance.putExternalcontactsImportJob(jobId, body, opts)
   .then((data) => {
     console.log(`putExternalcontactsImportJob success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6130,6 +7715,7 @@ apiInstance.putExternalcontactsImportJob(jobId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **jobId** | **String** | Job id |  |
  **body** | **Object** | Status of the Job's workflow |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6138,7 +7724,7 @@ apiInstance.putExternalcontactsImportJob(jobId, body)
 
 ## putExternalcontactsImportSetting
 
-> ContactImportSettings putExternalcontactsImportSetting(settingsId, body)
+> ContactImportSettings putExternalcontactsImportSetting(settingsId, body, opts)
 
 
 PUT /api/v2/externalcontacts/import/settings/{settingsId}
@@ -6164,8 +7750,14 @@ let apiInstance = new platformClient.ExternalContactsApi();
 
 let settingsId = "settingsId_example"; // String | Settings id
 let body = {}; // Object | Setting
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putExternalcontactsImportSetting(settingsId, body)
+apiInstance.putExternalcontactsImportSetting(settingsId, body, opts)
   .then((data) => {
     console.log(`putExternalcontactsImportSetting success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6182,6 +7774,7 @@ apiInstance.putExternalcontactsImportSetting(settingsId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **settingsId** | **String** | Settings id |  |
  **body** | **Object** | Setting |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6190,7 +7783,7 @@ apiInstance.putExternalcontactsImportSetting(settingsId, body)
 
 ## putExternalcontactsOrganization
 
-> ExternalOrganization putExternalcontactsOrganization(externalOrganizationId, body)
+> ExternalOrganization putExternalcontactsOrganization(externalOrganizationId, body, opts)
 
 
 PUT /api/v2/externalcontacts/organizations/{externalOrganizationId}
@@ -6217,8 +7810,14 @@ let apiInstance = new platformClient.ExternalContactsApi();
 
 let externalOrganizationId = "externalOrganizationId_example"; // String | External Organization ID
 let body = {}; // Object | ExternalOrganization
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putExternalcontactsOrganization(externalOrganizationId, body)
+apiInstance.putExternalcontactsOrganization(externalOrganizationId, body, opts)
   .then((data) => {
     console.log(`putExternalcontactsOrganization success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6235,6 +7834,7 @@ apiInstance.putExternalcontactsOrganization(externalOrganizationId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **externalOrganizationId** | **String** | External Organization ID |  |
  **body** | **Object** | ExternalOrganization |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6243,7 +7843,7 @@ apiInstance.putExternalcontactsOrganization(externalOrganizationId, body)
 
 ## putExternalcontactsOrganizationNote
 
-> Note putExternalcontactsOrganizationNote(externalOrganizationId, noteId, body)
+> Note putExternalcontactsOrganizationNote(externalOrganizationId, noteId, body, opts)
 
 
 PUT /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes/{noteId}
@@ -6271,8 +7871,14 @@ let apiInstance = new platformClient.ExternalContactsApi();
 let externalOrganizationId = "externalOrganizationId_example"; // String | External Organization Id
 let noteId = "noteId_example"; // String | Note Id
 let body = {}; // Object | Note
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putExternalcontactsOrganizationNote(externalOrganizationId, noteId, body)
+apiInstance.putExternalcontactsOrganizationNote(externalOrganizationId, noteId, body, opts)
   .then((data) => {
     console.log(`putExternalcontactsOrganizationNote success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6290,6 +7896,7 @@ apiInstance.putExternalcontactsOrganizationNote(externalOrganizationId, noteId, 
  **externalOrganizationId** | **String** | External Organization Id |  |
  **noteId** | **String** | Note Id |  |
  **body** | **Object** | Note |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6298,7 +7905,7 @@ apiInstance.putExternalcontactsOrganizationNote(externalOrganizationId, noteId, 
 
 ## putExternalcontactsOrganizationTrustorTrustorId
 
-> ExternalOrganizationTrustorLink putExternalcontactsOrganizationTrustorTrustorId(externalOrganizationId, trustorId)
+> ExternalOrganizationTrustorLink putExternalcontactsOrganizationTrustorTrustorId(externalOrganizationId, trustorId, opts)
 
 
 PUT /api/v2/externalcontacts/organizations/{externalOrganizationId}/trustor/{trustorId}
@@ -6324,8 +7931,14 @@ let apiInstance = new platformClient.ExternalContactsApi();
 
 let externalOrganizationId = "externalOrganizationId_example"; // String | External Organization ID
 let trustorId = "trustorId_example"; // String | Trustor ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putExternalcontactsOrganizationTrustorTrustorId(externalOrganizationId, trustorId)
+apiInstance.putExternalcontactsOrganizationTrustorTrustorId(externalOrganizationId, trustorId, opts)
   .then((data) => {
     console.log(`putExternalcontactsOrganizationTrustorTrustorId success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6342,6 +7955,7 @@ apiInstance.putExternalcontactsOrganizationTrustorTrustorId(externalOrganization
 | ------------- | ------------- | ------------- | ------------- |
  **externalOrganizationId** | **String** | External Organization ID |  |
  **trustorId** | **String** | Trustor ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6350,7 +7964,7 @@ apiInstance.putExternalcontactsOrganizationTrustorTrustorId(externalOrganization
 
 ## putExternalcontactsOrganizationsSchema
 
-> DataSchema putExternalcontactsOrganizationsSchema(schemaId, body)
+> DataSchema putExternalcontactsOrganizationsSchema(schemaId, body, opts)
 
 
 PUT /api/v2/externalcontacts/organizations/schemas/{schemaId}
@@ -6376,8 +7990,14 @@ let apiInstance = new platformClient.ExternalContactsApi();
 
 let schemaId = "schemaId_example"; // String | Schema ID
 let body = {}; // Object | Data Schema
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putExternalcontactsOrganizationsSchema(schemaId, body)
+apiInstance.putExternalcontactsOrganizationsSchema(schemaId, body, opts)
   .then((data) => {
     console.log(`putExternalcontactsOrganizationsSchema success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6394,6 +8014,7 @@ apiInstance.putExternalcontactsOrganizationsSchema(schemaId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **schemaId** | **String** | Schema ID |  |
  **body** | **Object** | Data Schema |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6402,7 +8023,7 @@ apiInstance.putExternalcontactsOrganizationsSchema(schemaId, body)
 
 ## putExternalcontactsRelationship
 
-> Relationship putExternalcontactsRelationship(relationshipId, body)
+> Relationship putExternalcontactsRelationship(relationshipId, body, opts)
 
 
 PUT /api/v2/externalcontacts/relationships/{relationshipId}
@@ -6429,8 +8050,14 @@ let apiInstance = new platformClient.ExternalContactsApi();
 
 let relationshipId = "relationshipId_example"; // String | Relationship Id
 let body = {}; // Object | Relationship
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putExternalcontactsRelationship(relationshipId, body)
+apiInstance.putExternalcontactsRelationship(relationshipId, body, opts)
   .then((data) => {
     console.log(`putExternalcontactsRelationship success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6447,10 +8074,11 @@ apiInstance.putExternalcontactsRelationship(relationshipId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **relationshipId** | **String** | Relationship Id |  |
  **body** | **Object** | Relationship |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **Relationship**
 
 
-_purecloud-platform-client-v2@229.1.0_
+_purecloud-platform-client-v2@258.0.0_

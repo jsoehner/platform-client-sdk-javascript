@@ -108,7 +108,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postTelephonyProvidersEdgesDidpools**](TelephonyProvidersEdgeApi#postTelephonyProvidersEdgesDidpools) | **POST** /api/v2/telephony/providers/edges/didpools | Create a new DID pool
 [**postTelephonyProvidersEdgesEdgegroups**](TelephonyProvidersEdgeApi#postTelephonyProvidersEdgesEdgegroups) | **POST** /api/v2/telephony/providers/edges/edgegroups | Create an edge group.
 [**postTelephonyProvidersEdgesExtensionpools**](TelephonyProvidersEdgeApi#postTelephonyProvidersEdgesExtensionpools) | **POST** /api/v2/telephony/providers/edges/extensionpools | Create a new extension pool
-[**postTelephonyProvidersEdgesMediastatisticsConversationCommunicationMediaresource**](TelephonyProvidersEdgeApi#postTelephonyProvidersEdgesMediastatisticsConversationCommunicationMediaresource) | **POST** /api/v2/telephony/providers/edges/mediastatistics/conversations/{conversationId}/communications/{communicationId}/mediaresources/{mediaResourceId} | Post media endpoint statistics event.
 [**postTelephonyProvidersEdgesPhoneReboot**](TelephonyProvidersEdgeApi#postTelephonyProvidersEdgesPhoneReboot) | **POST** /api/v2/telephony/providers/edges/phones/{phoneId}/reboot | Reboot a Phone
 [**postTelephonyProvidersEdgesPhonebasesettings**](TelephonyProvidersEdgeApi#postTelephonyProvidersEdgesPhonebasesettings) | **POST** /api/v2/telephony/providers/edges/phonebasesettings | Create a new Phone Base Settings object
 [**postTelephonyProvidersEdgesPhones**](TelephonyProvidersEdgeApi#postTelephonyProvidersEdgesPhones) | **POST** /api/v2/telephony/providers/edges/phones | Create a new Phone
@@ -137,7 +136,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ## deleteTelephonyProvidersEdge
 
-> void deleteTelephonyProvidersEdge(edgeId)
+> void deleteTelephonyProvidersEdge(edgeId, opts)
 
 
 DELETE /api/v2/telephony/providers/edges/{edgeId}
@@ -162,8 +161,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 let edgeId = "edgeId_example"; // String | Edge ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteTelephonyProvidersEdge(edgeId)
+apiInstance.deleteTelephonyProvidersEdge(edgeId, opts)
   .then(() => {
     console.log('deleteTelephonyProvidersEdge returned successfully.');
   })
@@ -179,6 +184,7 @@ apiInstance.deleteTelephonyProvidersEdge(edgeId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **edgeId** | **String** | Edge ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -187,7 +193,7 @@ void (no response body)
 
 ## deleteTelephonyProvidersEdgeLogicalinterface
 
-> void deleteTelephonyProvidersEdgeLogicalinterface(edgeId, interfaceId)
+> void deleteTelephonyProvidersEdgeLogicalinterface(edgeId, interfaceId, opts)
 
 
 DELETE /api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces/{interfaceId}
@@ -213,8 +219,14 @@ let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 let edgeId = "edgeId_example"; // String | Edge ID
 let interfaceId = "interfaceId_example"; // String | Interface ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteTelephonyProvidersEdgeLogicalinterface(edgeId, interfaceId)
+apiInstance.deleteTelephonyProvidersEdgeLogicalinterface(edgeId, interfaceId, opts)
   .then(() => {
     console.log('deleteTelephonyProvidersEdgeLogicalinterface returned successfully.');
   })
@@ -231,6 +243,7 @@ apiInstance.deleteTelephonyProvidersEdgeLogicalinterface(edgeId, interfaceId)
 | ------------- | ------------- | ------------- | ------------- |
  **edgeId** | **String** | Edge ID |  |
  **interfaceId** | **String** | Interface ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -239,7 +252,7 @@ void (no response body)
 
 ## deleteTelephonyProvidersEdgeSoftwareupdate
 
-> void deleteTelephonyProvidersEdgeSoftwareupdate(edgeId)
+> void deleteTelephonyProvidersEdgeSoftwareupdate(edgeId, opts)
 
 
 DELETE /api/v2/telephony/providers/edges/{edgeId}/softwareupdate
@@ -262,8 +275,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 let edgeId = "edgeId_example"; // String | Edge ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteTelephonyProvidersEdgeSoftwareupdate(edgeId)
+apiInstance.deleteTelephonyProvidersEdgeSoftwareupdate(edgeId, opts)
   .then(() => {
     console.log('deleteTelephonyProvidersEdgeSoftwareupdate returned successfully.');
   })
@@ -279,6 +298,7 @@ apiInstance.deleteTelephonyProvidersEdgeSoftwareupdate(edgeId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **edgeId** | **String** | Edge ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -287,7 +307,7 @@ void (no response body)
 
 ## deleteTelephonyProvidersEdgesAlertablepresences
 
-> void deleteTelephonyProvidersEdgesAlertablepresences()
+> void deleteTelephonyProvidersEdgesAlertablepresences(opts)
 
 
 DELETE /api/v2/telephony/providers/edges/alertablepresences
@@ -310,8 +330,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteTelephonyProvidersEdgesAlertablepresences()
+apiInstance.deleteTelephonyProvidersEdgesAlertablepresences(opts)
   .then(() => {
     console.log('deleteTelephonyProvidersEdgesAlertablepresences returned successfully.');
   })
@@ -323,7 +349,10 @@ apiInstance.deleteTelephonyProvidersEdgesAlertablepresences()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -332,7 +361,7 @@ void (no response body)
 
 ## deleteTelephonyProvidersEdgesCertificateauthority
 
-> void deleteTelephonyProvidersEdgesCertificateauthority(certificateId)
+> void deleteTelephonyProvidersEdgesCertificateauthority(certificateId, opts)
 
 
 DELETE /api/v2/telephony/providers/edges/certificateauthorities/{certificateId}
@@ -357,8 +386,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 let certificateId = "certificateId_example"; // String | Certificate ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteTelephonyProvidersEdgesCertificateauthority(certificateId)
+apiInstance.deleteTelephonyProvidersEdgesCertificateauthority(certificateId, opts)
   .then(() => {
     console.log('deleteTelephonyProvidersEdgesCertificateauthority returned successfully.');
   })
@@ -374,6 +409,7 @@ apiInstance.deleteTelephonyProvidersEdgesCertificateauthority(certificateId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **certificateId** | **String** | Certificate ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -382,7 +418,7 @@ void (no response body)
 
 ## deleteTelephonyProvidersEdgesDidpool
 
-> void deleteTelephonyProvidersEdgesDidpool(didPoolId)
+> void deleteTelephonyProvidersEdgesDidpool(didPoolId, opts)
 
 
 DELETE /api/v2/telephony/providers/edges/didpools/{didPoolId}
@@ -407,8 +443,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 let didPoolId = "didPoolId_example"; // String | DID pool ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteTelephonyProvidersEdgesDidpool(didPoolId)
+apiInstance.deleteTelephonyProvidersEdgesDidpool(didPoolId, opts)
   .then(() => {
     console.log('deleteTelephonyProvidersEdgesDidpool returned successfully.');
   })
@@ -424,6 +466,7 @@ apiInstance.deleteTelephonyProvidersEdgesDidpool(didPoolId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **didPoolId** | **String** | DID pool ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -432,7 +475,7 @@ void (no response body)
 
 ## deleteTelephonyProvidersEdgesEdgegroup
 
-> void deleteTelephonyProvidersEdgesEdgegroup(edgeGroupId)
+> void deleteTelephonyProvidersEdgesEdgegroup(edgeGroupId, opts)
 
 
 DELETE /api/v2/telephony/providers/edges/edgegroups/{edgeGroupId}
@@ -457,8 +500,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 let edgeGroupId = "edgeGroupId_example"; // String | Edge group ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteTelephonyProvidersEdgesEdgegroup(edgeGroupId)
+apiInstance.deleteTelephonyProvidersEdgesEdgegroup(edgeGroupId, opts)
   .then(() => {
     console.log('deleteTelephonyProvidersEdgesEdgegroup returned successfully.');
   })
@@ -474,6 +523,7 @@ apiInstance.deleteTelephonyProvidersEdgesEdgegroup(edgeGroupId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **edgeGroupId** | **String** | Edge group ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -482,7 +532,7 @@ void (no response body)
 
 ## deleteTelephonyProvidersEdgesExtensionpool
 
-> void deleteTelephonyProvidersEdgesExtensionpool(extensionPoolId)
+> void deleteTelephonyProvidersEdgesExtensionpool(extensionPoolId, opts)
 
 
 DELETE /api/v2/telephony/providers/edges/extensionpools/{extensionPoolId}
@@ -507,8 +557,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 let extensionPoolId = "extensionPoolId_example"; // String | Extension pool ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteTelephonyProvidersEdgesExtensionpool(extensionPoolId)
+apiInstance.deleteTelephonyProvidersEdgesExtensionpool(extensionPoolId, opts)
   .then(() => {
     console.log('deleteTelephonyProvidersEdgesExtensionpool returned successfully.');
   })
@@ -524,6 +580,7 @@ apiInstance.deleteTelephonyProvidersEdgesExtensionpool(extensionPoolId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **extensionPoolId** | **String** | Extension pool ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -532,7 +589,7 @@ void (no response body)
 
 ## deleteTelephonyProvidersEdgesPhone
 
-> void deleteTelephonyProvidersEdgesPhone(phoneId)
+> void deleteTelephonyProvidersEdgesPhone(phoneId, opts)
 
 
 DELETE /api/v2/telephony/providers/edges/phones/{phoneId}
@@ -557,8 +614,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 let phoneId = "phoneId_example"; // String | Phone ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteTelephonyProvidersEdgesPhone(phoneId)
+apiInstance.deleteTelephonyProvidersEdgesPhone(phoneId, opts)
   .then(() => {
     console.log('deleteTelephonyProvidersEdgesPhone returned successfully.');
   })
@@ -574,6 +637,7 @@ apiInstance.deleteTelephonyProvidersEdgesPhone(phoneId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **phoneId** | **String** | Phone ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -582,7 +646,7 @@ void (no response body)
 
 ## deleteTelephonyProvidersEdgesPhonebasesetting
 
-> void deleteTelephonyProvidersEdgesPhonebasesetting(phoneBaseId)
+> void deleteTelephonyProvidersEdgesPhonebasesetting(phoneBaseId, opts)
 
 
 DELETE /api/v2/telephony/providers/edges/phonebasesettings/{phoneBaseId}
@@ -607,8 +671,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 let phoneBaseId = "phoneBaseId_example"; // String | Phone base ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteTelephonyProvidersEdgesPhonebasesetting(phoneBaseId)
+apiInstance.deleteTelephonyProvidersEdgesPhonebasesetting(phoneBaseId, opts)
   .then(() => {
     console.log('deleteTelephonyProvidersEdgesPhonebasesetting returned successfully.');
   })
@@ -624,6 +694,7 @@ apiInstance.deleteTelephonyProvidersEdgesPhonebasesetting(phoneBaseId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **phoneBaseId** | **String** | Phone base ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -632,7 +703,7 @@ void (no response body)
 
 ## deleteTelephonyProvidersEdgesSite
 
-> void deleteTelephonyProvidersEdgesSite(siteId)
+> void deleteTelephonyProvidersEdgesSite(siteId, opts)
 
 
 DELETE /api/v2/telephony/providers/edges/sites/{siteId}
@@ -657,8 +728,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 let siteId = "siteId_example"; // String | Site ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteTelephonyProvidersEdgesSite(siteId)
+apiInstance.deleteTelephonyProvidersEdgesSite(siteId, opts)
   .then(() => {
     console.log('deleteTelephonyProvidersEdgesSite returned successfully.');
   })
@@ -674,6 +751,7 @@ apiInstance.deleteTelephonyProvidersEdgesSite(siteId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **siteId** | **String** | Site ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -682,7 +760,7 @@ void (no response body)
 
 ## deleteTelephonyProvidersEdgesSiteOutboundroute
 
-> void deleteTelephonyProvidersEdgesSiteOutboundroute(siteId, outboundRouteId)
+> void deleteTelephonyProvidersEdgesSiteOutboundroute(siteId, outboundRouteId, opts)
 
 
 DELETE /api/v2/telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId}
@@ -708,8 +786,14 @@ let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 let siteId = "siteId_example"; // String | Site ID
 let outboundRouteId = "outboundRouteId_example"; // String | Outbound route ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteTelephonyProvidersEdgesSiteOutboundroute(siteId, outboundRouteId)
+apiInstance.deleteTelephonyProvidersEdgesSiteOutboundroute(siteId, outboundRouteId, opts)
   .then(() => {
     console.log('deleteTelephonyProvidersEdgesSiteOutboundroute returned successfully.');
   })
@@ -726,6 +810,7 @@ apiInstance.deleteTelephonyProvidersEdgesSiteOutboundroute(siteId, outboundRoute
 | ------------- | ------------- | ------------- | ------------- |
  **siteId** | **String** | Site ID |  |
  **outboundRouteId** | **String** | Outbound route ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -734,7 +819,7 @@ void (no response body)
 
 ## deleteTelephonyProvidersEdgesTrunkbasesetting
 
-> void deleteTelephonyProvidersEdgesTrunkbasesetting(trunkBaseSettingsId)
+> void deleteTelephonyProvidersEdgesTrunkbasesetting(trunkBaseSettingsId, opts)
 
 
 DELETE /api/v2/telephony/providers/edges/trunkbasesettings/{trunkBaseSettingsId}
@@ -759,8 +844,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 let trunkBaseSettingsId = "trunkBaseSettingsId_example"; // String | Trunk Base ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteTelephonyProvidersEdgesTrunkbasesetting(trunkBaseSettingsId)
+apiInstance.deleteTelephonyProvidersEdgesTrunkbasesetting(trunkBaseSettingsId, opts)
   .then(() => {
     console.log('deleteTelephonyProvidersEdgesTrunkbasesetting returned successfully.');
   })
@@ -776,6 +867,7 @@ apiInstance.deleteTelephonyProvidersEdgesTrunkbasesetting(trunkBaseSettingsId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **trunkBaseSettingsId** | **String** | Trunk Base ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -810,7 +902,11 @@ let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 let edgeId = "edgeId_example"; // String | Edge ID
 let opts = { 
-  'expand': ["expand_example"] // [String] | Fields to expand in the response, comma-separated
+  'expand': ["expand_example"], // [String] | Fields to expand in the response, comma-separated
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getTelephonyProvidersEdge(edgeId, opts)
@@ -830,6 +926,7 @@ apiInstance.getTelephonyProvidersEdge(edgeId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **edgeId** | **String** | Edge ID |  |
  **expand** | **[String]** | Fields to expand in the response, comma-separated | [optional] <br />**Values**: site |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -838,7 +935,7 @@ apiInstance.getTelephonyProvidersEdge(edgeId, opts)
 
 ## getTelephonyProvidersEdgeDiagnosticNslookup
 
-> EdgeNetworkDiagnosticResponse getTelephonyProvidersEdgeDiagnosticNslookup(edgeId)
+> EdgeNetworkDiagnosticResponse getTelephonyProvidersEdgeDiagnosticNslookup(edgeId, opts)
 
 
 GET /api/v2/telephony/providers/edges/{edgeId}/diagnostic/nslookup
@@ -863,8 +960,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 let edgeId = "edgeId_example"; // String | Edge Id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getTelephonyProvidersEdgeDiagnosticNslookup(edgeId)
+apiInstance.getTelephonyProvidersEdgeDiagnosticNslookup(edgeId, opts)
   .then((data) => {
     console.log(`getTelephonyProvidersEdgeDiagnosticNslookup success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -880,6 +983,7 @@ apiInstance.getTelephonyProvidersEdgeDiagnosticNslookup(edgeId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **edgeId** | **String** | Edge Id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -888,7 +992,7 @@ apiInstance.getTelephonyProvidersEdgeDiagnosticNslookup(edgeId)
 
 ## getTelephonyProvidersEdgeDiagnosticPing
 
-> EdgeNetworkDiagnosticResponse getTelephonyProvidersEdgeDiagnosticPing(edgeId)
+> EdgeNetworkDiagnosticResponse getTelephonyProvidersEdgeDiagnosticPing(edgeId, opts)
 
 
 GET /api/v2/telephony/providers/edges/{edgeId}/diagnostic/ping
@@ -913,8 +1017,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 let edgeId = "edgeId_example"; // String | Edge Id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getTelephonyProvidersEdgeDiagnosticPing(edgeId)
+apiInstance.getTelephonyProvidersEdgeDiagnosticPing(edgeId, opts)
   .then((data) => {
     console.log(`getTelephonyProvidersEdgeDiagnosticPing success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -930,6 +1040,7 @@ apiInstance.getTelephonyProvidersEdgeDiagnosticPing(edgeId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **edgeId** | **String** | Edge Id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -938,7 +1049,7 @@ apiInstance.getTelephonyProvidersEdgeDiagnosticPing(edgeId)
 
 ## getTelephonyProvidersEdgeDiagnosticRoute
 
-> EdgeNetworkDiagnosticResponse getTelephonyProvidersEdgeDiagnosticRoute(edgeId)
+> EdgeNetworkDiagnosticResponse getTelephonyProvidersEdgeDiagnosticRoute(edgeId, opts)
 
 
 GET /api/v2/telephony/providers/edges/{edgeId}/diagnostic/route
@@ -963,8 +1074,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 let edgeId = "edgeId_example"; // String | Edge Id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getTelephonyProvidersEdgeDiagnosticRoute(edgeId)
+apiInstance.getTelephonyProvidersEdgeDiagnosticRoute(edgeId, opts)
   .then((data) => {
     console.log(`getTelephonyProvidersEdgeDiagnosticRoute success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -980,6 +1097,7 @@ apiInstance.getTelephonyProvidersEdgeDiagnosticRoute(edgeId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **edgeId** | **String** | Edge Id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -988,7 +1106,7 @@ apiInstance.getTelephonyProvidersEdgeDiagnosticRoute(edgeId)
 
 ## getTelephonyProvidersEdgeDiagnosticTracepath
 
-> EdgeNetworkDiagnosticResponse getTelephonyProvidersEdgeDiagnosticTracepath(edgeId)
+> EdgeNetworkDiagnosticResponse getTelephonyProvidersEdgeDiagnosticTracepath(edgeId, opts)
 
 
 GET /api/v2/telephony/providers/edges/{edgeId}/diagnostic/tracepath
@@ -1013,8 +1131,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 let edgeId = "edgeId_example"; // String | Edge Id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getTelephonyProvidersEdgeDiagnosticTracepath(edgeId)
+apiInstance.getTelephonyProvidersEdgeDiagnosticTracepath(edgeId, opts)
   .then((data) => {
     console.log(`getTelephonyProvidersEdgeDiagnosticTracepath success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1030,6 +1154,7 @@ apiInstance.getTelephonyProvidersEdgeDiagnosticTracepath(edgeId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **edgeId** | **String** | Edge Id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1065,7 +1190,11 @@ let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 let edgeId = "edgeId_example"; // String | Edge ID
 let interfaceId = "interfaceId_example"; // String | Interface ID
 let opts = { 
-  'expand': ["expand_example"] // [String] | Field to expand in the response
+  'expand': ["expand_example"], // [String] | Field to expand in the response
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getTelephonyProvidersEdgeLogicalinterface(edgeId, interfaceId, opts)
@@ -1086,6 +1215,7 @@ apiInstance.getTelephonyProvidersEdgeLogicalinterface(edgeId, interfaceId, opts)
  **edgeId** | **String** | Edge ID |  |
  **interfaceId** | **String** | Interface ID |  |
  **expand** | **[String]** | Field to expand in the response | [optional] <br />**Values**: externalTrunkBaseAssignments, phoneTrunkBaseAssignments |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1122,7 +1252,11 @@ let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 let edgeId = "edgeId_example"; // String | Edge ID
 let opts = { 
-  'expand': ["expand_example"] // [String] | Field to expand in the response
+  'expand': ["expand_example"], // [String] | Field to expand in the response
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getTelephonyProvidersEdgeLogicalinterfaces(edgeId, opts)
@@ -1142,6 +1276,7 @@ apiInstance.getTelephonyProvidersEdgeLogicalinterfaces(edgeId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **edgeId** | **String** | Edge ID |  |
  **expand** | **[String]** | Field to expand in the response | [optional] <br />**Values**: externalTrunkBaseAssignments, phoneTrunkBaseAssignments |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1150,7 +1285,7 @@ apiInstance.getTelephonyProvidersEdgeLogicalinterfaces(edgeId, opts)
 
 ## getTelephonyProvidersEdgeLogsJob
 
-> EdgeLogsJob getTelephonyProvidersEdgeLogsJob(edgeId, jobId)
+> EdgeLogsJob getTelephonyProvidersEdgeLogsJob(edgeId, jobId, opts)
 
 
 GET /api/v2/telephony/providers/edges/{edgeId}/logs/jobs/{jobId}
@@ -1176,8 +1311,14 @@ let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 let edgeId = "edgeId_example"; // String | Edge ID
 let jobId = "jobId_example"; // String | Job ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getTelephonyProvidersEdgeLogsJob(edgeId, jobId)
+apiInstance.getTelephonyProvidersEdgeLogsJob(edgeId, jobId, opts)
   .then((data) => {
     console.log(`getTelephonyProvidersEdgeLogsJob success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1194,6 +1335,7 @@ apiInstance.getTelephonyProvidersEdgeLogsJob(edgeId, jobId)
 | ------------- | ------------- | ------------- | ------------- |
  **edgeId** | **String** | Edge ID |  |
  **jobId** | **String** | Job ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1202,7 +1344,7 @@ apiInstance.getTelephonyProvidersEdgeLogsJob(edgeId, jobId)
 
 ## getTelephonyProvidersEdgeMetrics
 
-> EdgeMetrics getTelephonyProvidersEdgeMetrics(edgeId)
+> EdgeMetrics getTelephonyProvidersEdgeMetrics(edgeId, opts)
 
 
 GET /api/v2/telephony/providers/edges/{edgeId}/metrics
@@ -1227,8 +1369,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 let edgeId = "edgeId_example"; // String | Edge Id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getTelephonyProvidersEdgeMetrics(edgeId)
+apiInstance.getTelephonyProvidersEdgeMetrics(edgeId, opts)
   .then((data) => {
     console.log(`getTelephonyProvidersEdgeMetrics success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1244,6 +1392,7 @@ apiInstance.getTelephonyProvidersEdgeMetrics(edgeId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **edgeId** | **String** | Edge Id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1252,7 +1401,7 @@ apiInstance.getTelephonyProvidersEdgeMetrics(edgeId)
 
 ## getTelephonyProvidersEdgePhysicalinterface
 
-> DomainPhysicalInterface getTelephonyProvidersEdgePhysicalinterface(edgeId, interfaceId)
+> DomainPhysicalInterface getTelephonyProvidersEdgePhysicalinterface(edgeId, interfaceId, opts)
 
 
 GET /api/v2/telephony/providers/edges/{edgeId}/physicalinterfaces/{interfaceId}
@@ -1280,8 +1429,14 @@ let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 let edgeId = "edgeId_example"; // String | Edge ID
 let interfaceId = "interfaceId_example"; // String | Interface ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getTelephonyProvidersEdgePhysicalinterface(edgeId, interfaceId)
+apiInstance.getTelephonyProvidersEdgePhysicalinterface(edgeId, interfaceId, opts)
   .then((data) => {
     console.log(`getTelephonyProvidersEdgePhysicalinterface success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1298,6 +1453,7 @@ apiInstance.getTelephonyProvidersEdgePhysicalinterface(edgeId, interfaceId)
 | ------------- | ------------- | ------------- | ------------- |
  **edgeId** | **String** | Edge ID |  |
  **interfaceId** | **String** | Interface ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1306,7 +1462,7 @@ apiInstance.getTelephonyProvidersEdgePhysicalinterface(edgeId, interfaceId)
 
 ## getTelephonyProvidersEdgePhysicalinterfaces
 
-> PhysicalInterfaceEntityListing getTelephonyProvidersEdgePhysicalinterfaces(edgeId)
+> PhysicalInterfaceEntityListing getTelephonyProvidersEdgePhysicalinterfaces(edgeId, opts)
 
 
 GET /api/v2/telephony/providers/edges/{edgeId}/physicalinterfaces
@@ -1331,8 +1487,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 let edgeId = "edgeId_example"; // String | Edge ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getTelephonyProvidersEdgePhysicalinterfaces(edgeId)
+apiInstance.getTelephonyProvidersEdgePhysicalinterfaces(edgeId, opts)
   .then((data) => {
     console.log(`getTelephonyProvidersEdgePhysicalinterfaces success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1348,6 +1510,7 @@ apiInstance.getTelephonyProvidersEdgePhysicalinterfaces(edgeId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **edgeId** | **String** | Edge ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1356,7 +1519,7 @@ apiInstance.getTelephonyProvidersEdgePhysicalinterfaces(edgeId)
 
 ## getTelephonyProvidersEdgeSetuppackage
 
-> VmPairingInfo getTelephonyProvidersEdgeSetuppackage(edgeId)
+> VmPairingInfo getTelephonyProvidersEdgeSetuppackage(edgeId, opts)
 
 
 GET /api/v2/telephony/providers/edges/{edgeId}/setuppackage
@@ -1381,8 +1544,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 let edgeId = "edgeId_example"; // String | Edge ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getTelephonyProvidersEdgeSetuppackage(edgeId)
+apiInstance.getTelephonyProvidersEdgeSetuppackage(edgeId, opts)
   .then((data) => {
     console.log(`getTelephonyProvidersEdgeSetuppackage success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1398,6 +1567,7 @@ apiInstance.getTelephonyProvidersEdgeSetuppackage(edgeId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **edgeId** | **String** | Edge ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1406,7 +1576,7 @@ apiInstance.getTelephonyProvidersEdgeSetuppackage(edgeId)
 
 ## getTelephonyProvidersEdgeSoftwareupdate
 
-> DomainEdgeSoftwareUpdateDto getTelephonyProvidersEdgeSoftwareupdate(edgeId)
+> DomainEdgeSoftwareUpdateDto getTelephonyProvidersEdgeSoftwareupdate(edgeId, opts)
 
 
 GET /api/v2/telephony/providers/edges/{edgeId}/softwareupdate
@@ -1429,8 +1599,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 let edgeId = "edgeId_example"; // String | Edge ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getTelephonyProvidersEdgeSoftwareupdate(edgeId)
+apiInstance.getTelephonyProvidersEdgeSoftwareupdate(edgeId, opts)
   .then((data) => {
     console.log(`getTelephonyProvidersEdgeSoftwareupdate success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1446,6 +1622,7 @@ apiInstance.getTelephonyProvidersEdgeSoftwareupdate(edgeId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **edgeId** | **String** | Edge ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1454,7 +1631,7 @@ apiInstance.getTelephonyProvidersEdgeSoftwareupdate(edgeId)
 
 ## getTelephonyProvidersEdgeSoftwareversions
 
-> DomainEdgeSoftwareVersionDtoEntityListing getTelephonyProvidersEdgeSoftwareversions(edgeId)
+> DomainEdgeSoftwareVersionDtoEntityListing getTelephonyProvidersEdgeSoftwareversions(edgeId, opts)
 
 
 GET /api/v2/telephony/providers/edges/{edgeId}/softwareversions
@@ -1477,8 +1654,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 let edgeId = "edgeId_example"; // String | Edge ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getTelephonyProvidersEdgeSoftwareversions(edgeId)
+apiInstance.getTelephonyProvidersEdgeSoftwareversions(edgeId, opts)
   .then((data) => {
     console.log(`getTelephonyProvidersEdgeSoftwareversions success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1494,6 +1677,7 @@ apiInstance.getTelephonyProvidersEdgeSoftwareversions(edgeId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **edgeId** | **String** | Edge ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1535,7 +1719,11 @@ let opts = {
   'sortBy': "name", // String | Value by which to sort
   'sortOrder': "ASC", // String | Sort order
   'trunkBaseId': "trunkBaseId_example", // String | Filter by Trunk Base Ids
-  'trunkType': "trunkType_example" // String | Filter by a Trunk type
+  'trunkType': "trunkType_example", // String | Filter by a Trunk type
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getTelephonyProvidersEdgeTrunks(edgeId, opts)
@@ -1560,6 +1748,7 @@ apiInstance.getTelephonyProvidersEdgeTrunks(edgeId, opts)
  **sortOrder** | **String** | Sort order | [optional] [default to ASC] |
  **trunkBaseId** | **String** | Filter by Trunk Base Ids | [optional]  |
  **trunkType** | **String** | Filter by a Trunk type | [optional] <br />**Values**: EXTERNAL, PHONE, EDGE |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1600,7 +1789,11 @@ let opts = {
   'edgeGroupId': "edgeGroupId_example", // String | Filter by edgeGroup.id
   'sortBy': "name", // String | Sort by
   'managed': true, // Boolean | Filter by managed
-  'showCloudMedia': true // Boolean | True to show the cloud media devices in the result.
+  'showCloudMedia': true, // Boolean | True to show the cloud media devices in the result.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getTelephonyProvidersEdges(opts)
@@ -1626,6 +1819,7 @@ apiInstance.getTelephonyProvidersEdges(opts)
  **sortBy** | **String** | Sort by | [optional] [default to name] |
  **managed** | **Boolean** | Filter by managed | [optional]  |
  **showCloudMedia** | **Boolean** | True to show the cloud media devices in the result. | [optional] [default to true] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1659,7 +1853,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 let opts = { 
-  'type': "type_example" // String | 
+  'type': "type_example", // String | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getTelephonyProvidersEdgesAlertablepresences(opts)
@@ -1678,6 +1876,7 @@ apiInstance.getTelephonyProvidersEdgesAlertablepresences(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **type** | **String** |  | [optional] <br />**Values**: defaults, overrides |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1686,7 +1885,7 @@ apiInstance.getTelephonyProvidersEdgesAlertablepresences(opts)
 
 ## getTelephonyProvidersEdgesCertificateauthorities
 
-> CertificateAuthorityEntityListing getTelephonyProvidersEdgesCertificateauthorities()
+> CertificateAuthorityEntityListing getTelephonyProvidersEdgesCertificateauthorities(opts)
 
 
 GET /api/v2/telephony/providers/edges/certificateauthorities
@@ -1709,8 +1908,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getTelephonyProvidersEdgesCertificateauthorities()
+apiInstance.getTelephonyProvidersEdgesCertificateauthorities(opts)
   .then((data) => {
     console.log(`getTelephonyProvidersEdgesCertificateauthorities success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1722,7 +1927,10 @@ apiInstance.getTelephonyProvidersEdgesCertificateauthorities()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1731,7 +1939,7 @@ This endpoint does not need any parameter.
 
 ## getTelephonyProvidersEdgesCertificateauthority
 
-> DomainCertificateAuthority getTelephonyProvidersEdgesCertificateauthority(certificateId)
+> DomainCertificateAuthority getTelephonyProvidersEdgesCertificateauthority(certificateId, opts)
 
 
 GET /api/v2/telephony/providers/edges/certificateauthorities/{certificateId}
@@ -1756,8 +1964,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 let certificateId = "certificateId_example"; // String | Certificate ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getTelephonyProvidersEdgesCertificateauthority(certificateId)
+apiInstance.getTelephonyProvidersEdgesCertificateauthority(certificateId, opts)
   .then((data) => {
     console.log(`getTelephonyProvidersEdgesCertificateauthority success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1773,6 +1987,7 @@ apiInstance.getTelephonyProvidersEdgesCertificateauthority(certificateId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **certificateId** | **String** | Certificate ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1781,7 +1996,7 @@ apiInstance.getTelephonyProvidersEdgesCertificateauthority(certificateId)
 
 ## getTelephonyProvidersEdgesDid
 
-> DID getTelephonyProvidersEdgesDid(didId)
+> DID getTelephonyProvidersEdgesDid(didId, opts)
 
 
 GET /api/v2/telephony/providers/edges/dids/{didId}
@@ -1806,8 +2021,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 let didId = "didId_example"; // String | DID ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getTelephonyProvidersEdgesDid(didId)
+apiInstance.getTelephonyProvidersEdgesDid(didId, opts)
   .then((data) => {
     console.log(`getTelephonyProvidersEdgesDid success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1823,6 +2044,7 @@ apiInstance.getTelephonyProvidersEdgesDid(didId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **didId** | **String** | DID ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1831,7 +2053,7 @@ apiInstance.getTelephonyProvidersEdgesDid(didId)
 
 ## getTelephonyProvidersEdgesDidpool
 
-> DIDPool getTelephonyProvidersEdgesDidpool(didPoolId)
+> DIDPool getTelephonyProvidersEdgesDidpool(didPoolId, opts)
 
 
 GET /api/v2/telephony/providers/edges/didpools/{didPoolId}
@@ -1856,8 +2078,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 let didPoolId = "didPoolId_example"; // String | DID pool ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getTelephonyProvidersEdgesDidpool(didPoolId)
+apiInstance.getTelephonyProvidersEdgesDidpool(didPoolId, opts)
   .then((data) => {
     console.log(`getTelephonyProvidersEdgesDidpool success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1873,6 +2101,7 @@ apiInstance.getTelephonyProvidersEdgesDidpool(didPoolId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **didPoolId** | **String** | DID pool ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1909,7 +2138,11 @@ let opts = {
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
   'sortBy': "number", // String | Sort by
-  'id': ["id_example"] // [String] | Filter by a specific list of ID's
+  'id': ["id_example"], // [String] | Filter by a specific list of ID's
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getTelephonyProvidersEdgesDidpools(opts)
@@ -1931,6 +2164,7 @@ apiInstance.getTelephonyProvidersEdgesDidpools(opts)
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **sortBy** | **String** | Sort by | [optional] [default to number] |
  **id** | **[String]** | Filter by a specific list of ID's | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1969,7 +2203,11 @@ let opts = {
   'numberMatch': "numberMatch_example", // String | A number to filter the results by.
   'pageSize': 25, // Number | Page size
   'pageNumber': 1, // Number | Page number
-  'sortOrder': "ascending" // String | Sort order
+  'sortOrder': "ascending", // String | Sort order
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getTelephonyProvidersEdgesDidpoolsDids(type, opts)
@@ -1993,6 +2231,7 @@ apiInstance.getTelephonyProvidersEdgesDidpoolsDids(type, opts)
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **sortOrder** | **String** | Sort order | [optional] [default to ascending] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2033,7 +2272,11 @@ let opts = {
   'phoneNumber': "phoneNumber_example", // String | Filter by phoneNumber
   'ownerId': "ownerId_example", // String | Filter by the owner of a phone number
   'didPoolId': "didPoolId_example", // String | Filter by the DID Pool assignment
-  'id': ["id_example"] // [String] | Filter by a specific list of ID's
+  'id': ["id_example"], // [String] | Filter by a specific list of ID's
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getTelephonyProvidersEdgesDids(opts)
@@ -2059,6 +2302,7 @@ apiInstance.getTelephonyProvidersEdgesDids(opts)
  **ownerId** | **String** | Filter by the owner of a phone number | [optional]  |
  **didPoolId** | **String** | Filter by the DID Pool assignment | [optional]  |
  **id** | **[String]** | Filter by a specific list of ID's | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2093,7 +2337,11 @@ let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 let edgeGroupId = "edgeGroupId_example"; // String | Edge group ID
 let opts = { 
-  'expand': ["expand_example"] // [String] | Fields to expand in the response
+  'expand': ["expand_example"], // [String] | Fields to expand in the response
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getTelephonyProvidersEdgesEdgegroup(edgeGroupId, opts)
@@ -2113,6 +2361,7 @@ apiInstance.getTelephonyProvidersEdgesEdgegroup(edgeGroupId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **edgeGroupId** | **String** | Edge group ID |  |
  **expand** | **[String]** | Fields to expand in the response | [optional] <br />**Values**: phoneTrunkBases, edgeTrunkBaseAssignment |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2121,7 +2370,7 @@ apiInstance.getTelephonyProvidersEdgesEdgegroup(edgeGroupId, opts)
 
 ## getTelephonyProvidersEdgesEdgegroupEdgetrunkbase
 
-> EdgeTrunkBase getTelephonyProvidersEdgesEdgegroupEdgetrunkbase(edgegroupId, edgetrunkbaseId)
+> EdgeTrunkBase getTelephonyProvidersEdgesEdgegroupEdgetrunkbase(edgegroupId, edgetrunkbaseId, opts)
 
 
 GET /api/v2/telephony/providers/edges/edgegroups/{edgegroupId}/edgetrunkbases/{edgetrunkbaseId}
@@ -2147,8 +2396,14 @@ let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 let edgegroupId = "edgegroupId_example"; // String | Edge Group ID
 let edgetrunkbaseId = "edgetrunkbaseId_example"; // String | Edge Trunk Base ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getTelephonyProvidersEdgesEdgegroupEdgetrunkbase(edgegroupId, edgetrunkbaseId)
+apiInstance.getTelephonyProvidersEdgesEdgegroupEdgetrunkbase(edgegroupId, edgetrunkbaseId, opts)
   .then((data) => {
     console.log(`getTelephonyProvidersEdgesEdgegroupEdgetrunkbase success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2165,6 +2420,7 @@ apiInstance.getTelephonyProvidersEdgesEdgegroupEdgetrunkbase(edgegroupId, edgetr
 | ------------- | ------------- | ------------- | ------------- |
  **edgegroupId** | **String** | Edge Group ID |  |
  **edgetrunkbaseId** | **String** | Edge Trunk Base ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2202,7 +2458,11 @@ let opts = {
   'pageNumber': 1, // Number | Page number
   'name': "name_example", // String | Name
   'sortBy': "name", // String | Sort by
-  'managed': true // Boolean | Filter by managed
+  'managed': true, // Boolean | Filter by managed
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getTelephonyProvidersEdgesEdgegroups(opts)
@@ -2225,6 +2485,7 @@ apiInstance.getTelephonyProvidersEdgesEdgegroups(opts)
  **name** | **String** | Name | [optional]  |
  **sortBy** | **String** | Sort by | [optional] [default to name] |
  **managed** | **Boolean** | Filter by managed | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2233,7 +2494,7 @@ apiInstance.getTelephonyProvidersEdgesEdgegroups(opts)
 
 ## getTelephonyProvidersEdgesEdgeversionreport
 
-> EdgeVersionReport getTelephonyProvidersEdgesEdgeversionreport()
+> EdgeVersionReport getTelephonyProvidersEdgesEdgeversionreport(opts)
 
 
 GET /api/v2/telephony/providers/edges/edgeversionreport
@@ -2256,8 +2517,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getTelephonyProvidersEdgesEdgeversionreport()
+apiInstance.getTelephonyProvidersEdgesEdgeversionreport(opts)
   .then((data) => {
     console.log(`getTelephonyProvidersEdgesEdgeversionreport success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2269,7 +2536,10 @@ apiInstance.getTelephonyProvidersEdgesEdgeversionreport()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2278,7 +2548,7 @@ This endpoint does not need any parameter.
 
 ## getTelephonyProvidersEdgesExpired
 
-> ExpiredEdgeListing getTelephonyProvidersEdgesExpired()
+> ExpiredEdgeListing getTelephonyProvidersEdgesExpired(opts)
 
 
 GET /api/v2/telephony/providers/edges/expired
@@ -2302,8 +2572,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getTelephonyProvidersEdgesExpired()
+apiInstance.getTelephonyProvidersEdgesExpired(opts)
   .then((data) => {
     console.log(`getTelephonyProvidersEdgesExpired success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2315,7 +2591,10 @@ apiInstance.getTelephonyProvidersEdgesExpired()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2324,7 +2603,7 @@ This endpoint does not need any parameter.
 
 ## getTelephonyProvidersEdgesExtension
 
-> Extension getTelephonyProvidersEdgesExtension(extensionId)
+> Extension getTelephonyProvidersEdgesExtension(extensionId, opts)
 
 
 GET /api/v2/telephony/providers/edges/extensions/{extensionId}
@@ -2349,8 +2628,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 let extensionId = "extensionId_example"; // String | Extension ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getTelephonyProvidersEdgesExtension(extensionId)
+apiInstance.getTelephonyProvidersEdgesExtension(extensionId, opts)
   .then((data) => {
     console.log(`getTelephonyProvidersEdgesExtension success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2366,6 +2651,7 @@ apiInstance.getTelephonyProvidersEdgesExtension(extensionId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **extensionId** | **String** | Extension ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2374,7 +2660,7 @@ apiInstance.getTelephonyProvidersEdgesExtension(extensionId)
 
 ## getTelephonyProvidersEdgesExtensionpool
 
-> ExtensionPool getTelephonyProvidersEdgesExtensionpool(extensionPoolId)
+> ExtensionPool getTelephonyProvidersEdgesExtensionpool(extensionPoolId, opts)
 
 
 GET /api/v2/telephony/providers/edges/extensionpools/{extensionPoolId}
@@ -2399,8 +2685,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 let extensionPoolId = "extensionPoolId_example"; // String | Extension pool ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getTelephonyProvidersEdgesExtensionpool(extensionPoolId)
+apiInstance.getTelephonyProvidersEdgesExtensionpool(extensionPoolId, opts)
   .then((data) => {
     console.log(`getTelephonyProvidersEdgesExtensionpool success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2416,6 +2708,7 @@ apiInstance.getTelephonyProvidersEdgesExtensionpool(extensionPoolId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **extensionPoolId** | **String** | Extension pool ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2453,7 +2746,11 @@ let opts = {
   'pageNumber': 1, // Number | Page number
   'sortBy': "sortBy_example", // String | Sort by
   '_number': "_number_example", // String | Deprecated, filtering by number not supported
-  'divisionId': ["divisionId_example"] // [String] | List of divisionIds on which to filter.
+  'divisionId': ["divisionId_example"], // [String] | List of divisionIds on which to filter.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getTelephonyProvidersEdgesExtensionpools(opts)
@@ -2476,6 +2773,7 @@ apiInstance.getTelephonyProvidersEdgesExtensionpools(opts)
  **sortBy** | **String** | Sort by | [optional]  |
  **_number** | **String** | Deprecated, filtering by number not supported | [optional]  |
  **divisionId** | **[String]** | List of divisionIds on which to filter. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2517,7 +2815,11 @@ let opts = {
   'sortOrder': "ASC", // String | Sort order
   'id': ["id_example"], // [String] | ID of the Extension Pools to filter by.
   'name': "name_example", // String | Name of the Extension Pools to filter by.
-  'divisionId': ["divisionId_example"] // [String] | List of divisionIds on which to filter.
+  'divisionId': ["divisionId_example"], // [String] | List of divisionIds on which to filter.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getTelephonyProvidersEdgesExtensionpoolsDivisionviews(opts)
@@ -2542,6 +2844,7 @@ apiInstance.getTelephonyProvidersEdgesExtensionpoolsDivisionviews(opts)
  **id** | **[String]** | ID of the Extension Pools to filter by. | [optional]  |
  **name** | **String** | Name of the Extension Pools to filter by. | [optional]  |
  **divisionId** | **[String]** | List of divisionIds on which to filter. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2579,7 +2882,11 @@ let opts = {
   'pageNumber': 1, // Number | Page number
   'sortBy': "number", // String | Sort by
   'sortOrder': "ASC", // String | Sort order
-  '_number': "_number_example" // String | Filter by number
+  '_number': "_number_example", // String | Filter by number
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getTelephonyProvidersEdgesExtensions(opts)
@@ -2602,6 +2909,7 @@ apiInstance.getTelephonyProvidersEdgesExtensions(opts)
  **sortBy** | **String** | Sort by | [optional] [default to number] |
  **sortOrder** | **String** | Sort order | [optional] [default to ASC] |
  **_number** | **String** | Filter by number | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2610,7 +2918,7 @@ apiInstance.getTelephonyProvidersEdgesExtensions(opts)
 
 ## getTelephonyProvidersEdgesLine
 
-> Line getTelephonyProvidersEdgesLine(lineId)
+> Line getTelephonyProvidersEdgesLine(lineId, opts)
 
 
 GET /api/v2/telephony/providers/edges/lines/{lineId}
@@ -2635,8 +2943,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 let lineId = "lineId_example"; // String | Line ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getTelephonyProvidersEdgesLine(lineId)
+apiInstance.getTelephonyProvidersEdgesLine(lineId, opts)
   .then((data) => {
     console.log(`getTelephonyProvidersEdgesLine success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2652,6 +2966,7 @@ apiInstance.getTelephonyProvidersEdgesLine(lineId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **lineId** | **String** | Line ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2660,7 +2975,7 @@ apiInstance.getTelephonyProvidersEdgesLine(lineId)
 
 ## getTelephonyProvidersEdgesLinebasesetting
 
-> LineBase getTelephonyProvidersEdgesLinebasesetting(lineBaseId)
+> LineBase getTelephonyProvidersEdgesLinebasesetting(lineBaseId, opts)
 
 
 GET /api/v2/telephony/providers/edges/linebasesettings/{lineBaseId}
@@ -2685,8 +3000,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 let lineBaseId = "lineBaseId_example"; // String | Line base ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getTelephonyProvidersEdgesLinebasesetting(lineBaseId)
+apiInstance.getTelephonyProvidersEdgesLinebasesetting(lineBaseId, opts)
   .then((data) => {
     console.log(`getTelephonyProvidersEdgesLinebasesetting success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2702,6 +3023,7 @@ apiInstance.getTelephonyProvidersEdgesLinebasesetting(lineBaseId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **lineBaseId** | **String** | Line base ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2739,7 +3061,11 @@ let opts = {
   'pageSize': 25, // Number | Page size
   'sortBy': "name", // String | Value by which to sort
   'sortOrder': "ASC", // String | Sort order
-  'expand': ["expand_example"] // [String] | Fields to expand in the response, comma-separated
+  'expand': ["expand_example"], // [String] | Fields to expand in the response, comma-separated
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getTelephonyProvidersEdgesLinebasesettings(opts)
@@ -2762,6 +3088,7 @@ apiInstance.getTelephonyProvidersEdgesLinebasesettings(opts)
  **sortBy** | **String** | Value by which to sort | [optional] [default to name] |
  **sortOrder** | **String** | Sort order | [optional] [default to ASC] |
  **expand** | **[String]** | Fields to expand in the response, comma-separated | [optional] <br />**Values**: properties |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2799,7 +3126,11 @@ let opts = {
   'pageNumber': 1, // Number | Page number
   'name': "name_example", // String | Name
   'sortBy': "name", // String | Value by which to sort
-  'expand': ["expand_example"] // [String] | Fields to expand in the response, comma-separated. The edgeGroup value is deprecated.
+  'expand': ["expand_example"], // [String] | Fields to expand in the response, comma-separated. The edgeGroup value is deprecated.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getTelephonyProvidersEdgesLines(opts)
@@ -2822,6 +3153,7 @@ apiInstance.getTelephonyProvidersEdgesLines(opts)
  **name** | **String** | Name | [optional]  |
  **sortBy** | **String** | Value by which to sort | [optional] [default to name] |
  **expand** | **[String]** | Fields to expand in the response, comma-separated. The edgeGroup value is deprecated. | [optional] <br />**Values**: properties, site, edgeGroup, primaryEdge, secondaryEdge, edges, assignedUser |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2830,7 +3162,7 @@ apiInstance.getTelephonyProvidersEdgesLines(opts)
 
 ## getTelephonyProvidersEdgesLinesTemplate
 
-> Line getTelephonyProvidersEdgesLinesTemplate(lineBaseSettingsId)
+> Line getTelephonyProvidersEdgesLinesTemplate(lineBaseSettingsId, opts)
 
 
 GET /api/v2/telephony/providers/edges/lines/template
@@ -2855,8 +3187,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 let lineBaseSettingsId = "lineBaseSettingsId_example"; // String | The id of a Line Base Settings object upon which to base this Line
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getTelephonyProvidersEdgesLinesTemplate(lineBaseSettingsId)
+apiInstance.getTelephonyProvidersEdgesLinesTemplate(lineBaseSettingsId, opts)
   .then((data) => {
     console.log(`getTelephonyProvidersEdgesLinesTemplate success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2872,6 +3210,7 @@ apiInstance.getTelephonyProvidersEdgesLinesTemplate(lineBaseSettingsId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **lineBaseSettingsId** | **String** | The id of a Line Base Settings object upon which to base this Line |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2908,7 +3247,11 @@ let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 let edgeIds = "edgeIds_example"; // String | Comma separated list of Edge Id's
 let opts = { 
-  'expand': ["expand_example"] // [String] | Field to expand in the response
+  'expand': ["expand_example"], // [String] | Field to expand in the response
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getTelephonyProvidersEdgesLogicalinterfaces(edgeIds, opts)
@@ -2928,6 +3271,7 @@ apiInstance.getTelephonyProvidersEdgesLogicalinterfaces(edgeIds, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **edgeIds** | **String** | Comma separated list of Edge Id's |  |
  **expand** | **[String]** | Field to expand in the response | [optional] <br />**Values**: externalTrunkBaseAssignments, phoneTrunkBaseAssignments |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2936,7 +3280,7 @@ apiInstance.getTelephonyProvidersEdgesLogicalinterfaces(edgeIds, opts)
 
 ## getTelephonyProvidersEdgesMediastatisticsConversation
 
-> MediaStatisticsListing getTelephonyProvidersEdgesMediastatisticsConversation(conversationId)
+> MediaStatisticsListing getTelephonyProvidersEdgesMediastatisticsConversation(conversationId, opts)
 
 
 GET /api/v2/telephony/providers/edges/mediastatistics/conversations/{conversationId}
@@ -2963,8 +3307,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 let conversationId = "conversationId_example"; // String | Identifier of the conversation
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getTelephonyProvidersEdgesMediastatisticsConversation(conversationId)
+apiInstance.getTelephonyProvidersEdgesMediastatisticsConversation(conversationId, opts)
   .then((data) => {
     console.log(`getTelephonyProvidersEdgesMediastatisticsConversation success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2980,6 +3330,7 @@ apiInstance.getTelephonyProvidersEdgesMediastatisticsConversation(conversationId
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | Identifier of the conversation |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2988,7 +3339,7 @@ apiInstance.getTelephonyProvidersEdgesMediastatisticsConversation(conversationId
 
 ## getTelephonyProvidersEdgesMediastatisticsConversationCommunication
 
-> MediaStatistics getTelephonyProvidersEdgesMediastatisticsConversationCommunication(conversationId, communicationId)
+> MediaStatistics getTelephonyProvidersEdgesMediastatisticsConversationCommunication(conversationId, communicationId, opts)
 
 
 GET /api/v2/telephony/providers/edges/mediastatistics/conversations/{conversationId}/communications/{communicationId}
@@ -3016,8 +3367,14 @@ let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 let conversationId = "conversationId_example"; // String | Identifier of the conversation
 let communicationId = "communicationId_example"; // String | Identifier of the media session
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getTelephonyProvidersEdgesMediastatisticsConversationCommunication(conversationId, communicationId)
+apiInstance.getTelephonyProvidersEdgesMediastatisticsConversationCommunication(conversationId, communicationId, opts)
   .then((data) => {
     console.log(`getTelephonyProvidersEdgesMediastatisticsConversationCommunication success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3034,6 +3391,7 @@ apiInstance.getTelephonyProvidersEdgesMediastatisticsConversationCommunication(c
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | Identifier of the conversation |  |
  **communicationId** | **String** | Identifier of the media session |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3042,7 +3400,7 @@ apiInstance.getTelephonyProvidersEdgesMediastatisticsConversationCommunication(c
 
 ## getTelephonyProvidersEdgesMetrics
 
-> [EdgeMetrics] getTelephonyProvidersEdgesMetrics(edgeIds)
+> [EdgeMetrics] getTelephonyProvidersEdgesMetrics(edgeIds, opts)
 
 
 GET /api/v2/telephony/providers/edges/metrics
@@ -3067,8 +3425,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 let edgeIds = "edgeIds_example"; // String | Comma separated list of Edge Id's. Maximum of 100 edge ids allowed.
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getTelephonyProvidersEdgesMetrics(edgeIds)
+apiInstance.getTelephonyProvidersEdgesMetrics(edgeIds, opts)
   .then((data) => {
     console.log(`getTelephonyProvidersEdgesMetrics success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3084,6 +3448,7 @@ apiInstance.getTelephonyProvidersEdgesMetrics(edgeIds)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **edgeIds** | **String** | Comma separated list of Edge Id's. Maximum of 100 edge ids allowed. |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3122,7 +3487,11 @@ let opts = {
   'name': "name_example", // String | Name
   'siteId': "siteId_example", // String | Filter by site.id
   'externalTrunkBasesIds': "externalTrunkBasesIds_example", // String | Filter by externalTrunkBases.ids
-  'sortBy': "name" // String | Sort by
+  'sortBy': "name", // String | Sort by
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getTelephonyProvidersEdgesOutboundroutes(opts)
@@ -3146,6 +3515,7 @@ apiInstance.getTelephonyProvidersEdgesOutboundroutes(opts)
  **siteId** | **String** | Filter by site.id | [optional]  |
  **externalTrunkBasesIds** | **String** | Filter by externalTrunkBases.ids | [optional]  |
  **sortBy** | **String** | Sort by | [optional] [default to name] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3154,7 +3524,7 @@ apiInstance.getTelephonyProvidersEdgesOutboundroutes(opts)
 
 ## getTelephonyProvidersEdgesPhone
 
-> Phone getTelephonyProvidersEdgesPhone(phoneId)
+> Phone getTelephonyProvidersEdgesPhone(phoneId, opts)
 
 
 GET /api/v2/telephony/providers/edges/phones/{phoneId}
@@ -3179,8 +3549,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 let phoneId = "phoneId_example"; // String | Phone ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getTelephonyProvidersEdgesPhone(phoneId)
+apiInstance.getTelephonyProvidersEdgesPhone(phoneId, opts)
   .then((data) => {
     console.log(`getTelephonyProvidersEdgesPhone success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3196,6 +3572,7 @@ apiInstance.getTelephonyProvidersEdgesPhone(phoneId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **phoneId** | **String** | Phone ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3204,7 +3581,7 @@ apiInstance.getTelephonyProvidersEdgesPhone(phoneId)
 
 ## getTelephonyProvidersEdgesPhonebasesetting
 
-> PhoneBase getTelephonyProvidersEdgesPhonebasesetting(phoneBaseId)
+> PhoneBase getTelephonyProvidersEdgesPhonebasesetting(phoneBaseId, opts)
 
 
 GET /api/v2/telephony/providers/edges/phonebasesettings/{phoneBaseId}
@@ -3229,8 +3606,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 let phoneBaseId = "phoneBaseId_example"; // String | Phone base ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getTelephonyProvidersEdgesPhonebasesetting(phoneBaseId)
+apiInstance.getTelephonyProvidersEdgesPhonebasesetting(phoneBaseId, opts)
   .then((data) => {
     console.log(`getTelephonyProvidersEdgesPhonebasesetting success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3246,6 +3629,7 @@ apiInstance.getTelephonyProvidersEdgesPhonebasesetting(phoneBaseId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **phoneBaseId** | **String** | Phone base ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3284,7 +3668,11 @@ let opts = {
   'sortBy': "name", // String | Value by which to sort
   'sortOrder': "ASC", // String | Sort order
   'expand': ["expand_example"], // [String] | Fields to expand in the response, comma-separated
-  'name': "name_example" // String | Name
+  'name': "name_example", // String | Name
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getTelephonyProvidersEdgesPhonebasesettings(opts)
@@ -3308,6 +3696,7 @@ apiInstance.getTelephonyProvidersEdgesPhonebasesettings(opts)
  **sortOrder** | **String** | Sort order | [optional] [default to ASC] |
  **expand** | **[String]** | Fields to expand in the response, comma-separated | [optional] <br />**Values**: properties, lines |
  **name** | **String** | Name | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3342,7 +3731,11 @@ let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 let opts = { 
   'pageSize': 25, // Number | Page size
-  'pageNumber': 1 // Number | Page number
+  'pageNumber': 1, // Number | Page number
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getTelephonyProvidersEdgesPhonebasesettingsAvailablemetabases(opts)
@@ -3362,6 +3755,7 @@ apiInstance.getTelephonyProvidersEdgesPhonebasesettingsAvailablemetabases(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3370,7 +3764,7 @@ apiInstance.getTelephonyProvidersEdgesPhonebasesettingsAvailablemetabases(opts)
 
 ## getTelephonyProvidersEdgesPhonebasesettingsTemplate
 
-> PhoneBase getTelephonyProvidersEdgesPhonebasesettingsTemplate(phoneMetabaseId)
+> PhoneBase getTelephonyProvidersEdgesPhonebasesettingsTemplate(phoneMetabaseId, opts)
 
 
 GET /api/v2/telephony/providers/edges/phonebasesettings/template
@@ -3395,8 +3789,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 let phoneMetabaseId = "phoneMetabaseId_example"; // String | The id of a metabase object upon which to base this Phone Base Settings
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getTelephonyProvidersEdgesPhonebasesettingsTemplate(phoneMetabaseId)
+apiInstance.getTelephonyProvidersEdgesPhonebasesettingsTemplate(phoneMetabaseId, opts)
   .then((data) => {
     console.log(`getTelephonyProvidersEdgesPhonebasesettingsTemplate success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3412,6 +3812,7 @@ apiInstance.getTelephonyProvidersEdgesPhonebasesettingsTemplate(phoneMetabaseId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **phoneMetabaseId** | **String** | The id of a metabase object upon which to base this Phone Base Settings |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3461,7 +3862,11 @@ let opts = {
   'statusOperationalStatus': "statusOperationalStatus_example", // String | The primary status to filter by
   'secondaryStatusOperationalStatus': "secondaryStatusOperationalStatus_example", // String | The secondary status to filter by
   'expand': ["expand_example"], // [String] | Fields to expand in the response, comma-separated
-  'fields': ["fields_example"] // [String] | Fields and properties to get, comma-separated
+  'fields': ["fields_example"], // [String] | Fields and properties to get, comma-separated
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getTelephonyProvidersEdgesPhones(opts)
@@ -3496,6 +3901,7 @@ apiInstance.getTelephonyProvidersEdgesPhones(opts)
  **secondaryStatusOperationalStatus** | **String** | The secondary status to filter by | [optional]  |
  **expand** | **[String]** | Fields to expand in the response, comma-separated | [optional] <br />**Values**: properties, site, status, status.primaryEdgesStatus, status.secondaryEdgesStatus, phoneBaseSettings, lines |
  **fields** | **[String]** | Fields and properties to get, comma-separated | [optional] <br />**Values**: webRtcUser, properties.*, lines.loggedInUser, lines.defaultForUser |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3504,7 +3910,7 @@ apiInstance.getTelephonyProvidersEdgesPhones(opts)
 
 ## getTelephonyProvidersEdgesPhonesTemplate
 
-> Phone getTelephonyProvidersEdgesPhonesTemplate(phoneBaseSettingsId)
+> Phone getTelephonyProvidersEdgesPhonesTemplate(phoneBaseSettingsId, opts)
 
 
 GET /api/v2/telephony/providers/edges/phones/template
@@ -3529,8 +3935,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 let phoneBaseSettingsId = "phoneBaseSettingsId_example"; // String | The id of a Phone Base Settings object upon which to base this Phone
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getTelephonyProvidersEdgesPhonesTemplate(phoneBaseSettingsId)
+apiInstance.getTelephonyProvidersEdgesPhonesTemplate(phoneBaseSettingsId, opts)
   .then((data) => {
     console.log(`getTelephonyProvidersEdgesPhonesTemplate success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3546,6 +3958,7 @@ apiInstance.getTelephonyProvidersEdgesPhonesTemplate(phoneBaseSettingsId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **phoneBaseSettingsId** | **String** | The id of a Phone Base Settings object upon which to base this Phone |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3554,7 +3967,7 @@ apiInstance.getTelephonyProvidersEdgesPhonesTemplate(phoneBaseSettingsId)
 
 ## getTelephonyProvidersEdgesPhysicalinterfaces
 
-> PhysicalInterfaceEntityListing getTelephonyProvidersEdgesPhysicalinterfaces(edgeIds)
+> PhysicalInterfaceEntityListing getTelephonyProvidersEdgesPhysicalinterfaces(edgeIds, opts)
 
 
 GET /api/v2/telephony/providers/edges/physicalinterfaces
@@ -3581,8 +3994,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 let edgeIds = "edgeIds_example"; // String | Comma separated list of Edge Id's
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getTelephonyProvidersEdgesPhysicalinterfaces(edgeIds)
+apiInstance.getTelephonyProvidersEdgesPhysicalinterfaces(edgeIds, opts)
   .then((data) => {
     console.log(`getTelephonyProvidersEdgesPhysicalinterfaces success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3598,6 +4017,7 @@ apiInstance.getTelephonyProvidersEdgesPhysicalinterfaces(edgeIds)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **edgeIds** | **String** | Comma separated list of Edge Id's |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3606,7 +4026,7 @@ apiInstance.getTelephonyProvidersEdgesPhysicalinterfaces(edgeIds)
 
 ## getTelephonyProvidersEdgesSite
 
-> Site getTelephonyProvidersEdgesSite(siteId)
+> Site getTelephonyProvidersEdgesSite(siteId, opts)
 
 
 GET /api/v2/telephony/providers/edges/sites/{siteId}
@@ -3632,8 +4052,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 let siteId = "siteId_example"; // String | Site ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getTelephonyProvidersEdgesSite(siteId)
+apiInstance.getTelephonyProvidersEdgesSite(siteId, opts)
   .then((data) => {
     console.log(`getTelephonyProvidersEdgesSite success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3649,6 +4075,7 @@ apiInstance.getTelephonyProvidersEdgesSite(siteId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **siteId** | **String** | Site ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3657,7 +4084,7 @@ apiInstance.getTelephonyProvidersEdgesSite(siteId)
 
 ## getTelephonyProvidersEdgesSiteNumberplan
 
-> NumberPlan getTelephonyProvidersEdgesSiteNumberplan(siteId, numberPlanId)
+> NumberPlan getTelephonyProvidersEdgesSiteNumberplan(siteId, numberPlanId, opts)
 
 
 GET /api/v2/telephony/providers/edges/sites/{siteId}/numberplans/{numberPlanId}
@@ -3683,8 +4110,14 @@ let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 let siteId = "siteId_example"; // String | Site ID
 let numberPlanId = "numberPlanId_example"; // String | Number Plan ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getTelephonyProvidersEdgesSiteNumberplan(siteId, numberPlanId)
+apiInstance.getTelephonyProvidersEdgesSiteNumberplan(siteId, numberPlanId, opts)
   .then((data) => {
     console.log(`getTelephonyProvidersEdgesSiteNumberplan success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3701,6 +4134,7 @@ apiInstance.getTelephonyProvidersEdgesSiteNumberplan(siteId, numberPlanId)
 | ------------- | ------------- | ------------- | ------------- |
  **siteId** | **String** | Site ID |  |
  **numberPlanId** | **String** | Number Plan ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3709,7 +4143,7 @@ apiInstance.getTelephonyProvidersEdgesSiteNumberplan(siteId, numberPlanId)
 
 ## getTelephonyProvidersEdgesSiteNumberplans
 
-> [NumberPlan] getTelephonyProvidersEdgesSiteNumberplans(siteId)
+> [NumberPlan] getTelephonyProvidersEdgesSiteNumberplans(siteId, opts)
 
 
 GET /api/v2/telephony/providers/edges/sites/{siteId}/numberplans
@@ -3734,8 +4168,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 let siteId = "siteId_example"; // String | Site ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getTelephonyProvidersEdgesSiteNumberplans(siteId)
+apiInstance.getTelephonyProvidersEdgesSiteNumberplans(siteId, opts)
   .then((data) => {
     console.log(`getTelephonyProvidersEdgesSiteNumberplans success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3751,6 +4191,7 @@ apiInstance.getTelephonyProvidersEdgesSiteNumberplans(siteId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **siteId** | **String** | Site ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3785,7 +4226,11 @@ let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 let siteId = "siteId_example"; // String | Site ID
 let opts = { 
-  'classification': "classification_example" // String | Classification
+  'classification': "classification_example", // String | Classification
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getTelephonyProvidersEdgesSiteNumberplansClassifications(siteId, opts)
@@ -3805,6 +4250,7 @@ apiInstance.getTelephonyProvidersEdgesSiteNumberplansClassifications(siteId, opt
 | ------------- | ------------- | ------------- | ------------- |
  **siteId** | **String** | Site ID |  |
  **classification** | **String** | Classification | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3813,7 +4259,7 @@ apiInstance.getTelephonyProvidersEdgesSiteNumberplansClassifications(siteId, opt
 
 ## getTelephonyProvidersEdgesSiteOutboundroute
 
-> OutboundRouteBase getTelephonyProvidersEdgesSiteOutboundroute(siteId, outboundRouteId)
+> OutboundRouteBase getTelephonyProvidersEdgesSiteOutboundroute(siteId, outboundRouteId, opts)
 
 
 GET /api/v2/telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId}
@@ -3839,8 +4285,14 @@ let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 let siteId = "siteId_example"; // String | Site ID
 let outboundRouteId = "outboundRouteId_example"; // String | Outbound route ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getTelephonyProvidersEdgesSiteOutboundroute(siteId, outboundRouteId)
+apiInstance.getTelephonyProvidersEdgesSiteOutboundroute(siteId, outboundRouteId, opts)
   .then((data) => {
     console.log(`getTelephonyProvidersEdgesSiteOutboundroute success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3857,6 +4309,7 @@ apiInstance.getTelephonyProvidersEdgesSiteOutboundroute(siteId, outboundRouteId)
 | ------------- | ------------- | ------------- | ------------- |
  **siteId** | **String** | Site ID |  |
  **outboundRouteId** | **String** | Outbound route ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3895,7 +4348,11 @@ let opts = {
   'pageNumber': 1, // Number | Page number
   'name': "name_example", // String | Name
   'externalTrunkBasesIds': "externalTrunkBasesIds_example", // String | externalTrunkBases.ids
-  'sortBy': "name" // String | Sort by
+  'sortBy': "name", // String | Sort by
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getTelephonyProvidersEdgesSiteOutboundroutes(siteId, opts)
@@ -3919,6 +4376,7 @@ apiInstance.getTelephonyProvidersEdgesSiteOutboundroutes(siteId, opts)
  **name** | **String** | Name | [optional]  |
  **externalTrunkBasesIds** | **String** | externalTrunkBases.ids | [optional]  |
  **sortBy** | **String** | Sort by | [optional] [default to name] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3927,7 +4385,7 @@ apiInstance.getTelephonyProvidersEdgesSiteOutboundroutes(siteId, opts)
 
 ## getTelephonyProvidersEdgesSiteSiteconnections
 
-> SiteConnections getTelephonyProvidersEdgesSiteSiteconnections(siteId)
+> SiteConnections getTelephonyProvidersEdgesSiteSiteconnections(siteId, opts)
 
 
 GET /api/v2/telephony/providers/edges/sites/{siteId}/siteconnections
@@ -3953,8 +4411,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 let siteId = "siteId_example"; // String | Site ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getTelephonyProvidersEdgesSiteSiteconnections(siteId)
+apiInstance.getTelephonyProvidersEdgesSiteSiteconnections(siteId, opts)
   .then((data) => {
     console.log(`getTelephonyProvidersEdgesSiteSiteconnections success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3970,6 +4434,7 @@ apiInstance.getTelephonyProvidersEdgesSiteSiteconnections(siteId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **siteId** | **String** | Site ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4008,7 +4473,11 @@ let opts = {
   'name': "name_example", // String | Name
   'locationId': "locationId_example", // String | Location Id
   'managed': true, // Boolean | Filter by managed
-  'expand': ["expand_example"] // [String] | Fields to expand in the response, comma-separated
+  'expand': ["expand_example"], // [String] | Fields to expand in the response, comma-separated
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getTelephonyProvidersEdgesSites(opts)
@@ -4034,6 +4503,7 @@ apiInstance.getTelephonyProvidersEdgesSites(opts)
  **locationId** | **String** | Location Id | [optional]  |
  **managed** | **Boolean** | Filter by managed | [optional]  |
  **expand** | **[String]** | Fields to expand in the response, comma-separated | [optional] <br />**Values**: edges, location, primarySites, secondarySites |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4069,7 +4539,11 @@ let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 let q64 = "q64_example"; // String | q64
 let opts = { 
-  'expand': ["expand_example"] // [String] | expand
+  'expand': ["expand_example"], // [String] | expand
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getTelephonyProvidersEdgesSitesSearch(q64, opts)
@@ -4089,6 +4563,7 @@ apiInstance.getTelephonyProvidersEdgesSitesSearch(q64, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **q64** | **String** | q64 |  |
  **expand** | **[String]** | expand | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4121,7 +4596,11 @@ let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 let opts = { 
   'pageSize': 1000, // Number | Page size
-  'pageNumber': 1 // Number | Page number
+  'pageNumber': 1, // Number | Page number
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getTelephonyProvidersEdgesTimezones(opts)
@@ -4141,6 +4620,7 @@ apiInstance.getTelephonyProvidersEdgesTimezones(opts)
 | ------------- | ------------- | ------------- | ------------- |
  **pageSize** | **Number** | Page size | [optional] [default to 1000] |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4149,7 +4629,7 @@ apiInstance.getTelephonyProvidersEdgesTimezones(opts)
 
 ## getTelephonyProvidersEdgesTrunk
 
-> Trunk getTelephonyProvidersEdgesTrunk(trunkId)
+> Trunk getTelephonyProvidersEdgesTrunk(trunkId, opts)
 
 
 GET /api/v2/telephony/providers/edges/trunks/{trunkId}
@@ -4174,8 +4654,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 let trunkId = "trunkId_example"; // String | Trunk ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getTelephonyProvidersEdgesTrunk(trunkId)
+apiInstance.getTelephonyProvidersEdgesTrunk(trunkId, opts)
   .then((data) => {
     console.log(`getTelephonyProvidersEdgesTrunk success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4191,6 +4677,7 @@ apiInstance.getTelephonyProvidersEdgesTrunk(trunkId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **trunkId** | **String** | Trunk ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4199,7 +4686,7 @@ apiInstance.getTelephonyProvidersEdgesTrunk(trunkId)
 
 ## getTelephonyProvidersEdgesTrunkMetrics
 
-> TrunkMetrics getTelephonyProvidersEdgesTrunkMetrics(trunkId)
+> TrunkMetrics getTelephonyProvidersEdgesTrunkMetrics(trunkId, opts)
 
 
 GET /api/v2/telephony/providers/edges/trunks/{trunkId}/metrics
@@ -4224,8 +4711,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 let trunkId = "trunkId_example"; // String | Trunk Id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getTelephonyProvidersEdgesTrunkMetrics(trunkId)
+apiInstance.getTelephonyProvidersEdgesTrunkMetrics(trunkId, opts)
   .then((data) => {
     console.log(`getTelephonyProvidersEdgesTrunkMetrics success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4241,6 +4734,7 @@ apiInstance.getTelephonyProvidersEdgesTrunkMetrics(trunkId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **trunkId** | **String** | Trunk Id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4277,7 +4771,11 @@ let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 let trunkBaseSettingsId = "trunkBaseSettingsId_example"; // String | Trunk Base ID
 let opts = { 
-  'ignoreHidden': true // Boolean | Set this to true to not receive trunk properties that are meant to be hidden or for internal system usage only.
+  'ignoreHidden': true, // Boolean | Set this to true to not receive trunk properties that are meant to be hidden or for internal system usage only.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getTelephonyProvidersEdgesTrunkbasesetting(trunkBaseSettingsId, opts)
@@ -4297,6 +4795,7 @@ apiInstance.getTelephonyProvidersEdgesTrunkbasesetting(trunkBaseSettingsId, opts
 | ------------- | ------------- | ------------- | ------------- |
  **trunkBaseSettingsId** | **String** | Trunk Base ID |  |
  **ignoreHidden** | **Boolean** | Set this to true to not receive trunk properties that are meant to be hidden or for internal system usage only. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4340,7 +4839,11 @@ let opts = {
   'ignoreHidden': true, // Boolean | Set this to true to not receive trunk properties that are meant to be hidden or for internal system usage only.
   'managed': true, // Boolean | Filter by managed
   'expand': ["expand_example"], // [String] | Fields to expand in the response, comma-separated
-  'name': "name_example" // String | Name of the TrunkBase to filter by
+  'name': "name_example", // String | Name of the TrunkBase to filter by
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getTelephonyProvidersEdgesTrunkbasesettings(opts)
@@ -4367,6 +4870,7 @@ apiInstance.getTelephonyProvidersEdgesTrunkbasesettings(opts)
  **managed** | **Boolean** | Filter by managed | [optional]  |
  **expand** | **[String]** | Fields to expand in the response, comma-separated | [optional] <br />**Values**: properties |
  **name** | **String** | Name of the TrunkBase to filter by | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4402,7 +4906,11 @@ let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 let opts = { 
   'type': "type_example", // String | 
   'pageSize': 25, // Number | 
-  'pageNumber': 1 // Number | 
+  'pageNumber': 1, // Number | 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getTelephonyProvidersEdgesTrunkbasesettingsAvailablemetabases(opts)
@@ -4423,6 +4931,7 @@ apiInstance.getTelephonyProvidersEdgesTrunkbasesettingsAvailablemetabases(opts)
  **type** | **String** |  | [optional] <br />**Values**: EXTERNAL, PHONE, EDGE |
  **pageSize** | **Number** |  | [optional] [default to 25] |
  **pageNumber** | **Number** |  | [optional] [default to 1] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4431,7 +4940,7 @@ apiInstance.getTelephonyProvidersEdgesTrunkbasesettingsAvailablemetabases(opts)
 
 ## getTelephonyProvidersEdgesTrunkbasesettingsTemplate
 
-> TrunkBase getTelephonyProvidersEdgesTrunkbasesettingsTemplate(trunkMetabaseId)
+> TrunkBase getTelephonyProvidersEdgesTrunkbasesettingsTemplate(trunkMetabaseId, opts)
 
 
 GET /api/v2/telephony/providers/edges/trunkbasesettings/template
@@ -4456,8 +4965,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 let trunkMetabaseId = "trunkMetabaseId_example"; // String | The id of a metabase object upon which to base this Trunk Base Settings
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getTelephonyProvidersEdgesTrunkbasesettingsTemplate(trunkMetabaseId)
+apiInstance.getTelephonyProvidersEdgesTrunkbasesettingsTemplate(trunkMetabaseId, opts)
   .then((data) => {
     console.log(`getTelephonyProvidersEdgesTrunkbasesettingsTemplate success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4473,6 +4988,7 @@ apiInstance.getTelephonyProvidersEdgesTrunkbasesettingsTemplate(trunkMetabaseId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **trunkMetabaseId** | **String** | The id of a metabase object upon which to base this Trunk Base Settings |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4514,7 +5030,11 @@ let opts = {
   'sortOrder': "ASC", // String | Sort order
   'edgeId': "edgeId_example", // String | Filter by Edge Ids
   'trunkBaseId': "trunkBaseId_example", // String | Filter by Trunk Base Ids
-  'trunkType': "trunkType_example" // String | Filter by a Trunk type
+  'trunkType': "trunkType_example", // String | Filter by a Trunk type
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getTelephonyProvidersEdgesTrunks(opts)
@@ -4539,6 +5059,7 @@ apiInstance.getTelephonyProvidersEdgesTrunks(opts)
  **edgeId** | **String** | Filter by Edge Ids | [optional]  |
  **trunkBaseId** | **String** | Filter by Trunk Base Ids | [optional]  |
  **trunkType** | **String** | Filter by a Trunk type | [optional] <br />**Values**: EXTERNAL, PHONE, EDGE |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4547,7 +5068,7 @@ apiInstance.getTelephonyProvidersEdgesTrunks(opts)
 
 ## getTelephonyProvidersEdgesTrunksMetrics
 
-> [TrunkMetrics] getTelephonyProvidersEdgesTrunksMetrics(trunkIds)
+> [TrunkMetrics] getTelephonyProvidersEdgesTrunksMetrics(trunkIds, opts)
 
 
 GET /api/v2/telephony/providers/edges/trunks/metrics
@@ -4572,8 +5093,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 let trunkIds = "trunkIds_example"; // String | Comma separated list of Trunk Id's
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getTelephonyProvidersEdgesTrunksMetrics(trunkIds)
+apiInstance.getTelephonyProvidersEdgesTrunksMetrics(trunkIds, opts)
   .then((data) => {
     console.log(`getTelephonyProvidersEdgesTrunksMetrics success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4589,6 +5116,7 @@ apiInstance.getTelephonyProvidersEdgesTrunksMetrics(trunkIds)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **trunkIds** | **String** | Comma separated list of Trunk Id's |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4623,7 +5151,11 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 let opts = { 
-  'trunkType': "trunkType_example" // String | The type of this trunk base.
+  'trunkType': "trunkType_example", // String | The type of this trunk base.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getTelephonyProvidersEdgesTrunkswithrecording(opts)
@@ -4642,6 +5174,7 @@ apiInstance.getTelephonyProvidersEdgesTrunkswithrecording(opts)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **trunkType** | **String** | The type of this trunk base. | [optional] <br />**Values**: EXTERNAL, PHONE, EDGE |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4650,7 +5183,7 @@ apiInstance.getTelephonyProvidersEdgesTrunkswithrecording(opts)
 
 ## patchTelephonyProvidersEdgesSiteSiteconnections
 
-> SiteConnections patchTelephonyProvidersEdgesSiteSiteconnections(siteId, body)
+> SiteConnections patchTelephonyProvidersEdgesSiteSiteconnections(siteId, body, opts)
 
 
 PATCH /api/v2/telephony/providers/edges/sites/{siteId}/siteconnections
@@ -4676,8 +5209,14 @@ let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 let siteId = "siteId_example"; // String | Site ID
 let body = {}; // Object | Site
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchTelephonyProvidersEdgesSiteSiteconnections(siteId, body)
+apiInstance.patchTelephonyProvidersEdgesSiteSiteconnections(siteId, body, opts)
   .then((data) => {
     console.log(`patchTelephonyProvidersEdgesSiteSiteconnections success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4694,6 +5233,7 @@ apiInstance.patchTelephonyProvidersEdgesSiteSiteconnections(siteId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **siteId** | **String** | Site ID |  |
  **body** | **Object** | Site |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4702,7 +5242,7 @@ apiInstance.patchTelephonyProvidersEdgesSiteSiteconnections(siteId, body)
 
 ## postTelephonyProvidersEdgeDiagnosticNslookup
 
-> EdgeNetworkDiagnostic postTelephonyProvidersEdgeDiagnosticNslookup(edgeId, body)
+> EdgeNetworkDiagnostic postTelephonyProvidersEdgeDiagnosticNslookup(edgeId, body, opts)
 
 
 POST /api/v2/telephony/providers/edges/{edgeId}/diagnostic/nslookup
@@ -4728,8 +5268,14 @@ let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 let edgeId = "edgeId_example"; // String | Edge Id
 let body = {}; // Object | request payload to get network diagnostic
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postTelephonyProvidersEdgeDiagnosticNslookup(edgeId, body)
+apiInstance.postTelephonyProvidersEdgeDiagnosticNslookup(edgeId, body, opts)
   .then((data) => {
     console.log(`postTelephonyProvidersEdgeDiagnosticNslookup success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4746,6 +5292,7 @@ apiInstance.postTelephonyProvidersEdgeDiagnosticNslookup(edgeId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **edgeId** | **String** | Edge Id |  |
  **body** | **Object** | request payload to get network diagnostic |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4754,7 +5301,7 @@ apiInstance.postTelephonyProvidersEdgeDiagnosticNslookup(edgeId, body)
 
 ## postTelephonyProvidersEdgeDiagnosticPing
 
-> EdgeNetworkDiagnostic postTelephonyProvidersEdgeDiagnosticPing(edgeId, body)
+> EdgeNetworkDiagnostic postTelephonyProvidersEdgeDiagnosticPing(edgeId, body, opts)
 
 
 POST /api/v2/telephony/providers/edges/{edgeId}/diagnostic/ping
@@ -4780,8 +5327,14 @@ let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 let edgeId = "edgeId_example"; // String | Edge Id
 let body = {}; // Object | request payload to get network diagnostic
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postTelephonyProvidersEdgeDiagnosticPing(edgeId, body)
+apiInstance.postTelephonyProvidersEdgeDiagnosticPing(edgeId, body, opts)
   .then((data) => {
     console.log(`postTelephonyProvidersEdgeDiagnosticPing success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4798,6 +5351,7 @@ apiInstance.postTelephonyProvidersEdgeDiagnosticPing(edgeId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **edgeId** | **String** | Edge Id |  |
  **body** | **Object** | request payload to get network diagnostic |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4806,7 +5360,7 @@ apiInstance.postTelephonyProvidersEdgeDiagnosticPing(edgeId, body)
 
 ## postTelephonyProvidersEdgeDiagnosticRoute
 
-> EdgeNetworkDiagnostic postTelephonyProvidersEdgeDiagnosticRoute(edgeId, body)
+> EdgeNetworkDiagnostic postTelephonyProvidersEdgeDiagnosticRoute(edgeId, body, opts)
 
 
 POST /api/v2/telephony/providers/edges/{edgeId}/diagnostic/route
@@ -4832,8 +5386,14 @@ let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 let edgeId = "edgeId_example"; // String | Edge Id
 let body = {}; // Object | request payload to get network diagnostic
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postTelephonyProvidersEdgeDiagnosticRoute(edgeId, body)
+apiInstance.postTelephonyProvidersEdgeDiagnosticRoute(edgeId, body, opts)
   .then((data) => {
     console.log(`postTelephonyProvidersEdgeDiagnosticRoute success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4850,6 +5410,7 @@ apiInstance.postTelephonyProvidersEdgeDiagnosticRoute(edgeId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **edgeId** | **String** | Edge Id |  |
  **body** | **Object** | request payload to get network diagnostic |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4858,7 +5419,7 @@ apiInstance.postTelephonyProvidersEdgeDiagnosticRoute(edgeId, body)
 
 ## postTelephonyProvidersEdgeDiagnosticTracepath
 
-> EdgeNetworkDiagnostic postTelephonyProvidersEdgeDiagnosticTracepath(edgeId, body)
+> EdgeNetworkDiagnostic postTelephonyProvidersEdgeDiagnosticTracepath(edgeId, body, opts)
 
 
 POST /api/v2/telephony/providers/edges/{edgeId}/diagnostic/tracepath
@@ -4884,8 +5445,14 @@ let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 let edgeId = "edgeId_example"; // String | Edge Id
 let body = {}; // Object | request payload to get network diagnostic
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postTelephonyProvidersEdgeDiagnosticTracepath(edgeId, body)
+apiInstance.postTelephonyProvidersEdgeDiagnosticTracepath(edgeId, body, opts)
   .then((data) => {
     console.log(`postTelephonyProvidersEdgeDiagnosticTracepath success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4902,6 +5469,7 @@ apiInstance.postTelephonyProvidersEdgeDiagnosticTracepath(edgeId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **edgeId** | **String** | Edge Id |  |
  **body** | **Object** | request payload to get network diagnostic |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4910,7 +5478,7 @@ apiInstance.postTelephonyProvidersEdgeDiagnosticTracepath(edgeId, body)
 
 ## postTelephonyProvidersEdgeLogicalinterfaces
 
-> DomainLogicalInterface postTelephonyProvidersEdgeLogicalinterfaces(edgeId, body)
+> DomainLogicalInterface postTelephonyProvidersEdgeLogicalinterfaces(edgeId, body, opts)
 
 
 POST /api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces
@@ -4938,8 +5506,14 @@ let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 let edgeId = "edgeId_example"; // String | Edge ID
 let body = {}; // Object | Logical interface
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postTelephonyProvidersEdgeLogicalinterfaces(edgeId, body)
+apiInstance.postTelephonyProvidersEdgeLogicalinterfaces(edgeId, body, opts)
   .then((data) => {
     console.log(`postTelephonyProvidersEdgeLogicalinterfaces success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4956,6 +5530,7 @@ apiInstance.postTelephonyProvidersEdgeLogicalinterfaces(edgeId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **edgeId** | **String** | Edge ID |  |
  **body** | **Object** | Logical interface |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4964,7 +5539,7 @@ apiInstance.postTelephonyProvidersEdgeLogicalinterfaces(edgeId, body)
 
 ## postTelephonyProvidersEdgeLogsJobUpload
 
-> void postTelephonyProvidersEdgeLogsJobUpload(edgeId, jobId, body)
+> void postTelephonyProvidersEdgeLogsJobUpload(edgeId, jobId, body, opts)
 
 
 POST /api/v2/telephony/providers/edges/{edgeId}/logs/jobs/{jobId}/upload
@@ -4991,8 +5566,14 @@ let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 let edgeId = "edgeId_example"; // String | Edge ID
 let jobId = "jobId_example"; // String | Job ID
 let body = {}; // Object | Log upload request
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postTelephonyProvidersEdgeLogsJobUpload(edgeId, jobId, body)
+apiInstance.postTelephonyProvidersEdgeLogsJobUpload(edgeId, jobId, body, opts)
   .then(() => {
     console.log('postTelephonyProvidersEdgeLogsJobUpload returned successfully.');
   })
@@ -5010,6 +5591,7 @@ apiInstance.postTelephonyProvidersEdgeLogsJobUpload(edgeId, jobId, body)
  **edgeId** | **String** | Edge ID |  |
  **jobId** | **String** | Job ID |  |
  **body** | **Object** | Log upload request |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5018,7 +5600,7 @@ void (no response body)
 
 ## postTelephonyProvidersEdgeLogsJobs
 
-> EdgeLogsJobResponse postTelephonyProvidersEdgeLogsJobs(edgeId, body)
+> EdgeLogsJobResponse postTelephonyProvidersEdgeLogsJobs(edgeId, body, opts)
 
 
 POST /api/v2/telephony/providers/edges/{edgeId}/logs/jobs
@@ -5044,8 +5626,14 @@ let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 let edgeId = "edgeId_example"; // String | Edge ID
 let body = {}; // Object | EdgeLogsJobRequest
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postTelephonyProvidersEdgeLogsJobs(edgeId, body)
+apiInstance.postTelephonyProvidersEdgeLogsJobs(edgeId, body, opts)
   .then((data) => {
     console.log(`postTelephonyProvidersEdgeLogsJobs success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5062,6 +5650,7 @@ apiInstance.postTelephonyProvidersEdgeLogsJobs(edgeId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **edgeId** | **String** | Edge ID |  |
  **body** | **Object** | EdgeLogsJobRequest |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5096,7 +5685,11 @@ let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 let edgeId = "edgeId_example"; // String | Edge ID
 let opts = { 
-  'body': {} // Object | Parameters for the edge reboot
+  'body': {}, // Object | Parameters for the edge reboot
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postTelephonyProvidersEdgeReboot(edgeId, opts)
@@ -5116,6 +5709,7 @@ apiInstance.postTelephonyProvidersEdgeReboot(edgeId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **edgeId** | **String** | Edge ID |  |
  **body** | **Object** | Parameters for the edge reboot | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5124,7 +5718,7 @@ apiInstance.postTelephonyProvidersEdgeReboot(edgeId, opts)
 
 ## postTelephonyProvidersEdgeSoftwareupdate
 
-> DomainEdgeSoftwareUpdateDto postTelephonyProvidersEdgeSoftwareupdate(edgeId, body)
+> DomainEdgeSoftwareUpdateDto postTelephonyProvidersEdgeSoftwareupdate(edgeId, body, opts)
 
 
 POST /api/v2/telephony/providers/edges/{edgeId}/softwareupdate
@@ -5148,8 +5742,14 @@ let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 let edgeId = "edgeId_example"; // String | Edge ID
 let body = {}; // Object | Software update request
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postTelephonyProvidersEdgeSoftwareupdate(edgeId, body)
+apiInstance.postTelephonyProvidersEdgeSoftwareupdate(edgeId, body, opts)
   .then((data) => {
     console.log(`postTelephonyProvidersEdgeSoftwareupdate success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5166,6 +5766,7 @@ apiInstance.postTelephonyProvidersEdgeSoftwareupdate(edgeId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **edgeId** | **String** | Edge ID |  |
  **body** | **Object** | Software update request |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5200,7 +5801,11 @@ let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 let edgeId = "edgeId_example"; // String | Edge ID
 let opts = { 
-  'body': {} // Object | Edge Service State
+  'body': {}, // Object | Edge Service State
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postTelephonyProvidersEdgeStatuscode(edgeId, opts)
@@ -5220,6 +5825,7 @@ apiInstance.postTelephonyProvidersEdgeStatuscode(edgeId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **edgeId** | **String** | Edge ID |  |
  **body** | **Object** | Edge Service State | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5228,7 +5834,7 @@ apiInstance.postTelephonyProvidersEdgeStatuscode(edgeId, opts)
 
 ## postTelephonyProvidersEdgeUnpair
 
-> **&#39;String&#39;** postTelephonyProvidersEdgeUnpair(edgeId)
+> **&#39;String&#39;** postTelephonyProvidersEdgeUnpair(edgeId, opts)
 
 
 POST /api/v2/telephony/providers/edges/{edgeId}/unpair
@@ -5253,8 +5859,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 let edgeId = "edgeId_example"; // String | Edge Id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postTelephonyProvidersEdgeUnpair(edgeId)
+apiInstance.postTelephonyProvidersEdgeUnpair(edgeId, opts)
   .then((data) => {
     console.log(`postTelephonyProvidersEdgeUnpair success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5270,6 +5882,7 @@ apiInstance.postTelephonyProvidersEdgeUnpair(edgeId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **edgeId** | **String** | Edge Id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5278,7 +5891,7 @@ apiInstance.postTelephonyProvidersEdgeUnpair(edgeId)
 
 ## postTelephonyProvidersEdges
 
-> Edge postTelephonyProvidersEdges(body)
+> Edge postTelephonyProvidersEdges(body, opts)
 
 
 POST /api/v2/telephony/providers/edges
@@ -5303,8 +5916,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 let body = {}; // Object | Edge
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postTelephonyProvidersEdges(body)
+apiInstance.postTelephonyProvidersEdges(body, opts)
   .then((data) => {
     console.log(`postTelephonyProvidersEdges success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5320,6 +5939,7 @@ apiInstance.postTelephonyProvidersEdges(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Edge |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5328,7 +5948,7 @@ apiInstance.postTelephonyProvidersEdges(body)
 
 ## postTelephonyProvidersEdgesAddressvalidation
 
-> ValidateAddressResponse postTelephonyProvidersEdgesAddressvalidation(body)
+> ValidateAddressResponse postTelephonyProvidersEdgesAddressvalidation(body, opts)
 
 
 POST /api/v2/telephony/providers/edges/addressvalidation
@@ -5351,8 +5971,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 let body = {}; // Object | Address
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postTelephonyProvidersEdgesAddressvalidation(body)
+apiInstance.postTelephonyProvidersEdgesAddressvalidation(body, opts)
   .then((data) => {
     console.log(`postTelephonyProvidersEdgesAddressvalidation success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5368,6 +5994,7 @@ apiInstance.postTelephonyProvidersEdgesAddressvalidation(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Address |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5376,7 +6003,7 @@ apiInstance.postTelephonyProvidersEdgesAddressvalidation(body)
 
 ## postTelephonyProvidersEdgesCertificateauthorities
 
-> DomainCertificateAuthority postTelephonyProvidersEdgesCertificateauthorities(body)
+> DomainCertificateAuthority postTelephonyProvidersEdgesCertificateauthorities(body, opts)
 
 
 POST /api/v2/telephony/providers/edges/certificateauthorities
@@ -5401,8 +6028,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 let body = {}; // Object | CertificateAuthority
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postTelephonyProvidersEdgesCertificateauthorities(body)
+apiInstance.postTelephonyProvidersEdgesCertificateauthorities(body, opts)
   .then((data) => {
     console.log(`postTelephonyProvidersEdgesCertificateauthorities success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5418,6 +6051,7 @@ apiInstance.postTelephonyProvidersEdgesCertificateauthorities(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | CertificateAuthority |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5426,7 +6060,7 @@ apiInstance.postTelephonyProvidersEdgesCertificateauthorities(body)
 
 ## postTelephonyProvidersEdgesDidpools
 
-> DIDPool postTelephonyProvidersEdgesDidpools(body)
+> DIDPool postTelephonyProvidersEdgesDidpools(body, opts)
 
 
 POST /api/v2/telephony/providers/edges/didpools
@@ -5451,8 +6085,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 let body = {}; // Object | DID pool
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postTelephonyProvidersEdgesDidpools(body)
+apiInstance.postTelephonyProvidersEdgesDidpools(body, opts)
   .then((data) => {
     console.log(`postTelephonyProvidersEdgesDidpools success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5468,6 +6108,7 @@ apiInstance.postTelephonyProvidersEdgesDidpools(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | DID pool |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5476,7 +6117,7 @@ apiInstance.postTelephonyProvidersEdgesDidpools(body)
 
 ## postTelephonyProvidersEdgesEdgegroups
 
-> EdgeGroup postTelephonyProvidersEdgesEdgegroups(body)
+> EdgeGroup postTelephonyProvidersEdgesEdgegroups(body, opts)
 
 
 POST /api/v2/telephony/providers/edges/edgegroups
@@ -5501,8 +6142,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 let body = {}; // Object | EdgeGroup
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postTelephonyProvidersEdgesEdgegroups(body)
+apiInstance.postTelephonyProvidersEdgesEdgegroups(body, opts)
   .then((data) => {
     console.log(`postTelephonyProvidersEdgesEdgegroups success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5518,6 +6165,7 @@ apiInstance.postTelephonyProvidersEdgesEdgegroups(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | EdgeGroup |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5526,7 +6174,7 @@ apiInstance.postTelephonyProvidersEdgesEdgegroups(body)
 
 ## postTelephonyProvidersEdgesExtensionpools
 
-> ExtensionPool postTelephonyProvidersEdgesExtensionpools(body)
+> ExtensionPool postTelephonyProvidersEdgesExtensionpools(body, opts)
 
 
 POST /api/v2/telephony/providers/edges/extensionpools
@@ -5551,8 +6199,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 let body = {}; // Object | ExtensionPool
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postTelephonyProvidersEdgesExtensionpools(body)
+apiInstance.postTelephonyProvidersEdgesExtensionpools(body, opts)
   .then((data) => {
     console.log(`postTelephonyProvidersEdgesExtensionpools success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5568,73 +6222,16 @@ apiInstance.postTelephonyProvidersEdgesExtensionpools(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | ExtensionPool |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **ExtensionPool**
 
 
-## postTelephonyProvidersEdgesMediastatisticsConversationCommunicationMediaresource
-
-> MediaStatistics postTelephonyProvidersEdgesMediastatisticsConversationCommunicationMediaresource(conversationId, communicationId, mediaResourceId, body)
-
-
-POST /api/v2/telephony/providers/edges/mediastatistics/conversations/{conversationId}/communications/{communicationId}/mediaresources/{mediaResourceId}
-
-Post media endpoint statistics event.
-
-postTelephonyProvidersEdgesMediastatisticsConversationCommunicationMediaresource is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
-Requires ANY permissions:
-
-* telephony:mediaStatistics:add
-
-### Example Usage
-
-```{"language":"javascript"}
-// Browser
-const platformClient = require('platformClient');
-// Node
-const platformClient = require('purecloud-platform-client-v2');
-
-// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
-platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
-
-let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
-
-let conversationId = "conversationId_example"; // String | Identifier of the conversation
-let communicationId = "communicationId_example"; // String | Identifier of the media session
-let mediaResourceId = "mediaResourceId_example"; // String | Identifier of the media resource of the endpoint
-let body = {}; // Object | MediaStatisticsPostRequest
-
-apiInstance.postTelephonyProvidersEdgesMediastatisticsConversationCommunicationMediaresource(conversationId, communicationId, mediaResourceId, body)
-  .then((data) => {
-    console.log(`postTelephonyProvidersEdgesMediastatisticsConversationCommunicationMediaresource success! data: ${JSON.stringify(data, null, 2)}`);
-  })
-  .catch((err) => {
-    console.log('There was a failure calling postTelephonyProvidersEdgesMediastatisticsConversationCommunicationMediaresource');
-    console.error(err);
-  });
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
- **conversationId** | **String** | Identifier of the conversation |  |
- **communicationId** | **String** | Identifier of the media session |  |
- **mediaResourceId** | **String** | Identifier of the media resource of the endpoint |  |
- **body** | **Object** | MediaStatisticsPostRequest |  |
-
-### Return type
-
-**MediaStatistics**
-
-
 ## postTelephonyProvidersEdgesPhoneReboot
 
-> void postTelephonyProvidersEdgesPhoneReboot(phoneId)
+> void postTelephonyProvidersEdgesPhoneReboot(phoneId, opts)
 
 
 POST /api/v2/telephony/providers/edges/phones/{phoneId}/reboot
@@ -5659,8 +6256,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 let phoneId = "phoneId_example"; // String | Phone Id
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postTelephonyProvidersEdgesPhoneReboot(phoneId)
+apiInstance.postTelephonyProvidersEdgesPhoneReboot(phoneId, opts)
   .then(() => {
     console.log('postTelephonyProvidersEdgesPhoneReboot returned successfully.');
   })
@@ -5676,6 +6279,7 @@ apiInstance.postTelephonyProvidersEdgesPhoneReboot(phoneId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **phoneId** | **String** | Phone Id |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5684,7 +6288,7 @@ void (no response body)
 
 ## postTelephonyProvidersEdgesPhonebasesettings
 
-> PhoneBase postTelephonyProvidersEdgesPhonebasesettings(body)
+> PhoneBase postTelephonyProvidersEdgesPhonebasesettings(body, opts)
 
 
 POST /api/v2/telephony/providers/edges/phonebasesettings
@@ -5709,8 +6313,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 let body = {}; // Object | Phone base settings
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postTelephonyProvidersEdgesPhonebasesettings(body)
+apiInstance.postTelephonyProvidersEdgesPhonebasesettings(body, opts)
   .then((data) => {
     console.log(`postTelephonyProvidersEdgesPhonebasesettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5726,6 +6336,7 @@ apiInstance.postTelephonyProvidersEdgesPhonebasesettings(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Phone base settings |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5734,7 +6345,7 @@ apiInstance.postTelephonyProvidersEdgesPhonebasesettings(body)
 
 ## postTelephonyProvidersEdgesPhones
 
-> Phone postTelephonyProvidersEdgesPhones(body)
+> Phone postTelephonyProvidersEdgesPhones(body, opts)
 
 
 POST /api/v2/telephony/providers/edges/phones
@@ -5759,8 +6370,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 let body = {}; // Object | Phone
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postTelephonyProvidersEdgesPhones(body)
+apiInstance.postTelephonyProvidersEdgesPhones(body, opts)
   .then((data) => {
     console.log(`postTelephonyProvidersEdgesPhones success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5776,6 +6393,7 @@ apiInstance.postTelephonyProvidersEdgesPhones(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Phone |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5784,7 +6402,7 @@ apiInstance.postTelephonyProvidersEdgesPhones(body)
 
 ## postTelephonyProvidersEdgesPhonesReboot
 
-> void postTelephonyProvidersEdgesPhonesReboot(body)
+> void postTelephonyProvidersEdgesPhonesReboot(body, opts)
 
 
 POST /api/v2/telephony/providers/edges/phones/reboot
@@ -5809,8 +6427,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 let body = {}; // Object | Phones
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postTelephonyProvidersEdgesPhonesReboot(body)
+apiInstance.postTelephonyProvidersEdgesPhonesReboot(body, opts)
   .then(() => {
     console.log('postTelephonyProvidersEdgesPhonesReboot returned successfully.');
   })
@@ -5826,6 +6450,7 @@ apiInstance.postTelephonyProvidersEdgesPhonesReboot(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Phones |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5834,7 +6459,7 @@ void (no response body)
 
 ## postTelephonyProvidersEdgesSiteOutboundroutes
 
-> OutboundRouteBase postTelephonyProvidersEdgesSiteOutboundroutes(siteId, body)
+> OutboundRouteBase postTelephonyProvidersEdgesSiteOutboundroutes(siteId, body, opts)
 
 
 POST /api/v2/telephony/providers/edges/sites/{siteId}/outboundroutes
@@ -5860,8 +6485,14 @@ let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 let siteId = "siteId_example"; // String | Site ID
 let body = {}; // Object | OutboundRoute
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postTelephonyProvidersEdgesSiteOutboundroutes(siteId, body)
+apiInstance.postTelephonyProvidersEdgesSiteOutboundroutes(siteId, body, opts)
   .then((data) => {
     console.log(`postTelephonyProvidersEdgesSiteOutboundroutes success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5878,6 +6509,7 @@ apiInstance.postTelephonyProvidersEdgesSiteOutboundroutes(siteId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **siteId** | **String** | Site ID |  |
  **body** | **Object** | OutboundRoute |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5886,7 +6518,7 @@ apiInstance.postTelephonyProvidersEdgesSiteOutboundroutes(siteId, body)
 
 ## postTelephonyProvidersEdgesSites
 
-> Site postTelephonyProvidersEdgesSites(body)
+> Site postTelephonyProvidersEdgesSites(body, opts)
 
 
 POST /api/v2/telephony/providers/edges/sites
@@ -5911,8 +6543,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 let body = {}; // Object | Site
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postTelephonyProvidersEdgesSites(body)
+apiInstance.postTelephonyProvidersEdgesSites(body, opts)
   .then((data) => {
     console.log(`postTelephonyProvidersEdgesSites success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5928,6 +6566,7 @@ apiInstance.postTelephonyProvidersEdgesSites(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Site |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5936,7 +6575,7 @@ apiInstance.postTelephonyProvidersEdgesSites(body)
 
 ## postTelephonyProvidersEdgesSitesSearch
 
-> SitesSearchResponse postTelephonyProvidersEdgesSitesSearch(body)
+> SitesSearchResponse postTelephonyProvidersEdgesSitesSearch(body, opts)
 
 
 POST /api/v2/telephony/providers/edges/sites/search
@@ -5962,8 +6601,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 let body = {}; // Object | Search request options
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postTelephonyProvidersEdgesSitesSearch(body)
+apiInstance.postTelephonyProvidersEdgesSitesSearch(body, opts)
   .then((data) => {
     console.log(`postTelephonyProvidersEdgesSitesSearch success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5979,6 +6624,7 @@ apiInstance.postTelephonyProvidersEdgesSitesSearch(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Search request options |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5987,7 +6633,7 @@ apiInstance.postTelephonyProvidersEdgesSitesSearch(body)
 
 ## postTelephonyProvidersEdgesTrunkbasesettings
 
-> TrunkBase postTelephonyProvidersEdgesTrunkbasesettings(body)
+> TrunkBase postTelephonyProvidersEdgesTrunkbasesettings(body, opts)
 
 
 POST /api/v2/telephony/providers/edges/trunkbasesettings
@@ -6012,8 +6658,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 let body = {}; // Object | Trunk base settings
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postTelephonyProvidersEdgesTrunkbasesettings(body)
+apiInstance.postTelephonyProvidersEdgesTrunkbasesettings(body, opts)
   .then((data) => {
     console.log(`postTelephonyProvidersEdgesTrunkbasesettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6029,6 +6681,7 @@ apiInstance.postTelephonyProvidersEdgesTrunkbasesettings(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Trunk base settings |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6037,7 +6690,7 @@ apiInstance.postTelephonyProvidersEdgesTrunkbasesettings(body)
 
 ## putTelephonyProvidersEdge
 
-> Edge putTelephonyProvidersEdge(edgeId, body)
+> Edge putTelephonyProvidersEdge(edgeId, body, opts)
 
 
 PUT /api/v2/telephony/providers/edges/{edgeId}
@@ -6063,8 +6716,14 @@ let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 let edgeId = "edgeId_example"; // String | Edge ID
 let body = {}; // Object | Edge
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putTelephonyProvidersEdge(edgeId, body)
+apiInstance.putTelephonyProvidersEdge(edgeId, body, opts)
   .then((data) => {
     console.log(`putTelephonyProvidersEdge success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6081,6 +6740,7 @@ apiInstance.putTelephonyProvidersEdge(edgeId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **edgeId** | **String** | Edge ID |  |
  **body** | **Object** | Edge |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6089,7 +6749,7 @@ apiInstance.putTelephonyProvidersEdge(edgeId, body)
 
 ## putTelephonyProvidersEdgeLogicalinterface
 
-> DomainLogicalInterface putTelephonyProvidersEdgeLogicalinterface(edgeId, interfaceId, body)
+> DomainLogicalInterface putTelephonyProvidersEdgeLogicalinterface(edgeId, interfaceId, body, opts)
 
 
 PUT /api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces/{interfaceId}
@@ -6116,8 +6776,14 @@ let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 let edgeId = "edgeId_example"; // String | Edge ID
 let interfaceId = "interfaceId_example"; // String | Interface ID
 let body = {}; // Object | Logical interface
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putTelephonyProvidersEdgeLogicalinterface(edgeId, interfaceId, body)
+apiInstance.putTelephonyProvidersEdgeLogicalinterface(edgeId, interfaceId, body, opts)
   .then((data) => {
     console.log(`putTelephonyProvidersEdgeLogicalinterface success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6135,6 +6801,7 @@ apiInstance.putTelephonyProvidersEdgeLogicalinterface(edgeId, interfaceId, body)
  **edgeId** | **String** | Edge ID |  |
  **interfaceId** | **String** | Interface ID |  |
  **body** | **Object** | Logical interface |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6143,7 +6810,7 @@ apiInstance.putTelephonyProvidersEdgeLogicalinterface(edgeId, interfaceId, body)
 
 ## putTelephonyProvidersEdgesAlertablepresences
 
-> void putTelephonyProvidersEdgesAlertablepresences(body)
+> void putTelephonyProvidersEdgesAlertablepresences(body, opts)
 
 
 PUT /api/v2/telephony/providers/edges/alertablepresences
@@ -6168,8 +6835,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 let body = {}; // Object | Alertable Presences Overrides
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putTelephonyProvidersEdgesAlertablepresences(body)
+apiInstance.putTelephonyProvidersEdgesAlertablepresences(body, opts)
   .then(() => {
     console.log('putTelephonyProvidersEdgesAlertablepresences returned successfully.');
   })
@@ -6185,6 +6858,7 @@ apiInstance.putTelephonyProvidersEdgesAlertablepresences(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Alertable Presences Overrides |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6193,7 +6867,7 @@ void (no response body)
 
 ## putTelephonyProvidersEdgesCertificateauthority
 
-> DomainCertificateAuthority putTelephonyProvidersEdgesCertificateauthority(certificateId, body)
+> DomainCertificateAuthority putTelephonyProvidersEdgesCertificateauthority(certificateId, body, opts)
 
 
 PUT /api/v2/telephony/providers/edges/certificateauthorities/{certificateId}
@@ -6219,8 +6893,14 @@ let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 let certificateId = "certificateId_example"; // String | Certificate ID
 let body = {}; // Object | Certificate authority
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putTelephonyProvidersEdgesCertificateauthority(certificateId, body)
+apiInstance.putTelephonyProvidersEdgesCertificateauthority(certificateId, body, opts)
   .then((data) => {
     console.log(`putTelephonyProvidersEdgesCertificateauthority success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6237,6 +6917,7 @@ apiInstance.putTelephonyProvidersEdgesCertificateauthority(certificateId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **certificateId** | **String** | Certificate ID |  |
  **body** | **Object** | Certificate authority |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6245,7 +6926,7 @@ apiInstance.putTelephonyProvidersEdgesCertificateauthority(certificateId, body)
 
 ## putTelephonyProvidersEdgesDidpool
 
-> DIDPool putTelephonyProvidersEdgesDidpool(didPoolId, body)
+> DIDPool putTelephonyProvidersEdgesDidpool(didPoolId, body, opts)
 
 
 PUT /api/v2/telephony/providers/edges/didpools/{didPoolId}
@@ -6271,8 +6952,14 @@ let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 let didPoolId = "didPoolId_example"; // String | DID pool ID
 let body = {}; // Object | DID pool
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putTelephonyProvidersEdgesDidpool(didPoolId, body)
+apiInstance.putTelephonyProvidersEdgesDidpool(didPoolId, body, opts)
   .then((data) => {
     console.log(`putTelephonyProvidersEdgesDidpool success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6289,6 +6976,7 @@ apiInstance.putTelephonyProvidersEdgesDidpool(didPoolId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **didPoolId** | **String** | DID pool ID |  |
  **body** | **Object** | DID pool |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6297,7 +6985,7 @@ apiInstance.putTelephonyProvidersEdgesDidpool(didPoolId, body)
 
 ## putTelephonyProvidersEdgesEdgegroup
 
-> EdgeGroup putTelephonyProvidersEdgesEdgegroup(edgeGroupId, body)
+> EdgeGroup putTelephonyProvidersEdgesEdgegroup(edgeGroupId, body, opts)
 
 
 PUT /api/v2/telephony/providers/edges/edgegroups/{edgeGroupId}
@@ -6323,8 +7011,14 @@ let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 let edgeGroupId = "edgeGroupId_example"; // String | Edge group ID
 let body = {}; // Object | EdgeGroup
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putTelephonyProvidersEdgesEdgegroup(edgeGroupId, body)
+apiInstance.putTelephonyProvidersEdgesEdgegroup(edgeGroupId, body, opts)
   .then((data) => {
     console.log(`putTelephonyProvidersEdgesEdgegroup success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6341,6 +7035,7 @@ apiInstance.putTelephonyProvidersEdgesEdgegroup(edgeGroupId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **edgeGroupId** | **String** | Edge group ID |  |
  **body** | **Object** | EdgeGroup |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6349,7 +7044,7 @@ apiInstance.putTelephonyProvidersEdgesEdgegroup(edgeGroupId, body)
 
 ## putTelephonyProvidersEdgesEdgegroupEdgetrunkbase
 
-> EdgeTrunkBase putTelephonyProvidersEdgesEdgegroupEdgetrunkbase(edgegroupId, edgetrunkbaseId, body)
+> EdgeTrunkBase putTelephonyProvidersEdgesEdgegroupEdgetrunkbase(edgegroupId, edgetrunkbaseId, body, opts)
 
 
 PUT /api/v2/telephony/providers/edges/edgegroups/{edgegroupId}/edgetrunkbases/{edgetrunkbaseId}
@@ -6376,8 +7071,14 @@ let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 let edgegroupId = "edgegroupId_example"; // String | Edge Group ID
 let edgetrunkbaseId = "edgetrunkbaseId_example"; // String | Edge Trunk Base ID
 let body = {}; // Object | EdgeTrunkBase
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putTelephonyProvidersEdgesEdgegroupEdgetrunkbase(edgegroupId, edgetrunkbaseId, body)
+apiInstance.putTelephonyProvidersEdgesEdgegroupEdgetrunkbase(edgegroupId, edgetrunkbaseId, body, opts)
   .then((data) => {
     console.log(`putTelephonyProvidersEdgesEdgegroupEdgetrunkbase success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6395,6 +7096,7 @@ apiInstance.putTelephonyProvidersEdgesEdgegroupEdgetrunkbase(edgegroupId, edgetr
  **edgegroupId** | **String** | Edge Group ID |  |
  **edgetrunkbaseId** | **String** | Edge Trunk Base ID |  |
  **body** | **Object** | EdgeTrunkBase |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6403,7 +7105,7 @@ apiInstance.putTelephonyProvidersEdgesEdgegroupEdgetrunkbase(edgegroupId, edgetr
 
 ## putTelephonyProvidersEdgesExtensionpool
 
-> ExtensionPool putTelephonyProvidersEdgesExtensionpool(extensionPoolId, body)
+> ExtensionPool putTelephonyProvidersEdgesExtensionpool(extensionPoolId, body, opts)
 
 
 PUT /api/v2/telephony/providers/edges/extensionpools/{extensionPoolId}
@@ -6429,8 +7131,14 @@ let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 let extensionPoolId = "extensionPoolId_example"; // String | Extension pool ID
 let body = {}; // Object | ExtensionPool
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putTelephonyProvidersEdgesExtensionpool(extensionPoolId, body)
+apiInstance.putTelephonyProvidersEdgesExtensionpool(extensionPoolId, body, opts)
   .then((data) => {
     console.log(`putTelephonyProvidersEdgesExtensionpool success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6447,6 +7155,7 @@ apiInstance.putTelephonyProvidersEdgesExtensionpool(extensionPoolId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **extensionPoolId** | **String** | Extension pool ID |  |
  **body** | **Object** | ExtensionPool |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6455,7 +7164,7 @@ apiInstance.putTelephonyProvidersEdgesExtensionpool(extensionPoolId, body)
 
 ## putTelephonyProvidersEdgesPhone
 
-> Phone putTelephonyProvidersEdgesPhone(phoneId, body)
+> Phone putTelephonyProvidersEdgesPhone(phoneId, body, opts)
 
 
 PUT /api/v2/telephony/providers/edges/phones/{phoneId}
@@ -6481,8 +7190,14 @@ let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 let phoneId = "phoneId_example"; // String | Phone ID
 let body = {}; // Object | Phone
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putTelephonyProvidersEdgesPhone(phoneId, body)
+apiInstance.putTelephonyProvidersEdgesPhone(phoneId, body, opts)
   .then((data) => {
     console.log(`putTelephonyProvidersEdgesPhone success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6499,6 +7214,7 @@ apiInstance.putTelephonyProvidersEdgesPhone(phoneId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **phoneId** | **String** | Phone ID |  |
  **body** | **Object** | Phone |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6507,7 +7223,7 @@ apiInstance.putTelephonyProvidersEdgesPhone(phoneId, body)
 
 ## putTelephonyProvidersEdgesPhonebasesetting
 
-> PhoneBase putTelephonyProvidersEdgesPhonebasesetting(phoneBaseId, body)
+> PhoneBase putTelephonyProvidersEdgesPhonebasesetting(phoneBaseId, body, opts)
 
 
 PUT /api/v2/telephony/providers/edges/phonebasesettings/{phoneBaseId}
@@ -6533,8 +7249,14 @@ let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 let phoneBaseId = "phoneBaseId_example"; // String | Phone base ID
 let body = {}; // Object | Phone base settings
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putTelephonyProvidersEdgesPhonebasesetting(phoneBaseId, body)
+apiInstance.putTelephonyProvidersEdgesPhonebasesetting(phoneBaseId, body, opts)
   .then((data) => {
     console.log(`putTelephonyProvidersEdgesPhonebasesetting success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6551,6 +7273,7 @@ apiInstance.putTelephonyProvidersEdgesPhonebasesetting(phoneBaseId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **phoneBaseId** | **String** | Phone base ID |  |
  **body** | **Object** | Phone base settings |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6559,7 +7282,7 @@ apiInstance.putTelephonyProvidersEdgesPhonebasesetting(phoneBaseId, body)
 
 ## putTelephonyProvidersEdgesSite
 
-> Site putTelephonyProvidersEdgesSite(siteId, body)
+> Site putTelephonyProvidersEdgesSite(siteId, body, opts)
 
 
 PUT /api/v2/telephony/providers/edges/sites/{siteId}
@@ -6585,8 +7308,14 @@ let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 let siteId = "siteId_example"; // String | Site ID
 let body = {}; // Object | Site
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putTelephonyProvidersEdgesSite(siteId, body)
+apiInstance.putTelephonyProvidersEdgesSite(siteId, body, opts)
   .then((data) => {
     console.log(`putTelephonyProvidersEdgesSite success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6603,6 +7332,7 @@ apiInstance.putTelephonyProvidersEdgesSite(siteId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **siteId** | **String** | Site ID |  |
  **body** | **Object** | Site |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6611,7 +7341,7 @@ apiInstance.putTelephonyProvidersEdgesSite(siteId, body)
 
 ## putTelephonyProvidersEdgesSiteNumberplans
 
-> [NumberPlan] putTelephonyProvidersEdgesSiteNumberplans(siteId, body)
+> [NumberPlan] putTelephonyProvidersEdgesSiteNumberplans(siteId, body, opts)
 
 
 PUT /api/v2/telephony/providers/edges/sites/{siteId}/numberplans
@@ -6637,8 +7367,14 @@ let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 let siteId = "siteId_example"; // String | Site ID
 let body = [{}]; // Object | List of number plans
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putTelephonyProvidersEdgesSiteNumberplans(siteId, body)
+apiInstance.putTelephonyProvidersEdgesSiteNumberplans(siteId, body, opts)
   .then((data) => {
     console.log(`putTelephonyProvidersEdgesSiteNumberplans success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6655,6 +7391,7 @@ apiInstance.putTelephonyProvidersEdgesSiteNumberplans(siteId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **siteId** | **String** | Site ID |  |
  **body** | **Object** | List of number plans |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6663,7 +7400,7 @@ apiInstance.putTelephonyProvidersEdgesSiteNumberplans(siteId, body)
 
 ## putTelephonyProvidersEdgesSiteOutboundroute
 
-> OutboundRouteBase putTelephonyProvidersEdgesSiteOutboundroute(siteId, outboundRouteId, body)
+> OutboundRouteBase putTelephonyProvidersEdgesSiteOutboundroute(siteId, outboundRouteId, body, opts)
 
 
 PUT /api/v2/telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId}
@@ -6690,8 +7427,14 @@ let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 let siteId = "siteId_example"; // String | Site ID
 let outboundRouteId = "outboundRouteId_example"; // String | Outbound route ID
 let body = {}; // Object | OutboundRoute
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putTelephonyProvidersEdgesSiteOutboundroute(siteId, outboundRouteId, body)
+apiInstance.putTelephonyProvidersEdgesSiteOutboundroute(siteId, outboundRouteId, body, opts)
   .then((data) => {
     console.log(`putTelephonyProvidersEdgesSiteOutboundroute success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6709,6 +7452,7 @@ apiInstance.putTelephonyProvidersEdgesSiteOutboundroute(siteId, outboundRouteId,
  **siteId** | **String** | Site ID |  |
  **outboundRouteId** | **String** | Outbound route ID |  |
  **body** | **Object** | OutboundRoute |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6717,7 +7461,7 @@ apiInstance.putTelephonyProvidersEdgesSiteOutboundroute(siteId, outboundRouteId,
 
 ## putTelephonyProvidersEdgesSiteSiteconnections
 
-> SiteConnections putTelephonyProvidersEdgesSiteSiteconnections(siteId, body)
+> SiteConnections putTelephonyProvidersEdgesSiteSiteconnections(siteId, body, opts)
 
 
 PUT /api/v2/telephony/providers/edges/sites/{siteId}/siteconnections
@@ -6743,8 +7487,14 @@ let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 let siteId = "siteId_example"; // String | Site ID
 let body = {}; // Object | Site
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putTelephonyProvidersEdgesSiteSiteconnections(siteId, body)
+apiInstance.putTelephonyProvidersEdgesSiteSiteconnections(siteId, body, opts)
   .then((data) => {
     console.log(`putTelephonyProvidersEdgesSiteSiteconnections success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6761,6 +7511,7 @@ apiInstance.putTelephonyProvidersEdgesSiteSiteconnections(siteId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **siteId** | **String** | Site ID |  |
  **body** | **Object** | Site |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6769,7 +7520,7 @@ apiInstance.putTelephonyProvidersEdgesSiteSiteconnections(siteId, body)
 
 ## putTelephonyProvidersEdgesTrunkbasesetting
 
-> TrunkBase putTelephonyProvidersEdgesTrunkbasesetting(trunkBaseSettingsId, body)
+> TrunkBase putTelephonyProvidersEdgesTrunkbasesetting(trunkBaseSettingsId, body, opts)
 
 
 PUT /api/v2/telephony/providers/edges/trunkbasesettings/{trunkBaseSettingsId}
@@ -6795,8 +7546,14 @@ let apiInstance = new platformClient.TelephonyProvidersEdgeApi();
 
 let trunkBaseSettingsId = "trunkBaseSettingsId_example"; // String | Trunk Base ID
 let body = {}; // Object | Trunk base settings
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putTelephonyProvidersEdgesTrunkbasesetting(trunkBaseSettingsId, body)
+apiInstance.putTelephonyProvidersEdgesTrunkbasesetting(trunkBaseSettingsId, body, opts)
   .then((data) => {
     console.log(`putTelephonyProvidersEdgesTrunkbasesetting success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6813,10 +7570,11 @@ apiInstance.putTelephonyProvidersEdgesTrunkbasesetting(trunkBaseSettingsId, body
 | ------------- | ------------- | ------------- | ------------- |
  **trunkBaseSettingsId** | **String** | Trunk Base ID |  |
  **body** | **Object** | Trunk base settings |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **TrunkBase**
 
 
-_purecloud-platform-client-v2@229.1.0_
+_purecloud-platform-client-v2@258.0.0_

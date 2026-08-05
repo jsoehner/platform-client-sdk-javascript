@@ -14,7 +14,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**deleteOutboundCampaignrule**](OutboundApi#deleteOutboundCampaignrule) | **DELETE** /api/v2/outbound/campaignrules/{campaignRuleId} | Delete Campaign Rule
 [**deleteOutboundContactlist**](OutboundApi#deleteOutboundContactlist) | **DELETE** /api/v2/outbound/contactlists/{contactListId} | Delete a contact list.
 [**deleteOutboundContactlistContact**](OutboundApi#deleteOutboundContactlistContact) | **DELETE** /api/v2/outbound/contactlists/{contactListId}/contacts/{contactId} | Delete a contact.
-[**deleteOutboundContactlistContacts**](OutboundApi#deleteOutboundContactlistContacts) | **DELETE** /api/v2/outbound/contactlists/{contactListId}/contacts | Delete contacts from a contact list.
+[**deleteOutboundContactlistContacts**](OutboundApi#deleteOutboundContactlistContacts) | **DELETE** /api/v2/outbound/contactlists/{contactListId}/contacts | Delete contacts from a contact list. Only contacts that are not in use by any campaign will be deleted
 [**deleteOutboundContactlistfilter**](OutboundApi#deleteOutboundContactlistfilter) | **DELETE** /api/v2/outbound/contactlistfilters/{contactListFilterId} | Delete Contact List Filter
 [**deleteOutboundContactlists**](OutboundApi#deleteOutboundContactlists) | **DELETE** /api/v2/outbound/contactlists | Delete multiple contact lists.
 [**deleteOutboundContactlisttemplate**](OutboundApi#deleteOutboundContactlisttemplate) | **DELETE** /api/v2/outbound/contactlisttemplates/{contactListTemplateId} | Delete Contact List Template
@@ -73,6 +73,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**getOutboundContactlistsDivisionviews**](OutboundApi#getOutboundContactlistsDivisionviews) | **GET** /api/v2/outbound/contactlists/divisionviews | Query a list of simplified contact list objects.
 [**getOutboundContactlisttemplate**](OutboundApi#getOutboundContactlisttemplate) | **GET** /api/v2/outbound/contactlisttemplates/{contactListTemplateId} | Get Contact List Template
 [**getOutboundContactlisttemplates**](OutboundApi#getOutboundContactlisttemplates) | **GET** /api/v2/outbound/contactlisttemplates | Query a list of contact list templates
+[**getOutboundDiagnosticsCampaignSummary**](OutboundApi#getOutboundDiagnosticsCampaignSummary) | **GET** /api/v2/outbound/diagnostics/campaigns/{campaignId}/summary | Get diagnostic summary for a single campaign
 [**getOutboundDigitalruleset**](OutboundApi#getOutboundDigitalruleset) | **GET** /api/v2/outbound/digitalrulesets/{digitalRuleSetId} | Get an Outbound Digital Rule Set
 [**getOutboundDigitalrulesets**](OutboundApi#getOutboundDigitalrulesets) | **GET** /api/v2/outbound/digitalrulesets | Query a list of Outbound Digital Rule Sets
 [**getOutboundDnclist**](OutboundApi#getOutboundDnclist) | **GET** /api/v2/outbound/dnclists/{dncListId} | Get dialer DNC list
@@ -125,6 +126,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postOutboundCampaignStop**](OutboundApi#postOutboundCampaignStop) | **POST** /api/v2/outbound/campaigns/{campaignId}/stop | Stop the campaign
 [**postOutboundCampaignrules**](OutboundApi#postOutboundCampaignrules) | **POST** /api/v2/outbound/campaignrules | Create Campaign Rule
 [**postOutboundCampaigns**](OutboundApi#postOutboundCampaigns) | **POST** /api/v2/outbound/campaigns | Create a campaign.
+[**postOutboundCampaignsPerformanceQuery**](OutboundApi#postOutboundCampaignsPerformanceQuery) | **POST** /api/v2/outbound/campaigns/performance/query | Get performance data for a list of campaigns
 [**postOutboundCampaignsProgress**](OutboundApi#postOutboundCampaignsProgress) | **POST** /api/v2/outbound/campaigns/progress | Get progress for a list of campaigns
 [**postOutboundContactlistClear**](OutboundApi#postOutboundContactlistClear) | **POST** /api/v2/outbound/contactlists/{contactListId}/clear | Deletes all contacts out of a list. All outstanding recalls or rule-scheduled callbacks for non-preview campaigns configured with the contactlist will be cancelled.
 [**postOutboundContactlistContacts**](OutboundApi#postOutboundContactlistContacts) | **POST** /api/v2/outbound/contactlists/{contactListId}/contacts | Add contacts to a contact list.
@@ -137,6 +139,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postOutboundContactlistfiltersBulkRetrieve**](OutboundApi#postOutboundContactlistfiltersBulkRetrieve) | **POST** /api/v2/outbound/contactlistfilters/bulk/retrieve | Retrieve multiple contact list filters
 [**postOutboundContactlistfiltersPreview**](OutboundApi#postOutboundContactlistfiltersPreview) | **POST** /api/v2/outbound/contactlistfilters/preview | Get a preview of the output of a contact list filter
 [**postOutboundContactlists**](OutboundApi#postOutboundContactlists) | **POST** /api/v2/outbound/contactlists | Create a contact List.
+[**postOutboundContactlistsUploads**](OutboundApi#postOutboundContactlistsUploads) | **POST** /api/v2/outbound/contactlists/uploads | Generate presigned upload URL for contact list.
 [**postOutboundContactlisttemplates**](OutboundApi#postOutboundContactlisttemplates) | **POST** /api/v2/outbound/contactlisttemplates | Create Contact List Template
 [**postOutboundContactlisttemplatesBulkAdd**](OutboundApi#postOutboundContactlisttemplatesBulkAdd) | **POST** /api/v2/outbound/contactlisttemplates/bulk/add | Add multiple contact list templates
 [**postOutboundContactlisttemplatesBulkRetrieve**](OutboundApi#postOutboundContactlisttemplatesBulkRetrieve) | **POST** /api/v2/outbound/contactlisttemplates/bulk/retrieve | Get multiple contact list templates
@@ -146,6 +149,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 [**postOutboundDnclistExport**](OutboundApi#postOutboundDnclistExport) | **POST** /api/v2/outbound/dnclists/{dncListId}/export | Initiate the export of a dnc list.
 [**postOutboundDnclistPhonenumbers**](OutboundApi#postOutboundDnclistPhonenumbers) | **POST** /api/v2/outbound/dnclists/{dncListId}/phonenumbers | Add phone numbers to a DNC list.
 [**postOutboundDnclists**](OutboundApi#postOutboundDnclists) | **POST** /api/v2/outbound/dnclists | Create dialer DNC list
+[**postOutboundDnclistsUploads**](OutboundApi#postOutboundDnclistsUploads) | **POST** /api/v2/outbound/dnclists/uploads | Generate presigned upload URL for dnc list.
 [**postOutboundFilespecificationtemplates**](OutboundApi#postOutboundFilespecificationtemplates) | **POST** /api/v2/outbound/filespecificationtemplates | Create File Specification Template
 [**postOutboundImporttemplates**](OutboundApi#postOutboundImporttemplates) | **POST** /api/v2/outbound/importtemplates | Create Import Template
 [**postOutboundImporttemplatesBulkAdd**](OutboundApi#postOutboundImporttemplatesBulkAdd) | **POST** /api/v2/outbound/importtemplates/bulk/add | Add multiple import templates
@@ -183,7 +187,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ## deleteOutboundAttemptlimit
 
-> void deleteOutboundAttemptlimit(attemptLimitsId)
+> void deleteOutboundAttemptlimit(attemptLimitsId, opts)
 
 
 DELETE /api/v2/outbound/attemptlimits/{attemptLimitsId}
@@ -208,8 +212,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OutboundApi();
 
 let attemptLimitsId = "attemptLimitsId_example"; // String | Attempt limits ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteOutboundAttemptlimit(attemptLimitsId)
+apiInstance.deleteOutboundAttemptlimit(attemptLimitsId, opts)
   .then(() => {
     console.log('deleteOutboundAttemptlimit returned successfully.');
   })
@@ -225,6 +235,7 @@ apiInstance.deleteOutboundAttemptlimit(attemptLimitsId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **attemptLimitsId** | **String** | Attempt limits ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -233,7 +244,7 @@ void (no response body)
 
 ## deleteOutboundCallabletimeset
 
-> void deleteOutboundCallabletimeset(callableTimeSetId)
+> void deleteOutboundCallabletimeset(callableTimeSetId, opts)
 
 
 DELETE /api/v2/outbound/callabletimesets/{callableTimeSetId}
@@ -258,8 +269,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OutboundApi();
 
 let callableTimeSetId = "callableTimeSetId_example"; // String | Callable Time Set ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteOutboundCallabletimeset(callableTimeSetId)
+apiInstance.deleteOutboundCallabletimeset(callableTimeSetId, opts)
   .then(() => {
     console.log('deleteOutboundCallabletimeset returned successfully.');
   })
@@ -275,6 +292,7 @@ apiInstance.deleteOutboundCallabletimeset(callableTimeSetId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **callableTimeSetId** | **String** | Callable Time Set ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -283,7 +301,7 @@ void (no response body)
 
 ## deleteOutboundCallanalysisresponseset
 
-> void deleteOutboundCallanalysisresponseset(callAnalysisSetId)
+> void deleteOutboundCallanalysisresponseset(callAnalysisSetId, opts)
 
 
 DELETE /api/v2/outbound/callanalysisresponsesets/{callAnalysisSetId}
@@ -308,8 +326,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OutboundApi();
 
 let callAnalysisSetId = "callAnalysisSetId_example"; // String | Call Analysis Response Set ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteOutboundCallanalysisresponseset(callAnalysisSetId)
+apiInstance.deleteOutboundCallanalysisresponseset(callAnalysisSetId, opts)
   .then(() => {
     console.log('deleteOutboundCallanalysisresponseset returned successfully.');
   })
@@ -325,6 +349,7 @@ apiInstance.deleteOutboundCallanalysisresponseset(callAnalysisSetId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **callAnalysisSetId** | **String** | Call Analysis Response Set ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -333,7 +358,7 @@ void (no response body)
 
 ## deleteOutboundCampaign
 
-> Campaign deleteOutboundCampaign(campaignId)
+> Campaign deleteOutboundCampaign(campaignId, opts)
 
 
 DELETE /api/v2/outbound/campaigns/{campaignId}
@@ -358,8 +383,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OutboundApi();
 
 let campaignId = "campaignId_example"; // String | Campaign ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteOutboundCampaign(campaignId)
+apiInstance.deleteOutboundCampaign(campaignId, opts)
   .then((data) => {
     console.log(`deleteOutboundCampaign success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -375,6 +406,7 @@ apiInstance.deleteOutboundCampaign(campaignId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **campaignId** | **String** | Campaign ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -383,7 +415,7 @@ apiInstance.deleteOutboundCampaign(campaignId)
 
 ## deleteOutboundCampaignProgress
 
-> void deleteOutboundCampaignProgress(campaignId)
+> void deleteOutboundCampaignProgress(campaignId, opts)
 
 
 DELETE /api/v2/outbound/campaigns/{campaignId}/progress
@@ -409,8 +441,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OutboundApi();
 
 let campaignId = "campaignId_example"; // String | Campaign ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteOutboundCampaignProgress(campaignId)
+apiInstance.deleteOutboundCampaignProgress(campaignId, opts)
   .then(() => {
     console.log('deleteOutboundCampaignProgress returned successfully.');
   })
@@ -426,6 +464,7 @@ apiInstance.deleteOutboundCampaignProgress(campaignId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **campaignId** | **String** | Campaign ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -434,7 +473,7 @@ void (no response body)
 
 ## deleteOutboundCampaignrule
 
-> void deleteOutboundCampaignrule(campaignRuleId)
+> void deleteOutboundCampaignrule(campaignRuleId, opts)
 
 
 DELETE /api/v2/outbound/campaignrules/{campaignRuleId}
@@ -459,8 +498,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OutboundApi();
 
 let campaignRuleId = "campaignRuleId_example"; // String | Campaign Rule ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteOutboundCampaignrule(campaignRuleId)
+apiInstance.deleteOutboundCampaignrule(campaignRuleId, opts)
   .then(() => {
     console.log('deleteOutboundCampaignrule returned successfully.');
   })
@@ -476,6 +521,7 @@ apiInstance.deleteOutboundCampaignrule(campaignRuleId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **campaignRuleId** | **String** | Campaign Rule ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -484,7 +530,7 @@ void (no response body)
 
 ## deleteOutboundContactlist
 
-> void deleteOutboundContactlist(contactListId)
+> void deleteOutboundContactlist(contactListId, opts)
 
 
 DELETE /api/v2/outbound/contactlists/{contactListId}
@@ -509,8 +555,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OutboundApi();
 
 let contactListId = "contactListId_example"; // String | ContactList ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteOutboundContactlist(contactListId)
+apiInstance.deleteOutboundContactlist(contactListId, opts)
   .then(() => {
     console.log('deleteOutboundContactlist returned successfully.');
   })
@@ -526,6 +578,7 @@ apiInstance.deleteOutboundContactlist(contactListId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **contactListId** | **String** | ContactList ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -534,7 +587,7 @@ void (no response body)
 
 ## deleteOutboundContactlistContact
 
-> void deleteOutboundContactlistContact(contactListId, contactId)
+> void deleteOutboundContactlistContact(contactListId, contactId, opts)
 
 
 DELETE /api/v2/outbound/contactlists/{contactListId}/contacts/{contactId}
@@ -560,8 +613,14 @@ let apiInstance = new platformClient.OutboundApi();
 
 let contactListId = "contactListId_example"; // String | Contact List ID
 let contactId = "contactId_example"; // String | Contact ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteOutboundContactlistContact(contactListId, contactId)
+apiInstance.deleteOutboundContactlistContact(contactListId, contactId, opts)
   .then(() => {
     console.log('deleteOutboundContactlistContact returned successfully.');
   })
@@ -578,6 +637,7 @@ apiInstance.deleteOutboundContactlistContact(contactListId, contactId)
 | ------------- | ------------- | ------------- | ------------- |
  **contactListId** | **String** | Contact List ID |  |
  **contactId** | **String** | Contact ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -586,12 +646,12 @@ void (no response body)
 
 ## deleteOutboundContactlistContacts
 
-> void deleteOutboundContactlistContacts(contactListId, contactIds)
+> void deleteOutboundContactlistContacts(contactListId, contactIds, opts)
 
 
 DELETE /api/v2/outbound/contactlists/{contactListId}/contacts
 
-Delete contacts from a contact list.
+Delete contacts from a contact list. Only contacts that are not in use by any campaign will be deleted
 
 Requires ANY permissions:
 
@@ -612,8 +672,14 @@ let apiInstance = new platformClient.OutboundApi();
 
 let contactListId = "contactListId_example"; // String | Contact List ID
 let contactIds = ["contactIds_example"]; // [String] | ContactIds to delete.
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteOutboundContactlistContacts(contactListId, contactIds)
+apiInstance.deleteOutboundContactlistContacts(contactListId, contactIds, opts)
   .then(() => {
     console.log('deleteOutboundContactlistContacts returned successfully.');
   })
@@ -630,6 +696,7 @@ apiInstance.deleteOutboundContactlistContacts(contactListId, contactIds)
 | ------------- | ------------- | ------------- | ------------- |
  **contactListId** | **String** | Contact List ID |  |
  **contactIds** | **[String]** | ContactIds to delete. |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -638,7 +705,7 @@ void (no response body)
 
 ## deleteOutboundContactlistfilter
 
-> void deleteOutboundContactlistfilter(contactListFilterId)
+> void deleteOutboundContactlistfilter(contactListFilterId, opts)
 
 
 DELETE /api/v2/outbound/contactlistfilters/{contactListFilterId}
@@ -663,8 +730,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OutboundApi();
 
 let contactListFilterId = "contactListFilterId_example"; // String | Contact List Filter ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteOutboundContactlistfilter(contactListFilterId)
+apiInstance.deleteOutboundContactlistfilter(contactListFilterId, opts)
   .then(() => {
     console.log('deleteOutboundContactlistfilter returned successfully.');
   })
@@ -680,6 +753,7 @@ apiInstance.deleteOutboundContactlistfilter(contactListFilterId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **contactListFilterId** | **String** | Contact List Filter ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -688,7 +762,7 @@ void (no response body)
 
 ## deleteOutboundContactlists
 
-> void deleteOutboundContactlists(id)
+> void deleteOutboundContactlists(id, opts)
 
 
 DELETE /api/v2/outbound/contactlists
@@ -713,8 +787,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OutboundApi();
 
 let id = ["id_example"]; // [String] | contact list id(s) to delete
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteOutboundContactlists(id)
+apiInstance.deleteOutboundContactlists(id, opts)
   .then(() => {
     console.log('deleteOutboundContactlists returned successfully.');
   })
@@ -730,6 +810,7 @@ apiInstance.deleteOutboundContactlists(id)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **id** | **[String]** | contact list id(s) to delete |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -738,7 +819,7 @@ void (no response body)
 
 ## deleteOutboundContactlisttemplate
 
-> void deleteOutboundContactlisttemplate(contactListTemplateId)
+> void deleteOutboundContactlisttemplate(contactListTemplateId, opts)
 
 
 DELETE /api/v2/outbound/contactlisttemplates/{contactListTemplateId}
@@ -763,8 +844,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OutboundApi();
 
 let contactListTemplateId = "contactListTemplateId_example"; // String | ContactListTemplate ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteOutboundContactlisttemplate(contactListTemplateId)
+apiInstance.deleteOutboundContactlisttemplate(contactListTemplateId, opts)
   .then(() => {
     console.log('deleteOutboundContactlisttemplate returned successfully.');
   })
@@ -780,6 +867,7 @@ apiInstance.deleteOutboundContactlisttemplate(contactListTemplateId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **contactListTemplateId** | **String** | ContactListTemplate ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -788,7 +876,7 @@ void (no response body)
 
 ## deleteOutboundContactlisttemplates
 
-> void deleteOutboundContactlisttemplates(id)
+> void deleteOutboundContactlisttemplates(id, opts)
 
 
 DELETE /api/v2/outbound/contactlisttemplates
@@ -813,8 +901,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OutboundApi();
 
 let id = ["id_example"]; // [String] | contact list template id(s) to delete
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteOutboundContactlisttemplates(id)
+apiInstance.deleteOutboundContactlisttemplates(id, opts)
   .then(() => {
     console.log('deleteOutboundContactlisttemplates returned successfully.');
   })
@@ -830,6 +924,7 @@ apiInstance.deleteOutboundContactlisttemplates(id)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **id** | **[String]** | contact list template id(s) to delete |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -838,7 +933,7 @@ void (no response body)
 
 ## deleteOutboundDigitalruleset
 
-> void deleteOutboundDigitalruleset(digitalRuleSetId)
+> void deleteOutboundDigitalruleset(digitalRuleSetId, opts)
 
 
 DELETE /api/v2/outbound/digitalrulesets/{digitalRuleSetId}
@@ -863,8 +958,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OutboundApi();
 
 let digitalRuleSetId = "digitalRuleSetId_example"; // String | The Digital Rule Set ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteOutboundDigitalruleset(digitalRuleSetId)
+apiInstance.deleteOutboundDigitalruleset(digitalRuleSetId, opts)
   .then(() => {
     console.log('deleteOutboundDigitalruleset returned successfully.');
   })
@@ -880,6 +981,7 @@ apiInstance.deleteOutboundDigitalruleset(digitalRuleSetId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **digitalRuleSetId** | **String** | The Digital Rule Set ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -888,7 +990,7 @@ void (no response body)
 
 ## deleteOutboundDnclist
 
-> void deleteOutboundDnclist(dncListId)
+> void deleteOutboundDnclist(dncListId, opts)
 
 
 DELETE /api/v2/outbound/dnclists/{dncListId}
@@ -913,8 +1015,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OutboundApi();
 
 let dncListId = "dncListId_example"; // String | DncList ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteOutboundDnclist(dncListId)
+apiInstance.deleteOutboundDnclist(dncListId, opts)
   .then(() => {
     console.log('deleteOutboundDnclist returned successfully.');
   })
@@ -930,6 +1038,7 @@ apiInstance.deleteOutboundDnclist(dncListId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **dncListId** | **String** | DncList ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -966,7 +1075,11 @@ let apiInstance = new platformClient.OutboundApi();
 
 let dncListId = "dncListId_example"; // String | DncList ID
 let opts = { 
-  'expiredOnly': false // Boolean | Set to true to only remove DNC entries that are expired
+  'expiredOnly': false, // Boolean | Set to true to only remove DNC entries that are expired
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.deleteOutboundDnclistCustomexclusioncolumns(dncListId, opts)
@@ -986,6 +1099,7 @@ apiInstance.deleteOutboundDnclistCustomexclusioncolumns(dncListId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **dncListId** | **String** | DncList ID |  |
  **expiredOnly** | **Boolean** | Set to true to only remove DNC entries that are expired | [optional] [default to false] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1022,7 +1136,11 @@ let apiInstance = new platformClient.OutboundApi();
 
 let dncListId = "dncListId_example"; // String | DncList ID
 let opts = { 
-  'expiredOnly': false // Boolean | Set to true to only remove DNC entries that are expired
+  'expiredOnly': false, // Boolean | Set to true to only remove DNC entries that are expired
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.deleteOutboundDnclistEmailaddresses(dncListId, opts)
@@ -1042,6 +1160,7 @@ apiInstance.deleteOutboundDnclistEmailaddresses(dncListId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **dncListId** | **String** | DncList ID |  |
  **expiredOnly** | **Boolean** | Set to true to only remove DNC entries that are expired | [optional] [default to false] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1078,7 +1197,11 @@ let apiInstance = new platformClient.OutboundApi();
 
 let dncListId = "dncListId_example"; // String | DncList ID
 let opts = { 
-  'expiredOnly': false // Boolean | Set to true to only remove DNC entries that are expired
+  'expiredOnly': false, // Boolean | Set to true to only remove DNC entries that are expired
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.deleteOutboundDnclistPhonenumbers(dncListId, opts)
@@ -1098,6 +1221,7 @@ apiInstance.deleteOutboundDnclistPhonenumbers(dncListId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **dncListId** | **String** | DncList ID |  |
  **expiredOnly** | **Boolean** | Set to true to only remove DNC entries that are expired | [optional] [default to false] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1134,7 +1258,11 @@ let apiInstance = new platformClient.OutboundApi();
 
 let dncListId = "dncListId_example"; // String | DncList ID
 let opts = { 
-  'expiredOnly': false // Boolean | Set to true to only remove DNC whatsApp numbers that are expired
+  'expiredOnly': false, // Boolean | Set to true to only remove DNC whatsApp numbers that are expired
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.deleteOutboundDnclistWhatsappnumbers(dncListId, opts)
@@ -1154,6 +1282,7 @@ apiInstance.deleteOutboundDnclistWhatsappnumbers(dncListId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **dncListId** | **String** | DncList ID |  |
  **expiredOnly** | **Boolean** | Set to true to only remove DNC whatsApp numbers that are expired | [optional] [default to false] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1162,7 +1291,7 @@ void (no response body)
 
 ## deleteOutboundFilespecificationtemplate
 
-> void deleteOutboundFilespecificationtemplate(fileSpecificationTemplateId)
+> void deleteOutboundFilespecificationtemplate(fileSpecificationTemplateId, opts)
 
 
 DELETE /api/v2/outbound/filespecificationtemplates/{fileSpecificationTemplateId}
@@ -1187,8 +1316,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OutboundApi();
 
 let fileSpecificationTemplateId = "fileSpecificationTemplateId_example"; // String | File Specification Template ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteOutboundFilespecificationtemplate(fileSpecificationTemplateId)
+apiInstance.deleteOutboundFilespecificationtemplate(fileSpecificationTemplateId, opts)
   .then(() => {
     console.log('deleteOutboundFilespecificationtemplate returned successfully.');
   })
@@ -1204,6 +1339,7 @@ apiInstance.deleteOutboundFilespecificationtemplate(fileSpecificationTemplateId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **fileSpecificationTemplateId** | **String** | File Specification Template ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1212,7 +1348,7 @@ void (no response body)
 
 ## deleteOutboundFilespecificationtemplatesBulk
 
-> void deleteOutboundFilespecificationtemplatesBulk(id)
+> void deleteOutboundFilespecificationtemplatesBulk(id, opts)
 
 
 DELETE /api/v2/outbound/filespecificationtemplates/bulk
@@ -1237,8 +1373,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OutboundApi();
 
 let id = ["id_example"]; // [String] | File Specification template id(s) to delete
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteOutboundFilespecificationtemplatesBulk(id)
+apiInstance.deleteOutboundFilespecificationtemplatesBulk(id, opts)
   .then(() => {
     console.log('deleteOutboundFilespecificationtemplatesBulk returned successfully.');
   })
@@ -1254,6 +1396,7 @@ apiInstance.deleteOutboundFilespecificationtemplatesBulk(id)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **id** | **[String]** | File Specification template id(s) to delete |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1262,7 +1405,7 @@ void (no response body)
 
 ## deleteOutboundImporttemplate
 
-> void deleteOutboundImporttemplate(importTemplateId)
+> void deleteOutboundImporttemplate(importTemplateId, opts)
 
 
 DELETE /api/v2/outbound/importtemplates/{importTemplateId}
@@ -1287,8 +1430,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OutboundApi();
 
 let importTemplateId = "importTemplateId_example"; // String | Import Template ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteOutboundImporttemplate(importTemplateId)
+apiInstance.deleteOutboundImporttemplate(importTemplateId, opts)
   .then(() => {
     console.log('deleteOutboundImporttemplate returned successfully.');
   })
@@ -1304,6 +1453,7 @@ apiInstance.deleteOutboundImporttemplate(importTemplateId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **importTemplateId** | **String** | Import Template ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1312,7 +1462,7 @@ void (no response body)
 
 ## deleteOutboundImporttemplates
 
-> void deleteOutboundImporttemplates(id)
+> void deleteOutboundImporttemplates(id, opts)
 
 
 DELETE /api/v2/outbound/importtemplates
@@ -1337,8 +1487,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OutboundApi();
 
 let id = ["id_example"]; // [String] | import template id(s) to delete
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteOutboundImporttemplates(id)
+apiInstance.deleteOutboundImporttemplates(id, opts)
   .then(() => {
     console.log('deleteOutboundImporttemplates returned successfully.');
   })
@@ -1354,6 +1510,7 @@ apiInstance.deleteOutboundImporttemplates(id)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **id** | **[String]** | import template id(s) to delete |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1362,7 +1519,7 @@ void (no response body)
 
 ## deleteOutboundMessagingcampaign
 
-> MessagingCampaign deleteOutboundMessagingcampaign(messagingCampaignId)
+> MessagingCampaign deleteOutboundMessagingcampaign(messagingCampaignId, opts)
 
 
 DELETE /api/v2/outbound/messagingcampaigns/{messagingCampaignId}
@@ -1389,8 +1546,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OutboundApi();
 
 let messagingCampaignId = "messagingCampaignId_example"; // String | The Messaging Campaign ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteOutboundMessagingcampaign(messagingCampaignId)
+apiInstance.deleteOutboundMessagingcampaign(messagingCampaignId, opts)
   .then((data) => {
     console.log(`deleteOutboundMessagingcampaign success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1406,6 +1569,7 @@ apiInstance.deleteOutboundMessagingcampaign(messagingCampaignId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **messagingCampaignId** | **String** | The Messaging Campaign ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1414,7 +1578,7 @@ apiInstance.deleteOutboundMessagingcampaign(messagingCampaignId)
 
 ## deleteOutboundMessagingcampaignProgress
 
-> void deleteOutboundMessagingcampaignProgress(messagingCampaignId)
+> void deleteOutboundMessagingcampaignProgress(messagingCampaignId, opts)
 
 
 DELETE /api/v2/outbound/messagingcampaigns/{messagingCampaignId}/progress
@@ -1446,8 +1610,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OutboundApi();
 
 let messagingCampaignId = "messagingCampaignId_example"; // String | The Messaging Campaign ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteOutboundMessagingcampaignProgress(messagingCampaignId)
+apiInstance.deleteOutboundMessagingcampaignProgress(messagingCampaignId, opts)
   .then(() => {
     console.log('deleteOutboundMessagingcampaignProgress returned successfully.');
   })
@@ -1463,6 +1633,7 @@ apiInstance.deleteOutboundMessagingcampaignProgress(messagingCampaignId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **messagingCampaignId** | **String** | The Messaging Campaign ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1471,7 +1642,7 @@ void (no response body)
 
 ## deleteOutboundRuleset
 
-> void deleteOutboundRuleset(ruleSetId)
+> void deleteOutboundRuleset(ruleSetId, opts)
 
 
 DELETE /api/v2/outbound/rulesets/{ruleSetId}
@@ -1496,8 +1667,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OutboundApi();
 
 let ruleSetId = "ruleSetId_example"; // String | Rule Set ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteOutboundRuleset(ruleSetId)
+apiInstance.deleteOutboundRuleset(ruleSetId, opts)
   .then(() => {
     console.log('deleteOutboundRuleset returned successfully.');
   })
@@ -1513,6 +1690,7 @@ apiInstance.deleteOutboundRuleset(ruleSetId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **ruleSetId** | **String** | Rule Set ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1521,7 +1699,7 @@ void (no response body)
 
 ## deleteOutboundSchedulesCampaign
 
-> void deleteOutboundSchedulesCampaign(campaignId)
+> void deleteOutboundSchedulesCampaign(campaignId, opts)
 
 
 DELETE /api/v2/outbound/schedules/campaigns/{campaignId}
@@ -1547,8 +1725,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OutboundApi();
 
 let campaignId = "campaignId_example"; // String | Campaign ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteOutboundSchedulesCampaign(campaignId)
+apiInstance.deleteOutboundSchedulesCampaign(campaignId, opts)
   .then(() => {
     console.log('deleteOutboundSchedulesCampaign returned successfully.');
   })
@@ -1564,6 +1748,7 @@ apiInstance.deleteOutboundSchedulesCampaign(campaignId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **campaignId** | **String** | Campaign ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1572,7 +1757,7 @@ void (no response body)
 
 ## deleteOutboundSchedulesEmailcampaign
 
-> void deleteOutboundSchedulesEmailcampaign(emailCampaignId)
+> void deleteOutboundSchedulesEmailcampaign(emailCampaignId, opts)
 
 
 DELETE /api/v2/outbound/schedules/emailcampaigns/{emailCampaignId}
@@ -1598,8 +1783,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OutboundApi();
 
 let emailCampaignId = "emailCampaignId_example"; // String | Email Campaign ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteOutboundSchedulesEmailcampaign(emailCampaignId)
+apiInstance.deleteOutboundSchedulesEmailcampaign(emailCampaignId, opts)
   .then(() => {
     console.log('deleteOutboundSchedulesEmailcampaign returned successfully.');
   })
@@ -1615,6 +1806,7 @@ apiInstance.deleteOutboundSchedulesEmailcampaign(emailCampaignId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **emailCampaignId** | **String** | Email Campaign ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1623,7 +1815,7 @@ void (no response body)
 
 ## deleteOutboundSchedulesMessagingcampaign
 
-> void deleteOutboundSchedulesMessagingcampaign(messagingCampaignId)
+> void deleteOutboundSchedulesMessagingcampaign(messagingCampaignId, opts)
 
 
 DELETE /api/v2/outbound/schedules/messagingcampaigns/{messagingCampaignId}
@@ -1649,8 +1841,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OutboundApi();
 
 let messagingCampaignId = "messagingCampaignId_example"; // String | Messaging Campaign ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteOutboundSchedulesMessagingcampaign(messagingCampaignId)
+apiInstance.deleteOutboundSchedulesMessagingcampaign(messagingCampaignId, opts)
   .then(() => {
     console.log('deleteOutboundSchedulesMessagingcampaign returned successfully.');
   })
@@ -1666,6 +1864,7 @@ apiInstance.deleteOutboundSchedulesMessagingcampaign(messagingCampaignId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **messagingCampaignId** | **String** | Messaging Campaign ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1674,7 +1873,7 @@ void (no response body)
 
 ## deleteOutboundSchedulesSequence
 
-> void deleteOutboundSchedulesSequence(sequenceId)
+> void deleteOutboundSchedulesSequence(sequenceId, opts)
 
 
 DELETE /api/v2/outbound/schedules/sequences/{sequenceId}
@@ -1700,8 +1899,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OutboundApi();
 
 let sequenceId = "sequenceId_example"; // String | Sequence ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteOutboundSchedulesSequence(sequenceId)
+apiInstance.deleteOutboundSchedulesSequence(sequenceId, opts)
   .then(() => {
     console.log('deleteOutboundSchedulesSequence returned successfully.');
   })
@@ -1717,6 +1922,7 @@ apiInstance.deleteOutboundSchedulesSequence(sequenceId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **sequenceId** | **String** | Sequence ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1725,7 +1931,7 @@ void (no response body)
 
 ## deleteOutboundSchedulesWhatsappcampaign
 
-> void deleteOutboundSchedulesWhatsappcampaign(whatsAppCampaignId)
+> void deleteOutboundSchedulesWhatsappcampaign(whatsAppCampaignId, opts)
 
 
 DELETE /api/v2/outbound/schedules/whatsappcampaigns/{whatsAppCampaignId}
@@ -1751,8 +1957,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OutboundApi();
 
 let whatsAppCampaignId = "whatsAppCampaignId_example"; // String | WhatsApp Campaign ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteOutboundSchedulesWhatsappcampaign(whatsAppCampaignId)
+apiInstance.deleteOutboundSchedulesWhatsappcampaign(whatsAppCampaignId, opts)
   .then(() => {
     console.log('deleteOutboundSchedulesWhatsappcampaign returned successfully.');
   })
@@ -1768,6 +1980,7 @@ apiInstance.deleteOutboundSchedulesWhatsappcampaign(whatsAppCampaignId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **whatsAppCampaignId** | **String** | WhatsApp Campaign ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1776,7 +1989,7 @@ void (no response body)
 
 ## deleteOutboundSequence
 
-> void deleteOutboundSequence(sequenceId)
+> void deleteOutboundSequence(sequenceId, opts)
 
 
 DELETE /api/v2/outbound/sequences/{sequenceId}
@@ -1801,8 +2014,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OutboundApi();
 
 let sequenceId = "sequenceId_example"; // String | Campaign Sequence ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.deleteOutboundSequence(sequenceId)
+apiInstance.deleteOutboundSequence(sequenceId, opts)
   .then(() => {
     console.log('deleteOutboundSequence returned successfully.');
   })
@@ -1818,6 +2037,7 @@ apiInstance.deleteOutboundSequence(sequenceId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **sequenceId** | **String** | Campaign Sequence ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1826,7 +2046,7 @@ void (no response body)
 
 ## getOutboundAttemptlimit
 
-> AttemptLimits getOutboundAttemptlimit(attemptLimitsId)
+> AttemptLimits getOutboundAttemptlimit(attemptLimitsId, opts)
 
 
 GET /api/v2/outbound/attemptlimits/{attemptLimitsId}
@@ -1851,8 +2071,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OutboundApi();
 
 let attemptLimitsId = "attemptLimitsId_example"; // String | Attempt limits ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getOutboundAttemptlimit(attemptLimitsId)
+apiInstance.getOutboundAttemptlimit(attemptLimitsId, opts)
   .then((data) => {
     console.log(`getOutboundAttemptlimit success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1868,6 +2094,7 @@ apiInstance.getOutboundAttemptlimit(attemptLimitsId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **attemptLimitsId** | **String** | Attempt limits ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1907,7 +2134,11 @@ let opts = {
   'filterType': "Prefix", // String | Filter type
   'name': "name_example", // String | Name
   'sortBy': "sortBy_example", // String | Sort by
-  'sortOrder': "a" // String | Sort order
+  'sortOrder': "a", // String | Sort order
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getOutboundAttemptlimits(opts)
@@ -1932,6 +2163,7 @@ apiInstance.getOutboundAttemptlimits(opts)
  **name** | **String** | Name | [optional]  |
  **sortBy** | **String** | Sort by | [optional]  |
  **sortOrder** | **String** | Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -1940,7 +2172,7 @@ apiInstance.getOutboundAttemptlimits(opts)
 
 ## getOutboundCallabletimeset
 
-> CallableTimeSet getOutboundCallabletimeset(callableTimeSetId)
+> CallableTimeSet getOutboundCallabletimeset(callableTimeSetId, opts)
 
 
 GET /api/v2/outbound/callabletimesets/{callableTimeSetId}
@@ -1965,8 +2197,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OutboundApi();
 
 let callableTimeSetId = "callableTimeSetId_example"; // String | Callable Time Set ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getOutboundCallabletimeset(callableTimeSetId)
+apiInstance.getOutboundCallabletimeset(callableTimeSetId, opts)
   .then((data) => {
     console.log(`getOutboundCallabletimeset success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -1982,6 +2220,7 @@ apiInstance.getOutboundCallabletimeset(callableTimeSetId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **callableTimeSetId** | **String** | Callable Time Set ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2021,7 +2260,11 @@ let opts = {
   'filterType': "Prefix", // String | Filter type
   'name': "name_example", // String | Name
   'sortBy': "sortBy_example", // String | Sort by
-  'sortOrder': "a" // String | Sort order
+  'sortOrder': "a", // String | Sort order
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getOutboundCallabletimesets(opts)
@@ -2046,6 +2289,7 @@ apiInstance.getOutboundCallabletimesets(opts)
  **name** | **String** | Name | [optional]  |
  **sortBy** | **String** | Sort by | [optional]  |
  **sortOrder** | **String** | Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2054,7 +2298,7 @@ apiInstance.getOutboundCallabletimesets(opts)
 
 ## getOutboundCallanalysisresponseset
 
-> ResponseSet getOutboundCallanalysisresponseset(callAnalysisSetId)
+> ResponseSet getOutboundCallanalysisresponseset(callAnalysisSetId, opts)
 
 
 GET /api/v2/outbound/callanalysisresponsesets/{callAnalysisSetId}
@@ -2079,8 +2323,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OutboundApi();
 
 let callAnalysisSetId = "callAnalysisSetId_example"; // String | Call Analysis Response Set ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getOutboundCallanalysisresponseset(callAnalysisSetId)
+apiInstance.getOutboundCallanalysisresponseset(callAnalysisSetId, opts)
   .then((data) => {
     console.log(`getOutboundCallanalysisresponseset success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2096,6 +2346,7 @@ apiInstance.getOutboundCallanalysisresponseset(callAnalysisSetId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **callAnalysisSetId** | **String** | Call Analysis Response Set ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2135,7 +2386,11 @@ let opts = {
   'filterType': "Prefix", // String | Filter type
   'name': "name_example", // String | Name
   'sortBy': "sortBy_example", // String | Sort by
-  'sortOrder': "a" // String | Sort order
+  'sortOrder': "a", // String | Sort order
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getOutboundCallanalysisresponsesets(opts)
@@ -2160,6 +2415,7 @@ apiInstance.getOutboundCallanalysisresponsesets(opts)
  **name** | **String** | Name | [optional]  |
  **sortBy** | **String** | Sort by | [optional]  |
  **sortOrder** | **String** | Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2168,7 +2424,7 @@ apiInstance.getOutboundCallanalysisresponsesets(opts)
 
 ## getOutboundCampaign
 
-> Campaign getOutboundCampaign(campaignId)
+> Campaign getOutboundCampaign(campaignId, opts)
 
 
 GET /api/v2/outbound/campaigns/{campaignId}
@@ -2193,8 +2449,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OutboundApi();
 
 let campaignId = "campaignId_example"; // String | Campaign ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getOutboundCampaign(campaignId)
+apiInstance.getOutboundCampaign(campaignId, opts)
   .then((data) => {
     console.log(`getOutboundCampaign success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2210,6 +2472,7 @@ apiInstance.getOutboundCampaign(campaignId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **campaignId** | **String** | Campaign ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2218,7 +2481,7 @@ apiInstance.getOutboundCampaign(campaignId)
 
 ## getOutboundCampaignAgentownedmappingpreviewResults
 
-> AgentOwnedMappingPreviewListing getOutboundCampaignAgentownedmappingpreviewResults(campaignId)
+> AgentOwnedMappingPreviewListing getOutboundCampaignAgentownedmappingpreviewResults(campaignId, opts)
 
 
 GET /api/v2/outbound/campaigns/{campaignId}/agentownedmappingpreview/results
@@ -2245,8 +2508,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OutboundApi();
 
 let campaignId = "campaignId_example"; // String | Campaign ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getOutboundCampaignAgentownedmappingpreviewResults(campaignId)
+apiInstance.getOutboundCampaignAgentownedmappingpreviewResults(campaignId, opts)
   .then((data) => {
     console.log(`getOutboundCampaignAgentownedmappingpreviewResults success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2262,6 +2531,7 @@ apiInstance.getOutboundCampaignAgentownedmappingpreviewResults(campaignId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **campaignId** | **String** | Campaign ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2270,7 +2540,7 @@ apiInstance.getOutboundCampaignAgentownedmappingpreviewResults(campaignId)
 
 ## getOutboundCampaignDiagnostics
 
-> CampaignDiagnostics getOutboundCampaignDiagnostics(campaignId)
+> CampaignDiagnostics getOutboundCampaignDiagnostics(campaignId, opts)
 
 
 GET /api/v2/outbound/campaigns/{campaignId}/diagnostics
@@ -2295,8 +2565,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OutboundApi();
 
 let campaignId = "campaignId_example"; // String | Campaign ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getOutboundCampaignDiagnostics(campaignId)
+apiInstance.getOutboundCampaignDiagnostics(campaignId, opts)
   .then((data) => {
     console.log(`getOutboundCampaignDiagnostics success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2312,6 +2588,7 @@ apiInstance.getOutboundCampaignDiagnostics(campaignId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **campaignId** | **String** | Campaign ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2320,7 +2597,7 @@ apiInstance.getOutboundCampaignDiagnostics(campaignId)
 
 ## getOutboundCampaignInteractions
 
-> CampaignInteractions getOutboundCampaignInteractions(campaignId)
+> CampaignInteractions getOutboundCampaignInteractions(campaignId, opts)
 
 
 GET /api/v2/outbound/campaigns/{campaignId}/interactions
@@ -2345,8 +2622,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OutboundApi();
 
 let campaignId = "campaignId_example"; // String | Campaign ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getOutboundCampaignInteractions(campaignId)
+apiInstance.getOutboundCampaignInteractions(campaignId, opts)
   .then((data) => {
     console.log(`getOutboundCampaignInteractions success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2362,6 +2645,7 @@ apiInstance.getOutboundCampaignInteractions(campaignId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **campaignId** | **String** | Campaign ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2401,7 +2685,11 @@ let opts = {
   'siteId': "siteId_example", // String | Site to be used in line distribution calculations instead of current Campaign's Site.  Campaign's Site and Edge Group are mutually exclusive.
   'useWeight': true, // Boolean | Enable usage of weight, this value overrides current Campaign's setting in line distribution calculations
   'relativeWeight': 3.4, // Number | Relative weight to be used in line distribution calculations instead of current Campaign's relative weight
-  'outboundLineCount': 3.4 // Number | The number of outbound lines to be used in line distribution calculations, instead of current Campaign's Outbound Lines Count
+  'outboundLineCount': 3.4, // Number | The number of outbound lines to be used in line distribution calculations, instead of current Campaign's Outbound Lines Count
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getOutboundCampaignLinedistribution(campaignId, opts)
@@ -2426,6 +2714,7 @@ apiInstance.getOutboundCampaignLinedistribution(campaignId, opts)
  **useWeight** | **Boolean** | Enable usage of weight, this value overrides current Campaign's setting in line distribution calculations | [optional]  |
  **relativeWeight** | **Number** | Relative weight to be used in line distribution calculations instead of current Campaign's relative weight | [optional]  |
  **outboundLineCount** | **Number** | The number of outbound lines to be used in line distribution calculations, instead of current Campaign's Outbound Lines Count | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2434,7 +2723,7 @@ apiInstance.getOutboundCampaignLinedistribution(campaignId, opts)
 
 ## getOutboundCampaignProgress
 
-> CampaignProgress getOutboundCampaignProgress(campaignId)
+> CampaignProgress getOutboundCampaignProgress(campaignId, opts)
 
 
 GET /api/v2/outbound/campaigns/{campaignId}/progress
@@ -2459,8 +2748,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OutboundApi();
 
 let campaignId = "campaignId_example"; // String | Campaign ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getOutboundCampaignProgress(campaignId)
+apiInstance.getOutboundCampaignProgress(campaignId, opts)
   .then((data) => {
     console.log(`getOutboundCampaignProgress success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2476,6 +2771,7 @@ apiInstance.getOutboundCampaignProgress(campaignId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **campaignId** | **String** | Campaign ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2511,7 +2807,11 @@ let apiInstance = new platformClient.OutboundApi();
 let campaignId = "campaignId_example"; // String | Campaign ID
 let opts = { 
   'pageNumber': 1, // Number | Page number
-  'pageSize': 25 // Number | Page size
+  'pageSize': 25, // Number | Page size
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getOutboundCampaignSkillcombinations(campaignId, opts)
@@ -2532,6 +2832,7 @@ apiInstance.getOutboundCampaignSkillcombinations(campaignId, opts)
  **campaignId** | **String** | Campaign ID |  |
  **pageNumber** | **Number** | Page number | [optional] [default to 1] |
  **pageSize** | **Number** | Page size | [optional] [default to 25] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2540,7 +2841,7 @@ apiInstance.getOutboundCampaignSkillcombinations(campaignId, opts)
 
 ## getOutboundCampaignStats
 
-> CampaignStats getOutboundCampaignStats(campaignId)
+> CampaignStats getOutboundCampaignStats(campaignId, opts)
 
 
 GET /api/v2/outbound/campaigns/{campaignId}/stats
@@ -2565,8 +2866,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OutboundApi();
 
 let campaignId = "campaignId_example"; // String | Campaign ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getOutboundCampaignStats(campaignId)
+apiInstance.getOutboundCampaignStats(campaignId, opts)
   .then((data) => {
     console.log(`getOutboundCampaignStats success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2582,6 +2889,7 @@ apiInstance.getOutboundCampaignStats(campaignId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **campaignId** | **String** | Campaign ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2590,7 +2898,7 @@ apiInstance.getOutboundCampaignStats(campaignId)
 
 ## getOutboundCampaignrule
 
-> CampaignRule getOutboundCampaignrule(campaignRuleId)
+> CampaignRule getOutboundCampaignrule(campaignRuleId, opts)
 
 
 GET /api/v2/outbound/campaignrules/{campaignRuleId}
@@ -2615,8 +2923,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OutboundApi();
 
 let campaignRuleId = "campaignRuleId_example"; // String | Campaign Rule ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getOutboundCampaignrule(campaignRuleId)
+apiInstance.getOutboundCampaignrule(campaignRuleId, opts)
   .then((data) => {
     console.log(`getOutboundCampaignrule success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2632,6 +2946,7 @@ apiInstance.getOutboundCampaignrule(campaignRuleId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **campaignRuleId** | **String** | Campaign Rule ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2671,7 +2986,11 @@ let opts = {
   'filterType': "Prefix", // String | Filter type
   'name': "name_example", // String | Name
   'sortBy': "sortBy_example", // String | Sort by
-  'sortOrder': "a" // String | Sort order
+  'sortOrder': "a", // String | Sort order
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getOutboundCampaignrules(opts)
@@ -2696,6 +3015,7 @@ apiInstance.getOutboundCampaignrules(opts)
  **name** | **String** | Name | [optional]  |
  **sortBy** | **String** | Sort by | [optional]  |
  **sortOrder** | **String** | Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2741,7 +3061,11 @@ let opts = {
   'callAnalysisResponseSetId': "callAnalysisResponseSetId_example", // String | Call analysis response set ID
   'divisionId': ["divisionId_example"], // [String] | Division ID(s)
   'sortBy': "sortBy_example", // String | Sort by
-  'sortOrder': "a" // String | Sort order
+  'sortOrder': "a", // String | Sort order
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getOutboundCampaigns(opts)
@@ -2772,6 +3096,7 @@ apiInstance.getOutboundCampaigns(opts)
  **divisionId** | **[String]** | Division ID(s) | [optional]  |
  **sortBy** | **String** | Sort by | [optional]  |
  **sortOrder** | **String** | Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2814,7 +3139,11 @@ let opts = {
   'name': "name_example", // String | Campaign name(s)
   'divisionId': ["divisionId_example"], // [String] | Division ID(s)
   'mediaType': ["mediaType_example"], // [String] | Media type(s)
-  'sortOrder': "a" // String | Sort order
+  'sortOrder': "a", // String | Sort order
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getOutboundCampaignsAll(opts)
@@ -2839,6 +3168,7 @@ apiInstance.getOutboundCampaignsAll(opts)
  **divisionId** | **[String]** | Division ID(s) | [optional]  |
  **mediaType** | **[String]** | Media type(s) | [optional] <br />**Values**: email, sms, voice, whatsapp |
  **sortOrder** | **String** | Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2881,7 +3211,11 @@ let opts = {
   'name': "name_example", // String | Campaign name(s)
   'divisionId': ["divisionId_example"], // [String] | Division ID(s)
   'mediaType': ["mediaType_example"], // [String] | Media type(s)
-  'sortOrder': "a" // String | Sort order
+  'sortOrder': "a", // String | Sort order
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getOutboundCampaignsAllDivisionviews(opts)
@@ -2906,6 +3240,7 @@ apiInstance.getOutboundCampaignsAllDivisionviews(opts)
  **divisionId** | **[String]** | Division ID(s) | [optional]  |
  **mediaType** | **[String]** | Media type(s) | [optional] <br />**Values**: email, sms, voice, whatsapp |
  **sortOrder** | **String** | Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2914,7 +3249,7 @@ apiInstance.getOutboundCampaignsAllDivisionviews(opts)
 
 ## getOutboundCampaignsDivisionview
 
-> CampaignDivisionView getOutboundCampaignsDivisionview(campaignId)
+> CampaignDivisionView getOutboundCampaignsDivisionview(campaignId, opts)
 
 
 GET /api/v2/outbound/campaigns/divisionviews/{campaignId}
@@ -2941,8 +3276,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OutboundApi();
 
 let campaignId = "campaignId_example"; // String | Campaign ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getOutboundCampaignsDivisionview(campaignId)
+apiInstance.getOutboundCampaignsDivisionview(campaignId, opts)
   .then((data) => {
     console.log(`getOutboundCampaignsDivisionview success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -2958,6 +3299,7 @@ apiInstance.getOutboundCampaignsDivisionview(campaignId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **campaignId** | **String** | Campaign ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -2999,7 +3341,11 @@ let opts = {
   'name': "name_example", // String | Name
   'id': ["id_example"], // [String] | id
   'sortBy': "sortBy_example", // String | Sort by
-  'sortOrder': "a" // String | Sort order
+  'sortOrder': "a", // String | Sort order
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getOutboundCampaignsDivisionviews(opts)
@@ -3024,6 +3370,7 @@ apiInstance.getOutboundCampaignsDivisionviews(opts)
  **id** | **[String]** | id | [optional]  |
  **sortBy** | **String** | Sort by | [optional]  |
  **sortOrder** | **String** | Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3059,7 +3406,11 @@ let apiInstance = new platformClient.OutboundApi();
 let contactListId = "contactListId_example"; // String | ContactList ID
 let opts = { 
   'includeImportStatus': false, // Boolean | Import status
-  'includeSize': false // Boolean | Include size
+  'includeSize': false, // Boolean | Include size
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getOutboundContactlist(contactListId, opts)
@@ -3080,6 +3431,7 @@ apiInstance.getOutboundContactlist(contactListId, opts)
  **contactListId** | **String** | ContactList ID |  |
  **includeImportStatus** | **Boolean** | Import status | [optional] [default to false] |
  **includeSize** | **Boolean** | Include size | [optional] [default to false] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3088,7 +3440,7 @@ apiInstance.getOutboundContactlist(contactListId, opts)
 
 ## getOutboundContactlistContact
 
-> DialerContact getOutboundContactlistContact(contactListId, contactId)
+> DialerContact getOutboundContactlistContact(contactListId, contactId, opts)
 
 
 GET /api/v2/outbound/contactlists/{contactListId}/contacts/{contactId}
@@ -3114,8 +3466,14 @@ let apiInstance = new platformClient.OutboundApi();
 
 let contactListId = "contactListId_example"; // String | Contact List ID
 let contactId = "contactId_example"; // String | Contact ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getOutboundContactlistContact(contactListId, contactId)
+apiInstance.getOutboundContactlistContact(contactListId, contactId, opts)
   .then((data) => {
     console.log(`getOutboundContactlistContact success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3132,6 +3490,7 @@ apiInstance.getOutboundContactlistContact(contactListId, contactId)
 | ------------- | ------------- | ------------- | ------------- |
  **contactListId** | **String** | Contact List ID |  |
  **contactId** | **String** | Contact ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3140,7 +3499,7 @@ apiInstance.getOutboundContactlistContact(contactListId, contactId)
 
 ## getOutboundContactlistContactsBulkJob
 
-> ContactsBulkOperationJob getOutboundContactlistContactsBulkJob(contactListId, jobId)
+> ContactsBulkOperationJob getOutboundContactlistContactsBulkJob(contactListId, jobId, opts)
 
 
 GET /api/v2/outbound/contactlists/{contactListId}/contacts/bulk/jobs/{jobId}
@@ -3166,8 +3525,14 @@ let apiInstance = new platformClient.OutboundApi();
 
 let contactListId = "contactListId_example"; // String | Contact List ID
 let jobId = "jobId_example"; // String | Job ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getOutboundContactlistContactsBulkJob(contactListId, jobId)
+apiInstance.getOutboundContactlistContactsBulkJob(contactListId, jobId, opts)
   .then((data) => {
     console.log(`getOutboundContactlistContactsBulkJob success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3184,6 +3549,7 @@ apiInstance.getOutboundContactlistContactsBulkJob(contactListId, jobId)
 | ------------- | ------------- | ------------- | ------------- |
  **contactListId** | **String** | Contact List ID |  |
  **jobId** | **String** | Job ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3192,7 +3558,7 @@ apiInstance.getOutboundContactlistContactsBulkJob(contactListId, jobId)
 
 ## getOutboundContactlistContactsBulkJobs
 
-> ContactsBulkOperationJobListing getOutboundContactlistContactsBulkJobs(contactListId)
+> ContactsBulkOperationJobListing getOutboundContactlistContactsBulkJobs(contactListId, opts)
 
 
 GET /api/v2/outbound/contactlists/{contactListId}/contacts/bulk/jobs
@@ -3217,8 +3583,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OutboundApi();
 
 let contactListId = "contactListId_example"; // String | Contact List ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getOutboundContactlistContactsBulkJobs(contactListId)
+apiInstance.getOutboundContactlistContactsBulkJobs(contactListId, opts)
   .then((data) => {
     console.log(`getOutboundContactlistContactsBulkJobs success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3234,6 +3606,7 @@ apiInstance.getOutboundContactlistContactsBulkJobs(contactListId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **contactListId** | **String** | Contact List ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3269,7 +3642,11 @@ let apiInstance = new platformClient.OutboundApi();
 
 let contactListId = "contactListId_example"; // String | ContactList ID
 let opts = { 
-  'download': "false" // String | Redirect to download uri
+  'download': "false", // String | Redirect to download uri
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getOutboundContactlistExport(contactListId, opts)
@@ -3289,6 +3666,7 @@ apiInstance.getOutboundContactlistExport(contactListId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **contactListId** | **String** | ContactList ID |  |
  **download** | **String** | Redirect to download uri | [optional] [default to false] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3297,7 +3675,7 @@ apiInstance.getOutboundContactlistExport(contactListId, opts)
 
 ## getOutboundContactlistImportstatus
 
-> ImportStatus getOutboundContactlistImportstatus(contactListId)
+> ImportStatus getOutboundContactlistImportstatus(contactListId, opts)
 
 
 GET /api/v2/outbound/contactlists/{contactListId}/importstatus
@@ -3322,8 +3700,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OutboundApi();
 
 let contactListId = "contactListId_example"; // String | ContactList ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getOutboundContactlistImportstatus(contactListId)
+apiInstance.getOutboundContactlistImportstatus(contactListId, opts)
   .then((data) => {
     console.log(`getOutboundContactlistImportstatus success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3339,6 +3723,7 @@ apiInstance.getOutboundContactlistImportstatus(contactListId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **contactListId** | **String** | ContactList ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3347,7 +3732,7 @@ apiInstance.getOutboundContactlistImportstatus(contactListId)
 
 ## getOutboundContactlistTimezonemappingpreview
 
-> TimeZoneMappingPreview getOutboundContactlistTimezonemappingpreview(contactListId)
+> TimeZoneMappingPreview getOutboundContactlistTimezonemappingpreview(contactListId, opts)
 
 
 GET /api/v2/outbound/contactlists/{contactListId}/timezonemappingpreview
@@ -3372,8 +3757,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OutboundApi();
 
 let contactListId = "contactListId_example"; // String | ContactList ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getOutboundContactlistTimezonemappingpreview(contactListId)
+apiInstance.getOutboundContactlistTimezonemappingpreview(contactListId, opts)
   .then((data) => {
     console.log(`getOutboundContactlistTimezonemappingpreview success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3389,6 +3780,7 @@ apiInstance.getOutboundContactlistTimezonemappingpreview(contactListId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **contactListId** | **String** | ContactList ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3397,7 +3789,7 @@ apiInstance.getOutboundContactlistTimezonemappingpreview(contactListId)
 
 ## getOutboundContactlistfilter
 
-> ContactListFilter getOutboundContactlistfilter(contactListFilterId)
+> ContactListFilter getOutboundContactlistfilter(contactListFilterId, opts)
 
 
 GET /api/v2/outbound/contactlistfilters/{contactListFilterId}
@@ -3422,8 +3814,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OutboundApi();
 
 let contactListFilterId = "contactListFilterId_example"; // String | Contact List Filter ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getOutboundContactlistfilter(contactListFilterId)
+apiInstance.getOutboundContactlistfilter(contactListFilterId, opts)
   .then((data) => {
     console.log(`getOutboundContactlistfilter success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3439,6 +3837,7 @@ apiInstance.getOutboundContactlistfilter(contactListFilterId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **contactListFilterId** | **String** | Contact List Filter ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3479,7 +3878,11 @@ let opts = {
   'name': "name_example", // String | Name
   'sortBy': "sortBy_example", // String | Sort by
   'sortOrder': "a", // String | Sort order
-  'contactListId': "contactListId_example" // String | Contact List ID
+  'contactListId': "contactListId_example", // String | Contact List ID
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getOutboundContactlistfilters(opts)
@@ -3505,6 +3908,7 @@ apiInstance.getOutboundContactlistfilters(opts)
  **sortBy** | **String** | Sort by | [optional]  |
  **sortOrder** | **String** | Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
  **contactListId** | **String** | Contact List ID | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3519,6 +3923,8 @@ apiInstance.getOutboundContactlistfilters(opts)
 GET /api/v2/outbound/contactlists
 
 Query a list of contact lists.
+
+Any ContactList field can be used as a query parameter to filter results. Multiple values can be specified for a field, and filter type prefixes can be used inline. Example: dateCreated=greaterthan:2025-01-01T00:00:00.000Z&dateCreated=lessthan:2027-01-01T00:00:00.000Z. See https://developer.genesys.cloud/routing/outbound/filter-type for available filter types.
 
 Requires ANY permissions:
 
@@ -3548,7 +3954,11 @@ let opts = {
   'id': ["id_example"], // [String] | id
   'divisionId': ["divisionId_example"], // [String] | Division ID(s)
   'sortBy': "sortBy_example", // String | Sort by
-  'sortOrder': "a" // String | Sort order
+  'sortOrder': "a", // String | Sort order
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getOutboundContactlists(opts)
@@ -3577,6 +3987,7 @@ apiInstance.getOutboundContactlists(opts)
  **divisionId** | **[String]** | Division ID(s) | [optional]  |
  **sortBy** | **String** | Sort by | [optional]  |
  **sortOrder** | **String** | Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3614,7 +4025,11 @@ let apiInstance = new platformClient.OutboundApi();
 let contactListId = "contactListId_example"; // String | Contactlist ID
 let opts = { 
   'includeImportStatus': false, // Boolean | Include import status
-  'includeSize': false // Boolean | Include size
+  'includeSize': false, // Boolean | Include size
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getOutboundContactlistsDivisionview(contactListId, opts)
@@ -3635,6 +4050,7 @@ apiInstance.getOutboundContactlistsDivisionview(contactListId, opts)
  **contactListId** | **String** | Contactlist ID |  |
  **includeImportStatus** | **Boolean** | Include import status | [optional] [default to false] |
  **includeSize** | **Boolean** | Include size | [optional] [default to false] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3678,7 +4094,11 @@ let opts = {
   'name': "name_example", // String | Name
   'id': ["id_example"], // [String] | id
   'sortBy': "sortBy_example", // String | Sort by
-  'sortOrder': "a" // String | Sort order
+  'sortOrder': "a", // String | Sort order
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getOutboundContactlistsDivisionviews(opts)
@@ -3705,6 +4125,7 @@ apiInstance.getOutboundContactlistsDivisionviews(opts)
  **id** | **[String]** | id | [optional]  |
  **sortBy** | **String** | Sort by | [optional]  |
  **sortOrder** | **String** | Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3713,7 +4134,7 @@ apiInstance.getOutboundContactlistsDivisionviews(opts)
 
 ## getOutboundContactlisttemplate
 
-> ContactListTemplate getOutboundContactlisttemplate(contactListTemplateId)
+> ContactListTemplate getOutboundContactlisttemplate(contactListTemplateId, opts)
 
 
 GET /api/v2/outbound/contactlisttemplates/{contactListTemplateId}
@@ -3738,8 +4159,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OutboundApi();
 
 let contactListTemplateId = "contactListTemplateId_example"; // String | ContactListTemplate ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getOutboundContactlisttemplate(contactListTemplateId)
+apiInstance.getOutboundContactlisttemplate(contactListTemplateId, opts)
   .then((data) => {
     console.log(`getOutboundContactlisttemplate success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3755,6 +4182,7 @@ apiInstance.getOutboundContactlisttemplate(contactListTemplateId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **contactListTemplateId** | **String** | ContactListTemplate ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3794,7 +4222,11 @@ let opts = {
   'filterType': "Prefix", // String | Filter type
   'name': "name_example", // String | Name
   'sortBy': "sortBy_example", // String | Sort by
-  'sortOrder': "a" // String | Sort order
+  'sortOrder': "a", // String | Sort order
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getOutboundContactlisttemplates(opts)
@@ -3819,15 +4251,77 @@ apiInstance.getOutboundContactlisttemplates(opts)
  **name** | **String** | Name | [optional]  |
  **sortBy** | **String** | Sort by | [optional]  |
  **sortOrder** | **String** | Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **ContactListTemplateEntityListing**
 
 
+## getOutboundDiagnosticsCampaignSummary
+
+> CampaignDiagnosticSummary getOutboundDiagnosticsCampaignSummary(campaignId, start, end, opts)
+
+
+GET /api/v2/outbound/diagnostics/campaigns/{campaignId}/summary
+
+Get diagnostic summary for a single campaign
+
+Requires ANY permissions:
+
+* outbound:campaignDiagnostic:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let campaignId = "campaignId_example"; // String | Campaign ID
+let start = "start_example"; // String | Start datetime (ISO 8601 or Unix epoch)
+let end = "end_example"; // String | End datetime (ISO 8601 or Unix epoch)
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.getOutboundDiagnosticsCampaignSummary(campaignId, start, end, opts)
+  .then((data) => {
+    console.log(`getOutboundDiagnosticsCampaignSummary success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling getOutboundDiagnosticsCampaignSummary');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **campaignId** | **String** | Campaign ID |  |
+ **start** | **String** | Start datetime (ISO 8601 or Unix epoch) |  |
+ **end** | **String** | End datetime (ISO 8601 or Unix epoch) |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**CampaignDiagnosticSummary**
+
+
 ## getOutboundDigitalruleset
 
-> DigitalRuleSet getOutboundDigitalruleset(digitalRuleSetId)
+> DigitalRuleSet getOutboundDigitalruleset(digitalRuleSetId, opts)
 
 
 GET /api/v2/outbound/digitalrulesets/{digitalRuleSetId}
@@ -3852,8 +4346,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OutboundApi();
 
 let digitalRuleSetId = "digitalRuleSetId_example"; // String | The Digital Rule Set ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getOutboundDigitalruleset(digitalRuleSetId)
+apiInstance.getOutboundDigitalruleset(digitalRuleSetId, opts)
   .then((data) => {
     console.log(`getOutboundDigitalruleset success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -3869,6 +4369,7 @@ apiInstance.getOutboundDigitalruleset(digitalRuleSetId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **digitalRuleSetId** | **String** | The Digital Rule Set ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3907,7 +4408,11 @@ let opts = {
   'sortBy': "name", // String | The field to sort by
   'sortOrder': "ascending", // String | The direction to sort
   'name': "name_example", // String | Name
-  'id': ["id_example"] // [String] | A list of digital rule set ids to bulk fetch
+  'id': ["id_example"], // [String] | A list of digital rule set ids to bulk fetch
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getOutboundDigitalrulesets(opts)
@@ -3931,6 +4436,7 @@ apiInstance.getOutboundDigitalrulesets(opts)
  **sortOrder** | **String** | The direction to sort | [optional] [default to ascending]<br />**Values**: ascending, descending |
  **name** | **String** | Name | [optional]  |
  **id** | **[String]** | A list of digital rule set ids to bulk fetch | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -3966,7 +4472,11 @@ let apiInstance = new platformClient.OutboundApi();
 let dncListId = "dncListId_example"; // String | DncList ID
 let opts = { 
   'includeImportStatus': false, // Boolean | Import status
-  'includeSize': false // Boolean | Include size
+  'includeSize': false, // Boolean | Include size
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getOutboundDnclist(dncListId, opts)
@@ -3987,6 +4497,7 @@ apiInstance.getOutboundDnclist(dncListId, opts)
  **dncListId** | **String** | DncList ID |  |
  **includeImportStatus** | **Boolean** | Import status | [optional] [default to false] |
  **includeSize** | **Boolean** | Include size | [optional] [default to false] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4022,7 +4533,11 @@ let apiInstance = new platformClient.OutboundApi();
 
 let dncListId = "dncListId_example"; // String | DncList ID
 let opts = { 
-  'download': "false" // String | Redirect to download uri
+  'download': "false", // String | Redirect to download uri
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getOutboundDnclistExport(dncListId, opts)
@@ -4042,6 +4557,7 @@ apiInstance.getOutboundDnclistExport(dncListId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **dncListId** | **String** | DncList ID |  |
  **download** | **String** | Redirect to download uri | [optional] [default to false] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4050,7 +4566,7 @@ apiInstance.getOutboundDnclistExport(dncListId, opts)
 
 ## getOutboundDnclistImportstatus
 
-> ImportStatus getOutboundDnclistImportstatus(dncListId)
+> ImportStatus getOutboundDnclistImportstatus(dncListId, opts)
 
 
 GET /api/v2/outbound/dnclists/{dncListId}/importstatus
@@ -4075,8 +4591,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OutboundApi();
 
 let dncListId = "dncListId_example"; // String | DncList ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getOutboundDnclistImportstatus(dncListId)
+apiInstance.getOutboundDnclistImportstatus(dncListId, opts)
   .then((data) => {
     console.log(`getOutboundDnclistImportstatus success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4092,6 +4614,7 @@ apiInstance.getOutboundDnclistImportstatus(dncListId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **dncListId** | **String** | DncList ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4135,7 +4658,11 @@ let opts = {
   'dncSourceType': "dncSourceType_example", // String | DncSourceType
   'divisionId': ["divisionId_example"], // [String] | Division ID(s)
   'sortBy': "sortBy_example", // String | Sort by
-  'sortOrder': "sortOrder_example" // String | Sort order
+  'sortOrder': "sortOrder_example", // String | Sort order
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getOutboundDnclists(opts)
@@ -4164,6 +4691,7 @@ apiInstance.getOutboundDnclists(opts)
  **divisionId** | **[String]** | Division ID(s) | [optional]  |
  **sortBy** | **String** | Sort by | [optional]  |
  **sortOrder** | **String** | Sort order | [optional] <br />**Values**: ascending, descending |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4201,7 +4729,11 @@ let apiInstance = new platformClient.OutboundApi();
 let dncListId = "dncListId_example"; // String | Dnclist ID
 let opts = { 
   'includeImportStatus': false, // Boolean | Include import status
-  'includeSize': false // Boolean | Include size
+  'includeSize': false, // Boolean | Include size
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getOutboundDnclistsDivisionview(dncListId, opts)
@@ -4222,6 +4754,7 @@ apiInstance.getOutboundDnclistsDivisionview(dncListId, opts)
  **dncListId** | **String** | Dnclist ID |  |
  **includeImportStatus** | **Boolean** | Include import status | [optional] [default to false] |
  **includeSize** | **Boolean** | Include size | [optional] [default to false] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4266,7 +4799,11 @@ let opts = {
   'dncSourceType': "dncSourceType_example", // String | DncSourceType
   'id': ["id_example"], // [String] | id
   'sortBy': "sortBy_example", // String | Sort by
-  'sortOrder': "a" // String | Sort order
+  'sortOrder': "a", // String | Sort order
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getOutboundDnclistsDivisionviews(opts)
@@ -4294,6 +4831,7 @@ apiInstance.getOutboundDnclistsDivisionviews(opts)
  **id** | **[String]** | id | [optional]  |
  **sortBy** | **String** | Sort by | [optional]  |
  **sortOrder** | **String** | Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4302,7 +4840,7 @@ apiInstance.getOutboundDnclistsDivisionviews(opts)
 
 ## getOutboundEvent
 
-> EventLog getOutboundEvent(eventId)
+> EventLog getOutboundEvent(eventId, opts)
 
 
 GET /api/v2/outbound/events/{eventId}
@@ -4327,8 +4865,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OutboundApi();
 
 let eventId = "eventId_example"; // String | Event Log ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getOutboundEvent(eventId)
+apiInstance.getOutboundEvent(eventId, opts)
   .then((data) => {
     console.log(`getOutboundEvent success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4344,6 +4888,7 @@ apiInstance.getOutboundEvent(eventId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **eventId** | **String** | Event Log ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4383,7 +4928,11 @@ let opts = {
   'category': "category_example", // String | Category
   'level': "level_example", // String | Level
   'sortBy': "sortBy_example", // String | Sort by
-  'sortOrder': "a" // String | Sort order
+  'sortOrder': "a", // String | Sort order
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getOutboundEvents(opts)
@@ -4408,6 +4957,7 @@ apiInstance.getOutboundEvents(opts)
  **level** | **String** | Level | [optional]  |
  **sortBy** | **String** | Sort by | [optional]  |
  **sortOrder** | **String** | Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4416,7 +4966,7 @@ apiInstance.getOutboundEvents(opts)
 
 ## getOutboundFilespecificationtemplate
 
-> FileSpecificationTemplate getOutboundFilespecificationtemplate(fileSpecificationTemplateId)
+> FileSpecificationTemplate getOutboundFilespecificationtemplate(fileSpecificationTemplateId, opts)
 
 
 GET /api/v2/outbound/filespecificationtemplates/{fileSpecificationTemplateId}
@@ -4441,8 +4991,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OutboundApi();
 
 let fileSpecificationTemplateId = "fileSpecificationTemplateId_example"; // String | File Specification Template ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getOutboundFilespecificationtemplate(fileSpecificationTemplateId)
+apiInstance.getOutboundFilespecificationtemplate(fileSpecificationTemplateId, opts)
   .then((data) => {
     console.log(`getOutboundFilespecificationtemplate success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4458,6 +5014,7 @@ apiInstance.getOutboundFilespecificationtemplate(fileSpecificationTemplateId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **fileSpecificationTemplateId** | **String** | File Specification Template ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4497,7 +5054,11 @@ let opts = {
   'filterType': "Prefix", // String | Filter type
   'name': "name_example", // String | Name
   'sortBy': "sortBy_example", // String | Sort by
-  'sortOrder': "a" // String | Sort order
+  'sortOrder': "a", // String | Sort order
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getOutboundFilespecificationtemplates(opts)
@@ -4522,6 +5083,7 @@ apiInstance.getOutboundFilespecificationtemplates(opts)
  **name** | **String** | Name | [optional]  |
  **sortBy** | **String** | Sort by | [optional]  |
  **sortOrder** | **String** | Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4556,7 +5118,11 @@ let apiInstance = new platformClient.OutboundApi();
 
 let importTemplateId = "importTemplateId_example"; // String | Import Template ID
 let opts = { 
-  'includeImportStatus': false // Boolean | Import status
+  'includeImportStatus': false, // Boolean | Import status
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getOutboundImporttemplate(importTemplateId, opts)
@@ -4576,6 +5142,7 @@ apiInstance.getOutboundImporttemplate(importTemplateId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **importTemplateId** | **String** | Import Template ID |  |
  **includeImportStatus** | **Boolean** | Import status | [optional] [default to false] |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4610,7 +5177,11 @@ let apiInstance = new platformClient.OutboundApi();
 
 let importTemplateId = "importTemplateId_example"; // String | importTemplateId
 let opts = { 
-  'listNamePrefix': "listNamePrefix_example" // String | listNamePrefix
+  'listNamePrefix': "listNamePrefix_example", // String | listNamePrefix
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getOutboundImporttemplateImportstatus(importTemplateId, opts)
@@ -4630,6 +5201,7 @@ apiInstance.getOutboundImporttemplateImportstatus(importTemplateId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **importTemplateId** | **String** | importTemplateId |  |
  **listNamePrefix** | **String** | listNamePrefix | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4671,7 +5243,11 @@ let opts = {
   'name': "name_example", // String | Name
   'sortBy': "sortBy_example", // String | Sort by
   'sortOrder': "a", // String | Sort order
-  'contactListTemplateId': "contactListTemplateId_example" // String | Contact List Template ID
+  'contactListTemplateId': "contactListTemplateId_example", // String | Contact List Template ID
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getOutboundImporttemplates(opts)
@@ -4698,6 +5274,7 @@ apiInstance.getOutboundImporttemplates(opts)
  **sortBy** | **String** | Sort by | [optional]  |
  **sortOrder** | **String** | Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
  **contactListTemplateId** | **String** | Contact List Template ID | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4706,7 +5283,7 @@ apiInstance.getOutboundImporttemplates(opts)
 
 ## getOutboundMessagingcampaign
 
-> MessagingCampaign getOutboundMessagingcampaign(messagingCampaignId)
+> MessagingCampaign getOutboundMessagingcampaign(messagingCampaignId, opts)
 
 
 GET /api/v2/outbound/messagingcampaigns/{messagingCampaignId}
@@ -4733,8 +5310,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OutboundApi();
 
 let messagingCampaignId = "messagingCampaignId_example"; // String | The Messaging Campaign ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getOutboundMessagingcampaign(messagingCampaignId)
+apiInstance.getOutboundMessagingcampaign(messagingCampaignId, opts)
   .then((data) => {
     console.log(`getOutboundMessagingcampaign success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4750,6 +5333,7 @@ apiInstance.getOutboundMessagingcampaign(messagingCampaignId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **messagingCampaignId** | **String** | The Messaging Campaign ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4758,7 +5342,7 @@ apiInstance.getOutboundMessagingcampaign(messagingCampaignId)
 
 ## getOutboundMessagingcampaignDiagnostics
 
-> MessagingCampaignDiagnostics getOutboundMessagingcampaignDiagnostics(messagingCampaignId)
+> MessagingCampaignDiagnostics getOutboundMessagingcampaignDiagnostics(messagingCampaignId, opts)
 
 
 GET /api/v2/outbound/messagingcampaigns/{messagingCampaignId}/diagnostics
@@ -4785,8 +5369,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OutboundApi();
 
 let messagingCampaignId = "messagingCampaignId_example"; // String | The Messaging Campaign ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getOutboundMessagingcampaignDiagnostics(messagingCampaignId)
+apiInstance.getOutboundMessagingcampaignDiagnostics(messagingCampaignId, opts)
   .then((data) => {
     console.log(`getOutboundMessagingcampaignDiagnostics success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4802,6 +5392,7 @@ apiInstance.getOutboundMessagingcampaignDiagnostics(messagingCampaignId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **messagingCampaignId** | **String** | The Messaging Campaign ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4810,7 +5401,7 @@ apiInstance.getOutboundMessagingcampaignDiagnostics(messagingCampaignId)
 
 ## getOutboundMessagingcampaignProgress
 
-> CampaignProgress getOutboundMessagingcampaignProgress(messagingCampaignId)
+> CampaignProgress getOutboundMessagingcampaignProgress(messagingCampaignId, opts)
 
 
 GET /api/v2/outbound/messagingcampaigns/{messagingCampaignId}/progress
@@ -4837,8 +5428,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OutboundApi();
 
 let messagingCampaignId = "messagingCampaignId_example"; // String | The Messaging Campaign ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getOutboundMessagingcampaignProgress(messagingCampaignId)
+apiInstance.getOutboundMessagingcampaignProgress(messagingCampaignId, opts)
   .then((data) => {
     console.log(`getOutboundMessagingcampaignProgress success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4854,6 +5451,7 @@ apiInstance.getOutboundMessagingcampaignProgress(messagingCampaignId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **messagingCampaignId** | **String** | The Messaging Campaign ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4900,7 +5498,12 @@ let opts = {
   'senderSmsPhoneNumber': "senderSmsPhoneNumber_example", // String | Sender SMS Phone Number
   'id': ["id_example"], // [String] | A list of messaging campaign ids to bulk fetch
   'contentTemplateId': "contentTemplateId_example", // String | Content template ID
-  'campaignStatus': "campaignStatus_example" // String | Campaign Status
+  'campaignStatus': "campaignStatus_example", // String | Campaign Status
+  'ruleSetIds': ["ruleSetIds_example"], // [String] | Ruleset ID(s)
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getOutboundMessagingcampaigns(opts)
@@ -4930,6 +5533,8 @@ apiInstance.getOutboundMessagingcampaigns(opts)
  **id** | **[String]** | A list of messaging campaign ids to bulk fetch | [optional]  |
  **contentTemplateId** | **String** | Content template ID | [optional]  |
  **campaignStatus** | **String** | Campaign Status | [optional] <br />**Values**: on, stopping, off, complete, invalid, forced_off, forced_stopping |
+ **ruleSetIds** | **[String]** | Ruleset ID(s) | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -4938,7 +5543,7 @@ apiInstance.getOutboundMessagingcampaigns(opts)
 
 ## getOutboundMessagingcampaignsDivisionview
 
-> MessagingCampaignDivisionView getOutboundMessagingcampaignsDivisionview(messagingCampaignId)
+> MessagingCampaignDivisionView getOutboundMessagingcampaignsDivisionview(messagingCampaignId, opts)
 
 
 GET /api/v2/outbound/messagingcampaigns/divisionviews/{messagingCampaignId}
@@ -4967,8 +5572,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OutboundApi();
 
 let messagingCampaignId = "messagingCampaignId_example"; // String | The Messaging Campaign ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getOutboundMessagingcampaignsDivisionview(messagingCampaignId)
+apiInstance.getOutboundMessagingcampaignsDivisionview(messagingCampaignId, opts)
   .then((data) => {
     console.log(`getOutboundMessagingcampaignsDivisionview success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -4984,6 +5595,7 @@ apiInstance.getOutboundMessagingcampaignsDivisionview(messagingCampaignId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **messagingCampaignId** | **String** | The Messaging Campaign ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5029,7 +5641,11 @@ let opts = {
   'id': ["id_example"], // [String] | id
   'senderSmsPhoneNumber': "senderSmsPhoneNumber_example", // String | Sender SMS Phone Number
   'contentTemplateId': "contentTemplateId_example", // String | Content template ID
-  'campaignStatus': "campaignStatus_example" // String | Campaign Status
+  'campaignStatus': "campaignStatus_example", // String | Campaign Status
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getOutboundMessagingcampaignsDivisionviews(opts)
@@ -5056,6 +5672,7 @@ apiInstance.getOutboundMessagingcampaignsDivisionviews(opts)
  **senderSmsPhoneNumber** | **String** | Sender SMS Phone Number | [optional]  |
  **contentTemplateId** | **String** | Content template ID | [optional]  |
  **campaignStatus** | **String** | Campaign Status | [optional] <br />**Values**: on, stopping, off, complete, invalid, forced_off, forced_stopping |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5064,7 +5681,7 @@ apiInstance.getOutboundMessagingcampaignsDivisionviews(opts)
 
 ## getOutboundRuleset
 
-> RuleSet getOutboundRuleset(ruleSetId)
+> RuleSet getOutboundRuleset(ruleSetId, opts)
 
 
 GET /api/v2/outbound/rulesets/{ruleSetId}
@@ -5089,8 +5706,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OutboundApi();
 
 let ruleSetId = "ruleSetId_example"; // String | Rule Set ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getOutboundRuleset(ruleSetId)
+apiInstance.getOutboundRuleset(ruleSetId, opts)
   .then((data) => {
     console.log(`getOutboundRuleset success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5106,6 +5729,7 @@ apiInstance.getOutboundRuleset(ruleSetId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **ruleSetId** | **String** | Rule Set ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5145,7 +5769,11 @@ let opts = {
   'filterType': "Prefix", // String | Filter type
   'name': "name_example", // String | Name
   'sortBy': "sortBy_example", // String | Sort by
-  'sortOrder': "a" // String | Sort order
+  'sortOrder': "a", // String | Sort order
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getOutboundRulesets(opts)
@@ -5170,6 +5798,7 @@ apiInstance.getOutboundRulesets(opts)
  **name** | **String** | Name | [optional]  |
  **sortBy** | **String** | Sort by | [optional]  |
  **sortOrder** | **String** | Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5178,7 +5807,7 @@ apiInstance.getOutboundRulesets(opts)
 
 ## getOutboundSchedulesCampaign
 
-> CampaignSchedule getOutboundSchedulesCampaign(campaignId)
+> CampaignSchedule getOutboundSchedulesCampaign(campaignId, opts)
 
 
 GET /api/v2/outbound/schedules/campaigns/{campaignId}
@@ -5204,8 +5833,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OutboundApi();
 
 let campaignId = "campaignId_example"; // String | Campaign ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getOutboundSchedulesCampaign(campaignId)
+apiInstance.getOutboundSchedulesCampaign(campaignId, opts)
   .then((data) => {
     console.log(`getOutboundSchedulesCampaign success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5221,6 +5856,7 @@ apiInstance.getOutboundSchedulesCampaign(campaignId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **campaignId** | **String** | Campaign ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5229,7 +5865,7 @@ apiInstance.getOutboundSchedulesCampaign(campaignId)
 
 ## getOutboundSchedulesCampaigns
 
-> [CampaignSchedule] getOutboundSchedulesCampaigns()
+> [CampaignSchedule] getOutboundSchedulesCampaigns(opts)
 
 
 GET /api/v2/outbound/schedules/campaigns
@@ -5253,8 +5889,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getOutboundSchedulesCampaigns()
+apiInstance.getOutboundSchedulesCampaigns(opts)
   .then((data) => {
     console.log(`getOutboundSchedulesCampaigns success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5266,7 +5908,10 @@ apiInstance.getOutboundSchedulesCampaigns()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5275,7 +5920,7 @@ This endpoint does not need any parameter.
 
 ## getOutboundSchedulesEmailcampaign
 
-> EmailCampaignSchedule getOutboundSchedulesEmailcampaign(emailCampaignId)
+> EmailCampaignSchedule getOutboundSchedulesEmailcampaign(emailCampaignId, opts)
 
 
 GET /api/v2/outbound/schedules/emailcampaigns/{emailCampaignId}
@@ -5301,8 +5946,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OutboundApi();
 
 let emailCampaignId = "emailCampaignId_example"; // String | Email Campaign ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getOutboundSchedulesEmailcampaign(emailCampaignId)
+apiInstance.getOutboundSchedulesEmailcampaign(emailCampaignId, opts)
   .then((data) => {
     console.log(`getOutboundSchedulesEmailcampaign success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5318,6 +5969,7 @@ apiInstance.getOutboundSchedulesEmailcampaign(emailCampaignId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **emailCampaignId** | **String** | Email Campaign ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5326,7 +5978,7 @@ apiInstance.getOutboundSchedulesEmailcampaign(emailCampaignId)
 
 ## getOutboundSchedulesEmailcampaigns
 
-> EmailCampaignScheduleEntityListing getOutboundSchedulesEmailcampaigns()
+> EmailCampaignScheduleEntityListing getOutboundSchedulesEmailcampaigns(opts)
 
 
 GET /api/v2/outbound/schedules/emailcampaigns
@@ -5350,8 +6002,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getOutboundSchedulesEmailcampaigns()
+apiInstance.getOutboundSchedulesEmailcampaigns(opts)
   .then((data) => {
     console.log(`getOutboundSchedulesEmailcampaigns success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5363,7 +6021,10 @@ apiInstance.getOutboundSchedulesEmailcampaigns()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5372,7 +6033,7 @@ This endpoint does not need any parameter.
 
 ## getOutboundSchedulesMessagingcampaign
 
-> MessagingCampaignSchedule getOutboundSchedulesMessagingcampaign(messagingCampaignId)
+> MessagingCampaignSchedule getOutboundSchedulesMessagingcampaign(messagingCampaignId, opts)
 
 
 GET /api/v2/outbound/schedules/messagingcampaigns/{messagingCampaignId}
@@ -5398,8 +6059,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OutboundApi();
 
 let messagingCampaignId = "messagingCampaignId_example"; // String | Messaging Campaign ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getOutboundSchedulesMessagingcampaign(messagingCampaignId)
+apiInstance.getOutboundSchedulesMessagingcampaign(messagingCampaignId, opts)
   .then((data) => {
     console.log(`getOutboundSchedulesMessagingcampaign success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5415,6 +6082,7 @@ apiInstance.getOutboundSchedulesMessagingcampaign(messagingCampaignId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **messagingCampaignId** | **String** | Messaging Campaign ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5423,7 +6091,7 @@ apiInstance.getOutboundSchedulesMessagingcampaign(messagingCampaignId)
 
 ## getOutboundSchedulesMessagingcampaigns
 
-> MessagingCampaignScheduleEntityListing getOutboundSchedulesMessagingcampaigns()
+> MessagingCampaignScheduleEntityListing getOutboundSchedulesMessagingcampaigns(opts)
 
 
 GET /api/v2/outbound/schedules/messagingcampaigns
@@ -5447,8 +6115,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getOutboundSchedulesMessagingcampaigns()
+apiInstance.getOutboundSchedulesMessagingcampaigns(opts)
   .then((data) => {
     console.log(`getOutboundSchedulesMessagingcampaigns success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5460,7 +6134,10 @@ apiInstance.getOutboundSchedulesMessagingcampaigns()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5469,7 +6146,7 @@ This endpoint does not need any parameter.
 
 ## getOutboundSchedulesSequence
 
-> SequenceSchedule getOutboundSchedulesSequence(sequenceId)
+> SequenceSchedule getOutboundSchedulesSequence(sequenceId, opts)
 
 
 GET /api/v2/outbound/schedules/sequences/{sequenceId}
@@ -5495,8 +6172,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OutboundApi();
 
 let sequenceId = "sequenceId_example"; // String | Sequence ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getOutboundSchedulesSequence(sequenceId)
+apiInstance.getOutboundSchedulesSequence(sequenceId, opts)
   .then((data) => {
     console.log(`getOutboundSchedulesSequence success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5512,6 +6195,7 @@ apiInstance.getOutboundSchedulesSequence(sequenceId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **sequenceId** | **String** | Sequence ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5520,7 +6204,7 @@ apiInstance.getOutboundSchedulesSequence(sequenceId)
 
 ## getOutboundSchedulesSequences
 
-> [SequenceSchedule] getOutboundSchedulesSequences()
+> [SequenceSchedule] getOutboundSchedulesSequences(opts)
 
 
 GET /api/v2/outbound/schedules/sequences
@@ -5544,8 +6228,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getOutboundSchedulesSequences()
+apiInstance.getOutboundSchedulesSequences(opts)
   .then((data) => {
     console.log(`getOutboundSchedulesSequences success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5557,7 +6247,10 @@ apiInstance.getOutboundSchedulesSequences()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5566,7 +6259,7 @@ This endpoint does not need any parameter.
 
 ## getOutboundSchedulesWhatsappcampaign
 
-> WhatsAppCampaignSchedule getOutboundSchedulesWhatsappcampaign(whatsAppCampaignId)
+> WhatsAppCampaignSchedule getOutboundSchedulesWhatsappcampaign(whatsAppCampaignId, opts)
 
 
 GET /api/v2/outbound/schedules/whatsappcampaigns/{whatsAppCampaignId}
@@ -5592,8 +6285,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OutboundApi();
 
 let whatsAppCampaignId = "whatsAppCampaignId_example"; // String | WhatsApp Campaign ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getOutboundSchedulesWhatsappcampaign(whatsAppCampaignId)
+apiInstance.getOutboundSchedulesWhatsappcampaign(whatsAppCampaignId, opts)
   .then((data) => {
     console.log(`getOutboundSchedulesWhatsappcampaign success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5609,6 +6308,7 @@ apiInstance.getOutboundSchedulesWhatsappcampaign(whatsAppCampaignId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **whatsAppCampaignId** | **String** | WhatsApp Campaign ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5617,7 +6317,7 @@ apiInstance.getOutboundSchedulesWhatsappcampaign(whatsAppCampaignId)
 
 ## getOutboundSchedulesWhatsappcampaigns
 
-> WhatsAppCampaignScheduleEntityListing getOutboundSchedulesWhatsappcampaigns()
+> WhatsAppCampaignScheduleEntityListing getOutboundSchedulesWhatsappcampaigns(opts)
 
 
 GET /api/v2/outbound/schedules/whatsappcampaigns
@@ -5641,8 +6341,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getOutboundSchedulesWhatsappcampaigns()
+apiInstance.getOutboundSchedulesWhatsappcampaigns(opts)
   .then((data) => {
     console.log(`getOutboundSchedulesWhatsappcampaigns success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5654,7 +6360,10 @@ apiInstance.getOutboundSchedulesWhatsappcampaigns()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5663,7 +6372,7 @@ This endpoint does not need any parameter.
 
 ## getOutboundSequence
 
-> CampaignSequence getOutboundSequence(sequenceId)
+> CampaignSequence getOutboundSequence(sequenceId, opts)
 
 
 GET /api/v2/outbound/sequences/{sequenceId}
@@ -5688,8 +6397,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OutboundApi();
 
 let sequenceId = "sequenceId_example"; // String | Campaign Sequence ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getOutboundSequence(sequenceId)
+apiInstance.getOutboundSequence(sequenceId, opts)
   .then((data) => {
     console.log(`getOutboundSequence success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5705,6 +6420,7 @@ apiInstance.getOutboundSequence(sequenceId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **sequenceId** | **String** | Campaign Sequence ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5744,7 +6460,11 @@ let opts = {
   'filterType': "Prefix", // String | Filter type
   'name': "name_example", // String | Name
   'sortBy': "sortBy_example", // String | Sort by
-  'sortOrder': "a" // String | Sort order
+  'sortOrder': "a", // String | Sort order
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.getOutboundSequences(opts)
@@ -5769,6 +6489,7 @@ apiInstance.getOutboundSequences(opts)
  **name** | **String** | Name | [optional]  |
  **sortBy** | **String** | Sort by | [optional]  |
  **sortOrder** | **String** | Sort order | [optional] [default to a]<br />**Values**: ascending, descending |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5777,7 +6498,7 @@ apiInstance.getOutboundSequences(opts)
 
 ## getOutboundSettings
 
-> OutboundSettings getOutboundSettings()
+> OutboundSettings getOutboundSettings(opts)
 
 
 GET /api/v2/outbound/settings
@@ -5800,8 +6521,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getOutboundSettings()
+apiInstance.getOutboundSettings(opts)
   .then((data) => {
     console.log(`getOutboundSettings success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5813,7 +6540,10 @@ apiInstance.getOutboundSettings()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5822,7 +6552,7 @@ This endpoint does not need any parameter.
 
 ## getOutboundWrapupcodemappings
 
-> WrapUpCodeMapping getOutboundWrapupcodemappings()
+> WrapUpCodeMapping getOutboundWrapupcodemappings(opts)
 
 
 GET /api/v2/outbound/wrapupcodemappings
@@ -5845,8 +6575,14 @@ const platformClient = require('purecloud-platform-client-v2');
 platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 
 let apiInstance = new platformClient.OutboundApi();
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getOutboundWrapupcodemappings()
+apiInstance.getOutboundWrapupcodemappings(opts)
   .then((data) => {
     console.log(`getOutboundWrapupcodemappings success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -5858,7 +6594,10 @@ apiInstance.getOutboundWrapupcodemappings()
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5867,7 +6606,7 @@ This endpoint does not need any parameter.
 
 ## patchOutboundCampaign
 
-> void patchOutboundCampaign(campaignId, body)
+> void patchOutboundCampaign(campaignId, body, opts)
 
 
 PATCH /api/v2/outbound/campaigns/{campaignId}
@@ -5893,8 +6632,14 @@ let apiInstance = new platformClient.OutboundApi();
 
 let campaignId = "campaignId_example"; // String | Campaign ID
 let body = {}; // Object | CampaignPatchRequest
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchOutboundCampaign(campaignId, body)
+apiInstance.patchOutboundCampaign(campaignId, body, opts)
   .then(() => {
     console.log('patchOutboundCampaign returned successfully.');
   })
@@ -5911,6 +6656,7 @@ apiInstance.patchOutboundCampaign(campaignId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **campaignId** | **String** | Campaign ID |  |
  **body** | **Object** | CampaignPatchRequest |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5919,7 +6665,7 @@ void (no response body)
 
 ## patchOutboundDnclistCustomexclusioncolumns
 
-> void patchOutboundDnclistCustomexclusioncolumns(dncListId, body)
+> void patchOutboundDnclistCustomexclusioncolumns(dncListId, body, opts)
 
 
 PATCH /api/v2/outbound/dnclists/{dncListId}/customexclusioncolumns
@@ -5947,8 +6693,14 @@ let apiInstance = new platformClient.OutboundApi();
 
 let dncListId = "dncListId_example"; // String | DncList ID
 let body = {}; // Object | DNC Custom exclusion column entries
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchOutboundDnclistCustomexclusioncolumns(dncListId, body)
+apiInstance.patchOutboundDnclistCustomexclusioncolumns(dncListId, body, opts)
   .then(() => {
     console.log('patchOutboundDnclistCustomexclusioncolumns returned successfully.');
   })
@@ -5965,6 +6717,7 @@ apiInstance.patchOutboundDnclistCustomexclusioncolumns(dncListId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **dncListId** | **String** | DncList ID |  |
  **body** | **Object** | DNC Custom exclusion column entries |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -5973,7 +6726,7 @@ void (no response body)
 
 ## patchOutboundDnclistEmailaddresses
 
-> void patchOutboundDnclistEmailaddresses(dncListId, body)
+> void patchOutboundDnclistEmailaddresses(dncListId, body, opts)
 
 
 PATCH /api/v2/outbound/dnclists/{dncListId}/emailaddresses
@@ -6001,8 +6754,14 @@ let apiInstance = new platformClient.OutboundApi();
 
 let dncListId = "dncListId_example"; // String | DncList ID
 let body = {}; // Object | DNC Emails
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchOutboundDnclistEmailaddresses(dncListId, body)
+apiInstance.patchOutboundDnclistEmailaddresses(dncListId, body, opts)
   .then(() => {
     console.log('patchOutboundDnclistEmailaddresses returned successfully.');
   })
@@ -6019,6 +6778,7 @@ apiInstance.patchOutboundDnclistEmailaddresses(dncListId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **dncListId** | **String** | DncList ID |  |
  **body** | **Object** | DNC Emails |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6027,7 +6787,7 @@ void (no response body)
 
 ## patchOutboundDnclistPhonenumbers
 
-> void patchOutboundDnclistPhonenumbers(dncListId, body)
+> void patchOutboundDnclistPhonenumbers(dncListId, body, opts)
 
 
 PATCH /api/v2/outbound/dnclists/{dncListId}/phonenumbers
@@ -6055,8 +6815,14 @@ let apiInstance = new platformClient.OutboundApi();
 
 let dncListId = "dncListId_example"; // String | DncList ID
 let body = {}; // Object | DNC Phone Numbers
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchOutboundDnclistPhonenumbers(dncListId, body)
+apiInstance.patchOutboundDnclistPhonenumbers(dncListId, body, opts)
   .then(() => {
     console.log('patchOutboundDnclistPhonenumbers returned successfully.');
   })
@@ -6073,6 +6839,7 @@ apiInstance.patchOutboundDnclistPhonenumbers(dncListId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **dncListId** | **String** | DncList ID |  |
  **body** | **Object** | DNC Phone Numbers |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6081,7 +6848,7 @@ void (no response body)
 
 ## patchOutboundDnclistWhatsappnumbers
 
-> void patchOutboundDnclistWhatsappnumbers(dncListId, body)
+> void patchOutboundDnclistWhatsappnumbers(dncListId, body, opts)
 
 
 PATCH /api/v2/outbound/dnclists/{dncListId}/whatsappnumbers
@@ -6109,8 +6876,14 @@ let apiInstance = new platformClient.OutboundApi();
 
 let dncListId = "dncListId_example"; // String | DncList ID
 let body = {}; // Object | DNC whatsApp numbers
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.patchOutboundDnclistWhatsappnumbers(dncListId, body)
+apiInstance.patchOutboundDnclistWhatsappnumbers(dncListId, body, opts)
   .then(() => {
     console.log('patchOutboundDnclistWhatsappnumbers returned successfully.');
   })
@@ -6127,6 +6900,7 @@ apiInstance.patchOutboundDnclistWhatsappnumbers(dncListId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **dncListId** | **String** | DncList ID |  |
  **body** | **Object** | DNC whatsApp numbers |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6161,7 +6935,11 @@ let apiInstance = new platformClient.OutboundApi();
 
 let body = {}; // Object | outboundSettings
 let opts = { 
-  'useMaxCallsPerAgentDecimal': true // Boolean | Use maxCallsPerAgent with decimal precision
+  'useMaxCallsPerAgentDecimal': true, // Boolean | Use maxCallsPerAgent with decimal precision
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.patchOutboundSettings(body, opts)
@@ -6181,6 +6959,7 @@ apiInstance.patchOutboundSettings(body, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | outboundSettings |  |
  **useMaxCallsPerAgentDecimal** | **Boolean** | Use maxCallsPerAgent with decimal precision | [optional] <br />**Values**: true, false |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6189,7 +6968,7 @@ void (no response body)
 
 ## postOutboundAttemptlimits
 
-> AttemptLimits postOutboundAttemptlimits(body)
+> AttemptLimits postOutboundAttemptlimits(body, opts)
 
 
 POST /api/v2/outbound/attemptlimits
@@ -6214,8 +6993,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OutboundApi();
 
 let body = {}; // Object | AttemptLimits
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postOutboundAttemptlimits(body)
+apiInstance.postOutboundAttemptlimits(body, opts)
   .then((data) => {
     console.log(`postOutboundAttemptlimits success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6231,6 +7016,7 @@ apiInstance.postOutboundAttemptlimits(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | AttemptLimits |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6239,7 +7025,7 @@ apiInstance.postOutboundAttemptlimits(body)
 
 ## postOutboundCallabletimesets
 
-> CallableTimeSet postOutboundCallabletimesets(body)
+> CallableTimeSet postOutboundCallabletimesets(body, opts)
 
 
 POST /api/v2/outbound/callabletimesets
@@ -6264,8 +7050,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OutboundApi();
 
 let body = {}; // Object | DialerCallableTimeSet
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postOutboundCallabletimesets(body)
+apiInstance.postOutboundCallabletimesets(body, opts)
   .then((data) => {
     console.log(`postOutboundCallabletimesets success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6281,6 +7073,7 @@ apiInstance.postOutboundCallabletimesets(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | DialerCallableTimeSet |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6289,7 +7082,7 @@ apiInstance.postOutboundCallabletimesets(body)
 
 ## postOutboundCallanalysisresponsesets
 
-> ResponseSet postOutboundCallanalysisresponsesets(body)
+> ResponseSet postOutboundCallanalysisresponsesets(body, opts)
 
 
 POST /api/v2/outbound/callanalysisresponsesets
@@ -6314,8 +7107,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OutboundApi();
 
 let body = {}; // Object | ResponseSet
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postOutboundCallanalysisresponsesets(body)
+apiInstance.postOutboundCallanalysisresponsesets(body, opts)
   .then((data) => {
     console.log(`postOutboundCallanalysisresponsesets success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6331,6 +7130,7 @@ apiInstance.postOutboundCallanalysisresponsesets(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | ResponseSet |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6339,7 +7139,7 @@ apiInstance.postOutboundCallanalysisresponsesets(body)
 
 ## postOutboundCampaignAgentownedmappingpreview
 
-> **Object** postOutboundCampaignAgentownedmappingpreview(campaignId)
+> **Object** postOutboundCampaignAgentownedmappingpreview(campaignId, opts)
 
 
 POST /api/v2/outbound/campaigns/{campaignId}/agentownedmappingpreview
@@ -6366,8 +7166,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OutboundApi();
 
 let campaignId = "campaignId_example"; // String | Campaign ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postOutboundCampaignAgentownedmappingpreview(campaignId)
+apiInstance.postOutboundCampaignAgentownedmappingpreview(campaignId, opts)
   .then((data) => {
     console.log(`postOutboundCampaignAgentownedmappingpreview success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6383,6 +7189,7 @@ apiInstance.postOutboundCampaignAgentownedmappingpreview(campaignId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **campaignId** | **String** | Campaign ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6391,7 +7198,7 @@ apiInstance.postOutboundCampaignAgentownedmappingpreview(campaignId)
 
 ## postOutboundCampaignCallbackSchedule
 
-> ContactCallbackRequest postOutboundCampaignCallbackSchedule(campaignId, body)
+> ContactCallbackRequest postOutboundCampaignCallbackSchedule(campaignId, body, opts)
 
 :::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
 This resource has been deprecated
@@ -6420,8 +7227,14 @@ let apiInstance = new platformClient.OutboundApi();
 
 let campaignId = "campaignId_example"; // String | Campaign ID
 let body = {}; // Object | ContactCallbackRequest
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postOutboundCampaignCallbackSchedule(campaignId, body)
+apiInstance.postOutboundCampaignCallbackSchedule(campaignId, body, opts)
   .then((data) => {
     console.log(`postOutboundCampaignCallbackSchedule success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6438,6 +7251,7 @@ apiInstance.postOutboundCampaignCallbackSchedule(campaignId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **campaignId** | **String** | Campaign ID |  |
  **body** | **Object** | ContactCallbackRequest |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6446,7 +7260,7 @@ apiInstance.postOutboundCampaignCallbackSchedule(campaignId, body)
 
 ## postOutboundCampaignStart
 
-> void postOutboundCampaignStart(campaignId)
+> void postOutboundCampaignStart(campaignId, opts)
 
 
 POST /api/v2/outbound/campaigns/{campaignId}/start
@@ -6471,8 +7285,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OutboundApi();
 
 let campaignId = "campaignId_example"; // String | Campaign ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postOutboundCampaignStart(campaignId)
+apiInstance.postOutboundCampaignStart(campaignId, opts)
   .then(() => {
     console.log('postOutboundCampaignStart returned successfully.');
   })
@@ -6488,6 +7308,7 @@ apiInstance.postOutboundCampaignStart(campaignId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **campaignId** | **String** | Campaign ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6496,7 +7317,7 @@ void (no response body)
 
 ## postOutboundCampaignStop
 
-> void postOutboundCampaignStop(campaignId)
+> void postOutboundCampaignStop(campaignId, opts)
 
 
 POST /api/v2/outbound/campaigns/{campaignId}/stop
@@ -6521,8 +7342,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OutboundApi();
 
 let campaignId = "campaignId_example"; // String | Campaign ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postOutboundCampaignStop(campaignId)
+apiInstance.postOutboundCampaignStop(campaignId, opts)
   .then(() => {
     console.log('postOutboundCampaignStop returned successfully.');
   })
@@ -6538,6 +7365,7 @@ apiInstance.postOutboundCampaignStop(campaignId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **campaignId** | **String** | Campaign ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6546,7 +7374,7 @@ void (no response body)
 
 ## postOutboundCampaignrules
 
-> CampaignRule postOutboundCampaignrules(body)
+> CampaignRule postOutboundCampaignrules(body, opts)
 
 
 POST /api/v2/outbound/campaignrules
@@ -6571,8 +7399,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OutboundApi();
 
 let body = {}; // Object | CampaignRule
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postOutboundCampaignrules(body)
+apiInstance.postOutboundCampaignrules(body, opts)
   .then((data) => {
     console.log(`postOutboundCampaignrules success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6588,6 +7422,7 @@ apiInstance.postOutboundCampaignrules(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | CampaignRule |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6622,7 +7457,11 @@ let apiInstance = new platformClient.OutboundApi();
 
 let body = {}; // Object | Campaign
 let opts = { 
-  'useMaxCallsPerAgentDecimal': true // Boolean | Use maxCallsPerAgent with decimal precision
+  'useMaxCallsPerAgentDecimal': true, // Boolean | Use maxCallsPerAgent with decimal precision
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postOutboundCampaigns(body, opts)
@@ -6642,15 +7481,74 @@ apiInstance.postOutboundCampaigns(body, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Campaign |  |
  **useMaxCallsPerAgentDecimal** | **Boolean** | Use maxCallsPerAgent with decimal precision | [optional] <br />**Values**: true, false |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **Campaign**
 
 
+## postOutboundCampaignsPerformanceQuery
+
+> CampaignPerformanceDataListing postOutboundCampaignsPerformanceQuery(body, opts)
+
+
+POST /api/v2/outbound/campaigns/performance/query
+
+Get performance data for a list of campaigns
+
+Requires ANY permissions:
+
+* outbound:performance:view
+* outbound:campaign:view
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let body = ["body_example"]; // [String] | Campaign IDs. Maximum of 50 IDs allowed.
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.postOutboundCampaignsPerformanceQuery(body, opts)
+  .then((data) => {
+    console.log(`postOutboundCampaignsPerformanceQuery success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postOutboundCampaignsPerformanceQuery');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **[String]** | Campaign IDs. Maximum of 50 IDs allowed. |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**CampaignPerformanceDataListing**
+
+
 ## postOutboundCampaignsProgress
 
-> [CampaignProgress] postOutboundCampaignsProgress(body)
+> [CampaignProgress] postOutboundCampaignsProgress(body, opts)
 
 
 POST /api/v2/outbound/campaigns/progress
@@ -6675,8 +7573,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OutboundApi();
 
 let body = ["body_example"]; // [String] | Campaign IDs
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postOutboundCampaignsProgress(body)
+apiInstance.postOutboundCampaignsProgress(body, opts)
   .then((data) => {
     console.log(`postOutboundCampaignsProgress success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6692,6 +7596,7 @@ apiInstance.postOutboundCampaignsProgress(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **[String]** | Campaign IDs |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6700,7 +7605,7 @@ apiInstance.postOutboundCampaignsProgress(body)
 
 ## postOutboundContactlistClear
 
-> void postOutboundContactlistClear(contactListId)
+> void postOutboundContactlistClear(contactListId, opts)
 
 
 POST /api/v2/outbound/contactlists/{contactListId}/clear
@@ -6725,8 +7630,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OutboundApi();
 
 let contactListId = "contactListId_example"; // String | Contact List ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postOutboundContactlistClear(contactListId)
+apiInstance.postOutboundContactlistClear(contactListId, opts)
   .then(() => {
     console.log('postOutboundContactlistClear returned successfully.');
   })
@@ -6742,6 +7653,7 @@ apiInstance.postOutboundContactlistClear(contactListId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **contactListId** | **String** | Contact List ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6779,7 +7691,11 @@ let body = [{}]; // Object | Contact
 let opts = { 
   'priority': true, // Boolean | Contact priority. True means the contact(s) will be dialed next; false means the contact will go to the end of the contact queue.
   'clearSystemData': true, // Boolean | Clear system data. True means the system columns (attempts, callable status, etc) stored on the contact will be cleared if the contact already exists; false means they won't.
-  'doNotQueue': true // Boolean | Do not queue. True means that updated contacts will not have their positions in the queue altered, so contacts that have already been dialed will not be redialed. For new contacts, this parameter has no effect; False means that updated contacts will be re-queued, according to the 'priority' parameter.
+  'doNotQueue': true, // Boolean | Do not queue. True means that updated contacts will not have their positions in the queue altered, so contacts that have already been dialed will not be redialed. For new contacts, this parameter has no effect; False means that updated contacts will be re-queued, according to the 'priority' parameter.
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postOutboundContactlistContacts(contactListId, body, opts)
@@ -6802,6 +7718,7 @@ apiInstance.postOutboundContactlistContacts(contactListId, body, opts)
  **priority** | **Boolean** | Contact priority. True means the contact(s) will be dialed next; false means the contact will go to the end of the contact queue. | [optional]  |
  **clearSystemData** | **Boolean** | Clear system data. True means the system columns (attempts, callable status, etc) stored on the contact will be cleared if the contact already exists; false means they won't. | [optional]  |
  **doNotQueue** | **Boolean** | Do not queue. True means that updated contacts will not have their positions in the queue altered, so contacts that have already been dialed will not be redialed. For new contacts, this parameter has no effect; False means that updated contacts will be re-queued, according to the 'priority' parameter. | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6810,7 +7727,7 @@ apiInstance.postOutboundContactlistContacts(contactListId, body, opts)
 
 ## postOutboundContactlistContactsBulk
 
-> [DialerContact] postOutboundContactlistContactsBulk(contactListId, body)
+> [DialerContact] postOutboundContactlistContactsBulk(contactListId, body, opts)
 
 
 POST /api/v2/outbound/contactlists/{contactListId}/contacts/bulk
@@ -6836,8 +7753,14 @@ let apiInstance = new platformClient.OutboundApi();
 
 let contactListId = "contactListId_example"; // String | Contact List ID
 let body = ["body_example"]; // [String] | ContactIds to get.
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postOutboundContactlistContactsBulk(contactListId, body)
+apiInstance.postOutboundContactlistContactsBulk(contactListId, body, opts)
   .then((data) => {
     console.log(`postOutboundContactlistContactsBulk success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6854,6 +7777,7 @@ apiInstance.postOutboundContactlistContactsBulk(contactListId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **contactListId** | **String** | Contact List ID |  |
  **body** | **[String]** | ContactIds to get. |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6862,7 +7786,7 @@ apiInstance.postOutboundContactlistContactsBulk(contactListId, body)
 
 ## postOutboundContactlistContactsBulkRemove
 
-> ContactsBulkOperationJob postOutboundContactlistContactsBulkRemove(contactListId, body)
+> ContactsBulkOperationJob postOutboundContactlistContactsBulkRemove(contactListId, body, opts)
 
 
 POST /api/v2/outbound/contactlists/{contactListId}/contacts/bulk/remove
@@ -6888,8 +7812,14 @@ let apiInstance = new platformClient.OutboundApi();
 
 let contactListId = "contactListId_example"; // String | Contact List ID
 let body = {}; // Object | Contact filter information.
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postOutboundContactlistContactsBulkRemove(contactListId, body)
+apiInstance.postOutboundContactlistContactsBulkRemove(contactListId, body, opts)
   .then((data) => {
     console.log(`postOutboundContactlistContactsBulkRemove success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6906,6 +7836,7 @@ apiInstance.postOutboundContactlistContactsBulkRemove(contactListId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **contactListId** | **String** | Contact List ID |  |
  **body** | **Object** | Contact filter information. |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6914,7 +7845,7 @@ apiInstance.postOutboundContactlistContactsBulkRemove(contactListId, body)
 
 ## postOutboundContactlistContactsBulkUpdate
 
-> ContactsBulkOperationJob postOutboundContactlistContactsBulkUpdate(contactListId, body)
+> ContactsBulkOperationJob postOutboundContactlistContactsBulkUpdate(contactListId, body, opts)
 
 
 POST /api/v2/outbound/contactlists/{contactListId}/contacts/bulk/update
@@ -6940,8 +7871,14 @@ let apiInstance = new platformClient.OutboundApi();
 
 let contactListId = "contactListId_example"; // String | Contact List ID
 let body = {}; // Object | Contact bulk edit request information.
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postOutboundContactlistContactsBulkUpdate(contactListId, body)
+apiInstance.postOutboundContactlistContactsBulkUpdate(contactListId, body, opts)
   .then((data) => {
     console.log(`postOutboundContactlistContactsBulkUpdate success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -6958,6 +7895,7 @@ apiInstance.postOutboundContactlistContactsBulkUpdate(contactListId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **contactListId** | **String** | Contact List ID |  |
  **body** | **Object** | Contact bulk edit request information. |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -6966,7 +7904,7 @@ apiInstance.postOutboundContactlistContactsBulkUpdate(contactListId, body)
 
 ## postOutboundContactlistContactsSearch
 
-> ContactListingResponse postOutboundContactlistContactsSearch(contactListId, body)
+> ContactListingResponse postOutboundContactlistContactsSearch(contactListId, body, opts)
 
 
 POST /api/v2/outbound/contactlists/{contactListId}/contacts/search
@@ -6992,8 +7930,14 @@ let apiInstance = new platformClient.OutboundApi();
 
 let contactListId = "contactListId_example"; // String | Contact List ID
 let body = {}; // Object | Contact search parameters.
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postOutboundContactlistContactsSearch(contactListId, body)
+apiInstance.postOutboundContactlistContactsSearch(contactListId, body, opts)
   .then((data) => {
     console.log(`postOutboundContactlistContactsSearch success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -7010,6 +7954,7 @@ apiInstance.postOutboundContactlistContactsSearch(contactListId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **contactListId** | **String** | Contact List ID |  |
  **body** | **Object** | Contact search parameters. |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -7047,7 +7992,11 @@ let apiInstance = new platformClient.OutboundApi();
 
 let contactListId = "contactListId_example"; // String | ContactList ID
 let opts = { 
-  'body': {} // Object | Export information to get
+  'body': {}, // Object | Export information to get
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postOutboundContactlistExport(contactListId, opts)
@@ -7067,6 +8016,7 @@ apiInstance.postOutboundContactlistExport(contactListId, opts)
 | ------------- | ------------- | ------------- | ------------- |
  **contactListId** | **String** | ContactList ID |  |
  **body** | **Object** | Export information to get | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -7075,7 +8025,7 @@ apiInstance.postOutboundContactlistExport(contactListId, opts)
 
 ## postOutboundContactlistfilters
 
-> ContactListFilter postOutboundContactlistfilters(body)
+> ContactListFilter postOutboundContactlistfilters(body, opts)
 
 
 POST /api/v2/outbound/contactlistfilters
@@ -7100,8 +8050,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OutboundApi();
 
 let body = {}; // Object | ContactListFilter
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postOutboundContactlistfilters(body)
+apiInstance.postOutboundContactlistfilters(body, opts)
   .then((data) => {
     console.log(`postOutboundContactlistfilters success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -7117,6 +8073,7 @@ apiInstance.postOutboundContactlistfilters(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | ContactListFilter |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -7125,7 +8082,7 @@ apiInstance.postOutboundContactlistfilters(body)
 
 ## postOutboundContactlistfiltersBulkRetrieve
 
-> ContactListFilterEntityListing postOutboundContactlistfiltersBulkRetrieve(body)
+> ContactListFilterEntityListing postOutboundContactlistfiltersBulkRetrieve(body, opts)
 
 
 POST /api/v2/outbound/contactlistfilters/bulk/retrieve
@@ -7150,8 +8107,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OutboundApi();
 
 let body = {}; // Object | The contact list filters to retrieve
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postOutboundContactlistfiltersBulkRetrieve(body)
+apiInstance.postOutboundContactlistfiltersBulkRetrieve(body, opts)
   .then((data) => {
     console.log(`postOutboundContactlistfiltersBulkRetrieve success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -7167,6 +8130,7 @@ apiInstance.postOutboundContactlistfiltersBulkRetrieve(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | The contact list filters to retrieve |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -7175,7 +8139,7 @@ apiInstance.postOutboundContactlistfiltersBulkRetrieve(body)
 
 ## postOutboundContactlistfiltersPreview
 
-> FilterPreviewResponse postOutboundContactlistfiltersPreview(body)
+> FilterPreviewResponse postOutboundContactlistfiltersPreview(body, opts)
 
 
 POST /api/v2/outbound/contactlistfilters/preview
@@ -7200,8 +8164,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OutboundApi();
 
 let body = {}; // Object | ContactListFilter
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postOutboundContactlistfiltersPreview(body)
+apiInstance.postOutboundContactlistfiltersPreview(body, opts)
   .then((data) => {
     console.log(`postOutboundContactlistfiltersPreview success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -7217,6 +8187,7 @@ apiInstance.postOutboundContactlistfiltersPreview(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | ContactListFilter |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -7225,7 +8196,7 @@ apiInstance.postOutboundContactlistfiltersPreview(body)
 
 ## postOutboundContactlists
 
-> ContactList postOutboundContactlists(body)
+> ContactList postOutboundContactlists(body, opts)
 
 
 POST /api/v2/outbound/contactlists
@@ -7250,8 +8221,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OutboundApi();
 
 let body = {}; // Object | ContactList
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postOutboundContactlists(body)
+apiInstance.postOutboundContactlists(body, opts)
   .then((data) => {
     console.log(`postOutboundContactlists success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -7267,15 +8244,73 @@ apiInstance.postOutboundContactlists(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | ContactList |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **ContactList**
 
 
+## postOutboundContactlistsUploads
+
+> UploadUrlResponse postOutboundContactlistsUploads(body, opts)
+
+
+POST /api/v2/outbound/contactlists/uploads
+
+Generate presigned upload URL for contact list.
+
+Requires ANY permissions:
+
+* outbound:contactList:upload
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let body = {}; // Object | contactListUploadUrlRequest
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.postOutboundContactlistsUploads(body, opts)
+  .then((data) => {
+    console.log(`postOutboundContactlistsUploads success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postOutboundContactlistsUploads');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | contactListUploadUrlRequest |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**UploadUrlResponse**
+
+
 ## postOutboundContactlisttemplates
 
-> ContactListTemplate postOutboundContactlisttemplates(body)
+> ContactListTemplate postOutboundContactlisttemplates(body, opts)
 
 
 POST /api/v2/outbound/contactlisttemplates
@@ -7300,8 +8335,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OutboundApi();
 
 let body = {}; // Object | ContactListTemplate
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postOutboundContactlisttemplates(body)
+apiInstance.postOutboundContactlisttemplates(body, opts)
   .then((data) => {
     console.log(`postOutboundContactlisttemplates success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -7317,6 +8358,7 @@ apiInstance.postOutboundContactlisttemplates(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | ContactListTemplate |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -7325,7 +8367,7 @@ apiInstance.postOutboundContactlisttemplates(body)
 
 ## postOutboundContactlisttemplatesBulkAdd
 
-> ContactListTemplateEntityListing postOutboundContactlisttemplatesBulkAdd(body)
+> ContactListTemplateEntityListing postOutboundContactlisttemplatesBulkAdd(body, opts)
 
 
 POST /api/v2/outbound/contactlisttemplates/bulk/add
@@ -7350,8 +8392,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OutboundApi();
 
 let body = [{}]; // Object | contact list template(s) to add
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postOutboundContactlisttemplatesBulkAdd(body)
+apiInstance.postOutboundContactlisttemplatesBulkAdd(body, opts)
   .then((data) => {
     console.log(`postOutboundContactlisttemplatesBulkAdd success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -7367,6 +8415,7 @@ apiInstance.postOutboundContactlisttemplatesBulkAdd(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | contact list template(s) to add |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -7375,7 +8424,7 @@ apiInstance.postOutboundContactlisttemplatesBulkAdd(body)
 
 ## postOutboundContactlisttemplatesBulkRetrieve
 
-> ContactListTemplateEntityListing postOutboundContactlisttemplatesBulkRetrieve(body)
+> ContactListTemplateEntityListing postOutboundContactlisttemplatesBulkRetrieve(body, opts)
 
 
 POST /api/v2/outbound/contactlisttemplates/bulk/retrieve
@@ -7400,8 +8449,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OutboundApi();
 
 let body = {}; // Object | contact list templates to get
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postOutboundContactlisttemplatesBulkRetrieve(body)
+apiInstance.postOutboundContactlisttemplatesBulkRetrieve(body, opts)
   .then((data) => {
     console.log(`postOutboundContactlisttemplatesBulkRetrieve success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -7417,6 +8472,7 @@ apiInstance.postOutboundContactlisttemplatesBulkRetrieve(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | contact list templates to get |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -7425,7 +8481,7 @@ apiInstance.postOutboundContactlisttemplatesBulkRetrieve(body)
 
 ## postOutboundConversationDnc
 
-> void postOutboundConversationDnc(conversationId)
+> void postOutboundConversationDnc(conversationId, opts)
 
 
 POST /api/v2/outbound/conversations/{conversationId}/dnc
@@ -7450,8 +8506,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OutboundApi();
 
 let conversationId = "conversationId_example"; // String | Conversation ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postOutboundConversationDnc(conversationId)
+apiInstance.postOutboundConversationDnc(conversationId, opts)
   .then(() => {
     console.log('postOutboundConversationDnc returned successfully.');
   })
@@ -7467,6 +8529,7 @@ apiInstance.postOutboundConversationDnc(conversationId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **conversationId** | **String** | Conversation ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -7475,7 +8538,7 @@ void (no response body)
 
 ## postOutboundDigitalrulesets
 
-> DigitalRuleSet postOutboundDigitalrulesets(body)
+> DigitalRuleSet postOutboundDigitalrulesets(body, opts)
 
 
 POST /api/v2/outbound/digitalrulesets
@@ -7500,8 +8563,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OutboundApi();
 
 let body = {}; // Object | Digital Rule Set
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postOutboundDigitalrulesets(body)
+apiInstance.postOutboundDigitalrulesets(body, opts)
   .then((data) => {
     console.log(`postOutboundDigitalrulesets success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -7517,6 +8586,7 @@ apiInstance.postOutboundDigitalrulesets(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Digital Rule Set |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -7525,7 +8595,7 @@ apiInstance.postOutboundDigitalrulesets(body)
 
 ## postOutboundDnclistEmailaddresses
 
-> void postOutboundDnclistEmailaddresses(dncListId, body)
+> void postOutboundDnclistEmailaddresses(dncListId, body, opts)
 
 
 POST /api/v2/outbound/dnclists/{dncListId}/emailaddresses
@@ -7553,8 +8623,14 @@ let apiInstance = new platformClient.OutboundApi();
 
 let dncListId = "dncListId_example"; // String | DncList ID
 let body = ["body_example"]; // [String] | DNC email addresses
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postOutboundDnclistEmailaddresses(dncListId, body)
+apiInstance.postOutboundDnclistEmailaddresses(dncListId, body, opts)
   .then(() => {
     console.log('postOutboundDnclistEmailaddresses returned successfully.');
   })
@@ -7571,6 +8647,7 @@ apiInstance.postOutboundDnclistEmailaddresses(dncListId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **dncListId** | **String** | DncList ID |  |
  **body** | **[String]** | DNC email addresses |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -7579,7 +8656,7 @@ void (no response body)
 
 ## postOutboundDnclistExport
 
-> DomainEntityRef postOutboundDnclistExport(dncListId)
+> DomainEntityRef postOutboundDnclistExport(dncListId, opts)
 
 
 POST /api/v2/outbound/dnclists/{dncListId}/export
@@ -7607,8 +8684,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OutboundApi();
 
 let dncListId = "dncListId_example"; // String | DncList ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postOutboundDnclistExport(dncListId)
+apiInstance.postOutboundDnclistExport(dncListId, opts)
   .then((data) => {
     console.log(`postOutboundDnclistExport success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -7624,6 +8707,7 @@ apiInstance.postOutboundDnclistExport(dncListId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **dncListId** | **String** | DncList ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -7661,7 +8745,11 @@ let apiInstance = new platformClient.OutboundApi();
 let dncListId = "dncListId_example"; // String | DncList ID
 let body = ["body_example"]; // [String] | DNC Phone Numbers
 let opts = { 
-  'expirationDateTime': "expirationDateTime_example" // String | Expiration date for DNC phone numbers in yyyy-MM-ddTHH:mmZ format
+  'expirationDateTime': "expirationDateTime_example", // String | Expiration date for DNC phone numbers in yyyy-MM-ddTHH:mmZ format
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.postOutboundDnclistPhonenumbers(dncListId, body, opts)
@@ -7682,6 +8770,7 @@ apiInstance.postOutboundDnclistPhonenumbers(dncListId, body, opts)
  **dncListId** | **String** | DncList ID |  |
  **body** | **[String]** | DNC Phone Numbers |  |
  **expirationDateTime** | **String** | Expiration date for DNC phone numbers in yyyy-MM-ddTHH:mmZ format | [optional]  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -7690,7 +8779,7 @@ void (no response body)
 
 ## postOutboundDnclists
 
-> DncList postOutboundDnclists(body)
+> DncList postOutboundDnclists(body, opts)
 
 
 POST /api/v2/outbound/dnclists
@@ -7715,8 +8804,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OutboundApi();
 
 let body = {}; // Object | DncList
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postOutboundDnclists(body)
+apiInstance.postOutboundDnclists(body, opts)
   .then((data) => {
     console.log(`postOutboundDnclists success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -7732,15 +8827,73 @@ apiInstance.postOutboundDnclists(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | DncList |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **DncList**
 
 
+## postOutboundDnclistsUploads
+
+> UploadUrlResponse postOutboundDnclistsUploads(body, opts)
+
+
+POST /api/v2/outbound/dnclists/uploads
+
+Generate presigned upload URL for dnc list.
+
+Requires ANY permissions:
+
+* outbound:dncList:upload
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.OutboundApi();
+
+let body = {}; // Object | dncListUploadUrlRequest
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.postOutboundDnclistsUploads(body, opts)
+  .then((data) => {
+    console.log(`postOutboundDnclistsUploads success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postOutboundDnclistsUploads');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | dncListUploadUrlRequest |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**UploadUrlResponse**
+
+
 ## postOutboundFilespecificationtemplates
 
-> FileSpecificationTemplate postOutboundFilespecificationtemplates(body)
+> FileSpecificationTemplate postOutboundFilespecificationtemplates(body, opts)
 
 
 POST /api/v2/outbound/filespecificationtemplates
@@ -7765,8 +8918,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OutboundApi();
 
 let body = {}; // Object | FileSpecificationTemplate
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postOutboundFilespecificationtemplates(body)
+apiInstance.postOutboundFilespecificationtemplates(body, opts)
   .then((data) => {
     console.log(`postOutboundFilespecificationtemplates success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -7782,6 +8941,7 @@ apiInstance.postOutboundFilespecificationtemplates(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | FileSpecificationTemplate |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -7790,7 +8950,7 @@ apiInstance.postOutboundFilespecificationtemplates(body)
 
 ## postOutboundImporttemplates
 
-> ImportTemplate postOutboundImporttemplates(body)
+> ImportTemplate postOutboundImporttemplates(body, opts)
 
 
 POST /api/v2/outbound/importtemplates
@@ -7815,8 +8975,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OutboundApi();
 
 let body = {}; // Object | ImportTemplate
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postOutboundImporttemplates(body)
+apiInstance.postOutboundImporttemplates(body, opts)
   .then((data) => {
     console.log(`postOutboundImporttemplates success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -7832,6 +8998,7 @@ apiInstance.postOutboundImporttemplates(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | ImportTemplate |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -7840,7 +9007,7 @@ apiInstance.postOutboundImporttemplates(body)
 
 ## postOutboundImporttemplatesBulkAdd
 
-> ImportTemplateEntityListing postOutboundImporttemplatesBulkAdd(body)
+> ImportTemplateEntityListing postOutboundImporttemplatesBulkAdd(body, opts)
 
 
 POST /api/v2/outbound/importtemplates/bulk/add
@@ -7865,8 +9032,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OutboundApi();
 
 let body = [{}]; // Object | import template(s) to add
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postOutboundImporttemplatesBulkAdd(body)
+apiInstance.postOutboundImporttemplatesBulkAdd(body, opts)
   .then((data) => {
     console.log(`postOutboundImporttemplatesBulkAdd success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -7882,6 +9055,7 @@ apiInstance.postOutboundImporttemplatesBulkAdd(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | import template(s) to add |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -7890,7 +9064,7 @@ apiInstance.postOutboundImporttemplatesBulkAdd(body)
 
 ## postOutboundMessagingcampaignStart
 
-> void postOutboundMessagingcampaignStart(messagingCampaignId)
+> void postOutboundMessagingcampaignStart(messagingCampaignId, opts)
 
 
 POST /api/v2/outbound/messagingcampaigns/{messagingCampaignId}/start
@@ -7919,8 +9093,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OutboundApi();
 
 let messagingCampaignId = "messagingCampaignId_example"; // String | The Messaging Campaign ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postOutboundMessagingcampaignStart(messagingCampaignId)
+apiInstance.postOutboundMessagingcampaignStart(messagingCampaignId, opts)
   .then(() => {
     console.log('postOutboundMessagingcampaignStart returned successfully.');
   })
@@ -7936,6 +9116,7 @@ apiInstance.postOutboundMessagingcampaignStart(messagingCampaignId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **messagingCampaignId** | **String** | The Messaging Campaign ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -7944,7 +9125,7 @@ void (no response body)
 
 ## postOutboundMessagingcampaignStop
 
-> void postOutboundMessagingcampaignStop(messagingCampaignId)
+> void postOutboundMessagingcampaignStop(messagingCampaignId, opts)
 
 
 POST /api/v2/outbound/messagingcampaigns/{messagingCampaignId}/stop
@@ -7973,8 +9154,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OutboundApi();
 
 let messagingCampaignId = "messagingCampaignId_example"; // String | The Messaging Campaign ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postOutboundMessagingcampaignStop(messagingCampaignId)
+apiInstance.postOutboundMessagingcampaignStop(messagingCampaignId, opts)
   .then(() => {
     console.log('postOutboundMessagingcampaignStop returned successfully.');
   })
@@ -7990,6 +9177,7 @@ apiInstance.postOutboundMessagingcampaignStop(messagingCampaignId)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **messagingCampaignId** | **String** | The Messaging Campaign ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -7998,7 +9186,7 @@ void (no response body)
 
 ## postOutboundMessagingcampaigns
 
-> MessagingCampaign postOutboundMessagingcampaigns(body)
+> MessagingCampaign postOutboundMessagingcampaigns(body, opts)
 
 
 POST /api/v2/outbound/messagingcampaigns
@@ -8025,8 +9213,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OutboundApi();
 
 let body = {}; // Object | Messaging Campaign
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postOutboundMessagingcampaigns(body)
+apiInstance.postOutboundMessagingcampaigns(body, opts)
   .then((data) => {
     console.log(`postOutboundMessagingcampaigns success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -8042,6 +9236,7 @@ apiInstance.postOutboundMessagingcampaigns(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Messaging Campaign |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -8050,7 +9245,7 @@ apiInstance.postOutboundMessagingcampaigns(body)
 
 ## postOutboundMessagingcampaignsProgress
 
-> [CampaignProgress] postOutboundMessagingcampaignsProgress(body)
+> [CampaignProgress] postOutboundMessagingcampaignsProgress(body, opts)
 
 
 POST /api/v2/outbound/messagingcampaigns/progress
@@ -8077,8 +9272,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OutboundApi();
 
 let body = ["body_example"]; // [String] | Messaging Campaign IDs
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postOutboundMessagingcampaignsProgress(body)
+apiInstance.postOutboundMessagingcampaignsProgress(body, opts)
   .then((data) => {
     console.log(`postOutboundMessagingcampaignsProgress success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -8094,6 +9295,7 @@ apiInstance.postOutboundMessagingcampaignsProgress(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **[String]** | Messaging Campaign IDs |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -8102,7 +9304,7 @@ apiInstance.postOutboundMessagingcampaignsProgress(body)
 
 ## postOutboundRulesets
 
-> RuleSet postOutboundRulesets(body)
+> RuleSet postOutboundRulesets(body, opts)
 
 
 POST /api/v2/outbound/rulesets
@@ -8127,8 +9329,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OutboundApi();
 
 let body = {}; // Object | RuleSet
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postOutboundRulesets(body)
+apiInstance.postOutboundRulesets(body, opts)
   .then((data) => {
     console.log(`postOutboundRulesets success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -8144,6 +9352,7 @@ apiInstance.postOutboundRulesets(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | RuleSet |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -8152,7 +9361,7 @@ apiInstance.postOutboundRulesets(body)
 
 ## postOutboundSequences
 
-> CampaignSequence postOutboundSequences(body)
+> CampaignSequence postOutboundSequences(body, opts)
 
 
 POST /api/v2/outbound/sequences
@@ -8177,8 +9386,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OutboundApi();
 
 let body = {}; // Object | Organization
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postOutboundSequences(body)
+apiInstance.postOutboundSequences(body, opts)
   .then((data) => {
     console.log(`postOutboundSequences success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -8194,6 +9409,7 @@ apiInstance.postOutboundSequences(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | Organization |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -8202,7 +9418,7 @@ apiInstance.postOutboundSequences(body)
 
 ## putOutboundAttemptlimit
 
-> AttemptLimits putOutboundAttemptlimit(attemptLimitsId, body)
+> AttemptLimits putOutboundAttemptlimit(attemptLimitsId, body, opts)
 
 
 PUT /api/v2/outbound/attemptlimits/{attemptLimitsId}
@@ -8228,8 +9444,14 @@ let apiInstance = new platformClient.OutboundApi();
 
 let attemptLimitsId = "attemptLimitsId_example"; // String | Attempt limits ID
 let body = {}; // Object | AttemptLimits
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putOutboundAttemptlimit(attemptLimitsId, body)
+apiInstance.putOutboundAttemptlimit(attemptLimitsId, body, opts)
   .then((data) => {
     console.log(`putOutboundAttemptlimit success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -8246,6 +9468,7 @@ apiInstance.putOutboundAttemptlimit(attemptLimitsId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **attemptLimitsId** | **String** | Attempt limits ID |  |
  **body** | **Object** | AttemptLimits |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -8254,7 +9477,7 @@ apiInstance.putOutboundAttemptlimit(attemptLimitsId, body)
 
 ## putOutboundCallabletimeset
 
-> CallableTimeSet putOutboundCallabletimeset(callableTimeSetId, body)
+> CallableTimeSet putOutboundCallabletimeset(callableTimeSetId, body, opts)
 
 
 PUT /api/v2/outbound/callabletimesets/{callableTimeSetId}
@@ -8280,8 +9503,14 @@ let apiInstance = new platformClient.OutboundApi();
 
 let callableTimeSetId = "callableTimeSetId_example"; // String | Callable Time Set ID
 let body = {}; // Object | DialerCallableTimeSet
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putOutboundCallabletimeset(callableTimeSetId, body)
+apiInstance.putOutboundCallabletimeset(callableTimeSetId, body, opts)
   .then((data) => {
     console.log(`putOutboundCallabletimeset success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -8298,6 +9527,7 @@ apiInstance.putOutboundCallabletimeset(callableTimeSetId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **callableTimeSetId** | **String** | Callable Time Set ID |  |
  **body** | **Object** | DialerCallableTimeSet |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -8306,7 +9536,7 @@ apiInstance.putOutboundCallabletimeset(callableTimeSetId, body)
 
 ## putOutboundCallanalysisresponseset
 
-> ResponseSet putOutboundCallanalysisresponseset(callAnalysisSetId, body)
+> ResponseSet putOutboundCallanalysisresponseset(callAnalysisSetId, body, opts)
 
 
 PUT /api/v2/outbound/callanalysisresponsesets/{callAnalysisSetId}
@@ -8332,8 +9562,14 @@ let apiInstance = new platformClient.OutboundApi();
 
 let callAnalysisSetId = "callAnalysisSetId_example"; // String | Call Analysis Response Set ID
 let body = {}; // Object | ResponseSet
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putOutboundCallanalysisresponseset(callAnalysisSetId, body)
+apiInstance.putOutboundCallanalysisresponseset(callAnalysisSetId, body, opts)
   .then((data) => {
     console.log(`putOutboundCallanalysisresponseset success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -8350,6 +9586,7 @@ apiInstance.putOutboundCallanalysisresponseset(callAnalysisSetId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **callAnalysisSetId** | **String** | Call Analysis Response Set ID |  |
  **body** | **Object** | ResponseSet |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -8385,7 +9622,11 @@ let apiInstance = new platformClient.OutboundApi();
 let campaignId = "campaignId_example"; // String | Campaign ID
 let body = {}; // Object | Campaign
 let opts = { 
-  'useMaxCallsPerAgentDecimal': true // Boolean | Use maxCallsPerAgent with decimal precision
+  'useMaxCallsPerAgentDecimal': true, // Boolean | Use maxCallsPerAgent with decimal precision
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
 };
 
 apiInstance.putOutboundCampaign(campaignId, body, opts)
@@ -8406,6 +9647,7 @@ apiInstance.putOutboundCampaign(campaignId, body, opts)
  **campaignId** | **String** | Campaign ID |  |
  **body** | **Object** | Campaign |  |
  **useMaxCallsPerAgentDecimal** | **Boolean** | Use maxCallsPerAgent with decimal precision | [optional] <br />**Values**: true, false |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -8414,7 +9656,7 @@ apiInstance.putOutboundCampaign(campaignId, body, opts)
 
 ## putOutboundCampaignAgent
 
-> **&#39;String&#39;** putOutboundCampaignAgent(campaignId, userId, body)
+> **&#39;String&#39;** putOutboundCampaignAgent(campaignId, userId, body, opts)
 
 
 PUT /api/v2/outbound/campaigns/{campaignId}/agents/{userId}
@@ -8441,8 +9683,14 @@ let apiInstance = new platformClient.OutboundApi();
 let campaignId = "campaignId_example"; // String | Campaign ID
 let userId = "userId_example"; // String | Agent's user ID
 let body = {}; // Object | agent
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putOutboundCampaignAgent(campaignId, userId, body)
+apiInstance.putOutboundCampaignAgent(campaignId, userId, body, opts)
   .then((data) => {
     console.log(`putOutboundCampaignAgent success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -8460,6 +9708,7 @@ apiInstance.putOutboundCampaignAgent(campaignId, userId, body)
  **campaignId** | **String** | Campaign ID |  |
  **userId** | **String** | Agent's user ID |  |
  **body** | **Object** | agent |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -8468,7 +9717,7 @@ apiInstance.putOutboundCampaignAgent(campaignId, userId, body)
 
 ## putOutboundCampaignrule
 
-> CampaignRule putOutboundCampaignrule(campaignRuleId, body)
+> CampaignRule putOutboundCampaignrule(campaignRuleId, body, opts)
 
 
 PUT /api/v2/outbound/campaignrules/{campaignRuleId}
@@ -8494,8 +9743,14 @@ let apiInstance = new platformClient.OutboundApi();
 
 let campaignRuleId = "campaignRuleId_example"; // String | Campaign Rule ID
 let body = {}; // Object | CampaignRule
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putOutboundCampaignrule(campaignRuleId, body)
+apiInstance.putOutboundCampaignrule(campaignRuleId, body, opts)
   .then((data) => {
     console.log(`putOutboundCampaignrule success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -8512,6 +9767,7 @@ apiInstance.putOutboundCampaignrule(campaignRuleId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **campaignRuleId** | **String** | Campaign Rule ID |  |
  **body** | **Object** | CampaignRule |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -8520,7 +9776,7 @@ apiInstance.putOutboundCampaignrule(campaignRuleId, body)
 
 ## putOutboundContactlist
 
-> ContactList putOutboundContactlist(contactListId, body)
+> ContactList putOutboundContactlist(contactListId, body, opts)
 
 
 PUT /api/v2/outbound/contactlists/{contactListId}
@@ -8546,8 +9802,14 @@ let apiInstance = new platformClient.OutboundApi();
 
 let contactListId = "contactListId_example"; // String | ContactList ID
 let body = {}; // Object | ContactList
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putOutboundContactlist(contactListId, body)
+apiInstance.putOutboundContactlist(contactListId, body, opts)
   .then((data) => {
     console.log(`putOutboundContactlist success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -8564,6 +9826,7 @@ apiInstance.putOutboundContactlist(contactListId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **contactListId** | **String** | ContactList ID |  |
  **body** | **Object** | ContactList |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -8572,7 +9835,7 @@ apiInstance.putOutboundContactlist(contactListId, body)
 
 ## putOutboundContactlistContact
 
-> DialerContact putOutboundContactlistContact(contactListId, contactId, body)
+> DialerContact putOutboundContactlistContact(contactListId, contactId, body, opts)
 
 
 PUT /api/v2/outbound/contactlists/{contactListId}/contacts/{contactId}
@@ -8599,8 +9862,14 @@ let apiInstance = new platformClient.OutboundApi();
 let contactListId = "contactListId_example"; // String | Contact List ID
 let contactId = "contactId_example"; // String | Contact ID
 let body = {}; // Object | Contact
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putOutboundContactlistContact(contactListId, contactId, body)
+apiInstance.putOutboundContactlistContact(contactListId, contactId, body, opts)
   .then((data) => {
     console.log(`putOutboundContactlistContact success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -8618,6 +9887,7 @@ apiInstance.putOutboundContactlistContact(contactListId, contactId, body)
  **contactListId** | **String** | Contact List ID |  |
  **contactId** | **String** | Contact ID |  |
  **body** | **Object** | Contact |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -8626,7 +9896,7 @@ apiInstance.putOutboundContactlistContact(contactListId, contactId, body)
 
 ## putOutboundContactlistfilter
 
-> ContactListFilter putOutboundContactlistfilter(contactListFilterId, body)
+> ContactListFilter putOutboundContactlistfilter(contactListFilterId, body, opts)
 
 
 PUT /api/v2/outbound/contactlistfilters/{contactListFilterId}
@@ -8652,8 +9922,14 @@ let apiInstance = new platformClient.OutboundApi();
 
 let contactListFilterId = "contactListFilterId_example"; // String | Contact List Filter ID
 let body = {}; // Object | ContactListFilter
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putOutboundContactlistfilter(contactListFilterId, body)
+apiInstance.putOutboundContactlistfilter(contactListFilterId, body, opts)
   .then((data) => {
     console.log(`putOutboundContactlistfilter success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -8670,6 +9946,7 @@ apiInstance.putOutboundContactlistfilter(contactListFilterId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **contactListFilterId** | **String** | Contact List Filter ID |  |
  **body** | **Object** | ContactListFilter |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -8678,7 +9955,7 @@ apiInstance.putOutboundContactlistfilter(contactListFilterId, body)
 
 ## putOutboundContactlisttemplate
 
-> ContactListTemplate putOutboundContactlisttemplate(contactListTemplateId, body)
+> ContactListTemplate putOutboundContactlisttemplate(contactListTemplateId, body, opts)
 
 
 PUT /api/v2/outbound/contactlisttemplates/{contactListTemplateId}
@@ -8704,8 +9981,14 @@ let apiInstance = new platformClient.OutboundApi();
 
 let contactListTemplateId = "contactListTemplateId_example"; // String | ContactListTemplate ID
 let body = {}; // Object | ContactListTemplate
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putOutboundContactlisttemplate(contactListTemplateId, body)
+apiInstance.putOutboundContactlisttemplate(contactListTemplateId, body, opts)
   .then((data) => {
     console.log(`putOutboundContactlisttemplate success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -8722,6 +10005,7 @@ apiInstance.putOutboundContactlisttemplate(contactListTemplateId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **contactListTemplateId** | **String** | ContactListTemplate ID |  |
  **body** | **Object** | ContactListTemplate |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -8730,7 +10014,7 @@ apiInstance.putOutboundContactlisttemplate(contactListTemplateId, body)
 
 ## putOutboundDigitalruleset
 
-> DigitalRuleSet putOutboundDigitalruleset(digitalRuleSetId, body)
+> DigitalRuleSet putOutboundDigitalruleset(digitalRuleSetId, body, opts)
 
 
 PUT /api/v2/outbound/digitalrulesets/{digitalRuleSetId}
@@ -8756,8 +10040,14 @@ let apiInstance = new platformClient.OutboundApi();
 
 let digitalRuleSetId = "digitalRuleSetId_example"; // String | The Digital Rule Set ID
 let body = {}; // Object | Digital Rule Set
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putOutboundDigitalruleset(digitalRuleSetId, body)
+apiInstance.putOutboundDigitalruleset(digitalRuleSetId, body, opts)
   .then((data) => {
     console.log(`putOutboundDigitalruleset success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -8774,6 +10064,7 @@ apiInstance.putOutboundDigitalruleset(digitalRuleSetId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **digitalRuleSetId** | **String** | The Digital Rule Set ID |  |
  **body** | **Object** | Digital Rule Set |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -8782,7 +10073,7 @@ apiInstance.putOutboundDigitalruleset(digitalRuleSetId, body)
 
 ## putOutboundDnclist
 
-> DncList putOutboundDnclist(dncListId, body)
+> DncList putOutboundDnclist(dncListId, body, opts)
 
 
 PUT /api/v2/outbound/dnclists/{dncListId}
@@ -8808,8 +10099,14 @@ let apiInstance = new platformClient.OutboundApi();
 
 let dncListId = "dncListId_example"; // String | DncList ID
 let body = {}; // Object | DncList
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putOutboundDnclist(dncListId, body)
+apiInstance.putOutboundDnclist(dncListId, body, opts)
   .then((data) => {
     console.log(`putOutboundDnclist success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -8826,6 +10123,7 @@ apiInstance.putOutboundDnclist(dncListId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **dncListId** | **String** | DncList ID |  |
  **body** | **Object** | DncList |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -8834,7 +10132,7 @@ apiInstance.putOutboundDnclist(dncListId, body)
 
 ## putOutboundFilespecificationtemplate
 
-> FileSpecificationTemplate putOutboundFilespecificationtemplate(fileSpecificationTemplateId, body)
+> FileSpecificationTemplate putOutboundFilespecificationtemplate(fileSpecificationTemplateId, body, opts)
 
 
 PUT /api/v2/outbound/filespecificationtemplates/{fileSpecificationTemplateId}
@@ -8860,8 +10158,14 @@ let apiInstance = new platformClient.OutboundApi();
 
 let fileSpecificationTemplateId = "fileSpecificationTemplateId_example"; // String | File Specification Template ID
 let body = {}; // Object | fileSpecificationTemplate
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putOutboundFilespecificationtemplate(fileSpecificationTemplateId, body)
+apiInstance.putOutboundFilespecificationtemplate(fileSpecificationTemplateId, body, opts)
   .then((data) => {
     console.log(`putOutboundFilespecificationtemplate success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -8878,6 +10182,7 @@ apiInstance.putOutboundFilespecificationtemplate(fileSpecificationTemplateId, bo
 | ------------- | ------------- | ------------- | ------------- |
  **fileSpecificationTemplateId** | **String** | File Specification Template ID |  |
  **body** | **Object** | fileSpecificationTemplate |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -8886,7 +10191,7 @@ apiInstance.putOutboundFilespecificationtemplate(fileSpecificationTemplateId, bo
 
 ## putOutboundImporttemplate
 
-> ImportTemplate putOutboundImporttemplate(importTemplateId, body)
+> ImportTemplate putOutboundImporttemplate(importTemplateId, body, opts)
 
 
 PUT /api/v2/outbound/importtemplates/{importTemplateId}
@@ -8912,8 +10217,14 @@ let apiInstance = new platformClient.OutboundApi();
 
 let importTemplateId = "importTemplateId_example"; // String | Import Template ID
 let body = {}; // Object | importTemplate
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putOutboundImporttemplate(importTemplateId, body)
+apiInstance.putOutboundImporttemplate(importTemplateId, body, opts)
   .then((data) => {
     console.log(`putOutboundImporttemplate success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -8930,6 +10241,7 @@ apiInstance.putOutboundImporttemplate(importTemplateId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **importTemplateId** | **String** | Import Template ID |  |
  **body** | **Object** | importTemplate |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -8938,7 +10250,7 @@ apiInstance.putOutboundImporttemplate(importTemplateId, body)
 
 ## putOutboundMessagingcampaign
 
-> MessagingCampaign putOutboundMessagingcampaign(messagingCampaignId, body)
+> MessagingCampaign putOutboundMessagingcampaign(messagingCampaignId, body, opts)
 
 
 PUT /api/v2/outbound/messagingcampaigns/{messagingCampaignId}
@@ -8966,8 +10278,14 @@ let apiInstance = new platformClient.OutboundApi();
 
 let messagingCampaignId = "messagingCampaignId_example"; // String | The Messaging Campaign ID
 let body = {}; // Object | MessagingCampaign
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putOutboundMessagingcampaign(messagingCampaignId, body)
+apiInstance.putOutboundMessagingcampaign(messagingCampaignId, body, opts)
   .then((data) => {
     console.log(`putOutboundMessagingcampaign success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -8984,6 +10302,7 @@ apiInstance.putOutboundMessagingcampaign(messagingCampaignId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **messagingCampaignId** | **String** | The Messaging Campaign ID |  |
  **body** | **Object** | MessagingCampaign |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -8992,7 +10311,7 @@ apiInstance.putOutboundMessagingcampaign(messagingCampaignId, body)
 
 ## putOutboundRuleset
 
-> RuleSet putOutboundRuleset(ruleSetId, body)
+> RuleSet putOutboundRuleset(ruleSetId, body, opts)
 
 
 PUT /api/v2/outbound/rulesets/{ruleSetId}
@@ -9018,8 +10337,14 @@ let apiInstance = new platformClient.OutboundApi();
 
 let ruleSetId = "ruleSetId_example"; // String | Rule Set ID
 let body = {}; // Object | RuleSet
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putOutboundRuleset(ruleSetId, body)
+apiInstance.putOutboundRuleset(ruleSetId, body, opts)
   .then((data) => {
     console.log(`putOutboundRuleset success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -9036,6 +10361,7 @@ apiInstance.putOutboundRuleset(ruleSetId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **ruleSetId** | **String** | Rule Set ID |  |
  **body** | **Object** | RuleSet |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -9044,7 +10370,7 @@ apiInstance.putOutboundRuleset(ruleSetId, body)
 
 ## putOutboundSchedulesCampaign
 
-> CampaignSchedule putOutboundSchedulesCampaign(campaignId, body)
+> CampaignSchedule putOutboundSchedulesCampaign(campaignId, body, opts)
 
 
 PUT /api/v2/outbound/schedules/campaigns/{campaignId}
@@ -9071,8 +10397,14 @@ let apiInstance = new platformClient.OutboundApi();
 
 let campaignId = "campaignId_example"; // String | Campaign ID
 let body = {}; // Object | CampaignSchedule
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putOutboundSchedulesCampaign(campaignId, body)
+apiInstance.putOutboundSchedulesCampaign(campaignId, body, opts)
   .then((data) => {
     console.log(`putOutboundSchedulesCampaign success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -9089,6 +10421,7 @@ apiInstance.putOutboundSchedulesCampaign(campaignId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **campaignId** | **String** | Campaign ID |  |
  **body** | **Object** | CampaignSchedule |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -9097,7 +10430,7 @@ apiInstance.putOutboundSchedulesCampaign(campaignId, body)
 
 ## putOutboundSchedulesEmailcampaign
 
-> EmailCampaignSchedule putOutboundSchedulesEmailcampaign(emailCampaignId, body)
+> EmailCampaignSchedule putOutboundSchedulesEmailcampaign(emailCampaignId, body, opts)
 
 
 PUT /api/v2/outbound/schedules/emailcampaigns/{emailCampaignId}
@@ -9124,8 +10457,14 @@ let apiInstance = new platformClient.OutboundApi();
 
 let emailCampaignId = "emailCampaignId_example"; // String | Email Campaign ID
 let body = {}; // Object | EmailCampaignSchedule
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putOutboundSchedulesEmailcampaign(emailCampaignId, body)
+apiInstance.putOutboundSchedulesEmailcampaign(emailCampaignId, body, opts)
   .then((data) => {
     console.log(`putOutboundSchedulesEmailcampaign success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -9142,6 +10481,7 @@ apiInstance.putOutboundSchedulesEmailcampaign(emailCampaignId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **emailCampaignId** | **String** | Email Campaign ID |  |
  **body** | **Object** | EmailCampaignSchedule |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -9150,7 +10490,7 @@ apiInstance.putOutboundSchedulesEmailcampaign(emailCampaignId, body)
 
 ## putOutboundSchedulesMessagingcampaign
 
-> MessagingCampaignSchedule putOutboundSchedulesMessagingcampaign(messagingCampaignId, body)
+> MessagingCampaignSchedule putOutboundSchedulesMessagingcampaign(messagingCampaignId, body, opts)
 
 
 PUT /api/v2/outbound/schedules/messagingcampaigns/{messagingCampaignId}
@@ -9177,8 +10517,14 @@ let apiInstance = new platformClient.OutboundApi();
 
 let messagingCampaignId = "messagingCampaignId_example"; // String | Messaging Campaign ID
 let body = {}; // Object | MessagingCampaignSchedule
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putOutboundSchedulesMessagingcampaign(messagingCampaignId, body)
+apiInstance.putOutboundSchedulesMessagingcampaign(messagingCampaignId, body, opts)
   .then((data) => {
     console.log(`putOutboundSchedulesMessagingcampaign success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -9195,6 +10541,7 @@ apiInstance.putOutboundSchedulesMessagingcampaign(messagingCampaignId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **messagingCampaignId** | **String** | Messaging Campaign ID |  |
  **body** | **Object** | MessagingCampaignSchedule |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -9203,7 +10550,7 @@ apiInstance.putOutboundSchedulesMessagingcampaign(messagingCampaignId, body)
 
 ## putOutboundSchedulesSequence
 
-> SequenceSchedule putOutboundSchedulesSequence(sequenceId, body)
+> SequenceSchedule putOutboundSchedulesSequence(sequenceId, body, opts)
 
 
 PUT /api/v2/outbound/schedules/sequences/{sequenceId}
@@ -9230,8 +10577,14 @@ let apiInstance = new platformClient.OutboundApi();
 
 let sequenceId = "sequenceId_example"; // String | Sequence ID
 let body = {}; // Object | SequenceSchedule
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putOutboundSchedulesSequence(sequenceId, body)
+apiInstance.putOutboundSchedulesSequence(sequenceId, body, opts)
   .then((data) => {
     console.log(`putOutboundSchedulesSequence success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -9248,6 +10601,7 @@ apiInstance.putOutboundSchedulesSequence(sequenceId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **sequenceId** | **String** | Sequence ID |  |
  **body** | **Object** | SequenceSchedule |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -9256,7 +10610,7 @@ apiInstance.putOutboundSchedulesSequence(sequenceId, body)
 
 ## putOutboundSchedulesWhatsappcampaign
 
-> WhatsAppCampaignSchedule putOutboundSchedulesWhatsappcampaign(whatsAppCampaignId, body)
+> WhatsAppCampaignSchedule putOutboundSchedulesWhatsappcampaign(whatsAppCampaignId, body, opts)
 
 
 PUT /api/v2/outbound/schedules/whatsappcampaigns/{whatsAppCampaignId}
@@ -9283,8 +10637,14 @@ let apiInstance = new platformClient.OutboundApi();
 
 let whatsAppCampaignId = "whatsAppCampaignId_example"; // String | WhatsApp Campaign ID
 let body = {}; // Object | WhatsAppCampaignSchedule
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putOutboundSchedulesWhatsappcampaign(whatsAppCampaignId, body)
+apiInstance.putOutboundSchedulesWhatsappcampaign(whatsAppCampaignId, body, opts)
   .then((data) => {
     console.log(`putOutboundSchedulesWhatsappcampaign success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -9301,6 +10661,7 @@ apiInstance.putOutboundSchedulesWhatsappcampaign(whatsAppCampaignId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **whatsAppCampaignId** | **String** | WhatsApp Campaign ID |  |
  **body** | **Object** | WhatsAppCampaignSchedule |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -9309,7 +10670,7 @@ apiInstance.putOutboundSchedulesWhatsappcampaign(whatsAppCampaignId, body)
 
 ## putOutboundSequence
 
-> CampaignSequence putOutboundSequence(sequenceId, body)
+> CampaignSequence putOutboundSequence(sequenceId, body, opts)
 
 
 PUT /api/v2/outbound/sequences/{sequenceId}
@@ -9335,8 +10696,14 @@ let apiInstance = new platformClient.OutboundApi();
 
 let sequenceId = "sequenceId_example"; // String | Campaign Sequence ID
 let body = {}; // Object | Organization
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putOutboundSequence(sequenceId, body)
+apiInstance.putOutboundSequence(sequenceId, body, opts)
   .then((data) => {
     console.log(`putOutboundSequence success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -9353,6 +10720,7 @@ apiInstance.putOutboundSequence(sequenceId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **sequenceId** | **String** | Campaign Sequence ID |  |
  **body** | **Object** | Organization |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -9361,7 +10729,7 @@ apiInstance.putOutboundSequence(sequenceId, body)
 
 ## putOutboundWrapupcodemappings
 
-> WrapUpCodeMapping putOutboundWrapupcodemappings(body)
+> WrapUpCodeMapping putOutboundWrapupcodemappings(body, opts)
 
 
 PUT /api/v2/outbound/wrapupcodemappings
@@ -9386,8 +10754,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.OutboundApi();
 
 let body = {}; // Object | wrapUpCodeMapping
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.putOutboundWrapupcodemappings(body)
+apiInstance.putOutboundWrapupcodemappings(body, opts)
   .then((data) => {
     console.log(`putOutboundWrapupcodemappings success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -9403,10 +10777,11 @@ apiInstance.putOutboundWrapupcodemappings(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | wrapUpCodeMapping |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **WrapUpCodeMapping**
 
 
-_purecloud-platform-client-v2@229.1.0_
+_purecloud-platform-client-v2@258.0.0_

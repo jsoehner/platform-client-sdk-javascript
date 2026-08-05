@@ -8,6 +8,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | ------------- | ------------- | ------------- |
 [**getKnowledgeKnowledgebaseUploadsUrlsJob**](UploadsApi#getKnowledgeKnowledgebaseUploadsUrlsJob) | **GET** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/uploads/urls/jobs/{jobId} | Get content upload from URL job status
 [**postGamificationContestsUploadsPrizeimages**](UploadsApi#postGamificationContestsUploadsPrizeimages) | **POST** /api/v2/gamification/contests/uploads/prizeimages | Generates pre-signed URL to upload a prize image for gamification contests
+[**postGuidesUploads**](UploadsApi#postGuidesUploads) | **POST** /api/v2/guides/uploads | Generate presigned URL for uploading a file content to generate guide
 [**postIntegrationsActionDraftFunctionUpload**](UploadsApi#postIntegrationsActionDraftFunctionUpload) | **POST** /api/v2/integrations/actions/{actionId}/draft/function/upload | Create upload presigned URL for draft function package file.
 [**postKnowledgeDocumentuploads**](UploadsApi#postKnowledgeDocumentuploads) | **POST** /api/v2/knowledge/documentuploads | Creates a presigned URL for uploading a knowledge import file with a set of documents
 [**postKnowledgeKnowledgebaseUploadsUrlsJobs**](UploadsApi#postKnowledgeKnowledgebaseUploadsUrlsJobs) | **POST** /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/uploads/urls/jobs | Create content upload from URL job
@@ -21,7 +22,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 ## getKnowledgeKnowledgebaseUploadsUrlsJob
 
-> GetUploadSourceUrlJobStatusResponse getKnowledgeKnowledgebaseUploadsUrlsJob(knowledgeBaseId, jobId)
+> GetUploadSourceUrlJobStatusResponse getKnowledgeKnowledgebaseUploadsUrlsJob(knowledgeBaseId, jobId, opts)
 
 
 GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/uploads/urls/jobs/{jobId}
@@ -47,8 +48,14 @@ let apiInstance = new platformClient.UploadsApi();
 
 let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
 let jobId = "jobId_example"; // String | Upload job ID
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.getKnowledgeKnowledgebaseUploadsUrlsJob(knowledgeBaseId, jobId)
+apiInstance.getKnowledgeKnowledgebaseUploadsUrlsJob(knowledgeBaseId, jobId, opts)
   .then((data) => {
     console.log(`getKnowledgeKnowledgebaseUploadsUrlsJob success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -65,6 +72,7 @@ apiInstance.getKnowledgeKnowledgebaseUploadsUrlsJob(knowledgeBaseId, jobId)
 | ------------- | ------------- | ------------- | ------------- |
  **knowledgeBaseId** | **String** | Knowledge base ID |  |
  **jobId** | **String** | Upload job ID |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -73,7 +81,7 @@ apiInstance.getKnowledgeKnowledgebaseUploadsUrlsJob(knowledgeBaseId, jobId)
 
 ## postGamificationContestsUploadsPrizeimages
 
-> UploadUrlResponse postGamificationContestsUploadsPrizeimages(body)
+> UploadUrlResponse postGamificationContestsUploadsPrizeimages(body, opts)
 
 
 POST /api/v2/gamification/contests/uploads/prizeimages
@@ -98,8 +106,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.UploadsApi();
 
 let body = {}; // Object | query
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postGamificationContestsUploadsPrizeimages(body)
+apiInstance.postGamificationContestsUploadsPrizeimages(body, opts)
   .then((data) => {
     console.log(`postGamificationContestsUploadsPrizeimages success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -115,6 +129,64 @@ apiInstance.postGamificationContestsUploadsPrizeimages(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
+
+### Return type
+
+**UploadUrlResponse**
+
+
+## postGuidesUploads
+
+> UploadUrlResponse postGuidesUploads(body, opts)
+
+
+POST /api/v2/guides/uploads
+
+Generate presigned URL for uploading a file content to generate guide
+
+Requires ALL permissions:
+
+* aiStudio:guide:upload
+
+### Example Usage
+
+```{"language":"javascript"}
+// Browser
+const platformClient = require('platformClient');
+// Node
+const platformClient = require('purecloud-platform-client-v2');
+
+// Manually set auth token or use loginImplicitGrant(...) or loginClientCredentialsGrant(...) or loginPKCEGrant(...)
+platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
+
+let apiInstance = new platformClient.UploadsApi();
+
+let body = {}; // Object | query
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
+
+apiInstance.postGuidesUploads(body, opts)
+  .then((data) => {
+    console.log(`postGuidesUploads success! data: ${JSON.stringify(data, null, 2)}`);
+  })
+  .catch((err) => {
+    console.log('There was a failure calling postGuidesUploads');
+    console.error(err);
+  });
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+ **body** | **Object** | query |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -123,7 +195,7 @@ apiInstance.postGamificationContestsUploadsPrizeimages(body)
 
 ## postIntegrationsActionDraftFunctionUpload
 
-> FunctionUploadResponse postIntegrationsActionDraftFunctionUpload(actionId, body)
+> FunctionUploadResponse postIntegrationsActionDraftFunctionUpload(actionId, body, opts)
 
 
 POST /api/v2/integrations/actions/{actionId}/draft/function/upload
@@ -149,8 +221,14 @@ let apiInstance = new platformClient.UploadsApi();
 
 let actionId = "actionId_example"; // String | actionId
 let body = {}; // Object | Input used to request URL upload.
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postIntegrationsActionDraftFunctionUpload(actionId, body)
+apiInstance.postIntegrationsActionDraftFunctionUpload(actionId, body, opts)
   .then((data) => {
     console.log(`postIntegrationsActionDraftFunctionUpload success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -167,6 +245,7 @@ apiInstance.postIntegrationsActionDraftFunctionUpload(actionId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **actionId** | **String** | actionId |  |
  **body** | **Object** | Input used to request URL upload. |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -175,7 +254,7 @@ apiInstance.postIntegrationsActionDraftFunctionUpload(actionId, body)
 
 ## postKnowledgeDocumentuploads
 
-> UploadUrlResponse postKnowledgeDocumentuploads(body)
+> UploadUrlResponse postKnowledgeDocumentuploads(body, opts)
 
 
 POST /api/v2/knowledge/documentuploads
@@ -200,8 +279,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.UploadsApi();
 
 let body = {}; // Object | query
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postKnowledgeDocumentuploads(body)
+apiInstance.postKnowledgeDocumentuploads(body, opts)
   .then((data) => {
     console.log(`postKnowledgeDocumentuploads success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -217,6 +302,7 @@ apiInstance.postKnowledgeDocumentuploads(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -225,7 +311,7 @@ apiInstance.postKnowledgeDocumentuploads(body)
 
 ## postKnowledgeKnowledgebaseUploadsUrlsJobs
 
-> CreateUploadSourceUrlJobResponse postKnowledgeKnowledgebaseUploadsUrlsJobs(knowledgeBaseId, body)
+> CreateUploadSourceUrlJobResponse postKnowledgeKnowledgebaseUploadsUrlsJobs(knowledgeBaseId, body, opts)
 
 
 POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/uploads/urls/jobs
@@ -251,8 +337,14 @@ let apiInstance = new platformClient.UploadsApi();
 
 let knowledgeBaseId = "knowledgeBaseId_example"; // String | Knowledge base ID
 let body = {}; // Object | uploadRequest
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postKnowledgeKnowledgebaseUploadsUrlsJobs(knowledgeBaseId, body)
+apiInstance.postKnowledgeKnowledgebaseUploadsUrlsJobs(knowledgeBaseId, body, opts)
   .then((data) => {
     console.log(`postKnowledgeKnowledgebaseUploadsUrlsJobs success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -269,6 +361,7 @@ apiInstance.postKnowledgeKnowledgebaseUploadsUrlsJobs(knowledgeBaseId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **knowledgeBaseId** | **String** | Knowledge base ID |  |
  **body** | **Object** | uploadRequest |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -277,7 +370,7 @@ apiInstance.postKnowledgeKnowledgebaseUploadsUrlsJobs(knowledgeBaseId, body)
 
 ## postLanguageunderstandingMinerUploads
 
-> UploadUrlResponse postLanguageunderstandingMinerUploads(minerId, body)
+> UploadUrlResponse postLanguageunderstandingMinerUploads(minerId, body, opts)
 
 
 POST /api/v2/languageunderstanding/miners/{minerId}/uploads
@@ -303,8 +396,14 @@ let apiInstance = new platformClient.UploadsApi();
 
 let minerId = "minerId_example"; // String | Miner ID
 let body = null; // Object | query
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postLanguageunderstandingMinerUploads(minerId, body)
+apiInstance.postLanguageunderstandingMinerUploads(minerId, body, opts)
   .then((data) => {
     console.log(`postLanguageunderstandingMinerUploads success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -321,6 +420,7 @@ apiInstance.postLanguageunderstandingMinerUploads(minerId, body)
 | ------------- | ------------- | ------------- | ------------- |
  **minerId** | **String** | Miner ID |  |
  **body** | **Object** | query |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -329,7 +429,7 @@ apiInstance.postLanguageunderstandingMinerUploads(minerId, body)
 
 ## postUploadsLearningCoverart
 
-> UploadUrlResponse postUploadsLearningCoverart(body)
+> UploadUrlResponse postUploadsLearningCoverart(body, opts)
 
 
 POST /api/v2/uploads/learning/coverart
@@ -354,8 +454,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.UploadsApi();
 
 let body = {}; // Object | query
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postUploadsLearningCoverart(body)
+apiInstance.postUploadsLearningCoverart(body, opts)
   .then((data) => {
     console.log(`postUploadsLearningCoverart success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -371,6 +477,7 @@ apiInstance.postUploadsLearningCoverart(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -379,7 +486,7 @@ apiInstance.postUploadsLearningCoverart(body)
 
 ## postUploadsPublicassetsImages
 
-> UploadUrlResponse postUploadsPublicassetsImages(body)
+> UploadUrlResponse postUploadsPublicassetsImages(body, opts)
 
 
 POST /api/v2/uploads/publicassets/images
@@ -404,8 +511,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.UploadsApi();
 
 let body = {}; // Object | query
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postUploadsPublicassetsImages(body)
+apiInstance.postUploadsPublicassetsImages(body, opts)
   .then((data) => {
     console.log(`postUploadsPublicassetsImages success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -421,6 +534,7 @@ apiInstance.postUploadsPublicassetsImages(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -429,7 +543,7 @@ apiInstance.postUploadsPublicassetsImages(body)
 
 ## postUploadsRecordings
 
-> UploadUrlResponse postUploadsRecordings(body)
+> UploadUrlResponse postUploadsRecordings(body, opts)
 
 
 POST /api/v2/uploads/recordings
@@ -454,8 +568,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.UploadsApi();
 
 let body = {}; // Object | query
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postUploadsRecordings(body)
+apiInstance.postUploadsRecordings(body, opts)
   .then((data) => {
     console.log(`postUploadsRecordings success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -471,6 +591,7 @@ apiInstance.postUploadsRecordings(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
@@ -479,7 +600,7 @@ apiInstance.postUploadsRecordings(body)
 
 ## postUploadsWorkforcemanagementHistoricaldataCsv
 
-> UploadUrlResponse postUploadsWorkforcemanagementHistoricaldataCsv(body)
+> UploadUrlResponse postUploadsWorkforcemanagementHistoricaldataCsv(body, opts)
 
 
 POST /api/v2/uploads/workforcemanagement/historicaldata/csv
@@ -504,8 +625,14 @@ platformClient.ApiClient.instance.setAccessToken(yourAccessToken);
 let apiInstance = new platformClient.UploadsApi();
 
 let body = {}; // Object | query
+let opts = { 
+  'customHeaders': {  // Object.<string, string> | Request Custom Headers
+    'X-Service-Name': 'customer-service',
+    'X-Request-ID': 'req-12345'
+  }
+};
 
-apiInstance.postUploadsWorkforcemanagementHistoricaldataCsv(body)
+apiInstance.postUploadsWorkforcemanagementHistoricaldataCsv(body, opts)
   .then((data) => {
     console.log(`postUploadsWorkforcemanagementHistoricaldataCsv success! data: ${JSON.stringify(data, null, 2)}`);
   })
@@ -521,10 +648,11 @@ apiInstance.postUploadsWorkforcemanagementHistoricaldataCsv(body)
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
  **body** | **Object** | query |  |
+ **customHeaders** | **Object.<string, string>** | Request Custom Headers | [optional] |
 
 ### Return type
 
 **UploadUrlResponse**
 
 
-_purecloud-platform-client-v2@229.1.0_
+_purecloud-platform-client-v2@258.0.0_

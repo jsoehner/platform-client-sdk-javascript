@@ -520,20 +520,56 @@ class ApiClient {
 		// Check for window
 		if (typeof window === 'undefined') {
 			try {
-				const getRandomValues = require('crypto').getRandomValues;
+				const crypto = require('crypto');
 				const unreservedCharacters = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-._~";
-				let randomString = Array.from(getRandomValues(new Uint32Array(nChar)))
-					.map((x) => unreservedCharacters[x % unreservedCharacters.length])
-					.join('');
+				if (typeof crypto.randomInt === 'function') {
+					let randomString = '';
+					for (let i = 0; i < nChar; i++) {
+						randomString += unreservedCharacters[crypto.randomInt(0, unreservedCharacters.length)];
+					}
+					return randomString;
+				}
+				const maxValidByte = 256 - (256 % unreservedCharacters.length);
+				let randomString = '';
+				while (randomString.length < nChar) {
+					const needed = nChar - randomString.length;
+					const bytes = typeof crypto.randomBytes === 'function'
+						? crypto.randomBytes(Math.max(needed * 2, 32))
+						: (crypto.getRandomValues ? crypto.getRandomValues(new Uint8Array(Math.max(needed * 2, 32))) : new Uint8Array(0));
+					for (let i = 0; i < bytes.length; i++) {
+						const byte = bytes[i];
+						if (byte >= maxValidByte) {
+							continue;
+						}
+						randomString += unreservedCharacters[byte % unreservedCharacters.length];
+						if (randomString.length === nChar) {
+							break;
+						}
+					}
+				}
 				return randomString;
 			} catch (err) {
 				throw new Error(`Crypto module is missing/not supported.`);
 			}
 		} else {
 			const unreservedCharacters = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-._~";
-			let randomString = Array.from(crypto.getRandomValues(new Uint32Array(nChar)))
-				.map((x) => unreservedCharacters[x % unreservedCharacters.length])
-				.join('');
+			const maxValidByte = 256 - (256 % unreservedCharacters.length);
+			let randomString = '';
+			while (randomString.length < nChar) {
+				const needed = nChar - randomString.length;
+				const bytes = new Uint8Array(Math.max(needed * 2, 32));
+				crypto.getRandomValues(bytes);
+				for (let i = 0; i < bytes.length; i++) {
+					const byte = bytes[i];
+					if (byte >= maxValidByte) {
+						continue;
+					}
+					randomString += unreservedCharacters[byte % unreservedCharacters.length];
+					if (randomString.length === nChar) {
+						break;
+					}
+				}
+			}
 			return randomString;
 		}
 	}
@@ -1194,20 +1230,56 @@ class ApiClient {
 		// Check for window
 		if (typeof window === 'undefined') {
 			try {
-				const getRandomValues = require('crypto').getRandomValues;
+				const crypto = require('crypto');
 				const unreservedCharacters = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-._~";
-				let randomString = Array.from(getRandomValues(new Uint32Array(nChar)))
-					.map((x) => unreservedCharacters[x % unreservedCharacters.length])
-					.join('');
+				if (typeof crypto.randomInt === 'function') {
+					let randomString = '';
+					for (let i = 0; i < nChar; i++) {
+						randomString += unreservedCharacters[crypto.randomInt(0, unreservedCharacters.length)];
+					}
+					return randomString;
+				}
+				const maxValidByte = 256 - (256 % unreservedCharacters.length);
+				let randomString = '';
+				while (randomString.length < nChar) {
+					const needed = nChar - randomString.length;
+					const bytes = typeof crypto.randomBytes === 'function'
+						? crypto.randomBytes(Math.max(needed * 2, 32))
+						: (crypto.getRandomValues ? crypto.getRandomValues(new Uint8Array(Math.max(needed * 2, 32))) : new Uint8Array(0));
+					for (let i = 0; i < bytes.length; i++) {
+						const byte = bytes[i];
+						if (byte >= maxValidByte) {
+							continue;
+						}
+						randomString += unreservedCharacters[byte % unreservedCharacters.length];
+						if (randomString.length === nChar) {
+							break;
+						}
+					}
+				}
 				return randomString;
 			} catch (err) {
 				throw new Error(`Crypto module is missing/not supported.`);
 			}
 		} else {
 			const unreservedCharacters = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-._~";
-			let randomString = Array.from(crypto.getRandomValues(new Uint32Array(nChar)))
-				.map((x) => unreservedCharacters[x % unreservedCharacters.length])
-				.join('');
+			const maxValidByte = 256 - (256 % unreservedCharacters.length);
+			let randomString = '';
+			while (randomString.length < nChar) {
+				const needed = nChar - randomString.length;
+				const bytes = new Uint8Array(Math.max(needed * 2, 32));
+				crypto.getRandomValues(bytes);
+				for (let i = 0; i < bytes.length; i++) {
+					const byte = bytes[i];
+					if (byte >= maxValidByte) {
+						continue;
+					}
+					randomString += unreservedCharacters[byte % unreservedCharacters.length];
+					if (randomString.length === nChar) {
+						break;
+					}
+				}
+			}
 			return randomString;
 		}
 	}

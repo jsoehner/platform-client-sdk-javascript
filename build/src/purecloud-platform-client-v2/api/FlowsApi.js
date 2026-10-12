@@ -28,7 +28,7 @@ class FlowsApi {
 	postAnalyticsFlowsAggregatesQuery(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postAnalyticsFlowsAggregatesQuery';
+			throw new Error('Missing the required parameter "body" when calling postAnalyticsFlowsAggregatesQuery';
 		}
 
 		return this.apiClient.callApi(
@@ -53,7 +53,7 @@ class FlowsApi {
 	postAnalyticsFlowsObservationsQuery(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postAnalyticsFlowsObservationsQuery';
+			throw new Error('Missing the required parameter "body" when calling postAnalyticsFlowsObservationsQuery';
 		}
 
 		return this.apiClient.callApi(

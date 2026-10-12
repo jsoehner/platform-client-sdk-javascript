@@ -36,11 +36,11 @@ class TelephonyApi {
 		
 		// verify the required parameter 'dateStart' is set
 		if (dateStart === undefined || dateStart === null) {
-			throw 'Missing the required parameter "dateStart" when calling getTelephonySiptraces';
+			throw new Error('Missing the required parameter "dateStart" when calling getTelephonySiptraces';
 		}
 		// verify the required parameter 'dateEnd' is set
 		if (dateEnd === undefined || dateEnd === null) {
-			throw 'Missing the required parameter "dateEnd" when calling getTelephonySiptraces';
+			throw new Error('Missing the required parameter "dateEnd" when calling getTelephonySiptraces';
 		}
 
 		return this.apiClient.callApi(
@@ -65,7 +65,7 @@ class TelephonyApi {
 	getTelephonySiptracesDownloadDownloadId(downloadId) { 
 		// verify the required parameter 'downloadId' is set
 		if (downloadId === undefined || downloadId === null) {
-			throw 'Missing the required parameter "downloadId" when calling getTelephonySiptracesDownloadDownloadId';
+			throw new Error('Missing the required parameter "downloadId" when calling getTelephonySiptracesDownloadDownloadId';
 		}
 
 		return this.apiClient.callApi(
@@ -90,7 +90,7 @@ class TelephonyApi {
 	postTelephonySiptracesDownload(sIPSearchPublicRequest) { 
 		// verify the required parameter 'sIPSearchPublicRequest' is set
 		if (sIPSearchPublicRequest === undefined || sIPSearchPublicRequest === null) {
-			throw 'Missing the required parameter "sIPSearchPublicRequest" when calling postTelephonySiptracesDownload';
+			throw new Error('Missing the required parameter "sIPSearchPublicRequest" when calling postTelephonySiptracesDownload';
 		}
 
 		return this.apiClient.callApi(

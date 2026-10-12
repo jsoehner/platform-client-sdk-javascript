@@ -32,7 +32,7 @@ class ObjectsApi {
 		
 		// verify the required parameter 'divisionId' is set
 		if (divisionId === undefined || divisionId === null) {
-			throw 'Missing the required parameter "divisionId" when calling deleteAuthorizationDivision';
+			throw new Error('Missing the required parameter "divisionId" when calling deleteAuthorizationDivision';
 		}
 
 		return this.apiClient.callApi(
@@ -61,7 +61,7 @@ class ObjectsApi {
 		
 		// verify the required parameter 'divisionId' is set
 		if (divisionId === undefined || divisionId === null) {
-			throw 'Missing the required parameter "divisionId" when calling getAuthorizationDivision';
+			throw new Error('Missing the required parameter "divisionId" when calling getAuthorizationDivision';
 		}
 
 		return this.apiClient.callApi(
@@ -160,15 +160,15 @@ class ObjectsApi {
 	postAuthorizationDivisionObject(divisionId, objectType, body) { 
 		// verify the required parameter 'divisionId' is set
 		if (divisionId === undefined || divisionId === null) {
-			throw 'Missing the required parameter "divisionId" when calling postAuthorizationDivisionObject';
+			throw new Error('Missing the required parameter "divisionId" when calling postAuthorizationDivisionObject';
 		}
 		// verify the required parameter 'objectType' is set
 		if (objectType === undefined || objectType === null) {
-			throw 'Missing the required parameter "objectType" when calling postAuthorizationDivisionObject';
+			throw new Error('Missing the required parameter "objectType" when calling postAuthorizationDivisionObject';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postAuthorizationDivisionObject';
+			throw new Error('Missing the required parameter "body" when calling postAuthorizationDivisionObject';
 		}
 
 		return this.apiClient.callApi(
@@ -194,11 +194,11 @@ class ObjectsApi {
 	postAuthorizationDivisionRestore(divisionId, body) { 
 		// verify the required parameter 'divisionId' is set
 		if (divisionId === undefined || divisionId === null) {
-			throw 'Missing the required parameter "divisionId" when calling postAuthorizationDivisionRestore';
+			throw new Error('Missing the required parameter "divisionId" when calling postAuthorizationDivisionRestore';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postAuthorizationDivisionRestore';
+			throw new Error('Missing the required parameter "body" when calling postAuthorizationDivisionRestore';
 		}
 
 		return this.apiClient.callApi(
@@ -223,7 +223,7 @@ class ObjectsApi {
 	postAuthorizationDivisions(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postAuthorizationDivisions';
+			throw new Error('Missing the required parameter "body" when calling postAuthorizationDivisions';
 		}
 
 		return this.apiClient.callApi(
@@ -249,11 +249,11 @@ class ObjectsApi {
 	putAuthorizationDivision(divisionId, body) { 
 		// verify the required parameter 'divisionId' is set
 		if (divisionId === undefined || divisionId === null) {
-			throw 'Missing the required parameter "divisionId" when calling putAuthorizationDivision';
+			throw new Error('Missing the required parameter "divisionId" when calling putAuthorizationDivision';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putAuthorizationDivision';
+			throw new Error('Missing the required parameter "body" when calling putAuthorizationDivision';
 		}
 
 		return this.apiClient.callApi(

@@ -33,11 +33,11 @@ class GamificationApi {
 		
 		// verify the required parameter 'startWorkday' is set
 		if (startWorkday === undefined || startWorkday === null) {
-			throw 'Missing the required parameter "startWorkday" when calling getGamificationLeaderboard';
+			throw new Error('Missing the required parameter "startWorkday" when calling getGamificationLeaderboard';
 		}
 		// verify the required parameter 'endWorkday' is set
 		if (endWorkday === undefined || endWorkday === null) {
-			throw 'Missing the required parameter "endWorkday" when calling getGamificationLeaderboard';
+			throw new Error('Missing the required parameter "endWorkday" when calling getGamificationLeaderboard';
 		}
 
 		return this.apiClient.callApi(
@@ -69,19 +69,19 @@ class GamificationApi {
 		
 		// verify the required parameter 'filterType' is set
 		if (filterType === undefined || filterType === null) {
-			throw 'Missing the required parameter "filterType" when calling getGamificationLeaderboardAll';
+			throw new Error('Missing the required parameter "filterType" when calling getGamificationLeaderboardAll';
 		}
 		// verify the required parameter 'filterId' is set
 		if (filterId === undefined || filterId === null) {
-			throw 'Missing the required parameter "filterId" when calling getGamificationLeaderboardAll';
+			throw new Error('Missing the required parameter "filterId" when calling getGamificationLeaderboardAll';
 		}
 		// verify the required parameter 'startWorkday' is set
 		if (startWorkday === undefined || startWorkday === null) {
-			throw 'Missing the required parameter "startWorkday" when calling getGamificationLeaderboardAll';
+			throw new Error('Missing the required parameter "startWorkday" when calling getGamificationLeaderboardAll';
 		}
 		// verify the required parameter 'endWorkday' is set
 		if (endWorkday === undefined || endWorkday === null) {
-			throw 'Missing the required parameter "endWorkday" when calling getGamificationLeaderboardAll';
+			throw new Error('Missing the required parameter "endWorkday" when calling getGamificationLeaderboardAll';
 		}
 
 		return this.apiClient.callApi(
@@ -107,11 +107,11 @@ class GamificationApi {
 	getGamificationLeaderboardAllBestpoints(filterType, filterId) { 
 		// verify the required parameter 'filterType' is set
 		if (filterType === undefined || filterType === null) {
-			throw 'Missing the required parameter "filterType" when calling getGamificationLeaderboardAllBestpoints';
+			throw new Error('Missing the required parameter "filterType" when calling getGamificationLeaderboardAllBestpoints';
 		}
 		// verify the required parameter 'filterId' is set
 		if (filterId === undefined || filterId === null) {
-			throw 'Missing the required parameter "filterId" when calling getGamificationLeaderboardAllBestpoints';
+			throw new Error('Missing the required parameter "filterId" when calling getGamificationLeaderboardAllBestpoints';
 		}
 
 		return this.apiClient.callApi(
@@ -161,7 +161,7 @@ class GamificationApi {
 		
 		// verify the required parameter 'metricId' is set
 		if (metricId === undefined || metricId === null) {
-			throw 'Missing the required parameter "metricId" when calling getGamificationMetric';
+			throw new Error('Missing the required parameter "metricId" when calling getGamificationMetric';
 		}
 
 		return this.apiClient.callApi(
@@ -186,7 +186,7 @@ class GamificationApi {
 	getGamificationMetricdefinition(metricDefinitionId) { 
 		// verify the required parameter 'metricDefinitionId' is set
 		if (metricDefinitionId === undefined || metricDefinitionId === null) {
-			throw 'Missing the required parameter "metricDefinitionId" when calling getGamificationMetricdefinition';
+			throw new Error('Missing the required parameter "metricDefinitionId" when calling getGamificationMetricdefinition';
 		}
 
 		return this.apiClient.callApi(
@@ -256,7 +256,7 @@ class GamificationApi {
 	getGamificationProfile(performanceProfileId) { 
 		// verify the required parameter 'performanceProfileId' is set
 		if (performanceProfileId === undefined || performanceProfileId === null) {
-			throw 'Missing the required parameter "performanceProfileId" when calling getGamificationProfile';
+			throw new Error('Missing the required parameter "performanceProfileId" when calling getGamificationProfile';
 		}
 
 		return this.apiClient.callApi(
@@ -286,11 +286,11 @@ class GamificationApi {
 		
 		// verify the required parameter 'profileId' is set
 		if (profileId === undefined || profileId === null) {
-			throw 'Missing the required parameter "profileId" when calling getGamificationProfileMetric';
+			throw new Error('Missing the required parameter "profileId" when calling getGamificationProfileMetric';
 		}
 		// verify the required parameter 'metricId' is set
 		if (metricId === undefined || metricId === null) {
-			throw 'Missing the required parameter "metricId" when calling getGamificationProfileMetric';
+			throw new Error('Missing the required parameter "metricId" when calling getGamificationProfileMetric';
 		}
 
 		return this.apiClient.callApi(
@@ -320,7 +320,7 @@ class GamificationApi {
 		
 		// verify the required parameter 'profileId' is set
 		if (profileId === undefined || profileId === null) {
-			throw 'Missing the required parameter "profileId" when calling getGamificationProfileMetrics';
+			throw new Error('Missing the required parameter "profileId" when calling getGamificationProfileMetrics';
 		}
 
 		return this.apiClient.callApi(
@@ -349,7 +349,7 @@ class GamificationApi {
 		
 		// verify the required parameter 'profileId' is set
 		if (profileId === undefined || profileId === null) {
-			throw 'Missing the required parameter "profileId" when calling getGamificationProfileMetricsObjectivedetails';
+			throw new Error('Missing the required parameter "profileId" when calling getGamificationProfileMetricsObjectivedetails';
 		}
 
 		return this.apiClient.callApi(
@@ -398,7 +398,7 @@ class GamificationApi {
 		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling getGamificationProfilesUser';
+			throw new Error('Missing the required parameter "userId" when calling getGamificationProfilesUser';
 		}
 
 		return this.apiClient.callApi(
@@ -451,7 +451,7 @@ class GamificationApi {
 		
 		// verify the required parameter 'workday' is set
 		if (workday === undefined || workday === null) {
-			throw 'Missing the required parameter "workday" when calling getGamificationScorecards';
+			throw new Error('Missing the required parameter "workday" when calling getGamificationScorecards';
 		}
 
 		return this.apiClient.callApi(
@@ -477,11 +477,11 @@ class GamificationApi {
 	getGamificationScorecardsAttendance(startWorkday, endWorkday) { 
 		// verify the required parameter 'startWorkday' is set
 		if (startWorkday === undefined || startWorkday === null) {
-			throw 'Missing the required parameter "startWorkday" when calling getGamificationScorecardsAttendance';
+			throw new Error('Missing the required parameter "startWorkday" when calling getGamificationScorecardsAttendance';
 		}
 		// verify the required parameter 'endWorkday' is set
 		if (endWorkday === undefined || endWorkday === null) {
-			throw 'Missing the required parameter "endWorkday" when calling getGamificationScorecardsAttendance';
+			throw new Error('Missing the required parameter "endWorkday" when calling getGamificationScorecardsAttendance';
 		}
 
 		return this.apiClient.callApi(
@@ -526,7 +526,7 @@ class GamificationApi {
 	getGamificationScorecardsPointsAlltime(endWorkday) { 
 		// verify the required parameter 'endWorkday' is set
 		if (endWorkday === undefined || endWorkday === null) {
-			throw 'Missing the required parameter "endWorkday" when calling getGamificationScorecardsPointsAlltime';
+			throw new Error('Missing the required parameter "endWorkday" when calling getGamificationScorecardsPointsAlltime';
 		}
 
 		return this.apiClient.callApi(
@@ -551,7 +551,7 @@ class GamificationApi {
 	getGamificationScorecardsPointsAverage(workday) { 
 		// verify the required parameter 'workday' is set
 		if (workday === undefined || workday === null) {
-			throw 'Missing the required parameter "workday" when calling getGamificationScorecardsPointsAverage';
+			throw new Error('Missing the required parameter "workday" when calling getGamificationScorecardsPointsAverage';
 		}
 
 		return this.apiClient.callApi(
@@ -581,11 +581,11 @@ class GamificationApi {
 		
 		// verify the required parameter 'startWorkday' is set
 		if (startWorkday === undefined || startWorkday === null) {
-			throw 'Missing the required parameter "startWorkday" when calling getGamificationScorecardsPointsTrends';
+			throw new Error('Missing the required parameter "startWorkday" when calling getGamificationScorecardsPointsTrends';
 		}
 		// verify the required parameter 'endWorkday' is set
 		if (endWorkday === undefined || endWorkday === null) {
-			throw 'Missing the required parameter "endWorkday" when calling getGamificationScorecardsPointsTrends';
+			throw new Error('Missing the required parameter "endWorkday" when calling getGamificationScorecardsPointsTrends';
 		}
 
 		return this.apiClient.callApi(
@@ -615,11 +615,11 @@ class GamificationApi {
 		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling getGamificationScorecardsUser';
+			throw new Error('Missing the required parameter "userId" when calling getGamificationScorecardsUser';
 		}
 		// verify the required parameter 'workday' is set
 		if (workday === undefined || workday === null) {
-			throw 'Missing the required parameter "workday" when calling getGamificationScorecardsUser';
+			throw new Error('Missing the required parameter "workday" when calling getGamificationScorecardsUser';
 		}
 
 		return this.apiClient.callApi(
@@ -646,15 +646,15 @@ class GamificationApi {
 	getGamificationScorecardsUserAttendance(userId, startWorkday, endWorkday) { 
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling getGamificationScorecardsUserAttendance';
+			throw new Error('Missing the required parameter "userId" when calling getGamificationScorecardsUserAttendance';
 		}
 		// verify the required parameter 'startWorkday' is set
 		if (startWorkday === undefined || startWorkday === null) {
-			throw 'Missing the required parameter "startWorkday" when calling getGamificationScorecardsUserAttendance';
+			throw new Error('Missing the required parameter "startWorkday" when calling getGamificationScorecardsUserAttendance';
 		}
 		// verify the required parameter 'endWorkday' is set
 		if (endWorkday === undefined || endWorkday === null) {
-			throw 'Missing the required parameter "endWorkday" when calling getGamificationScorecardsUserAttendance';
+			throw new Error('Missing the required parameter "endWorkday" when calling getGamificationScorecardsUserAttendance';
 		}
 
 		return this.apiClient.callApi(
@@ -679,7 +679,7 @@ class GamificationApi {
 	getGamificationScorecardsUserBestpoints(userId) { 
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling getGamificationScorecardsUserBestpoints';
+			throw new Error('Missing the required parameter "userId" when calling getGamificationScorecardsUserBestpoints';
 		}
 
 		return this.apiClient.callApi(
@@ -705,11 +705,11 @@ class GamificationApi {
 	getGamificationScorecardsUserPointsAlltime(userId, endWorkday) { 
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling getGamificationScorecardsUserPointsAlltime';
+			throw new Error('Missing the required parameter "userId" when calling getGamificationScorecardsUserPointsAlltime';
 		}
 		// verify the required parameter 'endWorkday' is set
 		if (endWorkday === undefined || endWorkday === null) {
-			throw 'Missing the required parameter "endWorkday" when calling getGamificationScorecardsUserPointsAlltime';
+			throw new Error('Missing the required parameter "endWorkday" when calling getGamificationScorecardsUserPointsAlltime';
 		}
 
 		return this.apiClient.callApi(
@@ -740,15 +740,15 @@ class GamificationApi {
 		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling getGamificationScorecardsUserPointsTrends';
+			throw new Error('Missing the required parameter "userId" when calling getGamificationScorecardsUserPointsTrends';
 		}
 		// verify the required parameter 'startWorkday' is set
 		if (startWorkday === undefined || startWorkday === null) {
-			throw 'Missing the required parameter "startWorkday" when calling getGamificationScorecardsUserPointsTrends';
+			throw new Error('Missing the required parameter "startWorkday" when calling getGamificationScorecardsUserPointsTrends';
 		}
 		// verify the required parameter 'endWorkday' is set
 		if (endWorkday === undefined || endWorkday === null) {
-			throw 'Missing the required parameter "endWorkday" when calling getGamificationScorecardsUserPointsTrends';
+			throw new Error('Missing the required parameter "endWorkday" when calling getGamificationScorecardsUserPointsTrends';
 		}
 
 		return this.apiClient.callApi(
@@ -779,15 +779,15 @@ class GamificationApi {
 		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling getGamificationScorecardsUserValuesTrends';
+			throw new Error('Missing the required parameter "userId" when calling getGamificationScorecardsUserValuesTrends';
 		}
 		// verify the required parameter 'startWorkday' is set
 		if (startWorkday === undefined || startWorkday === null) {
-			throw 'Missing the required parameter "startWorkday" when calling getGamificationScorecardsUserValuesTrends';
+			throw new Error('Missing the required parameter "startWorkday" when calling getGamificationScorecardsUserValuesTrends';
 		}
 		// verify the required parameter 'endWorkday' is set
 		if (endWorkday === undefined || endWorkday === null) {
-			throw 'Missing the required parameter "endWorkday" when calling getGamificationScorecardsUserValuesTrends';
+			throw new Error('Missing the required parameter "endWorkday" when calling getGamificationScorecardsUserValuesTrends';
 		}
 
 		return this.apiClient.callApi(
@@ -814,15 +814,15 @@ class GamificationApi {
 	getGamificationScorecardsUsersPointsAverage(filterType, filterId, workday) { 
 		// verify the required parameter 'filterType' is set
 		if (filterType === undefined || filterType === null) {
-			throw 'Missing the required parameter "filterType" when calling getGamificationScorecardsUsersPointsAverage';
+			throw new Error('Missing the required parameter "filterType" when calling getGamificationScorecardsUsersPointsAverage';
 		}
 		// verify the required parameter 'filterId' is set
 		if (filterId === undefined || filterId === null) {
-			throw 'Missing the required parameter "filterId" when calling getGamificationScorecardsUsersPointsAverage';
+			throw new Error('Missing the required parameter "filterId" when calling getGamificationScorecardsUsersPointsAverage';
 		}
 		// verify the required parameter 'workday' is set
 		if (workday === undefined || workday === null) {
-			throw 'Missing the required parameter "workday" when calling getGamificationScorecardsUsersPointsAverage';
+			throw new Error('Missing the required parameter "workday" when calling getGamificationScorecardsUsersPointsAverage';
 		}
 
 		return this.apiClient.callApi(
@@ -853,15 +853,15 @@ class GamificationApi {
 		
 		// verify the required parameter 'filterType' is set
 		if (filterType === undefined || filterType === null) {
-			throw 'Missing the required parameter "filterType" when calling getGamificationScorecardsUsersValuesAverage';
+			throw new Error('Missing the required parameter "filterType" when calling getGamificationScorecardsUsersValuesAverage';
 		}
 		// verify the required parameter 'filterId' is set
 		if (filterId === undefined || filterId === null) {
-			throw 'Missing the required parameter "filterId" when calling getGamificationScorecardsUsersValuesAverage';
+			throw new Error('Missing the required parameter "filterId" when calling getGamificationScorecardsUsersValuesAverage';
 		}
 		// verify the required parameter 'workday' is set
 		if (workday === undefined || workday === null) {
-			throw 'Missing the required parameter "workday" when calling getGamificationScorecardsUsersValuesAverage';
+			throw new Error('Missing the required parameter "workday" when calling getGamificationScorecardsUsersValuesAverage';
 		}
 
 		return this.apiClient.callApi(
@@ -893,19 +893,19 @@ class GamificationApi {
 		
 		// verify the required parameter 'filterType' is set
 		if (filterType === undefined || filterType === null) {
-			throw 'Missing the required parameter "filterType" when calling getGamificationScorecardsUsersValuesTrends';
+			throw new Error('Missing the required parameter "filterType" when calling getGamificationScorecardsUsersValuesTrends';
 		}
 		// verify the required parameter 'filterId' is set
 		if (filterId === undefined || filterId === null) {
-			throw 'Missing the required parameter "filterId" when calling getGamificationScorecardsUsersValuesTrends';
+			throw new Error('Missing the required parameter "filterId" when calling getGamificationScorecardsUsersValuesTrends';
 		}
 		// verify the required parameter 'startWorkday' is set
 		if (startWorkday === undefined || startWorkday === null) {
-			throw 'Missing the required parameter "startWorkday" when calling getGamificationScorecardsUsersValuesTrends';
+			throw new Error('Missing the required parameter "startWorkday" when calling getGamificationScorecardsUsersValuesTrends';
 		}
 		// verify the required parameter 'endWorkday' is set
 		if (endWorkday === undefined || endWorkday === null) {
-			throw 'Missing the required parameter "endWorkday" when calling getGamificationScorecardsUsersValuesTrends';
+			throw new Error('Missing the required parameter "endWorkday" when calling getGamificationScorecardsUsersValuesTrends';
 		}
 
 		return this.apiClient.callApi(
@@ -934,7 +934,7 @@ class GamificationApi {
 		
 		// verify the required parameter 'workday' is set
 		if (workday === undefined || workday === null) {
-			throw 'Missing the required parameter "workday" when calling getGamificationScorecardsValuesAverage';
+			throw new Error('Missing the required parameter "workday" when calling getGamificationScorecardsValuesAverage';
 		}
 
 		return this.apiClient.callApi(
@@ -966,11 +966,11 @@ class GamificationApi {
 		
 		// verify the required parameter 'startWorkday' is set
 		if (startWorkday === undefined || startWorkday === null) {
-			throw 'Missing the required parameter "startWorkday" when calling getGamificationScorecardsValuesTrends';
+			throw new Error('Missing the required parameter "startWorkday" when calling getGamificationScorecardsValuesTrends';
 		}
 		// verify the required parameter 'endWorkday' is set
 		if (endWorkday === undefined || endWorkday === null) {
-			throw 'Missing the required parameter "endWorkday" when calling getGamificationScorecardsValuesTrends';
+			throw new Error('Missing the required parameter "endWorkday" when calling getGamificationScorecardsValuesTrends';
 		}
 
 		return this.apiClient.callApi(
@@ -1015,7 +1015,7 @@ class GamificationApi {
 	getGamificationTemplate(templateId) { 
 		// verify the required parameter 'templateId' is set
 		if (templateId === undefined || templateId === null) {
-			throw 'Missing the required parameter "templateId" when calling getGamificationTemplate';
+			throw new Error('Missing the required parameter "templateId" when calling getGamificationTemplate';
 		}
 
 		return this.apiClient.callApi(
@@ -1060,7 +1060,7 @@ class GamificationApi {
 	postGamificationMetrics(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postGamificationMetrics';
+			throw new Error('Missing the required parameter "body" when calling postGamificationMetrics';
 		}
 
 		return this.apiClient.callApi(
@@ -1085,7 +1085,7 @@ class GamificationApi {
 	postGamificationProfileActivate(performanceProfileId) { 
 		// verify the required parameter 'performanceProfileId' is set
 		if (performanceProfileId === undefined || performanceProfileId === null) {
-			throw 'Missing the required parameter "performanceProfileId" when calling postGamificationProfileActivate';
+			throw new Error('Missing the required parameter "performanceProfileId" when calling postGamificationProfileActivate';
 		}
 
 		return this.apiClient.callApi(
@@ -1110,7 +1110,7 @@ class GamificationApi {
 	postGamificationProfileDeactivate(performanceProfileId) { 
 		// verify the required parameter 'performanceProfileId' is set
 		if (performanceProfileId === undefined || performanceProfileId === null) {
-			throw 'Missing the required parameter "performanceProfileId" when calling postGamificationProfileDeactivate';
+			throw new Error('Missing the required parameter "performanceProfileId" when calling postGamificationProfileDeactivate';
 		}
 
 		return this.apiClient.callApi(
@@ -1136,11 +1136,11 @@ class GamificationApi {
 	postGamificationProfileMetrics(profileId, body) { 
 		// verify the required parameter 'profileId' is set
 		if (profileId === undefined || profileId === null) {
-			throw 'Missing the required parameter "profileId" when calling postGamificationProfileMetrics';
+			throw new Error('Missing the required parameter "profileId" when calling postGamificationProfileMetrics';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postGamificationProfileMetrics';
+			throw new Error('Missing the required parameter "body" when calling postGamificationProfileMetrics';
 		}
 
 		return this.apiClient.callApi(
@@ -1165,7 +1165,7 @@ class GamificationApi {
 	postGamificationProfiles(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postGamificationProfiles';
+			throw new Error('Missing the required parameter "body" when calling postGamificationProfiles';
 		}
 
 		return this.apiClient.callApi(
@@ -1195,11 +1195,11 @@ class GamificationApi {
 		
 		// verify the required parameter 'metricId' is set
 		if (metricId === undefined || metricId === null) {
-			throw 'Missing the required parameter "metricId" when calling putGamificationMetric';
+			throw new Error('Missing the required parameter "metricId" when calling putGamificationMetric';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putGamificationMetric';
+			throw new Error('Missing the required parameter "body" when calling putGamificationMetric';
 		}
 
 		return this.apiClient.callApi(
@@ -1228,7 +1228,7 @@ class GamificationApi {
 		
 		// verify the required parameter 'performanceProfileId' is set
 		if (performanceProfileId === undefined || performanceProfileId === null) {
-			throw 'Missing the required parameter "performanceProfileId" when calling putGamificationProfile';
+			throw new Error('Missing the required parameter "performanceProfileId" when calling putGamificationProfile';
 		}
 
 		return this.apiClient.callApi(
@@ -1255,15 +1255,15 @@ class GamificationApi {
 	putGamificationProfileMetric(profileId, metricId, body) { 
 		// verify the required parameter 'profileId' is set
 		if (profileId === undefined || profileId === null) {
-			throw 'Missing the required parameter "profileId" when calling putGamificationProfileMetric';
+			throw new Error('Missing the required parameter "profileId" when calling putGamificationProfileMetric';
 		}
 		// verify the required parameter 'metricId' is set
 		if (metricId === undefined || metricId === null) {
-			throw 'Missing the required parameter "metricId" when calling putGamificationProfileMetric';
+			throw new Error('Missing the required parameter "metricId" when calling putGamificationProfileMetric';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putGamificationProfileMetric';
+			throw new Error('Missing the required parameter "body" when calling putGamificationProfileMetric';
 		}
 
 		return this.apiClient.callApi(
@@ -1288,7 +1288,7 @@ class GamificationApi {
 	putGamificationStatus(status) { 
 		// verify the required parameter 'status' is set
 		if (status === undefined || status === null) {
-			throw 'Missing the required parameter "status" when calling putGamificationStatus';
+			throw new Error('Missing the required parameter "status" when calling putGamificationStatus';
 		}
 
 		return this.apiClient.callApi(

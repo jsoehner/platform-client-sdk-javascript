@@ -28,7 +28,7 @@ class WorkforceManagementApi {
 	deleteWorkforcemanagementBusinessunit(businessUnitId) { 
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null) {
-			throw 'Missing the required parameter "businessUnitId" when calling deleteWorkforcemanagementBusinessunit';
+			throw new Error('Missing the required parameter "businessUnitId" when calling deleteWorkforcemanagementBusinessunit';
 		}
 
 		return this.apiClient.callApi(
@@ -54,11 +54,11 @@ class WorkforceManagementApi {
 	deleteWorkforcemanagementBusinessunitActivitycode(businessUnitId, activityCodeId) { 
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null) {
-			throw 'Missing the required parameter "businessUnitId" when calling deleteWorkforcemanagementBusinessunitActivitycode';
+			throw new Error('Missing the required parameter "businessUnitId" when calling deleteWorkforcemanagementBusinessunitActivitycode';
 		}
 		// verify the required parameter 'activityCodeId' is set
 		if (activityCodeId === undefined || activityCodeId === null) {
-			throw 'Missing the required parameter "activityCodeId" when calling deleteWorkforcemanagementBusinessunitActivitycode';
+			throw new Error('Missing the required parameter "activityCodeId" when calling deleteWorkforcemanagementBusinessunitActivitycode';
 		}
 
 		return this.apiClient.callApi(
@@ -84,11 +84,11 @@ class WorkforceManagementApi {
 	deleteWorkforcemanagementBusinessunitPlanninggroup(businessUnitId, planningGroupId) { 
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null) {
-			throw 'Missing the required parameter "businessUnitId" when calling deleteWorkforcemanagementBusinessunitPlanninggroup';
+			throw new Error('Missing the required parameter "businessUnitId" when calling deleteWorkforcemanagementBusinessunitPlanninggroup';
 		}
 		// verify the required parameter 'planningGroupId' is set
 		if (planningGroupId === undefined || planningGroupId === null) {
-			throw 'Missing the required parameter "planningGroupId" when calling deleteWorkforcemanagementBusinessunitPlanninggroup';
+			throw new Error('Missing the required parameter "planningGroupId" when calling deleteWorkforcemanagementBusinessunitPlanninggroup';
 		}
 
 		return this.apiClient.callApi(
@@ -114,11 +114,11 @@ class WorkforceManagementApi {
 	deleteWorkforcemanagementBusinessunitSchedulingRun(businessUnitId, runId) { 
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null) {
-			throw 'Missing the required parameter "businessUnitId" when calling deleteWorkforcemanagementBusinessunitSchedulingRun';
+			throw new Error('Missing the required parameter "businessUnitId" when calling deleteWorkforcemanagementBusinessunitSchedulingRun';
 		}
 		// verify the required parameter 'runId' is set
 		if (runId === undefined || runId === null) {
-			throw 'Missing the required parameter "runId" when calling deleteWorkforcemanagementBusinessunitSchedulingRun';
+			throw new Error('Missing the required parameter "runId" when calling deleteWorkforcemanagementBusinessunitSchedulingRun';
 		}
 
 		return this.apiClient.callApi(
@@ -144,11 +144,11 @@ class WorkforceManagementApi {
 	deleteWorkforcemanagementBusinessunitServicegoaltemplate(businessUnitId, serviceGoalTemplateId) { 
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null) {
-			throw 'Missing the required parameter "businessUnitId" when calling deleteWorkforcemanagementBusinessunitServicegoaltemplate';
+			throw new Error('Missing the required parameter "businessUnitId" when calling deleteWorkforcemanagementBusinessunitServicegoaltemplate';
 		}
 		// verify the required parameter 'serviceGoalTemplateId' is set
 		if (serviceGoalTemplateId === undefined || serviceGoalTemplateId === null) {
-			throw 'Missing the required parameter "serviceGoalTemplateId" when calling deleteWorkforcemanagementBusinessunitServicegoaltemplate';
+			throw new Error('Missing the required parameter "serviceGoalTemplateId" when calling deleteWorkforcemanagementBusinessunitServicegoaltemplate';
 		}
 
 		return this.apiClient.callApi(
@@ -175,15 +175,15 @@ class WorkforceManagementApi {
 	deleteWorkforcemanagementBusinessunitWeekSchedule(businessUnitId, weekId, scheduleId) { 
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null) {
-			throw 'Missing the required parameter "businessUnitId" when calling deleteWorkforcemanagementBusinessunitWeekSchedule';
+			throw new Error('Missing the required parameter "businessUnitId" when calling deleteWorkforcemanagementBusinessunitWeekSchedule';
 		}
 		// verify the required parameter 'weekId' is set
 		if (weekId === undefined || weekId === null) {
-			throw 'Missing the required parameter "weekId" when calling deleteWorkforcemanagementBusinessunitWeekSchedule';
+			throw new Error('Missing the required parameter "weekId" when calling deleteWorkforcemanagementBusinessunitWeekSchedule';
 		}
 		// verify the required parameter 'scheduleId' is set
 		if (scheduleId === undefined || scheduleId === null) {
-			throw 'Missing the required parameter "scheduleId" when calling deleteWorkforcemanagementBusinessunitWeekSchedule';
+			throw new Error('Missing the required parameter "scheduleId" when calling deleteWorkforcemanagementBusinessunitWeekSchedule';
 		}
 
 		return this.apiClient.callApi(
@@ -210,15 +210,15 @@ class WorkforceManagementApi {
 	deleteWorkforcemanagementBusinessunitWeekShorttermforecast(businessUnitId, weekDateId, forecastId) { 
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null) {
-			throw 'Missing the required parameter "businessUnitId" when calling deleteWorkforcemanagementBusinessunitWeekShorttermforecast';
+			throw new Error('Missing the required parameter "businessUnitId" when calling deleteWorkforcemanagementBusinessunitWeekShorttermforecast';
 		}
 		// verify the required parameter 'weekDateId' is set
 		if (weekDateId === undefined || weekDateId === null) {
-			throw 'Missing the required parameter "weekDateId" when calling deleteWorkforcemanagementBusinessunitWeekShorttermforecast';
+			throw new Error('Missing the required parameter "weekDateId" when calling deleteWorkforcemanagementBusinessunitWeekShorttermforecast';
 		}
 		// verify the required parameter 'forecastId' is set
 		if (forecastId === undefined || forecastId === null) {
-			throw 'Missing the required parameter "forecastId" when calling deleteWorkforcemanagementBusinessunitWeekShorttermforecast';
+			throw new Error('Missing the required parameter "forecastId" when calling deleteWorkforcemanagementBusinessunitWeekShorttermforecast';
 		}
 
 		return this.apiClient.callApi(
@@ -263,7 +263,7 @@ class WorkforceManagementApi {
 	deleteWorkforcemanagementManagementunit(managementUnitId) { 
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null) {
-			throw 'Missing the required parameter "managementUnitId" when calling deleteWorkforcemanagementManagementunit';
+			throw new Error('Missing the required parameter "managementUnitId" when calling deleteWorkforcemanagementManagementunit';
 		}
 
 		return this.apiClient.callApi(
@@ -289,11 +289,11 @@ class WorkforceManagementApi {
 	deleteWorkforcemanagementManagementunitWorkplan(managementUnitId, workPlanId) { 
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null) {
-			throw 'Missing the required parameter "managementUnitId" when calling deleteWorkforcemanagementManagementunitWorkplan';
+			throw new Error('Missing the required parameter "managementUnitId" when calling deleteWorkforcemanagementManagementunitWorkplan';
 		}
 		// verify the required parameter 'workPlanId' is set
 		if (workPlanId === undefined || workPlanId === null) {
-			throw 'Missing the required parameter "workPlanId" when calling deleteWorkforcemanagementManagementunitWorkplan';
+			throw new Error('Missing the required parameter "workPlanId" when calling deleteWorkforcemanagementManagementunitWorkplan';
 		}
 
 		return this.apiClient.callApi(
@@ -319,11 +319,11 @@ class WorkforceManagementApi {
 	deleteWorkforcemanagementManagementunitWorkplanrotation(managementUnitId, workPlanRotationId) { 
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null) {
-			throw 'Missing the required parameter "managementUnitId" when calling deleteWorkforcemanagementManagementunitWorkplanrotation';
+			throw new Error('Missing the required parameter "managementUnitId" when calling deleteWorkforcemanagementManagementunitWorkplanrotation';
 		}
 		// verify the required parameter 'workPlanRotationId' is set
 		if (workPlanRotationId === undefined || workPlanRotationId === null) {
-			throw 'Missing the required parameter "workPlanRotationId" when calling deleteWorkforcemanagementManagementunitWorkplanrotation';
+			throw new Error('Missing the required parameter "workPlanRotationId" when calling deleteWorkforcemanagementManagementunitWorkplanrotation';
 		}
 
 		return this.apiClient.callApi(
@@ -348,7 +348,7 @@ class WorkforceManagementApi {
 	getWorkforcemanagementAdherence(userId) { 
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling getWorkforcemanagementAdherence';
+			throw new Error('Missing the required parameter "userId" when calling getWorkforcemanagementAdherence';
 		}
 
 		return this.apiClient.callApi(
@@ -373,7 +373,7 @@ class WorkforceManagementApi {
 	getWorkforcemanagementAdhocmodelingjob(jobId) { 
 		// verify the required parameter 'jobId' is set
 		if (jobId === undefined || jobId === null) {
-			throw 'Missing the required parameter "jobId" when calling getWorkforcemanagementAdhocmodelingjob';
+			throw new Error('Missing the required parameter "jobId" when calling getWorkforcemanagementAdhocmodelingjob';
 		}
 
 		return this.apiClient.callApi(
@@ -398,7 +398,7 @@ class WorkforceManagementApi {
 	getWorkforcemanagementAgentManagementunit(agentId) { 
 		// verify the required parameter 'agentId' is set
 		if (agentId === undefined || agentId === null) {
-			throw 'Missing the required parameter "agentId" when calling getWorkforcemanagementAgentManagementunit';
+			throw new Error('Missing the required parameter "agentId" when calling getWorkforcemanagementAgentManagementunit';
 		}
 
 		return this.apiClient.callApi(
@@ -447,7 +447,7 @@ class WorkforceManagementApi {
 		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null) {
-			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunit';
+			throw new Error('Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunit';
 		}
 
 		return this.apiClient.callApi(
@@ -473,11 +473,11 @@ class WorkforceManagementApi {
 	getWorkforcemanagementBusinessunitActivitycode(businessUnitId, activityCodeId) { 
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null) {
-			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitActivitycode';
+			throw new Error('Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitActivitycode';
 		}
 		// verify the required parameter 'activityCodeId' is set
 		if (activityCodeId === undefined || activityCodeId === null) {
-			throw 'Missing the required parameter "activityCodeId" when calling getWorkforcemanagementBusinessunitActivitycode';
+			throw new Error('Missing the required parameter "activityCodeId" when calling getWorkforcemanagementBusinessunitActivitycode';
 		}
 
 		return this.apiClient.callApi(
@@ -502,7 +502,7 @@ class WorkforceManagementApi {
 	getWorkforcemanagementBusinessunitActivitycodes(businessUnitId) { 
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null) {
-			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitActivitycodes';
+			throw new Error('Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitActivitycodes';
 		}
 
 		return this.apiClient.callApi(
@@ -528,11 +528,11 @@ class WorkforceManagementApi {
 	getWorkforcemanagementBusinessunitIntradayPlanninggroups(businessUnitId, _date) { 
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null) {
-			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitIntradayPlanninggroups';
+			throw new Error('Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitIntradayPlanninggroups';
 		}
 		// verify the required parameter '_date' is set
 		if (_date === undefined || _date === null) {
-			throw 'Missing the required parameter "_date" when calling getWorkforcemanagementBusinessunitIntradayPlanninggroups';
+			throw new Error('Missing the required parameter "_date" when calling getWorkforcemanagementBusinessunitIntradayPlanninggroups';
 		}
 
 		return this.apiClient.callApi(
@@ -562,7 +562,7 @@ class WorkforceManagementApi {
 		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null) {
-			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitManagementunits';
+			throw new Error('Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitManagementunits';
 		}
 
 		return this.apiClient.callApi(
@@ -588,11 +588,11 @@ class WorkforceManagementApi {
 	getWorkforcemanagementBusinessunitPlanninggroup(businessUnitId, planningGroupId) { 
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null) {
-			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitPlanninggroup';
+			throw new Error('Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitPlanninggroup';
 		}
 		// verify the required parameter 'planningGroupId' is set
 		if (planningGroupId === undefined || planningGroupId === null) {
-			throw 'Missing the required parameter "planningGroupId" when calling getWorkforcemanagementBusinessunitPlanninggroup';
+			throw new Error('Missing the required parameter "planningGroupId" when calling getWorkforcemanagementBusinessunitPlanninggroup';
 		}
 
 		return this.apiClient.callApi(
@@ -617,7 +617,7 @@ class WorkforceManagementApi {
 	getWorkforcemanagementBusinessunitPlanninggroups(businessUnitId) { 
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null) {
-			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitPlanninggroups';
+			throw new Error('Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitPlanninggroups';
 		}
 
 		return this.apiClient.callApi(
@@ -643,11 +643,11 @@ class WorkforceManagementApi {
 	getWorkforcemanagementBusinessunitSchedulingRun(businessUnitId, runId) { 
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null) {
-			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitSchedulingRun';
+			throw new Error('Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitSchedulingRun';
 		}
 		// verify the required parameter 'runId' is set
 		if (runId === undefined || runId === null) {
-			throw 'Missing the required parameter "runId" when calling getWorkforcemanagementBusinessunitSchedulingRun';
+			throw new Error('Missing the required parameter "runId" when calling getWorkforcemanagementBusinessunitSchedulingRun';
 		}
 
 		return this.apiClient.callApi(
@@ -675,19 +675,19 @@ class WorkforceManagementApi {
 	getWorkforcemanagementBusinessunitSchedulingRunResult(businessUnitId, runId, managementUnitIds, expand) { 
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null) {
-			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitSchedulingRunResult';
+			throw new Error('Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitSchedulingRunResult';
 		}
 		// verify the required parameter 'runId' is set
 		if (runId === undefined || runId === null) {
-			throw 'Missing the required parameter "runId" when calling getWorkforcemanagementBusinessunitSchedulingRunResult';
+			throw new Error('Missing the required parameter "runId" when calling getWorkforcemanagementBusinessunitSchedulingRunResult';
 		}
 		// verify the required parameter 'managementUnitIds' is set
 		if (managementUnitIds === undefined || managementUnitIds === null) {
-			throw 'Missing the required parameter "managementUnitIds" when calling getWorkforcemanagementBusinessunitSchedulingRunResult';
+			throw new Error('Missing the required parameter "managementUnitIds" when calling getWorkforcemanagementBusinessunitSchedulingRunResult';
 		}
 		// verify the required parameter 'expand' is set
 		if (expand === undefined || expand === null) {
-			throw 'Missing the required parameter "expand" when calling getWorkforcemanagementBusinessunitSchedulingRunResult';
+			throw new Error('Missing the required parameter "expand" when calling getWorkforcemanagementBusinessunitSchedulingRunResult';
 		}
 
 		return this.apiClient.callApi(
@@ -712,7 +712,7 @@ class WorkforceManagementApi {
 	getWorkforcemanagementBusinessunitSchedulingRuns(businessUnitId) { 
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null) {
-			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitSchedulingRuns';
+			throw new Error('Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitSchedulingRuns';
 		}
 
 		return this.apiClient.callApi(
@@ -738,11 +738,11 @@ class WorkforceManagementApi {
 	getWorkforcemanagementBusinessunitServicegoaltemplate(businessUnitId, serviceGoalTemplateId) { 
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null) {
-			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitServicegoaltemplate';
+			throw new Error('Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitServicegoaltemplate';
 		}
 		// verify the required parameter 'serviceGoalTemplateId' is set
 		if (serviceGoalTemplateId === undefined || serviceGoalTemplateId === null) {
-			throw 'Missing the required parameter "serviceGoalTemplateId" when calling getWorkforcemanagementBusinessunitServicegoaltemplate';
+			throw new Error('Missing the required parameter "serviceGoalTemplateId" when calling getWorkforcemanagementBusinessunitServicegoaltemplate';
 		}
 
 		return this.apiClient.callApi(
@@ -767,7 +767,7 @@ class WorkforceManagementApi {
 	getWorkforcemanagementBusinessunitServicegoaltemplates(businessUnitId) { 
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null) {
-			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitServicegoaltemplates';
+			throw new Error('Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitServicegoaltemplates';
 		}
 
 		return this.apiClient.callApi(
@@ -798,15 +798,15 @@ class WorkforceManagementApi {
 		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null) {
-			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitWeekSchedule';
+			throw new Error('Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitWeekSchedule';
 		}
 		// verify the required parameter 'weekId' is set
 		if (weekId === undefined || weekId === null) {
-			throw 'Missing the required parameter "weekId" when calling getWorkforcemanagementBusinessunitWeekSchedule';
+			throw new Error('Missing the required parameter "weekId" when calling getWorkforcemanagementBusinessunitWeekSchedule';
 		}
 		// verify the required parameter 'scheduleId' is set
 		if (scheduleId === undefined || scheduleId === null) {
-			throw 'Missing the required parameter "scheduleId" when calling getWorkforcemanagementBusinessunitWeekSchedule';
+			throw new Error('Missing the required parameter "scheduleId" when calling getWorkforcemanagementBusinessunitWeekSchedule';
 		}
 
 		return this.apiClient.callApi(
@@ -833,15 +833,15 @@ class WorkforceManagementApi {
 	getWorkforcemanagementBusinessunitWeekScheduleGenerationresults(businessUnitId, weekId, scheduleId) { 
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null) {
-			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitWeekScheduleGenerationresults';
+			throw new Error('Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitWeekScheduleGenerationresults';
 		}
 		// verify the required parameter 'weekId' is set
 		if (weekId === undefined || weekId === null) {
-			throw 'Missing the required parameter "weekId" when calling getWorkforcemanagementBusinessunitWeekScheduleGenerationresults';
+			throw new Error('Missing the required parameter "weekId" when calling getWorkforcemanagementBusinessunitWeekScheduleGenerationresults';
 		}
 		// verify the required parameter 'scheduleId' is set
 		if (scheduleId === undefined || scheduleId === null) {
-			throw 'Missing the required parameter "scheduleId" when calling getWorkforcemanagementBusinessunitWeekScheduleGenerationresults';
+			throw new Error('Missing the required parameter "scheduleId" when calling getWorkforcemanagementBusinessunitWeekScheduleGenerationresults';
 		}
 
 		return this.apiClient.callApi(
@@ -872,15 +872,15 @@ class WorkforceManagementApi {
 		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null) {
-			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitWeekScheduleHeadcountforecast';
+			throw new Error('Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitWeekScheduleHeadcountforecast';
 		}
 		// verify the required parameter 'weekId' is set
 		if (weekId === undefined || weekId === null) {
-			throw 'Missing the required parameter "weekId" when calling getWorkforcemanagementBusinessunitWeekScheduleHeadcountforecast';
+			throw new Error('Missing the required parameter "weekId" when calling getWorkforcemanagementBusinessunitWeekScheduleHeadcountforecast';
 		}
 		// verify the required parameter 'scheduleId' is set
 		if (scheduleId === undefined || scheduleId === null) {
-			throw 'Missing the required parameter "scheduleId" when calling getWorkforcemanagementBusinessunitWeekScheduleHeadcountforecast';
+			throw new Error('Missing the required parameter "scheduleId" when calling getWorkforcemanagementBusinessunitWeekScheduleHeadcountforecast';
 		}
 
 		return this.apiClient.callApi(
@@ -908,19 +908,19 @@ class WorkforceManagementApi {
 	getWorkforcemanagementBusinessunitWeekScheduleHistoryAgent(businessUnitId, weekId, scheduleId, agentId) { 
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null) {
-			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitWeekScheduleHistoryAgent';
+			throw new Error('Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitWeekScheduleHistoryAgent';
 		}
 		// verify the required parameter 'weekId' is set
 		if (weekId === undefined || weekId === null) {
-			throw 'Missing the required parameter "weekId" when calling getWorkforcemanagementBusinessunitWeekScheduleHistoryAgent';
+			throw new Error('Missing the required parameter "weekId" when calling getWorkforcemanagementBusinessunitWeekScheduleHistoryAgent';
 		}
 		// verify the required parameter 'scheduleId' is set
 		if (scheduleId === undefined || scheduleId === null) {
-			throw 'Missing the required parameter "scheduleId" when calling getWorkforcemanagementBusinessunitWeekScheduleHistoryAgent';
+			throw new Error('Missing the required parameter "scheduleId" when calling getWorkforcemanagementBusinessunitWeekScheduleHistoryAgent';
 		}
 		// verify the required parameter 'agentId' is set
 		if (agentId === undefined || agentId === null) {
-			throw 'Missing the required parameter "agentId" when calling getWorkforcemanagementBusinessunitWeekScheduleHistoryAgent';
+			throw new Error('Missing the required parameter "agentId" when calling getWorkforcemanagementBusinessunitWeekScheduleHistoryAgent';
 		}
 
 		return this.apiClient.callApi(
@@ -951,11 +951,11 @@ class WorkforceManagementApi {
 		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null) {
-			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitWeekSchedules';
+			throw new Error('Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitWeekSchedules';
 		}
 		// verify the required parameter 'weekId' is set
 		if (weekId === undefined || weekId === null) {
-			throw 'Missing the required parameter "weekId" when calling getWorkforcemanagementBusinessunitWeekSchedules';
+			throw new Error('Missing the required parameter "weekId" when calling getWorkforcemanagementBusinessunitWeekSchedules';
 		}
 
 		return this.apiClient.callApi(
@@ -986,15 +986,15 @@ class WorkforceManagementApi {
 		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null) {
-			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitWeekShorttermforecast';
+			throw new Error('Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitWeekShorttermforecast';
 		}
 		// verify the required parameter 'weekDateId' is set
 		if (weekDateId === undefined || weekDateId === null) {
-			throw 'Missing the required parameter "weekDateId" when calling getWorkforcemanagementBusinessunitWeekShorttermforecast';
+			throw new Error('Missing the required parameter "weekDateId" when calling getWorkforcemanagementBusinessunitWeekShorttermforecast';
 		}
 		// verify the required parameter 'forecastId' is set
 		if (forecastId === undefined || forecastId === null) {
-			throw 'Missing the required parameter "forecastId" when calling getWorkforcemanagementBusinessunitWeekShorttermforecast';
+			throw new Error('Missing the required parameter "forecastId" when calling getWorkforcemanagementBusinessunitWeekShorttermforecast';
 		}
 
 		return this.apiClient.callApi(
@@ -1026,15 +1026,15 @@ class WorkforceManagementApi {
 		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null) {
-			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitWeekShorttermforecastData';
+			throw new Error('Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitWeekShorttermforecastData';
 		}
 		// verify the required parameter 'weekDateId' is set
 		if (weekDateId === undefined || weekDateId === null) {
-			throw 'Missing the required parameter "weekDateId" when calling getWorkforcemanagementBusinessunitWeekShorttermforecastData';
+			throw new Error('Missing the required parameter "weekDateId" when calling getWorkforcemanagementBusinessunitWeekShorttermforecastData';
 		}
 		// verify the required parameter 'forecastId' is set
 		if (forecastId === undefined || forecastId === null) {
-			throw 'Missing the required parameter "forecastId" when calling getWorkforcemanagementBusinessunitWeekShorttermforecastData';
+			throw new Error('Missing the required parameter "forecastId" when calling getWorkforcemanagementBusinessunitWeekShorttermforecastData';
 		}
 
 		return this.apiClient.callApi(
@@ -1061,15 +1061,15 @@ class WorkforceManagementApi {
 	getWorkforcemanagementBusinessunitWeekShorttermforecastGenerationresults(businessUnitId, weekDateId, forecastId) { 
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null) {
-			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitWeekShorttermforecastGenerationresults';
+			throw new Error('Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitWeekShorttermforecastGenerationresults';
 		}
 		// verify the required parameter 'weekDateId' is set
 		if (weekDateId === undefined || weekDateId === null) {
-			throw 'Missing the required parameter "weekDateId" when calling getWorkforcemanagementBusinessunitWeekShorttermforecastGenerationresults';
+			throw new Error('Missing the required parameter "weekDateId" when calling getWorkforcemanagementBusinessunitWeekShorttermforecastGenerationresults';
 		}
 		// verify the required parameter 'forecastId' is set
 		if (forecastId === undefined || forecastId === null) {
-			throw 'Missing the required parameter "forecastId" when calling getWorkforcemanagementBusinessunitWeekShorttermforecastGenerationresults';
+			throw new Error('Missing the required parameter "forecastId" when calling getWorkforcemanagementBusinessunitWeekShorttermforecastGenerationresults';
 		}
 
 		return this.apiClient.callApi(
@@ -1100,15 +1100,15 @@ class WorkforceManagementApi {
 		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null) {
-			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitWeekShorttermforecastLongtermforecastdata';
+			throw new Error('Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitWeekShorttermforecastLongtermforecastdata';
 		}
 		// verify the required parameter 'weekDateId' is set
 		if (weekDateId === undefined || weekDateId === null) {
-			throw 'Missing the required parameter "weekDateId" when calling getWorkforcemanagementBusinessunitWeekShorttermforecastLongtermforecastdata';
+			throw new Error('Missing the required parameter "weekDateId" when calling getWorkforcemanagementBusinessunitWeekShorttermforecastLongtermforecastdata';
 		}
 		// verify the required parameter 'forecastId' is set
 		if (forecastId === undefined || forecastId === null) {
-			throw 'Missing the required parameter "forecastId" when calling getWorkforcemanagementBusinessunitWeekShorttermforecastLongtermforecastdata';
+			throw new Error('Missing the required parameter "forecastId" when calling getWorkforcemanagementBusinessunitWeekShorttermforecastLongtermforecastdata';
 		}
 
 		return this.apiClient.callApi(
@@ -1135,15 +1135,15 @@ class WorkforceManagementApi {
 	getWorkforcemanagementBusinessunitWeekShorttermforecastPlanninggroups(businessUnitId, weekDateId, forecastId) { 
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null) {
-			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitWeekShorttermforecastPlanninggroups';
+			throw new Error('Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitWeekShorttermforecastPlanninggroups';
 		}
 		// verify the required parameter 'weekDateId' is set
 		if (weekDateId === undefined || weekDateId === null) {
-			throw 'Missing the required parameter "weekDateId" when calling getWorkforcemanagementBusinessunitWeekShorttermforecastPlanninggroups';
+			throw new Error('Missing the required parameter "weekDateId" when calling getWorkforcemanagementBusinessunitWeekShorttermforecastPlanninggroups';
 		}
 		// verify the required parameter 'forecastId' is set
 		if (forecastId === undefined || forecastId === null) {
-			throw 'Missing the required parameter "forecastId" when calling getWorkforcemanagementBusinessunitWeekShorttermforecastPlanninggroups';
+			throw new Error('Missing the required parameter "forecastId" when calling getWorkforcemanagementBusinessunitWeekShorttermforecastPlanninggroups';
 		}
 
 		return this.apiClient.callApi(
@@ -1169,11 +1169,11 @@ class WorkforceManagementApi {
 	getWorkforcemanagementBusinessunitWeekShorttermforecasts(businessUnitId, weekDateId) { 
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null) {
-			throw 'Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitWeekShorttermforecasts';
+			throw new Error('Missing the required parameter "businessUnitId" when calling getWorkforcemanagementBusinessunitWeekShorttermforecasts';
 		}
 		// verify the required parameter 'weekDateId' is set
 		if (weekDateId === undefined || weekDateId === null) {
-			throw 'Missing the required parameter "weekDateId" when calling getWorkforcemanagementBusinessunitWeekShorttermforecasts';
+			throw new Error('Missing the required parameter "weekDateId" when calling getWorkforcemanagementBusinessunitWeekShorttermforecasts';
 		}
 
 		return this.apiClient.callApi(
@@ -1247,7 +1247,7 @@ class WorkforceManagementApi {
 	getWorkforcemanagementCalendarDataIcs(calendarId) { 
 		// verify the required parameter 'calendarId' is set
 		if (calendarId === undefined || calendarId === null) {
-			throw 'Missing the required parameter "calendarId" when calling getWorkforcemanagementCalendarDataIcs';
+			throw new Error('Missing the required parameter "calendarId" when calling getWorkforcemanagementCalendarDataIcs';
 		}
 
 		return this.apiClient.callApi(
@@ -1336,7 +1336,7 @@ class WorkforceManagementApi {
 		
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null) {
-			throw 'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunit';
+			throw new Error('Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunit';
 		}
 
 		return this.apiClient.callApi(
@@ -1361,7 +1361,7 @@ class WorkforceManagementApi {
 	getWorkforcemanagementManagementunitActivitycodes(managementUnitId) { 
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null) {
-			throw 'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitActivitycodes';
+			throw new Error('Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitActivitycodes';
 		}
 
 		return this.apiClient.callApi(
@@ -1390,7 +1390,7 @@ class WorkforceManagementApi {
 		
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null) {
-			throw 'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitAdherence';
+			throw new Error('Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitAdherence';
 		}
 
 		return this.apiClient.callApi(
@@ -1420,11 +1420,11 @@ class WorkforceManagementApi {
 		
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null) {
-			throw 'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitAgent';
+			throw new Error('Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitAgent';
 		}
 		// verify the required parameter 'agentId' is set
 		if (agentId === undefined || agentId === null) {
-			throw 'Missing the required parameter "agentId" when calling getWorkforcemanagementManagementunitAgent';
+			throw new Error('Missing the required parameter "agentId" when calling getWorkforcemanagementManagementunitAgent';
 		}
 
 		return this.apiClient.callApi(
@@ -1450,11 +1450,11 @@ class WorkforceManagementApi {
 	getWorkforcemanagementManagementunitAgentShifttrades(managementUnitId, agentId) { 
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null) {
-			throw 'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitAgentShifttrades';
+			throw new Error('Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitAgentShifttrades';
 		}
 		// verify the required parameter 'agentId' is set
 		if (agentId === undefined || agentId === null) {
-			throw 'Missing the required parameter "agentId" when calling getWorkforcemanagementManagementunitAgentShifttrades';
+			throw new Error('Missing the required parameter "agentId" when calling getWorkforcemanagementManagementunitAgentShifttrades';
 		}
 
 		return this.apiClient.callApi(
@@ -1479,7 +1479,7 @@ class WorkforceManagementApi {
 	getWorkforcemanagementManagementunitShifttradesMatched(managementUnitId) { 
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null) {
-			throw 'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitShifttradesMatched';
+			throw new Error('Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitShifttradesMatched';
 		}
 
 		return this.apiClient.callApi(
@@ -1504,7 +1504,7 @@ class WorkforceManagementApi {
 	getWorkforcemanagementManagementunitShifttradesUsers(managementUnitId) { 
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null) {
-			throw 'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitShifttradesUsers';
+			throw new Error('Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitShifttradesUsers';
 		}
 
 		return this.apiClient.callApi(
@@ -1531,15 +1531,15 @@ class WorkforceManagementApi {
 	getWorkforcemanagementManagementunitUserTimeoffrequest(managementUnitId, userId, timeOffRequestId) { 
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null) {
-			throw 'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitUserTimeoffrequest';
+			throw new Error('Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitUserTimeoffrequest';
 		}
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling getWorkforcemanagementManagementunitUserTimeoffrequest';
+			throw new Error('Missing the required parameter "userId" when calling getWorkforcemanagementManagementunitUserTimeoffrequest';
 		}
 		// verify the required parameter 'timeOffRequestId' is set
 		if (timeOffRequestId === undefined || timeOffRequestId === null) {
-			throw 'Missing the required parameter "timeOffRequestId" when calling getWorkforcemanagementManagementunitUserTimeoffrequest';
+			throw new Error('Missing the required parameter "timeOffRequestId" when calling getWorkforcemanagementManagementunitUserTimeoffrequest';
 		}
 
 		return this.apiClient.callApi(
@@ -1569,11 +1569,11 @@ class WorkforceManagementApi {
 		
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null) {
-			throw 'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitUserTimeoffrequests';
+			throw new Error('Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitUserTimeoffrequests';
 		}
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling getWorkforcemanagementManagementunitUserTimeoffrequests';
+			throw new Error('Missing the required parameter "userId" when calling getWorkforcemanagementManagementunitUserTimeoffrequests';
 		}
 
 		return this.apiClient.callApi(
@@ -1598,7 +1598,7 @@ class WorkforceManagementApi {
 	getWorkforcemanagementManagementunitUsers(managementUnitId) { 
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null) {
-			throw 'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitUsers';
+			throw new Error('Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitUsers';
 		}
 
 		return this.apiClient.callApi(
@@ -1630,15 +1630,15 @@ class WorkforceManagementApi {
 		
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null) {
-			throw 'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitWeekSchedule';
+			throw new Error('Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitWeekSchedule';
 		}
 		// verify the required parameter 'weekId' is set
 		if (weekId === undefined || weekId === null) {
-			throw 'Missing the required parameter "weekId" when calling getWorkforcemanagementManagementunitWeekSchedule';
+			throw new Error('Missing the required parameter "weekId" when calling getWorkforcemanagementManagementunitWeekSchedule';
 		}
 		// verify the required parameter 'scheduleId' is set
 		if (scheduleId === undefined || scheduleId === null) {
-			throw 'Missing the required parameter "scheduleId" when calling getWorkforcemanagementManagementunitWeekSchedule';
+			throw new Error('Missing the required parameter "scheduleId" when calling getWorkforcemanagementManagementunitWeekSchedule';
 		}
 
 		return this.apiClient.callApi(
@@ -1670,11 +1670,11 @@ class WorkforceManagementApi {
 		
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null) {
-			throw 'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitWeekSchedules';
+			throw new Error('Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitWeekSchedules';
 		}
 		// verify the required parameter 'weekId' is set
 		if (weekId === undefined || weekId === null) {
-			throw 'Missing the required parameter "weekId" when calling getWorkforcemanagementManagementunitWeekSchedules';
+			throw new Error('Missing the required parameter "weekId" when calling getWorkforcemanagementManagementunitWeekSchedules';
 		}
 
 		return this.apiClient.callApi(
@@ -1704,11 +1704,11 @@ class WorkforceManagementApi {
 		
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null) {
-			throw 'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitWeekShifttrades';
+			throw new Error('Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitWeekShifttrades';
 		}
 		// verify the required parameter 'weekDateId' is set
 		if (weekDateId === undefined || weekDateId === null) {
-			throw 'Missing the required parameter "weekDateId" when calling getWorkforcemanagementManagementunitWeekShifttrades';
+			throw new Error('Missing the required parameter "weekDateId" when calling getWorkforcemanagementManagementunitWeekShifttrades';
 		}
 
 		return this.apiClient.callApi(
@@ -1738,11 +1738,11 @@ class WorkforceManagementApi {
 		
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null) {
-			throw 'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitWorkplan';
+			throw new Error('Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitWorkplan';
 		}
 		// verify the required parameter 'workPlanId' is set
 		if (workPlanId === undefined || workPlanId === null) {
-			throw 'Missing the required parameter "workPlanId" when calling getWorkforcemanagementManagementunitWorkplan';
+			throw new Error('Missing the required parameter "workPlanId" when calling getWorkforcemanagementManagementunitWorkplan';
 		}
 
 		return this.apiClient.callApi(
@@ -1768,11 +1768,11 @@ class WorkforceManagementApi {
 	getWorkforcemanagementManagementunitWorkplanrotation(managementUnitId, workPlanRotationId) { 
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null) {
-			throw 'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitWorkplanrotation';
+			throw new Error('Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitWorkplanrotation';
 		}
 		// verify the required parameter 'workPlanRotationId' is set
 		if (workPlanRotationId === undefined || workPlanRotationId === null) {
-			throw 'Missing the required parameter "workPlanRotationId" when calling getWorkforcemanagementManagementunitWorkplanrotation';
+			throw new Error('Missing the required parameter "workPlanRotationId" when calling getWorkforcemanagementManagementunitWorkplanrotation';
 		}
 
 		return this.apiClient.callApi(
@@ -1801,7 +1801,7 @@ class WorkforceManagementApi {
 		
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null) {
-			throw 'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitWorkplanrotations';
+			throw new Error('Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitWorkplanrotations';
 		}
 
 		return this.apiClient.callApi(
@@ -1830,7 +1830,7 @@ class WorkforceManagementApi {
 		
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null) {
-			throw 'Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitWorkplans';
+			throw new Error('Missing the required parameter "managementUnitId" when calling getWorkforcemanagementManagementunitWorkplans';
 		}
 
 		return this.apiClient.callApi(
@@ -1927,7 +1927,7 @@ class WorkforceManagementApi {
 	getWorkforcemanagementSchedulingjob(jobId) { 
 		// verify the required parameter 'jobId' is set
 		if (jobId === undefined || jobId === null) {
-			throw 'Missing the required parameter "jobId" when calling getWorkforcemanagementSchedulingjob';
+			throw new Error('Missing the required parameter "jobId" when calling getWorkforcemanagementSchedulingjob';
 		}
 
 		return this.apiClient.callApi(
@@ -1972,7 +1972,7 @@ class WorkforceManagementApi {
 	getWorkforcemanagementTimeoffrequest(timeOffRequestId) { 
 		// verify the required parameter 'timeOffRequestId' is set
 		if (timeOffRequestId === undefined || timeOffRequestId === null) {
-			throw 'Missing the required parameter "timeOffRequestId" when calling getWorkforcemanagementTimeoffrequest';
+			throw new Error('Missing the required parameter "timeOffRequestId" when calling getWorkforcemanagementTimeoffrequest';
 		}
 
 		return this.apiClient.callApi(
@@ -2025,7 +2025,7 @@ class WorkforceManagementApi {
 		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null) {
-			throw 'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunit';
+			throw new Error('Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunit';
 		}
 
 		return this.apiClient.callApi(
@@ -2055,11 +2055,11 @@ class WorkforceManagementApi {
 		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null) {
-			throw 'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitActivitycode';
+			throw new Error('Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitActivitycode';
 		}
 		// verify the required parameter 'activityCodeId' is set
 		if (activityCodeId === undefined || activityCodeId === null) {
-			throw 'Missing the required parameter "activityCodeId" when calling patchWorkforcemanagementBusinessunitActivitycode';
+			throw new Error('Missing the required parameter "activityCodeId" when calling patchWorkforcemanagementBusinessunitActivitycode';
 		}
 
 		return this.apiClient.callApi(
@@ -2089,11 +2089,11 @@ class WorkforceManagementApi {
 		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null) {
-			throw 'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitPlanninggroup';
+			throw new Error('Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitPlanninggroup';
 		}
 		// verify the required parameter 'planningGroupId' is set
 		if (planningGroupId === undefined || planningGroupId === null) {
-			throw 'Missing the required parameter "planningGroupId" when calling patchWorkforcemanagementBusinessunitPlanninggroup';
+			throw new Error('Missing the required parameter "planningGroupId" when calling patchWorkforcemanagementBusinessunitPlanninggroup';
 		}
 
 		return this.apiClient.callApi(
@@ -2123,11 +2123,11 @@ class WorkforceManagementApi {
 		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null) {
-			throw 'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitSchedulingRun';
+			throw new Error('Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitSchedulingRun';
 		}
 		// verify the required parameter 'runId' is set
 		if (runId === undefined || runId === null) {
-			throw 'Missing the required parameter "runId" when calling patchWorkforcemanagementBusinessunitSchedulingRun';
+			throw new Error('Missing the required parameter "runId" when calling patchWorkforcemanagementBusinessunitSchedulingRun';
 		}
 
 		return this.apiClient.callApi(
@@ -2157,11 +2157,11 @@ class WorkforceManagementApi {
 		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null) {
-			throw 'Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitServicegoaltemplate';
+			throw new Error('Missing the required parameter "businessUnitId" when calling patchWorkforcemanagementBusinessunitServicegoaltemplate';
 		}
 		// verify the required parameter 'serviceGoalTemplateId' is set
 		if (serviceGoalTemplateId === undefined || serviceGoalTemplateId === null) {
-			throw 'Missing the required parameter "serviceGoalTemplateId" when calling patchWorkforcemanagementBusinessunitServicegoaltemplate';
+			throw new Error('Missing the required parameter "serviceGoalTemplateId" when calling patchWorkforcemanagementBusinessunitServicegoaltemplate';
 		}
 
 		return this.apiClient.callApi(
@@ -2190,7 +2190,7 @@ class WorkforceManagementApi {
 		
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null) {
-			throw 'Missing the required parameter "managementUnitId" when calling patchWorkforcemanagementManagementunit';
+			throw new Error('Missing the required parameter "managementUnitId" when calling patchWorkforcemanagementManagementunit';
 		}
 
 		return this.apiClient.callApi(
@@ -2221,15 +2221,15 @@ class WorkforceManagementApi {
 		
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null) {
-			throw 'Missing the required parameter "managementUnitId" when calling patchWorkforcemanagementManagementunitUserTimeoffrequest';
+			throw new Error('Missing the required parameter "managementUnitId" when calling patchWorkforcemanagementManagementunitUserTimeoffrequest';
 		}
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling patchWorkforcemanagementManagementunitUserTimeoffrequest';
+			throw new Error('Missing the required parameter "userId" when calling patchWorkforcemanagementManagementunitUserTimeoffrequest';
 		}
 		// verify the required parameter 'timeOffRequestId' is set
 		if (timeOffRequestId === undefined || timeOffRequestId === null) {
-			throw 'Missing the required parameter "timeOffRequestId" when calling patchWorkforcemanagementManagementunitUserTimeoffrequest';
+			throw new Error('Missing the required parameter "timeOffRequestId" when calling patchWorkforcemanagementManagementunitUserTimeoffrequest';
 		}
 
 		return this.apiClient.callApi(
@@ -2257,19 +2257,19 @@ class WorkforceManagementApi {
 	patchWorkforcemanagementManagementunitWeekShifttrade(managementUnitId, weekDateId, body, tradeId) { 
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null) {
-			throw 'Missing the required parameter "managementUnitId" when calling patchWorkforcemanagementManagementunitWeekShifttrade';
+			throw new Error('Missing the required parameter "managementUnitId" when calling patchWorkforcemanagementManagementunitWeekShifttrade';
 		}
 		// verify the required parameter 'weekDateId' is set
 		if (weekDateId === undefined || weekDateId === null) {
-			throw 'Missing the required parameter "weekDateId" when calling patchWorkforcemanagementManagementunitWeekShifttrade';
+			throw new Error('Missing the required parameter "weekDateId" when calling patchWorkforcemanagementManagementunitWeekShifttrade';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchWorkforcemanagementManagementunitWeekShifttrade';
+			throw new Error('Missing the required parameter "body" when calling patchWorkforcemanagementManagementunitWeekShifttrade';
 		}
 		// verify the required parameter 'tradeId' is set
 		if (tradeId === undefined || tradeId === null) {
-			throw 'Missing the required parameter "tradeId" when calling patchWorkforcemanagementManagementunitWeekShifttrade';
+			throw new Error('Missing the required parameter "tradeId" when calling patchWorkforcemanagementManagementunitWeekShifttrade';
 		}
 
 		return this.apiClient.callApi(
@@ -2300,11 +2300,11 @@ class WorkforceManagementApi {
 		
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null) {
-			throw 'Missing the required parameter "managementUnitId" when calling patchWorkforcemanagementManagementunitWorkplan';
+			throw new Error('Missing the required parameter "managementUnitId" when calling patchWorkforcemanagementManagementunitWorkplan';
 		}
 		// verify the required parameter 'workPlanId' is set
 		if (workPlanId === undefined || workPlanId === null) {
-			throw 'Missing the required parameter "workPlanId" when calling patchWorkforcemanagementManagementunitWorkplan';
+			throw new Error('Missing the required parameter "workPlanId" when calling patchWorkforcemanagementManagementunitWorkplan';
 		}
 
 		return this.apiClient.callApi(
@@ -2334,11 +2334,11 @@ class WorkforceManagementApi {
 		
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null) {
-			throw 'Missing the required parameter "managementUnitId" when calling patchWorkforcemanagementManagementunitWorkplanrotation';
+			throw new Error('Missing the required parameter "managementUnitId" when calling patchWorkforcemanagementManagementunitWorkplanrotation';
 		}
 		// verify the required parameter 'workPlanRotationId' is set
 		if (workPlanRotationId === undefined || workPlanRotationId === null) {
-			throw 'Missing the required parameter "workPlanRotationId" when calling patchWorkforcemanagementManagementunitWorkplanrotation';
+			throw new Error('Missing the required parameter "workPlanRotationId" when calling patchWorkforcemanagementManagementunitWorkplanrotation';
 		}
 
 		return this.apiClient.callApi(
@@ -2367,7 +2367,7 @@ class WorkforceManagementApi {
 		
 		// verify the required parameter 'timeOffRequestId' is set
 		if (timeOffRequestId === undefined || timeOffRequestId === null) {
-			throw 'Missing the required parameter "timeOffRequestId" when calling patchWorkforcemanagementTimeoffrequest';
+			throw new Error('Missing the required parameter "timeOffRequestId" when calling patchWorkforcemanagementTimeoffrequest';
 		}
 
 		return this.apiClient.callApi(
@@ -2444,7 +2444,7 @@ class WorkforceManagementApi {
 		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null) {
-			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitActivitycodes';
+			throw new Error('Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitActivitycodes';
 		}
 
 		return this.apiClient.callApi(
@@ -2475,7 +2475,7 @@ class WorkforceManagementApi {
 		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null) {
-			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitAgentschedulesSearch';
+			throw new Error('Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitAgentschedulesSearch';
 		}
 
 		return this.apiClient.callApi(
@@ -2505,7 +2505,7 @@ class WorkforceManagementApi {
 		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null) {
-			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitIntraday';
+			throw new Error('Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitIntraday';
 		}
 
 		return this.apiClient.callApi(
@@ -2534,7 +2534,7 @@ class WorkforceManagementApi {
 		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null) {
-			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitPlanninggroups';
+			throw new Error('Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitPlanninggroups';
 		}
 
 		return this.apiClient.callApi(
@@ -2563,7 +2563,7 @@ class WorkforceManagementApi {
 		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null) {
-			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitServicegoaltemplates';
+			throw new Error('Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitServicegoaltemplates';
 		}
 
 		return this.apiClient.callApi(
@@ -2596,19 +2596,19 @@ class WorkforceManagementApi {
 		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null) {
-			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitWeekScheduleAgentschedulesQuery';
+			throw new Error('Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitWeekScheduleAgentschedulesQuery';
 		}
 		// verify the required parameter 'weekId' is set
 		if (weekId === undefined || weekId === null) {
-			throw 'Missing the required parameter "weekId" when calling postWorkforcemanagementBusinessunitWeekScheduleAgentschedulesQuery';
+			throw new Error('Missing the required parameter "weekId" when calling postWorkforcemanagementBusinessunitWeekScheduleAgentschedulesQuery';
 		}
 		// verify the required parameter 'scheduleId' is set
 		if (scheduleId === undefined || scheduleId === null) {
-			throw 'Missing the required parameter "scheduleId" when calling postWorkforcemanagementBusinessunitWeekScheduleAgentschedulesQuery';
+			throw new Error('Missing the required parameter "scheduleId" when calling postWorkforcemanagementBusinessunitWeekScheduleAgentschedulesQuery';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitWeekScheduleAgentschedulesQuery';
+			throw new Error('Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitWeekScheduleAgentschedulesQuery';
 		}
 
 		return this.apiClient.callApi(
@@ -2636,19 +2636,19 @@ class WorkforceManagementApi {
 	postWorkforcemanagementBusinessunitWeekScheduleCopy(businessUnitId, weekId, scheduleId, body) { 
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null) {
-			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitWeekScheduleCopy';
+			throw new Error('Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitWeekScheduleCopy';
 		}
 		// verify the required parameter 'weekId' is set
 		if (weekId === undefined || weekId === null) {
-			throw 'Missing the required parameter "weekId" when calling postWorkforcemanagementBusinessunitWeekScheduleCopy';
+			throw new Error('Missing the required parameter "weekId" when calling postWorkforcemanagementBusinessunitWeekScheduleCopy';
 		}
 		// verify the required parameter 'scheduleId' is set
 		if (scheduleId === undefined || scheduleId === null) {
-			throw 'Missing the required parameter "scheduleId" when calling postWorkforcemanagementBusinessunitWeekScheduleCopy';
+			throw new Error('Missing the required parameter "scheduleId" when calling postWorkforcemanagementBusinessunitWeekScheduleCopy';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitWeekScheduleCopy';
+			throw new Error('Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitWeekScheduleCopy';
 		}
 
 		return this.apiClient.callApi(
@@ -2676,19 +2676,19 @@ class WorkforceManagementApi {
 	postWorkforcemanagementBusinessunitWeekScheduleReschedule(businessUnitId, weekId, scheduleId, body) { 
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null) {
-			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitWeekScheduleReschedule';
+			throw new Error('Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitWeekScheduleReschedule';
 		}
 		// verify the required parameter 'weekId' is set
 		if (weekId === undefined || weekId === null) {
-			throw 'Missing the required parameter "weekId" when calling postWorkforcemanagementBusinessunitWeekScheduleReschedule';
+			throw new Error('Missing the required parameter "weekId" when calling postWorkforcemanagementBusinessunitWeekScheduleReschedule';
 		}
 		// verify the required parameter 'scheduleId' is set
 		if (scheduleId === undefined || scheduleId === null) {
-			throw 'Missing the required parameter "scheduleId" when calling postWorkforcemanagementBusinessunitWeekScheduleReschedule';
+			throw new Error('Missing the required parameter "scheduleId" when calling postWorkforcemanagementBusinessunitWeekScheduleReschedule';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitWeekScheduleReschedule';
+			throw new Error('Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitWeekScheduleReschedule';
 		}
 
 		return this.apiClient.callApi(
@@ -2715,15 +2715,15 @@ class WorkforceManagementApi {
 	postWorkforcemanagementBusinessunitWeekSchedules(businessUnitId, weekId, body) { 
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null) {
-			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitWeekSchedules';
+			throw new Error('Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitWeekSchedules';
 		}
 		// verify the required parameter 'weekId' is set
 		if (weekId === undefined || weekId === null) {
-			throw 'Missing the required parameter "weekId" when calling postWorkforcemanagementBusinessunitWeekSchedules';
+			throw new Error('Missing the required parameter "weekId" when calling postWorkforcemanagementBusinessunitWeekSchedules';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitWeekSchedules';
+			throw new Error('Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitWeekSchedules';
 		}
 
 		return this.apiClient.callApi(
@@ -2750,15 +2750,15 @@ class WorkforceManagementApi {
 	postWorkforcemanagementBusinessunitWeekSchedulesGenerate(businessUnitId, weekId, body) { 
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null) {
-			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitWeekSchedulesGenerate';
+			throw new Error('Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitWeekSchedulesGenerate';
 		}
 		// verify the required parameter 'weekId' is set
 		if (weekId === undefined || weekId === null) {
-			throw 'Missing the required parameter "weekId" when calling postWorkforcemanagementBusinessunitWeekSchedulesGenerate';
+			throw new Error('Missing the required parameter "weekId" when calling postWorkforcemanagementBusinessunitWeekSchedulesGenerate';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitWeekSchedulesGenerate';
+			throw new Error('Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitWeekSchedulesGenerate';
 		}
 
 		return this.apiClient.callApi(
@@ -2790,19 +2790,19 @@ class WorkforceManagementApi {
 		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null) {
-			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitWeekShorttermforecastCopy';
+			throw new Error('Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitWeekShorttermforecastCopy';
 		}
 		// verify the required parameter 'weekDateId' is set
 		if (weekDateId === undefined || weekDateId === null) {
-			throw 'Missing the required parameter "weekDateId" when calling postWorkforcemanagementBusinessunitWeekShorttermforecastCopy';
+			throw new Error('Missing the required parameter "weekDateId" when calling postWorkforcemanagementBusinessunitWeekShorttermforecastCopy';
 		}
 		// verify the required parameter 'forecastId' is set
 		if (forecastId === undefined || forecastId === null) {
-			throw 'Missing the required parameter "forecastId" when calling postWorkforcemanagementBusinessunitWeekShorttermforecastCopy';
+			throw new Error('Missing the required parameter "forecastId" when calling postWorkforcemanagementBusinessunitWeekShorttermforecastCopy';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitWeekShorttermforecastCopy';
+			throw new Error('Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitWeekShorttermforecastCopy';
 		}
 
 		return this.apiClient.callApi(
@@ -2833,15 +2833,15 @@ class WorkforceManagementApi {
 		
 		// verify the required parameter 'businessUnitId' is set
 		if (businessUnitId === undefined || businessUnitId === null) {
-			throw 'Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitWeekShorttermforecastsGenerate';
+			throw new Error('Missing the required parameter "businessUnitId" when calling postWorkforcemanagementBusinessunitWeekShorttermforecastsGenerate';
 		}
 		// verify the required parameter 'weekDateId' is set
 		if (weekDateId === undefined || weekDateId === null) {
-			throw 'Missing the required parameter "weekDateId" when calling postWorkforcemanagementBusinessunitWeekShorttermforecastsGenerate';
+			throw new Error('Missing the required parameter "weekDateId" when calling postWorkforcemanagementBusinessunitWeekShorttermforecastsGenerate';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitWeekShorttermforecastsGenerate';
+			throw new Error('Missing the required parameter "body" when calling postWorkforcemanagementBusinessunitWeekShorttermforecastsGenerate';
 		}
 
 		return this.apiClient.callApi(
@@ -2964,7 +2964,7 @@ class WorkforceManagementApi {
 		
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null) {
-			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitAgentschedulesSearch';
+			throw new Error('Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitAgentschedulesSearch';
 		}
 
 		return this.apiClient.callApi(
@@ -2993,7 +2993,7 @@ class WorkforceManagementApi {
 		
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null) {
-			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitHistoricaladherencequery';
+			throw new Error('Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitHistoricaladherencequery';
 		}
 
 		return this.apiClient.callApi(
@@ -3022,7 +3022,7 @@ class WorkforceManagementApi {
 		
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null) {
-			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitMove';
+			throw new Error('Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitMove';
 		}
 
 		return this.apiClient.callApi(
@@ -3051,7 +3051,7 @@ class WorkforceManagementApi {
 		
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null) {
-			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitSchedulesSearch';
+			throw new Error('Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitSchedulesSearch';
 		}
 
 		return this.apiClient.callApi(
@@ -3080,7 +3080,7 @@ class WorkforceManagementApi {
 		
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null) {
-			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitTimeoffrequests';
+			throw new Error('Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitTimeoffrequests';
 		}
 
 		return this.apiClient.callApi(
@@ -3109,7 +3109,7 @@ class WorkforceManagementApi {
 		
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null) {
-			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitTimeoffrequestsQuery';
+			throw new Error('Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitTimeoffrequestsQuery';
 		}
 
 		return this.apiClient.callApi(
@@ -3137,19 +3137,19 @@ class WorkforceManagementApi {
 	postWorkforcemanagementManagementunitWeekShifttradeMatch(managementUnitId, weekDateId, body, tradeId) { 
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null) {
-			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitWeekShifttradeMatch';
+			throw new Error('Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitWeekShifttradeMatch';
 		}
 		// verify the required parameter 'weekDateId' is set
 		if (weekDateId === undefined || weekDateId === null) {
-			throw 'Missing the required parameter "weekDateId" when calling postWorkforcemanagementManagementunitWeekShifttradeMatch';
+			throw new Error('Missing the required parameter "weekDateId" when calling postWorkforcemanagementManagementunitWeekShifttradeMatch';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postWorkforcemanagementManagementunitWeekShifttradeMatch';
+			throw new Error('Missing the required parameter "body" when calling postWorkforcemanagementManagementunitWeekShifttradeMatch';
 		}
 		// verify the required parameter 'tradeId' is set
 		if (tradeId === undefined || tradeId === null) {
-			throw 'Missing the required parameter "tradeId" when calling postWorkforcemanagementManagementunitWeekShifttradeMatch';
+			throw new Error('Missing the required parameter "tradeId" when calling postWorkforcemanagementManagementunitWeekShifttradeMatch';
 		}
 
 		return this.apiClient.callApi(
@@ -3176,15 +3176,15 @@ class WorkforceManagementApi {
 	postWorkforcemanagementManagementunitWeekShifttrades(managementUnitId, weekDateId, body) { 
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null) {
-			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitWeekShifttrades';
+			throw new Error('Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitWeekShifttrades';
 		}
 		// verify the required parameter 'weekDateId' is set
 		if (weekDateId === undefined || weekDateId === null) {
-			throw 'Missing the required parameter "weekDateId" when calling postWorkforcemanagementManagementunitWeekShifttrades';
+			throw new Error('Missing the required parameter "weekDateId" when calling postWorkforcemanagementManagementunitWeekShifttrades';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postWorkforcemanagementManagementunitWeekShifttrades';
+			throw new Error('Missing the required parameter "body" when calling postWorkforcemanagementManagementunitWeekShifttrades';
 		}
 
 		return this.apiClient.callApi(
@@ -3211,15 +3211,15 @@ class WorkforceManagementApi {
 	postWorkforcemanagementManagementunitWeekShifttradesSearch(managementUnitId, weekDateId, body) { 
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null) {
-			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitWeekShifttradesSearch';
+			throw new Error('Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitWeekShifttradesSearch';
 		}
 		// verify the required parameter 'weekDateId' is set
 		if (weekDateId === undefined || weekDateId === null) {
-			throw 'Missing the required parameter "weekDateId" when calling postWorkforcemanagementManagementunitWeekShifttradesSearch';
+			throw new Error('Missing the required parameter "weekDateId" when calling postWorkforcemanagementManagementunitWeekShifttradesSearch';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postWorkforcemanagementManagementunitWeekShifttradesSearch';
+			throw new Error('Missing the required parameter "body" when calling postWorkforcemanagementManagementunitWeekShifttradesSearch';
 		}
 
 		return this.apiClient.callApi(
@@ -3250,15 +3250,15 @@ class WorkforceManagementApi {
 		
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null) {
-			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitWeekShifttradesStateBulk';
+			throw new Error('Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitWeekShifttradesStateBulk';
 		}
 		// verify the required parameter 'weekDateId' is set
 		if (weekDateId === undefined || weekDateId === null) {
-			throw 'Missing the required parameter "weekDateId" when calling postWorkforcemanagementManagementunitWeekShifttradesStateBulk';
+			throw new Error('Missing the required parameter "weekDateId" when calling postWorkforcemanagementManagementunitWeekShifttradesStateBulk';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postWorkforcemanagementManagementunitWeekShifttradesStateBulk';
+			throw new Error('Missing the required parameter "body" when calling postWorkforcemanagementManagementunitWeekShifttradesStateBulk';
 		}
 
 		return this.apiClient.callApi(
@@ -3288,11 +3288,11 @@ class WorkforceManagementApi {
 		
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null) {
-			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitWorkplanCopy';
+			throw new Error('Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitWorkplanCopy';
 		}
 		// verify the required parameter 'workPlanId' is set
 		if (workPlanId === undefined || workPlanId === null) {
-			throw 'Missing the required parameter "workPlanId" when calling postWorkforcemanagementManagementunitWorkplanCopy';
+			throw new Error('Missing the required parameter "workPlanId" when calling postWorkforcemanagementManagementunitWorkplanCopy';
 		}
 
 		return this.apiClient.callApi(
@@ -3323,11 +3323,11 @@ class WorkforceManagementApi {
 		
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null) {
-			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitWorkplanValidate';
+			throw new Error('Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitWorkplanValidate';
 		}
 		// verify the required parameter 'workPlanId' is set
 		if (workPlanId === undefined || workPlanId === null) {
-			throw 'Missing the required parameter "workPlanId" when calling postWorkforcemanagementManagementunitWorkplanValidate';
+			throw new Error('Missing the required parameter "workPlanId" when calling postWorkforcemanagementManagementunitWorkplanValidate';
 		}
 
 		return this.apiClient.callApi(
@@ -3357,11 +3357,11 @@ class WorkforceManagementApi {
 		
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null) {
-			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitWorkplanrotationCopy';
+			throw new Error('Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitWorkplanrotationCopy';
 		}
 		// verify the required parameter 'workPlanRotationId' is set
 		if (workPlanRotationId === undefined || workPlanRotationId === null) {
-			throw 'Missing the required parameter "workPlanRotationId" when calling postWorkforcemanagementManagementunitWorkplanrotationCopy';
+			throw new Error('Missing the required parameter "workPlanRotationId" when calling postWorkforcemanagementManagementunitWorkplanrotationCopy';
 		}
 
 		return this.apiClient.callApi(
@@ -3390,7 +3390,7 @@ class WorkforceManagementApi {
 		
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null) {
-			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitWorkplanrotations';
+			throw new Error('Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitWorkplanrotations';
 		}
 
 		return this.apiClient.callApi(
@@ -3420,7 +3420,7 @@ class WorkforceManagementApi {
 		
 		// verify the required parameter 'managementUnitId' is set
 		if (managementUnitId === undefined || managementUnitId === null) {
-			throw 'Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitWorkplans';
+			throw new Error('Missing the required parameter "managementUnitId" when calling postWorkforcemanagementManagementunitWorkplans';
 		}
 
 		return this.apiClient.callApi(

@@ -68,7 +68,7 @@ class AuditApi {
 	getAuditsQueryTransactionId(transactionId) { 
 		// verify the required parameter 'transactionId' is set
 		if (transactionId === undefined || transactionId === null) {
-			throw 'Missing the required parameter "transactionId" when calling getAuditsQueryTransactionId';
+			throw new Error('Missing the required parameter "transactionId" when calling getAuditsQueryTransactionId');
 		}
 
 		return this.apiClient.callApi(
@@ -99,7 +99,7 @@ class AuditApi {
 		
 		// verify the required parameter 'transactionId' is set
 		if (transactionId === undefined || transactionId === null) {
-			throw 'Missing the required parameter "transactionId" when calling getAuditsQueryTransactionIdResults';
+			throw new Error('Missing the required parameter "transactionId" when calling getAuditsQueryTransactionIdResults');
 		}
 
 		return this.apiClient.callApi(
@@ -124,7 +124,7 @@ class AuditApi {
 	postAuditsQuery(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postAuditsQuery';
+			throw new Error('Missing the required parameter "body" when calling postAuditsQuery');
 		}
 
 		return this.apiClient.callApi(
@@ -153,7 +153,7 @@ class AuditApi {
 		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postAuditsQueryRealtime';
+			throw new Error('Missing the required parameter "body" when calling postAuditsQueryRealtime');
 		}
 
 		return this.apiClient.callApi(

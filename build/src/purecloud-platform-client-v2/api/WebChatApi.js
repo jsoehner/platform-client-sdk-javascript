@@ -28,7 +28,7 @@ class WebChatApi {
 	deleteWebchatDeployment(deploymentId) { 
 		// verify the required parameter 'deploymentId' is set
 		if (deploymentId === undefined || deploymentId === null) {
-			throw 'Missing the required parameter "deploymentId" when calling deleteWebchatDeployment';
+			throw new Error('Missing the required parameter "deploymentId" when calling deleteWebchatDeployment';
 		}
 
 		return this.apiClient.callApi(
@@ -54,11 +54,11 @@ class WebChatApi {
 	deleteWebchatGuestConversationMember(conversationId, memberId) { 
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling deleteWebchatGuestConversationMember';
+			throw new Error('Missing the required parameter "conversationId" when calling deleteWebchatGuestConversationMember';
 		}
 		// verify the required parameter 'memberId' is set
 		if (memberId === undefined || memberId === null) {
-			throw 'Missing the required parameter "memberId" when calling deleteWebchatGuestConversationMember';
+			throw new Error('Missing the required parameter "memberId" when calling deleteWebchatGuestConversationMember';
 		}
 
 		return this.apiClient.callApi(
@@ -103,7 +103,7 @@ class WebChatApi {
 	getWebchatDeployment(deploymentId) { 
 		// verify the required parameter 'deploymentId' is set
 		if (deploymentId === undefined || deploymentId === null) {
-			throw 'Missing the required parameter "deploymentId" when calling getWebchatDeployment';
+			throw new Error('Missing the required parameter "deploymentId" when calling getWebchatDeployment';
 		}
 
 		return this.apiClient.callApi(
@@ -149,11 +149,11 @@ class WebChatApi {
 	getWebchatGuestConversationMediarequest(conversationId, mediaRequestId) { 
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling getWebchatGuestConversationMediarequest';
+			throw new Error('Missing the required parameter "conversationId" when calling getWebchatGuestConversationMediarequest';
 		}
 		// verify the required parameter 'mediaRequestId' is set
 		if (mediaRequestId === undefined || mediaRequestId === null) {
-			throw 'Missing the required parameter "mediaRequestId" when calling getWebchatGuestConversationMediarequest';
+			throw new Error('Missing the required parameter "mediaRequestId" when calling getWebchatGuestConversationMediarequest';
 		}
 
 		return this.apiClient.callApi(
@@ -178,7 +178,7 @@ class WebChatApi {
 	getWebchatGuestConversationMediarequests(conversationId) { 
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling getWebchatGuestConversationMediarequests';
+			throw new Error('Missing the required parameter "conversationId" when calling getWebchatGuestConversationMediarequests';
 		}
 
 		return this.apiClient.callApi(
@@ -204,11 +204,11 @@ class WebChatApi {
 	getWebchatGuestConversationMember(conversationId, memberId) { 
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling getWebchatGuestConversationMember';
+			throw new Error('Missing the required parameter "conversationId" when calling getWebchatGuestConversationMember';
 		}
 		// verify the required parameter 'memberId' is set
 		if (memberId === undefined || memberId === null) {
-			throw 'Missing the required parameter "memberId" when calling getWebchatGuestConversationMember';
+			throw new Error('Missing the required parameter "memberId" when calling getWebchatGuestConversationMember';
 		}
 
 		return this.apiClient.callApi(
@@ -239,7 +239,7 @@ class WebChatApi {
 		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling getWebchatGuestConversationMembers';
+			throw new Error('Missing the required parameter "conversationId" when calling getWebchatGuestConversationMembers';
 		}
 
 		return this.apiClient.callApi(
@@ -265,11 +265,11 @@ class WebChatApi {
 	getWebchatGuestConversationMessage(conversationId, messageId) { 
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling getWebchatGuestConversationMessage';
+			throw new Error('Missing the required parameter "conversationId" when calling getWebchatGuestConversationMessage';
 		}
 		// verify the required parameter 'messageId' is set
 		if (messageId === undefined || messageId === null) {
-			throw 'Missing the required parameter "messageId" when calling getWebchatGuestConversationMessage';
+			throw new Error('Missing the required parameter "messageId" when calling getWebchatGuestConversationMessage';
 		}
 
 		return this.apiClient.callApi(
@@ -301,7 +301,7 @@ class WebChatApi {
 		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling getWebchatGuestConversationMessages';
+			throw new Error('Missing the required parameter "conversationId" when calling getWebchatGuestConversationMessages';
 		}
 
 		return this.apiClient.callApi(
@@ -348,15 +348,15 @@ class WebChatApi {
 	patchWebchatGuestConversationMediarequest(conversationId, mediaRequestId, body) { 
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling patchWebchatGuestConversationMediarequest';
+			throw new Error('Missing the required parameter "conversationId" when calling patchWebchatGuestConversationMediarequest';
 		}
 		// verify the required parameter 'mediaRequestId' is set
 		if (mediaRequestId === undefined || mediaRequestId === null) {
-			throw 'Missing the required parameter "mediaRequestId" when calling patchWebchatGuestConversationMediarequest';
+			throw new Error('Missing the required parameter "mediaRequestId" when calling patchWebchatGuestConversationMediarequest';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchWebchatGuestConversationMediarequest';
+			throw new Error('Missing the required parameter "body" when calling patchWebchatGuestConversationMediarequest';
 		}
 
 		return this.apiClient.callApi(
@@ -381,7 +381,7 @@ class WebChatApi {
 	postWebchatDeployments(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postWebchatDeployments';
+			throw new Error('Missing the required parameter "body" when calling postWebchatDeployments';
 		}
 
 		return this.apiClient.callApi(
@@ -408,15 +408,15 @@ class WebChatApi {
 	postWebchatGuestConversationMemberMessages(conversationId, memberId, body) { 
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling postWebchatGuestConversationMemberMessages';
+			throw new Error('Missing the required parameter "conversationId" when calling postWebchatGuestConversationMemberMessages';
 		}
 		// verify the required parameter 'memberId' is set
 		if (memberId === undefined || memberId === null) {
-			throw 'Missing the required parameter "memberId" when calling postWebchatGuestConversationMemberMessages';
+			throw new Error('Missing the required parameter "memberId" when calling postWebchatGuestConversationMemberMessages';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postWebchatGuestConversationMemberMessages';
+			throw new Error('Missing the required parameter "body" when calling postWebchatGuestConversationMemberMessages';
 		}
 
 		return this.apiClient.callApi(
@@ -442,11 +442,11 @@ class WebChatApi {
 	postWebchatGuestConversationMemberTyping(conversationId, memberId) { 
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling postWebchatGuestConversationMemberTyping';
+			throw new Error('Missing the required parameter "conversationId" when calling postWebchatGuestConversationMemberTyping';
 		}
 		// verify the required parameter 'memberId' is set
 		if (memberId === undefined || memberId === null) {
-			throw 'Missing the required parameter "memberId" when calling postWebchatGuestConversationMemberTyping';
+			throw new Error('Missing the required parameter "memberId" when calling postWebchatGuestConversationMemberTyping';
 		}
 
 		return this.apiClient.callApi(
@@ -471,7 +471,7 @@ class WebChatApi {
 	postWebchatGuestConversations(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postWebchatGuestConversations';
+			throw new Error('Missing the required parameter "body" when calling postWebchatGuestConversations';
 		}
 
 		return this.apiClient.callApi(
@@ -497,11 +497,11 @@ class WebChatApi {
 	putWebchatDeployment(deploymentId, body) { 
 		// verify the required parameter 'deploymentId' is set
 		if (deploymentId === undefined || deploymentId === null) {
-			throw 'Missing the required parameter "deploymentId" when calling putWebchatDeployment';
+			throw new Error('Missing the required parameter "deploymentId" when calling putWebchatDeployment';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putWebchatDeployment';
+			throw new Error('Missing the required parameter "body" when calling putWebchatDeployment';
 		}
 
 		return this.apiClient.callApi(
@@ -526,7 +526,7 @@ class WebChatApi {
 	putWebchatSettings(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putWebchatSettings';
+			throw new Error('Missing the required parameter "body" when calling putWebchatSettings';
 		}
 
 		return this.apiClient.callApi(

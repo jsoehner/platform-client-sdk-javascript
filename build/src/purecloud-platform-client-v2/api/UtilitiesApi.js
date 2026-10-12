@@ -93,7 +93,7 @@ class UtilitiesApi {
 	postCertificateDetails(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postCertificateDetails';
+			throw new Error('Missing the required parameter "body" when calling postCertificateDetails';
 		}
 
 		return this.apiClient.callApi(

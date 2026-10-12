@@ -28,7 +28,7 @@ class ExternalContactsApi {
 	deleteExternalcontactsContact(contactId) { 
 		// verify the required parameter 'contactId' is set
 		if (contactId === undefined || contactId === null) {
-			throw 'Missing the required parameter "contactId" when calling deleteExternalcontactsContact';
+			throw new Error('Missing the required parameter "contactId" when calling deleteExternalcontactsContact';
 		}
 
 		return this.apiClient.callApi(
@@ -54,11 +54,11 @@ class ExternalContactsApi {
 	deleteExternalcontactsContactNote(contactId, noteId) { 
 		// verify the required parameter 'contactId' is set
 		if (contactId === undefined || contactId === null) {
-			throw 'Missing the required parameter "contactId" when calling deleteExternalcontactsContactNote';
+			throw new Error('Missing the required parameter "contactId" when calling deleteExternalcontactsContactNote';
 		}
 		// verify the required parameter 'noteId' is set
 		if (noteId === undefined || noteId === null) {
-			throw 'Missing the required parameter "noteId" when calling deleteExternalcontactsContactNote';
+			throw new Error('Missing the required parameter "noteId" when calling deleteExternalcontactsContactNote';
 		}
 
 		return this.apiClient.callApi(
@@ -83,7 +83,7 @@ class ExternalContactsApi {
 	deleteExternalcontactsContactsSchema(schemaId) { 
 		// verify the required parameter 'schemaId' is set
 		if (schemaId === undefined || schemaId === null) {
-			throw 'Missing the required parameter "schemaId" when calling deleteExternalcontactsContactsSchema';
+			throw new Error('Missing the required parameter "schemaId" when calling deleteExternalcontactsContactsSchema';
 		}
 
 		return this.apiClient.callApi(
@@ -108,7 +108,7 @@ class ExternalContactsApi {
 	deleteExternalcontactsOrganization(externalOrganizationId) { 
 		// verify the required parameter 'externalOrganizationId' is set
 		if (externalOrganizationId === undefined || externalOrganizationId === null) {
-			throw 'Missing the required parameter "externalOrganizationId" when calling deleteExternalcontactsOrganization';
+			throw new Error('Missing the required parameter "externalOrganizationId" when calling deleteExternalcontactsOrganization';
 		}
 
 		return this.apiClient.callApi(
@@ -134,11 +134,11 @@ class ExternalContactsApi {
 	deleteExternalcontactsOrganizationNote(externalOrganizationId, noteId) { 
 		// verify the required parameter 'externalOrganizationId' is set
 		if (externalOrganizationId === undefined || externalOrganizationId === null) {
-			throw 'Missing the required parameter "externalOrganizationId" when calling deleteExternalcontactsOrganizationNote';
+			throw new Error('Missing the required parameter "externalOrganizationId" when calling deleteExternalcontactsOrganizationNote';
 		}
 		// verify the required parameter 'noteId' is set
 		if (noteId === undefined || noteId === null) {
-			throw 'Missing the required parameter "noteId" when calling deleteExternalcontactsOrganizationNote';
+			throw new Error('Missing the required parameter "noteId" when calling deleteExternalcontactsOrganizationNote';
 		}
 
 		return this.apiClient.callApi(
@@ -163,7 +163,7 @@ class ExternalContactsApi {
 	deleteExternalcontactsOrganizationTrustor(externalOrganizationId) { 
 		// verify the required parameter 'externalOrganizationId' is set
 		if (externalOrganizationId === undefined || externalOrganizationId === null) {
-			throw 'Missing the required parameter "externalOrganizationId" when calling deleteExternalcontactsOrganizationTrustor';
+			throw new Error('Missing the required parameter "externalOrganizationId" when calling deleteExternalcontactsOrganizationTrustor';
 		}
 
 		return this.apiClient.callApi(
@@ -188,7 +188,7 @@ class ExternalContactsApi {
 	deleteExternalcontactsRelationship(relationshipId) { 
 		// verify the required parameter 'relationshipId' is set
 		if (relationshipId === undefined || relationshipId === null) {
-			throw 'Missing the required parameter "relationshipId" when calling deleteExternalcontactsRelationship';
+			throw new Error('Missing the required parameter "relationshipId" when calling deleteExternalcontactsRelationship';
 		}
 
 		return this.apiClient.callApi(
@@ -217,7 +217,7 @@ class ExternalContactsApi {
 		
 		// verify the required parameter 'contactId' is set
 		if (contactId === undefined || contactId === null) {
-			throw 'Missing the required parameter "contactId" when calling getExternalcontactsContact';
+			throw new Error('Missing the required parameter "contactId" when calling getExternalcontactsContact';
 		}
 
 		return this.apiClient.callApi(
@@ -247,11 +247,11 @@ class ExternalContactsApi {
 		
 		// verify the required parameter 'contactId' is set
 		if (contactId === undefined || contactId === null) {
-			throw 'Missing the required parameter "contactId" when calling getExternalcontactsContactNote';
+			throw new Error('Missing the required parameter "contactId" when calling getExternalcontactsContactNote';
 		}
 		// verify the required parameter 'noteId' is set
 		if (noteId === undefined || noteId === null) {
-			throw 'Missing the required parameter "noteId" when calling getExternalcontactsContactNote';
+			throw new Error('Missing the required parameter "noteId" when calling getExternalcontactsContactNote';
 		}
 
 		return this.apiClient.callApi(
@@ -283,7 +283,7 @@ class ExternalContactsApi {
 		
 		// verify the required parameter 'contactId' is set
 		if (contactId === undefined || contactId === null) {
-			throw 'Missing the required parameter "contactId" when calling getExternalcontactsContactNotes';
+			throw new Error('Missing the required parameter "contactId" when calling getExternalcontactsContactNotes';
 		}
 
 		return this.apiClient.callApi(
@@ -336,7 +336,7 @@ class ExternalContactsApi {
 	getExternalcontactsContactsSchema(schemaId) { 
 		// verify the required parameter 'schemaId' is set
 		if (schemaId === undefined || schemaId === null) {
-			throw 'Missing the required parameter "schemaId" when calling getExternalcontactsContactsSchema';
+			throw new Error('Missing the required parameter "schemaId" when calling getExternalcontactsContactsSchema';
 		}
 
 		return this.apiClient.callApi(
@@ -362,11 +362,11 @@ class ExternalContactsApi {
 	getExternalcontactsContactsSchemaVersion(schemaId, versionId) { 
 		// verify the required parameter 'schemaId' is set
 		if (schemaId === undefined || schemaId === null) {
-			throw 'Missing the required parameter "schemaId" when calling getExternalcontactsContactsSchemaVersion';
+			throw new Error('Missing the required parameter "schemaId" when calling getExternalcontactsContactsSchemaVersion';
 		}
 		// verify the required parameter 'versionId' is set
 		if (versionId === undefined || versionId === null) {
-			throw 'Missing the required parameter "versionId" when calling getExternalcontactsContactsSchemaVersion';
+			throw new Error('Missing the required parameter "versionId" when calling getExternalcontactsContactsSchemaVersion';
 		}
 
 		return this.apiClient.callApi(
@@ -391,7 +391,7 @@ class ExternalContactsApi {
 	getExternalcontactsContactsSchemaVersions(schemaId) { 
 		// verify the required parameter 'schemaId' is set
 		if (schemaId === undefined || schemaId === null) {
-			throw 'Missing the required parameter "schemaId" when calling getExternalcontactsContactsSchemaVersions';
+			throw new Error('Missing the required parameter "schemaId" when calling getExternalcontactsContactsSchemaVersions';
 		}
 
 		return this.apiClient.callApi(
@@ -441,7 +441,7 @@ class ExternalContactsApi {
 		
 		// verify the required parameter 'externalOrganizationId' is set
 		if (externalOrganizationId === undefined || externalOrganizationId === null) {
-			throw 'Missing the required parameter "externalOrganizationId" when calling getExternalcontactsOrganization';
+			throw new Error('Missing the required parameter "externalOrganizationId" when calling getExternalcontactsOrganization';
 		}
 
 		return this.apiClient.callApi(
@@ -474,7 +474,7 @@ class ExternalContactsApi {
 		
 		// verify the required parameter 'externalOrganizationId' is set
 		if (externalOrganizationId === undefined || externalOrganizationId === null) {
-			throw 'Missing the required parameter "externalOrganizationId" when calling getExternalcontactsOrganizationContacts';
+			throw new Error('Missing the required parameter "externalOrganizationId" when calling getExternalcontactsOrganizationContacts';
 		}
 
 		return this.apiClient.callApi(
@@ -504,11 +504,11 @@ class ExternalContactsApi {
 		
 		// verify the required parameter 'externalOrganizationId' is set
 		if (externalOrganizationId === undefined || externalOrganizationId === null) {
-			throw 'Missing the required parameter "externalOrganizationId" when calling getExternalcontactsOrganizationNote';
+			throw new Error('Missing the required parameter "externalOrganizationId" when calling getExternalcontactsOrganizationNote';
 		}
 		// verify the required parameter 'noteId' is set
 		if (noteId === undefined || noteId === null) {
-			throw 'Missing the required parameter "noteId" when calling getExternalcontactsOrganizationNote';
+			throw new Error('Missing the required parameter "noteId" when calling getExternalcontactsOrganizationNote';
 		}
 
 		return this.apiClient.callApi(
@@ -540,7 +540,7 @@ class ExternalContactsApi {
 		
 		// verify the required parameter 'externalOrganizationId' is set
 		if (externalOrganizationId === undefined || externalOrganizationId === null) {
-			throw 'Missing the required parameter "externalOrganizationId" when calling getExternalcontactsOrganizationNotes';
+			throw new Error('Missing the required parameter "externalOrganizationId" when calling getExternalcontactsOrganizationNotes';
 		}
 
 		return this.apiClient.callApi(
@@ -572,7 +572,7 @@ class ExternalContactsApi {
 		
 		// verify the required parameter 'externalOrganizationId' is set
 		if (externalOrganizationId === undefined || externalOrganizationId === null) {
-			throw 'Missing the required parameter "externalOrganizationId" when calling getExternalcontactsOrganizationRelationships';
+			throw new Error('Missing the required parameter "externalOrganizationId" when calling getExternalcontactsOrganizationRelationships';
 		}
 
 		return this.apiClient.callApi(
@@ -627,7 +627,7 @@ class ExternalContactsApi {
 	getExternalcontactsOrganizationsSchema(schemaId) { 
 		// verify the required parameter 'schemaId' is set
 		if (schemaId === undefined || schemaId === null) {
-			throw 'Missing the required parameter "schemaId" when calling getExternalcontactsOrganizationsSchema';
+			throw new Error('Missing the required parameter "schemaId" when calling getExternalcontactsOrganizationsSchema';
 		}
 
 		return this.apiClient.callApi(
@@ -653,11 +653,11 @@ class ExternalContactsApi {
 	getExternalcontactsOrganizationsSchemaVersion(schemaId, versionId) { 
 		// verify the required parameter 'schemaId' is set
 		if (schemaId === undefined || schemaId === null) {
-			throw 'Missing the required parameter "schemaId" when calling getExternalcontactsOrganizationsSchemaVersion';
+			throw new Error('Missing the required parameter "schemaId" when calling getExternalcontactsOrganizationsSchemaVersion';
 		}
 		// verify the required parameter 'versionId' is set
 		if (versionId === undefined || versionId === null) {
-			throw 'Missing the required parameter "versionId" when calling getExternalcontactsOrganizationsSchemaVersion';
+			throw new Error('Missing the required parameter "versionId" when calling getExternalcontactsOrganizationsSchemaVersion';
 		}
 
 		return this.apiClient.callApi(
@@ -682,7 +682,7 @@ class ExternalContactsApi {
 	getExternalcontactsOrganizationsSchemaVersions(schemaId) { 
 		// verify the required parameter 'schemaId' is set
 		if (schemaId === undefined || schemaId === null) {
-			throw 'Missing the required parameter "schemaId" when calling getExternalcontactsOrganizationsSchemaVersions';
+			throw new Error('Missing the required parameter "schemaId" when calling getExternalcontactsOrganizationsSchemaVersions';
 		}
 
 		return this.apiClient.callApi(
@@ -731,7 +731,7 @@ class ExternalContactsApi {
 		
 		// verify the required parameter 'relationshipId' is set
 		if (relationshipId === undefined || relationshipId === null) {
-			throw 'Missing the required parameter "relationshipId" when calling getExternalcontactsRelationship';
+			throw new Error('Missing the required parameter "relationshipId" when calling getExternalcontactsRelationship';
 		}
 
 		return this.apiClient.callApi(
@@ -760,7 +760,7 @@ class ExternalContactsApi {
 		
 		// verify the required parameter 'lookupVal' is set
 		if (lookupVal === undefined || lookupVal === null) {
-			throw 'Missing the required parameter "lookupVal" when calling getExternalcontactsReversewhitepageslookup';
+			throw new Error('Missing the required parameter "lookupVal" when calling getExternalcontactsReversewhitepageslookup';
 		}
 
 		return this.apiClient.callApi(
@@ -885,7 +885,7 @@ class ExternalContactsApi {
 	postExternalcontactsBulkContacts(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postExternalcontactsBulkContacts';
+			throw new Error('Missing the required parameter "body" when calling postExternalcontactsBulkContacts';
 		}
 
 		return this.apiClient.callApi(
@@ -910,7 +910,7 @@ class ExternalContactsApi {
 	postExternalcontactsBulkContactsAdd(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postExternalcontactsBulkContactsAdd';
+			throw new Error('Missing the required parameter "body" when calling postExternalcontactsBulkContactsAdd';
 		}
 
 		return this.apiClient.callApi(
@@ -935,7 +935,7 @@ class ExternalContactsApi {
 	postExternalcontactsBulkContactsRemove(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postExternalcontactsBulkContactsRemove';
+			throw new Error('Missing the required parameter "body" when calling postExternalcontactsBulkContactsRemove';
 		}
 
 		return this.apiClient.callApi(
@@ -960,7 +960,7 @@ class ExternalContactsApi {
 	postExternalcontactsBulkContactsUpdate(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postExternalcontactsBulkContactsUpdate';
+			throw new Error('Missing the required parameter "body" when calling postExternalcontactsBulkContactsUpdate';
 		}
 
 		return this.apiClient.callApi(
@@ -985,7 +985,7 @@ class ExternalContactsApi {
 	postExternalcontactsBulkNotes(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postExternalcontactsBulkNotes';
+			throw new Error('Missing the required parameter "body" when calling postExternalcontactsBulkNotes';
 		}
 
 		return this.apiClient.callApi(
@@ -1010,7 +1010,7 @@ class ExternalContactsApi {
 	postExternalcontactsBulkNotesAdd(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postExternalcontactsBulkNotesAdd';
+			throw new Error('Missing the required parameter "body" when calling postExternalcontactsBulkNotesAdd';
 		}
 
 		return this.apiClient.callApi(
@@ -1035,7 +1035,7 @@ class ExternalContactsApi {
 	postExternalcontactsBulkNotesRemove(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postExternalcontactsBulkNotesRemove';
+			throw new Error('Missing the required parameter "body" when calling postExternalcontactsBulkNotesRemove';
 		}
 
 		return this.apiClient.callApi(
@@ -1060,7 +1060,7 @@ class ExternalContactsApi {
 	postExternalcontactsBulkNotesUpdate(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postExternalcontactsBulkNotesUpdate';
+			throw new Error('Missing the required parameter "body" when calling postExternalcontactsBulkNotesUpdate';
 		}
 
 		return this.apiClient.callApi(
@@ -1085,7 +1085,7 @@ class ExternalContactsApi {
 	postExternalcontactsBulkOrganizations(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postExternalcontactsBulkOrganizations';
+			throw new Error('Missing the required parameter "body" when calling postExternalcontactsBulkOrganizations';
 		}
 
 		return this.apiClient.callApi(
@@ -1110,7 +1110,7 @@ class ExternalContactsApi {
 	postExternalcontactsBulkOrganizationsAdd(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postExternalcontactsBulkOrganizationsAdd';
+			throw new Error('Missing the required parameter "body" when calling postExternalcontactsBulkOrganizationsAdd';
 		}
 
 		return this.apiClient.callApi(
@@ -1135,7 +1135,7 @@ class ExternalContactsApi {
 	postExternalcontactsBulkOrganizationsRemove(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postExternalcontactsBulkOrganizationsRemove';
+			throw new Error('Missing the required parameter "body" when calling postExternalcontactsBulkOrganizationsRemove';
 		}
 
 		return this.apiClient.callApi(
@@ -1160,7 +1160,7 @@ class ExternalContactsApi {
 	postExternalcontactsBulkOrganizationsUpdate(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postExternalcontactsBulkOrganizationsUpdate';
+			throw new Error('Missing the required parameter "body" when calling postExternalcontactsBulkOrganizationsUpdate';
 		}
 
 		return this.apiClient.callApi(
@@ -1185,7 +1185,7 @@ class ExternalContactsApi {
 	postExternalcontactsBulkRelationships(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postExternalcontactsBulkRelationships';
+			throw new Error('Missing the required parameter "body" when calling postExternalcontactsBulkRelationships';
 		}
 
 		return this.apiClient.callApi(
@@ -1210,7 +1210,7 @@ class ExternalContactsApi {
 	postExternalcontactsBulkRelationshipsAdd(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postExternalcontactsBulkRelationshipsAdd';
+			throw new Error('Missing the required parameter "body" when calling postExternalcontactsBulkRelationshipsAdd';
 		}
 
 		return this.apiClient.callApi(
@@ -1235,7 +1235,7 @@ class ExternalContactsApi {
 	postExternalcontactsBulkRelationshipsRemove(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postExternalcontactsBulkRelationshipsRemove';
+			throw new Error('Missing the required parameter "body" when calling postExternalcontactsBulkRelationshipsRemove';
 		}
 
 		return this.apiClient.callApi(
@@ -1260,7 +1260,7 @@ class ExternalContactsApi {
 	postExternalcontactsBulkRelationshipsUpdate(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postExternalcontactsBulkRelationshipsUpdate';
+			throw new Error('Missing the required parameter "body" when calling postExternalcontactsBulkRelationshipsUpdate';
 		}
 
 		return this.apiClient.callApi(
@@ -1286,11 +1286,11 @@ class ExternalContactsApi {
 	postExternalcontactsContactNotes(contactId, body) { 
 		// verify the required parameter 'contactId' is set
 		if (contactId === undefined || contactId === null) {
-			throw 'Missing the required parameter "contactId" when calling postExternalcontactsContactNotes';
+			throw new Error('Missing the required parameter "contactId" when calling postExternalcontactsContactNotes';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postExternalcontactsContactNotes';
+			throw new Error('Missing the required parameter "body" when calling postExternalcontactsContactNotes';
 		}
 
 		return this.apiClient.callApi(
@@ -1315,7 +1315,7 @@ class ExternalContactsApi {
 	postExternalcontactsContacts(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postExternalcontactsContacts';
+			throw new Error('Missing the required parameter "body" when calling postExternalcontactsContacts';
 		}
 
 		return this.apiClient.callApi(
@@ -1340,7 +1340,7 @@ class ExternalContactsApi {
 	postExternalcontactsContactsSchemas(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postExternalcontactsContactsSchemas';
+			throw new Error('Missing the required parameter "body" when calling postExternalcontactsContactsSchemas';
 		}
 
 		return this.apiClient.callApi(
@@ -1366,11 +1366,11 @@ class ExternalContactsApi {
 	postExternalcontactsOrganizationNotes(externalOrganizationId, body) { 
 		// verify the required parameter 'externalOrganizationId' is set
 		if (externalOrganizationId === undefined || externalOrganizationId === null) {
-			throw 'Missing the required parameter "externalOrganizationId" when calling postExternalcontactsOrganizationNotes';
+			throw new Error('Missing the required parameter "externalOrganizationId" when calling postExternalcontactsOrganizationNotes';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postExternalcontactsOrganizationNotes';
+			throw new Error('Missing the required parameter "body" when calling postExternalcontactsOrganizationNotes';
 		}
 
 		return this.apiClient.callApi(
@@ -1395,7 +1395,7 @@ class ExternalContactsApi {
 	postExternalcontactsOrganizations(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postExternalcontactsOrganizations';
+			throw new Error('Missing the required parameter "body" when calling postExternalcontactsOrganizations';
 		}
 
 		return this.apiClient.callApi(
@@ -1420,7 +1420,7 @@ class ExternalContactsApi {
 	postExternalcontactsOrganizationsSchemas(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postExternalcontactsOrganizationsSchemas';
+			throw new Error('Missing the required parameter "body" when calling postExternalcontactsOrganizationsSchemas';
 		}
 
 		return this.apiClient.callApi(
@@ -1445,7 +1445,7 @@ class ExternalContactsApi {
 	postExternalcontactsRelationships(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postExternalcontactsRelationships';
+			throw new Error('Missing the required parameter "body" when calling postExternalcontactsRelationships';
 		}
 
 		return this.apiClient.callApi(
@@ -1471,11 +1471,11 @@ class ExternalContactsApi {
 	putExternalcontactsContact(contactId, body) { 
 		// verify the required parameter 'contactId' is set
 		if (contactId === undefined || contactId === null) {
-			throw 'Missing the required parameter "contactId" when calling putExternalcontactsContact';
+			throw new Error('Missing the required parameter "contactId" when calling putExternalcontactsContact';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putExternalcontactsContact';
+			throw new Error('Missing the required parameter "body" when calling putExternalcontactsContact';
 		}
 
 		return this.apiClient.callApi(
@@ -1502,15 +1502,15 @@ class ExternalContactsApi {
 	putExternalcontactsContactNote(contactId, noteId, body) { 
 		// verify the required parameter 'contactId' is set
 		if (contactId === undefined || contactId === null) {
-			throw 'Missing the required parameter "contactId" when calling putExternalcontactsContactNote';
+			throw new Error('Missing the required parameter "contactId" when calling putExternalcontactsContactNote';
 		}
 		// verify the required parameter 'noteId' is set
 		if (noteId === undefined || noteId === null) {
-			throw 'Missing the required parameter "noteId" when calling putExternalcontactsContactNote';
+			throw new Error('Missing the required parameter "noteId" when calling putExternalcontactsContactNote';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putExternalcontactsContactNote';
+			throw new Error('Missing the required parameter "body" when calling putExternalcontactsContactNote';
 		}
 
 		return this.apiClient.callApi(
@@ -1536,11 +1536,11 @@ class ExternalContactsApi {
 	putExternalcontactsContactsSchema(schemaId, body) { 
 		// verify the required parameter 'schemaId' is set
 		if (schemaId === undefined || schemaId === null) {
-			throw 'Missing the required parameter "schemaId" when calling putExternalcontactsContactsSchema';
+			throw new Error('Missing the required parameter "schemaId" when calling putExternalcontactsContactsSchema';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putExternalcontactsContactsSchema';
+			throw new Error('Missing the required parameter "body" when calling putExternalcontactsContactsSchema';
 		}
 
 		return this.apiClient.callApi(
@@ -1566,11 +1566,11 @@ class ExternalContactsApi {
 	putExternalcontactsConversation(body, conversationId) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putExternalcontactsConversation';
+			throw new Error('Missing the required parameter "body" when calling putExternalcontactsConversation';
 		}
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling putExternalcontactsConversation';
+			throw new Error('Missing the required parameter "conversationId" when calling putExternalcontactsConversation';
 		}
 
 		return this.apiClient.callApi(
@@ -1596,11 +1596,11 @@ class ExternalContactsApi {
 	putExternalcontactsOrganization(externalOrganizationId, body) { 
 		// verify the required parameter 'externalOrganizationId' is set
 		if (externalOrganizationId === undefined || externalOrganizationId === null) {
-			throw 'Missing the required parameter "externalOrganizationId" when calling putExternalcontactsOrganization';
+			throw new Error('Missing the required parameter "externalOrganizationId" when calling putExternalcontactsOrganization';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putExternalcontactsOrganization';
+			throw new Error('Missing the required parameter "body" when calling putExternalcontactsOrganization';
 		}
 
 		return this.apiClient.callApi(
@@ -1627,15 +1627,15 @@ class ExternalContactsApi {
 	putExternalcontactsOrganizationNote(externalOrganizationId, noteId, body) { 
 		// verify the required parameter 'externalOrganizationId' is set
 		if (externalOrganizationId === undefined || externalOrganizationId === null) {
-			throw 'Missing the required parameter "externalOrganizationId" when calling putExternalcontactsOrganizationNote';
+			throw new Error('Missing the required parameter "externalOrganizationId" when calling putExternalcontactsOrganizationNote';
 		}
 		// verify the required parameter 'noteId' is set
 		if (noteId === undefined || noteId === null) {
-			throw 'Missing the required parameter "noteId" when calling putExternalcontactsOrganizationNote';
+			throw new Error('Missing the required parameter "noteId" when calling putExternalcontactsOrganizationNote';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putExternalcontactsOrganizationNote';
+			throw new Error('Missing the required parameter "body" when calling putExternalcontactsOrganizationNote';
 		}
 
 		return this.apiClient.callApi(
@@ -1661,11 +1661,11 @@ class ExternalContactsApi {
 	putExternalcontactsOrganizationTrustorTrustorId(externalOrganizationId, trustorId) { 
 		// verify the required parameter 'externalOrganizationId' is set
 		if (externalOrganizationId === undefined || externalOrganizationId === null) {
-			throw 'Missing the required parameter "externalOrganizationId" when calling putExternalcontactsOrganizationTrustorTrustorId';
+			throw new Error('Missing the required parameter "externalOrganizationId" when calling putExternalcontactsOrganizationTrustorTrustorId';
 		}
 		// verify the required parameter 'trustorId' is set
 		if (trustorId === undefined || trustorId === null) {
-			throw 'Missing the required parameter "trustorId" when calling putExternalcontactsOrganizationTrustorTrustorId';
+			throw new Error('Missing the required parameter "trustorId" when calling putExternalcontactsOrganizationTrustorTrustorId';
 		}
 
 		return this.apiClient.callApi(
@@ -1691,11 +1691,11 @@ class ExternalContactsApi {
 	putExternalcontactsOrganizationsSchema(schemaId, body) { 
 		// verify the required parameter 'schemaId' is set
 		if (schemaId === undefined || schemaId === null) {
-			throw 'Missing the required parameter "schemaId" when calling putExternalcontactsOrganizationsSchema';
+			throw new Error('Missing the required parameter "schemaId" when calling putExternalcontactsOrganizationsSchema';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putExternalcontactsOrganizationsSchema';
+			throw new Error('Missing the required parameter "body" when calling putExternalcontactsOrganizationsSchema';
 		}
 
 		return this.apiClient.callApi(
@@ -1721,11 +1721,11 @@ class ExternalContactsApi {
 	putExternalcontactsRelationship(relationshipId, body) { 
 		// verify the required parameter 'relationshipId' is set
 		if (relationshipId === undefined || relationshipId === null) {
-			throw 'Missing the required parameter "relationshipId" when calling putExternalcontactsRelationship';
+			throw new Error('Missing the required parameter "relationshipId" when calling putExternalcontactsRelationship';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putExternalcontactsRelationship';
+			throw new Error('Missing the required parameter "body" when calling putExternalcontactsRelationship';
 		}
 
 		return this.apiClient.callApi(

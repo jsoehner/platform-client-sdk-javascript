@@ -28,7 +28,7 @@ class WebDeploymentsApi {
 	deleteWebdeploymentsConfiguration(configurationId) { 
 		// verify the required parameter 'configurationId' is set
 		if (configurationId === undefined || configurationId === null) {
-			throw 'Missing the required parameter "configurationId" when calling deleteWebdeploymentsConfiguration';
+			throw new Error('Missing the required parameter "configurationId" when calling deleteWebdeploymentsConfiguration';
 		}
 
 		return this.apiClient.callApi(
@@ -53,7 +53,7 @@ class WebDeploymentsApi {
 	deleteWebdeploymentsDeployment(deploymentId) { 
 		// verify the required parameter 'deploymentId' is set
 		if (deploymentId === undefined || deploymentId === null) {
-			throw 'Missing the required parameter "deploymentId" when calling deleteWebdeploymentsDeployment';
+			throw new Error('Missing the required parameter "deploymentId" when calling deleteWebdeploymentsDeployment';
 		}
 
 		return this.apiClient.callApi(
@@ -79,11 +79,11 @@ class WebDeploymentsApi {
 	getWebdeploymentsConfigurationVersion(configurationId, versionId) { 
 		// verify the required parameter 'configurationId' is set
 		if (configurationId === undefined || configurationId === null) {
-			throw 'Missing the required parameter "configurationId" when calling getWebdeploymentsConfigurationVersion';
+			throw new Error('Missing the required parameter "configurationId" when calling getWebdeploymentsConfigurationVersion';
 		}
 		// verify the required parameter 'versionId' is set
 		if (versionId === undefined || versionId === null) {
-			throw 'Missing the required parameter "versionId" when calling getWebdeploymentsConfigurationVersion';
+			throw new Error('Missing the required parameter "versionId" when calling getWebdeploymentsConfigurationVersion';
 		}
 
 		return this.apiClient.callApi(
@@ -108,7 +108,7 @@ class WebDeploymentsApi {
 	getWebdeploymentsConfigurationVersions(configurationId) { 
 		// verify the required parameter 'configurationId' is set
 		if (configurationId === undefined || configurationId === null) {
-			throw 'Missing the required parameter "configurationId" when calling getWebdeploymentsConfigurationVersions';
+			throw new Error('Missing the required parameter "configurationId" when calling getWebdeploymentsConfigurationVersions';
 		}
 
 		return this.apiClient.callApi(
@@ -133,7 +133,7 @@ class WebDeploymentsApi {
 	getWebdeploymentsConfigurationVersionsDraft(configurationId) { 
 		// verify the required parameter 'configurationId' is set
 		if (configurationId === undefined || configurationId === null) {
-			throw 'Missing the required parameter "configurationId" when calling getWebdeploymentsConfigurationVersionsDraft';
+			throw new Error('Missing the required parameter "configurationId" when calling getWebdeploymentsConfigurationVersionsDraft';
 		}
 
 		return this.apiClient.callApi(
@@ -182,7 +182,7 @@ class WebDeploymentsApi {
 	getWebdeploymentsDeployment(deploymentId) { 
 		// verify the required parameter 'deploymentId' is set
 		if (deploymentId === undefined || deploymentId === null) {
-			throw 'Missing the required parameter "deploymentId" when calling getWebdeploymentsDeployment';
+			throw new Error('Missing the required parameter "deploymentId" when calling getWebdeploymentsDeployment';
 		}
 
 		return this.apiClient.callApi(
@@ -227,7 +227,7 @@ class WebDeploymentsApi {
 	postWebdeploymentsConfigurationVersionsDraftPublish(configurationId) { 
 		// verify the required parameter 'configurationId' is set
 		if (configurationId === undefined || configurationId === null) {
-			throw 'Missing the required parameter "configurationId" when calling postWebdeploymentsConfigurationVersionsDraftPublish';
+			throw new Error('Missing the required parameter "configurationId" when calling postWebdeploymentsConfigurationVersionsDraftPublish';
 		}
 
 		return this.apiClient.callApi(
@@ -252,7 +252,7 @@ class WebDeploymentsApi {
 	postWebdeploymentsConfigurations(configurationVersion) { 
 		// verify the required parameter 'configurationVersion' is set
 		if (configurationVersion === undefined || configurationVersion === null) {
-			throw 'Missing the required parameter "configurationVersion" when calling postWebdeploymentsConfigurations';
+			throw new Error('Missing the required parameter "configurationVersion" when calling postWebdeploymentsConfigurations';
 		}
 
 		return this.apiClient.callApi(
@@ -277,7 +277,7 @@ class WebDeploymentsApi {
 	postWebdeploymentsDeployments(deployment) { 
 		// verify the required parameter 'deployment' is set
 		if (deployment === undefined || deployment === null) {
-			throw 'Missing the required parameter "deployment" when calling postWebdeploymentsDeployments';
+			throw new Error('Missing the required parameter "deployment" when calling postWebdeploymentsDeployments';
 		}
 
 		return this.apiClient.callApi(
@@ -303,11 +303,11 @@ class WebDeploymentsApi {
 	putWebdeploymentsConfigurationVersionsDraft(configurationId, configurationVersion) { 
 		// verify the required parameter 'configurationId' is set
 		if (configurationId === undefined || configurationId === null) {
-			throw 'Missing the required parameter "configurationId" when calling putWebdeploymentsConfigurationVersionsDraft';
+			throw new Error('Missing the required parameter "configurationId" when calling putWebdeploymentsConfigurationVersionsDraft';
 		}
 		// verify the required parameter 'configurationVersion' is set
 		if (configurationVersion === undefined || configurationVersion === null) {
-			throw 'Missing the required parameter "configurationVersion" when calling putWebdeploymentsConfigurationVersionsDraft';
+			throw new Error('Missing the required parameter "configurationVersion" when calling putWebdeploymentsConfigurationVersionsDraft';
 		}
 
 		return this.apiClient.callApi(
@@ -333,11 +333,11 @@ class WebDeploymentsApi {
 	putWebdeploymentsDeployment(deploymentId, deployment) { 
 		// verify the required parameter 'deploymentId' is set
 		if (deploymentId === undefined || deploymentId === null) {
-			throw 'Missing the required parameter "deploymentId" when calling putWebdeploymentsDeployment';
+			throw new Error('Missing the required parameter "deploymentId" when calling putWebdeploymentsDeployment';
 		}
 		// verify the required parameter 'deployment' is set
 		if (deployment === undefined || deployment === null) {
-			throw 'Missing the required parameter "deployment" when calling putWebdeploymentsDeployment';
+			throw new Error('Missing the required parameter "deployment" when calling putWebdeploymentsDeployment';
 		}
 
 		return this.apiClient.callApi(

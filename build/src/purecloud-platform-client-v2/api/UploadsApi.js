@@ -28,7 +28,7 @@ class UploadsApi {
 	postKnowledgeDocumentuploads(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postKnowledgeDocumentuploads';
+			throw new Error('Missing the required parameter "body" when calling postKnowledgeDocumentuploads';
 		}
 
 		return this.apiClient.callApi(
@@ -54,11 +54,11 @@ class UploadsApi {
 	postLanguageunderstandingMinerUploads(minerId, body) { 
 		// verify the required parameter 'minerId' is set
 		if (minerId === undefined || minerId === null) {
-			throw 'Missing the required parameter "minerId" when calling postLanguageunderstandingMinerUploads';
+			throw new Error('Missing the required parameter "minerId" when calling postLanguageunderstandingMinerUploads';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postLanguageunderstandingMinerUploads';
+			throw new Error('Missing the required parameter "body" when calling postLanguageunderstandingMinerUploads';
 		}
 
 		return this.apiClient.callApi(
@@ -83,7 +83,7 @@ class UploadsApi {
 	postUploadsPublicassetsImages(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postUploadsPublicassetsImages';
+			throw new Error('Missing the required parameter "body" when calling postUploadsPublicassetsImages';
 		}
 
 		return this.apiClient.callApi(
@@ -108,7 +108,7 @@ class UploadsApi {
 	postUploadsRecordings(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postUploadsRecordings';
+			throw new Error('Missing the required parameter "body" when calling postUploadsRecordings';
 		}
 
 		return this.apiClient.callApi(
@@ -133,7 +133,7 @@ class UploadsApi {
 	postUploadsWorkforcemanagementHistoricaldataCsv(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postUploadsWorkforcemanagementHistoricaldataCsv';
+			throw new Error('Missing the required parameter "body" when calling postUploadsWorkforcemanagementHistoricaldataCsv';
 		}
 
 		return this.apiClient.callApi(
@@ -158,7 +158,7 @@ class UploadsApi {
 	postUploadsWorkforcemanagementHistoricaldataJson(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postUploadsWorkforcemanagementHistoricaldataJson';
+			throw new Error('Missing the required parameter "body" when calling postUploadsWorkforcemanagementHistoricaldataJson';
 		}
 
 		return this.apiClient.callApi(

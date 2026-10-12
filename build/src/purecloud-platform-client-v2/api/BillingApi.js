@@ -29,11 +29,11 @@ class BillingApi {
 	getBillingReportsBillableusage(startDate, endDate) { 
 		// verify the required parameter 'startDate' is set
 		if (startDate === undefined || startDate === null) {
-			throw 'Missing the required parameter "startDate" when calling getBillingReportsBillableusage';
+			throw new Error('Missing the required parameter "startDate" when calling getBillingReportsBillableusage');
 		}
 		// verify the required parameter 'endDate' is set
 		if (endDate === undefined || endDate === null) {
-			throw 'Missing the required parameter "endDate" when calling getBillingReportsBillableusage';
+			throw new Error('Missing the required parameter "endDate" when calling getBillingReportsBillableusage');
 		}
 
 		return this.apiClient.callApi(
@@ -62,7 +62,7 @@ class BillingApi {
 		
 		// verify the required parameter 'trustorOrgId' is set
 		if (trustorOrgId === undefined || trustorOrgId === null) {
-			throw 'Missing the required parameter "trustorOrgId" when calling getBillingTrusteebillingoverviewTrustorOrgId';
+			throw new Error('Missing the required parameter "trustorOrgId" when calling getBillingTrusteebillingoverviewTrustorOrgId');
 		}
 
 		return this.apiClient.callApi(

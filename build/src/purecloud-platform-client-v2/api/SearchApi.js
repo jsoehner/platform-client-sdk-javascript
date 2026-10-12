@@ -28,7 +28,7 @@ class SearchApi {
 	getDocumentationGknSearch(q64) { 
 		// verify the required parameter 'q64' is set
 		if (q64 === undefined || q64 === null) {
-			throw 'Missing the required parameter "q64" when calling getDocumentationGknSearch';
+			throw new Error('Missing the required parameter "q64" when calling getDocumentationGknSearch';
 		}
 
 		return this.apiClient.callApi(
@@ -53,7 +53,7 @@ class SearchApi {
 	getDocumentationSearch(q64) { 
 		// verify the required parameter 'q64' is set
 		if (q64 === undefined || q64 === null) {
-			throw 'Missing the required parameter "q64" when calling getDocumentationSearch';
+			throw new Error('Missing the required parameter "q64" when calling getDocumentationSearch';
 		}
 
 		return this.apiClient.callApi(
@@ -82,7 +82,7 @@ class SearchApi {
 		
 		// verify the required parameter 'q64' is set
 		if (q64 === undefined || q64 === null) {
-			throw 'Missing the required parameter "q64" when calling getGroupsSearch';
+			throw new Error('Missing the required parameter "q64" when calling getGroupsSearch';
 		}
 
 		return this.apiClient.callApi(
@@ -111,7 +111,7 @@ class SearchApi {
 		
 		// verify the required parameter 'q64' is set
 		if (q64 === undefined || q64 === null) {
-			throw 'Missing the required parameter "q64" when calling getLocationsSearch';
+			throw new Error('Missing the required parameter "q64" when calling getLocationsSearch';
 		}
 
 		return this.apiClient.callApi(
@@ -141,7 +141,7 @@ class SearchApi {
 		
 		// verify the required parameter 'q64' is set
 		if (q64 === undefined || q64 === null) {
-			throw 'Missing the required parameter "q64" when calling getSearch';
+			throw new Error('Missing the required parameter "q64" when calling getSearch';
 		}
 
 		return this.apiClient.callApi(
@@ -171,7 +171,7 @@ class SearchApi {
 		
 		// verify the required parameter 'q64' is set
 		if (q64 === undefined || q64 === null) {
-			throw 'Missing the required parameter "q64" when calling getSearchSuggest';
+			throw new Error('Missing the required parameter "q64" when calling getSearchSuggest';
 		}
 
 		return this.apiClient.callApi(
@@ -201,7 +201,7 @@ class SearchApi {
 		
 		// verify the required parameter 'q64' is set
 		if (q64 === undefined || q64 === null) {
-			throw 'Missing the required parameter "q64" when calling getUsersSearch';
+			throw new Error('Missing the required parameter "q64" when calling getUsersSearch';
 		}
 
 		return this.apiClient.callApi(
@@ -230,7 +230,7 @@ class SearchApi {
 		
 		// verify the required parameter 'q64' is set
 		if (q64 === undefined || q64 === null) {
-			throw 'Missing the required parameter "q64" when calling getVoicemailSearch';
+			throw new Error('Missing the required parameter "q64" when calling getVoicemailSearch';
 		}
 
 		return this.apiClient.callApi(
@@ -255,7 +255,7 @@ class SearchApi {
 	postAnalyticsConversationsTranscriptsQuery(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postAnalyticsConversationsTranscriptsQuery';
+			throw new Error('Missing the required parameter "body" when calling postAnalyticsConversationsTranscriptsQuery';
 		}
 
 		return this.apiClient.callApi(
@@ -280,7 +280,7 @@ class SearchApi {
 	postDocumentationGknSearch(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postDocumentationGknSearch';
+			throw new Error('Missing the required parameter "body" when calling postDocumentationGknSearch';
 		}
 
 		return this.apiClient.callApi(
@@ -305,7 +305,7 @@ class SearchApi {
 	postDocumentationSearch(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postDocumentationSearch';
+			throw new Error('Missing the required parameter "body" when calling postDocumentationSearch';
 		}
 
 		return this.apiClient.callApi(
@@ -330,7 +330,7 @@ class SearchApi {
 	postGroupsSearch(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postGroupsSearch';
+			throw new Error('Missing the required parameter "body" when calling postGroupsSearch';
 		}
 
 		return this.apiClient.callApi(
@@ -359,7 +359,7 @@ class SearchApi {
 		
 		// verify the required parameter 'knowledgeBaseId' is set
 		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
-			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseSearch';
+			throw new Error('Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseSearch';
 		}
 
 		return this.apiClient.callApi(
@@ -384,7 +384,7 @@ class SearchApi {
 	postLocationsSearch(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postLocationsSearch';
+			throw new Error('Missing the required parameter "body" when calling postLocationsSearch';
 		}
 
 		return this.apiClient.callApi(
@@ -413,7 +413,7 @@ class SearchApi {
 		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postSearch';
+			throw new Error('Missing the required parameter "body" when calling postSearch';
 		}
 
 		return this.apiClient.callApi(
@@ -442,7 +442,7 @@ class SearchApi {
 		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postSearchSuggest';
+			throw new Error('Missing the required parameter "body" when calling postSearchSuggest';
 		}
 
 		return this.apiClient.callApi(
@@ -467,7 +467,7 @@ class SearchApi {
 	postSpeechandtextanalyticsTranscriptsSearch(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postSpeechandtextanalyticsTranscriptsSearch';
+			throw new Error('Missing the required parameter "body" when calling postSpeechandtextanalyticsTranscriptsSearch';
 		}
 
 		return this.apiClient.callApi(
@@ -492,7 +492,7 @@ class SearchApi {
 	postUsersSearch(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postUsersSearch';
+			throw new Error('Missing the required parameter "body" when calling postUsersSearch';
 		}
 
 		return this.apiClient.callApi(
@@ -517,7 +517,7 @@ class SearchApi {
 	postVoicemailSearch(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postVoicemailSearch';
+			throw new Error('Missing the required parameter "body" when calling postVoicemailSearch';
 		}
 
 		return this.apiClient.callApi(

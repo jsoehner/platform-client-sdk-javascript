@@ -28,7 +28,7 @@ class OutboundApi {
 	deleteOutboundAttemptlimit(attemptLimitsId) { 
 		// verify the required parameter 'attemptLimitsId' is set
 		if (attemptLimitsId === undefined || attemptLimitsId === null) {
-			throw 'Missing the required parameter "attemptLimitsId" when calling deleteOutboundAttemptlimit';
+			throw new Error('Missing the required parameter "attemptLimitsId" when calling deleteOutboundAttemptlimit';
 		}
 
 		return this.apiClient.callApi(
@@ -53,7 +53,7 @@ class OutboundApi {
 	deleteOutboundCallabletimeset(callableTimeSetId) { 
 		// verify the required parameter 'callableTimeSetId' is set
 		if (callableTimeSetId === undefined || callableTimeSetId === null) {
-			throw 'Missing the required parameter "callableTimeSetId" when calling deleteOutboundCallabletimeset';
+			throw new Error('Missing the required parameter "callableTimeSetId" when calling deleteOutboundCallabletimeset';
 		}
 
 		return this.apiClient.callApi(
@@ -78,7 +78,7 @@ class OutboundApi {
 	deleteOutboundCallanalysisresponseset(callAnalysisSetId) { 
 		// verify the required parameter 'callAnalysisSetId' is set
 		if (callAnalysisSetId === undefined || callAnalysisSetId === null) {
-			throw 'Missing the required parameter "callAnalysisSetId" when calling deleteOutboundCallanalysisresponseset';
+			throw new Error('Missing the required parameter "callAnalysisSetId" when calling deleteOutboundCallanalysisresponseset';
 		}
 
 		return this.apiClient.callApi(
@@ -103,7 +103,7 @@ class OutboundApi {
 	deleteOutboundCampaign(campaignId) { 
 		// verify the required parameter 'campaignId' is set
 		if (campaignId === undefined || campaignId === null) {
-			throw 'Missing the required parameter "campaignId" when calling deleteOutboundCampaign';
+			throw new Error('Missing the required parameter "campaignId" when calling deleteOutboundCampaign';
 		}
 
 		return this.apiClient.callApi(
@@ -128,7 +128,7 @@ class OutboundApi {
 	deleteOutboundCampaignProgress(campaignId) { 
 		// verify the required parameter 'campaignId' is set
 		if (campaignId === undefined || campaignId === null) {
-			throw 'Missing the required parameter "campaignId" when calling deleteOutboundCampaignProgress';
+			throw new Error('Missing the required parameter "campaignId" when calling deleteOutboundCampaignProgress';
 		}
 
 		return this.apiClient.callApi(
@@ -153,7 +153,7 @@ class OutboundApi {
 	deleteOutboundCampaignrule(campaignRuleId) { 
 		// verify the required parameter 'campaignRuleId' is set
 		if (campaignRuleId === undefined || campaignRuleId === null) {
-			throw 'Missing the required parameter "campaignRuleId" when calling deleteOutboundCampaignrule';
+			throw new Error('Missing the required parameter "campaignRuleId" when calling deleteOutboundCampaignrule';
 		}
 
 		return this.apiClient.callApi(
@@ -178,7 +178,7 @@ class OutboundApi {
 	deleteOutboundContactlist(contactListId) { 
 		// verify the required parameter 'contactListId' is set
 		if (contactListId === undefined || contactListId === null) {
-			throw 'Missing the required parameter "contactListId" when calling deleteOutboundContactlist';
+			throw new Error('Missing the required parameter "contactListId" when calling deleteOutboundContactlist';
 		}
 
 		return this.apiClient.callApi(
@@ -204,11 +204,11 @@ class OutboundApi {
 	deleteOutboundContactlistContact(contactListId, contactId) { 
 		// verify the required parameter 'contactListId' is set
 		if (contactListId === undefined || contactListId === null) {
-			throw 'Missing the required parameter "contactListId" when calling deleteOutboundContactlistContact';
+			throw new Error('Missing the required parameter "contactListId" when calling deleteOutboundContactlistContact';
 		}
 		// verify the required parameter 'contactId' is set
 		if (contactId === undefined || contactId === null) {
-			throw 'Missing the required parameter "contactId" when calling deleteOutboundContactlistContact';
+			throw new Error('Missing the required parameter "contactId" when calling deleteOutboundContactlistContact';
 		}
 
 		return this.apiClient.callApi(
@@ -234,11 +234,11 @@ class OutboundApi {
 	deleteOutboundContactlistContacts(contactListId, contactIds) { 
 		// verify the required parameter 'contactListId' is set
 		if (contactListId === undefined || contactListId === null) {
-			throw 'Missing the required parameter "contactListId" when calling deleteOutboundContactlistContacts';
+			throw new Error('Missing the required parameter "contactListId" when calling deleteOutboundContactlistContacts';
 		}
 		// verify the required parameter 'contactIds' is set
 		if (contactIds === undefined || contactIds === null) {
-			throw 'Missing the required parameter "contactIds" when calling deleteOutboundContactlistContacts';
+			throw new Error('Missing the required parameter "contactIds" when calling deleteOutboundContactlistContacts';
 		}
 
 		return this.apiClient.callApi(
@@ -263,7 +263,7 @@ class OutboundApi {
 	deleteOutboundContactlistfilter(contactListFilterId) { 
 		// verify the required parameter 'contactListFilterId' is set
 		if (contactListFilterId === undefined || contactListFilterId === null) {
-			throw 'Missing the required parameter "contactListFilterId" when calling deleteOutboundContactlistfilter';
+			throw new Error('Missing the required parameter "contactListFilterId" when calling deleteOutboundContactlistfilter';
 		}
 
 		return this.apiClient.callApi(
@@ -288,7 +288,7 @@ class OutboundApi {
 	deleteOutboundContactlists(id) { 
 		// verify the required parameter 'id' is set
 		if (id === undefined || id === null) {
-			throw 'Missing the required parameter "id" when calling deleteOutboundContactlists';
+			throw new Error('Missing the required parameter "id" when calling deleteOutboundContactlists';
 		}
 
 		return this.apiClient.callApi(
@@ -313,7 +313,7 @@ class OutboundApi {
 	deleteOutboundDnclist(dncListId) { 
 		// verify the required parameter 'dncListId' is set
 		if (dncListId === undefined || dncListId === null) {
-			throw 'Missing the required parameter "dncListId" when calling deleteOutboundDnclist';
+			throw new Error('Missing the required parameter "dncListId" when calling deleteOutboundDnclist';
 		}
 
 		return this.apiClient.callApi(
@@ -338,7 +338,7 @@ class OutboundApi {
 	deleteOutboundMessagingcampaign(messagingCampaignId) { 
 		// verify the required parameter 'messagingCampaignId' is set
 		if (messagingCampaignId === undefined || messagingCampaignId === null) {
-			throw 'Missing the required parameter "messagingCampaignId" when calling deleteOutboundMessagingcampaign';
+			throw new Error('Missing the required parameter "messagingCampaignId" when calling deleteOutboundMessagingcampaign';
 		}
 
 		return this.apiClient.callApi(
@@ -363,7 +363,7 @@ class OutboundApi {
 	deleteOutboundRuleset(ruleSetId) { 
 		// verify the required parameter 'ruleSetId' is set
 		if (ruleSetId === undefined || ruleSetId === null) {
-			throw 'Missing the required parameter "ruleSetId" when calling deleteOutboundRuleset';
+			throw new Error('Missing the required parameter "ruleSetId" when calling deleteOutboundRuleset';
 		}
 
 		return this.apiClient.callApi(
@@ -388,7 +388,7 @@ class OutboundApi {
 	deleteOutboundSchedulesCampaign(campaignId) { 
 		// verify the required parameter 'campaignId' is set
 		if (campaignId === undefined || campaignId === null) {
-			throw 'Missing the required parameter "campaignId" when calling deleteOutboundSchedulesCampaign';
+			throw new Error('Missing the required parameter "campaignId" when calling deleteOutboundSchedulesCampaign';
 		}
 
 		return this.apiClient.callApi(
@@ -413,7 +413,7 @@ class OutboundApi {
 	deleteOutboundSchedulesSequence(sequenceId) { 
 		// verify the required parameter 'sequenceId' is set
 		if (sequenceId === undefined || sequenceId === null) {
-			throw 'Missing the required parameter "sequenceId" when calling deleteOutboundSchedulesSequence';
+			throw new Error('Missing the required parameter "sequenceId" when calling deleteOutboundSchedulesSequence';
 		}
 
 		return this.apiClient.callApi(
@@ -438,7 +438,7 @@ class OutboundApi {
 	deleteOutboundSequence(sequenceId) { 
 		// verify the required parameter 'sequenceId' is set
 		if (sequenceId === undefined || sequenceId === null) {
-			throw 'Missing the required parameter "sequenceId" when calling deleteOutboundSequence';
+			throw new Error('Missing the required parameter "sequenceId" when calling deleteOutboundSequence';
 		}
 
 		return this.apiClient.callApi(
@@ -463,7 +463,7 @@ class OutboundApi {
 	getOutboundAttemptlimit(attemptLimitsId) { 
 		// verify the required parameter 'attemptLimitsId' is set
 		if (attemptLimitsId === undefined || attemptLimitsId === null) {
-			throw 'Missing the required parameter "attemptLimitsId" when calling getOutboundAttemptlimit';
+			throw new Error('Missing the required parameter "attemptLimitsId" when calling getOutboundAttemptlimit';
 		}
 
 		return this.apiClient.callApi(
@@ -518,7 +518,7 @@ class OutboundApi {
 	getOutboundCallabletimeset(callableTimeSetId) { 
 		// verify the required parameter 'callableTimeSetId' is set
 		if (callableTimeSetId === undefined || callableTimeSetId === null) {
-			throw 'Missing the required parameter "callableTimeSetId" when calling getOutboundCallabletimeset';
+			throw new Error('Missing the required parameter "callableTimeSetId" when calling getOutboundCallabletimeset';
 		}
 
 		return this.apiClient.callApi(
@@ -573,7 +573,7 @@ class OutboundApi {
 	getOutboundCallanalysisresponseset(callAnalysisSetId) { 
 		// verify the required parameter 'callAnalysisSetId' is set
 		if (callAnalysisSetId === undefined || callAnalysisSetId === null) {
-			throw 'Missing the required parameter "callAnalysisSetId" when calling getOutboundCallanalysisresponseset';
+			throw new Error('Missing the required parameter "callAnalysisSetId" when calling getOutboundCallanalysisresponseset';
 		}
 
 		return this.apiClient.callApi(
@@ -628,7 +628,7 @@ class OutboundApi {
 	getOutboundCampaign(campaignId) { 
 		// verify the required parameter 'campaignId' is set
 		if (campaignId === undefined || campaignId === null) {
-			throw 'Missing the required parameter "campaignId" when calling getOutboundCampaign';
+			throw new Error('Missing the required parameter "campaignId" when calling getOutboundCampaign';
 		}
 
 		return this.apiClient.callApi(
@@ -653,7 +653,7 @@ class OutboundApi {
 	getOutboundCampaignAgentownedmappingpreviewResults(campaignId) { 
 		// verify the required parameter 'campaignId' is set
 		if (campaignId === undefined || campaignId === null) {
-			throw 'Missing the required parameter "campaignId" when calling getOutboundCampaignAgentownedmappingpreviewResults';
+			throw new Error('Missing the required parameter "campaignId" when calling getOutboundCampaignAgentownedmappingpreviewResults';
 		}
 
 		return this.apiClient.callApi(
@@ -678,7 +678,7 @@ class OutboundApi {
 	getOutboundCampaignDiagnostics(campaignId) { 
 		// verify the required parameter 'campaignId' is set
 		if (campaignId === undefined || campaignId === null) {
-			throw 'Missing the required parameter "campaignId" when calling getOutboundCampaignDiagnostics';
+			throw new Error('Missing the required parameter "campaignId" when calling getOutboundCampaignDiagnostics';
 		}
 
 		return this.apiClient.callApi(
@@ -703,7 +703,7 @@ class OutboundApi {
 	getOutboundCampaignInteractions(campaignId) { 
 		// verify the required parameter 'campaignId' is set
 		if (campaignId === undefined || campaignId === null) {
-			throw 'Missing the required parameter "campaignId" when calling getOutboundCampaignInteractions';
+			throw new Error('Missing the required parameter "campaignId" when calling getOutboundCampaignInteractions';
 		}
 
 		return this.apiClient.callApi(
@@ -728,7 +728,7 @@ class OutboundApi {
 	getOutboundCampaignProgress(campaignId) { 
 		// verify the required parameter 'campaignId' is set
 		if (campaignId === undefined || campaignId === null) {
-			throw 'Missing the required parameter "campaignId" when calling getOutboundCampaignProgress';
+			throw new Error('Missing the required parameter "campaignId" when calling getOutboundCampaignProgress';
 		}
 
 		return this.apiClient.callApi(
@@ -753,7 +753,7 @@ class OutboundApi {
 	getOutboundCampaignStats(campaignId) { 
 		// verify the required parameter 'campaignId' is set
 		if (campaignId === undefined || campaignId === null) {
-			throw 'Missing the required parameter "campaignId" when calling getOutboundCampaignStats';
+			throw new Error('Missing the required parameter "campaignId" when calling getOutboundCampaignStats';
 		}
 
 		return this.apiClient.callApi(
@@ -778,7 +778,7 @@ class OutboundApi {
 	getOutboundCampaignrule(campaignRuleId) { 
 		// verify the required parameter 'campaignRuleId' is set
 		if (campaignRuleId === undefined || campaignRuleId === null) {
-			throw 'Missing the required parameter "campaignRuleId" when calling getOutboundCampaignrule';
+			throw new Error('Missing the required parameter "campaignRuleId" when calling getOutboundCampaignrule';
 		}
 
 		return this.apiClient.callApi(
@@ -929,7 +929,7 @@ class OutboundApi {
 	getOutboundCampaignsDivisionview(campaignId) { 
 		// verify the required parameter 'campaignId' is set
 		if (campaignId === undefined || campaignId === null) {
-			throw 'Missing the required parameter "campaignId" when calling getOutboundCampaignsDivisionview';
+			throw new Error('Missing the required parameter "campaignId" when calling getOutboundCampaignsDivisionview';
 		}
 
 		return this.apiClient.callApi(
@@ -989,7 +989,7 @@ class OutboundApi {
 		
 		// verify the required parameter 'contactListId' is set
 		if (contactListId === undefined || contactListId === null) {
-			throw 'Missing the required parameter "contactListId" when calling getOutboundContactlist';
+			throw new Error('Missing the required parameter "contactListId" when calling getOutboundContactlist';
 		}
 
 		return this.apiClient.callApi(
@@ -1015,11 +1015,11 @@ class OutboundApi {
 	getOutboundContactlistContact(contactListId, contactId) { 
 		// verify the required parameter 'contactListId' is set
 		if (contactListId === undefined || contactListId === null) {
-			throw 'Missing the required parameter "contactListId" when calling getOutboundContactlistContact';
+			throw new Error('Missing the required parameter "contactListId" when calling getOutboundContactlistContact';
 		}
 		// verify the required parameter 'contactId' is set
 		if (contactId === undefined || contactId === null) {
-			throw 'Missing the required parameter "contactId" when calling getOutboundContactlistContact';
+			throw new Error('Missing the required parameter "contactId" when calling getOutboundContactlistContact';
 		}
 
 		return this.apiClient.callApi(
@@ -1048,7 +1048,7 @@ class OutboundApi {
 		
 		// verify the required parameter 'contactListId' is set
 		if (contactListId === undefined || contactListId === null) {
-			throw 'Missing the required parameter "contactListId" when calling getOutboundContactlistExport';
+			throw new Error('Missing the required parameter "contactListId" when calling getOutboundContactlistExport';
 		}
 
 		return this.apiClient.callApi(
@@ -1073,7 +1073,7 @@ class OutboundApi {
 	getOutboundContactlistImportstatus(contactListId) { 
 		// verify the required parameter 'contactListId' is set
 		if (contactListId === undefined || contactListId === null) {
-			throw 'Missing the required parameter "contactListId" when calling getOutboundContactlistImportstatus';
+			throw new Error('Missing the required parameter "contactListId" when calling getOutboundContactlistImportstatus';
 		}
 
 		return this.apiClient.callApi(
@@ -1098,7 +1098,7 @@ class OutboundApi {
 	getOutboundContactlistTimezonemappingpreview(contactListId) { 
 		// verify the required parameter 'contactListId' is set
 		if (contactListId === undefined || contactListId === null) {
-			throw 'Missing the required parameter "contactListId" when calling getOutboundContactlistTimezonemappingpreview';
+			throw new Error('Missing the required parameter "contactListId" when calling getOutboundContactlistTimezonemappingpreview';
 		}
 
 		return this.apiClient.callApi(
@@ -1123,7 +1123,7 @@ class OutboundApi {
 	getOutboundContactlistfilter(contactListFilterId) { 
 		// verify the required parameter 'contactListFilterId' is set
 		if (contactListFilterId === undefined || contactListFilterId === null) {
-			throw 'Missing the required parameter "contactListFilterId" when calling getOutboundContactlistfilter';
+			throw new Error('Missing the required parameter "contactListFilterId" when calling getOutboundContactlistfilter';
 		}
 
 		return this.apiClient.callApi(
@@ -1218,7 +1218,7 @@ class OutboundApi {
 		
 		// verify the required parameter 'contactListId' is set
 		if (contactListId === undefined || contactListId === null) {
-			throw 'Missing the required parameter "contactListId" when calling getOutboundContactlistsDivisionview';
+			throw new Error('Missing the required parameter "contactListId" when calling getOutboundContactlistsDivisionview';
 		}
 
 		return this.apiClient.callApi(
@@ -1280,7 +1280,7 @@ class OutboundApi {
 		
 		// verify the required parameter 'dncListId' is set
 		if (dncListId === undefined || dncListId === null) {
-			throw 'Missing the required parameter "dncListId" when calling getOutboundDnclist';
+			throw new Error('Missing the required parameter "dncListId" when calling getOutboundDnclist';
 		}
 
 		return this.apiClient.callApi(
@@ -1309,7 +1309,7 @@ class OutboundApi {
 		
 		// verify the required parameter 'dncListId' is set
 		if (dncListId === undefined || dncListId === null) {
-			throw 'Missing the required parameter "dncListId" when calling getOutboundDnclistExport';
+			throw new Error('Missing the required parameter "dncListId" when calling getOutboundDnclistExport';
 		}
 
 		return this.apiClient.callApi(
@@ -1334,7 +1334,7 @@ class OutboundApi {
 	getOutboundDnclistImportstatus(dncListId) { 
 		// verify the required parameter 'dncListId' is set
 		if (dncListId === undefined || dncListId === null) {
-			throw 'Missing the required parameter "dncListId" when calling getOutboundDnclistImportstatus';
+			throw new Error('Missing the required parameter "dncListId" when calling getOutboundDnclistImportstatus';
 		}
 
 		return this.apiClient.callApi(
@@ -1398,7 +1398,7 @@ class OutboundApi {
 		
 		// verify the required parameter 'dncListId' is set
 		if (dncListId === undefined || dncListId === null) {
-			throw 'Missing the required parameter "dncListId" when calling getOutboundDnclistsDivisionview';
+			throw new Error('Missing the required parameter "dncListId" when calling getOutboundDnclistsDivisionview';
 		}
 
 		return this.apiClient.callApi(
@@ -1456,7 +1456,7 @@ class OutboundApi {
 	getOutboundEvent(eventId) { 
 		// verify the required parameter 'eventId' is set
 		if (eventId === undefined || eventId === null) {
-			throw 'Missing the required parameter "eventId" when calling getOutboundEvent';
+			throw new Error('Missing the required parameter "eventId" when calling getOutboundEvent';
 		}
 
 		return this.apiClient.callApi(
@@ -1511,7 +1511,7 @@ class OutboundApi {
 	getOutboundMessagingcampaign(messagingCampaignId) { 
 		// verify the required parameter 'messagingCampaignId' is set
 		if (messagingCampaignId === undefined || messagingCampaignId === null) {
-			throw 'Missing the required parameter "messagingCampaignId" when calling getOutboundMessagingcampaign';
+			throw new Error('Missing the required parameter "messagingCampaignId" when calling getOutboundMessagingcampaign';
 		}
 
 		return this.apiClient.callApi(
@@ -1536,7 +1536,7 @@ class OutboundApi {
 	getOutboundMessagingcampaignProgress(messagingCampaignId) { 
 		// verify the required parameter 'messagingCampaignId' is set
 		if (messagingCampaignId === undefined || messagingCampaignId === null) {
-			throw 'Missing the required parameter "messagingCampaignId" when calling getOutboundMessagingcampaignProgress';
+			throw new Error('Missing the required parameter "messagingCampaignId" when calling getOutboundMessagingcampaignProgress';
 		}
 
 		return this.apiClient.callApi(
@@ -1594,7 +1594,7 @@ class OutboundApi {
 	getOutboundMessagingcampaignsDivisionview(messagingCampaignId) { 
 		// verify the required parameter 'messagingCampaignId' is set
 		if (messagingCampaignId === undefined || messagingCampaignId === null) {
-			throw 'Missing the required parameter "messagingCampaignId" when calling getOutboundMessagingcampaignsDivisionview';
+			throw new Error('Missing the required parameter "messagingCampaignId" when calling getOutboundMessagingcampaignsDivisionview';
 		}
 
 		return this.apiClient.callApi(
@@ -1649,7 +1649,7 @@ class OutboundApi {
 	getOutboundRuleset(ruleSetId) { 
 		// verify the required parameter 'ruleSetId' is set
 		if (ruleSetId === undefined || ruleSetId === null) {
-			throw 'Missing the required parameter "ruleSetId" when calling getOutboundRuleset';
+			throw new Error('Missing the required parameter "ruleSetId" when calling getOutboundRuleset';
 		}
 
 		return this.apiClient.callApi(
@@ -1704,7 +1704,7 @@ class OutboundApi {
 	getOutboundSchedulesCampaign(campaignId) { 
 		// verify the required parameter 'campaignId' is set
 		if (campaignId === undefined || campaignId === null) {
-			throw 'Missing the required parameter "campaignId" when calling getOutboundSchedulesCampaign';
+			throw new Error('Missing the required parameter "campaignId" when calling getOutboundSchedulesCampaign';
 		}
 
 		return this.apiClient.callApi(
@@ -1749,7 +1749,7 @@ class OutboundApi {
 	getOutboundSchedulesSequence(sequenceId) { 
 		// verify the required parameter 'sequenceId' is set
 		if (sequenceId === undefined || sequenceId === null) {
-			throw 'Missing the required parameter "sequenceId" when calling getOutboundSchedulesSequence';
+			throw new Error('Missing the required parameter "sequenceId" when calling getOutboundSchedulesSequence';
 		}
 
 		return this.apiClient.callApi(
@@ -1794,7 +1794,7 @@ class OutboundApi {
 	getOutboundSequence(sequenceId) { 
 		// verify the required parameter 'sequenceId' is set
 		if (sequenceId === undefined || sequenceId === null) {
-			throw 'Missing the required parameter "sequenceId" when calling getOutboundSequence';
+			throw new Error('Missing the required parameter "sequenceId" when calling getOutboundSequence';
 		}
 
 		return this.apiClient.callApi(
@@ -1889,7 +1889,7 @@ class OutboundApi {
 	patchOutboundSettings(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchOutboundSettings';
+			throw new Error('Missing the required parameter "body" when calling patchOutboundSettings';
 		}
 
 		return this.apiClient.callApi(
@@ -1914,7 +1914,7 @@ class OutboundApi {
 	postOutboundAttemptlimits(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postOutboundAttemptlimits';
+			throw new Error('Missing the required parameter "body" when calling postOutboundAttemptlimits';
 		}
 
 		return this.apiClient.callApi(
@@ -1947,7 +1947,7 @@ class OutboundApi {
 		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postOutboundAudits';
+			throw new Error('Missing the required parameter "body" when calling postOutboundAudits';
 		}
 
 		return this.apiClient.callApi(
@@ -1972,7 +1972,7 @@ class OutboundApi {
 	postOutboundCallabletimesets(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postOutboundCallabletimesets';
+			throw new Error('Missing the required parameter "body" when calling postOutboundCallabletimesets';
 		}
 
 		return this.apiClient.callApi(
@@ -1997,7 +1997,7 @@ class OutboundApi {
 	postOutboundCallanalysisresponsesets(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postOutboundCallanalysisresponsesets';
+			throw new Error('Missing the required parameter "body" when calling postOutboundCallanalysisresponsesets';
 		}
 
 		return this.apiClient.callApi(
@@ -2022,7 +2022,7 @@ class OutboundApi {
 	postOutboundCampaignAgentownedmappingpreview(campaignId) { 
 		// verify the required parameter 'campaignId' is set
 		if (campaignId === undefined || campaignId === null) {
-			throw 'Missing the required parameter "campaignId" when calling postOutboundCampaignAgentownedmappingpreview';
+			throw new Error('Missing the required parameter "campaignId" when calling postOutboundCampaignAgentownedmappingpreview';
 		}
 
 		return this.apiClient.callApi(
@@ -2048,11 +2048,11 @@ class OutboundApi {
 	postOutboundCampaignCallbackSchedule(campaignId, body) { 
 		// verify the required parameter 'campaignId' is set
 		if (campaignId === undefined || campaignId === null) {
-			throw 'Missing the required parameter "campaignId" when calling postOutboundCampaignCallbackSchedule';
+			throw new Error('Missing the required parameter "campaignId" when calling postOutboundCampaignCallbackSchedule';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postOutboundCampaignCallbackSchedule';
+			throw new Error('Missing the required parameter "body" when calling postOutboundCampaignCallbackSchedule';
 		}
 
 		return this.apiClient.callApi(
@@ -2077,7 +2077,7 @@ class OutboundApi {
 	postOutboundCampaignrules(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postOutboundCampaignrules';
+			throw new Error('Missing the required parameter "body" when calling postOutboundCampaignrules';
 		}
 
 		return this.apiClient.callApi(
@@ -2102,7 +2102,7 @@ class OutboundApi {
 	postOutboundCampaigns(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postOutboundCampaigns';
+			throw new Error('Missing the required parameter "body" when calling postOutboundCampaigns';
 		}
 
 		return this.apiClient.callApi(
@@ -2127,7 +2127,7 @@ class OutboundApi {
 	postOutboundCampaignsProgress(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postOutboundCampaignsProgress';
+			throw new Error('Missing the required parameter "body" when calling postOutboundCampaignsProgress';
 		}
 
 		return this.apiClient.callApi(
@@ -2152,7 +2152,7 @@ class OutboundApi {
 	postOutboundContactlistClear(contactListId) { 
 		// verify the required parameter 'contactListId' is set
 		if (contactListId === undefined || contactListId === null) {
-			throw 'Missing the required parameter "contactListId" when calling postOutboundContactlistClear';
+			throw new Error('Missing the required parameter "contactListId" when calling postOutboundContactlistClear';
 		}
 
 		return this.apiClient.callApi(
@@ -2184,11 +2184,11 @@ class OutboundApi {
 		
 		// verify the required parameter 'contactListId' is set
 		if (contactListId === undefined || contactListId === null) {
-			throw 'Missing the required parameter "contactListId" when calling postOutboundContactlistContacts';
+			throw new Error('Missing the required parameter "contactListId" when calling postOutboundContactlistContacts';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postOutboundContactlistContacts';
+			throw new Error('Missing the required parameter "body" when calling postOutboundContactlistContacts';
 		}
 
 		return this.apiClient.callApi(
@@ -2214,11 +2214,11 @@ class OutboundApi {
 	postOutboundContactlistContactsBulk(contactListId, body) { 
 		// verify the required parameter 'contactListId' is set
 		if (contactListId === undefined || contactListId === null) {
-			throw 'Missing the required parameter "contactListId" when calling postOutboundContactlistContactsBulk';
+			throw new Error('Missing the required parameter "contactListId" when calling postOutboundContactlistContactsBulk';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postOutboundContactlistContactsBulk';
+			throw new Error('Missing the required parameter "body" when calling postOutboundContactlistContactsBulk';
 		}
 
 		return this.apiClient.callApi(
@@ -2243,7 +2243,7 @@ class OutboundApi {
 	postOutboundContactlistExport(contactListId) { 
 		// verify the required parameter 'contactListId' is set
 		if (contactListId === undefined || contactListId === null) {
-			throw 'Missing the required parameter "contactListId" when calling postOutboundContactlistExport';
+			throw new Error('Missing the required parameter "contactListId" when calling postOutboundContactlistExport';
 		}
 
 		return this.apiClient.callApi(
@@ -2268,7 +2268,7 @@ class OutboundApi {
 	postOutboundContactlistfilters(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postOutboundContactlistfilters';
+			throw new Error('Missing the required parameter "body" when calling postOutboundContactlistfilters';
 		}
 
 		return this.apiClient.callApi(
@@ -2293,7 +2293,7 @@ class OutboundApi {
 	postOutboundContactlistfiltersPreview(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postOutboundContactlistfiltersPreview';
+			throw new Error('Missing the required parameter "body" when calling postOutboundContactlistfiltersPreview';
 		}
 
 		return this.apiClient.callApi(
@@ -2318,7 +2318,7 @@ class OutboundApi {
 	postOutboundContactlists(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postOutboundContactlists';
+			throw new Error('Missing the required parameter "body" when calling postOutboundContactlists';
 		}
 
 		return this.apiClient.callApi(
@@ -2343,7 +2343,7 @@ class OutboundApi {
 	postOutboundConversationDnc(conversationId) { 
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling postOutboundConversationDnc';
+			throw new Error('Missing the required parameter "conversationId" when calling postOutboundConversationDnc';
 		}
 
 		return this.apiClient.callApi(
@@ -2368,7 +2368,7 @@ class OutboundApi {
 	postOutboundDnclistExport(dncListId) { 
 		// verify the required parameter 'dncListId' is set
 		if (dncListId === undefined || dncListId === null) {
-			throw 'Missing the required parameter "dncListId" when calling postOutboundDnclistExport';
+			throw new Error('Missing the required parameter "dncListId" when calling postOutboundDnclistExport';
 		}
 
 		return this.apiClient.callApi(
@@ -2394,11 +2394,11 @@ class OutboundApi {
 	postOutboundDnclistPhonenumbers(dncListId, body) { 
 		// verify the required parameter 'dncListId' is set
 		if (dncListId === undefined || dncListId === null) {
-			throw 'Missing the required parameter "dncListId" when calling postOutboundDnclistPhonenumbers';
+			throw new Error('Missing the required parameter "dncListId" when calling postOutboundDnclistPhonenumbers';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postOutboundDnclistPhonenumbers';
+			throw new Error('Missing the required parameter "body" when calling postOutboundDnclistPhonenumbers';
 		}
 
 		return this.apiClient.callApi(
@@ -2423,7 +2423,7 @@ class OutboundApi {
 	postOutboundDnclists(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postOutboundDnclists';
+			throw new Error('Missing the required parameter "body" when calling postOutboundDnclists';
 		}
 
 		return this.apiClient.callApi(
@@ -2448,7 +2448,7 @@ class OutboundApi {
 	postOutboundMessagingcampaigns(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postOutboundMessagingcampaigns';
+			throw new Error('Missing the required parameter "body" when calling postOutboundMessagingcampaigns';
 		}
 
 		return this.apiClient.callApi(
@@ -2473,7 +2473,7 @@ class OutboundApi {
 	postOutboundMessagingcampaignsProgress(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postOutboundMessagingcampaignsProgress';
+			throw new Error('Missing the required parameter "body" when calling postOutboundMessagingcampaignsProgress';
 		}
 
 		return this.apiClient.callApi(
@@ -2498,7 +2498,7 @@ class OutboundApi {
 	postOutboundRulesets(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postOutboundRulesets';
+			throw new Error('Missing the required parameter "body" when calling postOutboundRulesets';
 		}
 
 		return this.apiClient.callApi(
@@ -2523,7 +2523,7 @@ class OutboundApi {
 	postOutboundSequences(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postOutboundSequences';
+			throw new Error('Missing the required parameter "body" when calling postOutboundSequences';
 		}
 
 		return this.apiClient.callApi(
@@ -2549,11 +2549,11 @@ class OutboundApi {
 	putOutboundAttemptlimit(attemptLimitsId, body) { 
 		// verify the required parameter 'attemptLimitsId' is set
 		if (attemptLimitsId === undefined || attemptLimitsId === null) {
-			throw 'Missing the required parameter "attemptLimitsId" when calling putOutboundAttemptlimit';
+			throw new Error('Missing the required parameter "attemptLimitsId" when calling putOutboundAttemptlimit';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putOutboundAttemptlimit';
+			throw new Error('Missing the required parameter "body" when calling putOutboundAttemptlimit';
 		}
 
 		return this.apiClient.callApi(
@@ -2579,11 +2579,11 @@ class OutboundApi {
 	putOutboundCallabletimeset(callableTimeSetId, body) { 
 		// verify the required parameter 'callableTimeSetId' is set
 		if (callableTimeSetId === undefined || callableTimeSetId === null) {
-			throw 'Missing the required parameter "callableTimeSetId" when calling putOutboundCallabletimeset';
+			throw new Error('Missing the required parameter "callableTimeSetId" when calling putOutboundCallabletimeset';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putOutboundCallabletimeset';
+			throw new Error('Missing the required parameter "body" when calling putOutboundCallabletimeset';
 		}
 
 		return this.apiClient.callApi(
@@ -2609,11 +2609,11 @@ class OutboundApi {
 	putOutboundCallanalysisresponseset(callAnalysisSetId, body) { 
 		// verify the required parameter 'callAnalysisSetId' is set
 		if (callAnalysisSetId === undefined || callAnalysisSetId === null) {
-			throw 'Missing the required parameter "callAnalysisSetId" when calling putOutboundCallanalysisresponseset';
+			throw new Error('Missing the required parameter "callAnalysisSetId" when calling putOutboundCallanalysisresponseset';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putOutboundCallanalysisresponseset';
+			throw new Error('Missing the required parameter "body" when calling putOutboundCallanalysisresponseset';
 		}
 
 		return this.apiClient.callApi(
@@ -2639,11 +2639,11 @@ class OutboundApi {
 	putOutboundCampaign(campaignId, body) { 
 		// verify the required parameter 'campaignId' is set
 		if (campaignId === undefined || campaignId === null) {
-			throw 'Missing the required parameter "campaignId" when calling putOutboundCampaign';
+			throw new Error('Missing the required parameter "campaignId" when calling putOutboundCampaign';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putOutboundCampaign';
+			throw new Error('Missing the required parameter "body" when calling putOutboundCampaign';
 		}
 
 		return this.apiClient.callApi(
@@ -2670,15 +2670,15 @@ class OutboundApi {
 	putOutboundCampaignAgent(campaignId, userId, body) { 
 		// verify the required parameter 'campaignId' is set
 		if (campaignId === undefined || campaignId === null) {
-			throw 'Missing the required parameter "campaignId" when calling putOutboundCampaignAgent';
+			throw new Error('Missing the required parameter "campaignId" when calling putOutboundCampaignAgent';
 		}
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling putOutboundCampaignAgent';
+			throw new Error('Missing the required parameter "userId" when calling putOutboundCampaignAgent';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putOutboundCampaignAgent';
+			throw new Error('Missing the required parameter "body" when calling putOutboundCampaignAgent';
 		}
 
 		return this.apiClient.callApi(
@@ -2704,11 +2704,11 @@ class OutboundApi {
 	putOutboundCampaignrule(campaignRuleId, body) { 
 		// verify the required parameter 'campaignRuleId' is set
 		if (campaignRuleId === undefined || campaignRuleId === null) {
-			throw 'Missing the required parameter "campaignRuleId" when calling putOutboundCampaignrule';
+			throw new Error('Missing the required parameter "campaignRuleId" when calling putOutboundCampaignrule';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putOutboundCampaignrule';
+			throw new Error('Missing the required parameter "body" when calling putOutboundCampaignrule';
 		}
 
 		return this.apiClient.callApi(
@@ -2734,11 +2734,11 @@ class OutboundApi {
 	putOutboundContactlist(contactListId, body) { 
 		// verify the required parameter 'contactListId' is set
 		if (contactListId === undefined || contactListId === null) {
-			throw 'Missing the required parameter "contactListId" when calling putOutboundContactlist';
+			throw new Error('Missing the required parameter "contactListId" when calling putOutboundContactlist';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putOutboundContactlist';
+			throw new Error('Missing the required parameter "body" when calling putOutboundContactlist';
 		}
 
 		return this.apiClient.callApi(
@@ -2765,15 +2765,15 @@ class OutboundApi {
 	putOutboundContactlistContact(contactListId, contactId, body) { 
 		// verify the required parameter 'contactListId' is set
 		if (contactListId === undefined || contactListId === null) {
-			throw 'Missing the required parameter "contactListId" when calling putOutboundContactlistContact';
+			throw new Error('Missing the required parameter "contactListId" when calling putOutboundContactlistContact';
 		}
 		// verify the required parameter 'contactId' is set
 		if (contactId === undefined || contactId === null) {
-			throw 'Missing the required parameter "contactId" when calling putOutboundContactlistContact';
+			throw new Error('Missing the required parameter "contactId" when calling putOutboundContactlistContact';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putOutboundContactlistContact';
+			throw new Error('Missing the required parameter "body" when calling putOutboundContactlistContact';
 		}
 
 		return this.apiClient.callApi(
@@ -2799,11 +2799,11 @@ class OutboundApi {
 	putOutboundContactlistfilter(contactListFilterId, body) { 
 		// verify the required parameter 'contactListFilterId' is set
 		if (contactListFilterId === undefined || contactListFilterId === null) {
-			throw 'Missing the required parameter "contactListFilterId" when calling putOutboundContactlistfilter';
+			throw new Error('Missing the required parameter "contactListFilterId" when calling putOutboundContactlistfilter';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putOutboundContactlistfilter';
+			throw new Error('Missing the required parameter "body" when calling putOutboundContactlistfilter';
 		}
 
 		return this.apiClient.callApi(
@@ -2829,11 +2829,11 @@ class OutboundApi {
 	putOutboundDnclist(dncListId, body) { 
 		// verify the required parameter 'dncListId' is set
 		if (dncListId === undefined || dncListId === null) {
-			throw 'Missing the required parameter "dncListId" when calling putOutboundDnclist';
+			throw new Error('Missing the required parameter "dncListId" when calling putOutboundDnclist';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putOutboundDnclist';
+			throw new Error('Missing the required parameter "body" when calling putOutboundDnclist';
 		}
 
 		return this.apiClient.callApi(
@@ -2859,11 +2859,11 @@ class OutboundApi {
 	putOutboundMessagingcampaign(messagingCampaignId, body) { 
 		// verify the required parameter 'messagingCampaignId' is set
 		if (messagingCampaignId === undefined || messagingCampaignId === null) {
-			throw 'Missing the required parameter "messagingCampaignId" when calling putOutboundMessagingcampaign';
+			throw new Error('Missing the required parameter "messagingCampaignId" when calling putOutboundMessagingcampaign';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putOutboundMessagingcampaign';
+			throw new Error('Missing the required parameter "body" when calling putOutboundMessagingcampaign';
 		}
 
 		return this.apiClient.callApi(
@@ -2889,11 +2889,11 @@ class OutboundApi {
 	putOutboundRuleset(ruleSetId, body) { 
 		// verify the required parameter 'ruleSetId' is set
 		if (ruleSetId === undefined || ruleSetId === null) {
-			throw 'Missing the required parameter "ruleSetId" when calling putOutboundRuleset';
+			throw new Error('Missing the required parameter "ruleSetId" when calling putOutboundRuleset';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putOutboundRuleset';
+			throw new Error('Missing the required parameter "body" when calling putOutboundRuleset';
 		}
 
 		return this.apiClient.callApi(
@@ -2919,11 +2919,11 @@ class OutboundApi {
 	putOutboundSchedulesCampaign(campaignId, body) { 
 		// verify the required parameter 'campaignId' is set
 		if (campaignId === undefined || campaignId === null) {
-			throw 'Missing the required parameter "campaignId" when calling putOutboundSchedulesCampaign';
+			throw new Error('Missing the required parameter "campaignId" when calling putOutboundSchedulesCampaign';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putOutboundSchedulesCampaign';
+			throw new Error('Missing the required parameter "body" when calling putOutboundSchedulesCampaign';
 		}
 
 		return this.apiClient.callApi(
@@ -2949,11 +2949,11 @@ class OutboundApi {
 	putOutboundSchedulesSequence(sequenceId, body) { 
 		// verify the required parameter 'sequenceId' is set
 		if (sequenceId === undefined || sequenceId === null) {
-			throw 'Missing the required parameter "sequenceId" when calling putOutboundSchedulesSequence';
+			throw new Error('Missing the required parameter "sequenceId" when calling putOutboundSchedulesSequence';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putOutboundSchedulesSequence';
+			throw new Error('Missing the required parameter "body" when calling putOutboundSchedulesSequence';
 		}
 
 		return this.apiClient.callApi(
@@ -2979,11 +2979,11 @@ class OutboundApi {
 	putOutboundSequence(sequenceId, body) { 
 		// verify the required parameter 'sequenceId' is set
 		if (sequenceId === undefined || sequenceId === null) {
-			throw 'Missing the required parameter "sequenceId" when calling putOutboundSequence';
+			throw new Error('Missing the required parameter "sequenceId" when calling putOutboundSequence';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putOutboundSequence';
+			throw new Error('Missing the required parameter "body" when calling putOutboundSequence';
 		}
 
 		return this.apiClient.callApi(
@@ -3008,7 +3008,7 @@ class OutboundApi {
 	putOutboundWrapupcodemappings(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putOutboundWrapupcodemappings';
+			throw new Error('Missing the required parameter "body" when calling putOutboundWrapupcodemappings';
 		}
 
 		return this.apiClient.callApi(

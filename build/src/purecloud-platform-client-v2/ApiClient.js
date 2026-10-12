@@ -192,7 +192,7 @@ class ApiClient {
 		if (!this.authData) 
 			this.authData = {};
 		else
-			this.authData = JSON.parse(this.authData);
+			try { this.authData = JSON.parse(this.authData); } catch (e) { this.authData = {}; }
 		if (this.authData.accessToken) this.setAccessToken(this.authData.accessToken);
 		this.authData.state = tempState;
 	}
@@ -964,7 +964,7 @@ class ApiClient {
 
 				if (contentType === 'application/x-www-form-urlencoded') {
 					request.send(that.normalizeParams(formParams));
-				} else if (contentType == 'multipart/form-data') {
+				} else if (contentType === 'multipart/form-data') {
 					var _formParams = that.normalizeParams(formParams);
 					for (var key in _formParams) {
 						if (_formParams.hasOwnProperty(key)) {
@@ -1015,7 +1015,7 @@ class ApiClient {
 
 					// Resolve promise
 					if (error) {
-						if (data.status == 401 && that.config.refresh_access_token && that.authData.refreshToken !== "") {
+						if (data.status === 401 && that.config.refresh_access_token && that.authData.refreshToken !== "") {
 							that._handleExpiredAccessToken()
 								.then(() => {
 									sendRequest(that);

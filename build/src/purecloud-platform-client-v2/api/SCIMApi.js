@@ -32,7 +32,7 @@ class SCIMApi {
 		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling deleteScimUser';
+			throw new Error('Missing the required parameter "userId" when calling deleteScimUser';
 		}
 
 		return this.apiClient.callApi(
@@ -61,7 +61,7 @@ class SCIMApi {
 		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling deleteScimV2User';
+			throw new Error('Missing the required parameter "userId" when calling deleteScimV2User';
 		}
 
 		return this.apiClient.callApi(
@@ -92,7 +92,7 @@ class SCIMApi {
 		
 		// verify the required parameter 'groupId' is set
 		if (groupId === undefined || groupId === null) {
-			throw 'Missing the required parameter "groupId" when calling getScimGroup';
+			throw new Error('Missing the required parameter "groupId" when calling getScimGroup';
 		}
 
 		return this.apiClient.callApi(
@@ -145,7 +145,7 @@ class SCIMApi {
 	getScimResourcetype(resourceType) { 
 		// verify the required parameter 'resourceType' is set
 		if (resourceType === undefined || resourceType === null) {
-			throw 'Missing the required parameter "resourceType" when calling getScimResourcetype';
+			throw new Error('Missing the required parameter "resourceType" when calling getScimResourcetype';
 		}
 
 		return this.apiClient.callApi(
@@ -190,7 +190,7 @@ class SCIMApi {
 	getScimSchema(schemaId) { 
 		// verify the required parameter 'schemaId' is set
 		if (schemaId === undefined || schemaId === null) {
-			throw 'Missing the required parameter "schemaId" when calling getScimSchema';
+			throw new Error('Missing the required parameter "schemaId" when calling getScimSchema';
 		}
 
 		return this.apiClient.callApi(
@@ -269,7 +269,7 @@ class SCIMApi {
 		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling getScimUser';
+			throw new Error('Missing the required parameter "userId" when calling getScimUser';
 		}
 
 		return this.apiClient.callApi(
@@ -328,7 +328,7 @@ class SCIMApi {
 		
 		// verify the required parameter 'groupId' is set
 		if (groupId === undefined || groupId === null) {
-			throw 'Missing the required parameter "groupId" when calling getScimV2Group';
+			throw new Error('Missing the required parameter "groupId" when calling getScimV2Group';
 		}
 
 		return this.apiClient.callApi(
@@ -360,7 +360,7 @@ class SCIMApi {
 		
 		// verify the required parameter 'filter' is set
 		if (filter === undefined || filter === null) {
-			throw 'Missing the required parameter "filter" when calling getScimV2Groups';
+			throw new Error('Missing the required parameter "filter" when calling getScimV2Groups';
 		}
 
 		return this.apiClient.callApi(
@@ -385,7 +385,7 @@ class SCIMApi {
 	getScimV2Resourcetype(resourceType) { 
 		// verify the required parameter 'resourceType' is set
 		if (resourceType === undefined || resourceType === null) {
-			throw 'Missing the required parameter "resourceType" when calling getScimV2Resourcetype';
+			throw new Error('Missing the required parameter "resourceType" when calling getScimV2Resourcetype';
 		}
 
 		return this.apiClient.callApi(
@@ -430,7 +430,7 @@ class SCIMApi {
 	getScimV2Schema(schemaId) { 
 		// verify the required parameter 'schemaId' is set
 		if (schemaId === undefined || schemaId === null) {
-			throw 'Missing the required parameter "schemaId" when calling getScimV2Schema';
+			throw new Error('Missing the required parameter "schemaId" when calling getScimV2Schema';
 		}
 
 		return this.apiClient.callApi(
@@ -509,7 +509,7 @@ class SCIMApi {
 		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling getScimV2User';
+			throw new Error('Missing the required parameter "userId" when calling getScimV2User';
 		}
 
 		return this.apiClient.callApi(
@@ -567,11 +567,11 @@ class SCIMApi {
 		
 		// verify the required parameter 'groupId' is set
 		if (groupId === undefined || groupId === null) {
-			throw 'Missing the required parameter "groupId" when calling patchScimGroup';
+			throw new Error('Missing the required parameter "groupId" when calling patchScimGroup';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchScimGroup';
+			throw new Error('Missing the required parameter "body" when calling patchScimGroup';
 		}
 
 		return this.apiClient.callApi(
@@ -601,11 +601,11 @@ class SCIMApi {
 		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling patchScimUser';
+			throw new Error('Missing the required parameter "userId" when calling patchScimUser';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchScimUser';
+			throw new Error('Missing the required parameter "body" when calling patchScimUser';
 		}
 
 		return this.apiClient.callApi(
@@ -635,11 +635,11 @@ class SCIMApi {
 		
 		// verify the required parameter 'groupId' is set
 		if (groupId === undefined || groupId === null) {
-			throw 'Missing the required parameter "groupId" when calling patchScimV2Group';
+			throw new Error('Missing the required parameter "groupId" when calling patchScimV2Group';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchScimV2Group';
+			throw new Error('Missing the required parameter "body" when calling patchScimV2Group';
 		}
 
 		return this.apiClient.callApi(
@@ -669,11 +669,11 @@ class SCIMApi {
 		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling patchScimV2User';
+			throw new Error('Missing the required parameter "userId" when calling patchScimV2User';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchScimV2User';
+			throw new Error('Missing the required parameter "body" when calling patchScimV2User';
 		}
 
 		return this.apiClient.callApi(
@@ -698,7 +698,7 @@ class SCIMApi {
 	postScimUsers(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postScimUsers';
+			throw new Error('Missing the required parameter "body" when calling postScimUsers';
 		}
 
 		return this.apiClient.callApi(
@@ -723,7 +723,7 @@ class SCIMApi {
 	postScimV2Users(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postScimV2Users';
+			throw new Error('Missing the required parameter "body" when calling postScimV2Users';
 		}
 
 		return this.apiClient.callApi(
@@ -753,11 +753,11 @@ class SCIMApi {
 		
 		// verify the required parameter 'groupId' is set
 		if (groupId === undefined || groupId === null) {
-			throw 'Missing the required parameter "groupId" when calling putScimGroup';
+			throw new Error('Missing the required parameter "groupId" when calling putScimGroup';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putScimGroup';
+			throw new Error('Missing the required parameter "body" when calling putScimGroup';
 		}
 
 		return this.apiClient.callApi(
@@ -787,11 +787,11 @@ class SCIMApi {
 		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling putScimUser';
+			throw new Error('Missing the required parameter "userId" when calling putScimUser';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putScimUser';
+			throw new Error('Missing the required parameter "body" when calling putScimUser';
 		}
 
 		return this.apiClient.callApi(
@@ -821,11 +821,11 @@ class SCIMApi {
 		
 		// verify the required parameter 'groupId' is set
 		if (groupId === undefined || groupId === null) {
-			throw 'Missing the required parameter "groupId" when calling putScimV2Group';
+			throw new Error('Missing the required parameter "groupId" when calling putScimV2Group';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putScimV2Group';
+			throw new Error('Missing the required parameter "body" when calling putScimV2Group';
 		}
 
 		return this.apiClient.callApi(
@@ -855,11 +855,11 @@ class SCIMApi {
 		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling putScimV2User';
+			throw new Error('Missing the required parameter "userId" when calling putScimV2User';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putScimV2User';
+			throw new Error('Missing the required parameter "body" when calling putScimV2User';
 		}
 
 		return this.apiClient.callApi(

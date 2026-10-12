@@ -28,7 +28,7 @@ class MobileDevicesApi {
 	deleteMobiledevice(deviceId) { 
 		// verify the required parameter 'deviceId' is set
 		if (deviceId === undefined || deviceId === null) {
-			throw 'Missing the required parameter "deviceId" when calling deleteMobiledevice';
+			throw new Error('Missing the required parameter "deviceId" when calling deleteMobiledevice';
 		}
 
 		return this.apiClient.callApi(
@@ -53,7 +53,7 @@ class MobileDevicesApi {
 	getMobiledevice(deviceId) { 
 		// verify the required parameter 'deviceId' is set
 		if (deviceId === undefined || deviceId === null) {
-			throw 'Missing the required parameter "deviceId" when calling getMobiledevice';
+			throw new Error('Missing the required parameter "deviceId" when calling getMobiledevice';
 		}
 
 		return this.apiClient.callApi(
@@ -104,7 +104,7 @@ class MobileDevicesApi {
 	postMobiledevices(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postMobiledevices';
+			throw new Error('Missing the required parameter "body" when calling postMobiledevices';
 		}
 
 		return this.apiClient.callApi(
@@ -133,7 +133,7 @@ class MobileDevicesApi {
 		
 		// verify the required parameter 'deviceId' is set
 		if (deviceId === undefined || deviceId === null) {
-			throw 'Missing the required parameter "deviceId" when calling putMobiledevice';
+			throw new Error('Missing the required parameter "deviceId" when calling putMobiledevice';
 		}
 
 		return this.apiClient.callApi(

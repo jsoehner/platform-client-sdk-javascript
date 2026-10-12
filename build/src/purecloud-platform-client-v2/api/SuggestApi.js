@@ -33,7 +33,7 @@ class SuggestApi {
 		
 		// verify the required parameter 'q64' is set
 		if (q64 === undefined || q64 === null) {
-			throw 'Missing the required parameter "q64" when calling getSearch';
+			throw new Error('Missing the required parameter "q64" when calling getSearch';
 		}
 
 		return this.apiClient.callApi(
@@ -63,7 +63,7 @@ class SuggestApi {
 		
 		// verify the required parameter 'q64' is set
 		if (q64 === undefined || q64 === null) {
-			throw 'Missing the required parameter "q64" when calling getSearchSuggest';
+			throw new Error('Missing the required parameter "q64" when calling getSearchSuggest';
 		}
 
 		return this.apiClient.callApi(
@@ -92,7 +92,7 @@ class SuggestApi {
 		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postSearch';
+			throw new Error('Missing the required parameter "body" when calling postSearch';
 		}
 
 		return this.apiClient.callApi(
@@ -121,7 +121,7 @@ class SuggestApi {
 		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postSearchSuggest';
+			throw new Error('Missing the required parameter "body" when calling postSearchSuggest';
 		}
 
 		return this.apiClient.callApi(

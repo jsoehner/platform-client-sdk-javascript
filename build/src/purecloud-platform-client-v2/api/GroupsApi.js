@@ -28,7 +28,7 @@ class GroupsApi {
 	deleteGroup(groupId) { 
 		// verify the required parameter 'groupId' is set
 		if (groupId === undefined || groupId === null) {
-			throw 'Missing the required parameter "groupId" when calling deleteGroup';
+			throw new Error('Missing the required parameter "groupId" when calling deleteGroup';
 		}
 
 		return this.apiClient.callApi(
@@ -54,11 +54,11 @@ class GroupsApi {
 	deleteGroupMembers(groupId, ids) { 
 		// verify the required parameter 'groupId' is set
 		if (groupId === undefined || groupId === null) {
-			throw 'Missing the required parameter "groupId" when calling deleteGroupMembers';
+			throw new Error('Missing the required parameter "groupId" when calling deleteGroupMembers';
 		}
 		// verify the required parameter 'ids' is set
 		if (ids === undefined || ids === null) {
-			throw 'Missing the required parameter "ids" when calling deleteGroupMembers';
+			throw new Error('Missing the required parameter "ids" when calling deleteGroupMembers';
 		}
 
 		return this.apiClient.callApi(
@@ -83,7 +83,7 @@ class GroupsApi {
 	getFieldconfig(type) { 
 		// verify the required parameter 'type' is set
 		if (type === undefined || type === null) {
-			throw 'Missing the required parameter "type" when calling getFieldconfig';
+			throw new Error('Missing the required parameter "type" when calling getFieldconfig';
 		}
 
 		return this.apiClient.callApi(
@@ -108,7 +108,7 @@ class GroupsApi {
 	getGroup(groupId) { 
 		// verify the required parameter 'groupId' is set
 		if (groupId === undefined || groupId === null) {
-			throw 'Missing the required parameter "groupId" when calling getGroup';
+			throw new Error('Missing the required parameter "groupId" when calling getGroup';
 		}
 
 		return this.apiClient.callApi(
@@ -133,7 +133,7 @@ class GroupsApi {
 	getGroupIndividuals(groupId) { 
 		// verify the required parameter 'groupId' is set
 		if (groupId === undefined || groupId === null) {
-			throw 'Missing the required parameter "groupId" when calling getGroupIndividuals';
+			throw new Error('Missing the required parameter "groupId" when calling getGroupIndividuals';
 		}
 
 		return this.apiClient.callApi(
@@ -165,7 +165,7 @@ class GroupsApi {
 		
 		// verify the required parameter 'groupId' is set
 		if (groupId === undefined || groupId === null) {
-			throw 'Missing the required parameter "groupId" when calling getGroupMembers';
+			throw new Error('Missing the required parameter "groupId" when calling getGroupMembers';
 		}
 
 		return this.apiClient.callApi(
@@ -194,7 +194,7 @@ class GroupsApi {
 		
 		// verify the required parameter 'groupId' is set
 		if (groupId === undefined || groupId === null) {
-			throw 'Missing the required parameter "groupId" when calling getGroupProfile';
+			throw new Error('Missing the required parameter "groupId" when calling getGroupProfile';
 		}
 
 		return this.apiClient.callApi(
@@ -251,7 +251,7 @@ class GroupsApi {
 		
 		// verify the required parameter 'q64' is set
 		if (q64 === undefined || q64 === null) {
-			throw 'Missing the required parameter "q64" when calling getGroupsSearch';
+			throw new Error('Missing the required parameter "q64" when calling getGroupsSearch';
 		}
 
 		return this.apiClient.callApi(
@@ -304,11 +304,11 @@ class GroupsApi {
 	postGroupMembers(groupId, body) { 
 		// verify the required parameter 'groupId' is set
 		if (groupId === undefined || groupId === null) {
-			throw 'Missing the required parameter "groupId" when calling postGroupMembers';
+			throw new Error('Missing the required parameter "groupId" when calling postGroupMembers';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postGroupMembers';
+			throw new Error('Missing the required parameter "body" when calling postGroupMembers';
 		}
 
 		return this.apiClient.callApi(
@@ -333,7 +333,7 @@ class GroupsApi {
 	postGroups(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postGroups';
+			throw new Error('Missing the required parameter "body" when calling postGroups';
 		}
 
 		return this.apiClient.callApi(
@@ -358,7 +358,7 @@ class GroupsApi {
 	postGroupsSearch(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postGroupsSearch';
+			throw new Error('Missing the required parameter "body" when calling postGroupsSearch';
 		}
 
 		return this.apiClient.callApi(
@@ -387,7 +387,7 @@ class GroupsApi {
 		
 		// verify the required parameter 'groupId' is set
 		if (groupId === undefined || groupId === null) {
-			throw 'Missing the required parameter "groupId" when calling putGroup';
+			throw new Error('Missing the required parameter "groupId" when calling putGroup';
 		}
 
 		return this.apiClient.callApi(

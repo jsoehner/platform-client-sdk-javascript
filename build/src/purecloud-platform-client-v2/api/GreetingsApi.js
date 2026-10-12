@@ -28,7 +28,7 @@ class GreetingsApi {
 	deleteGreeting(greetingId) { 
 		// verify the required parameter 'greetingId' is set
 		if (greetingId === undefined || greetingId === null) {
-			throw 'Missing the required parameter "greetingId" when calling deleteGreeting';
+			throw new Error('Missing the required parameter "greetingId" when calling deleteGreeting';
 		}
 
 		return this.apiClient.callApi(
@@ -53,7 +53,7 @@ class GreetingsApi {
 	getGreeting(greetingId) { 
 		// verify the required parameter 'greetingId' is set
 		if (greetingId === undefined || greetingId === null) {
-			throw 'Missing the required parameter "greetingId" when calling getGreeting';
+			throw new Error('Missing the required parameter "greetingId" when calling getGreeting';
 		}
 
 		return this.apiClient.callApi(
@@ -82,7 +82,7 @@ class GreetingsApi {
 		
 		// verify the required parameter 'greetingId' is set
 		if (greetingId === undefined || greetingId === null) {
-			throw 'Missing the required parameter "greetingId" when calling getGreetingMedia';
+			throw new Error('Missing the required parameter "greetingId" when calling getGreetingMedia';
 		}
 
 		return this.apiClient.callApi(
@@ -157,7 +157,7 @@ class GreetingsApi {
 		
 		// verify the required parameter 'groupId' is set
 		if (groupId === undefined || groupId === null) {
-			throw 'Missing the required parameter "groupId" when calling getGroupGreetings';
+			throw new Error('Missing the required parameter "groupId" when calling getGroupGreetings';
 		}
 
 		return this.apiClient.callApi(
@@ -182,7 +182,7 @@ class GreetingsApi {
 	getGroupGreetingsDefaults(groupId) { 
 		// verify the required parameter 'groupId' is set
 		if (groupId === undefined || groupId === null) {
-			throw 'Missing the required parameter "groupId" when calling getGroupGreetingsDefaults';
+			throw new Error('Missing the required parameter "groupId" when calling getGroupGreetingsDefaults';
 		}
 
 		return this.apiClient.callApi(
@@ -212,7 +212,7 @@ class GreetingsApi {
 		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling getUserGreetings';
+			throw new Error('Missing the required parameter "userId" when calling getUserGreetings';
 		}
 
 		return this.apiClient.callApi(
@@ -237,7 +237,7 @@ class GreetingsApi {
 	getUserGreetingsDefaults(userId) { 
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling getUserGreetingsDefaults';
+			throw new Error('Missing the required parameter "userId" when calling getUserGreetingsDefaults';
 		}
 
 		return this.apiClient.callApi(
@@ -262,7 +262,7 @@ class GreetingsApi {
 	postGreetings(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postGreetings';
+			throw new Error('Missing the required parameter "body" when calling postGreetings';
 		}
 
 		return this.apiClient.callApi(
@@ -288,11 +288,11 @@ class GreetingsApi {
 	postGroupGreetings(groupId, body) { 
 		// verify the required parameter 'groupId' is set
 		if (groupId === undefined || groupId === null) {
-			throw 'Missing the required parameter "groupId" when calling postGroupGreetings';
+			throw new Error('Missing the required parameter "groupId" when calling postGroupGreetings';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postGroupGreetings';
+			throw new Error('Missing the required parameter "body" when calling postGroupGreetings';
 		}
 
 		return this.apiClient.callApi(
@@ -318,11 +318,11 @@ class GreetingsApi {
 	postUserGreetings(userId, body) { 
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling postUserGreetings';
+			throw new Error('Missing the required parameter "userId" when calling postUserGreetings';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postUserGreetings';
+			throw new Error('Missing the required parameter "body" when calling postUserGreetings';
 		}
 
 		return this.apiClient.callApi(
@@ -348,11 +348,11 @@ class GreetingsApi {
 	putGreeting(greetingId, body) { 
 		// verify the required parameter 'greetingId' is set
 		if (greetingId === undefined || greetingId === null) {
-			throw 'Missing the required parameter "greetingId" when calling putGreeting';
+			throw new Error('Missing the required parameter "greetingId" when calling putGreeting';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putGreeting';
+			throw new Error('Missing the required parameter "body" when calling putGreeting';
 		}
 
 		return this.apiClient.callApi(
@@ -377,7 +377,7 @@ class GreetingsApi {
 	putGreetingsDefaults(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putGreetingsDefaults';
+			throw new Error('Missing the required parameter "body" when calling putGreetingsDefaults';
 		}
 
 		return this.apiClient.callApi(
@@ -403,11 +403,11 @@ class GreetingsApi {
 	putGroupGreetingsDefaults(groupId, body) { 
 		// verify the required parameter 'groupId' is set
 		if (groupId === undefined || groupId === null) {
-			throw 'Missing the required parameter "groupId" when calling putGroupGreetingsDefaults';
+			throw new Error('Missing the required parameter "groupId" when calling putGroupGreetingsDefaults';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putGroupGreetingsDefaults';
+			throw new Error('Missing the required parameter "body" when calling putGroupGreetingsDefaults';
 		}
 
 		return this.apiClient.callApi(
@@ -433,11 +433,11 @@ class GreetingsApi {
 	putUserGreetingsDefaults(userId, body) { 
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling putUserGreetingsDefaults';
+			throw new Error('Missing the required parameter "userId" when calling putUserGreetingsDefaults';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putUserGreetingsDefaults';
+			throw new Error('Missing the required parameter "body" when calling putUserGreetingsDefaults';
 		}
 
 		return this.apiClient.callApi(

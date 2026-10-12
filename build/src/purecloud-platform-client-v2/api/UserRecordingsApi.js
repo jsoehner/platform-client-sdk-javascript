@@ -28,7 +28,7 @@ class UserRecordingsApi {
 	deleteUserrecording(recordingId) { 
 		// verify the required parameter 'recordingId' is set
 		if (recordingId === undefined || recordingId === null) {
-			throw 'Missing the required parameter "recordingId" when calling deleteUserrecording';
+			throw new Error('Missing the required parameter "recordingId" when calling deleteUserrecording';
 		}
 
 		return this.apiClient.callApi(
@@ -57,7 +57,7 @@ class UserRecordingsApi {
 		
 		// verify the required parameter 'recordingId' is set
 		if (recordingId === undefined || recordingId === null) {
-			throw 'Missing the required parameter "recordingId" when calling getUserrecording';
+			throw new Error('Missing the required parameter "recordingId" when calling getUserrecording';
 		}
 
 		return this.apiClient.callApi(
@@ -86,7 +86,7 @@ class UserRecordingsApi {
 		
 		// verify the required parameter 'recordingId' is set
 		if (recordingId === undefined || recordingId === null) {
-			throw 'Missing the required parameter "recordingId" when calling getUserrecordingMedia';
+			throw new Error('Missing the required parameter "recordingId" when calling getUserrecordingMedia';
 		}
 
 		return this.apiClient.callApi(
@@ -162,11 +162,11 @@ class UserRecordingsApi {
 		
 		// verify the required parameter 'recordingId' is set
 		if (recordingId === undefined || recordingId === null) {
-			throw 'Missing the required parameter "recordingId" when calling putUserrecording';
+			throw new Error('Missing the required parameter "recordingId" when calling putUserrecording';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putUserrecording';
+			throw new Error('Missing the required parameter "body" when calling putUserrecording';
 		}
 
 		return this.apiClient.callApi(

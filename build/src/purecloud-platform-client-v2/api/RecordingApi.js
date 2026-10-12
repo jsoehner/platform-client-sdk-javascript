@@ -30,15 +30,15 @@ class RecordingApi {
 	deleteConversationRecordingAnnotation(conversationId, recordingId, annotationId) { 
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling deleteConversationRecordingAnnotation';
+			throw new Error('Missing the required parameter "conversationId" when calling deleteConversationRecordingAnnotation';
 		}
 		// verify the required parameter 'recordingId' is set
 		if (recordingId === undefined || recordingId === null) {
-			throw 'Missing the required parameter "recordingId" when calling deleteConversationRecordingAnnotation';
+			throw new Error('Missing the required parameter "recordingId" when calling deleteConversationRecordingAnnotation';
 		}
 		// verify the required parameter 'annotationId' is set
 		if (annotationId === undefined || annotationId === null) {
-			throw 'Missing the required parameter "annotationId" when calling deleteConversationRecordingAnnotation';
+			throw new Error('Missing the required parameter "annotationId" when calling deleteConversationRecordingAnnotation';
 		}
 
 		return this.apiClient.callApi(
@@ -63,7 +63,7 @@ class RecordingApi {
 	deleteOrphanrecording(orphanId) { 
 		// verify the required parameter 'orphanId' is set
 		if (orphanId === undefined || orphanId === null) {
-			throw 'Missing the required parameter "orphanId" when calling deleteOrphanrecording';
+			throw new Error('Missing the required parameter "orphanId" when calling deleteOrphanrecording';
 		}
 
 		return this.apiClient.callApi(
@@ -88,7 +88,7 @@ class RecordingApi {
 	deleteRecordingCrossplatformMediaretentionpolicies(ids) { 
 		// verify the required parameter 'ids' is set
 		if (ids === undefined || ids === null) {
-			throw 'Missing the required parameter "ids" when calling deleteRecordingCrossplatformMediaretentionpolicies';
+			throw new Error('Missing the required parameter "ids" when calling deleteRecordingCrossplatformMediaretentionpolicies';
 		}
 
 		return this.apiClient.callApi(
@@ -113,7 +113,7 @@ class RecordingApi {
 	deleteRecordingCrossplatformMediaretentionpolicy(policyId) { 
 		// verify the required parameter 'policyId' is set
 		if (policyId === undefined || policyId === null) {
-			throw 'Missing the required parameter "policyId" when calling deleteRecordingCrossplatformMediaretentionpolicy';
+			throw new Error('Missing the required parameter "policyId" when calling deleteRecordingCrossplatformMediaretentionpolicy';
 		}
 
 		return this.apiClient.callApi(
@@ -138,7 +138,7 @@ class RecordingApi {
 	deleteRecordingJob(jobId) { 
 		// verify the required parameter 'jobId' is set
 		if (jobId === undefined || jobId === null) {
-			throw 'Missing the required parameter "jobId" when calling deleteRecordingJob';
+			throw new Error('Missing the required parameter "jobId" when calling deleteRecordingJob';
 		}
 
 		return this.apiClient.callApi(
@@ -163,7 +163,7 @@ class RecordingApi {
 	deleteRecordingMediaretentionpolicies(ids) { 
 		// verify the required parameter 'ids' is set
 		if (ids === undefined || ids === null) {
-			throw 'Missing the required parameter "ids" when calling deleteRecordingMediaretentionpolicies';
+			throw new Error('Missing the required parameter "ids" when calling deleteRecordingMediaretentionpolicies';
 		}
 
 		return this.apiClient.callApi(
@@ -188,7 +188,7 @@ class RecordingApi {
 	deleteRecordingMediaretentionpolicy(policyId) { 
 		// verify the required parameter 'policyId' is set
 		if (policyId === undefined || policyId === null) {
-			throw 'Missing the required parameter "policyId" when calling deleteRecordingMediaretentionpolicy';
+			throw new Error('Missing the required parameter "policyId" when calling deleteRecordingMediaretentionpolicy';
 		}
 
 		return this.apiClient.callApi(
@@ -224,11 +224,11 @@ class RecordingApi {
 		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling getConversationRecording';
+			throw new Error('Missing the required parameter "conversationId" when calling getConversationRecording';
 		}
 		// verify the required parameter 'recordingId' is set
 		if (recordingId === undefined || recordingId === null) {
-			throw 'Missing the required parameter "recordingId" when calling getConversationRecording';
+			throw new Error('Missing the required parameter "recordingId" when calling getConversationRecording';
 		}
 
 		return this.apiClient.callApi(
@@ -255,15 +255,15 @@ class RecordingApi {
 	getConversationRecordingAnnotation(conversationId, recordingId, annotationId) { 
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling getConversationRecordingAnnotation';
+			throw new Error('Missing the required parameter "conversationId" when calling getConversationRecordingAnnotation';
 		}
 		// verify the required parameter 'recordingId' is set
 		if (recordingId === undefined || recordingId === null) {
-			throw 'Missing the required parameter "recordingId" when calling getConversationRecordingAnnotation';
+			throw new Error('Missing the required parameter "recordingId" when calling getConversationRecordingAnnotation';
 		}
 		// verify the required parameter 'annotationId' is set
 		if (annotationId === undefined || annotationId === null) {
-			throw 'Missing the required parameter "annotationId" when calling getConversationRecordingAnnotation';
+			throw new Error('Missing the required parameter "annotationId" when calling getConversationRecordingAnnotation';
 		}
 
 		return this.apiClient.callApi(
@@ -289,11 +289,11 @@ class RecordingApi {
 	getConversationRecordingAnnotations(conversationId, recordingId) { 
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling getConversationRecordingAnnotations';
+			throw new Error('Missing the required parameter "conversationId" when calling getConversationRecordingAnnotations';
 		}
 		// verify the required parameter 'recordingId' is set
 		if (recordingId === undefined || recordingId === null) {
-			throw 'Missing the required parameter "recordingId" when calling getConversationRecordingAnnotations';
+			throw new Error('Missing the required parameter "recordingId" when calling getConversationRecordingAnnotations';
 		}
 
 		return this.apiClient.callApi(
@@ -318,7 +318,7 @@ class RecordingApi {
 	getConversationRecordingmetadata(conversationId) { 
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling getConversationRecordingmetadata';
+			throw new Error('Missing the required parameter "conversationId" when calling getConversationRecordingmetadata';
 		}
 
 		return this.apiClient.callApi(
@@ -344,11 +344,11 @@ class RecordingApi {
 	getConversationRecordingmetadataRecordingId(conversationId, recordingId) { 
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling getConversationRecordingmetadataRecordingId';
+			throw new Error('Missing the required parameter "conversationId" when calling getConversationRecordingmetadataRecordingId';
 		}
 		// verify the required parameter 'recordingId' is set
 		if (recordingId === undefined || recordingId === null) {
-			throw 'Missing the required parameter "recordingId" when calling getConversationRecordingmetadataRecordingId';
+			throw new Error('Missing the required parameter "recordingId" when calling getConversationRecordingmetadataRecordingId';
 		}
 
 		return this.apiClient.callApi(
@@ -378,7 +378,7 @@ class RecordingApi {
 		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling getConversationRecordings';
+			throw new Error('Missing the required parameter "conversationId" when calling getConversationRecordings';
 		}
 
 		return this.apiClient.callApi(
@@ -403,7 +403,7 @@ class RecordingApi {
 	getOrphanrecording(orphanId) { 
 		// verify the required parameter 'orphanId' is set
 		if (orphanId === undefined || orphanId === null) {
-			throw 'Missing the required parameter "orphanId" when calling getOrphanrecording';
+			throw new Error('Missing the required parameter "orphanId" when calling getOrphanrecording';
 		}
 
 		return this.apiClient.callApi(
@@ -438,7 +438,7 @@ class RecordingApi {
 		
 		// verify the required parameter 'orphanId' is set
 		if (orphanId === undefined || orphanId === null) {
-			throw 'Missing the required parameter "orphanId" when calling getOrphanrecordingMedia';
+			throw new Error('Missing the required parameter "orphanId" when calling getOrphanrecordingMedia';
 		}
 
 		return this.apiClient.callApi(
@@ -494,7 +494,7 @@ class RecordingApi {
 	getRecordingBatchrequest(jobId) { 
 		// verify the required parameter 'jobId' is set
 		if (jobId === undefined || jobId === null) {
-			throw 'Missing the required parameter "jobId" when calling getRecordingBatchrequest';
+			throw new Error('Missing the required parameter "jobId" when calling getRecordingBatchrequest';
 		}
 
 		return this.apiClient.callApi(
@@ -552,7 +552,7 @@ class RecordingApi {
 	getRecordingCrossplatformMediaretentionpolicy(policyId) { 
 		// verify the required parameter 'policyId' is set
 		if (policyId === undefined || policyId === null) {
-			throw 'Missing the required parameter "policyId" when calling getRecordingCrossplatformMediaretentionpolicy';
+			throw new Error('Missing the required parameter "policyId" when calling getRecordingCrossplatformMediaretentionpolicy';
 		}
 
 		return this.apiClient.callApi(
@@ -577,7 +577,7 @@ class RecordingApi {
 	getRecordingJob(jobId) { 
 		// verify the required parameter 'jobId' is set
 		if (jobId === undefined || jobId === null) {
-			throw 'Missing the required parameter "jobId" when calling getRecordingJob';
+			throw new Error('Missing the required parameter "jobId" when calling getRecordingJob';
 		}
 
 		return this.apiClient.callApi(
@@ -607,7 +607,7 @@ class RecordingApi {
 		
 		// verify the required parameter 'jobId' is set
 		if (jobId === undefined || jobId === null) {
-			throw 'Missing the required parameter "jobId" when calling getRecordingJobFailedrecordings';
+			throw new Error('Missing the required parameter "jobId" when calling getRecordingJobFailedrecordings';
 		}
 
 		return this.apiClient.callApi(
@@ -661,7 +661,7 @@ class RecordingApi {
 	getRecordingLocalkeysSetting(settingsId) { 
 		// verify the required parameter 'settingsId' is set
 		if (settingsId === undefined || settingsId === null) {
-			throw 'Missing the required parameter "settingsId" when calling getRecordingLocalkeysSetting';
+			throw new Error('Missing the required parameter "settingsId" when calling getRecordingLocalkeysSetting';
 		}
 
 		return this.apiClient.callApi(
@@ -739,7 +739,7 @@ class RecordingApi {
 	getRecordingMediaretentionpolicy(policyId) { 
 		// verify the required parameter 'policyId' is set
 		if (policyId === undefined || policyId === null) {
-			throw 'Missing the required parameter "policyId" when calling getRecordingMediaretentionpolicy';
+			throw new Error('Missing the required parameter "policyId" when calling getRecordingMediaretentionpolicy';
 		}
 
 		return this.apiClient.callApi(
@@ -859,11 +859,11 @@ class RecordingApi {
 	patchRecordingCrossplatformMediaretentionpolicy(policyId, body) { 
 		// verify the required parameter 'policyId' is set
 		if (policyId === undefined || policyId === null) {
-			throw 'Missing the required parameter "policyId" when calling patchRecordingCrossplatformMediaretentionpolicy';
+			throw new Error('Missing the required parameter "policyId" when calling patchRecordingCrossplatformMediaretentionpolicy';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchRecordingCrossplatformMediaretentionpolicy';
+			throw new Error('Missing the required parameter "body" when calling patchRecordingCrossplatformMediaretentionpolicy';
 		}
 
 		return this.apiClient.callApi(
@@ -889,11 +889,11 @@ class RecordingApi {
 	patchRecordingMediaretentionpolicy(policyId, body) { 
 		// verify the required parameter 'policyId' is set
 		if (policyId === undefined || policyId === null) {
-			throw 'Missing the required parameter "policyId" when calling patchRecordingMediaretentionpolicy';
+			throw new Error('Missing the required parameter "policyId" when calling patchRecordingMediaretentionpolicy';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchRecordingMediaretentionpolicy';
+			throw new Error('Missing the required parameter "body" when calling patchRecordingMediaretentionpolicy';
 		}
 
 		return this.apiClient.callApi(
@@ -922,7 +922,7 @@ class RecordingApi {
 		
 		// verify the required parameter 'recordingSessionId' is set
 		if (recordingSessionId === undefined || recordingSessionId === null) {
-			throw 'Missing the required parameter "recordingSessionId" when calling patchRecordingsScreensession';
+			throw new Error('Missing the required parameter "recordingSessionId" when calling patchRecordingsScreensession';
 		}
 
 		return this.apiClient.callApi(
@@ -949,15 +949,15 @@ class RecordingApi {
 	postConversationRecordingAnnotations(conversationId, recordingId, body) { 
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling postConversationRecordingAnnotations';
+			throw new Error('Missing the required parameter "conversationId" when calling postConversationRecordingAnnotations';
 		}
 		// verify the required parameter 'recordingId' is set
 		if (recordingId === undefined || recordingId === null) {
-			throw 'Missing the required parameter "recordingId" when calling postConversationRecordingAnnotations';
+			throw new Error('Missing the required parameter "recordingId" when calling postConversationRecordingAnnotations';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postConversationRecordingAnnotations';
+			throw new Error('Missing the required parameter "body" when calling postConversationRecordingAnnotations';
 		}
 
 		return this.apiClient.callApi(
@@ -982,7 +982,7 @@ class RecordingApi {
 	postRecordingBatchrequests(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postRecordingBatchrequests';
+			throw new Error('Missing the required parameter "body" when calling postRecordingBatchrequests';
 		}
 
 		return this.apiClient.callApi(
@@ -1007,7 +1007,7 @@ class RecordingApi {
 	postRecordingCrossplatformMediaretentionpolicies(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postRecordingCrossplatformMediaretentionpolicies';
+			throw new Error('Missing the required parameter "body" when calling postRecordingCrossplatformMediaretentionpolicies';
 		}
 
 		return this.apiClient.callApi(
@@ -1032,7 +1032,7 @@ class RecordingApi {
 	postRecordingJobs(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postRecordingJobs';
+			throw new Error('Missing the required parameter "body" when calling postRecordingJobs';
 		}
 
 		return this.apiClient.callApi(
@@ -1057,7 +1057,7 @@ class RecordingApi {
 	postRecordingLocalkeys(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postRecordingLocalkeys';
+			throw new Error('Missing the required parameter "body" when calling postRecordingLocalkeys';
 		}
 
 		return this.apiClient.callApi(
@@ -1082,7 +1082,7 @@ class RecordingApi {
 	postRecordingLocalkeysSettings(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postRecordingLocalkeysSettings';
+			throw new Error('Missing the required parameter "body" when calling postRecordingLocalkeysSettings';
 		}
 
 		return this.apiClient.callApi(
@@ -1107,7 +1107,7 @@ class RecordingApi {
 	postRecordingMediaretentionpolicies(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postRecordingMediaretentionpolicies';
+			throw new Error('Missing the required parameter "body" when calling postRecordingMediaretentionpolicies';
 		}
 
 		return this.apiClient.callApi(
@@ -1152,7 +1152,7 @@ class RecordingApi {
 	postRecordingsDeletionprotection(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postRecordingsDeletionprotection';
+			throw new Error('Missing the required parameter "body" when calling postRecordingsDeletionprotection';
 		}
 
 		return this.apiClient.callApi(
@@ -1177,7 +1177,7 @@ class RecordingApi {
 	postRecordingsScreensessionsAcknowledge(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postRecordingsScreensessionsAcknowledge';
+			throw new Error('Missing the required parameter "body" when calling postRecordingsScreensessionsAcknowledge';
 		}
 
 		return this.apiClient.callApi(
@@ -1202,7 +1202,7 @@ class RecordingApi {
 	postRecordingsScreensessionsMetadata(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postRecordingsScreensessionsMetadata';
+			throw new Error('Missing the required parameter "body" when calling postRecordingsScreensessionsMetadata';
 		}
 
 		return this.apiClient.callApi(
@@ -1229,15 +1229,15 @@ class RecordingApi {
 	putConversationRecording(conversationId, recordingId, body) { 
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling putConversationRecording';
+			throw new Error('Missing the required parameter "conversationId" when calling putConversationRecording';
 		}
 		// verify the required parameter 'recordingId' is set
 		if (recordingId === undefined || recordingId === null) {
-			throw 'Missing the required parameter "recordingId" when calling putConversationRecording';
+			throw new Error('Missing the required parameter "recordingId" when calling putConversationRecording';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putConversationRecording';
+			throw new Error('Missing the required parameter "body" when calling putConversationRecording';
 		}
 
 		return this.apiClient.callApi(
@@ -1265,19 +1265,19 @@ class RecordingApi {
 	putConversationRecordingAnnotation(conversationId, recordingId, annotationId, body) { 
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling putConversationRecordingAnnotation';
+			throw new Error('Missing the required parameter "conversationId" when calling putConversationRecordingAnnotation';
 		}
 		// verify the required parameter 'recordingId' is set
 		if (recordingId === undefined || recordingId === null) {
-			throw 'Missing the required parameter "recordingId" when calling putConversationRecordingAnnotation';
+			throw new Error('Missing the required parameter "recordingId" when calling putConversationRecordingAnnotation';
 		}
 		// verify the required parameter 'annotationId' is set
 		if (annotationId === undefined || annotationId === null) {
-			throw 'Missing the required parameter "annotationId" when calling putConversationRecordingAnnotation';
+			throw new Error('Missing the required parameter "annotationId" when calling putConversationRecordingAnnotation';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putConversationRecordingAnnotation';
+			throw new Error('Missing the required parameter "body" when calling putConversationRecordingAnnotation';
 		}
 
 		return this.apiClient.callApi(
@@ -1306,7 +1306,7 @@ class RecordingApi {
 		
 		// verify the required parameter 'orphanId' is set
 		if (orphanId === undefined || orphanId === null) {
-			throw 'Missing the required parameter "orphanId" when calling putOrphanrecording';
+			throw new Error('Missing the required parameter "orphanId" when calling putOrphanrecording';
 		}
 
 		return this.apiClient.callApi(
@@ -1332,11 +1332,11 @@ class RecordingApi {
 	putRecordingCrossplatformMediaretentionpolicy(policyId, body) { 
 		// verify the required parameter 'policyId' is set
 		if (policyId === undefined || policyId === null) {
-			throw 'Missing the required parameter "policyId" when calling putRecordingCrossplatformMediaretentionpolicy';
+			throw new Error('Missing the required parameter "policyId" when calling putRecordingCrossplatformMediaretentionpolicy';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putRecordingCrossplatformMediaretentionpolicy';
+			throw new Error('Missing the required parameter "body" when calling putRecordingCrossplatformMediaretentionpolicy';
 		}
 
 		return this.apiClient.callApi(
@@ -1362,11 +1362,11 @@ class RecordingApi {
 	putRecordingJob(jobId, body) { 
 		// verify the required parameter 'jobId' is set
 		if (jobId === undefined || jobId === null) {
-			throw 'Missing the required parameter "jobId" when calling putRecordingJob';
+			throw new Error('Missing the required parameter "jobId" when calling putRecordingJob';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putRecordingJob';
+			throw new Error('Missing the required parameter "body" when calling putRecordingJob';
 		}
 
 		return this.apiClient.callApi(
@@ -1392,11 +1392,11 @@ class RecordingApi {
 	putRecordingLocalkeysSetting(settingsId, body) { 
 		// verify the required parameter 'settingsId' is set
 		if (settingsId === undefined || settingsId === null) {
-			throw 'Missing the required parameter "settingsId" when calling putRecordingLocalkeysSetting';
+			throw new Error('Missing the required parameter "settingsId" when calling putRecordingLocalkeysSetting';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putRecordingLocalkeysSetting';
+			throw new Error('Missing the required parameter "body" when calling putRecordingLocalkeysSetting';
 		}
 
 		return this.apiClient.callApi(
@@ -1422,11 +1422,11 @@ class RecordingApi {
 	putRecordingMediaretentionpolicy(policyId, body) { 
 		// verify the required parameter 'policyId' is set
 		if (policyId === undefined || policyId === null) {
-			throw 'Missing the required parameter "policyId" when calling putRecordingMediaretentionpolicy';
+			throw new Error('Missing the required parameter "policyId" when calling putRecordingMediaretentionpolicy';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putRecordingMediaretentionpolicy';
+			throw new Error('Missing the required parameter "body" when calling putRecordingMediaretentionpolicy';
 		}
 
 		return this.apiClient.callApi(
@@ -1451,7 +1451,7 @@ class RecordingApi {
 	putRecordingRecordingkeysRotationschedule(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putRecordingRecordingkeysRotationschedule';
+			throw new Error('Missing the required parameter "body" when calling putRecordingRecordingkeysRotationschedule';
 		}
 
 		return this.apiClient.callApi(
@@ -1476,7 +1476,7 @@ class RecordingApi {
 	putRecordingSettings(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putRecordingSettings';
+			throw new Error('Missing the required parameter "body" when calling putRecordingSettings';
 		}
 
 		return this.apiClient.callApi(

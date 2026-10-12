@@ -488,7 +488,7 @@ class IdentityProviderApi {
 	putIdentityprovidersAdfs(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putIdentityprovidersAdfs';
+			throw new Error('Missing the required parameter "body" when calling putIdentityprovidersAdfs';
 		}
 
 		return this.apiClient.callApi(
@@ -513,7 +513,7 @@ class IdentityProviderApi {
 	putIdentityprovidersCic(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putIdentityprovidersCic';
+			throw new Error('Missing the required parameter "body" when calling putIdentityprovidersCic';
 		}
 
 		return this.apiClient.callApi(
@@ -538,7 +538,7 @@ class IdentityProviderApi {
 	putIdentityprovidersGeneric(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putIdentityprovidersGeneric';
+			throw new Error('Missing the required parameter "body" when calling putIdentityprovidersGeneric';
 		}
 
 		return this.apiClient.callApi(
@@ -563,7 +563,7 @@ class IdentityProviderApi {
 	putIdentityprovidersGsuite(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putIdentityprovidersGsuite';
+			throw new Error('Missing the required parameter "body" when calling putIdentityprovidersGsuite';
 		}
 
 		return this.apiClient.callApi(
@@ -588,7 +588,7 @@ class IdentityProviderApi {
 	putIdentityprovidersIdentitynow(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putIdentityprovidersIdentitynow';
+			throw new Error('Missing the required parameter "body" when calling putIdentityprovidersIdentitynow';
 		}
 
 		return this.apiClient.callApi(
@@ -613,7 +613,7 @@ class IdentityProviderApi {
 	putIdentityprovidersOkta(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putIdentityprovidersOkta';
+			throw new Error('Missing the required parameter "body" when calling putIdentityprovidersOkta';
 		}
 
 		return this.apiClient.callApi(
@@ -638,7 +638,7 @@ class IdentityProviderApi {
 	putIdentityprovidersOnelogin(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putIdentityprovidersOnelogin';
+			throw new Error('Missing the required parameter "body" when calling putIdentityprovidersOnelogin';
 		}
 
 		return this.apiClient.callApi(
@@ -663,7 +663,7 @@ class IdentityProviderApi {
 	putIdentityprovidersPing(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putIdentityprovidersPing';
+			throw new Error('Missing the required parameter "body" when calling putIdentityprovidersPing';
 		}
 
 		return this.apiClient.callApi(
@@ -688,7 +688,7 @@ class IdentityProviderApi {
 	putIdentityprovidersPurecloud(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putIdentityprovidersPurecloud';
+			throw new Error('Missing the required parameter "body" when calling putIdentityprovidersPurecloud';
 		}
 
 		return this.apiClient.callApi(
@@ -713,7 +713,7 @@ class IdentityProviderApi {
 	putIdentityprovidersPureengage(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putIdentityprovidersPureengage';
+			throw new Error('Missing the required parameter "body" when calling putIdentityprovidersPureengage';
 		}
 
 		return this.apiClient.callApi(
@@ -738,7 +738,7 @@ class IdentityProviderApi {
 	putIdentityprovidersSalesforce(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putIdentityprovidersSalesforce';
+			throw new Error('Missing the required parameter "body" when calling putIdentityprovidersSalesforce';
 		}
 
 		return this.apiClient.callApi(

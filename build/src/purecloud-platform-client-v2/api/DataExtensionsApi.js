@@ -28,7 +28,7 @@ class DataExtensionsApi {
 	getDataextensionsCoretype(coretypeName) { 
 		// verify the required parameter 'coretypeName' is set
 		if (coretypeName === undefined || coretypeName === null) {
-			throw 'Missing the required parameter "coretypeName" when calling getDataextensionsCoretype';
+			throw new Error('Missing the required parameter "coretypeName" when calling getDataextensionsCoretype';
 		}
 
 		return this.apiClient.callApi(

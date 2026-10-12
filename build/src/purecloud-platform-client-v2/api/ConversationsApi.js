@@ -28,7 +28,7 @@ class ConversationsApi {
 	deleteAnalyticsConversationsDetailsJob(jobId) { 
 		// verify the required parameter 'jobId' is set
 		if (jobId === undefined || jobId === null) {
-			throw 'Missing the required parameter "jobId" when calling deleteAnalyticsConversationsDetailsJob';
+			throw new Error('Missing the required parameter "jobId" when calling deleteAnalyticsConversationsDetailsJob';
 		}
 
 		return this.apiClient.callApi(
@@ -55,15 +55,15 @@ class ConversationsApi {
 	deleteConversationParticipantCode(conversationId, participantId, addCommunicationCode) { 
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling deleteConversationParticipantCode';
+			throw new Error('Missing the required parameter "conversationId" when calling deleteConversationParticipantCode';
 		}
 		// verify the required parameter 'participantId' is set
 		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling deleteConversationParticipantCode';
+			throw new Error('Missing the required parameter "participantId" when calling deleteConversationParticipantCode';
 		}
 		// verify the required parameter 'addCommunicationCode' is set
 		if (addCommunicationCode === undefined || addCommunicationCode === null) {
-			throw 'Missing the required parameter "addCommunicationCode" when calling deleteConversationParticipantCode';
+			throw new Error('Missing the required parameter "addCommunicationCode" when calling deleteConversationParticipantCode';
 		}
 
 		return this.apiClient.callApi(
@@ -89,11 +89,11 @@ class ConversationsApi {
 	deleteConversationParticipantFlaggedreason(conversationId, participantId) { 
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling deleteConversationParticipantFlaggedreason';
+			throw new Error('Missing the required parameter "conversationId" when calling deleteConversationParticipantFlaggedreason';
 		}
 		// verify the required parameter 'participantId' is set
 		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling deleteConversationParticipantFlaggedreason';
+			throw new Error('Missing the required parameter "participantId" when calling deleteConversationParticipantFlaggedreason';
 		}
 
 		return this.apiClient.callApi(
@@ -119,11 +119,11 @@ class ConversationsApi {
 	deleteConversationsCallParticipantConsult(conversationId, participantId) { 
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling deleteConversationsCallParticipantConsult';
+			throw new Error('Missing the required parameter "conversationId" when calling deleteConversationsCallParticipantConsult';
 		}
 		// verify the required parameter 'participantId' is set
 		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling deleteConversationsCallParticipantConsult';
+			throw new Error('Missing the required parameter "participantId" when calling deleteConversationsCallParticipantConsult';
 		}
 
 		return this.apiClient.callApi(
@@ -149,11 +149,11 @@ class ConversationsApi {
 	deleteConversationsEmailMessagesDraftAttachment(conversationId, attachmentId) { 
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling deleteConversationsEmailMessagesDraftAttachment';
+			throw new Error('Missing the required parameter "conversationId" when calling deleteConversationsEmailMessagesDraftAttachment';
 		}
 		// verify the required parameter 'attachmentId' is set
 		if (attachmentId === undefined || attachmentId === null) {
-			throw 'Missing the required parameter "attachmentId" when calling deleteConversationsEmailMessagesDraftAttachment';
+			throw new Error('Missing the required parameter "attachmentId" when calling deleteConversationsEmailMessagesDraftAttachment';
 		}
 
 		return this.apiClient.callApi(
@@ -178,7 +178,7 @@ class ConversationsApi {
 	deleteConversationsMessagingIntegrationsFacebookIntegrationId(integrationId) { 
 		// verify the required parameter 'integrationId' is set
 		if (integrationId === undefined || integrationId === null) {
-			throw 'Missing the required parameter "integrationId" when calling deleteConversationsMessagingIntegrationsFacebookIntegrationId';
+			throw new Error('Missing the required parameter "integrationId" when calling deleteConversationsMessagingIntegrationsFacebookIntegrationId';
 		}
 
 		return this.apiClient.callApi(
@@ -203,7 +203,7 @@ class ConversationsApi {
 	deleteConversationsMessagingIntegrationsLineIntegrationId(integrationId) { 
 		// verify the required parameter 'integrationId' is set
 		if (integrationId === undefined || integrationId === null) {
-			throw 'Missing the required parameter "integrationId" when calling deleteConversationsMessagingIntegrationsLineIntegrationId';
+			throw new Error('Missing the required parameter "integrationId" when calling deleteConversationsMessagingIntegrationsLineIntegrationId';
 		}
 
 		return this.apiClient.callApi(
@@ -228,7 +228,7 @@ class ConversationsApi {
 	deleteConversationsMessagingIntegrationsOpenIntegrationId(integrationId) { 
 		// verify the required parameter 'integrationId' is set
 		if (integrationId === undefined || integrationId === null) {
-			throw 'Missing the required parameter "integrationId" when calling deleteConversationsMessagingIntegrationsOpenIntegrationId';
+			throw new Error('Missing the required parameter "integrationId" when calling deleteConversationsMessagingIntegrationsOpenIntegrationId';
 		}
 
 		return this.apiClient.callApi(
@@ -253,7 +253,7 @@ class ConversationsApi {
 	deleteConversationsMessagingIntegrationsTwitterIntegrationId(integrationId) { 
 		// verify the required parameter 'integrationId' is set
 		if (integrationId === undefined || integrationId === null) {
-			throw 'Missing the required parameter "integrationId" when calling deleteConversationsMessagingIntegrationsTwitterIntegrationId';
+			throw new Error('Missing the required parameter "integrationId" when calling deleteConversationsMessagingIntegrationsTwitterIntegrationId';
 		}
 
 		return this.apiClient.callApi(
@@ -278,7 +278,7 @@ class ConversationsApi {
 	deleteConversationsMessagingIntegrationsWhatsappIntegrationId(integrationId) { 
 		// verify the required parameter 'integrationId' is set
 		if (integrationId === undefined || integrationId === null) {
-			throw 'Missing the required parameter "integrationId" when calling deleteConversationsMessagingIntegrationsWhatsappIntegrationId';
+			throw new Error('Missing the required parameter "integrationId" when calling deleteConversationsMessagingIntegrationsWhatsappIntegrationId';
 		}
 
 		return this.apiClient.callApi(
@@ -303,7 +303,7 @@ class ConversationsApi {
 	getAnalyticsConversationDetails(conversationId) { 
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling getAnalyticsConversationDetails';
+			throw new Error('Missing the required parameter "conversationId" when calling getAnalyticsConversationDetails';
 		}
 
 		return this.apiClient.callApi(
@@ -352,7 +352,7 @@ class ConversationsApi {
 	getAnalyticsConversationsDetailsJob(jobId) { 
 		// verify the required parameter 'jobId' is set
 		if (jobId === undefined || jobId === null) {
-			throw 'Missing the required parameter "jobId" when calling getAnalyticsConversationsDetailsJob';
+			throw new Error('Missing the required parameter "jobId" when calling getAnalyticsConversationsDetailsJob';
 		}
 
 		return this.apiClient.callApi(
@@ -382,7 +382,7 @@ class ConversationsApi {
 		
 		// verify the required parameter 'jobId' is set
 		if (jobId === undefined || jobId === null) {
-			throw 'Missing the required parameter "jobId" when calling getAnalyticsConversationsDetailsJobResults';
+			throw new Error('Missing the required parameter "jobId" when calling getAnalyticsConversationsDetailsJobResults';
 		}
 
 		return this.apiClient.callApi(
@@ -427,7 +427,7 @@ class ConversationsApi {
 	getConversation(conversationId) { 
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling getConversation';
+			throw new Error('Missing the required parameter "conversationId" when calling getConversation';
 		}
 
 		return this.apiClient.callApi(
@@ -454,15 +454,15 @@ class ConversationsApi {
 	getConversationParticipantSecureivrsession(conversationId, participantId, secureSessionId) { 
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling getConversationParticipantSecureivrsession';
+			throw new Error('Missing the required parameter "conversationId" when calling getConversationParticipantSecureivrsession';
 		}
 		// verify the required parameter 'participantId' is set
 		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling getConversationParticipantSecureivrsession';
+			throw new Error('Missing the required parameter "participantId" when calling getConversationParticipantSecureivrsession';
 		}
 		// verify the required parameter 'secureSessionId' is set
 		if (secureSessionId === undefined || secureSessionId === null) {
-			throw 'Missing the required parameter "secureSessionId" when calling getConversationParticipantSecureivrsession';
+			throw new Error('Missing the required parameter "secureSessionId" when calling getConversationParticipantSecureivrsession';
 		}
 
 		return this.apiClient.callApi(
@@ -488,11 +488,11 @@ class ConversationsApi {
 	getConversationParticipantSecureivrsessions(conversationId, participantId) { 
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling getConversationParticipantSecureivrsessions';
+			throw new Error('Missing the required parameter "conversationId" when calling getConversationParticipantSecureivrsessions';
 		}
 		// verify the required parameter 'participantId' is set
 		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling getConversationParticipantSecureivrsessions';
+			throw new Error('Missing the required parameter "participantId" when calling getConversationParticipantSecureivrsessions';
 		}
 
 		return this.apiClient.callApi(
@@ -522,11 +522,11 @@ class ConversationsApi {
 		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling getConversationParticipantWrapup';
+			throw new Error('Missing the required parameter "conversationId" when calling getConversationParticipantWrapup';
 		}
 		// verify the required parameter 'participantId' is set
 		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling getConversationParticipantWrapup';
+			throw new Error('Missing the required parameter "participantId" when calling getConversationParticipantWrapup';
 		}
 
 		return this.apiClient.callApi(
@@ -552,11 +552,11 @@ class ConversationsApi {
 	getConversationParticipantWrapupcodes(conversationId, participantId) { 
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling getConversationParticipantWrapupcodes';
+			throw new Error('Missing the required parameter "conversationId" when calling getConversationParticipantWrapupcodes';
 		}
 		// verify the required parameter 'participantId' is set
 		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling getConversationParticipantWrapupcodes';
+			throw new Error('Missing the required parameter "participantId" when calling getConversationParticipantWrapupcodes';
 		}
 
 		return this.apiClient.callApi(
@@ -605,7 +605,7 @@ class ConversationsApi {
 	getConversationsCall(conversationId) { 
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling getConversationsCall';
+			throw new Error('Missing the required parameter "conversationId" when calling getConversationsCall';
 		}
 
 		return this.apiClient.callApi(
@@ -635,11 +635,11 @@ class ConversationsApi {
 		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling getConversationsCallParticipantWrapup';
+			throw new Error('Missing the required parameter "conversationId" when calling getConversationsCallParticipantWrapup';
 		}
 		// verify the required parameter 'participantId' is set
 		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling getConversationsCallParticipantWrapup';
+			throw new Error('Missing the required parameter "participantId" when calling getConversationsCallParticipantWrapup';
 		}
 
 		return this.apiClient.callApi(
@@ -665,11 +665,11 @@ class ConversationsApi {
 	getConversationsCallParticipantWrapupcodes(conversationId, participantId) { 
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling getConversationsCallParticipantWrapupcodes';
+			throw new Error('Missing the required parameter "conversationId" when calling getConversationsCallParticipantWrapupcodes';
 		}
 		// verify the required parameter 'participantId' is set
 		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling getConversationsCallParticipantWrapupcodes';
+			throw new Error('Missing the required parameter "participantId" when calling getConversationsCallParticipantWrapupcodes';
 		}
 
 		return this.apiClient.callApi(
@@ -694,7 +694,7 @@ class ConversationsApi {
 	getConversationsCallback(conversationId) { 
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling getConversationsCallback';
+			throw new Error('Missing the required parameter "conversationId" when calling getConversationsCallback';
 		}
 
 		return this.apiClient.callApi(
@@ -724,11 +724,11 @@ class ConversationsApi {
 		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling getConversationsCallbackParticipantWrapup';
+			throw new Error('Missing the required parameter "conversationId" when calling getConversationsCallbackParticipantWrapup';
 		}
 		// verify the required parameter 'participantId' is set
 		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling getConversationsCallbackParticipantWrapup';
+			throw new Error('Missing the required parameter "participantId" when calling getConversationsCallbackParticipantWrapup';
 		}
 
 		return this.apiClient.callApi(
@@ -754,11 +754,11 @@ class ConversationsApi {
 	getConversationsCallbackParticipantWrapupcodes(conversationId, participantId) { 
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling getConversationsCallbackParticipantWrapupcodes';
+			throw new Error('Missing the required parameter "conversationId" when calling getConversationsCallbackParticipantWrapupcodes';
 		}
 		// verify the required parameter 'participantId' is set
 		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling getConversationsCallbackParticipantWrapupcodes';
+			throw new Error('Missing the required parameter "participantId" when calling getConversationsCallbackParticipantWrapupcodes';
 		}
 
 		return this.apiClient.callApi(
@@ -870,7 +870,7 @@ class ConversationsApi {
 	getConversationsChat(conversationId) { 
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling getConversationsChat';
+			throw new Error('Missing the required parameter "conversationId" when calling getConversationsChat';
 		}
 
 		return this.apiClient.callApi(
@@ -896,11 +896,11 @@ class ConversationsApi {
 	getConversationsChatMessage(conversationId, messageId) { 
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling getConversationsChatMessage';
+			throw new Error('Missing the required parameter "conversationId" when calling getConversationsChatMessage';
 		}
 		// verify the required parameter 'messageId' is set
 		if (messageId === undefined || messageId === null) {
-			throw 'Missing the required parameter "messageId" when calling getConversationsChatMessage';
+			throw new Error('Missing the required parameter "messageId" when calling getConversationsChatMessage';
 		}
 
 		return this.apiClient.callApi(
@@ -932,7 +932,7 @@ class ConversationsApi {
 		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling getConversationsChatMessages';
+			throw new Error('Missing the required parameter "conversationId" when calling getConversationsChatMessages';
 		}
 
 		return this.apiClient.callApi(
@@ -962,11 +962,11 @@ class ConversationsApi {
 		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling getConversationsChatParticipantWrapup';
+			throw new Error('Missing the required parameter "conversationId" when calling getConversationsChatParticipantWrapup';
 		}
 		// verify the required parameter 'participantId' is set
 		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling getConversationsChatParticipantWrapup';
+			throw new Error('Missing the required parameter "participantId" when calling getConversationsChatParticipantWrapup';
 		}
 
 		return this.apiClient.callApi(
@@ -992,11 +992,11 @@ class ConversationsApi {
 	getConversationsChatParticipantWrapupcodes(conversationId, participantId) { 
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling getConversationsChatParticipantWrapupcodes';
+			throw new Error('Missing the required parameter "conversationId" when calling getConversationsChatParticipantWrapupcodes';
 		}
 		// verify the required parameter 'participantId' is set
 		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling getConversationsChatParticipantWrapupcodes';
+			throw new Error('Missing the required parameter "participantId" when calling getConversationsChatParticipantWrapupcodes';
 		}
 
 		return this.apiClient.callApi(
@@ -1041,7 +1041,7 @@ class ConversationsApi {
 	getConversationsCobrowsesession(conversationId) { 
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling getConversationsCobrowsesession';
+			throw new Error('Missing the required parameter "conversationId" when calling getConversationsCobrowsesession';
 		}
 
 		return this.apiClient.callApi(
@@ -1071,11 +1071,11 @@ class ConversationsApi {
 		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling getConversationsCobrowsesessionParticipantWrapup';
+			throw new Error('Missing the required parameter "conversationId" when calling getConversationsCobrowsesessionParticipantWrapup';
 		}
 		// verify the required parameter 'participantId' is set
 		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling getConversationsCobrowsesessionParticipantWrapup';
+			throw new Error('Missing the required parameter "participantId" when calling getConversationsCobrowsesessionParticipantWrapup';
 		}
 
 		return this.apiClient.callApi(
@@ -1101,11 +1101,11 @@ class ConversationsApi {
 	getConversationsCobrowsesessionParticipantWrapupcodes(conversationId, participantId) { 
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling getConversationsCobrowsesessionParticipantWrapupcodes';
+			throw new Error('Missing the required parameter "conversationId" when calling getConversationsCobrowsesessionParticipantWrapupcodes';
 		}
 		// verify the required parameter 'participantId' is set
 		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling getConversationsCobrowsesessionParticipantWrapupcodes';
+			throw new Error('Missing the required parameter "participantId" when calling getConversationsCobrowsesessionParticipantWrapupcodes';
 		}
 
 		return this.apiClient.callApi(
@@ -1150,7 +1150,7 @@ class ConversationsApi {
 	getConversationsEmail(conversationId) { 
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling getConversationsEmail';
+			throw new Error('Missing the required parameter "conversationId" when calling getConversationsEmail';
 		}
 
 		return this.apiClient.callApi(
@@ -1176,11 +1176,11 @@ class ConversationsApi {
 	getConversationsEmailMessage(conversationId, messageId) { 
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling getConversationsEmailMessage';
+			throw new Error('Missing the required parameter "conversationId" when calling getConversationsEmailMessage';
 		}
 		// verify the required parameter 'messageId' is set
 		if (messageId === undefined || messageId === null) {
-			throw 'Missing the required parameter "messageId" when calling getConversationsEmailMessage';
+			throw new Error('Missing the required parameter "messageId" when calling getConversationsEmailMessage';
 		}
 
 		return this.apiClient.callApi(
@@ -1205,7 +1205,7 @@ class ConversationsApi {
 	getConversationsEmailMessages(conversationId) { 
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling getConversationsEmailMessages';
+			throw new Error('Missing the required parameter "conversationId" when calling getConversationsEmailMessages';
 		}
 
 		return this.apiClient.callApi(
@@ -1230,7 +1230,7 @@ class ConversationsApi {
 	getConversationsEmailMessagesDraft(conversationId) { 
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling getConversationsEmailMessagesDraft';
+			throw new Error('Missing the required parameter "conversationId" when calling getConversationsEmailMessagesDraft';
 		}
 
 		return this.apiClient.callApi(
@@ -1260,11 +1260,11 @@ class ConversationsApi {
 		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling getConversationsEmailParticipantWrapup';
+			throw new Error('Missing the required parameter "conversationId" when calling getConversationsEmailParticipantWrapup';
 		}
 		// verify the required parameter 'participantId' is set
 		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling getConversationsEmailParticipantWrapup';
+			throw new Error('Missing the required parameter "participantId" when calling getConversationsEmailParticipantWrapup';
 		}
 
 		return this.apiClient.callApi(
@@ -1290,11 +1290,11 @@ class ConversationsApi {
 	getConversationsEmailParticipantWrapupcodes(conversationId, participantId) { 
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling getConversationsEmailParticipantWrapupcodes';
+			throw new Error('Missing the required parameter "conversationId" when calling getConversationsEmailParticipantWrapupcodes';
 		}
 		// verify the required parameter 'participantId' is set
 		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling getConversationsEmailParticipantWrapupcodes';
+			throw new Error('Missing the required parameter "participantId" when calling getConversationsEmailParticipantWrapupcodes';
 		}
 
 		return this.apiClient.callApi(
@@ -1339,7 +1339,7 @@ class ConversationsApi {
 	getConversationsMessage(conversationId) { 
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling getConversationsMessage';
+			throw new Error('Missing the required parameter "conversationId" when calling getConversationsMessage';
 		}
 
 		return this.apiClient.callApi(
@@ -1366,15 +1366,15 @@ class ConversationsApi {
 	getConversationsMessageCommunicationMessagesMediaMediaId(conversationId, communicationId, mediaId) { 
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling getConversationsMessageCommunicationMessagesMediaMediaId';
+			throw new Error('Missing the required parameter "conversationId" when calling getConversationsMessageCommunicationMessagesMediaMediaId';
 		}
 		// verify the required parameter 'communicationId' is set
 		if (communicationId === undefined || communicationId === null) {
-			throw 'Missing the required parameter "communicationId" when calling getConversationsMessageCommunicationMessagesMediaMediaId';
+			throw new Error('Missing the required parameter "communicationId" when calling getConversationsMessageCommunicationMessagesMediaMediaId';
 		}
 		// verify the required parameter 'mediaId' is set
 		if (mediaId === undefined || mediaId === null) {
-			throw 'Missing the required parameter "mediaId" when calling getConversationsMessageCommunicationMessagesMediaMediaId';
+			throw new Error('Missing the required parameter "mediaId" when calling getConversationsMessageCommunicationMessagesMediaMediaId';
 		}
 
 		return this.apiClient.callApi(
@@ -1399,7 +1399,7 @@ class ConversationsApi {
 	getConversationsMessageDetails(messageId) { 
 		// verify the required parameter 'messageId' is set
 		if (messageId === undefined || messageId === null) {
-			throw 'Missing the required parameter "messageId" when calling getConversationsMessageDetails';
+			throw new Error('Missing the required parameter "messageId" when calling getConversationsMessageDetails';
 		}
 
 		return this.apiClient.callApi(
@@ -1425,11 +1425,11 @@ class ConversationsApi {
 	getConversationsMessageMessage(conversationId, messageId) { 
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling getConversationsMessageMessage';
+			throw new Error('Missing the required parameter "conversationId" when calling getConversationsMessageMessage';
 		}
 		// verify the required parameter 'messageId' is set
 		if (messageId === undefined || messageId === null) {
-			throw 'Missing the required parameter "messageId" when calling getConversationsMessageMessage';
+			throw new Error('Missing the required parameter "messageId" when calling getConversationsMessageMessage';
 		}
 
 		return this.apiClient.callApi(
@@ -1459,11 +1459,11 @@ class ConversationsApi {
 		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling getConversationsMessageParticipantWrapup';
+			throw new Error('Missing the required parameter "conversationId" when calling getConversationsMessageParticipantWrapup';
 		}
 		// verify the required parameter 'participantId' is set
 		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling getConversationsMessageParticipantWrapup';
+			throw new Error('Missing the required parameter "participantId" when calling getConversationsMessageParticipantWrapup';
 		}
 
 		return this.apiClient.callApi(
@@ -1489,11 +1489,11 @@ class ConversationsApi {
 	getConversationsMessageParticipantWrapupcodes(conversationId, participantId) { 
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling getConversationsMessageParticipantWrapupcodes';
+			throw new Error('Missing the required parameter "conversationId" when calling getConversationsMessageParticipantWrapupcodes';
 		}
 		// verify the required parameter 'participantId' is set
 		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling getConversationsMessageParticipantWrapupcodes';
+			throw new Error('Missing the required parameter "participantId" when calling getConversationsMessageParticipantWrapupcodes';
 		}
 
 		return this.apiClient.callApi(
@@ -1616,7 +1616,7 @@ class ConversationsApi {
 		
 		// verify the required parameter 'integrationId' is set
 		if (integrationId === undefined || integrationId === null) {
-			throw 'Missing the required parameter "integrationId" when calling getConversationsMessagingIntegrationsFacebookIntegrationId';
+			throw new Error('Missing the required parameter "integrationId" when calling getConversationsMessagingIntegrationsFacebookIntegrationId';
 		}
 
 		return this.apiClient.callApi(
@@ -1672,7 +1672,7 @@ class ConversationsApi {
 		
 		// verify the required parameter 'integrationId' is set
 		if (integrationId === undefined || integrationId === null) {
-			throw 'Missing the required parameter "integrationId" when calling getConversationsMessagingIntegrationsLineIntegrationId';
+			throw new Error('Missing the required parameter "integrationId" when calling getConversationsMessagingIntegrationsLineIntegrationId';
 		}
 
 		return this.apiClient.callApi(
@@ -1728,7 +1728,7 @@ class ConversationsApi {
 		
 		// verify the required parameter 'integrationId' is set
 		if (integrationId === undefined || integrationId === null) {
-			throw 'Missing the required parameter "integrationId" when calling getConversationsMessagingIntegrationsOpenIntegrationId';
+			throw new Error('Missing the required parameter "integrationId" when calling getConversationsMessagingIntegrationsOpenIntegrationId';
 		}
 
 		return this.apiClient.callApi(
@@ -1784,7 +1784,7 @@ class ConversationsApi {
 		
 		// verify the required parameter 'integrationId' is set
 		if (integrationId === undefined || integrationId === null) {
-			throw 'Missing the required parameter "integrationId" when calling getConversationsMessagingIntegrationsTwitterIntegrationId';
+			throw new Error('Missing the required parameter "integrationId" when calling getConversationsMessagingIntegrationsTwitterIntegrationId';
 		}
 
 		return this.apiClient.callApi(
@@ -1840,7 +1840,7 @@ class ConversationsApi {
 		
 		// verify the required parameter 'integrationId' is set
 		if (integrationId === undefined || integrationId === null) {
-			throw 'Missing the required parameter "integrationId" when calling getConversationsMessagingIntegrationsWhatsappIntegrationId';
+			throw new Error('Missing the required parameter "integrationId" when calling getConversationsMessagingIntegrationsWhatsappIntegrationId';
 		}
 
 		return this.apiClient.callApi(
@@ -1870,7 +1870,7 @@ class ConversationsApi {
 		
 		// verify the required parameter 'messengerType' is set
 		if (messengerType === undefined || messengerType === null) {
-			throw 'Missing the required parameter "messengerType" when calling getConversationsMessagingSticker';
+			throw new Error('Missing the required parameter "messengerType" when calling getConversationsMessagingSticker';
 		}
 
 		return this.apiClient.callApi(
@@ -1917,15 +1917,15 @@ class ConversationsApi {
 	patchConversationParticipant(conversationId, participantId, body) { 
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling patchConversationParticipant';
+			throw new Error('Missing the required parameter "conversationId" when calling patchConversationParticipant';
 		}
 		// verify the required parameter 'participantId' is set
 		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling patchConversationParticipant';
+			throw new Error('Missing the required parameter "participantId" when calling patchConversationParticipant';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchConversationParticipant';
+			throw new Error('Missing the required parameter "body" when calling patchConversationParticipant';
 		}
 
 		return this.apiClient.callApi(
@@ -1952,15 +1952,15 @@ class ConversationsApi {
 	patchConversationParticipantAttributes(conversationId, participantId, body) { 
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling patchConversationParticipantAttributes';
+			throw new Error('Missing the required parameter "conversationId" when calling patchConversationParticipantAttributes';
 		}
 		// verify the required parameter 'participantId' is set
 		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling patchConversationParticipantAttributes';
+			throw new Error('Missing the required parameter "participantId" when calling patchConversationParticipantAttributes';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchConversationParticipantAttributes';
+			throw new Error('Missing the required parameter "body" when calling patchConversationParticipantAttributes';
 		}
 
 		return this.apiClient.callApi(
@@ -1986,11 +1986,11 @@ class ConversationsApi {
 	patchConversationsCall(conversationId, body) { 
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling patchConversationsCall';
+			throw new Error('Missing the required parameter "conversationId" when calling patchConversationsCall';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchConversationsCall';
+			throw new Error('Missing the required parameter "body" when calling patchConversationsCall';
 		}
 
 		return this.apiClient.callApi(
@@ -2017,15 +2017,15 @@ class ConversationsApi {
 	patchConversationsCallParticipant(conversationId, participantId, body) { 
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling patchConversationsCallParticipant';
+			throw new Error('Missing the required parameter "conversationId" when calling patchConversationsCallParticipant';
 		}
 		// verify the required parameter 'participantId' is set
 		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling patchConversationsCallParticipant';
+			throw new Error('Missing the required parameter "participantId" when calling patchConversationsCallParticipant';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchConversationsCallParticipant';
+			throw new Error('Missing the required parameter "body" when calling patchConversationsCallParticipant';
 		}
 
 		return this.apiClient.callApi(
@@ -2052,15 +2052,15 @@ class ConversationsApi {
 	patchConversationsCallParticipantAttributes(conversationId, participantId, body) { 
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling patchConversationsCallParticipantAttributes';
+			throw new Error('Missing the required parameter "conversationId" when calling patchConversationsCallParticipantAttributes';
 		}
 		// verify the required parameter 'participantId' is set
 		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling patchConversationsCallParticipantAttributes';
+			throw new Error('Missing the required parameter "participantId" when calling patchConversationsCallParticipantAttributes';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchConversationsCallParticipantAttributes';
+			throw new Error('Missing the required parameter "body" when calling patchConversationsCallParticipantAttributes';
 		}
 
 		return this.apiClient.callApi(
@@ -2088,19 +2088,19 @@ class ConversationsApi {
 	patchConversationsCallParticipantCommunication(conversationId, participantId, communicationId, body) { 
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling patchConversationsCallParticipantCommunication';
+			throw new Error('Missing the required parameter "conversationId" when calling patchConversationsCallParticipantCommunication';
 		}
 		// verify the required parameter 'participantId' is set
 		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling patchConversationsCallParticipantCommunication';
+			throw new Error('Missing the required parameter "participantId" when calling patchConversationsCallParticipantCommunication';
 		}
 		// verify the required parameter 'communicationId' is set
 		if (communicationId === undefined || communicationId === null) {
-			throw 'Missing the required parameter "communicationId" when calling patchConversationsCallParticipantCommunication';
+			throw new Error('Missing the required parameter "communicationId" when calling patchConversationsCallParticipantCommunication';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchConversationsCallParticipantCommunication';
+			throw new Error('Missing the required parameter "body" when calling patchConversationsCallParticipantCommunication';
 		}
 
 		return this.apiClient.callApi(
@@ -2127,15 +2127,15 @@ class ConversationsApi {
 	patchConversationsCallParticipantConsult(conversationId, participantId, body) { 
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling patchConversationsCallParticipantConsult';
+			throw new Error('Missing the required parameter "conversationId" when calling patchConversationsCallParticipantConsult';
 		}
 		// verify the required parameter 'participantId' is set
 		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling patchConversationsCallParticipantConsult';
+			throw new Error('Missing the required parameter "participantId" when calling patchConversationsCallParticipantConsult';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchConversationsCallParticipantConsult';
+			throw new Error('Missing the required parameter "body" when calling patchConversationsCallParticipantConsult';
 		}
 
 		return this.apiClient.callApi(
@@ -2161,11 +2161,11 @@ class ConversationsApi {
 	patchConversationsCallback(conversationId, body) { 
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling patchConversationsCallback';
+			throw new Error('Missing the required parameter "conversationId" when calling patchConversationsCallback';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchConversationsCallback';
+			throw new Error('Missing the required parameter "body" when calling patchConversationsCallback';
 		}
 
 		return this.apiClient.callApi(
@@ -2192,15 +2192,15 @@ class ConversationsApi {
 	patchConversationsCallbackParticipant(conversationId, participantId, body) { 
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling patchConversationsCallbackParticipant';
+			throw new Error('Missing the required parameter "conversationId" when calling patchConversationsCallbackParticipant';
 		}
 		// verify the required parameter 'participantId' is set
 		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling patchConversationsCallbackParticipant';
+			throw new Error('Missing the required parameter "participantId" when calling patchConversationsCallbackParticipant';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchConversationsCallbackParticipant';
+			throw new Error('Missing the required parameter "body" when calling patchConversationsCallbackParticipant';
 		}
 
 		return this.apiClient.callApi(
@@ -2227,15 +2227,15 @@ class ConversationsApi {
 	patchConversationsCallbackParticipantAttributes(conversationId, participantId, body) { 
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling patchConversationsCallbackParticipantAttributes';
+			throw new Error('Missing the required parameter "conversationId" when calling patchConversationsCallbackParticipantAttributes';
 		}
 		// verify the required parameter 'participantId' is set
 		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling patchConversationsCallbackParticipantAttributes';
+			throw new Error('Missing the required parameter "participantId" when calling patchConversationsCallbackParticipantAttributes';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchConversationsCallbackParticipantAttributes';
+			throw new Error('Missing the required parameter "body" when calling patchConversationsCallbackParticipantAttributes';
 		}
 
 		return this.apiClient.callApi(
@@ -2263,19 +2263,19 @@ class ConversationsApi {
 	patchConversationsCallbackParticipantCommunication(conversationId, participantId, communicationId, body) { 
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling patchConversationsCallbackParticipantCommunication';
+			throw new Error('Missing the required parameter "conversationId" when calling patchConversationsCallbackParticipantCommunication';
 		}
 		// verify the required parameter 'participantId' is set
 		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling patchConversationsCallbackParticipantCommunication';
+			throw new Error('Missing the required parameter "participantId" when calling patchConversationsCallbackParticipantCommunication';
 		}
 		// verify the required parameter 'communicationId' is set
 		if (communicationId === undefined || communicationId === null) {
-			throw 'Missing the required parameter "communicationId" when calling patchConversationsCallbackParticipantCommunication';
+			throw new Error('Missing the required parameter "communicationId" when calling patchConversationsCallbackParticipantCommunication';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchConversationsCallbackParticipantCommunication';
+			throw new Error('Missing the required parameter "body" when calling patchConversationsCallbackParticipantCommunication';
 		}
 
 		return this.apiClient.callApi(
@@ -2301,11 +2301,11 @@ class ConversationsApi {
 	patchConversationsChat(conversationId, body) { 
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling patchConversationsChat';
+			throw new Error('Missing the required parameter "conversationId" when calling patchConversationsChat';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchConversationsChat';
+			throw new Error('Missing the required parameter "body" when calling patchConversationsChat';
 		}
 
 		return this.apiClient.callApi(
@@ -2332,15 +2332,15 @@ class ConversationsApi {
 	patchConversationsChatParticipant(conversationId, participantId, body) { 
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling patchConversationsChatParticipant';
+			throw new Error('Missing the required parameter "conversationId" when calling patchConversationsChatParticipant';
 		}
 		// verify the required parameter 'participantId' is set
 		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling patchConversationsChatParticipant';
+			throw new Error('Missing the required parameter "participantId" when calling patchConversationsChatParticipant';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchConversationsChatParticipant';
+			throw new Error('Missing the required parameter "body" when calling patchConversationsChatParticipant';
 		}
 
 		return this.apiClient.callApi(
@@ -2367,15 +2367,15 @@ class ConversationsApi {
 	patchConversationsChatParticipantAttributes(conversationId, participantId, body) { 
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling patchConversationsChatParticipantAttributes';
+			throw new Error('Missing the required parameter "conversationId" when calling patchConversationsChatParticipantAttributes';
 		}
 		// verify the required parameter 'participantId' is set
 		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling patchConversationsChatParticipantAttributes';
+			throw new Error('Missing the required parameter "participantId" when calling patchConversationsChatParticipantAttributes';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchConversationsChatParticipantAttributes';
+			throw new Error('Missing the required parameter "body" when calling patchConversationsChatParticipantAttributes';
 		}
 
 		return this.apiClient.callApi(
@@ -2403,19 +2403,19 @@ class ConversationsApi {
 	patchConversationsChatParticipantCommunication(conversationId, participantId, communicationId, body) { 
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling patchConversationsChatParticipantCommunication';
+			throw new Error('Missing the required parameter "conversationId" when calling patchConversationsChatParticipantCommunication';
 		}
 		// verify the required parameter 'participantId' is set
 		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling patchConversationsChatParticipantCommunication';
+			throw new Error('Missing the required parameter "participantId" when calling patchConversationsChatParticipantCommunication';
 		}
 		// verify the required parameter 'communicationId' is set
 		if (communicationId === undefined || communicationId === null) {
-			throw 'Missing the required parameter "communicationId" when calling patchConversationsChatParticipantCommunication';
+			throw new Error('Missing the required parameter "communicationId" when calling patchConversationsChatParticipantCommunication';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchConversationsChatParticipantCommunication';
+			throw new Error('Missing the required parameter "body" when calling patchConversationsChatParticipantCommunication';
 		}
 
 		return this.apiClient.callApi(
@@ -2441,11 +2441,11 @@ class ConversationsApi {
 	patchConversationsCobrowsesession(conversationId, body) { 
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling patchConversationsCobrowsesession';
+			throw new Error('Missing the required parameter "conversationId" when calling patchConversationsCobrowsesession';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchConversationsCobrowsesession';
+			throw new Error('Missing the required parameter "body" when calling patchConversationsCobrowsesession';
 		}
 
 		return this.apiClient.callApi(
@@ -2475,11 +2475,11 @@ class ConversationsApi {
 		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling patchConversationsCobrowsesessionParticipant';
+			throw new Error('Missing the required parameter "conversationId" when calling patchConversationsCobrowsesessionParticipant';
 		}
 		// verify the required parameter 'participantId' is set
 		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling patchConversationsCobrowsesessionParticipant';
+			throw new Error('Missing the required parameter "participantId" when calling patchConversationsCobrowsesessionParticipant';
 		}
 
 		return this.apiClient.callApi(
@@ -2509,11 +2509,11 @@ class ConversationsApi {
 		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling patchConversationsCobrowsesessionParticipantAttributes';
+			throw new Error('Missing the required parameter "conversationId" when calling patchConversationsCobrowsesessionParticipantAttributes';
 		}
 		// verify the required parameter 'participantId' is set
 		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling patchConversationsCobrowsesessionParticipantAttributes';
+			throw new Error('Missing the required parameter "participantId" when calling patchConversationsCobrowsesessionParticipantAttributes';
 		}
 
 		return this.apiClient.callApi(
@@ -2541,19 +2541,19 @@ class ConversationsApi {
 	patchConversationsCobrowsesessionParticipantCommunication(conversationId, participantId, communicationId, body) { 
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling patchConversationsCobrowsesessionParticipantCommunication';
+			throw new Error('Missing the required parameter "conversationId" when calling patchConversationsCobrowsesessionParticipantCommunication';
 		}
 		// verify the required parameter 'participantId' is set
 		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling patchConversationsCobrowsesessionParticipantCommunication';
+			throw new Error('Missing the required parameter "participantId" when calling patchConversationsCobrowsesessionParticipantCommunication';
 		}
 		// verify the required parameter 'communicationId' is set
 		if (communicationId === undefined || communicationId === null) {
-			throw 'Missing the required parameter "communicationId" when calling patchConversationsCobrowsesessionParticipantCommunication';
+			throw new Error('Missing the required parameter "communicationId" when calling patchConversationsCobrowsesessionParticipantCommunication';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchConversationsCobrowsesessionParticipantCommunication';
+			throw new Error('Missing the required parameter "body" when calling patchConversationsCobrowsesessionParticipantCommunication';
 		}
 
 		return this.apiClient.callApi(
@@ -2579,11 +2579,11 @@ class ConversationsApi {
 	patchConversationsEmail(conversationId, body) { 
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling patchConversationsEmail';
+			throw new Error('Missing the required parameter "conversationId" when calling patchConversationsEmail';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchConversationsEmail';
+			throw new Error('Missing the required parameter "body" when calling patchConversationsEmail';
 		}
 
 		return this.apiClient.callApi(
@@ -2610,15 +2610,15 @@ class ConversationsApi {
 	patchConversationsEmailParticipant(conversationId, participantId, body) { 
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling patchConversationsEmailParticipant';
+			throw new Error('Missing the required parameter "conversationId" when calling patchConversationsEmailParticipant';
 		}
 		// verify the required parameter 'participantId' is set
 		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling patchConversationsEmailParticipant';
+			throw new Error('Missing the required parameter "participantId" when calling patchConversationsEmailParticipant';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchConversationsEmailParticipant';
+			throw new Error('Missing the required parameter "body" when calling patchConversationsEmailParticipant';
 		}
 
 		return this.apiClient.callApi(
@@ -2645,15 +2645,15 @@ class ConversationsApi {
 	patchConversationsEmailParticipantAttributes(conversationId, participantId, body) { 
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling patchConversationsEmailParticipantAttributes';
+			throw new Error('Missing the required parameter "conversationId" when calling patchConversationsEmailParticipantAttributes';
 		}
 		// verify the required parameter 'participantId' is set
 		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling patchConversationsEmailParticipantAttributes';
+			throw new Error('Missing the required parameter "participantId" when calling patchConversationsEmailParticipantAttributes';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchConversationsEmailParticipantAttributes';
+			throw new Error('Missing the required parameter "body" when calling patchConversationsEmailParticipantAttributes';
 		}
 
 		return this.apiClient.callApi(
@@ -2681,19 +2681,19 @@ class ConversationsApi {
 	patchConversationsEmailParticipantCommunication(conversationId, participantId, communicationId, body) { 
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling patchConversationsEmailParticipantCommunication';
+			throw new Error('Missing the required parameter "conversationId" when calling patchConversationsEmailParticipantCommunication';
 		}
 		// verify the required parameter 'participantId' is set
 		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling patchConversationsEmailParticipantCommunication';
+			throw new Error('Missing the required parameter "participantId" when calling patchConversationsEmailParticipantCommunication';
 		}
 		// verify the required parameter 'communicationId' is set
 		if (communicationId === undefined || communicationId === null) {
-			throw 'Missing the required parameter "communicationId" when calling patchConversationsEmailParticipantCommunication';
+			throw new Error('Missing the required parameter "communicationId" when calling patchConversationsEmailParticipantCommunication';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchConversationsEmailParticipantCommunication';
+			throw new Error('Missing the required parameter "body" when calling patchConversationsEmailParticipantCommunication';
 		}
 
 		return this.apiClient.callApi(
@@ -2719,11 +2719,11 @@ class ConversationsApi {
 	patchConversationsMessage(conversationId, body) { 
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling patchConversationsMessage';
+			throw new Error('Missing the required parameter "conversationId" when calling patchConversationsMessage';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchConversationsMessage';
+			throw new Error('Missing the required parameter "body" when calling patchConversationsMessage';
 		}
 
 		return this.apiClient.callApi(
@@ -2753,11 +2753,11 @@ class ConversationsApi {
 		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling patchConversationsMessageParticipant';
+			throw new Error('Missing the required parameter "conversationId" when calling patchConversationsMessageParticipant';
 		}
 		// verify the required parameter 'participantId' is set
 		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling patchConversationsMessageParticipant';
+			throw new Error('Missing the required parameter "participantId" when calling patchConversationsMessageParticipant';
 		}
 
 		return this.apiClient.callApi(
@@ -2787,11 +2787,11 @@ class ConversationsApi {
 		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling patchConversationsMessageParticipantAttributes';
+			throw new Error('Missing the required parameter "conversationId" when calling patchConversationsMessageParticipantAttributes';
 		}
 		// verify the required parameter 'participantId' is set
 		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling patchConversationsMessageParticipantAttributes';
+			throw new Error('Missing the required parameter "participantId" when calling patchConversationsMessageParticipantAttributes';
 		}
 
 		return this.apiClient.callApi(
@@ -2819,19 +2819,19 @@ class ConversationsApi {
 	patchConversationsMessageParticipantCommunication(conversationId, participantId, communicationId, body) { 
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling patchConversationsMessageParticipantCommunication';
+			throw new Error('Missing the required parameter "conversationId" when calling patchConversationsMessageParticipantCommunication';
 		}
 		// verify the required parameter 'participantId' is set
 		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling patchConversationsMessageParticipantCommunication';
+			throw new Error('Missing the required parameter "participantId" when calling patchConversationsMessageParticipantCommunication';
 		}
 		// verify the required parameter 'communicationId' is set
 		if (communicationId === undefined || communicationId === null) {
-			throw 'Missing the required parameter "communicationId" when calling patchConversationsMessageParticipantCommunication';
+			throw new Error('Missing the required parameter "communicationId" when calling patchConversationsMessageParticipantCommunication';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchConversationsMessageParticipantCommunication';
+			throw new Error('Missing the required parameter "body" when calling patchConversationsMessageParticipantCommunication';
 		}
 
 		return this.apiClient.callApi(
@@ -2857,11 +2857,11 @@ class ConversationsApi {
 	patchConversationsMessagingIntegrationsFacebookIntegrationId(integrationId, body) { 
 		// verify the required parameter 'integrationId' is set
 		if (integrationId === undefined || integrationId === null) {
-			throw 'Missing the required parameter "integrationId" when calling patchConversationsMessagingIntegrationsFacebookIntegrationId';
+			throw new Error('Missing the required parameter "integrationId" when calling patchConversationsMessagingIntegrationsFacebookIntegrationId';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchConversationsMessagingIntegrationsFacebookIntegrationId';
+			throw new Error('Missing the required parameter "body" when calling patchConversationsMessagingIntegrationsFacebookIntegrationId';
 		}
 
 		return this.apiClient.callApi(
@@ -2887,11 +2887,11 @@ class ConversationsApi {
 	patchConversationsMessagingIntegrationsOpenIntegrationId(integrationId, body) { 
 		// verify the required parameter 'integrationId' is set
 		if (integrationId === undefined || integrationId === null) {
-			throw 'Missing the required parameter "integrationId" when calling patchConversationsMessagingIntegrationsOpenIntegrationId';
+			throw new Error('Missing the required parameter "integrationId" when calling patchConversationsMessagingIntegrationsOpenIntegrationId';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchConversationsMessagingIntegrationsOpenIntegrationId';
+			throw new Error('Missing the required parameter "body" when calling patchConversationsMessagingIntegrationsOpenIntegrationId';
 		}
 
 		return this.apiClient.callApi(
@@ -2917,11 +2917,11 @@ class ConversationsApi {
 	patchConversationsMessagingIntegrationsTwitterIntegrationId(integrationId, body) { 
 		// verify the required parameter 'integrationId' is set
 		if (integrationId === undefined || integrationId === null) {
-			throw 'Missing the required parameter "integrationId" when calling patchConversationsMessagingIntegrationsTwitterIntegrationId';
+			throw new Error('Missing the required parameter "integrationId" when calling patchConversationsMessagingIntegrationsTwitterIntegrationId';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchConversationsMessagingIntegrationsTwitterIntegrationId';
+			throw new Error('Missing the required parameter "body" when calling patchConversationsMessagingIntegrationsTwitterIntegrationId';
 		}
 
 		return this.apiClient.callApi(
@@ -2947,11 +2947,11 @@ class ConversationsApi {
 	patchConversationsMessagingIntegrationsWhatsappIntegrationId(integrationId, body) { 
 		// verify the required parameter 'integrationId' is set
 		if (integrationId === undefined || integrationId === null) {
-			throw 'Missing the required parameter "integrationId" when calling patchConversationsMessagingIntegrationsWhatsappIntegrationId';
+			throw new Error('Missing the required parameter "integrationId" when calling patchConversationsMessagingIntegrationsWhatsappIntegrationId';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchConversationsMessagingIntegrationsWhatsappIntegrationId';
+			throw new Error('Missing the required parameter "body" when calling patchConversationsMessagingIntegrationsWhatsappIntegrationId';
 		}
 
 		return this.apiClient.callApi(
@@ -2977,11 +2977,11 @@ class ConversationsApi {
 	postAnalyticsConversationDetailsProperties(conversationId, body) { 
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling postAnalyticsConversationDetailsProperties';
+			throw new Error('Missing the required parameter "conversationId" when calling postAnalyticsConversationDetailsProperties';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postAnalyticsConversationDetailsProperties';
+			throw new Error('Missing the required parameter "body" when calling postAnalyticsConversationDetailsProperties';
 		}
 
 		return this.apiClient.callApi(
@@ -3006,7 +3006,7 @@ class ConversationsApi {
 	postAnalyticsConversationsAggregatesQuery(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postAnalyticsConversationsAggregatesQuery';
+			throw new Error('Missing the required parameter "body" when calling postAnalyticsConversationsAggregatesQuery';
 		}
 
 		return this.apiClient.callApi(
@@ -3031,7 +3031,7 @@ class ConversationsApi {
 	postAnalyticsConversationsDetailsJobs(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postAnalyticsConversationsDetailsJobs';
+			throw new Error('Missing the required parameter "body" when calling postAnalyticsConversationsDetailsJobs';
 		}
 
 		return this.apiClient.callApi(
@@ -3056,7 +3056,7 @@ class ConversationsApi {
 	postAnalyticsConversationsDetailsQuery(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postAnalyticsConversationsDetailsQuery';
+			throw new Error('Missing the required parameter "body" when calling postAnalyticsConversationsDetailsQuery';
 		}
 
 		return this.apiClient.callApi(
@@ -3082,11 +3082,11 @@ class ConversationsApi {
 	postConversationAssign(conversationId, body) { 
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling postConversationAssign';
+			throw new Error('Missing the required parameter "conversationId" when calling postConversationAssign';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postConversationAssign';
+			throw new Error('Missing the required parameter "body" when calling postConversationAssign';
 		}
 
 		return this.apiClient.callApi(
@@ -3111,7 +3111,7 @@ class ConversationsApi {
 	postConversationDisconnect(conversationId) { 
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling postConversationDisconnect';
+			throw new Error('Missing the required parameter "conversationId" when calling postConversationDisconnect';
 		}
 
 		return this.apiClient.callApi(
@@ -3141,11 +3141,11 @@ class ConversationsApi {
 		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling postConversationParticipantCallbacks';
+			throw new Error('Missing the required parameter "conversationId" when calling postConversationParticipantCallbacks';
 		}
 		// verify the required parameter 'participantId' is set
 		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling postConversationParticipantCallbacks';
+			throw new Error('Missing the required parameter "participantId" when calling postConversationParticipantCallbacks';
 		}
 
 		return this.apiClient.callApi(
@@ -3175,11 +3175,11 @@ class ConversationsApi {
 		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling postConversationParticipantDigits';
+			throw new Error('Missing the required parameter "conversationId" when calling postConversationParticipantDigits';
 		}
 		// verify the required parameter 'participantId' is set
 		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling postConversationParticipantDigits';
+			throw new Error('Missing the required parameter "participantId" when calling postConversationParticipantDigits';
 		}
 
 		return this.apiClient.callApi(
@@ -3206,15 +3206,15 @@ class ConversationsApi {
 	postConversationParticipantReplace(conversationId, participantId, body) { 
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling postConversationParticipantReplace';
+			throw new Error('Missing the required parameter "conversationId" when calling postConversationParticipantReplace';
 		}
 		// verify the required parameter 'participantId' is set
 		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling postConversationParticipantReplace';
+			throw new Error('Missing the required parameter "participantId" when calling postConversationParticipantReplace';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postConversationParticipantReplace';
+			throw new Error('Missing the required parameter "body" when calling postConversationParticipantReplace';
 		}
 
 		return this.apiClient.callApi(
@@ -3244,11 +3244,11 @@ class ConversationsApi {
 		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling postConversationParticipantSecureivrsessions';
+			throw new Error('Missing the required parameter "conversationId" when calling postConversationParticipantSecureivrsessions';
 		}
 		// verify the required parameter 'participantId' is set
 		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling postConversationParticipantSecureivrsessions';
+			throw new Error('Missing the required parameter "participantId" when calling postConversationParticipantSecureivrsessions';
 		}
 
 		return this.apiClient.callApi(
@@ -3274,11 +3274,11 @@ class ConversationsApi {
 	postConversationsCall(conversationId, body) { 
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling postConversationsCall';
+			throw new Error('Missing the required parameter "conversationId" when calling postConversationsCall';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postConversationsCall';
+			throw new Error('Missing the required parameter "body" when calling postConversationsCall';
 		}
 
 		return this.apiClient.callApi(
@@ -3304,11 +3304,11 @@ class ConversationsApi {
 	postConversationsCallParticipantCoach(conversationId, participantId) { 
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling postConversationsCallParticipantCoach';
+			throw new Error('Missing the required parameter "conversationId" when calling postConversationsCallParticipantCoach';
 		}
 		// verify the required parameter 'participantId' is set
 		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling postConversationsCallParticipantCoach';
+			throw new Error('Missing the required parameter "participantId" when calling postConversationsCallParticipantCoach';
 		}
 
 		return this.apiClient.callApi(
@@ -3335,15 +3335,15 @@ class ConversationsApi {
 	postConversationsCallParticipantConsult(conversationId, participantId, body) { 
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling postConversationsCallParticipantConsult';
+			throw new Error('Missing the required parameter "conversationId" when calling postConversationsCallParticipantConsult';
 		}
 		// verify the required parameter 'participantId' is set
 		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling postConversationsCallParticipantConsult';
+			throw new Error('Missing the required parameter "participantId" when calling postConversationsCallParticipantConsult';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postConversationsCallParticipantConsult';
+			throw new Error('Missing the required parameter "body" when calling postConversationsCallParticipantConsult';
 		}
 
 		return this.apiClient.callApi(
@@ -3369,11 +3369,11 @@ class ConversationsApi {
 	postConversationsCallParticipantMonitor(conversationId, participantId) { 
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling postConversationsCallParticipantMonitor';
+			throw new Error('Missing the required parameter "conversationId" when calling postConversationsCallParticipantMonitor';
 		}
 		// verify the required parameter 'participantId' is set
 		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling postConversationsCallParticipantMonitor';
+			throw new Error('Missing the required parameter "participantId" when calling postConversationsCallParticipantMonitor';
 		}
 
 		return this.apiClient.callApi(
@@ -3400,15 +3400,15 @@ class ConversationsApi {
 	postConversationsCallParticipantReplace(conversationId, participantId, body) { 
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling postConversationsCallParticipantReplace';
+			throw new Error('Missing the required parameter "conversationId" when calling postConversationsCallParticipantReplace';
 		}
 		// verify the required parameter 'participantId' is set
 		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling postConversationsCallParticipantReplace';
+			throw new Error('Missing the required parameter "participantId" when calling postConversationsCallParticipantReplace';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postConversationsCallParticipantReplace';
+			throw new Error('Missing the required parameter "body" when calling postConversationsCallParticipantReplace';
 		}
 
 		return this.apiClient.callApi(
@@ -3434,11 +3434,11 @@ class ConversationsApi {
 	postConversationsCallParticipants(conversationId, body) { 
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling postConversationsCallParticipants';
+			throw new Error('Missing the required parameter "conversationId" when calling postConversationsCallParticipants';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postConversationsCallParticipants';
+			throw new Error('Missing the required parameter "body" when calling postConversationsCallParticipants';
 		}
 
 		return this.apiClient.callApi(
@@ -3465,15 +3465,15 @@ class ConversationsApi {
 	postConversationsCallbackParticipantReplace(conversationId, participantId, body) { 
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling postConversationsCallbackParticipantReplace';
+			throw new Error('Missing the required parameter "conversationId" when calling postConversationsCallbackParticipantReplace';
 		}
 		// verify the required parameter 'participantId' is set
 		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling postConversationsCallbackParticipantReplace';
+			throw new Error('Missing the required parameter "participantId" when calling postConversationsCallbackParticipantReplace';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postConversationsCallbackParticipantReplace';
+			throw new Error('Missing the required parameter "body" when calling postConversationsCallbackParticipantReplace';
 		}
 
 		return this.apiClient.callApi(
@@ -3498,7 +3498,7 @@ class ConversationsApi {
 	postConversationsCallbacks(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postConversationsCallbacks';
+			throw new Error('Missing the required parameter "body" when calling postConversationsCallbacks';
 		}
 
 		return this.apiClient.callApi(
@@ -3523,7 +3523,7 @@ class ConversationsApi {
 	postConversationsCalls(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postConversationsCalls';
+			throw new Error('Missing the required parameter "body" when calling postConversationsCalls';
 		}
 
 		return this.apiClient.callApi(
@@ -3550,15 +3550,15 @@ class ConversationsApi {
 	postConversationsChatCommunicationMessages(conversationId, communicationId, body) { 
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling postConversationsChatCommunicationMessages';
+			throw new Error('Missing the required parameter "conversationId" when calling postConversationsChatCommunicationMessages';
 		}
 		// verify the required parameter 'communicationId' is set
 		if (communicationId === undefined || communicationId === null) {
-			throw 'Missing the required parameter "communicationId" when calling postConversationsChatCommunicationMessages';
+			throw new Error('Missing the required parameter "communicationId" when calling postConversationsChatCommunicationMessages';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postConversationsChatCommunicationMessages';
+			throw new Error('Missing the required parameter "body" when calling postConversationsChatCommunicationMessages';
 		}
 
 		return this.apiClient.callApi(
@@ -3584,11 +3584,11 @@ class ConversationsApi {
 	postConversationsChatCommunicationTyping(conversationId, communicationId) { 
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling postConversationsChatCommunicationTyping';
+			throw new Error('Missing the required parameter "conversationId" when calling postConversationsChatCommunicationTyping';
 		}
 		// verify the required parameter 'communicationId' is set
 		if (communicationId === undefined || communicationId === null) {
-			throw 'Missing the required parameter "communicationId" when calling postConversationsChatCommunicationTyping';
+			throw new Error('Missing the required parameter "communicationId" when calling postConversationsChatCommunicationTyping';
 		}
 
 		return this.apiClient.callApi(
@@ -3615,15 +3615,15 @@ class ConversationsApi {
 	postConversationsChatParticipantReplace(conversationId, participantId, body) { 
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling postConversationsChatParticipantReplace';
+			throw new Error('Missing the required parameter "conversationId" when calling postConversationsChatParticipantReplace';
 		}
 		// verify the required parameter 'participantId' is set
 		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling postConversationsChatParticipantReplace';
+			throw new Error('Missing the required parameter "participantId" when calling postConversationsChatParticipantReplace';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postConversationsChatParticipantReplace';
+			throw new Error('Missing the required parameter "body" when calling postConversationsChatParticipantReplace';
 		}
 
 		return this.apiClient.callApi(
@@ -3648,7 +3648,7 @@ class ConversationsApi {
 	postConversationsChats(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postConversationsChats';
+			throw new Error('Missing the required parameter "body" when calling postConversationsChats';
 		}
 
 		return this.apiClient.callApi(
@@ -3678,11 +3678,11 @@ class ConversationsApi {
 		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling postConversationsCobrowsesessionParticipantReplace';
+			throw new Error('Missing the required parameter "conversationId" when calling postConversationsCobrowsesessionParticipantReplace';
 		}
 		// verify the required parameter 'participantId' is set
 		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling postConversationsCobrowsesessionParticipantReplace';
+			throw new Error('Missing the required parameter "participantId" when calling postConversationsCobrowsesessionParticipantReplace';
 		}
 
 		return this.apiClient.callApi(
@@ -3708,11 +3708,11 @@ class ConversationsApi {
 	postConversationsEmailInboundmessages(conversationId, body) { 
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling postConversationsEmailInboundmessages';
+			throw new Error('Missing the required parameter "conversationId" when calling postConversationsEmailInboundmessages';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postConversationsEmailInboundmessages';
+			throw new Error('Missing the required parameter "body" when calling postConversationsEmailInboundmessages';
 		}
 
 		return this.apiClient.callApi(
@@ -3738,11 +3738,11 @@ class ConversationsApi {
 	postConversationsEmailMessages(conversationId, body) { 
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling postConversationsEmailMessages';
+			throw new Error('Missing the required parameter "conversationId" when calling postConversationsEmailMessages';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postConversationsEmailMessages';
+			throw new Error('Missing the required parameter "body" when calling postConversationsEmailMessages';
 		}
 
 		return this.apiClient.callApi(
@@ -3768,11 +3768,11 @@ class ConversationsApi {
 	postConversationsEmailMessagesDraftAttachmentsCopy(conversationId, body) { 
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling postConversationsEmailMessagesDraftAttachmentsCopy';
+			throw new Error('Missing the required parameter "conversationId" when calling postConversationsEmailMessagesDraftAttachmentsCopy';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postConversationsEmailMessagesDraftAttachmentsCopy';
+			throw new Error('Missing the required parameter "body" when calling postConversationsEmailMessagesDraftAttachmentsCopy';
 		}
 
 		return this.apiClient.callApi(
@@ -3799,15 +3799,15 @@ class ConversationsApi {
 	postConversationsEmailParticipantReplace(conversationId, participantId, body) { 
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling postConversationsEmailParticipantReplace';
+			throw new Error('Missing the required parameter "conversationId" when calling postConversationsEmailParticipantReplace';
 		}
 		// verify the required parameter 'participantId' is set
 		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling postConversationsEmailParticipantReplace';
+			throw new Error('Missing the required parameter "participantId" when calling postConversationsEmailParticipantReplace';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postConversationsEmailParticipantReplace';
+			throw new Error('Missing the required parameter "body" when calling postConversationsEmailParticipantReplace';
 		}
 
 		return this.apiClient.callApi(
@@ -3832,7 +3832,7 @@ class ConversationsApi {
 	postConversationsEmails(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postConversationsEmails';
+			throw new Error('Missing the required parameter "body" when calling postConversationsEmails';
 		}
 
 		return this.apiClient.callApi(
@@ -3857,7 +3857,7 @@ class ConversationsApi {
 	postConversationsFaxes(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postConversationsFaxes';
+			throw new Error('Missing the required parameter "body" when calling postConversationsFaxes';
 		}
 
 		return this.apiClient.callApi(
@@ -3884,15 +3884,15 @@ class ConversationsApi {
 	postConversationsMessageCommunicationMessages(conversationId, communicationId, body) { 
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling postConversationsMessageCommunicationMessages';
+			throw new Error('Missing the required parameter "conversationId" when calling postConversationsMessageCommunicationMessages';
 		}
 		// verify the required parameter 'communicationId' is set
 		if (communicationId === undefined || communicationId === null) {
-			throw 'Missing the required parameter "communicationId" when calling postConversationsMessageCommunicationMessages';
+			throw new Error('Missing the required parameter "communicationId" when calling postConversationsMessageCommunicationMessages';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postConversationsMessageCommunicationMessages';
+			throw new Error('Missing the required parameter "body" when calling postConversationsMessageCommunicationMessages';
 		}
 
 		return this.apiClient.callApi(
@@ -3918,11 +3918,11 @@ class ConversationsApi {
 	postConversationsMessageCommunicationMessagesMedia(conversationId, communicationId) { 
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling postConversationsMessageCommunicationMessagesMedia';
+			throw new Error('Missing the required parameter "conversationId" when calling postConversationsMessageCommunicationMessagesMedia';
 		}
 		// verify the required parameter 'communicationId' is set
 		if (communicationId === undefined || communicationId === null) {
-			throw 'Missing the required parameter "communicationId" when calling postConversationsMessageCommunicationMessagesMedia';
+			throw new Error('Missing the required parameter "communicationId" when calling postConversationsMessageCommunicationMessagesMedia';
 		}
 
 		return this.apiClient.callApi(
@@ -3951,7 +3951,7 @@ class ConversationsApi {
 		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling postConversationsMessageMessagesBulk';
+			throw new Error('Missing the required parameter "conversationId" when calling postConversationsMessageMessagesBulk';
 		}
 
 		return this.apiClient.callApi(
@@ -3978,15 +3978,15 @@ class ConversationsApi {
 	postConversationsMessageParticipantReplace(conversationId, participantId, body) { 
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling postConversationsMessageParticipantReplace';
+			throw new Error('Missing the required parameter "conversationId" when calling postConversationsMessageParticipantReplace';
 		}
 		// verify the required parameter 'participantId' is set
 		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling postConversationsMessageParticipantReplace';
+			throw new Error('Missing the required parameter "participantId" when calling postConversationsMessageParticipantReplace';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postConversationsMessageParticipantReplace';
+			throw new Error('Missing the required parameter "body" when calling postConversationsMessageParticipantReplace';
 		}
 
 		return this.apiClient.callApi(
@@ -4011,7 +4011,7 @@ class ConversationsApi {
 	postConversationsMessages(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postConversationsMessages';
+			throw new Error('Missing the required parameter "body" when calling postConversationsMessages';
 		}
 
 		return this.apiClient.callApi(
@@ -4036,7 +4036,7 @@ class ConversationsApi {
 	postConversationsMessagesAgentless(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postConversationsMessagesAgentless';
+			throw new Error('Missing the required parameter "body" when calling postConversationsMessagesAgentless';
 		}
 
 		return this.apiClient.callApi(
@@ -4061,7 +4061,7 @@ class ConversationsApi {
 	postConversationsMessagesInboundOpen(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postConversationsMessagesInboundOpen';
+			throw new Error('Missing the required parameter "body" when calling postConversationsMessagesInboundOpen';
 		}
 
 		return this.apiClient.callApi(
@@ -4086,7 +4086,7 @@ class ConversationsApi {
 	postConversationsMessagingIntegrationsFacebook(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postConversationsMessagingIntegrationsFacebook';
+			throw new Error('Missing the required parameter "body" when calling postConversationsMessagingIntegrationsFacebook';
 		}
 
 		return this.apiClient.callApi(
@@ -4111,7 +4111,7 @@ class ConversationsApi {
 	postConversationsMessagingIntegrationsLine(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postConversationsMessagingIntegrationsLine';
+			throw new Error('Missing the required parameter "body" when calling postConversationsMessagingIntegrationsLine';
 		}
 
 		return this.apiClient.callApi(
@@ -4136,7 +4136,7 @@ class ConversationsApi {
 	postConversationsMessagingIntegrationsOpen(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postConversationsMessagingIntegrationsOpen';
+			throw new Error('Missing the required parameter "body" when calling postConversationsMessagingIntegrationsOpen';
 		}
 
 		return this.apiClient.callApi(
@@ -4161,7 +4161,7 @@ class ConversationsApi {
 	postConversationsMessagingIntegrationsTwitter(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postConversationsMessagingIntegrationsTwitter';
+			throw new Error('Missing the required parameter "body" when calling postConversationsMessagingIntegrationsTwitter';
 		}
 
 		return this.apiClient.callApi(
@@ -4186,7 +4186,7 @@ class ConversationsApi {
 	postConversationsMessagingIntegrationsWhatsapp(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postConversationsMessagingIntegrationsWhatsapp';
+			throw new Error('Missing the required parameter "body" when calling postConversationsMessagingIntegrationsWhatsapp';
 		}
 
 		return this.apiClient.callApi(
@@ -4212,11 +4212,11 @@ class ConversationsApi {
 	putConversationParticipantFlaggedreason(conversationId, participantId) { 
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling putConversationParticipantFlaggedreason';
+			throw new Error('Missing the required parameter "conversationId" when calling putConversationParticipantFlaggedreason';
 		}
 		// verify the required parameter 'participantId' is set
 		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling putConversationParticipantFlaggedreason';
+			throw new Error('Missing the required parameter "participantId" when calling putConversationParticipantFlaggedreason';
 		}
 
 		return this.apiClient.callApi(
@@ -4242,11 +4242,11 @@ class ConversationsApi {
 	putConversationTags(conversationId, body) { 
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling putConversationTags';
+			throw new Error('Missing the required parameter "conversationId" when calling putConversationTags';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putConversationTags';
+			throw new Error('Missing the required parameter "body" when calling putConversationTags';
 		}
 
 		return this.apiClient.callApi(
@@ -4274,19 +4274,19 @@ class ConversationsApi {
 	putConversationsCallParticipantCommunicationUuidata(conversationId, participantId, communicationId, body) { 
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling putConversationsCallParticipantCommunicationUuidata';
+			throw new Error('Missing the required parameter "conversationId" when calling putConversationsCallParticipantCommunicationUuidata';
 		}
 		// verify the required parameter 'participantId' is set
 		if (participantId === undefined || participantId === null) {
-			throw 'Missing the required parameter "participantId" when calling putConversationsCallParticipantCommunicationUuidata';
+			throw new Error('Missing the required parameter "participantId" when calling putConversationsCallParticipantCommunicationUuidata';
 		}
 		// verify the required parameter 'communicationId' is set
 		if (communicationId === undefined || communicationId === null) {
-			throw 'Missing the required parameter "communicationId" when calling putConversationsCallParticipantCommunicationUuidata';
+			throw new Error('Missing the required parameter "communicationId" when calling putConversationsCallParticipantCommunicationUuidata';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putConversationsCallParticipantCommunicationUuidata';
+			throw new Error('Missing the required parameter "body" when calling putConversationsCallParticipantCommunicationUuidata';
 		}
 
 		return this.apiClient.callApi(
@@ -4312,11 +4312,11 @@ class ConversationsApi {
 	putConversationsEmailMessagesDraft(conversationId, body) { 
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling putConversationsEmailMessagesDraft';
+			throw new Error('Missing the required parameter "conversationId" when calling putConversationsEmailMessagesDraft';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putConversationsEmailMessagesDraft';
+			throw new Error('Missing the required parameter "body" when calling putConversationsEmailMessagesDraft';
 		}
 
 		return this.apiClient.callApi(
@@ -4342,11 +4342,11 @@ class ConversationsApi {
 	putConversationsMessagingIntegrationsLineIntegrationId(integrationId, body) { 
 		// verify the required parameter 'integrationId' is set
 		if (integrationId === undefined || integrationId === null) {
-			throw 'Missing the required parameter "integrationId" when calling putConversationsMessagingIntegrationsLineIntegrationId';
+			throw new Error('Missing the required parameter "integrationId" when calling putConversationsMessagingIntegrationsLineIntegrationId';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putConversationsMessagingIntegrationsLineIntegrationId';
+			throw new Error('Missing the required parameter "body" when calling putConversationsMessagingIntegrationsLineIntegrationId';
 		}
 
 		return this.apiClient.callApi(
@@ -4371,7 +4371,7 @@ class ConversationsApi {
 	putConversationsMessagingThreadingtimeline(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putConversationsMessagingThreadingtimeline';
+			throw new Error('Missing the required parameter "body" when calling putConversationsMessagingThreadingtimeline';
 		}
 
 		return this.apiClient.callApi(

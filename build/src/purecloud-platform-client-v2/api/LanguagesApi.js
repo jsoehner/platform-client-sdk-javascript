@@ -28,7 +28,7 @@ class LanguagesApi {
 	deleteLanguage(languageId) { 
 		// verify the required parameter 'languageId' is set
 		if (languageId === undefined || languageId === null) {
-			throw 'Missing the required parameter "languageId" when calling deleteLanguage';
+			throw new Error('Missing the required parameter "languageId" when calling deleteLanguage';
 		}
 
 		return this.apiClient.callApi(
@@ -53,7 +53,7 @@ class LanguagesApi {
 	deleteRoutingLanguage(languageId) { 
 		// verify the required parameter 'languageId' is set
 		if (languageId === undefined || languageId === null) {
-			throw 'Missing the required parameter "languageId" when calling deleteRoutingLanguage';
+			throw new Error('Missing the required parameter "languageId" when calling deleteRoutingLanguage';
 		}
 
 		return this.apiClient.callApi(
@@ -78,7 +78,7 @@ class LanguagesApi {
 	getLanguage(languageId) { 
 		// verify the required parameter 'languageId' is set
 		if (languageId === undefined || languageId === null) {
-			throw 'Missing the required parameter "languageId" when calling getLanguage';
+			throw new Error('Missing the required parameter "languageId" when calling getLanguage';
 		}
 
 		return this.apiClient.callApi(
@@ -150,7 +150,7 @@ class LanguagesApi {
 	getLanguagesTranslationsBuiltin(language) { 
 		// verify the required parameter 'language' is set
 		if (language === undefined || language === null) {
-			throw 'Missing the required parameter "language" when calling getLanguagesTranslationsBuiltin';
+			throw new Error('Missing the required parameter "language" when calling getLanguagesTranslationsBuiltin';
 		}
 
 		return this.apiClient.callApi(
@@ -175,7 +175,7 @@ class LanguagesApi {
 	getLanguagesTranslationsOrganization(language) { 
 		// verify the required parameter 'language' is set
 		if (language === undefined || language === null) {
-			throw 'Missing the required parameter "language" when calling getLanguagesTranslationsOrganization';
+			throw new Error('Missing the required parameter "language" when calling getLanguagesTranslationsOrganization';
 		}
 
 		return this.apiClient.callApi(
@@ -200,7 +200,7 @@ class LanguagesApi {
 	getLanguagesTranslationsUser(userId) { 
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling getLanguagesTranslationsUser';
+			throw new Error('Missing the required parameter "userId" when calling getLanguagesTranslationsUser';
 		}
 
 		return this.apiClient.callApi(
@@ -225,7 +225,7 @@ class LanguagesApi {
 	getRoutingLanguage(languageId) { 
 		// verify the required parameter 'languageId' is set
 		if (languageId === undefined || languageId === null) {
-			throw 'Missing the required parameter "languageId" when calling getRoutingLanguage';
+			throw new Error('Missing the required parameter "languageId" when calling getRoutingLanguage';
 		}
 
 		return this.apiClient.callApi(
@@ -250,7 +250,7 @@ class LanguagesApi {
 	postLanguages(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postLanguages';
+			throw new Error('Missing the required parameter "body" when calling postLanguages';
 		}
 
 		return this.apiClient.callApi(

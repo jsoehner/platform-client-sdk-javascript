@@ -29,11 +29,11 @@ class QualityApi {
 	deleteQualityCalibration(calibrationId, calibratorId) { 
 		// verify the required parameter 'calibrationId' is set
 		if (calibrationId === undefined || calibrationId === null) {
-			throw 'Missing the required parameter "calibrationId" when calling deleteQualityCalibration';
+			throw new Error('Missing the required parameter "calibrationId" when calling deleteQualityCalibration';
 		}
 		// verify the required parameter 'calibratorId' is set
 		if (calibratorId === undefined || calibratorId === null) {
-			throw 'Missing the required parameter "calibratorId" when calling deleteQualityCalibration';
+			throw new Error('Missing the required parameter "calibratorId" when calling deleteQualityCalibration';
 		}
 
 		return this.apiClient.callApi(
@@ -63,11 +63,11 @@ class QualityApi {
 		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling deleteQualityConversationEvaluation';
+			throw new Error('Missing the required parameter "conversationId" when calling deleteQualityConversationEvaluation';
 		}
 		// verify the required parameter 'evaluationId' is set
 		if (evaluationId === undefined || evaluationId === null) {
-			throw 'Missing the required parameter "evaluationId" when calling deleteQualityConversationEvaluation';
+			throw new Error('Missing the required parameter "evaluationId" when calling deleteQualityConversationEvaluation';
 		}
 
 		return this.apiClient.callApi(
@@ -92,7 +92,7 @@ class QualityApi {
 	deleteQualityForm(formId) { 
 		// verify the required parameter 'formId' is set
 		if (formId === undefined || formId === null) {
-			throw 'Missing the required parameter "formId" when calling deleteQualityForm';
+			throw new Error('Missing the required parameter "formId" when calling deleteQualityForm';
 		}
 
 		return this.apiClient.callApi(
@@ -117,7 +117,7 @@ class QualityApi {
 	deleteQualityFormsEvaluation(formId) { 
 		// verify the required parameter 'formId' is set
 		if (formId === undefined || formId === null) {
-			throw 'Missing the required parameter "formId" when calling deleteQualityFormsEvaluation';
+			throw new Error('Missing the required parameter "formId" when calling deleteQualityFormsEvaluation';
 		}
 
 		return this.apiClient.callApi(
@@ -142,7 +142,7 @@ class QualityApi {
 	deleteQualityFormsSurvey(formId) { 
 		// verify the required parameter 'formId' is set
 		if (formId === undefined || formId === null) {
-			throw 'Missing the required parameter "formId" when calling deleteQualityFormsSurvey';
+			throw new Error('Missing the required parameter "formId" when calling deleteQualityFormsSurvey';
 		}
 
 		return this.apiClient.callApi(
@@ -207,7 +207,7 @@ class QualityApi {
 		
 		// verify the required parameter 'calibrationId' is set
 		if (calibrationId === undefined || calibrationId === null) {
-			throw 'Missing the required parameter "calibrationId" when calling getQualityCalibration';
+			throw new Error('Missing the required parameter "calibrationId" when calling getQualityCalibration';
 		}
 
 		return this.apiClient.callApi(
@@ -244,7 +244,7 @@ class QualityApi {
 		
 		// verify the required parameter 'calibratorId' is set
 		if (calibratorId === undefined || calibratorId === null) {
-			throw 'Missing the required parameter "calibratorId" when calling getQualityCalibrations';
+			throw new Error('Missing the required parameter "calibratorId" when calling getQualityCalibrations';
 		}
 
 		return this.apiClient.callApi(
@@ -274,11 +274,11 @@ class QualityApi {
 		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling getQualityConversationEvaluation';
+			throw new Error('Missing the required parameter "conversationId" when calling getQualityConversationEvaluation';
 		}
 		// verify the required parameter 'evaluationId' is set
 		if (evaluationId === undefined || evaluationId === null) {
-			throw 'Missing the required parameter "evaluationId" when calling getQualityConversationEvaluation';
+			throw new Error('Missing the required parameter "evaluationId" when calling getQualityConversationEvaluation';
 		}
 
 		return this.apiClient.callApi(
@@ -303,7 +303,7 @@ class QualityApi {
 	getQualityConversationSurveys(conversationId) { 
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling getQualityConversationSurveys';
+			throw new Error('Missing the required parameter "conversationId" when calling getQualityConversationSurveys';
 		}
 
 		return this.apiClient.callApi(
@@ -328,7 +328,7 @@ class QualityApi {
 	getQualityConversationsAuditsQueryTransactionId(transactionId) { 
 		// verify the required parameter 'transactionId' is set
 		if (transactionId === undefined || transactionId === null) {
-			throw 'Missing the required parameter "transactionId" when calling getQualityConversationsAuditsQueryTransactionId';
+			throw new Error('Missing the required parameter "transactionId" when calling getQualityConversationsAuditsQueryTransactionId';
 		}
 
 		return this.apiClient.callApi(
@@ -359,7 +359,7 @@ class QualityApi {
 		
 		// verify the required parameter 'transactionId' is set
 		if (transactionId === undefined || transactionId === null) {
-			throw 'Missing the required parameter "transactionId" when calling getQualityConversationsAuditsQueryTransactionIdResults';
+			throw new Error('Missing the required parameter "transactionId" when calling getQualityConversationsAuditsQueryTransactionIdResults';
 		}
 
 		return this.apiClient.callApi(
@@ -459,7 +459,7 @@ class QualityApi {
 	getQualityForm(formId) { 
 		// verify the required parameter 'formId' is set
 		if (formId === undefined || formId === null) {
-			throw 'Missing the required parameter "formId" when calling getQualityForm';
+			throw new Error('Missing the required parameter "formId" when calling getQualityForm';
 		}
 
 		return this.apiClient.callApi(
@@ -489,7 +489,7 @@ class QualityApi {
 		
 		// verify the required parameter 'formId' is set
 		if (formId === undefined || formId === null) {
-			throw 'Missing the required parameter "formId" when calling getQualityFormVersions';
+			throw new Error('Missing the required parameter "formId" when calling getQualityFormVersions';
 		}
 
 		return this.apiClient.callApi(
@@ -545,7 +545,7 @@ class QualityApi {
 	getQualityFormsEvaluation(formId) { 
 		// verify the required parameter 'formId' is set
 		if (formId === undefined || formId === null) {
-			throw 'Missing the required parameter "formId" when calling getQualityFormsEvaluation';
+			throw new Error('Missing the required parameter "formId" when calling getQualityFormsEvaluation';
 		}
 
 		return this.apiClient.callApi(
@@ -576,7 +576,7 @@ class QualityApi {
 		
 		// verify the required parameter 'formId' is set
 		if (formId === undefined || formId === null) {
-			throw 'Missing the required parameter "formId" when calling getQualityFormsEvaluationVersions';
+			throw new Error('Missing the required parameter "formId" when calling getQualityFormsEvaluationVersions';
 		}
 
 		return this.apiClient.callApi(
@@ -632,7 +632,7 @@ class QualityApi {
 	getQualityFormsSurvey(formId) { 
 		// verify the required parameter 'formId' is set
 		if (formId === undefined || formId === null) {
-			throw 'Missing the required parameter "formId" when calling getQualityFormsSurvey';
+			throw new Error('Missing the required parameter "formId" when calling getQualityFormsSurvey';
 		}
 
 		return this.apiClient.callApi(
@@ -662,7 +662,7 @@ class QualityApi {
 		
 		// verify the required parameter 'formId' is set
 		if (formId === undefined || formId === null) {
-			throw 'Missing the required parameter "formId" when calling getQualityFormsSurveyVersions';
+			throw new Error('Missing the required parameter "formId" when calling getQualityFormsSurveyVersions';
 		}
 
 		return this.apiClient.callApi(
@@ -718,7 +718,7 @@ class QualityApi {
 	getQualityFormsSurveysBulk(id) { 
 		// verify the required parameter 'id' is set
 		if (id === undefined || id === null) {
-			throw 'Missing the required parameter "id" when calling getQualityFormsSurveysBulk';
+			throw new Error('Missing the required parameter "id" when calling getQualityFormsSurveysBulk';
 		}
 
 		return this.apiClient.callApi(
@@ -747,7 +747,7 @@ class QualityApi {
 		
 		// verify the required parameter 'contextId' is set
 		if (contextId === undefined || contextId === null) {
-			throw 'Missing the required parameter "contextId" when calling getQualityFormsSurveysBulkContexts';
+			throw new Error('Missing the required parameter "contextId" when calling getQualityFormsSurveysBulkContexts';
 		}
 
 		return this.apiClient.callApi(
@@ -772,7 +772,7 @@ class QualityApi {
 	getQualityPublishedform(formId) { 
 		// verify the required parameter 'formId' is set
 		if (formId === undefined || formId === null) {
-			throw 'Missing the required parameter "formId" when calling getQualityPublishedform';
+			throw new Error('Missing the required parameter "formId" when calling getQualityPublishedform';
 		}
 
 		return this.apiClient.callApi(
@@ -824,7 +824,7 @@ class QualityApi {
 	getQualityPublishedformsEvaluation(formId) { 
 		// verify the required parameter 'formId' is set
 		if (formId === undefined || formId === null) {
-			throw 'Missing the required parameter "formId" when calling getQualityPublishedformsEvaluation';
+			throw new Error('Missing the required parameter "formId" when calling getQualityPublishedformsEvaluation';
 		}
 
 		return this.apiClient.callApi(
@@ -876,7 +876,7 @@ class QualityApi {
 	getQualityPublishedformsSurvey(formId) { 
 		// verify the required parameter 'formId' is set
 		if (formId === undefined || formId === null) {
-			throw 'Missing the required parameter "formId" when calling getQualityPublishedformsSurvey';
+			throw new Error('Missing the required parameter "formId" when calling getQualityPublishedformsSurvey';
 		}
 
 		return this.apiClient.callApi(
@@ -928,7 +928,7 @@ class QualityApi {
 	getQualitySurvey(surveyId) { 
 		// verify the required parameter 'surveyId' is set
 		if (surveyId === undefined || surveyId === null) {
-			throw 'Missing the required parameter "surveyId" when calling getQualitySurvey';
+			throw new Error('Missing the required parameter "surveyId" when calling getQualitySurvey';
 		}
 
 		return this.apiClient.callApi(
@@ -953,7 +953,7 @@ class QualityApi {
 	getQualitySurveysScorable(customerSurveyUrl) { 
 		// verify the required parameter 'customerSurveyUrl' is set
 		if (customerSurveyUrl === undefined || customerSurveyUrl === null) {
-			throw 'Missing the required parameter "customerSurveyUrl" when calling getQualitySurveysScorable';
+			throw new Error('Missing the required parameter "customerSurveyUrl" when calling getQualitySurveysScorable';
 		}
 
 		return this.apiClient.callApi(
@@ -979,11 +979,11 @@ class QualityApi {
 	patchQualityFormsSurvey(formId, body) { 
 		// verify the required parameter 'formId' is set
 		if (formId === undefined || formId === null) {
-			throw 'Missing the required parameter "formId" when calling patchQualityFormsSurvey';
+			throw new Error('Missing the required parameter "formId" when calling patchQualityFormsSurvey';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchQualityFormsSurvey';
+			throw new Error('Missing the required parameter "body" when calling patchQualityFormsSurvey';
 		}
 
 		return this.apiClient.callApi(
@@ -1008,7 +1008,7 @@ class QualityApi {
 	postAnalyticsEvaluationsAggregatesQuery(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postAnalyticsEvaluationsAggregatesQuery';
+			throw new Error('Missing the required parameter "body" when calling postAnalyticsEvaluationsAggregatesQuery';
 		}
 
 		return this.apiClient.callApi(
@@ -1033,7 +1033,7 @@ class QualityApi {
 	postAnalyticsSurveysAggregatesQuery(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postAnalyticsSurveysAggregatesQuery';
+			throw new Error('Missing the required parameter "body" when calling postAnalyticsSurveysAggregatesQuery';
 		}
 
 		return this.apiClient.callApi(
@@ -1062,7 +1062,7 @@ class QualityApi {
 		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postQualityCalibrations';
+			throw new Error('Missing the required parameter "body" when calling postQualityCalibrations';
 		}
 
 		return this.apiClient.callApi(
@@ -1092,11 +1092,11 @@ class QualityApi {
 		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling postQualityConversationEvaluations';
+			throw new Error('Missing the required parameter "conversationId" when calling postQualityConversationEvaluations';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postQualityConversationEvaluations';
+			throw new Error('Missing the required parameter "body" when calling postQualityConversationEvaluations';
 		}
 
 		return this.apiClient.callApi(
@@ -1121,7 +1121,7 @@ class QualityApi {
 	postQualityConversationsAuditsQuery(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postQualityConversationsAuditsQuery';
+			throw new Error('Missing the required parameter "body" when calling postQualityConversationsAuditsQuery';
 		}
 
 		return this.apiClient.callApi(
@@ -1146,7 +1146,7 @@ class QualityApi {
 	postQualityEvaluationsScoring(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postQualityEvaluationsScoring';
+			throw new Error('Missing the required parameter "body" when calling postQualityEvaluationsScoring';
 		}
 
 		return this.apiClient.callApi(
@@ -1171,7 +1171,7 @@ class QualityApi {
 	postQualityForms(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postQualityForms';
+			throw new Error('Missing the required parameter "body" when calling postQualityForms';
 		}
 
 		return this.apiClient.callApi(
@@ -1196,7 +1196,7 @@ class QualityApi {
 	postQualityFormsEvaluations(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postQualityFormsEvaluations';
+			throw new Error('Missing the required parameter "body" when calling postQualityFormsEvaluations';
 		}
 
 		return this.apiClient.callApi(
@@ -1221,7 +1221,7 @@ class QualityApi {
 	postQualityFormsSurveys(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postQualityFormsSurveys';
+			throw new Error('Missing the required parameter "body" when calling postQualityFormsSurveys';
 		}
 
 		return this.apiClient.callApi(
@@ -1246,7 +1246,7 @@ class QualityApi {
 	postQualityPublishedforms(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postQualityPublishedforms';
+			throw new Error('Missing the required parameter "body" when calling postQualityPublishedforms';
 		}
 
 		return this.apiClient.callApi(
@@ -1271,7 +1271,7 @@ class QualityApi {
 	postQualityPublishedformsEvaluations(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postQualityPublishedformsEvaluations';
+			throw new Error('Missing the required parameter "body" when calling postQualityPublishedformsEvaluations';
 		}
 
 		return this.apiClient.callApi(
@@ -1296,7 +1296,7 @@ class QualityApi {
 	postQualityPublishedformsSurveys(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postQualityPublishedformsSurveys';
+			throw new Error('Missing the required parameter "body" when calling postQualityPublishedformsSurveys';
 		}
 
 		return this.apiClient.callApi(
@@ -1321,7 +1321,7 @@ class QualityApi {
 	postQualitySurveysScoring(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postQualitySurveysScoring';
+			throw new Error('Missing the required parameter "body" when calling postQualitySurveysScoring';
 		}
 
 		return this.apiClient.callApi(
@@ -1347,11 +1347,11 @@ class QualityApi {
 	putQualityCalibration(calibrationId, body) { 
 		// verify the required parameter 'calibrationId' is set
 		if (calibrationId === undefined || calibrationId === null) {
-			throw 'Missing the required parameter "calibrationId" when calling putQualityCalibration';
+			throw new Error('Missing the required parameter "calibrationId" when calling putQualityCalibration';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putQualityCalibration';
+			throw new Error('Missing the required parameter "body" when calling putQualityCalibration';
 		}
 
 		return this.apiClient.callApi(
@@ -1382,15 +1382,15 @@ class QualityApi {
 		
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling putQualityConversationEvaluation';
+			throw new Error('Missing the required parameter "conversationId" when calling putQualityConversationEvaluation';
 		}
 		// verify the required parameter 'evaluationId' is set
 		if (evaluationId === undefined || evaluationId === null) {
-			throw 'Missing the required parameter "evaluationId" when calling putQualityConversationEvaluation';
+			throw new Error('Missing the required parameter "evaluationId" when calling putQualityConversationEvaluation';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putQualityConversationEvaluation';
+			throw new Error('Missing the required parameter "body" when calling putQualityConversationEvaluation';
 		}
 
 		return this.apiClient.callApi(
@@ -1416,11 +1416,11 @@ class QualityApi {
 	putQualityForm(formId, body) { 
 		// verify the required parameter 'formId' is set
 		if (formId === undefined || formId === null) {
-			throw 'Missing the required parameter "formId" when calling putQualityForm';
+			throw new Error('Missing the required parameter "formId" when calling putQualityForm';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putQualityForm';
+			throw new Error('Missing the required parameter "body" when calling putQualityForm';
 		}
 
 		return this.apiClient.callApi(
@@ -1446,11 +1446,11 @@ class QualityApi {
 	putQualityFormsEvaluation(formId, body) { 
 		// verify the required parameter 'formId' is set
 		if (formId === undefined || formId === null) {
-			throw 'Missing the required parameter "formId" when calling putQualityFormsEvaluation';
+			throw new Error('Missing the required parameter "formId" when calling putQualityFormsEvaluation';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putQualityFormsEvaluation';
+			throw new Error('Missing the required parameter "body" when calling putQualityFormsEvaluation';
 		}
 
 		return this.apiClient.callApi(
@@ -1476,11 +1476,11 @@ class QualityApi {
 	putQualityFormsSurvey(formId, body) { 
 		// verify the required parameter 'formId' is set
 		if (formId === undefined || formId === null) {
-			throw 'Missing the required parameter "formId" when calling putQualityFormsSurvey';
+			throw new Error('Missing the required parameter "formId" when calling putQualityFormsSurvey';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putQualityFormsSurvey';
+			throw new Error('Missing the required parameter "body" when calling putQualityFormsSurvey';
 		}
 
 		return this.apiClient.callApi(
@@ -1506,11 +1506,11 @@ class QualityApi {
 	putQualitySurveysScorable(body, customerSurveyUrl) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putQualitySurveysScorable';
+			throw new Error('Missing the required parameter "body" when calling putQualitySurveysScorable';
 		}
 		// verify the required parameter 'customerSurveyUrl' is set
 		if (customerSurveyUrl === undefined || customerSurveyUrl === null) {
-			throw 'Missing the required parameter "customerSurveyUrl" when calling putQualitySurveysScorable';
+			throw new Error('Missing the required parameter "customerSurveyUrl" when calling putQualitySurveysScorable';
 		}
 
 		return this.apiClient.callApi(

@@ -28,7 +28,7 @@ class JourneyApi {
 	deleteJourneyActionmap(actionMapId) { 
 		// verify the required parameter 'actionMapId' is set
 		if (actionMapId === undefined || actionMapId === null) {
-			throw 'Missing the required parameter "actionMapId" when calling deleteJourneyActionmap';
+			throw new Error('Missing the required parameter "actionMapId" when calling deleteJourneyActionmap';
 		}
 
 		return this.apiClient.callApi(
@@ -57,7 +57,7 @@ class JourneyApi {
 		
 		// verify the required parameter 'actionTemplateId' is set
 		if (actionTemplateId === undefined || actionTemplateId === null) {
-			throw 'Missing the required parameter "actionTemplateId" when calling deleteJourneyActiontemplate';
+			throw new Error('Missing the required parameter "actionTemplateId" when calling deleteJourneyActiontemplate';
 		}
 
 		return this.apiClient.callApi(
@@ -82,7 +82,7 @@ class JourneyApi {
 	deleteJourneyOutcome(outcomeId) { 
 		// verify the required parameter 'outcomeId' is set
 		if (outcomeId === undefined || outcomeId === null) {
-			throw 'Missing the required parameter "outcomeId" when calling deleteJourneyOutcome';
+			throw new Error('Missing the required parameter "outcomeId" when calling deleteJourneyOutcome';
 		}
 
 		return this.apiClient.callApi(
@@ -107,7 +107,7 @@ class JourneyApi {
 	deleteJourneySegment(segmentId) { 
 		// verify the required parameter 'segmentId' is set
 		if (segmentId === undefined || segmentId === null) {
-			throw 'Missing the required parameter "segmentId" when calling deleteJourneySegment';
+			throw new Error('Missing the required parameter "segmentId" when calling deleteJourneySegment';
 		}
 
 		return this.apiClient.callApi(
@@ -132,7 +132,7 @@ class JourneyApi {
 	getJourneyActionmap(actionMapId) { 
 		// verify the required parameter 'actionMapId' is set
 		if (actionMapId === undefined || actionMapId === null) {
-			throw 'Missing the required parameter "actionMapId" when calling getJourneyActionmap';
+			throw new Error('Missing the required parameter "actionMapId" when calling getJourneyActionmap';
 		}
 
 		return this.apiClient.callApi(
@@ -188,7 +188,7 @@ class JourneyApi {
 	getJourneyActiontarget(actionTargetId) { 
 		// verify the required parameter 'actionTargetId' is set
 		if (actionTargetId === undefined || actionTargetId === null) {
-			throw 'Missing the required parameter "actionTargetId" when calling getJourneyActiontarget';
+			throw new Error('Missing the required parameter "actionTargetId" when calling getJourneyActiontarget';
 		}
 
 		return this.apiClient.callApi(
@@ -238,7 +238,7 @@ class JourneyApi {
 	getJourneyActiontemplate(actionTemplateId) { 
 		// verify the required parameter 'actionTemplateId' is set
 		if (actionTemplateId === undefined || actionTemplateId === null) {
-			throw 'Missing the required parameter "actionTemplateId" when calling getJourneyActiontemplate';
+			throw new Error('Missing the required parameter "actionTemplateId" when calling getJourneyActiontemplate';
 		}
 
 		return this.apiClient.callApi(
@@ -293,7 +293,7 @@ class JourneyApi {
 	getJourneyOutcome(outcomeId) { 
 		// verify the required parameter 'outcomeId' is set
 		if (outcomeId === undefined || outcomeId === null) {
-			throw 'Missing the required parameter "outcomeId" when calling getJourneyOutcome';
+			throw new Error('Missing the required parameter "outcomeId" when calling getJourneyOutcome';
 		}
 
 		return this.apiClient.callApi(
@@ -347,7 +347,7 @@ class JourneyApi {
 	getJourneySegment(segmentId) { 
 		// verify the required parameter 'segmentId' is set
 		if (segmentId === undefined || segmentId === null) {
-			throw 'Missing the required parameter "segmentId" when calling getJourneySegment';
+			throw new Error('Missing the required parameter "segmentId" when calling getJourneySegment';
 		}
 
 		return this.apiClient.callApi(
@@ -402,7 +402,7 @@ class JourneyApi {
 	getJourneySession(sessionId) { 
 		// verify the required parameter 'sessionId' is set
 		if (sessionId === undefined || sessionId === null) {
-			throw 'Missing the required parameter "sessionId" when calling getJourneySession';
+			throw new Error('Missing the required parameter "sessionId" when calling getJourneySession';
 		}
 
 		return this.apiClient.callApi(
@@ -427,7 +427,7 @@ class JourneyApi {
 	getJourneySessionOutcomescores(sessionId) { 
 		// verify the required parameter 'sessionId' is set
 		if (sessionId === undefined || sessionId === null) {
-			throw 'Missing the required parameter "sessionId" when calling getJourneySessionOutcomescores';
+			throw new Error('Missing the required parameter "sessionId" when calling getJourneySessionOutcomescores';
 		}
 
 		return this.apiClient.callApi(
@@ -456,7 +456,7 @@ class JourneyApi {
 		
 		// verify the required parameter 'actionMapId' is set
 		if (actionMapId === undefined || actionMapId === null) {
-			throw 'Missing the required parameter "actionMapId" when calling patchJourneyActionmap';
+			throw new Error('Missing the required parameter "actionMapId" when calling patchJourneyActionmap';
 		}
 
 		return this.apiClient.callApi(
@@ -485,7 +485,7 @@ class JourneyApi {
 		
 		// verify the required parameter 'actionTargetId' is set
 		if (actionTargetId === undefined || actionTargetId === null) {
-			throw 'Missing the required parameter "actionTargetId" when calling patchJourneyActiontarget';
+			throw new Error('Missing the required parameter "actionTargetId" when calling patchJourneyActiontarget';
 		}
 
 		return this.apiClient.callApi(
@@ -514,7 +514,7 @@ class JourneyApi {
 		
 		// verify the required parameter 'actionTemplateId' is set
 		if (actionTemplateId === undefined || actionTemplateId === null) {
-			throw 'Missing the required parameter "actionTemplateId" when calling patchJourneyActiontemplate';
+			throw new Error('Missing the required parameter "actionTemplateId" when calling patchJourneyActiontemplate';
 		}
 
 		return this.apiClient.callApi(
@@ -543,7 +543,7 @@ class JourneyApi {
 		
 		// verify the required parameter 'outcomeId' is set
 		if (outcomeId === undefined || outcomeId === null) {
-			throw 'Missing the required parameter "outcomeId" when calling patchJourneyOutcome';
+			throw new Error('Missing the required parameter "outcomeId" when calling patchJourneyOutcome';
 		}
 
 		return this.apiClient.callApi(
@@ -572,7 +572,7 @@ class JourneyApi {
 		
 		// verify the required parameter 'segmentId' is set
 		if (segmentId === undefined || segmentId === null) {
-			throw 'Missing the required parameter "segmentId" when calling patchJourneySegment';
+			throw new Error('Missing the required parameter "segmentId" when calling patchJourneySegment';
 		}
 
 		return this.apiClient.callApi(
@@ -597,7 +597,7 @@ class JourneyApi {
 	postAnalyticsJourneysAggregatesQuery(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postAnalyticsJourneysAggregatesQuery';
+			throw new Error('Missing the required parameter "body" when calling postAnalyticsJourneysAggregatesQuery';
 		}
 
 		return this.apiClient.callApi(

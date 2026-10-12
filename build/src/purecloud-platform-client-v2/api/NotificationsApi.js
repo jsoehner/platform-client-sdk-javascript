@@ -28,7 +28,7 @@ class NotificationsApi {
 	deleteNotificationsChannelSubscriptions(channelId) { 
 		// verify the required parameter 'channelId' is set
 		if (channelId === undefined || channelId === null) {
-			throw 'Missing the required parameter "channelId" when calling deleteNotificationsChannelSubscriptions';
+			throw new Error('Missing the required parameter "channelId" when calling deleteNotificationsChannelSubscriptions';
 		}
 
 		return this.apiClient.callApi(
@@ -78,7 +78,7 @@ class NotificationsApi {
 	getNotificationsChannelSubscriptions(channelId) { 
 		// verify the required parameter 'channelId' is set
 		if (channelId === undefined || channelId === null) {
-			throw 'Missing the required parameter "channelId" when calling getNotificationsChannelSubscriptions';
+			throw new Error('Missing the required parameter "channelId" when calling getNotificationsChannelSubscriptions';
 		}
 
 		return this.apiClient.callApi(
@@ -127,7 +127,7 @@ class NotificationsApi {
 	headNotificationsChannel(channelId) { 
 		// verify the required parameter 'channelId' is set
 		if (channelId === undefined || channelId === null) {
-			throw 'Missing the required parameter "channelId" when calling headNotificationsChannel';
+			throw new Error('Missing the required parameter "channelId" when calling headNotificationsChannel';
 		}
 
 		return this.apiClient.callApi(
@@ -153,11 +153,11 @@ class NotificationsApi {
 	postNotificationsChannelSubscriptions(channelId, body) { 
 		// verify the required parameter 'channelId' is set
 		if (channelId === undefined || channelId === null) {
-			throw 'Missing the required parameter "channelId" when calling postNotificationsChannelSubscriptions';
+			throw new Error('Missing the required parameter "channelId" when calling postNotificationsChannelSubscriptions';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postNotificationsChannelSubscriptions';
+			throw new Error('Missing the required parameter "body" when calling postNotificationsChannelSubscriptions';
 		}
 
 		return this.apiClient.callApi(
@@ -203,11 +203,11 @@ class NotificationsApi {
 	putNotificationsChannelSubscriptions(channelId, body) { 
 		// verify the required parameter 'channelId' is set
 		if (channelId === undefined || channelId === null) {
-			throw 'Missing the required parameter "channelId" when calling putNotificationsChannelSubscriptions';
+			throw new Error('Missing the required parameter "channelId" when calling putNotificationsChannelSubscriptions';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putNotificationsChannelSubscriptions';
+			throw new Error('Missing the required parameter "body" when calling putNotificationsChannelSubscriptions';
 		}
 
 		return this.apiClient.callApi(

@@ -28,7 +28,7 @@ class KnowledgeApi {
 	deleteKnowledgeKnowledgebase(knowledgeBaseId) { 
 		// verify the required parameter 'knowledgeBaseId' is set
 		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
-			throw 'Missing the required parameter "knowledgeBaseId" when calling deleteKnowledgeKnowledgebase';
+			throw new Error('Missing the required parameter "knowledgeBaseId" when calling deleteKnowledgeKnowledgebase';
 		}
 
 		return this.apiClient.callApi(
@@ -55,15 +55,15 @@ class KnowledgeApi {
 	deleteKnowledgeKnowledgebaseLanguageCategory(categoryId, knowledgeBaseId, languageCode) { 
 		// verify the required parameter 'categoryId' is set
 		if (categoryId === undefined || categoryId === null) {
-			throw 'Missing the required parameter "categoryId" when calling deleteKnowledgeKnowledgebaseLanguageCategory';
+			throw new Error('Missing the required parameter "categoryId" when calling deleteKnowledgeKnowledgebaseLanguageCategory';
 		}
 		// verify the required parameter 'knowledgeBaseId' is set
 		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
-			throw 'Missing the required parameter "knowledgeBaseId" when calling deleteKnowledgeKnowledgebaseLanguageCategory';
+			throw new Error('Missing the required parameter "knowledgeBaseId" when calling deleteKnowledgeKnowledgebaseLanguageCategory';
 		}
 		// verify the required parameter 'languageCode' is set
 		if (languageCode === undefined || languageCode === null) {
-			throw 'Missing the required parameter "languageCode" when calling deleteKnowledgeKnowledgebaseLanguageCategory';
+			throw new Error('Missing the required parameter "languageCode" when calling deleteKnowledgeKnowledgebaseLanguageCategory';
 		}
 
 		return this.apiClient.callApi(
@@ -90,15 +90,15 @@ class KnowledgeApi {
 	deleteKnowledgeKnowledgebaseLanguageDocument(documentId, knowledgeBaseId, languageCode) { 
 		// verify the required parameter 'documentId' is set
 		if (documentId === undefined || documentId === null) {
-			throw 'Missing the required parameter "documentId" when calling deleteKnowledgeKnowledgebaseLanguageDocument';
+			throw new Error('Missing the required parameter "documentId" when calling deleteKnowledgeKnowledgebaseLanguageDocument';
 		}
 		// verify the required parameter 'knowledgeBaseId' is set
 		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
-			throw 'Missing the required parameter "knowledgeBaseId" when calling deleteKnowledgeKnowledgebaseLanguageDocument';
+			throw new Error('Missing the required parameter "knowledgeBaseId" when calling deleteKnowledgeKnowledgebaseLanguageDocument';
 		}
 		// verify the required parameter 'languageCode' is set
 		if (languageCode === undefined || languageCode === null) {
-			throw 'Missing the required parameter "languageCode" when calling deleteKnowledgeKnowledgebaseLanguageDocument';
+			throw new Error('Missing the required parameter "languageCode" when calling deleteKnowledgeKnowledgebaseLanguageDocument';
 		}
 
 		return this.apiClient.callApi(
@@ -125,15 +125,15 @@ class KnowledgeApi {
 	deleteKnowledgeKnowledgebaseLanguageDocumentsImport(knowledgeBaseId, languageCode, importId) { 
 		// verify the required parameter 'knowledgeBaseId' is set
 		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
-			throw 'Missing the required parameter "knowledgeBaseId" when calling deleteKnowledgeKnowledgebaseLanguageDocumentsImport';
+			throw new Error('Missing the required parameter "knowledgeBaseId" when calling deleteKnowledgeKnowledgebaseLanguageDocumentsImport';
 		}
 		// verify the required parameter 'languageCode' is set
 		if (languageCode === undefined || languageCode === null) {
-			throw 'Missing the required parameter "languageCode" when calling deleteKnowledgeKnowledgebaseLanguageDocumentsImport';
+			throw new Error('Missing the required parameter "languageCode" when calling deleteKnowledgeKnowledgebaseLanguageDocumentsImport';
 		}
 		// verify the required parameter 'importId' is set
 		if (importId === undefined || importId === null) {
-			throw 'Missing the required parameter "importId" when calling deleteKnowledgeKnowledgebaseLanguageDocumentsImport';
+			throw new Error('Missing the required parameter "importId" when calling deleteKnowledgeKnowledgebaseLanguageDocumentsImport';
 		}
 
 		return this.apiClient.callApi(
@@ -158,7 +158,7 @@ class KnowledgeApi {
 	getKnowledgeKnowledgebase(knowledgeBaseId) { 
 		// verify the required parameter 'knowledgeBaseId' is set
 		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
-			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebase';
+			throw new Error('Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebase';
 		}
 
 		return this.apiClient.callApi(
@@ -192,11 +192,11 @@ class KnowledgeApi {
 		
 		// verify the required parameter 'knowledgeBaseId' is set
 		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
-			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseLanguageCategories';
+			throw new Error('Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseLanguageCategories';
 		}
 		// verify the required parameter 'languageCode' is set
 		if (languageCode === undefined || languageCode === null) {
-			throw 'Missing the required parameter "languageCode" when calling getKnowledgeKnowledgebaseLanguageCategories';
+			throw new Error('Missing the required parameter "languageCode" when calling getKnowledgeKnowledgebaseLanguageCategories';
 		}
 
 		return this.apiClient.callApi(
@@ -223,15 +223,15 @@ class KnowledgeApi {
 	getKnowledgeKnowledgebaseLanguageCategory(categoryId, knowledgeBaseId, languageCode) { 
 		// verify the required parameter 'categoryId' is set
 		if (categoryId === undefined || categoryId === null) {
-			throw 'Missing the required parameter "categoryId" when calling getKnowledgeKnowledgebaseLanguageCategory';
+			throw new Error('Missing the required parameter "categoryId" when calling getKnowledgeKnowledgebaseLanguageCategory';
 		}
 		// verify the required parameter 'knowledgeBaseId' is set
 		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
-			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseLanguageCategory';
+			throw new Error('Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseLanguageCategory';
 		}
 		// verify the required parameter 'languageCode' is set
 		if (languageCode === undefined || languageCode === null) {
-			throw 'Missing the required parameter "languageCode" when calling getKnowledgeKnowledgebaseLanguageCategory';
+			throw new Error('Missing the required parameter "languageCode" when calling getKnowledgeKnowledgebaseLanguageCategory';
 		}
 
 		return this.apiClient.callApi(
@@ -258,15 +258,15 @@ class KnowledgeApi {
 	getKnowledgeKnowledgebaseLanguageDocument(documentId, knowledgeBaseId, languageCode) { 
 		// verify the required parameter 'documentId' is set
 		if (documentId === undefined || documentId === null) {
-			throw 'Missing the required parameter "documentId" when calling getKnowledgeKnowledgebaseLanguageDocument';
+			throw new Error('Missing the required parameter "documentId" when calling getKnowledgeKnowledgebaseLanguageDocument';
 		}
 		// verify the required parameter 'knowledgeBaseId' is set
 		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
-			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseLanguageDocument';
+			throw new Error('Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseLanguageDocument';
 		}
 		// verify the required parameter 'languageCode' is set
 		if (languageCode === undefined || languageCode === null) {
-			throw 'Missing the required parameter "languageCode" when calling getKnowledgeKnowledgebaseLanguageDocument';
+			throw new Error('Missing the required parameter "languageCode" when calling getKnowledgeKnowledgebaseLanguageDocument';
 		}
 
 		return this.apiClient.callApi(
@@ -304,11 +304,11 @@ class KnowledgeApi {
 		
 		// verify the required parameter 'knowledgeBaseId' is set
 		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
-			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseLanguageDocuments';
+			throw new Error('Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseLanguageDocuments';
 		}
 		// verify the required parameter 'languageCode' is set
 		if (languageCode === undefined || languageCode === null) {
-			throw 'Missing the required parameter "languageCode" when calling getKnowledgeKnowledgebaseLanguageDocuments';
+			throw new Error('Missing the required parameter "languageCode" when calling getKnowledgeKnowledgebaseLanguageDocuments';
 		}
 
 		return this.apiClient.callApi(
@@ -335,15 +335,15 @@ class KnowledgeApi {
 	getKnowledgeKnowledgebaseLanguageDocumentsImport(knowledgeBaseId, languageCode, importId) { 
 		// verify the required parameter 'knowledgeBaseId' is set
 		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
-			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseLanguageDocumentsImport';
+			throw new Error('Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseLanguageDocumentsImport';
 		}
 		// verify the required parameter 'languageCode' is set
 		if (languageCode === undefined || languageCode === null) {
-			throw 'Missing the required parameter "languageCode" when calling getKnowledgeKnowledgebaseLanguageDocumentsImport';
+			throw new Error('Missing the required parameter "languageCode" when calling getKnowledgeKnowledgebaseLanguageDocumentsImport';
 		}
 		// verify the required parameter 'importId' is set
 		if (importId === undefined || importId === null) {
-			throw 'Missing the required parameter "importId" when calling getKnowledgeKnowledgebaseLanguageDocumentsImport';
+			throw new Error('Missing the required parameter "importId" when calling getKnowledgeKnowledgebaseLanguageDocumentsImport';
 		}
 
 		return this.apiClient.callApi(
@@ -370,15 +370,15 @@ class KnowledgeApi {
 	getKnowledgeKnowledgebaseLanguageTraining(knowledgeBaseId, languageCode, trainingId) { 
 		// verify the required parameter 'knowledgeBaseId' is set
 		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
-			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseLanguageTraining';
+			throw new Error('Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseLanguageTraining';
 		}
 		// verify the required parameter 'languageCode' is set
 		if (languageCode === undefined || languageCode === null) {
-			throw 'Missing the required parameter "languageCode" when calling getKnowledgeKnowledgebaseLanguageTraining';
+			throw new Error('Missing the required parameter "languageCode" when calling getKnowledgeKnowledgebaseLanguageTraining';
 		}
 		// verify the required parameter 'trainingId' is set
 		if (trainingId === undefined || trainingId === null) {
-			throw 'Missing the required parameter "trainingId" when calling getKnowledgeKnowledgebaseLanguageTraining';
+			throw new Error('Missing the required parameter "trainingId" when calling getKnowledgeKnowledgebaseLanguageTraining';
 		}
 
 		return this.apiClient.callApi(
@@ -412,11 +412,11 @@ class KnowledgeApi {
 		
 		// verify the required parameter 'knowledgeBaseId' is set
 		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
-			throw 'Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseLanguageTrainings';
+			throw new Error('Missing the required parameter "knowledgeBaseId" when calling getKnowledgeKnowledgebaseLanguageTrainings';
 		}
 		// verify the required parameter 'languageCode' is set
 		if (languageCode === undefined || languageCode === null) {
-			throw 'Missing the required parameter "languageCode" when calling getKnowledgeKnowledgebaseLanguageTrainings';
+			throw new Error('Missing the required parameter "languageCode" when calling getKnowledgeKnowledgebaseLanguageTrainings';
 		}
 
 		return this.apiClient.callApi(
@@ -474,11 +474,11 @@ class KnowledgeApi {
 	patchKnowledgeKnowledgebase(knowledgeBaseId, body) { 
 		// verify the required parameter 'knowledgeBaseId' is set
 		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
-			throw 'Missing the required parameter "knowledgeBaseId" when calling patchKnowledgeKnowledgebase';
+			throw new Error('Missing the required parameter "knowledgeBaseId" when calling patchKnowledgeKnowledgebase';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchKnowledgeKnowledgebase';
+			throw new Error('Missing the required parameter "body" when calling patchKnowledgeKnowledgebase';
 		}
 
 		return this.apiClient.callApi(
@@ -506,19 +506,19 @@ class KnowledgeApi {
 	patchKnowledgeKnowledgebaseLanguageCategory(categoryId, knowledgeBaseId, languageCode, body) { 
 		// verify the required parameter 'categoryId' is set
 		if (categoryId === undefined || categoryId === null) {
-			throw 'Missing the required parameter "categoryId" when calling patchKnowledgeKnowledgebaseLanguageCategory';
+			throw new Error('Missing the required parameter "categoryId" when calling patchKnowledgeKnowledgebaseLanguageCategory';
 		}
 		// verify the required parameter 'knowledgeBaseId' is set
 		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
-			throw 'Missing the required parameter "knowledgeBaseId" when calling patchKnowledgeKnowledgebaseLanguageCategory';
+			throw new Error('Missing the required parameter "knowledgeBaseId" when calling patchKnowledgeKnowledgebaseLanguageCategory';
 		}
 		// verify the required parameter 'languageCode' is set
 		if (languageCode === undefined || languageCode === null) {
-			throw 'Missing the required parameter "languageCode" when calling patchKnowledgeKnowledgebaseLanguageCategory';
+			throw new Error('Missing the required parameter "languageCode" when calling patchKnowledgeKnowledgebaseLanguageCategory';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchKnowledgeKnowledgebaseLanguageCategory';
+			throw new Error('Missing the required parameter "body" when calling patchKnowledgeKnowledgebaseLanguageCategory';
 		}
 
 		return this.apiClient.callApi(
@@ -546,19 +546,19 @@ class KnowledgeApi {
 	patchKnowledgeKnowledgebaseLanguageDocument(documentId, knowledgeBaseId, languageCode, body) { 
 		// verify the required parameter 'documentId' is set
 		if (documentId === undefined || documentId === null) {
-			throw 'Missing the required parameter "documentId" when calling patchKnowledgeKnowledgebaseLanguageDocument';
+			throw new Error('Missing the required parameter "documentId" when calling patchKnowledgeKnowledgebaseLanguageDocument';
 		}
 		// verify the required parameter 'knowledgeBaseId' is set
 		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
-			throw 'Missing the required parameter "knowledgeBaseId" when calling patchKnowledgeKnowledgebaseLanguageDocument';
+			throw new Error('Missing the required parameter "knowledgeBaseId" when calling patchKnowledgeKnowledgebaseLanguageDocument';
 		}
 		// verify the required parameter 'languageCode' is set
 		if (languageCode === undefined || languageCode === null) {
-			throw 'Missing the required parameter "languageCode" when calling patchKnowledgeKnowledgebaseLanguageDocument';
+			throw new Error('Missing the required parameter "languageCode" when calling patchKnowledgeKnowledgebaseLanguageDocument';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchKnowledgeKnowledgebaseLanguageDocument';
+			throw new Error('Missing the required parameter "body" when calling patchKnowledgeKnowledgebaseLanguageDocument';
 		}
 
 		return this.apiClient.callApi(
@@ -585,15 +585,15 @@ class KnowledgeApi {
 	patchKnowledgeKnowledgebaseLanguageDocuments(knowledgeBaseId, languageCode, body) { 
 		// verify the required parameter 'knowledgeBaseId' is set
 		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
-			throw 'Missing the required parameter "knowledgeBaseId" when calling patchKnowledgeKnowledgebaseLanguageDocuments';
+			throw new Error('Missing the required parameter "knowledgeBaseId" when calling patchKnowledgeKnowledgebaseLanguageDocuments';
 		}
 		// verify the required parameter 'languageCode' is set
 		if (languageCode === undefined || languageCode === null) {
-			throw 'Missing the required parameter "languageCode" when calling patchKnowledgeKnowledgebaseLanguageDocuments';
+			throw new Error('Missing the required parameter "languageCode" when calling patchKnowledgeKnowledgebaseLanguageDocuments';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchKnowledgeKnowledgebaseLanguageDocuments';
+			throw new Error('Missing the required parameter "body" when calling patchKnowledgeKnowledgebaseLanguageDocuments';
 		}
 
 		return this.apiClient.callApi(
@@ -621,19 +621,19 @@ class KnowledgeApi {
 	patchKnowledgeKnowledgebaseLanguageDocumentsImport(knowledgeBaseId, languageCode, importId, body) { 
 		// verify the required parameter 'knowledgeBaseId' is set
 		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
-			throw 'Missing the required parameter "knowledgeBaseId" when calling patchKnowledgeKnowledgebaseLanguageDocumentsImport';
+			throw new Error('Missing the required parameter "knowledgeBaseId" when calling patchKnowledgeKnowledgebaseLanguageDocumentsImport';
 		}
 		// verify the required parameter 'languageCode' is set
 		if (languageCode === undefined || languageCode === null) {
-			throw 'Missing the required parameter "languageCode" when calling patchKnowledgeKnowledgebaseLanguageDocumentsImport';
+			throw new Error('Missing the required parameter "languageCode" when calling patchKnowledgeKnowledgebaseLanguageDocumentsImport';
 		}
 		// verify the required parameter 'importId' is set
 		if (importId === undefined || importId === null) {
-			throw 'Missing the required parameter "importId" when calling patchKnowledgeKnowledgebaseLanguageDocumentsImport';
+			throw new Error('Missing the required parameter "importId" when calling patchKnowledgeKnowledgebaseLanguageDocumentsImport';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchKnowledgeKnowledgebaseLanguageDocumentsImport';
+			throw new Error('Missing the required parameter "body" when calling patchKnowledgeKnowledgebaseLanguageDocumentsImport';
 		}
 
 		return this.apiClient.callApi(
@@ -658,7 +658,7 @@ class KnowledgeApi {
 	postKnowledgeDocumentuploads(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postKnowledgeDocumentuploads';
+			throw new Error('Missing the required parameter "body" when calling postKnowledgeDocumentuploads';
 		}
 
 		return this.apiClient.callApi(
@@ -685,15 +685,15 @@ class KnowledgeApi {
 	postKnowledgeKnowledgebaseLanguageCategories(knowledgeBaseId, languageCode, body) { 
 		// verify the required parameter 'knowledgeBaseId' is set
 		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
-			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseLanguageCategories';
+			throw new Error('Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseLanguageCategories';
 		}
 		// verify the required parameter 'languageCode' is set
 		if (languageCode === undefined || languageCode === null) {
-			throw 'Missing the required parameter "languageCode" when calling postKnowledgeKnowledgebaseLanguageCategories';
+			throw new Error('Missing the required parameter "languageCode" when calling postKnowledgeKnowledgebaseLanguageCategories';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postKnowledgeKnowledgebaseLanguageCategories';
+			throw new Error('Missing the required parameter "body" when calling postKnowledgeKnowledgebaseLanguageCategories';
 		}
 
 		return this.apiClient.callApi(
@@ -720,15 +720,15 @@ class KnowledgeApi {
 	postKnowledgeKnowledgebaseLanguageDocuments(knowledgeBaseId, languageCode, body) { 
 		// verify the required parameter 'knowledgeBaseId' is set
 		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
-			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseLanguageDocuments';
+			throw new Error('Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseLanguageDocuments';
 		}
 		// verify the required parameter 'languageCode' is set
 		if (languageCode === undefined || languageCode === null) {
-			throw 'Missing the required parameter "languageCode" when calling postKnowledgeKnowledgebaseLanguageDocuments';
+			throw new Error('Missing the required parameter "languageCode" when calling postKnowledgeKnowledgebaseLanguageDocuments';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postKnowledgeKnowledgebaseLanguageDocuments';
+			throw new Error('Missing the required parameter "body" when calling postKnowledgeKnowledgebaseLanguageDocuments';
 		}
 
 		return this.apiClient.callApi(
@@ -755,15 +755,15 @@ class KnowledgeApi {
 	postKnowledgeKnowledgebaseLanguageDocumentsImports(knowledgeBaseId, languageCode, body) { 
 		// verify the required parameter 'knowledgeBaseId' is set
 		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
-			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseLanguageDocumentsImports';
+			throw new Error('Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseLanguageDocumentsImports';
 		}
 		// verify the required parameter 'languageCode' is set
 		if (languageCode === undefined || languageCode === null) {
-			throw 'Missing the required parameter "languageCode" when calling postKnowledgeKnowledgebaseLanguageDocumentsImports';
+			throw new Error('Missing the required parameter "languageCode" when calling postKnowledgeKnowledgebaseLanguageDocumentsImports';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postKnowledgeKnowledgebaseLanguageDocumentsImports';
+			throw new Error('Missing the required parameter "body" when calling postKnowledgeKnowledgebaseLanguageDocumentsImports';
 		}
 
 		return this.apiClient.callApi(
@@ -790,15 +790,15 @@ class KnowledgeApi {
 	postKnowledgeKnowledgebaseLanguageTrainingPromote(knowledgeBaseId, languageCode, trainingId) { 
 		// verify the required parameter 'knowledgeBaseId' is set
 		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
-			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseLanguageTrainingPromote';
+			throw new Error('Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseLanguageTrainingPromote';
 		}
 		// verify the required parameter 'languageCode' is set
 		if (languageCode === undefined || languageCode === null) {
-			throw 'Missing the required parameter "languageCode" when calling postKnowledgeKnowledgebaseLanguageTrainingPromote';
+			throw new Error('Missing the required parameter "languageCode" when calling postKnowledgeKnowledgebaseLanguageTrainingPromote';
 		}
 		// verify the required parameter 'trainingId' is set
 		if (trainingId === undefined || trainingId === null) {
-			throw 'Missing the required parameter "trainingId" when calling postKnowledgeKnowledgebaseLanguageTrainingPromote';
+			throw new Error('Missing the required parameter "trainingId" when calling postKnowledgeKnowledgebaseLanguageTrainingPromote';
 		}
 
 		return this.apiClient.callApi(
@@ -824,11 +824,11 @@ class KnowledgeApi {
 	postKnowledgeKnowledgebaseLanguageTrainings(knowledgeBaseId, languageCode) { 
 		// verify the required parameter 'knowledgeBaseId' is set
 		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
-			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseLanguageTrainings';
+			throw new Error('Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseLanguageTrainings';
 		}
 		// verify the required parameter 'languageCode' is set
 		if (languageCode === undefined || languageCode === null) {
-			throw 'Missing the required parameter "languageCode" when calling postKnowledgeKnowledgebaseLanguageTrainings';
+			throw new Error('Missing the required parameter "languageCode" when calling postKnowledgeKnowledgebaseLanguageTrainings';
 		}
 
 		return this.apiClient.callApi(
@@ -857,7 +857,7 @@ class KnowledgeApi {
 		
 		// verify the required parameter 'knowledgeBaseId' is set
 		if (knowledgeBaseId === undefined || knowledgeBaseId === null) {
-			throw 'Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseSearch';
+			throw new Error('Missing the required parameter "knowledgeBaseId" when calling postKnowledgeKnowledgebaseSearch';
 		}
 
 		return this.apiClient.callApi(
@@ -882,7 +882,7 @@ class KnowledgeApi {
 	postKnowledgeKnowledgebases(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postKnowledgeKnowledgebases';
+			throw new Error('Missing the required parameter "body" when calling postKnowledgeKnowledgebases';
 		}
 
 		return this.apiClient.callApi(

@@ -28,7 +28,7 @@ class ResponseManagementApi {
 	deleteResponsemanagementLibrary(libraryId) { 
 		// verify the required parameter 'libraryId' is set
 		if (libraryId === undefined || libraryId === null) {
-			throw 'Missing the required parameter "libraryId" when calling deleteResponsemanagementLibrary';
+			throw new Error('Missing the required parameter "libraryId" when calling deleteResponsemanagementLibrary';
 		}
 
 		return this.apiClient.callApi(
@@ -53,7 +53,7 @@ class ResponseManagementApi {
 	deleteResponsemanagementResponse(responseId) { 
 		// verify the required parameter 'responseId' is set
 		if (responseId === undefined || responseId === null) {
-			throw 'Missing the required parameter "responseId" when calling deleteResponsemanagementResponse';
+			throw new Error('Missing the required parameter "responseId" when calling deleteResponsemanagementResponse';
 		}
 
 		return this.apiClient.callApi(
@@ -104,7 +104,7 @@ class ResponseManagementApi {
 	getResponsemanagementLibrary(libraryId) { 
 		// verify the required parameter 'libraryId' is set
 		if (libraryId === undefined || libraryId === null) {
-			throw 'Missing the required parameter "libraryId" when calling getResponsemanagementLibrary';
+			throw new Error('Missing the required parameter "libraryId" when calling getResponsemanagementLibrary';
 		}
 
 		return this.apiClient.callApi(
@@ -133,7 +133,7 @@ class ResponseManagementApi {
 		
 		// verify the required parameter 'responseId' is set
 		if (responseId === undefined || responseId === null) {
-			throw 'Missing the required parameter "responseId" when calling getResponsemanagementResponse';
+			throw new Error('Missing the required parameter "responseId" when calling getResponsemanagementResponse';
 		}
 
 		return this.apiClient.callApi(
@@ -164,7 +164,7 @@ class ResponseManagementApi {
 		
 		// verify the required parameter 'libraryId' is set
 		if (libraryId === undefined || libraryId === null) {
-			throw 'Missing the required parameter "libraryId" when calling getResponsemanagementResponses';
+			throw new Error('Missing the required parameter "libraryId" when calling getResponsemanagementResponses';
 		}
 
 		return this.apiClient.callApi(
@@ -189,7 +189,7 @@ class ResponseManagementApi {
 	postResponsemanagementLibraries(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postResponsemanagementLibraries';
+			throw new Error('Missing the required parameter "body" when calling postResponsemanagementLibraries';
 		}
 
 		return this.apiClient.callApi(
@@ -218,7 +218,7 @@ class ResponseManagementApi {
 		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postResponsemanagementResponses';
+			throw new Error('Missing the required parameter "body" when calling postResponsemanagementResponses';
 		}
 
 		return this.apiClient.callApi(
@@ -243,7 +243,7 @@ class ResponseManagementApi {
 	postResponsemanagementResponsesQuery(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postResponsemanagementResponsesQuery';
+			throw new Error('Missing the required parameter "body" when calling postResponsemanagementResponsesQuery';
 		}
 
 		return this.apiClient.callApi(
@@ -269,11 +269,11 @@ class ResponseManagementApi {
 	putResponsemanagementLibrary(libraryId, body) { 
 		// verify the required parameter 'libraryId' is set
 		if (libraryId === undefined || libraryId === null) {
-			throw 'Missing the required parameter "libraryId" when calling putResponsemanagementLibrary';
+			throw new Error('Missing the required parameter "libraryId" when calling putResponsemanagementLibrary';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putResponsemanagementLibrary';
+			throw new Error('Missing the required parameter "body" when calling putResponsemanagementLibrary';
 		}
 
 		return this.apiClient.callApi(
@@ -303,11 +303,11 @@ class ResponseManagementApi {
 		
 		// verify the required parameter 'responseId' is set
 		if (responseId === undefined || responseId === null) {
-			throw 'Missing the required parameter "responseId" when calling putResponsemanagementResponse';
+			throw new Error('Missing the required parameter "responseId" when calling putResponsemanagementResponse';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putResponsemanagementResponse';
+			throw new Error('Missing the required parameter "body" when calling putResponsemanagementResponse';
 		}
 
 		return this.apiClient.callApi(

@@ -28,7 +28,7 @@ class StationsApi {
 	deleteStationAssociateduser(stationId) { 
 		// verify the required parameter 'stationId' is set
 		if (stationId === undefined || stationId === null) {
-			throw 'Missing the required parameter "stationId" when calling deleteStationAssociateduser';
+			throw new Error('Missing the required parameter "stationId" when calling deleteStationAssociateduser';
 		}
 
 		return this.apiClient.callApi(
@@ -53,7 +53,7 @@ class StationsApi {
 	getStation(stationId) { 
 		// verify the required parameter 'stationId' is set
 		if (stationId === undefined || stationId === null) {
-			throw 'Missing the required parameter "stationId" when calling getStation';
+			throw new Error('Missing the required parameter "stationId" when calling getStation';
 		}
 
 		return this.apiClient.callApi(
@@ -129,7 +129,7 @@ class StationsApi {
 	patchStationsSettings(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchStationsSettings';
+			throw new Error('Missing the required parameter "body" when calling patchStationsSettings';
 		}
 
 		return this.apiClient.callApi(

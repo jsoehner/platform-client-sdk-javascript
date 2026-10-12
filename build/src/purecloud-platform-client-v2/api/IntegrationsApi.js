@@ -28,7 +28,7 @@ class IntegrationsApi {
 	deleteIntegration(integrationId) { 
 		// verify the required parameter 'integrationId' is set
 		if (integrationId === undefined || integrationId === null) {
-			throw 'Missing the required parameter "integrationId" when calling deleteIntegration';
+			throw new Error('Missing the required parameter "integrationId" when calling deleteIntegration';
 		}
 
 		return this.apiClient.callApi(
@@ -53,7 +53,7 @@ class IntegrationsApi {
 	deleteIntegrationsAction(actionId) { 
 		// verify the required parameter 'actionId' is set
 		if (actionId === undefined || actionId === null) {
-			throw 'Missing the required parameter "actionId" when calling deleteIntegrationsAction';
+			throw new Error('Missing the required parameter "actionId" when calling deleteIntegrationsAction';
 		}
 
 		return this.apiClient.callApi(
@@ -78,7 +78,7 @@ class IntegrationsApi {
 	deleteIntegrationsActionDraft(actionId) { 
 		// verify the required parameter 'actionId' is set
 		if (actionId === undefined || actionId === null) {
-			throw 'Missing the required parameter "actionId" when calling deleteIntegrationsActionDraft';
+			throw new Error('Missing the required parameter "actionId" when calling deleteIntegrationsActionDraft';
 		}
 
 		return this.apiClient.callApi(
@@ -103,7 +103,7 @@ class IntegrationsApi {
 	deleteIntegrationsCredential(credentialId) { 
 		// verify the required parameter 'credentialId' is set
 		if (credentialId === undefined || credentialId === null) {
-			throw 'Missing the required parameter "credentialId" when calling deleteIntegrationsCredential';
+			throw new Error('Missing the required parameter "credentialId" when calling deleteIntegrationsCredential';
 		}
 
 		return this.apiClient.callApi(
@@ -137,7 +137,7 @@ class IntegrationsApi {
 		
 		// verify the required parameter 'integrationId' is set
 		if (integrationId === undefined || integrationId === null) {
-			throw 'Missing the required parameter "integrationId" when calling getIntegration';
+			throw new Error('Missing the required parameter "integrationId" when calling getIntegration';
 		}
 
 		return this.apiClient.callApi(
@@ -162,7 +162,7 @@ class IntegrationsApi {
 	getIntegrationConfigCurrent(integrationId) { 
 		// verify the required parameter 'integrationId' is set
 		if (integrationId === undefined || integrationId === null) {
-			throw 'Missing the required parameter "integrationId" when calling getIntegrationConfigCurrent';
+			throw new Error('Missing the required parameter "integrationId" when calling getIntegrationConfigCurrent';
 		}
 
 		return this.apiClient.callApi(
@@ -221,7 +221,7 @@ class IntegrationsApi {
 		
 		// verify the required parameter 'actionId' is set
 		if (actionId === undefined || actionId === null) {
-			throw 'Missing the required parameter "actionId" when calling getIntegrationsAction';
+			throw new Error('Missing the required parameter "actionId" when calling getIntegrationsAction';
 		}
 
 		return this.apiClient.callApi(
@@ -251,7 +251,7 @@ class IntegrationsApi {
 		
 		// verify the required parameter 'actionId' is set
 		if (actionId === undefined || actionId === null) {
-			throw 'Missing the required parameter "actionId" when calling getIntegrationsActionDraft';
+			throw new Error('Missing the required parameter "actionId" when calling getIntegrationsActionDraft';
 		}
 
 		return this.apiClient.callApi(
@@ -277,11 +277,11 @@ class IntegrationsApi {
 	getIntegrationsActionDraftSchema(actionId, fileName) { 
 		// verify the required parameter 'actionId' is set
 		if (actionId === undefined || actionId === null) {
-			throw 'Missing the required parameter "actionId" when calling getIntegrationsActionDraftSchema';
+			throw new Error('Missing the required parameter "actionId" when calling getIntegrationsActionDraftSchema';
 		}
 		// verify the required parameter 'fileName' is set
 		if (fileName === undefined || fileName === null) {
-			throw 'Missing the required parameter "fileName" when calling getIntegrationsActionDraftSchema';
+			throw new Error('Missing the required parameter "fileName" when calling getIntegrationsActionDraftSchema';
 		}
 
 		return this.apiClient.callApi(
@@ -307,11 +307,11 @@ class IntegrationsApi {
 	getIntegrationsActionDraftTemplate(actionId, fileName) { 
 		// verify the required parameter 'actionId' is set
 		if (actionId === undefined || actionId === null) {
-			throw 'Missing the required parameter "actionId" when calling getIntegrationsActionDraftTemplate';
+			throw new Error('Missing the required parameter "actionId" when calling getIntegrationsActionDraftTemplate';
 		}
 		// verify the required parameter 'fileName' is set
 		if (fileName === undefined || fileName === null) {
-			throw 'Missing the required parameter "fileName" when calling getIntegrationsActionDraftTemplate';
+			throw new Error('Missing the required parameter "fileName" when calling getIntegrationsActionDraftTemplate';
 		}
 
 		return this.apiClient.callApi(
@@ -336,7 +336,7 @@ class IntegrationsApi {
 	getIntegrationsActionDraftValidation(actionId) { 
 		// verify the required parameter 'actionId' is set
 		if (actionId === undefined || actionId === null) {
-			throw 'Missing the required parameter "actionId" when calling getIntegrationsActionDraftValidation';
+			throw new Error('Missing the required parameter "actionId" when calling getIntegrationsActionDraftValidation';
 		}
 
 		return this.apiClient.callApi(
@@ -362,11 +362,11 @@ class IntegrationsApi {
 	getIntegrationsActionSchema(actionId, fileName) { 
 		// verify the required parameter 'actionId' is set
 		if (actionId === undefined || actionId === null) {
-			throw 'Missing the required parameter "actionId" when calling getIntegrationsActionSchema';
+			throw new Error('Missing the required parameter "actionId" when calling getIntegrationsActionSchema';
 		}
 		// verify the required parameter 'fileName' is set
 		if (fileName === undefined || fileName === null) {
-			throw 'Missing the required parameter "fileName" when calling getIntegrationsActionSchema';
+			throw new Error('Missing the required parameter "fileName" when calling getIntegrationsActionSchema';
 		}
 
 		return this.apiClient.callApi(
@@ -392,11 +392,11 @@ class IntegrationsApi {
 	getIntegrationsActionTemplate(actionId, fileName) { 
 		// verify the required parameter 'actionId' is set
 		if (actionId === undefined || actionId === null) {
-			throw 'Missing the required parameter "actionId" when calling getIntegrationsActionTemplate';
+			throw new Error('Missing the required parameter "actionId" when calling getIntegrationsActionTemplate';
 		}
 		// verify the required parameter 'fileName' is set
 		if (fileName === undefined || fileName === null) {
-			throw 'Missing the required parameter "fileName" when calling getIntegrationsActionTemplate';
+			throw new Error('Missing the required parameter "fileName" when calling getIntegrationsActionTemplate';
 		}
 
 		return this.apiClient.callApi(
@@ -522,11 +522,11 @@ class IntegrationsApi {
 		
 		// verify the required parameter 'integrationId' is set
 		if (integrationId === undefined || integrationId === null) {
-			throw 'Missing the required parameter "integrationId" when calling getIntegrationsBotconnectorIntegrationIdBot';
+			throw new Error('Missing the required parameter "integrationId" when calling getIntegrationsBotconnectorIntegrationIdBot';
 		}
 		// verify the required parameter 'botId' is set
 		if (botId === undefined || botId === null) {
-			throw 'Missing the required parameter "botId" when calling getIntegrationsBotconnectorIntegrationIdBot';
+			throw new Error('Missing the required parameter "botId" when calling getIntegrationsBotconnectorIntegrationIdBot';
 		}
 
 		return this.apiClient.callApi(
@@ -557,11 +557,11 @@ class IntegrationsApi {
 		
 		// verify the required parameter 'integrationId' is set
 		if (integrationId === undefined || integrationId === null) {
-			throw 'Missing the required parameter "integrationId" when calling getIntegrationsBotconnectorIntegrationIdBotVersions';
+			throw new Error('Missing the required parameter "integrationId" when calling getIntegrationsBotconnectorIntegrationIdBotVersions';
 		}
 		// verify the required parameter 'botId' is set
 		if (botId === undefined || botId === null) {
-			throw 'Missing the required parameter "botId" when calling getIntegrationsBotconnectorIntegrationIdBotVersions';
+			throw new Error('Missing the required parameter "botId" when calling getIntegrationsBotconnectorIntegrationIdBotVersions';
 		}
 
 		return this.apiClient.callApi(
@@ -586,7 +586,7 @@ class IntegrationsApi {
 	getIntegrationsBotconnectorIntegrationIdBots(integrationId) { 
 		// verify the required parameter 'integrationId' is set
 		if (integrationId === undefined || integrationId === null) {
-			throw 'Missing the required parameter "integrationId" when calling getIntegrationsBotconnectorIntegrationIdBots';
+			throw new Error('Missing the required parameter "integrationId" when calling getIntegrationsBotconnectorIntegrationIdBots';
 		}
 
 		return this.apiClient.callApi(
@@ -616,7 +616,7 @@ class IntegrationsApi {
 		
 		// verify the required parameter 'integrationId' is set
 		if (integrationId === undefined || integrationId === null) {
-			throw 'Missing the required parameter "integrationId" when calling getIntegrationsBotconnectorIntegrationIdBotsSummaries';
+			throw new Error('Missing the required parameter "integrationId" when calling getIntegrationsBotconnectorIntegrationIdBotsSummaries';
 		}
 
 		return this.apiClient.callApi(
@@ -670,7 +670,7 @@ class IntegrationsApi {
 	getIntegrationsCredential(credentialId) { 
 		// verify the required parameter 'credentialId' is set
 		if (credentialId === undefined || credentialId === null) {
-			throw 'Missing the required parameter "credentialId" when calling getIntegrationsCredential';
+			throw new Error('Missing the required parameter "credentialId" when calling getIntegrationsCredential';
 		}
 
 		return this.apiClient.callApi(
@@ -768,7 +768,7 @@ class IntegrationsApi {
 	getIntegrationsEventlogEventId(eventId) { 
 		// verify the required parameter 'eventId' is set
 		if (eventId === undefined || eventId === null) {
-			throw 'Missing the required parameter "eventId" when calling getIntegrationsEventlogEventId';
+			throw new Error('Missing the required parameter "eventId" when calling getIntegrationsEventlogEventId';
 		}
 
 		return this.apiClient.callApi(
@@ -793,7 +793,7 @@ class IntegrationsApi {
 	getIntegrationsSpeechDialogflowAgent(agentId) { 
 		// verify the required parameter 'agentId' is set
 		if (agentId === undefined || agentId === null) {
-			throw 'Missing the required parameter "agentId" when calling getIntegrationsSpeechDialogflowAgent';
+			throw new Error('Missing the required parameter "agentId" when calling getIntegrationsSpeechDialogflowAgent';
 		}
 
 		return this.apiClient.callApi(
@@ -844,7 +844,7 @@ class IntegrationsApi {
 	getIntegrationsSpeechLexBotAlias(aliasId) { 
 		// verify the required parameter 'aliasId' is set
 		if (aliasId === undefined || aliasId === null) {
-			throw 'Missing the required parameter "aliasId" when calling getIntegrationsSpeechLexBotAlias';
+			throw new Error('Missing the required parameter "aliasId" when calling getIntegrationsSpeechLexBotAlias';
 		}
 
 		return this.apiClient.callApi(
@@ -876,7 +876,7 @@ class IntegrationsApi {
 		
 		// verify the required parameter 'botId' is set
 		if (botId === undefined || botId === null) {
-			throw 'Missing the required parameter "botId" when calling getIntegrationsSpeechLexBotBotIdAliases';
+			throw new Error('Missing the required parameter "botId" when calling getIntegrationsSpeechLexBotBotIdAliases';
 		}
 
 		return this.apiClient.callApi(
@@ -931,7 +931,7 @@ class IntegrationsApi {
 		
 		// verify the required parameter 'engineId' is set
 		if (engineId === undefined || engineId === null) {
-			throw 'Missing the required parameter "engineId" when calling getIntegrationsSpeechTtsEngine';
+			throw new Error('Missing the required parameter "engineId" when calling getIntegrationsSpeechTtsEngine';
 		}
 
 		return this.apiClient.callApi(
@@ -957,11 +957,11 @@ class IntegrationsApi {
 	getIntegrationsSpeechTtsEngineVoice(engineId, voiceId) { 
 		// verify the required parameter 'engineId' is set
 		if (engineId === undefined || engineId === null) {
-			throw 'Missing the required parameter "engineId" when calling getIntegrationsSpeechTtsEngineVoice';
+			throw new Error('Missing the required parameter "engineId" when calling getIntegrationsSpeechTtsEngineVoice';
 		}
 		// verify the required parameter 'voiceId' is set
 		if (voiceId === undefined || voiceId === null) {
-			throw 'Missing the required parameter "voiceId" when calling getIntegrationsSpeechTtsEngineVoice';
+			throw new Error('Missing the required parameter "voiceId" when calling getIntegrationsSpeechTtsEngineVoice';
 		}
 
 		return this.apiClient.callApi(
@@ -991,7 +991,7 @@ class IntegrationsApi {
 		
 		// verify the required parameter 'engineId' is set
 		if (engineId === undefined || engineId === null) {
-			throw 'Missing the required parameter "engineId" when calling getIntegrationsSpeechTtsEngineVoices';
+			throw new Error('Missing the required parameter "engineId" when calling getIntegrationsSpeechTtsEngineVoices';
 		}
 
 		return this.apiClient.callApi(
@@ -1064,7 +1064,7 @@ class IntegrationsApi {
 	getIntegrationsType(typeId) { 
 		// verify the required parameter 'typeId' is set
 		if (typeId === undefined || typeId === null) {
-			throw 'Missing the required parameter "typeId" when calling getIntegrationsType';
+			throw new Error('Missing the required parameter "typeId" when calling getIntegrationsType';
 		}
 
 		return this.apiClient.callApi(
@@ -1090,11 +1090,11 @@ class IntegrationsApi {
 	getIntegrationsTypeConfigschema(typeId, configType) { 
 		// verify the required parameter 'typeId' is set
 		if (typeId === undefined || typeId === null) {
-			throw 'Missing the required parameter "typeId" when calling getIntegrationsTypeConfigschema';
+			throw new Error('Missing the required parameter "typeId" when calling getIntegrationsTypeConfigschema';
 		}
 		// verify the required parameter 'configType' is set
 		if (configType === undefined || configType === null) {
-			throw 'Missing the required parameter "configType" when calling getIntegrationsTypeConfigschema';
+			throw new Error('Missing the required parameter "configType" when calling getIntegrationsTypeConfigschema';
 		}
 
 		return this.apiClient.callApi(
@@ -1188,7 +1188,7 @@ class IntegrationsApi {
 		
 		// verify the required parameter 'integrationId' is set
 		if (integrationId === undefined || integrationId === null) {
-			throw 'Missing the required parameter "integrationId" when calling patchIntegration';
+			throw new Error('Missing the required parameter "integrationId" when calling patchIntegration';
 		}
 
 		return this.apiClient.callApi(
@@ -1214,11 +1214,11 @@ class IntegrationsApi {
 	patchIntegrationsAction(actionId, body) { 
 		// verify the required parameter 'actionId' is set
 		if (actionId === undefined || actionId === null) {
-			throw 'Missing the required parameter "actionId" when calling patchIntegrationsAction';
+			throw new Error('Missing the required parameter "actionId" when calling patchIntegrationsAction';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchIntegrationsAction';
+			throw new Error('Missing the required parameter "body" when calling patchIntegrationsAction';
 		}
 
 		return this.apiClient.callApi(
@@ -1244,11 +1244,11 @@ class IntegrationsApi {
 	patchIntegrationsActionDraft(actionId, body) { 
 		// verify the required parameter 'actionId' is set
 		if (actionId === undefined || actionId === null) {
-			throw 'Missing the required parameter "actionId" when calling patchIntegrationsActionDraft';
+			throw new Error('Missing the required parameter "actionId" when calling patchIntegrationsActionDraft';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchIntegrationsActionDraft';
+			throw new Error('Missing the required parameter "body" when calling patchIntegrationsActionDraft';
 		}
 
 		return this.apiClient.callApi(
@@ -1297,7 +1297,7 @@ class IntegrationsApi {
 	postIntegrationsActionDraft(actionId) { 
 		// verify the required parameter 'actionId' is set
 		if (actionId === undefined || actionId === null) {
-			throw 'Missing the required parameter "actionId" when calling postIntegrationsActionDraft';
+			throw new Error('Missing the required parameter "actionId" when calling postIntegrationsActionDraft';
 		}
 
 		return this.apiClient.callApi(
@@ -1323,11 +1323,11 @@ class IntegrationsApi {
 	postIntegrationsActionDraftPublish(actionId, body) { 
 		// verify the required parameter 'actionId' is set
 		if (actionId === undefined || actionId === null) {
-			throw 'Missing the required parameter "actionId" when calling postIntegrationsActionDraftPublish';
+			throw new Error('Missing the required parameter "actionId" when calling postIntegrationsActionDraftPublish';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postIntegrationsActionDraftPublish';
+			throw new Error('Missing the required parameter "body" when calling postIntegrationsActionDraftPublish';
 		}
 
 		return this.apiClient.callApi(
@@ -1353,11 +1353,11 @@ class IntegrationsApi {
 	postIntegrationsActionDraftTest(actionId, body) { 
 		// verify the required parameter 'actionId' is set
 		if (actionId === undefined || actionId === null) {
-			throw 'Missing the required parameter "actionId" when calling postIntegrationsActionDraftTest';
+			throw new Error('Missing the required parameter "actionId" when calling postIntegrationsActionDraftTest';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postIntegrationsActionDraftTest';
+			throw new Error('Missing the required parameter "body" when calling postIntegrationsActionDraftTest';
 		}
 
 		return this.apiClient.callApi(
@@ -1383,11 +1383,11 @@ class IntegrationsApi {
 	postIntegrationsActionExecute(actionId, body) { 
 		// verify the required parameter 'actionId' is set
 		if (actionId === undefined || actionId === null) {
-			throw 'Missing the required parameter "actionId" when calling postIntegrationsActionExecute';
+			throw new Error('Missing the required parameter "actionId" when calling postIntegrationsActionExecute';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postIntegrationsActionExecute';
+			throw new Error('Missing the required parameter "body" when calling postIntegrationsActionExecute';
 		}
 
 		return this.apiClient.callApi(
@@ -1413,11 +1413,11 @@ class IntegrationsApi {
 	postIntegrationsActionTest(actionId, body) { 
 		// verify the required parameter 'actionId' is set
 		if (actionId === undefined || actionId === null) {
-			throw 'Missing the required parameter "actionId" when calling postIntegrationsActionTest';
+			throw new Error('Missing the required parameter "actionId" when calling postIntegrationsActionTest';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postIntegrationsActionTest';
+			throw new Error('Missing the required parameter "body" when calling postIntegrationsActionTest';
 		}
 
 		return this.apiClient.callApi(
@@ -1442,7 +1442,7 @@ class IntegrationsApi {
 	postIntegrationsActions(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postIntegrationsActions';
+			throw new Error('Missing the required parameter "body" when calling postIntegrationsActions';
 		}
 
 		return this.apiClient.callApi(
@@ -1467,7 +1467,7 @@ class IntegrationsApi {
 	postIntegrationsActionsDrafts(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postIntegrationsActionsDrafts';
+			throw new Error('Missing the required parameter "body" when calling postIntegrationsActionsDrafts';
 		}
 
 		return this.apiClient.callApi(
@@ -1544,7 +1544,7 @@ class IntegrationsApi {
 		
 		// verify the required parameter 'integrationId' is set
 		if (integrationId === undefined || integrationId === null) {
-			throw 'Missing the required parameter "integrationId" when calling putIntegrationConfigCurrent';
+			throw new Error('Missing the required parameter "integrationId" when calling putIntegrationConfigCurrent';
 		}
 
 		return this.apiClient.callApi(
@@ -1570,11 +1570,11 @@ class IntegrationsApi {
 	putIntegrationsBotconnectorIntegrationIdBots(integrationId, botList) { 
 		// verify the required parameter 'integrationId' is set
 		if (integrationId === undefined || integrationId === null) {
-			throw 'Missing the required parameter "integrationId" when calling putIntegrationsBotconnectorIntegrationIdBots';
+			throw new Error('Missing the required parameter "integrationId" when calling putIntegrationsBotconnectorIntegrationIdBots';
 		}
 		// verify the required parameter 'botList' is set
 		if (botList === undefined || botList === null) {
-			throw 'Missing the required parameter "botList" when calling putIntegrationsBotconnectorIntegrationIdBots';
+			throw new Error('Missing the required parameter "botList" when calling putIntegrationsBotconnectorIntegrationIdBots';
 		}
 
 		return this.apiClient.callApi(
@@ -1603,7 +1603,7 @@ class IntegrationsApi {
 		
 		// verify the required parameter 'credentialId' is set
 		if (credentialId === undefined || credentialId === null) {
-			throw 'Missing the required parameter "credentialId" when calling putIntegrationsCredential';
+			throw new Error('Missing the required parameter "credentialId" when calling putIntegrationsCredential';
 		}
 
 		return this.apiClient.callApi(
@@ -1628,7 +1628,7 @@ class IntegrationsApi {
 	putIntegrationsSpeechTtsSettings(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putIntegrationsSpeechTtsSettings';
+			throw new Error('Missing the required parameter "body" when calling putIntegrationsSpeechTtsSettings';
 		}
 
 		return this.apiClient.callApi(

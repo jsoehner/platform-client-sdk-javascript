@@ -49,11 +49,11 @@ class GeolocationApi {
 	getUserGeolocation(userId, clientId) { 
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling getUserGeolocation';
+			throw new Error('Missing the required parameter "userId" when calling getUserGeolocation';
 		}
 		// verify the required parameter 'clientId' is set
 		if (clientId === undefined || clientId === null) {
-			throw 'Missing the required parameter "clientId" when calling getUserGeolocation';
+			throw new Error('Missing the required parameter "clientId" when calling getUserGeolocation';
 		}
 
 		return this.apiClient.callApi(
@@ -78,7 +78,7 @@ class GeolocationApi {
 	patchGeolocationsSettings(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchGeolocationsSettings';
+			throw new Error('Missing the required parameter "body" when calling patchGeolocationsSettings';
 		}
 
 		return this.apiClient.callApi(
@@ -105,15 +105,15 @@ class GeolocationApi {
 	patchUserGeolocation(userId, clientId, body) { 
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling patchUserGeolocation';
+			throw new Error('Missing the required parameter "userId" when calling patchUserGeolocation';
 		}
 		// verify the required parameter 'clientId' is set
 		if (clientId === undefined || clientId === null) {
-			throw 'Missing the required parameter "clientId" when calling patchUserGeolocation';
+			throw new Error('Missing the required parameter "clientId" when calling patchUserGeolocation';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchUserGeolocation';
+			throw new Error('Missing the required parameter "body" when calling patchUserGeolocation';
 		}
 
 		return this.apiClient.callApi(

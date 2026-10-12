@@ -28,7 +28,7 @@ class AnalyticsApi {
 	deleteAnalyticsConversationsDetailsJob(jobId) { 
 		// verify the required parameter 'jobId' is set
 		if (jobId === undefined || jobId === null) {
-			throw 'Missing the required parameter "jobId" when calling deleteAnalyticsConversationsDetailsJob';
+			throw new Error('Missing the required parameter "jobId" when calling deleteAnalyticsConversationsDetailsJob');
 		}
 
 		return this.apiClient.callApi(
@@ -53,7 +53,7 @@ class AnalyticsApi {
 	deleteAnalyticsReportingSchedule(scheduleId) { 
 		// verify the required parameter 'scheduleId' is set
 		if (scheduleId === undefined || scheduleId === null) {
-			throw 'Missing the required parameter "scheduleId" when calling deleteAnalyticsReportingSchedule';
+			throw new Error('Missing the required parameter "scheduleId" when calling deleteAnalyticsReportingSchedule');
 		}
 
 		return this.apiClient.callApi(
@@ -78,7 +78,7 @@ class AnalyticsApi {
 	deleteAnalyticsUsersDetailsJob(jobId) { 
 		// verify the required parameter 'jobId' is set
 		if (jobId === undefined || jobId === null) {
-			throw 'Missing the required parameter "jobId" when calling deleteAnalyticsUsersDetailsJob';
+			throw new Error('Missing the required parameter "jobId" when calling deleteAnalyticsUsersDetailsJob');
 		}
 
 		return this.apiClient.callApi(
@@ -110,7 +110,7 @@ class AnalyticsApi {
 		
 		// verify the required parameter 'botFlowId' is set
 		if (botFlowId === undefined || botFlowId === null) {
-			throw 'Missing the required parameter "botFlowId" when calling getAnalyticsBotflowReportingturns';
+			throw new Error('Missing the required parameter "botFlowId" when calling getAnalyticsBotflowReportingturns');
 		}
 
 		return this.apiClient.callApi(
@@ -135,7 +135,7 @@ class AnalyticsApi {
 	getAnalyticsConversationDetails(conversationId) { 
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling getAnalyticsConversationDetails';
+			throw new Error('Missing the required parameter "conversationId" when calling getAnalyticsConversationDetails');
 		}
 
 		return this.apiClient.callApi(
@@ -184,7 +184,7 @@ class AnalyticsApi {
 	getAnalyticsConversationsDetailsJob(jobId) { 
 		// verify the required parameter 'jobId' is set
 		if (jobId === undefined || jobId === null) {
-			throw 'Missing the required parameter "jobId" when calling getAnalyticsConversationsDetailsJob';
+			throw new Error('Missing the required parameter "jobId" when calling getAnalyticsConversationsDetailsJob');
 		}
 
 		return this.apiClient.callApi(
@@ -214,7 +214,7 @@ class AnalyticsApi {
 		
 		// verify the required parameter 'jobId' is set
 		if (jobId === undefined || jobId === null) {
-			throw 'Missing the required parameter "jobId" when calling getAnalyticsConversationsDetailsJobResults';
+			throw new Error('Missing the required parameter "jobId" when calling getAnalyticsConversationsDetailsJobResults');
 		}
 
 		return this.apiClient.callApi(
@@ -334,7 +334,7 @@ class AnalyticsApi {
 		
 		// verify the required parameter 'reportId' is set
 		if (reportId === undefined || reportId === null) {
-			throw 'Missing the required parameter "reportId" when calling getAnalyticsReportingReportIdMetadata';
+			throw new Error('Missing the required parameter "reportId" when calling getAnalyticsReportingReportIdMetadata');
 		}
 
 		return this.apiClient.callApi(
@@ -379,7 +379,7 @@ class AnalyticsApi {
 	getAnalyticsReportingSchedule(scheduleId) { 
 		// verify the required parameter 'scheduleId' is set
 		if (scheduleId === undefined || scheduleId === null) {
-			throw 'Missing the required parameter "scheduleId" when calling getAnalyticsReportingSchedule';
+			throw new Error('Missing the required parameter "scheduleId" when calling getAnalyticsReportingSchedule');
 		}
 
 		return this.apiClient.callApi(
@@ -409,7 +409,7 @@ class AnalyticsApi {
 		
 		// verify the required parameter 'scheduleId' is set
 		if (scheduleId === undefined || scheduleId === null) {
-			throw 'Missing the required parameter "scheduleId" when calling getAnalyticsReportingScheduleHistory';
+			throw new Error('Missing the required parameter "scheduleId" when calling getAnalyticsReportingScheduleHistory');
 		}
 
 		return this.apiClient.callApi(
@@ -434,7 +434,7 @@ class AnalyticsApi {
 	getAnalyticsReportingScheduleHistoryLatest(scheduleId) { 
 		// verify the required parameter 'scheduleId' is set
 		if (scheduleId === undefined || scheduleId === null) {
-			throw 'Missing the required parameter "scheduleId" when calling getAnalyticsReportingScheduleHistoryLatest';
+			throw new Error('Missing the required parameter "scheduleId" when calling getAnalyticsReportingScheduleHistoryLatest');
 		}
 
 		return this.apiClient.callApi(
@@ -460,11 +460,11 @@ class AnalyticsApi {
 	getAnalyticsReportingScheduleHistoryRunId(runId, scheduleId) { 
 		// verify the required parameter 'runId' is set
 		if (runId === undefined || runId === null) {
-			throw 'Missing the required parameter "runId" when calling getAnalyticsReportingScheduleHistoryRunId';
+			throw new Error('Missing the required parameter "runId" when calling getAnalyticsReportingScheduleHistoryRunId');
 		}
 		// verify the required parameter 'scheduleId' is set
 		if (scheduleId === undefined || scheduleId === null) {
-			throw 'Missing the required parameter "scheduleId" when calling getAnalyticsReportingScheduleHistoryRunId';
+			throw new Error('Missing the required parameter "scheduleId" when calling getAnalyticsReportingScheduleHistoryRunId');
 		}
 
 		return this.apiClient.callApi(
@@ -534,7 +534,7 @@ class AnalyticsApi {
 	getAnalyticsUsersDetailsJob(jobId) { 
 		// verify the required parameter 'jobId' is set
 		if (jobId === undefined || jobId === null) {
-			throw 'Missing the required parameter "jobId" when calling getAnalyticsUsersDetailsJob';
+			throw new Error('Missing the required parameter "jobId" when calling getAnalyticsUsersDetailsJob');
 		}
 
 		return this.apiClient.callApi(
@@ -564,7 +564,7 @@ class AnalyticsApi {
 		
 		// verify the required parameter 'jobId' is set
 		if (jobId === undefined || jobId === null) {
-			throw 'Missing the required parameter "jobId" when calling getAnalyticsUsersDetailsJobResults';
+			throw new Error('Missing the required parameter "jobId" when calling getAnalyticsUsersDetailsJobResults');
 		}
 
 		return this.apiClient.callApi(
@@ -609,7 +609,7 @@ class AnalyticsApi {
 	patchAnalyticsReportingSettings(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchAnalyticsReportingSettings';
+			throw new Error('Missing the required parameter "body" when calling patchAnalyticsReportingSettings');
 		}
 
 		return this.apiClient.callApi(
@@ -634,7 +634,7 @@ class AnalyticsApi {
 	postAnalyticsBotsAggregatesQuery(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postAnalyticsBotsAggregatesQuery';
+			throw new Error('Missing the required parameter "body" when calling postAnalyticsBotsAggregatesQuery');
 		}
 
 		return this.apiClient.callApi(
@@ -660,11 +660,11 @@ class AnalyticsApi {
 	postAnalyticsConversationDetailsProperties(conversationId, body) { 
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling postAnalyticsConversationDetailsProperties';
+			throw new Error('Missing the required parameter "conversationId" when calling postAnalyticsConversationDetailsProperties');
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postAnalyticsConversationDetailsProperties';
+			throw new Error('Missing the required parameter "body" when calling postAnalyticsConversationDetailsProperties');
 		}
 
 		return this.apiClient.callApi(
@@ -689,7 +689,7 @@ class AnalyticsApi {
 	postAnalyticsConversationsAggregatesQuery(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postAnalyticsConversationsAggregatesQuery';
+			throw new Error('Missing the required parameter "body" when calling postAnalyticsConversationsAggregatesQuery');
 		}
 
 		return this.apiClient.callApi(
@@ -714,7 +714,7 @@ class AnalyticsApi {
 	postAnalyticsConversationsDetailsJobs(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postAnalyticsConversationsDetailsJobs';
+			throw new Error('Missing the required parameter "body" when calling postAnalyticsConversationsDetailsJobs');
 		}
 
 		return this.apiClient.callApi(
@@ -739,7 +739,7 @@ class AnalyticsApi {
 	postAnalyticsConversationsDetailsQuery(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postAnalyticsConversationsDetailsQuery';
+			throw new Error('Missing the required parameter "body" when calling postAnalyticsConversationsDetailsQuery');
 		}
 
 		return this.apiClient.callApi(
@@ -764,7 +764,7 @@ class AnalyticsApi {
 	postAnalyticsConversationsTranscriptsQuery(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postAnalyticsConversationsTranscriptsQuery';
+			throw new Error('Missing the required parameter "body" when calling postAnalyticsConversationsTranscriptsQuery');
 		}
 
 		return this.apiClient.callApi(
@@ -789,7 +789,7 @@ class AnalyticsApi {
 	postAnalyticsEvaluationsAggregatesQuery(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postAnalyticsEvaluationsAggregatesQuery';
+			throw new Error('Missing the required parameter "body" when calling postAnalyticsEvaluationsAggregatesQuery');
 		}
 
 		return this.apiClient.callApi(
@@ -814,7 +814,7 @@ class AnalyticsApi {
 	postAnalyticsFlowsAggregatesQuery(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postAnalyticsFlowsAggregatesQuery';
+			throw new Error('Missing the required parameter "body" when calling postAnalyticsFlowsAggregatesQuery');
 		}
 
 		return this.apiClient.callApi(
@@ -839,7 +839,7 @@ class AnalyticsApi {
 	postAnalyticsFlowsObservationsQuery(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postAnalyticsFlowsObservationsQuery';
+			throw new Error('Missing the required parameter "body" when calling postAnalyticsFlowsObservationsQuery');
 		}
 
 		return this.apiClient.callApi(
@@ -864,7 +864,7 @@ class AnalyticsApi {
 	postAnalyticsJourneysAggregatesQuery(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postAnalyticsJourneysAggregatesQuery';
+			throw new Error('Missing the required parameter "body" when calling postAnalyticsJourneysAggregatesQuery');
 		}
 
 		return this.apiClient.callApi(
@@ -889,7 +889,7 @@ class AnalyticsApi {
 	postAnalyticsQueuesObservationsQuery(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postAnalyticsQueuesObservationsQuery';
+			throw new Error('Missing the required parameter "body" when calling postAnalyticsQueuesObservationsQuery');
 		}
 
 		return this.apiClient.callApi(
@@ -914,7 +914,7 @@ class AnalyticsApi {
 	postAnalyticsReportingExports(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postAnalyticsReportingExports';
+			throw new Error('Missing the required parameter "body" when calling postAnalyticsReportingExports');
 		}
 
 		return this.apiClient.callApi(
@@ -939,7 +939,7 @@ class AnalyticsApi {
 	postAnalyticsReportingScheduleRunreport(scheduleId) { 
 		// verify the required parameter 'scheduleId' is set
 		if (scheduleId === undefined || scheduleId === null) {
-			throw 'Missing the required parameter "scheduleId" when calling postAnalyticsReportingScheduleRunreport';
+			throw new Error('Missing the required parameter "scheduleId" when calling postAnalyticsReportingScheduleRunreport');
 		}
 
 		return this.apiClient.callApi(
@@ -964,7 +964,7 @@ class AnalyticsApi {
 	postAnalyticsReportingSchedules(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postAnalyticsReportingSchedules';
+			throw new Error('Missing the required parameter "body" when calling postAnalyticsReportingSchedules');
 		}
 
 		return this.apiClient.callApi(
@@ -989,7 +989,7 @@ class AnalyticsApi {
 	postAnalyticsSurveysAggregatesQuery(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postAnalyticsSurveysAggregatesQuery';
+			throw new Error('Missing the required parameter "body" when calling postAnalyticsSurveysAggregatesQuery');
 		}
 
 		return this.apiClient.callApi(
@@ -1014,7 +1014,7 @@ class AnalyticsApi {
 	postAnalyticsTranscriptsAggregatesQuery(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postAnalyticsTranscriptsAggregatesQuery';
+			throw new Error('Missing the required parameter "body" when calling postAnalyticsTranscriptsAggregatesQuery');
 		}
 
 		return this.apiClient.callApi(
@@ -1039,7 +1039,7 @@ class AnalyticsApi {
 	postAnalyticsUsersAggregatesQuery(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postAnalyticsUsersAggregatesQuery';
+			throw new Error('Missing the required parameter "body" when calling postAnalyticsUsersAggregatesQuery');
 		}
 
 		return this.apiClient.callApi(
@@ -1064,7 +1064,7 @@ class AnalyticsApi {
 	postAnalyticsUsersDetailsJobs(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postAnalyticsUsersDetailsJobs';
+			throw new Error('Missing the required parameter "body" when calling postAnalyticsUsersDetailsJobs');
 		}
 
 		return this.apiClient.callApi(
@@ -1089,7 +1089,7 @@ class AnalyticsApi {
 	postAnalyticsUsersDetailsQuery(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postAnalyticsUsersDetailsQuery';
+			throw new Error('Missing the required parameter "body" when calling postAnalyticsUsersDetailsQuery');
 		}
 
 		return this.apiClient.callApi(
@@ -1114,7 +1114,7 @@ class AnalyticsApi {
 	postAnalyticsUsersObservationsQuery(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postAnalyticsUsersObservationsQuery';
+			throw new Error('Missing the required parameter "body" when calling postAnalyticsUsersObservationsQuery');
 		}
 
 		return this.apiClient.callApi(
@@ -1140,11 +1140,11 @@ class AnalyticsApi {
 	putAnalyticsReportingSchedule(scheduleId, body) { 
 		// verify the required parameter 'scheduleId' is set
 		if (scheduleId === undefined || scheduleId === null) {
-			throw 'Missing the required parameter "scheduleId" when calling putAnalyticsReportingSchedule';
+			throw new Error('Missing the required parameter "scheduleId" when calling putAnalyticsReportingSchedule');
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putAnalyticsReportingSchedule';
+			throw new Error('Missing the required parameter "body" when calling putAnalyticsReportingSchedule');
 		}
 
 		return this.apiClient.callApi(

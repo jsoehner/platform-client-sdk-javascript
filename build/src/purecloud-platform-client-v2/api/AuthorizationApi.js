@@ -32,7 +32,7 @@ class AuthorizationApi {
 		
 		// verify the required parameter 'divisionId' is set
 		if (divisionId === undefined || divisionId === null) {
-			throw 'Missing the required parameter "divisionId" when calling deleteAuthorizationDivision';
+			throw new Error('Missing the required parameter "divisionId" when calling deleteAuthorizationDivision');
 		}
 
 		return this.apiClient.callApi(
@@ -57,7 +57,7 @@ class AuthorizationApi {
 	deleteAuthorizationRole(roleId) { 
 		// verify the required parameter 'roleId' is set
 		if (roleId === undefined || roleId === null) {
-			throw 'Missing the required parameter "roleId" when calling deleteAuthorizationRole';
+			throw new Error('Missing the required parameter "roleId" when calling deleteAuthorizationRole');
 		}
 
 		return this.apiClient.callApi(
@@ -84,15 +84,15 @@ class AuthorizationApi {
 	deleteAuthorizationSubjectDivisionRole(subjectId, divisionId, roleId) { 
 		// verify the required parameter 'subjectId' is set
 		if (subjectId === undefined || subjectId === null) {
-			throw 'Missing the required parameter "subjectId" when calling deleteAuthorizationSubjectDivisionRole';
+			throw new Error('Missing the required parameter "subjectId" when calling deleteAuthorizationSubjectDivisionRole');
 		}
 		// verify the required parameter 'divisionId' is set
 		if (divisionId === undefined || divisionId === null) {
-			throw 'Missing the required parameter "divisionId" when calling deleteAuthorizationSubjectDivisionRole';
+			throw new Error('Missing the required parameter "divisionId" when calling deleteAuthorizationSubjectDivisionRole');
 		}
 		// verify the required parameter 'roleId' is set
 		if (roleId === undefined || roleId === null) {
-			throw 'Missing the required parameter "roleId" when calling deleteAuthorizationSubjectDivisionRole';
+			throw new Error('Missing the required parameter "roleId" when calling deleteAuthorizationSubjectDivisionRole');
 		}
 
 		return this.apiClient.callApi(
@@ -121,7 +121,7 @@ class AuthorizationApi {
 		
 		// verify the required parameter 'divisionId' is set
 		if (divisionId === undefined || divisionId === null) {
-			throw 'Missing the required parameter "divisionId" when calling getAuthorizationDivision';
+			throw new Error('Missing the required parameter "divisionId" when calling getAuthorizationDivision');
 		}
 
 		return this.apiClient.callApi(
@@ -151,7 +151,7 @@ class AuthorizationApi {
 		
 		// verify the required parameter 'divisionId' is set
 		if (divisionId === undefined || divisionId === null) {
-			throw 'Missing the required parameter "divisionId" when calling getAuthorizationDivisionGrants';
+			throw new Error('Missing the required parameter "divisionId" when calling getAuthorizationDivisionGrants');
 		}
 
 		return this.apiClient.callApi(
@@ -252,7 +252,7 @@ class AuthorizationApi {
 		
 		// verify the required parameter 'permission' is set
 		if (permission === undefined || permission === null) {
-			throw 'Missing the required parameter "permission" when calling getAuthorizationDivisionspermittedMe';
+			throw new Error('Missing the required parameter "permission" when calling getAuthorizationDivisionspermittedMe');
 		}
 
 		return this.apiClient.callApi(
@@ -282,7 +282,7 @@ class AuthorizationApi {
 		
 		// verify the required parameter 'permission' is set
 		if (permission === undefined || permission === null) {
-			throw 'Missing the required parameter "permission" when calling getAuthorizationDivisionspermittedPagedMe';
+			throw new Error('Missing the required parameter "permission" when calling getAuthorizationDivisionspermittedPagedMe');
 		}
 
 		return this.apiClient.callApi(
@@ -313,11 +313,11 @@ class AuthorizationApi {
 		
 		// verify the required parameter 'subjectId' is set
 		if (subjectId === undefined || subjectId === null) {
-			throw 'Missing the required parameter "subjectId" when calling getAuthorizationDivisionspermittedPagedSubjectId';
+			throw new Error('Missing the required parameter "subjectId" when calling getAuthorizationDivisionspermittedPagedSubjectId');
 		}
 		// verify the required parameter 'permission' is set
 		if (permission === undefined || permission === null) {
-			throw 'Missing the required parameter "permission" when calling getAuthorizationDivisionspermittedPagedSubjectId';
+			throw new Error('Missing the required parameter "permission" when calling getAuthorizationDivisionspermittedPagedSubjectId');
 		}
 
 		return this.apiClient.callApi(
@@ -393,7 +393,7 @@ class AuthorizationApi {
 		
 		// verify the required parameter 'roleId' is set
 		if (roleId === undefined || roleId === null) {
-			throw 'Missing the required parameter "roleId" when calling getAuthorizationRole';
+			throw new Error('Missing the required parameter "roleId" when calling getAuthorizationRole');
 		}
 
 		return this.apiClient.callApi(
@@ -419,11 +419,11 @@ class AuthorizationApi {
 	getAuthorizationRoleComparedefaultRightRoleId(leftRoleId, rightRoleId) { 
 		// verify the required parameter 'leftRoleId' is set
 		if (leftRoleId === undefined || leftRoleId === null) {
-			throw 'Missing the required parameter "leftRoleId" when calling getAuthorizationRoleComparedefaultRightRoleId';
+			throw new Error('Missing the required parameter "leftRoleId" when calling getAuthorizationRoleComparedefaultRightRoleId');
 		}
 		// verify the required parameter 'rightRoleId' is set
 		if (rightRoleId === undefined || rightRoleId === null) {
-			throw 'Missing the required parameter "rightRoleId" when calling getAuthorizationRoleComparedefaultRightRoleId';
+			throw new Error('Missing the required parameter "rightRoleId" when calling getAuthorizationRoleComparedefaultRightRoleId');
 		}
 
 		return this.apiClient.callApi(
@@ -457,7 +457,7 @@ class AuthorizationApi {
 		
 		// verify the required parameter 'roleId' is set
 		if (roleId === undefined || roleId === null) {
-			throw 'Missing the required parameter "roleId" when calling getAuthorizationRoleSubjectgrants';
+			throw new Error('Missing the required parameter "roleId" when calling getAuthorizationRoleSubjectgrants');
 		}
 
 		return this.apiClient.callApi(
@@ -487,7 +487,7 @@ class AuthorizationApi {
 		
 		// verify the required parameter 'roleId' is set
 		if (roleId === undefined || roleId === null) {
-			throw 'Missing the required parameter "roleId" when calling getAuthorizationRoleUsers';
+			throw new Error('Missing the required parameter "roleId" when calling getAuthorizationRoleUsers');
 		}
 
 		return this.apiClient.callApi(
@@ -546,7 +546,7 @@ class AuthorizationApi {
 	getAuthorizationSubject(subjectId) { 
 		// verify the required parameter 'subjectId' is set
 		if (subjectId === undefined || subjectId === null) {
-			throw 'Missing the required parameter "subjectId" when calling getAuthorizationSubject';
+			throw new Error('Missing the required parameter "subjectId" when calling getAuthorizationSubject';
 		}
 
 		return this.apiClient.callApi(
@@ -615,7 +615,7 @@ class AuthorizationApi {
 	getUserRoles(userId) { 
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling getUserRoles';
+			throw new Error('Missing the required parameter "userId" when calling getUserRoles');
 		}
 
 		return this.apiClient.callApi(
@@ -641,11 +641,11 @@ class AuthorizationApi {
 	patchAuthorizationRole(roleId, body) { 
 		// verify the required parameter 'roleId' is set
 		if (roleId === undefined || roleId === null) {
-			throw 'Missing the required parameter "roleId" when calling patchAuthorizationRole';
+			throw new Error('Missing the required parameter "roleId" when calling patchAuthorizationRole');
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchAuthorizationRole';
+			throw new Error('Missing the required parameter "body" when calling patchAuthorizationRole');
 		}
 
 		return this.apiClient.callApi(
@@ -672,15 +672,15 @@ class AuthorizationApi {
 	postAuthorizationDivisionObject(divisionId, objectType, body) { 
 		// verify the required parameter 'divisionId' is set
 		if (divisionId === undefined || divisionId === null) {
-			throw 'Missing the required parameter "divisionId" when calling postAuthorizationDivisionObject';
+			throw new Error('Missing the required parameter "divisionId" when calling postAuthorizationDivisionObject');
 		}
 		// verify the required parameter 'objectType' is set
 		if (objectType === undefined || objectType === null) {
-			throw 'Missing the required parameter "objectType" when calling postAuthorizationDivisionObject';
+			throw new Error('Missing the required parameter "objectType" when calling postAuthorizationDivisionObject');
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postAuthorizationDivisionObject';
+			throw new Error('Missing the required parameter "body" when calling postAuthorizationDivisionObject');
 		}
 
 		return this.apiClient.callApi(
@@ -706,11 +706,11 @@ class AuthorizationApi {
 	postAuthorizationDivisionRestore(divisionId, body) { 
 		// verify the required parameter 'divisionId' is set
 		if (divisionId === undefined || divisionId === null) {
-			throw 'Missing the required parameter "divisionId" when calling postAuthorizationDivisionRestore';
+			throw new Error('Missing the required parameter "divisionId" when calling postAuthorizationDivisionRestore');
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postAuthorizationDivisionRestore';
+			throw new Error('Missing the required parameter "body" when calling postAuthorizationDivisionRestore');
 		}
 
 		return this.apiClient.callApi(
@@ -735,7 +735,7 @@ class AuthorizationApi {
 	postAuthorizationDivisions(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postAuthorizationDivisions';
+			throw new Error('Missing the required parameter "body" when calling postAuthorizationDivisions');
 		}
 
 		return this.apiClient.callApi(
@@ -765,11 +765,11 @@ class AuthorizationApi {
 		
 		// verify the required parameter 'roleId' is set
 		if (roleId === undefined || roleId === null) {
-			throw 'Missing the required parameter "roleId" when calling postAuthorizationRole';
+			throw new Error('Missing the required parameter "roleId" when calling postAuthorizationRole');
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postAuthorizationRole';
+			throw new Error('Missing the required parameter "body" when calling postAuthorizationRole');
 		}
 
 		return this.apiClient.callApi(
@@ -796,15 +796,15 @@ class AuthorizationApi {
 	postAuthorizationRoleComparedefaultRightRoleId(leftRoleId, rightRoleId, body) { 
 		// verify the required parameter 'leftRoleId' is set
 		if (leftRoleId === undefined || leftRoleId === null) {
-			throw 'Missing the required parameter "leftRoleId" when calling postAuthorizationRoleComparedefaultRightRoleId';
+			throw new Error('Missing the required parameter "leftRoleId" when calling postAuthorizationRoleComparedefaultRightRoleId');
 		}
 		// verify the required parameter 'rightRoleId' is set
 		if (rightRoleId === undefined || rightRoleId === null) {
-			throw 'Missing the required parameter "rightRoleId" when calling postAuthorizationRoleComparedefaultRightRoleId';
+			throw new Error('Missing the required parameter "rightRoleId" when calling postAuthorizationRoleComparedefaultRightRoleId');
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postAuthorizationRoleComparedefaultRightRoleId';
+			throw new Error('Missing the required parameter "body" when calling postAuthorizationRoleComparedefaultRightRoleId');
 		}
 
 		return this.apiClient.callApi(
@@ -829,7 +829,7 @@ class AuthorizationApi {
 	postAuthorizationRoles(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postAuthorizationRoles';
+			throw new Error('Missing the required parameter "body" when calling postAuthorizationRoles');
 		}
 
 		return this.apiClient.callApi(
@@ -883,11 +883,11 @@ class AuthorizationApi {
 		
 		// verify the required parameter 'subjectId' is set
 		if (subjectId === undefined || subjectId === null) {
-			throw 'Missing the required parameter "subjectId" when calling postAuthorizationSubjectBulkadd';
+			throw new Error('Missing the required parameter "subjectId" when calling postAuthorizationSubjectBulkadd');
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postAuthorizationSubjectBulkadd';
+			throw new Error('Missing the required parameter "body" when calling postAuthorizationSubjectBulkadd');
 		}
 
 		return this.apiClient.callApi(
@@ -913,11 +913,11 @@ class AuthorizationApi {
 	postAuthorizationSubjectBulkremove(subjectId, body) { 
 		// verify the required parameter 'subjectId' is set
 		if (subjectId === undefined || subjectId === null) {
-			throw 'Missing the required parameter "subjectId" when calling postAuthorizationSubjectBulkremove';
+			throw new Error('Missing the required parameter "subjectId" when calling postAuthorizationSubjectBulkremove');
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postAuthorizationSubjectBulkremove';
+			throw new Error('Missing the required parameter "body" when calling postAuthorizationSubjectBulkremove');
 		}
 
 		return this.apiClient.callApi(
@@ -947,11 +947,11 @@ class AuthorizationApi {
 		
 		// verify the required parameter 'subjectId' is set
 		if (subjectId === undefined || subjectId === null) {
-			throw 'Missing the required parameter "subjectId" when calling postAuthorizationSubjectBulkreplace';
+			throw new Error('Missing the required parameter "subjectId" when calling postAuthorizationSubjectBulkreplace');
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postAuthorizationSubjectBulkreplace';
+			throw new Error('Missing the required parameter "body" when calling postAuthorizationSubjectBulkreplace');
 		}
 
 		return this.apiClient.callApi(
@@ -982,15 +982,15 @@ class AuthorizationApi {
 		
 		// verify the required parameter 'subjectId' is set
 		if (subjectId === undefined || subjectId === null) {
-			throw 'Missing the required parameter "subjectId" when calling postAuthorizationSubjectDivisionRole';
+			throw new Error('Missing the required parameter "subjectId" when calling postAuthorizationSubjectDivisionRole');
 		}
 		// verify the required parameter 'divisionId' is set
 		if (divisionId === undefined || divisionId === null) {
-			throw 'Missing the required parameter "divisionId" when calling postAuthorizationSubjectDivisionRole';
+			throw new Error('Missing the required parameter "divisionId" when calling postAuthorizationSubjectDivisionRole');
 		}
 		// verify the required parameter 'roleId' is set
 		if (roleId === undefined || roleId === null) {
-			throw 'Missing the required parameter "roleId" when calling postAuthorizationSubjectDivisionRole';
+			throw new Error('Missing the required parameter "roleId" when calling postAuthorizationSubjectDivisionRole');
 		}
 
 		return this.apiClient.callApi(
@@ -1016,11 +1016,11 @@ class AuthorizationApi {
 	putAuthorizationDivision(divisionId, body) { 
 		// verify the required parameter 'divisionId' is set
 		if (divisionId === undefined || divisionId === null) {
-			throw 'Missing the required parameter "divisionId" when calling putAuthorizationDivision';
+			throw new Error('Missing the required parameter "divisionId" when calling putAuthorizationDivision');
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putAuthorizationDivision';
+			throw new Error('Missing the required parameter "body" when calling putAuthorizationDivision');
 		}
 
 		return this.apiClient.callApi(
@@ -1046,11 +1046,11 @@ class AuthorizationApi {
 	putAuthorizationRole(roleId, body) { 
 		// verify the required parameter 'roleId' is set
 		if (roleId === undefined || roleId === null) {
-			throw 'Missing the required parameter "roleId" when calling putAuthorizationRole';
+			throw new Error('Missing the required parameter "roleId" when calling putAuthorizationRole');
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putAuthorizationRole';
+			throw new Error('Missing the required parameter "body" when calling putAuthorizationRole');
 		}
 
 		return this.apiClient.callApi(
@@ -1076,11 +1076,11 @@ class AuthorizationApi {
 	putAuthorizationRoleUsersAdd(roleId, body) { 
 		// verify the required parameter 'roleId' is set
 		if (roleId === undefined || roleId === null) {
-			throw 'Missing the required parameter "roleId" when calling putAuthorizationRoleUsersAdd';
+			throw new Error('Missing the required parameter "roleId" when calling putAuthorizationRoleUsersAdd');
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putAuthorizationRoleUsersAdd';
+			throw new Error('Missing the required parameter "body" when calling putAuthorizationRoleUsersAdd');
 		}
 
 		return this.apiClient.callApi(
@@ -1106,11 +1106,11 @@ class AuthorizationApi {
 	putAuthorizationRoleUsersRemove(roleId, body) { 
 		// verify the required parameter 'roleId' is set
 		if (roleId === undefined || roleId === null) {
-			throw 'Missing the required parameter "roleId" when calling putAuthorizationRoleUsersRemove';
+			throw new Error('Missing the required parameter "roleId" when calling putAuthorizationRoleUsersRemove');
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putAuthorizationRoleUsersRemove';
+			throw new Error('Missing the required parameter "body" when calling putAuthorizationRoleUsersRemove');
 		}
 
 		return this.apiClient.callApi(
@@ -1135,7 +1135,7 @@ class AuthorizationApi {
 	putAuthorizationRolesDefault(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putAuthorizationRolesDefault';
+			throw new Error('Missing the required parameter "body" when calling putAuthorizationRolesDefault');
 		}
 
 		return this.apiClient.callApi(
@@ -1161,11 +1161,11 @@ class AuthorizationApi {
 	putUserRoles(userId, body) { 
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling putUserRoles';
+			throw new Error('Missing the required parameter "userId" when calling putUserRoles');
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putUserRoles';
+			throw new Error('Missing the required parameter "body" when calling putUserRoles');
 		}
 
 		return this.apiClient.callApi(

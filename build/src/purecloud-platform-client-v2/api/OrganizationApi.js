@@ -28,7 +28,7 @@ class OrganizationApi {
 	getFieldconfig(type) { 
 		// verify the required parameter 'type' is set
 		if (type === undefined || type === null) {
-			throw 'Missing the required parameter "type" when calling getFieldconfig';
+			throw new Error('Missing the required parameter "type" when calling getFieldconfig';
 		}
 
 		return this.apiClient.callApi(
@@ -93,7 +93,7 @@ class OrganizationApi {
 	getOrganizationsLimitsChangerequest(requestId) { 
 		// verify the required parameter 'requestId' is set
 		if (requestId === undefined || requestId === null) {
-			throw 'Missing the required parameter "requestId" when calling getOrganizationsLimitsChangerequest';
+			throw new Error('Missing the required parameter "requestId" when calling getOrganizationsLimitsChangerequest';
 		}
 
 		return this.apiClient.callApi(
@@ -166,7 +166,7 @@ class OrganizationApi {
 	getOrganizationsLimitsNamespace(namespaceName) { 
 		// verify the required parameter 'namespaceName' is set
 		if (namespaceName === undefined || namespaceName === null) {
-			throw 'Missing the required parameter "namespaceName" when calling getOrganizationsLimitsNamespace';
+			throw new Error('Missing the required parameter "namespaceName" when calling getOrganizationsLimitsNamespace';
 		}
 
 		return this.apiClient.callApi(
@@ -191,7 +191,7 @@ class OrganizationApi {
 	getOrganizationsLimitsNamespaceDefaults(namespaceName) { 
 		// verify the required parameter 'namespaceName' is set
 		if (namespaceName === undefined || namespaceName === null) {
-			throw 'Missing the required parameter "namespaceName" when calling getOrganizationsLimitsNamespaceDefaults';
+			throw new Error('Missing the required parameter "namespaceName" when calling getOrganizationsLimitsNamespaceDefaults';
 		}
 
 		return this.apiClient.callApi(
@@ -282,11 +282,11 @@ class OrganizationApi {
 	patchOrganizationsFeature(featureName, enabled) { 
 		// verify the required parameter 'featureName' is set
 		if (featureName === undefined || featureName === null) {
-			throw 'Missing the required parameter "featureName" when calling patchOrganizationsFeature';
+			throw new Error('Missing the required parameter "featureName" when calling patchOrganizationsFeature';
 		}
 		// verify the required parameter 'enabled' is set
 		if (enabled === undefined || enabled === null) {
-			throw 'Missing the required parameter "enabled" when calling patchOrganizationsFeature';
+			throw new Error('Missing the required parameter "enabled" when calling patchOrganizationsFeature';
 		}
 
 		return this.apiClient.callApi(
@@ -311,7 +311,7 @@ class OrganizationApi {
 	putOrganizationsEmbeddedintegration(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putOrganizationsEmbeddedintegration';
+			throw new Error('Missing the required parameter "body" when calling putOrganizationsEmbeddedintegration';
 		}
 
 		return this.apiClient.callApi(
@@ -336,7 +336,7 @@ class OrganizationApi {
 	putOrganizationsIpaddressauthentication(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putOrganizationsIpaddressauthentication';
+			throw new Error('Missing the required parameter "body" when calling putOrganizationsIpaddressauthentication';
 		}
 
 		return this.apiClient.callApi(
@@ -385,7 +385,7 @@ class OrganizationApi {
 	putOrganizationsWhitelist(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putOrganizationsWhitelist';
+			throw new Error('Missing the required parameter "body" when calling putOrganizationsWhitelist';
 		}
 
 		return this.apiClient.callApi(

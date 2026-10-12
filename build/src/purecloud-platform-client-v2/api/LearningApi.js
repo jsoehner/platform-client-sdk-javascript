@@ -28,7 +28,7 @@ class LearningApi {
 	deleteLearningAssignment(assignmentId) { 
 		// verify the required parameter 'assignmentId' is set
 		if (assignmentId === undefined || assignmentId === null) {
-			throw 'Missing the required parameter "assignmentId" when calling deleteLearningAssignment';
+			throw new Error('Missing the required parameter "assignmentId" when calling deleteLearningAssignment';
 		}
 
 		return this.apiClient.callApi(
@@ -53,7 +53,7 @@ class LearningApi {
 	deleteLearningModule(moduleId) { 
 		// verify the required parameter 'moduleId' is set
 		if (moduleId === undefined || moduleId === null) {
-			throw 'Missing the required parameter "moduleId" when calling deleteLearningModule';
+			throw new Error('Missing the required parameter "moduleId" when calling deleteLearningModule';
 		}
 
 		return this.apiClient.callApi(
@@ -82,7 +82,7 @@ class LearningApi {
 		
 		// verify the required parameter 'assignmentId' is set
 		if (assignmentId === undefined || assignmentId === null) {
-			throw 'Missing the required parameter "assignmentId" when calling getLearningAssignment';
+			throw new Error('Missing the required parameter "assignmentId" when calling getLearningAssignment';
 		}
 
 		return this.apiClient.callApi(
@@ -186,7 +186,7 @@ class LearningApi {
 		
 		// verify the required parameter 'moduleId' is set
 		if (moduleId === undefined || moduleId === null) {
-			throw 'Missing the required parameter "moduleId" when calling getLearningModule';
+			throw new Error('Missing the required parameter "moduleId" when calling getLearningModule';
 		}
 
 		return this.apiClient.callApi(
@@ -211,7 +211,7 @@ class LearningApi {
 	getLearningModuleRule(moduleId) { 
 		// verify the required parameter 'moduleId' is set
 		if (moduleId === undefined || moduleId === null) {
-			throw 'Missing the required parameter "moduleId" when calling getLearningModuleRule';
+			throw new Error('Missing the required parameter "moduleId" when calling getLearningModuleRule';
 		}
 
 		return this.apiClient.callApi(
@@ -241,11 +241,11 @@ class LearningApi {
 		
 		// verify the required parameter 'moduleId' is set
 		if (moduleId === undefined || moduleId === null) {
-			throw 'Missing the required parameter "moduleId" when calling getLearningModuleVersion';
+			throw new Error('Missing the required parameter "moduleId" when calling getLearningModuleVersion';
 		}
 		// verify the required parameter 'versionId' is set
 		if (versionId === undefined || versionId === null) {
-			throw 'Missing the required parameter "versionId" when calling getLearningModuleVersion';
+			throw new Error('Missing the required parameter "versionId" when calling getLearningModuleVersion';
 		}
 
 		return this.apiClient.callApi(
@@ -306,7 +306,7 @@ class LearningApi {
 		
 		// verify the required parameter 'assignmentId' is set
 		if (assignmentId === undefined || assignmentId === null) {
-			throw 'Missing the required parameter "assignmentId" when calling patchLearningAssignment';
+			throw new Error('Missing the required parameter "assignmentId" when calling patchLearningAssignment';
 		}
 
 		return this.apiClient.callApi(
@@ -331,7 +331,7 @@ class LearningApi {
 	postLearningAssessmentsScoring(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postLearningAssessmentsScoring';
+			throw new Error('Missing the required parameter "body" when calling postLearningAssessmentsScoring';
 		}
 
 		return this.apiClient.callApi(
@@ -380,7 +380,7 @@ class LearningApi {
 	postLearningAssignmentsAggregatesQuery(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postLearningAssignmentsAggregatesQuery';
+			throw new Error('Missing the required parameter "body" when calling postLearningAssignmentsAggregatesQuery';
 		}
 
 		return this.apiClient.callApi(
@@ -453,7 +453,7 @@ class LearningApi {
 	postLearningModulePublish(moduleId) { 
 		// verify the required parameter 'moduleId' is set
 		if (moduleId === undefined || moduleId === null) {
-			throw 'Missing the required parameter "moduleId" when calling postLearningModulePublish';
+			throw new Error('Missing the required parameter "moduleId" when calling postLearningModulePublish';
 		}
 
 		return this.apiClient.callApi(
@@ -478,7 +478,7 @@ class LearningApi {
 	postLearningModules(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postLearningModules';
+			throw new Error('Missing the required parameter "body" when calling postLearningModules';
 		}
 
 		return this.apiClient.callApi(
@@ -505,15 +505,15 @@ class LearningApi {
 	postLearningRulesQuery(pageSize, pageNumber, body) { 
 		// verify the required parameter 'pageSize' is set
 		if (pageSize === undefined || pageSize === null) {
-			throw 'Missing the required parameter "pageSize" when calling postLearningRulesQuery';
+			throw new Error('Missing the required parameter "pageSize" when calling postLearningRulesQuery';
 		}
 		// verify the required parameter 'pageNumber' is set
 		if (pageNumber === undefined || pageNumber === null) {
-			throw 'Missing the required parameter "pageNumber" when calling postLearningRulesQuery';
+			throw new Error('Missing the required parameter "pageNumber" when calling postLearningRulesQuery';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postLearningRulesQuery';
+			throw new Error('Missing the required parameter "body" when calling postLearningRulesQuery';
 		}
 
 		return this.apiClient.callApi(
@@ -539,11 +539,11 @@ class LearningApi {
 	putLearningModule(moduleId, body) { 
 		// verify the required parameter 'moduleId' is set
 		if (moduleId === undefined || moduleId === null) {
-			throw 'Missing the required parameter "moduleId" when calling putLearningModule';
+			throw new Error('Missing the required parameter "moduleId" when calling putLearningModule';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putLearningModule';
+			throw new Error('Missing the required parameter "body" when calling putLearningModule';
 		}
 
 		return this.apiClient.callApi(
@@ -569,11 +569,11 @@ class LearningApi {
 	putLearningModuleRule(moduleId, body) { 
 		// verify the required parameter 'moduleId' is set
 		if (moduleId === undefined || moduleId === null) {
-			throw 'Missing the required parameter "moduleId" when calling putLearningModuleRule';
+			throw new Error('Missing the required parameter "moduleId" when calling putLearningModuleRule';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putLearningModuleRule';
+			throw new Error('Missing the required parameter "body" when calling putLearningModuleRule';
 		}
 
 		return this.apiClient.callApi(

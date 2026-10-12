@@ -28,7 +28,7 @@ class VoicemailApi {
 	deleteVoicemailMessage(messageId) { 
 		// verify the required parameter 'messageId' is set
 		if (messageId === undefined || messageId === null) {
-			throw 'Missing the required parameter "messageId" when calling deleteVoicemailMessage';
+			throw new Error('Missing the required parameter "messageId" when calling deleteVoicemailMessage';
 		}
 
 		return this.apiClient.callApi(
@@ -73,7 +73,7 @@ class VoicemailApi {
 	getVoicemailGroupMailbox(groupId) { 
 		// verify the required parameter 'groupId' is set
 		if (groupId === undefined || groupId === null) {
-			throw 'Missing the required parameter "groupId" when calling getVoicemailGroupMailbox';
+			throw new Error('Missing the required parameter "groupId" when calling getVoicemailGroupMailbox';
 		}
 
 		return this.apiClient.callApi(
@@ -103,7 +103,7 @@ class VoicemailApi {
 		
 		// verify the required parameter 'groupId' is set
 		if (groupId === undefined || groupId === null) {
-			throw 'Missing the required parameter "groupId" when calling getVoicemailGroupMessages';
+			throw new Error('Missing the required parameter "groupId" when calling getVoicemailGroupMessages';
 		}
 
 		return this.apiClient.callApi(
@@ -128,7 +128,7 @@ class VoicemailApi {
 	getVoicemailGroupPolicy(groupId) { 
 		// verify the required parameter 'groupId' is set
 		if (groupId === undefined || groupId === null) {
-			throw 'Missing the required parameter "groupId" when calling getVoicemailGroupPolicy';
+			throw new Error('Missing the required parameter "groupId" when calling getVoicemailGroupPolicy';
 		}
 
 		return this.apiClient.callApi(
@@ -242,7 +242,7 @@ class VoicemailApi {
 		
 		// verify the required parameter 'messageId' is set
 		if (messageId === undefined || messageId === null) {
-			throw 'Missing the required parameter "messageId" when calling getVoicemailMessage';
+			throw new Error('Missing the required parameter "messageId" when calling getVoicemailMessage';
 		}
 
 		return this.apiClient.callApi(
@@ -271,7 +271,7 @@ class VoicemailApi {
 		
 		// verify the required parameter 'messageId' is set
 		if (messageId === undefined || messageId === null) {
-			throw 'Missing the required parameter "messageId" when calling getVoicemailMessageMedia';
+			throw new Error('Missing the required parameter "messageId" when calling getVoicemailMessageMedia';
 		}
 
 		return this.apiClient.callApi(
@@ -346,7 +346,7 @@ class VoicemailApi {
 		
 		// verify the required parameter 'queueId' is set
 		if (queueId === undefined || queueId === null) {
-			throw 'Missing the required parameter "queueId" when calling getVoicemailQueueMessages';
+			throw new Error('Missing the required parameter "queueId" when calling getVoicemailQueueMessages';
 		}
 
 		return this.apiClient.callApi(
@@ -375,7 +375,7 @@ class VoicemailApi {
 		
 		// verify the required parameter 'q64' is set
 		if (q64 === undefined || q64 === null) {
-			throw 'Missing the required parameter "q64" when calling getVoicemailSearch';
+			throw new Error('Missing the required parameter "q64" when calling getVoicemailSearch';
 		}
 
 		return this.apiClient.callApi(
@@ -400,7 +400,7 @@ class VoicemailApi {
 	getVoicemailUserpolicy(userId) { 
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling getVoicemailUserpolicy';
+			throw new Error('Missing the required parameter "userId" when calling getVoicemailUserpolicy';
 		}
 
 		return this.apiClient.callApi(
@@ -426,11 +426,11 @@ class VoicemailApi {
 	patchVoicemailGroupPolicy(groupId, body) { 
 		// verify the required parameter 'groupId' is set
 		if (groupId === undefined || groupId === null) {
-			throw 'Missing the required parameter "groupId" when calling patchVoicemailGroupPolicy';
+			throw new Error('Missing the required parameter "groupId" when calling patchVoicemailGroupPolicy';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchVoicemailGroupPolicy';
+			throw new Error('Missing the required parameter "body" when calling patchVoicemailGroupPolicy';
 		}
 
 		return this.apiClient.callApi(
@@ -455,7 +455,7 @@ class VoicemailApi {
 	patchVoicemailMePolicy(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchVoicemailMePolicy';
+			throw new Error('Missing the required parameter "body" when calling patchVoicemailMePolicy';
 		}
 
 		return this.apiClient.callApi(
@@ -481,11 +481,11 @@ class VoicemailApi {
 	patchVoicemailMessage(messageId, body) { 
 		// verify the required parameter 'messageId' is set
 		if (messageId === undefined || messageId === null) {
-			throw 'Missing the required parameter "messageId" when calling patchVoicemailMessage';
+			throw new Error('Missing the required parameter "messageId" when calling patchVoicemailMessage';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchVoicemailMessage';
+			throw new Error('Missing the required parameter "body" when calling patchVoicemailMessage';
 		}
 
 		return this.apiClient.callApi(
@@ -511,11 +511,11 @@ class VoicemailApi {
 	patchVoicemailUserpolicy(userId, body) { 
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling patchVoicemailUserpolicy';
+			throw new Error('Missing the required parameter "userId" when calling patchVoicemailUserpolicy';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchVoicemailUserpolicy';
+			throw new Error('Missing the required parameter "body" when calling patchVoicemailUserpolicy';
 		}
 
 		return this.apiClient.callApi(
@@ -564,7 +564,7 @@ class VoicemailApi {
 	postVoicemailSearch(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postVoicemailSearch';
+			throw new Error('Missing the required parameter "body" when calling postVoicemailSearch';
 		}
 
 		return this.apiClient.callApi(
@@ -590,11 +590,11 @@ class VoicemailApi {
 	putVoicemailMessage(messageId, body) { 
 		// verify the required parameter 'messageId' is set
 		if (messageId === undefined || messageId === null) {
-			throw 'Missing the required parameter "messageId" when calling putVoicemailMessage';
+			throw new Error('Missing the required parameter "messageId" when calling putVoicemailMessage';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putVoicemailMessage';
+			throw new Error('Missing the required parameter "body" when calling putVoicemailMessage';
 		}
 
 		return this.apiClient.callApi(
@@ -619,7 +619,7 @@ class VoicemailApi {
 	putVoicemailPolicy(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putVoicemailPolicy';
+			throw new Error('Missing the required parameter "body" when calling putVoicemailPolicy';
 		}
 
 		return this.apiClient.callApi(
@@ -645,11 +645,11 @@ class VoicemailApi {
 	putVoicemailUserpolicy(userId, body) { 
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling putVoicemailUserpolicy';
+			throw new Error('Missing the required parameter "userId" when calling putVoicemailUserpolicy';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putVoicemailUserpolicy';
+			throw new Error('Missing the required parameter "body" when calling putVoicemailUserpolicy';
 		}
 
 		return this.apiClient.callApi(

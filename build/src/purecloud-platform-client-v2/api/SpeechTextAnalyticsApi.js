@@ -32,7 +32,7 @@ class SpeechTextAnalyticsApi {
 		
 		// verify the required parameter 'programId' is set
 		if (programId === undefined || programId === null) {
-			throw 'Missing the required parameter "programId" when calling deleteSpeechandtextanalyticsProgram';
+			throw new Error('Missing the required parameter "programId" when calling deleteSpeechandtextanalyticsProgram';
 		}
 
 		return this.apiClient.callApi(
@@ -57,7 +57,7 @@ class SpeechTextAnalyticsApi {
 	deleteSpeechandtextanalyticsTopic(topicId) { 
 		// verify the required parameter 'topicId' is set
 		if (topicId === undefined || topicId === null) {
-			throw 'Missing the required parameter "topicId" when calling deleteSpeechandtextanalyticsTopic';
+			throw new Error('Missing the required parameter "topicId" when calling deleteSpeechandtextanalyticsTopic';
 		}
 
 		return this.apiClient.callApi(
@@ -82,7 +82,7 @@ class SpeechTextAnalyticsApi {
 	getSpeechandtextanalyticsConversation(conversationId) { 
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling getSpeechandtextanalyticsConversation';
+			throw new Error('Missing the required parameter "conversationId" when calling getSpeechandtextanalyticsConversation';
 		}
 
 		return this.apiClient.callApi(
@@ -108,11 +108,11 @@ class SpeechTextAnalyticsApi {
 	getSpeechandtextanalyticsConversationCommunicationTranscripturl(conversationId, communicationId) { 
 		// verify the required parameter 'conversationId' is set
 		if (conversationId === undefined || conversationId === null) {
-			throw 'Missing the required parameter "conversationId" when calling getSpeechandtextanalyticsConversationCommunicationTranscripturl';
+			throw new Error('Missing the required parameter "conversationId" when calling getSpeechandtextanalyticsConversationCommunicationTranscripturl';
 		}
 		// verify the required parameter 'communicationId' is set
 		if (communicationId === undefined || communicationId === null) {
-			throw 'Missing the required parameter "communicationId" when calling getSpeechandtextanalyticsConversationCommunicationTranscripturl';
+			throw new Error('Missing the required parameter "communicationId" when calling getSpeechandtextanalyticsConversationCommunicationTranscripturl';
 		}
 
 		return this.apiClient.callApi(
@@ -157,7 +157,7 @@ class SpeechTextAnalyticsApi {
 	getSpeechandtextanalyticsProgram(programId) { 
 		// verify the required parameter 'programId' is set
 		if (programId === undefined || programId === null) {
-			throw 'Missing the required parameter "programId" when calling getSpeechandtextanalyticsProgram';
+			throw new Error('Missing the required parameter "programId" when calling getSpeechandtextanalyticsProgram';
 		}
 
 		return this.apiClient.callApi(
@@ -182,7 +182,7 @@ class SpeechTextAnalyticsApi {
 	getSpeechandtextanalyticsProgramMappings(programId) { 
 		// verify the required parameter 'programId' is set
 		if (programId === undefined || programId === null) {
-			throw 'Missing the required parameter "programId" when calling getSpeechandtextanalyticsProgramMappings';
+			throw new Error('Missing the required parameter "programId" when calling getSpeechandtextanalyticsProgramMappings';
 		}
 
 		return this.apiClient.callApi(
@@ -232,7 +232,7 @@ class SpeechTextAnalyticsApi {
 	getSpeechandtextanalyticsProgramsGeneralJob(jobId) { 
 		// verify the required parameter 'jobId' is set
 		if (jobId === undefined || jobId === null) {
-			throw 'Missing the required parameter "jobId" when calling getSpeechandtextanalyticsProgramsGeneralJob';
+			throw new Error('Missing the required parameter "jobId" when calling getSpeechandtextanalyticsProgramsGeneralJob';
 		}
 
 		return this.apiClient.callApi(
@@ -282,7 +282,7 @@ class SpeechTextAnalyticsApi {
 	getSpeechandtextanalyticsProgramsPublishjob(jobId) { 
 		// verify the required parameter 'jobId' is set
 		if (jobId === undefined || jobId === null) {
-			throw 'Missing the required parameter "jobId" when calling getSpeechandtextanalyticsProgramsPublishjob';
+			throw new Error('Missing the required parameter "jobId" when calling getSpeechandtextanalyticsProgramsPublishjob';
 		}
 
 		return this.apiClient.callApi(
@@ -352,7 +352,7 @@ class SpeechTextAnalyticsApi {
 	getSpeechandtextanalyticsTopic(topicId) { 
 		// verify the required parameter 'topicId' is set
 		if (topicId === undefined || topicId === null) {
-			throw 'Missing the required parameter "topicId" when calling getSpeechandtextanalyticsTopic';
+			throw new Error('Missing the required parameter "topicId" when calling getSpeechandtextanalyticsTopic';
 		}
 
 		return this.apiClient.callApi(
@@ -451,7 +451,7 @@ class SpeechTextAnalyticsApi {
 	getSpeechandtextanalyticsTopicsPublishjob(jobId) { 
 		// verify the required parameter 'jobId' is set
 		if (jobId === undefined || jobId === null) {
-			throw 'Missing the required parameter "jobId" when calling getSpeechandtextanalyticsTopicsPublishjob';
+			throw new Error('Missing the required parameter "jobId" when calling getSpeechandtextanalyticsTopicsPublishjob';
 		}
 
 		return this.apiClient.callApi(
@@ -476,7 +476,7 @@ class SpeechTextAnalyticsApi {
 	patchSpeechandtextanalyticsSettings(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchSpeechandtextanalyticsSettings';
+			throw new Error('Missing the required parameter "body" when calling patchSpeechandtextanalyticsSettings';
 		}
 
 		return this.apiClient.callApi(
@@ -501,7 +501,7 @@ class SpeechTextAnalyticsApi {
 	postSpeechandtextanalyticsPrograms(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postSpeechandtextanalyticsPrograms';
+			throw new Error('Missing the required parameter "body" when calling postSpeechandtextanalyticsPrograms';
 		}
 
 		return this.apiClient.callApi(
@@ -526,7 +526,7 @@ class SpeechTextAnalyticsApi {
 	postSpeechandtextanalyticsProgramsGeneralJobs(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postSpeechandtextanalyticsProgramsGeneralJobs';
+			throw new Error('Missing the required parameter "body" when calling postSpeechandtextanalyticsProgramsGeneralJobs';
 		}
 
 		return this.apiClient.callApi(
@@ -551,7 +551,7 @@ class SpeechTextAnalyticsApi {
 	postSpeechandtextanalyticsProgramsPublishjobs(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postSpeechandtextanalyticsProgramsPublishjobs';
+			throw new Error('Missing the required parameter "body" when calling postSpeechandtextanalyticsProgramsPublishjobs';
 		}
 
 		return this.apiClient.callApi(
@@ -576,7 +576,7 @@ class SpeechTextAnalyticsApi {
 	postSpeechandtextanalyticsTopics(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postSpeechandtextanalyticsTopics';
+			throw new Error('Missing the required parameter "body" when calling postSpeechandtextanalyticsTopics';
 		}
 
 		return this.apiClient.callApi(
@@ -601,7 +601,7 @@ class SpeechTextAnalyticsApi {
 	postSpeechandtextanalyticsTopicsPublishjobs(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postSpeechandtextanalyticsTopicsPublishjobs';
+			throw new Error('Missing the required parameter "body" when calling postSpeechandtextanalyticsTopicsPublishjobs';
 		}
 
 		return this.apiClient.callApi(
@@ -626,7 +626,7 @@ class SpeechTextAnalyticsApi {
 	postSpeechandtextanalyticsTranscriptsSearch(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postSpeechandtextanalyticsTranscriptsSearch';
+			throw new Error('Missing the required parameter "body" when calling postSpeechandtextanalyticsTranscriptsSearch';
 		}
 
 		return this.apiClient.callApi(
@@ -652,11 +652,11 @@ class SpeechTextAnalyticsApi {
 	putSpeechandtextanalyticsProgram(programId, body) { 
 		// verify the required parameter 'programId' is set
 		if (programId === undefined || programId === null) {
-			throw 'Missing the required parameter "programId" when calling putSpeechandtextanalyticsProgram';
+			throw new Error('Missing the required parameter "programId" when calling putSpeechandtextanalyticsProgram';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putSpeechandtextanalyticsProgram';
+			throw new Error('Missing the required parameter "body" when calling putSpeechandtextanalyticsProgram';
 		}
 
 		return this.apiClient.callApi(
@@ -682,11 +682,11 @@ class SpeechTextAnalyticsApi {
 	putSpeechandtextanalyticsProgramMappings(programId, body) { 
 		// verify the required parameter 'programId' is set
 		if (programId === undefined || programId === null) {
-			throw 'Missing the required parameter "programId" when calling putSpeechandtextanalyticsProgramMappings';
+			throw new Error('Missing the required parameter "programId" when calling putSpeechandtextanalyticsProgramMappings';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putSpeechandtextanalyticsProgramMappings';
+			throw new Error('Missing the required parameter "body" when calling putSpeechandtextanalyticsProgramMappings';
 		}
 
 		return this.apiClient.callApi(
@@ -711,7 +711,7 @@ class SpeechTextAnalyticsApi {
 	putSpeechandtextanalyticsSettings(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putSpeechandtextanalyticsSettings';
+			throw new Error('Missing the required parameter "body" when calling putSpeechandtextanalyticsSettings';
 		}
 
 		return this.apiClient.callApi(
@@ -737,11 +737,11 @@ class SpeechTextAnalyticsApi {
 	putSpeechandtextanalyticsTopic(topicId, body) { 
 		// verify the required parameter 'topicId' is set
 		if (topicId === undefined || topicId === null) {
-			throw 'Missing the required parameter "topicId" when calling putSpeechandtextanalyticsTopic';
+			throw new Error('Missing the required parameter "topicId" when calling putSpeechandtextanalyticsTopic';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putSpeechandtextanalyticsTopic';
+			throw new Error('Missing the required parameter "body" when calling putSpeechandtextanalyticsTopic';
 		}
 
 		return this.apiClient.callApi(

@@ -32,7 +32,7 @@ class ContentManagementApi {
 		
 		// verify the required parameter 'documentId' is set
 		if (documentId === undefined || documentId === null) {
-			throw 'Missing the required parameter "documentId" when calling deleteContentmanagementDocument';
+			throw new Error('Missing the required parameter "documentId" when calling deleteContentmanagementDocument';
 		}
 
 		return this.apiClient.callApi(
@@ -57,7 +57,7 @@ class ContentManagementApi {
 	deleteContentmanagementShare(shareId) { 
 		// verify the required parameter 'shareId' is set
 		if (shareId === undefined || shareId === null) {
-			throw 'Missing the required parameter "shareId" when calling deleteContentmanagementShare';
+			throw new Error('Missing the required parameter "shareId" when calling deleteContentmanagementShare';
 		}
 
 		return this.apiClient.callApi(
@@ -82,7 +82,7 @@ class ContentManagementApi {
 	deleteContentmanagementStatusStatusId(statusId) { 
 		// verify the required parameter 'statusId' is set
 		if (statusId === undefined || statusId === null) {
-			throw 'Missing the required parameter "statusId" when calling deleteContentmanagementStatusStatusId';
+			throw new Error('Missing the required parameter "statusId" when calling deleteContentmanagementStatusStatusId';
 		}
 
 		return this.apiClient.callApi(
@@ -111,7 +111,7 @@ class ContentManagementApi {
 		
 		// verify the required parameter 'workspaceId' is set
 		if (workspaceId === undefined || workspaceId === null) {
-			throw 'Missing the required parameter "workspaceId" when calling deleteContentmanagementWorkspace';
+			throw new Error('Missing the required parameter "workspaceId" when calling deleteContentmanagementWorkspace';
 		}
 
 		return this.apiClient.callApi(
@@ -137,11 +137,11 @@ class ContentManagementApi {
 	deleteContentmanagementWorkspaceMember(workspaceId, memberId) { 
 		// verify the required parameter 'workspaceId' is set
 		if (workspaceId === undefined || workspaceId === null) {
-			throw 'Missing the required parameter "workspaceId" when calling deleteContentmanagementWorkspaceMember';
+			throw new Error('Missing the required parameter "workspaceId" when calling deleteContentmanagementWorkspaceMember';
 		}
 		// verify the required parameter 'memberId' is set
 		if (memberId === undefined || memberId === null) {
-			throw 'Missing the required parameter "memberId" when calling deleteContentmanagementWorkspaceMember';
+			throw new Error('Missing the required parameter "memberId" when calling deleteContentmanagementWorkspaceMember';
 		}
 
 		return this.apiClient.callApi(
@@ -167,11 +167,11 @@ class ContentManagementApi {
 	deleteContentmanagementWorkspaceTagvalue(workspaceId, tagId) { 
 		// verify the required parameter 'workspaceId' is set
 		if (workspaceId === undefined || workspaceId === null) {
-			throw 'Missing the required parameter "workspaceId" when calling deleteContentmanagementWorkspaceTagvalue';
+			throw new Error('Missing the required parameter "workspaceId" when calling deleteContentmanagementWorkspaceTagvalue';
 		}
 		// verify the required parameter 'tagId' is set
 		if (tagId === undefined || tagId === null) {
-			throw 'Missing the required parameter "tagId" when calling deleteContentmanagementWorkspaceTagvalue';
+			throw new Error('Missing the required parameter "tagId" when calling deleteContentmanagementWorkspaceTagvalue';
 		}
 
 		return this.apiClient.callApi(
@@ -200,7 +200,7 @@ class ContentManagementApi {
 		
 		// verify the required parameter 'documentId' is set
 		if (documentId === undefined || documentId === null) {
-			throw 'Missing the required parameter "documentId" when calling getContentmanagementDocument';
+			throw new Error('Missing the required parameter "documentId" when calling getContentmanagementDocument';
 		}
 
 		return this.apiClient.callApi(
@@ -234,7 +234,7 @@ class ContentManagementApi {
 		
 		// verify the required parameter 'documentId' is set
 		if (documentId === undefined || documentId === null) {
-			throw 'Missing the required parameter "documentId" when calling getContentmanagementDocumentAudits';
+			throw new Error('Missing the required parameter "documentId" when calling getContentmanagementDocumentAudits';
 		}
 
 		return this.apiClient.callApi(
@@ -264,7 +264,7 @@ class ContentManagementApi {
 		
 		// verify the required parameter 'documentId' is set
 		if (documentId === undefined || documentId === null) {
-			throw 'Missing the required parameter "documentId" when calling getContentmanagementDocumentContent';
+			throw new Error('Missing the required parameter "documentId" when calling getContentmanagementDocumentContent';
 		}
 
 		return this.apiClient.callApi(
@@ -298,7 +298,7 @@ class ContentManagementApi {
 		
 		// verify the required parameter 'workspaceId' is set
 		if (workspaceId === undefined || workspaceId === null) {
-			throw 'Missing the required parameter "workspaceId" when calling getContentmanagementDocuments';
+			throw new Error('Missing the required parameter "workspaceId" when calling getContentmanagementDocuments';
 		}
 
 		return this.apiClient.callApi(
@@ -331,7 +331,7 @@ class ContentManagementApi {
 		
 		// verify the required parameter 'queryPhrase' is set
 		if (queryPhrase === undefined || queryPhrase === null) {
-			throw 'Missing the required parameter "queryPhrase" when calling getContentmanagementQuery';
+			throw new Error('Missing the required parameter "queryPhrase" when calling getContentmanagementQuery';
 		}
 
 		return this.apiClient.callApi(
@@ -356,7 +356,7 @@ class ContentManagementApi {
 	getContentmanagementSecurityprofile(securityProfileId) { 
 		// verify the required parameter 'securityProfileId' is set
 		if (securityProfileId === undefined || securityProfileId === null) {
-			throw 'Missing the required parameter "securityProfileId" when calling getContentmanagementSecurityprofile';
+			throw new Error('Missing the required parameter "securityProfileId" when calling getContentmanagementSecurityprofile';
 		}
 
 		return this.apiClient.callApi(
@@ -405,7 +405,7 @@ class ContentManagementApi {
 		
 		// verify the required parameter 'shareId' is set
 		if (shareId === undefined || shareId === null) {
-			throw 'Missing the required parameter "shareId" when calling getContentmanagementShare';
+			throw new Error('Missing the required parameter "shareId" when calling getContentmanagementShare';
 		}
 
 		return this.apiClient.callApi(
@@ -437,7 +437,7 @@ class ContentManagementApi {
 		
 		// verify the required parameter 'sharedId' is set
 		if (sharedId === undefined || sharedId === null) {
-			throw 'Missing the required parameter "sharedId" when calling getContentmanagementSharedSharedId';
+			throw new Error('Missing the required parameter "sharedId" when calling getContentmanagementSharedSharedId';
 		}
 
 		return this.apiClient.callApi(
@@ -514,7 +514,7 @@ class ContentManagementApi {
 	getContentmanagementStatusStatusId(statusId) { 
 		// verify the required parameter 'statusId' is set
 		if (statusId === undefined || statusId === null) {
-			throw 'Missing the required parameter "statusId" when calling getContentmanagementStatusStatusId';
+			throw new Error('Missing the required parameter "statusId" when calling getContentmanagementStatusStatusId';
 		}
 
 		return this.apiClient.callApi(
@@ -563,7 +563,7 @@ class ContentManagementApi {
 		
 		// verify the required parameter 'workspaceId' is set
 		if (workspaceId === undefined || workspaceId === null) {
-			throw 'Missing the required parameter "workspaceId" when calling getContentmanagementWorkspace';
+			throw new Error('Missing the required parameter "workspaceId" when calling getContentmanagementWorkspace';
 		}
 
 		return this.apiClient.callApi(
@@ -596,7 +596,7 @@ class ContentManagementApi {
 		
 		// verify the required parameter 'workspaceId' is set
 		if (workspaceId === undefined || workspaceId === null) {
-			throw 'Missing the required parameter "workspaceId" when calling getContentmanagementWorkspaceDocuments';
+			throw new Error('Missing the required parameter "workspaceId" when calling getContentmanagementWorkspaceDocuments';
 		}
 
 		return this.apiClient.callApi(
@@ -626,11 +626,11 @@ class ContentManagementApi {
 		
 		// verify the required parameter 'workspaceId' is set
 		if (workspaceId === undefined || workspaceId === null) {
-			throw 'Missing the required parameter "workspaceId" when calling getContentmanagementWorkspaceMember';
+			throw new Error('Missing the required parameter "workspaceId" when calling getContentmanagementWorkspaceMember';
 		}
 		// verify the required parameter 'memberId' is set
 		if (memberId === undefined || memberId === null) {
-			throw 'Missing the required parameter "memberId" when calling getContentmanagementWorkspaceMember';
+			throw new Error('Missing the required parameter "memberId" when calling getContentmanagementWorkspaceMember';
 		}
 
 		return this.apiClient.callApi(
@@ -661,7 +661,7 @@ class ContentManagementApi {
 		
 		// verify the required parameter 'workspaceId' is set
 		if (workspaceId === undefined || workspaceId === null) {
-			throw 'Missing the required parameter "workspaceId" when calling getContentmanagementWorkspaceMembers';
+			throw new Error('Missing the required parameter "workspaceId" when calling getContentmanagementWorkspaceMembers';
 		}
 
 		return this.apiClient.callApi(
@@ -691,11 +691,11 @@ class ContentManagementApi {
 		
 		// verify the required parameter 'workspaceId' is set
 		if (workspaceId === undefined || workspaceId === null) {
-			throw 'Missing the required parameter "workspaceId" when calling getContentmanagementWorkspaceTagvalue';
+			throw new Error('Missing the required parameter "workspaceId" when calling getContentmanagementWorkspaceTagvalue';
 		}
 		// verify the required parameter 'tagId' is set
 		if (tagId === undefined || tagId === null) {
-			throw 'Missing the required parameter "tagId" when calling getContentmanagementWorkspaceTagvalue';
+			throw new Error('Missing the required parameter "tagId" when calling getContentmanagementWorkspaceTagvalue';
 		}
 
 		return this.apiClient.callApi(
@@ -727,7 +727,7 @@ class ContentManagementApi {
 		
 		// verify the required parameter 'workspaceId' is set
 		if (workspaceId === undefined || workspaceId === null) {
-			throw 'Missing the required parameter "workspaceId" when calling getContentmanagementWorkspaceTagvalues';
+			throw new Error('Missing the required parameter "workspaceId" when calling getContentmanagementWorkspaceTagvalues';
 		}
 
 		return this.apiClient.callApi(
@@ -779,7 +779,7 @@ class ContentManagementApi {
 	postContentmanagementAuditquery(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postContentmanagementAuditquery';
+			throw new Error('Missing the required parameter "body" when calling postContentmanagementAuditquery';
 		}
 
 		return this.apiClient.callApi(
@@ -810,11 +810,11 @@ class ContentManagementApi {
 		
 		// verify the required parameter 'documentId' is set
 		if (documentId === undefined || documentId === null) {
-			throw 'Missing the required parameter "documentId" when calling postContentmanagementDocument';
+			throw new Error('Missing the required parameter "documentId" when calling postContentmanagementDocument';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postContentmanagementDocument';
+			throw new Error('Missing the required parameter "body" when calling postContentmanagementDocument';
 		}
 
 		return this.apiClient.callApi(
@@ -844,11 +844,11 @@ class ContentManagementApi {
 		
 		// verify the required parameter 'documentId' is set
 		if (documentId === undefined || documentId === null) {
-			throw 'Missing the required parameter "documentId" when calling postContentmanagementDocumentContent';
+			throw new Error('Missing the required parameter "documentId" when calling postContentmanagementDocumentContent';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postContentmanagementDocumentContent';
+			throw new Error('Missing the required parameter "body" when calling postContentmanagementDocumentContent';
 		}
 
 		return this.apiClient.callApi(
@@ -879,7 +879,7 @@ class ContentManagementApi {
 		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postContentmanagementDocuments';
+			throw new Error('Missing the required parameter "body" when calling postContentmanagementDocuments';
 		}
 
 		return this.apiClient.callApi(
@@ -908,7 +908,7 @@ class ContentManagementApi {
 		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postContentmanagementQuery';
+			throw new Error('Missing the required parameter "body" when calling postContentmanagementQuery';
 		}
 
 		return this.apiClient.callApi(
@@ -933,7 +933,7 @@ class ContentManagementApi {
 	postContentmanagementShares(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postContentmanagementShares';
+			throw new Error('Missing the required parameter "body" when calling postContentmanagementShares';
 		}
 
 		return this.apiClient.callApi(
@@ -959,11 +959,11 @@ class ContentManagementApi {
 	postContentmanagementWorkspaceTagvalues(workspaceId, body) { 
 		// verify the required parameter 'workspaceId' is set
 		if (workspaceId === undefined || workspaceId === null) {
-			throw 'Missing the required parameter "workspaceId" when calling postContentmanagementWorkspaceTagvalues';
+			throw new Error('Missing the required parameter "workspaceId" when calling postContentmanagementWorkspaceTagvalues';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postContentmanagementWorkspaceTagvalues';
+			throw new Error('Missing the required parameter "body" when calling postContentmanagementWorkspaceTagvalues';
 		}
 
 		return this.apiClient.callApi(
@@ -993,11 +993,11 @@ class ContentManagementApi {
 		
 		// verify the required parameter 'workspaceId' is set
 		if (workspaceId === undefined || workspaceId === null) {
-			throw 'Missing the required parameter "workspaceId" when calling postContentmanagementWorkspaceTagvaluesQuery';
+			throw new Error('Missing the required parameter "workspaceId" when calling postContentmanagementWorkspaceTagvaluesQuery';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postContentmanagementWorkspaceTagvaluesQuery';
+			throw new Error('Missing the required parameter "body" when calling postContentmanagementWorkspaceTagvaluesQuery';
 		}
 
 		return this.apiClient.callApi(
@@ -1022,7 +1022,7 @@ class ContentManagementApi {
 	postContentmanagementWorkspaces(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postContentmanagementWorkspaces';
+			throw new Error('Missing the required parameter "body" when calling postContentmanagementWorkspaces';
 		}
 
 		return this.apiClient.callApi(
@@ -1048,11 +1048,11 @@ class ContentManagementApi {
 	putContentmanagementWorkspace(workspaceId, body) { 
 		// verify the required parameter 'workspaceId' is set
 		if (workspaceId === undefined || workspaceId === null) {
-			throw 'Missing the required parameter "workspaceId" when calling putContentmanagementWorkspace';
+			throw new Error('Missing the required parameter "workspaceId" when calling putContentmanagementWorkspace';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putContentmanagementWorkspace';
+			throw new Error('Missing the required parameter "body" when calling putContentmanagementWorkspace';
 		}
 
 		return this.apiClient.callApi(
@@ -1079,15 +1079,15 @@ class ContentManagementApi {
 	putContentmanagementWorkspaceMember(workspaceId, memberId, body) { 
 		// verify the required parameter 'workspaceId' is set
 		if (workspaceId === undefined || workspaceId === null) {
-			throw 'Missing the required parameter "workspaceId" when calling putContentmanagementWorkspaceMember';
+			throw new Error('Missing the required parameter "workspaceId" when calling putContentmanagementWorkspaceMember';
 		}
 		// verify the required parameter 'memberId' is set
 		if (memberId === undefined || memberId === null) {
-			throw 'Missing the required parameter "memberId" when calling putContentmanagementWorkspaceMember';
+			throw new Error('Missing the required parameter "memberId" when calling putContentmanagementWorkspaceMember';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putContentmanagementWorkspaceMember';
+			throw new Error('Missing the required parameter "body" when calling putContentmanagementWorkspaceMember';
 		}
 
 		return this.apiClient.callApi(
@@ -1114,15 +1114,15 @@ class ContentManagementApi {
 	putContentmanagementWorkspaceTagvalue(workspaceId, tagId, body) { 
 		// verify the required parameter 'workspaceId' is set
 		if (workspaceId === undefined || workspaceId === null) {
-			throw 'Missing the required parameter "workspaceId" when calling putContentmanagementWorkspaceTagvalue';
+			throw new Error('Missing the required parameter "workspaceId" when calling putContentmanagementWorkspaceTagvalue';
 		}
 		// verify the required parameter 'tagId' is set
 		if (tagId === undefined || tagId === null) {
-			throw 'Missing the required parameter "tagId" when calling putContentmanagementWorkspaceTagvalue';
+			throw new Error('Missing the required parameter "tagId" when calling putContentmanagementWorkspaceTagvalue';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putContentmanagementWorkspaceTagvalue';
+			throw new Error('Missing the required parameter "body" when calling putContentmanagementWorkspaceTagvalue';
 		}
 
 		return this.apiClient.callApi(

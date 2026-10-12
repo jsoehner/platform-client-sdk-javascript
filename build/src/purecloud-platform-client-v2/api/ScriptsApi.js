@@ -28,7 +28,7 @@ class ScriptsApi {
 	getScript(scriptId) { 
 		// verify the required parameter 'scriptId' is set
 		if (scriptId === undefined || scriptId === null) {
-			throw 'Missing the required parameter "scriptId" when calling getScript';
+			throw new Error('Missing the required parameter "scriptId" when calling getScript';
 		}
 
 		return this.apiClient.callApi(
@@ -58,11 +58,11 @@ class ScriptsApi {
 		
 		// verify the required parameter 'scriptId' is set
 		if (scriptId === undefined || scriptId === null) {
-			throw 'Missing the required parameter "scriptId" when calling getScriptPage';
+			throw new Error('Missing the required parameter "scriptId" when calling getScriptPage';
 		}
 		// verify the required parameter 'pageId' is set
 		if (pageId === undefined || pageId === null) {
-			throw 'Missing the required parameter "pageId" when calling getScriptPage';
+			throw new Error('Missing the required parameter "pageId" when calling getScriptPage';
 		}
 
 		return this.apiClient.callApi(
@@ -91,7 +91,7 @@ class ScriptsApi {
 		
 		// verify the required parameter 'scriptId' is set
 		if (scriptId === undefined || scriptId === null) {
-			throw 'Missing the required parameter "scriptId" when calling getScriptPages';
+			throw new Error('Missing the required parameter "scriptId" when calling getScriptPages';
 		}
 
 		return this.apiClient.callApi(
@@ -182,7 +182,7 @@ class ScriptsApi {
 		
 		// verify the required parameter 'scriptId' is set
 		if (scriptId === undefined || scriptId === null) {
-			throw 'Missing the required parameter "scriptId" when calling getScriptsPublishedScriptId';
+			throw new Error('Missing the required parameter "scriptId" when calling getScriptsPublishedScriptId';
 		}
 
 		return this.apiClient.callApi(
@@ -212,11 +212,11 @@ class ScriptsApi {
 		
 		// verify the required parameter 'scriptId' is set
 		if (scriptId === undefined || scriptId === null) {
-			throw 'Missing the required parameter "scriptId" when calling getScriptsPublishedScriptIdPage';
+			throw new Error('Missing the required parameter "scriptId" when calling getScriptsPublishedScriptIdPage';
 		}
 		// verify the required parameter 'pageId' is set
 		if (pageId === undefined || pageId === null) {
-			throw 'Missing the required parameter "pageId" when calling getScriptsPublishedScriptIdPage';
+			throw new Error('Missing the required parameter "pageId" when calling getScriptsPublishedScriptIdPage';
 		}
 
 		return this.apiClient.callApi(
@@ -245,7 +245,7 @@ class ScriptsApi {
 		
 		// verify the required parameter 'scriptId' is set
 		if (scriptId === undefined || scriptId === null) {
-			throw 'Missing the required parameter "scriptId" when calling getScriptsPublishedScriptIdPages';
+			throw new Error('Missing the required parameter "scriptId" when calling getScriptsPublishedScriptIdPages';
 		}
 
 		return this.apiClient.callApi(
@@ -277,7 +277,7 @@ class ScriptsApi {
 		
 		// verify the required parameter 'scriptId' is set
 		if (scriptId === undefined || scriptId === null) {
-			throw 'Missing the required parameter "scriptId" when calling getScriptsPublishedScriptIdVariables';
+			throw new Error('Missing the required parameter "scriptId" when calling getScriptsPublishedScriptIdVariables';
 		}
 
 		return this.apiClient.callApi(
@@ -306,7 +306,7 @@ class ScriptsApi {
 		
 		// verify the required parameter 'uploadId' is set
 		if (uploadId === undefined || uploadId === null) {
-			throw 'Missing the required parameter "uploadId" when calling getScriptsUploadStatus';
+			throw new Error('Missing the required parameter "uploadId" when calling getScriptsUploadStatus';
 		}
 
 		return this.apiClient.callApi(
@@ -335,7 +335,7 @@ class ScriptsApi {
 		
 		// verify the required parameter 'scriptId' is set
 		if (scriptId === undefined || scriptId === null) {
-			throw 'Missing the required parameter "scriptId" when calling postScriptExport';
+			throw new Error('Missing the required parameter "scriptId" when calling postScriptExport';
 		}
 
 		return this.apiClient.callApi(

@@ -28,7 +28,7 @@ class OAuthApi {
 	deleteOauthClient(clientId) { 
 		// verify the required parameter 'clientId' is set
 		if (clientId === undefined || clientId === null) {
-			throw 'Missing the required parameter "clientId" when calling deleteOauthClient';
+			throw new Error('Missing the required parameter "clientId" when calling deleteOauthClient';
 		}
 
 		return this.apiClient.callApi(
@@ -53,7 +53,7 @@ class OAuthApi {
 	getOauthAuthorization(clientId) { 
 		// verify the required parameter 'clientId' is set
 		if (clientId === undefined || clientId === null) {
-			throw 'Missing the required parameter "clientId" when calling getOauthAuthorization';
+			throw new Error('Missing the required parameter "clientId" when calling getOauthAuthorization';
 		}
 
 		return this.apiClient.callApi(
@@ -98,7 +98,7 @@ class OAuthApi {
 	getOauthClient(clientId) { 
 		// verify the required parameter 'clientId' is set
 		if (clientId === undefined || clientId === null) {
-			throw 'Missing the required parameter "clientId" when calling getOauthClient';
+			throw new Error('Missing the required parameter "clientId" when calling getOauthClient';
 		}
 
 		return this.apiClient.callApi(
@@ -124,11 +124,11 @@ class OAuthApi {
 	getOauthClientUsageQueryResult(executionId, clientId) { 
 		// verify the required parameter 'executionId' is set
 		if (executionId === undefined || executionId === null) {
-			throw 'Missing the required parameter "executionId" when calling getOauthClientUsageQueryResult';
+			throw new Error('Missing the required parameter "executionId" when calling getOauthClientUsageQueryResult';
 		}
 		// verify the required parameter 'clientId' is set
 		if (clientId === undefined || clientId === null) {
-			throw 'Missing the required parameter "clientId" when calling getOauthClientUsageQueryResult';
+			throw new Error('Missing the required parameter "clientId" when calling getOauthClientUsageQueryResult';
 		}
 
 		return this.apiClient.callApi(
@@ -157,7 +157,7 @@ class OAuthApi {
 		
 		// verify the required parameter 'clientId' is set
 		if (clientId === undefined || clientId === null) {
-			throw 'Missing the required parameter "clientId" when calling getOauthClientUsageSummary';
+			throw new Error('Missing the required parameter "clientId" when calling getOauthClientUsageSummary';
 		}
 
 		return this.apiClient.callApi(
@@ -206,7 +206,7 @@ class OAuthApi {
 		
 		// verify the required parameter 'scopeId' is set
 		if (scopeId === undefined || scopeId === null) {
-			throw 'Missing the required parameter "scopeId" when calling getOauthScope';
+			throw new Error('Missing the required parameter "scopeId" when calling getOauthScope';
 		}
 
 		return this.apiClient.callApi(
@@ -255,7 +255,7 @@ class OAuthApi {
 	postOauthClientSecret(clientId) { 
 		// verify the required parameter 'clientId' is set
 		if (clientId === undefined || clientId === null) {
-			throw 'Missing the required parameter "clientId" when calling postOauthClientSecret';
+			throw new Error('Missing the required parameter "clientId" when calling postOauthClientSecret';
 		}
 
 		return this.apiClient.callApi(
@@ -281,11 +281,11 @@ class OAuthApi {
 	postOauthClientUsageQuery(clientId, body) { 
 		// verify the required parameter 'clientId' is set
 		if (clientId === undefined || clientId === null) {
-			throw 'Missing the required parameter "clientId" when calling postOauthClientUsageQuery';
+			throw new Error('Missing the required parameter "clientId" when calling postOauthClientUsageQuery';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postOauthClientUsageQuery';
+			throw new Error('Missing the required parameter "body" when calling postOauthClientUsageQuery';
 		}
 
 		return this.apiClient.callApi(
@@ -310,7 +310,7 @@ class OAuthApi {
 	postOauthClients(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postOauthClients';
+			throw new Error('Missing the required parameter "body" when calling postOauthClients';
 		}
 
 		return this.apiClient.callApi(
@@ -336,11 +336,11 @@ class OAuthApi {
 	putOauthClient(clientId, body) { 
 		// verify the required parameter 'clientId' is set
 		if (clientId === undefined || clientId === null) {
-			throw 'Missing the required parameter "clientId" when calling putOauthClient';
+			throw new Error('Missing the required parameter "clientId" when calling putOauthClient';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putOauthClient';
+			throw new Error('Missing the required parameter "body" when calling putOauthClient';
 		}
 
 		return this.apiClient.callApi(

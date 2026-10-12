@@ -28,7 +28,7 @@ class CoachingApi {
 	deleteCoachingAppointment(appointmentId) { 
 		// verify the required parameter 'appointmentId' is set
 		if (appointmentId === undefined || appointmentId === null) {
-			throw 'Missing the required parameter "appointmentId" when calling deleteCoachingAppointment';
+			throw new Error('Missing the required parameter "appointmentId" when calling deleteCoachingAppointment';
 		}
 
 		return this.apiClient.callApi(
@@ -54,11 +54,11 @@ class CoachingApi {
 	deleteCoachingAppointmentAnnotation(appointmentId, annotationId) { 
 		// verify the required parameter 'appointmentId' is set
 		if (appointmentId === undefined || appointmentId === null) {
-			throw 'Missing the required parameter "appointmentId" when calling deleteCoachingAppointmentAnnotation';
+			throw new Error('Missing the required parameter "appointmentId" when calling deleteCoachingAppointmentAnnotation';
 		}
 		// verify the required parameter 'annotationId' is set
 		if (annotationId === undefined || annotationId === null) {
-			throw 'Missing the required parameter "annotationId" when calling deleteCoachingAppointmentAnnotation';
+			throw new Error('Missing the required parameter "annotationId" when calling deleteCoachingAppointmentAnnotation';
 		}
 
 		return this.apiClient.callApi(
@@ -83,7 +83,7 @@ class CoachingApi {
 	getCoachingAppointment(appointmentId) { 
 		// verify the required parameter 'appointmentId' is set
 		if (appointmentId === undefined || appointmentId === null) {
-			throw 'Missing the required parameter "appointmentId" when calling getCoachingAppointment';
+			throw new Error('Missing the required parameter "appointmentId" when calling getCoachingAppointment';
 		}
 
 		return this.apiClient.callApi(
@@ -109,11 +109,11 @@ class CoachingApi {
 	getCoachingAppointmentAnnotation(appointmentId, annotationId) { 
 		// verify the required parameter 'appointmentId' is set
 		if (appointmentId === undefined || appointmentId === null) {
-			throw 'Missing the required parameter "appointmentId" when calling getCoachingAppointmentAnnotation';
+			throw new Error('Missing the required parameter "appointmentId" when calling getCoachingAppointmentAnnotation';
 		}
 		// verify the required parameter 'annotationId' is set
 		if (annotationId === undefined || annotationId === null) {
-			throw 'Missing the required parameter "annotationId" when calling getCoachingAppointmentAnnotation';
+			throw new Error('Missing the required parameter "annotationId" when calling getCoachingAppointmentAnnotation';
 		}
 
 		return this.apiClient.callApi(
@@ -143,7 +143,7 @@ class CoachingApi {
 		
 		// verify the required parameter 'appointmentId' is set
 		if (appointmentId === undefined || appointmentId === null) {
-			throw 'Missing the required parameter "appointmentId" when calling getCoachingAppointmentAnnotations';
+			throw new Error('Missing the required parameter "appointmentId" when calling getCoachingAppointmentAnnotations';
 		}
 
 		return this.apiClient.callApi(
@@ -173,7 +173,7 @@ class CoachingApi {
 		
 		// verify the required parameter 'appointmentId' is set
 		if (appointmentId === undefined || appointmentId === null) {
-			throw 'Missing the required parameter "appointmentId" when calling getCoachingAppointmentStatuses';
+			throw new Error('Missing the required parameter "appointmentId" when calling getCoachingAppointmentStatuses';
 		}
 
 		return this.apiClient.callApi(
@@ -210,7 +210,7 @@ class CoachingApi {
 		
 		// verify the required parameter 'userIds' is set
 		if (userIds === undefined || userIds === null) {
-			throw 'Missing the required parameter "userIds" when calling getCoachingAppointments';
+			throw new Error('Missing the required parameter "userIds" when calling getCoachingAppointments';
 		}
 
 		return this.apiClient.callApi(
@@ -271,7 +271,7 @@ class CoachingApi {
 		
 		// verify the required parameter 'notificationId' is set
 		if (notificationId === undefined || notificationId === null) {
-			throw 'Missing the required parameter "notificationId" when calling getCoachingNotification';
+			throw new Error('Missing the required parameter "notificationId" when calling getCoachingNotification';
 		}
 
 		return this.apiClient.callApi(
@@ -323,11 +323,11 @@ class CoachingApi {
 	patchCoachingAppointment(appointmentId, body) { 
 		// verify the required parameter 'appointmentId' is set
 		if (appointmentId === undefined || appointmentId === null) {
-			throw 'Missing the required parameter "appointmentId" when calling patchCoachingAppointment';
+			throw new Error('Missing the required parameter "appointmentId" when calling patchCoachingAppointment';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchCoachingAppointment';
+			throw new Error('Missing the required parameter "body" when calling patchCoachingAppointment';
 		}
 
 		return this.apiClient.callApi(
@@ -354,15 +354,15 @@ class CoachingApi {
 	patchCoachingAppointmentAnnotation(appointmentId, annotationId, body) { 
 		// verify the required parameter 'appointmentId' is set
 		if (appointmentId === undefined || appointmentId === null) {
-			throw 'Missing the required parameter "appointmentId" when calling patchCoachingAppointmentAnnotation';
+			throw new Error('Missing the required parameter "appointmentId" when calling patchCoachingAppointmentAnnotation';
 		}
 		// verify the required parameter 'annotationId' is set
 		if (annotationId === undefined || annotationId === null) {
-			throw 'Missing the required parameter "annotationId" when calling patchCoachingAppointmentAnnotation';
+			throw new Error('Missing the required parameter "annotationId" when calling patchCoachingAppointmentAnnotation';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchCoachingAppointmentAnnotation';
+			throw new Error('Missing the required parameter "body" when calling patchCoachingAppointmentAnnotation';
 		}
 
 		return this.apiClient.callApi(
@@ -388,11 +388,11 @@ class CoachingApi {
 	patchCoachingAppointmentStatus(appointmentId, body) { 
 		// verify the required parameter 'appointmentId' is set
 		if (appointmentId === undefined || appointmentId === null) {
-			throw 'Missing the required parameter "appointmentId" when calling patchCoachingAppointmentStatus';
+			throw new Error('Missing the required parameter "appointmentId" when calling patchCoachingAppointmentStatus';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchCoachingAppointmentStatus';
+			throw new Error('Missing the required parameter "body" when calling patchCoachingAppointmentStatus';
 		}
 
 		return this.apiClient.callApi(
@@ -418,11 +418,11 @@ class CoachingApi {
 	patchCoachingNotification(notificationId, body) { 
 		// verify the required parameter 'notificationId' is set
 		if (notificationId === undefined || notificationId === null) {
-			throw 'Missing the required parameter "notificationId" when calling patchCoachingNotification';
+			throw new Error('Missing the required parameter "notificationId" when calling patchCoachingNotification';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchCoachingNotification';
+			throw new Error('Missing the required parameter "body" when calling patchCoachingNotification';
 		}
 
 		return this.apiClient.callApi(
@@ -448,11 +448,11 @@ class CoachingApi {
 	postCoachingAppointmentAnnotations(appointmentId, body) { 
 		// verify the required parameter 'appointmentId' is set
 		if (appointmentId === undefined || appointmentId === null) {
-			throw 'Missing the required parameter "appointmentId" when calling postCoachingAppointmentAnnotations';
+			throw new Error('Missing the required parameter "appointmentId" when calling postCoachingAppointmentAnnotations';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postCoachingAppointmentAnnotations';
+			throw new Error('Missing the required parameter "body" when calling postCoachingAppointmentAnnotations';
 		}
 
 		return this.apiClient.callApi(
@@ -478,11 +478,11 @@ class CoachingApi {
 	postCoachingAppointmentConversations(appointmentId, body) { 
 		// verify the required parameter 'appointmentId' is set
 		if (appointmentId === undefined || appointmentId === null) {
-			throw 'Missing the required parameter "appointmentId" when calling postCoachingAppointmentConversations';
+			throw new Error('Missing the required parameter "appointmentId" when calling postCoachingAppointmentConversations';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postCoachingAppointmentConversations';
+			throw new Error('Missing the required parameter "body" when calling postCoachingAppointmentConversations';
 		}
 
 		return this.apiClient.callApi(
@@ -507,7 +507,7 @@ class CoachingApi {
 	postCoachingAppointments(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postCoachingAppointments';
+			throw new Error('Missing the required parameter "body" when calling postCoachingAppointments';
 		}
 
 		return this.apiClient.callApi(
@@ -532,7 +532,7 @@ class CoachingApi {
 	postCoachingAppointmentsAggregatesQuery(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postCoachingAppointmentsAggregatesQuery';
+			throw new Error('Missing the required parameter "body" when calling postCoachingAppointmentsAggregatesQuery';
 		}
 
 		return this.apiClient.callApi(
@@ -557,7 +557,7 @@ class CoachingApi {
 	postCoachingScheduleslotsQuery(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postCoachingScheduleslotsQuery';
+			throw new Error('Missing the required parameter "body" when calling postCoachingScheduleslotsQuery';
 		}
 
 		return this.apiClient.callApi(

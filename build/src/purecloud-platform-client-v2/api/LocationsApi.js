@@ -28,7 +28,7 @@ class LocationsApi {
 	deleteLocation(locationId) { 
 		// verify the required parameter 'locationId' is set
 		if (locationId === undefined || locationId === null) {
-			throw 'Missing the required parameter "locationId" when calling deleteLocation';
+			throw new Error('Missing the required parameter "locationId" when calling deleteLocation';
 		}
 
 		return this.apiClient.callApi(
@@ -57,7 +57,7 @@ class LocationsApi {
 		
 		// verify the required parameter 'locationId' is set
 		if (locationId === undefined || locationId === null) {
-			throw 'Missing the required parameter "locationId" when calling getLocation';
+			throw new Error('Missing the required parameter "locationId" when calling getLocation';
 		}
 
 		return this.apiClient.callApi(
@@ -82,7 +82,7 @@ class LocationsApi {
 	getLocationSublocations(locationId) { 
 		// verify the required parameter 'locationId' is set
 		if (locationId === undefined || locationId === null) {
-			throw 'Missing the required parameter "locationId" when calling getLocationSublocations';
+			throw new Error('Missing the required parameter "locationId" when calling getLocationSublocations';
 		}
 
 		return this.apiClient.callApi(
@@ -138,7 +138,7 @@ class LocationsApi {
 		
 		// verify the required parameter 'q64' is set
 		if (q64 === undefined || q64 === null) {
-			throw 'Missing the required parameter "q64" when calling getLocationsSearch';
+			throw new Error('Missing the required parameter "q64" when calling getLocationsSearch';
 		}
 
 		return this.apiClient.callApi(
@@ -164,11 +164,11 @@ class LocationsApi {
 	patchLocation(locationId, body) { 
 		// verify the required parameter 'locationId' is set
 		if (locationId === undefined || locationId === null) {
-			throw 'Missing the required parameter "locationId" when calling patchLocation';
+			throw new Error('Missing the required parameter "locationId" when calling patchLocation';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchLocation';
+			throw new Error('Missing the required parameter "body" when calling patchLocation';
 		}
 
 		return this.apiClient.callApi(
@@ -193,7 +193,7 @@ class LocationsApi {
 	postLocations(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postLocations';
+			throw new Error('Missing the required parameter "body" when calling postLocations';
 		}
 
 		return this.apiClient.callApi(
@@ -218,7 +218,7 @@ class LocationsApi {
 	postLocationsSearch(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postLocationsSearch';
+			throw new Error('Missing the required parameter "body" when calling postLocationsSearch';
 		}
 
 		return this.apiClient.callApi(

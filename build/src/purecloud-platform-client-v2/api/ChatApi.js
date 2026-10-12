@@ -48,7 +48,7 @@ class ChatApi {
 	patchChatSettings(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchChatSettings';
+			throw new Error('Missing the required parameter "body" when calling patchChatSettings';
 		}
 
 		return this.apiClient.callApi(
@@ -73,7 +73,7 @@ class ChatApi {
 	putChatSettings(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putChatSettings';
+			throw new Error('Missing the required parameter "body" when calling putChatSettings';
 		}
 
 		return this.apiClient.callApi(

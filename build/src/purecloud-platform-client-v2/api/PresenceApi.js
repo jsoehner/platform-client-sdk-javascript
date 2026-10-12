@@ -28,7 +28,7 @@ class PresenceApi {
 	deletePresencedefinition(presenceId) { 
 		// verify the required parameter 'presenceId' is set
 		if (presenceId === undefined || presenceId === null) {
-			throw 'Missing the required parameter "presenceId" when calling deletePresencedefinition';
+			throw new Error('Missing the required parameter "presenceId" when calling deletePresencedefinition';
 		}
 
 		return this.apiClient.callApi(
@@ -57,7 +57,7 @@ class PresenceApi {
 		
 		// verify the required parameter 'presenceId' is set
 		if (presenceId === undefined || presenceId === null) {
-			throw 'Missing the required parameter "presenceId" when calling getPresencedefinition';
+			throw new Error('Missing the required parameter "presenceId" when calling getPresencedefinition';
 		}
 
 		return this.apiClient.callApi(
@@ -130,11 +130,11 @@ class PresenceApi {
 	getUserPresence(userId, sourceId) { 
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling getUserPresence';
+			throw new Error('Missing the required parameter "userId" when calling getUserPresence';
 		}
 		// verify the required parameter 'sourceId' is set
 		if (sourceId === undefined || sourceId === null) {
-			throw 'Missing the required parameter "sourceId" when calling getUserPresence';
+			throw new Error('Missing the required parameter "sourceId" when calling getUserPresence';
 		}
 
 		return this.apiClient.callApi(
@@ -159,7 +159,7 @@ class PresenceApi {
 	getUserPresencesMicrosoftteams(userId) { 
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling getUserPresencesMicrosoftteams';
+			throw new Error('Missing the required parameter "userId" when calling getUserPresencesMicrosoftteams';
 		}
 
 		return this.apiClient.callApi(
@@ -184,7 +184,7 @@ class PresenceApi {
 	getUserPresencesPurecloud(userId) { 
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling getUserPresencesPurecloud';
+			throw new Error('Missing the required parameter "userId" when calling getUserPresencesPurecloud';
 		}
 
 		return this.apiClient.callApi(
@@ -209,7 +209,7 @@ class PresenceApi {
 	getUserPresencesZoomphone(userId) { 
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling getUserPresencesZoomphone';
+			throw new Error('Missing the required parameter "userId" when calling getUserPresencesZoomphone';
 		}
 
 		return this.apiClient.callApi(
@@ -236,15 +236,15 @@ class PresenceApi {
 	patchUserPresence(userId, sourceId, body) { 
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling patchUserPresence';
+			throw new Error('Missing the required parameter "userId" when calling patchUserPresence';
 		}
 		// verify the required parameter 'sourceId' is set
 		if (sourceId === undefined || sourceId === null) {
-			throw 'Missing the required parameter "sourceId" when calling patchUserPresence';
+			throw new Error('Missing the required parameter "sourceId" when calling patchUserPresence';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchUserPresence';
+			throw new Error('Missing the required parameter "body" when calling patchUserPresence';
 		}
 
 		return this.apiClient.callApi(
@@ -270,11 +270,11 @@ class PresenceApi {
 	patchUserPresencesPurecloud(userId, body) { 
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling patchUserPresencesPurecloud';
+			throw new Error('Missing the required parameter "userId" when calling patchUserPresencesPurecloud';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchUserPresencesPurecloud';
+			throw new Error('Missing the required parameter "body" when calling patchUserPresencesPurecloud';
 		}
 
 		return this.apiClient.callApi(
@@ -299,7 +299,7 @@ class PresenceApi {
 	postPresencedefinitions(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postPresencedefinitions';
+			throw new Error('Missing the required parameter "body" when calling postPresencedefinitions';
 		}
 
 		return this.apiClient.callApi(
@@ -325,11 +325,11 @@ class PresenceApi {
 	putPresencedefinition(presenceId, body) { 
 		// verify the required parameter 'presenceId' is set
 		if (presenceId === undefined || presenceId === null) {
-			throw 'Missing the required parameter "presenceId" when calling putPresencedefinition';
+			throw new Error('Missing the required parameter "presenceId" when calling putPresencedefinition';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putPresencedefinition';
+			throw new Error('Missing the required parameter "body" when calling putPresencedefinition';
 		}
 
 		return this.apiClient.callApi(
@@ -354,7 +354,7 @@ class PresenceApi {
 	putUsersPresencesBulk(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putUsersPresencesBulk';
+			throw new Error('Missing the required parameter "body" when calling putUsersPresencesBulk';
 		}
 
 		return this.apiClient.callApi(

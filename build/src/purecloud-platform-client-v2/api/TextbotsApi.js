@@ -29,11 +29,11 @@ class TextbotsApi {
 	postTextbotsBotflowsSessionTurns(sessionId, turnRequest) { 
 		// verify the required parameter 'sessionId' is set
 		if (sessionId === undefined || sessionId === null) {
-			throw 'Missing the required parameter "sessionId" when calling postTextbotsBotflowsSessionTurns';
+			throw new Error('Missing the required parameter "sessionId" when calling postTextbotsBotflowsSessionTurns';
 		}
 		// verify the required parameter 'turnRequest' is set
 		if (turnRequest === undefined || turnRequest === null) {
-			throw 'Missing the required parameter "turnRequest" when calling postTextbotsBotflowsSessionTurns';
+			throw new Error('Missing the required parameter "turnRequest" when calling postTextbotsBotflowsSessionTurns';
 		}
 
 		return this.apiClient.callApi(
@@ -58,7 +58,7 @@ class TextbotsApi {
 	postTextbotsBotflowsSessions(launchRequest) { 
 		// verify the required parameter 'launchRequest' is set
 		if (launchRequest === undefined || launchRequest === null) {
-			throw 'Missing the required parameter "launchRequest" when calling postTextbotsBotflowsSessions';
+			throw new Error('Missing the required parameter "launchRequest" when calling postTextbotsBotflowsSessions';
 		}
 
 		return this.apiClient.callApi(
@@ -83,7 +83,7 @@ class TextbotsApi {
 	postTextbotsBotsExecute(postTextRequest) { 
 		// verify the required parameter 'postTextRequest' is set
 		if (postTextRequest === undefined || postTextRequest === null) {
-			throw 'Missing the required parameter "postTextRequest" when calling postTextbotsBotsExecute';
+			throw new Error('Missing the required parameter "postTextRequest" when calling postTextbotsBotsExecute';
 		}
 
 		return this.apiClient.callApi(

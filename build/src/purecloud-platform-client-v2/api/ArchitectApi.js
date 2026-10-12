@@ -28,7 +28,7 @@ class ArchitectApi {
 	deleteArchitectEmergencygroup(emergencyGroupId) { 
 		// verify the required parameter 'emergencyGroupId' is set
 		if (emergencyGroupId === undefined || emergencyGroupId === null) {
-			throw 'Missing the required parameter "emergencyGroupId" when calling deleteArchitectEmergencygroup';
+			throw new Error('Missing the required parameter "emergencyGroupId" when calling deleteArchitectEmergencygroup');
 		}
 
 		return this.apiClient.callApi(
@@ -53,7 +53,7 @@ class ArchitectApi {
 	deleteArchitectIvr(ivrId) { 
 		// verify the required parameter 'ivrId' is set
 		if (ivrId === undefined || ivrId === null) {
-			throw 'Missing the required parameter "ivrId" when calling deleteArchitectIvr';
+			throw new Error('Missing the required parameter "ivrId" when calling deleteArchitectIvr');
 		}
 
 		return this.apiClient.callApi(
@@ -82,7 +82,7 @@ class ArchitectApi {
 		
 		// verify the required parameter 'promptId' is set
 		if (promptId === undefined || promptId === null) {
-			throw 'Missing the required parameter "promptId" when calling deleteArchitectPrompt';
+			throw new Error('Missing the required parameter "promptId" when calling deleteArchitectPrompt');
 		}
 
 		return this.apiClient.callApi(
@@ -108,11 +108,11 @@ class ArchitectApi {
 	deleteArchitectPromptResource(promptId, languageCode) { 
 		// verify the required parameter 'promptId' is set
 		if (promptId === undefined || promptId === null) {
-			throw 'Missing the required parameter "promptId" when calling deleteArchitectPromptResource';
+			throw new Error('Missing the required parameter "promptId" when calling deleteArchitectPromptResource');
 		}
 		// verify the required parameter 'languageCode' is set
 		if (languageCode === undefined || languageCode === null) {
-			throw 'Missing the required parameter "languageCode" when calling deleteArchitectPromptResource';
+			throw new Error('Missing the required parameter "languageCode" when calling deleteArchitectPromptResource');
 		}
 
 		return this.apiClient.callApi(
@@ -138,11 +138,11 @@ class ArchitectApi {
 	deleteArchitectPromptResourceAudio(promptId, languageCode) { 
 		// verify the required parameter 'promptId' is set
 		if (promptId === undefined || promptId === null) {
-			throw 'Missing the required parameter "promptId" when calling deleteArchitectPromptResourceAudio';
+			throw new Error('Missing the required parameter "promptId" when calling deleteArchitectPromptResourceAudio');
 		}
 		// verify the required parameter 'languageCode' is set
 		if (languageCode === undefined || languageCode === null) {
-			throw 'Missing the required parameter "languageCode" when calling deleteArchitectPromptResourceAudio';
+			throw new Error('Missing the required parameter "languageCode" when calling deleteArchitectPromptResourceAudio');
 		}
 
 		return this.apiClient.callApi(
@@ -167,7 +167,7 @@ class ArchitectApi {
 	deleteArchitectPrompts(id) { 
 		// verify the required parameter 'id' is set
 		if (id === undefined || id === null) {
-			throw 'Missing the required parameter "id" when calling deleteArchitectPrompts';
+			throw new Error('Missing the required parameter "id" when calling deleteArchitectPrompts');
 		}
 
 		return this.apiClient.callApi(
@@ -192,7 +192,7 @@ class ArchitectApi {
 	deleteArchitectSchedule(scheduleId) { 
 		// verify the required parameter 'scheduleId' is set
 		if (scheduleId === undefined || scheduleId === null) {
-			throw 'Missing the required parameter "scheduleId" when calling deleteArchitectSchedule';
+			throw new Error('Missing the required parameter "scheduleId" when calling deleteArchitectSchedule');
 		}
 
 		return this.apiClient.callApi(
@@ -217,7 +217,7 @@ class ArchitectApi {
 	deleteArchitectSchedulegroup(scheduleGroupId) { 
 		// verify the required parameter 'scheduleGroupId' is set
 		if (scheduleGroupId === undefined || scheduleGroupId === null) {
-			throw 'Missing the required parameter "scheduleGroupId" when calling deleteArchitectSchedulegroup';
+			throw new Error('Missing the required parameter "scheduleGroupId" when calling deleteArchitectSchedulegroup');
 		}
 
 		return this.apiClient.callApi(
@@ -243,11 +243,11 @@ class ArchitectApi {
 	deleteArchitectSystempromptResource(promptId, languageCode) { 
 		// verify the required parameter 'promptId' is set
 		if (promptId === undefined || promptId === null) {
-			throw 'Missing the required parameter "promptId" when calling deleteArchitectSystempromptResource';
+			throw new Error('Missing the required parameter "promptId" when calling deleteArchitectSystempromptResource');
 		}
 		// verify the required parameter 'languageCode' is set
 		if (languageCode === undefined || languageCode === null) {
-			throw 'Missing the required parameter "languageCode" when calling deleteArchitectSystempromptResource';
+			throw new Error('Missing the required parameter "languageCode" when calling deleteArchitectSystempromptResource');
 		}
 
 		return this.apiClient.callApi(
@@ -272,7 +272,7 @@ class ArchitectApi {
 	deleteFlow(flowId) { 
 		// verify the required parameter 'flowId' is set
 		if (flowId === undefined || flowId === null) {
-			throw 'Missing the required parameter "flowId" when calling deleteFlow';
+			throw new Error('Missing the required parameter "flowId" when calling deleteFlow');
 		}
 
 		return this.apiClient.callApi(
@@ -297,7 +297,7 @@ class ArchitectApi {
 	deleteFlows(id) { 
 		// verify the required parameter 'id' is set
 		if (id === undefined || id === null) {
-			throw 'Missing the required parameter "id" when calling deleteFlows';
+			throw new Error('Missing the required parameter "id" when calling deleteFlows');
 		}
 
 		return this.apiClient.callApi(
@@ -326,7 +326,7 @@ class ArchitectApi {
 		
 		// verify the required parameter 'datatableId' is set
 		if (datatableId === undefined || datatableId === null) {
-			throw 'Missing the required parameter "datatableId" when calling deleteFlowsDatatable';
+			throw new Error('Missing the required parameter "datatableId" when calling deleteFlowsDatatable');
 		}
 
 		return this.apiClient.callApi(
@@ -352,11 +352,11 @@ class ArchitectApi {
 	deleteFlowsDatatableRow(datatableId, rowId) { 
 		// verify the required parameter 'datatableId' is set
 		if (datatableId === undefined || datatableId === null) {
-			throw 'Missing the required parameter "datatableId" when calling deleteFlowsDatatableRow';
+			throw new Error('Missing the required parameter "datatableId" when calling deleteFlowsDatatableRow');
 		}
 		// verify the required parameter 'rowId' is set
 		if (rowId === undefined || rowId === null) {
-			throw 'Missing the required parameter "rowId" when calling deleteFlowsDatatableRow';
+			throw new Error('Missing the required parameter "rowId" when calling deleteFlowsDatatableRow');
 		}
 
 		return this.apiClient.callApi(
@@ -381,7 +381,7 @@ class ArchitectApi {
 	deleteFlowsMilestone(milestoneId) { 
 		// verify the required parameter 'milestoneId' is set
 		if (milestoneId === undefined || milestoneId === null) {
-			throw 'Missing the required parameter "milestoneId" when calling deleteFlowsMilestone';
+			throw new Error('Missing the required parameter "milestoneId" when calling deleteFlowsMilestone');
 		}
 
 		return this.apiClient.callApi(
@@ -416,7 +416,7 @@ class ArchitectApi {
 		
 		// verify the required parameter 'name' is set
 		if (name === undefined || name === null) {
-			throw 'Missing the required parameter "name" when calling getArchitectDependencytracking';
+			throw new Error('Missing the required parameter "name" when calling getArchitectDependencytracking');
 		}
 
 		return this.apiClient.callApi(
@@ -469,15 +469,15 @@ class ArchitectApi {
 		
 		// verify the required parameter 'id' is set
 		if (id === undefined || id === null) {
-			throw 'Missing the required parameter "id" when calling getArchitectDependencytrackingConsumedresources';
+			throw new Error('Missing the required parameter "id" when calling getArchitectDependencytrackingConsumedresources');
 		}
 		// verify the required parameter 'version' is set
 		if (version === undefined || version === null) {
-			throw 'Missing the required parameter "version" when calling getArchitectDependencytrackingConsumedresources';
+			throw new Error('Missing the required parameter "version" when calling getArchitectDependencytrackingConsumedresources';
 		}
 		// verify the required parameter 'objectType' is set
 		if (objectType === undefined || objectType === null) {
-			throw 'Missing the required parameter "objectType" when calling getArchitectDependencytrackingConsumedresources';
+			throw new Error('Missing the required parameter "objectType" when calling getArchitectDependencytrackingConsumedresources';
 		}
 
 		return this.apiClient.callApi(
@@ -511,11 +511,11 @@ class ArchitectApi {
 		
 		// verify the required parameter 'id' is set
 		if (id === undefined || id === null) {
-			throw 'Missing the required parameter "id" when calling getArchitectDependencytrackingConsumingresources';
+			throw new Error('Missing the required parameter "id" when calling getArchitectDependencytrackingConsumingresources';
 		}
 		// verify the required parameter 'objectType' is set
 		if (objectType === undefined || objectType === null) {
-			throw 'Missing the required parameter "objectType" when calling getArchitectDependencytrackingConsumingresources';
+			throw new Error('Missing the required parameter "objectType" when calling getArchitectDependencytrackingConsumingresources';
 		}
 
 		return this.apiClient.callApi(
@@ -580,7 +580,7 @@ class ArchitectApi {
 		
 		// verify the required parameter 'id' is set
 		if (id === undefined || id === null) {
-			throw 'Missing the required parameter "id" when calling getArchitectDependencytrackingObject';
+			throw new Error('Missing the required parameter "id" when calling getArchitectDependencytrackingObject';
 		}
 
 		return this.apiClient.callApi(
@@ -605,7 +605,7 @@ class ArchitectApi {
 	getArchitectDependencytrackingType(typeId) { 
 		// verify the required parameter 'typeId' is set
 		if (typeId === undefined || typeId === null) {
-			throw 'Missing the required parameter "typeId" when calling getArchitectDependencytrackingType';
+			throw new Error('Missing the required parameter "typeId" when calling getArchitectDependencytrackingType';
 		}
 
 		return this.apiClient.callApi(
@@ -684,7 +684,7 @@ class ArchitectApi {
 	getArchitectEmergencygroup(emergencyGroupId) { 
 		// verify the required parameter 'emergencyGroupId' is set
 		if (emergencyGroupId === undefined || emergencyGroupId === null) {
-			throw 'Missing the required parameter "emergencyGroupId" when calling getArchitectEmergencygroup';
+			throw new Error('Missing the required parameter "emergencyGroupId" when calling getArchitectEmergencygroup';
 		}
 
 		return this.apiClient.callApi(
@@ -737,7 +737,7 @@ class ArchitectApi {
 	getArchitectIvr(ivrId) { 
 		// verify the required parameter 'ivrId' is set
 		if (ivrId === undefined || ivrId === null) {
-			throw 'Missing the required parameter "ivrId" when calling getArchitectIvr';
+			throw new Error('Missing the required parameter "ivrId" when calling getArchitectIvr';
 		}
 
 		return this.apiClient.callApi(
@@ -790,7 +790,7 @@ class ArchitectApi {
 	getArchitectPrompt(promptId) { 
 		// verify the required parameter 'promptId' is set
 		if (promptId === undefined || promptId === null) {
-			throw 'Missing the required parameter "promptId" when calling getArchitectPrompt';
+			throw new Error('Missing the required parameter "promptId" when calling getArchitectPrompt';
 		}
 
 		return this.apiClient.callApi(
@@ -824,11 +824,11 @@ class ArchitectApi {
 		
 		// verify the required parameter 'promptId' is set
 		if (promptId === undefined || promptId === null) {
-			throw 'Missing the required parameter "promptId" when calling getArchitectPromptHistoryHistoryId';
+			throw new Error('Missing the required parameter "promptId" when calling getArchitectPromptHistoryHistoryId';
 		}
 		// verify the required parameter 'historyId' is set
 		if (historyId === undefined || historyId === null) {
-			throw 'Missing the required parameter "historyId" when calling getArchitectPromptHistoryHistoryId';
+			throw new Error('Missing the required parameter "historyId" when calling getArchitectPromptHistoryHistoryId';
 		}
 
 		return this.apiClient.callApi(
@@ -854,11 +854,11 @@ class ArchitectApi {
 	getArchitectPromptResource(promptId, languageCode) { 
 		// verify the required parameter 'promptId' is set
 		if (promptId === undefined || promptId === null) {
-			throw 'Missing the required parameter "promptId" when calling getArchitectPromptResource';
+			throw new Error('Missing the required parameter "promptId" when calling getArchitectPromptResource';
 		}
 		// verify the required parameter 'languageCode' is set
 		if (languageCode === undefined || languageCode === null) {
-			throw 'Missing the required parameter "languageCode" when calling getArchitectPromptResource';
+			throw new Error('Missing the required parameter "languageCode" when calling getArchitectPromptResource';
 		}
 
 		return this.apiClient.callApi(
@@ -888,7 +888,7 @@ class ArchitectApi {
 		
 		// verify the required parameter 'promptId' is set
 		if (promptId === undefined || promptId === null) {
-			throw 'Missing the required parameter "promptId" when calling getArchitectPromptResources';
+			throw new Error('Missing the required parameter "promptId" when calling getArchitectPromptResources';
 		}
 
 		return this.apiClient.callApi(
@@ -943,7 +943,7 @@ class ArchitectApi {
 	getArchitectSchedule(scheduleId) { 
 		// verify the required parameter 'scheduleId' is set
 		if (scheduleId === undefined || scheduleId === null) {
-			throw 'Missing the required parameter "scheduleId" when calling getArchitectSchedule';
+			throw new Error('Missing the required parameter "scheduleId" when calling getArchitectSchedule';
 		}
 
 		return this.apiClient.callApi(
@@ -968,7 +968,7 @@ class ArchitectApi {
 	getArchitectSchedulegroup(scheduleGroupId) { 
 		// verify the required parameter 'scheduleGroupId' is set
 		if (scheduleGroupId === undefined || scheduleGroupId === null) {
-			throw 'Missing the required parameter "scheduleGroupId" when calling getArchitectSchedulegroup';
+			throw new Error('Missing the required parameter "scheduleGroupId" when calling getArchitectSchedulegroup';
 		}
 
 		return this.apiClient.callApi(
@@ -1052,7 +1052,7 @@ class ArchitectApi {
 	getArchitectSystemprompt(promptId) { 
 		// verify the required parameter 'promptId' is set
 		if (promptId === undefined || promptId === null) {
-			throw 'Missing the required parameter "promptId" when calling getArchitectSystemprompt';
+			throw new Error('Missing the required parameter "promptId" when calling getArchitectSystemprompt';
 		}
 
 		return this.apiClient.callApi(
@@ -1086,11 +1086,11 @@ class ArchitectApi {
 		
 		// verify the required parameter 'promptId' is set
 		if (promptId === undefined || promptId === null) {
-			throw 'Missing the required parameter "promptId" when calling getArchitectSystempromptHistoryHistoryId';
+			throw new Error('Missing the required parameter "promptId" when calling getArchitectSystempromptHistoryHistoryId';
 		}
 		// verify the required parameter 'historyId' is set
 		if (historyId === undefined || historyId === null) {
-			throw 'Missing the required parameter "historyId" when calling getArchitectSystempromptHistoryHistoryId';
+			throw new Error('Missing the required parameter "historyId" when calling getArchitectSystempromptHistoryHistoryId';
 		}
 
 		return this.apiClient.callApi(
@@ -1116,11 +1116,11 @@ class ArchitectApi {
 	getArchitectSystempromptResource(promptId, languageCode) { 
 		// verify the required parameter 'promptId' is set
 		if (promptId === undefined || promptId === null) {
-			throw 'Missing the required parameter "promptId" when calling getArchitectSystempromptResource';
+			throw new Error('Missing the required parameter "promptId" when calling getArchitectSystempromptResource';
 		}
 		// verify the required parameter 'languageCode' is set
 		if (languageCode === undefined || languageCode === null) {
-			throw 'Missing the required parameter "languageCode" when calling getArchitectSystempromptResource';
+			throw new Error('Missing the required parameter "languageCode" when calling getArchitectSystempromptResource';
 		}
 
 		return this.apiClient.callApi(
@@ -1152,7 +1152,7 @@ class ArchitectApi {
 		
 		// verify the required parameter 'promptId' is set
 		if (promptId === undefined || promptId === null) {
-			throw 'Missing the required parameter "promptId" when calling getArchitectSystempromptResources';
+			throw new Error('Missing the required parameter "promptId" when calling getArchitectSystempromptResources';
 		}
 
 		return this.apiClient.callApi(
@@ -1211,7 +1211,7 @@ class ArchitectApi {
 		
 		// verify the required parameter 'flowId' is set
 		if (flowId === undefined || flowId === null) {
-			throw 'Missing the required parameter "flowId" when calling getFlow';
+			throw new Error('Missing the required parameter "flowId" when calling getFlow';
 		}
 
 		return this.apiClient.callApi(
@@ -1245,11 +1245,11 @@ class ArchitectApi {
 		
 		// verify the required parameter 'flowId' is set
 		if (flowId === undefined || flowId === null) {
-			throw 'Missing the required parameter "flowId" when calling getFlowHistoryHistoryId';
+			throw new Error('Missing the required parameter "flowId" when calling getFlowHistoryHistoryId';
 		}
 		// verify the required parameter 'historyId' is set
 		if (historyId === undefined || historyId === null) {
-			throw 'Missing the required parameter "historyId" when calling getFlowHistoryHistoryId';
+			throw new Error('Missing the required parameter "historyId" when calling getFlowHistoryHistoryId';
 		}
 
 		return this.apiClient.callApi(
@@ -1278,7 +1278,7 @@ class ArchitectApi {
 		
 		// verify the required parameter 'flowId' is set
 		if (flowId === undefined || flowId === null) {
-			throw 'Missing the required parameter "flowId" when calling getFlowLatestconfiguration';
+			throw new Error('Missing the required parameter "flowId" when calling getFlowLatestconfiguration';
 		}
 
 		return this.apiClient.callApi(
@@ -1308,11 +1308,11 @@ class ArchitectApi {
 		
 		// verify the required parameter 'flowId' is set
 		if (flowId === undefined || flowId === null) {
-			throw 'Missing the required parameter "flowId" when calling getFlowVersion';
+			throw new Error('Missing the required parameter "flowId" when calling getFlowVersion';
 		}
 		// verify the required parameter 'versionId' is set
 		if (versionId === undefined || versionId === null) {
-			throw 'Missing the required parameter "versionId" when calling getFlowVersion';
+			throw new Error('Missing the required parameter "versionId" when calling getFlowVersion';
 		}
 
 		return this.apiClient.callApi(
@@ -1342,11 +1342,11 @@ class ArchitectApi {
 		
 		// verify the required parameter 'flowId' is set
 		if (flowId === undefined || flowId === null) {
-			throw 'Missing the required parameter "flowId" when calling getFlowVersionConfiguration';
+			throw new Error('Missing the required parameter "flowId" when calling getFlowVersionConfiguration';
 		}
 		// verify the required parameter 'versionId' is set
 		if (versionId === undefined || versionId === null) {
-			throw 'Missing the required parameter "versionId" when calling getFlowVersionConfiguration';
+			throw new Error('Missing the required parameter "versionId" when calling getFlowVersionConfiguration';
 		}
 
 		return this.apiClient.callApi(
@@ -1377,7 +1377,7 @@ class ArchitectApi {
 		
 		// verify the required parameter 'flowId' is set
 		if (flowId === undefined || flowId === null) {
-			throw 'Missing the required parameter "flowId" when calling getFlowVersions';
+			throw new Error('Missing the required parameter "flowId" when calling getFlowVersions';
 		}
 
 		return this.apiClient.callApi(
@@ -1448,7 +1448,7 @@ class ArchitectApi {
 		
 		// verify the required parameter 'datatableId' is set
 		if (datatableId === undefined || datatableId === null) {
-			throw 'Missing the required parameter "datatableId" when calling getFlowsDatatable';
+			throw new Error('Missing the required parameter "datatableId" when calling getFlowsDatatable';
 		}
 
 		return this.apiClient.callApi(
@@ -1474,11 +1474,11 @@ class ArchitectApi {
 	getFlowsDatatableExportJob(datatableId, exportJobId) { 
 		// verify the required parameter 'datatableId' is set
 		if (datatableId === undefined || datatableId === null) {
-			throw 'Missing the required parameter "datatableId" when calling getFlowsDatatableExportJob';
+			throw new Error('Missing the required parameter "datatableId" when calling getFlowsDatatableExportJob';
 		}
 		// verify the required parameter 'exportJobId' is set
 		if (exportJobId === undefined || exportJobId === null) {
-			throw 'Missing the required parameter "exportJobId" when calling getFlowsDatatableExportJob';
+			throw new Error('Missing the required parameter "exportJobId" when calling getFlowsDatatableExportJob';
 		}
 
 		return this.apiClient.callApi(
@@ -1504,11 +1504,11 @@ class ArchitectApi {
 	getFlowsDatatableImportJob(datatableId, importJobId) { 
 		// verify the required parameter 'datatableId' is set
 		if (datatableId === undefined || datatableId === null) {
-			throw 'Missing the required parameter "datatableId" when calling getFlowsDatatableImportJob';
+			throw new Error('Missing the required parameter "datatableId" when calling getFlowsDatatableImportJob';
 		}
 		// verify the required parameter 'importJobId' is set
 		if (importJobId === undefined || importJobId === null) {
-			throw 'Missing the required parameter "importJobId" when calling getFlowsDatatableImportJob';
+			throw new Error('Missing the required parameter "importJobId" when calling getFlowsDatatableImportJob';
 		}
 
 		return this.apiClient.callApi(
@@ -1538,7 +1538,7 @@ class ArchitectApi {
 		
 		// verify the required parameter 'datatableId' is set
 		if (datatableId === undefined || datatableId === null) {
-			throw 'Missing the required parameter "datatableId" when calling getFlowsDatatableImportJobs';
+			throw new Error('Missing the required parameter "datatableId" when calling getFlowsDatatableImportJobs';
 		}
 
 		return this.apiClient.callApi(
@@ -1568,11 +1568,11 @@ class ArchitectApi {
 		
 		// verify the required parameter 'datatableId' is set
 		if (datatableId === undefined || datatableId === null) {
-			throw 'Missing the required parameter "datatableId" when calling getFlowsDatatableRow';
+			throw new Error('Missing the required parameter "datatableId" when calling getFlowsDatatableRow';
 		}
 		// verify the required parameter 'rowId' is set
 		if (rowId === undefined || rowId === null) {
-			throw 'Missing the required parameter "rowId" when calling getFlowsDatatableRow';
+			throw new Error('Missing the required parameter "rowId" when calling getFlowsDatatableRow';
 		}
 
 		return this.apiClient.callApi(
@@ -1603,7 +1603,7 @@ class ArchitectApi {
 		
 		// verify the required parameter 'datatableId' is set
 		if (datatableId === undefined || datatableId === null) {
-			throw 'Missing the required parameter "datatableId" when calling getFlowsDatatableRows';
+			throw new Error('Missing the required parameter "datatableId" when calling getFlowsDatatableRows';
 		}
 
 		return this.apiClient.callApi(
@@ -1662,7 +1662,7 @@ class ArchitectApi {
 		
 		// verify the required parameter 'datatableId' is set
 		if (datatableId === undefined || datatableId === null) {
-			throw 'Missing the required parameter "datatableId" when calling getFlowsDatatablesDivisionview';
+			throw new Error('Missing the required parameter "datatableId" when calling getFlowsDatatablesDivisionview';
 		}
 
 		return this.apiClient.callApi(
@@ -1752,7 +1752,7 @@ class ArchitectApi {
 	getFlowsExecution(flowExecutionId) { 
 		// verify the required parameter 'flowExecutionId' is set
 		if (flowExecutionId === undefined || flowExecutionId === null) {
-			throw 'Missing the required parameter "flowExecutionId" when calling getFlowsExecution';
+			throw new Error('Missing the required parameter "flowExecutionId" when calling getFlowsExecution';
 		}
 
 		return this.apiClient.callApi(
@@ -1777,7 +1777,7 @@ class ArchitectApi {
 	getFlowsMilestone(milestoneId) { 
 		// verify the required parameter 'milestoneId' is set
 		if (milestoneId === undefined || milestoneId === null) {
-			throw 'Missing the required parameter "milestoneId" when calling getFlowsMilestone';
+			throw new Error('Missing the required parameter "milestoneId" when calling getFlowsMilestone';
 		}
 
 		return this.apiClient.callApi(
@@ -1864,7 +1864,7 @@ class ArchitectApi {
 	getFlowsOutcome(flowOutcomeId) { 
 		// verify the required parameter 'flowOutcomeId' is set
 		if (flowOutcomeId === undefined || flowOutcomeId === null) {
-			throw 'Missing the required parameter "flowOutcomeId" when calling getFlowsOutcome';
+			throw new Error('Missing the required parameter "flowOutcomeId" when calling getFlowsOutcome';
 		}
 
 		return this.apiClient.callApi(
@@ -1971,7 +1971,7 @@ class ArchitectApi {
 	postArchitectEmergencygroups(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postArchitectEmergencygroups';
+			throw new Error('Missing the required parameter "body" when calling postArchitectEmergencygroups';
 		}
 
 		return this.apiClient.callApi(
@@ -1996,7 +1996,7 @@ class ArchitectApi {
 	postArchitectIvrs(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postArchitectIvrs';
+			throw new Error('Missing the required parameter "body" when calling postArchitectIvrs';
 		}
 
 		return this.apiClient.callApi(
@@ -2021,7 +2021,7 @@ class ArchitectApi {
 	postArchitectPromptHistory(promptId) { 
 		// verify the required parameter 'promptId' is set
 		if (promptId === undefined || promptId === null) {
-			throw 'Missing the required parameter "promptId" when calling postArchitectPromptHistory';
+			throw new Error('Missing the required parameter "promptId" when calling postArchitectPromptHistory';
 		}
 
 		return this.apiClient.callApi(
@@ -2047,11 +2047,11 @@ class ArchitectApi {
 	postArchitectPromptResources(promptId, body) { 
 		// verify the required parameter 'promptId' is set
 		if (promptId === undefined || promptId === null) {
-			throw 'Missing the required parameter "promptId" when calling postArchitectPromptResources';
+			throw new Error('Missing the required parameter "promptId" when calling postArchitectPromptResources';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postArchitectPromptResources';
+			throw new Error('Missing the required parameter "body" when calling postArchitectPromptResources';
 		}
 
 		return this.apiClient.callApi(
@@ -2076,7 +2076,7 @@ class ArchitectApi {
 	postArchitectPrompts(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postArchitectPrompts';
+			throw new Error('Missing the required parameter "body" when calling postArchitectPrompts';
 		}
 
 		return this.apiClient.callApi(
@@ -2101,7 +2101,7 @@ class ArchitectApi {
 	postArchitectSchedulegroups(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postArchitectSchedulegroups';
+			throw new Error('Missing the required parameter "body" when calling postArchitectSchedulegroups';
 		}
 
 		return this.apiClient.callApi(
@@ -2126,7 +2126,7 @@ class ArchitectApi {
 	postArchitectSchedules(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postArchitectSchedules';
+			throw new Error('Missing the required parameter "body" when calling postArchitectSchedules';
 		}
 
 		return this.apiClient.callApi(
@@ -2151,7 +2151,7 @@ class ArchitectApi {
 	postArchitectSystempromptHistory(promptId) { 
 		// verify the required parameter 'promptId' is set
 		if (promptId === undefined || promptId === null) {
-			throw 'Missing the required parameter "promptId" when calling postArchitectSystempromptHistory';
+			throw new Error('Missing the required parameter "promptId" when calling postArchitectSystempromptHistory';
 		}
 
 		return this.apiClient.callApi(
@@ -2177,11 +2177,11 @@ class ArchitectApi {
 	postArchitectSystempromptResources(promptId, body) { 
 		// verify the required parameter 'promptId' is set
 		if (promptId === undefined || promptId === null) {
-			throw 'Missing the required parameter "promptId" when calling postArchitectSystempromptResources';
+			throw new Error('Missing the required parameter "promptId" when calling postArchitectSystempromptResources';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postArchitectSystempromptResources';
+			throw new Error('Missing the required parameter "body" when calling postArchitectSystempromptResources';
 		}
 
 		return this.apiClient.callApi(
@@ -2206,7 +2206,7 @@ class ArchitectApi {
 	postFlowHistory(flowId) { 
 		// verify the required parameter 'flowId' is set
 		if (flowId === undefined || flowId === null) {
-			throw 'Missing the required parameter "flowId" when calling postFlowHistory';
+			throw new Error('Missing the required parameter "flowId" when calling postFlowHistory';
 		}
 
 		return this.apiClient.callApi(
@@ -2232,11 +2232,11 @@ class ArchitectApi {
 	postFlowVersions(flowId, body) { 
 		// verify the required parameter 'flowId' is set
 		if (flowId === undefined || flowId === null) {
-			throw 'Missing the required parameter "flowId" when calling postFlowVersions';
+			throw new Error('Missing the required parameter "flowId" when calling postFlowVersions';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postFlowVersions';
+			throw new Error('Missing the required parameter "body" when calling postFlowVersions';
 		}
 
 		return this.apiClient.callApi(
@@ -2265,7 +2265,7 @@ class ArchitectApi {
 		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postFlows';
+			throw new Error('Missing the required parameter "body" when calling postFlows';
 		}
 
 		return this.apiClient.callApi(
@@ -2290,7 +2290,7 @@ class ArchitectApi {
 	postFlowsActionsCheckin(flow) { 
 		// verify the required parameter 'flow' is set
 		if (flow === undefined || flow === null) {
-			throw 'Missing the required parameter "flow" when calling postFlowsActionsCheckin';
+			throw new Error('Missing the required parameter "flow" when calling postFlowsActionsCheckin';
 		}
 
 		return this.apiClient.callApi(
@@ -2315,7 +2315,7 @@ class ArchitectApi {
 	postFlowsActionsCheckout(flow) { 
 		// verify the required parameter 'flow' is set
 		if (flow === undefined || flow === null) {
-			throw 'Missing the required parameter "flow" when calling postFlowsActionsCheckout';
+			throw new Error('Missing the required parameter "flow" when calling postFlowsActionsCheckout';
 		}
 
 		return this.apiClient.callApi(
@@ -2340,7 +2340,7 @@ class ArchitectApi {
 	postFlowsActionsDeactivate(flow) { 
 		// verify the required parameter 'flow' is set
 		if (flow === undefined || flow === null) {
-			throw 'Missing the required parameter "flow" when calling postFlowsActionsDeactivate';
+			throw new Error('Missing the required parameter "flow" when calling postFlowsActionsDeactivate';
 		}
 
 		return this.apiClient.callApi(
@@ -2369,7 +2369,7 @@ class ArchitectApi {
 		
 		// verify the required parameter 'flow' is set
 		if (flow === undefined || flow === null) {
-			throw 'Missing the required parameter "flow" when calling postFlowsActionsPublish';
+			throw new Error('Missing the required parameter "flow" when calling postFlowsActionsPublish';
 		}
 
 		return this.apiClient.callApi(
@@ -2394,7 +2394,7 @@ class ArchitectApi {
 	postFlowsActionsRevert(flow) { 
 		// verify the required parameter 'flow' is set
 		if (flow === undefined || flow === null) {
-			throw 'Missing the required parameter "flow" when calling postFlowsActionsRevert';
+			throw new Error('Missing the required parameter "flow" when calling postFlowsActionsRevert';
 		}
 
 		return this.apiClient.callApi(
@@ -2419,7 +2419,7 @@ class ArchitectApi {
 	postFlowsActionsUnlock(flow) { 
 		// verify the required parameter 'flow' is set
 		if (flow === undefined || flow === null) {
-			throw 'Missing the required parameter "flow" when calling postFlowsActionsUnlock';
+			throw new Error('Missing the required parameter "flow" when calling postFlowsActionsUnlock';
 		}
 
 		return this.apiClient.callApi(
@@ -2444,7 +2444,7 @@ class ArchitectApi {
 	postFlowsDatatableExportJobs(datatableId) { 
 		// verify the required parameter 'datatableId' is set
 		if (datatableId === undefined || datatableId === null) {
-			throw 'Missing the required parameter "datatableId" when calling postFlowsDatatableExportJobs';
+			throw new Error('Missing the required parameter "datatableId" when calling postFlowsDatatableExportJobs';
 		}
 
 		return this.apiClient.callApi(
@@ -2470,11 +2470,11 @@ class ArchitectApi {
 	postFlowsDatatableImportJobs(datatableId, body) { 
 		// verify the required parameter 'datatableId' is set
 		if (datatableId === undefined || datatableId === null) {
-			throw 'Missing the required parameter "datatableId" when calling postFlowsDatatableImportJobs';
+			throw new Error('Missing the required parameter "datatableId" when calling postFlowsDatatableImportJobs';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postFlowsDatatableImportJobs';
+			throw new Error('Missing the required parameter "body" when calling postFlowsDatatableImportJobs';
 		}
 
 		return this.apiClient.callApi(
@@ -2500,11 +2500,11 @@ class ArchitectApi {
 	postFlowsDatatableRows(datatableId, dataTableRow) { 
 		// verify the required parameter 'datatableId' is set
 		if (datatableId === undefined || datatableId === null) {
-			throw 'Missing the required parameter "datatableId" when calling postFlowsDatatableRows';
+			throw new Error('Missing the required parameter "datatableId" when calling postFlowsDatatableRows';
 		}
 		// verify the required parameter 'dataTableRow' is set
 		if (dataTableRow === undefined || dataTableRow === null) {
-			throw 'Missing the required parameter "dataTableRow" when calling postFlowsDatatableRows';
+			throw new Error('Missing the required parameter "dataTableRow" when calling postFlowsDatatableRows';
 		}
 
 		return this.apiClient.callApi(
@@ -2529,7 +2529,7 @@ class ArchitectApi {
 	postFlowsDatatables(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postFlowsDatatables';
+			throw new Error('Missing the required parameter "body" when calling postFlowsDatatables';
 		}
 
 		return this.apiClient.callApi(
@@ -2554,7 +2554,7 @@ class ArchitectApi {
 	postFlowsExecutions(flowLaunchRequest) { 
 		// verify the required parameter 'flowLaunchRequest' is set
 		if (flowLaunchRequest === undefined || flowLaunchRequest === null) {
-			throw 'Missing the required parameter "flowLaunchRequest" when calling postFlowsExecutions';
+			throw new Error('Missing the required parameter "flowLaunchRequest" when calling postFlowsExecutions';
 		}
 
 		return this.apiClient.callApi(
@@ -2628,11 +2628,11 @@ class ArchitectApi {
 	putArchitectEmergencygroup(emergencyGroupId, body) { 
 		// verify the required parameter 'emergencyGroupId' is set
 		if (emergencyGroupId === undefined || emergencyGroupId === null) {
-			throw 'Missing the required parameter "emergencyGroupId" when calling putArchitectEmergencygroup';
+			throw new Error('Missing the required parameter "emergencyGroupId" when calling putArchitectEmergencygroup';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putArchitectEmergencygroup';
+			throw new Error('Missing the required parameter "body" when calling putArchitectEmergencygroup';
 		}
 
 		return this.apiClient.callApi(
@@ -2658,11 +2658,11 @@ class ArchitectApi {
 	putArchitectIvr(ivrId, body) { 
 		// verify the required parameter 'ivrId' is set
 		if (ivrId === undefined || ivrId === null) {
-			throw 'Missing the required parameter "ivrId" when calling putArchitectIvr';
+			throw new Error('Missing the required parameter "ivrId" when calling putArchitectIvr';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putArchitectIvr';
+			throw new Error('Missing the required parameter "body" when calling putArchitectIvr';
 		}
 
 		return this.apiClient.callApi(
@@ -2688,11 +2688,11 @@ class ArchitectApi {
 	putArchitectPrompt(promptId, body) { 
 		// verify the required parameter 'promptId' is set
 		if (promptId === undefined || promptId === null) {
-			throw 'Missing the required parameter "promptId" when calling putArchitectPrompt';
+			throw new Error('Missing the required parameter "promptId" when calling putArchitectPrompt';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putArchitectPrompt';
+			throw new Error('Missing the required parameter "body" when calling putArchitectPrompt';
 		}
 
 		return this.apiClient.callApi(
@@ -2719,15 +2719,15 @@ class ArchitectApi {
 	putArchitectPromptResource(promptId, languageCode, body) { 
 		// verify the required parameter 'promptId' is set
 		if (promptId === undefined || promptId === null) {
-			throw 'Missing the required parameter "promptId" when calling putArchitectPromptResource';
+			throw new Error('Missing the required parameter "promptId" when calling putArchitectPromptResource';
 		}
 		// verify the required parameter 'languageCode' is set
 		if (languageCode === undefined || languageCode === null) {
-			throw 'Missing the required parameter "languageCode" when calling putArchitectPromptResource';
+			throw new Error('Missing the required parameter "languageCode" when calling putArchitectPromptResource';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putArchitectPromptResource';
+			throw new Error('Missing the required parameter "body" when calling putArchitectPromptResource';
 		}
 
 		return this.apiClient.callApi(
@@ -2753,11 +2753,11 @@ class ArchitectApi {
 	putArchitectSchedule(scheduleId, body) { 
 		// verify the required parameter 'scheduleId' is set
 		if (scheduleId === undefined || scheduleId === null) {
-			throw 'Missing the required parameter "scheduleId" when calling putArchitectSchedule';
+			throw new Error('Missing the required parameter "scheduleId" when calling putArchitectSchedule';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putArchitectSchedule';
+			throw new Error('Missing the required parameter "body" when calling putArchitectSchedule';
 		}
 
 		return this.apiClient.callApi(
@@ -2783,11 +2783,11 @@ class ArchitectApi {
 	putArchitectSchedulegroup(scheduleGroupId, body) { 
 		// verify the required parameter 'scheduleGroupId' is set
 		if (scheduleGroupId === undefined || scheduleGroupId === null) {
-			throw 'Missing the required parameter "scheduleGroupId" when calling putArchitectSchedulegroup';
+			throw new Error('Missing the required parameter "scheduleGroupId" when calling putArchitectSchedulegroup';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putArchitectSchedulegroup';
+			throw new Error('Missing the required parameter "body" when calling putArchitectSchedulegroup';
 		}
 
 		return this.apiClient.callApi(
@@ -2814,15 +2814,15 @@ class ArchitectApi {
 	putArchitectSystempromptResource(promptId, languageCode, body) { 
 		// verify the required parameter 'promptId' is set
 		if (promptId === undefined || promptId === null) {
-			throw 'Missing the required parameter "promptId" when calling putArchitectSystempromptResource';
+			throw new Error('Missing the required parameter "promptId" when calling putArchitectSystempromptResource';
 		}
 		// verify the required parameter 'languageCode' is set
 		if (languageCode === undefined || languageCode === null) {
-			throw 'Missing the required parameter "languageCode" when calling putArchitectSystempromptResource';
+			throw new Error('Missing the required parameter "languageCode" when calling putArchitectSystempromptResource';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putArchitectSystempromptResource';
+			throw new Error('Missing the required parameter "body" when calling putArchitectSystempromptResource';
 		}
 
 		return this.apiClient.callApi(
@@ -2848,11 +2848,11 @@ class ArchitectApi {
 	putFlow(flowId, body) { 
 		// verify the required parameter 'flowId' is set
 		if (flowId === undefined || flowId === null) {
-			throw 'Missing the required parameter "flowId" when calling putFlow';
+			throw new Error('Missing the required parameter "flowId" when calling putFlow';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putFlow';
+			throw new Error('Missing the required parameter "body" when calling putFlow';
 		}
 
 		return this.apiClient.callApi(
@@ -2882,11 +2882,11 @@ class ArchitectApi {
 		
 		// verify the required parameter 'datatableId' is set
 		if (datatableId === undefined || datatableId === null) {
-			throw 'Missing the required parameter "datatableId" when calling putFlowsDatatable';
+			throw new Error('Missing the required parameter "datatableId" when calling putFlowsDatatable';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putFlowsDatatable';
+			throw new Error('Missing the required parameter "body" when calling putFlowsDatatable';
 		}
 
 		return this.apiClient.callApi(
@@ -2916,11 +2916,11 @@ class ArchitectApi {
 		
 		// verify the required parameter 'datatableId' is set
 		if (datatableId === undefined || datatableId === null) {
-			throw 'Missing the required parameter "datatableId" when calling putFlowsDatatableRow';
+			throw new Error('Missing the required parameter "datatableId" when calling putFlowsDatatableRow';
 		}
 		// verify the required parameter 'rowId' is set
 		if (rowId === undefined || rowId === null) {
-			throw 'Missing the required parameter "rowId" when calling putFlowsDatatableRow';
+			throw new Error('Missing the required parameter "rowId" when calling putFlowsDatatableRow';
 		}
 
 		return this.apiClient.callApi(
@@ -2949,7 +2949,7 @@ class ArchitectApi {
 		
 		// verify the required parameter 'milestoneId' is set
 		if (milestoneId === undefined || milestoneId === null) {
-			throw 'Missing the required parameter "milestoneId" when calling putFlowsMilestone';
+			throw new Error('Missing the required parameter "milestoneId" when calling putFlowsMilestone';
 		}
 
 		return this.apiClient.callApi(
@@ -2978,7 +2978,7 @@ class ArchitectApi {
 		
 		// verify the required parameter 'flowOutcomeId' is set
 		if (flowOutcomeId === undefined || flowOutcomeId === null) {
-			throw 'Missing the required parameter "flowOutcomeId" when calling putFlowsOutcome';
+			throw new Error('Missing the required parameter "flowOutcomeId" when calling putFlowsOutcome';
 		}
 
 		return this.apiClient.callApi(

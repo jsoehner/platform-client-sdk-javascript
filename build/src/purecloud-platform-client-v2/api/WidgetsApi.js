@@ -28,7 +28,7 @@ class WidgetsApi {
 	deleteWidgetsDeployment(deploymentId) { 
 		// verify the required parameter 'deploymentId' is set
 		if (deploymentId === undefined || deploymentId === null) {
-			throw 'Missing the required parameter "deploymentId" when calling deleteWidgetsDeployment';
+			throw new Error('Missing the required parameter "deploymentId" when calling deleteWidgetsDeployment';
 		}
 
 		return this.apiClient.callApi(
@@ -53,7 +53,7 @@ class WidgetsApi {
 	getWidgetsDeployment(deploymentId) { 
 		// verify the required parameter 'deploymentId' is set
 		if (deploymentId === undefined || deploymentId === null) {
-			throw 'Missing the required parameter "deploymentId" when calling getWidgetsDeployment';
+			throw new Error('Missing the required parameter "deploymentId" when calling getWidgetsDeployment';
 		}
 
 		return this.apiClient.callApi(
@@ -98,7 +98,7 @@ class WidgetsApi {
 	postWidgetsDeployments(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postWidgetsDeployments';
+			throw new Error('Missing the required parameter "body" when calling postWidgetsDeployments';
 		}
 
 		return this.apiClient.callApi(
@@ -124,11 +124,11 @@ class WidgetsApi {
 	putWidgetsDeployment(deploymentId, body) { 
 		// verify the required parameter 'deploymentId' is set
 		if (deploymentId === undefined || deploymentId === null) {
-			throw 'Missing the required parameter "deploymentId" when calling putWidgetsDeployment';
+			throw new Error('Missing the required parameter "deploymentId" when calling putWidgetsDeployment';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putWidgetsDeployment';
+			throw new Error('Missing the required parameter "body" when calling putWidgetsDeployment';
 		}
 
 		return this.apiClient.callApi(

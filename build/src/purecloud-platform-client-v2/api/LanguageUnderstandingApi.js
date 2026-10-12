@@ -28,7 +28,7 @@ class LanguageUnderstandingApi {
 	deleteLanguageunderstandingDomain(domainId) { 
 		// verify the required parameter 'domainId' is set
 		if (domainId === undefined || domainId === null) {
-			throw 'Missing the required parameter "domainId" when calling deleteLanguageunderstandingDomain';
+			throw new Error('Missing the required parameter "domainId" when calling deleteLanguageunderstandingDomain';
 		}
 
 		return this.apiClient.callApi(
@@ -54,11 +54,11 @@ class LanguageUnderstandingApi {
 	deleteLanguageunderstandingDomainFeedbackFeedbackId(domainId, feedbackId) { 
 		// verify the required parameter 'domainId' is set
 		if (domainId === undefined || domainId === null) {
-			throw 'Missing the required parameter "domainId" when calling deleteLanguageunderstandingDomainFeedbackFeedbackId';
+			throw new Error('Missing the required parameter "domainId" when calling deleteLanguageunderstandingDomainFeedbackFeedbackId';
 		}
 		// verify the required parameter 'feedbackId' is set
 		if (feedbackId === undefined || feedbackId === null) {
-			throw 'Missing the required parameter "feedbackId" when calling deleteLanguageunderstandingDomainFeedbackFeedbackId';
+			throw new Error('Missing the required parameter "feedbackId" when calling deleteLanguageunderstandingDomainFeedbackFeedbackId';
 		}
 
 		return this.apiClient.callApi(
@@ -84,11 +84,11 @@ class LanguageUnderstandingApi {
 	deleteLanguageunderstandingDomainVersion(domainId, domainVersionId) { 
 		// verify the required parameter 'domainId' is set
 		if (domainId === undefined || domainId === null) {
-			throw 'Missing the required parameter "domainId" when calling deleteLanguageunderstandingDomainVersion';
+			throw new Error('Missing the required parameter "domainId" when calling deleteLanguageunderstandingDomainVersion';
 		}
 		// verify the required parameter 'domainVersionId' is set
 		if (domainVersionId === undefined || domainVersionId === null) {
-			throw 'Missing the required parameter "domainVersionId" when calling deleteLanguageunderstandingDomainVersion';
+			throw new Error('Missing the required parameter "domainVersionId" when calling deleteLanguageunderstandingDomainVersion';
 		}
 
 		return this.apiClient.callApi(
@@ -113,7 +113,7 @@ class LanguageUnderstandingApi {
 	deleteLanguageunderstandingMiner(minerId) { 
 		// verify the required parameter 'minerId' is set
 		if (minerId === undefined || minerId === null) {
-			throw 'Missing the required parameter "minerId" when calling deleteLanguageunderstandingMiner';
+			throw new Error('Missing the required parameter "minerId" when calling deleteLanguageunderstandingMiner';
 		}
 
 		return this.apiClient.callApi(
@@ -139,11 +139,11 @@ class LanguageUnderstandingApi {
 	deleteLanguageunderstandingMinerDraft(minerId, draftId) { 
 		// verify the required parameter 'minerId' is set
 		if (minerId === undefined || minerId === null) {
-			throw 'Missing the required parameter "minerId" when calling deleteLanguageunderstandingMinerDraft';
+			throw new Error('Missing the required parameter "minerId" when calling deleteLanguageunderstandingMinerDraft';
 		}
 		// verify the required parameter 'draftId' is set
 		if (draftId === undefined || draftId === null) {
-			throw 'Missing the required parameter "draftId" when calling deleteLanguageunderstandingMinerDraft';
+			throw new Error('Missing the required parameter "draftId" when calling deleteLanguageunderstandingMinerDraft';
 		}
 
 		return this.apiClient.callApi(
@@ -168,7 +168,7 @@ class LanguageUnderstandingApi {
 	getLanguageunderstandingDomain(domainId) { 
 		// verify the required parameter 'domainId' is set
 		if (domainId === undefined || domainId === null) {
-			throw 'Missing the required parameter "domainId" when calling getLanguageunderstandingDomain';
+			throw new Error('Missing the required parameter "domainId" when calling getLanguageunderstandingDomain';
 		}
 
 		return this.apiClient.callApi(
@@ -206,7 +206,7 @@ class LanguageUnderstandingApi {
 		
 		// verify the required parameter 'domainId' is set
 		if (domainId === undefined || domainId === null) {
-			throw 'Missing the required parameter "domainId" when calling getLanguageunderstandingDomainFeedback';
+			throw new Error('Missing the required parameter "domainId" when calling getLanguageunderstandingDomainFeedback';
 		}
 
 		return this.apiClient.callApi(
@@ -236,11 +236,11 @@ class LanguageUnderstandingApi {
 		
 		// verify the required parameter 'domainId' is set
 		if (domainId === undefined || domainId === null) {
-			throw 'Missing the required parameter "domainId" when calling getLanguageunderstandingDomainFeedbackFeedbackId';
+			throw new Error('Missing the required parameter "domainId" when calling getLanguageunderstandingDomainFeedbackFeedbackId';
 		}
 		// verify the required parameter 'feedbackId' is set
 		if (feedbackId === undefined || feedbackId === null) {
-			throw 'Missing the required parameter "feedbackId" when calling getLanguageunderstandingDomainFeedbackFeedbackId';
+			throw new Error('Missing the required parameter "feedbackId" when calling getLanguageunderstandingDomainFeedbackFeedbackId';
 		}
 
 		return this.apiClient.callApi(
@@ -270,11 +270,11 @@ class LanguageUnderstandingApi {
 		
 		// verify the required parameter 'domainId' is set
 		if (domainId === undefined || domainId === null) {
-			throw 'Missing the required parameter "domainId" when calling getLanguageunderstandingDomainVersion';
+			throw new Error('Missing the required parameter "domainId" when calling getLanguageunderstandingDomainVersion';
 		}
 		// verify the required parameter 'domainVersionId' is set
 		if (domainVersionId === undefined || domainVersionId === null) {
-			throw 'Missing the required parameter "domainVersionId" when calling getLanguageunderstandingDomainVersion';
+			throw new Error('Missing the required parameter "domainVersionId" when calling getLanguageunderstandingDomainVersion';
 		}
 
 		return this.apiClient.callApi(
@@ -300,11 +300,11 @@ class LanguageUnderstandingApi {
 	getLanguageunderstandingDomainVersionReport(domainId, domainVersionId) { 
 		// verify the required parameter 'domainId' is set
 		if (domainId === undefined || domainId === null) {
-			throw 'Missing the required parameter "domainId" when calling getLanguageunderstandingDomainVersionReport';
+			throw new Error('Missing the required parameter "domainId" when calling getLanguageunderstandingDomainVersionReport';
 		}
 		// verify the required parameter 'domainVersionId' is set
 		if (domainVersionId === undefined || domainVersionId === null) {
-			throw 'Missing the required parameter "domainVersionId" when calling getLanguageunderstandingDomainVersionReport';
+			throw new Error('Missing the required parameter "domainVersionId" when calling getLanguageunderstandingDomainVersionReport';
 		}
 
 		return this.apiClient.callApi(
@@ -335,7 +335,7 @@ class LanguageUnderstandingApi {
 		
 		// verify the required parameter 'domainId' is set
 		if (domainId === undefined || domainId === null) {
-			throw 'Missing the required parameter "domainId" when calling getLanguageunderstandingDomainVersions';
+			throw new Error('Missing the required parameter "domainId" when calling getLanguageunderstandingDomainVersions';
 		}
 
 		return this.apiClient.callApi(
@@ -385,7 +385,7 @@ class LanguageUnderstandingApi {
 	getLanguageunderstandingMiner(minerId) { 
 		// verify the required parameter 'minerId' is set
 		if (minerId === undefined || minerId === null) {
-			throw 'Missing the required parameter "minerId" when calling getLanguageunderstandingMiner';
+			throw new Error('Missing the required parameter "minerId" when calling getLanguageunderstandingMiner';
 		}
 
 		return this.apiClient.callApi(
@@ -411,11 +411,11 @@ class LanguageUnderstandingApi {
 	getLanguageunderstandingMinerDraft(minerId, draftId) { 
 		// verify the required parameter 'minerId' is set
 		if (minerId === undefined || minerId === null) {
-			throw 'Missing the required parameter "minerId" when calling getLanguageunderstandingMinerDraft';
+			throw new Error('Missing the required parameter "minerId" when calling getLanguageunderstandingMinerDraft';
 		}
 		// verify the required parameter 'draftId' is set
 		if (draftId === undefined || draftId === null) {
-			throw 'Missing the required parameter "draftId" when calling getLanguageunderstandingMinerDraft';
+			throw new Error('Missing the required parameter "draftId" when calling getLanguageunderstandingMinerDraft';
 		}
 
 		return this.apiClient.callApi(
@@ -440,7 +440,7 @@ class LanguageUnderstandingApi {
 	getLanguageunderstandingMinerDrafts(minerId) { 
 		// verify the required parameter 'minerId' is set
 		if (minerId === undefined || minerId === null) {
-			throw 'Missing the required parameter "minerId" when calling getLanguageunderstandingMinerDrafts';
+			throw new Error('Missing the required parameter "minerId" when calling getLanguageunderstandingMinerDrafts';
 		}
 
 		return this.apiClient.callApi(
@@ -470,11 +470,11 @@ class LanguageUnderstandingApi {
 		
 		// verify the required parameter 'minerId' is set
 		if (minerId === undefined || minerId === null) {
-			throw 'Missing the required parameter "minerId" when calling getLanguageunderstandingMinerIntent';
+			throw new Error('Missing the required parameter "minerId" when calling getLanguageunderstandingMinerIntent';
 		}
 		// verify the required parameter 'intentId' is set
 		if (intentId === undefined || intentId === null) {
-			throw 'Missing the required parameter "intentId" when calling getLanguageunderstandingMinerIntent';
+			throw new Error('Missing the required parameter "intentId" when calling getLanguageunderstandingMinerIntent';
 		}
 
 		return this.apiClient.callApi(
@@ -503,7 +503,7 @@ class LanguageUnderstandingApi {
 		
 		// verify the required parameter 'minerId' is set
 		if (minerId === undefined || minerId === null) {
-			throw 'Missing the required parameter "minerId" when calling getLanguageunderstandingMinerIntents';
+			throw new Error('Missing the required parameter "minerId" when calling getLanguageunderstandingMinerIntents';
 		}
 
 		return this.apiClient.callApi(
@@ -549,11 +549,11 @@ class LanguageUnderstandingApi {
 	patchLanguageunderstandingDomain(domainId, body) { 
 		// verify the required parameter 'domainId' is set
 		if (domainId === undefined || domainId === null) {
-			throw 'Missing the required parameter "domainId" when calling patchLanguageunderstandingDomain';
+			throw new Error('Missing the required parameter "domainId" when calling patchLanguageunderstandingDomain';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchLanguageunderstandingDomain';
+			throw new Error('Missing the required parameter "body" when calling patchLanguageunderstandingDomain';
 		}
 
 		return this.apiClient.callApi(
@@ -583,11 +583,11 @@ class LanguageUnderstandingApi {
 		
 		// verify the required parameter 'minerId' is set
 		if (minerId === undefined || minerId === null) {
-			throw 'Missing the required parameter "minerId" when calling patchLanguageunderstandingMinerDraft';
+			throw new Error('Missing the required parameter "minerId" when calling patchLanguageunderstandingMinerDraft';
 		}
 		// verify the required parameter 'draftId' is set
 		if (draftId === undefined || draftId === null) {
-			throw 'Missing the required parameter "draftId" when calling patchLanguageunderstandingMinerDraft';
+			throw new Error('Missing the required parameter "draftId" when calling patchLanguageunderstandingMinerDraft';
 		}
 
 		return this.apiClient.callApi(
@@ -613,11 +613,11 @@ class LanguageUnderstandingApi {
 	postLanguageunderstandingDomainFeedback(domainId, body) { 
 		// verify the required parameter 'domainId' is set
 		if (domainId === undefined || domainId === null) {
-			throw 'Missing the required parameter "domainId" when calling postLanguageunderstandingDomainFeedback';
+			throw new Error('Missing the required parameter "domainId" when calling postLanguageunderstandingDomainFeedback';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postLanguageunderstandingDomainFeedback';
+			throw new Error('Missing the required parameter "body" when calling postLanguageunderstandingDomainFeedback';
 		}
 
 		return this.apiClient.callApi(
@@ -644,15 +644,15 @@ class LanguageUnderstandingApi {
 	postLanguageunderstandingDomainVersionDetect(domainId, domainVersionId, body) { 
 		// verify the required parameter 'domainId' is set
 		if (domainId === undefined || domainId === null) {
-			throw 'Missing the required parameter "domainId" when calling postLanguageunderstandingDomainVersionDetect';
+			throw new Error('Missing the required parameter "domainId" when calling postLanguageunderstandingDomainVersionDetect';
 		}
 		// verify the required parameter 'domainVersionId' is set
 		if (domainVersionId === undefined || domainVersionId === null) {
-			throw 'Missing the required parameter "domainVersionId" when calling postLanguageunderstandingDomainVersionDetect';
+			throw new Error('Missing the required parameter "domainVersionId" when calling postLanguageunderstandingDomainVersionDetect';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postLanguageunderstandingDomainVersionDetect';
+			throw new Error('Missing the required parameter "body" when calling postLanguageunderstandingDomainVersionDetect';
 		}
 
 		return this.apiClient.callApi(
@@ -678,11 +678,11 @@ class LanguageUnderstandingApi {
 	postLanguageunderstandingDomainVersionPublish(domainId, domainVersionId) { 
 		// verify the required parameter 'domainId' is set
 		if (domainId === undefined || domainId === null) {
-			throw 'Missing the required parameter "domainId" when calling postLanguageunderstandingDomainVersionPublish';
+			throw new Error('Missing the required parameter "domainId" when calling postLanguageunderstandingDomainVersionPublish';
 		}
 		// verify the required parameter 'domainVersionId' is set
 		if (domainVersionId === undefined || domainVersionId === null) {
-			throw 'Missing the required parameter "domainVersionId" when calling postLanguageunderstandingDomainVersionPublish';
+			throw new Error('Missing the required parameter "domainVersionId" when calling postLanguageunderstandingDomainVersionPublish';
 		}
 
 		return this.apiClient.callApi(
@@ -708,11 +708,11 @@ class LanguageUnderstandingApi {
 	postLanguageunderstandingDomainVersionTrain(domainId, domainVersionId) { 
 		// verify the required parameter 'domainId' is set
 		if (domainId === undefined || domainId === null) {
-			throw 'Missing the required parameter "domainId" when calling postLanguageunderstandingDomainVersionTrain';
+			throw new Error('Missing the required parameter "domainId" when calling postLanguageunderstandingDomainVersionTrain';
 		}
 		// verify the required parameter 'domainVersionId' is set
 		if (domainVersionId === undefined || domainVersionId === null) {
-			throw 'Missing the required parameter "domainVersionId" when calling postLanguageunderstandingDomainVersionTrain';
+			throw new Error('Missing the required parameter "domainVersionId" when calling postLanguageunderstandingDomainVersionTrain';
 		}
 
 		return this.apiClient.callApi(
@@ -738,11 +738,11 @@ class LanguageUnderstandingApi {
 	postLanguageunderstandingDomainVersions(domainId, body) { 
 		// verify the required parameter 'domainId' is set
 		if (domainId === undefined || domainId === null) {
-			throw 'Missing the required parameter "domainId" when calling postLanguageunderstandingDomainVersions';
+			throw new Error('Missing the required parameter "domainId" when calling postLanguageunderstandingDomainVersions';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postLanguageunderstandingDomainVersions';
+			throw new Error('Missing the required parameter "body" when calling postLanguageunderstandingDomainVersions';
 		}
 
 		return this.apiClient.callApi(
@@ -767,7 +767,7 @@ class LanguageUnderstandingApi {
 	postLanguageunderstandingDomains(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postLanguageunderstandingDomains';
+			throw new Error('Missing the required parameter "body" when calling postLanguageunderstandingDomains';
 		}
 
 		return this.apiClient.callApi(
@@ -793,11 +793,11 @@ class LanguageUnderstandingApi {
 	postLanguageunderstandingMinerDrafts(minerId, body) { 
 		// verify the required parameter 'minerId' is set
 		if (minerId === undefined || minerId === null) {
-			throw 'Missing the required parameter "minerId" when calling postLanguageunderstandingMinerDrafts';
+			throw new Error('Missing the required parameter "minerId" when calling postLanguageunderstandingMinerDrafts';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postLanguageunderstandingMinerDrafts';
+			throw new Error('Missing the required parameter "body" when calling postLanguageunderstandingMinerDrafts';
 		}
 
 		return this.apiClient.callApi(
@@ -826,7 +826,7 @@ class LanguageUnderstandingApi {
 		
 		// verify the required parameter 'minerId' is set
 		if (minerId === undefined || minerId === null) {
-			throw 'Missing the required parameter "minerId" when calling postLanguageunderstandingMinerExecute';
+			throw new Error('Missing the required parameter "minerId" when calling postLanguageunderstandingMinerExecute';
 		}
 
 		return this.apiClient.callApi(
@@ -851,7 +851,7 @@ class LanguageUnderstandingApi {
 	postLanguageunderstandingMiners(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postLanguageunderstandingMiners';
+			throw new Error('Missing the required parameter "body" when calling postLanguageunderstandingMiners';
 		}
 
 		return this.apiClient.callApi(
@@ -878,15 +878,15 @@ class LanguageUnderstandingApi {
 	putLanguageunderstandingDomainVersion(domainId, domainVersionId, body) { 
 		// verify the required parameter 'domainId' is set
 		if (domainId === undefined || domainId === null) {
-			throw 'Missing the required parameter "domainId" when calling putLanguageunderstandingDomainVersion';
+			throw new Error('Missing the required parameter "domainId" when calling putLanguageunderstandingDomainVersion';
 		}
 		// verify the required parameter 'domainVersionId' is set
 		if (domainVersionId === undefined || domainVersionId === null) {
-			throw 'Missing the required parameter "domainVersionId" when calling putLanguageunderstandingDomainVersion';
+			throw new Error('Missing the required parameter "domainVersionId" when calling putLanguageunderstandingDomainVersion';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putLanguageunderstandingDomainVersion';
+			throw new Error('Missing the required parameter "body" when calling putLanguageunderstandingDomainVersion';
 		}
 
 		return this.apiClient.callApi(

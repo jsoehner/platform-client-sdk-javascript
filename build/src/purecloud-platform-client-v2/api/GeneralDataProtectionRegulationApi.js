@@ -28,7 +28,7 @@ class GeneralDataProtectionRegulationApi {
 	getGdprRequest(requestId) { 
 		// verify the required parameter 'requestId' is set
 		if (requestId === undefined || requestId === null) {
-			throw 'Missing the required parameter "requestId" when calling getGdprRequest';
+			throw new Error('Missing the required parameter "requestId" when calling getGdprRequest';
 		}
 
 		return this.apiClient.callApi(
@@ -79,11 +79,11 @@ class GeneralDataProtectionRegulationApi {
 	getGdprSubjects(searchType, searchValue) { 
 		// verify the required parameter 'searchType' is set
 		if (searchType === undefined || searchType === null) {
-			throw 'Missing the required parameter "searchType" when calling getGdprSubjects';
+			throw new Error('Missing the required parameter "searchType" when calling getGdprSubjects';
 		}
 		// verify the required parameter 'searchValue' is set
 		if (searchValue === undefined || searchValue === null) {
-			throw 'Missing the required parameter "searchValue" when calling getGdprSubjects';
+			throw new Error('Missing the required parameter "searchValue" when calling getGdprSubjects';
 		}
 
 		return this.apiClient.callApi(
@@ -112,7 +112,7 @@ class GeneralDataProtectionRegulationApi {
 		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postGdprRequests';
+			throw new Error('Missing the required parameter "body" when calling postGdprRequests';
 		}
 
 		return this.apiClient.callApi(

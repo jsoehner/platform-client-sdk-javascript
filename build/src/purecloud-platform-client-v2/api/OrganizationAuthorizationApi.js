@@ -28,7 +28,7 @@ class OrganizationAuthorizationApi {
 	deleteOrgauthorizationTrustee(trusteeOrgId) { 
 		// verify the required parameter 'trusteeOrgId' is set
 		if (trusteeOrgId === undefined || trusteeOrgId === null) {
-			throw 'Missing the required parameter "trusteeOrgId" when calling deleteOrgauthorizationTrustee';
+			throw new Error('Missing the required parameter "trusteeOrgId" when calling deleteOrgauthorizationTrustee';
 		}
 
 		return this.apiClient.callApi(
@@ -54,11 +54,11 @@ class OrganizationAuthorizationApi {
 	deleteOrgauthorizationTrusteeUser(trusteeOrgId, trusteeUserId) { 
 		// verify the required parameter 'trusteeOrgId' is set
 		if (trusteeOrgId === undefined || trusteeOrgId === null) {
-			throw 'Missing the required parameter "trusteeOrgId" when calling deleteOrgauthorizationTrusteeUser';
+			throw new Error('Missing the required parameter "trusteeOrgId" when calling deleteOrgauthorizationTrusteeUser';
 		}
 		// verify the required parameter 'trusteeUserId' is set
 		if (trusteeUserId === undefined || trusteeUserId === null) {
-			throw 'Missing the required parameter "trusteeUserId" when calling deleteOrgauthorizationTrusteeUser';
+			throw new Error('Missing the required parameter "trusteeUserId" when calling deleteOrgauthorizationTrusteeUser';
 		}
 
 		return this.apiClient.callApi(
@@ -84,11 +84,11 @@ class OrganizationAuthorizationApi {
 	deleteOrgauthorizationTrusteeUserRoles(trusteeOrgId, trusteeUserId) { 
 		// verify the required parameter 'trusteeOrgId' is set
 		if (trusteeOrgId === undefined || trusteeOrgId === null) {
-			throw 'Missing the required parameter "trusteeOrgId" when calling deleteOrgauthorizationTrusteeUserRoles';
+			throw new Error('Missing the required parameter "trusteeOrgId" when calling deleteOrgauthorizationTrusteeUserRoles';
 		}
 		// verify the required parameter 'trusteeUserId' is set
 		if (trusteeUserId === undefined || trusteeUserId === null) {
-			throw 'Missing the required parameter "trusteeUserId" when calling deleteOrgauthorizationTrusteeUserRoles';
+			throw new Error('Missing the required parameter "trusteeUserId" when calling deleteOrgauthorizationTrusteeUserRoles';
 		}
 
 		return this.apiClient.callApi(
@@ -113,7 +113,7 @@ class OrganizationAuthorizationApi {
 	deleteOrgauthorizationTrustor(trustorOrgId) { 
 		// verify the required parameter 'trustorOrgId' is set
 		if (trustorOrgId === undefined || trustorOrgId === null) {
-			throw 'Missing the required parameter "trustorOrgId" when calling deleteOrgauthorizationTrustor';
+			throw new Error('Missing the required parameter "trustorOrgId" when calling deleteOrgauthorizationTrustor';
 		}
 
 		return this.apiClient.callApi(
@@ -139,11 +139,11 @@ class OrganizationAuthorizationApi {
 	deleteOrgauthorizationTrustorUser(trustorOrgId, trusteeUserId) { 
 		// verify the required parameter 'trustorOrgId' is set
 		if (trustorOrgId === undefined || trustorOrgId === null) {
-			throw 'Missing the required parameter "trustorOrgId" when calling deleteOrgauthorizationTrustorUser';
+			throw new Error('Missing the required parameter "trustorOrgId" when calling deleteOrgauthorizationTrustorUser';
 		}
 		// verify the required parameter 'trusteeUserId' is set
 		if (trusteeUserId === undefined || trusteeUserId === null) {
-			throw 'Missing the required parameter "trusteeUserId" when calling deleteOrgauthorizationTrustorUser';
+			throw new Error('Missing the required parameter "trusteeUserId" when calling deleteOrgauthorizationTrustorUser';
 		}
 
 		return this.apiClient.callApi(
@@ -168,7 +168,7 @@ class OrganizationAuthorizationApi {
 	getOrgauthorizationPairing(pairingId) { 
 		// verify the required parameter 'pairingId' is set
 		if (pairingId === undefined || pairingId === null) {
-			throw 'Missing the required parameter "pairingId" when calling getOrgauthorizationPairing';
+			throw new Error('Missing the required parameter "pairingId" when calling getOrgauthorizationPairing';
 		}
 
 		return this.apiClient.callApi(
@@ -193,7 +193,7 @@ class OrganizationAuthorizationApi {
 	getOrgauthorizationTrustee(trusteeOrgId) { 
 		// verify the required parameter 'trusteeOrgId' is set
 		if (trusteeOrgId === undefined || trusteeOrgId === null) {
-			throw 'Missing the required parameter "trusteeOrgId" when calling getOrgauthorizationTrustee';
+			throw new Error('Missing the required parameter "trusteeOrgId" when calling getOrgauthorizationTrustee';
 		}
 
 		return this.apiClient.callApi(
@@ -219,11 +219,11 @@ class OrganizationAuthorizationApi {
 	getOrgauthorizationTrusteeUser(trusteeOrgId, trusteeUserId) { 
 		// verify the required parameter 'trusteeOrgId' is set
 		if (trusteeOrgId === undefined || trusteeOrgId === null) {
-			throw 'Missing the required parameter "trusteeOrgId" when calling getOrgauthorizationTrusteeUser';
+			throw new Error('Missing the required parameter "trusteeOrgId" when calling getOrgauthorizationTrusteeUser';
 		}
 		// verify the required parameter 'trusteeUserId' is set
 		if (trusteeUserId === undefined || trusteeUserId === null) {
-			throw 'Missing the required parameter "trusteeUserId" when calling getOrgauthorizationTrusteeUser';
+			throw new Error('Missing the required parameter "trusteeUserId" when calling getOrgauthorizationTrusteeUser';
 		}
 
 		return this.apiClient.callApi(
@@ -249,11 +249,11 @@ class OrganizationAuthorizationApi {
 	getOrgauthorizationTrusteeUserRoles(trusteeOrgId, trusteeUserId) { 
 		// verify the required parameter 'trusteeOrgId' is set
 		if (trusteeOrgId === undefined || trusteeOrgId === null) {
-			throw 'Missing the required parameter "trusteeOrgId" when calling getOrgauthorizationTrusteeUserRoles';
+			throw new Error('Missing the required parameter "trusteeOrgId" when calling getOrgauthorizationTrusteeUserRoles';
 		}
 		// verify the required parameter 'trusteeUserId' is set
 		if (trusteeUserId === undefined || trusteeUserId === null) {
-			throw 'Missing the required parameter "trusteeUserId" when calling getOrgauthorizationTrusteeUserRoles';
+			throw new Error('Missing the required parameter "trusteeUserId" when calling getOrgauthorizationTrusteeUserRoles';
 		}
 
 		return this.apiClient.callApi(
@@ -283,7 +283,7 @@ class OrganizationAuthorizationApi {
 		
 		// verify the required parameter 'trusteeOrgId' is set
 		if (trusteeOrgId === undefined || trusteeOrgId === null) {
-			throw 'Missing the required parameter "trusteeOrgId" when calling getOrgauthorizationTrusteeUsers';
+			throw new Error('Missing the required parameter "trusteeOrgId" when calling getOrgauthorizationTrusteeUsers';
 		}
 
 		return this.apiClient.callApi(
@@ -333,7 +333,7 @@ class OrganizationAuthorizationApi {
 	getOrgauthorizationTrustor(trustorOrgId) { 
 		// verify the required parameter 'trustorOrgId' is set
 		if (trustorOrgId === undefined || trustorOrgId === null) {
-			throw 'Missing the required parameter "trustorOrgId" when calling getOrgauthorizationTrustor';
+			throw new Error('Missing the required parameter "trustorOrgId" when calling getOrgauthorizationTrustor';
 		}
 
 		return this.apiClient.callApi(
@@ -359,11 +359,11 @@ class OrganizationAuthorizationApi {
 	getOrgauthorizationTrustorUser(trustorOrgId, trusteeUserId) { 
 		// verify the required parameter 'trustorOrgId' is set
 		if (trustorOrgId === undefined || trustorOrgId === null) {
-			throw 'Missing the required parameter "trustorOrgId" when calling getOrgauthorizationTrustorUser';
+			throw new Error('Missing the required parameter "trustorOrgId" when calling getOrgauthorizationTrustorUser';
 		}
 		// verify the required parameter 'trusteeUserId' is set
 		if (trusteeUserId === undefined || trusteeUserId === null) {
-			throw 'Missing the required parameter "trusteeUserId" when calling getOrgauthorizationTrustorUser';
+			throw new Error('Missing the required parameter "trusteeUserId" when calling getOrgauthorizationTrustorUser';
 		}
 
 		return this.apiClient.callApi(
@@ -393,7 +393,7 @@ class OrganizationAuthorizationApi {
 		
 		// verify the required parameter 'trustorOrgId' is set
 		if (trustorOrgId === undefined || trustorOrgId === null) {
-			throw 'Missing the required parameter "trustorOrgId" when calling getOrgauthorizationTrustorUsers';
+			throw new Error('Missing the required parameter "trustorOrgId" when calling getOrgauthorizationTrustorUsers';
 		}
 
 		return this.apiClient.callApi(
@@ -443,7 +443,7 @@ class OrganizationAuthorizationApi {
 	postOrgauthorizationPairings(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postOrgauthorizationPairings';
+			throw new Error('Missing the required parameter "body" when calling postOrgauthorizationPairings';
 		}
 
 		return this.apiClient.callApi(
@@ -469,11 +469,11 @@ class OrganizationAuthorizationApi {
 	postOrgauthorizationTrusteeUsers(trusteeOrgId, body) { 
 		// verify the required parameter 'trusteeOrgId' is set
 		if (trusteeOrgId === undefined || trusteeOrgId === null) {
-			throw 'Missing the required parameter "trusteeOrgId" when calling postOrgauthorizationTrusteeUsers';
+			throw new Error('Missing the required parameter "trusteeOrgId" when calling postOrgauthorizationTrusteeUsers';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postOrgauthorizationTrusteeUsers';
+			throw new Error('Missing the required parameter "body" when calling postOrgauthorizationTrusteeUsers';
 		}
 
 		return this.apiClient.callApi(
@@ -498,7 +498,7 @@ class OrganizationAuthorizationApi {
 	postOrgauthorizationTrustees(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postOrgauthorizationTrustees';
+			throw new Error('Missing the required parameter "body" when calling postOrgauthorizationTrustees';
 		}
 
 		return this.apiClient.callApi(
@@ -530,7 +530,7 @@ class OrganizationAuthorizationApi {
 		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postOrgauthorizationTrusteesAudits';
+			throw new Error('Missing the required parameter "body" when calling postOrgauthorizationTrusteesAudits';
 		}
 
 		return this.apiClient.callApi(
@@ -562,7 +562,7 @@ class OrganizationAuthorizationApi {
 		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postOrgauthorizationTrustorAudits';
+			throw new Error('Missing the required parameter "body" when calling postOrgauthorizationTrustorAudits';
 		}
 
 		return this.apiClient.callApi(
@@ -588,11 +588,11 @@ class OrganizationAuthorizationApi {
 	putOrgauthorizationTrustee(trusteeOrgId, body) { 
 		// verify the required parameter 'trusteeOrgId' is set
 		if (trusteeOrgId === undefined || trusteeOrgId === null) {
-			throw 'Missing the required parameter "trusteeOrgId" when calling putOrgauthorizationTrustee';
+			throw new Error('Missing the required parameter "trusteeOrgId" when calling putOrgauthorizationTrustee';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putOrgauthorizationTrustee';
+			throw new Error('Missing the required parameter "body" when calling putOrgauthorizationTrustee';
 		}
 
 		return this.apiClient.callApi(
@@ -619,15 +619,15 @@ class OrganizationAuthorizationApi {
 	putOrgauthorizationTrusteeUserRoledivisions(trusteeOrgId, trusteeUserId, body) { 
 		// verify the required parameter 'trusteeOrgId' is set
 		if (trusteeOrgId === undefined || trusteeOrgId === null) {
-			throw 'Missing the required parameter "trusteeOrgId" when calling putOrgauthorizationTrusteeUserRoledivisions';
+			throw new Error('Missing the required parameter "trusteeOrgId" when calling putOrgauthorizationTrusteeUserRoledivisions';
 		}
 		// verify the required parameter 'trusteeUserId' is set
 		if (trusteeUserId === undefined || trusteeUserId === null) {
-			throw 'Missing the required parameter "trusteeUserId" when calling putOrgauthorizationTrusteeUserRoledivisions';
+			throw new Error('Missing the required parameter "trusteeUserId" when calling putOrgauthorizationTrusteeUserRoledivisions';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putOrgauthorizationTrusteeUserRoledivisions';
+			throw new Error('Missing the required parameter "body" when calling putOrgauthorizationTrusteeUserRoledivisions';
 		}
 
 		return this.apiClient.callApi(
@@ -654,15 +654,15 @@ class OrganizationAuthorizationApi {
 	putOrgauthorizationTrusteeUserRoles(trusteeOrgId, trusteeUserId, body) { 
 		// verify the required parameter 'trusteeOrgId' is set
 		if (trusteeOrgId === undefined || trusteeOrgId === null) {
-			throw 'Missing the required parameter "trusteeOrgId" when calling putOrgauthorizationTrusteeUserRoles';
+			throw new Error('Missing the required parameter "trusteeOrgId" when calling putOrgauthorizationTrusteeUserRoles';
 		}
 		// verify the required parameter 'trusteeUserId' is set
 		if (trusteeUserId === undefined || trusteeUserId === null) {
-			throw 'Missing the required parameter "trusteeUserId" when calling putOrgauthorizationTrusteeUserRoles';
+			throw new Error('Missing the required parameter "trusteeUserId" when calling putOrgauthorizationTrusteeUserRoles';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putOrgauthorizationTrusteeUserRoles';
+			throw new Error('Missing the required parameter "body" when calling putOrgauthorizationTrusteeUserRoles';
 		}
 
 		return this.apiClient.callApi(
@@ -688,11 +688,11 @@ class OrganizationAuthorizationApi {
 	putOrgauthorizationTrustorUser(trustorOrgId, trusteeUserId) { 
 		// verify the required parameter 'trustorOrgId' is set
 		if (trustorOrgId === undefined || trustorOrgId === null) {
-			throw 'Missing the required parameter "trustorOrgId" when calling putOrgauthorizationTrustorUser';
+			throw new Error('Missing the required parameter "trustorOrgId" when calling putOrgauthorizationTrustorUser';
 		}
 		// verify the required parameter 'trusteeUserId' is set
 		if (trusteeUserId === undefined || trusteeUserId === null) {
-			throw 'Missing the required parameter "trusteeUserId" when calling putOrgauthorizationTrustorUser';
+			throw new Error('Missing the required parameter "trusteeUserId" when calling putOrgauthorizationTrustorUser';
 		}
 
 		return this.apiClient.callApi(

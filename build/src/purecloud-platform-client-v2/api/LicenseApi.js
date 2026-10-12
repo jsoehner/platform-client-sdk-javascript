@@ -28,7 +28,7 @@ class LicenseApi {
 	getLicenseDefinition(licenseId) { 
 		// verify the required parameter 'licenseId' is set
 		if (licenseId === undefined || licenseId === null) {
-			throw 'Missing the required parameter "licenseId" when calling getLicenseDefinition';
+			throw new Error('Missing the required parameter "licenseId" when calling getLicenseDefinition';
 		}
 
 		return this.apiClient.callApi(
@@ -73,7 +73,7 @@ class LicenseApi {
 	getLicenseToggle(featureName) { 
 		// verify the required parameter 'featureName' is set
 		if (featureName === undefined || featureName === null) {
-			throw 'Missing the required parameter "featureName" when calling getLicenseToggle';
+			throw new Error('Missing the required parameter "featureName" when calling getLicenseToggle';
 		}
 
 		return this.apiClient.callApi(
@@ -98,7 +98,7 @@ class LicenseApi {
 	getLicenseUser(userId) { 
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling getLicenseUser';
+			throw new Error('Missing the required parameter "userId" when calling getLicenseUser';
 		}
 
 		return this.apiClient.callApi(
@@ -196,7 +196,7 @@ class LicenseApi {
 	postLicenseToggle(featureName) { 
 		// verify the required parameter 'featureName' is set
 		if (featureName === undefined || featureName === null) {
-			throw 'Missing the required parameter "featureName" when calling postLicenseToggle';
+			throw new Error('Missing the required parameter "featureName" when calling postLicenseToggle';
 		}
 
 		return this.apiClient.callApi(

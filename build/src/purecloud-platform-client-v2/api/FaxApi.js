@@ -28,7 +28,7 @@ class FaxApi {
 	deleteFaxDocument(documentId) { 
 		// verify the required parameter 'documentId' is set
 		if (documentId === undefined || documentId === null) {
-			throw 'Missing the required parameter "documentId" when calling deleteFaxDocument';
+			throw new Error('Missing the required parameter "documentId" when calling deleteFaxDocument';
 		}
 
 		return this.apiClient.callApi(
@@ -53,7 +53,7 @@ class FaxApi {
 	getFaxDocument(documentId) { 
 		// verify the required parameter 'documentId' is set
 		if (documentId === undefined || documentId === null) {
-			throw 'Missing the required parameter "documentId" when calling getFaxDocument';
+			throw new Error('Missing the required parameter "documentId" when calling getFaxDocument';
 		}
 
 		return this.apiClient.callApi(
@@ -78,7 +78,7 @@ class FaxApi {
 	getFaxDocumentContent(documentId) { 
 		// verify the required parameter 'documentId' is set
 		if (documentId === undefined || documentId === null) {
-			throw 'Missing the required parameter "documentId" when calling getFaxDocumentContent';
+			throw new Error('Missing the required parameter "documentId" when calling getFaxDocumentContent';
 		}
 
 		return this.apiClient.callApi(
@@ -149,11 +149,11 @@ class FaxApi {
 	putFaxDocument(documentId, body) { 
 		// verify the required parameter 'documentId' is set
 		if (documentId === undefined || documentId === null) {
-			throw 'Missing the required parameter "documentId" when calling putFaxDocument';
+			throw new Error('Missing the required parameter "documentId" when calling putFaxDocument';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putFaxDocument';
+			throw new Error('Missing the required parameter "body" when calling putFaxDocument';
 		}
 
 		return this.apiClient.callApi(

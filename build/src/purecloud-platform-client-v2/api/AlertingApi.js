@@ -28,7 +28,7 @@ class AlertingApi {
 	deleteAlertingInteractionstatsAlert(alertId) { 
 		// verify the required parameter 'alertId' is set
 		if (alertId === undefined || alertId === null) {
-			throw 'Missing the required parameter "alertId" when calling deleteAlertingInteractionstatsAlert';
+			throw new Error('Missing the required parameter "alertId" when calling deleteAlertingInteractionstatsAlert');
 		}
 
 		return this.apiClient.callApi(
@@ -53,7 +53,7 @@ class AlertingApi {
 	deleteAlertingInteractionstatsRule(ruleId) { 
 		// verify the required parameter 'ruleId' is set
 		if (ruleId === undefined || ruleId === null) {
-			throw 'Missing the required parameter "ruleId" when calling deleteAlertingInteractionstatsRule';
+			throw new Error('Missing the required parameter "ruleId" when calling deleteAlertingInteractionstatsRule');
 		}
 
 		return this.apiClient.callApi(
@@ -102,7 +102,7 @@ class AlertingApi {
 		
 		// verify the required parameter 'alertId' is set
 		if (alertId === undefined || alertId === null) {
-			throw 'Missing the required parameter "alertId" when calling getAlertingInteractionstatsAlert';
+			throw new Error('Missing the required parameter "alertId" when calling getAlertingInteractionstatsAlert');
 		}
 
 		return this.apiClient.callApi(
@@ -175,7 +175,7 @@ class AlertingApi {
 		
 		// verify the required parameter 'ruleId' is set
 		if (ruleId === undefined || ruleId === null) {
-			throw 'Missing the required parameter "ruleId" when calling getAlertingInteractionstatsRule';
+			throw new Error('Missing the required parameter "ruleId" when calling getAlertingInteractionstatsRule');
 		}
 
 		return this.apiClient.callApi(
@@ -228,7 +228,7 @@ class AlertingApi {
 		
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postAlertingInteractionstatsRules';
+			throw new Error('Missing the required parameter "body" when calling postAlertingInteractionstatsRules');
 		}
 
 		return this.apiClient.callApi(
@@ -258,11 +258,11 @@ class AlertingApi {
 		
 		// verify the required parameter 'alertId' is set
 		if (alertId === undefined || alertId === null) {
-			throw 'Missing the required parameter "alertId" when calling putAlertingInteractionstatsAlert';
+			throw new Error('Missing the required parameter "alertId" when calling putAlertingInteractionstatsAlert');
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putAlertingInteractionstatsAlert';
+			throw new Error('Missing the required parameter "body" when calling putAlertingInteractionstatsAlert');
 		}
 
 		return this.apiClient.callApi(
@@ -292,11 +292,11 @@ class AlertingApi {
 		
 		// verify the required parameter 'ruleId' is set
 		if (ruleId === undefined || ruleId === null) {
-			throw 'Missing the required parameter "ruleId" when calling putAlertingInteractionstatsRule';
+			throw new Error('Missing the required parameter "ruleId" when calling putAlertingInteractionstatsRule');
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putAlertingInteractionstatsRule';
+			throw new Error('Missing the required parameter "body" when calling putAlertingInteractionstatsRule');
 		}
 
 		return this.apiClient.callApi(

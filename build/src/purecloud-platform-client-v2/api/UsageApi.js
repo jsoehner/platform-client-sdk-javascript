@@ -28,7 +28,7 @@ class UsageApi {
 	getUsageQueryExecutionIdResults(executionId) { 
 		// verify the required parameter 'executionId' is set
 		if (executionId === undefined || executionId === null) {
-			throw 'Missing the required parameter "executionId" when calling getUsageQueryExecutionIdResults';
+			throw new Error('Missing the required parameter "executionId" when calling getUsageQueryExecutionIdResults';
 		}
 
 		return this.apiClient.callApi(
@@ -53,7 +53,7 @@ class UsageApi {
 	postUsageQuery(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postUsageQuery';
+			throw new Error('Missing the required parameter "body" when calling postUsageQuery';
 		}
 
 		return this.apiClient.callApi(

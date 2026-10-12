@@ -28,7 +28,7 @@ class UsersApi {
 	deleteAnalyticsUsersDetailsJob(jobId) { 
 		// verify the required parameter 'jobId' is set
 		if (jobId === undefined || jobId === null) {
-			throw 'Missing the required parameter "jobId" when calling deleteAnalyticsUsersDetailsJob';
+			throw new Error('Missing the required parameter "jobId" when calling deleteAnalyticsUsersDetailsJob');
 		}
 
 		return this.apiClient.callApi(
@@ -55,15 +55,15 @@ class UsersApi {
 	deleteAuthorizationSubjectDivisionRole(subjectId, divisionId, roleId) { 
 		// verify the required parameter 'subjectId' is set
 		if (subjectId === undefined || subjectId === null) {
-			throw 'Missing the required parameter "subjectId" when calling deleteAuthorizationSubjectDivisionRole';
+			throw new Error('Missing the required parameter "subjectId" when calling deleteAuthorizationSubjectDivisionRole';
 		}
 		// verify the required parameter 'divisionId' is set
 		if (divisionId === undefined || divisionId === null) {
-			throw 'Missing the required parameter "divisionId" when calling deleteAuthorizationSubjectDivisionRole';
+			throw new Error('Missing the required parameter "divisionId" when calling deleteAuthorizationSubjectDivisionRole';
 		}
 		// verify the required parameter 'roleId' is set
 		if (roleId === undefined || roleId === null) {
-			throw 'Missing the required parameter "roleId" when calling deleteAuthorizationSubjectDivisionRole';
+			throw new Error('Missing the required parameter "roleId" when calling deleteAuthorizationSubjectDivisionRole';
 		}
 
 		return this.apiClient.callApi(
@@ -88,7 +88,7 @@ class UsersApi {
 	deleteRoutingUserUtilization(userId) { 
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling deleteRoutingUserUtilization';
+			throw new Error('Missing the required parameter "userId" when calling deleteRoutingUserUtilization';
 		}
 
 		return this.apiClient.callApi(
@@ -113,7 +113,7 @@ class UsersApi {
 	deleteUser(userId) { 
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling deleteUser';
+			throw new Error('Missing the required parameter "userId" when calling deleteUser';
 		}
 
 		return this.apiClient.callApi(
@@ -139,11 +139,11 @@ class UsersApi {
 	deleteUserRoutinglanguage(userId, languageId) { 
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling deleteUserRoutinglanguage';
+			throw new Error('Missing the required parameter "userId" when calling deleteUserRoutinglanguage';
 		}
 		// verify the required parameter 'languageId' is set
 		if (languageId === undefined || languageId === null) {
-			throw 'Missing the required parameter "languageId" when calling deleteUserRoutinglanguage';
+			throw new Error('Missing the required parameter "languageId" when calling deleteUserRoutinglanguage';
 		}
 
 		return this.apiClient.callApi(
@@ -169,11 +169,11 @@ class UsersApi {
 	deleteUserRoutingskill(userId, skillId) { 
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling deleteUserRoutingskill';
+			throw new Error('Missing the required parameter "userId" when calling deleteUserRoutingskill';
 		}
 		// verify the required parameter 'skillId' is set
 		if (skillId === undefined || skillId === null) {
-			throw 'Missing the required parameter "skillId" when calling deleteUserRoutingskill';
+			throw new Error('Missing the required parameter "skillId" when calling deleteUserRoutingskill';
 		}
 
 		return this.apiClient.callApi(
@@ -198,7 +198,7 @@ class UsersApi {
 	deleteUserStationAssociatedstation(userId) { 
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling deleteUserStationAssociatedstation';
+			throw new Error('Missing the required parameter "userId" when calling deleteUserStationAssociatedstation';
 		}
 
 		return this.apiClient.callApi(
@@ -223,7 +223,7 @@ class UsersApi {
 	deleteUserStationDefaultstation(userId) { 
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling deleteUserStationDefaultstation';
+			throw new Error('Missing the required parameter "userId" when calling deleteUserStationDefaultstation';
 		}
 
 		return this.apiClient.callApi(
@@ -248,7 +248,7 @@ class UsersApi {
 	getAnalyticsUsersDetailsJob(jobId) { 
 		// verify the required parameter 'jobId' is set
 		if (jobId === undefined || jobId === null) {
-			throw 'Missing the required parameter "jobId" when calling getAnalyticsUsersDetailsJob';
+			throw new Error('Missing the required parameter "jobId" when calling getAnalyticsUsersDetailsJob';
 		}
 
 		return this.apiClient.callApi(
@@ -278,7 +278,7 @@ class UsersApi {
 		
 		// verify the required parameter 'jobId' is set
 		if (jobId === undefined || jobId === null) {
-			throw 'Missing the required parameter "jobId" when calling getAnalyticsUsersDetailsJobResults';
+			throw new Error('Missing the required parameter "jobId" when calling getAnalyticsUsersDetailsJobResults';
 		}
 
 		return this.apiClient.callApi(
@@ -327,7 +327,7 @@ class UsersApi {
 		
 		// verify the required parameter 'permission' is set
 		if (permission === undefined || permission === null) {
-			throw 'Missing the required parameter "permission" when calling getAuthorizationDivisionspermittedMe';
+			throw new Error('Missing the required parameter "permission" when calling getAuthorizationDivisionspermittedMe';
 		}
 
 		return this.apiClient.callApi(
@@ -357,7 +357,7 @@ class UsersApi {
 		
 		// verify the required parameter 'permission' is set
 		if (permission === undefined || permission === null) {
-			throw 'Missing the required parameter "permission" when calling getAuthorizationDivisionspermittedPagedMe';
+			throw new Error('Missing the required parameter "permission" when calling getAuthorizationDivisionspermittedPagedMe';
 		}
 
 		return this.apiClient.callApi(
@@ -388,11 +388,11 @@ class UsersApi {
 		
 		// verify the required parameter 'subjectId' is set
 		if (subjectId === undefined || subjectId === null) {
-			throw 'Missing the required parameter "subjectId" when calling getAuthorizationDivisionspermittedPagedSubjectId';
+			throw new Error('Missing the required parameter "subjectId" when calling getAuthorizationDivisionspermittedPagedSubjectId';
 		}
 		// verify the required parameter 'permission' is set
 		if (permission === undefined || permission === null) {
-			throw 'Missing the required parameter "permission" when calling getAuthorizationDivisionspermittedPagedSubjectId';
+			throw new Error('Missing the required parameter "permission" when calling getAuthorizationDivisionspermittedPagedSubjectId';
 		}
 
 		return this.apiClient.callApi(
@@ -417,7 +417,7 @@ class UsersApi {
 	getAuthorizationSubject(subjectId) { 
 		// verify the required parameter 'subjectId' is set
 		if (subjectId === undefined || subjectId === null) {
-			throw 'Missing the required parameter "subjectId" when calling getAuthorizationSubject';
+			throw new Error('Missing the required parameter "subjectId" when calling getAuthorizationSubject';
 		}
 
 		return this.apiClient.callApi(
@@ -462,7 +462,7 @@ class UsersApi {
 	getFieldconfig(type) { 
 		// verify the required parameter 'type' is set
 		if (type === undefined || type === null) {
-			throw 'Missing the required parameter "type" when calling getFieldconfig';
+			throw new Error('Missing the required parameter "type" when calling getFieldconfig';
 		}
 
 		return this.apiClient.callApi(
@@ -517,7 +517,7 @@ class UsersApi {
 	getRoutingUserUtilization(userId) { 
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling getRoutingUserUtilization';
+			throw new Error('Missing the required parameter "userId" when calling getRoutingUserUtilization';
 		}
 
 		return this.apiClient.callApi(
@@ -548,7 +548,7 @@ class UsersApi {
 		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling getUser';
+			throw new Error('Missing the required parameter "userId" when calling getUser';
 		}
 
 		return this.apiClient.callApi(
@@ -577,7 +577,7 @@ class UsersApi {
 		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling getUserAdjacents';
+			throw new Error('Missing the required parameter "userId" when calling getUserAdjacents';
 		}
 
 		return this.apiClient.callApi(
@@ -602,7 +602,7 @@ class UsersApi {
 	getUserCallforwarding(userId) { 
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling getUserCallforwarding';
+			throw new Error('Missing the required parameter "userId" when calling getUserCallforwarding';
 		}
 
 		return this.apiClient.callApi(
@@ -631,7 +631,7 @@ class UsersApi {
 		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling getUserDirectreports';
+			throw new Error('Missing the required parameter "userId" when calling getUserDirectreports';
 		}
 
 		return this.apiClient.callApi(
@@ -663,7 +663,7 @@ class UsersApi {
 		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling getUserFavorites';
+			throw new Error('Missing the required parameter "userId" when calling getUserFavorites';
 		}
 
 		return this.apiClient.callApi(
@@ -689,11 +689,11 @@ class UsersApi {
 	getUserGeolocation(userId, clientId) { 
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling getUserGeolocation';
+			throw new Error('Missing the required parameter "userId" when calling getUserGeolocation';
 		}
 		// verify the required parameter 'clientId' is set
 		if (clientId === undefined || clientId === null) {
-			throw 'Missing the required parameter "clientId" when calling getUserGeolocation';
+			throw new Error('Missing the required parameter "clientId" when calling getUserGeolocation';
 		}
 
 		return this.apiClient.callApi(
@@ -718,7 +718,7 @@ class UsersApi {
 	getUserOutofoffice(userId) { 
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling getUserOutofoffice';
+			throw new Error('Missing the required parameter "userId" when calling getUserOutofoffice';
 		}
 
 		return this.apiClient.callApi(
@@ -748,7 +748,7 @@ class UsersApi {
 		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling getUserProfile';
+			throw new Error('Missing the required parameter "userId" when calling getUserProfile';
 		}
 
 		return this.apiClient.callApi(
@@ -773,7 +773,7 @@ class UsersApi {
 	getUserProfileskills(userId) { 
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling getUserProfileskills';
+			throw new Error('Missing the required parameter "userId" when calling getUserProfileskills';
 		}
 
 		return this.apiClient.callApi(
@@ -805,7 +805,7 @@ class UsersApi {
 		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling getUserQueues';
+			throw new Error('Missing the required parameter "userId" when calling getUserQueues';
 		}
 
 		return this.apiClient.callApi(
@@ -830,7 +830,7 @@ class UsersApi {
 	getUserRoles(userId) { 
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling getUserRoles';
+			throw new Error('Missing the required parameter "userId" when calling getUserRoles';
 		}
 
 		return this.apiClient.callApi(
@@ -861,7 +861,7 @@ class UsersApi {
 		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling getUserRoutinglanguages';
+			throw new Error('Missing the required parameter "userId" when calling getUserRoutinglanguages';
 		}
 
 		return this.apiClient.callApi(
@@ -892,7 +892,7 @@ class UsersApi {
 		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling getUserRoutingskills';
+			throw new Error('Missing the required parameter "userId" when calling getUserRoutingskills';
 		}
 
 		return this.apiClient.callApi(
@@ -917,7 +917,7 @@ class UsersApi {
 	getUserRoutingstatus(userId) { 
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling getUserRoutingstatus';
+			throw new Error('Missing the required parameter "userId" when calling getUserRoutingstatus';
 		}
 
 		return this.apiClient.callApi(
@@ -942,7 +942,7 @@ class UsersApi {
 	getUserState(userId) { 
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling getUserState';
+			throw new Error('Missing the required parameter "userId" when calling getUserState';
 		}
 
 		return this.apiClient.callApi(
@@ -967,7 +967,7 @@ class UsersApi {
 	getUserStation(userId) { 
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling getUserStation';
+			throw new Error('Missing the required parameter "userId" when calling getUserStation';
 		}
 
 		return this.apiClient.callApi(
@@ -996,7 +996,7 @@ class UsersApi {
 		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling getUserSuperiors';
+			throw new Error('Missing the required parameter "userId" when calling getUserSuperiors';
 		}
 
 		return this.apiClient.callApi(
@@ -1026,7 +1026,7 @@ class UsersApi {
 		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling getUserTrustors';
+			throw new Error('Missing the required parameter "userId" when calling getUserTrustors';
 		}
 
 		return this.apiClient.callApi(
@@ -1150,11 +1150,11 @@ class UsersApi {
 	getUsersDevelopmentActivity(activityId, type) { 
 		// verify the required parameter 'activityId' is set
 		if (activityId === undefined || activityId === null) {
-			throw 'Missing the required parameter "activityId" when calling getUsersDevelopmentActivity';
+			throw new Error('Missing the required parameter "activityId" when calling getUsersDevelopmentActivity';
 		}
 		// verify the required parameter 'type' is set
 		if (type === undefined || type === null) {
-			throw 'Missing the required parameter "type" when calling getUsersDevelopmentActivity';
+			throw new Error('Missing the required parameter "type" when calling getUsersDevelopmentActivity';
 		}
 
 		return this.apiClient.callApi(
@@ -1209,7 +1209,7 @@ class UsersApi {
 		
 		// verify the required parameter 'q64' is set
 		if (q64 === undefined || q64 === null) {
-			throw 'Missing the required parameter "q64" when calling getUsersSearch';
+			throw new Error('Missing the required parameter "q64" when calling getUsersSearch';
 		}
 
 		return this.apiClient.callApi(
@@ -1235,11 +1235,11 @@ class UsersApi {
 	patchUser(userId, body) { 
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling patchUser';
+			throw new Error('Missing the required parameter "userId" when calling patchUser';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchUser';
+			throw new Error('Missing the required parameter "body" when calling patchUser';
 		}
 
 		return this.apiClient.callApi(
@@ -1265,11 +1265,11 @@ class UsersApi {
 	patchUserCallforwarding(userId, body) { 
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling patchUserCallforwarding';
+			throw new Error('Missing the required parameter "userId" when calling patchUserCallforwarding';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchUserCallforwarding';
+			throw new Error('Missing the required parameter "body" when calling patchUserCallforwarding';
 		}
 
 		return this.apiClient.callApi(
@@ -1296,15 +1296,15 @@ class UsersApi {
 	patchUserGeolocation(userId, clientId, body) { 
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling patchUserGeolocation';
+			throw new Error('Missing the required parameter "userId" when calling patchUserGeolocation';
 		}
 		// verify the required parameter 'clientId' is set
 		if (clientId === undefined || clientId === null) {
-			throw 'Missing the required parameter "clientId" when calling patchUserGeolocation';
+			throw new Error('Missing the required parameter "clientId" when calling patchUserGeolocation';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchUserGeolocation';
+			throw new Error('Missing the required parameter "body" when calling patchUserGeolocation';
 		}
 
 		return this.apiClient.callApi(
@@ -1331,15 +1331,15 @@ class UsersApi {
 	patchUserQueue(queueId, userId, body) { 
 		// verify the required parameter 'queueId' is set
 		if (queueId === undefined || queueId === null) {
-			throw 'Missing the required parameter "queueId" when calling patchUserQueue';
+			throw new Error('Missing the required parameter "queueId" when calling patchUserQueue';
 		}
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling patchUserQueue';
+			throw new Error('Missing the required parameter "userId" when calling patchUserQueue';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchUserQueue';
+			throw new Error('Missing the required parameter "body" when calling patchUserQueue';
 		}
 
 		return this.apiClient.callApi(
@@ -1369,11 +1369,11 @@ class UsersApi {
 		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling patchUserQueues';
+			throw new Error('Missing the required parameter "userId" when calling patchUserQueues';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchUserQueues';
+			throw new Error('Missing the required parameter "body" when calling patchUserQueues';
 		}
 
 		return this.apiClient.callApi(
@@ -1400,15 +1400,15 @@ class UsersApi {
 	patchUserRoutinglanguage(userId, languageId, body) { 
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling patchUserRoutinglanguage';
+			throw new Error('Missing the required parameter "userId" when calling patchUserRoutinglanguage';
 		}
 		// verify the required parameter 'languageId' is set
 		if (languageId === undefined || languageId === null) {
-			throw 'Missing the required parameter "languageId" when calling patchUserRoutinglanguage';
+			throw new Error('Missing the required parameter "languageId" when calling patchUserRoutinglanguage';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchUserRoutinglanguage';
+			throw new Error('Missing the required parameter "body" when calling patchUserRoutinglanguage';
 		}
 
 		return this.apiClient.callApi(
@@ -1434,11 +1434,11 @@ class UsersApi {
 	patchUserRoutinglanguagesBulk(userId, body) { 
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling patchUserRoutinglanguagesBulk';
+			throw new Error('Missing the required parameter "userId" when calling patchUserRoutinglanguagesBulk';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchUserRoutinglanguagesBulk';
+			throw new Error('Missing the required parameter "body" when calling patchUserRoutinglanguagesBulk';
 		}
 
 		return this.apiClient.callApi(
@@ -1464,11 +1464,11 @@ class UsersApi {
 	patchUserRoutingskillsBulk(userId, body) { 
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling patchUserRoutingskillsBulk';
+			throw new Error('Missing the required parameter "userId" when calling patchUserRoutingskillsBulk';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchUserRoutingskillsBulk';
+			throw new Error('Missing the required parameter "body" when calling patchUserRoutingskillsBulk';
 		}
 
 		return this.apiClient.callApi(
@@ -1493,7 +1493,7 @@ class UsersApi {
 	patchUsersBulk(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling patchUsersBulk';
+			throw new Error('Missing the required parameter "body" when calling patchUsersBulk';
 		}
 
 		return this.apiClient.callApi(
@@ -1518,7 +1518,7 @@ class UsersApi {
 	postAnalyticsUsersAggregatesQuery(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postAnalyticsUsersAggregatesQuery';
+			throw new Error('Missing the required parameter "body" when calling postAnalyticsUsersAggregatesQuery';
 		}
 
 		return this.apiClient.callApi(
@@ -1543,7 +1543,7 @@ class UsersApi {
 	postAnalyticsUsersDetailsJobs(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postAnalyticsUsersDetailsJobs';
+			throw new Error('Missing the required parameter "body" when calling postAnalyticsUsersDetailsJobs';
 		}
 
 		return this.apiClient.callApi(
@@ -1568,7 +1568,7 @@ class UsersApi {
 	postAnalyticsUsersDetailsQuery(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postAnalyticsUsersDetailsQuery';
+			throw new Error('Missing the required parameter "body" when calling postAnalyticsUsersDetailsQuery';
 		}
 
 		return this.apiClient.callApi(
@@ -1593,7 +1593,7 @@ class UsersApi {
 	postAnalyticsUsersObservationsQuery(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postAnalyticsUsersObservationsQuery';
+			throw new Error('Missing the required parameter "body" when calling postAnalyticsUsersObservationsQuery';
 		}
 
 		return this.apiClient.callApi(
@@ -1623,11 +1623,11 @@ class UsersApi {
 		
 		// verify the required parameter 'subjectId' is set
 		if (subjectId === undefined || subjectId === null) {
-			throw 'Missing the required parameter "subjectId" when calling postAuthorizationSubjectBulkadd';
+			throw new Error('Missing the required parameter "subjectId" when calling postAuthorizationSubjectBulkadd';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postAuthorizationSubjectBulkadd';
+			throw new Error('Missing the required parameter "body" when calling postAuthorizationSubjectBulkadd';
 		}
 
 		return this.apiClient.callApi(
@@ -1653,11 +1653,11 @@ class UsersApi {
 	postAuthorizationSubjectBulkremove(subjectId, body) { 
 		// verify the required parameter 'subjectId' is set
 		if (subjectId === undefined || subjectId === null) {
-			throw 'Missing the required parameter "subjectId" when calling postAuthorizationSubjectBulkremove';
+			throw new Error('Missing the required parameter "subjectId" when calling postAuthorizationSubjectBulkremove';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postAuthorizationSubjectBulkremove';
+			throw new Error('Missing the required parameter "body" when calling postAuthorizationSubjectBulkremove';
 		}
 
 		return this.apiClient.callApi(
@@ -1687,11 +1687,11 @@ class UsersApi {
 		
 		// verify the required parameter 'subjectId' is set
 		if (subjectId === undefined || subjectId === null) {
-			throw 'Missing the required parameter "subjectId" when calling postAuthorizationSubjectBulkreplace';
+			throw new Error('Missing the required parameter "subjectId" when calling postAuthorizationSubjectBulkreplace';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postAuthorizationSubjectBulkreplace';
+			throw new Error('Missing the required parameter "body" when calling postAuthorizationSubjectBulkreplace';
 		}
 
 		return this.apiClient.callApi(
@@ -1722,15 +1722,15 @@ class UsersApi {
 		
 		// verify the required parameter 'subjectId' is set
 		if (subjectId === undefined || subjectId === null) {
-			throw 'Missing the required parameter "subjectId" when calling postAuthorizationSubjectDivisionRole';
+			throw new Error('Missing the required parameter "subjectId" when calling postAuthorizationSubjectDivisionRole';
 		}
 		// verify the required parameter 'divisionId' is set
 		if (divisionId === undefined || divisionId === null) {
-			throw 'Missing the required parameter "divisionId" when calling postAuthorizationSubjectDivisionRole';
+			throw new Error('Missing the required parameter "divisionId" when calling postAuthorizationSubjectDivisionRole';
 		}
 		// verify the required parameter 'roleId' is set
 		if (roleId === undefined || roleId === null) {
-			throw 'Missing the required parameter "roleId" when calling postAuthorizationSubjectDivisionRole';
+			throw new Error('Missing the required parameter "roleId" when calling postAuthorizationSubjectDivisionRole';
 		}
 
 		return this.apiClient.callApi(
@@ -1759,7 +1759,7 @@ class UsersApi {
 		
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling postUserInvite';
+			throw new Error('Missing the required parameter "userId" when calling postUserInvite';
 		}
 
 		return this.apiClient.callApi(
@@ -1785,11 +1785,11 @@ class UsersApi {
 	postUserPassword(userId, body) { 
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling postUserPassword';
+			throw new Error('Missing the required parameter "userId" when calling postUserPassword';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postUserPassword';
+			throw new Error('Missing the required parameter "body" when calling postUserPassword';
 		}
 
 		return this.apiClient.callApi(
@@ -1815,11 +1815,11 @@ class UsersApi {
 	postUserRoutinglanguages(userId, body) { 
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling postUserRoutinglanguages';
+			throw new Error('Missing the required parameter "userId" when calling postUserRoutinglanguages';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postUserRoutinglanguages';
+			throw new Error('Missing the required parameter "body" when calling postUserRoutinglanguages';
 		}
 
 		return this.apiClient.callApi(
@@ -1845,11 +1845,11 @@ class UsersApi {
 	postUserRoutingskills(userId, body) { 
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling postUserRoutingskills';
+			throw new Error('Missing the required parameter "userId" when calling postUserRoutingskills';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postUserRoutingskills';
+			throw new Error('Missing the required parameter "body" when calling postUserRoutingskills';
 		}
 
 		return this.apiClient.callApi(
@@ -1874,7 +1874,7 @@ class UsersApi {
 	postUsers(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postUsers';
+			throw new Error('Missing the required parameter "body" when calling postUsers';
 		}
 
 		return this.apiClient.callApi(
@@ -1899,7 +1899,7 @@ class UsersApi {
 	postUsersDevelopmentActivitiesAggregatesQuery(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postUsersDevelopmentActivitiesAggregatesQuery';
+			throw new Error('Missing the required parameter "body" when calling postUsersDevelopmentActivitiesAggregatesQuery';
 		}
 
 		return this.apiClient.callApi(
@@ -1924,7 +1924,7 @@ class UsersApi {
 	postUsersMePassword(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postUsersMePassword';
+			throw new Error('Missing the required parameter "body" when calling postUsersMePassword';
 		}
 
 		return this.apiClient.callApi(
@@ -1949,7 +1949,7 @@ class UsersApi {
 	postUsersSearch(body) { 
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling postUsersSearch';
+			throw new Error('Missing the required parameter "body" when calling postUsersSearch';
 		}
 
 		return this.apiClient.callApi(
@@ -1975,11 +1975,11 @@ class UsersApi {
 	putRoutingUserUtilization(userId, body) { 
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling putRoutingUserUtilization';
+			throw new Error('Missing the required parameter "userId" when calling putRoutingUserUtilization';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putRoutingUserUtilization';
+			throw new Error('Missing the required parameter "body" when calling putRoutingUserUtilization';
 		}
 
 		return this.apiClient.callApi(
@@ -2005,11 +2005,11 @@ class UsersApi {
 	putUserCallforwarding(userId, body) { 
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling putUserCallforwarding';
+			throw new Error('Missing the required parameter "userId" when calling putUserCallforwarding';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putUserCallforwarding';
+			throw new Error('Missing the required parameter "body" when calling putUserCallforwarding';
 		}
 
 		return this.apiClient.callApi(
@@ -2035,11 +2035,11 @@ class UsersApi {
 	putUserOutofoffice(userId, body) { 
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling putUserOutofoffice';
+			throw new Error('Missing the required parameter "userId" when calling putUserOutofoffice';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putUserOutofoffice';
+			throw new Error('Missing the required parameter "body" when calling putUserOutofoffice';
 		}
 
 		return this.apiClient.callApi(
@@ -2065,11 +2065,11 @@ class UsersApi {
 	putUserProfileskills(userId, body) { 
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling putUserProfileskills';
+			throw new Error('Missing the required parameter "userId" when calling putUserProfileskills';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putUserProfileskills';
+			throw new Error('Missing the required parameter "body" when calling putUserProfileskills';
 		}
 
 		return this.apiClient.callApi(
@@ -2095,11 +2095,11 @@ class UsersApi {
 	putUserRoles(userId, body) { 
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling putUserRoles';
+			throw new Error('Missing the required parameter "userId" when calling putUserRoles';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putUserRoles';
+			throw new Error('Missing the required parameter "body" when calling putUserRoles';
 		}
 
 		return this.apiClient.callApi(
@@ -2126,15 +2126,15 @@ class UsersApi {
 	putUserRoutingskill(userId, skillId, body) { 
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling putUserRoutingskill';
+			throw new Error('Missing the required parameter "userId" when calling putUserRoutingskill';
 		}
 		// verify the required parameter 'skillId' is set
 		if (skillId === undefined || skillId === null) {
-			throw 'Missing the required parameter "skillId" when calling putUserRoutingskill';
+			throw new Error('Missing the required parameter "skillId" when calling putUserRoutingskill';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putUserRoutingskill';
+			throw new Error('Missing the required parameter "body" when calling putUserRoutingskill';
 		}
 
 		return this.apiClient.callApi(
@@ -2160,11 +2160,11 @@ class UsersApi {
 	putUserRoutingskillsBulk(userId, body) { 
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling putUserRoutingskillsBulk';
+			throw new Error('Missing the required parameter "userId" when calling putUserRoutingskillsBulk';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putUserRoutingskillsBulk';
+			throw new Error('Missing the required parameter "body" when calling putUserRoutingskillsBulk';
 		}
 
 		return this.apiClient.callApi(
@@ -2190,11 +2190,11 @@ class UsersApi {
 	putUserRoutingstatus(userId, body) { 
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling putUserRoutingstatus';
+			throw new Error('Missing the required parameter "userId" when calling putUserRoutingstatus';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putUserRoutingstatus';
+			throw new Error('Missing the required parameter "body" when calling putUserRoutingstatus';
 		}
 
 		return this.apiClient.callApi(
@@ -2220,11 +2220,11 @@ class UsersApi {
 	putUserState(userId, body) { 
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling putUserState';
+			throw new Error('Missing the required parameter "userId" when calling putUserState';
 		}
 		// verify the required parameter 'body' is set
 		if (body === undefined || body === null) {
-			throw 'Missing the required parameter "body" when calling putUserState';
+			throw new Error('Missing the required parameter "body" when calling putUserState';
 		}
 
 		return this.apiClient.callApi(
@@ -2250,11 +2250,11 @@ class UsersApi {
 	putUserStationAssociatedstationStationId(userId, stationId) { 
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling putUserStationAssociatedstationStationId';
+			throw new Error('Missing the required parameter "userId" when calling putUserStationAssociatedstationStationId';
 		}
 		// verify the required parameter 'stationId' is set
 		if (stationId === undefined || stationId === null) {
-			throw 'Missing the required parameter "stationId" when calling putUserStationAssociatedstationStationId';
+			throw new Error('Missing the required parameter "stationId" when calling putUserStationAssociatedstationStationId';
 		}
 
 		return this.apiClient.callApi(
@@ -2280,11 +2280,11 @@ class UsersApi {
 	putUserStationDefaultstationStationId(userId, stationId) { 
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling putUserStationDefaultstationStationId';
+			throw new Error('Missing the required parameter "userId" when calling putUserStationDefaultstationStationId';
 		}
 		// verify the required parameter 'stationId' is set
 		if (stationId === undefined || stationId === null) {
-			throw 'Missing the required parameter "stationId" when calling putUserStationDefaultstationStationId';
+			throw new Error('Missing the required parameter "stationId" when calling putUserStationDefaultstationStationId';
 		}
 
 		return this.apiClient.callApi(

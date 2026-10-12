@@ -28,7 +28,7 @@ class TokensApi {
 	deleteToken(userId) { 
 		// verify the required parameter 'userId' is set
 		if (userId === undefined || userId === null) {
-			throw 'Missing the required parameter "userId" when calling deleteToken';
+			throw new Error('Missing the required parameter "userId" when calling deleteToken';
 		}
 
 		return this.apiClient.callApi(
